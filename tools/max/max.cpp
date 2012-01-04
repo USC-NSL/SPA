@@ -72,6 +72,8 @@
 #include "klee/Internal/System/Time.h"
 #include "klee/Internal/Support/ModuleUtil.h"
 #include "klee/Init.h"
+#include "klee/Executor.h"
+#include "klee/Searcher.h"
 
 #include "cloud9/Logger.h"
 #include "cloud9/ExecutionTree.h"
@@ -450,10 +452,12 @@ int main(int argc, char **argv, char **envp) {
 		fprintf( dotFile, "}\n" );
 		fclose( dotFile );
 	}
-	done();
 
 	// Create the job manager
 	theJobManager = new JobManager(mainModule, "main", pArgc, pArgv, envp);
+	klee::Executor *executor = (klee::Executor *) theJobManager->getInterpreter();
+	klee::FilteringSearcher *filteringSearcher = (klee::FilteringSearcher *) executor->getSearcher();
+	filteringSearcher->setInstructionFilter( uselessInstructions );
 
 	if (ReplayPath.size() > 0) {
       CLOUD9_INFO("Running in replay mode. No load balancer involved.");

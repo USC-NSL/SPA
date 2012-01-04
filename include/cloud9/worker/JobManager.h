@@ -230,6 +230,10 @@ public:
     return selStrategy;
   }
 
+  klee::Interpreter *getInterpreter() {
+    return interpreter;
+  }
+
   StateSelectionStrategy *createBaseStrategy();
 
   void lockJobs() {

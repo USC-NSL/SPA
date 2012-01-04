@@ -274,6 +274,27 @@ namespace klee {
     }
   };
 
+  class FilteringSearcher : public Searcher {
+	Searcher *searcher;
+	std::set<llvm::Instruction *> filterOut;
+
+  public:
+    explicit FilteringSearcher(Searcher *_searcher);
+    ~FilteringSearcher();
+
+	void setInstructionFilter(std::set<llvm::Instruction *> _filterOut);
+
+    ExecutionState &selectState();
+    void update(ExecutionState *current,
+                const std::set<ExecutionState*> &addedStates,
+                const std::set<ExecutionState*> &removedStates);
+    bool empty() { return searcher->empty(); }
+    void printName(std::ostream &os) {
+      os << "<FilteringSearcher> wrapped around:\n";
+      searcher->printName(os);
+      os << "</FilteringSearcher>\n";
+    }
+  };
 }
 
 #endif
