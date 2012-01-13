@@ -9,7 +9,7 @@
 #include <unistd.h>
 #include <assert.h>
 #include <klee/klee.h>
-#include "max.h"
+#include <spa/max.h>
 
 
 //the port at which the receiver operates
@@ -85,8 +85,6 @@ void Route(int sockfd, void * buffer) {
 }
 
 void SenderHandlePacket( int sockfd, void *buffer, unsigned int length ) {
-	max_messagehandler(); // Annotate function as message handler.
-
 	//some variables that count packets
 	static int num_pkts_in_flight = 1;
 	static int num_pkts_sent = 1;
@@ -139,6 +137,12 @@ void SenderHandlePacket( int sockfd, void *buffer, unsigned int length ) {
 		printf("Limit exceeded for number of packet to send (%d)", num_pkts_sent);
 		exit(0);
 	}
+}
+
+void MaxSenderHandlePacketEntry() {
+	max_message_handler_entry(); // Annotate function as message handler entry point.
+
+	SenderHandlePacket( 0, calloc( 1, PKT_SIZE ), PKT_SIZE );
 }
 
 //
@@ -309,8 +313,6 @@ void Usage(char * progname) {
 // the fun begins here
 // 
 int main(int argc, char * argv[]) {
-	max_init();
-
   if (argc < 2) {
     Usage(argv[0]);
   }
@@ -351,4 +353,3 @@ int main(int argc, char * argv[]) {
 
   return 0;
 }
-

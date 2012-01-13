@@ -3,15 +3,13 @@
 
 #ifdef ENABLE_MAX
 
-void max_init();
-void max_messagehandler();
+void max_message_handler_entry();
 void max_interesting();
 #define max_make_symbolic( a, b, c ) (klee_make_symbolic( a, b, c ))
 
 #else
 
-#define max_init()
-#define max_messagehandler()
+#define max_message_handler_entry()
 #define max_interesting()
 #define max_make_symbolic( a, b, c )
 
