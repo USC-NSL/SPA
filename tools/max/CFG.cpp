@@ -30,6 +30,7 @@ namespace SPA {
 				// Connect within basic block.
 				// Iterate instructions.
 				BasicBlock::iterator bbit = bb.begin(), bbie = bb.end();
+				instructions.insert( &(*bbit) );
 				Instruction *prevInst = &(*(bbit++));
 				for ( ; bbit != bbie; bbit++ ) {
 					Instruction *inst = &(*bbit);
