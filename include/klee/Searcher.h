@@ -282,7 +282,7 @@ namespace klee {
     explicit FilteringSearcher(Searcher *_searcher);
     ~FilteringSearcher();
 
-	void setInstructionFilter(std::set<llvm::Instruction *> _filterOut);
+	void setInstructionFilter(std::set<llvm::Instruction *> &_filterOut);
 
     ExecutionState &selectState();
     void update(ExecutionState *current,
