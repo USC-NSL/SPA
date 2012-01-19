@@ -95,7 +95,7 @@
 #define MAX_MESSAGE_HANDLER_ANNOTATION_FUNCTION	"max_message_handler_entry"
 #define MAX_INTERESTING_ANNOTATION_FUNCTION		"max_interesting"
 #define MAX_GENERATED_ENTRY_FUNCTION			"__max_entry_function"
-#define MAX_HANDLER_ID_VAR_NAME					"handerID"
+#define MAX_HANDLER_ID_VAR_NAME					"maxHanderID"
 
 using namespace llvm;
 using namespace cloud9::worker;
@@ -436,35 +436,72 @@ int main(int argc, char **argv, char **envp) {
 	if ( DumpCFG.size() > 0 )
 		dumpCFG( cfg, cg, messageHandlers, interestingInstructions, uselessInstructions );
 
-	// Add entry functions.
+	// Add entry function.
 	CLOUD9_INFO( "Generating entry function." );
-	Function *entryFunction = dyn_cast<llvm::Function>( mainModule->getOrInsertFunction( MAX_GENERATED_ENTRY_FUNCTION, mainModule->getFunction( "main" )->getFunctionType() ) );
-	llvm::IRBuilder<> builder(getGlobalContext());
-	BasicBlock *entryBB = BasicBlock::Create( builder.getContext(), "entry", entryFunction );
-	BasicBlock *returnBB = BasicBlock::Create( builder.getContext(), "return", entryFunction );
+	Function *entryFunction = Function::Create(
+		mainModule->getFunction( "main" )->getFunctionType(),
+		GlobalValue::ExternalLinkage,
+		MAX_GENERATED_ENTRY_FUNCTION,
+		mainModule );
+	entryFunction->setCallingConv( CallingConv::C );
 
-	builder.SetInsertPoint( entryBB );
-// 	Value *handlerIDVar = builder.CreateAlloca( builder.getInt32Ty(), NULL, MAX_HANDLER_ID_VAR_NAME );
-	Value *handlerIDVarName = ConstantArray::get( builder.getContext(), MAX_HANDLER_ID_VAR_NAME, true );
-	Value *kleeSymInt = builder.CreateCall( mainModule->getOrInsertFunction( "klee_int", FunctionType::get( builder.getInt32Ty(), ArrayRef<const Type *>( handlerIDVarName->getType() ).vec(), false ) ), handlerIDVarName );
-// 	builder.CreateStore( kleeSymInt, handlerIDVar );
-	SwitchInst *switchInst = builder.CreateSwitch( kleeSymInt, returnBB, messageHandlers.size() );
-
-	builder.SetInsertPoint( returnBB );
-	builder.CreateRet( ConstantInt::get( entryFunction->getReturnType(), 0 ) );
-	
-	uint32_t handlerID = 0;
-	for ( std::set<llvm::Function *>::iterator hit = messageHandlers.begin(), hie = messageHandlers.end(); hit != hie; hit++ ) {
-		std::stringstream ss;
-		ss<<handlerID;
-		BasicBlock *swBB = BasicBlock::Create( builder.getContext(), "sw" + ss.str(), entryFunction );
-		switchInst->addCase( builder.getInt32( handlerID ), swBB );
-		builder.SetInsertPoint( swBB );
-		builder.CreateCall( *hit );
-		builder.CreateBr( returnBB );
+	Function *kleeIntFunction = mainModule->getFunction( "klee_int" );
+	if ( ! kleeIntFunction ) {
+		kleeIntFunction = Function::Create(
+			FunctionType::get(
+				IntegerType::get( mainModule->getContext(), 32 ),
+				ArrayRef<const Type *>( PointerType::get( IntegerType::get(mainModule->getContext(), 8 ), 0 ) ).vec(),
+				false ),
+			GlobalValue::ExternalLinkage,
+			"klee_int",
+			mainModule );
+		
+			kleeIntFunction->setCallingConv( CallingConv::C );
 	}
 
-	entryFunction->dump();
+	GlobalVariable *handlerIDVarName = new GlobalVariable(
+		*mainModule,
+		ArrayType::get( IntegerType::get( mainModule->getContext(), 8 ), strlen( MAX_HANDLER_ID_VAR_NAME ) + 1 ),
+		true,
+		GlobalValue::PrivateLinkage,
+		NULL,
+		MAX_HANDLER_ID_VAR_NAME );
+	handlerIDVarName->setInitializer( ConstantArray::get(mainModule->getContext(), MAX_HANDLER_ID_VAR_NAME, true ) );
+
+	Function::arg_iterator args = entryFunction->arg_begin();
+	Value *argcVar = args++;
+	argcVar->setName( "argc" );
+	Value *argvVar = args++;
+	argvVar->setName( "argv" );
+
+	BasicBlock* entryBB = BasicBlock::Create( mainModule->getContext(), "", entryFunction, 0);
+	BasicBlock* returnBB = BasicBlock::Create( mainModule->getContext(), "", entryFunction, 0);
+
+	new StoreInst( argcVar, new AllocaInst( IntegerType::get( mainModule->getContext(), 32 ), "", entryBB ), false, entryBB );
+	new StoreInst( argvVar, new AllocaInst( PointerType::get( PointerType::get( IntegerType::get( mainModule->getContext(), 8 ), 0 ), 0 ), "", entryBB ), false, entryBB );
+	Constant *idxs[] = {ConstantInt::get( mainModule->getContext(), APInt( 32, 0, true ) ), ConstantInt::get( mainModule->getContext(), APInt( 32, 0, true ) )};
+	CallInst *kleeIntCall = CallInst::Create(
+		kleeIntFunction,
+		ConstantExpr::getGetElementPtr( handlerIDVarName, idxs, 2, false ),
+		"", entryBB);
+	kleeIntCall->setCallingConv(CallingConv::C);
+	kleeIntCall->setTailCall(false);
+
+	SwitchInst* switchInst = SwitchInst::Create( kleeIntCall, returnBB, messageHandlers.size() + 1, entryBB );
+
+	uint32_t handlerID = 0;
+	for ( std::set<llvm::Function *>::iterator hit = messageHandlers.begin(), hie = messageHandlers.end(); hit != hie; hit++ ) {
+		BasicBlock *swBB = BasicBlock::Create( mainModule->getContext(), "", entryFunction, 0 );
+		switchInst->addCase( ConstantInt::get( mainModule->getContext(), APInt( 32, handlerID++, true ) ), swBB );
+
+		CallInst *handlerCallInst = CallInst::Create( *hit, "", swBB );
+		handlerCallInst->setCallingConv( CallingConv::C );
+		handlerCallInst->setTailCall( false );
+
+		BranchInst::Create(returnBB, swBB);
+	}
+
+	ReturnInst::Create( mainModule->getContext(), ConstantInt::get( mainModule->getContext(), APInt( 32, 0, true ) ), returnBB );
 
 	// Create the job manager
 	UseInstructionFiltering = true;
