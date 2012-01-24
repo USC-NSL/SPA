@@ -2,7 +2,7 @@
  * SPA - Systematic Protocol Analysis Framework
  */
 
-#include "CFG.h"
+#include "spa/CFG.h"
 
 #include "llvm/Instructions.h"
 

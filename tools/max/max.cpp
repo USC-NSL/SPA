@@ -89,8 +89,8 @@
 #include "cloud9/Utils.h"
 #include "cloud9/instrum/InstrumentationManager.h"
 
-#include "CFG.h"
-#include "CG.h"
+#include "spa/CFG.h"
+#include "spa/CG.h"
 
 #define MAX_MESSAGE_HANDLER_ANNOTATION_FUNCTION	"max_message_handler_entry"
 #define MAX_INTERESTING_ANNOTATION_FUNCTION		"max_interesting"
