@@ -3,8 +3,8 @@
 
 #ifdef ENABLE_MAX
 
-void max_message_handler_entry();
-void max_interesting();
+void __attribute__((noinline)) max_message_handler_entry() {}
+void __attribute__((noinline)) max_interesting() {}
 #define max_make_symbolic( a, b, c ) (klee_make_symbolic( a, b, c ))
 
 #else
