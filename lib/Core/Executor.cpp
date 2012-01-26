@@ -344,7 +344,6 @@ Executor::Executor(const InterpreterOptions &opts,
 
   memory = new MemoryManager();
 
-  searcher = initSearcher(NULL);
 }
 
 
@@ -2681,6 +2680,8 @@ void Executor::run(ExecutionState &initialState) {
     if (OnlySeed)
       goto dump;
   }
+
+  searcher = initSearcher(NULL);
 
   searcher->update(0, states, std::set<ExecutionState*>());
 
