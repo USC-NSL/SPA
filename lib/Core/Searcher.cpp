@@ -595,10 +595,13 @@ ExecutionState &FilteringSearcher::selectState() {
 void FilteringSearcher::update(ExecutionState *current,
                                  const std::set<ExecutionState*> &addedStates,
                                  const std::set<ExecutionState*> &removedStates) {
-	std::set<ExecutionState*> filteredAddedStates;
+	std::set<ExecutionState*> filteredAddedStates, filteredRemovedStates;
 	for ( std::set<ExecutionState*>::iterator it = addedStates.begin(), ie = addedStates.end(); it != ie; it++ )
 		if ( filterOut.count( (*((*it)->pc())).inst ) == 0 )
 			filteredAddedStates.insert( *it );
+	for ( std::set<ExecutionState*>::iterator it = removedStates.begin(), ie = removedStates.end(); it != ie; it++ )
+		if ( filterOut.count( (*((*it)->pc())).inst ) == 0 )
+			filteredRemovedStates.insert( *it );
 
-	searcher->update(current, filteredAddedStates, removedStates);
+	searcher->update(current, filteredAddedStates, filteredRemovedStates);
 }
