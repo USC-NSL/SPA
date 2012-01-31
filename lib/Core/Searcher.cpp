@@ -584,6 +584,7 @@ FilteringSearcher::~FilteringSearcher() {
   delete searcher;
 }
 
+std::set<llvm::Instruction *> FilteringSearcher::filterOut;
 void FilteringSearcher::setInstructionFilter(std::set<llvm::Instruction *> &_filterOut) {
 	filterOut = _filterOut;
 }

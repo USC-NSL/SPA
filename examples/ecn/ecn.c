@@ -142,7 +142,7 @@ void SenderHandlePacket( int sockfd, void *buffer, unsigned int length ) {
 void MaxSenderHandlePacketEntry() {
 	max_message_handler_entry(); // Annotate function as message handler entry point.
 
-	SenderHandlePacket( 0, calloc( 1, PKT_SIZE ), PKT_SIZE );
+	SenderHandlePacket( 1, calloc( 1, PKT_SIZE ), PKT_SIZE );
 }
 
 //
@@ -340,13 +340,7 @@ int main(int argc, char * argv[]) {
 		close(fdpair[0]);
 
 		RunSender();
-	}
-	else if (strcmp(argv[1], "max") == 0) {
-		//the buffer used for sending and receiving packets
-		void * buffer = malloc(PKT_SIZE);
-		SenderHandlePacket( 1, buffer, PKT_SIZE );
-	}
-	else {
+	} else {
     printf("\nSpecify 'sender' or 'receiver'.  You specified '%s'\n\n", argv[1]);
     Usage(argv[0]);
   }

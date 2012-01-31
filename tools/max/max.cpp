@@ -94,7 +94,8 @@
 
 #define MAX_MESSAGE_HANDLER_ANNOTATION_FUNCTION	"max_message_handler_entry"
 #define MAX_INTERESTING_ANNOTATION_FUNCTION		"max_interesting"
-#define MAX_GENERATED_ENTRY_FUNCTION			"__max_entry_function"
+#define MAX_ENTRY_FUNCTION						"__user_main"
+#define MAX_OLD_ENTRY_FUNCTION					"__max_old_user_main"
 #define MAX_HANDLER_ID_VAR_NAME					"maxHanderID"
 
 using namespace llvm;
@@ -438,12 +439,17 @@ int main(int argc, char **argv, char **envp) {
 
 	// Add entry function.
 	CLOUD9_INFO( "Generating entry function." );
+	// Rename old main function
+	Function *oldEntryFunction = mainModule->getFunction( MAX_ENTRY_FUNCTION );
+	oldEntryFunction->setName( MAX_OLD_ENTRY_FUNCTION );
+
 	Function *entryFunction = Function::Create(
-		mainModule->getFunction( "main" )->getFunctionType(),
+		oldEntryFunction->getFunctionType(),
 		GlobalValue::ExternalLinkage,
-		MAX_GENERATED_ENTRY_FUNCTION,
+		"main",
 		mainModule );
 	entryFunction->setCallingConv( CallingConv::C );
+	oldEntryFunction->replaceAllUsesWith( entryFunction );
 
 	Function *kleeIntFunction = mainModule->getFunction( "klee_int" );
 	if ( ! kleeIntFunction ) {
@@ -505,11 +511,10 @@ int main(int argc, char **argv, char **envp) {
 
 	// Create the job manager
 	UseInstructionFiltering = true;
-	theJobManager = new JobManager(mainModule, MAX_GENERATED_ENTRY_FUNCTION, pArgc, pArgv, envp);
-	klee::Executor *executor = (klee::Executor *) theJobManager->getInterpreter();
-	klee::FilteringSearcher *filteringSearcher = (klee::FilteringSearcher *) executor->getSearcher();
-	filteringSearcher->setInstructionFilter( uselessInstructions );
-
+	theJobManager = new JobManager(mainModule, "main", pArgc, pArgv, envp);
+ 	klee::FilteringSearcher::setInstructionFilter( uselessInstructions );
+	
+	oldEntryFunction->dump();
 	entryFunction->dump();
 
 	if (StandAlone) {

@@ -276,13 +276,13 @@ namespace klee {
 
   class FilteringSearcher : public Searcher {
 	Searcher *searcher;
-	std::set<llvm::Instruction *> filterOut;
+	static std::set<llvm::Instruction *> filterOut;
 
   public:
     explicit FilteringSearcher(Searcher *_searcher);
     ~FilteringSearcher();
 
-	void setInstructionFilter(std::set<llvm::Instruction *> &_filterOut);
+	static void setInstructionFilter(std::set<llvm::Instruction *> &_filterOut);
 
     ExecutionState &selectState();
     void update(ExecutionState *current,
