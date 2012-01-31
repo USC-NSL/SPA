@@ -287,6 +287,32 @@ void done() {
 	exit(0);
 }
 
+class MaxStateEventHandler: public StateEventHandler {
+private:
+	int testCaseID;
+
+public:
+	MaxStateEventHandler() : testCaseID( 0 ) {
+	}
+	~MaxStateEventHandler() {
+	}
+	
+	bool onStateBranching(klee::ExecutionState *state, klee::ForkTag forkTag) { return true; }
+	void onStateBranched(klee::ExecutionState *kState, klee::ExecutionState *parent, int index, klee::ForkTag forkTag) {}
+	void onOutOfResources(klee::ExecutionState *destroyedState) {}
+	void onEvent(klee::ExecutionState *kState, unsigned int type, long int value) {}
+	void onControlFlowEvent(klee::ExecutionState *kState, ControlFlowEvent event) {}
+	void onDebugInfo(klee::ExecutionState *kState, const std::string &message) {}
+
+	void onStateDestroy(klee::ExecutionState *kState, bool silenced) {
+		assert(kState);
+
+// 		SymbolicState *state = kState->getCloud9State();
+
+		CLOUD9_DEBUG( "Test " << testCaseID++ << ".\n" );
+	}
+};
+
 int main(int argc, char **argv, char **envp) {
 	// Make sure to clean up properly before any exit point in the program
 	atexit(llvm::llvm_shutdown);
@@ -513,6 +539,8 @@ int main(int argc, char **argv, char **envp) {
 	UseInstructionFiltering = true;
 	theJobManager = new JobManager(mainModule, "main", pArgc, pArgv, envp);
 	klee::FilteringSearcher::setInstructionFilter( uselessInstructions );
+	(dynamic_cast<SymbolicEngine*>(theJobManager->getInterpreter()))
+		->registerStateEventHandler( new MaxStateEventHandler() );
 
 	if (StandAlone) {
 	  CLOUD9_INFO("Running in stand-alone mode. No load balancer involved.");
