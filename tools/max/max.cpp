@@ -446,7 +446,7 @@ int main(int argc, char **argv, char **envp) {
 	Function *entryFunction = Function::Create(
 		oldEntryFunction->getFunctionType(),
 		GlobalValue::ExternalLinkage,
-		"main",
+		MAX_ENTRY_FUNCTION,
 		mainModule );
 	entryFunction->setCallingConv( CallingConv::C );
 	oldEntryFunction->replaceAllUsesWith( entryFunction );
@@ -495,7 +495,7 @@ int main(int argc, char **argv, char **envp) {
 
 	SwitchInst* switchInst = SwitchInst::Create( kleeIntCall, returnBB, messageHandlers.size() + 1, entryBB );
 
-	uint32_t handlerID = 0;
+	uint32_t handlerID = 1;
 	for ( std::set<llvm::Function *>::iterator hit = messageHandlers.begin(), hie = messageHandlers.end(); hit != hie; hit++ ) {
 		BasicBlock *swBB = BasicBlock::Create( mainModule->getContext(), "", entryFunction, 0 );
 		switchInst->addCase( ConstantInt::get( mainModule->getContext(), APInt( 32, handlerID++, true ) ), swBB );
@@ -512,10 +512,7 @@ int main(int argc, char **argv, char **envp) {
 	// Create the job manager
 	UseInstructionFiltering = true;
 	theJobManager = new JobManager(mainModule, "main", pArgc, pArgv, envp);
- 	klee::FilteringSearcher::setInstructionFilter( uselessInstructions );
-	
-	oldEntryFunction->dump();
-	entryFunction->dump();
+	klee::FilteringSearcher::setInstructionFilter( uselessInstructions );
 
 	if (StandAlone) {
 	  CLOUD9_INFO("Running in stand-alone mode. No load balancer involved.");
