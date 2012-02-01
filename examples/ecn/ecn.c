@@ -101,7 +101,7 @@ void SenderHandlePacket( int sockfd, void *buffer, unsigned int length ) {
 
 	//read its ecn bit
 	int ecnBit = GetEcnBit(buffer);
-	max_make_symbolic( &ecnBit, sizeof(ecnBit), "SenderReceivedEcnBit"); 
+	max_make_symbolic( ecnBit, "SenderReceivedEcnBit" );
 	//printf("Got a packet with EcnBit %d\n", ecnBit);
 	
 	//if ecn bit is zero, send two packets in response

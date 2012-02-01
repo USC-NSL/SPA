@@ -307,9 +307,10 @@ public:
 	void onStateDestroy(klee::ExecutionState *kState, bool silenced) {
 		assert(kState);
 
-// 		SymbolicState *state = kState->getCloud9State();
-
-		CLOUD9_DEBUG( "Test " << testCaseID++ << ".\n" );
+		for ( klee::ConstraintManager::constraint_iterator it = kState->constraints().begin(), ie = kState->constraints().end(); it != ie; it++) {
+			CLOUD9_DEBUG( "----------" << std::endl << "Path " << testCaseID++ << std::endl << *it << std::endl );
+			std::cerr << *it << std::endl;
+		}
 	}
 };
 
