@@ -1,35 +1,3 @@
-/*
- * Cloud9 Parallel Symbolic Execution Engine
- *
- * Copyright (c) 2011, Dependable Systems Laboratory, EPFL
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are met:
- *     * Redistributions of source code must retain the above copyright
- *       notice, this list of conditions and the following disclaimer.
- *     * Redistributions in binary form must reproduce the above copyright
- *       notice, this list of conditions and the following disclaimer in the
- *       documentation and/or other materials provided with the distribution.
- *     * Neither the name of the Dependable Systems Laboratory, EPFL nor the
- *       names of its contributors may be used to endorse or promote products
- *       derived from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
- * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
- * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
- * DISCLAIMED. IN NO EVENT SHALL THE DEPENDABLE SYSTEMS LABORATORY, EPFL BE LIABLE
- * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
- * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
- * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
- * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
- * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- *
- * All contributors are listed in CLOUD9-AUTHORS file.
- *
-*/
-
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -76,6 +44,10 @@
 #include "klee/Init.h"
 #include "klee/Executor.h"
 #include "klee/Searcher.h"
+#include "klee/Expr.h"
+#include "klee/ExprBuilder.h"
+#include "../../lib/Core/Memory.h"
+#include "../../lib/Core/TimingSolver.h"
 
 #include "cloud9/Logger.h"
 #include "cloud9/ExecutionTree.h"
@@ -94,6 +66,7 @@
 
 #define MAX_MESSAGE_HANDLER_ANNOTATION_FUNCTION	"max_message_handler_entry"
 #define MAX_INTERESTING_ANNOTATION_FUNCTION		"max_interesting"
+#define MAX_NUM_INTERESTING_VAR_NAME			"max_num_interesting"
 #define MAX_ENTRY_FUNCTION						"__user_main"
 #define MAX_OLD_ENTRY_FUNCTION					"__max_old_user_main"
 #define MAX_HANDLER_ID_VAR_NAME					"maxHanderID"
@@ -289,10 +262,45 @@ void done() {
 
 class MaxStateEventHandler: public StateEventHandler {
 private:
+	klee::Solver *solver;
 	int testCaseID;
+
+	bool isStateInteresting( klee::ExecutionState *kState ) {
+		// Find special max variables.
+		const klee::Array *handlerIDArray = NULL;
+		const klee::Array *numInterestingArray = NULL;
+		for ( std::vector< std::pair<const klee::MemoryObject*,const klee::Array*> >::iterator it = kState->symbolics.begin(), ie = kState->symbolics.end(); it != ie; it++ ) {
+			if ( (*it).first->name == MAX_HANDLER_ID_VAR_NAME )
+				handlerIDArray = (*it).second;
+			if ( (*it).first->name == MAX_NUM_INTERESTING_VAR_NAME )
+				numInterestingArray = (*it).second;
+		}
+		
+		if ( handlerIDArray && numInterestingArray ) {
+			klee::ExprBuilder *exprBuilder = klee::createDefaultExprBuilder();
+			klee::ref<klee::Expr> checkInteresting = exprBuilder->And(
+				exprBuilder->Eq(
+					klee::Expr::createTempRead( handlerIDArray, klee::Expr::Int32 ),
+					exprBuilder->Constant( APInt( 32, 1 ) ) ),
+				exprBuilder->Not(
+					exprBuilder->Eq(
+						klee::Expr::createTempRead( numInterestingArray, klee::Expr::Int32 ),
+									exprBuilder->Constant( APInt( 32, 0 ) ) ) ) );
+
+			bool result = false;
+			assert( solver->mustBeTrue( klee::Query( kState->constraints(), checkInteresting), result ) && "Solver failure." );
+			return result;
+		} else {
+			return false;
+		}
+	}
 
 public:
 	MaxStateEventHandler() : testCaseID( 0 ) {
+		solver = new klee::STPSolver( false, true );
+		solver = klee::createCexCachingSolver(solver);
+		solver = klee::createCachingSolver(solver);
+		solver = klee::createIndependentSolver(solver);
 	}
 	~MaxStateEventHandler() {
 	}
@@ -307,10 +315,20 @@ public:
 	void onStateDestroy(klee::ExecutionState *kState, bool silenced) {
 		assert(kState);
 
-		for ( klee::ConstraintManager::constraint_iterator it = kState->constraints().begin(), ie = kState->constraints().end(); it != ie; it++) {
-			CLOUD9_DEBUG( "----------" << std::endl << "Path " << testCaseID++ << std::endl << *it << std::endl );
-			std::cerr << *it << std::endl;
-		}
+		CLOUD9_DEBUG( "---------- Path " << testCaseID++ );
+
+		CLOUD9_DEBUG( "Symbolics:" );
+		for ( std::vector< std::pair<const klee::MemoryObject*,const klee::Array*> >::iterator it = kState->symbolics.begin(), ie = kState->symbolics.end(); it != ie; it++ )
+			CLOUD9_DEBUG( "	" << (*it).first->name << " = " << (*it).second->name );
+		
+		CLOUD9_DEBUG( "Constraints:" );
+		for ( klee::ConstraintManager::constraint_iterator it = kState->constraints().begin(), ie = kState->constraints().end(); it != ie; it++)
+			CLOUD9_DEBUG( *it );
+
+		if ( isStateInteresting( kState ) )
+			CLOUD9_DEBUG( "State is interesting." );
+		else
+			CLOUD9_DEBUG( "State is uninteresting." );
 	}
 };
 

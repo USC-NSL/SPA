@@ -1,8 +1,8 @@
 TARGETS = ecn.bc ecn
 OBJECTS = ecn.bc
 CC = llvm-gcc -Wall -g --emit-llvm
-MAX = max --stand-alone --libc=uclibc --posix-runtime -write-cov -write-cvcs -write-paths -write-pcs -write-test-info
-# MAX = max --stand-alone -write-cov -write-cvcs -write-paths -write-pcs -write-test-info
+MAX = max --stand-alone --libc=uclibc --posix-runtime -no-output
+# MAX = max --stand-alone -no-output
 
 default: $(TARGETS)
 

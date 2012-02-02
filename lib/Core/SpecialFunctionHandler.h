@@ -126,8 +126,6 @@ namespace klee {
     HANDLER(handleValloc);
     HANDLER(handleWarning);
     HANDLER(handleWarningOnce);
-
-	HANDLER(handleMaxRegisterSymbol);
 #undef HANDLER
   };
 } // End klee namespace

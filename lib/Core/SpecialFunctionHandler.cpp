@@ -140,8 +140,6 @@ HandlerInfo handlerInfo[] = {
   add("_ZnwmRKSt9nothrow_t", handleNew, true),
 
   add("syscall", handleSyscall, true),
-
-  add("max_register_symbol", handleMaxRegisterSymbol, false),
 #undef addDNR
 #undef add  
 };
@@ -1132,12 +1130,4 @@ void SpecialFunctionHandler::handleSyscall(ExecutionState &state,
   } else {
     executor.terminateStateOnError(state, "syscall requires a concrete syscall number", "user.err");
   }
-}
-
-void SpecialFunctionHandler::handleMaxRegisterSymbol(ExecutionState &state, KInstruction *target, std::vector<ref<Expr> > &arguments) {
-	// FIXME: Should be a user.err, not an assert.
-	assert( arguments.size()==2 && "invalid number of arguments to max_register_symbol");
-	std::string name = readStringAtAddress(state, arguments[0]);
-
-	CLOUD9_DEBUG( "MAX_REGISTER_SYMBOL: " << name << " = " << arguments[1] );
 }
