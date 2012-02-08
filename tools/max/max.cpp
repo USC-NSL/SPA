@@ -71,8 +71,6 @@
 #define MAX_OLD_ENTRY_FUNCTION					"__max_old_user_main"
 #define MAX_HANDLER_ID_VAR_NAME					"maxHanderID"
 
-using namespace llvm;
-using namespace cloud9::worker;
 using namespace SPA;
 
 namespace {
@@ -89,7 +87,7 @@ static bool Interrupted = false;
 extern cl::opt<double> MaxTime;
 extern cl::opt<bool> UseInstructionFiltering;
 
-JobManager *theJobManager = NULL;
+cloud9::worker::JobManager *theJobManager = NULL;
 
 // This is a temporary hack. If the running process has access to
 // externals then it can disable interrupts, which screws up the
@@ -260,32 +258,32 @@ void done() {
 	exit(0);
 }
 
-class MaxStateEventHandler: public StateEventHandler {
+class MaxStateEventHandler: public cloud9::worker::StateEventHandler {
 private:
 	klee::Solver *solver;
 	int testCaseID;
 
-	bool isStateInteresting( klee::ExecutionState *kState ) {
+	bool isStateInteresting( klee::ExecutionState *kState, int handlerID ) {
 		// Find special max variables.
 		const klee::Array *handlerIDArray = NULL;
-		const klee::Array *numInterestingArray = NULL;
+		const klee::ObjectState *numInterestingObjState = NULL;
 		for ( std::vector< std::pair<const klee::MemoryObject*,const klee::Array*> >::iterator it = kState->symbolics.begin(), ie = kState->symbolics.end(); it != ie; it++ ) {
 			if ( (*it).first->name == MAX_HANDLER_ID_VAR_NAME )
 				handlerIDArray = (*it).second;
 			if ( (*it).first->name == MAX_NUM_INTERESTING_VAR_NAME )
-				numInterestingArray = (*it).second;
+				numInterestingObjState = kState->addressSpace().findObject( (*it).first );
 		}
 		
-		if ( handlerIDArray && numInterestingArray ) {
+		if ( handlerIDArray && numInterestingObjState ) {
 			klee::ExprBuilder *exprBuilder = klee::createDefaultExprBuilder();
 			klee::ref<klee::Expr> checkInteresting = exprBuilder->And(
 				exprBuilder->Eq(
 					klee::Expr::createTempRead( handlerIDArray, klee::Expr::Int32 ),
-					exprBuilder->Constant( APInt( 32, 1 ) ) ),
+					exprBuilder->Constant( APInt( 32, handlerID ) ) ),
 				exprBuilder->Not(
 					exprBuilder->Eq(
-						klee::Expr::createTempRead( numInterestingArray, klee::Expr::Int32 ),
-									exprBuilder->Constant( APInt( 32, 0 ) ) ) ) );
+						numInterestingObjState->read( 0, 32 ),
+						exprBuilder->Constant( APInt( 32, 0 ) ) ) ) );
 
 			bool result = false;
 			assert( solver->mustBeTrue( klee::Query( kState->constraints(), checkInteresting), result ) && "Solver failure." );
@@ -309,26 +307,27 @@ public:
 	void onStateBranched(klee::ExecutionState *kState, klee::ExecutionState *parent, int index, klee::ForkTag forkTag) {}
 	void onOutOfResources(klee::ExecutionState *destroyedState) {}
 	void onEvent(klee::ExecutionState *kState, unsigned int type, long int value) {}
-	void onControlFlowEvent(klee::ExecutionState *kState, ControlFlowEvent event) {}
+	void onControlFlowEvent(klee::ExecutionState *kState, cloud9::worker::ControlFlowEvent event) {}
 	void onDebugInfo(klee::ExecutionState *kState, const std::string &message) {}
 
 	void onStateDestroy(klee::ExecutionState *kState, bool silenced) {
 		assert(kState);
 
-		CLOUD9_DEBUG( "---------- Path " << testCaseID++ );
-
-		CLOUD9_DEBUG( "Symbolics:" );
-		for ( std::vector< std::pair<const klee::MemoryObject*,const klee::Array*> >::iterator it = kState->symbolics.begin(), ie = kState->symbolics.end(); it != ie; it++ )
-			CLOUD9_DEBUG( "	" << (*it).first->name << " = " << (*it).second->name );
-		
-		CLOUD9_DEBUG( "Constraints:" );
-		for ( klee::ConstraintManager::constraint_iterator it = kState->constraints().begin(), ie = kState->constraints().end(); it != ie; it++)
-			CLOUD9_DEBUG( *it );
-
-		if ( isStateInteresting( kState ) )
-			CLOUD9_DEBUG( "State is interesting." );
-		else
-			CLOUD9_DEBUG( "State is uninteresting." );
+		if ( isStateInteresting( kState, 1 ) ) {
+			CLOUD9_DEBUG( "--- Found interesting state. ---" );
+			CLOUD9_DEBUG( "Symbolic Variables:" );
+			for ( std::vector< std::pair<const klee::MemoryObject*,const klee::Array*> >::iterator it = kState->symbolics.begin(), ie = kState->symbolics.end(); it != ie; it++ ) {
+				CLOUD9_DEBUG( "	" << (*it).first->name << " = " << (*it).second->name );
+				const klee::ObjectState *os = kState->addressSpace().findObject( (*it).first );
+				if ( os )
+					CLOUD9_DEBUG( "		" << os->read( 0, 32 ) );
+			}
+			std::ostream &out = cloud9::Logger::getLogger().getDebugStream();
+			out << "Path Constraints:" << std::endl;
+			for ( klee::ConstraintManager::constraint_iterator it = kState->constraints().begin(), ie = kState->constraints().end(); it != ie; it++)
+				out << *it << std::endl;
+			CLOUD9_DEBUG( "---  ---" );
+		}
 	}
 };
 
@@ -530,6 +529,9 @@ int main(int argc, char **argv, char **envp) {
 
 	new StoreInst( argcVar, new AllocaInst( IntegerType::get( mainModule->getContext(), 32 ), "", entryBB ), false, entryBB );
 	new StoreInst( argvVar, new AllocaInst( PointerType::get( PointerType::get( IntegerType::get( mainModule->getContext(), 8 ), 0 ), 0 ), "", entryBB ), false, entryBB );
+	CallInst *maxInitCall = CallInst::Create( mainModule->getFunction( "max_init" ), "", entryBB);
+	maxInitCall->setCallingConv(CallingConv::C);
+	maxInitCall->setTailCall(false);
 	Constant *idxs[] = {ConstantInt::get( mainModule->getContext(), APInt( 32, 0, true ) ), ConstantInt::get( mainModule->getContext(), APInt( 32, 0, true ) )};
 	CallInst *kleeIntCall = CallInst::Create(
 		kleeIntFunction,
@@ -556,9 +558,9 @@ int main(int argc, char **argv, char **envp) {
 
 	// Create the job manager
 	UseInstructionFiltering = true;
-	theJobManager = new JobManager(mainModule, "main", pArgc, pArgv, envp);
+	theJobManager = new cloud9::worker::JobManager(mainModule, "main", pArgc, pArgv, envp);
 	klee::FilteringSearcher::setInstructionFilter( uselessInstructions );
-	(dynamic_cast<SymbolicEngine*>(theJobManager->getInterpreter()))
+	(dynamic_cast<cloud9::worker::SymbolicEngine*>(theJobManager->getInterpreter()))
 		->registerStateEventHandler( new MaxStateEventHandler() );
 
 	if (StandAlone) {
@@ -570,7 +572,7 @@ int main(int argc, char **argv, char **envp) {
 
 	  theJobManager->finalize();
 	} else {
-      CommManager commManager(theJobManager); // Handle outside communication
+      cloud9::worker::CommManager commManager(theJobManager); // Handle outside communication
       commManager.setup();
 
       theJobManager->processJobs(false, (int)MaxTime.getValue()); // Blocking when no jobs are on the queue
