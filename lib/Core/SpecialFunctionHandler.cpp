@@ -140,6 +140,8 @@ HandlerInfo handlerInfo[] = {
   add("_ZnwmRKSt9nothrow_t", handleNew, true),
 
   add("syscall", handleSyscall, true),
+
+  add("max_make_symbolic", handleMaxMakeSymbolic, false),
 #undef addDNR
 #undef add  
 };
@@ -1130,4 +1132,30 @@ void SpecialFunctionHandler::handleSyscall(ExecutionState &state,
   } else {
     executor.terminateStateOnError(state, "syscall requires a concrete syscall number", "user.err");
   }
+}
+
+void SpecialFunctionHandler::handleMaxMakeSymbolic(ExecutionState &state, KInstruction *target, std::vector<ref<Expr> > &arguments) {
+	std::string name;
+	klee::ConstantExpr *fixed;
+
+	assert( arguments.size() == 4 && "Invalid number of arguments to max_make_symbolic." );
+	assert( (fixed = dyn_cast<ConstantExpr>(executor.toUnique( state, arguments[3] ) )) && "Argument 3 of max_make_symbolic is not constant." );
+	name = (fixed->isZero() ? "var:" : "fixed:") + readStringAtAddress(state, arguments[2]);
+
+	resolutions_ty resList;
+	processMemoryLocation(state, arguments[0], arguments[1], "make_symbolic", resList);
+
+	for (resolutions_ty::iterator it = resList.begin(); it != resList.end(); it++) {
+		const MemoryObject *mo = it->first.first;
+		const ObjectState *os = it->first.second;
+		ExecutionState *s = it->second;
+
+		mo->setName( name );
+
+		if (os->readOnly) {
+			executor.terminateStateOnError(*s, "cannot make readonly object symbolic", "user.err");
+		} else {
+			executor.executeMakeSymbolic(*s, mo, os->isShared);
+		}
+	}
 }

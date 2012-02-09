@@ -4,7 +4,9 @@ CC = llvm-gcc -Wall -g --emit-llvm
 MAX = max --stand-alone --libc=uclibc --posix-runtime -no-output
 # MAX = max --stand-alone -no-output
 
-default: $(TARGETS)
+default: all
+
+all: $(TARGETS)
 
 ecn: ecn.c
 	gcc -Wall -g -o $@ $^
