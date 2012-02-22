@@ -46,6 +46,7 @@
 #include "klee/Searcher.h"
 #include "klee/Expr.h"
 #include "klee/ExprBuilder.h"
+#include "../../lib/Core/Context.h"
 #include "../../lib/Core/Memory.h"
 #include "../../lib/Core/TimingSolver.h"
 
@@ -63,13 +64,15 @@
 
 #include "spa/CFG.h"
 #include "spa/CG.h"
+#include "spa/maxRuntime.h"
 
 #define MAX_MESSAGE_HANDLER_ANNOTATION_FUNCTION	"max_message_handler_entry"
 #define MAX_INTERESTING_ANNOTATION_FUNCTION		"max_interesting"
-#define MAX_NUM_INTERESTING_VAR_NAME			"max_num_interesting"
+#define MAX_HANDLER_NAME_VAR_NAME				"max_internal_HandlerName"
+#define MAX_NUM_INTERESTING_VAR_NAME			"max_internal_NumInteresting"
 #define MAX_ENTRY_FUNCTION						"__user_main"
 #define MAX_OLD_ENTRY_FUNCTION					"__max_old_user_main"
-#define MAX_HANDLER_ID_VAR_NAME					"maxHanderID"
+#define MAX_HANDLER_ID_VAR_NAME					"max_internal_HanderID"
 
 using namespace SPA;
 
@@ -261,32 +264,58 @@ void done() {
 class MaxStateEventHandler: public cloud9::worker::StateEventHandler {
 private:
 	klee::Solver *solver;
-	int testCaseID;
+	int numTestCases;
 
-	bool isStateInteresting( klee::ExecutionState *kState, int handlerID ) {
+	bool isStateInteresting( klee::ExecutionState *kState, std::string &handlerName ) {
 		// Find special max variables.
-		const klee::Array *handlerIDArray = NULL;
 		const klee::ObjectState *numInterestingObjState = NULL;
+		const klee::ObjectState *handlerNameObjState = NULL;
 		for ( std::vector< std::pair<const klee::MemoryObject*,const klee::Array*> >::iterator it = kState->symbolics.begin(), ie = kState->symbolics.end(); it != ie; it++ ) {
-			if ( (*it).first->name == MAX_HANDLER_ID_VAR_NAME )
-				handlerIDArray = (*it).second;
+			if ( (*it).first->name == MAX_HANDLER_NAME_VAR_NAME )
+				handlerNameObjState = kState->addressSpace().findObject( (*it).first );
 			if ( (*it).first->name == MAX_NUM_INTERESTING_VAR_NAME )
 				numInterestingObjState = kState->addressSpace().findObject( (*it).first );
 		}
 		
-		if ( handlerIDArray && numInterestingObjState ) {
+		if ( numInterestingObjState && handlerNameObjState ) {
 			klee::ExprBuilder *exprBuilder = klee::createDefaultExprBuilder();
-			klee::ref<klee::Expr> checkInteresting = exprBuilder->And(
+			klee::ref<klee::Expr> checkInteresting = exprBuilder->Not(
 				exprBuilder->Eq(
-					klee::Expr::createTempRead( handlerIDArray, klee::Expr::Int32 ),
-					exprBuilder->Constant( APInt( 32, handlerID ) ) ),
-				exprBuilder->Not(
-					exprBuilder->Eq(
-						numInterestingObjState->read( 0, 32 ),
-						exprBuilder->Constant( APInt( 32, 0 ) ) ) ) );
+					numInterestingObjState->read( 0, 32 ),
+					exprBuilder->Constant( APInt( 32, 0 ) ) ) );
 
 			bool result = false;
 			assert( solver->mustBeTrue( klee::Query( kState->constraints(), checkInteresting), result ) && "Solver failure." );
+
+			if ( result ) {
+				klee::ref<klee::Expr> addressExpr = handlerNameObjState->read( 0, klee::Context::get().getPointerWidth() );
+				assert( isa<klee::ConstantExpr>(addressExpr) && "Handler Name is symbolic." );
+				klee::ref<klee::ConstantExpr> address = cast<klee::ConstantExpr>(addressExpr);
+				klee::ObjectPair op;
+				assert( kState->addressSpace().resolveOne(address, op) && "Handler Name is not uniquely defined." );
+				const klee::MemoryObject *mo = op.first;
+				const klee::ObjectState *os = op.second;
+
+				char *buf = new char[mo->size];
+				unsigned ioffset = 0;
+				klee::ref<klee::Expr> offset_expr = klee::SubExpr::create(address, op.first->getBaseExpr());
+				assert( isa<klee::ConstantExpr>(offset_expr) && "Handler Name is an invalid string." );
+				klee::ref<klee::ConstantExpr> value = cast<klee::ConstantExpr>(offset_expr.get());
+				ioffset = value.get()->getZExtValue();
+				assert(ioffset < mo->size);
+
+				unsigned i;
+				for ( i = 0; i < mo->size - ioffset - 1; i++ ) {
+					klee::ref<klee::Expr> cur = os->read8( i + ioffset );
+					assert( isa<klee::ConstantExpr>(cur) && "Symbolic character in Handler Name." );
+					buf[i] = cast<klee::ConstantExpr>(cur)->getZExtValue(8);
+				}
+				buf[i] = 0;
+				
+				handlerName = buf;
+				delete[] buf;
+			}
+
 			return result;
 		} else {
 			return false;
@@ -294,7 +323,7 @@ private:
 	}
 
 public:
-	MaxStateEventHandler() : testCaseID( 0 ) {
+	MaxStateEventHandler() : numTestCases( 0 ) {
 		solver = new klee::STPSolver( false, true );
 		solver = klee::createCexCachingSolver(solver);
 		solver = klee::createCachingSolver(solver);
@@ -313,20 +342,30 @@ public:
 	void onStateDestroy(klee::ExecutionState *kState, bool silenced) {
 		assert(kState);
 
-		if ( isStateInteresting( kState, 1 ) ) {
-			CLOUD9_DEBUG( "--- Found interesting state. ---" );
-			CLOUD9_DEBUG( "Symbolic Variables:" );
-			for ( std::vector< std::pair<const klee::MemoryObject*,const klee::Array*> >::iterator it = kState->symbolics.begin(), ie = kState->symbolics.end(); it != ie; it++ ) {
-				CLOUD9_DEBUG( "	" << (*it).first->name << " = " << (*it).second->name );
-				const klee::ObjectState *os = kState->addressSpace().findObject( (*it).first );
-				if ( os )
-					CLOUD9_DEBUG( "		" << os->read( 0, 32 ) );
-			}
-			std::ostream &out = cloud9::Logger::getLogger().getDebugStream();
-			out << "Path Constraints:" << std::endl;
+		std::string handlerName;
+		if ( isStateInteresting( kState, handlerName ) ) {
+			CLOUD9_DEBUG( "Found interesting state for handler " << handlerName << "." );
+			std::ofstream pathFile( MAX_PATH_FILE, std::ios::out | ((numTestCases == 0) ? std::ios::trunc : std::ios::app) );
+			assert( pathFile.is_open() && "Unable to open path file." );
+
+			pathFile << MAX_PATH_START << std::endl;
+			pathFile << handlerName << std::endl;
+			pathFile << MAX_PATH_SYMBOLS_START << std::endl;
+			for ( std::vector< std::pair<const klee::MemoryObject*,const klee::Array*> >::iterator it = kState->symbolics.begin(), ie = kState->symbolics.end(); it != ie; it++ )
+				pathFile << (*it).first->name << MAX_PATH_SYMBOLS_DELIMITER << (*it).second->name << std::endl;
+			pathFile << MAX_PATH_SYMBOLS_END << std::endl;
+			pathFile << MAX_PATH_CONSTRAINTS_START << std::endl;
+			for ( std::vector< std::pair<const klee::MemoryObject*,const klee::Array*> >::iterator it = kState->symbolics.begin(), ie = kState->symbolics.end(); it != ie; it++ )
+				pathFile << "array " << (*it).second->name << "[" << (*it).second->size << "] : w32 -> w8 = symbolic" << std::endl;
+			pathFile << MAX_PATH_CONSTRAINTS_KLEAVER_START << std::endl;
 			for ( klee::ConstraintManager::constraint_iterator it = kState->constraints().begin(), ie = kState->constraints().end(); it != ie; it++)
-				out << *it << std::endl;
-			CLOUD9_DEBUG( "---  ---" );
+				pathFile << *it << std::endl;
+			pathFile << MAX_PATH_CONSTRAINTS_KLEAVER_END << std::endl;
+			pathFile << MAX_PATH_CONSTRAINTS_END << std::endl;
+			pathFile << MAX_PATH_END << std::endl;
+			pathFile.close();
+
+			numTestCases++;
 		}
 	}
 };
