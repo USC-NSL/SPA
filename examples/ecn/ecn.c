@@ -30,7 +30,7 @@
 #define MAX_PKTS_IN_FLIGHT 100
 
 //maximum number of packets to send for the sender; we exit when this limit is reached
-#define MAX_PKTS_TO_SEND_SNDR 1
+#define MAX_PKTS_TO_SEND_SNDR 10
 
 // Synchronization pipe.
 int fdpair[2];
@@ -90,6 +90,13 @@ void SenderHandlePacket( int sockfd, void *buffer, unsigned int length ) {
 	static int num_pkts_sent = 1;
 	static int num_pkts_rcvd = 0;
 
+	//read its ecn bit
+	int ecnBit = GetEcnBit(buffer);
+	max_input_var( &ecnBit, sizeof( ecnBit ), "SenderReceivedEcnBit" );
+	max_message_handler( "ECNPacket" );
+
+	//printf("Got a packet with EcnBit %d\n", ecnBit);
+
 	//this is the number of packets that we'll send in current round
 	int num_pkts_to_send = 0;
 	//got a valid packet; update stats
@@ -99,11 +106,6 @@ void SenderHandlePacket( int sockfd, void *buffer, unsigned int length ) {
 	//sanity check
 	assert( num_pkts_in_flight >= 0 ); 
 
-	//read its ecn bit
-	int ecnBit = GetEcnBit(buffer);
-	max_input_var( &ecnBit, sizeof( ecnBit ), "SenderReceivedEcnBit" );
-	//printf("Got a packet with EcnBit %d\n", ecnBit);
-	
 	//if ecn bit is zero, send two packets in response
 	//else send none
 	if (ecnBit == 0)
@@ -140,8 +142,7 @@ void SenderHandlePacket( int sockfd, void *buffer, unsigned int length ) {
 }
 
 void MaxSenderHandlePacketEntry() {
-	max_message_handler_entry(); // Annotate function as message handler entry point.
-
+	max_message_handler_entry();
 	SenderHandlePacket( 1, calloc( 1, PKT_SIZE ), PKT_SIZE );
 }
 
@@ -198,11 +199,7 @@ int RunSender() {
 
     //set up the file descriptors for the select call
     fd_set readfds;
-#ifdef ENABLE_MAX
-	memset(&readfds, '\0', sizeof readfds);
-#else // #ifdef ENABLE_MAX
     FD_ZERO(&readfds);
-#endif // #ifdef ENABLE_MAX #else
 
     FD_SET(sockfd, &readfds);
 

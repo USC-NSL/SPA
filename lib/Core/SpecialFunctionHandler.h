@@ -128,6 +128,7 @@ namespace klee {
     HANDLER(handleWarningOnce);
 
     HANDLER(handleMaxMakeSymbolic);
+    HANDLER(handleMaxSolveSymbolic);
 #undef HANDLER
   };
 } // End klee namespace

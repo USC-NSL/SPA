@@ -142,6 +142,7 @@ HandlerInfo handlerInfo[] = {
   add("syscall", handleSyscall, true),
 
   add("max_make_symbolic", handleMaxMakeSymbolic, false),
+  add("max_solve_symbolic", handleMaxSolveSymbolic, false),
 #undef addDNR
 #undef add  
 };
@@ -1140,7 +1141,7 @@ void SpecialFunctionHandler::handleMaxMakeSymbolic(ExecutionState &state, KInstr
 
 	assert( arguments.size() == 4 && "Invalid number of arguments to max_make_symbolic." );
 	assert( (fixed = dyn_cast<ConstantExpr>(executor.toUnique( state, arguments[3] ) )) && "Argument 3 of max_make_symbolic is not constant." );
-	name = (fixed->isZero() ? "var:" : "fixed:") + readStringAtAddress(state, arguments[2]);
+	name = (fixed->isZero() ? "max_var_" : "max_fixed_") + readStringAtAddress(state, arguments[2]);
 
 	resolutions_ty resList;
 	processMemoryLocation(state, arguments[0], arguments[1], "make_symbolic", resList);
@@ -1158,4 +1159,7 @@ void SpecialFunctionHandler::handleMaxMakeSymbolic(ExecutionState &state, KInstr
 			executor.executeMakeSymbolic(*s, mo, os->isShared);
 		}
 	}
+}
+
+void SpecialFunctionHandler::handleMaxSolveSymbolic(ExecutionState &state, KInstruction *target, std::vector<ref<Expr> > &arguments) {
 }
