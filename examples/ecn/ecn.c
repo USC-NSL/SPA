@@ -30,7 +30,7 @@
 #define MAX_PKTS_IN_FLIGHT 100
 
 //maximum number of packets to send for the sender; we exit when this limit is reached
-#define MAX_PKTS_TO_SEND_SNDR 10
+#define MAX_PKTS_TO_SEND_SNDR 100
 
 // Synchronization pipe.
 int fdpair[2];
@@ -136,7 +136,7 @@ void SenderHandlePacket( int sockfd, void *buffer, unsigned int length ) {
 
 	//exit if limit of sending reached
 	if (num_pkts_sent > MAX_PKTS_TO_SEND_SNDR) {
-		printf("Limit exceeded for number of packet to send (%d)", num_pkts_sent);
+		printf("Limit exceeded for number of packet to send (%d)\n", num_pkts_sent);
 		exit(0);
 	}
 }

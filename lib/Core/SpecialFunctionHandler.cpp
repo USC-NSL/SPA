@@ -23,6 +23,8 @@
 #include "klee/Executor.h"
 #include "MemoryManager.h"
 
+#include "spa/maxRuntime.h"
+
 #include "llvm/Module.h"
 #include "llvm/ADT/Twine.h"
 #include "llvm/Type.h"
@@ -1141,7 +1143,7 @@ void SpecialFunctionHandler::handleMaxMakeSymbolic(ExecutionState &state, KInstr
 
 	assert( arguments.size() == 4 && "Invalid number of arguments to max_make_symbolic." );
 	assert( (fixed = dyn_cast<ConstantExpr>(executor.toUnique( state, arguments[3] ) )) && "Argument 3 of max_make_symbolic is not constant." );
-	name = (fixed->isZero() ? "max_var_" : "max_fixed_") + readStringAtAddress(state, arguments[2]);
+	name = (fixed->isZero() ? MAX_VAR_INPUT_PREFIX : MAX_FIXED_INPUT_PREFIX) + readStringAtAddress(state, arguments[2]);
 
 	resolutions_ty resList;
 	processMemoryLocation(state, arguments[0], arguments[1], "make_symbolic", resList);
