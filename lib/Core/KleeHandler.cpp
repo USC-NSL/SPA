@@ -77,8 +77,6 @@ cl::opt<bool> WriteSymPaths("write-sym-paths", cl::desc(
 
 cl::opt<bool> ExitOnError("exit-on-error", cl::desc("Exit if errors occur"));
 
-cl::opt<bool> NoOutput("no-output", cl::desc("Don't generate test files"));
-
 cl::opt<bool> WriteCVCs("write-cvcs", cl::desc(
 		"Write .cvc files for each test case"));
 
@@ -96,6 +94,8 @@ StopAfterNTests("stop-after-n-tests",
 	     cl::desc("Stop execution after generating the given number of tests.  Extra tests corresponding to partially explored paths will also be dumped."),
 	     cl::init(0));
 }
+
+cl::opt<bool> NoOutput("no-output", cl::desc("Don't generate test files"));
 
 namespace klee {
 

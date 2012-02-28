@@ -3,8 +3,8 @@ OBJECTS = ecn.bc
 LLVM_CC = llvm-gcc -Wall -g --emit-llvm
 CC = gcc -Wall -g
 LIB_MAX_ADVERSARIAL_MODULE = ../../Release+Asserts/lib/libMaxAdversarialModule.so
-MAX = max --stand-alone --libc=uclibc --posix-runtime -no-output
-# MAX = max --stand-alone -no-output
+MAX = max --stand-alone --libc=uclibc --posix-runtime
+# MAX = max --stand-alone
 
 default: all
 

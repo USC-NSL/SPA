@@ -88,6 +88,7 @@ cl::opt<std::string> DumpCFG("dump-cfg", cl::desc(
 
 static bool Interrupted = false;
 extern cl::opt<double> MaxTime;
+extern cl::opt<bool> NoOutput;
 extern cl::opt<bool> UseInstructionFiltering;
 
 cloud9::worker::JobManager *theJobManager = NULL;
@@ -596,6 +597,7 @@ int main(int argc, char **argv, char **envp) {
 	ReturnInst::Create( mainModule->getContext(), ConstantInt::get( mainModule->getContext(), APInt( 32, 0, true ) ), returnBB );
 
 	// Create the job manager
+	NoOutput = true;
 	UseInstructionFiltering = true;
 	theJobManager = new cloud9::worker::JobManager(mainModule, "main", pArgc, pArgv, envp);
 	klee::FilteringSearcher::setInstructionFilter( uselessInstructions );
