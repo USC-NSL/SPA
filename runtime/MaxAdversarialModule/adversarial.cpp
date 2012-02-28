@@ -65,6 +65,7 @@ void loadPaths() {
 
 		if ( line == MAX_PATH_START ) {
 			changeState( PATH_DONE, PATH_STARTED );
+			handlerName.clear();
 		} else if ( line == MAX_PATH_SYMBOLS_START ) {
 			changeState( PATH_STARTED, SYMBOLS );
 			assert( (! handlerName.empty()) && "No handler name found." );
@@ -138,33 +139,30 @@ void solvePath( char *name ) {
 
 	// Check if handler has known paths.
 	if ( paths->count( name ) ) {
+// 		std::cerr << "Fixed inputs:" << std::endl;
+// 		for ( std::map<std::string, std::pair<void *, size_t> >::iterator iit = fixedInputs.begin(), iie = fixedInputs.end(); iit != iie; iit++ ) {
+// 			std::cerr << "	" << iit->first << " =";
+// 			for ( unsigned i = 0; i < iit->second.second; i++ )
+// 				std::cerr << " " << (int) ((uint8_t *) iit->second.first)[i];
+// 			std::cerr << std::endl;
+// 		}
+		unsigned int numPaths = 1;
 		// Check each path.
-		for ( std::set< std::pair<std::map<std::string, const klee::Array *>, klee::ConstraintManager *> >::iterator pit = (*paths)[name].begin(), pie = (*paths)[name].end(); pit != pie; pit++ ) {
+		for ( std::set< std::pair<std::map<std::string, const klee::Array *>, klee::ConstraintManager *> >::iterator pit = (*paths)[name].begin(), pie = (*paths)[name].end(); pit != pie; pit++, numPaths++ ) {
 			klee::ExprBuilder *exprBuilder = klee::createDefaultExprBuilder();
-			klee::ref<klee::Expr> checkPath;
-			// Build query expression. And all relevant fixed inputs.
+			// Load path constraints.
+			klee::ConstraintManager cm( *pit->second );
+			// And all relevant fixed input constraints.
 			for ( std::map<std::string, std::pair<void *, size_t> >::iterator iit = fixedInputs.begin(), iie = fixedInputs.end(); iit != iie; iit++ ) {
 				// Check if input is relevant.
 				if ( pit->first.count( iit->first ) ) {
-					// And the comparison of each byte.
+					// Add the comparison of each byte.
 					klee::UpdateList ul( pit->first.find( iit->first )->second, 0 );
-					for ( size_t p = 0; p < iit->second.second; p++ ) {
-						klee::ref<klee::Expr> checkByte = exprBuilder->Eq(
+					for ( size_t p = 0; p < iit->second.second; p++ )
+						cm.addConstraint( exprBuilder->Eq(
 							klee::ReadExpr::create( ul, klee::ConstantExpr::alloc( p, klee::Expr::Int32 ) ),
-							exprBuilder->Constant( llvm::APInt( 8, ((uint8_t *) iit->second.first)[p] ) ) );
-						if ( checkPath.get() )
-							checkPath = exprBuilder->And( checkByte, checkPath );
-						else
-							checkPath = checkByte;
-					}
+							exprBuilder->Constant( llvm::APInt( 8, ((uint8_t *) iit->second.first)[p] ) ) ) );
 				}
-			}
-			// The solver needs a non constant true query.
-			if ( ! checkPath.get() ) {
-				klee::UpdateList ul( pit->first.find( "max_internal_Zero" )->second, 0 );
-				checkPath = exprBuilder->Eq(
-					klee::ReadExpr::create( ul, klee::ConstantExpr::alloc( 0, klee::Expr::Int32 ) ),
-					exprBuilder->Constant( llvm::APInt( 8, 0 ) ) );
 			}
 
 			// Created list of variable inputs.
@@ -172,21 +170,13 @@ void solvePath( char *name ) {
 			for ( std::map<std::string, std::pair<void *, size_t> >::iterator iit = varInputs.begin(), iie = varInputs.end(); iit != iie; iit++ )
 				objects.push_back( pit->first.find( iit->first )->second );
 
-// 			std::cerr << "Path Constraints:" << std::endl;
-// 			for ( klee::ConstraintManager::const_iterator cit = pit->second->begin(), cie = pit->second->end(); cit != cie; cit++ )
+// 			std::cerr << "Constraints:" << std::endl;
+// 			for ( klee::ConstraintManager::const_iterator cit = cm.begin(), cie = cm.end(); cit != cie; cit++ )
 // 				std::cerr << *cit << std::endl;
-			std::cerr << "Fixed inputs:" << std::endl;
-			for ( std::map<std::string, std::pair<void *, size_t> >::iterator iit = fixedInputs.begin(), iie = fixedInputs.end(); iit != iie; iit++ ) {
-				std::cerr << "	" << iit->first << " =";
-				for ( unsigned i = 0; i < iit->second.second; i++ )
-					std::cerr << " " << (int) ((uint8_t *) iit->second.first)[i];
-				std::cerr << std::endl;
-			}
-			std::cerr << "Query:" << std::endl << checkPath << std::endl;
 
 			std::vector< std::vector<unsigned char> > result;
-			if ( solver->getInitialValues( klee::Query( *pit->second, checkPath ), objects, result ) ) {
-				std::cerr << "Found interesting assignment." << std::endl;
+			if ( solver->getInitialValues( klee::Query( cm, exprBuilder->False() ), objects, result ) ) {
+				std::cerr << "Found interesting assignment. Searched " << numPaths << "/" << (*paths)[name].size() << " paths." << std::endl;
 				std::cerr << "Variable inputs:" << std::endl;
 
 				std::map<std::string, std::pair<void *, size_t> >::iterator iit, iie;
@@ -207,6 +197,8 @@ void solvePath( char *name ) {
 					std::cerr << std::endl;
 				}
 				return;
+			} else {
+// 				std::cerr << "Path does not match." << std::endl;
 			}
 		}
 	}

@@ -12,10 +12,6 @@ void max_init() {
 
 	klee_make_symbolic( &max_internal_NumInteresting, sizeof( max_internal_NumInteresting ), "max_internal_NumInteresting" );
 	max_internal_NumInteresting = 0;
-
-	uint8_t max_internal_Zero = 0;
-	klee_make_symbolic( &max_internal_Zero, sizeof( max_internal_Zero ), "max_internal_Zero" );
-	max_internal_Zero = 0;
 }
 
 void __attribute__((noinline)) max_message_handler_entry() {}
