@@ -27,10 +27,10 @@
 #define ECN_REFLECTION_PROB_AT_RCVR   1
 
 //maximum number of packets for which the sender has not received a response
-#define MAX_PKTS_IN_FLIGHT 100
+#define MAX_PKTS_IN_FLIGHT 3
 
 //maximum number of packets to send for the sender; we exit when this limit is reached
-#define MAX_PKTS_TO_SEND_SNDR 100
+#define MAX_PKTS_TO_SEND_SNDR 10
 
 // Synchronization pipe.
 int fdpair[2];
