@@ -1,10 +1,6 @@
 #include <assert.h>
 #include <arpa/inet.h>
-// #include <netinet/in.h>
-// #include <stdio.h>
-// #include <sys/types.h>
 #include <sys/socket.h>
-// #include <unistd.h>
 #include <strings.h>
 
 #include <iostream>
@@ -12,9 +8,11 @@
 
 #include "netcalc.h"
 
+// Handles the query and computes the response.
 void handleQuery( nc_query_t &query, nc_response_t &response ) {
 	response.err = NC_OK;
 
+	// Check operator.
 	switch ( query.op ) {
 		case NC_ADDITION : {
 			response.value = query.arg1 + query.arg2;
@@ -33,11 +31,12 @@ void handleQuery( nc_query_t &query, nc_response_t &response ) {
 				response.value = query.arg1 / query.arg2;
 			}
 		} break;
-		default : {
+		default : { // Unknown operator.
 			response.err = NC_BADINPUT;
 		} break;
 	}
 
+	// Output the operation.
 	if ( response.err == NC_OK ) {
 		std::cout << query.arg1 << " " << getOpName( query.op ) << " " << query.arg2 << " = " << response.value << std::endl;
 	} else {
@@ -59,6 +58,7 @@ int main( int argc, char **argv ) {
 
 	std::cerr << "Listening for queries on UDP port " << NETCALC_UDP_PORT << "." << std::endl;
 
+	// Handle queries indefinitely.
 	while ( true ) {
 		struct sockaddr_in si_client;
 		socklen_t si_client_len = sizeof( si_client );

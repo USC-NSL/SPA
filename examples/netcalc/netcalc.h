@@ -20,6 +20,7 @@ std::string nc_operator_names[] = {
 	"[Unknown Operator]"
 };
 
+// Convert operator to it name.
 std::string getOpName( nc_operator_t op ) {
 	if ( op < NC_OPERATOR_END )
 		return nc_operator_names[op];
@@ -27,6 +28,7 @@ std::string getOpName( nc_operator_t op ) {
 		return nc_operator_names[NC_OPERATOR_END];
 }
 
+// Convert an operator name to the operator enum.
 nc_operator_t getOpByName( std::string name ) {
 	for ( int i = 0; i < NC_OPERATOR_END; i++ )
 		if ( nc_operator_names[i] == name )
@@ -58,6 +60,7 @@ std::string nc_error_text[] = {
 	"Unknown error."
 };
 
+// Convert an error enum to a human readable description.
 std::string getErrText( nc_error_t err ) {
 	if ( err < NC_ERROR_END )
 		return nc_error_text[err];

@@ -5,53 +5,106 @@
 #include <sys/socket.h>
 #include <netdb.h>
 
-#include <map>
+#include <list>
 #include <iostream>
 
 #include "netcalc.h"
 
 #define DEFAULT_HOST	"localhost"
+#define HOST_PARAM		"--host"
+
+int sock;
+struct addrinfo *server;
+
+std::list<nc_value_t> stack;
+
+// Executes a single query on the remote server.
+nc_value_t executeQuery( nc_query_t &query ) {
+	// Send query.
+	assert( sendto( sock, &query, sizeof( query ), 0, server->ai_addr, server->ai_addrlen ) == sizeof( query ) );
+	// Get response.
+	nc_response_t response;
+	assert( recv( sock, &response, sizeof( response ), 0 ) == sizeof( response ) );
+	// Output operation.
+	if ( response.err == NC_OK ) {
+		std::cerr << "	" << query.arg1 << " " << getOpName( query.op ) << " " << query.arg2 << " = " << response.value << std::endl;
+	} else {
+		std::cerr << "Error: " << getErrText( response.err ) << std::endl;
+	}
+	assert( response.err == NC_OK && "Query failed." );
+
+	return response.value;
+}
+
+// Handle an RPN operation (either an operator or a number to push).
+void handleRPNOp( std::string rpnOp ) {
+	nc_operator_t ncOp;
+
+	// Check whether operator or number.
+	if ( (ncOp = getOpByName( rpnOp )) == NC_OPERATOR_END ) { // Not a known operator. Assume number.
+		stack.push_back( atoi( rpnOp.c_str() ) );
+	} else {
+		assert( stack.size() >= 2 && "Not enough data in stack to run an operation." );
+		// Pop arguments.
+		nc_query_t query;
+		query.op = ncOp;
+		query.arg2 = stack.back();
+		stack.pop_back();
+		query.arg1 = stack.back();
+		stack.pop_back();
+		// Push result.
+		stack.push_back( executeQuery( query ) );
+	}
+}
+
+// Output stack elements.
+void dumpStack() {
+	for ( std::list<nc_value_t>::iterator it = stack.begin(), ie = stack.end(); it != ie; it++ ) {
+		if ( it != stack.begin() )
+			std::cout << "	";
+		std::cout << *it;
+	}
+	std::cout << std::endl;
+}
+
+// Execute a list of RPN operations and output result.
+void executeRPN( std::list<std::string> rpn ) {
+	for ( std::list<std::string>::iterator it = rpn.begin(), ie = rpn.end(); it != ie; it++ )
+		handleRPNOp( *it );
+	dumpStack();
+}
 
 int main( int argc, char **argv ) {
-	assert( argc >= 4 && "Too few arguments." );
-	assert( argc <= 5 && "Too many arguments." );
+	std::list<std::string> args( argv, argv + argc );
 
-	nc_query_t query;
-	query.arg1 = atol( argv[1] );
-	query.arg2 = atol( argv[3] );
-	query.op = getOpByName( std::string() + argv[2] );
+	// Remove program name.
+	args.pop_front();
 
 	const char *host = DEFAULT_HOST;
-	if ( argc >= 5 )
-		host = argv[4];
+	// Check if user specified a host.
+	if ( args.size() > 2 && args.front() == HOST_PARAM ) {
+		args.pop_front();
+		host = args.front().c_str();
+		args.pop_front();
+	}
+	std::cerr << "Sending queries to " << host << "." << std::endl;
 
-	std::cerr << "Sending query to " << host << "." << std::endl;
-
-	struct addrinfo hints, *base_result, *result;
+	struct addrinfo hints, *result;
 	bzero( &hints, sizeof( hints ) );
 	hints.ai_family = AF_INET;
 	hints.ai_socktype = SOCK_DGRAM;
 	hints.ai_protocol = IPPROTO_UDP;
-	assert( ! getaddrinfo( host, NULL, &hints, &base_result ) );
+	assert( ! getaddrinfo( host, NULL, &hints, &result ) );
 
-	int s;
-	for ( result = base_result; result; result = result->ai_next ) {
+	for ( server = result; server; server = server->ai_next ) {
 		((struct sockaddr_in *) result->ai_addr)->sin_port = htons( NETCALC_UDP_PORT );
-		if ( (s = socket( result->ai_family, result->ai_socktype, result->ai_protocol )) < 0 )
+		if ( (sock = socket( server->ai_family, server->ai_socktype, server->ai_protocol )) < 0 )
 			continue;
 		break;
 	}
-	assert( s >= 0 && "Host could not be resolved." );
+	assert( sock >= 0 && "Host could not be resolved." );
 
-	assert( sendto( s, &query, sizeof( query ), 0, result->ai_addr, result->ai_addrlen ) == sizeof( query ) );
-	freeaddrinfo( base_result );
+	executeRPN( args );
 
-	nc_response_t response;
-	assert( recv( s, &response, sizeof( response ), 0 ) == sizeof( response ) );
-
-	if ( response.err == NC_OK ) {
-		std::cout << query.arg1 << " " << getOpName( query.op ) << " " << query.arg2 << " = " << response.value << std::endl;
-	} else {
-		std::cerr << "Error: " << getErrText( response.err ) << std::endl;
-	}
+	freeaddrinfo( result );
 }
