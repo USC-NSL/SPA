@@ -584,9 +584,9 @@ FilteringSearcher::~FilteringSearcher() {
   delete searcher;
 }
 
-std::set<llvm::Instruction *> FilteringSearcher::filterOut;
-void FilteringSearcher::setInstructionFilter(std::set<llvm::Instruction *> &_filterOut) {
-	filterOut = _filterOut;
+SPA::InstructionFilter *FilteringSearcher::filter;
+void FilteringSearcher::setInstructionFilter(SPA::InstructionFilter *_filter) {
+	filter = _filter;
 }
 
 ExecutionState &FilteringSearcher::selectState() {
@@ -598,10 +598,10 @@ void FilteringSearcher::update(ExecutionState *current,
                                  const std::set<ExecutionState*> &removedStates) {
 	std::set<ExecutionState*> filteredAddedStates, filteredRemovedStates;
 	for ( std::set<ExecutionState*>::iterator it = addedStates.begin(), ie = addedStates.end(); it != ie; it++ )
-		if ( filterOut.count( (*((*it)->pc())).inst ) == 0 )
+		if ( filter->checkInstruction( (*((*it)->pc())).inst ) )
 			filteredAddedStates.insert( *it );
 	for ( std::set<ExecutionState*>::iterator it = removedStates.begin(), ie = removedStates.end(); it != ie; it++ )
-		if ( filterOut.count( (*((*it)->pc())).inst ) == 0 )
+		if ( filter->checkInstruction( (*((*it)->pc())).inst ) )
 			filteredRemovedStates.insert( *it );
 
 	searcher->update(current, filteredAddedStates, filteredRemovedStates);

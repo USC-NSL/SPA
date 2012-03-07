@@ -18,6 +18,8 @@
 // FIXME: Move out of header, use llvm streams.
 #include <ostream>
 
+#include <spa/InstructionFilter.h>
+
 namespace llvm {
   class BasicBlock;
   class Function;
@@ -276,13 +278,13 @@ namespace klee {
 
   class FilteringSearcher : public Searcher {
 	Searcher *searcher;
-	static std::set<llvm::Instruction *> filterOut;
+	static SPA::InstructionFilter *filter;
 
   public:
     explicit FilteringSearcher(Searcher *_searcher);
     ~FilteringSearcher();
 
-	static void setInstructionFilter(std::set<llvm::Instruction *> &_filterOut);
+	static void setInstructionFilter(SPA::InstructionFilter *_filter);
 
     ExecutionState &selectState();
     void update(ExecutionState *current,
