@@ -64,6 +64,11 @@
 
 #include "spa/CFG.h"
 #include "spa/CG.h"
+#include "spa/CFGForwardIF.h"
+#include "spa/CFGBackwardIF.h"
+#include "spa/WhitelistIF.h"
+#include "spa/NegatedIF.h"
+#include "spa/IntersectionIF.h"
 #include "spa/maxRuntime.h"
 
 #define MAX_MESSAGE_HANDLER_ANNOTATION_FUNCTION	"max_message_handler_entry"
@@ -200,62 +205,6 @@ static int watchdog(int pid) {
   }
 
   return 0;
-}
-
-void dumpCFG(
-	CFG &cfg, CG &cg,
-	std::set<llvm::Function *> messageHandlers,
-	std::set<llvm::Instruction *> interestingInstructions,
-	std::set<llvm::Instruction *> uselessInstructions ) {
-	// Generate CFG DOT file.
-	CLOUD9_DEBUG( "   Generating CFG output: " + DumpCFG );
-	FILE *dotFile = fopen( DumpCFG.getValue().c_str(), "w" );
-	fprintf( dotFile, "digraph CFG {\n" );
-
-	// Color message handling function clusters.
-	for ( std::set<llvm::Function *>::iterator it = messageHandlers.begin(), ie = messageHandlers.end(); it != ie; it++ )
-		fprintf( dotFile, "	subgraph cluster_%s {\n		color = \"red\";\n	}\n", (*it)->getName().str().c_str() );
-	// Add all instructions.
-	for ( CFG::iterator it = cfg.begin(), ie = cfg.end(); it != ie; it++ ) {
-		Instruction *inst = *it;
-		const char *shape = "oval";
-		const char *style = "";
-		if ( inst == &(inst->getParent()->getParent()->getEntryBlock().front()) )
-			shape = "box";
-		if ( cfg.getSuccessors( inst ).empty() )
-			shape = "doublecircle";
-		if ( uselessInstructions.count( inst ) > 0 )
-			style = " style = \"filled\"";
-		if ( interestingInstructions.count( inst ) > 0 )
-			style = " style = \"filled\" color = \"red\"";
-		fprintf( dotFile, "	subgraph cluster_%s {\n		label = \"%s\";\n		n%p [label = \"%d\" shape = \"%s\"%s];\n	}\n",
-			inst->getParent()->getParent()->getName().str().c_str(),
-			inst->getParent()->getParent()->getName().str().c_str(),
-			(void*) inst, inst->getDebugLoc().getLine(),
-			shape, style );
-	}
-	// Add edges.
-	// Successors.
-	fprintf( dotFile, "	edge [color = \"green\"];\n" );
-	for ( CFG::iterator it1 = cfg.begin(), ie1 = cfg.end(); it1 != ie1; it1++ )
-		for ( std::set<llvm::Instruction *>::iterator it2 = cfg.getSuccessors( *it1 ).begin(), ie2 = cfg.getSuccessors( *it1 ).end(); it2 != ie2; it2++ )
-			fprintf( dotFile, "	n%p -> n%p;\n", (void*) *it1, (void*) *it2 );
-	// Callers.
-	fprintf( dotFile, "	edge [color = \"blue\"];\n" );
-	for ( CG::iterator it1 = cg.begin(), ie1 = cg.end(); it1 != ie1; it1++ ) {
-		llvm::Function *fn = *it1;
-		for ( std::set<llvm::Instruction *>::iterator it2 = cg.getCallers( fn ).begin(), ie2 = cg.getCallers( fn ).end(); it2 != ie2; it2++ ) {
-			if ( fn == NULL )
-				fprintf( dotFile, "	IndirectFunction [label = \"*\" shape = \"box\"]\n	n%p -> IndirectFunction;\n", (void*) *it2 );
-			else if ( ! fn->empty() )
-				fprintf( dotFile, "	n%p -> n%p;\n", (void*) *it2, (void*) &(fn->getEntryBlock().front()) );
-			else
-				fprintf( dotFile, "	n%p [label = \"%s\" shape = \"box\"]\n	n%p -> n%p;\n", (void*) fn, fn->getName().str().c_str(), (void*) *it2, (void*) fn );
-		}
-	}
-
-	fprintf( dotFile, "}\n" );
-	fclose( dotFile );
 }
 
 void done() {
@@ -426,100 +375,44 @@ int main(int argc, char **argv, char **envp) {
 	CFG cfg( mainModule );
 	CG cg( cfg );
 
-	// Find message handling functions.
-	CLOUD9_DEBUG( "   Searching for message handlers." );
-	std::set<llvm::Function *> messageHandlers;
+	CLOUD9_DEBUG( "   Filtering CFG." );
+
+	// Find message handling function entry points.
+	std::set<llvm::Instruction *> messageHandlers;
 	std::set<llvm::Instruction *> mhCallers = cg.getCallers( mainModule->getFunction( MAX_MESSAGE_HANDLER_ANNOTATION_FUNCTION ) );
 	for ( std::set<llvm::Instruction *>::iterator it = mhCallers.begin(), ie = mhCallers.end(); it != ie; it++ )
-		messageHandlers.insert( (*it)->getParent()->getParent() );
+		messageHandlers.insert( &(*it)->getParent()->getParent()->front().front() );
 	if ( messageHandlers.empty() ) {
 		CLOUD9_ERROR( "No message handlers found." );
 		done();
 	}
 
 	// Find interesting instructions.
-	CLOUD9_DEBUG( "   Searching for interesting instructions." );
 	std::set<llvm::Instruction *> interestingInstructions = cg.getCallers( mainModule->getFunction( MAX_INTERESTING_ANNOTATION_FUNCTION ) );
 	if ( interestingInstructions.empty() ) {
 		CLOUD9_ERROR( "No interesting statements found." );
 		done();
 	}
 
-	// Find all instructions that are reachable from message handlers.
-	CLOUD9_DEBUG( "   Searching forward from handlers." );
-	std::set<llvm::Instruction *> reachedFromHandler;
-	// Use a work list to add all successors of message handler entry instructions.
-	std::set<llvm::Instruction *> worklist;
-	for ( std::set<llvm::Function *>::iterator it = messageHandlers.begin(), ie = messageHandlers.end(); it != ie; it++ )
-		worklist.insert( &((*it)->getEntryBlock().front()) );
-	while ( ! worklist.empty() ) {
-		std::set<llvm::Instruction *>::iterator it = worklist.begin(), ie;
-		Instruction *inst = *it;
-		worklist.erase( it );
-		
-		// Mark instruction as reachable.
-		reachedFromHandler.insert( inst );
-		std::set<llvm::Instruction *> s = cfg.getSuccessors( inst );
-		// Add all not reached successors to work list.
-		for ( it = s.begin(), ie = s.end(); it != ie; it++ )
-			if ( reachedFromHandler.count( *it ) == 0 )
-				worklist.insert( *it );
-		// Check for CallInst or InvokeInst and add entire function to work list.
-		llvm::Function *fn = NULL;
-		if ( llvm::InvokeInst *ii = dyn_cast<llvm::InvokeInst>( inst ) )
-			fn = ii->getCalledFunction();
-		if ( llvm::CallInst *ci = dyn_cast<llvm::CallInst>( inst ) )
-			fn = ci->getCalledFunction();
-		if ( fn != NULL )
-			for ( CFG::iterator it2 = cfg.begin(), ie2 = cfg.end(); it2 != ie2; it2++ )
-				if ( (*it2)->getParent()->getParent() == fn && reachedFromHandler.count( *it2 ) == 0 )
-					worklist.insert( *it2 );
-	}
-	// Find all instructions that can reach interesting statements.
-	CLOUD9_DEBUG( "   Searching backward from interesting instructions." );
-	std::set<llvm::Instruction *> reachesInteresting;
-	// Use a worklist to add all predecessors of interesting instructions.
-	worklist = interestingInstructions;
-	while ( ! worklist.empty() ) {
-		std::set<llvm::Instruction *>::iterator it = worklist.begin(), ie;
-		Instruction *inst = *it;
-		worklist.erase( it );
+	// Create instruction filter.
+	IntersectionIF filter = IntersectionIF();
+	filter.addIF( new CFGForwardIF( cfg, cg, messageHandlers ) );
+	filter.addIF( new CFGBackwardIF( cfg, cg, interestingInstructions ) );
 
-		// Mark instruction as reaching.
-		reachesInteresting.insert( inst );
-		std::set<llvm::Instruction *> p = cfg.getPredecessors( inst );
-		// Add all non-reaching predecessors to work list.
-		for ( it = p.begin(), ie = p.end(); it != ie; it++ )
-			if ( reachesInteresting.count( *it ) == 0 )
-				worklist.insert( *it );
-		// Check for CallInst or InvokeInst and add entire function to work list.
-		llvm::Function *fn = NULL;
-		if ( llvm::InvokeInst *ii = dyn_cast<llvm::InvokeInst>( inst ) )
-			fn = ii->getCalledFunction();
-		if ( llvm::CallInst *ci = dyn_cast<llvm::CallInst>( inst ) )
-			fn = ci->getCalledFunction();
-		if ( fn != NULL )
-			for ( CFG::iterator it2 = cfg.begin(), ie2 = cfg.end(); it2 != ie2; it2++ )
-				if ( (*it2)->getParent()->getParent() == fn && reachesInteresting.count( *it2 ) == 0 )
-					worklist.insert( *it2 );
-		// Check if entry instruction.
-		if ( inst == &(inst->getParent()->getParent()->getEntryBlock().front()) ) {
-			p = cg.getCallers( inst->getParent()->getParent() );
-			// Add all useless callers to work list.
-			for ( it = p.begin(), ie = p.end(); it != ie; it++ )
-				if ( reachesInteresting.count( *it ) == 0 )
-					worklist.insert( *it );
-		}
-	}
-	// Determine useless instructions (can't reach interesting statements after starting at message handler).
-	CLOUD9_DEBUG( "   Defining useless instructions." );
-	std::set<llvm::Instruction *> uselessInstructions;
-	for ( CFG::iterator it = cfg.begin(), ie = cfg.end(); it != ie; it++ )
-		if ( reachedFromHandler.count( *it ) == 0 || reachesInteresting.count( *it ) == 0 )
-			uselessInstructions.insert( *it );
+	if ( DumpCFG.size() > 0 ) {
+		std::ofstream dotFile( DumpCFG.getValue().c_str() );
+		assert( dotFile.is_open() && "Unable to open dump file." );
 
-	if ( DumpCFG.size() > 0 )
-		dumpCFG( cfg, cg, messageHandlers, interestingInstructions, uselessInstructions );
+		std::map<InstructionFilter *, std::string> annotations;
+		annotations[new WhitelistIF( messageHandlers )] = "style = \"filled\" color = \"green\"";
+		annotations[new WhitelistIF( interestingInstructions )] = "style = \"filled\" color = \"red\"";
+		annotations[new NegatedIF( &filter )] = "style = \"filled\"";
+
+		cfg.dump( dotFile, annotations );
+
+		dotFile.flush();
+		dotFile.close();
+	}
 
 	// Add entry function.
 	CLOUD9_INFO( "Generating entry function." );
@@ -583,11 +476,11 @@ int main(int argc, char **argv, char **envp) {
 	SwitchInst* switchInst = SwitchInst::Create( kleeIntCall, returnBB, messageHandlers.size() + 1, entryBB );
 
 	uint32_t handlerID = 1;
-	for ( std::set<llvm::Function *>::iterator hit = messageHandlers.begin(), hie = messageHandlers.end(); hit != hie; hit++ ) {
+	for ( std::set<llvm::Instruction *>::iterator hit = messageHandlers.begin(), hie = messageHandlers.end(); hit != hie; hit++ ) {
 		BasicBlock *swBB = BasicBlock::Create( mainModule->getContext(), "", entryFunction, 0 );
 		switchInst->addCase( ConstantInt::get( mainModule->getContext(), APInt( 32, handlerID++, true ) ), swBB );
 
-		CallInst *handlerCallInst = CallInst::Create( *hit, "", swBB );
+		CallInst *handlerCallInst = CallInst::Create( (*hit)->getParent()->getParent(), "", swBB );
 		handlerCallInst->setCallingConv( CallingConv::C );
 		handlerCallInst->setTailCall( false );
 
@@ -600,7 +493,7 @@ int main(int argc, char **argv, char **envp) {
 	NoOutput = true;
 	UseInstructionFiltering = true;
 	theJobManager = new cloud9::worker::JobManager(mainModule, "main", pArgc, pArgv, envp);
-	klee::FilteringSearcher::setInstructionFilter( uselessInstructions );
+	klee::FilteringSearcher::setInstructionFilter( &filter );
 	(dynamic_cast<cloud9::worker::SymbolicEngine*>(theJobManager->getInterpreter()))
 		->registerStateEventHandler( new MaxStateEventHandler() );
 
