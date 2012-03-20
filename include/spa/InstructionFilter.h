@@ -11,7 +11,7 @@ namespace SPA {
 	class InstructionFilter {
 	public:
 		/**
-		 * Checks if a an instruction should be processed or filtered out.
+		 * Checks if an instruction should be processed or filtered out.
 		 * 
 		 * @param instruction The instruction to check.
 		 * @return true if the instruction should be processed; false if it should be filtered out.
