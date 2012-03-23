@@ -11,6 +11,7 @@
 
 #include <klee/Expr.h>
 #include <klee/Constraints.h>
+#include "klee/ExecutionState.h"
 
 #define SPA_PATH_START				"--- PATH START ---"
 #define SPA_PATH_SYMBOL_START		"--- SYMBOL START ---"
@@ -33,14 +34,19 @@
 
 namespace SPA {
 	class Path {
+	private:
 		std::set<const klee::Array *> symbols;
 		std::map<std::string, const klee::Array *> symbolNames;
 		std::map<std::string, std::vector<klee::ref<klee::Expr> > > symbolValues;
 		std::map<std::string, std::string> tags;
 		klee::ConstraintManager *constraints;
 
+		Path();
+
 	public:
 		static std::set<Path *> loadPaths( std::istream &pathFile );
+
+		Path( klee::ExecutionState *kState );
 
 		const klee::Array *getSymbol( std::string name ) const {
 			return symbolNames.count( name ) ? symbolNames.find( name )->second : NULL;
@@ -63,7 +69,6 @@ namespace SPA {
 			return constraints;
 		}
 
-		friend class SPA;
 		friend std::ostream& operator<<( std::ostream &stream, const Path &path );
 	};
 
