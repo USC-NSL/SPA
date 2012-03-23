@@ -58,11 +58,11 @@ namespace SPA {
 		return instructions.end();
 	}
 	
-	std::set<Instruction *> CFG::getSuccessors( Instruction *instruction ) {
+	const std::set<Instruction *> &CFG::getSuccessors( Instruction *instruction ) {
 		return successors[instruction];
 	}
 
-	std::set<Instruction *> CFG::getPredecessors( Instruction *instruction ) {
+	const std::set<Instruction *> &CFG::getPredecessors( Instruction *instruction ) {
 		return predecessors[instruction];
 	}
 
@@ -96,8 +96,8 @@ namespace SPA {
 		// Add edges.
 		// Successors.
 		dotFile << "	edge [color = \"green\"];" << std::endl;
-		for ( CFG::iterator it1 = begin(), ie1 = end(); it1 != ie1; it1++ )
-			for ( std::set<llvm::Instruction *>::iterator it2 = getSuccessors( *it1 ).begin(), ie2 = getSuccessors( *it1 ).end(); it2 != ie2; it2++ )
+		for ( iterator it1 = begin(), ie1 = end(); it1 != ie1; it1++ )
+			for ( iterator it2 = getSuccessors( *it1 ).begin(), ie2 = getSuccessors( *it1 ).end(); it2 != ie2; it2++ )
 				dotFile << "	n" << ((unsigned long) *it1) << " -> n" << ((unsigned long) *it2) << ";" << std::endl;
 		// Callers.
 		CG cg = CG( *this );

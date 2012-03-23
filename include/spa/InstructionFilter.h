@@ -2,10 +2,10 @@
  * SPA - Systematic Protocol Analysis Framework
  */
 
-#include "llvm/Instruction.h"
-
 #ifndef __InstructionFilter_H__
 #define __InstructionFilter_H__
+
+#include "llvm/Instruction.h"
 
 namespace SPA {
 	class InstructionFilter {

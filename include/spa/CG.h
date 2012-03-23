@@ -2,13 +2,13 @@
  * SPA - Systematic Protocol Analysis Framework
  */
 
+#ifndef __CG_H__
+#define __CG_H__
+
 #include <map>
 #include <set>
 
 #include "CFG.h"
-
-#ifndef __CG_H__
-#define __CG_H__
 
 namespace SPA {
 	class CG {
@@ -22,7 +22,7 @@ namespace SPA {
 		CG( CFG &cfg );
 		iterator begin();
 		iterator end();
-		std::set<llvm::Instruction *> getCallers( llvm::Function *function );
+		const std::set<llvm::Instruction *> &getCallers( llvm::Function *function );
 	};
 }
 

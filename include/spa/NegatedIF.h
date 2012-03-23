@@ -2,12 +2,12 @@
  * SPA - Systematic Protocol Analysis Framework
  */
 
+#ifndef __NegatedIF_H__
+#define __NegatedIF_H__
+
 #include <set>
 
 #include <spa/InstructionFilter.h>
-
-#ifndef __NegatedIF_H__
-#define __NegatedIF_H__
 
 namespace SPA {
 	class NegatedIF : public InstructionFilter {

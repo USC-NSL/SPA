@@ -2,13 +2,13 @@
  * SPA - Systematic Protocol Analysis Framework
  */
 
+#ifndef __BlacklistIF_H__
+#define __BlacklistIF_H__
+
 #include <set>
 
 #include <spa/NegatedIF.h>
 #include <spa/WhitelistIF.h>
-
-#ifndef __BlacklistIF_H__
-#define __BlacklistIF_H__
 
 namespace SPA {
 	class BlacklistIF : public InstructionFilter, private NegatedIF {

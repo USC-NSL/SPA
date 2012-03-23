@@ -2,14 +2,14 @@
  * SPA - Systematic Protocol Analysis Framework
  */
 
+#ifndef __CFGForwardIF_H__
+#define __CFGForwardIF_H__
+
 #include <set>
 
 #include <spa/CFG.h>
 #include <spa/CG.h>
 #include <spa/InstructionFilter.h>
-
-#ifndef __CFGForwardIF_H__
-#define __CFGForwardIF_H__
 
 namespace SPA {
 	class CFGForwardIF : public InstructionFilter {

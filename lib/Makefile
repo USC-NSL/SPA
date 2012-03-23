@@ -9,6 +9,6 @@
 
 LEVEL=..
 
-PARALLEL_DIRS=Basic Support Expr Solver Module Core Cloud9 SPA
+PARALLEL_DIRS=Basic Support Expr Solver Module Core Cloud9 SPA SPARuntime
 
 include $(LEVEL)/Makefile.common

@@ -2,12 +2,12 @@
  * SPA - Systematic Protocol Analysis Framework
  */
 
+#ifndef __IntersectionIF_H__
+#define __IntersectionIF_H__
+
 #include <set>
 
 #include <spa/InstructionFilter.h>
-
-#ifndef __IntersectionIF_H__
-#define __IntersectionIF_H__
 
 namespace SPA {
 	class IntersectionIF : public InstructionFilter {

@@ -2,12 +2,12 @@
  * SPA - Systematic Protocol Analysis Framework
  */
 
+#ifndef __UnionIF_H__
+#define __UnionIF_H__
+
 #include <set>
 
 #include <spa/InstructionFilter.h>
-
-#ifndef __UnionIF_H__
-#define __UnionIF_H__
 
 namespace SPA {
 	class UnionIF : public InstructionFilter {

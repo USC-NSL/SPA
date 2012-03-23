@@ -2,14 +2,14 @@
  * SPA - Systematic Protocol Analysis Framework
  */
 
+#ifndef __WhitelistIF_H__
+#define __WhitelistIF_H__
+
 #include <set>
 
 #include <llvm/Instruction.h>
 
 #include <spa/InstructionFilter.h>
-
-#ifndef __WhitelistIF_H__
-#define __WhitelistIF_H__
 
 namespace SPA {
 	class WhitelistIF : public InstructionFilter {

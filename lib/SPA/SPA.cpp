@@ -58,13 +58,12 @@
 #include "cloud9/instrum/InstrumentationManager.h"
 
 #include <spa/SPA.h>
+#include <spa/Path.h>
 
 #define MAIN_ENTRY_FUNCTION	"__user_main"
 #define OLD_ENTRY_FUNCTION	"__spa_old_user_main"
-#define SPA_INIT_FUNCTION	"spa_init"
 #define KLEE_INT_FUNCTION	"klee_int"
 #define HANDLER_ID_VAR_NAME	"spa_internal_HanderID"
-
 extern cl::opt<double> MaxTime;
 extern cl::opt<bool> NoOutput;
 extern cl::opt<bool> UseInstructionFiltering;
@@ -75,8 +74,14 @@ namespace {
 		cl::init(true));
 
 	typedef enum {
-		PATH_STARTED,
-		SYMBOLS,
+		START,
+		PATH,
+		SYMBOL_NAME,
+		SYMBOL_ARRAY,
+		SYMBOL_VALUE,
+		SYMBOL_END,
+		TAG_KEY,
+		TAG_VALUE,
 		CONSTRAINTS,
 		PATH_DONE
 	} LoadState_t;
@@ -225,24 +230,15 @@ namespace SPA {
 
 		// Take care of Ctrl+C requests
 		sys::SetInterruptFunction(interrupt_handle);
-
-		int pArgc;
-		char **pArgv;
-		char **pEnvp;
-		klee::readProgramArguments(pArgc, pArgv, pEnvp, NULL);
-
-		// Create the job manager
-		NoOutput = true;
-		theJobManager = new cloud9::worker::JobManager( module, "main", pArgc, pArgv, NULL );
-		(dynamic_cast<cloud9::worker::SymbolicEngine*>(theJobManager->getInterpreter()))
-			->registerStateEventHandler( this );
 	}
 
 	/**
 	 * Generates a new main function that looks like:
 	 * 
 	 *	int main( int argc, char **argv ) {
-	 * 		spa_init();
+	 * 		init1();
+	 * 		init2();
+	 * 		(...)
 	 *		int handlerID = klee_int( "handlerID" );
 	 *		switch ( handlerID ) {
 	 *			case 1: handler1(); break;
@@ -264,28 +260,6 @@ namespace SPA {
 		// Replace the old with the new.
 		oldEntryFunction->replaceAllUsesWith( entryFunction );
 
-		// Get klee_int function.
-		llvm::Function *kleeIntFunction = module->getFunction( KLEE_INT_FUNCTION );
-		if ( ! kleeIntFunction ) {
-			kleeIntFunction = llvm::Function::Create(
-				llvm::FunctionType::get(
-					llvm::IntegerType::get( module->getContext(), 32 ),
-					llvm::ArrayRef<const llvm::Type *>( llvm::PointerType::get( llvm::IntegerType::get( module->getContext(), 8 ), 0 ) ).vec(),
-					false ),
-				llvm::GlobalValue::ExternalLinkage, KLEE_INT_FUNCTION, module );
-				kleeIntFunction->setCallingConv( llvm::CallingConv::C );
-		}
-
-		// Create handlerID variable.
-		llvm::GlobalVariable *handlerIDVarName = new llvm::GlobalVariable(
-			*module,
-			llvm::ArrayType::get( llvm::IntegerType::get( module->getContext(), 8 ), strlen( HANDLER_ID_VAR_NAME ) + 1 ),
-			true,
-			llvm::GlobalValue::PrivateLinkage,
-			NULL,
-			HANDLER_ID_VAR_NAME );
-		handlerIDVarName->setInitializer( llvm::ConstantArray::get( module->getContext(), HANDLER_ID_VAR_NAME, true ) );
-
 		// Declare arguments.
 		llvm::Function::arg_iterator args = entryFunction->arg_begin();
 		llvm::Value *argcVar = args++;
@@ -300,10 +274,32 @@ namespace SPA {
 		// Allocate arguments.
 		new llvm::StoreInst( argcVar, new llvm::AllocaInst( llvm::IntegerType::get( module->getContext(), 32 ), "", entryBB ), false, entryBB );
 		new llvm::StoreInst( argvVar, new llvm::AllocaInst( llvm::PointerType::get( llvm::PointerType::get( llvm::IntegerType::get( module->getContext(), 8 ), 0 ), 0 ), "", entryBB ), false, entryBB );
-		// spa_init();
-		llvm::CallInst *spaInitCall = llvm::CallInst::Create( module->getFunction( SPA_INIT_FUNCTION ), "", entryBB);
-		spaInitCall->setCallingConv(llvm::CallingConv::C);
-		spaInitCall->setTailCall(false);
+		// Init functions;
+		for ( std::list<llvm::Function *>::iterator it = initFunctions.begin(), ie = initFunctions.end(); it != ie; it++ ) {
+			llvm::CallInst *initCall = llvm::CallInst::Create( *it, "", entryBB);
+			initCall->setCallingConv(llvm::CallingConv::C);
+			initCall->setTailCall(false);
+		}
+		// Get klee_int function.
+		llvm::Function *kleeIntFunction = module->getFunction( KLEE_INT_FUNCTION );
+		if ( ! kleeIntFunction ) {
+			kleeIntFunction = llvm::Function::Create(
+				llvm::FunctionType::get(
+					llvm::IntegerType::get( module->getContext(), 32 ),
+										llvm::ArrayRef<const llvm::Type *>( llvm::PointerType::get( llvm::IntegerType::get( module->getContext(), 8 ), 0 ) ).vec(),
+										false ),
+										llvm::GlobalValue::ExternalLinkage, KLEE_INT_FUNCTION, module );
+			kleeIntFunction->setCallingConv( llvm::CallingConv::C );
+		}
+		// Create handlerID variable.
+		llvm::GlobalVariable *handlerIDVarName = new llvm::GlobalVariable(
+			*module,
+			llvm::ArrayType::get( llvm::IntegerType::get( module->getContext(), 8 ), strlen( HANDLER_ID_VAR_NAME ) + 1 ),
+																		  true,
+																	llvm::GlobalValue::PrivateLinkage,
+																	NULL,
+																	HANDLER_ID_VAR_NAME );
+		handlerIDVarName->setInitializer( llvm::ConstantArray::get( module->getContext(), HANDLER_ID_VAR_NAME, true ) );
 		// handlerID = klee_int();
 		llvm::Constant *idxs[] = {llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, 0, true ) ), llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, 0, true ) )};
 		llvm::CallInst *kleeIntCall = llvm::CallInst::Create(
@@ -329,6 +325,9 @@ namespace SPA {
 		}
 		// return 0;
 		llvm::ReturnInst::Create( module->getContext(), llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, 0, true ) ), returnBB );
+
+// 		module->dump();
+		// 		entryFunction->dump();
 	}
 
 	void SPA::start() {
@@ -336,6 +335,20 @@ namespace SPA {
 			UseInstructionFiltering = true;
 			klee::FilteringSearcher::setInstructionFilter( instructionFilter );
 		}
+
+		generateMain();
+
+		int pArgc;
+		char **pArgv;
+		char **pEnvp;
+		char *envp[] = { NULL };
+		klee::readProgramArguments(pArgc, pArgv, pEnvp, envp );
+
+		// Create the job manager
+		NoOutput = true;
+		theJobManager = new cloud9::worker::JobManager( module, "main", pArgc, pArgv, pEnvp );
+		(dynamic_cast<cloud9::worker::SymbolicEngine*>(theJobManager->getInterpreter()))
+			->registerStateEventHandler( this );
 
 		if (StandAlone) {
 			CLOUD9_INFO("Running in stand-alone mode. No load balancer involved.");
@@ -362,121 +375,65 @@ namespace SPA {
 		theJobManager = NULL;
 	}
 
-	std::string cleanUpLine( std::string line ) {
-		// Remove comments.
-		line = line.substr( 0, line.find( SPA_PATH_COMMENT ) );
-		// Remove trailing white space.
-		line = line.substr( 0, line.find_last_not_of( SPA_PATH_WHITE_SPACE ) + 1 );
-		// Remove leading white space.
-		if ( line.find_first_not_of( SPA_PATH_WHITE_SPACE ) != line.npos )
-			line = line.substr( line.find_first_not_of( SPA_PATH_WHITE_SPACE ), line.npos );
-		
-		return line;
-	}
+	void SPA::onStateDestroy(klee::ExecutionState *kState, bool silenced) {
+		assert( kState );
 
-	#define changeState( from, to ) \
-		assert( state == from && "Invalid path file." ); \
-		state = to;
+		CLOUD9_DEBUG( "Processing path." );
 
-	std::map<std::string, std::set< std::pair<std::map<std::string, const klee::Array *>, klee::ConstraintManager *> > > SPA::loadPaths( std::istream pathFile ) {
-		std::map<std::string, std::set< std::pair<std::map<std::string, const klee::Array *>, klee::ConstraintManager *> > > paths;
-		int numPaths = 0;
+		Path path;
 
-		LoadState_t state = PATH_DONE;
-		std::string handlerName = "";
-		std::string kQuery = "";
-		std::map<std::string, std::string> symbols;
-		std::pair<std::map<std::string, const klee::Array *>, klee::ConstraintManager *> pathData;
-		while ( pathFile.good() ) {
-			std::string line;
-			getline( pathFile, line );
-			line = cleanUpLine( line );
-			if ( line.empty() )
-				continue;
+		for ( std::vector< std::pair<const klee::MemoryObject*,const klee::Array*> >::iterator it = kState->symbolics.begin(), ie = kState->symbolics.end(); it != ie; it++ ) {
+			std::string name = (*it).first->name;
 
-			if ( line == SPA_PATH_START ) {
-				changeState( PATH_DONE, PATH_STARTED );
-				handlerName.clear();
-			} else if ( line == SPA_PATH_SYMBOLS_START ) {
-				changeState( PATH_STARTED, SYMBOLS );
-				assert( (! handlerName.empty()) && "No handler name found." );
-			} else if ( line == SPA_PATH_SYMBOLS_END ) {
-				changeState( SYMBOLS, PATH_STARTED );
-			} else if ( line == SPA_PATH_CONSTRAINTS_START ) {
-				changeState( PATH_STARTED, CONSTRAINTS );
-				kQuery = "";
-			} else if ( line == SPA_PATH_CONSTRAINTS_END ) {
-				changeState( CONSTRAINTS, PATH_STARTED );
+			path.symbols.insert( it->second );
 
-				llvm::MemoryBuffer *MB = llvm::MemoryBuffer::getMemBuffer( kQuery );
-				klee::ExprBuilder *Builder = klee::createDefaultExprBuilder();
-				klee::expr::Parser *P = klee::expr::Parser::Create( "", MB, Builder );
-				while ( klee::expr::Decl *D = P->ParseTopLevelDecl() ) {
-					assert( ! P->GetNumErrors() && "Error parsing constraints in path file." );
-					if ( klee::expr::QueryCommand *QC = dyn_cast<klee::expr::QueryCommand>( D ) ) {
-						pathData.second = new klee::ConstraintManager( QC->Constraints );
-						delete D;
-						break;
-					} else if ( klee::expr::ArrayDecl *AD = dyn_cast<klee::expr::ArrayDecl>( D ) ) {
-						pathData.first[symbols[AD->Name->Name]] = AD->Root;
-					}
+			if ( name.compare( 0, strlen( SPA_INPUT_PREFIX ), SPA_INPUT_PREFIX ) == 0 ) {
+				path.symbolNames[name] = it->second;
+			} else if ( name.compare( 0, strlen( SPA_OUTPUT_PREFIX ), SPA_OUTPUT_PREFIX ) == 0 ) {
+				path.symbolNames[name] = it->second;
+				// Symbolic value.
+				if ( const klee::ObjectState *os = kState->addressSpace().findObject( (*it).first ) )
+					for ( unsigned int i = 0; i < os->size; i++ )
+						path.symbolValues[name].push_back( os->read8( i ) );
+			} else if ( name.compare( 0, strlen( SPA_TAG_PREFIX ), SPA_TAG_PREFIX ) == 0 ) {
+				const klee::ObjectState *addrOS = kState->addressSpace().findObject( (*it).first );
+				assert( addrOS && "Tag not set." );
+
+				klee::ref<klee::Expr> addrExpr = addrOS->read( 0, klee::Context::get().getPointerWidth() );
+				assert( isa<klee::ConstantExpr>( addrExpr ) && "Tag address is symbolic." );
+				klee::ref<klee::ConstantExpr> address = cast<klee::ConstantExpr>(addrExpr);
+				klee::ObjectPair op;
+				assert( kState->addressSpace().resolveOne( address, op ) && "Tag address is not uniquely defined." );
+				const klee::MemoryObject *mo = op.first;
+				const klee::ObjectState *os = op.second;
+
+				char *buf = new char[mo->size];
+				unsigned ioffset = 0;
+				klee::ref<klee::Expr> offset_expr = klee::SubExpr::create( address, op.first->getBaseExpr() );
+				assert( isa<klee::ConstantExpr>( offset_expr ) && "Tag is an invalid string." );
+				klee::ref<klee::ConstantExpr> value = cast<klee::ConstantExpr>( offset_expr.get() );
+				ioffset = value.get()->getZExtValue();
+				assert( ioffset < mo->size );
+
+				unsigned i;
+				for ( i = 0; i < mo->size - ioffset - 1; i++ ) {
+					klee::ref<klee::Expr> cur = os->read8( i + ioffset );
+					assert( isa<klee::ConstantExpr>( cur ) && "Symbolic character in tag value." );
+					buf[i] = cast<klee::ConstantExpr>(cur)->getZExtValue( 8 );
 				}
-				delete P;
-				delete Builder;
-				delete MB;
-			} else if ( line == SPA_PATH_END ) {
-				changeState( PATH_STARTED, PATH_DONE );
-				paths[handlerName].insert( pathData );
-				numPaths++;
-			} else {
-				switch ( state ) {
-					case PATH_STARTED : {
-						assert( handlerName.empty() && "Handler name multiply defined." );
-						handlerName = line;
-					} break;
-					case SYMBOLS : {
-						assert( line.find( SPA_PATH_SYMBOLS_DELIMITER ) != line.npos && line.find( SPA_PATH_SYMBOLS_DELIMITER ) + strlen( SPA_PATH_SYMBOLS_DELIMITER ) < line.size() && "Invalid symbol definition." );
-						std::string name = line.substr( 0, line.find( SPA_PATH_SYMBOLS_DELIMITER ) );
-						std::string symbol = line.substr( line.find( SPA_PATH_SYMBOLS_DELIMITER ) + strlen( SPA_PATH_SYMBOLS_DELIMITER ), line.npos );
-						symbols[symbol] = name;
-					} break;
-					case CONSTRAINTS : {
-						kQuery += " " + line;
-					} break;
-					default : {
-						assert( false && "Invalid path file." );
-					} break;
-				}
+				buf[i] = 0;
+
+				name = name.substr( strlen( SPA_TAG_PREFIX ) );
+				path.tags[name] = std::string( buf );
+// 				CLOUD9_DEBUG( "	Tag: " << name << " = " << buf );
+				delete buf;
 			}
 		}
+		path.constraints = &kState->constraints();
 
-		std::cerr << "Loaded " << numPaths << " paths." << std::endl;
-
-		return paths;
-	}
-
-
-	void SPA::onStateDestroy(klee::ExecutionState *kState, bool silenced) {
-		assert(kState);
-
-		std::string handlerName;
-		if ( ! pathFilter || pathFilter->checkPath( kState ) ) {
+		if ( ! pathFilter || pathFilter->checkPath( path ) ) {
 			CLOUD9_DEBUG( "Outputting path." );
-			output << SPA_PATH_START << std::endl;
-			output << handlerName << std::endl;
-			output << SPA_PATH_SYMBOLS_START << std::endl;
-			for ( std::vector< std::pair<const klee::MemoryObject*,const klee::Array*> >::iterator it = kState->symbolics.begin(), ie = kState->symbolics.end(); it != ie; it++ )
-				output << (*it).first->name << SPA_PATH_SYMBOLS_DELIMITER << (*it).second->name << std::endl;
-			output << SPA_PATH_SYMBOLS_END << std::endl;
-			output << SPA_PATH_CONSTRAINTS_START << std::endl;
-			for ( std::vector< std::pair<const klee::MemoryObject*,const klee::Array*> >::iterator it = kState->symbolics.begin(), ie = kState->symbolics.end(); it != ie; it++ )
-				output << "array " << (*it).second->name << "[" << (*it).second->size << "] : w32 -> w8 = symbolic" << std::endl;
-			output << SPA_PATH_CONSTRAINTS_KLEAVER_START << std::endl;
-			for ( klee::ConstraintManager::constraint_iterator it = kState->constraints().begin(), ie = kState->constraints().end(); it != ie; it++)
-				output << *it << std::endl;
-			output << SPA_PATH_CONSTRAINTS_KLEAVER_END << std::endl;
-			output << SPA_PATH_CONSTRAINTS_END << std::endl;
-			output << SPA_PATH_END << std::endl;
+			output << path;
 		}
 	}
 }

@@ -43,7 +43,7 @@ namespace SPA {
 		return functions.end();
 	}
 
-	std::set<Instruction *> CG::getCallers( Function *function ) {
+	const std::set<Instruction *> &CG::getCallers( Function *function ) {
 		return callers[function];
 	}
 }

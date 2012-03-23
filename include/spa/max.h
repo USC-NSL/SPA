@@ -1,35 +1,34 @@
 #ifndef __MAX_H__
 #define __MAX_H__
 
+#define MAX_PATH_FILE "max_paths.txt"
+
 #ifdef ENABLE_MAX
 
-const char *max_internal_HandlerName = NULL;
-uint32_t max_internal_NumInteresting = 0;
+#include <spa/spaRuntime.h>
 
-void max_init() {
-	klee_make_symbolic( &max_internal_HandlerName, sizeof( max_internal_HandlerName ), "max_internal_HandlerName" );
-	max_internal_HandlerName = NULL;
+const char *max_HandlerName = NULL;
+const char *max_Interesting = NULL;
 
-	klee_make_symbolic( &max_internal_NumInteresting, sizeof( max_internal_NumInteresting ), "max_internal_NumInteresting" );
-	max_internal_NumInteresting = 0;
-}
+void maxSolveSymbolicHandler( va_list args );
+void maxInputFixedHandler( va_list args );
+void maxInputVarHandler( va_list args );
 
 void __attribute__((noinline)) max_message_handler_entry() {}
 
 void max_solve_symbolic( const char *name  );
 void max_message_handler( const char *name ) {
-	max_internal_HandlerName = name;
-	max_solve_symbolic( name );
+	spa_tag( max_HandlerName, name );
+	spa_runtime_call( maxSolveSymbolicHandler, name );
 }
 
 void __attribute__((noinline)) max_interesting() {
-	max_internal_NumInteresting++;
+	spa_tag( max_Interesting, "1" );
 }
 
-void max_make_symbolic( void *var, size_t size, const char *name, int fixed );
-#define max_state( var, size, name ) max_make_symbolic( var, size, name, 1 );
-#define max_input_fixed( var, size, name ) max_make_symbolic( var, size, name, 1 );
-#define max_input_var( var, size, name ) max_make_symbolic( var, size, name, 0 );
+#define max_state( var, size, name ) spa_input_fixed( var, size, name )
+#define max_input_fixed( var, size, name ) spa_input_fixed( var, size, name ); spa_runtime_call( maxInputFixedHandler, var, size, name )
+#define max_input_var( var, size, name ) spa_input_var( var, size, name ); spa_runtime_call( maxInputVarHandler, var, size, name )
 
 #else
 

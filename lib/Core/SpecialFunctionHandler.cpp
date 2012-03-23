@@ -23,8 +23,6 @@
 #include "klee/Executor.h"
 #include "MemoryManager.h"
 
-#include "spa/maxRuntime.h"
-
 #include "llvm/Module.h"
 #include "llvm/ADT/Twine.h"
 #include "llvm/Type.h"
@@ -143,8 +141,7 @@ HandlerInfo handlerInfo[] = {
 
   add("syscall", handleSyscall, true),
 
-  add("max_make_symbolic", handleMaxMakeSymbolic, false),
-  add("max_solve_symbolic", handleMaxSolveSymbolic, false),
+  add("spa_runtime_call", handleSpaRuntimeCall, false),
 #undef addDNR
 #undef add  
 };
@@ -1137,31 +1134,5 @@ void SpecialFunctionHandler::handleSyscall(ExecutionState &state,
   }
 }
 
-void SpecialFunctionHandler::handleMaxMakeSymbolic(ExecutionState &state, KInstruction *target, std::vector<ref<Expr> > &arguments) {
-	std::string name;
-	klee::ConstantExpr *fixed;
-
-	assert( arguments.size() == 4 && "Invalid number of arguments to max_make_symbolic." );
-	assert( (fixed = dyn_cast<ConstantExpr>(executor.toUnique( state, arguments[3] ) )) && "Argument 3 of max_make_symbolic is not constant." );
-	name = (fixed->isZero() ? MAX_VAR_INPUT_PREFIX : MAX_FIXED_INPUT_PREFIX) + readStringAtAddress(state, arguments[2]);
-
-	resolutions_ty resList;
-	processMemoryLocation(state, arguments[0], arguments[1], "make_symbolic", resList);
-
-	for (resolutions_ty::iterator it = resList.begin(); it != resList.end(); it++) {
-		const MemoryObject *mo = it->first.first;
-		const ObjectState *os = it->first.second;
-		ExecutionState *s = it->second;
-
-		mo->setName( name );
-
-		if (os->readOnly) {
-			executor.terminateStateOnError(*s, "cannot make readonly object symbolic", "user.err");
-		} else {
-			executor.executeMakeSymbolic(*s, mo, os->isShared);
-		}
-	}
-}
-
-void SpecialFunctionHandler::handleMaxSolveSymbolic(ExecutionState &state, KInstruction *target, std::vector<ref<Expr> > &arguments) {
+void SpecialFunctionHandler::handleSpaRuntimeCall(ExecutionState &state, KInstruction *target, std::vector<ref<Expr> > &arguments) {
 }

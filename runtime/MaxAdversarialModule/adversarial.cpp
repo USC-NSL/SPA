@@ -12,11 +12,13 @@
 #include <klee/ExprBuilder.h>
 #include <klee/Solver.h>
 
-#include <spa/SPA.h>
-#include <spa/maxRuntime.h>
+#include <spa/Path.h>
 #include <spa/max.h>
+#include <spa/spaRuntimeImpl.h>
 
-std::map<std::string, std::set< std::pair<std::map<std::string, const klee::Array *>, klee::ConstraintManager *> > > paths;
+#define HANDLER_NAME_TAG	"max_HandlerName"
+
+std::map<std::string, std::set<SPA::Path *> > paths;
 std::map<std::string, std::pair<void *, size_t> > fixedInputs;
 std::map<std::string, std::pair<void *, size_t> > varInputs;
 klee::Solver *solver;
@@ -28,9 +30,12 @@ void initAdversarialModule() {
 		std::cerr << "Loading path data from file: " << MAX_PATH_FILE << std::endl;
 		std::ifstream pathFile( MAX_PATH_FILE );
 		assert( pathFile.is_open() && "Unable to open path file." );
-		
-		paths = SPA::loadPaths( pathFile );
-		
+
+		std::set<SPA::Path *> pathSet = SPA::Path::loadPaths( pathFile );
+		for ( std::set<SPA::Path *>::iterator it = pathSet.begin(), ie = pathSet.end(); it != ie; it++ )
+			if ( ! (*it)->getTag( std::string( HANDLER_NAME_TAG ) ).empty() )
+				paths[(*it)->getTag( std::string( HANDLER_NAME_TAG ) )].insert( *it );
+
 		pathFile.close();
 
 		solver = new klee::STPSolver( false, true );
@@ -56,16 +61,16 @@ void solvePath( char *name ) {
 // 		}
 		unsigned int numPaths = 1;
 		// Check each path.
-		for ( std::set< std::pair<std::map<std::string, const klee::Array *>, klee::ConstraintManager *> >::iterator pit = paths[name].begin(), pie = paths[name].end(); pit != pie; pit++, numPaths++ ) {
+		for ( std::set<SPA::Path *>::iterator pit = paths[name].begin(), pie = paths[name].end(); pit != pie; pit++, numPaths++ ) {
 			klee::ExprBuilder *exprBuilder = klee::createDefaultExprBuilder();
 			// Load path constraints.
-			klee::ConstraintManager cm( *pit->second );
+			klee::ConstraintManager cm( *(*pit)->getConstraints() );
 			// And all relevant fixed input constraints.
 			for ( std::map<std::string, std::pair<void *, size_t> >::iterator iit = fixedInputs.begin(), iie = fixedInputs.end(); iit != iie; iit++ ) {
 				// Check if input is relevant.
-				if ( pit->first.count( iit->first ) ) {
+				if ( (*pit)->getSymbol( iit->first ) ) {
 					// Add the comparison of each byte.
-					klee::UpdateList ul( pit->first.find( iit->first )->second, 0 );
+					klee::UpdateList ul( (*pit)->getSymbol( iit->first ), 0 );
 					for ( size_t p = 0; p < iit->second.second; p++ )
 						cm.addConstraint( exprBuilder->Eq(
 							klee::ReadExpr::create( ul, klee::ConstantExpr::alloc( p, klee::Expr::Int32 ) ),
@@ -75,8 +80,11 @@ void solvePath( char *name ) {
 
 			// Created list of variable inputs.
 			std::vector<const klee::Array*> objects;
-			for ( std::map<std::string, std::pair<void *, size_t> >::iterator iit = varInputs.begin(), iie = varInputs.end(); iit != iie; iit++ )
-				objects.push_back( pit->first.find( iit->first )->second );
+			for ( std::map<std::string, std::pair<void *, size_t> >::iterator iit = varInputs.begin(), iie = varInputs.end(); iit != iie; iit++ ) {
+				assert( (*pit)->getSymbol( iit->first ) && "Unrecognized variable." );
+				objects.push_back( (*pit)->getSymbol( iit->first ) );
+			}
+			assert( ! objects.empty() && "No variable inputs to solve for." );
 
 // 			std::cerr << "Constraints:" << std::endl;
 // 			for ( klee::ConstraintManager::const_iterator cit = cm.begin(), cie = cm.end(); cit != cie; cit++ )
@@ -85,7 +93,7 @@ void solvePath( char *name ) {
 			std::vector< std::vector<unsigned char> > result;
 			if ( solver->getInitialValues( klee::Query( cm, exprBuilder->False() ), objects, result ) ) {
 				std::cerr << "Found interesting assignment. Searched " << numPaths << "/" << paths[name].size() << " paths." << std::endl;
-				std::cerr << "Variable inputs:" << std::endl;
+				std::cerr << "Assignment:" << std::endl;
 
 				std::map<std::string, std::pair<void *, size_t> >::iterator iit, iie;
 				std::vector< std::vector<unsigned char> >::iterator rit, rie;
@@ -114,22 +122,36 @@ void solvePath( char *name ) {
 }
 
 extern "C" {
-	void klee_make_symbolic(void *addr, size_t nbytes, const char *name) {}
+	void maxSolveSymbolicHandler( va_list args ) {
+		char *name = va_arg( args, char * );
 
-	void max_make_symbolic( void *var, size_t size, const char *name, int fixed ) {
-		if ( fixed ) {
-			fixedInputs[std::string() + MAX_FIXED_INPUT_PREFIX + name].first = var;
-			fixedInputs[std::string() + MAX_FIXED_INPUT_PREFIX + name].second = size;
-		} else {
-			varInputs[std::string() + MAX_VAR_INPUT_PREFIX + name].first = var;
-			varInputs[std::string() + MAX_VAR_INPUT_PREFIX + name].second = size;
-		}
-	}
-
-	void max_solve_symbolic( char *name  ) {
 		initAdversarialModule();
 		solvePath( name );
 		fixedInputs.clear();
 		varInputs.clear();
+	}
+
+	void maxInputFixedHandler( va_list args ) {
+		void *var = va_arg( args, void * );
+		size_t size = va_arg( args, size_t );
+		const char *name = va_arg( args, const char * );
+
+		fixedInputs[std::string() + SPA_INPUT_FIXED_PREFIX + name].first = var;
+		fixedInputs[std::string() + SPA_INPUT_FIXED_PREFIX + name].second = size;
+	}
+
+	void maxInputVarHandler( va_list args ) {
+		void *var = va_arg( args, void * );
+		size_t size = va_arg( args, size_t );
+		const char *name = va_arg( args, const char * );
+
+		varInputs[std::string() + SPA_INPUT_VAR_PREFIX + name].first = var;
+		varInputs[std::string() + SPA_INPUT_VAR_PREFIX + name].second = size;
+	}
+
+	void max_make_symbolic( void *var, size_t size, const char *name, int fixed ) {
+		if ( fixed ) {
+		} else {
+		}
 	}
 }
