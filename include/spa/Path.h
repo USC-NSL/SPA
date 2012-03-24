@@ -27,8 +27,6 @@
 #define SPA_PATH_WHITE_SPACE		" 	\r\n"
 
 #define SPA_INPUT_PREFIX		"spa_input_"
-#define SPA_INPUT_FIXED_PREFIX	(SPA_INPUT_PREFIX "fixed_")
-#define SPA_INPUT_VAR_PREFIX	(SPA_INPUT_PREFIX "var_")
 #define SPA_OUTPUT_PREFIX		"spa_output_"
 #define SPA_TAG_PREFIX			"spa_tag_"
 

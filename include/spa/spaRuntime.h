@@ -12,9 +12,8 @@ void __spa_tag( char **var, char *varName, char *value ) {
 	*var = value;
 }
 
-#define spa_var( var ) spa_input_fixed( &var, sizeof( var ), #var )
-#define spa_input_fixed( var, size, name ) klee_make_symbolic( var, size, "spa_input_fixed_" name )
-#define spa_input_var( var, size, name ) klee_make_symbolic( var, size, "spa_input_var_" name )
+#define spa_var( var ) spa_input( &var, sizeof( var ), #var )
+#define spa_input( var, size, name ) klee_make_symbolic( var, size, "spa_input_" name )
 
 #ifdef __cplusplus
 extern "C" {

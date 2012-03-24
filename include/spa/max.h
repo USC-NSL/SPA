@@ -26,9 +26,9 @@ void __attribute__((noinline)) max_interesting() {
 	spa_tag( max_Interesting, "1" );
 }
 
-#define max_state( var, size, name ) spa_input_fixed( var, size, name )
-#define max_input_fixed( var, size, name ) spa_input_fixed( var, size, name ); spa_runtime_call( maxInputFixedHandler, var, size, name )
-#define max_input_var( var, size, name ) spa_input_var( var, size, name ); spa_runtime_call( maxInputVarHandler, var, size, name )
+#define max_state( var, size, name ) spa_input( var, size, name )
+#define max_input_fixed( var, size, name ) spa_input( var, size, name ); spa_runtime_call( maxInputFixedHandler, var, size, name )
+#define max_input_var( var, size, name ) spa_input( var, size, name ); spa_runtime_call( maxInputVarHandler, var, size, name )
 
 #else
 

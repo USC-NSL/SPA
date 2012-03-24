@@ -136,8 +136,8 @@ extern "C" {
 		size_t size = va_arg( args, size_t );
 		const char *name = va_arg( args, const char * );
 
-		fixedInputs[std::string() + SPA_INPUT_FIXED_PREFIX + name].first = var;
-		fixedInputs[std::string() + SPA_INPUT_FIXED_PREFIX + name].second = size;
+		fixedInputs[std::string() + SPA_INPUT_PREFIX + name].first = var;
+		fixedInputs[std::string() + SPA_INPUT_PREFIX + name].second = size;
 	}
 
 	void maxInputVarHandler( va_list args ) {
@@ -145,13 +145,7 @@ extern "C" {
 		size_t size = va_arg( args, size_t );
 		const char *name = va_arg( args, const char * );
 
-		varInputs[std::string() + SPA_INPUT_VAR_PREFIX + name].first = var;
-		varInputs[std::string() + SPA_INPUT_VAR_PREFIX + name].second = size;
-	}
-
-	void max_make_symbolic( void *var, size_t size, const char *name, int fixed ) {
-		if ( fixed ) {
-		} else {
-		}
+		varInputs[std::string() + SPA_INPUT_PREFIX + name].first = var;
+		varInputs[std::string() + SPA_INPUT_PREFIX + name].second = size;
 	}
 }
