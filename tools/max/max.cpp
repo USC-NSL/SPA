@@ -38,17 +38,7 @@ namespace {
 }
 
 class MaxPathFilter : public SPA::PathFilter {
-private:
-	klee::Solver *solver;
-
 public:
-	MaxPathFilter() {
-		solver = new klee::STPSolver( false, true );
-		solver = klee::createCexCachingSolver(solver);
-		solver = klee::createCachingSolver(solver);
-		solver = klee::createIndependentSolver(solver);
-	}
-
 	bool checkPath( SPA::Path &path ) {
 		return (! path.getTag( MAX_HANDLER_NAME_TAG ).empty()) && (! path.getTag( MAX_INTERESTING_TAG ).empty());
 	}
