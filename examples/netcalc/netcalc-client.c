@@ -8,6 +8,8 @@
 #include <list>
 #include <iostream>
 
+#include <spa/spaRuntime.h>
+
 #include "netcalc.h"
 
 #define DEFAULT_HOST	"localhost"
@@ -19,7 +21,18 @@ struct addrinfo *server;
 std::list<nc_value_t> stack;
 
 // Executes a single query on the remote server.
-nc_value_t executeQuery( nc_query_t &query ) {
+nc_value_t executeQuery( nc_operator_t op, nc_value_t arg1, nc_value_t arg2 ) {
+	spa_input_var( op );
+	spa_input_var( arg1 );
+	spa_input_var( arg2 );
+
+	nc_query_t query;
+	query.op = op;
+	query.arg1 = arg1;
+	query.arg2 = arg2;
+
+	spa_output_var( query );
+
 	// Send query.
 	assert( sendto( sock, &query, sizeof( query ), 0, server->ai_addr, server->ai_addrlen ) == sizeof( query ) );
 	// Get response.
@@ -36,6 +49,11 @@ nc_value_t executeQuery( nc_query_t &query ) {
 	return response.value;
 }
 
+void SpaExecuteQueryEntry() {
+	spa_api_entry();
+	executeQuery( NC_ADDITION, 0, 0 );
+}
+
 // Handle an RPN operation (either an operator or a number to push).
 void handleRPNOp( std::string rpnOp ) {
 	nc_operator_t ncOp;
@@ -46,14 +64,12 @@ void handleRPNOp( std::string rpnOp ) {
 	} else {
 		assert( stack.size() >= 2 && "Not enough data in stack to run an operation." );
 		// Pop arguments.
-		nc_query_t query;
-		query.op = ncOp;
-		query.arg2 = stack.back();
+		nc_value_t arg2 = stack.back();
 		stack.pop_back();
-		query.arg1 = stack.back();
+		nc_value_t arg1 = stack.back();
 		stack.pop_back();
 		// Push result.
-		stack.push_back( executeQuery( query ) );
+		stack.push_back( executeQuery( ncOp, arg1, arg2 ) );
 	}
 }
 

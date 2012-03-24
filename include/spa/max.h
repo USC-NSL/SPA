@@ -30,7 +30,7 @@ void __attribute__((noinline)) max_interesting() {
 #define max_input_fixed( var, size, name ) spa_input( var, size, name ); spa_runtime_call( maxInputFixedHandler, var, size, name )
 #define max_input_var( var, size, name ) spa_input( var, size, name ); spa_runtime_call( maxInputVarHandler, var, size, name )
 
-#else
+#else // #ifdef ENABLE_MAX
 
 #define max_message_handler_entry()
 #define max_message_handler( name )
