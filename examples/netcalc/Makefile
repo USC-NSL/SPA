@@ -1,3 +1,4 @@
+PATHS = netcalc-client.bc.paths netcalc-server.bc.paths
 TARGETS = netcalc-client netcalc-server
 BC_TARGETS = netcalc-client.bc netcalc-server.bc
 HEADERS = netcalc.h
@@ -15,8 +16,11 @@ all: $(TARGETS) $(BC_TARGETS)
 %.bc: %.c $(HEADERS)
 	$(LLVM_CC) -DENABLE_SPA -c -o $@ $<
 
-run-spa: $(BC_TARGETS)
-	$(SPA) $^
+%.bc.paths: %.bc
+	$(SPA) $<
+
+run-spa: $(PATHS)
 
 clean:
-	rm -f $(TARGETS) $(BC_TARGETS)
+	rm -f $(TARGETS) $(BC_TARGETS) $(PATHS)
+	rm -rf klee-out-* klee-last

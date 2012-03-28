@@ -44,10 +44,10 @@ void handleQuery( nc_query_t &query, nc_response_t &response ) {
 
 	// Output the operation.
 	if ( response.err == NC_OK ) {
-		std::cout << query.arg1 << " " << getOpName( query.op ) << " " << query.arg2 << " = " << response.value << std::endl;
+// 		std::cout << query.arg1 << " " << getOpName( query.op ) << " " << query.arg2 << " = " << response.value << std::endl;
 		spa_tag( QueryValid, "1" );
 	} else {
-		std::cerr << "Error: " << getErrText( response.err ) << std::endl;
+// 		std::cerr << "Error: " << getErrText( response.err ) << std::endl;
 	}
 
 	spa_output_var( response );
