@@ -4,26 +4,23 @@
 #define MAX_PATH_FILE "max_paths.txt"
 
 #ifdef ENABLE_MAX
+#define ENABLE_SPA
 
 #include <spa/spaRuntime.h>
 
-const char *max_HandlerName = NULL;
-const char *max_Interesting = NULL;
+SpaTag_t max_HandlerName = NULL;
 
 void maxSolveSymbolicHandler( va_list args );
 void maxInputFixedHandler( va_list args );
 void maxInputVarHandler( va_list args );
 
 void __attribute__((noinline)) max_message_handler_entry() {}
+void __attribute__((noinline)) max_interesting() {}
 
 void max_solve_symbolic( const char *name  );
 void max_message_handler( const char *name ) {
 	spa_tag( max_HandlerName, name );
 	spa_runtime_call( maxSolveSymbolicHandler, name );
-}
-
-void __attribute__((noinline)) max_interesting() {
-	spa_tag( max_Interesting, "1" );
 }
 
 #define max_state( var, size, name ) spa_input( var, size, name )

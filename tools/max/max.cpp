@@ -30,7 +30,6 @@
 #define MAX_MESSAGE_HANDLER_ANNOTATION_FUNCTION	"max_message_handler_entry"
 #define MAX_INTERESTING_ANNOTATION_FUNCTION		"max_interesting"
 #define MAX_HANDLER_NAME_TAG					"max_HandlerName"
-#define MAX_INTERESTING_TAG						"max_Interesting"
 
 namespace {
 	llvm::cl::opt<std::string> DumpCFG("dump-cfg", llvm::cl::desc(
@@ -40,7 +39,7 @@ namespace {
 class MaxPathFilter : public SPA::PathFilter {
 public:
 	bool checkPath( SPA::Path &path ) {
-		return (! path.getTag( MAX_HANDLER_NAME_TAG ).empty()) && (! path.getTag( MAX_INTERESTING_TAG ).empty());
+		return ! path.getTag( MAX_HANDLER_NAME_TAG ).empty();
 	}
 };
 
@@ -77,6 +76,8 @@ int main(int argc, char **argv, char **envp) {
 	// Find interesting instructions.
 	std::set<llvm::Instruction *> interestingInstructions = cg.getCallers( module->getFunction( MAX_INTERESTING_ANNOTATION_FUNCTION ) );
 	assert( ! interestingInstructions.empty() && "No interesting statements found." );
+	for ( std::set<llvm::Instruction *>::iterator it = interestingInstructions.begin(), ie = interestingInstructions.end(); it != ie; it++ )
+		spa.addCheckpoint( *it );
 
 	// Create instruction filter.
 	SPA::IntersectionIF filter = SPA::IntersectionIF();
@@ -102,6 +103,7 @@ int main(int argc, char **argv, char **envp) {
 	}
 
 	spa.setPathFilter( new MaxPathFilter() );
+	spa.setOutputTerminalPaths( false );
 
 	CLOUD9_DEBUG( "Starting SPA." );
 	spa.start();

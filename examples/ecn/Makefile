@@ -24,3 +24,5 @@ run-max: ecn.bc
  
 clean:
 	rm -f $(TARGETS) $(OBJECTS)
+	rm -rf klee-out-* klee-last
+	rm -f max_paths.txt
