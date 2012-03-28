@@ -11,10 +11,14 @@ typedef void (*SpaRuntimeHandler_t)( va_list );
 extern "C" {
 	void __attribute__((noinline)) spa_api_entry() {}
 	void __attribute__((noinline)) spa_message_handler_entry() {}
+	void __attribute__((noinline)) spa_checkpoint() {}
+	void __attribute__((noinline)) spa_runtime_call( SpaRuntimeHandler_t handler, ... );
 }
 #else // #ifdef __cplusplus
 void __attribute__((noinline)) spa_api_entry() {}
 void __attribute__((noinline)) spa_message_handler_entry() {}
+void __attribute__((noinline)) spa_checkpoint() {}
+void __attribute__((noinline)) spa_runtime_call( SpaRuntimeHandler_t handler, ... );
 #endif// #ifdef __cplusplus #else
 
 #define spa_input_var( var ) spa_input( &var, sizeof( var ), #var )
@@ -31,17 +35,15 @@ void __spa_tag( SpaTag_t *var, const char *varName, SpaTag_t value ) {
 
 #define spa_input( var, size, name ) klee_make_symbolic( var, size, "spa_input_" name )
 
-void spa_output( void *var, size_t size, const char *name ) {
-	klee_make_symbolic( var, size, (std::string() + "spa_output_" + name).c_str() );
+#define spa_output( var, size, name ) __spa_output( var, size, "spa_output_" name )
+void __spa_output( void *var, size_t size, const char *name ) {
+	static SpaTag_t Output;
+	void *buffer = malloc( size );
+	klee_make_symbolic( buffer, size, name );
+	memcpy( buffer, var, size );
+	spa_tag( Output, "1" );
+	spa_checkpoint();
 }
-
-#ifdef __cplusplus
-extern "C" {
-	void spa_runtime_call( SpaRuntimeHandler_t handler, ... );
-}
-#else // #ifdef __cplusplus
-void spa_runtime_call( SpaRuntimeHandler_t handler, ... );
-#endif// #ifdef __cplusplus #else
 
 #else // #ifdef ENABLE_SPA
 
