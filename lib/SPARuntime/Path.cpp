@@ -33,15 +33,7 @@ namespace SPA {
 
 			symbols.insert( it->second );
 
-			if ( name.compare( 0, strlen( SPA_INPUT_PREFIX ), SPA_INPUT_PREFIX ) == 0 ) {
-				symbolNames[name] = it->second;
-			} else if ( name.compare( 0, strlen( SPA_OUTPUT_PREFIX ), SPA_OUTPUT_PREFIX ) == 0 ) {
-				symbolNames[name] = it->second;
-				// Symbolic value.
-				if ( const klee::ObjectState *os = kState->addressSpace().findObject( (*it).first ) )
-					for ( unsigned int i = 0; i < os->size; i++ )
-						symbolValues[name].push_back( os->read8( i ) );
-			} else if ( name.compare( 0, strlen( SPA_TAG_PREFIX ), SPA_TAG_PREFIX ) == 0 ) {
+			if ( name.compare( 0, strlen( SPA_TAG_PREFIX ), SPA_TAG_PREFIX ) == 0 ) {
 				const klee::ObjectState *addrOS = kState->addressSpace().findObject( (*it).first );
 				assert( addrOS && "Tag not set." );
 
@@ -73,6 +65,14 @@ namespace SPA {
 				tags[name] = std::string( buf );
 // 				CLOUD9_DEBUG( "	Tag: " << name << " = " << buf );
 				delete buf;
+			} else {
+				symbolNames[name] = it->second;
+
+				// Symbolic value.
+				if ( name.compare( 0, strlen( SPA_OUTPUT_PREFIX ), SPA_OUTPUT_PREFIX ) == 0 )
+					if ( const klee::ObjectState *os = kState->addressSpace().findObject( (*it).first ) )
+						for ( unsigned int i = 0; i < os->size; i++ )
+							symbolValues[name].push_back( os->read8( i ) );
 			}
 		}
 		constraints = &kState->constraints();
