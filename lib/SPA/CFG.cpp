@@ -66,53 +66,59 @@ namespace SPA {
 		return predecessors[instruction];
 	}
 
-	void CFG::dump( std::ostream &dotFile, std::map<InstructionFilter *, std::string> &annotations ) {
+	void CFG::dump( std::ostream &dotFile, InstructionFilter *filter, std::map<InstructionFilter *, std::string> &annotations ) {
 		// Generate CFG DOT file.
 		dotFile<< "digraph CFG {" << std::endl;
 
 		// Add all instructions.
 		for ( iterator it = begin(), ie = end(); it != ie; it++ ) {
-			Instruction *inst = *it;
-			std::stringstream attributes;
-			// Annotate entry / exit points.
-			if ( getSuccessors( inst ).empty() )
-				attributes << "shape = \"doublecircle\"";
-			else if ( inst == &(inst->getParent()->getParent()->getEntryBlock().front()) )
-				attributes << "shape = \"box\"";
-			else
-				attributes << "shape = \"oval\"";
-			// Annotate source line.
-			attributes << " label = \"" << inst->getDebugLoc().getLine() << "\"";
-			// Add user annotations.
-			for ( std::map<InstructionFilter *, std::string>::iterator it = annotations.begin(), ie = annotations.end(); it != ie; it++ )
-				if ( it->first->checkInstruction( inst ) )
-					attributes << " " << it->second;
+			if ( ! filter || filter->checkInstruction( *it ) ) {
+				Instruction *inst = *it;
+				std::stringstream attributes;
+				// Annotate entry / exit points.
+				if ( getSuccessors( inst ).empty() )
+					attributes << "shape = \"doublecircle\"";
+				else if ( inst == &(inst->getParent()->getParent()->getEntryBlock().front()) )
+					attributes << "shape = \"box\"";
+				else
+					attributes << "shape = \"oval\"";
+				// Annotate source line.
+				attributes << " label = \"" << inst->getDebugLoc().getLine() << "\"";
+				// Add user annotations.
+				for ( std::map<InstructionFilter *, std::string>::iterator it = annotations.begin(), ie = annotations.end(); it != ie; it++ )
+					if ( it->first->checkInstruction( inst ) )
+						attributes << " " << it->second;
 
-			dotFile << "	subgraph cluster_" << inst->getParent()->getParent()->getName().str() << " {" << std::endl
-				<< "		label = \"" << inst->getParent()->getParent()->getName().str() << "\";" << std::endl
-				<< "		n" << ((long) inst) << " [" << attributes.str() << "];" << std::endl
-				<< "	}" << std::endl;
+				dotFile << "	subgraph cluster_" << inst->getParent()->getParent()->getName().str() << " {" << std::endl
+					<< "		label = \"" << inst->getParent()->getParent()->getName().str() << "\";" << std::endl
+					<< "		n" << ((long) inst) << " [" << attributes.str() << "];" << std::endl
+					<< "	}" << std::endl;
+			}
 		}
 		// Add edges.
 		// Successors.
 		dotFile << "	edge [color = \"green\"];" << std::endl;
 		for ( iterator it1 = begin(), ie1 = end(); it1 != ie1; it1++ )
-			for ( iterator it2 = getSuccessors( *it1 ).begin(), ie2 = getSuccessors( *it1 ).end(); it2 != ie2; it2++ )
-				dotFile << "	n" << ((unsigned long) *it1) << " -> n" << ((unsigned long) *it2) << ";" << std::endl;
+			if ( ! filter || filter->checkInstruction( *it1 ) )
+				for ( iterator it2 = getSuccessors( *it1 ).begin(), ie2 = getSuccessors( *it1 ).end(); it2 != ie2; it2++ )
+					if ( ! filter || filter->checkInstruction( *it2 ) )
+						dotFile << "	n" << ((unsigned long) *it1) << " -> n" << ((unsigned long) *it2) << ";" << std::endl;
 		// Callers.
 		CG cg = CG( *this );
 		dotFile << "	edge [color = \"blue\"];" << std::endl;
 		for ( CG::iterator it1 = cg.begin(), ie1 = cg.end(); it1 != ie1; it1++ ) {
 			llvm::Function *fn = *it1;
 			for ( std::set<llvm::Instruction *>::iterator it2 = cg.getCallers( fn ).begin(), ie2 = cg.getCallers( fn ).end(); it2 != ie2; it2++ ) {
-				if ( fn == NULL )
-					dotFile << "	IndirectFunction [label = \"*\" shape = \"box\"]" << std::endl
-						<< "	n" << ((unsigned long) *it2) << " -> IndirectFunction;" << std::endl;
-				else if ( ! fn->empty() )
-					dotFile << "	n" << ((unsigned long) *it2) << " -> n" << ((unsigned long) &(fn->getEntryBlock().front())) << ";" << std::endl;
-				else
-					dotFile << "	n" << ((unsigned long) fn) << " [label = \"" << fn->getName().str() << "\" shape = \"box\"]" << std::endl
-						<< "	n" << ((unsigned long) *it2) << " -> n" << ((unsigned long) fn) << ";" << std::endl;
+				if ( ! filter || filter->checkInstruction( *it2 ) ) {
+					if ( fn == NULL )
+						dotFile << "	IndirectFunction [label = \"*\" shape = \"box\"]" << std::endl
+							<< "	n" << ((unsigned long) *it2) << " -> IndirectFunction;" << std::endl;
+					else if ( ! fn->empty() )
+						dotFile << "	n" << ((unsigned long) *it2) << " -> n" << ((unsigned long) &(fn->getEntryBlock().front())) << ";" << std::endl;
+					else
+						dotFile << "	n" << ((unsigned long) fn) << " [label = \"" << fn->getName().str() << "\" shape = \"box\"]" << std::endl
+							<< "	n" << ((unsigned long) *it2) << " -> n" << ((unsigned long) fn) << ";" << std::endl;
+				}
 			}
 		}
 

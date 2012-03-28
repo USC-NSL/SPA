@@ -30,7 +30,7 @@
 #define MAX_MESSAGE_HANDLER_ANNOTATION_FUNCTION	"max_message_handler_entry"
 #define MAX_INTERESTING_ANNOTATION_FUNCTION		"max_interesting"
 #define MAX_HANDLER_NAME_TAG					"max_HandlerName"
-#define MAX_INTERESTING_TAG					"max_Interesting"
+#define MAX_INTERESTING_TAG						"max_Interesting"
 
 namespace {
 	llvm::cl::opt<std::string> DumpCFG("dump-cfg", llvm::cl::desc(
@@ -94,7 +94,8 @@ int main(int argc, char **argv, char **envp) {
 		annotations[new SPA::WhitelistIF( interestingInstructions )] = "style = \"filled\" color = \"red\"";
 		annotations[new SPA::NegatedIF( &filter )] = "style = \"filled\"";
 
-		cfg.dump( dotFile, annotations );
+// 		cfg.dump( dotFile, NULL, annotations );
+		cfg.dump( dotFile, &filter, annotations );
 
 		dotFile.flush();
 		dotFile.close();

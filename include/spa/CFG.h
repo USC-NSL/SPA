@@ -28,7 +28,7 @@ namespace SPA {
 		iterator end();
 		const std::set<llvm::Instruction *> &getSuccessors( llvm::Instruction *instruction );
 		const std::set<llvm::Instruction *> &getPredecessors( llvm::Instruction *instruction );
-		void dump( std::ostream &dotFile, std::map<InstructionFilter *, std::string> &annotations );
+		void dump( std::ostream &dotFile, InstructionFilter *filter, std::map<InstructionFilter *, std::string> &annotations );
 	};
 }
 
