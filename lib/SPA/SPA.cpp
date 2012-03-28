@@ -192,6 +192,7 @@ namespace SPA {
 
 	SPA::SPA( llvm::Module *_module, std::ostream &_output ) :
 		module( _module ),
+		outputTerminalPaths( true ),
 		instructionFilter( NULL ),
 		pathFilter( NULL ),
 		output( _output ) {
@@ -330,6 +331,8 @@ namespace SPA {
 	}
 
 	void SPA::start() {
+		assert( (outputTerminalPaths || ! checkpoints.empty()) && "No points to output data from." );
+
 		if ( instructionFilter ) {
 			UseInstructionFiltering = true;
 			klee::FilteringSearcher::setInstructionFilter( instructionFilter );
@@ -390,15 +393,17 @@ namespace SPA {
 	}
 
 	void SPA::onStateDestroy(klee::ExecutionState *kState, bool silenced) {
-		assert( kState );
+		if ( outputTerminalPaths ) {
+			assert( kState );
 
-		CLOUD9_DEBUG( "Processing terminal path." );
+			CLOUD9_DEBUG( "Processing terminal path." );
 
-		Path path( kState );
+			Path path( kState );
 
-		if ( ! pathFilter || pathFilter->checkPath( path ) ) {
-			CLOUD9_DEBUG( "Outputting path." );
-			output << path;
+			if ( ! pathFilter || pathFilter->checkPath( path ) ) {
+				CLOUD9_DEBUG( "Outputting path." );
+				output << path;
+			}
 		}
 	}
 }

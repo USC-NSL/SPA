@@ -23,6 +23,7 @@ namespace SPA {
 		std::list<llvm::Function *> initFunctions;
 		std::list<llvm::Function *> entryFunctions;
 		std::set<llvm::Instruction *> checkpoints;
+		bool outputTerminalPaths;
 		InstructionFilter *instructionFilter;
 		PathFilter *pathFilter;
 		std::ostream &output;
@@ -36,6 +37,7 @@ namespace SPA {
 		void setInstructionFilter( InstructionFilter *_instructionFilter ) { instructionFilter = _instructionFilter; }
 		void setPathFilter( PathFilter *_pathFilter ) { pathFilter = _pathFilter; }
 		void addCheckpoint( llvm::Instruction *instruction ) { checkpoints.insert( instruction ); }
+		void setOutputTerminalPaths( bool _outputTerminalPaths ) { outputTerminalPaths = _outputTerminalPaths; }
 		void start();
 
 		bool onStateBranching(klee::ExecutionState *state, klee::ForkTag forkTag) { return true; }
