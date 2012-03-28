@@ -374,10 +374,25 @@ namespace SPA {
 		theJobManager = NULL;
 	}
 
+	void SPA::onControlFlowEvent( klee::ExecutionState *kState, cloud9::worker::ControlFlowEvent event ) {
+		assert( kState );
+
+		if ( event == cloud9::worker::STEP && checkpoints.count( kState->pc()->inst ) ) {
+			CLOUD9_DEBUG( "Processing checkpoint path." );
+
+			Path path( kState );
+
+			if ( ! pathFilter || pathFilter->checkPath( path ) ) {
+				CLOUD9_DEBUG( "Outputting path." );
+				output << path;
+			}
+		}
+	}
+
 	void SPA::onStateDestroy(klee::ExecutionState *kState, bool silenced) {
 		assert( kState );
 
-		CLOUD9_DEBUG( "Processing path." );
+		CLOUD9_DEBUG( "Processing terminal path." );
 
 		Path path( kState );
 

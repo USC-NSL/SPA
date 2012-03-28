@@ -28,7 +28,8 @@
 
 #define SPA_API_ANNOTATION_FUNCTION				"spa_api_entry"
 #define SPA_MESSAGE_HANDLER_ANNOTATION_FUNCTION	"spa_message_handler_entry"
-#define SPA_OUTPUT_ANNOTATION_FUNCTION			"spa_output"
+#define SPA_CHECKPOINT_ANNOTATION_FUNCTION		"spa_checkpoint"
+#define SPA_OUTPUT_TAG							"Output"
 
 extern std::string InputFile;
 
@@ -39,6 +40,13 @@ namespace {
 	llvm::cl::opt<std::string> PathFile("path-file", llvm::cl::desc(
 		"Sets the output path file."));
 }
+
+class SpaPathFilter : public SPA::PathFilter {
+public:
+	bool checkPath( SPA::Path &path ) {
+		return ! path.getTag( SPA_OUTPUT_TAG ).empty();
+	}
+};
 
 int main(int argc, char **argv, char **envp) {
 	// Fill up every global cl::opt object declared in the program
@@ -79,14 +87,18 @@ int main(int argc, char **argv, char **envp) {
 	assert( ! entryPoints.empty() && "No APIs or message handlers found." );
 
 	// Find outputs.
-	std::set<llvm::Instruction *> outputPoints = cg.getCallers( module->getFunction( SPA_OUTPUT_ANNOTATION_FUNCTION ) );
-	assert( ! outputPoints.empty() && "No message outputs found." );
+	std::set<llvm::Instruction *> checkpoints = cg.getCallers( module->getFunction( SPA_CHECKPOINT_ANNOTATION_FUNCTION ) );
+	assert( ! checkpoints.empty() && "No message outputs found." );
 
 	// Create instruction filter.
 	SPA::IntersectionIF filter = SPA::IntersectionIF();
 	filter.addIF( new SPA::CFGForwardIF( cfg, cg, entryPoints ) );
-	filter.addIF( new SPA::CFGBackwardIF( cfg, cg, outputPoints ) );
+	filter.addIF( new SPA::CFGBackwardIF( cfg, cg, checkpoints ) );
 	spa.setInstructionFilter( &filter );
+
+	CLOUD9_DEBUG( "   Setting up path checkpoints." );
+	for ( std::set<llvm::Instruction *>::iterator it = checkpoints.begin(), ie = checkpoints.end(); it != ie; it++ )
+		spa.addCheckpoint( *it );
 
 	if ( DumpCFG.size() > 0 ) {
 		CLOUD9_DEBUG( "Dumping CFG to: " << DumpCFG.getValue() );
@@ -95,14 +107,17 @@ int main(int argc, char **argv, char **envp) {
 
 		std::map<SPA::InstructionFilter *, std::string> annotations;
 		annotations[new SPA::WhitelistIF( entryPoints )] = "style = \"filled\" color = \"green\"";
-		annotations[new SPA::WhitelistIF( outputPoints )] = "style = \"filled\" color = \"red\"";
+		annotations[new SPA::WhitelistIF( checkpoints )] = "style = \"filled\" color = \"red\"";
 		annotations[new SPA::NegatedIF( &filter )] = "style = \"filled\"";
 
-		cfg.dump( dotFile, annotations );
+// 		cfg.dump( dotFile, NULL, annotations );
+		cfg.dump( dotFile, &filter, annotations );
 
 		dotFile.flush();
 		dotFile.close();
 	}
+
+	spa.setPathFilter( new SpaPathFilter() );
 
 	CLOUD9_DEBUG( "Starting SPA." );
 	spa.start();
