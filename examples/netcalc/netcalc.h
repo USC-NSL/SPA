@@ -10,29 +10,25 @@ typedef enum {
 	NC_OPERATOR_END
 } nc_operator_t;
 
-std::string nc_operator_names[] = {
-	"+",
-	"-",
-	"*",
-	"/",
-	"%",
-
-	"[Unknown Operator]"
-};
-
 // Convert operator to it name.
 std::string getOpName( nc_operator_t op ) {
-	if ( op < NC_OPERATOR_END )
-		return nc_operator_names[op];
-	else
-		return nc_operator_names[NC_OPERATOR_END];
+	switch ( op ) {
+		case NC_ADDITION :		return "+";
+		case NC_SUBTRACTION :	return "-";
+		case NC_MUTIPLICATION :	return "*";
+		case NC_DIVISION :		return "/";
+		case NC_MODULO :		return "%";
+		default :				return "[Unknown Operator]";
+	}
 }
 
 // Convert an operator name to the operator enum.
 nc_operator_t getOpByName( std::string name ) {
-	for ( int i = 0; i < NC_OPERATOR_END; i++ )
-		if ( nc_operator_names[i] == name )
-			return (nc_operator_t) i;
+	if ( "+" == name ) return NC_ADDITION;
+	if ( "-" == name ) return NC_SUBTRACTION;
+	if ( "*" == name ) return NC_MUTIPLICATION;
+	if ( "/" == name ) return NC_DIVISION;
+	if ( "%" == name ) return NC_MODULO;
 	return NC_OPERATOR_END;
 }
 
@@ -52,20 +48,14 @@ typedef enum {
 	NC_ERROR_END
 } nc_error_t;
 
-std::string nc_error_text[] = {
-	"OK.",
-	"Bad input.",
-	"Division by zero.",
-
-	"Unknown error."
-};
-
 // Convert an error enum to a human readable description.
 std::string getErrText( nc_error_t err ) {
-	if ( err < NC_ERROR_END )
-		return nc_error_text[err];
-	else
-		return nc_error_text[NC_ERROR_END];
+	switch ( err ) {
+		case NC_OK :		return "OK.";
+		case NC_BADINPUT :	return "Bad input.";
+		case NC_DIV0 :		return "Division by zero.";
+		default :			return "Unknown error.";
+	}
 }
 
 typedef struct {
