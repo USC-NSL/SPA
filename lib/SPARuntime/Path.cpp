@@ -88,10 +88,14 @@ namespace SPA {
 			if ( path.symbolValues.count( it->first ) ) {
 				for ( std::set<const klee::Array *>::iterator it2 = path.symbols.begin(), ie2 = path.symbols.end(); it2 != ie2; it2++ )
 					stream << "array " << (*it2)->name << "[" << (*it2)->size << "] : w32 -> w8 = symbolic" << std::endl;
-				stream << SPA_PATH_KLEAVER_START << std::endl;
-				for ( std::vector<klee::ref<klee::Expr> >::const_iterator it2 = path.symbolValues.find( it->first )->second.begin(), ie2 = path.symbolValues.find( it->first )->second.end(); it2 != ie2; it2++ )
-					stream << *it2 << std::endl;
-				stream << SPA_PATH_KLEAVER_END << std::endl;
+				stream << SPA_PATH_KQUERY_EXPRESSIONS_START << std::endl;
+				for ( std::vector<klee::ref<klee::Expr> >::const_iterator it2 = path.symbolValues.find( it->first )->second.begin(), ie2 = path.symbolValues.find( it->first )->second.end(); it2 != ie2; it2++ ) {
+					if ( (*it2)->getKind() == klee::Expr::Constant )
+						stream << "(w8 " << *it2 << ")" << std::endl;
+					else
+						stream << *it2 << std::endl;
+				}
+				stream << SPA_PATH_KQUERY_EXPRESSIONS_END << std::endl;
 			} else {
 				stream << "array " << it->second->name << "[" << it->second->size << "] : w32 -> w8 = symbolic" << std::endl;
 			}
@@ -108,10 +112,10 @@ namespace SPA {
 		stream << SPA_PATH_CONSTRAINTS_START << std::endl;
 		for ( std::set<const klee::Array *>::iterator it2 = path.symbols.begin(), ie2 = path.symbols.end(); it2 != ie2; it2++ )
 			stream << "array " << (*it2)->name << "[" << (*it2)->size << "] : w32 -> w8 = symbolic" << std::endl;
-		stream << SPA_PATH_KLEAVER_START << std::endl;
+		stream << SPA_PATH_KQUERY_CONSTRAINTS_START << std::endl;
 		for ( klee::ConstraintManager::constraint_iterator it = path.getConstraints()->begin(), ie = path.getConstraints()->end(); it != ie; it++)
 			stream << *it << std::endl;
-		stream << SPA_PATH_KLEAVER_END << std::endl;
+		stream << SPA_PATH_KQUERY_CONSTRAINTS_END << std::endl;
 		stream << SPA_PATH_CONSTRAINTS_END << std::endl;
 		return stream << SPA_PATH_END << std::endl;
 	}
@@ -129,11 +133,14 @@ namespace SPA {
 	}
 
 	#define changeState( from, to ) \
-		assert( state == from && "Invalid path file." ); \
+		if ( state != from ) { CLOUD9_ERROR( "Invalid path file. Error near line " << lineNumber << "." ); \
+			assert( false && "Invalid path file." ); \
+		} \
 		state = to;
 
 	std::set<Path *> Path::loadPaths( std::istream &pathFile ) {
 		std::set<Path *> paths;
+		int lineNumber = 0;
 
 		LoadState_t state = START;
 		Path *path = NULL;
@@ -142,6 +149,7 @@ namespace SPA {
 			std::string line;
 			getline( pathFile, line );
 			line = cleanUpLine( line );
+			lineNumber++;
 			if ( line.empty() )
 				continue;
 
@@ -166,7 +174,7 @@ namespace SPA {
 						if ( symbolArray == AD->Root->name )
 							path->symbolNames[symbolName] = AD->Root;
 					} else if ( klee::expr::QueryCommand *QC = dyn_cast<klee::expr::QueryCommand>( D ) ) {
-						path->symbolValues[symbolName] = QC->Constraints;
+						path->symbolValues[symbolName] = QC->Values;
 						delete D;
 						break;
 					}
