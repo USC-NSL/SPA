@@ -4,7 +4,6 @@
 #include <fstream>
 #include <string>
 #include <utility>
-
 #include <map>
 
 #include <llvm/Support/MemoryBuffer.h>

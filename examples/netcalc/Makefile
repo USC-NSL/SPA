@@ -20,6 +20,7 @@ all: $(TARGETS) $(BC_TARGETS)
 	$(SPA) $<
 
 run-spa: $(PATHS)
+	spaBadInputs -client netcalc-client.bc.paths -server netcalc-server.bc.paths
 
 clean:
 	rm -f $(TARGETS) $(BC_TARGETS) $(PATHS)
