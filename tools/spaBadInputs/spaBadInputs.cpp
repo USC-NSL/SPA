@@ -69,19 +69,17 @@ int main(int argc, char **argv, char **envp) {
 	for ( std::set<SPA::Path *>::iterator it1 = clientPaths.begin(), ie1 = clientPaths.end(); it1 != ie1; it1++ ) {
 		klee::ref<klee::Expr> pc = exprBuilder->True();
 		// AND path constraints.
-		for ( klee::ConstraintManager::const_iterator it2 = (*it1)->getConstraints()->begin(), ie2 = (*it1)->getConstraints()->end(); it2 != ie2; it2++ )
+		for ( klee::ConstraintManager::const_iterator it2 = (*it1)->getConstraints().begin(), ie2 = (*it1)->getConstraints().end(); it2 != ie2; it2++ )
 			pc = exprBuilder->And( *it2, pc );
-		// AND client output values = server input array (for each server path)
+		// AND client output values = server input array.
 		//TODO: Generalize
 		for ( int offset = 0; offset < (*it1)->getSymbolValueSize( "spa_output_query" ); offset++ ) {
-			for ( std::set<SPA::Path *>::iterator it2 = serverPaths.begin(), ie2 = serverPaths.end(); it2 != ie2; it2++ ) {
-				klee::UpdateList ul( (*it2)->getSymbol( "spa_input_query" ), 0 );
-				pc = exprBuilder->And(
-					exprBuilder->Eq(
-						(*it1)->getSymbolValue( "spa_output_query", offset ),
-						klee::ReadExpr::create( ul, klee::ConstantExpr::alloc( offset, klee::Expr::Int32 ) ) ),
-					pc );
-			}
+			klee::UpdateList ul( (*serverPaths.begin())->getSymbol( "spa_input_query" ), 0 );
+			pc = exprBuilder->And(
+				exprBuilder->Eq(
+					(*it1)->getSymbolValue( "spa_output_query", offset ),
+					klee::ReadExpr::create( ul, klee::ConstantExpr::alloc( offset, klee::Expr::Int32 ) ) ),
+				pc );
 		}
 		generated = exprBuilder->Or( pc, generated );
 	}
@@ -91,7 +89,7 @@ int main(int argc, char **argv, char **envp) {
 	for ( std::set<SPA::Path *>::iterator it1 = serverPaths.begin(), ie1 = serverPaths.end(); it1 != ie1; it1++ ) {
 		klee::ref<klee::Expr> pc = exprBuilder->True();
 		// AND path constraints
-		for ( klee::ConstraintManager::const_iterator it2 = (*it1)->getConstraints()->begin(), ie2 = (*it1)->getConstraints()->end(); it2 != ie2; it2++ )
+		for ( klee::ConstraintManager::const_iterator it2 = (*it1)->getConstraints().begin(), ie2 = (*it1)->getConstraints().end(); it2 != ie2; it2++ )
 			pc = exprBuilder->And( *it2, pc );
 		accepted = exprBuilder->Or( pc, accepted );
 	}

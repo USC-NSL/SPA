@@ -63,7 +63,7 @@ void solvePath( char *name ) {
 		for ( std::set<SPA::Path *>::iterator pit = paths[name].begin(), pie = paths[name].end(); pit != pie; pit++, numPaths++ ) {
 			klee::ExprBuilder *exprBuilder = klee::createDefaultExprBuilder();
 			// Load path constraints.
-			klee::ConstraintManager cm( *(*pit)->getConstraints() );
+			klee::ConstraintManager cm( (*pit)->getConstraints() );
 			// And all relevant fixed input constraints.
 			for ( std::map<std::string, std::pair<void *, size_t> >::iterator iit = fixedInputs.begin(), iie = fixedInputs.end(); iit != iie; iit++ ) {
 				// Check if input is relevant.

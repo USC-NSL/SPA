@@ -39,7 +39,7 @@ namespace SPA {
 		std::map<std::string, const klee::Array *> symbolNames;
 		std::map<std::string, std::vector<klee::ref<klee::Expr> > > symbolValues;
 		std::map<std::string, std::string> tags;
-		klee::ConstraintManager *constraints;
+		klee::ConstraintManager constraints;
 
 		Path();
 
@@ -65,7 +65,7 @@ namespace SPA {
 			return tags.count( key ) ? tags.find( key )->second : std::string();
 		}
 		
-		klee::ConstraintManager *getConstraints() const {
+		const klee::ConstraintManager &getConstraints() const {
 			return constraints;
 		}
 

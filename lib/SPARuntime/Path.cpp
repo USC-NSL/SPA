@@ -75,7 +75,7 @@ namespace SPA {
 							symbolValues[name].push_back( os->read8( i ) );
 			}
 		}
-		constraints = &kState->constraints();
+		constraints = kState->constraints();
 	}
 
 	std::ostream& operator<<( std::ostream &stream, const Path &path ) {
@@ -113,7 +113,7 @@ namespace SPA {
 		for ( std::set<const klee::Array *>::iterator it2 = path.symbols.begin(), ie2 = path.symbols.end(); it2 != ie2; it2++ )
 			stream << "array " << (*it2)->name << "[" << (*it2)->size << "] : w32 -> w8 = symbolic" << std::endl;
 		stream << SPA_PATH_KQUERY_CONSTRAINTS_START << std::endl;
-		for ( klee::ConstraintManager::constraint_iterator it = path.getConstraints()->begin(), ie = path.getConstraints()->end(); it != ie; it++)
+		for ( klee::ConstraintManager::constraint_iterator it = path.getConstraints().begin(), ie = path.getConstraints().end(); it != ie; it++)
 			stream << *it << std::endl;
 		stream << SPA_PATH_KQUERY_CONSTRAINTS_END << std::endl;
 		stream << SPA_PATH_CONSTRAINTS_END << std::endl;
@@ -132,6 +132,19 @@ namespace SPA {
 		return line;
 	}
 
+	klee::ref<klee::Expr> replaceArrays( klee::ref<klee::Expr> expr, std::map<std::string, const klee::Array *> &arrays ) {
+		if ( expr->getKind() == klee::Expr::Read ) {
+			klee::ref<klee::ReadExpr> readExpr = dyn_cast<klee::ReadExpr>( expr );
+			readExpr->updates.root = arrays[readExpr->updates.root->name];
+			return readExpr;
+		} else {
+			klee::ref<klee::Expr> *kids = new klee::ref<klee::Expr>[expr->getNumKids()];
+			for ( unsigned i = 0; i < expr->getNumKids(); i++ )
+				kids[i] = replaceArrays( expr->getKid( i ), arrays );
+			return expr->rebuild( kids );
+		}
+	}
+
 	#define changeState( from, to ) \
 		if ( state != from ) { CLOUD9_ERROR( "Invalid path file. Error near line " << lineNumber << "." ); \
 			assert( false && "Invalid path file." ); \
@@ -139,6 +152,7 @@ namespace SPA {
 		state = to;
 
 	std::set<Path *> Path::loadPaths( std::istream &pathFile ) {
+		std::map<std::string, const klee::Array *> arrays;
 		std::set<Path *> paths;
 		int lineNumber = 0;
 
@@ -170,11 +184,15 @@ namespace SPA {
 				while ( klee::expr::Decl *D = P->ParseTopLevelDecl() ) {
 					assert( ! P->GetNumErrors() && "Error parsing symbol value in path file." );
 					if ( klee::expr::ArrayDecl *AD = dyn_cast<klee::expr::ArrayDecl>( D ) ) {
-						path->symbols.insert( AD->Root );
+						if ( ! arrays.count( AD->Root->name ) )
+							arrays[AD->Root->name] = AD->Root;
+						path->symbols.insert( arrays[AD->Root->name] );
 						if ( symbolArray == AD->Root->name )
-							path->symbolNames[symbolName] = AD->Root;
+							path->symbolNames[symbolName] = arrays[AD->Root->name];
 					} else if ( klee::expr::QueryCommand *QC = dyn_cast<klee::expr::QueryCommand>( D ) ) {
 						path->symbolValues[symbolName] = QC->Values;
+						for ( std::vector<klee::ref<klee::Expr> >::iterator it = path->symbolValues[symbolName].begin(), ie = path->symbolValues[symbolName].end(); it != ie; it++ )
+							*it = replaceArrays( *it, arrays );
 						delete D;
 						break;
 					}
@@ -202,7 +220,8 @@ namespace SPA {
 				while ( klee::expr::Decl *D = P->ParseTopLevelDecl() ) {
 					assert( ! P->GetNumErrors() && "Error parsing constraints in path file." );
 					if ( klee::expr::QueryCommand *QC = dyn_cast<klee::expr::QueryCommand>( D ) ) {
-						path->constraints = new klee::ConstraintManager( QC->Constraints );
+						for ( klee::ConstraintManager::constraint_iterator it = QC->Constraints.begin(), ie = QC->Constraints.end(); it != ie; it++ )
+							path->constraints.addConstraint( replaceArrays( *it, arrays ) );
 						delete D;
 						break;
 					}
