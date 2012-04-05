@@ -26,7 +26,7 @@
 #include <../../lib/Core/Memory.h>
 
 #include "spa/SPA.h"
-#include "spa/Path.h"
+#include "spa/PathLoader.h"
 
 namespace {
 	llvm::cl::opt<std::string> ClientPathFile("client", llvm::cl::desc(
@@ -51,14 +51,20 @@ int main(int argc, char **argv, char **envp) {
 	std::cerr << "Loading client path data." << std::endl;
 	std::ifstream pathFile( ClientPathFile.getValue().c_str() );
 	assert( pathFile.is_open() && "Unable to open path file." );
-	std::set<SPA::Path *> clientPaths = SPA::Path::loadPaths( pathFile );
+	SPA::PathLoader clientPathLoader( pathFile );
+	std::set<SPA::Path *> clientPaths;
+	while ( SPA::Path *path = clientPathLoader.getPath() )
+		clientPaths.insert( path );
 	pathFile.close();
 
 	assert( ServerPathFile.size() > 0 && "No server path file specified." );
 	std::cerr << "Loading server path data." << std::endl;
 	pathFile.open( ServerPathFile.getValue().c_str() );
 	assert( pathFile.is_open() && "Unable to open path file." );
-	std::set<SPA::Path *> serverPaths = SPA::Path::loadPaths( pathFile );
+	SPA::PathLoader serverPathLoader( pathFile );
+	std::set<SPA::Path *> serverPaths;
+	while ( SPA::Path *path = serverPathLoader.getPath() )
+		serverPaths.insert( path );
 	pathFile.close();
 
 	std::cerr << "Building global constraint." << std::endl;

@@ -5,11 +5,8 @@
 #ifndef __PATH_H__
 #define __PATH_H__
 
-#include <iostream>
-#include <list>
 #include <map>
 
-#include <klee/Expr.h>
 #include <klee/Constraints.h>
 #include "klee/ExecutionState.h"
 
@@ -44,8 +41,6 @@ namespace SPA {
 		Path();
 
 	public:
-		static std::set<Path *> loadPaths( std::istream &pathFile );
-
 		Path( klee::ExecutionState *kState );
 
 		const klee::Array *getSymbol( std::string name ) const {
@@ -69,6 +64,7 @@ namespace SPA {
 			return constraints;
 		}
 
+		friend class PathLoader;
 		friend std::ostream& operator<<( std::ostream &stream, const Path &path );
 	};
 

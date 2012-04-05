@@ -12,6 +12,7 @@
 #include <klee/Solver.h>
 
 #include <spa/Path.h>
+#include <spa/PathLoader.h>
 #include <spa/max.h>
 #include <spa/spaRuntimeImpl.h>
 
@@ -30,7 +31,10 @@ void initAdversarialModule() {
 		std::ifstream pathFile( MAX_PATH_FILE );
 		assert( pathFile.is_open() && "Unable to open path file." );
 
-		std::set<SPA::Path *> pathSet = SPA::Path::loadPaths( pathFile );
+		std::set<SPA::Path *> pathSet;
+		SPA::PathLoader pathLoader( pathFile );
+		while ( SPA::Path *path = pathLoader.getPath() )
+			pathSet.insert( path );
 		for ( std::set<SPA::Path *>::iterator it = pathSet.begin(), ie = pathSet.end(); it != ie; it++ )
 			if ( ! (*it)->getTag( std::string( HANDLER_NAME_TAG ) ).empty() )
 				paths[(*it)->getTag( std::string( HANDLER_NAME_TAG ) )].insert( *it );
