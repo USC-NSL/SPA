@@ -28,6 +28,9 @@
 #include "spa/SPA.h"
 #include "spa/PathLoader.h"
 
+//TODO:Generalize
+#define SPA_VALID_TAG	"QueryValid"
+
 namespace {
 	llvm::cl::opt<std::string> ClientPathFile("client", llvm::cl::desc(
 		"Specifies the client path file."));
@@ -36,11 +39,23 @@ namespace {
 		"Specifies the server path file."));
 }
 
+class InvalidPathFilter : public SPA::PathFilter {
+public:
+	bool checkPath( SPA::Path &path ) {
+		return path.getTag( SPA_VALID_TAG ).empty();
+	}
+};
+
 void showResult( std::vector<unsigned char> result ) {
 	std::cout << "[" << result.size() << "]";
 	for ( std::vector<unsigned char>::iterator it = result.begin(), ie = result.end(); it != ie; it++ )
 		std::cout << " " << (int) *it;
 	std::cout << std::endl;
+}
+
+void showConstraints( klee::ConstraintManager &cm ) {
+	for ( klee::ConstraintManager::const_iterator it = cm.begin(), ie = cm.end(); it != ie; it++ )
+		std::cerr << *it << std::endl;
 }
 
 int main(int argc, char **argv, char **envp) {
@@ -62,73 +77,71 @@ int main(int argc, char **argv, char **envp) {
 	pathFile.open( ServerPathFile.getValue().c_str() );
 	assert( pathFile.is_open() && "Unable to open path file." );
 	SPA::PathLoader serverPathLoader( pathFile );
+	serverPathLoader.setFilter( new InvalidPathFilter() );
 	std::set<SPA::Path *> serverPaths;
 	while ( SPA::Path *path = serverPathLoader.getPath() )
 		serverPaths.insert( path );
 	pathFile.close();
 
-	std::cerr << "Building global constraint." << std::endl;
+	std::cerr << "Solving path pairs." << std::endl;
 	klee::ExprBuilder *exprBuilder = klee::createDefaultExprBuilder();
-
-	klee::ref<klee::Expr> generated = exprBuilder->False();
-	// OR data from each client path.
-	for ( std::set<SPA::Path *>::iterator it1 = clientPaths.begin(), ie1 = clientPaths.end(); it1 != ie1; it1++ ) {
-		klee::ref<klee::Expr> pc = exprBuilder->True();
-		// AND path constraints.
-		for ( klee::ConstraintManager::const_iterator it2 = (*it1)->getConstraints().begin(), ie2 = (*it1)->getConstraints().end(); it2 != ie2; it2++ )
-			pc = exprBuilder->And( *it2, pc );
-		// AND client output values = server input array.
-		//TODO: Generalize
-		for ( int offset = 0; offset < (*it1)->getSymbolValueSize( "spa_output_query" ); offset++ ) {
-			klee::UpdateList ul( (*serverPaths.begin())->getSymbol( "spa_input_query" ), 0 );
-			pc = exprBuilder->And(
-				exprBuilder->Eq(
-					(*it1)->getSymbolValue( "spa_output_query", offset ),
-					klee::ReadExpr::create( ul, klee::ConstantExpr::alloc( offset, klee::Expr::Int32 ) ) ),
-				pc );
-		}
-		generated = exprBuilder->Or( pc, generated );
-	}
-
-	klee::ref<klee::Expr> accepted = exprBuilder->False();
-	// OR data from each server path.
-	for ( std::set<SPA::Path *>::iterator it1 = serverPaths.begin(), ie1 = serverPaths.end(); it1 != ie1; it1++ ) {
-		klee::ref<klee::Expr> pc = exprBuilder->True();
-		// AND path constraints
-		for ( klee::ConstraintManager::const_iterator it2 = (*it1)->getConstraints().begin(), ie2 = (*it1)->getConstraints().end(); it2 != ie2; it2++ )
-			pc = exprBuilder->And( *it2, pc );
-		accepted = exprBuilder->Or( pc, accepted );
-	}
-
-	klee::ref<klee::Expr> badInputs = exprBuilder->And( generated, exprBuilder->Not( accepted ) );
-// 	std::cout << "Constraint on bad inputs:" << std::endl << badInputs << std::endl;
-
-	klee::ConstraintManager cm;
-	cm.addConstraint( badInputs );
-
 	klee::Solver *solver = new klee::STPSolver( false, true );
 	solver = klee::createCexCachingSolver(solver);
 	solver = klee::createCachingSolver(solver);
 	solver = klee::createIndependentSolver(solver);
 
-	std::vector<const klee::Array*> objects;
-	//TODO: Generalize
-	objects.push_back( (*clientPaths.begin())->getSymbol( "spa_input_op" ) );
-	objects.push_back( (*clientPaths.begin())->getSymbol( "spa_input_arg1" ) );
-	objects.push_back( (*clientPaths.begin())->getSymbol( "spa_input_arg2" ) );
+	unsigned long numClientPaths = 0;
+	for ( std::set<SPA::Path *>::iterator cit = clientPaths.begin(), cie = clientPaths.end(); cit != cie; cit++, numClientPaths++ ) {
+		unsigned long numServerPaths = 0;
+		for ( std::set<SPA::Path *>::iterator sit = serverPaths.begin(), sie = serverPaths.end(); sit != sie; sit++, numServerPaths++ ) {
+			std::cerr << "Processing client path " << numClientPaths << "/" << clientPaths.size()
+				<< " with server path " << numServerPaths << "/" << serverPaths.size() << "." << std::endl;
+			klee::ConstraintManager cm;
+			klee::ref<klee::Expr> badInputs = exprBuilder->True();
+			// Add client path constraints.
+			for ( klee::ConstraintManager::const_iterator it = (*cit)->getConstraints().begin(), ie = (*cit)->getConstraints().end(); it != ie; it++ )
+// 				badInputs = exprBuilder->And( *it, badInputs );
+				cm.addConstraint( *it );
+			// Add server path constraints.
+			for ( klee::ConstraintManager::const_iterator it = (*sit)->getConstraints().begin(), ie = (*sit)->getConstraints().end(); it != ie; it++ )
+// 				badInputs = exprBuilder->And( *it, badInputs );
+				cm.addConstraint( *it );
+			// Add client output values = server input array constraint.
+			//TODO: Generalize
+			for ( int offset = 0; offset < (*cit)->getSymbolValueSize( "spa_output_query" ); offset++ ) {
+				klee::UpdateList ul( (*sit)->getSymbol( "spa_input_query" ), 0 );
+				badInputs = exprBuilder->And(
+					exprBuilder->Eq(
+						exprBuilder->Read( ul, exprBuilder->Constant( offset, klee::Expr::Int32 ) ),
+						(*cit)->getSymbolValue( "spa_output_query", offset ) ),
+					badInputs );
+			}
+			std::cerr << "Path pair constraints:" << std::endl;
+			showConstraints( cm );
+			std::cerr << badInputs << std::endl;
 
-	std::vector< std::vector<unsigned char> > result;
-	std::cerr << "Solving constraint." << std::endl;
-	if ( solver->getInitialValues( klee::Query( cm, exprBuilder->False() ), objects, result ) ) {
-		std::cerr << "Found solution:" << std::endl;
-		//TODO: Generalize
-		std::cout << "	op = ";
-		showResult( result[0] );
-		std::cout << "	arg1 = ";
-		showResult( result[1] );
-		std::cout << "	arg2 = ";
-		showResult( result[2] );
-	} else {
-		std::cerr << "Could not solve constraint." << std::endl;
+			std::vector<const klee::Array*> objects;
+			//TODO: Generalize
+			objects.push_back( (*cit)->getSymbol( "spa_input_op" ) );
+			objects.push_back( (*cit)->getSymbol( "spa_input_arg1" ) );
+			objects.push_back( (*cit)->getSymbol( "spa_input_arg2" ) );
+
+			std::cerr << "Solving constraint for:" << std::endl;
+			for ( std::vector<const klee::Array*>::iterator it = objects.begin(), ie = objects.end(); it != ie; it++ )
+				std::cerr << (*it)->name << std::endl;
+			std::vector< std::vector<unsigned char> > result;
+			if ( solver->getInitialValues( klee::Query( cm, badInputs ), objects, result ) ) {
+				std::cerr << "Found solution:" << std::endl;
+				//TODO: Generalize
+				std::cout << "	op = ";
+				showResult( result[0] );
+				std::cout << "	arg1 = ";
+				showResult( result[1] );
+				std::cout << "	arg2 = ";
+				showResult( result[2] );
+			} else {
+				std::cerr << "Could not solve constraint." << std::endl;
+			}
+		}
 	}
 }
