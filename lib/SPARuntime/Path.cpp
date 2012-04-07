@@ -67,43 +67,41 @@ namespace SPA {
 
 	std::ostream& operator<<( std::ostream &stream, const Path &path ) {
 		stream << SPA_PATH_START << std::endl;
+		stream << SPA_PATH_SYMBOLS_START << std::endl;
+		for ( std::map<std::string, const klee::Array *>::const_iterator it = path.symbolNames.begin(), ie = path.symbolNames.end(); it != ie; it++ )
+			stream << it->first << SPA_PATH_SYMBOL_DELIMITER
+				<< it->second->name << SPA_PATH_SYMBOL_DELIMITER
+				<< (path.symbolValues.count( it->first ) ? SPA_PATH_SYMBOL_HASVALUE : SPA_PATH_SYMBOL_NOVALUE) << std::endl;
+		stream << SPA_PATH_SYMBOLS_END << std::endl;
+
+		stream << SPA_PATH_TAGS_START << std::endl;
+		for ( std::map<std::string, std::string>::const_iterator it = path.tags.begin(), ie = path.tags.end(); it != ie; it++ )
+			stream << it->first << SPA_PATH_TAG_DELIMITER << it->second << std::endl;
+		stream << SPA_PATH_TAGS_END << std::endl;
+
+		stream << SPA_PATH_KQUERY_START << std::endl;
+		for ( std::set<const klee::Array *>::iterator it2 = path.symbols.begin(), ie2 = path.symbols.end(); it2 != ie2; it2++ )
+			stream << "array " << (*it2)->name << "[" << (*it2)->size << "] : w32 -> w8 = symbolic" << std::endl;
+
+		stream << SPA_PATH_KQUERY_CONSTRAINTS_START << std::endl;
+		for ( klee::ConstraintManager::constraint_iterator it = path.getConstraints().begin(), ie = path.getConstraints().end(); it != ie; it++)
+			stream << *it << std::endl;
+
+		stream << SPA_PATH_KQUERY_EXPRESSIONS_START << std::endl;
+		// Symbolic values.
 		for ( std::map<std::string, const klee::Array *>::const_iterator it = path.symbolNames.begin(), ie = path.symbolNames.end(); it != ie; it++ ) {
-			stream << SPA_PATH_SYMBOL_START << std::endl;
-			stream << it->first << std::endl;
-			stream << it->second->name << std::endl;
-			// Symbolic value.
 			if ( path.symbolValues.count( it->first ) ) {
-				for ( std::set<const klee::Array *>::iterator it2 = path.symbols.begin(), ie2 = path.symbols.end(); it2 != ie2; it2++ )
-					stream << "array " << (*it2)->name << "[" << (*it2)->size << "] : w32 -> w8 = symbolic" << std::endl;
-				stream << SPA_PATH_KQUERY_EXPRESSIONS_START << std::endl;
 				for ( std::vector<klee::ref<klee::Expr> >::const_iterator it2 = path.symbolValues.find( it->first )->second.begin(), ie2 = path.symbolValues.find( it->first )->second.end(); it2 != ie2; it2++ ) {
 					if ( (*it2)->getKind() == klee::Expr::Constant )
 						stream << "(w8 " << *it2 << ")" << std::endl;
 					else
 						stream << *it2 << std::endl;
 				}
-				stream << SPA_PATH_KQUERY_EXPRESSIONS_END << std::endl;
-			} else {
-				stream << "array " << it->second->name << "[" << it->second->size << "] : w32 -> w8 = symbolic" << std::endl;
 			}
-			stream << SPA_PATH_SYMBOL_END << std::endl;
 		}
+		stream << SPA_PATH_KQUERY_EXPRESSIONS_END << std::endl;
+		stream << SPA_PATH_KQUERY_END << std::endl;
 
-		for ( std::map<std::string, std::string>::const_iterator it = path.tags.begin(), ie = path.tags.end(); it != ie; it++ ) {
-			stream << SPA_PATH_TAG_START << std::endl;
-			stream << it->first << std::endl;
-			stream << it->second << std::endl;
-			stream << SPA_PATH_TAG_END << std::endl;
-		}
-
-		stream << SPA_PATH_CONSTRAINTS_START << std::endl;
-		for ( std::set<const klee::Array *>::iterator it2 = path.symbols.begin(), ie2 = path.symbols.end(); it2 != ie2; it2++ )
-			stream << "array " << (*it2)->name << "[" << (*it2)->size << "] : w32 -> w8 = symbolic" << std::endl;
-		stream << SPA_PATH_KQUERY_CONSTRAINTS_START << std::endl;
-		for ( klee::ConstraintManager::constraint_iterator it = path.getConstraints().begin(), ie = path.getConstraints().end(); it != ie; it++)
-			stream << *it << std::endl;
-		stream << SPA_PATH_KQUERY_CONSTRAINTS_END << std::endl;
-		stream << SPA_PATH_CONSTRAINTS_END << std::endl;
 		return stream << SPA_PATH_END << std::endl;
 	}
 }

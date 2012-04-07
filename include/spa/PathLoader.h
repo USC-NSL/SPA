@@ -16,7 +16,7 @@ namespace SPA {
 		PathFilter *filter;
 
 	public:
-		PathLoader( std::istream &_input ) : input( _input ), lineNumber( 0 ) {}
+		PathLoader( std::istream &_input ) : input( _input ), lineNumber( 0 ), filter( NULL ) {}
 		void setFilter( PathFilter *_filter ) { filter = _filter; }
 		void restart() { input.seekg( 0 ); lineNumber = 0; }
 

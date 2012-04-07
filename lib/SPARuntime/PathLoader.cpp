@@ -2,6 +2,8 @@
  * SPA - Systematic Protocol Analysis Framework
  */
 
+#include <list>
+
 #include "llvm/Support/MemoryBuffer.h"
 
 #include "../../lib/Core/Memory.h"
@@ -14,12 +16,9 @@ namespace {
 	typedef enum {
 		START,
 		PATH,
-		SYMBOL_NAME,
-		SYMBOL_ARRAY,
-		SYMBOL_VALUE,
-		TAG_KEY,
-		TAG_VALUE,
-		CONSTRAINTS,
+		SYMBOLS,
+		TAGS,
+		KQUERY,
 		PATH_DONE
 	} LoadState_t;
 }
@@ -37,6 +36,18 @@ namespace SPA {
 		return line;
 	}
 
+	std::vector<std::string> split( std::string str, std::string delimiter ) {
+		std::vector<std::string> result;
+		size_t p;
+		while ( (p = str.find( delimiter )) != std::string::npos ) {
+			result.push_back( str.substr( 0, p ) );
+			str = str.substr( p + delimiter.size() );
+		}
+		result.push_back( str );
+
+		return result;
+	}
+
 	#define changeState( from, to ) \
 		if ( state != from ) { CLOUD9_ERROR( "Invalid path file. Error near line " << lineNumber << "." ); \
 			assert( false && "Invalid path file." ); \
@@ -44,10 +55,11 @@ namespace SPA {
 		state = to;
 
 	Path *PathLoader::getPath() {
-
 		LoadState_t state = START;
 		Path *path = NULL;
-		std::string symbolName, symbolArray, tagKey, tagValue, kQuery;
+		std::map<std::string, std::string> arrayToName;
+		std::list<std::string> symbolsWithValue;
+		std::string kQuery;
 		while ( input.good() ) {
 			std::string line;
 			getline( input, line );
@@ -59,53 +71,45 @@ namespace SPA {
 			if ( line == SPA_PATH_START ) {
 				changeState( START, PATH );
 				path = new Path();
-			} else if ( line == SPA_PATH_SYMBOL_START ) {
-				changeState( PATH, SYMBOL_NAME );
-				symbolName = "";
-				symbolArray = "";
+				arrayToName.clear();
+				symbolsWithValue.clear();
 				kQuery = "";
-			} else if ( line == SPA_PATH_SYMBOL_END ) {
-				changeState( SYMBOL_VALUE, PATH );
-				assert( (! symbolName.empty()) && (! symbolArray.empty()) && "Invalid path file." );
-				llvm::MemoryBuffer *MB = llvm::MemoryBuffer::getMemBuffer( kQuery );
-				klee::ExprBuilder *Builder = klee::createDefaultExprBuilder();
-				klee::expr::Parser *P = klee::expr::Parser::Create( "", MB, Builder );
-				while ( klee::expr::Decl *D = P->ParseTopLevelDecl() ) {
-					assert( ! P->GetNumErrors() && "Error parsing symbol value in path file." );
-					if ( klee::expr::ArrayDecl *AD = dyn_cast<klee::expr::ArrayDecl>( D ) ) {
-						path->symbols.insert( AD->Root );
-						if ( symbolArray == AD->Root->name )
-							path->symbolNames[symbolName] = AD->Root;
-					} else if ( klee::expr::QueryCommand *QC = dyn_cast<klee::expr::QueryCommand>( D ) ) {
-						path->symbolValues[symbolName] = QC->Values;
-						delete D;
-						break;
-					}
-				}
-				delete P;
-				delete Builder;
-				delete MB;
-			} else if ( line == SPA_PATH_TAG_START ) {
-				changeState( PATH, TAG_KEY );
-				tagKey = "";
-				tagValue = "";
-			} else if ( line == SPA_PATH_TAG_END ) {
-				changeState( TAG_VALUE, PATH );
-				assert( (! tagKey.empty()) && (! tagValue.empty()) && "Invalid path file." );
-				path->tags[tagKey] = tagValue;
-			} else if ( line == SPA_PATH_CONSTRAINTS_START ) {
-				changeState( PATH, CONSTRAINTS );
-				kQuery = "";
-			} else if ( line == SPA_PATH_CONSTRAINTS_END ) {
-				changeState( CONSTRAINTS, PATH_DONE );
+			} else if ( line == SPA_PATH_SYMBOLS_START ) {
+				changeState( PATH, SYMBOLS );
+			} else if ( line == SPA_PATH_SYMBOLS_END ) {
+				changeState( SYMBOLS, PATH );
+			} else if ( line == SPA_PATH_TAGS_START ) {
+				changeState( PATH, TAGS );
+			} else if ( line == SPA_PATH_TAGS_END ) {
+				changeState( TAGS, PATH );
+			} else if ( line == SPA_PATH_KQUERY_START ) {
+				changeState( PATH, KQUERY );
+			} else if ( line == SPA_PATH_KQUERY_END ) {
+				changeState( KQUERY, PATH_DONE );
 
 				llvm::MemoryBuffer *MB = llvm::MemoryBuffer::getMemBuffer( kQuery );
 				klee::ExprBuilder *Builder = klee::createDefaultExprBuilder();
 				klee::expr::Parser *P = klee::expr::Parser::Create( "", MB, Builder );
 				while ( klee::expr::Decl *D = P->ParseTopLevelDecl() ) {
-					assert( ! P->GetNumErrors() && "Error parsing constraints in path file." );
-					if ( klee::expr::QueryCommand *QC = dyn_cast<klee::expr::QueryCommand>( D ) ) {
+					assert( ! P->GetNumErrors() && "Error parsing kquery in path file." );
+					if ( klee::expr::ArrayDecl *AD = dyn_cast<klee::expr::ArrayDecl>( D ) ) {
+						path->symbols.insert( AD->Root );
+						if ( arrayToName.count( AD->Root->name ) )
+							path->symbolNames[arrayToName[AD->Root->name]] = AD->Root;
+					} else if ( klee::expr::QueryCommand *QC = dyn_cast<klee::expr::QueryCommand>( D ) ) {
 						path->constraints = klee::ConstraintManager( QC->Constraints );
+
+						std::list<std::string>::iterator curSymbol = symbolsWithValue.begin();
+						unsigned b = path->symbolNames[*curSymbol]->size;
+						for ( std::vector<klee::ref<klee::Expr> >::const_iterator it = QC->Values.begin(), ie = QC->Values.end(); it != ie; it++, b-- ) {
+							if ( b == 0 ) {
+								assert( ++curSymbol != symbolsWithValue.end() && "Too many expressions in path file kquery." );
+								b = path->symbolNames[*curSymbol]->size;
+							}
+							path->symbolValues[*curSymbol].push_back( *it );
+						}
+						assert( (b == 0) && (++curSymbol == symbolsWithValue.end()) && "Too few expressions in path file kquery." );
+
 						delete D;
 						break;
 					}
@@ -121,29 +125,21 @@ namespace SPA {
 					delete path;
 			} else {
 				switch ( state ) {
-					case SYMBOL_NAME : {
-						assert( symbolName.empty() && "Invalid path file." );
-						symbolName = line;
-						changeState( SYMBOL_NAME, SYMBOL_ARRAY );
+					case SYMBOLS : {
+						std::vector<std::string> s = split( line, SPA_PATH_SYMBOL_DELIMITER );
+						assert( s.size() == 3 && "Invalid symbol specification in path file." );
+						arrayToName[s[1]] = s[0];
+						if ( s[2] == SPA_PATH_SYMBOL_HASVALUE )
+							symbolsWithValue.push_back( s[0] );
+						else
+							assert( s[2] == SPA_PATH_SYMBOL_NOVALUE && "Invalid symbol specification in path file." );
 					} break;
-					case SYMBOL_ARRAY : {
-						assert( symbolArray.empty() && "Invalid path file." );
-						symbolArray = line;
-						changeState( SYMBOL_ARRAY, SYMBOL_VALUE );
+					case TAGS : {
+						std::vector<std::string> s = split( line, SPA_PATH_TAG_DELIMITER );
+						assert( s.size() == 2 && "Invalid tag specification in path file." );
+						path->tags[s[0]] = s[1];
 					} break;
-					case SYMBOL_VALUE : {
-						kQuery += " " + line;
-					} break;
-					case TAG_KEY : {
-						assert( tagKey.empty() && "Invalid path file." );
-						tagKey = line;
-						changeState( TAG_KEY, TAG_VALUE );
-					} break;
-					case TAG_VALUE : {
-						assert( tagValue.empty() && "Invalid path file." );
-						tagValue = line;
-					} break;
-					case CONSTRAINTS : {
+					case KQUERY : {
 						kQuery += " " + line;
 					} break;
 					default : {
