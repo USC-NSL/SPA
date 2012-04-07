@@ -32,7 +32,6 @@ void handleQuery( nc_query_t &query, nc_response_t &response ) {
 		case NC_DIVISION : {
 			if ( query.arg2 == 0 ) {
 				response.err = NC_DIV0;
-				return;
 			} else {
 				response.value = query.arg1 / query.arg2;
 			}

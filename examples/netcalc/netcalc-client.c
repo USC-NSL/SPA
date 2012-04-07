@@ -26,7 +26,7 @@ nc_value_t executeQuery( nc_operator_t op, nc_value_t arg1, nc_value_t arg2 ) {
 	spa_input_var( arg1 );
 	spa_input_var( arg2 );
 
-	assert( op < NC_OPERATOR_END && "Invalid operator in query.");
+	assert( (op >= 0) && (op < NC_OPERATOR_END) && "Invalid operator in query.");
 
 	nc_query_t query;
 	query.op = op;
