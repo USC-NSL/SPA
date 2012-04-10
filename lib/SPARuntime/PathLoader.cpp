@@ -99,16 +99,18 @@ namespace SPA {
 					} else if ( klee::expr::QueryCommand *QC = dyn_cast<klee::expr::QueryCommand>( D ) ) {
 						path->constraints = klee::ConstraintManager( QC->Constraints );
 
-						std::list<std::string>::iterator curSymbol = symbolsWithValue.begin();
-						unsigned b = path->symbolNames[*curSymbol]->size;
-						for ( std::vector<klee::ref<klee::Expr> >::const_iterator it = QC->Values.begin(), ie = QC->Values.end(); it != ie; it++, b-- ) {
-							if ( b == 0 ) {
-								assert( ++curSymbol != symbolsWithValue.end() && "Too many expressions in path file kquery." );
-								b = path->symbolNames[*curSymbol]->size;
+						if ( ! symbolsWithValue.empty() ) {
+							std::list<std::string>::iterator curSymbol = symbolsWithValue.begin();
+							unsigned b = path->symbolNames[*curSymbol]->size;
+							for ( std::vector<klee::ref<klee::Expr> >::const_iterator it = QC->Values.begin(), ie = QC->Values.end(); it != ie; it++, b-- ) {
+								if ( b == 0 ) {
+									assert( ++curSymbol != symbolsWithValue.end() && "Too many expressions in path file kquery." );
+									b = path->symbolNames[*curSymbol]->size;
+								}
+								path->symbolValues[*curSymbol].push_back( *it );
 							}
-							path->symbolValues[*curSymbol].push_back( *it );
+							assert( (b == 0) && (++curSymbol == symbolsWithValue.end()) && "Too few expressions in path file kquery." );
 						}
-						assert( (b == 0) && (++curSymbol == symbolsWithValue.end()) && "Too few expressions in path file kquery." );
 
 						delete D;
 						break;
