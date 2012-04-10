@@ -26,11 +26,6 @@
 #include "spa/IntersectionIF.h"
 #include "spa/PathFilter.h"
 
-#define SPA_API_ANNOTATION_FUNCTION				"spa_api_entry"
-#define SPA_MESSAGE_HANDLER_ANNOTATION_FUNCTION	"spa_message_handler_entry"
-#define SPA_CHECKPOINT_ANNOTATION_FUNCTION		"spa_checkpoint"
-#define SPA_OUTPUT_TAG							"Output"
-
 extern std::string InputFile;
 
 namespace {
@@ -118,6 +113,7 @@ int main(int argc, char **argv, char **envp) {
 	}
 
 	spa.setPathFilter( new SpaPathFilter() );
+	spa.setOutputTerminalPaths( false );
 
 	CLOUD9_DEBUG( "Starting SPA." );
 	spa.start();

@@ -9,6 +9,8 @@
 #include "klee/ExprBuilder.h"
 #include <expr/Parser.h>
 
+#include <spa/SPA.h>
+
 #include <spa/Path.h>
 
 namespace SPA {
@@ -56,7 +58,7 @@ namespace SPA {
 				symbolNames[name] = it->second;
 
 				// Symbolic value.
-				if ( name.compare( 0, strlen( SPA_OUTPUT_PREFIX ), SPA_OUTPUT_PREFIX ) == 0 )
+				if ( name.compare( 0, strlen( SPA_OUTPUT_PREFIX ), SPA_OUTPUT_PREFIX ) == 0 || name.compare( 0, strlen( SPA_STATE_PREFIX ), SPA_STATE_PREFIX ) == 0 )
 					if ( const klee::ObjectState *os = kState->addressSpace().findObject( (*it).first ) )
 						for ( unsigned int i = 0; i < os->size; i++ )
 							symbolValues[name].push_back( os->read8( i ) );

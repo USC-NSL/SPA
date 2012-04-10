@@ -23,9 +23,9 @@ void max_message_handler( const char *name ) {
 	spa_runtime_call( maxSolveSymbolicHandler, name );
 }
 
-#define max_state( var, size, name ) spa_input( var, size, name )
-#define max_input_fixed( var, size, name ) spa_input( var, size, name ); spa_runtime_call( maxInputFixedHandler, var, size, name )
-#define max_input_var( var, size, name ) spa_input( var, size, name ); spa_runtime_call( maxInputVarHandler, var, size, name )
+#define max_state( var, size, name ) spa_state( var, size, name )
+#define max_input_fixed( var, size, name ) spa_msg_input( var, size, name ); spa_runtime_call( maxInputFixedHandler, var, size, name )
+#define max_input_var( var, size, name ) spa_msg_input( var, size, name ); spa_runtime_call( maxInputVarHandler, var, size, name )
 
 #else // #ifdef ENABLE_MAX
 

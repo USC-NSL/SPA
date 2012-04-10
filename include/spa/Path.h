@@ -28,10 +28,6 @@
 #define SPA_PATH_COMMENT					"#"
 #define SPA_PATH_WHITE_SPACE				" 	\r\n"
 
-#define SPA_INPUT_PREFIX		"spa_input_"
-#define SPA_OUTPUT_PREFIX		"spa_output_"
-#define SPA_TAG_PREFIX			"spa_tag_"
-
 namespace SPA {
 	class Path {
 	private:
@@ -50,7 +46,7 @@ namespace SPA {
 			return symbolNames.count( name ) ? symbolNames.find( name )->second : NULL;
 		}
 
-		int getSymbolValueSize( std::string name ) const {
+		size_t getSymbolValueSize( std::string name ) const {
 			return symbolValues.count( name ) ? symbolValues.find( name )->second.size() : 0;
 		}
 
@@ -58,6 +54,10 @@ namespace SPA {
 			assert( offset >=0 && offset < getSymbolValueSize( name ) && "Symbol offset out of bounds." );
 			return symbolValues.find( name )->second[offset];
 		}
+
+		std::map<std::string, const klee::Array *>::const_iterator beginSymbols() { return symbolNames.begin(); }
+
+		std::map<std::string, const klee::Array *>::const_iterator endSymbols() { return symbolNames.end(); }
 
 		std::string getTag( std::string key ) const {
 			return tags.count( key ) ? tags.find( key )->second : std::string();

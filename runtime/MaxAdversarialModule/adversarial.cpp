@@ -14,6 +14,7 @@
 #include <spa/Path.h>
 #include <spa/PathLoader.h>
 #include <spa/max.h>
+#include <spa/SPA.h>
 #include <spa/spaRuntimeImpl.h>
 
 #define HANDLER_NAME_TAG	"max_HandlerName"
@@ -139,8 +140,8 @@ extern "C" {
 		size_t size = va_arg( args, size_t );
 		const char *name = va_arg( args, const char * );
 
-		fixedInputs[std::string() + SPA_INPUT_PREFIX + name].first = var;
-		fixedInputs[std::string() + SPA_INPUT_PREFIX + name].second = size;
+		fixedInputs[std::string() + SPA_MESSAGE_INPUT_PREFIX + name].first = var;
+		fixedInputs[std::string() + SPA_MESSAGE_INPUT_PREFIX + name].second = size;
 	}
 
 	void maxInputVarHandler( va_list args ) {
@@ -148,7 +149,7 @@ extern "C" {
 		size_t size = va_arg( args, size_t );
 		const char *name = va_arg( args, const char * );
 
-		varInputs[std::string() + SPA_INPUT_PREFIX + name].first = var;
-		varInputs[std::string() + SPA_INPUT_PREFIX + name].second = size;
+		varInputs[std::string() + SPA_MESSAGE_INPUT_PREFIX + name].first = var;
+		varInputs[std::string() + SPA_MESSAGE_INPUT_PREFIX + name].second = size;
 	}
 }

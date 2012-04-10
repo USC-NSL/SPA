@@ -22,9 +22,9 @@ std::list<nc_value_t> stack;
 
 // Executes a single query on the remote server.
 nc_value_t executeQuery( nc_operator_t op, nc_value_t arg1, nc_value_t arg2 ) {
-	spa_input_var( op );
-	spa_input_var( arg1 );
-	spa_input_var( arg2 );
+	spa_api_input_var( op );
+	spa_api_input_var( arg1 );
+	spa_api_input_var( arg2 );
 
 	assert( (op >= 0) && (op < NC_OPERATOR_END) && "Invalid operator in query.");
 
@@ -33,7 +33,7 @@ nc_value_t executeQuery( nc_operator_t op, nc_value_t arg1, nc_value_t arg2 ) {
 	query.arg1 = arg1;
 	query.arg2 = arg2;
 
-	spa_output_var( query );
+	spa_msg_output_var( query );
 
 	// Send query.
 	assert( sendto( sock, &query, sizeof( query ), 0, server->ai_addr, server->ai_addrlen ) == sizeof( query ) );

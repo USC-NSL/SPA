@@ -16,6 +16,24 @@
 #include <spa/InstructionFilter.h>
 #include <spa/PathFilter.h>
 
+#define SPA_API_ANNOTATION_FUNCTION				"spa_api_entry"
+#define SPA_MESSAGE_HANDLER_ANNOTATION_FUNCTION	"spa_message_handler_entry"
+#define SPA_CHECKPOINT_ANNOTATION_FUNCTION		"spa_checkpoint"
+
+#define SPA_PREFIX					"spa_"
+#define SPA_TAG_PREFIX				SPA_PREFIX "tag_"
+#define SPA_STATE_PREFIX			SPA_PREFIX "state_"
+#define SPA_INPUT_PREFIX			SPA_PREFIX "in_"
+#define SPA_API_INPUT_PREFIX		SPA_INPUT_PREFIX "api_"
+#define SPA_MESSAGE_INPUT_PREFIX	SPA_INPUT_PREFIX "msg_"
+#define SPA_OUTPUT_PREFIX			SPA_PREFIX "out_"
+#define SPA_API_OUTPUT_PREFIX		SPA_OUTPUT_PREFIX "api_"
+#define SPA_MESSAGE_OUTPUT_PREFIX	SPA_OUTPUT_PREFIX "msg_"
+
+#define SPA_OUTPUT_TAG		"Output"
+#define SPA_VALIDPATH_TAG	"ValidPath"
+#define SPA_VALIDPATH_VALUE	"1"
+
 namespace SPA {
 	class SPA : public cloud9::worker::StateEventHandler {
 	private:

@@ -14,7 +14,7 @@ SpaTag_t QueryValid;
 
 // Handles the query and computes the response.
 void handleQuery( nc_query_t &query, nc_response_t &response ) {
-	spa_input_var( query );
+	spa_msg_input_var( query );
 
 	response.err = NC_OK;
 
@@ -44,12 +44,12 @@ void handleQuery( nc_query_t &query, nc_response_t &response ) {
 	// Output the operation.
 	if ( response.err == NC_OK ) {
 // 		std::cout << query.arg1 << " " << getOpName( query.op ) << " " << query.arg2 << " = " << response.value << std::endl;
-		spa_tag( QueryValid, "1" );
+		spa_valid_path();
 	} else {
 // 		std::cerr << "Error: " << getErrText( response.err ) << std::endl;
 	}
 
-	spa_output_var( response );
+	spa_msg_output_var( response );
 }
 
 void SpaHandleQueryEntry() {
