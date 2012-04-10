@@ -36,6 +36,13 @@ void handleQuery( nc_query_t &query, nc_response_t &response ) {
 				response.value = query.arg1 / query.arg2;
 			}
 		} break;
+// 		case NC_MODULO : {
+// 			if ( query.arg2 == 0 ) {
+// 				response.err = NC_DIV0;
+// 			} else {
+// 				response.value = query.arg1 % query.arg2;
+// 			}
+// 		} break;
 		default : { // Unknown operator.
 			response.err = NC_BADINPUT;
 		} break;
