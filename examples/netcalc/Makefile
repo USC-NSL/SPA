@@ -1,3 +1,4 @@
+BADINPUTS = BadInputs.txt
 PATHS = netcalc-client.bc.paths netcalc-server.bc.paths
 TARGETS = netcalc-client netcalc-server
 BC_TARGETS = netcalc-client.bc netcalc-server.bc
@@ -19,9 +20,11 @@ all: $(TARGETS) $(BC_TARGETS)
 %.bc.paths: %.bc
 	$(SPA) $<
 
-run-spa: $(PATHS)
-	spaBadInputs -client netcalc-client.bc.paths -server netcalc-server.bc.paths
+$(BADINPUTS): $(PATHS)
+	spaBadInputs -client netcalc-client.bc.paths -server netcalc-server.bc.paths > $(BADINPUTS)
+
+run-spa: $(BADINPUTS)
 
 clean:
-	rm -f $(TARGETS) $(BC_TARGETS) $(PATHS)
+	rm -f $(TARGETS) $(BC_TARGETS) $(PATHS) $(BADINPUTS)
 	rm -rf klee-out-* klee-last
