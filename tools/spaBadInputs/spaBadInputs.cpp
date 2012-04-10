@@ -86,8 +86,8 @@ int main(int argc, char **argv, char **envp) {
 	for ( std::set<SPA::Path *>::iterator cit = clientPaths.begin(), cie = clientPaths.end(); cit != cie; cit++, numClientPaths++ ) {
 		unsigned long numServerPaths = 0;
 		for ( std::set<SPA::Path *>::iterator sit = serverPaths.begin(), sie = serverPaths.end(); sit != sie; sit++, numServerPaths++ ) {
-			std::cerr << "Processing client path " << numClientPaths << "/" << clientPaths.size()
-				<< " with server path " << numServerPaths << "/" << serverPaths.size() << "." << std::endl;
+			std::cerr << "Processing client path " << (numClientPaths + 1) << "/" << clientPaths.size()
+				<< " with server path " << (numServerPaths + 1) << "/" << serverPaths.size() << "." << std::endl;
 			klee::ConstraintManager cm;
 			// Add client path constraints.
 			for ( klee::ConstraintManager::const_iterator it = (*cit)->getConstraints().begin(), ie = (*cit)->getConstraints().end(); it != ie; it++ )
