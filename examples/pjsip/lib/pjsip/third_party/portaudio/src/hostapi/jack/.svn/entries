@@ -1,0 +1,41 @@
+8
+
+dir
+1433
+https://subversion.assembla.com/svn/portaudio/portaudio/trunk/src/hostapi/jack
+https://subversion.assembla.com/svn/portaudio
+
+
+
+2008-02-20T10:09:20.686801Z
+1346
+rossb
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+0f58301d-fd10-0410-b4af-bbb618454e57
+
+pa_jack.c
+file
+
+
+
+
+2012-04-17T21:49:48.000000Z
+93cc901b1510d2bb221b9568800484f6
+2008-02-20T10:09:20.686801Z
+1346
+rossb
+has-props
+

@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/repos/!svn/ver/3707/pjproject/trunk/tests/automated
+END
+msvc.xml.template
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/!svn/ver/3300/pjproject/trunk/tests/automated/msvc.xml.template
+END
+run_continuous.py
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/!svn/ver/3704/pjproject/trunk/tests/automated/run_continuous.py
+END
+gnu.xml.template
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/!svn/ver/3300/pjproject/trunk/tests/automated/gnu.xml.template
+END
+symbian-vas.xml.template
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/!svn/ver/3131/pjproject/trunk/tests/automated/symbian-vas.xml.template
+END
+testvars.template
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/!svn/ver/3300/pjproject/trunk/tests/automated/testvars.template
+END
+prepare.xml.template
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/!svn/ver/3300/pjproject/trunk/tests/automated/prepare.xml.template
+END
+configure.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/!svn/ver/3300/pjproject/trunk/tests/automated/configure.py
+END
+gnu-ipp.xml.template
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/!svn/ver/3300/pjproject/trunk/tests/automated/gnu-ipp.xml.template
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/!svn/ver/3707/pjproject/trunk/tests/automated/README.txt
+END
+iphone.xml.template
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/!svn/ver/3280/pjproject/trunk/tests/automated/iphone.xml.template
+END
+symbian.xml.template
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/!svn/ver/3297/pjproject/trunk/tests/automated/symbian.xml.template
+END
+symbian-aps.xml.template
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/!svn/ver/3131/pjproject/trunk/tests/automated/symbian-aps.xml.template
+END
+run_scenario.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/!svn/ver/3151/pjproject/trunk/tests/automated/run_scenario.py
+END

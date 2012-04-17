@@ -1,0 +1,82 @@
+8
+
+dir
+4060
+http://svn.pjsip.org/repos/pjproject/trunk/pjsip-apps/src/symbian_ua_gui
+http://svn.pjsip.org/repos
+
+
+
+2011-05-05T06:14:19.959022Z
+3553
+nanang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+74dad513-b988-da41-8d7b-12977e46ad98
+
+gfx
+dir
+
+symbian_ua_guiContainer.uidesign
+file
+
+
+
+
+2012-04-17T21:49:38.000000Z
+7e6874313c0a9339c83987620ebc3019
+2008-05-30T11:35:46.038003Z
+1973
+nanang
+
+src
+dir
+
+data
+dir
+
+inc
+dir
+
+application.uidesign
+file
+
+
+
+
+2012-04-17T21:49:38.000000Z
+607bd4d0d8903871f1c704bbfb517875
+2008-05-30T11:35:46.038003Z
+1973
+nanang
+
+symbian_ua_guiSettingItemList.uidesign
+file
+
+
+
+
+2012-04-17T21:49:38.000000Z
+a1d3086689ef69ee360853eadc4925ec
+2008-05-30T11:35:46.038003Z
+1973
+nanang
+
+group
+dir
+
+sis
+dir
+

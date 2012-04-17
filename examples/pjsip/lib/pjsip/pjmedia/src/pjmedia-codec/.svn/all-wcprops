@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/!svn/ver/4056/pjproject/trunk/pjmedia/src/pjmedia-codec
+END
+amr_sdp_match.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/!svn/ver/3911/pjproject/trunk/pjmedia/src/pjmedia-codec/amr_sdp_match.c
+END
+l16.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/!svn/ver/3664/pjproject/trunk/pjmedia/src/pjmedia-codec/l16.c
+END
+g7221.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/!svn/ver/4001/pjproject/trunk/pjmedia/src/pjmedia-codec/g7221.c
+END
+h263_packetizer.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/!svn/ver/4006/pjproject/trunk/pjmedia/src/pjmedia-codec/h263_packetizer.c
+END
+h264_packetizer.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/!svn/ver/4006/pjproject/trunk/pjmedia/src/pjmedia-codec/h264_packetizer.c
+END
+passthrough.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/!svn/ver/3911/pjproject/trunk/pjmedia/src/pjmedia-codec/passthrough.c
+END
+ipp_codecs.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/!svn/ver/4002/pjproject/trunk/pjmedia/src/pjmedia-codec/ipp_codecs.c
+END
+ilbc.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/!svn/ver/3664/pjproject/trunk/pjmedia/src/pjmedia-codec/ilbc.c
+END
+speex_codec.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/!svn/ver/3664/pjproject/trunk/pjmedia/src/pjmedia-codec/speex_codec.c
+END
+g722.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/!svn/ver/3664/pjproject/trunk/pjmedia/src/pjmedia-codec/g722.c
+END
+audio_codecs.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/!svn/ver/3910/pjproject/trunk/pjmedia/src/pjmedia-codec/audio_codecs.c
+END
+g7221_sdp_match.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/!svn/ver/3911/pjproject/trunk/pjmedia/src/pjmedia-codec/g7221_sdp_match.c
+END
+gsm.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/!svn/ver/3664/pjproject/trunk/pjmedia/src/pjmedia-codec/gsm.c
+END
+ffmpeg_vid_codecs.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/!svn/ver/4056/pjproject/trunk/pjmedia/src/pjmedia-codec/ffmpeg_vid_codecs.c
+END
+opencore_amrnb.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/!svn/ver/3939/pjproject/trunk/pjmedia/src/pjmedia-codec/opencore_amrnb.c
+END

@@ -1,0 +1,18 @@
+K 10
+svn:ignore
+V 100
+moc_*
+vidgui
+Makefile
+README.TXT
+.project
+.cproject
+release
+debug
+*.log
+*.idb
+*.pdb
+*.vcproj
+*.user
+
+END

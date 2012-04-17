@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/!svn/ver/3841/pjproject/trunk/pjmedia/src/pjmedia-audiodev
+END
+alsa_dev.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/!svn/ver/3553/pjproject/trunk/pjmedia/src/pjmedia-audiodev/alsa_dev.c
+END
+pa_dev.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/!svn/ver/3553/pjproject/trunk/pjmedia/src/pjmedia-audiodev/pa_dev.c
+END
+s60_g729_bitstream.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/!svn/ver/2506/pjproject/trunk/pjmedia/src/pjmedia-audiodev/s60_g729_bitstream.h
+END
+audiodev.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/!svn/ver/3841/pjproject/trunk/pjmedia/src/pjmedia-audiodev/audiodev.c
+END
+audiotest.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/!svn/ver/3553/pjproject/trunk/pjmedia/src/pjmedia-audiodev/audiotest.c
+END
+symb_vas_dev.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/!svn/ver/3841/pjproject/trunk/pjmedia/src/pjmedia-audiodev/symb_vas_dev.cpp
+END
+legacy_dev.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/!svn/ver/3553/pjproject/trunk/pjmedia/src/pjmedia-audiodev/legacy_dev.c
+END
+wmme_dev.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/!svn/ver/3664/pjproject/trunk/pjmedia/src/pjmedia-audiodev/wmme_dev.c
+END
+errno.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/!svn/ver/3553/pjproject/trunk/pjmedia/src/pjmedia-audiodev/errno.c
+END
+coreaudio_dev.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/!svn/ver/3841/pjproject/trunk/pjmedia/src/pjmedia-audiodev/coreaudio_dev.c
+END
+null_dev.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/!svn/ver/3553/pjproject/trunk/pjmedia/src/pjmedia-audiodev/null_dev.c
+END
+symb_mda_dev.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/!svn/ver/3841/pjproject/trunk/pjmedia/src/pjmedia-audiodev/symb_mda_dev.cpp
+END
+symb_aps_dev.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/!svn/ver/3841/pjproject/trunk/pjmedia/src/pjmedia-audiodev/symb_aps_dev.cpp
+END

@@ -1,0 +1,68 @@
+8
+
+dir
+4060
+http://svn.pjsip.org/repos/pjproject/trunk/third_party/build/milenage
+http://svn.pjsip.org/repos
+
+
+
+2011-07-19T03:42:28.070005Z
+3664
+nanang
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+74dad513-b988-da41-8d7b-12977e46ad98
+
+libmilenage.vcp
+file
+
+
+
+
+2012-04-17T21:49:42.000000Z
+82ab472d42c0b0b04c9b6abded5894ea
+2007-11-11T07:14:47.832438Z
+1575
+bennylp
+
+output
+dir
+
+libmilenage.vcproj
+file
+
+
+
+
+2012-04-17T21:49:42.000000Z
+6819c5ef99395a52d50d75005c2a6f94
+2009-04-29T15:30:38.994109Z
+2664
+bennylp
+
+Makefile
+file
+
+
+
+
+2012-04-17T21:49:42.000000Z
+9693b7148b6407426ab3ce67fe0c1589
+2008-07-29T11:42:20.742138Z
+2183
+bennylp
+has-props
+

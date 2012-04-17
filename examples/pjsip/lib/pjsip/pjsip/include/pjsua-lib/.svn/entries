@@ -1,0 +1,54 @@
+8
+
+dir
+4060
+http://svn.pjsip.org/repos/pjproject/trunk/pjsip/include/pjsua-lib
+http://svn.pjsip.org/repos
+
+
+
+2012-04-16T07:50:01.536165Z
+4054
+bennylp
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+74dad513-b988-da41-8d7b-12977e46ad98
+
+pjsua_internal.h
+file
+
+
+
+
+2012-04-17T21:49:36.000000Z
+0f13b1a79a012eb398098b10a54304b1
+2012-03-22T09:56:52.904875Z
+3982
+bennylp
+has-props
+
+pjsua.h
+file
+
+
+
+
+2012-04-17T21:49:36.000000Z
+9a756a25c2c00c1c9d1ea17cf271ad3a
+2012-04-16T07:50:01.536165Z
+4054
+bennylp
+has-props
+

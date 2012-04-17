@@ -1,0 +1,9 @@
+K 10
+svn:ignore
+V 32
+*.vcl
+*.aps
+*.vcproj*user
+*.pch
+
+END

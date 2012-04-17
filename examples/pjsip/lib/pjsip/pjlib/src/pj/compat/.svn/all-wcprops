@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/repos/!svn/ver/3553/pjproject/trunk/pjlib/src/pj/compat
+END
+longjmp_i386.S
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/!svn/ver/1227/pjproject/trunk/pjlib/src/pj/compat/longjmp_i386.S
+END
+string.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/!svn/ver/3553/pjproject/trunk/pjlib/src/pj/compat/string.c
+END
+sigjmp.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/!svn/ver/3553/pjproject/trunk/pjlib/src/pj/compat/sigjmp.c
+END
+string_compat.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/!svn/ver/3553/pjproject/trunk/pjlib/src/pj/compat/string_compat.c
+END
+setjmp_i386.S
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/!svn/ver/1227/pjproject/trunk/pjlib/src/pj/compat/setjmp_i386.S
+END

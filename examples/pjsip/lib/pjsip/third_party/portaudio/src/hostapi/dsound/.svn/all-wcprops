@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/portaudio/!svn/ver/1433/portaudio/trunk/src/hostapi/dsound
+END
+pa_win_ds_dynlink.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/portaudio/!svn/ver/1379/portaudio/trunk/src/hostapi/dsound/pa_win_ds_dynlink.h
+END
+pa_win_ds.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/portaudio/!svn/ver/1433/portaudio/trunk/src/hostapi/dsound/pa_win_ds.c
+END
+pa_win_ds_dynlink.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/portaudio/!svn/ver/1379/portaudio/trunk/src/hostapi/dsound/pa_win_ds_dynlink.c
+END

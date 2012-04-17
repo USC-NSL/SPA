@@ -1,0 +1,17 @@
+K 10
+svn:ignore
+V 92
+ABLD.BAT
+*.cwlink
+*.mcp
+*_Data
+*.xml
+*_UID_.cpp
+tmpnames.def
+*.sis
+*.sisx
+*.cer
+*.key
+*.rnd
+
+END

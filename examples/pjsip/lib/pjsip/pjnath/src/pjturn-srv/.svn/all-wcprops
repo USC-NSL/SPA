@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/repos/!svn/ver/3553/pjproject/trunk/pjnath/src/pjturn-srv
+END
+auth.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/!svn/ver/3553/pjproject/trunk/pjnath/src/pjturn-srv/auth.c
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/!svn/ver/3553/pjproject/trunk/pjnath/src/pjturn-srv/main.c
+END
+allocation.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/!svn/ver/3553/pjproject/trunk/pjnath/src/pjturn-srv/allocation.c
+END
+auth.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/!svn/ver/3553/pjproject/trunk/pjnath/src/pjturn-srv/auth.h
+END
+server.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/!svn/ver/3553/pjproject/trunk/pjnath/src/pjturn-srv/server.c
+END
+listener_tcp.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/!svn/ver/3553/pjproject/trunk/pjnath/src/pjturn-srv/listener_tcp.c
+END
+listener_udp.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/!svn/ver/3553/pjproject/trunk/pjnath/src/pjturn-srv/listener_udp.c
+END
+turn.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/!svn/ver/3553/pjproject/trunk/pjnath/src/pjturn-srv/turn.h
+END

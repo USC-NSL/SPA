@@ -1,0 +1,6 @@
+K 13
+svn:externals
+V 79
+portaudio	-r1433 https://subversion.assembla.com/svn/portaudio/portaudio/trunk
+
+END

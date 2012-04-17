@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/repos/!svn/ver/3553/pjproject/trunk/pjnath/include/pjnath
+END
+ice_strans.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/!svn/ver/3553/pjproject/trunk/pjnath/include/pjnath/ice_strans.h
+END
+nat_detect.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/!svn/ver/3553/pjproject/trunk/pjnath/include/pjnath/nat_detect.h
+END
+stun_auth.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/!svn/ver/3553/pjproject/trunk/pjnath/include/pjnath/stun_auth.h
+END
+turn_session.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/!svn/ver/3553/pjproject/trunk/pjnath/include/pjnath/turn_session.h
+END
+stun_session.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/!svn/ver/3553/pjproject/trunk/pjnath/include/pjnath/stun_session.h
+END
+stun_config.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/!svn/ver/3553/pjproject/trunk/pjnath/include/pjnath/stun_config.h
+END
+stun_transaction.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/!svn/ver/3553/pjproject/trunk/pjnath/include/pjnath/stun_transaction.h
+END
+stun_msg.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/!svn/ver/3553/pjproject/trunk/pjnath/include/pjnath/stun_msg.h
+END
+ice_session.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/!svn/ver/3553/pjproject/trunk/pjnath/include/pjnath/ice_session.h
+END
+types.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/!svn/ver/3553/pjproject/trunk/pjnath/include/pjnath/types.h
+END
+config.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/!svn/ver/3553/pjproject/trunk/pjnath/include/pjnath/config.h
+END
+errno.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/!svn/ver/3553/pjproject/trunk/pjnath/include/pjnath/errno.h
+END
+turn_sock.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/!svn/ver/3553/pjproject/trunk/pjnath/include/pjnath/turn_sock.h
+END
+stun_sock.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/!svn/ver/3553/pjproject/trunk/pjnath/include/pjnath/stun_sock.h
+END

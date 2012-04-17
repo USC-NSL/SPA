@@ -1,0 +1,293 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/repos/!svn/ver/2660/pjproject/trunk/third_party/ilbc
+END
+helpfun.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/helpfun.c
+END
+StateSearchW.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/StateSearchW.h
+END
+iCBConstruct.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/iCBConstruct.c
+END
+syntFilter.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/syntFilter.c
+END
+anaFilter.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/anaFilter.c
+END
+helpfun.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/helpfun.h
+END
+iCBConstruct.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/iCBConstruct.h
+END
+syntFilter.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/syntFilter.h
+END
+anaFilter.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/anaFilter.h
+END
+constants.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/constants.c
+END
+iLBC_decode.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/iLBC_decode.c
+END
+constants.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/constants.h
+END
+iLBC_decode.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/iLBC_decode.h
+END
+getCBvec.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/getCBvec.c
+END
+enhancer.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/enhancer.c
+END
+iCBSearch.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/!svn/ver/2660/pjproject/trunk/third_party/ilbc/iCBSearch.c
+END
+hpInput.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/hpInput.c
+END
+getCBvec.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/getCBvec.h
+END
+gainquant.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/gainquant.c
+END
+enhancer.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/enhancer.h
+END
+iCBSearch.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/iCBSearch.h
+END
+hpInput.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/hpInput.h
+END
+gainquant.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/gainquant.h
+END
+LPCencode.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/LPCencode.c
+END
+LPCencode.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/LPCencode.h
+END
+doCPLC.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/doCPLC.c
+END
+createCB.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/createCB.c
+END
+iLBC_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/iLBC_test.c
+END
+doCPLC.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/doCPLC.h
+END
+StateConstructW.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/StateConstructW.c
+END
+packing.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/packing.c
+END
+createCB.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/createCB.h
+END
+StateConstructW.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/StateConstructW.h
+END
+packing.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/packing.h
+END
+LPCdecode.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/LPCdecode.c
+END
+lsf.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/lsf.c
+END
+filter.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/filter.c
+END
+iLBC_encode.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/iLBC_encode.c
+END
+LPCdecode.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/LPCdecode.h
+END
+hpOutput.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/hpOutput.c
+END
+FrameClassify.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/FrameClassify.c
+END
+iLBC_define.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/iLBC_define.h
+END
+lsf.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/lsf.h
+END
+filter.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/filter.h
+END
+iLBC_encode.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/iLBC_encode.h
+END
+hpOutput.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/hpOutput.h
+END
+FrameClassify.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/FrameClassify.h
+END
+StateSearchW.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/!svn/ver/1227/pjproject/trunk/third_party/ilbc/StateSearchW.c
+END

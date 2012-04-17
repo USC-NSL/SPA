@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/portaudio/!svn/ver/1385/portaudio/trunk/src/hostapi/oss
+END
+recplay.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/portaudio/!svn/ver/1379/portaudio/trunk/src/hostapi/oss/recplay.c
+END
+pa_unix_oss.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/portaudio/!svn/ver/1385/portaudio/trunk/src/hostapi/oss/pa_unix_oss.c
+END
+low_latency_tip.txt
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/portaudio/!svn/ver/1379/portaudio/trunk/src/hostapi/oss/low_latency_tip.txt
+END

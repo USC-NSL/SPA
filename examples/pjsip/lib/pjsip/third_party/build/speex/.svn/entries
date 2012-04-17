@@ -1,0 +1,85 @@
+8
+
+dir
+4060
+http://svn.pjsip.org/repos/pjproject/trunk/third_party/build/speex
+http://svn.pjsip.org/repos
+
+
+
+2011-07-19T03:42:28.070005Z
+3664
+nanang
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+74dad513-b988-da41-8d7b-12977e46ad98
+
+output
+dir
+
+libspeex.vcp
+file
+
+
+
+
+2012-04-17T21:49:42.000000Z
+c1a14a835b0d5cbb9e28e0d9540a8c9d
+2008-06-10T14:09:37.871845Z
+2002
+nanang
+
+speex
+dir
+
+config.h
+file
+
+
+
+
+2012-04-17T21:49:42.000000Z
+aae7e2b78ebd6a978ba98bce656bf12c
+2008-06-10T14:35:50.554266Z
+2003
+nanang
+has-props
+
+Makefile
+file
+
+
+
+
+2012-04-17T21:49:42.000000Z
+e73a6996a45c76fcce83c90a40e8bb6f
+2008-07-29T11:42:20.742138Z
+2183
+bennylp
+has-props
+
+libspeex.vcproj
+file
+
+
+
+
+2012-04-17T21:49:42.000000Z
+1fdb5bf0d096f446b81db66504067f99
+2009-05-06T18:59:31.630623Z
+2678
+nanang
+has-props
+

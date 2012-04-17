@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/!svn/ver/2660/pjproject/trunk/third_party/srtp/crypto/cipher
+END
+aes_cbc.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/!svn/ver/1730/pjproject/trunk/third_party/srtp/crypto/cipher/aes_cbc.c
+END
+aes_icm.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/!svn/ver/1730/pjproject/trunk/third_party/srtp/crypto/cipher/aes_icm.c
+END
+null_cipher.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/!svn/ver/1730/pjproject/trunk/third_party/srtp/crypto/cipher/null_cipher.c
+END
+aes.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/!svn/ver/1730/pjproject/trunk/third_party/srtp/crypto/cipher/aes.c
+END
+cipher.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/!svn/ver/2660/pjproject/trunk/third_party/srtp/crypto/cipher/cipher.c
+END
