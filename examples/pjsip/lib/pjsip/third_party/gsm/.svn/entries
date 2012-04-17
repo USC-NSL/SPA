@@ -1,143 +1,0 @@
-8
-
-dir
-4060
-http://svn.pjsip.org/repos/pjproject/trunk/third_party/gsm
-http://svn.pjsip.org/repos
-
-
-
-2010-05-01T22:05:41.321707Z
-3158
-bennylp
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-74dad513-b988-da41-8d7b-12977e46ad98
-
-MACHINES
-file
-
-
-
-
-2012-04-17T21:49:44.000000Z
-fec37d187957fa14187a13974a68e5bf
-2007-04-07T12:29:46.517960Z
-1168
-bennylp
-has-props
-
-ChangeLog
-file
-
-
-
-
-2012-04-17T21:49:44.000000Z
-506b43e21b927492c2662b548eca27d2
-2007-04-07T12:29:46.517960Z
-1168
-bennylp
-has-props
-
-src
-dir
-
-README
-file
-
-
-
-
-2012-04-17T21:49:44.000000Z
-f0ab53a6be4aefa9705f39b4bdafd62a
-2007-04-07T12:29:46.517960Z
-1168
-bennylp
-has-props
-
-tls
-dir
-
-add-test
-dir
-
-MANIFEST
-file
-
-
-
-
-2012-04-17T21:49:44.000000Z
-a81e9ef0956c5e1d8c7402170dd67b43
-2007-04-07T12:29:46.517960Z
-1168
-bennylp
-has-props
-
-INSTALL
-file
-
-
-
-
-2012-04-17T21:49:44.000000Z
-b41c1892f74fc6909cc633139aeefa9d
-2007-04-07T12:29:46.517960Z
-1168
-bennylp
-has-props
-
-lib
-dir
-
-COPYRIGHT
-file
-
-
-
-
-2012-04-17T21:49:44.000000Z
-97e265fa1fd10a668bd99c4945fb9200
-2007-04-07T12:29:46.517960Z
-1168
-bennylp
-has-props
-
-bin
-dir
-
-inc
-dir
-
-tst
-dir
-
-man
-dir
-
-Makefile
-file
-
-
-
-
-2012-04-17T21:49:44.000000Z
-2261ca6700033f7fcebba1ed94972662
-2007-04-07T12:29:46.517960Z
-1168
-bennylp
-has-props
-

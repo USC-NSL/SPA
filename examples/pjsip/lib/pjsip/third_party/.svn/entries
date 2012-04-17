@@ -1,74 +1,0 @@
-8
-
-dir
-4060
-http://svn.pjsip.org/repos/pjproject/trunk/third_party
-http://svn.pjsip.org/repos
-
-
-
-2012-03-30T07:10:13.512709Z
-3999
-bennylp
-has-props
-
-svn:special svn:externals svn:needs-lock
-svn:externals
-
-
-
-
-
-
-
-
-
-
-74dad513-b988-da41-8d7b-12977e46ad98
-
-build
-dir
-
-mp3
-dir
-
-milenage
-dir
-
-g7221
-dir
-
-speex
-dir
-
-gsm
-dir
-
-lib
-dir
-
-bin
-dir
-
-resample
-dir
-
-srtp
-dir
-
-ilbc
-dir
-
-README.txt
-file
-
-
-
-
-2012-04-17T21:49:45.000000Z
-62d2d909bb2842156b8fd76bd21a121f
-2008-01-23T20:17:42.299488Z
-1730
-bennylp
-has-props
-

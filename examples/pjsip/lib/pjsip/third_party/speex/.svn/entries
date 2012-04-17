@@ -1,66 +1,0 @@
-8
-
-dir
-4060
-http://svn.pjsip.org/repos/pjproject/trunk/third_party/speex
-http://svn.pjsip.org/repos
-
-
-
-2008-08-09T05:40:22.903978Z
-2198
-bennylp
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-74dad513-b988-da41-8d7b-12977e46ad98
-
-symbian
-dir
-
-win32
-dir
-
-include
-dir
-
-AUTHORS
-file
-
-
-
-
-2012-04-17T21:49:43.000000Z
-fa7d2c268ac9fb391c7761eae1fbff87
-2008-06-10T14:09:37.871845Z
-2002
-nanang
-has-props
-
-COPYING
-file
-
-
-
-
-2012-04-17T21:49:43.000000Z
-314649d8ba9dd7045dfb6683f298d0a8
-2008-06-10T14:09:37.871845Z
-2002
-nanang
-has-props
-
-libspeex
-dir
-

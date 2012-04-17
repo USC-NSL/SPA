@@ -1,46 +1,0 @@
-8
-
-dir
-4060
-http://svn.pjsip.org/repos/pjproject/trunk/pjsip
-http://svn.pjsip.org/repos
-
-
-
-2012-04-17T09:55:30.866789Z
-4060
-ming
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-74dad513-b988-da41-8d7b-12977e46ad98
-
-build
-dir
-
-include
-dir
-
-lib
-dir
-
-src
-dir
-
-bin
-dir
-
-docs
-dir
-

@@ -1,37 +1,0 @@
-8
-
-dir
-4060
-http://svn.pjsip.org/repos/pjproject/trunk/third_party/g7221
-http://svn.pjsip.org/repos
-
-
-
-2009-11-11T04:44:25.529038Z
-3017
-nanang
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-74dad513-b988-da41-8d7b-12977e46ad98
-
-decode
-dir
-
-common
-dir
-
-encode
-dir
-

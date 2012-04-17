@@ -1,43 +1,0 @@
-8
-
-dir
-4060
-http://svn.pjsip.org/repos/pjproject/trunk/pjsip/src
-http://svn.pjsip.org/repos
-
-
-
-2012-04-17T09:55:30.866789Z
-4060
-ming
-has-props
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-74dad513-b988-da41-8d7b-12977e46ad98
-
-test
-dir
-
-pjsip
-dir
-
-pjsua-lib
-dir
-
-pjsip-ua
-dir
-
-pjsip-simple
-dir
-
