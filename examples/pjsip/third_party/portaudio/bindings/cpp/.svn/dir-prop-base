@@ -1,0 +1,13 @@
+K 10
+svn:ignore
+V 62
+bin
+bin-*
+autom4te.cache
+libtool
+config.*
+lib-stamp
+Makefile
+
+
+END

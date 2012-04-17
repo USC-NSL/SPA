@@ -1,0 +1,81 @@
+8
+
+dir
+4060
+http://svn.pjsip.org/repos/pjproject/trunk/third_party/build/srtp
+http://svn.pjsip.org/repos
+
+
+
+2011-07-19T03:42:28.070005Z
+3664
+nanang
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+74dad513-b988-da41-8d7b-12977e46ad98
+
+output
+dir
+
+libsrtp.vcproj
+file
+
+
+
+
+2012-04-17T21:49:42.000000Z
+5b8bb83de5bd3c1c893608aa1a54e9e4
+2009-07-31T09:55:13.217422Z
+2849
+bennylp
+
+srtp_config.h
+file
+
+
+
+
+2012-04-17T21:49:42.000000Z
+dd09cf812f5ab4d610f9c23e3a8ab93e
+2009-04-28T19:38:43.971077Z
+2660
+nanang
+has-props
+
+libsrtp.vcp
+file
+
+
+
+
+2012-04-17T21:49:42.000000Z
+a4da7a3c9edc45a151711ba89412fa61
+2008-01-24T10:23:43.399988Z
+1736
+bennylp
+
+Makefile
+file
+
+
+
+
+2012-04-17T21:49:42.000000Z
+3bf6ba82e1d973087b6ad749b04ad31f
+2008-07-29T11:42:20.742138Z
+2183
+bennylp
+has-props
+

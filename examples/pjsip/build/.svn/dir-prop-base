@@ -1,0 +1,9 @@
+K 10
+svn:ignore
+V 36
+*.ncb
+*.opt
+os-auto.mak
+cc-auto.mak
+
+END

@@ -1,0 +1,227 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/repos/!svn/ver/3841/pjproject/trunk/pjlib/include/pj/compat
+END
+high_precision.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/!svn/ver/3553/pjproject/trunk/pjlib/include/pj/compat/high_precision.h
+END
+m_powerpc.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/!svn/ver/3553/pjproject/trunk/pjlib/include/pj/compat/m_powerpc.h
+END
+cc_mwcc.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/!svn/ver/3553/pjproject/trunk/pjlib/include/pj/compat/cc_mwcc.h
+END
+os_linux_kernel.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/!svn/ver/3553/pjproject/trunk/pjlib/include/pj/compat/os_linux_kernel.h
+END
+os_linux.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/!svn/ver/3553/pjproject/trunk/pjlib/include/pj/compat/os_linux.h
+END
+cc_gcc.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/!svn/ver/3664/pjproject/trunk/pjlib/include/pj/compat/cc_gcc.h
+END
+m_alpha.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/!svn/ver/3553/pjproject/trunk/pjlib/include/pj/compat/m_alpha.h
+END
+os_win32.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/!svn/ver/3553/pjproject/trunk/pjlib/include/pj/compat/os_win32.h
+END
+os_symbian.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/!svn/ver/3841/pjproject/trunk/pjlib/include/pj/compat/os_symbian.h
+END
+cc_codew.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/!svn/ver/3553/pjproject/trunk/pjlib/include/pj/compat/cc_codew.h
+END
+string.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/!svn/ver/3553/pjproject/trunk/pjlib/include/pj/compat/string.h
+END
+malloc.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/!svn/ver/3553/pjproject/trunk/pjlib/include/pj/compat/malloc.h
+END
+os_sunos.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/!svn/ver/3553/pjproject/trunk/pjlib/include/pj/compat/os_sunos.h
+END
+m_sparc.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/!svn/ver/3553/pjproject/trunk/pjlib/include/pj/compat/m_sparc.h
+END
+os_darwinos.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/!svn/ver/3553/pjproject/trunk/pjlib/include/pj/compat/os_darwinos.h
+END
+os_win32_wince.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/!svn/ver/3841/pjproject/trunk/pjlib/include/pj/compat/os_win32_wince.h
+END
+m_auto.h.in
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/!svn/ver/3295/pjproject/trunk/pjlib/include/pj/compat/m_auto.h.in
+END
+cc_armcc.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/!svn/ver/3553/pjproject/trunk/pjlib/include/pj/compat/cc_armcc.h
+END
+os_rtems.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/!svn/ver/3553/pjproject/trunk/pjlib/include/pj/compat/os_rtems.h
+END
+os_palmos.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/!svn/ver/3553/pjproject/trunk/pjlib/include/pj/compat/os_palmos.h
+END
+size_t.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/!svn/ver/3553/pjproject/trunk/pjlib/include/pj/compat/size_t.h
+END
+time.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/!svn/ver/3553/pjproject/trunk/pjlib/include/pj/compat/time.h
+END
+assert.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/!svn/ver/3553/pjproject/trunk/pjlib/include/pj/compat/assert.h
+END
+m_m68k.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/!svn/ver/3553/pjproject/trunk/pjlib/include/pj/compat/m_m68k.h
+END
+setjmp.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/!svn/ver/3553/pjproject/trunk/pjlib/include/pj/compat/setjmp.h
+END
+m_armv4.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/!svn/ver/3553/pjproject/trunk/pjlib/include/pj/compat/m_armv4.h
+END
+m_i386.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/!svn/ver/3553/pjproject/trunk/pjlib/include/pj/compat/m_i386.h
+END
+cc_gcce.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/!svn/ver/3553/pjproject/trunk/pjlib/include/pj/compat/cc_gcce.h
+END
+m_x86_64.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/!svn/ver/3553/pjproject/trunk/pjlib/include/pj/compat/m_x86_64.h
+END
+cc_msvc.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/!svn/ver/3664/pjproject/trunk/pjlib/include/pj/compat/cc_msvc.h
+END
+os_auto.h.in
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/!svn/ver/3841/pjproject/trunk/pjlib/include/pj/compat/os_auto.h.in
+END
+stdfileio.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/!svn/ver/3553/pjproject/trunk/pjlib/include/pj/compat/stdfileio.h
+END
+rand.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/!svn/ver/3553/pjproject/trunk/pjlib/include/pj/compat/rand.h
+END
+ctype.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/!svn/ver/3553/pjproject/trunk/pjlib/include/pj/compat/ctype.h
+END
+stdarg.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/!svn/ver/3553/pjproject/trunk/pjlib/include/pj/compat/stdarg.h
+END
+errno.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/!svn/ver/3553/pjproject/trunk/pjlib/include/pj/compat/errno.h
+END
+socket.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/!svn/ver/3553/pjproject/trunk/pjlib/include/pj/compat/socket.h
+END

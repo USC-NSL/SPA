@@ -1,0 +1,9 @@
+K 10
+svn:ignore
+V 36
+*.pyc
+cfg_site.py
+out.xml
+build.log
+
+END

@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repos/!svn/ver/3553/pjproject/trunk/pjnath/src/pjnath-test
+END
+sess_auth.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/!svn/ver/3553/pjproject/trunk/pjnath/src/pjnath-test/sess_auth.c
+END
+ice_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/!svn/ver/3553/pjproject/trunk/pjnath/src/pjnath-test/ice_test.c
+END
+test.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/!svn/ver/3553/pjproject/trunk/pjnath/src/pjnath-test/test.c
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/!svn/ver/3553/pjproject/trunk/pjnath/src/pjnath-test/main.c
+END
+test.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/!svn/ver/3553/pjproject/trunk/pjnath/src/pjnath-test/test.h
+END
+main_win32.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/!svn/ver/2338/pjproject/trunk/pjnath/src/pjnath-test/main_win32.c
+END
+server.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/!svn/ver/3553/pjproject/trunk/pjnath/src/pjnath-test/server.c
+END
+turn_sock_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/!svn/ver/3553/pjproject/trunk/pjnath/src/pjnath-test/turn_sock_test.c
+END
+stun_sock_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/!svn/ver/3553/pjproject/trunk/pjnath/src/pjnath-test/stun_sock_test.c
+END
+stun.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/!svn/ver/3553/pjproject/trunk/pjnath/src/pjnath-test/stun.c
+END
+server.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/!svn/ver/3553/pjproject/trunk/pjnath/src/pjnath-test/server.h
+END

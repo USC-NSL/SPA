@@ -1,0 +1,19 @@
+K 10
+svn:ignore
+V 112
+*.opt
+*.ncb
+*.plg
+TODO-LIST.TXT
+.pj*
+*.swp
+*.log
+pjsip++.dsp
+*.vcproj*user
+*.sln
+*.suo
+*.htm
+*.html
+os-auto.mak
+
+END

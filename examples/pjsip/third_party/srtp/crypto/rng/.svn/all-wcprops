@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/!svn/ver/1807/pjproject/trunk/third_party/srtp/crypto/rng
+END
+ctr_prng.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/!svn/ver/1730/pjproject/trunk/third_party/srtp/crypto/rng/ctr_prng.c
+END
+rand_linux_kernel.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/!svn/ver/1730/pjproject/trunk/third_party/srtp/crypto/rng/rand_linux_kernel.c
+END
+rand_source.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/!svn/ver/1807/pjproject/trunk/third_party/srtp/crypto/rng/rand_source.c
+END
+prng.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/!svn/ver/1730/pjproject/trunk/third_party/srtp/crypto/rng/prng.c
+END

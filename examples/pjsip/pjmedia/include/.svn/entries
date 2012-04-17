@@ -1,0 +1,92 @@
+8
+
+dir
+4060
+http://svn.pjsip.org/repos/pjproject/trunk/pjmedia/include
+http://svn.pjsip.org/repos
+
+
+
+2012-04-17T06:57:50.763344Z
+4058
+bennylp
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+74dad513-b988-da41-8d7b-12977e46ad98
+
+pjmedia.h
+file
+
+
+
+
+2012-04-17T21:49:40.000000Z
+371c6c60143ad27cb31bb04682e8ef3f
+2011-07-19T03:42:28.070005Z
+3664
+nanang
+has-props
+
+pjmedia_audiodev.h
+file
+
+
+
+
+2012-04-17T21:49:40.000000Z
+61acd6f7e9ef7947b3e0afc253aa5605
+2011-05-05T06:14:19.959022Z
+3553
+nanang
+has-props
+
+pjmedia-codec
+dir
+
+pjmedia_videodev.h
+file
+
+
+
+
+2012-04-17T21:49:40.000000Z
+7ec0cb1c87ec711543db033d023fb2b3
+2012-04-04T05:05:50.573262Z
+4016
+bennylp
+has-props
+
+pjmedia-audiodev
+dir
+
+pjmedia
+dir
+
+pjmedia-codec.h
+file
+
+
+
+
+2012-04-17T21:49:40.000000Z
+79141f4a2217eab53112c07311122f55
+2012-04-13T06:24:23.896356Z
+4049
+ming
+has-props
+
+pjmedia-videodev
+dir
+

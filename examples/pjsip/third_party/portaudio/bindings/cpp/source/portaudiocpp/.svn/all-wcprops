@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/portaudio/!svn/ver/1379/portaudio/trunk/bindings/cpp/source/portaudiocpp
+END
+SystemDeviceIterator.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/portaudio/!svn/ver/1379/portaudio/trunk/bindings/cpp/source/portaudiocpp/SystemDeviceIterator.cxx
+END
+StreamParameters.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/portaudio/!svn/ver/1379/portaudio/trunk/bindings/cpp/source/portaudiocpp/StreamParameters.cxx
+END
+MemFunCallbackStream.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/portaudio/!svn/ver/1379/portaudio/trunk/bindings/cpp/source/portaudiocpp/MemFunCallbackStream.cxx
+END
+System.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/portaudio/!svn/ver/1379/portaudio/trunk/bindings/cpp/source/portaudiocpp/System.cxx
+END
+CppFunCallbackStream.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/portaudio/!svn/ver/1379/portaudio/trunk/bindings/cpp/source/portaudiocpp/CppFunCallbackStream.cxx
+END
+CFunCallbackStream.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/portaudio/!svn/ver/1379/portaudio/trunk/bindings/cpp/source/portaudiocpp/CFunCallbackStream.cxx
+END
+DirectionSpecificStreamParameters.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/portaudio/!svn/ver/1379/portaudio/trunk/bindings/cpp/source/portaudiocpp/DirectionSpecificStreamParameters.cxx
+END
+SystemHostApiIterator.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/portaudio/!svn/ver/1379/portaudio/trunk/bindings/cpp/source/portaudiocpp/SystemHostApiIterator.cxx
+END
+InterfaceCallbackStream.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/portaudio/!svn/ver/1379/portaudio/trunk/bindings/cpp/source/portaudiocpp/InterfaceCallbackStream.cxx
+END
+Stream.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/portaudio/!svn/ver/1379/portaudio/trunk/bindings/cpp/source/portaudiocpp/Stream.cxx
+END
+Exception.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/portaudio/!svn/ver/1379/portaudio/trunk/bindings/cpp/source/portaudiocpp/Exception.cxx
+END
+Device.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/portaudio/!svn/ver/1379/portaudio/trunk/bindings/cpp/source/portaudiocpp/Device.cxx
+END
+BlockingStream.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/portaudio/!svn/ver/1379/portaudio/trunk/bindings/cpp/source/portaudiocpp/BlockingStream.cxx
+END
+HostApi.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/portaudio/!svn/ver/1379/portaudio/trunk/bindings/cpp/source/portaudiocpp/HostApi.cxx
+END
+CallbackStream.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/portaudio/!svn/ver/1379/portaudio/trunk/bindings/cpp/source/portaudiocpp/CallbackStream.cxx
+END
+AsioDeviceAdapter.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/portaudio/!svn/ver/1379/portaudio/trunk/bindings/cpp/source/portaudiocpp/AsioDeviceAdapter.cxx
+END
+CallbackInterface.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/portaudio/!svn/ver/1379/portaudio/trunk/bindings/cpp/source/portaudiocpp/CallbackInterface.cxx
+END

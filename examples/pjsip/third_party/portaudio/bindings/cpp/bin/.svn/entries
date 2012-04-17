@@ -1,0 +1,52 @@
+8
+
+dir
+1433
+https://subversion.assembla.com/svn/portaudio/portaudio/trunk/bindings/cpp/bin
+https://subversion.assembla.com/svn/portaudio
+
+
+
+2006-08-24T05:38:12.495887Z
+1090
+aknudsen
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+0f58301d-fd10-0410-b4af-bbb618454e57
+
+Makefile.in
+file
+
+
+
+
+2012-04-17T21:49:49.000000Z
+9cfda78f59d45139062ff9a9ef1ae64d
+2006-08-24T05:38:12.495887Z
+1090
+aknudsen
+
+Makefile.am
+file
+
+
+
+
+2012-04-17T21:49:49.000000Z
+89acad0b54bda94007255cd0ed0dc5c7
+2006-06-16T15:14:30.386046Z
+1055
+aknudsen
+

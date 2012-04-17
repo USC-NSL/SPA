@@ -1,0 +1,54 @@
+8
+
+dir
+4060
+http://svn.pjsip.org/repos/pjproject/trunk/tests/pjsua/scripts-pres
+http://svn.pjsip.org/repos
+
+
+
+2008-12-22T18:54:58.727370Z
+2392
+bennylp
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+74dad513-b988-da41-8d7b-12977e46ad98
+
+100_peertopeer.py
+file
+
+
+
+
+2012-04-17T21:49:39.000000Z
+07aa41af3b8b581defb1894e150e4964
+2008-12-22T18:54:58.727370Z
+2392
+bennylp
+has-props
+
+200_publish.py
+file
+
+
+
+
+2012-04-17T21:49:39.000000Z
+497c14458c76a181b5f3534b69de7a9d
+2008-06-16T13:04:44.400089Z
+2028
+bennylp
+has-props
+

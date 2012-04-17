@@ -1,0 +1,99 @@
+8
+
+dir
+4060
+http://svn.pjsip.org/repos/pjproject/trunk/pjnath/build
+http://svn.pjsip.org/repos
+
+
+
+2011-07-19T21:42:58.865126Z
+3669
+ismangil
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+74dad513-b988-da41-8d7b-12977e46ad98
+
+output
+dir
+
+pjturn_client.vcproj
+file
+
+
+
+
+2012-04-17T21:49:35.000000Z
+b6c1c2d978cc4bff54eae10f6f0d23eb
+2009-04-29T15:30:38.994109Z
+2664
+bennylp
+has-props
+
+wince-evc4
+dir
+
+pjnath_test.vcproj
+file
+
+
+
+
+2012-04-17T21:49:35.000000Z
+f28b6ec187924b8db7204e15c73962e0
+2009-04-29T15:30:38.994109Z
+2664
+bennylp
+has-props
+
+pjnath.vcproj
+file
+
+
+
+
+2012-04-17T21:49:35.000000Z
+6e0896012d3906b17d6860accf68c5f2
+2009-04-29T15:30:38.994109Z
+2664
+bennylp
+has-props
+
+Makefile
+file
+
+
+
+
+2012-04-17T21:49:35.000000Z
+0c88f1f9f31d563a5b35c12da3eac536
+2011-07-19T21:42:58.865126Z
+3669
+ismangil
+has-props
+
+pjstun_srv_test.vcproj
+file
+
+
+
+
+2012-04-17T21:49:35.000000Z
+5369c7f3daf774b41cde9b922016163f
+2009-04-29T15:30:38.994109Z
+2664
+bennylp
+has-props
+

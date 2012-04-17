@@ -1,0 +1,131 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/!svn/ver/3716/pjproject/trunk/tests/pjsua/scripts-recvfrom
+END
+230_reg_bad_fail_stale_true.py
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-recvfrom/230_reg_bad_fail_stale_true.py
+END
+234_reg_bad_stale_ok.py
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-recvfrom/234_reg_bad_stale_ok.py
+END
+235_reg_good_tel_uri_enocredential.py
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/!svn/ver/3323/pjproject/trunk/tests/pjsua/scripts-recvfrom/235_reg_good_tel_uri_enocredential.py
+END
+231_reg_bad_fail_stale_false_nonce_changed.py
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-recvfrom/231_reg_bad_fail_stale_false_nonce_changed.py
+END
+201_reg_good_ok.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-recvfrom/201_reg_good_ok.py
+END
+240_publish_scenarios.py
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/!svn/ver/2661/pjproject/trunk/tests/pjsua/scripts-recvfrom/240_publish_scenarios.py
+END
+209a_reg_handle_423_ok.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/!svn/ver/3105/pjproject/trunk/tests/pjsua/scripts-recvfrom/209a_reg_handle_423_ok.py
+END
+209b_reg_handle_423_bad_min_expires1.py
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repos/!svn/ver/3105/pjproject/trunk/tests/pjsua/scripts-recvfrom/209b_reg_handle_423_bad_min_expires1.py
+END
+209c_reg_handle_423_bad_min_expires2.py
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repos/!svn/ver/3105/pjproject/trunk/tests/pjsua/scripts-recvfrom/209c_reg_handle_423_bad_min_expires2.py
+END
+203_reg_good_empty_realm.py
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/!svn/ver/3150/pjproject/trunk/tests/pjsua/scripts-recvfrom/203_reg_good_empty_realm.py
+END
+301_timer_good_retry_after_422.py
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/!svn/ver/3287/pjproject/trunk/tests/pjsua/scripts-recvfrom/301_timer_good_retry_after_422.py
+END
+220_reg_good_ims_ok.py
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-recvfrom/220_reg_good_ims_ok.py
+END
+100_simple.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/!svn/ver/3284/pjproject/trunk/tests/pjsua/scripts-recvfrom/100_simple.py
+END
+202_reg_good_ok_wildcard.py
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-recvfrom/202_reg_good_ok_wildcard.py
+END
+300_timer_good.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/!svn/ver/3307/pjproject/trunk/tests/pjsua/scripts-recvfrom/300_timer_good.py
+END
+208_reg_good_retry_nonce_ok.py
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-recvfrom/208_reg_good_retry_nonce_ok.py
+END
+200_reg_good_enocredentiall.py
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-recvfrom/200_reg_good_enocredentiall.py
+END
+215_reg_good_multi_ok.py
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-recvfrom/215_reg_good_multi_ok.py
+END
+206_reg_good_efailedcredential.py
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-recvfrom/206_reg_good_efailedcredential.py
+END
+205_reg_good_no_realm.py
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-recvfrom/205_reg_good_no_realm.py
+END
+400_inv_answered_with_less_media.py
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repos/!svn/ver/3716/pjproject/trunk/tests/pjsua/scripts-recvfrom/400_inv_answered_with_less_media.py
+END

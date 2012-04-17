@@ -1,0 +1,281 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/!svn/ver/1890/pjproject/trunk/third_party/build/portaudio/src
+END
+pa_dither.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_dither.c
+END
+pa_mac_core_blocking.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_mac_core_blocking.c
+END
+pa_unix_util.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_unix_util.c
+END
+pa_skeleton.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_skeleton.c
+END
+pa_dither.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_dither.h
+END
+pa_mac_core_blocking.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_mac_core_blocking.h
+END
+pa_unix_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_unix_util.h
+END
+pa_front.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_front.c
+END
+portaudio.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/portaudio.h
+END
+pa_unix_hostapis.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_unix_hostapis.c
+END
+pa_trace.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_trace.c
+END
+pa_linux_alsa.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_linux_alsa.c
+END
+pa_trace.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_trace.h
+END
+pa_linux_alsa.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_linux_alsa.h
+END
+pa_unix_oss.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_unix_oss.c
+END
+pa_mac_core_internal.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_mac_core_internal.h
+END
+pa_types.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_types.h
+END
+pa_process.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_process.c
+END
+pa_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_util.h
+END
+pa_win_wmme.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_win_wmme.c
+END
+pa_process.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_process.h
+END
+pa_allocation.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_allocation.c
+END
+pa_cpuload.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_cpuload.c
+END
+pa_win_wmme.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_win_wmme.h
+END
+pa_win_waveformat.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/!svn/ver/1876/pjproject/trunk/third_party/build/portaudio/src/pa_win_waveformat.c
+END
+pa_ringbuffer.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_ringbuffer.c
+END
+pa_allocation.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_allocation.h
+END
+pa_converters.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_converters.c
+END
+pa_win_util.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_win_util.c
+END
+pa_stream.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_stream.c
+END
+pa_cpuload.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_cpuload.h
+END
+pa_endianness.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_endianness.h
+END
+pa_win_waveformat.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/!svn/ver/1876/pjproject/trunk/third_party/build/portaudio/src/pa_win_waveformat.h
+END
+pa_ringbuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_ringbuffer.h
+END
+pa_converters.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_converters.h
+END
+pa_stream.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_stream.h
+END
+pa_mac_core_utilities.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_mac_core_utilities.c
+END
+pa_debugprint.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_debugprint.c
+END
+pa_mac_core_old.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_mac_core_old.c
+END
+pa_win_hostapis.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_win_hostapis.c
+END
+pa_mac_core_utilities.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_mac_core_utilities.h
+END
+pa_debugprint.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_debugprint.h
+END
+pa_mac_core.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_mac_core.c
+END
+pa_mac_hostapis.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/!svn/ver/1890/pjproject/trunk/third_party/build/portaudio/src/pa_mac_hostapis.c
+END
+pa_hostapi.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/!svn/ver/1227/pjproject/trunk/third_party/build/portaudio/src/pa_hostapi.h
+END
+pa_mac_core.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/!svn/ver/1325/pjproject/trunk/third_party/build/portaudio/src/pa_mac_core.h
+END

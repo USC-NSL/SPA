@@ -1,0 +1,16 @@
+K 10
+svn:ignore
+V 83
+.pjlib*
+output/*
+core
+*.ncb
+*.suo
+*.opt
+*.plg
+test*.txt
+.gdb*
+os-auto.mak
+pj*.user
+
+END

@@ -1,0 +1,15 @@
+K 10
+svn:ignore
+V 76
+.pjlib*
+*.ncb
+*.opt
+*.lpg
+*.suo
+*.bsc
+*vcproj*.user
+*.sln
+*.plg
+os-auto.mak
+
+END

@@ -1,0 +1,34 @@
+8
+
+dir
+4060
+http://svn.pjsip.org/repos/pjproject/trunk/pjlib-util/src
+http://svn.pjsip.org/repos
+
+
+
+2012-03-30T07:10:13.512709Z
+3999
+bennylp
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+74dad513-b988-da41-8d7b-12977e46ad98
+
+pjlib-util-test
+dir
+
+pjlib-util
+dir
+

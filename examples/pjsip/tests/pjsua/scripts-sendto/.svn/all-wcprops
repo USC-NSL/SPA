@@ -1,0 +1,557 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/!svn/ver/3713/pjproject/trunk/tests/pjsua/scripts-sendto
+END
+173_timer_offer_refresher_uac.py
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/!svn/ver/2858/pjproject/trunk/tests/pjsua/scripts-sendto/173_timer_offer_refresher_uac.py
+END
+201_ice_mismatch_3.py
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/201_ice_mismatch_3.py
+END
+320_srtp2_no_crypto.py
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/320_srtp2_no_crypto.py
+END
+200_ice_success_3.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/200_ice_success_3.py
+END
+200_ice_no_ice.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/200_ice_no_ice.py
+END
+159_no_rport.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/!svn/ver/2442/pjproject/trunk/tests/pjsua/scripts-sendto/159_no_rport.py
+END
+300_srtp_receive_no_key_3.py
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/300_srtp_receive_no_key_3.py
+END
+410_fmtp_amrnb_offer_octet_align.py
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/!svn/ver/3664/pjproject/trunk/tests/pjsua/scripts-sendto/410_fmtp_amrnb_offer_octet_align.py
+END
+999_asterisk_err.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/999_asterisk_err.py
+END
+173_timer_offer_refresher_uas.py
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/!svn/ver/2858/pjproject/trunk/tests/pjsua/scripts-sendto/173_timer_offer_refresher_uas.py
+END
+322_srtp2_recv_savp.py
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/322_srtp2_recv_savp.py
+END
+150_err_extension.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/150_err_extension.py
+END
+151_err_sdp_video.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/151_err_sdp_video.py
+END
+001_torture_4475_3_1_1_3.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/!svn/ver/2505/pjproject/trunk/tests/pjsua/scripts-sendto/001_torture_4475_3_1_1_3.py
+END
+323_srtp2_receive_too_long_key.py
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/!svn/ver/3193/pjproject/trunk/tests/pjsua/scripts-sendto/323_srtp2_receive_too_long_key.py
+END
+120_sdp_with_video_dynamic_1.py
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/120_sdp_with_video_dynamic_1.py
+END
+361_non_sip_uri.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/361_non_sip_uri.py
+END
+125_sdp_with_multi_audio_0.py
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/!svn/ver/3711/pjproject/trunk/tests/pjsua/scripts-sendto/125_sdp_with_multi_audio_0.py
+END
+320_srtp_with_unknown_transport_1.py
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/320_srtp_with_unknown_transport_1.py
+END
+412_fmtp_amrnb_offer_band_eff2.py
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/!svn/ver/3664/pjproject/trunk/tests/pjsua/scripts-sendto/412_fmtp_amrnb_offer_band_eff2.py
+END
+110_tel_uri.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/!svn/ver/2451/pjproject/trunk/tests/pjsua/scripts-sendto/110_tel_uri.py
+END
+160_err_duplicate_replaces.py
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/160_err_duplicate_replaces.py
+END
+125_sdp_with_multi_audio_4.py
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/125_sdp_with_multi_audio_4.py
+END
+201_ice_mismatch_2.py
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/201_ice_mismatch_2.py
+END
+200_ice_success_2.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/200_ice_success_2.py
+END
+153_err_sdp_unsupported_codec.py
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/153_err_sdp_unsupported_codec.py
+END
+173_timer_offer_no_refresher.py
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/!svn/ver/2858/pjproject/trunk/tests/pjsua/scripts-sendto/173_timer_offer_no_refresher.py
+END
+330_srtp_prefer_rtp_savp.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/!svn/ver/3251/pjproject/trunk/tests/pjsua/scripts-sendto/330_srtp_prefer_rtp_savp.py
+END
+300_srtp_receive_no_key_2.py
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/300_srtp_receive_no_key_2.py
+END
+155_err_sdp_bad_syntax.py
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/155_err_sdp_bad_syntax.py
+END
+300_srtp_receive_crypto_tag_zero.py
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/!svn/ver/2765/pjproject/trunk/tests/pjsua/scripts-sendto/300_srtp_receive_crypto_tag_zero.py
+END
+320_srtp_with_unknown_media_2.py
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/320_srtp_with_unknown_media_2.py
+END
+122_sdp_with_unknown_dynamic_2.py
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/122_sdp_with_unknown_dynamic_2.py
+END
+323_srtp2_unsupported_crypto.py
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/323_srtp2_unsupported_crypto.py
+END
+159_no_rport_nit.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/!svn/ver/2442/pjproject/trunk/tests/pjsua/scripts-sendto/159_no_rport_nit.py
+END
+001_torture_4475_3_1_1_2.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/!svn/ver/2505/pjproject/trunk/tests/pjsua/scripts-sendto/001_torture_4475_3_1_1_2.py
+END
+331_srtp_prefer_rtp_avp.py
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/331_srtp_prefer_rtp_avp.py
+END
+360_non_sip_uri.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/360_non_sip_uri.py
+END
+363_non_sip_uri_subscribe.py
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/363_non_sip_uri_subscribe.py
+END
+121_sdp_with_video_static_2.py
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/121_sdp_with_video_static_2.py
+END
+321_srtp2_recv_avp.py
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/!svn/ver/3713/pjproject/trunk/tests/pjsua/scripts-sendto/321_srtp2_recv_avp.py
+END
+125_sdp_with_multi_audio_3.py
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/125_sdp_with_multi_audio_3.py
+END
+201_ice_mismatch_1.py
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/201_ice_mismatch_1.py
+END
+172_timer_supported_but_not_used.py
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/!svn/ver/2858/pjproject/trunk/tests/pjsua/scripts-sendto/172_timer_supported_but_not_used.py
+END
+200_ice_success_1.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/200_ice_success_1.py
+END
+300_srtp_receive_no_key_1.py
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/300_srtp_receive_no_key_1.py
+END
+300_srtp_duplicated_crypto_tag.py
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/300_srtp_duplicated_crypto_tag.py
+END
+171_timer_initiated_by_uas.py
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/!svn/ver/3307/pjproject/trunk/tests/pjsua/scripts-sendto/171_timer_initiated_by_uas.py
+END
+320_srtp_with_unknown_media_1.py
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/320_srtp_with_unknown_media_1.py
+END
+401_fmtp_g7221_with_bitrate_32000.py
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/!svn/ver/3664/pjproject/trunk/tests/pjsua/scripts-sendto/401_fmtp_g7221_with_bitrate_32000.py
+END
+156_err_sdp_bad_net_type.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/156_err_sdp_bad_net_type.py
+END
+170_timer_required.py
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/!svn/ver/3307/pjproject/trunk/tests/pjsua/scripts-sendto/170_timer_required.py
+END
+313_srtp1_unsupported_crypto.py
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/313_srtp1_unsupported_crypto.py
+END
+122_sdp_with_unknown_dynamic_1.py
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/122_sdp_with_unknown_dynamic_1.py
+END
+001_torture_4475_3_1_1_1.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/!svn/ver/2505/pjproject/trunk/tests/pjsua/scripts-sendto/001_torture_4475_3_1_1_1.py
+END
+140_sdp_with_direction_attr_in_session_2.py
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/!svn/ver/3086/pjproject/trunk/tests/pjsua/scripts-sendto/140_sdp_with_direction_attr_in_session_2.py
+END
+251_multipart_ok_simple.py
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/!svn/ver/3243/pjproject/trunk/tests/pjsua/scripts-sendto/251_multipart_ok_simple.py
+END
+123_sdp_with_unknown_static_2.py
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/123_sdp_with_unknown_static_2.py
+END
+001_torture_4475_3_1_1_5.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/!svn/ver/2505/pjproject/trunk/tests/pjsua/scripts-sendto/001_torture_4475_3_1_1_5.py
+END
+158_err_sdp_bad_transport_type.py
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/158_err_sdp_bad_transport_type.py
+END
+121_sdp_with_video_static_1.py
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/121_sdp_with_video_static_1.py
+END
+364_non_sip_uri_subscribe.py
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/364_non_sip_uri_subscribe.py
+END
+311_srtp1_recv_avp.py
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/311_srtp1_recv_avp.py
+END
+125_sdp_with_multi_audio_2.py
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/125_sdp_with_multi_audio_2.py
+END
+310_srtp1_no_crypto.py
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/310_srtp1_no_crypto.py
+END
+124_sdp_with_unknown_static_unknown_transport.py
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/124_sdp_with_unknown_static_unknown_transport.py
+END
+157_err_sdp_bad_addr_type.py
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/157_err_sdp_bad_addr_type.py
+END
+200_ice_success_4.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/200_ice_success_4.py
+END
+161_err_replaces_dlg_not_found.py
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/161_err_replaces_dlg_not_found.py
+END
+411_fmtp_amrnb_offer_band_eff.py
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/!svn/ver/3664/pjproject/trunk/tests/pjsua/scripts-sendto/411_fmtp_amrnb_offer_band_eff.py
+END
+500_pres_subscribe_with_bad_event.py
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/500_pres_subscribe_with_bad_event.py
+END
+301_srtp0_recv_savp.py
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/!svn/ver/3713/pjproject/trunk/tests/pjsua/scripts-sendto/301_srtp0_recv_savp.py
+END
+252_multipart_ok_clutter.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/!svn/ver/3243/pjproject/trunk/tests/pjsua/scripts-sendto/252_multipart_ok_clutter.py
+END
+100_simplecall.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/100_simplecall.py
+END
+312_srtp1_recv_savp.py
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/312_srtp1_recv_savp.py
+END
+401_fmtp_g7221_with_bitrate_24000.py
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/!svn/ver/3664/pjproject/trunk/tests/pjsua/scripts-sendto/401_fmtp_g7221_with_bitrate_24000.py
+END
+300_srtp_invalid_crypto_tag_non_numeric.py
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/300_srtp_invalid_crypto_tag_non_numeric.py
+END
+999_message_no_body.py
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/!svn/ver/2884/pjproject/trunk/tests/pjsua/scripts-sendto/999_message_no_body.py
+END
+140_sdp_with_direction_attr_in_session_1.py
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/!svn/ver/3086/pjproject/trunk/tests/pjsua/scripts-sendto/140_sdp_with_direction_attr_in_session_1.py
+END
+126_sdp_with_port_0_and_no_rtpmap_for_dynamic_pt.py
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/!svn/ver/3011/pjproject/trunk/tests/pjsua/scripts-sendto/126_sdp_with_port_0_and_no_rtpmap_for_dynamic_pt.py
+END
+174_timer_se_too_small.py
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/!svn/ver/2858/pjproject/trunk/tests/pjsua/scripts-sendto/174_timer_se_too_small.py
+END
+123_sdp_with_unknown_static_1.py
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/123_sdp_with_unknown_static_1.py
+END
+001_torture_4475_3_1_1_4.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/!svn/ver/3712/pjproject/trunk/tests/pjsua/scripts-sendto/001_torture_4475_3_1_1_4.py
+END
+120_sdp_with_video_dynamic_2.py
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/120_sdp_with_video_dynamic_2.py
+END
+362_non_sip_uri.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/362_non_sip_uri.py
+END
+301_srtp0_recv_avp.py
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/301_srtp0_recv_avp.py
+END
+152_err_sdp_no_media.py
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/152_err_sdp_no_media.py
+END
+400_fmtp_g7221_with_bitrate.py
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/!svn/ver/3664/pjproject/trunk/tests/pjsua/scripts-sendto/400_fmtp_g7221_with_bitrate.py
+END
+260_multipart_err_no_sdp.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/!svn/ver/3243/pjproject/trunk/tests/pjsua/scripts-sendto/260_multipart_err_no_sdp.py
+END
+125_sdp_with_multi_audio_1.py
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/125_sdp_with_multi_audio_1.py
+END
+320_srtp_with_unknown_transport_2.py
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/320_srtp_with_unknown_transport_2.py
+END
+300_srtp_crypto_case_insensitive.py
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/!svn/ver/2392/pjproject/trunk/tests/pjsua/scripts-sendto/300_srtp_crypto_case_insensitive.py
+END

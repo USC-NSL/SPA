@@ -1,0 +1,10 @@
+K 10
+svn:ignore
+V 34
+*.user
+*.vcl
+*.vco
+*.depend
+*.plg
+
+END
