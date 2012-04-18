@@ -1,0 +1,12 @@
+*.lo
+*.la
+Makefile
+config.h
+doc/Makefile
+libtool
+packages/Makefile
+src/.deps/
+src/Makefile
+src/sofsip_cli
+src/test_media
+stamp-h1
