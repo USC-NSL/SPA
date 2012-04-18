@@ -2,4 +2,5 @@
 # Contact: Kai Vehmanen <kai.vehmanen@nokia.com>
 # Licensed under LGPL. See file COPYING.
 
-EXTRA_DIST = sofsip-cli.spec sofsip-cli.spec.in
+man_MANS = sofsip_cli.1
+EXTRA_DIST = $(man_MANS)
