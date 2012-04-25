@@ -2,13 +2,13 @@
 
 dir
 4082
-http://svn.pjsip.org/repos/pjproject/trunk/pjsip/include/pjsip-ua
+http://svn.pjsip.org/repos/pjproject/branches/1.x/pjsip/include/pjsip-ua
 http://svn.pjsip.org/repos
 
 
 
-2012-04-11T10:01:00.027932Z
-4038
+2012-04-11T09:41:25.461115Z
+4037
 bennylp
 
 
@@ -45,10 +45,10 @@ file
 
 
 
-2012-04-17T21:49:36.000000Z
+2012-04-25T01:48:47.000000Z
 bcfd9e3b3e7c47d628dacc203cbeb34b
-2012-04-11T10:01:00.027932Z
-4038
+2012-04-11T09:41:25.461115Z
+4037
 bennylp
 has-props
 
@@ -97,10 +97,10 @@ file
 
 
 
-2012-04-17T21:49:36.000000Z
-02d31be998089fdb69534824fbc44acc
-2011-10-24T09:28:13.441892Z
-3841
-ming
+2012-04-25T01:47:28.000000Z
+77cbac81695951f851f4673e0fe79882
+2011-06-24T07:35:28.082747Z
+3598
+bennylp
 has-props
 

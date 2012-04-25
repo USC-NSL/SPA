@@ -76,9 +76,8 @@ export PJSIP_SIMPLE_CFLAGS += $(_CFLAGS)
 export PJSUA_LIB_SRCDIR = ../src/pjsua-lib
 export PJSUA_LIB_OBJS += $(OS_OBJS) $(M_OBJS) $(CC_OBJS) $(HOST_OBJS) \
 			pjsua_acc.o pjsua_call.o pjsua_core.o \
-			pjsua_im.o pjsua_media.o pjsua_pres.o \
-			pjsua_dump.o pjsua_aud.o pjsua_vid.o
-export PJSUA_LIB_CFLAGS += $(_CFLAGS) $(PJ_VIDEO_CFLAGS)
+			pjsua_im.o pjsua_media.o pjsua_pres.o
+export PJSUA_LIB_CFLAGS += $(_CFLAGS)
 
 
 export CC_OUT CC AR RANLIB HOST_MV HOST_RM HOST_RMDIR HOST_MKDIR OBJEXT LD LDOUT 

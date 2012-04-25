@@ -1,4 +1,4 @@
-/* $Id: g722.c 3664 2011-07-19 03:42:28Z nanang $ */
+/* $Id: g722.c 3553 2011-05-05 06:14:19Z nanang $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -122,8 +122,7 @@ static pjmedia_codec_factory_op g722_factory_op =
     &g722_default_attr,
     &g722_enum_codecs,
     &g722_alloc_codec,
-    &g722_dealloc_codec,
-    &pjmedia_codec_g722_deinit
+    &g722_dealloc_codec
 };
 
 /* G722 factory */

@@ -1,35 +1,5 @@
 K 25
 svn:wc:ra_dav:version-url
-V 54
-/repos/!svn/ver/4075/pjproject/trunk/third_party/build
-END
-os-auto.mak.in
-K 25
-svn:wc:ra_dav:version-url
-V 69
-/repos/!svn/ver/3295/pjproject/trunk/third_party/build/os-auto.mak.in
-END
-os-linux.mak
-K 25
-svn:wc:ra_dav:version-url
-V 67
-/repos/!svn/ver/2601/pjproject/trunk/third_party/build/os-linux.mak
-END
-os-win32.mak
-K 25
-svn:wc:ra_dav:version-url
-V 67
-/repos/!svn/ver/2601/pjproject/trunk/third_party/build/os-win32.mak
-END
-os-darwinos.mak
-K 25
-svn:wc:ra_dav:version-url
-V 70
-/repos/!svn/ver/2601/pjproject/trunk/third_party/build/os-darwinos.mak
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 63
-/repos/!svn/ver/2037/pjproject/trunk/third_party/build/Makefile
+V 61
+/repos/!svn/ver/3968/pjproject/branches/1.x/third_party/build
 END

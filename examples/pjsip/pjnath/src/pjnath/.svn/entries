@@ -2,14 +2,14 @@
 
 dir
 4082
-http://svn.pjsip.org/repos/pjproject/trunk/pjnath/src/pjnath
+http://svn.pjsip.org/repos/pjproject/branches/1.x/pjnath/src/pjnath
 http://svn.pjsip.org/repos
 
 
 
-2012-03-30T07:10:13.512709Z
-3999
-bennylp
+2012-03-29T04:17:06.872025Z
+3991
+nanang
 
 
 svn:special svn:externals svn:needs-lock
@@ -32,11 +32,11 @@ file
 
 
 
-2012-04-17T21:49:35.000000Z
-02fb25aeb00409baa61077c48d57faf2
-2011-09-18T14:59:56.299132Z
-3753
-bennylp
+2012-04-25T01:47:27.000000Z
+843e2a064d4b5ea726d1147e772b9158
+2011-05-05T06:14:19.959022Z
+3553
+nanang
 has-props
 
 stun_msg.c
@@ -58,11 +58,11 @@ file
 
 
 
-2012-04-17T21:49:35.000000Z
-42fb80590c012909cc51093f99dfa486
-2012-03-30T07:10:13.512709Z
-3999
-bennylp
+2012-04-25T01:48:47.000000Z
+fa2669d10186351a1f2554f8759a3dda
+2012-02-08T09:29:38.607765Z
+3951
+nanang
 has-props
 
 stun_msg_dump.c
@@ -99,9 +99,9 @@ file
 
 2012-04-17T21:49:35.000000Z
 8632db080636d9b10178e57c021416d5
-2011-10-24T09:28:13.441892Z
-3841
-ming
+2011-06-22T10:57:11.504312Z
+3596
+bennylp
 has-props
 
 stun_sock.c
@@ -110,11 +110,11 @@ file
 
 
 
-2012-04-17T21:49:35.000000Z
+2012-04-25T01:48:47.000000Z
 761ebcbee3496ff42695d7c1948c9f91
-2012-03-30T07:10:13.512709Z
-3999
-bennylp
+2012-01-26T04:37:06.915914Z
+3944
+nanang
 has-props
 
 ice_strans.c
@@ -123,11 +123,11 @@ file
 
 
 
-2012-04-17T21:49:35.000000Z
-1cd1e6ee7dbde807dde14d8de9527cbd
-2012-03-30T07:10:13.512709Z
-3999
-bennylp
+2012-04-25T01:48:47.000000Z
+f66716aec5c1d3c56f58362c44d518e0
+2012-03-29T04:17:06.872025Z
+3991
+nanang
 has-props
 
 nat_detect.c
@@ -164,9 +164,9 @@ file
 
 2012-04-17T21:49:35.000000Z
 b13445bd9d1344e8177c045bec337aa4
-2011-10-24T15:03:43.278471Z
-3844
-bennylp
+2011-10-31T10:28:34.338841Z
+3877
+ming
 has-props
 
 stun_session.c
@@ -175,10 +175,10 @@ file
 
 
 
-2012-04-17T21:49:35.000000Z
-243254a38f0c91d2bcdca19c7d47cd24
-2011-10-24T14:13:35.550826Z
-3843
-bennylp
+2012-04-25T01:47:27.000000Z
+6b5a01cb5408f292b91f25d88c5daf6e
+2011-10-31T10:27:12.586970Z
+3876
+ming
 has-props
 

@@ -1,4 +1,4 @@
-/* $Id: encdec.c 3664 2011-07-19 03:42:28Z nanang $ */
+/* $Id: encdec.c 3816 2011-10-14 04:15:15Z bennylp $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -137,8 +137,8 @@ static pj_status_t enc_dec_test(const char *codec_id,
 
     /* Alloc codec */
     CHECK( pjmedia_codec_mgr_alloc_codec(cm, pci, &codec) );
-    CHECK( pjmedia_codec_init(codec, pool) );
-    CHECK( pjmedia_codec_open(codec, &param) );
+    CHECK( codec->op->init(codec, pool) );
+    CHECK( codec->op->open(codec, &param) );
     
     for (;;) {
 	pjmedia_frame frm_pcm, frm_bit, out_frm, frames[4];
@@ -162,8 +162,7 @@ static pj_status_t enc_dec_test(const char *codec_id,
 	/* Encode */
 	frm_bit.buf = bitstream;
 	frm_bit.size = sizeof(bitstream);
-	CHECK(pjmedia_codec_encode(codec, &frm_pcm, sizeof(bitstream), 
-	                           &frm_bit));
+	CHECK(codec->op->encode(codec, &frm_pcm, sizeof(bitstream), &frm_bit));
 
 	/* On DTX, write zero frame to wavout to maintain duration */
 	if (frm_bit.size == 0 || frm_bit.type != PJMEDIA_FRAME_TYPE_AUDIO) {
@@ -181,8 +180,8 @@ static pj_status_t enc_dec_test(const char *codec_id,
 	 */
 	ts.u64 = 0;
 	cnt = PJ_ARRAY_SIZE(frames);
-	CHECK( pjmedia_codec_parse(codec, bitstream, frm_bit.size, &ts, &cnt, 
-			           frames) );
+	CHECK( codec->op->parse(codec, bitstream, frm_bit.size, &ts, &cnt, 
+			        frames) );
 	CHECK( (cnt==1 ? PJ_SUCCESS : -1) );
 
 	/* Decode or simulate packet loss */
@@ -191,11 +190,11 @@ static pj_status_t enc_dec_test(const char *codec_id,
 	
 	if ((pj_rand() % 100) < (int)lost_pct) {
 	    /* Simulate loss */
-	    CHECK( pjmedia_codec_recover(codec, sizeof(pcmbuf), &out_frm) );
+	    CHECK( codec->op->recover(codec, sizeof(pcmbuf), &out_frm) );
 	    TRACE_((THIS_FILE, "%d.%03d Packet lost", T));
 	} else {
 	    /* Decode */
-	    CHECK( pjmedia_codec_decode(codec, &frames[0], sizeof(pcmbuf), 
+	    CHECK( codec->op->decode(codec, &frames[0], sizeof(pcmbuf), 
 				     &out_frm) );
 	}
 
@@ -211,7 +210,7 @@ static pj_status_t enc_dec_test(const char *codec_id,
     pjmedia_port_destroy(wavin);
 
     /* Close codec */
-    pjmedia_codec_close(codec);
+    codec->op->close(codec);
     pjmedia_codec_mgr_dealloc_codec(cm, codec);
 
     /* Release pool */
@@ -239,7 +238,24 @@ int main(int argc, char *argv[])
     CHECK( pjmedia_endpt_create(&cp.factory, NULL, 1, &mept) );
 
     /* Register all codecs */
-    CHECK( pjmedia_codec_register_audio_codecs(mept, NULL) );
+#if PJMEDIA_HAS_G711_CODEC
+    CHECK( pjmedia_codec_g711_init(mept) );
+#endif
+#if PJMEDIA_HAS_GSM_CODEC
+    CHECK( pjmedia_codec_gsm_init(mept) );
+#endif
+#if PJMEDIA_HAS_ILBC_CODEC
+    CHECK( pjmedia_codec_ilbc_init(mept, 30) );
+#endif
+#if PJMEDIA_HAS_SPEEX_CODEC
+    CHECK( pjmedia_codec_speex_init(mept, 0, 5, 5) );
+#endif
+#if PJMEDIA_HAS_G722_CODEC
+    CHECK( pjmedia_codec_g722_init(mept) );
+#endif
+#if PJMEDIA_HAS_OPENCORE_AMRNB_CODEC
+    CHECK( pjmedia_codec_opencore_amrnb_init(mept) );
+#endif
 
     pj_gettimeofday(&t0);
     status = enc_dec_test(argv[1], argv[2], argv[3]);

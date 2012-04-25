@@ -2,14 +2,14 @@
 
 dir
 4082
-http://svn.pjsip.org/repos/pjproject/trunk/pjlib/src/pjlib-test
+http://svn.pjsip.org/repos/pjproject/branches/1.x/pjlib/src/pjlib-test
 http://svn.pjsip.org/repos
 
 
 
-2011-10-24T09:28:13.441892Z
-3841
-ming
+2011-09-21T04:54:27.339992Z
+3761
+bennylp
 
 
 svn:special svn:externals svn:needs-lock
@@ -47,9 +47,9 @@ file
 
 2012-04-17T21:49:46.000000Z
 e8958569205df0b1d1f49093fa85e402
-2011-10-24T09:28:13.441892Z
-3841
-ming
+2011-09-21T04:54:27.339992Z
+3761
+bennylp
 has-props
 
 ioq_udp.c
@@ -195,19 +195,6 @@ a5f3df1d979dbd9980efa0c2f9d0f6ee
 nanang
 has-props
 
-fifobuf.c
-file
-
-
-
-
-2012-04-17T21:49:46.000000Z
-c12ec0b28c39632805f6bfcaadda59d5
-2011-05-05T06:14:19.959022Z
-3553
-nanang
-has-props
-
 ssl_sock.c
 file
 
@@ -234,6 +221,19 @@ file
 nanang
 has-props
 
+fifobuf.c
+file
+
+
+
+
+2012-04-17T21:49:46.000000Z
+c12ec0b28c39632805f6bfcaadda59d5
+2011-05-05T06:14:19.959022Z
+3553
+nanang
+has-props
+
 os.c
 file
 
@@ -242,9 +242,9 @@ file
 
 2012-04-17T21:49:46.000000Z
 f2f9b4801af7e0c57b6b712e6235f5d8
-2011-10-24T09:28:13.441892Z
-3841
-ming
+2011-09-21T04:27:58.717736Z
+3759
+bennylp
 has-props
 
 pjlib_test_reg.rss

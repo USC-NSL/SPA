@@ -1,4 +1,4 @@
-/* $Id: sound_port.h 4082 2012-04-24 13:09:14Z bennylp $ */
+/* $Id: sound_port.h 4065 2012-04-21 02:17:07Z bennylp $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -25,7 +25,6 @@
  * @brief Media port connection abstraction to sound device.
  */
 #include <pjmedia-audiodev/audiodev.h>
-#include <pjmedia/clock.h>
 #include <pjmedia/port.h>
 
 PJ_BEGIN_DECL
@@ -282,19 +281,6 @@ PJ_DECL(pj_status_t) pjmedia_snd_port_set_ec( pjmedia_snd_port *snd_port,
  */
 PJ_DECL(pj_status_t) pjmedia_snd_port_get_ec_tail(pjmedia_snd_port *snd_port,
 						  unsigned *p_length);
-
-
-/**
- * Get a clock source from the sound port.
- *
- * @param snd_port  The sound port.
- * @param dir       Sound port's direction.
- *
- * @return	    The clock source.
- */
-PJ_DECL(pjmedia_clock_src *)
-pjmedia_snd_port_get_clock_src( pjmedia_snd_port *snd_port,
-                                pjmedia_dir dir );
 
 
 /**

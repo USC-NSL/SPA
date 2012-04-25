@@ -1,4 +1,4 @@
-/* $Id: wmme_dev.c 3664 2011-07-19 03:42:28Z nanang $ */
+/* $Id: wmme_dev.c 3553 2011-05-05 06:14:19Z nanang $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -372,12 +372,12 @@ static void build_dev_info(UINT deviceId, struct wmme_dev_info *wdi,
     /* Extended formats */
     wdi->info.caps |= PJMEDIA_AUD_DEV_CAP_EXT_FORMAT;
     wdi->info.ext_fmt_cnt = 2;
-    pjmedia_format_init_audio(&wdi->info.ext_fmt[0],
-			      PJMEDIA_FORMAT_PCMU, 8000, 1, 8,
-			      20000, 64000, 64000);
-    pjmedia_format_init_audio(&wdi->info.ext_fmt[0],
-			      PJMEDIA_FORMAT_PCMA, 8000, 1, 8,
-			      20000, 64000, 64000);
+    wdi->info.ext_fmt[0].id = PJMEDIA_FORMAT_PCMU;
+    wdi->info.ext_fmt[0].bitrate = 64000;
+    wdi->info.ext_fmt[0].vad = 0;
+    wdi->info.ext_fmt[1].id = PJMEDIA_FORMAT_PCMA;
+    wdi->info.ext_fmt[1].bitrate = 64000;
+    wdi->info.ext_fmt[1].vad = 0;
 }
 
 /* API: init factory */

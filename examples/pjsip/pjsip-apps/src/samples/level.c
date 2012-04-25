@@ -1,4 +1,4 @@
-/* $Id: level.c 3664 2011-07-19 03:42:28Z nanang $ */
+/* $Id: level.c 3553 2011-05-05 06:14:19Z nanang $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -124,7 +124,7 @@ int main(int argc, char *argv[])
 	return 1;
     }
 
-    if (PJMEDIA_PIA_SPF(&file_port->info) > NSAMPLES) {
+    if (file_port->info.samples_per_frame > NSAMPLES) {
 	app_perror(THIS_FILE, "WAV clock rate is too big", PJ_EINVAL);
 	return 1;
     }
@@ -145,11 +145,11 @@ int main(int argc, char *argv[])
 	pjmedia_port_get_frame(file_port, &frm);
 
 	level32 = pjmedia_calc_avg_signal(framebuf, 
-					  PJMEDIA_PIA_SPF(&file_port->info));
+					  file_port->info.samples_per_frame);
 	level = pjmedia_linear2ulaw(level32) ^ 0xFF;
 
-	ms = i * 1000 * PJMEDIA_PIA_SPF(&file_port->info) /
-		PJMEDIA_PIA_SRATE(&file_port->info);
+	ms = i * 1000 * file_port->info.samples_per_frame /
+			file_port->info.clock_rate;
 	printf("%03d.%03d\t%7d\t%7d\n", 
 	        ms/1000, ms%1000, level, level32);
     }

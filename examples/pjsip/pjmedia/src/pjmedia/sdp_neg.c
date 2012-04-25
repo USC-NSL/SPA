@@ -1,4 +1,4 @@
-/* $Id: sdp_neg.c 3980 2012-03-20 09:23:20Z ming $ */
+/* $Id: sdp_neg.c 3812 2011-10-11 05:06:42Z nanang $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -52,31 +52,19 @@ static const char *state_str[] =
     "STATE_DONE",
 };
 
-/* Definition of customized SDP format negotiation callback */
-struct fmt_match_cb_t
-{
-    pj_str_t			    fmt_name;
-    pjmedia_sdp_neg_fmt_match_cb    cb;
-};
-
-/* Number of registered customized SDP format negotiation callbacks */
-static unsigned fmt_match_cb_cnt;
-
-/* The registered customized SDP format negotiation callbacks */
-static struct fmt_match_cb_t 
-	      fmt_match_cb[PJMEDIA_SDP_NEG_MAX_CUSTOM_FMT_NEG_CB];
-
-/* Redefining a very long identifier name, just for convenience */
-#define ALLOW_MODIFY_ANSWER PJMEDIA_SDP_NEG_FMT_MATCH_ALLOW_MODIFY_ANSWER
-
-static pj_status_t custom_fmt_match( pj_pool_t *pool,
-				   const pj_str_t *fmt_name,
-				   pjmedia_sdp_media *offer,
-				   unsigned o_fmt_idx,
-				   pjmedia_sdp_media *answer,
-				   unsigned a_fmt_idx,
-				   unsigned option);
-
+#define GET_FMTP_IVAL(ival, fmtp, param, default_val) \
+    do { \
+	pj_str_t s; \
+	char *p; \
+	p = pj_stristr(&fmtp.fmt_param, &param); \
+	if (!p) { \
+	    ival = default_val; \
+	    break; \
+	} \
+	pj_strset(&s, p + param.slen, fmtp.fmt_param.slen - \
+		  (p - fmtp.fmt_param.ptr) - param.slen); \
+	ival = pj_strtoul(&s); \
+    } while (0)
 
 /*
  * Get string representation of negotiator state.
@@ -243,31 +231,6 @@ PJ_DEF(pj_status_t) pjmedia_sdp_neg_get_neg_local( pjmedia_sdp_neg *neg,
     return PJ_SUCCESS;
 }
 
-static pjmedia_sdp_media *sdp_media_clone_deactivate(
-				    pj_pool_t *pool,
-                                    const pjmedia_sdp_media *rem_med,
-                                    const pjmedia_sdp_media *local_med,
-                                    const pjmedia_sdp_session *local_sess)
-{
-    pjmedia_sdp_media *res;
-
-    res = pjmedia_sdp_media_clone_deactivate(pool, rem_med);
-    if (!res)
-	return NULL;
-
-    if (!res->conn && (!local_sess || !local_sess->conn)) {
-	if (local_med && local_med->conn)
-	    res->conn = pjmedia_sdp_conn_clone(pool, local_med->conn);
-	else {
-	    res->conn = PJ_POOL_ZALLOC_T(pool, pjmedia_sdp_conn);
-	    res->conn->net_type = pj_str("IN");
-	    res->conn->addr_type = pj_str("IP4");
-	    res->conn->addr = pj_str("127.0.0.1");
-	}
-    }
-
-    return res;
-}
 
 /*
  * Modify local SDP and wait for remote answer.
@@ -348,7 +311,7 @@ PJ_DEF(pj_status_t) pjmedia_sdp_neg_modify_local_offer( pj_pool_t *pool,
 	if (!found) {
 	    pjmedia_sdp_media *m;
 
-	    m = sdp_media_clone_deactivate(pool, om, om, local);
+	    m = pjmedia_sdp_media_clone_deactivate(pool, om);
 
 	    pj_array_insert(new_offer->media, sizeof(new_offer->media[0]),
 			    new_offer->media_count++, oi, &m);
@@ -592,6 +555,189 @@ static void update_media_direction(pj_pool_t *pool,
     }
 }
 
+/* Matching G722.1 bitrates between offer and answer.
+ */
+static pj_bool_t match_g7221( const pjmedia_sdp_media *offer,
+			      unsigned o_fmt_idx,
+			      const pjmedia_sdp_media *answer,
+			      unsigned a_fmt_idx)
+{
+    const pjmedia_sdp_attr *attr_ans;
+    const pjmedia_sdp_attr *attr_ofr;
+    pjmedia_sdp_fmtp fmtp;
+    unsigned a_bitrate, o_bitrate;
+    const pj_str_t bitrate = {"bitrate=", 8};
+
+    /* Parse offer */
+    attr_ofr = pjmedia_sdp_media_find_attr2(offer, "fmtp", 
+					    &offer->desc.fmt[o_fmt_idx]);
+    if (!attr_ofr)
+	return PJ_FALSE;
+
+    if (pjmedia_sdp_attr_get_fmtp(attr_ofr, &fmtp) != PJ_SUCCESS)
+	return PJ_FALSE;
+
+    GET_FMTP_IVAL(o_bitrate, fmtp, bitrate, 0);
+
+    /* Parse answer */
+    attr_ans = pjmedia_sdp_media_find_attr2(answer, "fmtp", 
+					    &answer->desc.fmt[a_fmt_idx]);
+    if (!attr_ans)
+	return PJ_FALSE;
+
+    if (pjmedia_sdp_attr_get_fmtp(attr_ans, &fmtp) != PJ_SUCCESS)
+	return PJ_FALSE;
+
+    GET_FMTP_IVAL(a_bitrate, fmtp, bitrate, 0);
+
+    /* Compare bitrate in answer and offer. */
+    return (a_bitrate == o_bitrate);
+}
+
+/* Negotiate AMR format params between offer and answer. Format params
+ * to be matched are: octet-align, crc, robust-sorting, interleaving, 
+ * and channels (channels is negotiated by rtpmap line negotiation). 
+ * Note: For answerer, octet-align mode setting is adaptable to offerer 
+ *       setting. In the case that octet-align mode need to be adjusted,
+ *       pt_need_adapt will be set to the format ID.
+ *       
+ */
+static pj_bool_t match_amr( const pjmedia_sdp_media *offer,
+			    unsigned o_fmt_idx,
+			    const pjmedia_sdp_media *answer,
+			    unsigned a_fmt_idx,
+			    pj_bool_t answerer,
+			    pj_str_t *pt_need_adapt)
+{
+    /* Negotiated format-param field-names constants. */
+    const pj_str_t STR_OCTET_ALIGN	= {"octet-align=", 12};
+    const pj_str_t STR_CRC		= {"crc=", 4};
+    const pj_str_t STR_ROBUST_SORTING	= {"robust-sorting=", 15};
+    const pj_str_t STR_INTERLEAVING	= {"interleaving=", 13};
+
+    /* Negotiated params and their default values. */
+    unsigned a_octet_align = 0, o_octet_align = 0;
+    unsigned a_crc = 0, o_crc = 0;
+    unsigned a_robust_sorting = 0, o_robust_sorting = 0;
+    unsigned a_interleaving = 0, o_interleaving = 0;
+
+    const pjmedia_sdp_attr *attr_ans;
+    const pjmedia_sdp_attr *attr_ofr;
+    pjmedia_sdp_fmtp fmtp;
+    pj_bool_t match;
+
+    /* Parse offerer FMTP */
+    attr_ofr = pjmedia_sdp_media_find_attr2(offer, "fmtp", 
+					    &offer->desc.fmt[o_fmt_idx]);
+    if (attr_ofr) {
+	if (pjmedia_sdp_attr_get_fmtp(attr_ofr, &fmtp) != PJ_SUCCESS)
+	    /* Invalid fmtp format. */
+	    return PJ_FALSE;
+
+	GET_FMTP_IVAL(o_octet_align, fmtp, STR_OCTET_ALIGN, 0);
+	GET_FMTP_IVAL(o_crc, fmtp, STR_CRC, 0);
+	GET_FMTP_IVAL(o_robust_sorting, fmtp, STR_ROBUST_SORTING, 0);
+	GET_FMTP_IVAL(o_interleaving, fmtp, STR_INTERLEAVING, 0);
+    }
+
+    /* Parse answerer FMTP */
+    attr_ans = pjmedia_sdp_media_find_attr2(answer, "fmtp", 
+					    &answer->desc.fmt[a_fmt_idx]);
+    if (attr_ans) {
+	if (pjmedia_sdp_attr_get_fmtp(attr_ans, &fmtp) != PJ_SUCCESS)
+	    /* Invalid fmtp format. */
+	    return PJ_FALSE;
+
+	GET_FMTP_IVAL(a_octet_align, fmtp, STR_OCTET_ALIGN, 0);
+	GET_FMTP_IVAL(a_crc, fmtp, STR_CRC, 0);
+	GET_FMTP_IVAL(a_robust_sorting, fmtp, STR_ROBUST_SORTING, 0);
+	GET_FMTP_IVAL(a_interleaving, fmtp, STR_INTERLEAVING, 0);
+    }
+
+    if (answerer) {
+	match = a_crc == o_crc &&
+		a_robust_sorting == o_robust_sorting &&
+		a_interleaving == o_interleaving;
+
+	/* If answerer octet-align setting doesn't match to the offerer's, 
+	 * set pt_need_adapt to this media format ID to signal the caller
+	 * that this format ID needs to be adjusted.
+	 */
+	if (a_octet_align != o_octet_align && match) {
+	    pj_assert(pt_need_adapt != NULL);
+	    *pt_need_adapt = answer->desc.fmt[a_fmt_idx];
+	}
+    } else {
+	match = (a_octet_align == o_octet_align &&
+		 a_crc == o_crc &&
+		 a_robust_sorting == o_robust_sorting &&
+		 a_interleaving == o_interleaving);
+    }
+
+    return match;
+}
+
+
+/* Toggle AMR octet-align setting in the fmtp.
+ */
+static pj_status_t amr_toggle_octet_align(pj_pool_t *pool,
+					  pjmedia_sdp_media *media,
+					  unsigned fmt_idx)
+{
+    pjmedia_sdp_attr *attr;
+    pjmedia_sdp_fmtp fmtp;
+    const pj_str_t STR_OCTET_ALIGN = {"octet-align=", 12};
+    
+    enum { MAX_FMTP_STR_LEN = 160 };
+
+    attr = pjmedia_sdp_media_find_attr2(media, "fmtp", 
+					&media->desc.fmt[fmt_idx]);
+    /* Check if the AMR media format has FMTP attribute */
+    if (attr) {
+	char *p;
+	pj_status_t status;
+
+	status = pjmedia_sdp_attr_get_fmtp(attr, &fmtp);
+	if (status != PJ_SUCCESS)
+	    return status;
+
+	/* Check if the fmtp has octet-align field. */
+	p = pj_stristr(&fmtp.fmt_param, &STR_OCTET_ALIGN);
+	if (p) {
+	    /* It has, just toggle the value */
+	    unsigned octet_align;
+	    pj_str_t s;
+
+	    pj_strset(&s, p + STR_OCTET_ALIGN.slen, fmtp.fmt_param.slen -
+		      (p - fmtp.fmt_param.ptr) - STR_OCTET_ALIGN.slen);
+	    octet_align = pj_strtoul(&s);
+	    *(p + STR_OCTET_ALIGN.slen) = (char)(octet_align? '0' : '1');
+	} else {
+	    /* It doesn't, append octet-align field */
+	    char buf[MAX_FMTP_STR_LEN];
+
+	    pj_ansi_snprintf(buf, MAX_FMTP_STR_LEN, "%.*s;octet-align=1",
+			     (int)fmtp.fmt_param.slen, fmtp.fmt_param.ptr);
+	    attr->value = pj_strdup3(pool, buf);
+	}
+    } else {
+	/* Add new attribute for the AMR media format with octet-align 
+	 * field set.
+	 */
+	char buf[MAX_FMTP_STR_LEN];
+
+	attr = PJ_POOL_ZALLOC_T(pool, pjmedia_sdp_attr);
+	attr->name = pj_str("fmtp");
+	pj_ansi_snprintf(buf, MAX_FMTP_STR_LEN, "%.*s octet-align=1",
+			 (int)media->desc.fmt[fmt_idx].slen,
+		         media->desc.fmt[fmt_idx].ptr);
+	attr->value = pj_strdup3(pool, buf);
+	media->attr[media->attr_count++] = attr;
+    }
+
+    return PJ_SUCCESS;
+}
+
 
 /* Update single local media description to after receiving answer
  * from remote.
@@ -729,11 +875,19 @@ static pj_status_t process_m_answer( pj_pool_t *pool,
 			    (pj_stricmp(&or_.param, &ar.param)==0 ||
 			     (ar.param.slen==1 && *ar.param.ptr=='1')))
 			{
-			    /* Call custom format matching callbacks */
-			    if (custom_fmt_match(pool, &or_.enc_name,
-						 offer, i, answer, j, 0) ==
-				PJ_SUCCESS)
+			    /* Further check for G7221, negotiate bitrate. */
+			    if (pj_stricmp2(&or_.enc_name, "G7221") == 0) {
+				if (match_g7221(offer, i, answer, j))
+				    break;
+			    } else
+			    /* Further check for AMR, negotiate fmtp. */
+			    if (pj_stricmp2(&or_.enc_name, "AMR") == 0 ||
+				pj_stricmp2(&or_.enc_name, "AMR-WB") == 0) 
 			    {
+				if (match_amr(offer, i, answer, j, PJ_FALSE, 
+					      NULL))
+				    break;
+			    } else {
 				/* Match! */
 				break;
 			    }
@@ -862,8 +1016,7 @@ static pj_status_t process_answer(pj_pool_t *pool,
 	    pjmedia_sdp_media *am;
 
 	    /* Generate matching-but-disabled-media for the answer */
-	    am = sdp_media_clone_deactivate(pool, offer->media[omi],
-	                                    offer->media[omi], offer);
+	    am = pjmedia_sdp_media_clone_deactivate(pool, offer->media[omi]);
 	    answer->media[answer->media_count++] = am;
 	    ++ami;
 
@@ -903,89 +1056,11 @@ static pj_status_t process_answer(pj_pool_t *pool,
     return has_active ? PJ_SUCCESS : PJMEDIA_SDPNEG_ENOMEDIA;
 }
 
-
-/* Internal function to rewrite the format string in SDP attribute rtpmap
- * and fmtp.
- */
-PJ_INLINE(void) rewrite_pt(pj_pool_t *pool, pj_str_t *attr_val,
-			   const pj_str_t *old_pt, const pj_str_t *new_pt)
-{
-    int len_diff = new_pt->slen - old_pt->slen;
-
-    /* Note that attribute value should be null-terminated. */
-    if (len_diff > 0) {
-	pj_str_t new_val;
-	new_val.ptr = (char*)pj_pool_alloc(pool, attr_val->slen+len_diff+1);
-	new_val.slen = attr_val->slen + len_diff;
-	pj_memcpy(new_val.ptr + len_diff, attr_val->ptr, attr_val->slen + 1);
-	*attr_val = new_val;
-    } else if (len_diff < 0) {
-	attr_val->slen += len_diff;
-	pj_memmove(attr_val->ptr, attr_val->ptr - len_diff,
-		   attr_val->slen + 1);
-    }
-    pj_memcpy(attr_val->ptr, new_pt->ptr, new_pt->slen);
-}
-
-
-/* Internal function to apply symmetric PT for the local answer. */
-static void apply_answer_symmetric_pt(pj_pool_t *pool,
-				      pjmedia_sdp_media *answer,
-				      unsigned pt_cnt,
-				      const pj_str_t pt_offer[],
-				      const pj_str_t pt_answer[])
-{
-    pjmedia_sdp_attr *a_tmp[PJMEDIA_MAX_SDP_ATTR];
-    unsigned i, a_tmp_cnt = 0;
-
-    /* Rewrite the payload types in the answer if different to
-     * the ones in the offer.
-     */
-    for (i = 0; i < pt_cnt; ++i) {
-	pjmedia_sdp_attr *a;
-
-	/* Skip if the PTs are the same already, e.g: static PT. */
-	if (pj_strcmp(&pt_answer[i], &pt_offer[i]) == 0)
-	    continue;
-
-	/* Rewrite payload type in the answer to match to the offer */
-	pj_strdup(pool, &answer->desc.fmt[i], &pt_offer[i]);
-
-	/* Also update payload type in rtpmap */
-	a = pjmedia_sdp_media_find_attr2(answer, "rtpmap", &pt_answer[i]);
-	if (a) {
-	    rewrite_pt(pool, &a->value, &pt_answer[i], &pt_offer[i]);
-	    /* Temporarily remove the attribute in case the new payload
-	     * type is being used by another format in the media.
-	     */
-	    pjmedia_sdp_media_remove_attr(answer, a);
-	    a_tmp[a_tmp_cnt++] = a;
-	}
-
-	/* Also update payload type in fmtp */
-	a = pjmedia_sdp_media_find_attr2(answer, "fmtp", &pt_answer[i]);
-	if (a) {
-	    rewrite_pt(pool, &a->value, &pt_answer[i], &pt_offer[i]);
-	    /* Temporarily remove the attribute in case the new payload
-	     * type is being used by another format in the media.
-	     */
-	    pjmedia_sdp_media_remove_attr(answer, a);
-	    a_tmp[a_tmp_cnt++] = a;
-	}
-    }
-
-    /* Return back 'rtpmap' and 'fmtp' attributes */
-    for (i = 0; i < a_tmp_cnt; ++i)
-	pjmedia_sdp_media_add_attr(answer, a_tmp[i]);
-}
-
-
 /* Try to match offer with answer. */
 static pj_status_t match_offer(pj_pool_t *pool,
 			       pj_bool_t prefer_remote_codec_order,
 			       const pjmedia_sdp_media *offer,
 			       const pjmedia_sdp_media *preanswer,
-			       const pjmedia_sdp_session *preanswer_sdp,
 			       pjmedia_sdp_media **p_answer)
 {
     unsigned i;
@@ -997,23 +1072,13 @@ static pj_status_t match_offer(pj_pool_t *pool,
 	      found_matching_other = 0;
     unsigned pt_answer_count = 0;
     pj_str_t pt_answer[PJMEDIA_MAX_SDP_FMT];
-    pj_str_t pt_offer[PJMEDIA_MAX_SDP_FMT];
     pjmedia_sdp_media *answer;
     const pjmedia_sdp_media *master, *slave;
+    pj_str_t pt_amr_need_adapt = {NULL, 0};
 
     /* If offer has zero port, just clone the offer */
     if (offer->desc.port == 0) {
-	answer = sdp_media_clone_deactivate(pool, offer, preanswer,
-					    preanswer_sdp);
-	*p_answer = answer;
-	return PJ_SUCCESS;
-    }
-
-    /* If the preanswer define zero port, this media is being rejected,
-     * just clone the preanswer.
-     */
-    if (preanswer->desc.port == 0) {
-	answer = pjmedia_sdp_media_clone(pool, preanswer);
+	answer = pjmedia_sdp_media_clone_deactivate(pool, offer);
 	*p_answer = answer;
 	return PJ_SUCCESS;
     }
@@ -1061,7 +1126,6 @@ static pj_status_t match_offer(pj_pool_t *pool,
 		    p = pj_strtoul(&slave->desc.fmt[j]);
 		    if (p == pt && pj_isdigit(*slave->desc.fmt[j].ptr)) {
 			found_matching_codec = 1;
-			pt_offer[pt_answer_count] = slave->desc.fmt[j];
 			pt_answer[pt_answer_count++] = slave->desc.fmt[j];
 			break;
 		    }
@@ -1120,32 +1184,30 @@ static pj_status_t match_offer(pj_pool_t *pool,
 			{
 			    /* Match! */
 			    if (is_codec) {
-				pjmedia_sdp_media *o, *a;
-				unsigned o_fmt_idx, a_fmt_idx;
-
-				o = (pjmedia_sdp_media*)offer;
-				a = (pjmedia_sdp_media*)preanswer;
-				o_fmt_idx = prefer_remote_codec_order? i:j;
-				a_fmt_idx = prefer_remote_codec_order? j:i;
-
-				/* Call custom format matching callbacks */
-				if (custom_fmt_match(pool, &or_.enc_name,
-						     o, o_fmt_idx,
-						     a, a_fmt_idx,
-						     ALLOW_MODIFY_ANSWER) !=
-				    PJ_SUCCESS)
+				/* Further check for G7221, negotiate bitrate */
+				if (pj_stricmp2(&or_.enc_name, "G7221") == 0 &&
+				    !match_g7221(master, i, slave, j))
 				{
 				    continue;
+				} else 
+				/* Further check for AMR, negotiate fmtp */
+				if (pj_stricmp2(&or_.enc_name, "AMR")==0 ||
+				    pj_stricmp2(&or_.enc_name, "AMR-WB")==0) 
+				{
+				    unsigned o_med_idx, a_med_idx;
+
+				    o_med_idx = prefer_remote_codec_order? i:j;
+				    a_med_idx = prefer_remote_codec_order? j:i;
+				    if (!match_amr(offer, o_med_idx, 
+						   preanswer, a_med_idx,
+						   PJ_TRUE, &pt_amr_need_adapt))
+					continue;
 				}
 				found_matching_codec = 1;
 			    } else {
 				found_matching_telephone_event = 1;
 			    }
 
-			    pt_offer[pt_answer_count] = 
-						prefer_remote_codec_order?
-						offer->desc.fmt[i]:
-						offer->desc.fmt[j];
 			    pt_answer[pt_answer_count++] = 
 						prefer_remote_codec_order? 
 						preanswer->desc.fmt[j]:
@@ -1171,9 +1233,6 @@ static pj_status_t match_offer(pj_pool_t *pool,
 		if (!pj_strcmp(&master->desc.fmt[i], &slave->desc.fmt[j])) {
 		    /* Match */
 		    found_matching_other = 1;
-		    pt_offer[pt_answer_count] = prefer_remote_codec_order?
-						offer->desc.fmt[i]:
-						offer->desc.fmt[j];
 		    pt_answer[pt_answer_count++] = prefer_remote_codec_order? 
 						   preanswer->desc.fmt[j]:
 						   preanswer->desc.fmt[i];
@@ -1213,6 +1272,10 @@ static pj_status_t match_offer(pj_pool_t *pool,
 	}
 	pj_assert(j != answer->desc.fmt_count);
 	str_swap(&answer->desc.fmt[i], &answer->desc.fmt[j]);
+	
+	/* For AMR/AMRWB format, adapt octet-align setting if required. */
+	if (!pj_strcmp(&pt_amr_need_adapt, &pt_answer[i]))
+	    amr_toggle_octet_align(pool, answer, i);
     }
     
     /* Remove unwanted local formats. */
@@ -1234,11 +1297,6 @@ static pj_status_t match_offer(pj_pool_t *pool,
 	}
     }
     answer->desc.fmt_count = pt_answer_count;
-
-#if PJMEDIA_SDP_NEG_ANSWER_SYMMETRIC_PT
-    apply_answer_symmetric_pt(pool, answer, pt_answer_count,
-			      pt_offer, pt_answer);
-#endif
 
     /* Update media direction. */
     update_media_direction(pool, offer, answer);
@@ -1296,18 +1354,14 @@ static pj_status_t create_answer( pj_pool_t *pool,
 		pj_strcmp(&om->desc.transport, &im->desc.transport)==0 &&
 		media_used[j] == 0)
 	    {
-                pj_status_t status2;
-
 		/* See if it has matching codec. */
-		status2 = match_offer(pool, prefer_remote_codec_order, 
-				      om, im, initial, &am);
-		if (status2 == PJ_SUCCESS) {
+		status = match_offer(pool, prefer_remote_codec_order, 
+				     om, im, &am);
+		if (status == PJ_SUCCESS) {
 		    /* Mark media as used. */
 		    media_used[j] = 1;
 		    break;
-                } else {
-                    status = status2;
-                }
+		}
 	    }
 	}
 
@@ -1320,7 +1374,7 @@ static pj_status_t create_answer( pj_pool_t *pool,
 	     * ignore anything in the media once it sees that the port
 	     * number is zero.
 	     */
-	    am = sdp_media_clone_deactivate(pool, om, om, answer);
+	    am = pjmedia_sdp_media_clone_deactivate(pool, om);
 	} else {
 	    /* The answer is in am */
 	    pj_assert(am != NULL);
@@ -1420,130 +1474,5 @@ PJ_DEF(pj_status_t) pjmedia_sdp_neg_negotiate( pj_pool_t *pool,
     neg->has_remote_answer = PJ_FALSE;
 
     return status;
-}
-
-
-static pj_status_t custom_fmt_match(pj_pool_t *pool,
-				    const pj_str_t *fmt_name,
-				    pjmedia_sdp_media *offer,
-				    unsigned o_fmt_idx,
-				    pjmedia_sdp_media *answer,
-				    unsigned a_fmt_idx,
-				    unsigned option)
-{
-    unsigned i;
-
-    for (i = 0; i < fmt_match_cb_cnt; ++i) {
-	if (pj_stricmp(fmt_name, &fmt_match_cb[i].fmt_name) == 0) {
-	    pj_assert(fmt_match_cb[i].cb);
-	    return (*fmt_match_cb[i].cb)(pool, offer, o_fmt_idx,
-					 answer, a_fmt_idx,
-					 option);
-	}
-    }
-
-    /* Not customized format matching found, should be matched */
-    return PJ_SUCCESS;
-}
-
-/* Register customized SDP format negotiation callback function. */
-PJ_DECL(pj_status_t) pjmedia_sdp_neg_register_fmt_match_cb(
-					const pj_str_t *fmt_name,
-					pjmedia_sdp_neg_fmt_match_cb cb)
-{
-    struct fmt_match_cb_t *f = NULL;
-    unsigned i;
-
-    PJ_ASSERT_RETURN(fmt_name, PJ_EINVAL);
-
-    /* Check if the callback for the format name has been registered */
-    for (i = 0; i < fmt_match_cb_cnt; ++i) {
-	if (pj_stricmp(fmt_name, &fmt_match_cb[i].fmt_name) == 0)
-	    break;
-    }
-
-    /* Unregistration */
-    
-    if (cb == NULL) {
-	if (i == fmt_match_cb_cnt)
-	    return PJ_ENOTFOUND;
-
-	pj_array_erase(fmt_match_cb, sizeof(fmt_match_cb[0]),
-		       fmt_match_cb_cnt, i);
-	fmt_match_cb_cnt--;
-
-	return PJ_SUCCESS;
-    }
-
-    /* Registration */
-
-    if (i < fmt_match_cb_cnt) {
-	/* The same format name has been registered before */
-	if (cb != fmt_match_cb[i].cb)
-	    return PJ_EEXISTS;
-	else
-	    return PJ_SUCCESS;
-    }
-
-    if (fmt_match_cb_cnt >= PJ_ARRAY_SIZE(fmt_match_cb))
-	return PJ_ETOOMANY;
-
-    f = &fmt_match_cb[fmt_match_cb_cnt++];
-    f->fmt_name = *fmt_name;
-    f->cb = cb;
-
-    return PJ_SUCCESS;
-}
-
-
-/* Match format in the SDP media offer and answer. */
-PJ_DEF(pj_status_t) pjmedia_sdp_neg_fmt_match(pj_pool_t *pool,
-					      pjmedia_sdp_media *offer,
-					      unsigned o_fmt_idx,
-					      pjmedia_sdp_media *answer,
-					      unsigned a_fmt_idx,
-					      unsigned option)
-{
-    const pjmedia_sdp_attr *attr;
-    pjmedia_sdp_rtpmap o_rtpmap, a_rtpmap;
-    unsigned o_pt;
-    unsigned a_pt;
-
-    o_pt = pj_strtoul(&offer->desc.fmt[o_fmt_idx]);
-    a_pt = pj_strtoul(&answer->desc.fmt[a_fmt_idx]);
-
-    if (o_pt < 96 || a_pt < 96) {
-	if (o_pt == a_pt)
-	    return PJ_SUCCESS;
-	else
-	    return PJMEDIA_SDP_EFORMATNOTEQUAL;
-    }
-
-    /* Get the format rtpmap from the offer. */
-    attr = pjmedia_sdp_media_find_attr2(offer, "rtpmap", 
-					&offer->desc.fmt[o_fmt_idx]);
-    if (!attr) {
-	pj_assert(!"Bug! Offer haven't been validated");
-	return PJ_EBUG;
-    }
-    pjmedia_sdp_attr_get_rtpmap(attr, &o_rtpmap);
-
-    /* Get the format rtpmap from the answer. */
-    attr = pjmedia_sdp_media_find_attr2(answer, "rtpmap", 
-					&answer->desc.fmt[a_fmt_idx]);
-    if (!attr) {
-	pj_assert(!"Bug! Answer haven't been validated");
-	return PJ_EBUG;
-    }
-    pjmedia_sdp_attr_get_rtpmap(attr, &a_rtpmap);
-
-    if (pj_stricmp(&o_rtpmap.enc_name, &a_rtpmap.enc_name) != 0 ||
-	o_rtpmap.clock_rate != a_rtpmap.clock_rate)
-    {
-	return PJMEDIA_SDP_EFORMATNOTEQUAL;
-    }
-
-    return custom_fmt_match(pool, &o_rtpmap.enc_name,
-			    offer, o_fmt_idx, answer, a_fmt_idx, option);
 }
 

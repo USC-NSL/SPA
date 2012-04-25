@@ -1,4 +1,4 @@
-/* $Id: auddemo.c 3664 2011-07-19 03:42:28Z nanang $ */
+/* $Id: auddemo.c 3553 2011-05-05 06:14:19Z nanang $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -144,7 +144,7 @@ static void show_dev_info(unsigned index)
 		strcat(formats, "unknown/");
 		break;
 	    }
-	    sprintf(bitrate, "%u", info.ext_fmt[i].det.aud.avg_bps);
+	    sprintf(bitrate, "%u", info.ext_fmt[i].bitrate);
 	    strcat(formats, bitrate);
 	    strcat(formats, " ");
 	}
@@ -276,10 +276,10 @@ static void record(unsigned rec_index, const char *filename)
     }
 
     param.dir = PJMEDIA_DIR_CAPTURE;
-    param.clock_rate = PJMEDIA_PIA_SRATE(&wav->info);
-    param.samples_per_frame = PJMEDIA_PIA_SPF(&wav->info);
-    param.channel_count = PJMEDIA_PIA_CCNT(&wav->info);
-    param.bits_per_sample = PJMEDIA_PIA_BITS(&wav->info);
+    param.clock_rate = wav->info.clock_rate;
+    param.samples_per_frame = wav->info.samples_per_frame;
+    param.channel_count = wav->info.channel_count;
+    param.bits_per_sample = wav->info.bits_per_sample;
 
     status = pjmedia_aud_stream_create(&param, &wav_rec_cb, NULL, wav,
 				       &strm);
@@ -343,10 +343,10 @@ static void play_file(unsigned play_index, const char *filename)
     }
 
     param.dir = PJMEDIA_DIR_PLAYBACK;
-    param.clock_rate = PJMEDIA_PIA_SRATE(&wav->info);
-    param.samples_per_frame = PJMEDIA_PIA_SPF(&wav->info);
-    param.channel_count = PJMEDIA_PIA_CCNT(&wav->info);
-    param.bits_per_sample = PJMEDIA_PIA_BITS(&wav->info);
+    param.clock_rate = wav->info.clock_rate;
+    param.samples_per_frame = wav->info.samples_per_frame;
+    param.channel_count = wav->info.channel_count;
+    param.bits_per_sample = wav->info.bits_per_sample;
 
     status = pjmedia_aud_stream_create(&param, NULL, &wav_play_cb, wav,
 				       &strm);

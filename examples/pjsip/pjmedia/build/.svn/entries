@@ -2,14 +2,14 @@
 
 dir
 4082
-http://svn.pjsip.org/repos/pjproject/trunk/pjmedia/build
+http://svn.pjsip.org/repos/pjproject/branches/1.x/pjmedia/build
 http://svn.pjsip.org/repos
 
 
 
-2012-04-19T06:36:57.016760Z
-4062
-ming
+2011-10-14T06:41:51.977120Z
+3817
+bennylp
 has-props
 
 svn:special svn:externals svn:needs-lock
@@ -78,6 +78,19 @@ file
 bennylp
 has-props
 
+pjmedia_codec.dsp
+file
+
+
+
+
+2012-04-25T01:47:28.000000Z
+9c2539cbae4fdbe07fa1e8e7289d5fc9
+2009-04-01T12:05:34.956685Z
+2563
+nanang
+has-props
+
 pjmedia_audiodev.vcproj
 file
 
@@ -89,6 +102,32 @@ file
 2010-02-19T13:01:40.780420Z
 3103
 bennylp
+
+pjmedia_test.dsp
+file
+
+
+
+
+2012-04-25T01:47:28.000000Z
+7b3f6ea420661d88cb9bcaea7035f860
+2009-04-18T00:34:45.346768Z
+2614
+bennylp
+has-props
+
+pjmedia.dsp
+file
+
+
+
+
+2012-04-25T01:47:28.000000Z
+427dbdb9c1f6b5e507be7abf6d0d06a0
+2009-06-07T16:49:42.460177Z
+2755
+nanang
+has-props
 
 m-x86_64.mak
 file
@@ -106,19 +145,6 @@ has-props
 output
 dir
 
-pjmedia_videodev.vcproj
-file
-
-
-
-
-2012-04-25T00:57:29.000000Z
-b77f040ad82bb150801140ede8107e12
-2012-04-19T06:36:57.016760Z
-4062
-ming
-has-props
-
 Jbtest.dat
 file
 
@@ -127,9 +153,9 @@ file
 
 2012-04-17T21:49:40.000000Z
 970c24e188ffed685d213f6e84e877e4
-2011-10-24T09:28:13.441892Z
-3841
-ming
+2011-10-13T09:02:41.199104Z
+3814
+nanang
 has-props
 
 os-auto.mak.in
@@ -138,15 +164,28 @@ file
 
 
 
-2012-04-17T21:49:40.000000Z
-aa0d3e676374fb4507209adc0de8f117
-2011-10-24T09:28:13.441892Z
-3841
-ming
+2012-04-25T01:47:28.000000Z
+e15dde48be4b8199263e54715ebadd70
+2011-10-14T04:15:15.417713Z
+3816
+bennylp
 has-props
 
 wince-evc4
 dir
+
+pjmedia.dsw
+file
+
+
+
+
+2012-04-25T01:47:28.000000Z
+1685871c25f6c8dd18baa7cb489ece41
+2008-03-26T16:18:17.850476Z
+1895
+bennylp
+has-props
 
 pjmedia_codec.vcproj
 file
@@ -154,11 +193,24 @@ file
 
 
 
-2012-04-17T21:49:40.000000Z
-779df64f853c6b581efd50733331d01d
-2012-04-13T06:24:23.896356Z
-4049
-ming
+2012-04-25T01:47:28.000000Z
+8a1a39f8b02d90416cbc139c4c7821ba
+2011-10-14T06:41:51.977120Z
+3817
+bennylp
+
+pjaut.dsp
+file
+
+
+
+
+2012-04-25T01:47:28.000000Z
+eb4d45efdaf220b536faddfbe8780131
+2006-05-19T21:06:04.835460Z
+458
+bennylp
+has-props
 
 pjmedia_test.vcproj
 file
@@ -166,11 +218,11 @@ file
 
 
 
-2012-04-17T21:49:40.000000Z
-bb67e58d766c789d296fe48876ad38be
-2011-07-19T03:42:28.070005Z
-3664
-nanang
+2012-04-25T01:47:28.000000Z
+4a35a020ef90590051bc48d7fa491744
+2009-04-29T15:30:38.994109Z
+2664
+bennylp
 has-props
 
 pjmedia.vcproj
@@ -179,10 +231,10 @@ file
 
 
 
-2012-04-17T21:49:40.000000Z
-fdb8de5d4753bfc93fd18f0faaad081f
-2012-03-22T11:26:59.933239Z
-3985
+2012-04-25T01:47:28.000000Z
+951e1200ad8bf6784df03dd8ddd2d1d3
+2009-06-07T16:49:42.460177Z
+2755
 nanang
 
 os-darwinos.mak
@@ -204,10 +256,22 @@ file
 
 
 
-2012-04-17T21:49:40.000000Z
-5f8adae2c46f719ee8a9cb17dc9e3da7
-2012-04-13T06:29:56.556752Z
-4050
-ming
+2012-04-25T01:47:28.000000Z
+dc02c2a3b58ea70f9372114c7249dcc3
+2011-07-22T11:52:50.127900Z
+3677
+ismangil
 has-props
+
+pjmedia_audiodev.dsp
+file
+
+
+
+
+2012-04-25T01:47:28.000000Z
+b4594002965476960f1e2ff21bc96cbb
+2010-02-19T13:01:40.780420Z
+3103
+bennylp
 

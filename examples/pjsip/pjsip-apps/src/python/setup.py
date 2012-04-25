@@ -1,4 +1,4 @@
-# $Id: setup.py 3999 2012-03-30 07:10:13Z bennylp $
+# $Id: setup.py 3888 2011-11-19 03:35:48Z ming $
 #
 # pjsua Setup script.
 #

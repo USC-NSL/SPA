@@ -71,8 +71,5 @@
 
 #define PJ_UNREACHED(x)	    	
 
-#define PJ_ALIGN_DATA(declaration, alignment) declaration __attribute__((aligned (alignment)))
-
-
 #endif	/* __PJ_COMPAT_CC_GCC_H__ */
 

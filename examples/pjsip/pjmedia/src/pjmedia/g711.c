@@ -1,4 +1,4 @@
-/* $Id: g711.c 3664 2011-07-19 03:42:28Z nanang $ */
+/* $Id: g711.c 3553 2011-05-05 06:14:19Z nanang $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -111,8 +111,7 @@ static pjmedia_codec_factory_op g711_factory_op =
     &g711_default_attr,
     &g711_enum_codecs,
     &g711_alloc_codec,
-    &g711_dealloc_codec,
-    &pjmedia_codec_g711_deinit
+    &g711_dealloc_codec
 };
 
 /* G711 factory private data */

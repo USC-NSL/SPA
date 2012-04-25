@@ -2,14 +2,14 @@
 
 dir
 4082
-http://svn.pjsip.org/repos/pjproject/trunk/pjsip/src
+http://svn.pjsip.org/repos/pjproject/branches/1.x/pjsip/src
 http://svn.pjsip.org/repos
 
 
 
-2012-04-24T13:09:14.350951Z
-4082
-bennylp
+2012-04-23T10:22:49.210849Z
+4067
+ming
 has-props
 
 svn:special svn:externals svn:needs-lock

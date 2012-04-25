@@ -1,4 +1,4 @@
-/* $Id: cc_gcc.h 3664 2011-07-19 03:42:28Z nanang $ */
+/* $Id: cc_gcc.h 3553 2011-05-05 06:14:19Z nanang $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -70,9 +70,6 @@
 #endif
 
 #define PJ_UNREACHED(x)	    	
-
-#define PJ_ALIGN_DATA(declaration, alignment) declaration __attribute__((aligned (alignment)))
-
 
 #endif	/* __PJ_COMPAT_CC_GCC_H__ */
 

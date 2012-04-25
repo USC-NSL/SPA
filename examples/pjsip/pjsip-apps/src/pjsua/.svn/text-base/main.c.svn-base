@@ -19,7 +19,6 @@
  */
 #include <pjsua-lib/pjsua.h>
 
-
 #define THIS_FILE	"main.c"
 
 
@@ -85,7 +84,7 @@ static void setup_socket_signal()
 
 #endif
 
-static int main_func(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
     setup_socket_signal();
 
@@ -107,7 +106,3 @@ static int main_func(int argc, char *argv[])
     return 0;
 }
 
-int main(int argc, char *argv[])
-{
-    return pj_run_app(&main_func, argc, argv, 0);
-}

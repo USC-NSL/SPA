@@ -2,14 +2,14 @@
 
 dir
 4082
-http://svn.pjsip.org/repos/pjproject/trunk/pjsip/src/pjsip-ua
+http://svn.pjsip.org/repos/pjproject/branches/1.x/pjsip/src/pjsip-ua
 http://svn.pjsip.org/repos
 
 
 
-2012-04-24T13:09:14.350951Z
-4082
-bennylp
+2012-04-23T10:22:49.210849Z
+4067
+ming
 
 
 svn:special svn:externals svn:needs-lock
@@ -32,11 +32,11 @@ file
 
 
 
-2012-04-17T21:49:36.000000Z
-c34fa07c1a9c29567da544b7a538f782
-2011-10-24T09:28:13.441892Z
-3841
-ming
+2012-04-25T01:47:28.000000Z
+ca3106538ecf47a52d7847d43be2f17d
+2011-09-08T10:19:01.342072Z
+3746
+bennylp
 has-props
 
 sip_xfer.c
@@ -58,11 +58,11 @@ file
 
 
 
-2012-04-25T00:57:29.000000Z
-e98170c29acb43272cff58cf5df63e62
-2012-04-24T13:09:14.350951Z
-4082
-bennylp
+2012-04-25T01:48:47.000000Z
+fd2f798733084be9ae275e5cabfb6d7d
+2012-04-23T10:22:49.210849Z
+4067
+ming
 has-props
 
 sip_reg.c
@@ -71,10 +71,10 @@ file
 
 
 
-2012-04-17T21:49:36.000000Z
+2012-04-25T01:48:47.000000Z
 0ece0e5f1a32a19832f601ef88b1f4f3
-2012-04-11T10:01:00.027932Z
-4038
+2012-04-11T09:41:25.461115Z
+4037
 bennylp
 has-props
 
@@ -84,11 +84,11 @@ file
 
 
 
-2012-04-17T21:49:36.000000Z
+2012-04-25T01:48:47.000000Z
 8f9abcaffefc944812d43cdecc87969b
-2012-03-30T07:10:13.512709Z
-3999
-bennylp
+2012-03-22T11:29:20.444512Z
+3986
+nanang
 has-props
 
 sip_timer.c
@@ -97,10 +97,10 @@ file
 
 
 
-2012-04-17T21:49:36.000000Z
+2012-04-25T01:48:47.000000Z
 1561e9701bb383f757667203e9dcde98
-2012-03-30T07:10:13.512709Z
-3999
-bennylp
+2012-03-22T11:29:20.444512Z
+3986
+nanang
 has-props
 

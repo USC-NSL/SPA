@@ -1,17 +1,11 @@
 K 25
 svn:wc:ra_dav:version-url
-V 60
-/repos/!svn/ver/4071/pjproject/trunk/pjsip/include/pjsua-lib
-END
-pjsua_internal.h
-K 25
-svn:wc:ra_dav:version-url
-V 77
-/repos/!svn/ver/4071/pjproject/trunk/pjsip/include/pjsua-lib/pjsua_internal.h
+V 67
+/repos/!svn/ver/4045/pjproject/branches/1.x/pjsip/include/pjsua-lib
 END
 pjsua.h
 K 25
 svn:wc:ra_dav:version-url
-V 68
-/repos/!svn/ver/4054/pjproject/trunk/pjsip/include/pjsua-lib/pjsua.h
+V 75
+/repos/!svn/ver/4045/pjproject/branches/1.x/pjsip/include/pjsua-lib/pjsua.h
 END

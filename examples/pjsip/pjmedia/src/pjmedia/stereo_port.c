@@ -1,4 +1,4 @@
-/* $Id: stereo_port.c 3664 2011-07-19 03:42:28Z nanang $ */
+/* $Id: stereo_port.c 3553 2011-05-05 06:14:19Z nanang $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -24,7 +24,7 @@
 #include <pj/string.h>
 
 
-#define SIGNATURE		PJMEDIA_SIG_PORT_STEREO
+#define SIGNATURE		PJMEDIA_PORT_SIGNATURE('S','T','R','O')
 
 
 struct stereo_port
@@ -39,7 +39,7 @@ struct stereo_port
 
 
 static pj_status_t stereo_put_frame(pjmedia_port *this_port,
-				    pjmedia_frame *frame);
+				    const pjmedia_frame *frame);
 static pj_status_t stereo_get_frame(pjmedia_port *this_port, 
 				    pjmedia_frame *frame);
 static pj_status_t stereo_destroy(pjmedia_port *this_port);
@@ -60,27 +60,24 @@ PJ_DEF(pj_status_t) pjmedia_stereo_port_create( pj_pool_t *pool,
     PJ_ASSERT_RETURN(pool && dn_port && channel_count && p_port, PJ_EINVAL);
 
     /* Only supports 16bit samples per frame */
-    PJ_ASSERT_RETURN(PJMEDIA_PIA_BITS(&dn_port->info) == 16,
-		     PJMEDIA_ENCBITS);
+    PJ_ASSERT_RETURN(dn_port->info.bits_per_sample == 16, PJMEDIA_ENCBITS);
 
     /* Validate channel counts */
-    PJ_ASSERT_RETURN(((PJMEDIA_PIA_CCNT(&dn_port->info)>1 &&
-			      channel_count==1) ||
-		      (PJMEDIA_PIA_CCNT(&dn_port->info)==1 &&
-			      channel_count>1)),
+    PJ_ASSERT_RETURN(((dn_port->info.channel_count>1 && channel_count==1) ||
+		      (dn_port->info.channel_count==1 && channel_count>1)),
 		      PJ_EINVAL);
 
     /* Create and initialize port. */
     sport = PJ_POOL_ZALLOC_T(pool, struct stereo_port);
     PJ_ASSERT_RETURN(sport != NULL, PJ_ENOMEM);
 
-    samples_per_frame = PJMEDIA_PIA_SPF(&dn_port->info) * channel_count /
-	                  PJMEDIA_PIA_CCNT(&dn_port->info);
+    samples_per_frame = dn_port->info.samples_per_frame * channel_count /
+			dn_port->info.channel_count;
 
     pjmedia_port_info_init(&sport->base.info, &name, SIGNATURE, 
-	                   PJMEDIA_PIA_SRATE(&dn_port->info),
+			   dn_port->info.clock_rate,
 			   channel_count, 
-			   PJMEDIA_PIA_BITS(&dn_port->info),
+			   dn_port->info.bits_per_sample, 
 			   samples_per_frame);
 
     sport->dn_port = dn_port;
@@ -88,14 +85,12 @@ PJ_DEF(pj_status_t) pjmedia_stereo_port_create( pj_pool_t *pool,
 
     /* We always need buffer for put_frame */
     sport->put_buf = (pj_int16_t*)
-		     pj_pool_alloc(pool,
-				   PJMEDIA_PIA_AVG_FSZ(&dn_port->info));
+		     pj_pool_alloc(pool, dn_port->info.bytes_per_frame);
 
     /* See if we need buffer for get_frame */
-    if (PJMEDIA_PIA_CCNT(&dn_port->info) > channel_count) {
+    if (dn_port->info.channel_count > channel_count) {
 	sport->get_buf = (pj_int16_t*)
-			 pj_pool_alloc(pool,
-				       PJMEDIA_PIA_AVG_FSZ(&dn_port->info));
+			 pj_pool_alloc(pool, dn_port->info.bytes_per_frame);
     }
 
     /* Media port interface */
@@ -111,10 +106,9 @@ PJ_DEF(pj_status_t) pjmedia_stereo_port_create( pj_pool_t *pool,
 }
 
 static pj_status_t stereo_put_frame(pjmedia_port *this_port,
-				    pjmedia_frame *frame)
+				    const pjmedia_frame *frame)
 {
     struct stereo_port *sport = (struct stereo_port*) this_port;
-    const pjmedia_audio_format_detail *s_afd, *dn_afd;
     pjmedia_frame tmp_frame;
 
     /* Return if we don't have downstream port. */
@@ -122,27 +116,23 @@ static pj_status_t stereo_put_frame(pjmedia_port *this_port,
 	return PJ_SUCCESS;
     }
 
-    s_afd = pjmedia_format_get_audio_format_detail(&this_port->info.fmt, 1);
-    dn_afd = pjmedia_format_get_audio_format_detail(&sport->dn_port->info.fmt,
-						    1);
-
     if (frame->type == PJMEDIA_FRAME_TYPE_AUDIO) {
 	tmp_frame.buf = sport->put_buf;
-	if (dn_afd->channel_count == 1) {
+	if (sport->dn_port->info.channel_count == 1) {
 	    pjmedia_convert_channel_nto1((pj_int16_t*)tmp_frame.buf, 
 					 (const pj_int16_t*)frame->buf,
-					 s_afd->channel_count,
-					 PJMEDIA_AFD_SPF(s_afd),
+					 sport->base.info.channel_count, 
+					 sport->base.info.samples_per_frame, 
 					 (sport->options & PJMEDIA_STEREO_MIX),
 					 0);
 	} else {
 	    pjmedia_convert_channel_1ton((pj_int16_t*)tmp_frame.buf, 
 					 (const pj_int16_t*)frame->buf,
-					 dn_afd->channel_count,
-					 PJMEDIA_AFD_SPF(s_afd),
+					 sport->dn_port->info.channel_count, 
+					 sport->base.info.samples_per_frame,
 					 sport->options);
 	}
-	tmp_frame.size = PJMEDIA_AFD_AVG_FSZ(dn_afd);
+	tmp_frame.size = sport->dn_port->info.bytes_per_frame;
     } else {
 	tmp_frame.buf = frame->buf;
 	tmp_frame.size = frame->size;
@@ -160,7 +150,6 @@ static pj_status_t stereo_get_frame(pjmedia_port *this_port,
 				    pjmedia_frame *frame)
 {
     struct stereo_port *sport = (struct stereo_port*) this_port;
-    const pjmedia_audio_format_detail *s_afd, *dn_afd;
     pjmedia_frame tmp_frame;
     pj_status_t status;
 
@@ -170,12 +159,8 @@ static pj_status_t stereo_get_frame(pjmedia_port *this_port,
 	return PJ_SUCCESS;
     }
 
-    s_afd = pjmedia_format_get_audio_format_detail(&this_port->info.fmt, 1);
-    dn_afd = pjmedia_format_get_audio_format_detail(&sport->dn_port->info.fmt,
-						    1);
-
     tmp_frame.buf = sport->get_buf? sport->get_buf : frame->buf;
-    tmp_frame.size = PJMEDIA_PIA_AVG_FSZ(&sport->dn_port->info);
+    tmp_frame.size = sport->dn_port->info.bytes_per_frame;
     tmp_frame.timestamp.u64 = frame->timestamp.u64;
     tmp_frame.type = PJMEDIA_FRAME_TYPE_AUDIO;
 
@@ -192,21 +177,21 @@ static pj_status_t stereo_get_frame(pjmedia_port *this_port,
 	return PJ_SUCCESS;
     }
 
-    if (s_afd->channel_count == 1) {
+    if (sport->base.info.channel_count == 1) {
 	pjmedia_convert_channel_nto1((pj_int16_t*)frame->buf, 
 				     (const pj_int16_t*)tmp_frame.buf,
-				     dn_afd->channel_count,
-				     PJMEDIA_AFD_SPF(s_afd),
+				     sport->dn_port->info.channel_count, 
+				     sport->dn_port->info.samples_per_frame, 
 				     (sport->options & PJMEDIA_STEREO_MIX), 0);
     } else {
 	pjmedia_convert_channel_1ton((pj_int16_t*)frame->buf, 
 				     (const pj_int16_t*)tmp_frame.buf,
-				     s_afd->channel_count,
-				     PJMEDIA_AFD_SPF(dn_afd),
+				     sport->base.info.channel_count, 
+				     sport->dn_port->info.samples_per_frame,
 				     sport->options);
     }
 
-    frame->size = PJMEDIA_AFD_AVG_FSZ(s_afd);
+    frame->size = sport->base.info.bytes_per_frame;
     frame->type = PJMEDIA_FRAME_TYPE_AUDIO;
 
     return PJ_SUCCESS;

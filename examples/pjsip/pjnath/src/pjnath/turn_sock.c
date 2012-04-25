@@ -1,4 +1,4 @@
-/* $Id: turn_sock.c 3841 2011-10-24 09:28:13Z ming $ */
+/* $Id: turn_sock.c 3596 2011-06-22 10:57:11Z bennylp $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>

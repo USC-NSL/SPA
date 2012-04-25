@@ -23,7 +23,6 @@
 #include <pj/assert.h>
 #include <pj/log.h>
 #include <pj/pool.h>
-#include <pj/string.h>
 
 #define THIS_FILE   "silencedet.c"
 

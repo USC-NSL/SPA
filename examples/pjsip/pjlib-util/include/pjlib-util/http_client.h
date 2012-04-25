@@ -1,4 +1,4 @@
-/* $Id: http_client.h 3841 2011-10-24 09:28:13Z ming $ */
+/* $Id: http_client.h 3810 2011-10-11 04:37:37Z bennylp $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  *

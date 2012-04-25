@@ -33,17 +33,17 @@ svn:wc:ra_dav:version-url
 V 52
 /svn/portaudio/!svn/ver/1379/portaudio/trunk/depcomp
 END
-config.guess
-K 25
-svn:wc:ra_dav:version-url
-V 57
-/svn/portaudio/!svn/ver/1379/portaudio/trunk/config.guess
-END
 fixdir.bat
 K 25
 svn:wc:ra_dav:version-url
 V 55
 /svn/portaudio/!svn/ver/1379/portaudio/trunk/fixdir.bat
+END
+config.guess
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/portaudio/!svn/ver/1379/portaudio/trunk/config.guess
 END
 fixfile.bat
 K 25
@@ -51,17 +51,17 @@ svn:wc:ra_dav:version-url
 V 56
 /svn/portaudio/!svn/ver/1379/portaudio/trunk/fixfile.bat
 END
-ltmain.sh
-K 25
-svn:wc:ra_dav:version-url
-V 54
-/svn/portaudio/!svn/ver/1379/portaudio/trunk/ltmain.sh
-END
 config.sub
 K 25
 svn:wc:ra_dav:version-url
 V 55
 /svn/portaudio/!svn/ver/1379/portaudio/trunk/config.sub
+END
+ltmain.sh
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/portaudio/!svn/ver/1379/portaudio/trunk/ltmain.sh
 END
 LICENSE.txt
 K 25
@@ -75,17 +75,17 @@ svn:wc:ra_dav:version-url
 V 55
 /svn/portaudio/!svn/ver/1379/portaudio/trunk/SConstruct
 END
-missing
-K 25
-svn:wc:ra_dav:version-url
-V 52
-/svn/portaudio/!svn/ver/1379/portaudio/trunk/missing
-END
 portaudio-2.0.pc.in
 K 25
 svn:wc:ra_dav:version-url
 V 64
 /svn/portaudio/!svn/ver/1379/portaudio/trunk/portaudio-2.0.pc.in
+END
+missing
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/portaudio/!svn/ver/1379/portaudio/trunk/missing
 END
 index.html
 K 25

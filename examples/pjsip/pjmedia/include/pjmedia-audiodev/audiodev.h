@@ -1,4 +1,4 @@
-/* $Id: audiodev.h 3664 2011-07-19 03:42:28Z nanang $ */
+/* $Id: audiodev.h 3553 2011-05-05 06:14:19Z nanang $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -26,8 +26,6 @@
  */
 #include <pjmedia-audiodev/config.h>
 #include <pjmedia-audiodev/errno.h>
-#include <pjmedia/format.h>
-#include <pjmedia/frame.h>
 #include <pjmedia/types.h>
 #include <pj/pool.h>
 

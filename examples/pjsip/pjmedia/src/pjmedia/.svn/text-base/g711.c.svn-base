@@ -111,8 +111,7 @@ static pjmedia_codec_factory_op g711_factory_op =
     &g711_default_attr,
     &g711_enum_codecs,
     &g711_alloc_codec,
-    &g711_dealloc_codec,
-    &pjmedia_codec_g711_deinit
+    &g711_dealloc_codec
 };
 
 /* G711 factory private data */

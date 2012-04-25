@@ -1,4 +1,4 @@
-/* $Id: mem_capture.c 3664 2011-07-19 03:42:28Z nanang $ */
+/* $Id: mem_capture.c 3553 2011-05-05 06:14:19Z nanang $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -25,7 +25,7 @@
 
 #define THIS_FILE	    "mem_capture.c"
 
-#define SIGNATURE	    PJMEDIA_SIG_PORT_MEM_CAPTURE
+#define SIGNATURE	    PJMEDIA_PORT_SIGNATURE('M', 'R', 'e', 'c')
 #define BYTES_PER_SAMPLE    2
 
 struct mem_rec
@@ -46,7 +46,7 @@ struct mem_rec
 
 
 static pj_status_t rec_put_frame(pjmedia_port *this_port, 
-				 pjmedia_frame *frame);
+				  const pjmedia_frame *frame);
 static pj_status_t rec_get_frame(pjmedia_port *this_port, 
 				  pjmedia_frame *frame);
 static pj_status_t rec_on_destroy(pjmedia_port *this_port);
@@ -140,7 +140,7 @@ PJ_DEF(pj_size_t) pjmedia_mem_capture_get_size(pjmedia_port *port)
 
 
 static pj_status_t rec_put_frame( pjmedia_port *this_port, 
-				  pjmedia_frame *frame)
+				  const pjmedia_frame *frame)
 {
     struct mem_rec *rec;
     char *endpos;

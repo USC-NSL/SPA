@@ -1,35 +1,5 @@
 K 25
 svn:wc:ra_dav:version-url
-V 50
-/repos/!svn/ver/4071/pjproject/trunk/pjsip/include
-END
-pjsip_ua.h
-K 25
-svn:wc:ra_dav:version-url
-V 61
-/repos/!svn/ver/3553/pjproject/trunk/pjsip/include/pjsip_ua.h
-END
-pjsip_simple.h
-K 25
-svn:wc:ra_dav:version-url
-V 65
-/repos/!svn/ver/3553/pjproject/trunk/pjsip/include/pjsip_simple.h
-END
-pjsua.h
-K 25
-svn:wc:ra_dav:version-url
-V 58
-/repos/!svn/ver/3063/pjproject/trunk/pjsip/include/pjsua.h
-END
-pjsip.h
-K 25
-svn:wc:ra_dav:version-url
-V 58
-/repos/!svn/ver/3553/pjproject/trunk/pjsip/include/pjsip.h
-END
-pjsip_auth.h
-K 25
-svn:wc:ra_dav:version-url
-V 63
-/repos/!svn/ver/3553/pjproject/trunk/pjsip/include/pjsip_auth.h
+V 57
+/repos/!svn/ver/4045/pjproject/branches/1.x/pjsip/include
 END

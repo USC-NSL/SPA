@@ -29,7 +29,6 @@
 #include <pj/assert.h>
 #include <pj/errno.h>
 #include <pj/pool.h>
-#include <pjmedia/frame.h>
 
 /**
  * @defgroup PJMED_CIRCBUF Circular Buffer

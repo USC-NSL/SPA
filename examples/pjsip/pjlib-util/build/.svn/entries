@@ -2,13 +2,13 @@
 
 dir
 4082
-http://svn.pjsip.org/repos/pjproject/trunk/pjlib-util/build
+http://svn.pjsip.org/repos/pjproject/branches/1.x/pjlib-util/build
 http://svn.pjsip.org/repos
 
 
 
-2011-07-19T21:42:58.865126Z
-3669
+2011-07-22T11:52:50.127900Z
+3677
 ismangil
 has-props
 
@@ -54,6 +54,32 @@ file
 bennylp
 has-props
 
+pjlib_util_test.dsp
+file
+
+
+
+
+2012-04-25T01:47:29.000000Z
+a7f9b3c6bea26baf3438631e1e3b83b6
+2010-02-04T18:29:16.097319Z
+3087
+ming
+has-props
+
+pjlib_util.dsp
+file
+
+
+
+
+2012-04-25T01:47:29.000000Z
+aa3904da37103b1bfcb171449ac3e6e4
+2010-02-04T18:29:16.097319Z
+3087
+ming
+has-props
+
 os-auto.mak.in
 file
 
@@ -91,8 +117,8 @@ file
 
 2012-04-17T21:49:46.000000Z
 8983d40e1f93e24ea223af430be0e9bb
-2011-07-19T21:42:58.865126Z
-3669
+2011-07-22T11:52:50.127900Z
+3677
 ismangil
 has-props
 

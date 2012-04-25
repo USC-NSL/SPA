@@ -2,14 +2,14 @@
 
 dir
 4082
-http://svn.pjsip.org/repos/pjproject/trunk/third_party/build
+http://svn.pjsip.org/repos/pjproject/branches/1.x/third_party/build
 http://svn.pjsip.org/repos
 
 
 
-2012-04-24T08:11:31.323431Z
-4075
-nanang
+2012-03-08T07:44:41.139221Z
+3968
+bennylp
 has-props
 
 svn:special svn:externals svn:needs-lock
@@ -28,6 +28,22 @@ svn:special svn:externals svn:needs-lock
 
 milenage
 dir
+
+g7221
+dir
+
+os-auto.mak.in
+file
+
+
+
+
+2012-04-17T21:49:42.000000Z
+3fc571bf1e579b0b5f4611cc19ea331c
+2010-08-25T12:51:29.278996Z
+3295
+bennylp
+has-props
 
 speex
 dir
@@ -48,7 +64,10 @@ has-props
 gsm
 dir
 
-baseclasses
+portaudio
+dir
+
+srtp
 dir
 
 os-win32.mak
@@ -63,31 +82,6 @@ file
 2601
 nanang
 has-props
-
-srtp
-dir
-
-samplerate
-dir
-
-g7221
-dir
-
-os-auto.mak.in
-file
-
-
-
-
-2012-04-17T21:49:42.000000Z
-3fc571bf1e579b0b5f4611cc19ea331c
-2010-08-25T12:51:29.278996Z
-3295
-bennylp
-has-props
-
-portaudio
-dir
 
 resample
 dir
@@ -107,6 +101,9 @@ file
 2601
 nanang
 has-props
+
+samplerate
+dir
 
 Makefile
 file

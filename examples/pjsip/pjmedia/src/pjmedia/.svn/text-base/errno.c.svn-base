@@ -66,7 +66,6 @@ static const struct
     PJ_BUILD_ERR( PJMEDIA_SDP_EINFMTP,	    "Invalid SDP fmtp attribute" ),
     PJ_BUILD_ERR( PJMEDIA_SDP_EINRTCP,	    "Invalid SDP rtcp attribyte" ),
     PJ_BUILD_ERR( PJMEDIA_SDP_EINPROTO,	    "Invalid SDP media transport protocol" ),
-    PJ_BUILD_ERR( PJMEDIA_SDP_EINBANDW,	    "Invalid SDP bandwidth info line" ),
 
     /* SDP negotiator errors. */
     PJ_BUILD_ERR( PJMEDIA_SDPNEG_EINSTATE,	"Invalid SDP negotiator state for operation" ),
@@ -105,7 +104,6 @@ static const struct
     PJ_BUILD_ERR( PJMEDIA_CODEC_EFRMINLEN,      "Invalid codec frame length" ),
     PJ_BUILD_ERR( PJMEDIA_CODEC_EPCMFRMINLEN,   "Invalid PCM frame length" ),
     PJ_BUILD_ERR( PJMEDIA_CODEC_EINMODE,	"Invalid codec mode (no fmtp?)" ),
-    PJ_BUILD_ERR( PJMEDIA_CODEC_EBADBITSTREAM,	"Bad or corrupted bitstream" ),
 
     /* Media errors. */
     PJ_BUILD_ERR( PJMEDIA_EINVALIDIP,	    "Invalid remote media (IP) address" ),
@@ -116,7 +114,6 @@ static const struct
     PJ_BUILD_ERR( PJMEDIA_EREMOTENODTMF,    "Remote does not support DTMF" ),
     PJ_BUILD_ERR( PJMEDIA_RTP_EINDTMF,	    "Invalid DTMF digit" ),
     PJ_BUILD_ERR( PJMEDIA_RTP_EREMNORFC2833,"Remote does not support RFC 2833" ),
-    PJ_BUILD_ERR( PJMEDIA_EBADFMT,	    "Bad format"),
 
     /* RTP session errors. */
     PJ_BUILD_ERR( PJMEDIA_RTP_EINPKT,	    "Invalid RTP packet" ),
@@ -145,7 +142,6 @@ static const struct
     PJ_BUILD_ERR( PJMEDIA_EWAVEUNSUPP,	    "Unsupported WAVE file format" ),
     PJ_BUILD_ERR( PJMEDIA_EWAVETOOSHORT,    "WAVE file too short" ),
     PJ_BUILD_ERR( PJMEDIA_EFRMFILETOOBIG,   "Sound frame too large for file buffer"),
-    PJ_BUILD_ERR( PJMEDIA_EAVIUNSUPP,	    "Unsupported AVI file"),
 
     /* Sound device errors: */
     PJ_BUILD_ERR( PJMEDIA_ENOSNDREC,	    "No suitable sound capture device" ),

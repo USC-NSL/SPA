@@ -1,4 +1,4 @@
-/* $Id: os.h 3664 2011-07-19 03:42:28Z nanang $ */
+/* $Id: os.h 3553 2011-05-05 06:14:19Z nanang $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -1428,36 +1428,6 @@ PJ_DECL(pj_uint32_t) pj_elapsed_cycle( const pj_timestamp *start,
 
 
 #endif	/* PJ_HAS_HIGH_RES_TIMER */
-
-/** @} */
-
-
-/* **************************************************************************/
-/**
- * @defgroup PJ_APP_OS Application execution
- * @ingroup PJ_OS
- * @{
- */
-
-/* Type for main function. */
-typedef int (*pj_main_func_ptr)(int argc, char *argv[]);
-
-/**
- * Run the application. This function has to be called in the main thread
- * and after doing the necessary initialization according to the flags
- * provided, it will call main_func() function.
- *
- * @param main_func Application's main function.
- * @param argc	    Number of arguments from the main() function, which
- * 		    will be passed to main_func() function.
- * @param argv	    The arguments from the main() function, which will
- * 		    be passed to main_func() function.
- * @param flags     Flags for application execution, currently must be 0.
- *
- * @return          main_func()'s return value.
- */
-int pj_run_app(pj_main_func_ptr main_func, int argc, char *argv[],
-	       unsigned flags);
 
 /** @} */
 

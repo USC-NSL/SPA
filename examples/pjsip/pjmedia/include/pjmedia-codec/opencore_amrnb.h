@@ -1,4 +1,4 @@
-/* $Id: opencore_amrnb.h 3841 2011-10-24 09:28:13Z ming $ */
+/* $Id: opencore_amrnb.h 3816 2011-10-14 04:15:15Z bennylp $ */
 /*
  * Copyright (C) 2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2011 Dan Arrhenius <dan@keystream.se>

@@ -1,4 +1,4 @@
-/* $Id: codec.c 3664 2011-07-19 03:42:28Z nanang $ */
+/* $Id: codec.c 3553 2011-05-05 06:14:19Z nanang $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -72,18 +72,9 @@ PJ_DEF(pj_status_t) pjmedia_codec_mgr_init (pjmedia_codec_mgr *mgr,
  */
 PJ_DEF(pj_status_t) pjmedia_codec_mgr_destroy (pjmedia_codec_mgr *mgr)
 {
-    pjmedia_codec_factory *factory;
     unsigned i;
 
     PJ_ASSERT_RETURN(mgr, PJ_EINVAL);
-
-    /* Destroy all factories in the list */
-    factory = mgr->factory_list.next;
-    while (factory != &mgr->factory_list) {
-	pjmedia_codec_factory *next = factory->next;
-	(*factory->op->destroy)();
-	factory = next;
-    }
 
     /* Cleanup all pools of all codec default params */
     for (i=0; i<mgr->codec_cnt; ++i) {
@@ -119,13 +110,6 @@ PJ_DEF(pj_status_t) pjmedia_codec_mgr_register_factory( pjmedia_codec_mgr *mgr,
     pj_status_t status;
 
     PJ_ASSERT_RETURN(mgr && factory, PJ_EINVAL);
-
-    /* Since 2.0 we require codec factory to implement "destroy" op. Please
-     * see: https://trac.pjsip.org/repos/ticket/1294
-     *
-     * Really! Please do see it.
-     */
-    PJ_ASSERT_RETURN(factory->op->destroy != NULL, PJ_ENOTSUP);
 
     /* Enum codecs */
     count = PJ_ARRAY_SIZE(info);

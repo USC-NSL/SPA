@@ -18,7 +18,6 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA 
  */
 #include <pjmedia-codec/g7221.h>
-#include <pjmedia-codec/g7221_sdp_match.h>
 #include <pjmedia/codec.h>
 #include <pjmedia/errno.h>
 #include <pjmedia/endpoint.h>
@@ -116,8 +115,7 @@ static pjmedia_codec_factory_op codec_factory_op =
     &default_attr,
     &enum_codecs,
     &alloc_codec,
-    &dealloc_codec,
-    &pjmedia_codec_g7221_deinit
+    &dealloc_codec
 };
 
 
@@ -247,7 +245,6 @@ PJ_DEF(pj_status_t) pjmedia_codec_g7221_init( pjmedia_endpt *endpt )
 {
     pjmedia_codec_mgr *codec_mgr;
     codec_mode *mode;
-    pj_str_t codec_name;
     pj_status_t status;
 
     if (codec_factory.pool != NULL) {
@@ -338,14 +335,6 @@ PJ_DEF(pj_status_t) pjmedia_codec_g7221_init( pjmedia_endpt *endpt )
 	status = PJ_EINVALIDOP;
 	goto on_error;
     }
-
-    /* Register format match callback. */
-    pj_cstr(&codec_name, CODEC_TAG);
-    status = pjmedia_sdp_neg_register_fmt_match_cb(
-					&codec_name,
-					&pjmedia_codec_g7221_match_sdp);
-    if (status != PJ_SUCCESS)
-	goto on_error;
 
     /* Register codec factory to endpoint. */
     status = pjmedia_codec_mgr_register_factory(codec_mgr, 

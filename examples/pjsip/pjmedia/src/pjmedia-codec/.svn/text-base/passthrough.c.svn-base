@@ -18,7 +18,6 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA 
  */
 #include <pjmedia-codec/passthrough.h>
-#include <pjmedia-codec/amr_sdp_match.h>
 #include <pjmedia/codec.h>
 #include <pjmedia/errno.h>
 #include <pjmedia/endpoint.h>
@@ -99,8 +98,7 @@ static pjmedia_codec_factory_op codec_factory_op =
     &default_attr,
     &enum_codecs,
     &alloc_codec,
-    &dealloc_codec,
-    &pjmedia_codec_passthrough_deinit
+    &dealloc_codec
 };
 
 /* Passthrough codecs factory */
@@ -318,7 +316,6 @@ static pj_status_t parse_amr(codec_private_t *codec_data, void *pkt,
 PJ_DEF(pj_status_t) pjmedia_codec_passthrough_init( pjmedia_endpt *endpt )
 {
     pjmedia_codec_mgr *codec_mgr;
-    pj_str_t codec_name;
     pj_status_t status;
 
     if (codec_factory.pool != NULL) {
@@ -348,19 +345,6 @@ PJ_DEF(pj_status_t) pjmedia_codec_passthrough_init( pjmedia_endpt *endpt )
 	status = PJ_EINVALIDOP;
 	goto on_error;
     }
-
-    /* Register format match callback. */
-#if PJMEDIA_HAS_PASSTROUGH_CODEC_AMR
-    pj_cstr(&codec_name, "AMR");
-    status = pjmedia_sdp_neg_register_fmt_match_cb(
-					&codec_name,
-					&pjmedia_codec_amr_match_sdp);
-    if (status != PJ_SUCCESS)
-	goto on_error;
-#endif
-
-    /* Suppress compile warning */
-    PJ_UNUSED_ARG(codec_name);
 
     /* Register codec factory to endpoint. */
     status = pjmedia_codec_mgr_register_factory(codec_mgr, 
@@ -398,7 +382,7 @@ PJ_DEF(pj_status_t) pjmedia_codec_passthrough_init2(
 	    unsigned j;
 
 	    for (j = 0; j < setting->fmt_cnt && !enabled; ++j) {
-		if ((pj_uint32_t)codec_desc[i].fmt_id == setting->fmts[j].id)
+		if (codec_desc[i].fmt_id == setting->fmts[j].id)
 		    enabled = PJ_TRUE;
 	    }
 

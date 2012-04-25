@@ -1,4 +1,4 @@
-/* $Id: cc_msvc.h 3664 2011-07-19 03:42:28Z nanang $ */
+/* $Id: cc_msvc.h 3553 2011-05-05 06:14:19Z nanang $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -79,9 +79,6 @@ typedef unsigned __int64 pj_uint64_t;
 #define PJ_INT64_FMT		"I64"
 
 #define PJ_UNREACHED(x)	    	
-
-#define PJ_ALIGN_DATA(declaration, alignment) __declspec(align(alignment)) declaration
-
 
 #endif	/* __PJ_COMPAT_CC_MSVC_H__ */
 

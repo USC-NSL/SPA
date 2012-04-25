@@ -25,7 +25,7 @@
  * @brief SDP header file.
  */
 #include <pjmedia/types.h>
-#include <pj/sock.h>
+
 
 /**
  * @defgroup PJMEDIA_SDP SDP Parsing and Data Structure
@@ -276,11 +276,18 @@ pjmedia_sdp_rtpmap_to_attr( pj_pool_t *pool,
 /**
  * This structure describes SDP \a fmtp attribute.
  */
-typedef struct pjmedia_sdp_fmtp
+struct pjmedia_sdp_fmtp
 {
     pj_str_t		fmt;	    /**< Format type.		    */
     pj_str_t		fmt_param;  /**< Format specific parameter. */
-} pjmedia_sdp_fmtp;
+};
+
+
+/**
+ * @see pjmedia_sdp_fmtp
+ */
+typedef struct pjmedia_sdp_fmtp pjmedia_sdp_fmtp;
+
 
 
 /**
@@ -366,20 +373,6 @@ typedef struct pjmedia_sdp_conn pjmedia_sdp_conn;
 PJ_DECL(pjmedia_sdp_conn*) pjmedia_sdp_conn_clone(pj_pool_t *pool, 
 						  const pjmedia_sdp_conn *rhs);
 
-
-/** 
- * Compare connection info. 
- * 
- * @param conn1	    The first connection info to compare.
- * @param conn1	    The second connection info to compare.
- * @param option    Comparison option, which should be zero for now.
- *
- * @return	    PJ_SUCCESS when both connection info are equal, otherwise
- *		    returns PJMEDIA_SDP_ECONNNOTEQUAL.
- */
-PJ_DECL(pj_status_t) pjmedia_sdp_conn_cmp(const pjmedia_sdp_conn *conn1, 
-					  const pjmedia_sdp_conn *conn2,
-					  unsigned option);
 
 
 /* **************************************************************************
@@ -614,11 +607,8 @@ struct pjmedia_sdp_session
 	pj_str_t    addr;	    /**< The address.			*/
     } origin;
 
-    pj_str_t	       name;	    /**< Subject line (s=)		*/
-    pjmedia_sdp_conn  *conn;	    /**< Connection line (c=)		*/
-    unsigned	       bandw_count; /**< Number of bandwidth info (b=)	*/
-    pjmedia_sdp_bandw *bandw[PJMEDIA_MAX_SDP_BANDW];
-				    /**< Bandwidth info array (b=)	*/
+    pj_str_t	     name;	    /**< Subject line (s=)		*/
+    pjmedia_sdp_conn *conn;	    /**< Connection line (c=)		*/
     
     /** Session time (t= line)	*/
     struct

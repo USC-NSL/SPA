@@ -1,4 +1,4 @@
-/* $Id: sip_config.c 3999 2012-03-30 07:10:13Z bennylp $ */
+/* $Id: sip_config.c 3952 2012-02-16 05:35:25Z bennylp $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>

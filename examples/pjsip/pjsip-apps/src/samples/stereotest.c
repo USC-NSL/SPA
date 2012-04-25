@@ -1,4 +1,4 @@
-/* $Id: stereotest.c 3664 2011-07-19 03:42:28Z nanang $ */
+/* $Id: stereotest.c 3553 2011-05-05 06:14:19Z nanang $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -189,11 +189,11 @@ int main(int argc, char *argv[])
 	status = pjmedia_snd_port_create_player( 
 		     pool,				/* pool		      */
 		     dev_id,				/* device id.	      */
-		     PJMEDIA_PIA_SRATE(&file_port->info),/* clock rate.	      */
+		     file_port->info.clock_rate,	/* clock rate.	      */
 		     snd_ch_cnt,			/* # of channels.     */
 		     snd_ch_cnt * PTIME *		/* samples per frame. */
-		     PJMEDIA_PIA_SRATE(&file_port->info) / 1000,
-		     PJMEDIA_PIA_BITS(&file_port->info),/* bits per sample.   */
+		     file_port->info.clock_rate / 1000,
+		     file_port->info.bits_per_sample,   /* bits per sample.   */
 		     0,					/* options	      */
 		     &snd_port				/* returned port      */
 		     );
@@ -202,7 +202,7 @@ int main(int argc, char *argv[])
 	    return 1;
 	}
 
-	if (snd_ch_cnt != PJMEDIA_PIA_CCNT(&file_port->info)) {
+	if (snd_ch_cnt != file_port->info.channel_count) {
 	    status = pjmedia_stereo_port_create( pool,
 						 file_port,
 						 snd_ch_cnt,
@@ -289,9 +289,9 @@ int main(int argc, char *argv[])
     pj_thread_sleep(100);
 
     printf("Mode = %s\n", (mode == MODE_PLAY? "playing" : "recording") );
-    printf("File  port channel count = %d\n", PJMEDIA_PIA_CCNT(&file_port->info));
+    printf("File  port channel count = %d\n", file_port->info.channel_count);
     printf("Sound port channel count = %d\n", 
-	    PJMEDIA_PIA_CCNT(&pjmedia_snd_port_get_port(snd_port)->info));
+	   pjmedia_snd_port_get_port(snd_port)->info.channel_count);
     puts("");
     puts("Press <ENTER> to stop and quit");
 

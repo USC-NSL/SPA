@@ -1,4 +1,4 @@
-/* $Id: wav_writer.c 3664 2011-07-19 03:42:28Z nanang $ */
+/* $Id: wav_writer.c 3553 2011-05-05 06:14:19Z nanang $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -30,7 +30,7 @@
 
 
 #define THIS_FILE	    "wav_writer.c"
-#define SIGNATURE	    PJMEDIA_SIG_PORT_WAV_WRITER
+#define SIGNATURE	    PJMEDIA_PORT_SIGNATURE('F', 'W', 'R', 'T')
 
 
 struct file_port
@@ -51,7 +51,7 @@ struct file_port
 };
 
 static pj_status_t file_put_frame(pjmedia_port *this_port, 
-				  pjmedia_frame *frame);
+				  const pjmedia_frame *frame);
 static pj_status_t file_get_frame(pjmedia_port *this_port, 
 				  pjmedia_frame *frame);
 static pj_status_t file_on_destroy(pjmedia_port *this_port);
@@ -198,7 +198,7 @@ PJ_DEF(pj_status_t) pjmedia_wav_writer_port_create( pj_pool_t *pool,
     fport->bufsize = buff_size;
 
     /* Check that buffer size is greater than bytes per frame */
-    pj_assert(fport->bufsize >= PJMEDIA_PIA_AVG_FSZ(&fport->base.info));
+    pj_assert(fport->bufsize >= fport->base.info.bytes_per_frame);
 
 
     /* Allocate buffer and set initial write position */
@@ -216,7 +216,7 @@ PJ_DEF(pj_status_t) pjmedia_wav_writer_port_create( pj_pool_t *pool,
 	      "File writer '%.*s' created: samp.rate=%d, bufsize=%uKB",
 	      (int)fport->base.info.name.slen,
 	      fport->base.info.name.ptr,
-	      PJMEDIA_PIA_SRATE(&fport->base.info),
+	      fport->base.info.clock_rate,
 	      fport->bufsize / 1000));
 
 
@@ -308,7 +308,7 @@ static pj_status_t flush_buffer(struct file_port *fport)
  * to the file.
  */
 static pj_status_t file_put_frame(pjmedia_port *this_port, 
-				  pjmedia_frame *frame)
+				  const pjmedia_frame *frame)
 {
     struct file_port *fport = (struct file_port *)this_port;
     unsigned frame_size;

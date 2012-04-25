@@ -1,4 +1,4 @@
-/* $Id: conference.h 3664 2011-07-19 03:42:28Z nanang $ */
+/* $Id: conference.h 3553 2011-05-05 06:14:19Z nanang $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -46,12 +46,14 @@ PJ_BEGIN_DECL
 /**
  * The conference bridge signature in pjmedia_port_info.
  */
-#define PJMEDIA_CONF_BRIDGE_SIGNATURE	PJMEDIA_SIG_PORT_CONF
+#define PJMEDIA_CONF_BRIDGE_SIGNATURE	\
+		    PJMEDIA_PORT_SIGNATURE('C', 'O', 'N', 'F')
 
 /**
  * The audio switchboard signature in pjmedia_port_info.
  */
-#define PJMEDIA_CONF_SWITCH_SIGNATURE	PJMEDIA_SIG_PORT_CONF_SWITCH
+#define PJMEDIA_CONF_SWITCH_SIGNATURE	\
+		    PJMEDIA_PORT_SIGNATURE('A', 'S', 'W', 'I')
 
 
 /**

@@ -2,13 +2,13 @@
 
 dir
 4082
-http://svn.pjsip.org/repos/pjproject/trunk/third_party/build/resample
+http://svn.pjsip.org/repos/pjproject/branches/1.x/third_party/build/resample
 http://svn.pjsip.org/repos
 
 
 
-2012-03-30T07:10:13.512709Z
-3999
+2012-03-08T07:44:41.139221Z
+3968
 bennylp
 has-props
 
@@ -26,6 +26,19 @@ svn:special svn:externals svn:needs-lock
 
 74dad513-b988-da41-8d7b-12977e46ad98
 
+libresample_dll.dsp
+file
+
+
+
+
+2012-04-25T01:47:29.000000Z
+646119779c5c574fed35074bd7b89cde
+2007-04-30T09:02:46.641652Z
+1232
+bennylp
+has-props
+
 output
 dir
 
@@ -40,6 +53,19 @@ file
 2009-05-06T18:59:31.630623Z
 2678
 nanang
+has-props
+
+libresample.dsp
+file
+
+
+
+
+2012-04-25T01:47:29.000000Z
+8be03a1da36f930dca0ebf197c22a8fb
+2007-04-09T07:06:08.709595Z
+1177
+bennylp
 has-props
 
 libresample.vcp
@@ -86,10 +112,10 @@ file
 
 
 
-2012-04-17T21:49:42.000000Z
+2012-04-25T01:48:47.000000Z
 560d14e50acb660cc9fc0d1848b726c9
-2012-03-30T07:10:13.512709Z
-3999
+2012-03-08T07:44:41.139221Z
+3968
 bennylp
 has-props
 

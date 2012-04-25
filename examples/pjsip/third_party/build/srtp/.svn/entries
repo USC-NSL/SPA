@@ -2,14 +2,14 @@
 
 dir
 4082
-http://svn.pjsip.org/repos/pjproject/trunk/third_party/build/srtp
+http://svn.pjsip.org/repos/pjproject/branches/1.x/third_party/build/srtp
 http://svn.pjsip.org/repos
 
 
 
-2011-07-19T03:42:28.070005Z
-3664
-nanang
+2009-07-31T09:55:13.217422Z
+2849
+bennylp
 has-props
 
 svn:special svn:externals svn:needs-lock
@@ -53,6 +53,18 @@ dd09cf812f5ab4d610f9c23e3a8ab93e
 2660
 nanang
 has-props
+
+libsrtp.dsp
+file
+
+
+
+
+2012-04-25T01:47:29.000000Z
+033ca4a8985257a337402c215c2cdb22
+2008-02-01T14:53:44.789026Z
+1764
+bennylp
 
 libsrtp.vcp
 file

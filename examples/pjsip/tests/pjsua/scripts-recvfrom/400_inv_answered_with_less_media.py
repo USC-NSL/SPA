@@ -1,10 +1,10 @@
-# $Id: 400_inv_answered_with_less_media.py 3716 2011-08-19 12:24:48Z nanang $
+# $Id: 400_inv_answered_with_less_media.py 3195 2010-06-03 03:06:03Z nanang $
 import inc_sip as sip
 import inc_sdp as sdp
 
 # Offer with 2 media lines answered with only 1 media line
 
-pjsua = "--null-audio sip:127.0.0.1:$PORT --id=sip:1000@localhost --extra-audio --use-srtp=0"
+pjsua = "--null-audio sip:127.0.0.1:$PORT --use-srtp=3 --srtp-secure=0"
 
 sdp = \
 """
@@ -21,7 +21,7 @@ a=fmtp:101 0-15
 """
 
 req = sip.RecvfromTransaction("Receiving 2 media lines, answer with 1 media line", 200,
-				include=["m=audio \d+ RTP/AVP", "m=audio \d+ RTP/AVP"], 
+				include=["m=audio \d+ RTP/SAVP", "m=audio \d+ RTP/AVP"], 
 				exclude=[],
                                 resp_hdr=["Content-type: application/sdp"],
                                 resp_body=sdp,

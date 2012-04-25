@@ -2,14 +2,14 @@
 
 dir
 4082
-http://svn.pjsip.org/repos/pjproject/trunk/third_party/build/milenage
+http://svn.pjsip.org/repos/pjproject/branches/1.x/third_party/build/milenage
 http://svn.pjsip.org/repos
 
 
 
-2011-07-19T03:42:28.070005Z
-3664
-nanang
+2009-04-29T15:30:38.994109Z
+2664
+bennylp
 has-props
 
 svn:special svn:externals svn:needs-lock
@@ -65,4 +65,16 @@ file
 2183
 bennylp
 has-props
+
+libmilenage.dsp
+file
+
+
+
+
+2012-04-25T01:47:29.000000Z
+df09d3124d681514d912b111e77ed1ab
+2007-11-12T13:55:30.409242Z
+1578
+bennylp
 

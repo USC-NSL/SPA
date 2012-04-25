@@ -1,4 +1,4 @@
-/* $Id: os_core_symbian.cpp 3999 2012-03-30 07:10:13Z bennylp $ */
+/* $Id: os_core_symbian.cpp 3986 2012-03-22 11:29:20Z nanang $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -1052,12 +1052,3 @@ PJ_DEF(pj_status_t) pj_thread_get_stack_info(pj_thread_t *thread,
 }
 
 #endif	/* PJ_OS_HAS_CHECK_STACK */
-
-/*
- * pj_run_app()
- */
-PJ_DEF(int) pj_run_app(pj_main_func_ptr main_func, int argc, char *argv[],
-                       unsigned flags)
-{
-    return (*main_func)(argc, argv);
-}

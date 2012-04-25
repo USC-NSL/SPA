@@ -1,155 +1,35 @@
 K 25
 svn:wc:ra_dav:version-url
-V 36
-/repos/!svn/ver/4082/pjproject/trunk
-END
-configure
-K 25
-svn:wc:ra_dav:version-url
-V 46
-/repos/!svn/ver/1227/pjproject/trunk/configure
-END
-aconfigure
-K 25
-svn:wc:ra_dav:version-url
-V 47
-/repos/!svn/ver/4069/pjproject/trunk/aconfigure
-END
-svn_add.bat
-K 25
-svn:wc:ra_dav:version-url
-V 48
-/repos/!svn/ver/3104/pjproject/trunk/svn_add.bat
-END
-configure-legacy
-K 25
-svn:wc:ra_dav:version-url
-V 53
-/repos/!svn/ver/3063/pjproject/trunk/configure-legacy
-END
-INSTALL.txt
-K 25
-svn:wc:ra_dav:version-url
-V 48
-/repos/!svn/ver/1227/pjproject/trunk/INSTALL.txt
-END
-README-RTEMS
-K 25
-svn:wc:ra_dav:version-url
-V 49
-/repos/!svn/ver/1227/pjproject/trunk/README-RTEMS
-END
-config.guess
-K 25
-svn:wc:ra_dav:version-url
-V 49
-/repos/!svn/ver/1227/pjproject/trunk/config.guess
-END
-version.mak
-K 25
-svn:wc:ra_dav:version-url
-V 48
-/repos/!svn/ver/3999/pjproject/trunk/version.mak
-END
-config.sub
-K 25
-svn:wc:ra_dav:version-url
-V 47
-/repos/!svn/ver/1948/pjproject/trunk/config.sub
-END
-libpjproject.pc.in
-K 25
-svn:wc:ra_dav:version-url
-V 55
-/repos/!svn/ver/3063/pjproject/trunk/libpjproject.pc.in
-END
-pkgconfig.py
-K 25
-svn:wc:ra_dav:version-url
-V 49
-/repos/!svn/ver/4069/pjproject/trunk/pkgconfig.py
+V 43
+/repos/!svn/ver/4079/pjproject/branches/1.x
 END
 configure-iphone
 K 25
 svn:wc:ra_dav:version-url
-V 53
-/repos/!svn/ver/3999/pjproject/trunk/configure-iphone
+V 60
+/repos/!svn/ver/3978/pjproject/branches/1.x/configure-iphone
 END
-svn_pset
+aconfigure
 K 25
 svn:wc:ra_dav:version-url
-V 45
-/repos/!svn/ver/1227/pjproject/trunk/svn_pset
+V 54
+/repos/!svn/ver/3968/pjproject/branches/1.x/aconfigure
 END
 aconfigure.ac
 K 25
 svn:wc:ra_dav:version-url
-V 50
-/repos/!svn/ver/4069/pjproject/trunk/aconfigure.ac
-END
-user.mak.sample
-K 25
-svn:wc:ra_dav:version-url
-V 52
-/repos/!svn/ver/1572/pjproject/trunk/user.mak.sample
-END
-svn_pset.bat
-K 25
-svn:wc:ra_dav:version-url
-V 49
-/repos/!svn/ver/3104/pjproject/trunk/svn_pset.bat
-END
-COPYING
-K 25
-svn:wc:ra_dav:version-url
-V 44
-/repos/!svn/ver/1227/pjproject/trunk/COPYING
-END
-pjproject-vs8.sln
-K 25
-svn:wc:ra_dav:version-url
-V 54
-/repos/!svn/ver/4072/pjproject/trunk/pjproject-vs8.sln
-END
-README.txt
-K 25
-svn:wc:ra_dav:version-url
-V 47
-/repos/!svn/ver/3553/pjproject/trunk/README.txt
+V 57
+/repos/!svn/ver/3968/pjproject/branches/1.x/aconfigure.ac
 END
 build.mak.in
 K 25
 svn:wc:ra_dav:version-url
-V 49
-/repos/!svn/ver/3999/pjproject/trunk/build.mak.in
+V 56
+/repos/!svn/ver/3974/pjproject/branches/1.x/build.mak.in
 END
-c++-build.mak
+version.mak
 K 25
 svn:wc:ra_dav:version-url
-V 50
-/repos/!svn/ver/1318/pjproject/trunk/c++-build.mak
-END
-self-test.mak
-K 25
-svn:wc:ra_dav:version-url
-V 50
-/repos/!svn/ver/1451/pjproject/trunk/self-test.mak
-END
-Makefile
-K 25
-svn:wc:ra_dav:version-url
-V 45
-/repos/!svn/ver/3984/pjproject/trunk/Makefile
-END
-svn_add
-K 25
-svn:wc:ra_dav:version-url
-V 44
-/repos/!svn/ver/1227/pjproject/trunk/svn_add
-END
-install-sh
-K 25
-svn:wc:ra_dav:version-url
-V 47
-/repos/!svn/ver/1227/pjproject/trunk/install-sh
+V 55
+/repos/!svn/ver/3967/pjproject/branches/1.x/version.mak
 END

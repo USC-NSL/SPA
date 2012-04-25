@@ -1,4 +1,4 @@
-/* $Id: sip_100rel.c 3841 2011-10-24 09:28:13Z ming $ */
+/* $Id: sip_100rel.c 3746 2011-09-08 10:19:01Z bennylp $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -28,7 +28,6 @@
 #include <pj/os.h>
 #include <pj/pool.h>
 #include <pj/rand.h>
-#include <pj/string.h>
 
 #define THIS_FILE	"sip_100rel.c"
 

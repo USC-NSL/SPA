@@ -1,4 +1,4 @@
-/* $Id: errno.h 3945 2012-01-27 09:12:59Z nanang $ */
+/* $Id: errno.h 3553 2011-05-05 06:14:19Z nanang $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -171,11 +171,6 @@ PJ_BEGIN_DECL
  * Invalid SDP media transport protocol.
  */
 #define PJMEDIA_SDP_EINPROTO	    (PJMEDIA_ERRNO_START+36)    /* 220036 */
-/**
- * @hideinitializer
- * Invalid SDP bandwidth info (b=) line.
- */
-#define PJMEDIA_SDP_EINBANDW	    (PJMEDIA_ERRNO_START+37)    /* 220037 */
 
 
 /************************************************************
@@ -351,11 +346,6 @@ PJ_BEGIN_DECL
  * Invalid mode.
  */
 #define PJMEDIA_CODEC_EINMODE	    (PJMEDIA_ERRNO_START+86)    /* 220086 */
-/**
- * @hideinitializer
- * Bad or corrupted bitstream.
- */
-#define PJMEDIA_CODEC_EBADBITSTREAM (PJMEDIA_ERRNO_START+87)    /* 220087 */
 
 
 /************************************************************
@@ -401,11 +391,7 @@ PJ_BEGIN_DECL
  * Remote does not support RFC 2833
  */
 #define PJMEDIA_RTP_EREMNORFC2833   (PJMEDIA_ERRNO_START+107)    /* 220107 */
-/**
- * @hideinitializer
- * Invalid or bad format
- */
-#define PJMEDIA_EBADFMT             (PJMEDIA_ERRNO_START+108)    /* 220108 */
+
 
 
 /************************************************************
@@ -531,11 +517,6 @@ PJ_BEGIN_DECL
  * Sound frame is too large for file buffer.
  */
 #define PJMEDIA_EFRMFILETOOBIG	    (PJMEDIA_ERRNO_START+183)    /* 220183 */
-/**
- * @hideinitializer
- * Unsupported AVI file.
- */
-#define PJMEDIA_EAVIUNSUPP	    (PJMEDIA_ERRNO_START+191)    /* 220191 */
 
 
 /************************************************************

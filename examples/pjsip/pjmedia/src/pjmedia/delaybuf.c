@@ -1,4 +1,4 @@
-/* $Id: delaybuf.c 3841 2011-10-24 09:28:13Z ming $ */
+/* $Id: delaybuf.c 3567 2011-05-15 12:54:28Z ming $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -21,7 +21,6 @@
 #include <pjmedia/delaybuf.h>
 #include <pjmedia/circbuf.h>
 #include <pjmedia/errno.h>
-#include <pjmedia/frame.h>
 #include <pjmedia/wsola.h>
 #include <pj/assert.h>
 #include <pj/lock.h>

@@ -1,4 +1,4 @@
-/* $Id: ipp_codecs.c 4002 2012-03-30 08:05:43Z bennylp $ */
+/* $Id: ipp_codecs.c 3879 2011-10-31 15:48:15Z nanang $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -18,8 +18,6 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA 
  */
 #include <pjmedia-codec/ipp_codecs.h>
-#include <pjmedia-codec/amr_sdp_match.h>
-#include <pjmedia-codec/g7221_sdp_match.h>
 #include <pjmedia/codec.h>
 #include <pjmedia/errno.h>
 #include <pjmedia/endpoint.h>
@@ -106,8 +104,7 @@ static pjmedia_codec_factory_op ipp_factory_op =
     &ipp_default_attr,
     &ipp_enum_codecs,
     &ipp_alloc_codec,
-    &ipp_dealloc_codec,
-    &pjmedia_codec_ipp_deinit
+    &ipp_dealloc_codec
 };
 
 /* IPP codecs factory */
@@ -669,7 +666,6 @@ PJ_DEF(pj_status_t) pjmedia_codec_g7221_set_pcm_shift(int val)
 PJ_DEF(pj_status_t) pjmedia_codec_ipp_init( pjmedia_endpt *endpt )
 {
     pjmedia_codec_mgr *codec_mgr;
-    pj_str_t codec_name;
     pj_status_t status;
 
     if (ipp_factory.pool != NULL) {
@@ -699,37 +695,6 @@ PJ_DEF(pj_status_t) pjmedia_codec_ipp_init( pjmedia_endpt *endpt )
 	status = PJ_EINVALIDOP;
 	goto on_error;
     }
-
-    /* Register format match callback. */
-#if PJMEDIA_HAS_INTEL_IPP_CODEC_G722_1
-    pj_cstr(&codec_name, "G7221");
-    status = pjmedia_sdp_neg_register_fmt_match_cb(
-					&codec_name,
-					&pjmedia_codec_g7221_match_sdp);
-    if (status != PJ_SUCCESS)
-	goto on_error;
-#endif
-
-#if PJMEDIA_HAS_INTEL_IPP_CODEC_AMR
-    pj_cstr(&codec_name, "AMR");
-    status = pjmedia_sdp_neg_register_fmt_match_cb(
-					&codec_name,
-					&pjmedia_codec_amr_match_sdp);
-    if (status != PJ_SUCCESS)
-	goto on_error;
-#endif
-
-#if PJMEDIA_HAS_INTEL_IPP_CODEC_AMRWB
-    pj_cstr(&codec_name, "AMR-WB");
-    status = pjmedia_sdp_neg_register_fmt_match_cb(
-					&codec_name,
-					&pjmedia_codec_amr_match_sdp);
-    if (status != PJ_SUCCESS)
-	goto on_error;
-#endif
-
-    /* Suppress compile warning */
-    PJ_UNUSED_ARG(codec_name);
 
     /* Register codec factory to endpoint. */
     status = pjmedia_codec_mgr_register_factory(codec_mgr, 

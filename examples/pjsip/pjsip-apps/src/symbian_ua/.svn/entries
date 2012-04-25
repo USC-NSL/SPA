@@ -2,14 +2,14 @@
 
 dir
 4082
-http://svn.pjsip.org/repos/pjproject/trunk/pjsip-apps/src/symbian_ua
+http://svn.pjsip.org/repos/pjproject/branches/1.x/pjsip-apps/src/symbian_ua
 http://svn.pjsip.org/repos
 
 
 
-2012-03-30T07:10:13.512709Z
-3999
-bennylp
+2012-01-17T07:02:14.136926Z
+3943
+nanang
 
 
 svn:special svn:externals svn:needs-lock
@@ -32,11 +32,11 @@ file
 
 
 
-2012-04-17T21:49:37.000000Z
-0661a7a988d8d2ff2166246e8457c61b
-2012-03-30T07:10:13.512709Z
-3999
-bennylp
+2012-04-25T01:48:47.000000Z
+d96d71445ea8c2fc691ae70107d11e96
+2012-01-17T07:02:14.136926Z
+3943
+nanang
 has-props
 
 main_symbian.cpp

@@ -2,14 +2,14 @@
 
 dir
 4082
-http://svn.pjsip.org/repos/pjproject/trunk/pjmedia/include/pjmedia-audiodev
+http://svn.pjsip.org/repos/pjproject/branches/1.x/pjmedia/include/pjmedia-audiodev
 http://svn.pjsip.org/repos
 
 
 
-2011-10-24T09:28:13.441892Z
-3841
-ming
+2011-09-09T09:51:10.287159Z
+3748
+nanang
 
 
 svn:special svn:externals svn:needs-lock
@@ -32,10 +32,10 @@ file
 
 
 
-2012-04-17T21:49:40.000000Z
-9018685ab6eac764a3926a8610b72029
-2011-07-19T03:42:28.070005Z
-3664
+2012-04-25T01:47:28.000000Z
+6455f1a4e57b61ce633c8772daafb679
+2011-05-05T06:14:19.959022Z
+3553
 nanang
 has-props
 
@@ -71,11 +71,11 @@ file
 
 
 
-2012-04-17T21:49:40.000000Z
-336cc74e89f7be622f0660eb169a2d36
-2011-10-24T09:28:13.441892Z
-3841
-ming
+2012-04-25T01:47:28.000000Z
+f529d7b9a060b6c8d6af3dca824bc14f
+2011-09-09T09:51:10.287159Z
+3748
+nanang
 has-props
 
 errno.h

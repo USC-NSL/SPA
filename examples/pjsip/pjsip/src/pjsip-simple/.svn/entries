@@ -2,13 +2,13 @@
 
 dir
 4082
-http://svn.pjsip.org/repos/pjproject/trunk/pjsip/src/pjsip-simple
+http://svn.pjsip.org/repos/pjproject/branches/1.x/pjsip/src/pjsip-simple
 http://svn.pjsip.org/repos
 
 
 
-2012-04-24T13:09:14.350951Z
-4082
+2012-04-20T09:59:51.418825Z
+4064
 bennylp
 
 
@@ -60,9 +60,9 @@ file
 
 2012-04-17T21:49:36.000000Z
 501c3c081741d90a32576cd654e7f1b7
-2011-10-24T09:28:13.441892Z
-3841
-ming
+2011-09-09T09:49:41.958206Z
+3747
+bennylp
 has-props
 
 evsub.c
@@ -71,10 +71,10 @@ file
 
 
 
-2012-04-25T00:57:29.000000Z
-b5aa39a31e6bbf834fe666d7d8575ca9
-2012-04-24T13:09:14.350951Z
-4082
+2012-04-25T01:48:47.000000Z
+4dd54728239383ddb6865e12af85df71
+2012-04-20T09:59:51.418825Z
+4064
 bennylp
 has-props
 
@@ -125,9 +125,9 @@ file
 
 2012-04-17T21:49:36.000000Z
 2f785cb6fa30c832d374b3225b5d0e45
-2011-10-24T09:28:13.441892Z
-3841
-ming
+2011-05-15T12:13:24.542083Z
+3565
+bennylp
 has-props
 
 iscomposing.c

@@ -1,155 +1,17 @@
 K 25
 svn:wc:ra_dav:version-url
-V 62
-/repos/!svn/ver/3999/pjproject/trunk/pjlib-util/src/pjlib-util
+V 69
+/repos/!svn/ver/3958/pjproject/branches/1.x/pjlib-util/src/pjlib-util
 END
 stun_simple_client.c
 K 25
 svn:wc:ra_dav:version-url
-V 83
-/repos/!svn/ver/3999/pjproject/trunk/pjlib-util/src/pjlib-util/stun_simple_client.c
+V 90
+/repos/!svn/ver/3896/pjproject/branches/1.x/pjlib-util/src/pjlib-util/stun_simple_client.c
 END
 xml.c
 K 25
 svn:wc:ra_dav:version-url
-V 68
-/repos/!svn/ver/3999/pjproject/trunk/pjlib-util/src/pjlib-util/xml.c
-END
-resolver.c
-K 25
-svn:wc:ra_dav:version-url
-V 73
-/repos/!svn/ver/3553/pjproject/trunk/pjlib-util/src/pjlib-util/resolver.c
-END
-getopt.c
-K 25
-svn:wc:ra_dav:version-url
-V 71
-/repos/!svn/ver/3550/pjproject/trunk/pjlib-util/src/pjlib-util/getopt.c
-END
-stun_simple.c
-K 25
-svn:wc:ra_dav:version-url
-V 76
-/repos/!svn/ver/3553/pjproject/trunk/pjlib-util/src/pjlib-util/stun_simple.c
-END
-string.c
-K 25
-svn:wc:ra_dav:version-url
-V 71
-/repos/!svn/ver/3553/pjproject/trunk/pjlib-util/src/pjlib-util/string.c
-END
-dns_dump.c
-K 25
-svn:wc:ra_dav:version-url
-V 73
-/repos/!svn/ver/3553/pjproject/trunk/pjlib-util/src/pjlib-util/dns_dump.c
-END
-dns_server.c
-K 25
-svn:wc:ra_dav:version-url
 V 75
-/repos/!svn/ver/3553/pjproject/trunk/pjlib-util/src/pjlib-util/dns_server.c
-END
-crc32.c
-K 25
-svn:wc:ra_dav:version-url
-V 70
-/repos/!svn/ver/2511/pjproject/trunk/pjlib-util/src/pjlib-util/crc32.c
-END
-scanner_cis_bitwise.c
-K 25
-svn:wc:ra_dav:version-url
-V 84
-/repos/!svn/ver/3553/pjproject/trunk/pjlib-util/src/pjlib-util/scanner_cis_bitwise.c
-END
-http_client.c
-K 25
-svn:wc:ra_dav:version-url
-V 76
-/repos/!svn/ver/3841/pjproject/trunk/pjlib-util/src/pjlib-util/http_client.c
-END
-hmac_md5.c
-K 25
-svn:wc:ra_dav:version-url
-V 73
-/repos/!svn/ver/3553/pjproject/trunk/pjlib-util/src/pjlib-util/hmac_md5.c
-END
-pcap.c
-K 25
-svn:wc:ra_dav:version-url
-V 69
-/repos/!svn/ver/3841/pjproject/trunk/pjlib-util/src/pjlib-util/pcap.c
-END
-hmac_sha1.c
-K 25
-svn:wc:ra_dav:version-url
-V 74
-/repos/!svn/ver/3553/pjproject/trunk/pjlib-util/src/pjlib-util/hmac_sha1.c
-END
-dns.c
-K 25
-svn:wc:ra_dav:version-url
-V 68
-/repos/!svn/ver/3553/pjproject/trunk/pjlib-util/src/pjlib-util/dns.c
-END
-base64.c
-K 25
-svn:wc:ra_dav:version-url
-V 71
-/repos/!svn/ver/3553/pjproject/trunk/pjlib-util/src/pjlib-util/base64.c
-END
-md5.c
-K 25
-svn:wc:ra_dav:version-url
-V 68
-/repos/!svn/ver/1227/pjproject/trunk/pjlib-util/src/pjlib-util/md5.c
-END
-errno.c
-K 25
-svn:wc:ra_dav:version-url
-V 70
-/repos/!svn/ver/3553/pjproject/trunk/pjlib-util/src/pjlib-util/errno.c
-END
-scanner_cis_uint.c
-K 25
-svn:wc:ra_dav:version-url
-V 81
-/repos/!svn/ver/3553/pjproject/trunk/pjlib-util/src/pjlib-util/scanner_cis_uint.c
-END
-symbols.c
-K 25
-svn:wc:ra_dav:version-url
-V 72
-/repos/!svn/ver/3553/pjproject/trunk/pjlib-util/src/pjlib-util/symbols.c
-END
-scanner.c
-K 25
-svn:wc:ra_dav:version-url
-V 72
-/repos/!svn/ver/3553/pjproject/trunk/pjlib-util/src/pjlib-util/scanner.c
-END
-xml_wrap.cpp
-K 25
-svn:wc:ra_dav:version-url
-V 75
-/repos/!svn/ver/3553/pjproject/trunk/pjlib-util/src/pjlib-util/xml_wrap.cpp
-END
-resolver_wrap.cpp
-K 25
-svn:wc:ra_dav:version-url
-V 80
-/repos/!svn/ver/3553/pjproject/trunk/pjlib-util/src/pjlib-util/resolver_wrap.cpp
-END
-srv_resolver.c
-K 25
-svn:wc:ra_dav:version-url
-V 77
-/repos/!svn/ver/3553/pjproject/trunk/pjlib-util/src/pjlib-util/srv_resolver.c
-END
-sha1.c
-K 25
-svn:wc:ra_dav:version-url
-V 69
-/repos/!svn/ver/3549/pjproject/trunk/pjlib-util/src/pjlib-util/sha1.c
+/repos/!svn/ver/3958/pjproject/branches/1.x/pjlib-util/src/pjlib-util/xml.c
 END

@@ -2,13 +2,13 @@
 
 dir
 4082
-http://svn.pjsip.org/repos/pjproject/trunk/pjsip-apps/src/python
+http://svn.pjsip.org/repos/pjproject/branches/1.x/pjsip-apps/src/python
 http://svn.pjsip.org/repos
 
 
 
-2012-03-30T07:10:13.512709Z
-3999
+2012-03-13T02:01:58.041608Z
+3973
 bennylp
 has-props
 
@@ -32,10 +32,10 @@ file
 
 
 
-2012-04-17T21:49:37.000000Z
+2012-04-25T01:48:47.000000Z
 0ff350dbfac3d7402687dfc93cb86ac6
-2012-03-30T07:10:13.512709Z
-3999
+2012-03-13T02:01:58.041608Z
+3973
 bennylp
 has-props
 
@@ -74,11 +74,11 @@ file
 
 
 
-2012-04-17T21:49:37.000000Z
+2012-04-25T01:48:47.000000Z
 1dcb736f49ffe96c6931648c4d8c5556
-2012-03-30T07:10:13.512709Z
-3999
-bennylp
+2011-11-19T03:35:48.762611Z
+3888
+ming
 has-props
 
 pjsua.py

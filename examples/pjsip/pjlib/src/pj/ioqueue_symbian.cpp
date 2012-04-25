@@ -1,4 +1,4 @@
-/* $Id: ioqueue_symbian.cpp 3841 2011-10-24 09:28:13Z ming $ */
+/* $Id: ioqueue_symbian.cpp 3597 2011-06-22 15:50:57Z nanang $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>

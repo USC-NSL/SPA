@@ -2,13 +2,13 @@
 
 dir
 4082
-http://svn.pjsip.org/repos/pjproject/trunk/tests/automated
+http://svn.pjsip.org/repos/pjproject/branches/1.x/tests/automated
 http://svn.pjsip.org/repos
 
 
 
-2011-08-16T09:17:22.161136Z
-3707
+2011-08-16T09:10:58.335015Z
+3706
 bennylp
 has-props
 
@@ -47,8 +47,8 @@ file
 
 2012-04-17T21:49:40.000000Z
 4797551a7579100f51e1a8b833a67970
-2011-08-16T08:27:38.580274Z
-3704
+2011-08-16T08:57:11.119216Z
+3705
 bennylp
 has-props
 
@@ -138,8 +138,8 @@ file
 
 2012-04-17T21:49:40.000000Z
 e379c2cbdcaa04b00e0808193fb11f92
-2011-08-16T09:17:22.161136Z
-3707
+2011-08-16T09:10:58.335015Z
+3706
 bennylp
 has-props
 

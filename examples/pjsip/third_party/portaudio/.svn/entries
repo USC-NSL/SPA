@@ -55,9 +55,6 @@ file
 rossb
 has-props
 
-include
-dir
-
 Doxyfile
 file
 
@@ -70,6 +67,9 @@ c48d3e77de98fb94bb7c3702a95fb1b1
 1084
 rossb
 has-props
+
+include
+dir
 
 configure.in
 file
@@ -84,9 +84,6 @@ file
 rossb
 has-props
 
-src
-dir
-
 depcomp
 file
 
@@ -98,6 +95,22 @@ d7d8db17e074dcabf513d766b728993d
 2006-06-16T15:51:43.507036Z
 1059
 aknudsen
+has-props
+
+src
+dir
+
+fixdir.bat
+file
+
+
+
+
+2012-04-17T21:49:49.000000Z
+721d8ee67f09895296c09328cd5a50e2
+2002-06-04T23:07:01.000000Z
+178
+
 has-props
 
 config.guess
@@ -113,18 +126,8 @@ file
 bjornroche
 has-props
 
-fixdir.bat
-file
-
-
-
-
-2012-04-17T21:49:49.000000Z
-721d8ee67f09895296c09328cd5a50e2
-2002-06-04T23:07:01.000000Z
-178
-
-has-props
+testcvs
+dir
 
 fixfile.bat
 file
@@ -139,21 +142,8 @@ file
 phil
 has-props
 
-testcvs
+bindings
 dir
-
-config.sub
-file
-
-
-
-
-2012-04-17T21:49:49.000000Z
-297d155d0ebe1c2209f4d3b6859d18ae
-2006-05-22T20:31:12.563905Z
-1019
-bjornroche
-has-props
 
 ltmain.sh
 file
@@ -167,8 +157,18 @@ d82aa6b73fec3d7959a2f9ccadf79bf4
 1035
 aknudsen
 
-bindings
-dir
+config.sub
+file
+
+
+
+
+2012-04-17T21:49:49.000000Z
+297d155d0ebe1c2209f4d3b6859d18ae
+2006-05-22T20:31:12.563905Z
+1019
+bjornroche
+has-props
 
 build
 dir

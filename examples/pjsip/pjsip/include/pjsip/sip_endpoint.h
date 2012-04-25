@@ -1,4 +1,4 @@
-/* $Id: sip_endpoint.h 3999 2012-03-30 07:10:13Z bennylp $ */
+/* $Id: sip_endpoint.h 3988 2012-03-28 07:32:42Z nanang $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>

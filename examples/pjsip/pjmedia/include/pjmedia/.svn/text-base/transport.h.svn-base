@@ -28,7 +28,6 @@
 
 #include <pjmedia/types.h>
 #include <pjmedia/errno.h>
-#include <pj/string.h>
 
 /**
  * @defgroup PJMEDIA_TRANSPORT Media Transport
@@ -258,35 +257,6 @@ typedef enum pjmedia_tranport_media_option
 
 
 /**
- * Media socket info is used to describe the underlying sockets
- * to be used as media transport.
- */
-typedef struct pjmedia_sock_info
-{
-    /** The RTP socket handle */
-    pj_sock_t	    rtp_sock;
-
-    /** Address to be advertised as the local address for the RTP
-     *  socket, which does not need to be equal as the bound
-     *  address (for example, this address can be the address resolved
-     *  with STUN).
-     */
-    pj_sockaddr	    rtp_addr_name;
-
-    /** The RTCP socket handle. */
-    pj_sock_t	    rtcp_sock;
-
-    /** Address to be advertised as the local address for the RTCP
-     *  socket, which does not need to be equal as the bound
-     *  address (for example, this address can be the address resolved
-     *  with STUN).
-     */
-    pj_sockaddr	    rtcp_addr_name;
-
-} pjmedia_sock_info;
-
-
-/**
  * This structure describes the operations for the stream transport.
  */
 struct pjmedia_transport_op
@@ -483,9 +453,6 @@ struct pjmedia_transport
 
     /** Transport's "virtual" function table. */
     pjmedia_transport_op    *op;
-
-    /** Application/user data */
-    void		    *user_data;
 };
 
 /**

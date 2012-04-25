@@ -1,4 +1,4 @@
-/* $Id: mem_player.c 3664 2011-07-19 03:42:28Z nanang $ */
+/* $Id: mem_player.c 3553 2011-05-05 06:14:19Z nanang $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -25,7 +25,7 @@
 
 #define THIS_FILE	    "mem_player.c"
 
-#define SIGNATURE	    PJMEDIA_SIG_PORT_MEM_PLAYER
+#define SIGNATURE	    PJMEDIA_PORT_SIGNATURE('M', 'P', 'l', 'y')
 #define BYTES_PER_SAMPLE    2
 
 struct mem_player
@@ -48,7 +48,7 @@ struct mem_player
 
 
 static pj_status_t mem_put_frame(pjmedia_port *this_port, 
-				 pjmedia_frame *frame);
+				  const pjmedia_frame *frame);
 static pj_status_t mem_get_frame(pjmedia_port *this_port, 
 				  pjmedia_frame *frame);
 static pj_status_t mem_on_destroy(pjmedia_port *this_port);
@@ -125,7 +125,7 @@ PJ_DEF(pj_status_t) pjmedia_mem_player_set_eof_cb( pjmedia_port *port,
 
 
 static pj_status_t mem_put_frame( pjmedia_port *this_port, 
-				  pjmedia_frame *frame)
+				  const pjmedia_frame *frame)
 {
     PJ_UNUSED_ARG(this_port);
     PJ_UNUSED_ARG(frame);
@@ -165,7 +165,7 @@ static pj_status_t mem_get_frame( pjmedia_port *this_port,
 	player->eof = PJ_FALSE;
     }
 
-    size_needed = PJMEDIA_PIA_AVG_FSZ(&this_port->info);
+    size_needed = this_port->info.bytes_per_frame;
     size_written = 0;
     endpos = player->buffer + player->buf_size;
 
@@ -200,11 +200,11 @@ static pj_status_t mem_get_frame( pjmedia_port *this_port,
 	}
     }
 
-    frame->size = PJMEDIA_PIA_AVG_FSZ(&this_port->info);
+    frame->size = this_port->info.bytes_per_frame;
     frame->timestamp.u64 = player->timestamp.u64;
     frame->type = PJMEDIA_FRAME_TYPE_AUDIO;
 
-    player->timestamp.u64 += PJMEDIA_PIA_SPF(&this_port->info);
+    player->timestamp.u64 += this_port->info.samples_per_frame;
 
     return PJ_SUCCESS;
 }

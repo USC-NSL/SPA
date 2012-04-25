@@ -1,4 +1,4 @@
-/* $Id: l16.c 3664 2011-07-19 03:42:28Z nanang $ */
+/* $Id: l16.c 3553 2011-05-05 06:14:19Z nanang $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -112,8 +112,7 @@ static pjmedia_codec_factory_op l16_factory_op =
     &l16_default_attr,
     &l16_enum_codecs,
     &l16_alloc_codec,
-    &l16_dealloc_codec,
-    &pjmedia_codec_l16_deinit
+    &l16_dealloc_codec
 };
 
 /* L16 factory private data */

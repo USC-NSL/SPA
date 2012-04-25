@@ -33,9 +33,7 @@ PJ_BEGIN_DECL
                               	   char *buf, pj_size_t bufsize );
 PJ_END_DECL
 
-#ifndef PJLIB_MAX_ERR_MSG_HANDLER
-#	define PJLIB_MAX_ERR_MSG_HANDLER   10
-#endif
+#define PJLIB_MAX_ERR_MSG_HANDLER   8
 
 /* Error message handler. */
 static unsigned err_msg_hnd_cnt;

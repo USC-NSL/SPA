@@ -1,59 +1,23 @@
 K 25
 svn:wc:ra_dav:version-url
-V 56
-/repos/!svn/ver/4082/pjproject/trunk/pjsip/src/pjsua-lib
+V 63
+/repos/!svn/ver/4067/pjproject/branches/1.x/pjsip/src/pjsua-lib
 END
 pjsua_media.c
 K 25
 svn:wc:ra_dav:version-url
-V 70
-/repos/!svn/ver/4071/pjproject/trunk/pjsip/src/pjsua-lib/pjsua_media.c
-END
-pjsua_vid.c
-K 25
-svn:wc:ra_dav:version-url
-V 68
-/repos/!svn/ver/4071/pjproject/trunk/pjsip/src/pjsua-lib/pjsua_vid.c
-END
-pjsua_dump.c
-K 25
-svn:wc:ra_dav:version-url
-V 69
-/repos/!svn/ver/3999/pjproject/trunk/pjsip/src/pjsua-lib/pjsua_dump.c
-END
-pjsua_im.c
-K 25
-svn:wc:ra_dav:version-url
-V 67
-/repos/!svn/ver/3553/pjproject/trunk/pjsip/src/pjsua-lib/pjsua_im.c
+V 77
+/repos/!svn/ver/4065/pjproject/branches/1.x/pjsip/src/pjsua-lib/pjsua_media.c
 END
 pjsua_acc.c
 K 25
 svn:wc:ra_dav:version-url
-V 68
-/repos/!svn/ver/4042/pjproject/trunk/pjsip/src/pjsua-lib/pjsua_acc.c
-END
-pjsua_core.c
-K 25
-svn:wc:ra_dav:version-url
-V 69
-/repos/!svn/ver/4071/pjproject/trunk/pjsip/src/pjsua-lib/pjsua_core.c
-END
-pjsua_aud.c
-K 25
-svn:wc:ra_dav:version-url
-V 68
-/repos/!svn/ver/4000/pjproject/trunk/pjsip/src/pjsua-lib/pjsua_aud.c
-END
-pjsua_pres.c
-K 25
-svn:wc:ra_dav:version-url
-V 69
-/repos/!svn/ver/3841/pjproject/trunk/pjsip/src/pjsua-lib/pjsua_pres.c
+V 75
+/repos/!svn/ver/4041/pjproject/branches/1.x/pjsip/src/pjsua-lib/pjsua_acc.c
 END
 pjsua_call.c
 K 25
 svn:wc:ra_dav:version-url
-V 69
-/repos/!svn/ver/4082/pjproject/trunk/pjsip/src/pjsua-lib/pjsua_call.c
+V 76
+/repos/!svn/ver/4067/pjproject/branches/1.x/pjsip/src/pjsua-lib/pjsua_call.c
 END

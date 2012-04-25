@@ -1,4 +1,4 @@
-# $Id: 001_torture_4475_3_1_1_4.py 3712 2011-08-18 17:34:29Z nanang $
+# $Id: 001_torture_4475_3_1_1_4.py 2505 2009-03-12 11:25:11Z bennylp $
 import inc_sip as sip
 import inc_sdp as sdp
 
@@ -21,5 +21,5 @@ L:0
 
 sendto_cfg = sip.SendtoCfg( "RFC 4475 3.1.1.4", 
 			    "--null-audio --auto-answer 200", 
-			    "", 200, complete_msg=complete_msg)
+			    "", 405, complete_msg=complete_msg)
 

@@ -1,4 +1,4 @@
-/* $Id: hash.h 3841 2011-10-24 09:28:13Z ming $ */
+/* $Id: hash.h 3673 2011-07-20 08:08:46Z bennylp $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>

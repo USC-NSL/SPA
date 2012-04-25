@@ -1,35 +1,11 @@
 K 25
 svn:wc:ra_dav:version-url
-V 63
-/repos/!svn/ver/3999/pjproject/trunk/third_party/build/resample
-END
-libresample.vcproj
-K 25
-svn:wc:ra_dav:version-url
-V 82
-/repos/!svn/ver/2678/pjproject/trunk/third_party/build/resample/libresample.vcproj
-END
-libresample.vcp
-K 25
-svn:wc:ra_dav:version-url
-V 79
-/repos/!svn/ver/1227/pjproject/trunk/third_party/build/resample/libresample.vcp
-END
-config.h
-K 25
-svn:wc:ra_dav:version-url
-V 72
-/repos/!svn/ver/2676/pjproject/trunk/third_party/build/resample/config.h
-END
-libresample_dll.vcproj
-K 25
-svn:wc:ra_dav:version-url
-V 86
-/repos/!svn/ver/2638/pjproject/trunk/third_party/build/resample/libresample_dll.vcproj
+V 70
+/repos/!svn/ver/3968/pjproject/branches/1.x/third_party/build/resample
 END
 Makefile
 K 25
 svn:wc:ra_dav:version-url
-V 72
-/repos/!svn/ver/3999/pjproject/trunk/third_party/build/resample/Makefile
+V 79
+/repos/!svn/ver/3968/pjproject/branches/1.x/third_party/build/resample/Makefile
 END

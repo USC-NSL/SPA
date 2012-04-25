@@ -1,4 +1,4 @@
-/* $Id: stream.h 3841 2011-10-24 09:28:13Z ming $ */
+/* $Id: stream.h 3571 2011-05-19 08:05:23Z ming $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -32,7 +32,6 @@
 #include <pjmedia/port.h>
 #include <pjmedia/rtcp.h>
 #include <pjmedia/transport.h>
-#include <pjmedia/vid_codec.h>
 #include <pj/sock.h>
 
 PJ_BEGIN_DECL
@@ -88,7 +87,7 @@ typedef struct pjmedia_channel pjmedia_channel;
  * corresponds to one "m=" line in SDP session descriptor, and it has
  * its own RTP/RTCP socket pair.
  */
-typedef struct pjmedia_stream_info
+struct pjmedia_stream_info
 {
     pjmedia_type	type;	    /**< Media type (audio, video)	    */
     pjmedia_tp_proto	proto;	    /**< Transport protocol (RTP/AVP, etc.) */
@@ -110,7 +109,6 @@ typedef struct pjmedia_stream_info
     pjmedia_codec_info	fmt;	    /**< Incoming codec format info.	    */
     pjmedia_codec_param *param;	    /**< Optional codec param.		    */
     unsigned		tx_pt;	    /**< Outgoing codec paylaod type.	    */
-    unsigned		rx_pt;	    /**< Incoming codec paylaod type.	    */
     unsigned		tx_maxptime;/**< Outgoing codec max ptime.	    */
     int		        tx_event_pt;/**< Outgoing pt for telephone-events.  */
     int			rx_event_pt;/**< Incoming pt for telephone-events.  */
@@ -138,32 +136,14 @@ typedef struct pjmedia_stream_info
     pj_bool_t           rtcp_sdes_bye_disabled; 
                                     /**< Disable automatic sending of RTCP
                                          SDES and BYE.                      */
-} pjmedia_stream_info;
+};
 
 
 /**
- * This function will initialize the stream info based on information
- * in both SDP session descriptors for the specified stream index. 
- * The remaining information will be taken from default codec parameters. 
- * If socket info array is specified, the socket will be copied to the 
- * session info as well.
- *
- * @param si		Stream info structure to be initialized.
- * @param pool		Pool to allocate memory.
- * @param endpt		PJMEDIA endpoint instance.
- * @param local		Local SDP session descriptor.
- * @param remote	Remote SDP session descriptor.
- * @param stream_idx	Media stream index in the session descriptor.
- *
- * @return		PJ_SUCCESS if stream info is successfully initialized.
+ * @see pjmedia_stream_info.
  */
-PJ_DECL(pj_status_t)
-pjmedia_stream_info_from_sdp( pjmedia_stream_info *si,
-			      pj_pool_t *pool,
-			      pjmedia_endpt *endpt,
-			      const pjmedia_sdp_session *local,
-			      const pjmedia_sdp_session *remote,
-			      unsigned stream_idx);
+typedef struct pjmedia_stream_info pjmedia_stream_info;
+
 
 
 /**
@@ -252,17 +232,6 @@ PJ_DECL(pjmedia_transport*) pjmedia_stream_get_transport(pjmedia_stream *st);
  */
 PJ_DECL(pj_status_t) pjmedia_stream_start(pjmedia_stream *stream);
 
-
-/**
- * Get the stream info.
- *
- * @param stream	The media stream.
- * @param info		Stream info.
- *
- * @return		PJ_SUCCESS on success.
- */
-PJ_DECL(pj_status_t) pjmedia_stream_get_info( const pjmedia_stream *stream,
-					      pjmedia_stream_info *info);
 
 /**
  * Get the stream statistics. See also
@@ -404,7 +373,6 @@ pjmedia_stream_set_dtmf_callback(pjmedia_stream *stream,
 					    void *user_data, 
 					    int digit), 
 				 void *user_data);
-
 
 /**
  * Send RTCP SDES for the media stream.

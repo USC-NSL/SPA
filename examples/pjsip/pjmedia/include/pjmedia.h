@@ -1,4 +1,4 @@
-/* $Id: pjmedia.h 3664 2011-07-19 03:42:28Z nanang $ */
+/* $Id: pjmedia.h 3553 2011-05-05 06:14:19Z nanang $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -24,22 +24,19 @@
  * @file pjmedia.h
  * @brief PJMEDIA main header file.
  */
+
+#include <pjmedia/types.h>
 #include <pjmedia/alaw_ulaw.h>
-#include <pjmedia/avi_stream.h>
 #include <pjmedia/bidirectional.h>
 #include <pjmedia/circbuf.h>
 #include <pjmedia/clock.h>
 #include <pjmedia/codec.h>
 #include <pjmedia/conference.h>
-#include <pjmedia/converter.h>
 #include <pjmedia/delaybuf.h>
 #include <pjmedia/echo.h>
 #include <pjmedia/echo_port.h>
-#include <pjmedia/endpoint.h>
 #include <pjmedia/errno.h>
-#include <pjmedia/event.h>
-#include <pjmedia/frame.h>
-#include <pjmedia/format.h>
+#include <pjmedia/endpoint.h>
 #include <pjmedia/g711.h>
 #include <pjmedia/jbuf.h>
 #include <pjmedia/master_port.h>
@@ -53,14 +50,13 @@
 #include <pjmedia/rtp.h>
 #include <pjmedia/sdp.h>
 #include <pjmedia/sdp_neg.h>
-//#include <pjmedia/session.h>
+#include <pjmedia/session.h>
 #include <pjmedia/silencedet.h>
 #include <pjmedia/sound.h>
 #include <pjmedia/sound_port.h>
 #include <pjmedia/splitcomb.h>
 #include <pjmedia/stereo.h>
 #include <pjmedia/stream.h>
-#include <pjmedia/stream_common.h>
 #include <pjmedia/tonegen.h>
 #include <pjmedia/transport.h>
 #include <pjmedia/transport_adapter_sample.h>
@@ -68,10 +64,6 @@
 #include <pjmedia/transport_loop.h>
 #include <pjmedia/transport_srtp.h>
 #include <pjmedia/transport_udp.h>
-#include <pjmedia/vid_port.h>
-#include <pjmedia/vid_codec.h>
-#include <pjmedia/vid_stream.h>
-#include <pjmedia/vid_tee.h>
 #include <pjmedia/wav_playlist.h>
 #include <pjmedia/wav_port.h>
 #include <pjmedia/wave.h>

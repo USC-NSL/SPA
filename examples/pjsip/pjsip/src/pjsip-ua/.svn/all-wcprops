@@ -1,41 +1,29 @@
 K 25
 svn:wc:ra_dav:version-url
-V 55
-/repos/!svn/ver/4082/pjproject/trunk/pjsip/src/pjsip-ua
-END
-sip_100rel.c
-K 25
-svn:wc:ra_dav:version-url
-V 68
-/repos/!svn/ver/3841/pjproject/trunk/pjsip/src/pjsip-ua/sip_100rel.c
-END
-sip_xfer.c
-K 25
-svn:wc:ra_dav:version-url
-V 66
-/repos/!svn/ver/3553/pjproject/trunk/pjsip/src/pjsip-ua/sip_xfer.c
+V 62
+/repos/!svn/ver/4067/pjproject/branches/1.x/pjsip/src/pjsip-ua
 END
 sip_inv.c
 K 25
 svn:wc:ra_dav:version-url
-V 65
-/repos/!svn/ver/4082/pjproject/trunk/pjsip/src/pjsip-ua/sip_inv.c
+V 72
+/repos/!svn/ver/4067/pjproject/branches/1.x/pjsip/src/pjsip-ua/sip_inv.c
 END
 sip_reg.c
 K 25
 svn:wc:ra_dav:version-url
-V 65
-/repos/!svn/ver/4038/pjproject/trunk/pjsip/src/pjsip-ua/sip_reg.c
+V 72
+/repos/!svn/ver/4037/pjproject/branches/1.x/pjsip/src/pjsip-ua/sip_reg.c
 END
 sip_replaces.c
 K 25
 svn:wc:ra_dav:version-url
-V 70
-/repos/!svn/ver/3999/pjproject/trunk/pjsip/src/pjsip-ua/sip_replaces.c
+V 77
+/repos/!svn/ver/3986/pjproject/branches/1.x/pjsip/src/pjsip-ua/sip_replaces.c
 END
 sip_timer.c
 K 25
 svn:wc:ra_dav:version-url
-V 67
-/repos/!svn/ver/3999/pjproject/trunk/pjsip/src/pjsip-ua/sip_timer.c
+V 74
+/repos/!svn/ver/3986/pjproject/branches/1.x/pjsip/src/pjsip-ua/sip_timer.c
 END

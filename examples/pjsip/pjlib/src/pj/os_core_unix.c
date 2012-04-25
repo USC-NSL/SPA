@@ -1,4 +1,4 @@
-/* $Id: os_core_unix.c 3999 2012-03-30 07:10:13Z bennylp $ */
+/* $Id: os_core_unix.c 3986 2012-03-22 11:29:20Z nanang $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -1839,13 +1839,3 @@ PJ_DEF(pj_color_t) pj_term_get_color(void)
 
 #endif	/* PJ_TERM_HAS_COLOR */
 
-#if !defined(PJ_DARWINOS) || PJ_DARWINOS == 0
-/*
- * pj_run_app()
- */
-PJ_DEF(int) pj_run_app(pj_main_func_ptr main_func, int argc, char *argv[],
-                       unsigned flags)
-{
-    return (*main_func)(argc, argv);
-}
-#endif

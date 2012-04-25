@@ -2,13 +2,13 @@
 
 dir
 4082
-http://svn.pjsip.org/repos/pjproject/trunk/third_party/build/speex
+http://svn.pjsip.org/repos/pjproject/branches/1.x/third_party/build/speex
 http://svn.pjsip.org/repos
 
 
 
-2011-07-19T03:42:28.070005Z
-3664
+2009-05-06T18:59:31.630623Z
+2678
 nanang
 has-props
 
@@ -28,6 +28,19 @@ svn:special svn:externals svn:needs-lock
 
 output
 dir
+
+libspeex.dsp
+file
+
+
+
+
+2012-04-25T01:47:29.000000Z
+6970839567df9a68c886d232d9cc7de8
+2008-06-10T14:09:37.871845Z
+2002
+nanang
+has-props
 
 libspeex.vcp
 file

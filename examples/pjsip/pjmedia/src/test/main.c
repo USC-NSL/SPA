@@ -1,4 +1,4 @@
-/* $Id: main.c 3664 2011-07-19 03:42:28Z nanang $ */
+/* $Id: main.c 3553 2011-05-05 06:14:19Z nanang $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -17,8 +17,6 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA 
  */
-#include <pj/os.h>
-
 #include "test.h"
 
  
@@ -31,7 +29,8 @@
 #   include "../../../pjlib/include/rtems-network-config.h"
 #endif
 
-static int main_func(int argc, char *argv[])
+
+int main(int argc, char *argv[])
 {
     int rc;
     char s[10];
@@ -47,7 +46,4 @@ static int main_func(int argc, char *argv[])
     return rc;
 }
 
-int main(int argc, char *argv[])
-{
-    return pj_run_app(&main_func, argc, argv, 0);
-}
+

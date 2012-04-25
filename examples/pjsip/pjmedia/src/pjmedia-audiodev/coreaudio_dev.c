@@ -1,4 +1,4 @@
-/* $Id: coreaudio_dev.c 4082 2012-04-24 13:09:14Z bennylp $ */
+/* $Id: coreaudio_dev.c 4079 2012-04-24 10:26:07Z ming $ */
 /*
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  *

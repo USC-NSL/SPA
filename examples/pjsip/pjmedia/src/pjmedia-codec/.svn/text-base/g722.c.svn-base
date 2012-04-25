@@ -122,8 +122,7 @@ static pjmedia_codec_factory_op g722_factory_op =
     &g722_default_attr,
     &g722_enum_codecs,
     &g722_alloc_codec,
-    &g722_dealloc_codec,
-    &pjmedia_codec_g722_deinit
+    &g722_dealloc_codec
 };
 
 /* G722 factory */

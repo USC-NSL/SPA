@@ -2,14 +2,14 @@
 
 dir
 4082
-http://svn.pjsip.org/repos/pjproject/trunk/pjsip-apps/build
+http://svn.pjsip.org/repos/pjproject/branches/1.x/pjsip-apps/build
 http://svn.pjsip.org/repos
 
 
 
-2012-04-24T12:45:00.494734Z
-4080
-nanang
+2010-04-20T09:44:27.669351Z
+3141
+bennylp
 has-props
 
 svn:special svn:externals svn:needs-lock
@@ -26,17 +26,30 @@ svn:special svn:externals svn:needs-lock
 
 74dad513-b988-da41-8d7b-12977e46ad98
 
+py_pjsua.dsp
+file
+
+
+
+
+2012-04-25T01:47:28.000000Z
+9c674c05ba8394f35407387cffaf61bb
+2007-09-10T16:54:22.474016Z
+1430
+bennylp
+has-props
+
 Samples-vc.mak
 file
 
 
 
 
-2012-04-25T00:57:29.000000Z
-162c82d86f39a1af6c6f9db56347e7c0
-2012-04-24T12:45:00.494734Z
-4080
-nanang
+2012-04-25T01:47:28.000000Z
+fb05a14c6e244cc2d9d0f31e3019fa75
+2010-04-20T09:44:27.669351Z
+3141
+bennylp
 has-props
 
 pjsua.vcproj
@@ -45,11 +58,11 @@ file
 
 
 
-2012-04-17T21:49:37.000000Z
-d414ca19ce6ce671fabac72bccb4d2fe
-2011-07-19T03:42:28.070005Z
-3664
-nanang
+2012-04-25T01:47:28.000000Z
+504b9f1753c0a7f6a0b21f428a7e82e3
+2009-04-29T15:30:38.994109Z
+2664
+bennylp
 
 python_pjsua.vcproj
 file
@@ -89,6 +102,19 @@ file
 bennylp
 has-props
 
+samples.dsp
+file
+
+
+
+
+2012-04-25T01:47:28.000000Z
+fc660b0ea8d389e8ba4e3d9ca4d9dbb9
+2010-02-04T18:29:16.097319Z
+3087
+ming
+has-props
+
 libpjproject.vcproj
 file
 
@@ -107,23 +133,11 @@ file
 
 
 
-2012-04-17T21:49:37.000000Z
-c9b9bde790a9853334e129686784e349
-2011-07-19T03:42:28.070005Z
-3664
-nanang
-
-vidgui.vcproj
-file
-
-
-
-
-2012-04-17T21:49:37.000000Z
-4572d4aa92ba30ebd18268f6a4265dfc
-2011-08-01T12:57:45.425202Z
-3686
-nanang
+2012-04-25T01:47:28.000000Z
+c6d360a0068164ecda88124b20e1e4f0
+2009-04-29T15:30:38.994109Z
+2664
+bennylp
 
 Footprint.mak
 file
@@ -150,8 +164,34 @@ file
 2664
 bennylp
 
+pjsystest.dsp
+file
+
+
+
+
+2012-04-25T01:47:28.000000Z
+785c15491e1b6f2960c78c89d72f291a
+2009-07-17T11:37:42.477674Z
+2839
+bennylp
+has-props
+
 output
 dir
+
+pjsip_apps.dsw
+file
+
+
+
+
+2012-04-25T01:47:28.000000Z
+8d47d3c391375c4629c25899cf747cb7
+2009-05-06T10:28:52.549415Z
+2674
+bennylp
+has-props
 
 wince-evc4
 dir
@@ -162,11 +202,37 @@ file
 
 
 
-2012-04-17T21:49:37.000000Z
-678988d8bb7d4ca0c2ed2e1b7a9e8a35
-2011-07-19T03:42:28.070005Z
-3664
-nanang
+2012-04-25T01:47:28.000000Z
+8cf592c2917133decc7208fe5f33cc89
+2010-02-04T18:29:16.097319Z
+3087
+ming
+
+pjsua.dsp
+file
+
+
+
+
+2012-04-25T01:47:28.000000Z
+5ab96485f99fe56b9cf49d67cd805828
+2007-03-25T18:44:51.578957Z
+1104
+bennylp
+has-props
+
+python_pjsua.dsp
+file
+
+
+
+
+2012-04-25T01:47:28.000000Z
+e0b328cf34f6a302d0701dfb8028a4a2
+2008-07-10T22:41:20.510239Z
+2119
+bennylp
+has-props
 
 pjsystest.vcproj
 file
@@ -187,10 +253,10 @@ file
 
 
 
-2012-04-17T21:49:37.000000Z
-e73f7ca9aa10bd95a41108b8a5d5060c
-2011-09-19T01:15:02.957081Z
-3754
+2012-04-25T01:47:28.000000Z
+6135a385659c4cc82cfed2f2535b4aef
+2010-04-20T09:44:27.669351Z
+3141
 bennylp
 has-props
 
@@ -207,16 +273,29 @@ file
 nanang
 has-props
 
+sample_debug.dsp
+file
+
+
+
+
+2012-04-25T01:47:28.000000Z
+9eda4ded29926f377bea830eb3b5577d
+2009-03-12T18:11:37.148578Z
+2506
+bennylp
+has-props
+
 Makefile
 file
 
 
 
 
-2012-04-17T21:49:37.000000Z
-db51a940410c908f4a8cda210b8d3f53
-2011-07-19T03:42:28.070005Z
-3664
-nanang
+2012-04-25T01:47:28.000000Z
+2d9defc00d23c450fe370c6ccc262591
+2010-01-08T09:53:31.089473Z
+3048
+bennylp
 has-props
 

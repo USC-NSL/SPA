@@ -1,4 +1,4 @@
-/* $Id: resampleplay.c 3664 2011-07-19 03:42:28Z nanang $ */
+/* $Id: resampleplay.c 3553 2011-05-05 06:14:19Z nanang $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -129,7 +129,7 @@ int main(int argc, char *argv[])
     }
 
     /* File must have same number of channels. */
-    if (PJMEDIA_PIA_CCNT(&file_port->info) != (unsigned)channel_count) {
+    if (file_port->info.channel_count != (unsigned)channel_count) {
 	PJ_LOG(3,(THIS_FILE, "Error: file has different number of channels. "
 			     "Perhaps you'd need -c option?"));
 	pjmedia_port_destroy(file_port);
@@ -186,8 +186,7 @@ int main(int argc, char *argv[])
 
 
     printf("Playing %s at sampling rate %d (original file sampling rate=%d)\n",
-	   argv[pj_optind], sampling_rate,
-	   PJMEDIA_PIA_SRATE(&file_port->info));
+	   argv[pj_optind], sampling_rate, file_port->info.clock_rate);
     puts("");
     puts("Press <ENTER> to stop playing and quit");
 

@@ -1,4 +1,4 @@
-/* $Id: stun_simple_client.c 3999 2012-03-30 07:10:13Z bennylp $ */
+/* $Id: stun_simple_client.c 3896 2011-12-05 02:12:38Z bennylp $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -19,6 +19,7 @@
  */
 #include <pjlib-util/stun_simple.h>
 #include <pjlib-util/errno.h>
+#include <pj/compat/socket.h>
 #include <pj/log.h>
 #include <pj/os.h>
 #include <pj/pool.h>
@@ -44,7 +45,7 @@ PJ_DEF(pj_status_t) pjstun_get_mapped_addr( pj_pool_factory *pf,
 {
     unsigned srv_cnt;
     pj_sockaddr_in srv_addr[2];
-    int i, send_cnt = 0, nfds;
+    int i, j, send_cnt = 0, nfds;
     pj_pool_t *pool;
     struct query_rec {
 	struct {
@@ -121,7 +122,7 @@ PJ_DEF(pj_status_t) pjstun_get_mapped_addr( pj_pool_factory *pf,
 	}
     }
 #else
-    nfds = PJ_IOQUEUE_MAX_HANDLES-1;
+    nfds = FD_SETSIZE-1;
 #endif
 
     /* Main retransmission loop. */
@@ -134,7 +135,6 @@ PJ_DEF(pj_status_t) pjstun_get_mapped_addr( pj_pool_factory *pf,
 
 	/* Send messages to servers that has not given us response. */
 	for (i=0; i<sock_cnt && status==PJ_SUCCESS; ++i) {
-	    unsigned j;
 	    for (j=0; j<srv_cnt && status==PJ_SUCCESS; ++j) {
 		pjstun_msg_hdr *msg_hdr = (pjstun_msg_hdr*) out_msg;
                 pj_ssize_t sent_len;

@@ -20,7 +20,6 @@
 #ifndef __PJ_CONFIG_H__
 #define __PJ_CONFIG_H__
 
-
 /**
  * @file config.h
  * @brief PJLIB Main configuration settings.
@@ -45,10 +44,6 @@
 #  error "Unknown compiler."
 #endif
 
-/* PJ_ALIGN_DATA is compiler specific directive to align data address */
-#ifndef PJ_ALIGN_DATA
-#  error "PJ_ALIGN_DATA is not defined!"
-#endif
 
 /********************************************************************
  * Include target OS specific configuration.
@@ -407,33 +402,6 @@
 #  define PJ_LOG_USE_STACK_BUFFER   1
 #endif
 
-/**
- * Enable log indentation feature.
- *
- * Default: 1
- */
-#ifndef PJ_LOG_ENABLE_INDENT
-#   define PJ_LOG_ENABLE_INDENT        1
-#endif
-
-/**
- * Number of PJ_LOG_INDENT_CHAR to put every time pj_log_push_indent()
- * is called.
- *
- * Default: 1
- */
-#ifndef PJ_LOG_INDENT_SIZE
-#   define PJ_LOG_INDENT_SIZE        1
-#endif
-
-/**
- * Log indentation character.
- *
- * Default: space
- */
-#ifndef PJ_LOG_INDENT_CHAR
-#   define PJ_LOG_INDENT_CHAR	    '.'
-#endif
 
 /**
  * Colorfull terminal (for logging etc).
@@ -1151,10 +1119,10 @@
 PJ_BEGIN_DECL
 
 /** PJLIB version major number. */
-#define PJ_VERSION_NUM_MAJOR	2
+#define PJ_VERSION_NUM_MAJOR	1
 
 /** PJLIB version minor number. */
-#define PJ_VERSION_NUM_MINOR	0
+#define PJ_VERSION_NUM_MINOR	12
 
 /** PJLIB version revision number. */
 #define PJ_VERSION_NUM_REV	0
@@ -1163,7 +1131,7 @@ PJ_BEGIN_DECL
  * Extra suffix for the version (e.g. "-trunk"), or empty for
  * web release version.
  */
-#define PJ_VERSION_NUM_EXTRA	"-beta-svn"
+#define PJ_VERSION_NUM_EXTRA	"-svn"
 
 /**
  * PJLIB version number consists of three bytes with the following format:

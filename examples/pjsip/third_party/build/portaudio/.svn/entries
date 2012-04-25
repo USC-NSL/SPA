@@ -2,14 +2,14 @@
 
 dir
 4082
-http://svn.pjsip.org/repos/pjproject/trunk/third_party/build/portaudio
+http://svn.pjsip.org/repos/pjproject/branches/1.x/third_party/build/portaudio
 http://svn.pjsip.org/repos
 
 
 
-2011-07-19T03:42:28.070005Z
-3664
-nanang
+2010-08-25T12:51:29.278996Z
+3295
+bennylp
 has-props
 
 svn:special svn:externals svn:needs-lock
@@ -41,6 +41,19 @@ has-props
 
 output
 dir
+
+libportaudio.dsp
+file
+
+
+
+
+2012-04-25T01:47:29.000000Z
+d1cd89fb172fe742284b9309e112e1c9
+2008-03-12T23:21:06.405655Z
+1865
+bennylp
+has-props
 
 os-auto.mak.in
 file

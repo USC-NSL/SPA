@@ -1,4 +1,4 @@
-/* $Id: symb_vas_dev.cpp 3841 2011-10-24 09:28:13Z ming $ */
+/* $Id: symb_vas_dev.cpp 3809 2011-10-11 03:05:34Z nanang $ */
 /* 
  * Copyright (C) 2009-2011 Teluu Inc. (http://www.teluu.com)
  *

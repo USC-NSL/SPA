@@ -20,7 +20,6 @@
 #include <pjmedia/types.h>
 #include <pjmedia/alaw_ulaw.h>
 #include <pjmedia/errno.h>
-#include <pjmedia/frame.h>
 #include <pjmedia/silencedet.h>
 #include <pj/array.h>
 #include <pj/assert.h>

@@ -2,14 +2,14 @@
 
 dir
 4082
-http://svn.pjsip.org/repos/pjproject/trunk/third_party/build/ilbc
+http://svn.pjsip.org/repos/pjproject/branches/1.x/third_party/build/ilbc
 http://svn.pjsip.org/repos
 
 
 
-2011-07-19T03:42:28.070005Z
-3664
-nanang
+2009-04-29T15:30:38.994109Z
+2664
+bennylp
 has-props
 
 svn:special svn:externals svn:needs-lock
@@ -39,6 +39,19 @@ file
 bb6a87afa0dc52e05d6abdb4c70f3a10
 2009-04-29T15:30:38.994109Z
 2664
+bennylp
+has-props
+
+libilbccodec.dsp
+file
+
+
+
+
+2012-04-25T01:47:29.000000Z
+b26e5673ed1215032f244b74b96502f0
+2007-04-09T07:06:08.709595Z
+1177
 bennylp
 has-props
 

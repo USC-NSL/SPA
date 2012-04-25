@@ -21,7 +21,6 @@
 #include <pjmedia/delaybuf.h>
 #include <pjmedia/circbuf.h>
 #include <pjmedia/errno.h>
-#include <pjmedia/frame.h>
 #include <pjmedia/wsola.h>
 #include <pj/assert.h>
 #include <pj/lock.h>

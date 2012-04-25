@@ -2,14 +2,14 @@
 
 dir
 4082
-http://svn.pjsip.org/repos/pjproject/trunk/pjmedia/src/pjmedia-codec
+http://svn.pjsip.org/repos/pjproject/branches/1.x/pjmedia/src/pjmedia-codec
 http://svn.pjsip.org/repos
 
 
 
-2012-04-24T13:09:14.350951Z
-4082
-bennylp
+2012-04-20T03:19:42.837675Z
+4063
+nanang
 
 
 svn:special svn:externals svn:needs-lock
@@ -29,120 +29,16 @@ svn:special svn:externals svn:needs-lock
 g722
 dir
 
-amr_sdp_match.c
+speex_codec.c
 file
 
 
 
 
-2012-04-17T21:49:41.000000Z
-aba853c5d0b12b5ee0972cbc7b3e949e
-2011-12-15T06:45:23.973655Z
-3911
-nanang
-has-props
-
-g7221.c
-file
-
-
-
-
-2012-04-17T21:49:41.000000Z
-93df639abbd9801817a532106c01b5df
-2012-03-30T07:53:36.095799Z
-4001
-bennylp
-has-props
-
-l16.c
-file
-
-
-
-
-2012-04-17T21:49:41.000000Z
-a044d7d884f313f52755f886ea23a7a5
-2011-07-19T03:42:28.070005Z
-3664
-nanang
-has-props
-
-h263_packetizer.c
-file
-
-
-
-
-2012-04-17T21:49:41.000000Z
-001e665d40710fb0ad1071b44a171d2a
-2012-04-02T08:40:54.002933Z
-4006
-nanang
-has-props
-
-h264_packetizer.c
-file
-
-
-
-
-2012-04-17T21:49:41.000000Z
-f5af4bc9a7eea8dfb24ec0504b48fb1d
-2012-04-02T08:40:54.002933Z
-4006
-nanang
-has-props
-
-passthrough.c
-file
-
-
-
-
-2012-04-25T00:57:29.000000Z
-fbca9889014ae7a91c89b97974408906
-2012-04-24T13:09:14.350951Z
-4082
-bennylp
-has-props
-
-ipp_codecs.c
-file
-
-
-
-
-2012-04-17T21:49:41.000000Z
-9c6dd4550e5efd26b895af1665cef037
-2012-03-30T08:05:43.147587Z
-4002
-bennylp
-has-props
-
-ilbc.c
-file
-
-
-
-
-2012-04-17T21:49:41.000000Z
-2ae6fa2e437b47b010e5b267572b0b4c
-2011-07-19T03:42:28.070005Z
-3664
-nanang
-has-props
-
-audio_codecs.c
-file
-
-
-
-
-2012-04-17T21:49:41.000000Z
-9169a344f72a9681965765b47d10e217
-2011-12-15T06:34:25.644439Z
-3910
+2012-04-25T01:47:29.000000Z
+89340cdc76419758ba27f475d30d9dcb
+2011-05-05T06:14:19.959022Z
+3553
 nanang
 has-props
 
@@ -152,50 +48,37 @@ file
 
 
 
-2012-04-17T21:49:41.000000Z
-e73c28f4c0996187cd7f4ba9af5a0297
-2011-07-19T03:42:28.070005Z
-3664
+2012-04-25T01:47:29.000000Z
+3b34b72237ab66bfa642b104366f77eb
+2011-05-05T06:14:19.959022Z
+3553
 nanang
 has-props
 
-speex_codec.c
+l16.c
 file
 
 
 
 
-2012-04-17T21:49:41.000000Z
-6c3a2ee5170898a3f3affd38b57f77dd
-2011-07-19T03:42:28.070005Z
-3664
+2012-04-25T01:47:29.000000Z
+d29537dd85e79d9f410d43beaff16855
+2011-05-05T06:14:19.959022Z
+3553
 nanang
 has-props
 
-g7221_sdp_match.c
+g7221.c
 file
 
 
 
 
-2012-04-17T21:49:41.000000Z
-555cc71aaa870c3112a36e6d906746e6
-2011-12-15T06:45:23.973655Z
-3911
+2012-04-25T01:47:29.000000Z
+d6f27cc2bf656d4aaa847dec80fbdab4
+2011-11-02T07:50:44.277198Z
+3880
 nanang
-has-props
-
-ffmpeg_vid_codecs.c
-file
-
-
-
-
-2012-04-25T00:57:29.000000Z
-1a1ab6e5d419118a47f108c5a83d2a0a
-2012-04-24T13:06:39.132776Z
-4081
-bennylp
 has-props
 
 gsm.c
@@ -204,10 +87,49 @@ file
 
 
 
-2012-04-17T21:49:41.000000Z
-1de570b11f9cc30ae8abb36fcae9804e
-2011-07-19T03:42:28.070005Z
-3664
+2012-04-25T01:47:29.000000Z
+c84edef4de42b68c1638147cb97f9653
+2011-05-05T06:14:19.959022Z
+3553
+nanang
+has-props
+
+passthrough.c
+file
+
+
+
+
+2012-04-25T01:48:47.000000Z
+c5323b4cfbb7e12f2286c7de38095d7d
+2012-04-20T03:19:42.837675Z
+4063
+nanang
+has-props
+
+ipp_codecs.c
+file
+
+
+
+
+2012-04-25T01:47:29.000000Z
+cef052adf9d5ed211de1c5fba7646b4a
+2011-10-31T15:48:15.785279Z
+3879
+nanang
+has-props
+
+ilbc.c
+file
+
+
+
+
+2012-04-25T01:47:29.000000Z
+ea0270e09048c0682a0405bb26c7d15d
+2011-05-05T06:14:19.959022Z
+3553
 nanang
 has-props
 
@@ -217,10 +139,10 @@ file
 
 
 
-2012-04-17T21:49:41.000000Z
-b5ec212215f614fcb88d0c2a46f76e90
-2012-01-10T05:38:40.754095Z
-3939
-nanang
+2012-04-25T01:47:29.000000Z
+c6495d6c66488acad850955f85877bb6
+2011-10-14T06:41:51.977120Z
+3817
+bennylp
 has-props
 

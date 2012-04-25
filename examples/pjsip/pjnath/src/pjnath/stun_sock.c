@@ -1,4 +1,4 @@
-/* $Id: stun_sock.c 3999 2012-03-30 07:10:13Z bennylp $ */
+/* $Id: stun_sock.c 3944 2012-01-26 04:37:06Z nanang $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>

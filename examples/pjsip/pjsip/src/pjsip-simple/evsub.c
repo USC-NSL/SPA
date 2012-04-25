@@ -1,4 +1,4 @@
-/* $Id: evsub.c 4082 2012-04-24 13:09:14Z bennylp $ */
+/* $Id: evsub.c 4064 2012-04-20 09:59:51Z bennylp $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -578,7 +578,6 @@ static void set_state( pjsip_evsub *sub, pjsip_evsub_state state,
 	      old_state_str.ptr,
 	      (int)sub->state_str.slen,
 	      sub->state_str.ptr));
-    pj_log_push_indent();
 
     /* don't call the callback with NULL event, it may crash the app! */
     if (!event) {
@@ -596,8 +595,6 @@ static void set_state( pjsip_evsub *sub, pjsip_evsub_state state,
 	    evsub_destroy(sub);
 	}
     }
-
-    pj_log_pop_indent();
 }
 
 
@@ -630,14 +627,11 @@ static void on_timer( pj_timer_heap_t *timer_heap,
 	    pj_status_t status;
 
 	    PJ_LOG(5,(sub->obj_name, "Refreshing subscription."));
-	    pj_log_push_indent();
 	    status = pjsip_evsub_initiate(sub, NULL, 
 					  sub->expires->ivalue,
 					  &tdata);
 	    if (status == PJ_SUCCESS)
 		pjsip_evsub_send_request(sub, tdata);
-
-	    pj_log_pop_indent();
 	}
 	break;
 
@@ -651,13 +645,10 @@ static void on_timer( pj_timer_heap_t *timer_heap,
 
 	    PJ_LOG(5,(sub->obj_name, "Timeout waiting for refresh. "
 				     "Sending NOTIFY to terminate."));
-	    pj_log_push_indent();
 	    status = pjsip_evsub_notify( sub, PJSIP_EVSUB_STATE_TERMINATED, 
 					 NULL, &STR_TIMEOUT, &tdata);
 	    if (status == PJ_SUCCESS)
 		pjsip_evsub_send_request(sub, tdata);
-
-	    pj_log_pop_indent();
 	}
 	break;
 
@@ -667,10 +658,8 @@ static void on_timer( pj_timer_heap_t *timer_heap,
 
 	    PJ_LOG(5,(sub->obj_name, "Timeout waiting for final NOTIFY. "
 				     "Terminating.."));
-	    pj_log_push_indent();
 	    set_state(sub, PJSIP_EVSUB_STATE_TERMINATED, NULL, NULL, 
 		      &timeout);
-	    pj_log_pop_indent();
 	}
 	break;
 
@@ -683,12 +672,9 @@ static void on_timer( pj_timer_heap_t *timer_heap,
 		     "Timeout waiting for subsequent NOTIFY (we did "
 		     "send non-2xx response for previous NOTIFY). "
 		     "Unsubscribing.."));
-	    pj_log_push_indent();
 	    status = pjsip_evsub_initiate( sub, NULL, 0, &tdata);
 	    if (status == PJ_SUCCESS)
 		pjsip_evsub_send_request(sub, tdata);
-
-	    pj_log_pop_indent();
 	}
 	break;
 

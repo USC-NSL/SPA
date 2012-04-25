@@ -1,4 +1,4 @@
-/* $Id: pcaputil.c 3841 2011-10-24 09:28:13Z ming $ */
+/* $Id: pcaputil.c 3816 2011-10-14 04:15:15Z bennylp $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -88,7 +88,7 @@ static void cleanup()
         pj_ssize_t pos = pjmedia_wav_writer_port_get_pos(app.wav);
         if (pos >= 0) {
             unsigned msec;
-            msec = pos / 2 * 1000 / PJMEDIA_PIA_SRATE(&app.wav->info);
+            msec = pos / 2 * 1000 / app.wav->info.clock_rate;
             printf("Written: %dm:%02ds.%03d\n",
                     msec / 1000 / 60,
                     (msec / 1000) % 60,
@@ -99,7 +99,7 @@ static void cleanup()
     if (app.pcap) pj_pcap_close(app.pcap);
     if (app.codec) {
 	pjmedia_codec_mgr *cmgr;
-	pjmedia_codec_close(app.codec);
+	app.codec->op->close(app.codec);
 	cmgr = pjmedia_endpt_get_codec_mgr(app.mept);
 	pjmedia_codec_mgr_dealloc_codec(cmgr, app.codec);
     }
@@ -281,7 +281,37 @@ static void pcap2wav(const pj_str_t *codec,
     pj_status_t status;
 
     /* Initialize all codecs */
-    T( pjmedia_codec_register_audio_codecs(app.mept, NULL) );
+#if PJMEDIA_HAS_SPEEX_CODEC
+    T( pjmedia_codec_speex_init(app.mept, 0, 10, 10) );
+#endif /* PJMEDIA_HAS_SPEEX_CODEC */
+
+#if PJMEDIA_HAS_ILBC_CODEC
+    T( pjmedia_codec_ilbc_init(app.mept, 30) );
+#endif /* PJMEDIA_HAS_ILBC_CODEC */
+
+#if PJMEDIA_HAS_GSM_CODEC
+    T( pjmedia_codec_gsm_init(app.mept) );
+#endif /* PJMEDIA_HAS_GSM_CODEC */
+
+#if PJMEDIA_HAS_G711_CODEC
+    T( pjmedia_codec_g711_init(app.mept) );
+#endif	/* PJMEDIA_HAS_G711_CODEC */
+
+#if PJMEDIA_HAS_G722_CODEC
+    T( pjmedia_codec_g722_init(app.mept) );
+#endif	/* PJMEDIA_HAS_G722_CODEC */
+
+#if PJMEDIA_HAS_L16_CODEC
+    T( pjmedia_codec_l16_init(app.mept, 0) );
+#endif	/* PJMEDIA_HAS_L16_CODEC */
+
+#if PJMEDIA_HAS_OPENCORE_AMRNB_CODEC
+    T( pjmedia_codec_opencore_amrnb_init(app.mept) );
+#endif	/* PJMEDIA_HAS_L16_CODEC */
+
+#if PJMEDIA_HAS_INTEL_IPP
+    T( pjmedia_codec_ipp_init(app.mept) );
+#endif
 
     /* Create SRTP transport is needed */
 #if PJMEDIA_HAS_SRTP
@@ -323,8 +353,8 @@ static void pcap2wav(const pj_str_t *codec,
 
     /* Alloc and init codec */
     T( pjmedia_codec_mgr_alloc_codec(cmgr, ci, &app.codec) );
-    T( pjmedia_codec_init(app.codec, app.pool) );
-    T( pjmedia_codec_open(app.codec, &param) );
+    T( app.codec->op->init(app.codec, app.pool) );
+    T( app.codec->op->open(app.codec, &param) );
 
     /* Init audio device or WAV file */
     samples_per_frame = ci->clock_rate * param.info.frm_ptime / 1000;
@@ -365,7 +395,7 @@ static void pcap2wav(const pj_str_t *codec,
 	/* Parse first packet */
 	ts.u64 = 0;
 	frame_cnt = PJ_ARRAY_SIZE(frames);
-	T( pjmedia_codec_parse(app.codec, pkt0.payload, pkt0.payload_len, 
+	T( app.codec->op->parse(app.codec, pkt0.payload, pkt0.payload_len, 
 				&ts, &frame_cnt, frames) );
 
 	/* Decode and write to WAV file */
@@ -376,7 +406,7 @@ static void pcap2wav(const pj_str_t *codec,
 	    pcm_frame.buf = pcm;
 	    pcm_frame.size = samples_per_frame * 2;
 
-	    T( pjmedia_codec_decode(app.codec, &frames[i], pcm_frame.size, 
+	    T( app.codec->op->decode(app.codec, &frames[i], pcm_frame.size, 
 				     &pcm_frame) );
 	    if (app.wav) {
 		T( pjmedia_port_put_frame(app.wav, &pcm_frame) );
@@ -400,8 +430,8 @@ static void pcap2wav(const pj_str_t *codec,
 	    pcm_frame.size = samples_per_frame * 2;
 
 	    if (app.codec->op->recover) {
-		T( pjmedia_codec_recover(app.codec, pcm_frame.size, 
-					 &pcm_frame) );
+		T( app.codec->op->recover(app.codec, pcm_frame.size, 
+					  &pcm_frame) );
 	    } else {
 		pj_bzero(pcm_frame.buf, pcm_frame.size);
 	    }

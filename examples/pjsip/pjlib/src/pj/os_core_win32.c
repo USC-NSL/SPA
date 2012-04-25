@@ -1,4 +1,4 @@
-/* $Id: os_core_win32.c 3999 2012-03-30 07:10:13Z bennylp $ */
+/* $Id: os_core_win32.c 3986 2012-03-22 11:29:20Z nanang $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -578,9 +578,6 @@ PJ_DEF(pj_status_t) pj_thread_join(pj_thread_t *p)
 
     PJ_CHECK_STACK();
     PJ_ASSERT_RETURN(p, PJ_EINVAL);
-
-    if (p == pj_thread_this())
-	return PJ_ECANCELLED;
 
     PJ_LOG(6, (pj_thread_this()->obj_name, "Joining thread %s", p->obj_name));
 
@@ -1444,13 +1441,3 @@ PJ_DEF(pj_color_t) pj_term_get_color(void)
 }
 
 #endif	/* PJ_TERM_HAS_COLOR */
-
-/*
- * pj_run_app()
- */
-PJ_DEF(int) pj_run_app(pj_main_func_ptr main_func, int argc, char *argv[],
-                       unsigned flags)
-{
-    PJ_UNUSED_ARG(flags);
-    return (*main_func)(argc, argv);
-}

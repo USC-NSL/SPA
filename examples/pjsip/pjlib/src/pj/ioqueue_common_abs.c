@@ -1,4 +1,4 @@
-/* $Id: ioqueue_common_abs.c 3666 2011-07-19 08:40:20Z nanang $ */
+/* $Id: ioqueue_common_abs.c 3553 2011-05-05 06:14:19Z nanang $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -283,7 +283,7 @@ void ioqueue_dispatch_write_event(pj_ioqueue_t *ioqueue, pj_ioqueue_key_t *h)
 	/* Socket is writable. */
         struct write_operation *write_op;
         pj_ssize_t sent;
-        pj_status_t send_rc = PJ_SUCCESS;
+        pj_status_t send_rc;
 
         /* Get the first in the queue. */
         write_op = h->write_list.next;
@@ -312,8 +312,8 @@ void ioqueue_dispatch_write_event(pj_ioqueue_t *ioqueue, pj_ioqueue_key_t *h)
 	     */
 	    //write_op->op = 0;
         } else if (write_op->op == PJ_IOQUEUE_OP_SEND_TO) {
-	    int retry = 2;
-	    while (--retry >= 0) {
+	    int retry;
+	    for (retry=0; retry<2; ++retry) {
 		send_rc = pj_sock_sendto(h->fd, 
 					 write_op->buf+write_op->written,
 					 &sent, write_op->flags,
@@ -935,19 +935,17 @@ PJ_DEF(pj_status_t) pj_ioqueue_sendto( pj_ioqueue_key_t *key,
 {
     struct write_operation *write_op;
     unsigned retry;
+#if defined(PJ_IPHONE_OS_HAS_MULTITASKING_SUPPORT) && \
+	    PJ_IPHONE_OS_HAS_MULTITASKING_SUPPORT!=0
     pj_bool_t restart_retry = PJ_FALSE;
+#endif
     pj_status_t status;
     pj_ssize_t sent;
 
     PJ_ASSERT_RETURN(key && op_key && data && length, PJ_EINVAL);
     PJ_CHECK_STACK();
 
-#if defined(PJ_IPHONE_OS_HAS_MULTITASKING_SUPPORT) && \
-	    PJ_IPHONE_OS_HAS_MULTITASKING_SUPPORT!=0
 retry_on_restart:
-#else
-    PJ_UNUSED_ARG(restart_retry);
-#endif
     /* Check if key is closing. */
     if (IS_CLOSING(key))
 	return PJ_ECANCELLED;

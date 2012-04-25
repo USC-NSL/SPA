@@ -2,13 +2,13 @@
 
 dir
 4082
-http://svn.pjsip.org/repos/pjproject/trunk/build.symbian
+http://svn.pjsip.org/repos/pjproject/branches/1.x/build.symbian
 http://svn.pjsip.org/repos
 
 
 
-2011-12-15T06:45:23.973655Z
-3911
+2011-03-08T06:30:34.807991Z
+3437
 nanang
 has-props
 
@@ -479,11 +479,11 @@ file
 
 
 
-2012-04-17T21:49:38.000000Z
-2f06bab31009f6ee58f04c4e175f64d9
-2011-12-15T06:45:23.973655Z
-3911
-nanang
+2012-04-25T01:47:28.000000Z
+1b4244460b7bcc6190e9dc640fe0f9ea
+2010-01-06T08:34:41.082262Z
+3046
+bennylp
 
 pjsip_ua.mmp
 file

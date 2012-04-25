@@ -2,14 +2,14 @@
 
 dir
 4082
-http://svn.pjsip.org/repos/pjproject/trunk/pjsip/build
+http://svn.pjsip.org/repos/pjproject/branches/1.x/pjsip/build
 http://svn.pjsip.org/repos
 
 
 
-2012-04-24T13:09:14.350951Z
-4082
-bennylp
+2012-04-23T03:57:20.889033Z
+4066
+nanang
 has-props
 
 svn:special svn:externals svn:needs-lock
@@ -26,21 +26,6 @@ svn:special svn:externals svn:needs-lock
 
 74dad513-b988-da41-8d7b-12977e46ad98
 
-pjsip_core.vcproj
-file
-
-
-
-
-2012-04-25T00:57:28.000000Z
-2f22d66ab9117b9ded36311d038a1494
-2012-04-24T13:09:14.350951Z
-4082
-bennylp
-
-output
-dir
-
 os-rtems.mak
 file
 
@@ -53,6 +38,98 @@ c3db2ae207110bb0eef48ce60d7c864b
 604
 bennylp
 has-props
+
+pjsip.dsw
+file
+
+
+
+
+2012-04-25T01:47:27.000000Z
+eb4b4f81c72baeb6a705d20c4990a5cc
+2006-06-23T01:03:52.111114Z
+547
+bennylp
+has-props
+
+pjsip_core.dsp
+file
+
+
+
+
+2012-04-25T01:47:27.000000Z
+6cca6125173f2728675d9cddad1563e2
+2010-08-01T13:48:49.920993Z
+3244
+bennylp
+has-props
+
+pjsip_simple.dsp
+file
+
+
+
+
+2012-04-25T01:47:27.000000Z
+ba50bc5e0cc8ece79663cdd5b4b8c3d4
+2009-10-28T12:19:35.336199Z
+2974
+bennylp
+has-props
+
+pjsip_test.vcproj
+file
+
+
+
+
+2012-04-17T21:49:36.000000Z
+634bff7ce6321af3cad7e0131717c036
+2010-08-01T13:48:49.920993Z
+3244
+bennylp
+
+pjsua_lib.dsp
+file
+
+
+
+
+2012-04-25T01:47:27.000000Z
+584438de9326c89d03f11efac961d034
+2007-09-27T14:07:07.248725Z
+1454
+bennylp
+has-props
+
+pjsip_core.vcproj
+file
+
+
+
+
+2012-04-25T01:48:47.000000Z
+2f22d66ab9117b9ded36311d038a1494
+2012-04-23T03:57:20.889033Z
+4066
+nanang
+
+pjsip_ua.dsp
+file
+
+
+
+
+2012-04-25T01:47:27.000000Z
+f2c0ebfe5c0316a8f482ed63ba128142
+2009-08-11T18:21:13.647731Z
+2861
+nanang
+has-props
+
+output
+dir
 
 pjsip_simple.vcproj
 file
@@ -82,17 +159,18 @@ has-props
 wince-evc4
 dir
 
-pjsip_test.vcproj
+pjsip_test.dsp
 file
 
 
 
 
-2012-04-17T21:49:36.000000Z
-634bff7ce6321af3cad7e0131717c036
+2012-04-25T01:47:27.000000Z
+8eb1f65745baf707b38f0e62a06b0f44
 2010-08-01T13:48:49.920993Z
 3244
 bennylp
+has-props
 
 pjsua_lib.vcproj
 file
@@ -100,11 +178,11 @@ file
 
 
 
-2012-04-17T21:49:36.000000Z
-6524638834b029f825ca38a67bee34de
-2012-03-22T11:26:59.933239Z
-3985
-nanang
+2012-04-25T01:47:27.000000Z
+55e5b88906f69bcac8f4201acdca219e
+2009-04-29T15:30:38.994109Z
+2664
+bennylp
 
 pjsip_ua.vcproj
 file
@@ -124,10 +202,10 @@ file
 
 
 
-2012-04-17T21:49:36.000000Z
-add56ced159a7676d042953371ad6593
-2012-03-22T09:56:52.904875Z
-3982
-bennylp
+2012-04-25T01:47:27.000000Z
+87875b016fcb7855f434de548e7ee110
+2011-07-22T11:52:50.127900Z
+3677
+ismangil
 has-props
 

@@ -2,14 +2,14 @@
 
 dir
 4082
-http://svn.pjsip.org/repos/pjproject/trunk/pjmedia/src/test
+http://svn.pjsip.org/repos/pjproject/branches/1.x/pjmedia/src/test
 http://svn.pjsip.org/repos
 
 
 
-2012-04-13T06:24:23.896356Z
-4049
-ming
+2011-10-14T04:15:15.417713Z
+3816
+bennylp
 has-props
 
 svn:special svn:externals svn:needs-lock
@@ -39,8 +39,57 @@ file
 nanang
 has-props
 
-vectors
-dir
+sdp_neg_test.c
+file
+
+
+
+
+2012-04-17T21:49:41.000000Z
+e011f1792c4f68985809ae3c2b3da620
+2011-05-05T06:14:19.959022Z
+3553
+nanang
+has-props
+
+test.c
+file
+
+
+
+
+2012-04-25T01:47:28.000000Z
+aea3b5623ca5438978347507ee36661d
+2011-07-24T09:13:11.391720Z
+3681
+bennylp
+has-props
+
+session_test.c
+file
+
+
+
+
+2012-04-17T21:49:41.000000Z
+e45342083afb678c68f9169e7aea1119
+2011-05-05T06:14:19.959022Z
+3553
+nanang
+has-props
+
+codec_vectors.c
+file
+
+
+
+
+2012-04-25T01:47:28.000000Z
+bb0ff3d319a71edabba916e10fdaf1c5
+2011-05-05T06:14:19.959022Z
+3553
+nanang
+has-props
 
 rtp_test.c
 file
@@ -55,105 +104,30 @@ file
 nanang
 has-props
 
-mips_test.c
-file
-
-
-
-
-2012-04-17T21:49:41.000000Z
-b6832d5220783bfa6788a1b1124ae1c5
-2012-03-22T09:56:52.904875Z
-3982
-bennylp
-has-props
+vectors
+dir
 
-wince_main.c
+test.h
 file
 
 
 
 
-2012-04-17T21:49:41.000000Z
-fdc89b4cd6fb87a13457b658d8dbec38
+2012-04-25T01:47:28.000000Z
+552fd75b626c2ed751f6893815b68119
 2011-05-05T06:14:19.959022Z
 3553
 nanang
 has-props
 
-sdp_neg_test.c
+main.c
 file
 
 
 
 
-2012-04-17T21:49:41.000000Z
-e011f1792c4f68985809ae3c2b3da620
-2011-05-05T06:14:19.959022Z
-3553
-nanang
-has-props
-
-vid_codec_test.c
-file
-
-
-
-
-2012-04-17T21:49:41.000000Z
-d5437bf97b845b3b312f1b44ea6da43d
-2012-04-13T06:24:23.896356Z
-4049
-ming
-has-props
-
-test.c
-file
-
-
-
-
-2012-04-17T21:49:41.000000Z
-2545d00908dd82eccbcd4097d462222a
-2011-12-01T10:49:07.476116Z
-3893
-ming
-has-props
-
-vid_dev_test.c
-file
-
-
-
-
-2012-04-17T21:49:41.000000Z
-181fc81cf8d3b915c80ec3c6593421ab
-2012-04-13T06:24:23.896356Z
-4049
-ming
-has-props
-
-codec_vectors.c
-file
-
-
-
-
-2012-04-17T21:49:41.000000Z
-90df426c103b6341bbc0638767385e73
-2011-07-19T03:42:28.070005Z
-3664
-nanang
-has-props
-
-session_test.c
-file
-
-
-
-
-2012-04-17T21:49:41.000000Z
-e45342083afb678c68f9169e7aea1119
+2012-04-25T01:47:28.000000Z
+044ae8d31b1bc92dcdd0848e78a54aa4
 2011-05-05T06:14:19.959022Z
 3553
 nanang
@@ -172,32 +146,6 @@ file
 nanang
 has-props
 
-main.c
-file
-
-
-
-
-2012-04-17T21:49:41.000000Z
-892b02c588dc2033725f37c3d811f060
-2011-07-19T03:42:28.070005Z
-3664
-nanang
-has-props
-
-test.h
-file
-
-
-
-
-2012-04-17T21:49:41.000000Z
-7ed77b5b9779eacf6f27c867b97d0c86
-2011-07-19T11:11:07.188103Z
-3667
-nanang
-has-props
-
 jbuf_test.c
 file
 
@@ -206,22 +154,9 @@ file
 
 2012-04-17T21:49:41.000000Z
 64b64b90a9fc683de46d0eeb091e6752
-2011-10-24T09:28:13.441892Z
-3841
-ming
-has-props
-
-vid_port_test.c
-file
-
-
-
-
-2012-04-17T21:49:41.000000Z
-ad8799fdfa31ddb6381512921e50ef00
-2012-04-13T06:24:23.896356Z
-4049
-ming
+2011-10-13T09:02:41.199104Z
+3814
+nanang
 has-props
 
 sdptest.c
@@ -232,6 +167,32 @@ file
 
 2012-04-17T21:49:41.000000Z
 46f4bc5611dfe62e8ad2f1633c7fe71f
+2011-05-05T06:14:19.959022Z
+3553
+nanang
+has-props
+
+mips_test.c
+file
+
+
+
+
+2012-04-25T01:47:28.000000Z
+c3057bf4175bd9eb34656d109a99ea2d
+2011-10-14T04:15:15.417713Z
+3816
+bennylp
+has-props
+
+wince_main.c
+file
+
+
+
+
+2012-04-17T21:49:41.000000Z
+fdc89b4cd6fb87a13457b658d8dbec38
 2011-05-05T06:14:19.959022Z
 3553
 nanang

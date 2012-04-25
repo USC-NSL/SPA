@@ -1,4 +1,4 @@
-# $Id: 321_srtp2_recv_avp.py 3713 2011-08-18 18:11:08Z nanang $
+# $Id: 321_srtp2_recv_avp.py 2036 2008-06-20 17:43:55Z nanang $
 import inc_sip as sip
 import inc_sdp as sdp
 
@@ -23,6 +23,6 @@ include = []
 exclude = []
 
 sendto_cfg = sip.SendtoCfg( "Callee has SRTP mandatory and receive RTP/AVP with crypto, should reject the call", 
-			    pjsua_args=args, sdp=sdp, resp_code=488, 
+			    pjsua_args=args, sdp=sdp, resp_code=406, 
 			    resp_inc=include, resp_exc=exclude)
 

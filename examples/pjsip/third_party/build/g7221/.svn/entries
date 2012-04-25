@@ -2,14 +2,14 @@
 
 dir
 4082
-http://svn.pjsip.org/repos/pjproject/trunk/third_party/build/g7221
+http://svn.pjsip.org/repos/pjproject/branches/1.x/third_party/build/g7221
 http://svn.pjsip.org/repos
 
 
 
-2011-07-19T03:42:28.070005Z
-3664
-nanang
+2010-04-29T02:33:38.862913Z
+3152
+bennylp
 has-props
 
 svn:special svn:externals svn:needs-lock
@@ -40,6 +40,18 @@ file
 2009-06-01T16:43:45.530697Z
 2731
 nanang
+
+libg7221codec.dsp
+file
+
+
+
+
+2012-04-25T01:47:29.000000Z
+b0a73d0e570fb050184521fab6f6c7ca
+2009-04-20T18:38:15.643291Z
+2623
+bennylp
 
 Makefile
 file

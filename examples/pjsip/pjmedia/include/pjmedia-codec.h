@@ -1,4 +1,4 @@
-/* $Id: pjmedia-codec.h 4049 2012-04-13 06:24:23Z ming $ */
+/* $Id: pjmedia-codec.h 3816 2011-10-14 04:15:15Z bennylp $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -25,9 +25,7 @@
  * @brief Include all codecs API in PJMEDIA-CODEC
  */
 
-#include <pjmedia-codec/audio_codecs.h>
 #include <pjmedia-codec/l16.h>
-#include <pjmedia-codec/ffmpeg_vid_codecs.h>
 #include <pjmedia-codec/gsm.h>
 #include <pjmedia-codec/speex.h>
 #include <pjmedia-codec/ilbc.h>

@@ -20,7 +20,6 @@
 
 #include <pjmedia/echo.h>
 #include <pjmedia/errno.h>
-#include <pjmedia/frame.h>
 #include <pj/assert.h>
 #include <pj/log.h>
 #include <pj/pool.h>

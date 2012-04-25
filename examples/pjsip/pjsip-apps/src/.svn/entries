@@ -2,14 +2,14 @@
 
 dir
 4082
-http://svn.pjsip.org/repos/pjproject/trunk/pjsip-apps/src
+http://svn.pjsip.org/repos/pjproject/branches/1.x/pjsip-apps/src
 http://svn.pjsip.org/repos
 
 
 
-2012-04-24T13:09:14.350951Z
-4082
-bennylp
+2012-04-24T07:38:41.165881Z
+4074
+ming
 
 
 svn:special svn:externals svn:needs-lock
@@ -29,43 +29,37 @@ svn:special svn:externals svn:needs-lock
 pocketpj
 dir
 
-ipjsystest
+python
 dir
 
-python
+ipjsystest
 dir
 
 pjsua
 dir
 
-symbian_ua
-dir
-
-vidgui
-dir
-
-confbot
-dir
-
-py_pjsua
-dir
-
-ipjsua
-dir
-
-symbian_ua_gui
-dir
-
 samples
+dir
+
+symbian_ua
 dir
 
 pjsua_wince
 dir
 
-3rdparty_media_sample
+pjsystest
 dir
 
-pjsystest
+py_pjsua
+dir
+
+confbot
+dir
+
+symbian_ua_gui
+dir
+
+ipjsua
 dir
 
 symsndtest

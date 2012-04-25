@@ -1,4 +1,4 @@
-/* $Id: errno.c 3664 2011-07-19 03:42:28Z nanang $ */
+/* $Id: errno.c 3553 2011-05-05 06:14:19Z nanang $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -33,9 +33,7 @@ PJ_BEGIN_DECL
                               	   char *buf, pj_size_t bufsize );
 PJ_END_DECL
 
-#ifndef PJLIB_MAX_ERR_MSG_HANDLER
-#	define PJLIB_MAX_ERR_MSG_HANDLER   10
-#endif
+#define PJLIB_MAX_ERR_MSG_HANDLER   8
 
 /* Error message handler. */
 static unsigned err_msg_hnd_cnt;

@@ -2,14 +2,14 @@
 
 dir
 4082
-http://svn.pjsip.org/repos/pjproject/trunk/tests/pjsua
+http://svn.pjsip.org/repos/pjproject/branches/1.x/tests/pjsua
 http://svn.pjsip.org/repos
 
 
 
-2011-10-24T09:28:13.441892Z
-3841
-ming
+2011-09-08T04:37:43.906034Z
+3743
+bennylp
 has-props
 
 svn:special svn:externals svn:needs-lock
@@ -90,11 +90,11 @@ file
 
 
 
-2012-04-17T21:49:40.000000Z
-38e7e2468ce629110114d19911fbef60
-2011-08-19T12:41:40.305455Z
-3717
-nanang
+2012-04-25T01:47:28.000000Z
+2a35a0c36fc64d9f19d6d06de0b2f671
+2010-03-27T02:35:06.002528Z
+3122
+bennylp
 has-props
 
 scripts-run
@@ -202,10 +202,10 @@ file
 
 
 
-2012-04-17T21:49:40.000000Z
-a511d51a5f923b5f4009bedb96633170
-2011-08-18T17:26:11.390256Z
-3710
+2012-04-25T01:47:28.000000Z
+66a8d2d6074dd83b298726bb3f6b9cb3
+2008-06-25T18:18:32.467658Z
+2052
 nanang
 has-props
 

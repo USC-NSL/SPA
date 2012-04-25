@@ -1,203 +1,53 @@
 K 25
 svn:wc:ra_dav:version-url
-V 52
-/repos/!svn/ver/4038/pjproject/trunk/pjsip/src/pjsip
-END
-sip_parser_wrap.cpp
-K 25
-svn:wc:ra_dav:version-url
-V 72
-/repos/!svn/ver/3553/pjproject/trunk/pjsip/src/pjsip/sip_parser_wrap.cpp
-END
-sip_auth_server.c
-K 25
-svn:wc:ra_dav:version-url
-V 70
-/repos/!svn/ver/3553/pjproject/trunk/pjsip/src/pjsip/sip_auth_server.c
-END
-sip_tel_uri_wrap.cpp
-K 25
-svn:wc:ra_dav:version-url
-V 73
-/repos/!svn/ver/3553/pjproject/trunk/pjsip/src/pjsip/sip_tel_uri_wrap.cpp
-END
-sip_parser.c
-K 25
-svn:wc:ra_dav:version-url
-V 65
-/repos/!svn/ver/3553/pjproject/trunk/pjsip/src/pjsip/sip_parser.c
-END
-sip_uri.c
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/repos/!svn/ver/3553/pjproject/trunk/pjsip/src/pjsip/sip_uri.c
-END
-sip_dialog.c
-K 25
-svn:wc:ra_dav:version-url
-V 65
-/repos/!svn/ver/3753/pjproject/trunk/pjsip/src/pjsip/sip_dialog.c
-END
-sip_transport_tcp.c
-K 25
-svn:wc:ra_dav:version-url
-V 72
-/repos/!svn/ver/3553/pjproject/trunk/pjsip/src/pjsip/sip_transport_tcp.c
+V 59
+/repos/!svn/ver/4032/pjproject/branches/1.x/pjsip/src/pjsip
 END
 sip_config.c
 K 25
 svn:wc:ra_dav:version-url
-V 65
-/repos/!svn/ver/3999/pjproject/trunk/pjsip/src/pjsip/sip_config.c
-END
-sip_util_proxy_wrap.cpp
-K 25
-svn:wc:ra_dav:version-url
-V 76
-/repos/!svn/ver/3553/pjproject/trunk/pjsip/src/pjsip/sip_util_proxy_wrap.cpp
-END
-sip_auth_msg.c
-K 25
-svn:wc:ra_dav:version-url
-V 67
-/repos/!svn/ver/3553/pjproject/trunk/pjsip/src/pjsip/sip_auth_msg.c
+V 72
+/repos/!svn/ver/3952/pjproject/branches/1.x/pjsip/src/pjsip/sip_config.c
 END
 sip_util.c
 K 25
 svn:wc:ra_dav:version-url
-V 63
-/repos/!svn/ver/3999/pjproject/trunk/pjsip/src/pjsip/sip_util.c
-END
-sip_auth_parser.c
-K 25
-svn:wc:ra_dav:version-url
 V 70
-/repos/!svn/ver/3553/pjproject/trunk/pjsip/src/pjsip/sip_auth_parser.c
-END
-sip_util_proxy.c
-K 25
-svn:wc:ra_dav:version-url
-V 69
-/repos/!svn/ver/3553/pjproject/trunk/pjsip/src/pjsip/sip_util_proxy.c
+/repos/!svn/ver/3952/pjproject/branches/1.x/pjsip/src/pjsip/sip_util.c
 END
 sip_transaction.c
 K 25
 svn:wc:ra_dav:version-url
-V 70
-/repos/!svn/ver/4001/pjproject/trunk/pjsip/src/pjsip/sip_transaction.c
-END
-sip_errno.c
-K 25
-svn:wc:ra_dav:version-url
-V 64
-/repos/!svn/ver/3553/pjproject/trunk/pjsip/src/pjsip/sip_errno.c
-END
-sip_transport_wrap.cpp
-K 25
-svn:wc:ra_dav:version-url
-V 75
-/repos/!svn/ver/3553/pjproject/trunk/pjsip/src/pjsip/sip_transport_wrap.cpp
-END
-sip_transport_loop.c
-K 25
-svn:wc:ra_dav:version-url
-V 73
-/repos/!svn/ver/3553/pjproject/trunk/pjsip/src/pjsip/sip_transport_loop.c
-END
-sip_msg.c
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/repos/!svn/ver/3553/pjproject/trunk/pjsip/src/pjsip/sip_msg.c
-END
-sip_dialog_wrap.cpp
-K 25
-svn:wc:ra_dav:version-url
-V 72
-/repos/!svn/ver/3553/pjproject/trunk/pjsip/src/pjsip/sip_dialog_wrap.cpp
+V 77
+/repos/!svn/ver/3989/pjproject/branches/1.x/pjsip/src/pjsip/sip_transaction.c
 END
 sip_transport.c
 K 25
 svn:wc:ra_dav:version-url
-V 68
-/repos/!svn/ver/4038/pjproject/trunk/pjsip/src/pjsip/sip_transport.c
+V 75
+/repos/!svn/ver/4032/pjproject/branches/1.x/pjsip/src/pjsip/sip_transport.c
 END
 sip_auth_client.c
 K 25
 svn:wc:ra_dav:version-url
-V 70
-/repos/!svn/ver/3999/pjproject/trunk/pjsip/src/pjsip/sip_auth_client.c
-END
-sip_util_statefull.c
-K 25
-svn:wc:ra_dav:version-url
-V 73
-/repos/!svn/ver/3553/pjproject/trunk/pjsip/src/pjsip/sip_util_statefull.c
-END
-sip_ua_layer.c
-K 25
-svn:wc:ra_dav:version-url
-V 67
-/repos/!svn/ver/3664/pjproject/trunk/pjsip/src/pjsip/sip_ua_layer.c
-END
-sip_tel_uri.c
-K 25
-svn:wc:ra_dav:version-url
-V 66
-/repos/!svn/ver/3553/pjproject/trunk/pjsip/src/pjsip/sip_tel_uri.c
-END
-sip_transport_udp.c
-K 25
-svn:wc:ra_dav:version-url
-V 72
-/repos/!svn/ver/3553/pjproject/trunk/pjsip/src/pjsip/sip_transport_udp.c
-END
-sip_auth_parser_wrap.cpp
-K 25
-svn:wc:ra_dav:version-url
 V 77
-/repos/!svn/ver/3553/pjproject/trunk/pjsip/src/pjsip/sip_auth_parser_wrap.cpp
-END
-sip_util_wrap.cpp
-K 25
-svn:wc:ra_dav:version-url
-V 70
-/repos/!svn/ver/3553/pjproject/trunk/pjsip/src/pjsip/sip_util_wrap.cpp
-END
-sip_endpoint_wrap.cpp
-K 25
-svn:wc:ra_dav:version-url
-V 74
-/repos/!svn/ver/3553/pjproject/trunk/pjsip/src/pjsip/sip_endpoint_wrap.cpp
+/repos/!svn/ver/3954/pjproject/branches/1.x/pjsip/src/pjsip/sip_auth_client.c
 END
 sip_auth_aka.c
 K 25
 svn:wc:ra_dav:version-url
-V 67
-/repos/!svn/ver/3999/pjproject/trunk/pjsip/src/pjsip/sip_auth_aka.c
+V 74
+/repos/!svn/ver/3916/pjproject/branches/1.x/pjsip/src/pjsip/sip_auth_aka.c
 END
 sip_transport_tls.c
 K 25
 svn:wc:ra_dav:version-url
-V 72
-/repos/!svn/ver/3999/pjproject/trunk/pjsip/src/pjsip/sip_transport_tls.c
-END
-sip_resolve.c
-K 25
-svn:wc:ra_dav:version-url
-V 66
-/repos/!svn/ver/3553/pjproject/trunk/pjsip/src/pjsip/sip_resolve.c
+V 79
+/repos/!svn/ver/3942/pjproject/branches/1.x/pjsip/src/pjsip/sip_transport_tls.c
 END
 sip_endpoint.c
 K 25
 svn:wc:ra_dav:version-url
-V 67
-/repos/!svn/ver/3999/pjproject/trunk/pjsip/src/pjsip/sip_endpoint.c
-END
-sip_multipart.c
-K 25
-svn:wc:ra_dav:version-url
-V 68
-/repos/!svn/ver/3841/pjproject/trunk/pjsip/src/pjsip/sip_multipart.c
+V 74
+/repos/!svn/ver/3988/pjproject/branches/1.x/pjsip/src/pjsip/sip_endpoint.c
 END

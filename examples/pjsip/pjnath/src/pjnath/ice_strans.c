@@ -1,4 +1,4 @@
-/* $Id: ice_strans.c 3999 2012-03-30 07:10:13Z bennylp $ */
+/* $Id: ice_strans.c 3991 2012-03-29 04:17:06Z nanang $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -405,8 +405,6 @@ static pj_status_t create_comp(pj_ice_strans *ice_st, unsigned comp_id)
 		      "Comp %d: srflx candidate starts Binding discovery",
 		      comp_id));
 
-	    pj_log_push_indent();
-
 	    /* Start Binding resolution */
 	    status = pj_stun_sock_start(comp->stun_sock, 
 					&ice_st->cfg.stun.server,
@@ -414,7 +412,6 @@ static pj_status_t create_comp(pj_ice_strans *ice_st, unsigned comp_id)
 					ice_st->cfg.resolver);
 	    if (status != PJ_SUCCESS) {
 		///sess_dec_ref(ice_st);
-		pj_log_pop_indent();
 		return status;
 	    }
 
@@ -422,7 +419,6 @@ static pj_status_t create_comp(pj_ice_strans *ice_st, unsigned comp_id)
 	    status = pj_stun_sock_get_info(comp->stun_sock, &stun_sock_info);
 	    if (status != PJ_SUCCESS) {
 		///sess_dec_ref(ice_st);
-		pj_log_pop_indent();
 		return status;
 	    }
 
@@ -441,7 +437,6 @@ static pj_status_t create_comp(pj_ice_strans *ice_st, unsigned comp_id)
 	    /* Set default candidate to srflx */
 	    comp->default_cand = cand - comp->cand_list;
 
-	    pj_log_pop_indent();
 	}
 
 	/* Add local addresses to host candidates, unless max_host_cands
@@ -541,7 +536,6 @@ PJ_DEF(pj_status_t) pj_ice_strans_create( const char *name,
     PJ_LOG(4,(ice_st->obj_name, 
 	      "Creating ICE stream transport with %d component(s)",
 	      comp_cnt));
-    pj_log_push_indent();
 
     pj_ice_strans_cfg_copy(pool, &ice_st->cfg, cfg);
     pj_memcpy(&ice_st->cb, cb, sizeof(*cb));
@@ -556,7 +550,6 @@ PJ_DEF(pj_status_t) pj_ice_strans_create( const char *name,
 					    &ice_st->init_lock);
     if (status != PJ_SUCCESS) {
 	destroy_ice_st(ice_st);
-	pj_log_pop_indent();
 	return status;
     }
 
@@ -577,7 +570,6 @@ PJ_DEF(pj_status_t) pj_ice_strans_create( const char *name,
 	if (status != PJ_SUCCESS) {
 	    pj_lock_release(ice_st->init_lock);
 	    destroy_ice_st(ice_st);
-	    pj_log_pop_indent();
 	    return status;
 	}
     }
@@ -585,15 +577,12 @@ PJ_DEF(pj_status_t) pj_ice_strans_create( const char *name,
     /* Done with initialization */
     pj_lock_release(ice_st->init_lock);
 
-    PJ_LOG(4,(ice_st->obj_name, "ICE stream transport created"));
-
-    *p_ice_st = ice_st;
-
     /* Check if all candidates are ready (this may call callback) */
     sess_init_update(ice_st);
 
-    pj_log_pop_indent();
+    PJ_LOG(4,(ice_st->obj_name, "ICE stream transport created"));
 
+    *p_ice_st = ice_st;
     return PJ_SUCCESS;
 }
 
@@ -601,9 +590,6 @@ PJ_DEF(pj_status_t) pj_ice_strans_create( const char *name,
 static void destroy_ice_st(pj_ice_strans *ice_st)
 {
     unsigned i;
-
-    PJ_LOG(5,(ice_st->obj_name, "ICE stream transport destroying.."));
-    pj_log_push_indent();
 
     /* Destroy ICE if we have ICE */
     if (ice_st->ice) {
@@ -643,11 +629,8 @@ static void destroy_ice_st(pj_ice_strans *ice_st)
 	ice_st->busy_cnt = NULL;
     }
 
-    PJ_LOG(4,(ice_st->obj_name, "ICE stream transport destroyed"));
-
     /* Done */
     pj_pool_release(ice_st->pool);
-    pj_log_pop_indent();
 }
 
 /* Get ICE session state. */
@@ -681,19 +664,14 @@ static void sess_fail(pj_ice_strans *ice_st, pj_ice_strans_op op,
 
     pj_strerror(status, errmsg, sizeof(errmsg));
     PJ_LOG(4,(ice_st->obj_name, "%s: %s", title, errmsg));
-    pj_log_push_indent();
 
-    if (op==PJ_ICE_STRANS_OP_INIT && ice_st->cb_called) {
-	pj_log_pop_indent();
+    if (op==PJ_ICE_STRANS_OP_INIT && ice_st->cb_called)
 	return;
-    }
 
     ice_st->cb_called = PJ_TRUE;
 
     if (ice_st->cb.on_ice_complete)
 	(*ice_st->cb.on_ice_complete)(ice_st, op, status);
-
-    pj_log_pop_indent();
 }
 
 /* Update initialization status */
@@ -731,6 +709,8 @@ static void sess_init_update(pj_ice_strans *ice_st)
  */
 PJ_DEF(pj_status_t) pj_ice_strans_destroy(pj_ice_strans *ice_st)
 {
+    char obj_name[PJ_MAX_OBJ_NAME];
+
     PJ_ASSERT_RETURN(ice_st, PJ_EINVAL);
 
     ice_st->destroy_req = PJ_TRUE;
@@ -740,7 +720,10 @@ PJ_DEF(pj_status_t) pj_ice_strans_destroy(pj_ice_strans *ice_st)
 	return PJ_EPENDING;
     }
     
+    pj_memcpy(obj_name, ice_st->obj_name, PJ_MAX_OBJ_NAME);
     destroy_ice_st(ice_st);
+
+    PJ_LOG(4,(obj_name, "ICE stream transport destroyed"));
     return PJ_SUCCESS;
 }
 
@@ -1320,10 +1303,9 @@ static void on_ice_complete(pj_ice_sess *ice, pj_status_t status)
 	ice_st->state = (status==PJ_SUCCESS) ? PJ_ICE_STRANS_STATE_RUNNING :
 					       PJ_ICE_STRANS_STATE_FAILED;
 
-	pj_log_push_indent();
 	(*ice_st->cb.on_ice_complete)(ice_st, PJ_ICE_STRANS_OP_NEGOTIATION, 
 				      status);
-	pj_log_pop_indent();
+
 	
     }
 
@@ -1647,7 +1629,6 @@ static void turn_on_state(pj_turn_sock *turn_sock, pj_turn_state_t old_state,
 
     PJ_LOG(5,(comp->ice_st->obj_name, "TURN client state changed %s --> %s",
 	      pj_turn_state_name(old_state), pj_turn_state_name(new_state)));
-    pj_log_push_indent();
 
     sess_add_ref(comp->ice_st);
 
@@ -1723,7 +1704,5 @@ static void turn_on_state(pj_turn_sock *turn_sock, pj_turn_state_t old_state,
     }
 
     sess_dec_ref(comp->ice_st);
-
-    pj_log_pop_indent();
 }
 

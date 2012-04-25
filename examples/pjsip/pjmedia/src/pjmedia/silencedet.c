@@ -1,4 +1,4 @@
-/* $Id: silencedet.c 3664 2011-07-19 03:42:28Z nanang $ */
+/* $Id: silencedet.c 3553 2011-05-05 06:14:19Z nanang $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -23,7 +23,6 @@
 #include <pj/assert.h>
 #include <pj/log.h>
 #include <pj/pool.h>
-#include <pj/string.h>
 
 #define THIS_FILE   "silencedet.c"
 
