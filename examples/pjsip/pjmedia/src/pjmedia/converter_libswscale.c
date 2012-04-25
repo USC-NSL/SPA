@@ -1,4 +1,4 @@
-/* $Id: converter_libswscale.c 4056 2012-04-17 02:48:29Z nanang $ */
+/* $Id: converter_libswscale.c 4076 2012-04-24 09:40:35Z bennylp $ */
 /*
  * Copyright (C) 2010-2011 Teluu Inc. (http://www.teluu.com)
  *
@@ -150,7 +150,8 @@ static pj_status_t libswscale_conv_convert(pjmedia_converter *converter,
     (*dst->fmt_info->apply_fmt)(dst->fmt_info, &dst->apply_param);
 
     h = sws_scale(fcv->sws_ctx,
-	          src->apply_param.planes, src->apply_param.strides,
+	          (const uint8_t* const *)src->apply_param.planes,
+	          src->apply_param.strides,
 		  0, src->apply_param.size.h,
 		  dst->apply_param.planes, dst->apply_param.strides);
 

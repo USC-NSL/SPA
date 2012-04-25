@@ -1,4 +1,4 @@
-/* $Id: sdl_dev.c 4053 2012-04-16 05:22:18Z ming $ */
+/* $Id: sdl_dev.c 4078 2012-04-24 09:46:39Z bennylp $ */
 /*
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  *
@@ -1222,6 +1222,7 @@ static pj_status_t sdl_stream_destroy(pjmedia_vid_dev_stream *strm)
 /****************************************************************************
  * Job queue implementation
  */
+#if PJ_DARWINOS==0
 static int job_thread(void * data)
 {
     job_queue *jq = (job_queue *)data;
@@ -1286,6 +1287,7 @@ static int job_thread(void * data)
 
     return 0;
 }
+#endif
 
 static pj_status_t job_queue_create(pj_pool_t *pool, job_queue **pjq)
 {

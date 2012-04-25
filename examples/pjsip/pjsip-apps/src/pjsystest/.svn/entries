@@ -1,15 +1,15 @@
 8
 
 dir
-4060
+4082
 http://svn.pjsip.org/repos/pjproject/trunk/pjsip-apps/src/pjsystest
 http://svn.pjsip.org/repos
 
 
 
-2011-07-19T03:42:28.070005Z
-3664
-nanang
+2012-04-24T13:09:14.350951Z
+4082
+bennylp
 
 
 svn:special svn:externals svn:needs-lock
@@ -32,11 +32,11 @@ file
 
 
 
-2012-04-17T21:49:37.000000Z
-30c7cb150ece08e055eed7a1f254d54e
-2011-07-19T03:42:28.070005Z
-3664
-nanang
+2012-04-25T00:57:29.000000Z
+7b77600c8a867418e33c9992f33b574d
+2012-04-24T13:09:14.350951Z
+4082
+bennylp
 has-props
 
 pjsystest_wince.rc

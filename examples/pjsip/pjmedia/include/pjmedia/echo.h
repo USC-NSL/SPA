@@ -1,4 +1,4 @@
-/* $Id: echo.h 3841 2011-10-24 09:28:13Z ming $ */
+/* $Id: echo.h 4082 2012-04-24 13:09:14Z bennylp $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -95,8 +95,13 @@ typedef enum pjmedia_echo_flag
      * created for the echo canceller will use simple FIFO mechanism, i.e.
      * without using WSOLA to expand and shrink audio samples.
      */
-    PJMEDIA_ECHO_USE_SIMPLE_FIFO = 32
+    PJMEDIA_ECHO_USE_SIMPLE_FIFO = 32,
 
+    /**
+     * If PJMEDIA_ECHO_USE_SW_ECHO flag is specified, software echo canceller
+     * will be used instead of device EC.
+     */
+    PJMEDIA_ECHO_USE_SW_ECHO = 64
 
 } pjmedia_echo_flag;
 

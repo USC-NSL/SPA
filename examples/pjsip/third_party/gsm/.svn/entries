@@ -1,7 +1,7 @@
 8
 
 dir
-4060
+4082
 http://svn.pjsip.org/repos/pjproject/trunk/third_party/gsm
 http://svn.pjsip.org/repos
 
@@ -26,18 +26,8 @@ svn:special svn:externals svn:needs-lock
 
 74dad513-b988-da41-8d7b-12977e46ad98
 
-MACHINES
-file
-
-
-
-
-2012-04-17T21:49:44.000000Z
-fec37d187957fa14187a13974a68e5bf
-2007-04-07T12:29:46.517960Z
-1168
-bennylp
-has-props
+src
+dir
 
 ChangeLog
 file
@@ -52,8 +42,18 @@ file
 bennylp
 has-props
 
-src
-dir
+MACHINES
+file
+
+
+
+
+2012-04-17T21:49:44.000000Z
+fec37d187957fa14187a13974a68e5bf
+2007-04-07T12:29:46.517960Z
+1168
+bennylp
+has-props
 
 README
 file
@@ -74,18 +74,8 @@ dir
 add-test
 dir
 
-MANIFEST
-file
-
-
-
-
-2012-04-17T21:49:44.000000Z
-a81e9ef0956c5e1d8c7402170dd67b43
-2007-04-07T12:29:46.517960Z
-1168
-bennylp
-has-props
+lib
+dir
 
 INSTALL
 file
@@ -100,7 +90,20 @@ b41c1892f74fc6909cc633139aeefa9d
 bennylp
 has-props
 
-lib
+MANIFEST
+file
+
+
+
+
+2012-04-17T21:49:44.000000Z
+a81e9ef0956c5e1d8c7402170dd67b43
+2007-04-07T12:29:46.517960Z
+1168
+bennylp
+has-props
+
+bin
 dir
 
 COPYRIGHT
@@ -115,9 +118,6 @@ file
 1168
 bennylp
 has-props
-
-bin
-dir
 
 inc
 dir

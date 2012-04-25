@@ -1,7 +1,7 @@
 8
 
 dir
-4060
+4082
 http://svn.pjsip.org/repos/pjproject/trunk/pjlib/build
 http://svn.pjsip.org/repos
 
@@ -130,19 +130,6 @@ file
 3424
 bennylp
 
-os-linux-kernel.mak
-file
-
-
-
-
-2012-04-17T21:49:45.000000Z
-f9450fb6a1c0eca9a17df25fc2689725
-2005-11-21T01:55:47.243552Z
-65
-bennylp
-has-props
-
 os-auto.mak.in
 file
 
@@ -153,6 +140,19 @@ file
 5d4266e689a8b7455b14c31475571d62
 2010-08-25T12:51:29.278996Z
 3295
+bennylp
+has-props
+
+os-linux-kernel.mak
+file
+
+
+
+
+2012-04-17T21:49:45.000000Z
+f9450fb6a1c0eca9a17df25fc2689725
+2005-11-21T01:55:47.243552Z
+65
 bennylp
 has-props
 

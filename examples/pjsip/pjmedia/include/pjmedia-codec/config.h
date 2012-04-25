@@ -1,4 +1,4 @@
-/* $Id: config.h 4051 2012-04-13 08:16:30Z ming $ */
+/* $Id: config.h 4070 2012-04-23 13:48:10Z bennylp $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -402,7 +402,7 @@
  * Default: 1
  */
 #ifndef PJMEDIA_HAS_FFMPEG_CODEC_H263P
-#   define PJMEDIA_HAS_FFMPEG_CODEC_H263P	1
+#   define PJMEDIA_HAS_FFMPEG_CODEC_H263P	PJMEDIA_HAS_FFMPEG_VID_CODEC
 #endif
 
 /**
@@ -411,7 +411,7 @@
  * Default: 0
  */
 #ifndef PJMEDIA_HAS_FFMPEG_CODEC_H264
-#   define PJMEDIA_HAS_FFMPEG_CODEC_H264	0
+#   define PJMEDIA_HAS_FFMPEG_CODEC_H264	PJMEDIA_HAS_FFMPEG_VID_CODEC
 #endif
 
 /**

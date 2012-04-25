@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 36
-/repos/!svn/ver/4060/pjproject/trunk
+/repos/!svn/ver/4082/pjproject/trunk
 END
 configure
 K 25
@@ -13,7 +13,7 @@ aconfigure
 K 25
 svn:wc:ra_dav:version-url
 V 47
-/repos/!svn/ver/3999/pjproject/trunk/aconfigure
+/repos/!svn/ver/4069/pjproject/trunk/aconfigure
 END
 svn_add.bat
 K 25
@@ -63,6 +63,12 @@ svn:wc:ra_dav:version-url
 V 55
 /repos/!svn/ver/3063/pjproject/trunk/libpjproject.pc.in
 END
+pkgconfig.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/repos/!svn/ver/4069/pjproject/trunk/pkgconfig.py
+END
 configure-iphone
 K 25
 svn:wc:ra_dav:version-url
@@ -79,7 +85,7 @@ aconfigure.ac
 K 25
 svn:wc:ra_dav:version-url
 V 50
-/repos/!svn/ver/3999/pjproject/trunk/aconfigure.ac
+/repos/!svn/ver/4069/pjproject/trunk/aconfigure.ac
 END
 user.mak.sample
 K 25
@@ -103,7 +109,7 @@ pjproject-vs8.sln
 K 25
 svn:wc:ra_dav:version-url
 V 54
-/repos/!svn/ver/3664/pjproject/trunk/pjproject-vs8.sln
+/repos/!svn/ver/4072/pjproject/trunk/pjproject-vs8.sln
 END
 README.txt
 K 25

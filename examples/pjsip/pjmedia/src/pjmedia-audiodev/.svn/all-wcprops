@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 65
-/repos/!svn/ver/3841/pjproject/trunk/pjmedia/src/pjmedia-audiodev
+/repos/!svn/ver/4082/pjproject/trunk/pjmedia/src/pjmedia-audiodev
 END
 alsa_dev.c
 K 25
@@ -61,7 +61,7 @@ coreaudio_dev.c
 K 25
 svn:wc:ra_dav:version-url
 V 81
-/repos/!svn/ver/3841/pjproject/trunk/pjmedia/src/pjmedia-audiodev/coreaudio_dev.c
+/repos/!svn/ver/4082/pjproject/trunk/pjmedia/src/pjmedia-audiodev/coreaudio_dev.c
 END
 null_dev.c
 K 25

@@ -1,19 +1,19 @@
 K 25
 svn:wc:ra_dav:version-url
 V 56
-/repos/!svn/ver/4059/pjproject/trunk/pjmedia/src/pjmedia
-END
-transport_ice.c
-K 25
-svn:wc:ra_dav:version-url
-V 72
-/repos/!svn/ver/3999/pjproject/trunk/pjmedia/src/pjmedia/transport_ice.c
+/repos/!svn/ver/4082/pjproject/trunk/pjmedia/src/pjmedia
 END
 sound_legacy.c
 K 25
 svn:wc:ra_dav:version-url
 V 71
 /repos/!svn/ver/3553/pjproject/trunk/pjmedia/src/pjmedia/sound_legacy.c
+END
+transport_ice.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/!svn/ver/3999/pjproject/trunk/pjmedia/src/pjmedia/transport_ice.c
 END
 codec.c
 K 25
@@ -45,23 +45,23 @@ svn:wc:ra_dav:version-url
 V 74
 /repos/!svn/ver/3553/pjproject/trunk/pjmedia/src/pjmedia/alaw_ulaw_table.c
 END
-sdp.c
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/repos/!svn/ver/3945/pjproject/trunk/pjmedia/src/pjmedia/sdp.c
-END
 jbuf.c
 K 25
 svn:wc:ra_dav:version-url
 V 63
 /repos/!svn/ver/3874/pjproject/trunk/pjmedia/src/pjmedia/jbuf.c
 END
+sdp.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/!svn/ver/3945/pjproject/trunk/pjmedia/src/pjmedia/sdp.c
+END
 sound_port.c
 K 25
 svn:wc:ra_dav:version-url
 V 69
-/repos/!svn/ver/3999/pjproject/trunk/pjmedia/src/pjmedia/sound_port.c
+/repos/!svn/ver/4082/pjproject/trunk/pjmedia/src/pjmedia/sound_port.c
 END
 transport_srtp.c
 K 25
@@ -69,17 +69,17 @@ svn:wc:ra_dav:version-url
 V 73
 /repos/!svn/ver/3999/pjproject/trunk/pjmedia/src/pjmedia/transport_srtp.c
 END
-stereo_port.c
-K 25
-svn:wc:ra_dav:version-url
-V 70
-/repos/!svn/ver/3664/pjproject/trunk/pjmedia/src/pjmedia/stereo_port.c
-END
 rtp.c
 K 25
 svn:wc:ra_dav:version-url
 V 62
 /repos/!svn/ver/3553/pjproject/trunk/pjmedia/src/pjmedia/rtp.c
+END
+stereo_port.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/!svn/ver/3664/pjproject/trunk/pjmedia/src/pjmedia/stereo_port.c
 END
 vid_stream_info.c
 K 25
@@ -201,29 +201,17 @@ svn:wc:ra_dav:version-url
 V 68
 /repos/!svn/ver/3664/pjproject/trunk/pjmedia/src/pjmedia/null_port.c
 END
-silencedet.c
-K 25
-svn:wc:ra_dav:version-url
-V 69
-/repos/!svn/ver/3664/pjproject/trunk/pjmedia/src/pjmedia/silencedet.c
-END
 g711.c
 K 25
 svn:wc:ra_dav:version-url
 V 63
 /repos/!svn/ver/3664/pjproject/trunk/pjmedia/src/pjmedia/g711.c
 END
-echo_speex.c
+silencedet.c
 K 25
 svn:wc:ra_dav:version-url
 V 69
-/repos/!svn/ver/3664/pjproject/trunk/pjmedia/src/pjmedia/echo_speex.c
-END
-echo_port.c
-K 25
-svn:wc:ra_dav:version-url
-V 68
-/repos/!svn/ver/3664/pjproject/trunk/pjmedia/src/pjmedia/echo_port.c
+/repos/!svn/ver/3664/pjproject/trunk/pjmedia/src/pjmedia/silencedet.c
 END
 echo_suppress.c
 K 25
@@ -231,17 +219,23 @@ svn:wc:ra_dav:version-url
 V 72
 /repos/!svn/ver/3664/pjproject/trunk/pjmedia/src/pjmedia/echo_suppress.c
 END
+echo_port.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/!svn/ver/3664/pjproject/trunk/pjmedia/src/pjmedia/echo_port.c
+END
+echo_speex.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/!svn/ver/3664/pjproject/trunk/pjmedia/src/pjmedia/echo_speex.c
+END
 port.c
 K 25
 svn:wc:ra_dav:version-url
 V 63
 /repos/!svn/ver/3893/pjproject/trunk/pjmedia/src/pjmedia/port.c
-END
-transport_loop.c
-K 25
-svn:wc:ra_dav:version-url
-V 73
-/repos/!svn/ver/3553/pjproject/trunk/pjmedia/src/pjmedia/transport_loop.c
 END
 wsola.c
 K 25
@@ -249,17 +243,17 @@ svn:wc:ra_dav:version-url
 V 64
 /repos/!svn/ver/3553/pjproject/trunk/pjmedia/src/pjmedia/wsola.c
 END
+transport_loop.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/!svn/ver/3553/pjproject/trunk/pjmedia/src/pjmedia/transport_loop.c
+END
 wav_writer.c
 K 25
 svn:wc:ra_dav:version-url
 V 69
 /repos/!svn/ver/3664/pjproject/trunk/pjmedia/src/pjmedia/wav_writer.c
-END
-stream.c
-K 25
-svn:wc:ra_dav:version-url
-V 65
-/repos/!svn/ver/3999/pjproject/trunk/pjmedia/src/pjmedia/stream.c
 END
 delaybuf.c
 K 25
@@ -267,17 +261,23 @@ svn:wc:ra_dav:version-url
 V 67
 /repos/!svn/ver/3841/pjproject/trunk/pjmedia/src/pjmedia/delaybuf.c
 END
-tonegen.c
+stream.c
 K 25
 svn:wc:ra_dav:version-url
-V 66
-/repos/!svn/ver/3664/pjproject/trunk/pjmedia/src/pjmedia/tonegen.c
+V 65
+/repos/!svn/ver/3999/pjproject/trunk/pjmedia/src/pjmedia/stream.c
 END
 master_port.c
 K 25
 svn:wc:ra_dav:version-url
 V 70
 /repos/!svn/ver/3664/pjproject/trunk/pjmedia/src/pjmedia/master_port.c
+END
+tonegen.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/!svn/ver/3664/pjproject/trunk/pjmedia/src/pjmedia/tonegen.c
 END
 wave.c
 K 25
@@ -297,17 +297,17 @@ svn:wc:ra_dav:version-url
 V 70
 /repos/!svn/ver/3999/pjproject/trunk/pjmedia/src/pjmedia/conf_switch.c
 END
-converter.c
-K 25
-svn:wc:ra_dav:version-url
-V 68
-/repos/!svn/ver/3664/pjproject/trunk/pjmedia/src/pjmedia/converter.c
-END
 conference.c
 K 25
 svn:wc:ra_dav:version-url
 V 69
 /repos/!svn/ver/3664/pjproject/trunk/pjmedia/src/pjmedia/conference.c
+END
+converter.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/!svn/ver/3664/pjproject/trunk/pjmedia/src/pjmedia/converter.c
 END
 rtcp.c
 K 25
@@ -315,29 +315,29 @@ svn:wc:ra_dav:version-url
 V 63
 /repos/!svn/ver/3999/pjproject/trunk/pjmedia/src/pjmedia/rtcp.c
 END
-resample_port.c
-K 25
-svn:wc:ra_dav:version-url
-V 72
-/repos/!svn/ver/3664/pjproject/trunk/pjmedia/src/pjmedia/resample_port.c
-END
 alaw_ulaw.c
 K 25
 svn:wc:ra_dav:version-url
 V 68
 /repos/!svn/ver/3841/pjproject/trunk/pjmedia/src/pjmedia/alaw_ulaw.c
 END
-vid_codec.c
+resample_port.c
 K 25
 svn:wc:ra_dav:version-url
-V 68
-/repos/!svn/ver/4008/pjproject/trunk/pjmedia/src/pjmedia/vid_codec.c
+V 72
+/repos/!svn/ver/3664/pjproject/trunk/pjmedia/src/pjmedia/resample_port.c
 END
 converter_libswscale.c
 K 25
 svn:wc:ra_dav:version-url
 V 79
-/repos/!svn/ver/4056/pjproject/trunk/pjmedia/src/pjmedia/converter_libswscale.c
+/repos/!svn/ver/4076/pjproject/trunk/pjmedia/src/pjmedia/converter_libswscale.c
+END
+vid_codec.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/!svn/ver/4008/pjproject/trunk/pjmedia/src/pjmedia/vid_codec.c
 END
 endpoint.c
 K 25
@@ -357,29 +357,29 @@ svn:wc:ra_dav:version-url
 V 66
 /repos/!svn/ver/3841/pjproject/trunk/pjmedia/src/pjmedia/session.c
 END
-sdp_cmp.c
-K 25
-svn:wc:ra_dav:version-url
-V 66
-/repos/!svn/ver/3664/pjproject/trunk/pjmedia/src/pjmedia/sdp_cmp.c
-END
 errno.c
 K 25
 svn:wc:ra_dav:version-url
 V 64
 /repos/!svn/ver/3945/pjproject/trunk/pjmedia/src/pjmedia/errno.c
 END
-vid_port.c
+sdp_cmp.c
 K 25
 svn:wc:ra_dav:version-url
-V 67
-/repos/!svn/ver/4029/pjproject/trunk/pjmedia/src/pjmedia/vid_port.c
+V 66
+/repos/!svn/ver/3664/pjproject/trunk/pjmedia/src/pjmedia/sdp_cmp.c
 END
 echo_common.c
 K 25
 svn:wc:ra_dav:version-url
 V 70
 /repos/!svn/ver/3841/pjproject/trunk/pjmedia/src/pjmedia/echo_common.c
+END
+vid_port.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/!svn/ver/4077/pjproject/trunk/pjmedia/src/pjmedia/vid_port.c
 END
 plc_common.c
 K 25

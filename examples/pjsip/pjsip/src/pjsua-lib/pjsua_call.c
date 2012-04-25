@@ -1,4 +1,4 @@
-/* $Id: pjsua_call.c 4052 2012-04-16 02:47:38Z ming $ */
+/* $Id: pjsua_call.c 4082 2012-04-24 13:09:14Z bennylp $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -544,9 +544,12 @@ static pj_status_t apply_call_setting(pjsua_call *call,
 	old_opt = call->opt;
 	call->opt = *opt;
 
-	/* Reinit media channel when media count is changed */
-	if (opt->aud_cnt != old_opt.aud_cnt ||
-	    opt->vid_cnt != old_opt.vid_cnt)
+	/* Reinit media channel when media count is changed or we are the
+	 * answerer (as remote offer may 'extremely' modify the existing
+	 * media session, e.g: media type order).
+	 */
+	if (rem_sdp ||
+	    opt->aud_cnt!=old_opt.aud_cnt || opt->vid_cnt!=old_opt.vid_cnt)
 	{
 	    pjsip_role_e role = rem_sdp? PJSIP_ROLE_UAS : PJSIP_ROLE_UAC;
 	    status = pjsua_media_channel_init(call->index, role,
@@ -850,12 +853,19 @@ on_incoming_call_med_tp_complete(pjsua_call_id call_id,
 
 on_return:
     if (status != PJ_SUCCESS) {
-        pjsip_tx_data *tdata;
-        pj_status_t status_;
+        /* If the callback is called from pjsua_call_on_incoming(), the
+         * invite's state is PJSIP_INV_STATE_NULL, so the invite session
+         * will be terminated later, otherwise we end the session here.
+         */
+        if (call->inv->state > PJSIP_INV_STATE_NULL) {
+            pjsip_tx_data *tdata;
+            pj_status_t status_;
 
-	status_ = pjsip_inv_end_session(call->inv, sip_err_code, NULL, &tdata);
-	if (status_ == PJ_SUCCESS && tdata)
-	    status_ = pjsip_inv_send_msg(call->inv, tdata);
+	    status_ = pjsip_inv_end_session(call->inv, sip_err_code, NULL,
+                                            &tdata);
+	    if (status_ == PJ_SUCCESS && tdata)
+	        status_ = pjsip_inv_send_msg(call->inv, tdata);
+        }
 
         pjsua_media_channel_deinit(call->index);
     }
@@ -1191,7 +1201,6 @@ pj_bool_t pjsua_call_on_incoming(pjsip_rx_data *rdata)
 	/* Can't terminate dialog because transaction is in progress.
 	pjsip_dlg_terminate(dlg);
 	 */
-	pjsua_media_channel_deinit(call->index);
 	goto on_return;
     }
 
@@ -1225,12 +1234,21 @@ pj_bool_t pjsua_call_on_incoming(pjsip_rx_data *rdata)
         status = on_incoming_call_med_tp_complete(call_id, NULL);
         if (status != PJ_SUCCESS) {
             sip_err_code = PJSIP_SC_NOT_ACCEPTABLE;
+            /* Since the call invite's state is still PJSIP_INV_STATE_NULL,
+             * the invite session was not ended in
+             * on_incoming_call_med_tp_complete(), so we need to send
+             * a response message and terminate the invite here.
+             */
             pjsip_dlg_respond(dlg, rdata, sip_err_code, NULL, NULL, NULL);
+            pjsip_inv_terminate(call->inv, sip_err_code, PJ_FALSE); 
+            call->inv = NULL; 
 	    goto on_return;
         }
     } else if (status != PJ_EPENDING) {
 	pjsua_perror(THIS_FILE, "Error initializing media channel", status);
 	pjsip_dlg_respond(dlg, rdata, sip_err_code, NULL, NULL, NULL);
+        pjsip_inv_terminate(call->inv, sip_err_code, PJ_FALSE); 
+        call->inv = NULL; 
 	goto on_return;
     }
 
@@ -1251,10 +1269,8 @@ pj_bool_t pjsua_call_on_incoming(pjsip_rx_data *rdata)
 				    &pjsua_var.acc[acc_id].cfg.timer_setting);
     if (status != PJ_SUCCESS) {
 	pjsua_perror(THIS_FILE, "Session Timer init failed", status);
-	status = pjsip_inv_end_session(inv, PJSIP_SC_INTERNAL_SERVER_ERROR,
-				       NULL, &response);
-	if (status == PJ_SUCCESS && response)
-	    status = pjsip_inv_send_msg(inv, response);
+        pjsip_dlg_respond(dlg, rdata, PJSIP_SC_INTERNAL_SERVER_ERROR, NULL, NULL, NULL);
+	pjsip_inv_terminate(inv, PJSIP_SC_INTERNAL_SERVER_ERROR, PJ_FALSE);
 
 	pjsua_media_channel_deinit(call->index);
 
@@ -1301,6 +1317,7 @@ pj_bool_t pjsua_call_on_incoming(pjsip_rx_data *rdata)
 	status = pjsip_inv_send_msg(inv, response);
 	if (status != PJ_SUCCESS) {
 	    pjsua_perror(THIS_FILE, "Unable to send 100 response", status);
+	    pjsua_media_channel_deinit(call->index);
 	    goto on_return;
 	}
     }
@@ -3208,6 +3225,9 @@ static void pjsua_call_on_media_update(pjsip_inv_session *inv,
 
 	pjsua_perror(THIS_FILE, "SDP negotiation has failed", status);
 
+	/* Clean up provisional media */
+	pjsua_media_prov_clean_up(call->index);
+
 	/* Do not deinitialize media since this may be a re-INVITE or
 	 * UPDATE (which in this case the media should not get affected
 	 * by the failed re-INVITE/UPDATE). The media will be shutdown
@@ -3411,17 +3431,11 @@ static void pjsua_call_on_rx_offer(pjsip_inv_session *inv,
 
 	call->opt = opt;
     }
-
+    
     /* Re-init media for the new remote offer before creating SDP */
-    status = pjsua_media_channel_init(call->index, PJSIP_ROLE_UAS,
-				      call->secure_level,
-				      call->inv->pool_prov,
-				      offer, NULL,
-                                      PJ_FALSE, NULL);
-    if (status != PJ_SUCCESS) {
-	pjsua_perror(THIS_FILE, "Error re-initializing media channel", status);
+    status = apply_call_setting(call, &call->opt, offer);
+    if (status != PJ_SUCCESS)
 	goto on_return;
-    }
 
     status = pjsua_media_channel_create_sdp(call->index, 
 					    call->inv->pool_prov, 

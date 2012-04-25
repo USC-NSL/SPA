@@ -1,15 +1,15 @@
 8
 
 dir
-4060
+4082
 http://svn.pjsip.org/repos/pjproject/trunk/third_party
 http://svn.pjsip.org/repos
 
 
 
-2012-03-30T07:10:13.512709Z
-3999
-bennylp
+2012-04-24T08:11:31.323431Z
+4075
+nanang
 has-props
 
 svn:special svn:externals svn:needs-lock
@@ -54,6 +54,9 @@ resample
 dir
 
 srtp
+dir
+
+BaseClasses
 dir
 
 ilbc

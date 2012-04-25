@@ -1,7 +1,7 @@
 8
 
 dir
-4060
+4082
 http://svn.pjsip.org/repos/pjproject/trunk/tests/pjsua/scripts-sipp
 http://svn.pjsip.org/repos
 
@@ -251,19 +251,6 @@ e1fb4aa8a9c900b81a146d5559dac653
 bennylp
 has-props
 
-uas-reinv-and-ack(same-branch)-without-sdp.xml
-file
-
-
-
-
-2012-04-17T21:49:39.000000Z
-bd09fc418992dc7b1c3da16e7e3714d5
-2010-06-16T15:26:18.973473Z
-3208
-nanang
-has-props
-
 uas-cancel-no-final.xml
 file
 
@@ -275,6 +262,19 @@ f2754da480d95e6cab7fa20a15406707
 2009-04-26T11:02:04.181124Z
 2646
 bennylp
+has-props
+
+uas-reinv-and-ack(same-branch)-without-sdp.xml
+file
+
+
+
+
+2012-04-17T21:49:39.000000Z
+bd09fc418992dc7b1c3da16e7e3714d5
+2010-06-16T15:26:18.973473Z
+3208
+nanang
 has-props
 
 uas-422-then-200-bad-se.xml

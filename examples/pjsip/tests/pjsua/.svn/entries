@@ -1,7 +1,7 @@
 8
 
 dir
-4060
+4082
 http://svn.pjsip.org/repos/pjproject/trunk/tests/pjsua
 http://svn.pjsip.org/repos
 
@@ -39,6 +39,9 @@ f31b5f9e0311e37e79ce6e39d21332b8
 bennylp
 has-props
 
+wavs
+dir
+
 config_site.py
 file
 
@@ -51,9 +54,6 @@ e12a88addc719a933dbfc5d336bac069
 2237
 bennylp
 has-props
-
-wavs
-dir
 
 scripts-sendto
 dir
@@ -71,19 +71,6 @@ file
 bennylp
 has-props
 
-runall.py
-file
-
-
-
-
-2012-04-17T21:49:40.000000Z
-38e7e2468ce629110114d19911fbef60
-2011-08-19T12:41:40.305455Z
-3717
-nanang
-has-props
-
 mod_media_playrec.py
 file
 
@@ -95,6 +82,19 @@ e27c6542a6c9bf8049c237987f60b63e
 2009-08-17T08:29:47.416188Z
 2884
 bennylp
+has-props
+
+runall.py
+file
+
+
+
+
+2012-04-17T21:49:40.000000Z
+38e7e2468ce629110114d19911fbef60
+2011-08-19T12:41:40.305455Z
+3717
+nanang
 has-props
 
 scripts-run
@@ -129,9 +129,6 @@ has-props
 scripts-pesq
 dir
 
-scripts-pres
-dir
-
 mod_pesq.py
 file
 
@@ -144,6 +141,9 @@ file
 2417
 bennylp
 has-props
+
+scripts-pres
+dir
 
 mod_pres.py
 file

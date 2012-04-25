@@ -1,7 +1,7 @@
 8
 
 dir
-4060
+4082
 http://svn.pjsip.org/repos/pjproject/trunk/build
 http://svn.pjsip.org/repos
 
@@ -26,16 +26,16 @@ svn:special svn:externals svn:needs-lock
 
 74dad513-b988-da41-8d7b-12977e46ad98
 
-m-powerpc.mak
+os-rtems.mak
 file
 
 
 
 
 2012-04-17T21:49:45.000000Z
-4de8f79c1d35dab8987311da8ed9eeff
-2006-03-20T12:39:24.003369Z
-338
+5aa722d144fd1212bdcaee2e06bc4a5c
+2006-08-20T20:47:34.752385Z
+689
 bennylp
 has-props
 
@@ -52,16 +52,16 @@ f84c3f95009b586bebc7f2d935aac678
 bennylp
 has-props
 
-os-rtems.mak
+m-powerpc.mak
 file
 
 
 
 
 2012-04-17T21:49:45.000000Z
-5aa722d144fd1212bdcaee2e06bc4a5c
-2006-08-20T20:47:34.752385Z
-689
+4de8f79c1d35dab8987311da8ed9eeff
+2006-03-20T12:39:24.003369Z
+338
 bennylp
 has-props
 
@@ -104,16 +104,16 @@ ff4f261063900cbf8b4e9878a23f491d
 bennylp
 has-props
 
-m-m68k.mak
+cc-gcc.mak
 file
 
 
 
 
 2012-04-17T21:49:45.000000Z
-3c63663d6b6d95a5e6724d32a9db81d3
-2005-11-21T01:55:47.243552Z
-65
+145151ad2a8ec9b47660d6b1d27e5614
+2006-05-10T19:24:40.123217Z
+433
 bennylp
 has-props
 
@@ -130,18 +130,21 @@ file
 bennylp
 has-props
 
-cc-gcc.mak
+m-m68k.mak
 file
 
 
 
 
 2012-04-17T21:49:45.000000Z
-145151ad2a8ec9b47660d6b1d27e5614
-2006-05-10T19:24:40.123217Z
-433
+3c63663d6b6d95a5e6724d32a9db81d3
+2005-11-21T01:55:47.243552Z
+65
 bennylp
 has-props
+
+vs
+dir
 
 os-win32.mak
 file
@@ -155,9 +158,6 @@ file
 689
 bennylp
 has-props
-
-vs
-dir
 
 m-i386.mak
 file
@@ -185,19 +185,6 @@ file
 bennylp
 has-props
 
-m-x86_64.mak
-file
-
-
-
-
-2012-04-17T21:49:45.000000Z
-d006b1f603575775f25b8c9531a83d18
-2006-07-23T14:38:49.077038Z
-624
-bennylp
-has-props
-
 common.mak
 file
 
@@ -209,6 +196,19 @@ file
 2010-05-17T13:07:39.744024Z
 3175
 ming
+has-props
+
+m-x86_64.mak
+file
+
+
+
+
+2012-04-17T21:49:45.000000Z
+d006b1f603575775f25b8c9531a83d18
+2006-07-23T14:38:49.077038Z
+624
+bennylp
 has-props
 
 rules.mak

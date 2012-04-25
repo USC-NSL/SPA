@@ -1,4 +1,4 @@
-/* $Id: vid_port.c 4029 2012-04-05 08:53:48Z ming $ */
+/* $Id: vid_port.c 4077 2012-04-24 09:43:06Z bennylp $ */
 /*
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  *
@@ -695,7 +695,7 @@ static void enc_clock_cb(const pj_timestamp *ts, void *user_data)
      */
     pjmedia_vid_port *vp = (pjmedia_vid_port*)user_data;
     pjmedia_frame frame_;
-    pj_status_t status;
+    pj_status_t status = PJ_SUCCESS;
 
     pj_assert(vp->role==ROLE_ACTIVE);
 

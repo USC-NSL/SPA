@@ -1,7 +1,7 @@
 8
 
 dir
-4060
+4082
 http://svn.pjsip.org/repos/pjproject/trunk/build.symbian
 http://svn.pjsip.org/repos
 
@@ -203,19 +203,6 @@ b8dd9009d1397fa95f0a571ebfb40c3c
 bennylp
 has-props
 
-symsndtest.mmp
-file
-
-
-
-
-2012-04-17T21:49:38.000000Z
-f473ec628d2d9c7dd8b53869daea66a3
-2010-04-07T13:21:31.578687Z
-3135
-nanang
-has-props
-
 symbian_audioU.def
 file
 
@@ -229,17 +216,17 @@ file
 bennylp
 has-props
 
-pjsipU.def
+symsndtest.mmp
 file
 
 
 
 
 2012-04-17T21:49:38.000000Z
-bd8180cb81456d7eb113d5553fadcbaa
-2007-12-01T09:02:46.242452Z
-1603
-bennylp
+f473ec628d2d9c7dd8b53869daea66a3
+2010-04-07T13:21:31.578687Z
+3135
+nanang
 has-props
 
 libsrtp.mmp
@@ -252,6 +239,19 @@ file
 72b2e3f81c6a51d1ab0b04782927c021
 2010-01-06T08:34:41.082262Z
 3046
+bennylp
+has-props
+
+pjsipU.def
+file
+
+
+
+
+2012-04-17T21:49:38.000000Z
+bd8180cb81456d7eb113d5553fadcbaa
+2007-12-01T09:02:46.242452Z
+1603
 bennylp
 has-props
 
@@ -281,19 +281,6 @@ efbc4d769a9a2d29213da0de6cb649b1
 bennylp
 has-props
 
-pjnath.mmp
-file
-
-
-
-
-2012-04-17T21:49:38.000000Z
-f369c75711ab545baa1d2fd085ae92a6
-2010-01-06T08:34:41.082262Z
-3046
-bennylp
-has-props
-
 bld.inf
 file
 
@@ -307,16 +294,16 @@ ddbd3b0389f9aac45cc2f58b96b2b53e
 bennylp
 has-props
 
-pjsip.mmp
+pjnath.mmp
 file
 
 
 
 
 2012-04-17T21:49:38.000000Z
-6bfbe069ef7913a12431a369bda11cf4
-2010-08-01T09:48:51.595727Z
-3243
+f369c75711ab545baa1d2fd085ae92a6
+2010-01-06T08:34:41.082262Z
+3046
 bennylp
 has-props
 
@@ -333,17 +320,18 @@ file
 bennylp
 has-props
 
-libg7221codec.mmp
+pjsip.mmp
 file
 
 
 
 
 2012-04-17T21:49:38.000000Z
-e757230bd5abcd4bf4f917a6c50df6e8
-2010-01-06T08:34:41.082262Z
-3046
+6bfbe069ef7913a12431a369bda11cf4
+2010-08-01T09:48:51.595727Z
+3243
 bennylp
+has-props
 
 pjlib_test.pkg
 file
@@ -356,6 +344,18 @@ bc9f6b7105fcae97154502a768740b3e
 2009-06-17T18:30:45.140644Z
 2772
 nanang
+
+libg7221codec.mmp
+file
+
+
+
+
+2012-04-17T21:49:38.000000Z
+e757230bd5abcd4bf4f917a6c50df6e8
+2010-01-06T08:34:41.082262Z
+3046
+bennylp
 
 pjsip_simpleU.def
 file
@@ -396,19 +396,6 @@ file
 bennylp
 has-props
 
-00.bat
-file
-
-
-
-
-2012-04-17T21:49:38.000000Z
-c0685e48456feeaa11df56568017e7b1
-2009-01-01T00:11:17.969989Z
-2405
-bennylp
-has-props
-
 libpassthroughcodec.mmp
 file
 
@@ -419,6 +406,19 @@ file
 ef63d0d8112f0c92e8c9106db0a7e2c3
 2010-01-06T08:34:41.082262Z
 3046
+bennylp
+has-props
+
+00.bat
+file
+
+
+
+
+2012-04-17T21:49:38.000000Z
+c0685e48456feeaa11df56568017e7b1
+2009-01-01T00:11:17.969989Z
+2405
 bennylp
 has-props
 

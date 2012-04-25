@@ -1,15 +1,15 @@
 8
 
 dir
-4060
+4082
 http://svn.pjsip.org/repos/pjproject/trunk/pjmedia/src/pjmedia-videodev
 http://svn.pjsip.org/repos
 
 
 
-2012-04-16T05:22:18.919452Z
-4053
-ming
+2012-04-24T09:46:39.852633Z
+4078
+bennylp
 
 
 svn:special svn:externals svn:needs-lock
@@ -32,11 +32,11 @@ file
 
 
 
-2012-04-17T21:49:42.000000Z
-f7e99c861f8c15ea1c9dc1ac056665ce
-2012-04-16T05:22:18.919452Z
-4053
-ming
+2012-04-25T00:57:29.000000Z
+7f11b26505673d543c41222e88fb9580
+2012-04-24T09:46:39.852633Z
+4078
+bennylp
 has-props
 
 colorbar_dev.c
@@ -71,11 +71,11 @@ file
 
 
 
-2012-04-17T21:49:42.000000Z
-afca4d38912234f4fd6d420f5690c57d
-2011-08-19T09:35:25.088302Z
-3715
-nanang
+2012-04-25T00:57:29.000000Z
+d1603af1b16cf47e01b1680c07565b44
+2012-04-19T06:36:57.016760Z
+4062
+ming
 has-props
 
 ffmpeg_dev.c

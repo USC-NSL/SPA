@@ -1,7 +1,7 @@
 8
 
 dir
-4060
+4082
 http://svn.pjsip.org/repos/pjproject/trunk/pjsip-apps/src/pocketpj
 http://svn.pjsip.org/repos
 
@@ -76,17 +76,8 @@ file
 bennylp
 has-props
 
-PocketPJ.vcc
-file
-
-
-
-
-2012-04-17T21:49:37.000000Z
-b9bda163e7f5c40ef7757b58b692652f
-2008-08-13T13:56:24.996937Z
-2211
-bennylp
+res
+dir
 
 newres.h
 file
@@ -101,8 +92,17 @@ f1a2f64e65969d59f3c116e8f40f13d9
 bennylp
 has-props
 
-res
-dir
+PocketPJ.vcc
+file
+
+
+
+
+2012-04-17T21:49:37.000000Z
+b9bda163e7f5c40ef7757b58b692652f
+2008-08-13T13:56:24.996937Z
+2211
+bennylp
 
 PocketPJDlg.h
 file
@@ -130,6 +130,9 @@ ac1ce0e9c67c03f6e75b5ceb7c11f67e
 bennylp
 has-props
 
+output
+dir
+
 PocketPJ.cpp
 file
 
@@ -142,9 +145,6 @@ b605b813f2bef8ea85b17b9146574493
 1819
 bennylp
 has-props
-
-output
-dir
 
 PopUpWnd.h
 file

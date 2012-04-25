@@ -1,15 +1,15 @@
 8
 
 dir
-4060
+4082
 http://svn.pjsip.org/repos/pjproject/trunk
 http://svn.pjsip.org/repos
 
 
 
-2012-04-17T09:55:30.866789Z
-4060
-ming
+2012-04-24T13:09:14.350951Z
+4082
+bennylp
 has-props
 
 svn:special svn:externals svn:needs-lock
@@ -45,10 +45,10 @@ file
 
 
 
-2012-04-17T21:49:46.000000Z
-f8ca92ff49a806eae96cd65645e613b3
-2012-03-30T07:10:13.512709Z
-3999
+2012-04-25T00:57:30.000000Z
+8aa18e2d6a0ef40916824f2a2b42b1cf
+2012-04-23T13:46:21.574355Z
+4069
 bennylp
 has-props
 
@@ -243,6 +243,19 @@ file
 bennylp
 has-props
 
+pkgconfig.py
+file
+
+
+
+
+2012-04-25T00:58:28.000000Z
+e5e9e3cb84da8e56f4795d372b088f16
+2012-04-23T13:46:21.574355Z
+4069
+bennylp
+has-props
+
 build
 dir
 
@@ -268,10 +281,10 @@ file
 
 
 
-2012-04-17T21:49:46.000000Z
-c0a940b82d45526600420cdfff9148a9
-2012-03-30T07:10:13.512709Z
-3999
+2012-04-25T00:58:18.000000Z
+371a69d4a1406723e226ad39e9343d7a
+2012-04-23T13:46:21.574355Z
+4069
 bennylp
 has-props
 
@@ -306,10 +319,10 @@ file
 
 
 
-2012-04-17T21:49:46.000000Z
-5ef8d6345f2b8eedced4bf26c161d6b5
-2011-07-19T03:42:28.070005Z
-3664
+2012-04-25T00:58:18.000000Z
+c7cb520f1c900e3d3ac82c90b4e251d3
+2012-04-24T07:07:39.599030Z
+4072
 nanang
 
 pjlib-util

@@ -1,4 +1,4 @@
-/* $Id: coreaudio_dev.c 3841 2011-10-24 09:28:13Z ming $ */
+/* $Id: coreaudio_dev.c 4082 2012-04-24 13:09:14Z bennylp $ */
 /*
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  *
@@ -1964,6 +1964,11 @@ static pj_status_t ca_stream_set_cap(pjmedia_aud_stream *s,
 	strm->cf->io_comp = io_comp;
 	strm->param.ec_enabled = *(pj_bool_t*)pval;
 
+        PJ_LOG(4, (THIS_FILE, "Using %s audio unit", 
+                              (desc.componentSubType ==
+                               kAudioUnitSubType_RemoteIO? "RemoteIO":
+                               "VoiceProcessingIO")));
+        
 	return PJ_SUCCESS;
     }
 #endif

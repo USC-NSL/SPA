@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 65
-/repos/!svn/ver/4053/pjproject/trunk/pjmedia/src/pjmedia-videodev
+/repos/!svn/ver/4078/pjproject/trunk/pjmedia/src/pjmedia-videodev
 END
 sdl_dev.c
 K 25
 svn:wc:ra_dav:version-url
 V 75
-/repos/!svn/ver/4053/pjproject/trunk/pjmedia/src/pjmedia-videodev/sdl_dev.c
+/repos/!svn/ver/4078/pjproject/trunk/pjmedia/src/pjmedia-videodev/sdl_dev.c
 END
 colorbar_dev.c
 K 25
@@ -25,7 +25,7 @@ dshowclasses.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/repos/!svn/ver/3715/pjproject/trunk/pjmedia/src/pjmedia-videodev/dshowclasses.cpp
+/repos/!svn/ver/4062/pjproject/trunk/pjmedia/src/pjmedia-videodev/dshowclasses.cpp
 END
 ffmpeg_dev.c
 K 25

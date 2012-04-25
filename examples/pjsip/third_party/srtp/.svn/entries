@@ -1,7 +1,7 @@
 8
 
 dir
-4060
+4082
 http://svn.pjsip.org/repos/pjproject/trunk/third_party/srtp
 http://svn.pjsip.org/repos
 
@@ -32,14 +32,14 @@ dir
 crypto
 dir
 
-configure
+srtp7.vcproj
 file
 
 
 
 
 2012-04-17T21:49:44.000000Z
-9790aa8905e9e317328f48cf734f5bf4
+d44390aad5f5bd7f18c702c20b82606c
 2008-01-23T20:17:42.299488Z
 1730
 bennylp
@@ -56,38 +56,14 @@ file
 1730
 bennylp
 
-srtp7.vcproj
+configure
 file
 
 
 
 
 2012-04-17T21:49:44.000000Z
-d44390aad5f5bd7f18c702c20b82606c
-2008-01-23T20:17:42.299488Z
-1730
-bennylp
-
-config.hw
-file
-
-
-
-
-2012-04-17T21:49:44.000000Z
-71e9ce04aebf9ebb1c91e027ac941bde
-2008-01-23T20:17:42.299488Z
-1730
-bennylp
-
-Makefile.in
-file
-
-
-
-
-2012-04-17T21:49:44.000000Z
-8353f8ac090aa149c3cf502ec8bd2035
+9790aa8905e9e317328f48cf734f5bf4
 2008-01-23T20:17:42.299488Z
 1730
 bennylp
@@ -104,20 +80,32 @@ file
 1730
 bennylp
 
-include
-dir
-
-VERSION
+Makefile.in
 file
 
 
 
 
 2012-04-17T21:49:44.000000Z
-ddedfbb217dbc35ac393edc3e9893044
+8353f8ac090aa149c3cf502ec8bd2035
 2008-01-23T20:17:42.299488Z
 1730
 bennylp
+
+config.hw
+file
+
+
+
+
+2012-04-17T21:49:44.000000Z
+71e9ce04aebf9ebb1c91e027ac941bde
+2008-01-23T20:17:42.299488Z
+1730
+bennylp
+
+include
+dir
 
 srtp.def
 file
@@ -127,6 +115,18 @@ file
 
 2012-04-17T21:49:44.000000Z
 5415fddcd8bb7129849eea7fd10ad8cd
+2008-01-23T20:17:42.299488Z
+1730
+bennylp
+
+VERSION
+file
+
+
+
+
+2012-04-17T21:49:44.000000Z
+ddedfbb217dbc35ac393edc3e9893044
 2008-01-23T20:17:42.299488Z
 1730
 bennylp

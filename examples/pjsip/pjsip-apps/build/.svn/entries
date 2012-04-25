@@ -1,15 +1,15 @@
 8
 
 dir
-4060
+4082
 http://svn.pjsip.org/repos/pjproject/trunk/pjsip-apps/build
 http://svn.pjsip.org/repos
 
 
 
-2011-09-19T01:15:02.957081Z
-3754
-bennylp
+2012-04-24T12:45:00.494734Z
+4080
+nanang
 has-props
 
 svn:special svn:externals svn:needs-lock
@@ -32,11 +32,11 @@ file
 
 
 
-2012-04-17T21:49:37.000000Z
-8fb13955ee971edcbd48dca7d5420f61
-2011-09-19T01:15:02.957081Z
-3754
-bennylp
+2012-04-25T00:57:29.000000Z
+162c82d86f39a1af6c6f9db56347e7c0
+2012-04-24T12:45:00.494734Z
+4080
+nanang
 has-props
 
 pjsua.vcproj
@@ -63,19 +63,6 @@ file
 2674
 bennylp
 
-os-win32.mak
-file
-
-
-
-
-2012-04-17T21:49:37.000000Z
-7a69d3c20f62071e75da5622917ce752
-2006-03-01T19:31:18.993864Z
-254
-bennylp
-has-props
-
 get-footprint.py
 file
 
@@ -89,17 +76,30 @@ file
 bennylp
 has-props
 
-vidgui.vcproj
+os-win32.mak
 file
 
 
 
 
 2012-04-17T21:49:37.000000Z
-4572d4aa92ba30ebd18268f6a4265dfc
-2011-08-01T12:57:45.425202Z
-3686
-nanang
+7a69d3c20f62071e75da5622917ce752
+2006-03-01T19:31:18.993864Z
+254
+bennylp
+has-props
+
+libpjproject.vcproj
+file
+
+
+
+
+2012-04-17T21:49:37.000000Z
+d6a7ec304109ca76621437652f5b21d0
+2009-04-29T15:30:38.994109Z
+2664
+bennylp
 
 sample_debug.vcproj
 file
@@ -113,17 +113,17 @@ c9b9bde790a9853334e129686784e349
 3664
 nanang
 
-libpjproject.vcproj
+vidgui.vcproj
 file
 
 
 
 
 2012-04-17T21:49:37.000000Z
-d6a7ec304109ca76621437652f5b21d0
-2009-04-29T15:30:38.994109Z
-2664
-bennylp
+4572d4aa92ba30ebd18268f6a4265dfc
+2011-08-01T12:57:45.425202Z
+3686
+nanang
 
 Footprint.mak
 file

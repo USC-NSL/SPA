@@ -1,7 +1,7 @@
 8
 
 dir
-4060
+4082
 http://svn.pjsip.org/repos/pjproject/trunk/tests/pjsua/scripts-recvfrom
 http://svn.pjsip.org/repos
 
@@ -65,19 +65,6 @@ a6b72be8e41a8b28dfdddf054940ea4f
 bennylp
 has-props
 
-231_reg_bad_fail_stale_false_nonce_changed.py
-file
-
-
-
-
-2012-04-17T21:49:40.000000Z
-f6c96cb0754daf494592697c3608320c
-2008-12-22T18:54:58.727370Z
-2392
-bennylp
-has-props
-
 201_reg_good_ok.py
 file
 
@@ -86,6 +73,19 @@ file
 
 2012-04-17T21:49:40.000000Z
 5672db6f4813dcc99621307c31119119
+2008-12-22T18:54:58.727370Z
+2392
+bennylp
+has-props
+
+231_reg_bad_fail_stale_false_nonce_changed.py
+file
+
+
+
+
+2012-04-17T21:49:40.000000Z
+f6c96cb0754daf494592697c3608320c
 2008-12-22T18:54:58.727370Z
 2392
 bennylp
@@ -130,19 +130,6 @@ file
 bennylp
 has-props
 
-209c_reg_handle_423_bad_min_expires2.py
-file
-
-
-
-
-2012-04-17T21:49:40.000000Z
-0302fd823a5d6f6982e6b9f62fbe22bb
-2010-02-23T11:03:07.414115Z
-3105
-bennylp
-has-props
-
 203_reg_good_empty_realm.py
 file
 
@@ -153,6 +140,19 @@ file
 fe15d2f37c5601072ba13fa1d8798726
 2010-04-29T00:23:43.503126Z
 3150
+bennylp
+has-props
+
+209c_reg_handle_423_bad_min_expires2.py
+file
+
+
+
+
+2012-04-17T21:49:40.000000Z
+0302fd823a5d6f6982e6b9f62fbe22bb
+2010-02-23T11:03:07.414115Z
+3105
 bennylp
 has-props
 
@@ -169,19 +169,6 @@ b878aa796c8a564ce9ea14c510c833af
 nanang
 has-props
 
-220_reg_good_ims_ok.py
-file
-
-
-
-
-2012-04-17T21:49:40.000000Z
-79a8de2b5afdba437750f5f5aa1ab0c3
-2008-12-22T18:54:58.727370Z
-2392
-bennylp
-has-props
-
 100_simple.py
 file
 
@@ -195,14 +182,14 @@ file
 bennylp
 has-props
 
-202_reg_good_ok_wildcard.py
+220_reg_good_ims_ok.py
 file
 
 
 
 
 2012-04-17T21:49:40.000000Z
-fc51e77a984a495b7fa19f0b976f6def
+79a8de2b5afdba437750f5f5aa1ab0c3
 2008-12-22T18:54:58.727370Z
 2392
 bennylp
@@ -219,6 +206,19 @@ a93b4eaabe081da60c7b5a3617a3104c
 2010-09-08T05:38:49.354462Z
 3307
 nanang
+has-props
+
+202_reg_good_ok_wildcard.py
+file
+
+
+
+
+2012-04-17T21:49:40.000000Z
+fc51e77a984a495b7fa19f0b976f6def
+2008-12-22T18:54:58.727370Z
+2392
+bennylp
 has-props
 
 208_reg_good_retry_nonce_ok.py

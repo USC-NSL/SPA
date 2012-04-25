@@ -1,4 +1,4 @@
-/* $Id: dshowclasses.cpp 3715 2011-08-19 09:35:25Z nanang $ */
+/* $Id: dshowclasses.cpp 4062 2012-04-19 06:36:57Z ming $ */
 /*
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  *
@@ -25,12 +25,6 @@
 
 #include <assert.h>
 #include <streams.h>
-
-#if PJ_DEBUG
-#   pragma comment(lib, "Strmbasd.lib")
-#else
-#   pragma comment(lib, "Strmbase.lib")
-#endif
 
 typedef void (*input_callback)(void *user_data, IMediaSample *pMediaSample);
 

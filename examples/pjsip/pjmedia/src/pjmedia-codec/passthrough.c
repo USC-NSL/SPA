@@ -1,4 +1,4 @@
-/* $Id: passthrough.c 3911 2011-12-15 06:45:23Z nanang $ */
+/* $Id: passthrough.c 4082 2012-04-24 13:09:14Z bennylp $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -261,7 +261,8 @@ static pj_status_t pack_amr ( codec_private_t *codec_data,
 	pj_bzero(info, sizeof(*info));
 	
 	if (len == 0) {
-	    info->frame_type = (pj_uint8_t)(enc_setting->amr_nb? 14 : 15);
+	    /* DTX */
+	    info->frame_type = 15;
 	} else {
 	    info->frame_type = pjmedia_codec_amr_get_mode2(enc_setting->amr_nb, 
 							   len);

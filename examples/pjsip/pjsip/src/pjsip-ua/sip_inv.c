@@ -1,4 +1,4 @@
-/* $Id: sip_inv.c 4054 2012-04-16 07:50:01Z bennylp $ */
+/* $Id: sip_inv.c 4082 2012-04-24 13:09:14Z bennylp $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -2242,7 +2242,7 @@ PJ_DEF(pj_status_t) pjsip_inv_end_session(  pjsip_inv_session *inv,
 	return PJSIP_ESESSIONTERMINATED;
 
     default:
-	pj_assert("!Invalid operation!");
+	pj_assert(!"Invalid operation!");
 	pj_log_pop_indent();
 	return PJ_EINVALIDOP;
     }
