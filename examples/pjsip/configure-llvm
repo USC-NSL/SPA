@@ -1,0 +1,3 @@
+#!/bin/sh
+
+CC='llvm-gcc' CFLAGS='-emit-llvm -use-gold-plugin' CXX='llvm-g++' CXXFLAGS='-emit-llvm -use-gold-plugin' CPP='llvm-cpp' LD='llvm-ld' ./configure --disable-sound
