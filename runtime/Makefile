@@ -15,7 +15,7 @@ LEVEL=..
 #
 # List all of the subdirectories that we will compile.
 #
-PARALLEL_DIRS=Intrinsic Runtest MaxAdversarialModule
+PARALLEL_DIRS=Intrinsic Runtest MaxAdversarialModule SpaStubs
 
 include $(LEVEL)/Makefile.config
 
