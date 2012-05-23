@@ -19,7 +19,10 @@ namespace SPA {
 			if ( const InvokeInst *ii = dyn_cast<InvokeInst>( *it ) ) {
 				if ( ! ii->getCalledFunction() ) {
 					DILocation *l = (DILocation *) (*it)->getDebugLoc().getAsMDNode( (*it)->getContext() );
-					CLOUD9_INFO( "Indirect function call found in function " << (*it)->getParent()->getParent()->getName().str() << " in file " << l->getFilename().str() << ":" << l->getLineNumber() << "." );
+					if ( l )
+						CLOUD9_INFO( "Indirect function call found in function " << (*it)->getParent()->getParent()->getName().str() << " in file " << l->getFilename().str() << ":" << l->getLineNumber() << "." );
+					else
+						CLOUD9_INFO( "Indirect function call found in function " << (*it)->getParent()->getParent()->getName().str() << "." );
 				}
 				functions.insert( ii->getCalledFunction() );
 				callers[ii->getCalledFunction()].insert( *it );
