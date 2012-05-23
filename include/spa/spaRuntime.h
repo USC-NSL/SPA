@@ -4,17 +4,22 @@
 #include <stdarg.h>
 #include <klee/klee.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif// #ifdef __cplusplus
-
 typedef const char *SpaTag_t;
 typedef void (*SpaRuntimeHandler_t)( va_list );
 
-void spa_api_entry();
-void spa_message_handler_entry();
-void spa_checkpoint();
-void spa_runtime_call( SpaRuntimeHandler_t handler, ... );
+#ifdef __cplusplus
+extern "C" {
+	void __attribute__((noinline)) spa_api_entry() {}
+	void __attribute__((noinline)) spa_message_handler_entry() {}
+	void __attribute__((noinline)) spa_checkpoint() {}
+	void __attribute__((noinline)) spa_runtime_call( SpaRuntimeHandler_t handler, ... );
+}
+#else // #ifdef __cplusplus
+void __attribute__((noinline)) spa_api_entry() {}
+void __attribute__((noinline)) spa_message_handler_entry() {}
+void __attribute__((noinline)) spa_checkpoint() {}
+void __attribute__((noinline)) spa_runtime_call( SpaRuntimeHandler_t handler, ... );
+#endif// #ifdef __cplusplus #else
 
 
 #ifdef ENABLE_SPA
@@ -67,9 +72,5 @@ void __spa_output( void *var, size_t size, const char *name ) {
 #define spa_msg_output_var( var )
 
 #endif // #ifdef ENABLE_SPA #else
-
-#ifdef __cplusplus
-}
-#endif// #ifdef __cplusplus
 
 #endif // #ifndef __SPARUNTIME_H__
