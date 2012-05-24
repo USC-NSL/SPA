@@ -71,6 +71,7 @@ void __spa_output( void *var, size_t size, const char *varName, const char *size
 #define spa_api_output( var, size, name )
 #define spa_api_output_var( var )
 #define spa_msg_input( var, size, name )
+#define spa_msg_input_size( var, name )
 #define spa_msg_input_var( var )
 #define spa_msg_output( var, size, name )
 #define spa_msg_output_var( var )
