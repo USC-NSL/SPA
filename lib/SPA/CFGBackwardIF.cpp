@@ -11,6 +11,7 @@ namespace SPA {
 		// Use a worklist to add all predecessors of target instruction.
 		std::set<llvm::Instruction *> worklist = targets;
 		std::set<llvm::Instruction *> reaching;
+		std::set<llvm::Function *> reachingFns;
 
 		while ( ! worklist.empty() ) {
 			std::set<llvm::Instruction *>::iterator it = worklist.begin(), ie;
@@ -30,10 +31,12 @@ namespace SPA {
 					fn = ii->getCalledFunction();
 				if ( llvm::CallInst *ci = llvm::dyn_cast<llvm::CallInst>( inst ) )
 					fn = ci->getCalledFunction();
-				if ( fn != NULL )
+				if ( fn != NULL && reachingFns.count( fn ) == 0 ) {
+					reachingFns.insert( fn );
 					for ( CFG::iterator it2 = cfg.begin(), ie2 = cfg.end(); it2 != ie2; it2++ )
 						if ( (*it2)->getParent()->getParent() == fn && reaching.count( *it2 ) == 0 )
 							worklist.insert( *it2 );
+				}
 				// Check if entry instruction.
 				if ( inst == &(inst->getParent()->getParent()->getEntryBlock().front()) ) {
 					p = cg.getCallers( inst->getParent()->getParent() );
