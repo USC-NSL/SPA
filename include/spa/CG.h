@@ -15,7 +15,7 @@ namespace SPA {
 	private:
 		std::map<llvm::Function *,std::set<llvm::Instruction *> > callers;
 		std::set<llvm::Function *> functions;
-		
+
 	public:
 		typedef std::set<llvm::Function *>::iterator iterator;
 

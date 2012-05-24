@@ -19,11 +19,11 @@
 #include "spa/CG.h"
 #include "spa/SPA.h"
 #include "spa/Path.h"
-#include "spa/CFGForwardIF.h"
+// #include "spa/CFGForwardIF.h"
 #include "spa/CFGBackwardIF.h"
 #include "spa/WhitelistIF.h"
 #include "spa/NegatedIF.h"
-#include "spa/IntersectionIF.h"
+// #include "spa/IntersectionIF.h"
 #include "spa/PathFilter.h"
 #include "spa/max.h"
 
@@ -80,9 +80,10 @@ int main(int argc, char **argv, char **envp) {
 		spa.addCheckpoint( *it );
 
 	// Create instruction filter.
-	SPA::IntersectionIF filter = SPA::IntersectionIF();
-	filter.addIF( new SPA::CFGForwardIF( cfg, cg, messageHandlers ) );
-	filter.addIF( new SPA::CFGBackwardIF( cfg, cg, interestingInstructions ) );
+// 	SPA::IntersectionIF filter = SPA::IntersectionIF();
+// 	filter.addIF( new SPA::CFGForwardIF( cfg, cg, messageHandlers ) );
+// 	filter.addIF( new SPA::CFGBackwardIF( cfg, cg, interestingInstructions ) );
+	SPA::CFGBackwardIF filter = SPA::CFGBackwardIF( cfg, cg, interestingInstructions );
 	spa.setInstructionFilter( &filter );
 
 	if ( DumpCFG.size() > 0 ) {

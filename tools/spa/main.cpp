@@ -19,11 +19,11 @@
 #include "spa/CG.h"
 #include "spa/SPA.h"
 #include "spa/Path.h"
-#include "spa/CFGForwardIF.h"
+// #include "spa/CFGForwardIF.h"
 #include "spa/CFGBackwardIF.h"
 #include "spa/WhitelistIF.h"
 #include "spa/NegatedIF.h"
-#include "spa/IntersectionIF.h"
+// #include "spa/IntersectionIF.h"
 #include "spa/PathFilter.h"
 
 extern std::string InputFile;
@@ -86,9 +86,10 @@ int main(int argc, char **argv, char **envp) {
 	assert( ! checkpoints.empty() && "No message outputs found." );
 
 	// Create instruction filter.
-	SPA::IntersectionIF filter = SPA::IntersectionIF();
-	filter.addIF( new SPA::CFGForwardIF( cfg, cg, entryPoints ) );
-	filter.addIF( new SPA::CFGBackwardIF( cfg, cg, checkpoints ) );
+// 	SPA::IntersectionIF filter = SPA::IntersectionIF();
+// 	filter.addIF( new SPA::CFGForwardIF( cfg, cg, entryPoints ) );
+// 	filter.addIF( new SPA::CFGBackwardIF( cfg, cg, checkpoints ) );
+	SPA::CFGBackwardIF filter = SPA::CFGBackwardIF( cfg, cg, checkpoints );
 	spa.setInstructionFilter( &filter );
 
 	CLOUD9_DEBUG( "   Setting up path checkpoints." );
