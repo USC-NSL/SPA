@@ -41,14 +41,18 @@ void __spa_tag( SpaTag_t *var, const char *varName, SpaTag_t value ) {
 #define spa_api_output( var, size, name ) __spa_output( var, size, "spa_out_api_" name )
 #define spa_api_output_var( var ) spa_api_output( var, sizeof( var ), #var )
 #define spa_msg_input( var, size, name ) klee_make_symbolic( var, size, "spa_in_msg_" name )
+#define spa_msg_input_size( var, name ) klee_make_symbolic( var, sizeof( var ), "spa_in_msg_size_" name )
 #define spa_msg_input_var( var ) spa_msg_input( &var, sizeof( var ), #var )
-#define spa_msg_output( var, size, name ) __spa_output( var, size, "spa_out_msg_" name )
+#define spa_msg_output( var, size, name ) __spa_output( var, size, "spa_out_msg_" name, "spa_out_msg_size_" name )
 #define spa_msg_output_var( var ) spa_msg_output( &var, sizeof( var ), #var )
-void __spa_output( void *var, size_t size, const char *name ) {
+void __spa_output( void *var, size_t size, const char *varName, const char *sizeName ) {
 	static SpaTag_t Output;
 	void *buffer = malloc( size );
-	klee_make_symbolic( buffer, size, name );
+	klee_make_symbolic( buffer, size, varName );
 	memcpy( buffer, var, size );
+	size_t bufSize;
+	klee_make_symbolic( &bufSize, sizeof( bufSize ), sizeName );
+	bufSize = size;
 	spa_tag( Output, "1" );
 	spa_checkpoint();
 }
