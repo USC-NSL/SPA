@@ -30,6 +30,9 @@
 #include <pj/compat/socket.h>
 #include <pj/string.h>
 
+#include "../../../pjlib/src/pj/ioqueue_common_abs.h"
+#include <spa/spaRuntime.h>
+
 
 #define THIS_FILE   "sip_transport_udp.c"
 
@@ -281,6 +284,23 @@ static void udp_on_read_complete( pj_ioqueue_key_t *key,
 	}
     }
 }
+
+static void spa_udp_on_read_complete_entry() {
+	spa_message_handler_entry();
+
+	uint8_t h[256];
+	spa_state( h, 256, "h" );
+	pj_ioqueue_op_key_t read_op;
+	spa_state_var( read_op );
+	uint8_t buf[256];
+	pj_ssize_t bytes_read;
+	spa_msg_input( buf, 256, "message" );
+	spa_msg_input_size( bytes_read, "message" );
+	((struct read_operation *) &read_op)->buf = buf;
+
+	udp_on_read_complete( (pj_ioqueue_key_t *) h, &read_op, bytes_read );
+}
+
 
 /*
  * udp_on_write_complete()

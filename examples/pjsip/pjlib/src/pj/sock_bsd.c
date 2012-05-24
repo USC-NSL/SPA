@@ -26,6 +26,8 @@
 #include <pj/errno.h>
 #include <pj/unicode.h>
 
+#include <spa/spaRuntime.h>
+
 /*
  * Address families conversion.
  * The values here are indexed based on pj_addr_family.

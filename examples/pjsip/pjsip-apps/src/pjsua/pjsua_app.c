@@ -20,6 +20,8 @@
 #include <pjsua-lib/pjsua.h>
 #include "gui.h"
 
+#include <spa/spaRuntime.h>
+
 
 #define THIS_FILE	"pjsua_app.c"
 #define NO_LIMIT	(int)0x7FFFFFFF
@@ -2511,6 +2513,8 @@ static void on_incoming_call(pjsua_acc_id acc_id, pjsua_call_id call_id,
     PJ_UNUSED_ARG(rdata);
 
     pjsua_call_get_info(call_id, &call_info);
+
+	spa_valid_path();
 
     if (current_call==PJSUA_INVALID_ID)
 	current_call = call_id;

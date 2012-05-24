@@ -20,6 +20,8 @@
 #include <pjsua-lib/pjsua.h>
 #include <pjsua-lib/pjsua_internal.h>
 
+#include <spa/spaRuntime.h>
+
 
 #define THIS_FILE		"pjsua_call.c"
 
@@ -354,12 +356,12 @@ void spa_call_make_call_entry() {
 
 	/* Create pjsua first! */
 	status = pjsua_create();
-	if (status != PJ_SUCCESS) error_exit("Error in pjsua_create()", status);
+	if (status != PJ_SUCCESS) return;
 
 	/* Check valid SIP URL */
 	{
-		status = pjsua_verify_url(url);
-		if (status != PJ_SUCCESS) error_exit("Invalid URL", status);
+		status = pjsua_verify_url(to_url);
+		if (status != PJ_SUCCESS) return;
 	}
 
 	/* Init pjsua */
@@ -372,7 +374,7 @@ void spa_call_make_call_entry() {
 		log_cfg.console_level = 4;
 
 		status = pjsua_init(&cfg, &log_cfg, NULL);
-		if (status != PJ_SUCCESS) error_exit("Error in pjsua_init()", status);
+		if (status != PJ_SUCCESS) return;
 	}
 
 	/* Add UDP transport. */
@@ -382,12 +384,12 @@ void spa_call_make_call_entry() {
 		pjsua_transport_config_default(&cfg);
 		cfg.port = 5061;
 		status = pjsua_transport_create(PJSIP_TRANSPORT_UDP, &cfg, NULL);
-		if (status != PJ_SUCCESS) error_exit("Error creating transport", status);
+		if (status != PJ_SUCCESS) return;
 	}
 
 	/* Initialization is done, now start pjsua */
 	status = pjsua_start();
-	if (status != PJ_SUCCESS) error_exit("Error starting pjsua", status);
+	if (status != PJ_SUCCESS) return;
 
 	/* Register to SIP server by creating SIP account. */
 	{
@@ -397,20 +399,20 @@ void spa_call_make_call_entry() {
 		cfg.id = pj_str(from_id);
 
 		status = pjsua_acc_add(&cfg, PJ_TRUE, &acc_id);
-		if (status != PJ_SUCCESS) error_exit("Error adding account", status);
+		if (status != PJ_SUCCESS) return;
 	}
 
 	/* Make call to the URL. */
 	{
 		pj_str_t uri = pj_str(to_url);
 		status = pjsua_call_make_call(acc_id, &uri, 0, NULL, NULL, NULL);
-		if (status != PJ_SUCCESS) error_exit("Error making call", status);
+		if (status != PJ_SUCCESS) return;
 	}
 
 	/* Destroy pjsua */
 	pjsua_destroy();
 
-	return 0;
+	return;
 }
 
 
