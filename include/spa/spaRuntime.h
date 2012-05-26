@@ -9,16 +9,16 @@ typedef void (*SpaRuntimeHandler_t)( va_list );
 
 #ifdef __cplusplus
 extern "C" {
-	void __attribute__((noinline)) __attribute__((weak)) spa_api_entry() { asm(""); }
-	void __attribute__((noinline)) __attribute__((weak)) spa_message_handler_entry() { asm(""); }
-	void __attribute__((noinline)) __attribute__((weak)) spa_checkpoint() { asm(""); }
-	void __attribute__((noinline)) spa_runtime_call( SpaRuntimeHandler_t handler, ... );
+	void __attribute__((noinline,weak,used)) spa_api_entry() { asm(""); }
+	void __attribute__((noinline,weak,used)) spa_message_handler_entry() { asm(""); }
+	void __attribute__((noinline,weak,used)) spa_checkpoint() { asm(""); }
+	void __attribute__((noinline,used)) spa_runtime_call( SpaRuntimeHandler_t handler, ... );
 }
 #else // #ifdef __cplusplus
-void __attribute__((noinline)) __attribute__((weak))spa_api_entry() { asm(""); }
-void __attribute__((noinline)) __attribute__((weak))spa_message_handler_entry() { asm(""); }
-void __attribute__((noinline)) __attribute__((weak))spa_checkpoint() { asm(""); }
-void __attribute__((noinline)) spa_runtime_call( SpaRuntimeHandler_t handler, ... );
+void __attribute__((noinline,weak,used))spa_api_entry() { asm(""); }
+void __attribute__((noinline,weak,used))spa_message_handler_entry() { asm(""); }
+void __attribute__((noinline,weak,used))spa_checkpoint() { asm(""); }
+void __attribute__((noinline,used)) spa_runtime_call( SpaRuntimeHandler_t handler, ... );
 #endif// #ifdef __cplusplus #else
 
 
