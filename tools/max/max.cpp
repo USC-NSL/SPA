@@ -66,7 +66,7 @@ int main(int argc, char **argv, char **envp) {
 	CLOUD9_DEBUG( "   Creating CFG filter." );
 	// Find message handling function entry points.
 	std::set<llvm::Instruction *> messageHandlers;
-	std::set<llvm::Instruction *> mhCallers = cg.getCallers( module->getFunction( MAX_MESSAGE_HANDLER_ANNOTATION_FUNCTION ) );
+	std::set<llvm::Instruction *> mhCallers = cg.getDefiniteCallers( module->getFunction( MAX_MESSAGE_HANDLER_ANNOTATION_FUNCTION ) );
 	for ( std::set<llvm::Instruction *>::iterator it = mhCallers.begin(), ie = mhCallers.end(); it != ie; it++ ) {
 		spa.addEntryFunction( (*it)->getParent()->getParent() );
 		messageHandlers.insert( &(*it)->getParent()->getParent()->front().front() );
@@ -74,7 +74,7 @@ int main(int argc, char **argv, char **envp) {
 	assert( ! messageHandlers.empty() && "No message handlers found." );
 
 	// Find interesting instructions.
-	std::set<llvm::Instruction *> interestingInstructions = cg.getCallers( module->getFunction( MAX_INTERESTING_ANNOTATION_FUNCTION ) );
+	std::set<llvm::Instruction *> interestingInstructions = cg.getDefiniteCallers( module->getFunction( MAX_INTERESTING_ANNOTATION_FUNCTION ) );
 	assert( ! interestingInstructions.empty() && "No interesting statements found." );
 	for ( std::set<llvm::Instruction *>::iterator it = interestingInstructions.begin(), ie = interestingInstructions.end(); it != ie; it++ )
 		spa.addCheckpoint( *it );

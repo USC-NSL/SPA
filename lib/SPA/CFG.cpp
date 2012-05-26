@@ -108,7 +108,23 @@ namespace SPA {
 		dotFile << "	edge [color = \"blue\"];" << std::endl;
 		for ( CG::iterator it1 = cg.begin(), ie1 = cg.end(); it1 != ie1; it1++ ) {
 			llvm::Function *fn = *it1;
-			for ( std::set<llvm::Instruction *>::iterator it2 = cg.getCallers( fn ).begin(), ie2 = cg.getCallers( fn ).end(); it2 != ie2; it2++ ) {
+			for ( std::set<llvm::Instruction *>::iterator it2 = cg.getDefiniteCallers( fn ).begin(), ie2 = cg.getDefiniteCallers( fn ).end(); it2 != ie2; it2++ ) {
+				if ( ! filter || filter->checkInstruction( *it2 ) ) {
+					if ( fn == NULL )
+						dotFile << "	IndirectFunction [label = \"*\" shape = \"box\"]" << std::endl
+							<< "	n" << ((unsigned long) *it2) << " -> IndirectFunction;" << std::endl;
+					else if ( ! fn->empty() )
+						dotFile << "	n" << ((unsigned long) *it2) << " -> n" << ((unsigned long) &(fn->getEntryBlock().front())) << ";" << std::endl;
+					else
+						dotFile << "	n" << ((unsigned long) fn) << " [label = \"" << fn->getName().str() << "\" shape = \"box\"]" << std::endl
+							<< "	n" << ((unsigned long) *it2) << " -> n" << ((unsigned long) fn) << ";" << std::endl;
+				}
+			}
+		}
+		dotFile << "	edge [color = \"cyan\"];" << std::endl;
+		for ( CG::iterator it1 = cg.begin(), ie1 = cg.end(); it1 != ie1; it1++ ) {
+			llvm::Function *fn = *it1;
+			for ( std::set<llvm::Instruction *>::iterator it2 = cg.getPossibleCallers( fn ).begin(), ie2 = cg.getPossibleCallers( fn ).end(); it2 != ie2; it2++ ) {
 				if ( ! filter || filter->checkInstruction( *it2 ) ) {
 					if ( fn == NULL )
 						dotFile << "	IndirectFunction [label = \"*\" shape = \"box\"]" << std::endl

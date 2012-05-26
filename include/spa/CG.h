@@ -13,16 +13,18 @@
 namespace SPA {
 	class CG {
 	private:
-		std::map<llvm::Function *,std::set<llvm::Instruction *> > callers;
+		std::map<llvm::Function *,std::set<llvm::Instruction *> > definiteCallers;
+		std::map<llvm::Function *,std::set<llvm::Instruction *> > possibleCallers;
 		std::set<llvm::Function *> functions;
 
 	public:
 		typedef std::set<llvm::Function *>::iterator iterator;
 
 		CG( CFG &cfg );
-		iterator begin();
-		iterator end();
-		const std::set<llvm::Instruction *> &getCallers( llvm::Function *function );
+		iterator begin() { return functions.begin(); }
+		iterator end() { return functions.end(); }
+		const std::set<llvm::Instruction *> &getDefiniteCallers( llvm::Function *function ) { return definiteCallers[function]; }
+		const std::set<llvm::Instruction *> &getPossibleCallers( llvm::Function *function ) { return possibleCallers[function]; }
 	};
 }
 

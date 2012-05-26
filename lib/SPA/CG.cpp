@@ -21,17 +21,19 @@ namespace SPA {
 			if ( const InvokeInst *ii = dyn_cast<InvokeInst>( *it ) ) {
 				if ( ii->getCalledFunction() )
 					functions.insert( ii->getCalledFunction() );
-				callers[ii->getCalledFunction()].insert( *it );
+				definiteCallers[ii->getCalledFunction()].insert( *it );
+				possibleCallers[ii->getCalledFunction()].insert( *it );
 			}
 			if ( const CallInst *ci = dyn_cast<CallInst>( *it ) ) {
 				if ( ci->getCalledFunction() )
 					functions.insert( ci->getCalledFunction() );
-				callers[ci->getCalledFunction()].insert( *it );
+				definiteCallers[ci->getCalledFunction()].insert( *it );
+				possibleCallers[ci->getCalledFunction()].insert( *it );
 			}
 		}
 
 		// Revisit indirect calls.
-		for ( std::set<llvm::Instruction *>::iterator iit = callers[NULL].begin(), iie = callers[NULL].end(); iit != iie; iit++ ) {
+		for ( std::set<llvm::Instruction *>::iterator iit = definiteCallers[NULL].begin(), iie = definiteCallers[NULL].end(); iit != iie; iit++ ) {
 			// Make a list of argument types.
 			std::vector<const llvm::Type *> argTypes;
 			if ( const InvokeInst *ii = dyn_cast<InvokeInst>( *iit ) ) {
@@ -51,21 +53,9 @@ namespace SPA {
 						if ( argTypes[i] != (*fit)->getFunctionType()->getParamType( i ) )
 							break;
 					if ( i == argTypes.size() )
-						callers[*fit].insert( *iit );
+						possibleCallers[*fit].insert( *iit );
 				}
 			}
 		}
-	}
-
-	CG::iterator CG::begin() {
-		return functions.begin();
-	}
-
-	CG::iterator CG::end() {
-		return functions.end();
-	}
-
-	const std::set<Instruction *> &CG::getCallers( Function *function ) {
-		return callers[function];
 	}
 }

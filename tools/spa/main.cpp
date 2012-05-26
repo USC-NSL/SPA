@@ -22,6 +22,7 @@
 // #include "spa/CFGForwardIF.h"
 #include "spa/CFGBackwardIF.h"
 #include "spa/WhitelistIF.h"
+#include "spa/DummyIF.h"
 #include "spa/NegatedIF.h"
 // #include "spa/IntersectionIF.h"
 #include "spa/PathFilter.h"
@@ -69,27 +70,42 @@ int main(int argc, char **argv, char **envp) {
 	CLOUD9_DEBUG( "   Creating CFG filter." );
 	// Find entry points.
 	std::set<llvm::Instruction *> entryPoints;
-	std::set<llvm::Instruction *> apiCallers = cg.getCallers( module->getFunction( SPA_API_ANNOTATION_FUNCTION ) );
-	for ( std::set<llvm::Instruction *>::iterator it = apiCallers.begin(), ie = apiCallers.end(); it != ie; it++ ) {
-		spa.addEntryFunction( (*it)->getParent()->getParent() );
-		entryPoints.insert( &(*it)->getParent()->getParent()->front().front() );
+	Function *fn = module->getFunction( SPA_API_ANNOTATION_FUNCTION );
+	if ( fn ) {
+		std::set<llvm::Instruction *> apiCallers = cg.getDefiniteCallers( fn );
+		for ( std::set<llvm::Instruction *>::iterator it = apiCallers.begin(), ie = apiCallers.end(); it != ie; it++ ) {
+			CLOUD9_DEBUG( "      Found API entry function: " << (*it)->getParent()->getParent()->getName().str() );
+			spa.addEntryFunction( (*it)->getParent()->getParent() );
+			entryPoints.insert( &(*it)->getParent()->getParent()->front().front() );
+		}
+	} else {
+		CLOUD9_INFO( "      API annotation function not present in module." );
 	}
-	std::set<llvm::Instruction *> mhCallers = cg.getCallers( module->getFunction( SPA_MESSAGE_HANDLER_ANNOTATION_FUNCTION ) );
-	for ( std::set<llvm::Instruction *>::iterator it = mhCallers.begin(), ie = mhCallers.end(); it != ie; it++ ) {
-		spa.addEntryFunction( (*it)->getParent()->getParent() );
-		entryPoints.insert( &(*it)->getParent()->getParent()->front().front() );
+	fn = module->getFunction( SPA_MESSAGE_HANDLER_ANNOTATION_FUNCTION );
+	if ( fn ) {
+		std::set<llvm::Instruction *> mhCallers = cg.getDefiniteCallers( fn );
+		for ( std::set<llvm::Instruction *>::iterator it = mhCallers.begin(), ie = mhCallers.end(); it != ie; it++ ) {
+			CLOUD9_DEBUG( "      Found message handler entry function: " << (*it)->getParent()->getParent()->getName().str() );
+			spa.addEntryFunction( (*it)->getParent()->getParent() );
+			entryPoints.insert( &(*it)->getParent()->getParent()->front().front() );
+		}
+	} else {
+		CLOUD9_INFO( "      Message handler annotation function not present in module." );
 	}
 	assert( ! entryPoints.empty() && "No APIs or message handlers found." );
 
 	// Find outputs.
-	std::set<llvm::Instruction *> checkpoints = cg.getCallers( module->getFunction( SPA_CHECKPOINT_ANNOTATION_FUNCTION ) );
+	fn = module->getFunction( SPA_CHECKPOINT_ANNOTATION_FUNCTION );
+	assert( fn && "Checkpoint annotation function not present in module." );
+	std::set<llvm::Instruction *> checkpoints = cg.getDefiniteCallers( fn );
 	assert( ! checkpoints.empty() && "No message outputs found." );
 
 	// Create instruction filter.
 // 	SPA::IntersectionIF filter = SPA::IntersectionIF();
 // 	filter.addIF( new SPA::CFGForwardIF( cfg, cg, entryPoints ) );
 // 	filter.addIF( new SPA::CFGBackwardIF( cfg, cg, checkpoints ) );
-	SPA::CFGBackwardIF filter = SPA::CFGBackwardIF( cfg, cg, checkpoints );
+// 	SPA::CFGBackwardIF filter = SPA::CFGBackwardIF( cfg, cg, checkpoints );
+	SPA::DummyIF filter = SPA::DummyIF();
 	spa.setInstructionFilter( &filter );
 
 	CLOUD9_DEBUG( "   Setting up path checkpoints." );

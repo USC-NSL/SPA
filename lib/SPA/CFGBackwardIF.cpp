@@ -39,7 +39,7 @@ namespace SPA {
 				}
 				// Check if entry instruction.
 				if ( inst == &(inst->getParent()->getParent()->getEntryBlock().front()) ) {
-					p = cg.getCallers( inst->getParent()->getParent() );
+					p = cg.getPossibleCallers( inst->getParent()->getParent() );
 					// Add all non-reaching callers to work list.
 					for ( it = p.begin(), ie = p.end(); it != ie; it++ )
 						if ( reaching.count( *it ) == 0 )
