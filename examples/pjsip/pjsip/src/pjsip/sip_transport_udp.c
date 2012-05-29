@@ -285,7 +285,7 @@ static void udp_on_read_complete( pj_ioqueue_key_t *key,
     }
 }
 
-static void spa_udp_on_read_complete_entry() {
+static void __attribute__((used)) spa_udp_on_read_complete_entry() {
 	spa_message_handler_entry();
 
 	uint8_t h[256];

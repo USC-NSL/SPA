@@ -342,7 +342,7 @@ static int call_get_secure_level(pjsua_call *call)
 */
 
 
-void spa_call_make_call_entry() {
+void __attribute__((used)) spa_call_make_call_entry() {
 	spa_api_entry();
 
 	// Symbolic API inputs. Values are just place holders.
