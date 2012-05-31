@@ -656,7 +656,7 @@ PJ_DEF(pj_status_t) pj_sock_send(pj_sock_t sock,
     PJ_CHECK_STACK();
     PJ_ASSERT_RETURN(len, PJ_EINVAL);
 
-	spa_msg_output( buf, len, "message" );
+	spa_msg_output( buf, *len, "message" );
     *len = send(sock, (const char*)buf, *len, flags);
 
     if (*len < 0)
@@ -681,7 +681,7 @@ PJ_DEF(pj_status_t) pj_sock_sendto(pj_sock_t sock,
     
     CHECK_ADDR_LEN(to, tolen);
 
-	spa_msg_output( buf, len, "message" );
+	spa_msg_output( buf, *len, "message" );
     *len = sendto(sock, (const char*)buf, *len, flags, 
 		  (const struct sockaddr*)to, tolen);
 

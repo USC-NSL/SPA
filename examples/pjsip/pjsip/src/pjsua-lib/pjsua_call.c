@@ -346,10 +346,12 @@ void __attribute__((used)) spa_call_make_call_entry() {
 	spa_api_entry();
 
 	// Symbolic API inputs. Values are just place holders.
-	char *from_id = "sip:caller@localhost";
-	spa_api_input( from_id, strlen( from_id ), "from_id" );
-	char *to_url = "sip:user@localhost:5060";
-	spa_api_input( to_url, strlen( to_url ), "to_url" );
+	char *from_id = malloc( 100 );
+	spa_api_input( from_id, 100, "from_id" );
+	klee_assume( from_id[99] == '\0' );
+	char *to_url = malloc( 100 );
+	spa_api_input( to_url, 100, "to_url" );
+	klee_assume( to_url[99] == '\0' );
 
 	pjsua_acc_id acc_id;
 	pj_status_t status;

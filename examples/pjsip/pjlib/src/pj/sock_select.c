@@ -45,7 +45,11 @@ PJ_DEF(void) PJ_FD_ZERO(pj_fd_set_t *fdsetp)
     PJ_CHECK_STACK();
     pj_assert(sizeof(pj_fd_set_t)-sizeof(pj_sock_t) >= sizeof(fd_set));
 
+#ifdef ENABLE_SPA // SPA: FD_ZERO uses unsupported inline asm.
+	bzero( PART_FDSET(fdsetp), sizeof( fd_set ) );
+#else
     FD_ZERO(PART_FDSET(fdsetp));
+#endif
     PART_COUNT(fdsetp) = 0;
 }
 
