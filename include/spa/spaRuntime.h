@@ -9,16 +9,16 @@ typedef void (*SpaRuntimeHandler_t)( va_list );
 
 #ifdef __cplusplus
 extern "C" {
-	void __attribute__((noinline,weak,used)) spa_api_entry() { asm(""); }
-	void __attribute__((noinline,weak,used)) spa_message_handler_entry() { asm(""); }
-	void __attribute__((noinline,weak,used)) spa_checkpoint() { asm(""); }
-	void __attribute__((noinline,used)) spa_runtime_call( SpaRuntimeHandler_t handler, ... );
+	void __attribute__((noinline,weak)) spa_api_entry() { asm(""); }
+	void __attribute__((noinline,weak)) spa_message_handler_entry() { asm(""); }
+	void __attribute__((noinline,weak)) spa_checkpoint() { asm(""); }
+	void __attribute__((noinline)) spa_runtime_call( SpaRuntimeHandler_t handler, ... );
 }
 #else // #ifdef __cplusplus
-void __attribute__((noinline,weak,used))spa_api_entry() { asm(""); }
-void __attribute__((noinline,weak,used))spa_message_handler_entry() { asm(""); }
-void __attribute__((noinline,weak,used))spa_checkpoint() { asm(""); }
-void __attribute__((noinline,used)) spa_runtime_call( SpaRuntimeHandler_t handler, ... );
+void __attribute__((noinline,weak)) spa_api_entry() { asm(""); }
+void __attribute__((noinline,weak)) spa_message_handler_entry() { asm(""); }
+void __attribute__((noinline,weak)) spa_checkpoint() { asm(""); }
+void __attribute__((noinline)) spa_runtime_call( SpaRuntimeHandler_t handler, ... );
 #endif// #ifdef __cplusplus #else
 
 
@@ -29,7 +29,7 @@ SpaTag_t ValidPath;
 #define spa_valid_path() spa_tag( ValidPath, "1" );
 
 #define spa_tag( var, value ) __spa_tag( &var, "spa_tag_" #var, value )
-void __spa_tag( SpaTag_t *var, const char *varName, SpaTag_t value ) {
+void __attribute__((weak)) __spa_tag( SpaTag_t *var, const char *varName, SpaTag_t value ) {
 	klee_make_symbolic( var, sizeof( char * ), varName );
 	*var = value;
 }
@@ -38,21 +38,21 @@ void __spa_tag( SpaTag_t *var, const char *varName, SpaTag_t value ) {
 #define spa_api_input_var( var ) spa_api_input( &var, sizeof( var ), #var )
 #define spa_state( var, size, name ) klee_make_symbolic( var, size, "spa_state_" name )
 #define spa_state_var( var ) spa_state( &var, sizeof( var ), #var )
-#define spa_api_output( var, size, name ) __spa_output( var, size, "spa_out_api_" name )
+#define spa_api_output( var, size, name ) __spa_output( (void *) var, size, "spa_out_api_" name )
 #define spa_api_output_var( var ) spa_api_output( var, sizeof( var ), #var )
 #define spa_msg_input( var, size, name ) klee_make_symbolic( var, size, "spa_in_msg_" name )
-#define spa_msg_input_size( var, name ) klee_make_symbolic( var, sizeof( var ), "spa_in_msg_size_" name )
+#define spa_msg_input_size( var, name ) klee_make_symbolic( &var, sizeof( var ), "spa_in_msg_size_" name )
 #define spa_msg_input_var( var ) spa_msg_input( &var, sizeof( var ), #var )
-#define spa_msg_output( var, size, name ) __spa_output( var, size, "spa_out_msg_" name, "spa_out_msg_size_" name )
+#define spa_msg_output( var, size, name ) __spa_output( (void *) var, size, "spa_out_msg_" name, "spa_out_msg_size_" name )
 #define spa_msg_output_var( var ) spa_msg_output( &var, sizeof( var ), #var )
-void __spa_output( void *var, size_t size, const char *varName, const char *sizeName ) {
+void __attribute__((weak)) __spa_output( void *var, size_t size, const char *varName, const char *sizeName ) {
 	static SpaTag_t Output;
 	void *buffer = malloc( size );
 	klee_make_symbolic( buffer, size, varName );
 	memcpy( buffer, var, size );
-	size_t bufSize;
-	klee_make_symbolic( &bufSize, sizeof( bufSize ), sizeName );
-	bufSize = size;
+	size_t *bufSize = (size_t *) malloc( sizeof( size_t ) );
+	klee_make_symbolic( bufSize, sizeof( size_t ), sizeName );
+	*bufSize = size;
 	spa_tag( Output, "1" );
 	spa_checkpoint();
 }
