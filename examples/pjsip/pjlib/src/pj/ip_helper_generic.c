@@ -54,7 +54,8 @@
     /* dummy */
 
 #elif defined(PJ_HAS_IFADDRS_H) && PJ_HAS_IFADDRS_H != 0 && \
-      defined(PJ_HAS_NET_IF_H) && PJ_HAS_NET_IF_H != 0
+      defined(PJ_HAS_NET_IF_H) && PJ_HAS_NET_IF_H != 0 && \
+      defined(SPA_ENABLED) // SPA: getifaddrs returns bad memory in KLEE.
 /* Using getifaddrs() is preferred since it can work with both IPv4 and IPv6 */
 static pj_status_t if_enum_by_af(int af,
 				 unsigned *p_cnt,

@@ -285,20 +285,27 @@ static void udp_on_read_complete( pj_ioqueue_key_t *key,
     }
 }
 
-static void spa_udp_on_read_complete_entry() {
+static void __attribute__((used)) spa_udp_on_read_complete_entry() {
 	spa_message_handler_entry();
 
-	uint8_t h[256];
-	spa_state( h, 256, "h" );
-	pj_ioqueue_op_key_t read_op;
+	char h[1000];
+// 	spa_state( h, 1024, "h" );
+	pjsip_rx_data_op_key read_op;
 	spa_state_var( read_op );
-	uint8_t buf[256];
+	pjsip_rx_data rdata;
+	spa_state_var( rdata );
+	struct udp_transport tp;
+	spa_state_var( tp );
+	uint8_t buf[1500];
+	spa_msg_input( buf, 1500, "message" );
 	pj_ssize_t bytes_read;
-	spa_msg_input( buf, 256, "message" );
 	spa_msg_input_size( bytes_read, "message" );
-	((struct read_operation *) &read_op)->buf = buf;
 
-	udp_on_read_complete( (pj_ioqueue_key_t *) h, &read_op, bytes_read );
+	((struct read_operation *) &read_op)->buf = buf;
+	((pjsip_rx_data_op_key *) &read_op)->rdata = &rdata;
+	rdata.tp_info.transport = (void *) &tp;
+
+	udp_on_read_complete( (pj_ioqueue_key_t *) h, (pj_ioqueue_op_key_t *) &read_op, bytes_read );
 }
 
 
