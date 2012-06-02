@@ -576,21 +576,18 @@ void InterleavedSearcher::update(ExecutionState *current,
 
 /***/
 
-FilteringSearcher::FilteringSearcher(Searcher *_searcher )
-  : searcher(_searcher) {
+FilteringSearcher::FilteringSearcher(Searcher *_searcher, SPA::InstructionFilter *_filter )
+  : searcher(_searcher), filter( _filter ), statesEnqueued( 0 ), statesDequeued( 0 ), statesFiltered( 0 ) {
 }
 
 FilteringSearcher::~FilteringSearcher() {
   delete searcher;
 }
 
-SPA::InstructionFilter *FilteringSearcher::filter;
-void FilteringSearcher::setInstructionFilter(SPA::InstructionFilter *_filter) {
-	filter = _filter;
-}
-
 ExecutionState &FilteringSearcher::selectState() {
-  return searcher->selectState();
+	std::cerr << "[FilteringSearcher] Queued: " << (statesEnqueued - statesDequeued) << "; Processed: " << statesDequeued << "; Filtered: " << statesFiltered << std::endl;
+
+	return searcher->selectState();
 }
 
 void FilteringSearcher::update(ExecutionState *current,
@@ -604,5 +601,8 @@ void FilteringSearcher::update(ExecutionState *current,
 		if ( filter->checkInstruction( (*((*it)->pc())).inst ) )
 			filteredRemovedStates.insert( *it );
 
+	statesEnqueued += filteredAddedStates.size();
+	statesDequeued += filteredRemovedStates.size();
+	statesFiltered += addedStates.size() - filteredAddedStates.size();
 	searcher->update(current, filteredAddedStates, filteredRemovedStates);
 }

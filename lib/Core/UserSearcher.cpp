@@ -87,9 +87,6 @@ namespace {
             cl::init(5.0));
 
 }
-cl::opt<bool>
-UseInstructionFiltering("use-instruction-filtering",
-               cl::desc("Filter out un-interesting instructions to prune the part of the CFG that is explored."));
 
 bool klee::userSearcherRequiresMD2U() {
   return (WeightType==WeightedRandomSearcher::MinDistToUncovered ||
@@ -169,10 +166,6 @@ Searcher *klee::constructUserSearcher(Executor &executor, Searcher *original) {
   
   if (UseIterativeDeepeningTimeSearch) {
     searcher = new IterativeDeepeningTimeSearcher(searcher);
-  }
-
-  if (UseInstructionFiltering) {
-    searcher = new FilteringSearcher(searcher);
   }
 
   std::ostream &os = executor.getHandler().getInfoStream();

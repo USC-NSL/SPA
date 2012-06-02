@@ -51,6 +51,7 @@
 #include "cloud9/worker/TreeNodeInfo.h"
 #include "cloud9/worker/JobManager.h"
 #include "cloud9/worker/WorkerCommon.h"
+#include "cloud9/worker/CoreStrategies.h"
 #include "cloud9/worker/KleeCommon.h"
 #include "cloud9/worker/CommManager.h"
 #include "cloud9/Utils.h"
@@ -333,11 +334,6 @@ namespace SPA {
 	void SPA::start() {
 		assert( (outputTerminalPaths || ! checkpoints.empty()) && "No points to output data from." );
 
-		if ( instructionFilter ) {
-			UseInstructionFiltering = true;
-			klee::FilteringSearcher::setInstructionFilter( instructionFilter );
-		}
-
 		generateMain();
 
 		int pArgc;
@@ -349,6 +345,18 @@ namespace SPA {
 		// Create the job manager
 		NoOutput = true;
 		theJobManager = new cloud9::worker::JobManager( module, "main", pArgc, pArgv, pEnvp );
+
+		if ( instructionFilter ) {
+			CLOUD9_INFO( "Replacing strategy stack with SPA filtering." );
+			theJobManager->setStrategy(
+				new cloud9::worker::RandomJobFromStateStrategy(
+					theJobManager->getTree(),
+					new cloud9::worker::KleeStrategy(
+						theJobManager->getTree(),
+						new klee::FilteringSearcher( new klee::DFSSearcher(), instructionFilter ) ),
+					theJobManager ) );
+		}
+
 		(dynamic_cast<cloud9::worker::SymbolicEngine*>(theJobManager->getInterpreter()))
 			->registerStateEventHandler( this );
 

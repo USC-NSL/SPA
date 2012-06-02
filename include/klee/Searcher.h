@@ -278,13 +278,14 @@ namespace klee {
 
   class FilteringSearcher : public Searcher {
 	Searcher *searcher;
-	static SPA::InstructionFilter *filter;
+	SPA::InstructionFilter *filter;
+	unsigned long statesEnqueued;
+	unsigned long statesDequeued;
+	unsigned long statesFiltered;
 
   public:
-    explicit FilteringSearcher(Searcher *_searcher);
+    explicit FilteringSearcher(Searcher *_searcher, SPA::InstructionFilter *_filter);
     ~FilteringSearcher();
-
-	static void setInstructionFilter(SPA::InstructionFilter *_filter);
 
     ExecutionState &selectState();
     void update(ExecutionState *current,

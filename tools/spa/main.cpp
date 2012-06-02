@@ -96,8 +96,9 @@ int main(int argc, char **argv, char **envp) {
 
 	// Find outputs.
 	fn = module->getFunction( SPA_CHECKPOINT_ANNOTATION_FUNCTION );
-	assert( fn && "Checkpoint annotation function not present in module." );
-	std::set<llvm::Instruction *> checkpoints = cg.getDefiniteCallers( fn );
+	std::set<llvm::Instruction *> checkpoints;
+	if ( fn )
+		checkpoints = cg.getDefiniteCallers( fn );
 	assert( ! checkpoints.empty() && "No message outputs found." );
 
 	// Create instruction filter.
