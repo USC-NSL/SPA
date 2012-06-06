@@ -123,15 +123,15 @@ int main(int argc, char **argv, char **envp) {
 		annotations[new SPA::WhitelistIF( checkpoints )] = "style = \"filled\" color = \"red\"";
 		annotations[new SPA::NegatedIF( &filter )] = "style = \"filled\"";
 
-// 		cfg.dump( dotFile, NULL, annotations );
-		cfg.dump( dotFile, &filter, annotations );
+		cfg.dump( dotFile, NULL, annotations );
+// 		cfg.dump( dotFile, &filter, annotations );
 
 		dotFile.flush();
 		dotFile.close();
 	}
 
 	spa.setPathFilter( new SpaPathFilter() );
-	spa.setOutputTerminalPaths( false );
+	spa.setOutputTerminalPaths( true );
 
 	CLOUD9_DEBUG( "Starting SPA." );
 	spa.start();

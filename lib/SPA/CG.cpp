@@ -19,14 +19,20 @@ namespace SPA {
 		for ( CFG::iterator it = cfg.begin(), ie = cfg.end(); it != ie; it++ ) {
 			// Check for CallInst or InvokeInst.
 			if ( const InvokeInst *ii = dyn_cast<InvokeInst>( *it ) ) {
-				if ( ii->getCalledFunction() )
+				if ( ii->getCalledFunction() ) {
 					functions.insert( ii->getCalledFunction() );
+					definiteCallees[*it].insert( ii->getCalledFunction() );
+					possibleCallees[*it].insert( ii->getCalledFunction() );
+				}
 				definiteCallers[ii->getCalledFunction()].insert( *it );
 				possibleCallers[ii->getCalledFunction()].insert( *it );
 			}
 			if ( const CallInst *ci = dyn_cast<CallInst>( *it ) ) {
-				if ( ci->getCalledFunction() )
+				if ( ci->getCalledFunction() ) {
 					functions.insert( ci->getCalledFunction() );
+					definiteCallees[*it].insert( ci->getCalledFunction() );
+					possibleCallees[*it].insert( ci->getCalledFunction() );
+				}
 				definiteCallers[ci->getCalledFunction()].insert( *it );
 				possibleCallers[ci->getCalledFunction()].insert( *it );
 			}
@@ -52,8 +58,11 @@ namespace SPA {
 					for ( i = 0; i < argTypes.size(); i++ )
 						if ( argTypes[i] != (*fit)->getFunctionType()->getParamType( i ) )
 							break;
-					if ( i == argTypes.size() )
+					if ( i == argTypes.size() ) {
+						// Found possible match.
 						possibleCallers[*fit].insert( *iit );
+						possibleCallees[*iit].insert( *fit );
+					}
 				}
 			}
 		}
