@@ -576,33 +576,31 @@ void InterleavedSearcher::update(ExecutionState *current,
 
 /***/
 
-FilteringSearcher::FilteringSearcher(Searcher *_searcher, SPA::InstructionFilter *_filter )
-  : searcher(_searcher), filter( _filter ), statesEnqueued( 0 ), statesDequeued( 0 ), statesFiltered( 0 ) {
+FilteringSearcher::FilteringSearcher( SPA::InstructionFilter *_filter )
+  : filter( _filter ), statesDequeued( 0 ), statesFiltered( 0 ) {
 }
 
-FilteringSearcher::~FilteringSearcher() {
-  delete searcher;
-}
+FilteringSearcher::~FilteringSearcher() {}
 
 ExecutionState &FilteringSearcher::selectState() {
-	std::cerr << "[FilteringSearcher] Queued: " << (statesEnqueued - statesDequeued) << "; Processed: " << statesDequeued << "; Filtered: " << statesFiltered << std::endl;
-
-	return searcher->selectState();
+	return *states.front();
 }
 
 void FilteringSearcher::update(ExecutionState *current,
                                  const std::set<ExecutionState*> &addedStates,
                                  const std::set<ExecutionState*> &removedStates) {
-	std::set<ExecutionState*> filteredAddedStates, filteredRemovedStates;
-	for ( std::set<ExecutionState*>::iterator it = addedStates.begin(), ie = addedStates.end(); it != ie; it++ )
-		if ( filter->checkInstruction( (*((*it)->pc())).inst ) )
-			filteredAddedStates.insert( *it );
+	for ( std::set<ExecutionState*>::iterator it = addedStates.begin(), ie = addedStates.end(); it != ie; it++ ) {
+		if ( states.empty() && filter->checkInstruction( (*((*it)->pc())).inst ) ) {
+			states.push_back( *it );
+		} else {
+			std::cerr << "[FilteringSearcher] Filtering instruction at " << (*((*it)->pc())).inst->getParent()->getParent()->getName().str() << ":" << (*((*it)->pc())).inst->getDebugLoc().getLine() << std::endl;
+			statesFiltered++;
+		}
+	}
 	for ( std::set<ExecutionState*>::iterator it = removedStates.begin(), ie = removedStates.end(); it != ie; it++ )
-		if ( filter->checkInstruction( (*((*it)->pc())).inst ) )
-			filteredRemovedStates.insert( *it );
+		states.remove( *it );
+	statesDequeued += removedStates.size();
 
-	statesEnqueued += filteredAddedStates.size();
-	statesDequeued += filteredRemovedStates.size();
-	statesFiltered += addedStates.size() - filteredAddedStates.size();
-	searcher->update(current, filteredAddedStates, filteredRemovedStates);
+	if ( addedStates.size() || removedStates.size() )
+		std::cerr << "[FilteringSearcher] Queued: " << states.size() << "; Processed: " << statesDequeued << "; Filtered: " << statesFiltered << std::endl;
 }

@@ -105,8 +105,8 @@ int main(int argc, char **argv, char **envp) {
 // 	SPA::IntersectionIF filter = SPA::IntersectionIF();
 // 	filter.addIF( new SPA::CFGForwardIF( cfg, cg, entryPoints ) );
 // 	filter.addIF( new SPA::CFGBackwardIF( cfg, cg, checkpoints ) );
-// 	SPA::CFGBackwardIF filter = SPA::CFGBackwardIF( cfg, cg, checkpoints );
-	SPA::DummyIF filter = SPA::DummyIF();
+	SPA::CFGBackwardIF filter = SPA::CFGBackwardIF( cfg, cg, checkpoints );
+// 	SPA::DummyIF filter = SPA::DummyIF();
 	spa.setInstructionFilter( &filter );
 
 	CLOUD9_DEBUG( "   Setting up path checkpoints." );

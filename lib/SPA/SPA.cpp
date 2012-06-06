@@ -353,7 +353,7 @@ namespace SPA {
 					theJobManager->getTree(),
 					new cloud9::worker::KleeStrategy(
 						theJobManager->getTree(),
-						new klee::FilteringSearcher( new klee::DFSSearcher(), instructionFilter ) ),
+						new klee::FilteringSearcher( instructionFilter ) ),
 					theJobManager ) );
 		}
 

@@ -11,6 +11,7 @@
 #define KLEE_SEARCHER_H
 
 #include <vector>
+#include <list>
 #include <set>
 #include <map>
 #include <queue>
@@ -277,25 +278,22 @@ namespace klee {
   };
 
   class FilteringSearcher : public Searcher {
-	Searcher *searcher;
 	SPA::InstructionFilter *filter;
-	unsigned long statesEnqueued;
+    std::list<ExecutionState *> states;
 	unsigned long statesDequeued;
 	unsigned long statesFiltered;
 
   public:
-    explicit FilteringSearcher(Searcher *_searcher, SPA::InstructionFilter *_filter);
+    explicit FilteringSearcher( SPA::InstructionFilter *_filter );
     ~FilteringSearcher();
 
     ExecutionState &selectState();
     void update(ExecutionState *current,
                 const std::set<ExecutionState*> &addedStates,
                 const std::set<ExecutionState*> &removedStates);
-    bool empty() { return searcher->empty(); }
+    bool empty() { return states.empty(); }
     void printName(std::ostream &os) {
-      os << "<FilteringSearcher> wrapped around:\n";
-      searcher->printName(os);
-      os << "</FilteringSearcher>\n";
+      os << "FilteringSearcher" << std::endl;
     }
   };
 }
