@@ -9,15 +9,15 @@ typedef void (*SpaRuntimeHandler_t)( va_list );
 
 #ifdef __cplusplus
 extern "C" {
-	void __attribute__((noinline,weak)) spa_api_entry() { asm(""); }
-	void __attribute__((noinline,weak)) spa_message_handler_entry() { asm(""); }
-	void __attribute__((noinline,weak)) spa_checkpoint() { asm(""); }
+	void __attribute__((noinline,weak)) spa_api_entry() { }
+	void __attribute__((noinline,weak)) spa_message_handler_entry() { }
+	void __attribute__((noinline,weak)) spa_checkpoint() { }
 	void __attribute__((noinline)) spa_runtime_call( SpaRuntimeHandler_t handler, ... );
 }
 #else // #ifdef __cplusplus
-void __attribute__((noinline,weak)) spa_api_entry() { asm(""); }
-void __attribute__((noinline,weak)) spa_message_handler_entry() { asm(""); }
-void __attribute__((noinline,weak)) spa_checkpoint() { asm(""); }
+void __attribute__((noinline,weak)) spa_api_entry() { }
+void __attribute__((noinline,weak)) spa_message_handler_entry() { }
+void __attribute__((noinline,weak)) spa_checkpoint() { }
 void __attribute__((noinline)) spa_runtime_call( SpaRuntimeHandler_t handler, ... );
 #endif// #ifdef __cplusplus #else
 
