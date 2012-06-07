@@ -590,7 +590,7 @@ void FilteringSearcher::update(ExecutionState *current,
                                  const std::set<ExecutionState*> &addedStates,
                                  const std::set<ExecutionState*> &removedStates) {
 	for ( std::set<ExecutionState*>::iterator it = addedStates.begin(), ie = addedStates.end(); it != ie; it++ ) {
-		if ( states.empty() && filter->checkInstruction( (*((*it)->pc())).inst ) ) {
+		if ( filter->checkInstruction( (*((*it)->pc())).inst ) ) {
 			states.push_back( *it );
 		} else {
 			std::cerr << "[FilteringSearcher] Filtering instruction at " << (*((*it)->pc())).inst->getParent()->getParent()->getName().str() << ":" << (*((*it)->pc())).inst->getDebugLoc().getLine() << std::endl;

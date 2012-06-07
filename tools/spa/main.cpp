@@ -63,20 +63,19 @@ int main(int argc, char **argv, char **envp) {
 	CLOUD9_INFO( "Pruning CFG." );
 
 	// Get full CFG and call-graph.
-	CLOUD9_DEBUG( "   Building CFG & CG." );
 	SPA::CFG cfg( module );
 	SPA::CG cg( cfg );
 
 	CLOUD9_DEBUG( "   Creating CFG filter." );
-	// Find entry points.
-	std::set<llvm::Instruction *> entryPoints;
+	// Find entry handlers.
 	Function *fn = module->getFunction( SPA_API_ANNOTATION_FUNCTION );
+	bool entryFound = false;
 	if ( fn ) {
 		std::set<llvm::Instruction *> apiCallers = cg.getDefiniteCallers( fn );
 		for ( std::set<llvm::Instruction *>::iterator it = apiCallers.begin(), ie = apiCallers.end(); it != ie; it++ ) {
 			CLOUD9_DEBUG( "      Found API entry function: " << (*it)->getParent()->getParent()->getName().str() );
 			spa.addEntryFunction( (*it)->getParent()->getParent() );
-			entryPoints.insert( &(*it)->getParent()->getParent()->front().front() );
+			entryFound = true;
 		}
 	} else {
 		CLOUD9_INFO( "      API annotation function not present in module." );
@@ -87,31 +86,32 @@ int main(int argc, char **argv, char **envp) {
 		for ( std::set<llvm::Instruction *>::iterator it = mhCallers.begin(), ie = mhCallers.end(); it != ie; it++ ) {
 			CLOUD9_DEBUG( "      Found message handler entry function: " << (*it)->getParent()->getParent()->getName().str() );
 			spa.addEntryFunction( (*it)->getParent()->getParent() );
-			entryPoints.insert( &(*it)->getParent()->getParent()->front().front() );
+			entryFound = true;
 		}
 	} else {
 		CLOUD9_INFO( "      Message handler annotation function not present in module." );
 	}
-	assert( ! entryPoints.empty() && "No APIs or message handlers found." );
+	assert( entryFound && "No APIs or message handlers found." );
 
-	// Find outputs.
+	// Find checkpoints.
+	CLOUD9_DEBUG( "   Setting up path checkpoints." );
 	fn = module->getFunction( SPA_CHECKPOINT_ANNOTATION_FUNCTION );
 	std::set<llvm::Instruction *> checkpoints;
 	if ( fn )
 		checkpoints = cg.getDefiniteCallers( fn );
 	assert( ! checkpoints.empty() && "No message outputs found." );
 
+	for ( std::set<llvm::Instruction *>::iterator it = checkpoints.begin(), ie = checkpoints.end(); it != ie; it++ )
+		spa.addCheckpoint( *it );
+
+	// Rebuild full CFG and call-graph (changed by SPA after adding init/entry handlers.).
+	cfg = SPA::CFG( module );
+	cg = SPA::CG( cfg );
+
 	// Create instruction filter.
-// 	SPA::IntersectionIF filter = SPA::IntersectionIF();
-// 	filter.addIF( new SPA::CFGForwardIF( cfg, cg, entryPoints ) );
-// 	filter.addIF( new SPA::CFGBackwardIF( cfg, cg, checkpoints ) );
 	SPA::CFGBackwardIF filter = SPA::CFGBackwardIF( cfg, cg, checkpoints );
 // 	SPA::DummyIF filter = SPA::DummyIF();
 	spa.setInstructionFilter( &filter );
-
-	CLOUD9_DEBUG( "   Setting up path checkpoints." );
-	for ( std::set<llvm::Instruction *>::iterator it = checkpoints.begin(), ie = checkpoints.end(); it != ie; it++ )
-		spa.addCheckpoint( *it );
 
 	if ( DumpCFG.size() > 0 ) {
 		CLOUD9_DEBUG( "Dumping CFG to: " << DumpCFG.getValue() );
@@ -119,7 +119,6 @@ int main(int argc, char **argv, char **envp) {
 		assert( dotFile.is_open() && "Unable to open dump file." );
 
 		std::map<SPA::InstructionFilter *, std::string> annotations;
-		annotations[new SPA::WhitelistIF( entryPoints )] = "style = \"filled\" color = \"green\"";
 		annotations[new SPA::WhitelistIF( checkpoints )] = "style = \"filled\" color = \"red\"";
 		annotations[new SPA::NegatedIF( &filter )] = "style = \"filled\"";
 
