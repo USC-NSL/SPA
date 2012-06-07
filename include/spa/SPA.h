@@ -10,6 +10,7 @@
 #include <map>
 
 #include <llvm/Module.h>
+#include "llvm/Instructions.h"
 
 #include <cloud9/worker/SymbolicEngine.h>
 
