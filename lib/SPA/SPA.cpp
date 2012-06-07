@@ -61,7 +61,8 @@
 #include <spa/Path.h>
 
 #define MAIN_ENTRY_FUNCTION	"__user_main"
-#define OLD_ENTRY_FUNCTION	"__spa_old_user_main"
+#define ALTERNATIVE_MAIN_ENTRY_FUNCTION	"main"
+#define OLD_ENTRY_FUNCTION	"__spa_old_main"
 #define KLEE_INT_FUNCTION	"klee_int"
 #define HANDLER_ID_VAR_NAME	"spa_internal_HanderID"
 extern cl::opt<double> MaxTime;
@@ -254,11 +255,15 @@ namespace SPA {
 	void SPA::generateMain() {
 		// Rename old main function
 		llvm::Function *oldEntryFunction = module->getFunction( MAIN_ENTRY_FUNCTION );
+		if ( ! oldEntryFunction )
+			oldEntryFunction = module->getFunction( ALTERNATIVE_MAIN_ENTRY_FUNCTION );
+		assert( oldEntryFunction && "No main function found to replace." );
+		std::string entryFunctionName = oldEntryFunction->getName().str();
 		oldEntryFunction->setName( OLD_ENTRY_FUNCTION );
 		// Create new one.
 		entryFunction = llvm::Function::Create(
 			oldEntryFunction->getFunctionType(),
-			llvm::GlobalValue::ExternalLinkage, MAIN_ENTRY_FUNCTION, module );
+			llvm::GlobalValue::ExternalLinkage, entryFunctionName, module );
 		entryFunction->setCallingConv( llvm::CallingConv::C );
 		// Replace the old with the new.
 		oldEntryFunction->replaceAllUsesWith( entryFunction );
