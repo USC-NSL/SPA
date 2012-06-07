@@ -38,8 +38,11 @@ namespace SPA {
 	class SPA : public cloud9::worker::StateEventHandler {
 	private:
 		llvm::Module *module;
-		std::list<llvm::Function *> initFunctions;
-		std::list<llvm::Function *> entryFunctions;
+		llvm::Function *entryFunction;
+		llvm::Instruction *initHandlerPlaceHolder;
+		llvm::SwitchInst *entrySwitchInst;
+		uint32_t handlerID;
+		llvm::BasicBlock *entryReturnBB;
 		std::set<llvm::Instruction *> checkpoints;
 		bool outputTerminalPaths;
 		InstructionFilter *instructionFilter;
@@ -50,8 +53,8 @@ namespace SPA {
 
 	public:
 		SPA( llvm::Module *_module, std::ostream &_output );
-		void addInitFunction( llvm::Function *fn ) { initFunctions.push_back( fn ); }
-		void addEntryFunction( llvm::Function *fn ) { entryFunctions.push_back( fn ); }
+		void addInitFunction( llvm::Function *fn );
+		void addEntryFunction( llvm::Function *fn );
 		void setInstructionFilter( InstructionFilter *_instructionFilter ) { instructionFilter = _instructionFilter; }
 		void setPathFilter( PathFilter *_pathFilter ) { pathFilter = _pathFilter; }
 		void addCheckpoint( llvm::Instruction *instruction ) { checkpoints.insert( instruction ); }

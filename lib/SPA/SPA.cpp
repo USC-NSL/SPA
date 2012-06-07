@@ -231,6 +231,8 @@ namespace SPA {
 
 		// Take care of Ctrl+C requests
 		sys::SetInterruptFunction(interrupt_handle);
+
+		generateMain();
 	}
 
 	/**
@@ -254,7 +256,7 @@ namespace SPA {
 		llvm::Function *oldEntryFunction = module->getFunction( MAIN_ENTRY_FUNCTION );
 		oldEntryFunction->setName( OLD_ENTRY_FUNCTION );
 		// Create new one.
-		llvm::Function *entryFunction = llvm::Function::Create(
+		entryFunction = llvm::Function::Create(
 			oldEntryFunction->getFunctionType(),
 			llvm::GlobalValue::ExternalLinkage, MAIN_ENTRY_FUNCTION, module );
 		entryFunction->setCallingConv( llvm::CallingConv::C );
@@ -270,17 +272,11 @@ namespace SPA {
 
 		// Create the entry and return basic blocks.
 		llvm::BasicBlock* entryBB = llvm::BasicBlock::Create( module->getContext(), "", entryFunction, 0);
-		llvm::BasicBlock* returnBB = llvm::BasicBlock::Create( module->getContext(), "", entryFunction, 0);
+		entryReturnBB = llvm::BasicBlock::Create( module->getContext(), "", entryFunction, 0);
 
 		// Allocate arguments.
 		new llvm::StoreInst( argcVar, new llvm::AllocaInst( llvm::IntegerType::get( module->getContext(), 32 ), "", entryBB ), false, entryBB );
 		new llvm::StoreInst( argvVar, new llvm::AllocaInst( llvm::PointerType::get( llvm::PointerType::get( llvm::IntegerType::get( module->getContext(), 8 ), 0 ), 0 ), "", entryBB ), false, entryBB );
-		// Init functions;
-		for ( std::list<llvm::Function *>::iterator it = initFunctions.begin(), ie = initFunctions.end(); it != ie; it++ ) {
-			llvm::CallInst *initCall = llvm::CallInst::Create( *it, "", entryBB);
-			initCall->setCallingConv(llvm::CallingConv::C);
-			initCall->setTailCall(false);
-		}
 		// Get klee_int function.
 		llvm::Function *kleeIntFunction = module->getFunction( KLEE_INT_FUNCTION );
 		if ( ! kleeIntFunction ) {
@@ -309,32 +305,40 @@ namespace SPA {
 			"", entryBB);
 		kleeIntCall->setCallingConv(llvm::CallingConv::C);
 		kleeIntCall->setTailCall(false);
+		// Init handlers will be later added before this point.
+		initHandlerPlaceHolder = kleeIntCall;
 		// switch ( handlerID )
-		llvm::SwitchInst* switchInst = llvm::SwitchInst::Create( kleeIntCall, returnBB, entryFunctions.size() + 1, entryBB );
-		// case x:
-		uint32_t handlerID = 1;
-		for ( std::list<llvm::Function *>::iterator it = entryFunctions.begin(), ie = entryFunctions.end(); it != ie; it++ ) {
-			// Create basic block for this case.
-			llvm::BasicBlock *swBB = llvm::BasicBlock::Create( module->getContext(), "", entryFunction, 0 );
-			switchInst->addCase( llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, handlerID++, true ) ), swBB );
-			// handlerx();
-			llvm::CallInst *handlerCallInst = llvm::CallInst::Create( *it, "", swBB );
-			handlerCallInst->setCallingConv( llvm::CallingConv::C );
-			handlerCallInst->setTailCall( false );
-			// break;
-			llvm::BranchInst::Create(returnBB, swBB);
-		}
+		entrySwitchInst = llvm::SwitchInst::Create( kleeIntCall, entryReturnBB, 1, entryBB );
+		// Entry handlers will be later added starting with id = 1.
+		handlerID = 1;
 		// return 0;
-		llvm::ReturnInst::Create( module->getContext(), llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, 0, true ) ), returnBB );
+		llvm::ReturnInst::Create( module->getContext(), llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, 0, true ) ), entryReturnBB );
 
 // 		module->dump();
 		// 		entryFunction->dump();
 	}
 
+	void SPA::addInitFunction( llvm::Function *fn ) {
+		llvm::CallInst *initCall = llvm::CallInst::Create( fn, "", initHandlerPlaceHolder );
+		initCall->setCallingConv(llvm::CallingConv::C);
+		initCall->setTailCall(false);
+	}
+
+	void SPA::addEntryFunction( llvm::Function *fn ) {
+		// case x:
+		// Create basic block for this case.
+		llvm::BasicBlock *swBB = llvm::BasicBlock::Create( module->getContext(), "", entryFunction, 0 );
+		entrySwitchInst->addCase( llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, handlerID++, true ) ), swBB );
+		// handlerx();
+		llvm::CallInst *handlerCallInst = llvm::CallInst::Create( fn, "", swBB );
+		handlerCallInst->setCallingConv( llvm::CallingConv::C );
+		handlerCallInst->setTailCall( false );
+		// break;
+		llvm::BranchInst::Create(entryReturnBB, swBB);
+	}
+
 	void SPA::start() {
 		assert( (outputTerminalPaths || ! checkpoints.empty()) && "No points to output data from." );
-
-		generateMain();
 
 		int pArgc;
 		char **pArgv;
