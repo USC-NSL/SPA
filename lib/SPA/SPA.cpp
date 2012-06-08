@@ -58,6 +58,7 @@
 #include "cloud9/instrum/InstrumentationManager.h"
 
 #include <spa/SPA.h>
+#include <spa/SpaSearcher.h>
 #include <spa/Path.h>
 
 #define MAIN_ENTRY_FUNCTION	"__user_main"
@@ -362,7 +363,7 @@ namespace SPA {
 					theJobManager->getTree(),
 					new cloud9::worker::KleeStrategy(
 						theJobManager->getTree(),
-						new klee::FilteringSearcher( instructionFilter ) ),
+						new SpaSearcher( instructionFilter ) ),
 					theJobManager ) );
 		}
 

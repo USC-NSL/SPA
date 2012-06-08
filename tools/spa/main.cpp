@@ -37,12 +37,12 @@ namespace {
 		"Sets the output path file."));
 }
 
-class SpaPathFilter : public SPA::PathFilter {
-public:
-	bool checkPath( SPA::Path &path ) {
-		return ! path.getTag( SPA_OUTPUT_TAG ).empty();
-	}
-};
+// class SpaPathFilter : public SPA::PathFilter {
+// public:
+// 	bool checkPath( SPA::Path &path ) {
+// 		return ! path.getTag( SPA_OUTPUT_TAG ).empty();
+// 	}
+// };
 
 int main(int argc, char **argv, char **envp) {
 	// Fill up every global cl::opt object declared in the program
@@ -94,7 +94,7 @@ int main(int argc, char **argv, char **envp) {
 	assert( entryFound && "No APIs or message handlers found." );
 
 	// Find checkpoints.
-	CLOUD9_DEBUG( "   Setting up path checkpoints." );
+	CLOUD9_DEBUG( "      Setting up path checkpoints." );
 	fn = module->getFunction( SPA_CHECKPOINT_ANNOTATION_FUNCTION );
 	std::set<llvm::Instruction *> checkpoints;
 	if ( fn )
@@ -109,6 +109,7 @@ int main(int argc, char **argv, char **envp) {
 	cg = SPA::CG( cfg );
 
 	// Create instruction filter.
+	CLOUD9_DEBUG( "      Building filter." );
 	SPA::CFGBackwardIF filter = SPA::CFGBackwardIF( cfg, cg, checkpoints );
 // 	SPA::DummyIF filter = SPA::DummyIF();
 	spa.setInstructionFilter( &filter );
@@ -129,7 +130,7 @@ int main(int argc, char **argv, char **envp) {
 		dotFile.close();
 	}
 
-	spa.setPathFilter( new SpaPathFilter() );
+// 	spa.setPathFilter( new SpaPathFilter() );
 	spa.setOutputTerminalPaths( true );
 
 	CLOUD9_DEBUG( "Starting SPA." );

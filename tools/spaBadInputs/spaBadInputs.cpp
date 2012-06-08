@@ -44,6 +44,13 @@ public:
 	}
 };
 
+class OutputPathFilter : public SPA::PathFilter {
+public:
+	bool checkPath( SPA::Path &path ) {
+		return ! path.getTag( SPA_OUTPUT_TAG ).empty();
+	}
+};
+
 void showConstraints( klee::ConstraintManager &cm ) {
 	for ( klee::ConstraintManager::const_iterator it = cm.begin(), ie = cm.end(); it != ie; it++ )
 		std::cerr << *it << std::endl;
@@ -58,11 +65,12 @@ int main(int argc, char **argv, char **envp) {
 	std::ifstream pathFile( ClientPathFile.getValue().c_str() );
 	assert( pathFile.is_open() && "Unable to open path file." );
 	SPA::PathLoader clientPathLoader( pathFile );
+	clientPathLoader.setFilter( new OutputPathFilter() );
 	std::set<SPA::Path *> clientPaths;
 	while ( SPA::Path *path = clientPathLoader.getPath() )
 		clientPaths.insert( path );
 	pathFile.close();
-	std::cerr << "Found " << clientPaths.size() << " client paths." << std::endl;
+	std::cerr << "Found " << clientPaths.size() << " client paths with outputs." << std::endl;
 	
 	assert( ServerPathFile.size() > 0 && "No server path file specified." );
 	std::cerr << "Loading server path data." << std::endl;
