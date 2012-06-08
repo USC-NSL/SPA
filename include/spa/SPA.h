@@ -31,9 +31,12 @@
 #define SPA_API_OUTPUT_PREFIX		SPA_OUTPUT_PREFIX "api_"
 #define SPA_MESSAGE_OUTPUT_PREFIX	SPA_OUTPUT_PREFIX "msg_"
 
-#define SPA_OUTPUT_TAG		"Output"
-#define SPA_VALIDPATH_TAG	"ValidPath"
-#define SPA_VALIDPATH_VALUE	"1"
+#define SPA_HANDLERTYPE_TAG			"HandlerType"
+#define SPA_MESSAGEHANDLER_VALUE	"Message"
+#define SPA_APIHANDLER_VALUE		"API"
+#define SPA_OUTPUT_TAG				"Output"
+#define SPA_VALIDPATH_TAG			"ValidPath"
+#define SPA_VALIDPATH_VALUE			"1"
 
 namespace SPA {
 	class SPA : public cloud9::worker::StateEventHandler {

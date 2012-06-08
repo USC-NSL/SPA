@@ -37,17 +37,19 @@ namespace {
 		"Specifies the server path file."));
 }
 
-class InvalidPathFilter : public SPA::PathFilter {
+class ClientPathFilter : public SPA::PathFilter {
 public:
 	bool checkPath( SPA::Path &path ) {
-		return path.getTag( SPA_VALIDPATH_TAG ) != SPA_VALIDPATH_VALUE;
+		return path.getTag( SPA_HANDLERTYPE_TAG ) == SPA_APIHANDLER_VALUE &&
+			! path.getTag( SPA_OUTPUT_TAG ).empty();
 	}
 };
 
-class OutputPathFilter : public SPA::PathFilter {
+class ServerPathFilter : public SPA::PathFilter {
 public:
 	bool checkPath( SPA::Path &path ) {
-		return ! path.getTag( SPA_OUTPUT_TAG ).empty();
+		return path.getTag( SPA_HANDLERTYPE_TAG ) == SPA_MESSAGEHANDLER_VALUE &&
+			path.getTag( SPA_VALIDPATH_TAG ) != SPA_VALIDPATH_VALUE;
 	}
 };
 
@@ -65,7 +67,7 @@ int main(int argc, char **argv, char **envp) {
 	std::ifstream pathFile( ClientPathFile.getValue().c_str() );
 	assert( pathFile.is_open() && "Unable to open path file." );
 	SPA::PathLoader clientPathLoader( pathFile );
-	clientPathLoader.setFilter( new OutputPathFilter() );
+	clientPathLoader.setFilter( new ClientPathFilter() );
 	std::set<SPA::Path *> clientPaths;
 	while ( SPA::Path *path = clientPathLoader.getPath() )
 		clientPaths.insert( path );
@@ -77,7 +79,7 @@ int main(int argc, char **argv, char **envp) {
 	pathFile.open( ServerPathFile.getValue().c_str() );
 	assert( pathFile.is_open() && "Unable to open path file." );
 	SPA::PathLoader serverPathLoader( pathFile );
-	serverPathLoader.setFilter( new InvalidPathFilter() );
+	serverPathLoader.setFilter( new ServerPathFilter() );
 	std::set<SPA::Path *> serverPaths;
 	while ( SPA::Path *path = serverPathLoader.getPath() )
 		serverPaths.insert( path );
