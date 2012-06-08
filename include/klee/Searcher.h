@@ -276,26 +276,6 @@ namespace klee {
       os << "</InterleavedSearcher>\n";
     }
   };
-
-  class FilteringSearcher : public Searcher {
-	SPA::InstructionFilter *filter;
-    std::list<ExecutionState *> states;
-	unsigned long statesDequeued;
-	unsigned long statesFiltered;
-
-  public:
-    explicit FilteringSearcher( SPA::InstructionFilter *_filter );
-    ~FilteringSearcher();
-
-    ExecutionState &selectState();
-    void update(ExecutionState *current,
-                const std::set<ExecutionState*> &addedStates,
-                const std::set<ExecutionState*> &removedStates);
-    bool empty() { return states.empty(); }
-    void printName(std::ostream &os) {
-      os << "FilteringSearcher" << std::endl;
-    }
-  };
 }
 
 #endif

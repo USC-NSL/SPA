@@ -573,34 +573,3 @@ void InterleavedSearcher::update(ExecutionState *current,
          ie = searchers.end(); it != ie; ++it)
     (*it)->update(current, addedStates, removedStates);
 }
-
-/***/
-
-FilteringSearcher::FilteringSearcher( SPA::InstructionFilter *_filter )
-  : filter( _filter ), statesDequeued( 0 ), statesFiltered( 0 ) {
-}
-
-FilteringSearcher::~FilteringSearcher() {}
-
-ExecutionState &FilteringSearcher::selectState() {
-	return *states.front();
-}
-
-void FilteringSearcher::update(ExecutionState *current,
-                                 const std::set<ExecutionState*> &addedStates,
-                                 const std::set<ExecutionState*> &removedStates) {
-	for ( std::set<ExecutionState*>::iterator it = addedStates.begin(), ie = addedStates.end(); it != ie; it++ ) {
-		if ( filter->checkInstruction( (*((*it)->pc())).inst ) ) {
-			states.push_back( *it );
-		} else {
-			std::cerr << "[FilteringSearcher] Filtering instruction at " << (*((*it)->pc())).inst->getParent()->getParent()->getName().str() << ":" << (*((*it)->pc())).inst->getDebugLoc().getLine() << std::endl;
-			statesFiltered++;
-		}
-	}
-	for ( std::set<ExecutionState*>::iterator it = removedStates.begin(), ie = removedStates.end(); it != ie; it++ )
-		states.remove( *it );
-	statesDequeued += removedStates.size();
-
-	if ( addedStates.size() || removedStates.size() )
-		std::cerr << "[FilteringSearcher] Queued: " << states.size() << "; Processed: " << statesDequeued << "; Filtered: " << statesFiltered << std::endl;
-}
