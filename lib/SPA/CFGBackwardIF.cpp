@@ -26,16 +26,16 @@ namespace SPA {
 			for ( it = p.begin(), ie = p.end(); it != ie; it++ )
 				if ( reaching.count( *it ) == 0 )
 					worklist.insert( *it );
-				// Add possible called functions to function work list (maybe a call-site).
-				fnWorklist.insert( cg.getPossibleCallees( inst ).begin(), cg.getPossibleCallees( inst ).end() );
-				// Check if entry instruction.
-				if ( inst == &(inst->getParent()->getParent()->getEntryBlock().front()) ) {
-					p = cg.getPossibleCallers( inst->getParent()->getParent() );
-					// Add all non-reaching callers to work list.
-					for ( it = p.begin(), ie = p.end(); it != ie; it++ )
-						if ( reaching.count( *it ) == 0 )
-							worklist.insert( *it );
-				}
+			// Add possible called functions to function work list (maybe a call-site).
+			fnWorklist.insert( cg.getPossibleCallees( inst ).begin(), cg.getPossibleCallees( inst ).end() );
+			// Check if entry instruction.
+			if ( inst == &(inst->getParent()->getParent()->getEntryBlock().front()) ) {
+				p = cg.getPossibleCallers( inst->getParent()->getParent() );
+				// Add all non-reaching callers to work list.
+				for ( it = p.begin(), ie = p.end(); it != ie; it++ )
+					if ( reaching.count( *it ) == 0 )
+						worklist.insert( *it );
+			}
 		}
 
 		while ( ! fnWorklist.empty() ) {
