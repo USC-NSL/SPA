@@ -194,11 +194,9 @@ namespace SPA {
 	}
 
 	SPA::SPA( llvm::Module *_module, std::ostream &_output ) :
-		module( _module ),
-		outputTerminalPaths( true ),
-		instructionFilter( NULL ),
-		pathFilter( NULL ),
-		output( _output ) {
+		module( _module ), output( _output ),
+		instructionFilter( NULL ), pathFilter( NULL ), outputTerminalPaths( true ),
+		checkpointsFound( 0 ), terminalPathsFound( 0 ), outputtedPaths( 0 ) {
 
 		// Make sure to clean up properly before any exit point in the program
 		atexit(llvm::llvm_shutdown);
@@ -400,17 +398,22 @@ namespace SPA {
 
 		if ( event == cloud9::worker::STEP && checkpoints.count( kState->pc()->inst ) ) {
 			CLOUD9_DEBUG( "Processing checkpoint path." );
+			checkpointsFound++;
 
 			Path path( kState );
 
 			if ( ! pathFilter || pathFilter->checkPath( path ) ) {
 				CLOUD9_DEBUG( "Outputting path." );
 				output << path;
+				outputtedPaths++;
 			}
+
 		}
 	}
 
 	void SPA::onStateDestroy(klee::ExecutionState *kState, bool silenced) {
+		terminalPathsFound++;
+
 		if ( outputTerminalPaths ) {
 			assert( kState );
 
@@ -421,7 +424,13 @@ namespace SPA {
 			if ( ! pathFilter || pathFilter->checkPath( path ) ) {
 				CLOUD9_DEBUG( "Outputting path." );
 				output << path;
+				outputtedPaths++;
 			}
+
+			CLOUD9_DEBUG( "Checkpoints: " << checkpointsFound
+				<< "; TerminalPaths: " << terminalPathsFound
+				<< "; Outputted: " << outputtedPaths
+				<< "; Filtered: " << (checkpointsFound + terminalPathsFound - outputtedPaths) );
 		}
 	}
 }

@@ -47,11 +47,13 @@ namespace SPA {
 		llvm::SwitchInst *entrySwitchInst;
 		uint32_t handlerID;
 		llvm::BasicBlock *entryReturnBB;
+		std::ostream &output;
 		std::set<llvm::Instruction *> checkpoints;
-		bool outputTerminalPaths;
 		InstructionFilter *instructionFilter;
 		PathFilter *pathFilter;
-		std::ostream &output;
+		bool outputTerminalPaths;
+
+		unsigned long checkpointsFound, terminalPathsFound, outputtedPaths;
 
 		void generateMain();
 
