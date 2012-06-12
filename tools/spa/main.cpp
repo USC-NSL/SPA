@@ -133,6 +133,7 @@ int main(int argc, char **argv, char **envp) {
 		CLOUD9_DEBUG( "      Building filter." );
 		filter = new SPA::CFGBackwardIF( cfg, cg, checkpoints );
 		spa.setInstructionFilter( filter );
+		spa.setOutputFilteredPaths( false );
 	}
 
 	if ( DumpCFG.size() > 0 ) {

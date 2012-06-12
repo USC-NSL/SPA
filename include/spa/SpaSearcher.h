@@ -8,6 +8,7 @@
 #include <klee/Searcher.h>
 
 #include <spa/InstructionFilter.h>
+#include <spa/FilteringEventHandler.h>
 
 
 namespace SPA {
@@ -15,12 +16,15 @@ namespace SPA {
 	private:
 		InstructionFilter *filter;
 		std::list<klee::ExecutionState *> states;
+		std::list<FilteringEventHandler *> filteringEventHandlers;
 		unsigned long statesDequeued;
 		unsigned long statesFiltered;
 
 	public:
-		explicit SpaSearcher( InstructionFilter *_filter );
-		~SpaSearcher();
+		explicit SpaSearcher( InstructionFilter *_filter )
+			: filter( _filter ), statesDequeued( 0 ), statesFiltered( 0 ) { };
+		void addFilteringEventHandler( FilteringEventHandler *handler ) { filteringEventHandlers.push_back( handler ); }
+		~SpaSearcher() { };
 
 		klee::ExecutionState &selectState();
 		void update( klee::ExecutionState *current, const std::set<klee::ExecutionState *> &addedStates, const std::set<klee::ExecutionState *> &removedStates );

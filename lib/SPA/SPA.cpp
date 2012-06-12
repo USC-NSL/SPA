@@ -195,8 +195,9 @@ namespace SPA {
 
 	SPA::SPA( llvm::Module *_module, std::ostream &_output ) :
 		module( _module ), output( _output ),
-		instructionFilter( NULL ), pathFilter( NULL ), outputTerminalPaths( true ),
-		checkpointsFound( 0 ), terminalPathsFound( 0 ), outputtedPaths( 0 ) {
+		instructionFilter( NULL ),
+		pathFilter( NULL ), outputFilteredPaths( true ), outputTerminalPaths( true ),
+		checkpointsFound( 0 ), filteredPathsFound( 0 ), terminalPathsFound( 0 ), outputtedPaths( 0 ) {
 
 		// Make sure to clean up properly before any exit point in the program
 		atexit(llvm::llvm_shutdown);
@@ -393,21 +394,26 @@ namespace SPA {
 		theJobManager = NULL;
 	}
 
-	void SPA::onControlFlowEvent( klee::ExecutionState *kState, cloud9::worker::ControlFlowEvent event ) {
-		assert( kState );
+	void SPA::processPath( klee::ExecutionState *state ) {
+		Path path( state );
 
+		if ( ! pathFilter || pathFilter->checkPath( path ) ) {
+			CLOUD9_DEBUG( "Outputting path." );
+			output << path;
+			outputtedPaths++;
+		}
+
+		CLOUD9_DEBUG( "Checkpoints: " << checkpointsFound
+			<< "; TerminalPaths: " << terminalPathsFound
+			<< "; Outputted: " << outputtedPaths
+			<< "; Filtered: " << (checkpointsFound + terminalPathsFound - outputtedPaths) );
+	}
+
+	void SPA::onControlFlowEvent( klee::ExecutionState *kState, cloud9::worker::ControlFlowEvent event ) {
 		if ( event == cloud9::worker::STEP && checkpoints.count( kState->pc()->inst ) ) {
 			CLOUD9_DEBUG( "Processing checkpoint path." );
 			checkpointsFound++;
-
-			Path path( kState );
-
-			if ( ! pathFilter || pathFilter->checkPath( path ) ) {
-				CLOUD9_DEBUG( "Outputting path." );
-				output << path;
-				outputtedPaths++;
-			}
-
+			processPath( kState );
 		}
 	}
 
@@ -419,18 +425,19 @@ namespace SPA {
 
 			CLOUD9_DEBUG( "Processing terminal path." );
 
-			Path path( kState );
+			processPath( kState );
+		}
+	}
 
-			if ( ! pathFilter || pathFilter->checkPath( path ) ) {
-				CLOUD9_DEBUG( "Outputting path." );
-				output << path;
-				outputtedPaths++;
-			}
+	void SPA::onStateFiltered( klee::ExecutionState *state ) {
+		filteredPathsFound++;
 
-			CLOUD9_DEBUG( "Checkpoints: " << checkpointsFound
-				<< "; TerminalPaths: " << terminalPathsFound
-				<< "; Outputted: " << outputtedPaths
-				<< "; Filtered: " << (checkpointsFound + terminalPathsFound - outputtedPaths) );
+		if ( outputFilteredPaths ) {
+			assert( state );
+
+			CLOUD9_DEBUG( "Processing filtered path." );
+
+			processPath( state );
 		}
 	}
 }

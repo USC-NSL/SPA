@@ -10,20 +10,17 @@
 #include <llvm/BasicBlock.h>
 
 namespace SPA {
-	SpaSearcher::SpaSearcher( InstructionFilter *_filter )
-		: filter( _filter ), statesDequeued( 0 ), statesFiltered( 0 ) { }
-
-	SpaSearcher::~SpaSearcher() { }
-
 	klee::ExecutionState &SpaSearcher::selectState() { return *states.front(); }
 
 	void SpaSearcher::update( klee::ExecutionState *current, const std::set<klee::ExecutionState *> &addedStates, const std::set<klee::ExecutionState *> &removedStates) {
-		for ( std::set<klee::ExecutionState*>::iterator it = addedStates.begin(), ie = addedStates.end(); it != ie; it++ ) {
-			if ( filter->checkInstruction( (*((*it)->pc())).inst ) ) {
-				states.push_back( *it );
+		for ( std::set<klee::ExecutionState*>::iterator sit = addedStates.begin(), sie = addedStates.end(); sit != sie; sit++ ) {
+			if ( filter->checkInstruction( (*((*sit)->pc())).inst ) ) {
+				states.push_back( *sit );
 			} else {
-				std::cerr << "[SpaSearcher] Filtering instruction at " << (*((*it)->pc())).inst->getParent()->getParent()->getName().str() << ":" << (*((*it)->pc())).inst->getDebugLoc().getLine() << std::endl;
+				std::cerr << "[SpaSearcher] Filtering instruction at " << (*((*sit)->pc())).inst->getParent()->getParent()->getName().str() << ":" << (*((*sit)->pc())).inst->getDebugLoc().getLine() << std::endl;
 				statesFiltered++;
+				for ( std::list<FilteringEventHandler *>::iterator hit = filteringEventHandlers.begin(), hie = filteringEventHandlers.end(); sit != sie; sit++ )
+					(*hit)->onStateFiltered( *sit );
 			}
 		}
 		for ( std::set<klee::ExecutionState *>::iterator it = removedStates.begin(), ie = removedStates.end(); it != ie; it++ )

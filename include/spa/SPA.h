@@ -15,6 +15,7 @@
 #include <cloud9/worker/SymbolicEngine.h>
 
 #include <spa/InstructionFilter.h>
+#include <spa/FilteringEventHandler.h>
 #include <spa/PathFilter.h>
 
 #define SPA_API_ANNOTATION_FUNCTION				"spa_api_entry"
@@ -39,7 +40,7 @@
 #define SPA_VALIDPATH_VALUE			"1"
 
 namespace SPA {
-	class SPA : public cloud9::worker::StateEventHandler {
+	class SPA : public cloud9::worker::StateEventHandler, FilteringEventHandler {
 	private:
 		llvm::Module *module;
 		llvm::Function *entryFunction;
@@ -51,11 +52,13 @@ namespace SPA {
 		std::set<llvm::Instruction *> checkpoints;
 		InstructionFilter *instructionFilter;
 		PathFilter *pathFilter;
+		bool outputFilteredPaths;
 		bool outputTerminalPaths;
 
-		unsigned long checkpointsFound, terminalPathsFound, outputtedPaths;
+		unsigned long checkpointsFound, filteredPathsFound, terminalPathsFound, outputtedPaths;
 
 		void generateMain();
+		void processPath( klee::ExecutionState *state );
 
 	public:
 		SPA( llvm::Module *_module, std::ostream &_output );
@@ -64,6 +67,7 @@ namespace SPA {
 		void setInstructionFilter( InstructionFilter *_instructionFilter ) { instructionFilter = _instructionFilter; }
 		void setPathFilter( PathFilter *_pathFilter ) { pathFilter = _pathFilter; }
 		void addCheckpoint( llvm::Instruction *instruction ) { checkpoints.insert( instruction ); }
+		void setOutputFilteredPaths( bool _outputFilteredPaths ) { outputFilteredPaths = _outputFilteredPaths; }
 		void setOutputTerminalPaths( bool _outputTerminalPaths ) { outputTerminalPaths = _outputTerminalPaths; }
 		void start();
 
@@ -75,6 +79,7 @@ namespace SPA {
 
 		void onControlFlowEvent(klee::ExecutionState *kState, cloud9::worker::ControlFlowEvent event);
 		void onStateDestroy(klee::ExecutionState *kState, bool silenced);
+		void onStateFiltered( klee::ExecutionState *state );
 	};
 }
 

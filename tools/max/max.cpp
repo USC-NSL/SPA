@@ -104,6 +104,7 @@ int main(int argc, char **argv, char **envp) {
 	}
 
 	spa.setPathFilter( new MaxPathFilter() );
+	spa.setOutputFilteredPaths( false );
 	spa.setOutputTerminalPaths( false );
 
 	CLOUD9_DEBUG( "Starting SPA." );
