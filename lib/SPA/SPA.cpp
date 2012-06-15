@@ -68,7 +68,6 @@
 #define HANDLER_ID_VAR_NAME	"spa_internal_HanderID"
 extern cl::opt<double> MaxTime;
 extern cl::opt<bool> NoOutput;
-extern cl::opt<bool> UseInstructionFiltering;
 
 namespace {
 	cl::opt<bool> StandAlone("stand-alone",
@@ -343,7 +342,8 @@ namespace SPA {
 	}
 
 	void SPA::start() {
-		assert( (outputTerminalPaths || ! checkpoints.empty()) && "No points to output data from." );
+		assert( (outputFilteredPaths || outputTerminalPaths || ! checkpoints.empty()) && "No points to output data from." );
+		assert( ((! instructionFilter) || instructionFilter->checkInstruction( &module->getFunction( "main" )->getEntryBlock().front() )) && "main function is filtered out." );
 
 		int pArgc;
 		char **pArgv;
@@ -355,14 +355,16 @@ namespace SPA {
 		NoOutput = true;
 		theJobManager = new cloud9::worker::JobManager( module, "main", pArgc, pArgv, pEnvp );
 
-		if ( instructionFilter ) {
-			CLOUD9_INFO( "Replacing strategy stack with SPA filtering." );
+		if ( instructionFilter || stateUtility ) {
+			CLOUD9_INFO( "Replacing strategy stack with SPA filtering/utility." );
+			SpaSearcher *spaSearcher = new SpaSearcher( instructionFilter, stateUtility );
+			spaSearcher->addFilteringEventHandler( this );
 			theJobManager->setStrategy(
 				new cloud9::worker::RandomJobFromStateStrategy(
 					theJobManager->getTree(),
 					new cloud9::worker::KleeStrategy(
 						theJobManager->getTree(),
-						new SpaSearcher( instructionFilter ) ),
+						spaSearcher ),
 					theJobManager ) );
 		}
 
@@ -406,7 +408,7 @@ namespace SPA {
 		CLOUD9_DEBUG( "Checkpoints: " << checkpointsFound
 			<< "; TerminalPaths: " << terminalPathsFound
 			<< "; Outputted: " << outputtedPaths
-			<< "; Filtered: " << (checkpointsFound + terminalPathsFound - outputtedPaths) );
+			<< "; Filtered: " << filteredPathsFound );
 	}
 
 	void SPA::onControlFlowEvent( klee::ExecutionState *kState, cloud9::worker::ControlFlowEvent event ) {
