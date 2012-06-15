@@ -33,8 +33,8 @@ namespace SPA {
 					fn = ci->getCalledFunction();
 				if ( fn != NULL && reachedFns.count( fn ) == 0 ) {
 					reachedFns.insert( fn );
-					for ( CFG::iterator it2 = cfg.begin(), ie2 = cfg.end(); it2 != ie2; it2++ )
-						if ( (*it2)->getParent()->getParent() == fn && reachable.count( *it2 ) == 0 )
+					for ( std::vector<llvm::Instruction *>::const_iterator it2 = cfg.getInstructions( fn ).begin(), ie2 = cfg.getInstructions( fn ).end(); it2 != ie2; it2++ )
+						if ( reachable.count( *it2 ) == 0 )
 							worklist.insert( *it2 );
 				}
 		}

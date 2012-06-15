@@ -4,6 +4,8 @@
 
 #include "llvm/Instructions.h"
 
+#include "cloud9/Logger.h"
+
 #include "spa/CFGBackwardIF.h"
 
 namespace SPA {
@@ -14,6 +16,7 @@ namespace SPA {
 		std::set<llvm::Function *> fnWorklist;
 		std::set<llvm::Function *> fnProcessed;
 
+		CLOUD9_DEBUG( "      Exploring reverse path." );
 		while ( ! worklist.empty() ) {
 			std::set<llvm::Instruction *>::iterator it = worklist.begin(), ie;
 			llvm::Instruction *inst = *it;
@@ -38,28 +41,27 @@ namespace SPA {
 			}
 		}
 
+		CLOUD9_DEBUG( "      Exploring called functions." );
 		while ( ! fnWorklist.empty() ) {
 			std::set<llvm::Function *>::iterator it = fnWorklist.begin(), ie;
 			llvm::Function *fn = *it;
 			fnWorklist.erase( it );
 
-			if ( fnProcessed.count( fn ) )
-				continue;
-
 			// Mark function as processed.
 			fnProcessed.insert( fn );
 
 			// Add entire function to reaching set.
-			for ( CFG::iterator it2 = cfg.begin(), ie2 = cfg.end(); it2 != ie2; it2++ ) {
-				if ( (*it2)->getParent()->getParent() == fn ) {
-					reaching.insert( *it2 );
+			for ( std::vector<llvm::Instruction *>::const_iterator it2 = cfg.getInstructions( fn ).begin(), ie2 = cfg.getInstructions( fn ).end(); it2 != ie2; it2++ ) {
+				reaching.insert( *it2 );
+				for ( std::set<llvm::Function *>::iterator it3 = cg.getPossibleCallees( *it2 ).begin(), ie3 = cg.getPossibleCallees( *it2 ).end(); it3 != ie3; it3++ )
 					// Add possible called functions to function work list (maybe a call-site).
-					fnWorklist.insert( cg.getPossibleCallees( *it2 ).begin(), cg.getPossibleCallees( *it2 ).end() );
-				}
+					if ( ! fnProcessed.count( *it3 ) )
+						fnWorklist.insert( *it3 );
 			}
 		}
 
 		// Define filter out set as opposite of reaching set.
+		CLOUD9_DEBUG( "      Defining filter." );
 		for ( CFG::iterator it = cfg.begin(), ie = cfg.end(); it != ie; it++ )
 			if ( reaching.count( *it ) == 0 )
 				filterOut.insert( *it );

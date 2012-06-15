@@ -36,10 +36,12 @@ namespace SPA {
 				// Iterate instructions.
 				BasicBlock::iterator bbit = bb.begin(), bbie = bb.end();
 				instructions.insert( &(*bbit) );
+				functionInstructions[&fn].push_back( &(*bbit) );
 				Instruction *prevInst = &(*(bbit++));
 				for ( ; bbit != bbie; bbit++ ) {
 					Instruction *inst = &(*bbit);
 					instructions.insert( inst );
+					functionInstructions[&fn].push_back( inst );
 					predecessors[inst];
 					successors[inst];
 					predecessors[inst].insert( prevInst );
@@ -53,11 +55,15 @@ namespace SPA {
 	CFG::iterator CFG::begin() {
 		return instructions.begin();
 	}
-	
+
 	CFG::iterator CFG::end() {
 		return instructions.end();
 	}
-	
+
+	const std::vector<llvm::Instruction *> &CFG::getInstructions( llvm::Function *fn ) {
+		return functionInstructions[fn];
+	}
+
 	const std::set<Instruction *> &CFG::getSuccessors( Instruction *instruction ) {
 		return successors[instruction];
 	}
