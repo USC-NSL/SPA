@@ -63,7 +63,7 @@ void StackTrace::dump(std::ostream &out) const {
       out << ai->getNameStr();
       // XXX should go through function
       ref<Expr> value = it->second[index++];
-      if (isa<ConstantExpr>(value))
+      if ((! value.isNull()) && isa<ConstantExpr>(value))
         out << "=" << value;
     }
     out << ")";
