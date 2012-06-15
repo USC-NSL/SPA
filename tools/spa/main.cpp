@@ -19,12 +19,11 @@
 #include "spa/CG.h"
 #include "spa/SPA.h"
 #include "spa/Path.h"
-// #include "spa/CFGForwardIF.h"
 #include "spa/CFGBackwardIF.h"
 #include "spa/WhitelistIF.h"
 #include "spa/DummyIF.h"
 #include "spa/NegatedIF.h"
-// #include "spa/IntersectionIF.h"
+#include "spa/AstarUtility.h"
 #include "spa/PathFilter.h"
 
 extern std::string InputFile;
@@ -44,13 +43,17 @@ namespace {
 		llvm::cl::desc( "Explores server paths (packet input to API)." ) );
 }
 
-class SpaPathFilter : public SPA::PathFilter {
+class SpaClientPathFilter : public SPA::PathFilter {
 public:
 	bool checkPath( SPA::Path &path ) {
-		return (path.getTag( SPA_HANDLERTYPE_TAG ) == SPA_APIHANDLER_VALUE &&
-			! path.getTag( SPA_OUTPUT_TAG ).empty())
-			|| (path.getTag( SPA_HANDLERTYPE_TAG ) == SPA_MESSAGEHANDLER_VALUE &&
-			path.getTag( SPA_VALIDPATH_TAG ) != SPA_VALIDPATH_VALUE );
+		return ! path.getTag( SPA_OUTPUT_TAG ).empty();
+	}
+};
+
+class SpaServerPathFilter : public SPA::PathFilter {
+public:
+	bool checkPath( SPA::Path &path ) {
+		return path.getTag( SPA_VALIDPATH_TAG ) != SPA_VALIDPATH_VALUE;
 	}
 };
 
@@ -58,14 +61,14 @@ int main(int argc, char **argv, char **envp) {
 	// Fill up every global cl::opt object declared in the program
 	cl::ParseCommandLineOptions( argc, argv, "Systematic Protocol Analyzer" );
 
-	assert( (Client || Server) && "Must specify --client or --server." );
+	assert( ((! Client) != (! Server)) && "Must specify either --client or --server." );
 
 	llvm::Module *module = klee::loadByteCode();
 	module = klee::prepareModule( module );
 
 	std::string pathFileName = PathFile;
 	if ( pathFileName == "" )
-		pathFileName = InputFile + ".paths";
+		pathFileName = InputFile + (Client ? ".client" : ".server") + ".paths";
 	CLOUD9_INFO( "Writing output to: " << pathFileName );
 	std::ofstream pathFile( pathFileName.c_str(), std::ios::out | std::ios::trunc );
 	assert( pathFile.is_open() && "Unable to open path file." );
@@ -78,63 +81,73 @@ int main(int argc, char **argv, char **envp) {
 	SPA::CFG cfg( module );
 	SPA::CG cg( cfg );
 
-	CLOUD9_DEBUG( "   Creating CFG filter." );
 	// Find entry handlers.
-	bool entryFound = false;
+	std::set<llvm::Instruction *> entryPoints;
 	if ( Client ) {
 		Function *fn = module->getFunction( SPA_API_ANNOTATION_FUNCTION );
 		if ( fn ) {
 			std::set<llvm::Instruction *> apiCallers = cg.getDefiniteCallers( fn );
 			for ( std::set<llvm::Instruction *>::iterator it = apiCallers.begin(), ie = apiCallers.end(); it != ie; it++ ) {
-				CLOUD9_DEBUG( "      Found API entry function: " << (*it)->getParent()->getParent()->getName().str() );
+				CLOUD9_DEBUG( "   Found API entry function: " << (*it)->getParent()->getParent()->getName().str() );
 				spa.addEntryFunction( (*it)->getParent()->getParent() );
-				entryFound = true;
+				entryPoints.insert( *it );
 			}
 		} else {
-			CLOUD9_INFO( "      API annotation function not present in module." );
+			CLOUD9_INFO( "   API annotation function not present in module." );
 		}
-	}
-	if ( Server ) {
+	} else if ( Server ) {
 		Function *fn = module->getFunction( SPA_MESSAGE_HANDLER_ANNOTATION_FUNCTION );
 		if ( fn ) {
 			std::set<llvm::Instruction *> mhCallers = cg.getDefiniteCallers( fn );
 			for ( std::set<llvm::Instruction *>::iterator it = mhCallers.begin(), ie = mhCallers.end(); it != ie; it++ ) {
-				CLOUD9_DEBUG( "      Found message handler entry function: " << (*it)->getParent()->getParent()->getName().str() );
+				CLOUD9_DEBUG( "   Found message handler entry function: " << (*it)->getParent()->getParent()->getName().str() );
 				spa.addEntryFunction( (*it)->getParent()->getParent() );
-				entryFound = true;
+				entryPoints.insert( *it );
 			}
 		} else {
-			CLOUD9_INFO( "      Message handler annotation function not present in module." );
+			CLOUD9_INFO( "   Message handler annotation function not present in module." );
 		}
 	}
-	assert( entryFound && "No APIs or message handlers found." );
+	assert( (! entryPoints.empty()) && "No APIs or message handlers found." );
+
+	// Rebuild full CFG and call-graph (changed by SPA after adding init/entry handlers).
+	cfg = SPA::CFG( module );
+	cg = SPA::CG( cfg );
 
 	// Find checkpoints.
-	CLOUD9_DEBUG( "      Setting up path checkpoints." );
+	CLOUD9_DEBUG( "   Setting up path checkpoints." );
 	Function *fn = module->getFunction( SPA_CHECKPOINT_ANNOTATION_FUNCTION );
 	std::set<llvm::Instruction *> checkpoints;
 	if ( fn )
 		checkpoints = cg.getDefiniteCallers( fn );
 	else
-		CLOUD9_INFO( "      Checkpoint annotation function not present in module." );
+		CLOUD9_INFO( "   Checkpoint annotation function not present in module." );
 	assert( ! checkpoints.empty() && "No checkpoints found." );
 
-	for ( std::set<llvm::Instruction *>::iterator it = checkpoints.begin(), ie = checkpoints.end(); it != ie; it++ ) {
+	for ( std::set<llvm::Instruction *>::iterator it = checkpoints.begin(), ie = checkpoints.end(); it != ie; it++ )
 		spa.addCheckpoint( *it );
-	}
-
-	// Rebuild full CFG and call-graph (changed by SPA after adding init/entry handlers.).
-	cfg = SPA::CFG( module );
-	cg = SPA::CG( cfg );
 
 	// Create instruction filter.
-	SPA::InstructionFilter *filter = NULL;
-	if ( Client && ! Server ) {
-		CLOUD9_DEBUG( "      Building filter." );
-		filter = new SPA::CFGBackwardIF( cfg, cg, checkpoints );
-		spa.setInstructionFilter( filter );
+	CLOUD9_DEBUG( "   Creating CFG filter." );
+	SPA::InstructionFilter *filter = new SPA::CFGBackwardIF( cfg, cg, checkpoints );
+	spa.setInstructionFilter( filter );
+	if ( Client )
 		spa.setOutputFilteredPaths( false );
+	else if ( Server )
+		spa.setOutputFilteredPaths( true );
+	for ( std::set<llvm::Instruction *>::iterator it = entryPoints.begin(), ie = entryPoints.end(); it != ie; it++ ) {
+		if ( ! filter->checkInstruction( *it ) ) {
+			CLOUD9_DEBUG( "Entry point at function " << (*it)->getParent()->getParent()->getName().str() << " is not included in filter." );
+			assert( false && "Entry point is filtered out." );
+		}
 	}
+
+	// Create state utility function.
+	CLOUD9_DEBUG( "   Creating state utility function." );
+	if ( Client )
+		spa.setStateUtility( new SPA::AstarUtility( cfg, cg, checkpoints ) );
+	else if ( Server && filter )
+		spa.setStateUtility( new SPA::AstarUtility( cfg, cg, *filter ) );
 
 	if ( DumpCFG.size() > 0 ) {
 		CLOUD9_DEBUG( "Dumping CFG to: " << DumpCFG.getValue() );
@@ -153,8 +166,12 @@ int main(int argc, char **argv, char **envp) {
 		dotFile.close();
 	}
 
-	spa.setPathFilter( new SpaPathFilter() );
-	spa.setOutputTerminalPaths( true );
+	if ( Client )
+		spa.setPathFilter( new SpaClientPathFilter() );
+	else if ( Server )
+		spa.setPathFilter( new SpaServerPathFilter() );
+
+	spa.setOutputTerminalPaths( false );
 
 	CLOUD9_DEBUG( "Starting SPA." );
 	spa.start();
