@@ -14,11 +14,11 @@
 namespace SPA {
 	class FunctionIF : public InstructionFilter {
 	private:
-		std::set<llvm::Instruction *> filterOut;
+		llvm::Function *function;
 
 	public:
-		FunctionIF( CFG &cfg, CG &cg, llvm::Function *fn );
-		bool checkInstruction( llvm::Instruction *instruction );
+		FunctionIF( llvm::Function *_function ) : function( _function );
+		bool checkInstruction( llvm::Instruction *instruction ) { return instruction->getParent()->getParent() == function };
 	};
 }
 
