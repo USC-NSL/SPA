@@ -69,7 +69,7 @@ int main(int argc, char **argv, char **envp) {
 	std::set<llvm::Instruction *> mhCallers = cg.getDefiniteCallers( module->getFunction( MAX_MESSAGE_HANDLER_ANNOTATION_FUNCTION ) );
 	for ( std::set<llvm::Instruction *>::iterator it = mhCallers.begin(), ie = mhCallers.end(); it != ie; it++ ) {
 		spa.addEntryFunction( (*it)->getParent()->getParent() );
-		messageHandlers.insert( &(*it)->getParent()->getParent()->front().front() );
+		messageHandlers.insert( &(*it)->getParent()->getParent()->getEntryBlock().front() );
 	}
 	assert( ! messageHandlers.empty() && "No message handlers found." );
 
