@@ -6,8 +6,6 @@
 #define __TargetDistanceUtility_H__
 
 #include "spa/StateUtility.h"
-#include "spa/CFG.h"
-#include "spa/CG.h"
 
 namespace SPA {
 	class TargetDistanceUtility : public StateUtility {
@@ -21,7 +19,7 @@ namespace SPA {
 		double getDistance( llvm::Instruction *instruction ) {
 			return distances.count( instruction )
 				? distances[instruction].first
-				: INFINITY;
+				: +INFINITY;
 		}
 		bool isFinal( llvm::Instruction *instruction ) {
 			return distances.count( instruction )
@@ -33,6 +31,7 @@ namespace SPA {
 		TargetDistanceUtility( CFG &cfg, CG &cg, std::set<llvm::Instruction *> &targets );
 		TargetDistanceUtility( CFG &cfg, CG &cg, InstructionFilter &filter );
 		double getUtility( const klee::ExecutionState *state );
+		std::string getColor( CFG &cfg, CG &cg, llvm::Instruction *instruction );
 	};
 }
 

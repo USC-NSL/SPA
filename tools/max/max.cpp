@@ -96,8 +96,8 @@ int main(int argc, char **argv, char **envp) {
 		annotations[new SPA::WhitelistIF( interestingInstructions )] = "style = \"filled\" color = \"red\"";
 		annotations[new SPA::NegatedIF( &filter )] = "style = \"filled\"";
 
-// 		cfg.dump( dotFile, NULL, annotations );
-		cfg.dump( dotFile, &filter, annotations );
+// 		cfg.dump( dotFile, NULL, annotations, NULL );
+		cfg.dump( dotFile, &filter, annotations, NULL );
 
 		dotFile.flush();
 		dotFile.close();

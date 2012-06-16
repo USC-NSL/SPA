@@ -46,14 +46,16 @@ namespace {
 class SpaClientPathFilter : public SPA::PathFilter {
 public:
 	bool checkPath( SPA::Path &path ) {
-		return ! path.getTag( SPA_OUTPUT_TAG ).empty();
+		return path.getTag( SPA_HANDLERTYPE_TAG ) == SPA_APIHANDLER_VALUE &&
+			! path.getTag( SPA_OUTPUT_TAG ).empty();
 	}
 };
 
 class SpaServerPathFilter : public SPA::PathFilter {
 public:
 	bool checkPath( SPA::Path &path ) {
-		return path.getTag( SPA_VALIDPATH_TAG ) != SPA_VALIDPATH_VALUE;
+		return path.getTag( SPA_HANDLERTYPE_TAG ) == SPA_MESSAGEHANDLER_VALUE &&
+			path.getTag( SPA_VALIDPATH_TAG ) != SPA_VALIDPATH_VALUE;
 	}
 };
 
@@ -144,10 +146,14 @@ int main(int argc, char **argv, char **envp) {
 
 	// Create state utility function.
 	CLOUD9_DEBUG( "   Creating state utility function." );
+	SPA::StateUtility *utility = NULL;
 	if ( Client )
-		spa.setStateUtility( new SPA::AstarUtility( cfg, cg, checkpoints ) );
+		utility = new SPA::AstarUtility( cfg, cg, checkpoints );
+// 		utility = new SPA::TargetDistanceUtility( cfg, cg, checkpoints );
 	else if ( Server && filter )
-		spa.setStateUtility( new SPA::AstarUtility( cfg, cg, *filter ) );
+		utility = new SPA::AstarUtility( cfg, cg, *filter );
+// 		utility = new SPA::TargetDistanceUtility( cfg, cg, *filter );
+	spa.setStateUtility( utility );
 
 	if ( DumpCFG.size() > 0 ) {
 		CLOUD9_DEBUG( "Dumping CFG to: " << DumpCFG.getValue() );
@@ -155,15 +161,15 @@ int main(int argc, char **argv, char **envp) {
 		assert( dotFile.is_open() && "Unable to open dump file." );
 
 		std::map<SPA::InstructionFilter *, std::string> annotations;
-		annotations[new SPA::WhitelistIF( checkpoints )] = "style = \"filled\" color = \"red\"";
+		annotations[new SPA::WhitelistIF( checkpoints )] = "style = \"filled\" fillcolor = \"red\"";
 		if ( filter )
-			annotations[new SPA::NegatedIF( filter )] = "style = \"filled\"";
+			annotations[new SPA::NegatedIF( filter )] = "style = \"filled\" fillcolor = \"grey\"";
 
-		cfg.dump( dotFile, NULL, annotations );
-// 		cfg.dump( dotFile, &filter, annotations );
+		cfg.dump( dotFile, /*filter*/ NULL, annotations, utility /*NULL*/ );
 
 		dotFile.flush();
 		dotFile.close();
+		return 0;
 	}
 
 	if ( Client )

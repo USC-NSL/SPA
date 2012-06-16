@@ -26,6 +26,10 @@ namespace SPA {
 		double getUtility( const klee::ExecutionState *state ) {
 			return targetDistance.getUtility( state ) - depth.getUtility( state );
 		}
+
+		std::string getColor( CFG &cfg, CG &cg, llvm::Instruction *instruction ) {
+			return targetDistance.getColor( cfg, cg, instruction );
+		}
 	};
 }
 

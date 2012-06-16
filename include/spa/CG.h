@@ -5,6 +5,10 @@
 #ifndef __CG_H__
 #define __CG_H__
 
+namespace SPA {
+	class CG;
+}
+
 #include <map>
 #include <set>
 

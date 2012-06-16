@@ -5,7 +5,13 @@
 #ifndef __StateUtility_H__
 #define __StateUtility_H__
 
+namespace SPA {
+	class StateUtility;
+}
+
 #include "klee/ExecutionState.h"
+#include "spa/CFG.h"
+#include "spa/CG.h"
 
 namespace SPA {
 	class StateUtility {
@@ -17,6 +23,11 @@ namespace SPA {
 		 * @return The utility metric for the given state (higher = more useful).
 		 */
 		virtual double getUtility( const klee::ExecutionState *state ) = 0;
+
+		/**
+		 * Gives a Graphviz color for a given node to aid in debugging.
+		 */
+		virtual std::string getColor( CFG &cfg, CG &cg, llvm::Instruction *instruction ) { return "white"; }
 
 	protected:
 		virtual ~StateUtility() { }

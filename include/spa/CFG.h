@@ -5,6 +5,10 @@
 #ifndef __CFG_H__
 #define __CFG_H__
 
+namespace SPA {
+	class CFG;
+}
+
 #include <map>
 #include <set>
 #include <ostream>
@@ -13,6 +17,7 @@
 #include "llvm/Instruction.h"
 
 #include "spa/InstructionFilter.h"
+#include "spa/StateUtility.h"
 
 namespace SPA {
 	class CFG {
@@ -34,7 +39,7 @@ namespace SPA {
 		const std::set<llvm::Instruction *> &getSuccessors( llvm::Instruction *instruction );
 		const std::set<llvm::Instruction *> &getPredecessors( llvm::Instruction *instruction );
 		// Dumps CFG as a GraphViz DOT-file.
-		void dump( std::ostream &dotFile, InstructionFilter *filter, std::map<InstructionFilter *, std::string> &annotations );
+		void dump( std::ostream &dotFile, InstructionFilter *filter, std::map<InstructionFilter *, std::string> &annotations, StateUtility *utility );
 	};
 }
 

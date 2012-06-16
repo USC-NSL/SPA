@@ -4,6 +4,7 @@
 
 #include <spa/TargetDistanceUtility.h>
 
+#include <sstream>
 #include <klee/Internal/Module/KInstruction.h>
 
 
@@ -20,6 +21,7 @@ namespace SPA {
 			}
 		}
 
+		assert( (! worklist.empty()) && "Filter must exclude something." );
 		processWorklist( cfg, cg, worklist );
 	}
 
@@ -54,7 +56,7 @@ namespace SPA {
 				}
 			}
 			// Check cost of callees.
-			for ( std::set<llvm::Function *>::const_iterator it = cg.getDefiniteCallees( inst ).begin(), ie = cg.getDefiniteCallees( inst ).end(); it != ie; it++ ) {
+			for ( std::set<llvm::Function *>::const_iterator it = cg.getPossibleCallees( inst ).begin(), ie = cg.getPossibleCallees( inst ).end(); it != ie; it++ ) {
 				if ( (! (*it)->empty()) && distances[inst].first > distances[&(*it)->getEntryBlock().front()].first + 1 ) {
 					distances[inst] = std::pair<double, bool>( distances[&(*it)->getEntryBlock().front()].first + 1, true );
 					updated = true;
@@ -112,6 +114,39 @@ namespace SPA {
 				return result;
 		}
 		// No final state was found.
-		return - INFINITY;
+		return -INFINITY;
+	}
+
+	std::string TargetDistanceUtility::getColor( CFG &cfg, CG &cg, llvm::Instruction *instruction ) {
+		double minPartial = +INFINITY, maxPartial = -INFINITY,
+			minFinal = +INFINITY, maxFinal = -INFINITY;
+
+		for ( CFG::iterator it = cfg.begin(), ie = cfg.end(); it != ie; it++ ) {
+			if ( getDistance( *it ) == INFINITY )
+				continue;
+			if ( isFinal( *it ) ) {
+				minFinal = std::min( minFinal, getDistance( *it ) );
+				maxFinal = std::max( maxFinal, getDistance( *it ) );
+			} else  if ( (*it)->getParent()->getParent() == instruction->getParent()->getParent() ) {
+				minPartial = std::min( minPartial, getDistance( *it ) );
+				maxPartial = std::max( maxPartial, getDistance( *it ) );
+			}
+		}
+
+		std::stringstream result;
+		if ( isFinal( instruction ) ) {
+			// Min = White, Max = Green
+			if ( minFinal < maxFinal && getDistance( instruction ) != INFINITY )
+				result << "0.33+" << ((maxFinal - getDistance( instruction )) / (maxFinal - minFinal)) << "+1.0";
+			else
+				result << "0.33+0.0+1.0";
+		} else {
+			// Min = White, Max = Blue
+			if ( minPartial < maxPartial && getDistance( instruction ) != INFINITY )
+				result << "0.67+" << ((maxPartial - getDistance( instruction )) / (maxPartial - minPartial)) << "+1.0";
+			else
+				result << "0.67+0.0+1.0";
+		}
+		return result.str();
 	}
 }
