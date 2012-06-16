@@ -573,36 +573,3 @@ void InterleavedSearcher::update(ExecutionState *current,
          ie = searchers.end(); it != ie; ++it)
     (*it)->update(current, addedStates, removedStates);
 }
-
-/***/
-
-FilteringSearcher::FilteringSearcher(Searcher *_searcher )
-  : searcher(_searcher) {
-}
-
-FilteringSearcher::~FilteringSearcher() {
-  delete searcher;
-}
-
-SPA::InstructionFilter *FilteringSearcher::filter;
-void FilteringSearcher::setInstructionFilter(SPA::InstructionFilter *_filter) {
-	filter = _filter;
-}
-
-ExecutionState &FilteringSearcher::selectState() {
-  return searcher->selectState();
-}
-
-void FilteringSearcher::update(ExecutionState *current,
-                                 const std::set<ExecutionState*> &addedStates,
-                                 const std::set<ExecutionState*> &removedStates) {
-	std::set<ExecutionState*> filteredAddedStates, filteredRemovedStates;
-	for ( std::set<ExecutionState*>::iterator it = addedStates.begin(), ie = addedStates.end(); it != ie; it++ )
-		if ( filter->checkInstruction( (*((*it)->pc())).inst ) )
-			filteredAddedStates.insert( *it );
-	for ( std::set<ExecutionState*>::iterator it = removedStates.begin(), ie = removedStates.end(); it != ie; it++ )
-		if ( filter->checkInstruction( (*((*it)->pc())).inst ) )
-			filteredRemovedStates.insert( *it );
-
-	searcher->update(current, filteredAddedStates, filteredRemovedStates);
-}

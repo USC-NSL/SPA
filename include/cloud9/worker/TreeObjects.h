@@ -59,7 +59,9 @@ private:
 
 	bool _active;
 
+public:
 	std::vector<klee::KInstruction*> _instrProgress;
+private:
 	unsigned int _instrPos;
 	unsigned long _instrSinceFork;
 

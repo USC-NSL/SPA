@@ -36,10 +36,12 @@ namespace SPA {
 				// Iterate instructions.
 				BasicBlock::iterator bbit = bb.begin(), bbie = bb.end();
 				instructions.insert( &(*bbit) );
+				functionInstructions[&fn].push_back( &(*bbit) );
 				Instruction *prevInst = &(*(bbit++));
 				for ( ; bbit != bbie; bbit++ ) {
 					Instruction *inst = &(*bbit);
 					instructions.insert( inst );
+					functionInstructions[&fn].push_back( inst );
 					predecessors[inst];
 					successors[inst];
 					predecessors[inst].insert( prevInst );
@@ -53,11 +55,15 @@ namespace SPA {
 	CFG::iterator CFG::begin() {
 		return instructions.begin();
 	}
-	
+
 	CFG::iterator CFG::end() {
 		return instructions.end();
 	}
-	
+
+	const std::vector<llvm::Instruction *> &CFG::getInstructions( llvm::Function *fn ) {
+		return functionInstructions[fn];
+	}
+
 	const std::set<Instruction *> &CFG::getSuccessors( Instruction *instruction ) {
 		return successors[instruction];
 	}
@@ -66,7 +72,9 @@ namespace SPA {
 		return predecessors[instruction];
 	}
 
-	void CFG::dump( std::ostream &dotFile, InstructionFilter *filter, std::map<InstructionFilter *, std::string> &annotations ) {
+	void CFG::dump( std::ostream &dotFile, InstructionFilter *filter, std::map<InstructionFilter *, std::string> &annotations, StateUtility *utility ) {
+		CG cg = CG( *this );
+
 		// Generate CFG DOT file.
 		dotFile<< "digraph CFG {" << std::endl;
 
@@ -84,6 +92,9 @@ namespace SPA {
 					attributes << "shape = \"oval\"";
 				// Annotate source line.
 				attributes << " label = \"" << inst->getDebugLoc().getLine() << "\"";
+				// Annotate utility color.
+				if ( utility )
+					attributes << " style=\"filled\" fillcolor = \"" << utility->getColor( *this, cg, inst ) << "\"";
 				// Add user annotations.
 				for ( std::map<InstructionFilter *, std::string>::iterator it = annotations.begin(), ie = annotations.end(); it != ie; it++ )
 					if ( it->first->checkInstruction( inst ) )
@@ -104,7 +115,6 @@ namespace SPA {
 					if ( ! filter || filter->checkInstruction( *it2 ) )
 						dotFile << "	n" << ((unsigned long) *it1) << " -> n" << ((unsigned long) *it2) << ";" << std::endl;
 		// Callers.
-		CG cg = CG( *this );
 		dotFile << "	edge [color = \"blue\"];" << std::endl;
 		for ( CG::iterator it1 = cg.begin(), ie1 = cg.end(); it1 != ie1; it1++ ) {
 			llvm::Function *fn = *it1;

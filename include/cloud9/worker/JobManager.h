@@ -230,6 +230,10 @@ public:
     return selStrategy;
   }
 
+  void setStrategy( JobSelectionStrategy *_selStrategy ) {
+    selStrategy = _selStrategy;
+  }
+
   klee::Interpreter *getInterpreter() {
     return interpreter;
   }

@@ -11,6 +11,7 @@
 #define KLEE_SEARCHER_H
 
 #include <vector>
+#include <list>
 #include <set>
 #include <map>
 #include <queue>
@@ -273,28 +274,6 @@ namespace klee {
            it != ie; ++it)
         (*it)->printName(os);
       os << "</InterleavedSearcher>\n";
-    }
-  };
-
-  class FilteringSearcher : public Searcher {
-	Searcher *searcher;
-	static SPA::InstructionFilter *filter;
-
-  public:
-    explicit FilteringSearcher(Searcher *_searcher);
-    ~FilteringSearcher();
-
-	static void setInstructionFilter(SPA::InstructionFilter *_filter);
-
-    ExecutionState &selectState();
-    void update(ExecutionState *current,
-                const std::set<ExecutionState*> &addedStates,
-                const std::set<ExecutionState*> &removedStates);
-    bool empty() { return searcher->empty(); }
-    void printName(std::ostream &os) {
-      os << "<FilteringSearcher> wrapped around:\n";
-      searcher->printName(os);
-      os << "</FilteringSearcher>\n";
     }
   };
 }

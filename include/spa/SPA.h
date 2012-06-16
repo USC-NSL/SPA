@@ -10,10 +10,13 @@
 #include <map>
 
 #include <llvm/Module.h>
+#include "llvm/Instructions.h"
 
 #include <cloud9/worker/SymbolicEngine.h>
 
 #include <spa/InstructionFilter.h>
+#include <spa/StateUtility.h>
+#include <spa/FilteringEventHandler.h>
 #include <spa/PathFilter.h>
 
 #define SPA_API_ANNOTATION_FUNCTION				"spa_api_entry"
@@ -30,31 +33,44 @@
 #define SPA_API_OUTPUT_PREFIX		SPA_OUTPUT_PREFIX "api_"
 #define SPA_MESSAGE_OUTPUT_PREFIX	SPA_OUTPUT_PREFIX "msg_"
 
-#define SPA_OUTPUT_TAG		"Output"
-#define SPA_VALIDPATH_TAG	"ValidPath"
-#define SPA_VALIDPATH_VALUE	"1"
+#define SPA_HANDLERTYPE_TAG			"HandlerType"
+#define SPA_MESSAGEHANDLER_VALUE	"Message"
+#define SPA_APIHANDLER_VALUE		"API"
+#define SPA_OUTPUT_TAG				"Output"
+#define SPA_VALIDPATH_TAG			"ValidPath"
+#define SPA_VALIDPATH_VALUE			"1"
 
 namespace SPA {
-	class SPA : public cloud9::worker::StateEventHandler {
+	class SPA : public cloud9::worker::StateEventHandler, FilteringEventHandler {
 	private:
 		llvm::Module *module;
-		std::list<llvm::Function *> initFunctions;
-		std::list<llvm::Function *> entryFunctions;
-		std::set<llvm::Instruction *> checkpoints;
-		bool outputTerminalPaths;
-		InstructionFilter *instructionFilter;
-		PathFilter *pathFilter;
+		llvm::Function *entryFunction;
+		llvm::Instruction *initHandlerPlaceHolder;
+		llvm::SwitchInst *entrySwitchInst;
+		uint32_t handlerID;
+		llvm::BasicBlock *entryReturnBB;
 		std::ostream &output;
+		std::set<llvm::Instruction *> checkpoints;
+		InstructionFilter *instructionFilter;
+		StateUtility *stateUtility;
+		PathFilter *pathFilter;
+		bool outputFilteredPaths;
+		bool outputTerminalPaths;
+
+		unsigned long checkpointsFound, filteredPathsFound, terminalPathsFound, outputtedPaths;
 
 		void generateMain();
+		void processPath( klee::ExecutionState *state );
 
 	public:
 		SPA( llvm::Module *_module, std::ostream &_output );
-		void addInitFunction( llvm::Function *fn ) { initFunctions.push_back( fn ); }
-		void addEntryFunction( llvm::Function *fn ) { entryFunctions.push_back( fn ); }
+		void addInitFunction( llvm::Function *fn );
+		void addEntryFunction( llvm::Function *fn );
 		void setInstructionFilter( InstructionFilter *_instructionFilter ) { instructionFilter = _instructionFilter; }
+		void setStateUtility( StateUtility *_stateUtility ) { stateUtility = _stateUtility; }
 		void setPathFilter( PathFilter *_pathFilter ) { pathFilter = _pathFilter; }
 		void addCheckpoint( llvm::Instruction *instruction ) { checkpoints.insert( instruction ); }
+		void setOutputFilteredPaths( bool _outputFilteredPaths ) { outputFilteredPaths = _outputFilteredPaths; }
 		void setOutputTerminalPaths( bool _outputTerminalPaths ) { outputTerminalPaths = _outputTerminalPaths; }
 		void start();
 
@@ -66,6 +82,7 @@ namespace SPA {
 
 		void onControlFlowEvent(klee::ExecutionState *kState, cloud9::worker::ControlFlowEvent event);
 		void onStateDestroy(klee::ExecutionState *kState, bool silenced);
+		void onStateFiltered( klee::ExecutionState *state );
 	};
 }
 

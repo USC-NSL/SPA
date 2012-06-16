@@ -69,7 +69,7 @@ int main(int argc, char **argv, char **envp) {
 	std::set<llvm::Instruction *> mhCallers = cg.getDefiniteCallers( module->getFunction( MAX_MESSAGE_HANDLER_ANNOTATION_FUNCTION ) );
 	for ( std::set<llvm::Instruction *>::iterator it = mhCallers.begin(), ie = mhCallers.end(); it != ie; it++ ) {
 		spa.addEntryFunction( (*it)->getParent()->getParent() );
-		messageHandlers.insert( &(*it)->getParent()->getParent()->front().front() );
+		messageHandlers.insert( &(*it)->getParent()->getParent()->getEntryBlock().front() );
 	}
 	assert( ! messageHandlers.empty() && "No message handlers found." );
 
@@ -96,14 +96,15 @@ int main(int argc, char **argv, char **envp) {
 		annotations[new SPA::WhitelistIF( interestingInstructions )] = "style = \"filled\" color = \"red\"";
 		annotations[new SPA::NegatedIF( &filter )] = "style = \"filled\"";
 
-// 		cfg.dump( dotFile, NULL, annotations );
-		cfg.dump( dotFile, &filter, annotations );
+// 		cfg.dump( dotFile, NULL, annotations, NULL );
+		cfg.dump( dotFile, &filter, annotations, NULL );
 
 		dotFile.flush();
 		dotFile.close();
 	}
 
 	spa.setPathFilter( new MaxPathFilter() );
+	spa.setOutputFilteredPaths( false );
 	spa.setOutputTerminalPaths( false );
 
 	CLOUD9_DEBUG( "Starting SPA." );

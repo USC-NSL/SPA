@@ -15,7 +15,7 @@ namespace SPA {
 		std::set<InstructionFilter *> subFilters;
 
 	public:
-		UnionIF();
+		UnionIF() { };
 		UnionIF( std::set<InstructionFilter *> _subFilters ) : subFilters( _subFilters ) { }
 		void addIF( InstructionFilter *instructionFilter );
 		bool checkInstruction( llvm::Instruction *instruction );

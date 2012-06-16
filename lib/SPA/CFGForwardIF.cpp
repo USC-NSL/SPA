@@ -11,6 +11,7 @@ namespace SPA {
 		// Use a work list to add all successors of starting instruction.
 		std::set<llvm::Instruction *> worklist = startingPoints;
 		std::set<llvm::Instruction *> reachable;
+		std::set<llvm::Function *> reachedFns;
 
 		while ( ! worklist.empty() ) {
 			std::set<llvm::Instruction *>::iterator it = worklist.begin(), ie;
@@ -30,10 +31,12 @@ namespace SPA {
 					fn = ii->getCalledFunction();
 				if ( llvm::CallInst *ci = llvm::dyn_cast<llvm::CallInst>( inst ) )
 					fn = ci->getCalledFunction();
-				if ( fn != NULL )
-					for ( CFG::iterator it2 = cfg.begin(), ie2 = cfg.end(); it2 != ie2; it2++ )
-						if ( (*it2)->getParent()->getParent() == fn && reachable.count( *it2 ) == 0 )
+				if ( fn != NULL && reachedFns.count( fn ) == 0 ) {
+					reachedFns.insert( fn );
+					for ( std::vector<llvm::Instruction *>::const_iterator it2 = cfg.getInstructions( fn ).begin(), ie2 = cfg.getInstructions( fn ).end(); it2 != ie2; it2++ )
+						if ( reachable.count( *it2 ) == 0 )
 							worklist.insert( *it2 );
+				}
 		}
 
 		// Define filter out set as opposite of reachable set.

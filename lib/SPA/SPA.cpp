@@ -51,21 +51,23 @@
 #include "cloud9/worker/TreeNodeInfo.h"
 #include "cloud9/worker/JobManager.h"
 #include "cloud9/worker/WorkerCommon.h"
+#include "cloud9/worker/CoreStrategies.h"
 #include "cloud9/worker/KleeCommon.h"
 #include "cloud9/worker/CommManager.h"
 #include "cloud9/Utils.h"
 #include "cloud9/instrum/InstrumentationManager.h"
 
 #include <spa/SPA.h>
+#include <spa/SpaSearcher.h>
 #include <spa/Path.h>
 
 #define MAIN_ENTRY_FUNCTION	"__user_main"
-#define OLD_ENTRY_FUNCTION	"__spa_old_user_main"
+#define ALTERNATIVE_MAIN_ENTRY_FUNCTION	"main"
+#define OLD_ENTRY_FUNCTION	"__spa_old_main"
 #define KLEE_INT_FUNCTION	"klee_int"
 #define HANDLER_ID_VAR_NAME	"spa_internal_HanderID"
 extern cl::opt<double> MaxTime;
 extern cl::opt<bool> NoOutput;
-extern cl::opt<bool> UseInstructionFiltering;
 
 namespace {
 	cl::opt<bool> StandAlone("stand-alone",
@@ -191,11 +193,10 @@ namespace SPA {
 	}
 
 	SPA::SPA( llvm::Module *_module, std::ostream &_output ) :
-		module( _module ),
-		outputTerminalPaths( true ),
+		module( _module ), output( _output ),
 		instructionFilter( NULL ),
-		pathFilter( NULL ),
-		output( _output ) {
+		pathFilter( NULL ), outputFilteredPaths( true ), outputTerminalPaths( true ),
+		checkpointsFound( 0 ), filteredPathsFound( 0 ), terminalPathsFound( 0 ), outputtedPaths( 0 ) {
 
 		// Make sure to clean up properly before any exit point in the program
 		atexit(llvm::llvm_shutdown);
@@ -230,6 +231,8 @@ namespace SPA {
 
 		// Take care of Ctrl+C requests
 		sys::SetInterruptFunction(interrupt_handle);
+
+		generateMain();
 	}
 
 	/**
@@ -251,11 +254,15 @@ namespace SPA {
 	void SPA::generateMain() {
 		// Rename old main function
 		llvm::Function *oldEntryFunction = module->getFunction( MAIN_ENTRY_FUNCTION );
+		if ( ! oldEntryFunction )
+			oldEntryFunction = module->getFunction( ALTERNATIVE_MAIN_ENTRY_FUNCTION );
+		assert( oldEntryFunction && "No main function found to replace." );
+		std::string entryFunctionName = oldEntryFunction->getName().str();
 		oldEntryFunction->setName( OLD_ENTRY_FUNCTION );
 		// Create new one.
-		llvm::Function *entryFunction = llvm::Function::Create(
+		entryFunction = llvm::Function::Create(
 			oldEntryFunction->getFunctionType(),
-			llvm::GlobalValue::ExternalLinkage, MAIN_ENTRY_FUNCTION, module );
+			llvm::GlobalValue::ExternalLinkage, entryFunctionName, module );
 		entryFunction->setCallingConv( llvm::CallingConv::C );
 		// Replace the old with the new.
 		oldEntryFunction->replaceAllUsesWith( entryFunction );
@@ -269,17 +276,11 @@ namespace SPA {
 
 		// Create the entry and return basic blocks.
 		llvm::BasicBlock* entryBB = llvm::BasicBlock::Create( module->getContext(), "", entryFunction, 0);
-		llvm::BasicBlock* returnBB = llvm::BasicBlock::Create( module->getContext(), "", entryFunction, 0);
+		entryReturnBB = llvm::BasicBlock::Create( module->getContext(), "", entryFunction, 0);
 
 		// Allocate arguments.
 		new llvm::StoreInst( argcVar, new llvm::AllocaInst( llvm::IntegerType::get( module->getContext(), 32 ), "", entryBB ), false, entryBB );
 		new llvm::StoreInst( argvVar, new llvm::AllocaInst( llvm::PointerType::get( llvm::PointerType::get( llvm::IntegerType::get( module->getContext(), 8 ), 0 ), 0 ), "", entryBB ), false, entryBB );
-		// Init functions;
-		for ( std::list<llvm::Function *>::iterator it = initFunctions.begin(), ie = initFunctions.end(); it != ie; it++ ) {
-			llvm::CallInst *initCall = llvm::CallInst::Create( *it, "", entryBB);
-			initCall->setCallingConv(llvm::CallingConv::C);
-			initCall->setTailCall(false);
-		}
 		// Get klee_int function.
 		llvm::Function *kleeIntFunction = module->getFunction( KLEE_INT_FUNCTION );
 		if ( ! kleeIntFunction ) {
@@ -308,37 +309,41 @@ namespace SPA {
 			"", entryBB);
 		kleeIntCall->setCallingConv(llvm::CallingConv::C);
 		kleeIntCall->setTailCall(false);
+		// Init handlers will be later added before this point.
+		initHandlerPlaceHolder = kleeIntCall;
 		// switch ( handlerID )
-		llvm::SwitchInst* switchInst = llvm::SwitchInst::Create( kleeIntCall, returnBB, entryFunctions.size() + 1, entryBB );
-		// case x:
-		uint32_t handlerID = 1;
-		for ( std::list<llvm::Function *>::iterator it = entryFunctions.begin(), ie = entryFunctions.end(); it != ie; it++ ) {
-			// Create basic block for this case.
-			llvm::BasicBlock *swBB = llvm::BasicBlock::Create( module->getContext(), "", entryFunction, 0 );
-			switchInst->addCase( llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, handlerID++, true ) ), swBB );
-			// handlerx();
-			llvm::CallInst *handlerCallInst = llvm::CallInst::Create( *it, "", swBB );
-			handlerCallInst->setCallingConv( llvm::CallingConv::C );
-			handlerCallInst->setTailCall( false );
-			// break;
-			llvm::BranchInst::Create(returnBB, swBB);
-		}
+		entrySwitchInst = llvm::SwitchInst::Create( kleeIntCall, entryReturnBB, 1, entryBB );
+		// Entry handlers will be later added starting with id = 1.
+		handlerID = 1;
 		// return 0;
-		llvm::ReturnInst::Create( module->getContext(), llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, 0, true ) ), returnBB );
+		llvm::ReturnInst::Create( module->getContext(), llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, 0, true ) ), entryReturnBB );
 
 // 		module->dump();
 		// 		entryFunction->dump();
 	}
 
+	void SPA::addInitFunction( llvm::Function *fn ) {
+		llvm::CallInst *initCall = llvm::CallInst::Create( fn, "", initHandlerPlaceHolder );
+		initCall->setCallingConv(llvm::CallingConv::C);
+		initCall->setTailCall(false);
+	}
+
+	void SPA::addEntryFunction( llvm::Function *fn ) {
+		// case x:
+		// Create basic block for this case.
+		llvm::BasicBlock *swBB = llvm::BasicBlock::Create( module->getContext(), "", entryFunction, 0 );
+		entrySwitchInst->addCase( llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, handlerID++, true ) ), swBB );
+		// handlerx();
+		llvm::CallInst *handlerCallInst = llvm::CallInst::Create( fn, "", swBB );
+		handlerCallInst->setCallingConv( llvm::CallingConv::C );
+		handlerCallInst->setTailCall( false );
+		// break;
+		llvm::BranchInst::Create(entryReturnBB, swBB);
+	}
+
 	void SPA::start() {
-		assert( (outputTerminalPaths || ! checkpoints.empty()) && "No points to output data from." );
-
-		if ( instructionFilter ) {
-			UseInstructionFiltering = true;
-			klee::FilteringSearcher::setInstructionFilter( instructionFilter );
-		}
-
-		generateMain();
+		assert( (outputFilteredPaths || outputTerminalPaths || ! checkpoints.empty()) && "No points to output data from." );
+		assert( ((! instructionFilter) || instructionFilter->checkInstruction( &module->getFunction( "main" )->getEntryBlock().front() )) && "main function is filtered out." );
 
 		int pArgc;
 		char **pArgv;
@@ -349,6 +354,20 @@ namespace SPA {
 		// Create the job manager
 		NoOutput = true;
 		theJobManager = new cloud9::worker::JobManager( module, "main", pArgc, pArgv, pEnvp );
+
+		if ( instructionFilter || stateUtility ) {
+			CLOUD9_INFO( "Replacing strategy stack with SPA filtering/utility." );
+			SpaSearcher *spaSearcher = new SpaSearcher( instructionFilter, stateUtility );
+			spaSearcher->addFilteringEventHandler( this );
+			theJobManager->setStrategy(
+				new cloud9::worker::RandomJobFromStateStrategy(
+					theJobManager->getTree(),
+					new cloud9::worker::KleeStrategy(
+						theJobManager->getTree(),
+						spaSearcher ),
+					theJobManager ) );
+		}
+
 		(dynamic_cast<cloud9::worker::SymbolicEngine*>(theJobManager->getInterpreter()))
 			->registerStateEventHandler( this );
 
@@ -377,33 +396,50 @@ namespace SPA {
 		theJobManager = NULL;
 	}
 
-	void SPA::onControlFlowEvent( klee::ExecutionState *kState, cloud9::worker::ControlFlowEvent event ) {
-		assert( kState );
+	void SPA::processPath( klee::ExecutionState *state ) {
+		Path path( state );
 
+		if ( ! pathFilter || pathFilter->checkPath( path ) ) {
+			CLOUD9_DEBUG( "Outputting path." );
+			output << path;
+			outputtedPaths++;
+		}
+
+		CLOUD9_DEBUG( "Checkpoints: " << checkpointsFound
+			<< "; TerminalPaths: " << terminalPathsFound
+			<< "; Outputted: " << outputtedPaths
+			<< "; Filtered: " << filteredPathsFound );
+	}
+
+	void SPA::onControlFlowEvent( klee::ExecutionState *kState, cloud9::worker::ControlFlowEvent event ) {
 		if ( event == cloud9::worker::STEP && checkpoints.count( kState->pc()->inst ) ) {
 			CLOUD9_DEBUG( "Processing checkpoint path." );
-
-			Path path( kState );
-
-			if ( ! pathFilter || pathFilter->checkPath( path ) ) {
-				CLOUD9_DEBUG( "Outputting path." );
-				output << path;
-			}
+			checkpointsFound++;
+			processPath( kState );
 		}
 	}
 
 	void SPA::onStateDestroy(klee::ExecutionState *kState, bool silenced) {
+		terminalPathsFound++;
+
 		if ( outputTerminalPaths ) {
 			assert( kState );
 
 			CLOUD9_DEBUG( "Processing terminal path." );
 
-			Path path( kState );
+			processPath( kState );
+		}
+	}
 
-			if ( ! pathFilter || pathFilter->checkPath( path ) ) {
-				CLOUD9_DEBUG( "Outputting path." );
-				output << path;
-			}
+	void SPA::onStateFiltered( klee::ExecutionState *state ) {
+		filteredPathsFound++;
+
+		if ( outputFilteredPaths ) {
+			assert( state );
+
+			CLOUD9_DEBUG( "Processing filtered path." );
+
+			processPath( state );
 		}
 	}
 }
