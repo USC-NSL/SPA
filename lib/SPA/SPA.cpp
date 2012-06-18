@@ -396,6 +396,13 @@ namespace SPA {
 		theJobManager = NULL;
 	}
 
+	void SPA::showStats() {
+		CLOUD9_DEBUG( "Checkpoints: " << checkpointsFound
+			<< "; TerminalPaths: " << terminalPathsFound
+			<< "; Outputted: " << outputtedPaths
+			<< "; Filtered: " << filteredPathsFound );
+	}
+
 	void SPA::processPath( klee::ExecutionState *state ) {
 		Path path( state );
 
@@ -404,11 +411,6 @@ namespace SPA {
 			output << path;
 			outputtedPaths++;
 		}
-
-		CLOUD9_DEBUG( "Checkpoints: " << checkpointsFound
-			<< "; TerminalPaths: " << terminalPathsFound
-			<< "; Outputted: " << outputtedPaths
-			<< "; Filtered: " << filteredPathsFound );
 	}
 
 	void SPA::onControlFlowEvent( klee::ExecutionState *kState, cloud9::worker::ControlFlowEvent event ) {
@@ -416,6 +418,7 @@ namespace SPA {
 			CLOUD9_DEBUG( "Processing checkpoint path." );
 			checkpointsFound++;
 			processPath( kState );
+			showStats();
 		}
 	}
 
@@ -429,6 +432,7 @@ namespace SPA {
 
 			processPath( kState );
 		}
+		showStats();
 	}
 
 	void SPA::onStateFiltered( klee::ExecutionState *state ) {
@@ -441,5 +445,6 @@ namespace SPA {
 
 			processPath( state );
 		}
+		showStats();
 	}
 }
