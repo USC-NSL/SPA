@@ -15,6 +15,7 @@ namespace SPA {
 		// A state's distance is calculated by traversing the stack and adding up
 		// partial distances until a final one is found.
 		std::map<llvm::Instruction *, std::pair<double, bool> > distances;
+		void propagateChanges( CFG &cfg, CG &cg, std::set<llvm::Instruction *> &worklist, llvm::Instruction *instruction );
 		void processWorklist( CFG &cfg, CG &cg, std::set<llvm::Instruction *> &worklist );
 		double getDistance( llvm::Instruction *instruction ) {
 			return distances.count( instruction )

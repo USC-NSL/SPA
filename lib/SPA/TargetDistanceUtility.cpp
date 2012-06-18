@@ -17,7 +17,7 @@ namespace SPA {
 				distances[*it] = std::pair<double, bool>( +INFINITY, false );
 			} else {
 				distances[*it] = std::pair<double, bool>( 0, true );
-				worklist.insert( *it );
+				propagateChanges( cfg, cg, worklist, *it );
 			}
 		}
 
@@ -33,10 +33,18 @@ namespace SPA {
 
 		for ( std::set<llvm::Instruction *>::iterator it = targets.begin(), ie = targets.end(); it != ie; it++ ) {
 			distances[*it] = std::pair<double, bool>( 0, true );
-			worklist.insert( cfg.getPredecessors( *it ).begin(), cfg.getPredecessors( *it ).end() );
+			propagateChanges( cfg, cg, worklist, *it );
 		}
 
 		processWorklist( cfg, cg, worklist );
+	}
+
+	void TargetDistanceUtility::propagateChanges( CFG &cfg, CG &cg, std::set<llvm::Instruction *> &worklist, llvm::Instruction *instruction ) {
+		// Propagate changes to predecessors.
+		worklist.insert( cfg.getPredecessors( instruction ).begin(), cfg.getPredecessors( instruction ).end() );
+		// Check if entry instruction and propagate to callers.
+		if ( (! instruction->getParent()->getParent()->empty()) && instruction == &(instruction->getParent()->getParent()->getEntryBlock().front()) )
+			worklist.insert( cg.getPossibleCallers( instruction->getParent()->getParent() ).begin(), cg.getPossibleCallers( instruction->getParent()->getParent() ).end() );
 	}
 
 	void TargetDistanceUtility::processWorklist( CFG &cfg, CG &cg, std::set<llvm::Instruction *> &worklist ) {
@@ -63,13 +71,8 @@ namespace SPA {
 				}
 			}
 
-			if ( updated ) {
-				// Propagate changes to predecessors.
-				worklist.insert( cfg.getPredecessors( inst ).begin(), cfg.getPredecessors( inst ).end() );
-				// Check if entry instruction and propagate to callers.
-				if ( (! inst->getParent()->getParent()->empty()) && inst == &(inst->getParent()->getParent()->getEntryBlock().front()) )
-					worklist.insert( cg.getPossibleCallers( inst->getParent()->getParent() ).begin(), cg.getPossibleCallers( inst->getParent()->getParent() ).end() );
-			}
+			if ( updated )
+				propagateChanges( cfg, cg, worklist, inst );
 		}
 
 		CLOUD9_DEBUG( "      Processing indirect paths." );

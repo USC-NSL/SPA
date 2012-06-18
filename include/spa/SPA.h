@@ -60,6 +60,7 @@ namespace SPA {
 		unsigned long checkpointsFound, filteredPathsFound, terminalPathsFound, outputtedPaths;
 
 		void generateMain();
+		void showStats();
 		void processPath( klee::ExecutionState *state );
 
 	public:
