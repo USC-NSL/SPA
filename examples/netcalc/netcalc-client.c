@@ -56,20 +56,14 @@ nc_value_t executeQuery( nc_operator_t op, nc_value_t arg1, nc_value_t arg2 ) {
 void SpaExecuteQueryEntry() {
 	spa_api_entry();
 
-	struct addrinfo hints, *result;
+	struct addrinfo hints;
 	bzero( &hints, sizeof( hints ) );
 	hints.ai_family = AF_INET;
 	hints.ai_socktype = SOCK_DGRAM;
 	hints.ai_protocol = IPPROTO_UDP;
-	assert( ! getaddrinfo( DEFAULT_HOST, NULL, &hints, &result ) );
-
-	for ( server = result; server; server = server->ai_next ) {
-		((struct sockaddr_in *) result->ai_addr)->sin_port = htons( NETCALC_UDP_PORT );
-		if ( (sock = socket( server->ai_family, server->ai_socktype, server->ai_protocol )) < 0 )
-			continue;
-		break;
-	}
-	assert( sock >= 0 && "Host could not be resolved." );
+	assert( ! getaddrinfo( DEFAULT_HOST, NULL, &hints, &server ) );
+	((struct sockaddr_in *) server->ai_addr)->sin_port = htons( NETCALC_UDP_PORT );
+	assert( (sock = socket( server->ai_family, server->ai_socktype, server->ai_protocol )) >= 0 && "Host could not be resolved." );
 
 	executeQuery( NC_ADDITION, 0, 0 );
 }
