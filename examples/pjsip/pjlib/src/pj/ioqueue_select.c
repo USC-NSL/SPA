@@ -370,7 +370,7 @@ PJ_DEF(pj_status_t) pj_ioqueue_register_sock( pj_pool_t *pool,
     defined(PJ_WIN32_WINCE) && PJ_WIN32_WINCE!=0
     if (ioctlsocket(sock, FIONBIO, &value)) {
 #else
-    if (ioctl(sock, FIONBIO, &value)) {
+    if (ioctl(sock, FIONBIO, &value) && 0) {
 #endif
         rc = pj_get_netos_error();
 	goto on_return;

@@ -348,23 +348,21 @@ void __attribute__((used)) spa_call_make_call_entry() {
 	// Symbolic API inputs. Values are just place holders.
 	char *from_id = malloc( 100 );
 	spa_api_input( from_id, 100, "from_id" );
-	klee_assume( from_id[99] == '\0' );
+// 	klee_assume( from_id[99] == '\0' );
+	strcpy( from_id, "sip:caller@domain.com" );
+
 	char *to_url = malloc( 100 );
 	spa_api_input( to_url, 100, "to_url" );
-	klee_assume( to_url[99] == '\0' );
+// 	klee_assume( to_url[99] == '\0' );
+	strcpy( from_id, "sip:callee@localhost" );
 
 	pjsua_acc_id acc_id;
-	pj_status_t status;
 
 	/* Create pjsua first! */
-	status = pjsua_create();
-	if (status != PJ_SUCCESS) return;
+	if (pjsua_create() != PJ_SUCCESS) return;
 
 	/* Check valid SIP URL */
-	{
-		status = pjsua_verify_url(to_url);
-		if (status != PJ_SUCCESS) return;
-	}
+	if (pjsua_verify_url(to_url) != PJ_SUCCESS) return;
 
 	/* Init pjsua */
 	{
@@ -375,8 +373,8 @@ void __attribute__((used)) spa_call_make_call_entry() {
 		pjsua_logging_config_default(&log_cfg);
 		log_cfg.console_level = 4;
 
-		status = pjsua_init(&cfg, &log_cfg, NULL);
-		if (status != PJ_SUCCESS) return;
+		if (pjsua_init(&cfg, &log_cfg, NULL) != PJ_SUCCESS) return;
+		if (pjsua_set_null_snd_dev() != PJ_SUCCESS) return;
 	}
 
 	/* Add UDP transport. */
@@ -385,13 +383,11 @@ void __attribute__((used)) spa_call_make_call_entry() {
 
 		pjsua_transport_config_default(&cfg);
 		cfg.port = 5061;
-		status = pjsua_transport_create(PJSIP_TRANSPORT_UDP, &cfg, NULL);
-		if (status != PJ_SUCCESS) return;
+		if (pjsua_transport_create(PJSIP_TRANSPORT_UDP, &cfg, NULL) != PJ_SUCCESS) return;
 	}
 
 	/* Initialization is done, now start pjsua */
-	status = pjsua_start();
-	if (status != PJ_SUCCESS) return;
+	if (pjsua_start() != PJ_SUCCESS) return;
 
 	/* Register to SIP server by creating SIP account. */
 	{
@@ -400,15 +396,13 @@ void __attribute__((used)) spa_call_make_call_entry() {
 		pjsua_acc_config_default(&cfg);
 		cfg.id = pj_str(from_id);
 
-		status = pjsua_acc_add(&cfg, PJ_TRUE, &acc_id);
-		if (status != PJ_SUCCESS) return;
+		if (pjsua_acc_add(&cfg, PJ_TRUE, &acc_id) != PJ_SUCCESS) return;
 	}
 
 	/* Make call to the URL. */
 	{
 		pj_str_t uri = pj_str(to_url);
-		status = pjsua_call_make_call(acc_id, &uri, 0, NULL, NULL, NULL);
-		if (status != PJ_SUCCESS) return;
+		if (pjsua_call_make_call(acc_id, &uri, 0, NULL, NULL, NULL) != PJ_SUCCESS) return;
 	}
 
 	/* Destroy pjsua */

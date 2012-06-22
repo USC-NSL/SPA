@@ -11,7 +11,7 @@ pjlib/build/.pjlib-x86_64-unknown-linux-gnu.depend
 pjlib/build/os-auto.mak
 pjlib/include/pj/compat/m_auto.h
 pjlib/include/pj/compat/os_auto.h
-pjlib/include/pj/config_site.h
+#pjlib/include/pj/config_site.h
 pjmedia/bin/pjmedia-test-x86_64-unknown-linux-gnu
 pjmedia/build/.pjmedia-audiodev-x86_64-unknown-linux-gnu.depend
 pjmedia/build/.pjmedia-codec-x86_64-unknown-linux-gnu.depend
