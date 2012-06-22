@@ -72,7 +72,7 @@ namespace SPA {
 		return predecessors[instruction];
 	}
 
-	void CFG::dump( std::ostream &dotFile, InstructionFilter *filter, std::map<InstructionFilter *, std::string> &annotations, StateUtility *utility ) {
+	void CFG::dump( std::ostream &dotFile, InstructionFilter *filter, std::map<InstructionFilter *, std::string> &annotations, StateUtility *utility, bool compact ) {
 		CG cg = CG( *this );
 
 		// Generate CFG DOT file.
@@ -102,18 +102,26 @@ namespace SPA {
 
 				dotFile << "	subgraph cluster_" << inst->getParent()->getParent()->getName().str() << " {" << std::endl
 					<< "		label = \"" << inst->getParent()->getParent()->getName().str() << "\";" << std::endl
-					<< "		n" << ((long) inst) << " [" << attributes.str() << "];" << std::endl
+					<< "		n" << (compact ? (unsigned long) inst->getParent() : (unsigned long) inst) << " [" << attributes.str() << "];" << std::endl
 					<< "	}" << std::endl;
 			}
 		}
 		// Add edges.
 		// Successors.
 		dotFile << "	edge [color = \"green\"];" << std::endl;
-		for ( iterator it1 = begin(), ie1 = end(); it1 != ie1; it1++ )
-			if ( ! filter || filter->checkInstruction( *it1 ) )
-				for ( iterator it2 = getSuccessors( *it1 ).begin(), ie2 = getSuccessors( *it1 ).end(); it2 != ie2; it2++ )
-					if ( ! filter || filter->checkInstruction( *it2 ) )
-						dotFile << "	n" << ((unsigned long) *it1) << " -> n" << ((unsigned long) *it2) << ";" << std::endl;
+		for ( iterator it1 = begin(), ie1 = end(); it1 != ie1; it1++ ) {
+			for ( iterator it2 = getSuccessors( *it1 ).begin(), ie2 = getSuccessors( *it1 ).end(); it2 != ie2; it2++ ) {
+				if ( filter && (! filter->checkInstruction( *it1 )) && (! filter->checkInstruction( *it2 )) )
+					continue;
+				if ( compact && (*it1)->getParent() == (*it2)->getParent() )
+					continue;
+
+				if ( compact )
+					dotFile << "	n" << ((unsigned long) (*it1)->getParent()) << " -> n" << ((unsigned long) (*it2)->getParent()) << ";" << std::endl;
+				else
+					dotFile << "	n" << ((unsigned long) *it1) << " -> n" << ((unsigned long) *it2) << ";" << std::endl;
+			}
+		}
 		// Callers.
 		dotFile << "	edge [color = \"blue\"];" << std::endl;
 		for ( CG::iterator it1 = cg.begin(), ie1 = cg.end(); it1 != ie1; it1++ ) {
@@ -122,12 +130,15 @@ namespace SPA {
 				if ( ! filter || filter->checkInstruction( *it2 ) ) {
 					if ( fn == NULL )
 						dotFile << "	IndirectFunction [label = \"*\" shape = \"box\"]" << std::endl
-							<< "	n" << ((unsigned long) *it2) << " -> IndirectFunction;" << std::endl;
+							<< "	n" << (compact ? (unsigned long) (*it2)->getParent() : (unsigned long) *it2) << " -> IndirectFunction;" << std::endl;
 					else if ( ! fn->empty() )
-						dotFile << "	n" << ((unsigned long) *it2) << " -> n" << ((unsigned long) &(fn->getEntryBlock().front())) << ";" << std::endl;
+						if ( compact )
+							dotFile << "	n" << ((unsigned long) (*it2)->getParent()) << " -> n" << ((unsigned long) &(fn->getEntryBlock())) << ";" << std::endl;
+						else
+							dotFile << "	n" << ((unsigned long) *it2) << " -> n" << ((unsigned long) &(fn->getEntryBlock().front())) << ";" << std::endl;
 					else
 						dotFile << "	n" << ((unsigned long) fn) << " [label = \"" << fn->getName().str() << "\" shape = \"box\"]" << std::endl
-							<< "	n" << ((unsigned long) *it2) << " -> n" << ((unsigned long) fn) << ";" << std::endl;
+							<< "	n" << (compact ? (unsigned long) (*it2)->getParent() : (unsigned long) *it2) << " -> n" << ((unsigned long) fn) << ";" << std::endl;
 				}
 			}
 		}
@@ -138,12 +149,15 @@ namespace SPA {
 				if ( ! filter || filter->checkInstruction( *it2 ) ) {
 					if ( fn == NULL )
 						dotFile << "	IndirectFunction [label = \"*\" shape = \"box\"]" << std::endl
-							<< "	n" << ((unsigned long) *it2) << " -> IndirectFunction;" << std::endl;
+							<< "	n" << (compact ? (unsigned long) (*it2)->getParent() : (unsigned long) *it2) << " -> IndirectFunction;" << std::endl;
 					else if ( ! fn->empty() )
-						dotFile << "	n" << ((unsigned long) *it2) << " -> n" << ((unsigned long) &(fn->getEntryBlock().front())) << ";" << std::endl;
+						if ( compact )
+							dotFile << "	n" << ((unsigned long) (*it2)->getParent()) << " -> n" << ((unsigned long) &(fn->getEntryBlock())) << ";" << std::endl;
+						else
+							dotFile << "	n" << ((unsigned long) *it2) << " -> n" << ((unsigned long) &(fn->getEntryBlock().front())) << ";" << std::endl;
 					else
 						dotFile << "	n" << ((unsigned long) fn) << " [label = \"" << fn->getName().str() << "\" shape = \"box\"]" << std::endl
-							<< "	n" << ((unsigned long) *it2) << " -> n" << ((unsigned long) fn) << ";" << std::endl;
+							<< "	n" << (compact ? (unsigned long) (*it2)->getParent() : (unsigned long) *it2) << " -> n" << ((unsigned long) fn) << ";" << std::endl;
 				}
 			}
 		}

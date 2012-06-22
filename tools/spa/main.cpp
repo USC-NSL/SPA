@@ -133,10 +133,6 @@ int main(int argc, char **argv, char **envp) {
 	CLOUD9_DEBUG( "   Creating CFG filter." );
 	SPA::InstructionFilter *filter = new SPA::CFGBackwardIF( cfg, cg, checkpoints );
 	spa.setInstructionFilter( filter );
-	if ( Client )
-		spa.setOutputFilteredPaths( false );
-	else if ( Server )
-		spa.setOutputFilteredPaths( true );
 	for ( std::set<llvm::Instruction *>::iterator it = entryPoints.begin(), ie = entryPoints.end(); it != ie; it++ ) {
 		if ( ! filter->checkInstruction( *it ) ) {
 			CLOUD9_DEBUG( "Entry point at function " << (*it)->getParent()->getParent()->getName().str() << " is not included in filter." );
@@ -165,19 +161,23 @@ int main(int argc, char **argv, char **envp) {
 		if ( filter )
 			annotations[new SPA::NegatedIF( filter )] = "style = \"filled\" fillcolor = \"grey\"";
 
-		cfg.dump( dotFile, /*filter*/ NULL, annotations, utility /*NULL*/ );
+		cfg.dump( dotFile, /*filter*/ NULL, annotations, utility /*NULL*/, false /*true*/ );
 
 		dotFile.flush();
 		dotFile.close();
 		return 0;
 	}
 
-	if ( Client )
+	if ( Client ) {
+		spa.setOutputFilteredPaths( false );
+		spa.setOutputTerminalPaths( false );
 		spa.setPathFilter( new SpaClientPathFilter() );
-	else if ( Server )
+	} else if ( Server ) {
+		spa.setOutputFilteredPaths( true );
+		spa.setOutputTerminalPaths( true );
 		spa.setPathFilter( new SpaServerPathFilter() );
+	}
 
-	spa.setOutputTerminalPaths( false );
 
 	CLOUD9_DEBUG( "Starting SPA." );
 	spa.start();

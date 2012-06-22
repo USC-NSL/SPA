@@ -39,7 +39,7 @@ namespace SPA {
 		const std::set<llvm::Instruction *> &getSuccessors( llvm::Instruction *instruction );
 		const std::set<llvm::Instruction *> &getPredecessors( llvm::Instruction *instruction );
 		// Dumps CFG as a GraphViz DOT-file.
-		void dump( std::ostream &dotFile, InstructionFilter *filter, std::map<InstructionFilter *, std::string> &annotations, StateUtility *utility );
+		void dump( std::ostream &dotFile, InstructionFilter *filter, std::map<InstructionFilter *, std::string> &annotations, StateUtility *utility, bool compact );
 	};
 }
 
