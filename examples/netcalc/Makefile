@@ -42,5 +42,5 @@ cfg: $(CFGS)
 run-spa: $(BADINPUTS)
 
 clean:
-	rm -f $(TARGETS) $(BC_TARGETS) $(PATHS) $(BADINPUTS)
+	rm -f $(TARGETS) $(BC_TARGETS) $(PATHS) $(BADINPUTS) $(CFGS) $(CFGS:.pdf=.dot)
 	rm -rf *.log klee-out-* klee-last
