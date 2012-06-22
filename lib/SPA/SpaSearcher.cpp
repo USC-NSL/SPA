@@ -42,6 +42,7 @@ namespace SPA {
 			<< (*(states.begin()->second->pc())).inst->getParent()->getParent()->getName().str()
 			<< ":" << (*(states.begin()->second->pc())).inst->getDebugLoc().getLine()
 			<< " with utility: " << - states.begin()->first );
+		klee::c9::printStateStack( std::cerr, *states.begin()->second ) << std::endl;
 		return *states.begin()->second;
 	}
 
@@ -56,8 +57,13 @@ namespace SPA {
 					(*hit)->onStateFiltered( *sit );
 			}
 		}
-		for ( std::set<klee::ExecutionState *>::iterator it = removedStates.begin(), ie = removedStates.end(); it != ie; it++ )
+		for ( std::set<klee::ExecutionState *>::iterator it = removedStates.begin(), ie = removedStates.end(); it != ie; it++ ) {
 			dequeueState( *it );
+			CLOUD9_DEBUG( "[SpaSearcher] Dequeuing state at "
+				<< (*((*it)->pc())).inst->getParent()->getParent()->getName().str()
+				<< ":" << (*((*it)->pc())).inst->getDebugLoc().getLine() );
+			klee::c9::printStateStack( std::cerr, **it ) << std::endl;
+		}
 		statesDequeued += removedStates.size();
 
 		// Re-insert to keep set coherent.

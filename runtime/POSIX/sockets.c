@@ -1658,6 +1658,14 @@ int getsockopt(int sockfd, int level, int optname, void *optval, socklen_t *optl
       *((int*) optval) = 0;
       *optlen = sizeof(int);
       break;
+    case SO_TYPE:
+      if (*optlen < sizeof(int)) {
+        errno = EINVAL;
+        return -1;
+      }
+      *((int*) optval) = sock->type;
+      *optlen = sizeof(int);
+      break;
     default:
       klee_warning("unsupported optname");
       errno = EINVAL;
