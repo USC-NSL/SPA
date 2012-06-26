@@ -131,13 +131,16 @@ static void udp_on_read_complete( pj_ioqueue_key_t *key,
 
     /* Don't do anything if transport is closing. */
     if (tp->is_closing) {
+	fprintf( stderr, "is_closing.\n" );
 	tp->is_closing++;
 	return;
     }
 
     /* Don't do anything if transport is being paused. */
-    if (tp->is_paused)
+    if (tp->is_paused) {
+	fprintf( stderr, "is_paused.\n" );
 	return;
+	}
 
     /*
      * The idea of the loop is to process immediate data received by
@@ -185,6 +188,7 @@ static void udp_on_read_complete( pj_ioqueue_key_t *key,
 	    rdata->pkt_info.len = 0;
 
 	} else if (bytes_read <= MIN_SIZE) {
+	fprintf( stderr, "min_size.\n" );
 
 	    /* TODO: */
 
@@ -233,8 +237,10 @@ static void udp_on_read_complete( pj_ioqueue_key_t *key,
 	 * check handles the case where transport is paused while endpoint
 	 * is still processing a SIP message.
 	 */
-	if (tp->is_paused)
+	if (tp->is_paused) {
+		fprintf( stderr, "is_paused2.\n" );
 	    return;
+	}
 
 	/* Read next packet. */
 	bytes_read = sizeof(rdata->pkt_info.packet);
@@ -283,19 +289,16 @@ static void udp_on_read_complete( pj_ioqueue_key_t *key,
 	    }
 	}
     }
+	fprintf( stderr, "udp_on_read_complete done.\n" );
 }
 
 static void __attribute__((used)) spa_udp_on_read_complete_entry() {
 	spa_message_handler_entry();
 
 	char h[1000];
-// 	spa_state( h, 1024, "h" );
 	pjsip_rx_data_op_key read_op;
-	spa_state_var( read_op );
 	pjsip_rx_data rdata;
-	spa_state_var( rdata );
 	struct udp_transport tp;
-	spa_state_var( tp );
 	uint8_t buf[1500];
 	spa_msg_input( buf, 1500, "message" );
 	pj_ssize_t bytes_read;
@@ -304,8 +307,12 @@ static void __attribute__((used)) spa_udp_on_read_complete_entry() {
 	((struct read_operation *) &read_op)->buf = buf;
 	((pjsip_rx_data_op_key *) &read_op)->rdata = &rdata;
 	rdata.tp_info.transport = (void *) &tp;
+    ((struct udp_transport*) ((pjsip_rx_data_op_key*) &read_op)->rdata->tp_info.transport)->is_closing = PJ_FALSE;
+    ((struct udp_transport*) ((pjsip_rx_data_op_key*) &read_op)->rdata->tp_info.transport)->is_paused = PJ_FALSE;
+    ((pj_sockaddr*) &((pjsip_rx_data_op_key*) &read_op)->rdata->pkt_info.src_addr)->addr.sa_family = PJ_AF_INET;
 
 	udp_on_read_complete( (pj_ioqueue_key_t *) h, (pj_ioqueue_op_key_t *) &read_op, bytes_read );
+	fprintf( stderr, "Message handler done.\n" );
 }
 
 
@@ -696,8 +703,12 @@ static pj_status_t transport_attach( pjsip_endpoint *endpt,
     unsigned i;
     pj_status_t status;
 
-    PJ_ASSERT_RETURN(endpt && sock!=PJ_INVALID_SOCKET && a_name && async_cnt>0,
-		     PJ_EINVAL);
+//     PJ_ASSERT_RETURN(endpt && sock!=PJ_INVALID_SOCKET && a_name && async_cnt>0,
+// 		     PJ_EINVAL);
+    assert(endpt);
+    assert(sock!=PJ_INVALID_SOCKET);
+    assert(a_name);
+    assert(async_cnt>0);
 
     /* Object name. */
     if (type & PJSIP_TRANSPORT_IPV6) {
@@ -712,6 +723,7 @@ static pj_status_t transport_attach( pjsip_endpoint *endpt,
     /* Create pool. */
     pool = pjsip_endpt_create_pool(endpt, format, PJSIP_POOL_LEN_TRANSPORT, 
 				   PJSIP_POOL_INC_TRANSPORT);
+	assert(pool);
     if (!pool)
 	return PJ_ENOMEM;
 
@@ -725,12 +737,14 @@ static pj_status_t transport_attach( pjsip_endpoint *endpt,
 
     /* Init reference counter. */
     status = pj_atomic_create(pool, 0, &tp->base.ref_cnt);
+	assert(status==PJ_SUCCESS);
     if (status != PJ_SUCCESS)
 	goto on_error;
 
     /* Init lock. */
     status = pj_lock_create_recursive_mutex(pool, pool->obj_name, 
 					    &tp->base.lock);
+	assert(status==PJ_SUCCESS);
     if (status != PJ_SUCCESS)
 	goto on_error;
 
@@ -754,6 +768,7 @@ static pj_status_t transport_attach( pjsip_endpoint *endpt,
     /* Init local address. */
     status = pj_sock_getsockname(sock, &tp->base.local_addr, 
 				 &tp->base.addr_len);
+	assert(status==PJ_SUCCESS);
     if (status != PJ_SUCCESS)
 	goto on_error;
 
@@ -777,6 +792,7 @@ static pj_status_t transport_attach( pjsip_endpoint *endpt,
 
     /* Register to ioqueue */
     status = register_to_ioqueue(tp);
+	assert(status==PJ_SUCCESS);
     if (status != PJ_SUCCESS)
 	goto on_error;
 
@@ -794,6 +810,7 @@ static pj_status_t transport_attach( pjsip_endpoint *endpt,
     /* Register to transport manager. */
     tp->base.tpmgr = pjsip_endpt_get_tpmgr(endpt);
     status = pjsip_transport_register( tp->base.tpmgr, (pjsip_transport*)tp);
+	assert(status==PJ_SUCCESS);
     if (status != PJ_SUCCESS)
 	goto on_error;
 
@@ -819,6 +836,7 @@ static pj_status_t transport_attach( pjsip_endpoint *endpt,
 
     /* Start reading the ioqueue. */
     status = start_async_read(tp);
+	assert(status==PJ_SUCCESS);
     if (status != PJ_SUCCESS) {
 	pjsip_transport_destroy(&tp->base);
 	return status;
