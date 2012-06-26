@@ -58,6 +58,11 @@ namespace SPA {
 				(*hit)->onStateFiltered( states.begin()->second );
 			dequeueState( states.begin()->second );
 		}
+		CLOUD9_DEBUG( "[SpaSearcher] Queued: " << states.size()
+			<< "; Utility Range: [" << (states.size() ? - states.rbegin()->first : 0)
+			<< "; " << (states.size() ? - states.begin()->first : 0)
+			<< "]; Processed: " << statesDequeued
+			<< "; Filtered: " << statesFiltered );
 		CLOUD9_DEBUG( "[SpaSearcher] Selecting state at "
 			<< (*(states.begin()->second->pc())).inst->getParent()->getParent()->getName().str()
 			<< ":" << (*(states.begin()->second->pc())).inst->getDebugLoc().getLine()
@@ -89,12 +94,5 @@ namespace SPA {
 		// Re-insert to keep set coherent.
 		if ( current )
 			enqueueState( dequeueState( current ) );
-
-		if ( removedStates.size() )
-			CLOUD9_DEBUG( "[SpaSearcher] Queued: " << states.size()
-				<< "; Utility Range: [" << (states.size() ? - states.rbegin()->first : 0)
-				<< "; " << (states.size() ? - states.begin()->first : 0)
-				<< "]; Processed: " << statesDequeued
-				<< "; Filtered: " << statesFiltered );
 	}
 }
