@@ -47,7 +47,17 @@ namespace SPA {
 	}
 
 	klee::ExecutionState &SpaSearcher::selectState() {
-		enqueueState( dequeueState( states.begin()->second ) );
+		if ( checkState( states.begin()->second ) ) {
+			// If head instruction is still in, re-insert to keep set coherent.
+			enqueueState( dequeueState( states.begin()->second ) );
+		} else if ( states.size() > 1 ) {
+			// If head instruction is out, remove it, unless the queue would become empty.
+			CLOUD9_DEBUG( "[SpaSearcher] Filtering ongoing state at instruction " << states.begin()->second->pc()->inst->getParent()->getParent()->getName().str() << ":" << states.begin()->second->pc()->inst->getDebugLoc().getLine() );
+			statesFiltered++;
+			for ( std::list<FilteringEventHandler *>::iterator hit = filteringEventHandlers.begin(), hie = filteringEventHandlers.end(); hit != hie; hit++ )
+				(*hit)->onStateFiltered( states.begin()->second );
+			dequeueState( states.begin()->second );
+		}
 		CLOUD9_DEBUG( "[SpaSearcher] Selecting state at "
 			<< (*(states.begin()->second->pc())).inst->getParent()->getParent()->getName().str()
 			<< ":" << (*(states.begin()->second->pc())).inst->getDebugLoc().getLine()
@@ -61,7 +71,7 @@ namespace SPA {
 			if ( checkState( *sit ) ) {
 				enqueueState( *sit );
 			} else {
-				CLOUD9_DEBUG( "[SpaSearcher] Filtering instruction at " << (*sit)->pc()->inst->getParent()->getParent()->getName().str() << ":" << (*sit)->pc()->inst->getDebugLoc().getLine() );
+				CLOUD9_DEBUG( "[SpaSearcher] Filtering new state at instruction " << (*sit)->pc()->inst->getParent()->getParent()->getName().str() << ":" << (*sit)->pc()->inst->getDebugLoc().getLine() );
 				statesFiltered++;
 				for ( std::list<FilteringEventHandler *>::iterator hit = filteringEventHandlers.begin(), hie = filteringEventHandlers.end(); hit != hie; hit++ )
 					(*hit)->onStateFiltered( *sit );
