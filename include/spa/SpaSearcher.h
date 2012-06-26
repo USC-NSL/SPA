@@ -23,7 +23,8 @@ namespace SPA {
 		unsigned long statesDequeued;
 		unsigned long statesFiltered;
 
-		klee::ExecutionState *enqueueState( klee::ExecutionState *state );
+		bool checkState( klee::ExecutionState *state );
+		void enqueueState( klee::ExecutionState *state );
 		klee::ExecutionState *dequeueState( klee::ExecutionState *state );
 
 	public:

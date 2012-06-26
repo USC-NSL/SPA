@@ -109,15 +109,15 @@ namespace SPA {
 
 		double result = - getDistance( state->pc()->inst );
 		if ( isFinal( state->pc()->inst ) )
-			return result;
+			return result > -INFINITY ? result : UTILITY_PROCESS_LAST;
 
 		for ( klee::ExecutionState::stack_ty::const_reverse_iterator it = state->stack().rbegin(), ie = state->stack().rend(); it != ie && it->caller; it++ ) {
 			result -= getDistance( it->caller->inst );
 			if ( isFinal( it->caller->inst ) )
-				return result;
+				return result > -INFINITY ? result : UTILITY_PROCESS_LAST;
 		}
 		// No final state was found.
-		return -INFINITY;
+		return UTILITY_PROCESS_LAST;
 	}
 
 	std::string TargetDistanceUtility::getColor( CFG &cfg, CG &cg, llvm::Instruction *instruction ) {
