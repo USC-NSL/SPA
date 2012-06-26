@@ -9,11 +9,17 @@ namespace SPA {
 	class StateUtility;
 }
 
+#include <cfloat>
 #include "klee/ExecutionState.h"
 #include "spa/CFG.h"
 #include "spa/CG.h"
 
 namespace SPA {
+#define UTILITY_PROCESS_FIRST	+INFINITY
+#define UTILITY_PROCESS_LAST	-DBL_MAX
+#define UTILITY_FILTER_OUT		-INFINITY
+#define UTILITY_NONE			UTILITY_PROCESS_LAST
+
 	class StateUtility {
 	public:
 		/**
