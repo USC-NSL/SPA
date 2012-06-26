@@ -18,7 +18,7 @@ namespace SPA {
 #define UTILITY_PROCESS_FIRST	+INFINITY
 #define UTILITY_PROCESS_LAST	-DBL_MAX
 #define UTILITY_FILTER_OUT		-INFINITY
-#define UTILITY_NONE			UTILITY_PROCESS_LAST
+#define UTILITY_DEFAULT			0
 
 	class StateUtility {
 	public:

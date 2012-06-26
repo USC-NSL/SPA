@@ -5,9 +5,10 @@
 #ifndef __SPASEARCHER_H__
 #define __SPASEARCHER_H__
 
+#include <vector>
+
 #include <klee/Searcher.h>
 
-#include <spa/InstructionFilter.h>
 #include <spa/StateUtility.h>
 #include <spa/FilteringEventHandler.h>
 
@@ -15,11 +16,10 @@
 namespace SPA {
 	class SpaSearcher : public klee::Searcher {
 	private:
-		InstructionFilter *filter;
-		StateUtility *stateUtility;
-		std::set<std::pair<double,klee::ExecutionState *> > states;
-		std::map<klee::ExecutionState *, double> stateUtilities;
-		std::list<FilteringEventHandler *> filteringEventHandlers;
+		std::vector<StateUtility *> stateUtilities;
+		std::set<std::pair<std::vector<double>,klee::ExecutionState *> > states;
+		std::map<klee::ExecutionState *, std::vector<double> > oldUtilities;
+		std::vector<FilteringEventHandler *> filteringEventHandlers;
 		unsigned long statesDequeued;
 		unsigned long statesFiltered;
 
@@ -28,8 +28,8 @@ namespace SPA {
 		klee::ExecutionState *dequeueState( klee::ExecutionState *state );
 
 	public:
-		explicit SpaSearcher( InstructionFilter *_filter, StateUtility *_stateUtility )
-			: filter( _filter ), stateUtility( _stateUtility ), statesDequeued( 0 ), statesFiltered( 0 ) { };
+		explicit SpaSearcher( std::vector<StateUtility *> _stateUtilities )
+			: stateUtilities( _stateUtilities ), statesDequeued( 0 ), statesFiltered( 0 ) { };
 		void addFilteringEventHandler( FilteringEventHandler *handler ) { filteringEventHandlers.push_back( handler ); }
 		~SpaSearcher() { };
 

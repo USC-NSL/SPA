@@ -23,6 +23,7 @@
 #include "spa/WhitelistIF.h"
 #include "spa/DummyIF.h"
 #include "spa/NegatedIF.h"
+#include "spa/InstructionFilterUtility.h"
 #include "spa/AstarUtility.h"
 #include "spa/PathFilter.h"
 
@@ -132,7 +133,7 @@ int main(int argc, char **argv, char **envp) {
 	// Create instruction filter.
 	CLOUD9_DEBUG( "   Creating CFG filter." );
 	SPA::InstructionFilter *filter = new SPA::CFGBackwardIF( cfg, cg, checkpoints );
-	spa.setInstructionFilter( filter );
+	spa.addStateUtility( new SPA::InstructionFilterUtility( filter ) );
 	for ( std::set<llvm::Instruction *>::iterator it = entryPoints.begin(), ie = entryPoints.end(); it != ie; it++ ) {
 		if ( ! filter->checkInstruction( *it ) ) {
 			CLOUD9_DEBUG( "Entry point at function " << (*it)->getParent()->getParent()->getName().str() << " is not included in filter." );
@@ -149,7 +150,7 @@ int main(int argc, char **argv, char **envp) {
 	else if ( Server && filter )
 		utility = new SPA::AstarUtility( cfg, cg, *filter );
 // 		utility = new SPA::TargetDistanceUtility( cfg, cg, *filter );
-	spa.setStateUtility( utility );
+	spa.addStateUtility( utility );
 
 	if ( DumpCFG.size() > 0 ) {
 		CLOUD9_DEBUG( "Dumping CFG to: " << DumpCFG.getValue() );

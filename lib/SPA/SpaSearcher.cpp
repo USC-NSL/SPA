@@ -2,6 +2,8 @@
  * SPA - Systematic Protocol Analysis Framework
  */
 
+#include <sstream>
+
 #include <spa/SpaSearcher.h>
 
 #include <klee/ExecutionState.h>
@@ -13,37 +15,33 @@
 
 namespace SPA {
 	bool SpaSearcher::checkState( klee::ExecutionState *state ) {
-		if ( filter && ! filter->checkInstruction( state->pc()->inst ) ) {
-			CLOUD9_DEBUG( "[SpaSearcher] State filtered by instruction filter." );
-			return false;
-		}
-		if ( stateUtility && stateUtility->getUtility( state ) == -INFINITY ) {
-			CLOUD9_DEBUG( "[SpaSearcher] State filtered by utility function." );
-			return false;
-		}
+		for ( std::vector<StateUtility *>::iterator it = stateUtilities.begin(), ie = stateUtilities.end(); it != ie; it++ )
+			if ( (*it)->getUtility( state ) == UTILITY_FILTER_OUT )
+				return false;
 		return true;
 	}
 
 	void SpaSearcher::enqueueState( klee::ExecutionState *state ) {
-		if ( stateUtility ) {
+		std::vector<double> u;
+		for ( std::vector<StateUtility *>::iterator it = stateUtilities.begin(), ie = stateUtilities.end(); it != ie; it++ )
 			// Invert search order to get high priority states at beginning of queue.
-			double u = - stateUtility->getUtility( state );
-			states.insert( std::pair<double, klee::ExecutionState *>( u, state ) );
-			stateUtilities[state] = u;
-		} else {
-			states.insert( std::pair<double, klee::ExecutionState *>( UTILITY_NONE, state ) );
-		}
+			u.push_back( - (*it)->getUtility( state ) );
+		states.insert( std::pair<std::vector<double>, klee::ExecutionState *>( u, state ) );
+		oldUtilities[state] = u;
 	}
 
 	klee::ExecutionState *SpaSearcher::dequeueState( klee::ExecutionState *state ) {
-		if ( stateUtility ) {
-			states.erase( std::pair<double, klee::ExecutionState *>( stateUtilities[state], state ) );
-			stateUtilities.erase( state );
-		} else {
-			states.erase( std::pair<double, klee::ExecutionState *>( 0, state ) );
-		}
+		states.erase( std::pair<std::vector<double>, klee::ExecutionState *>( oldUtilities[state], state ) );
+		oldUtilities.erase( state );
 
 		return state;
+	}
+
+	std::string utilityStr( const std::vector<double> &utility ) {
+		std::stringstream result;
+		for ( std::vector<double>::const_iterator it = utility.begin(), ie = utility.end(); it != ie; it++ )
+			result << (it != utility.begin() ? "," : "") << (-*it);
+		return result.str();
 	}
 
 	klee::ExecutionState &SpaSearcher::selectState() {
@@ -54,19 +52,18 @@ namespace SPA {
 			// If head instruction is out, remove it, unless the queue would become empty.
 			CLOUD9_DEBUG( "[SpaSearcher] Filtering ongoing state at instruction " << states.begin()->second->pc()->inst->getParent()->getParent()->getName().str() << ":" << states.begin()->second->pc()->inst->getDebugLoc().getLine() );
 			statesFiltered++;
-			for ( std::list<FilteringEventHandler *>::iterator hit = filteringEventHandlers.begin(), hie = filteringEventHandlers.end(); hit != hie; hit++ )
+			for ( std::vector<FilteringEventHandler *>::iterator hit = filteringEventHandlers.begin(), hie = filteringEventHandlers.end(); hit != hie; hit++ )
 				(*hit)->onStateFiltered( states.begin()->second );
 			dequeueState( states.begin()->second );
 		}
 		CLOUD9_DEBUG( "[SpaSearcher] Queued: " << states.size()
-			<< "; Utility Range: [" << (states.size() ? - states.rbegin()->first : 0)
-			<< "; " << (states.size() ? - states.begin()->first : 0)
+			<< "; Utility Range: [" << (states.size() ? utilityStr( states.rbegin()->first ) : "")
+			<< "; " << (states.size() ? utilityStr( states.begin()->first ) : "")
 			<< "]; Processed: " << statesDequeued
 			<< "; Filtered: " << statesFiltered );
 		CLOUD9_DEBUG( "[SpaSearcher] Selecting state at "
 			<< (*(states.begin()->second->pc())).inst->getParent()->getParent()->getName().str()
-			<< ":" << (*(states.begin()->second->pc())).inst->getDebugLoc().getLine()
-			<< " with utility: " << - states.begin()->first );
+			<< ":" << (*(states.begin()->second->pc())).inst->getDebugLoc().getLine() );
 		klee::c9::printStateStack( std::cerr, *states.begin()->second ) << std::endl;
 		return *states.begin()->second;
 	}
@@ -78,7 +75,7 @@ namespace SPA {
 			} else {
 				CLOUD9_DEBUG( "[SpaSearcher] Filtering new state at instruction " << (*sit)->pc()->inst->getParent()->getParent()->getName().str() << ":" << (*sit)->pc()->inst->getDebugLoc().getLine() );
 				statesFiltered++;
-				for ( std::list<FilteringEventHandler *>::iterator hit = filteringEventHandlers.begin(), hie = filteringEventHandlers.end(); hit != hie; hit++ )
+				for ( std::vector<FilteringEventHandler *>::iterator hit = filteringEventHandlers.begin(), hie = filteringEventHandlers.end(); hit != hie; hit++ )
 					(*hit)->onStateFiltered( *sit );
 			}
 		}

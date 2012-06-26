@@ -14,7 +14,6 @@
 
 #include <cloud9/worker/SymbolicEngine.h>
 
-#include <spa/InstructionFilter.h>
 #include <spa/StateUtility.h>
 #include <spa/FilteringEventHandler.h>
 #include <spa/PathFilter.h>
@@ -51,8 +50,7 @@ namespace SPA {
 		llvm::BasicBlock *entryReturnBB;
 		std::ostream &output;
 		std::set<llvm::Instruction *> checkpoints;
-		InstructionFilter *instructionFilter;
-		StateUtility *stateUtility;
+		std::vector<StateUtility *> stateUtilities;
 		PathFilter *pathFilter;
 		bool outputFilteredPaths;
 		bool outputTerminalPaths;
@@ -67,8 +65,7 @@ namespace SPA {
 		SPA( llvm::Module *_module, std::ostream &_output );
 		void addInitFunction( llvm::Function *fn );
 		void addEntryFunction( llvm::Function *fn );
-		void setInstructionFilter( InstructionFilter *_instructionFilter ) { instructionFilter = _instructionFilter; }
-		void setStateUtility( StateUtility *_stateUtility ) { stateUtility = _stateUtility; }
+		void addStateUtility( StateUtility *stateUtility ) { stateUtilities.push_back( stateUtility ); }
 		void setPathFilter( PathFilter *_pathFilter ) { pathFilter = _pathFilter; }
 		void addCheckpoint( llvm::Instruction *instruction ) { checkpoints.insert( instruction ); }
 		void setOutputFilteredPaths( bool _outputFilteredPaths ) { outputFilteredPaths = _outputFilteredPaths; }
