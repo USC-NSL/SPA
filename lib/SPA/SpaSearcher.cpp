@@ -25,20 +25,13 @@ namespace SPA {
 	}
 
 	void SpaSearcher::enqueueState( klee::ExecutionState *state ) {
-		if ( checkState( state ) ) {
-			if ( stateUtility ) {
-				// Invert search order to get high priority states at beginning of queue.
-				double u = - stateUtility->getUtility( state );
-				states.insert( std::pair<double, klee::ExecutionState *>( u, state ) );
-				stateUtilities[state] = u;
-			} else {
-				states.insert( std::pair<double, klee::ExecutionState *>( UTILITY_NONE, state ) );
-			}
+		if ( stateUtility ) {
+			// Invert search order to get high priority states at beginning of queue.
+			double u = - stateUtility->getUtility( state );
+			states.insert( std::pair<double, klee::ExecutionState *>( u, state ) );
+			stateUtilities[state] = u;
 		} else {
-			CLOUD9_DEBUG( "[SpaSearcher] Filtering instruction at " << state->pc()->inst->getParent()->getParent()->getName().str() << ":" << state->pc()->inst->getDebugLoc().getLine() );
-			statesFiltered++;
-			for ( std::list<FilteringEventHandler *>::iterator hit = filteringEventHandlers.begin(), hie = filteringEventHandlers.end(); hit != hie; hit++ )
-				(*hit)->onStateFiltered( state );
+			states.insert( std::pair<double, klee::ExecutionState *>( UTILITY_NONE, state ) );
 		}
 	}
 
@@ -64,8 +57,16 @@ namespace SPA {
 	}
 
 	void SpaSearcher::update( klee::ExecutionState *current, const std::set<klee::ExecutionState *> &addedStates, const std::set<klee::ExecutionState *> &removedStates) {
-		for ( std::set<klee::ExecutionState*>::iterator sit = addedStates.begin(), sie = addedStates.end(); sit != sie; sit++ )
-			enqueueState( *sit );
+		for ( std::set<klee::ExecutionState*>::iterator sit = addedStates.begin(), sie = addedStates.end(); sit != sie; sit++ ) {
+			if ( checkState( *sit ) ) {
+				enqueueState( *sit );
+			} else {
+				CLOUD9_DEBUG( "[SpaSearcher] Filtering instruction at " << (*sit)->pc()->inst->getParent()->getParent()->getName().str() << ":" << (*sit)->pc()->inst->getDebugLoc().getLine() );
+				statesFiltered++;
+				for ( std::list<FilteringEventHandler *>::iterator hit = filteringEventHandlers.begin(), hie = filteringEventHandlers.end(); hit != hie; hit++ )
+					(*hit)->onStateFiltered( *sit );
+			}
+		}
 		for ( std::set<klee::ExecutionState *>::iterator it = removedStates.begin(), ie = removedStates.end(); it != ie; it++ ) {
 			dequeueState( *it );
 			CLOUD9_DEBUG( "[SpaSearcher] Dequeuing state at "
