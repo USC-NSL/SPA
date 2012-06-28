@@ -15,9 +15,14 @@
 
 namespace SPA {
 	bool SpaSearcher::checkState( klee::ExecutionState *state ) {
-		for ( std::vector<StateUtility *>::iterator it = stateUtilities.begin(), ie = stateUtilities.end(); it != ie; it++ )
-			if ( (*it)->getUtility( state ) == UTILITY_FILTER_OUT )
+		unsigned int u = 0;
+		for ( std::vector<StateUtility *>::iterator it = stateUtilities.begin(), ie = stateUtilities.end(); it != ie; it++, u++ ) {
+			if ( (*it)->getUtility( state ) == UTILITY_FILTER_OUT ) {
+				CLOUD9_DEBUG( "[SpaSearcher] Filtering state due to utility " << u << " at:" );
+				klee::c9::printStateStack( std::cerr, *state ) << std::endl;
 				return false;
+			}
+		}
 		return true;
 	}
 
@@ -44,18 +49,27 @@ namespace SPA {
 		return result.str();
 	}
 
-	klee::ExecutionState &SpaSearcher::selectState() {
-		if ( checkState( states.begin()->second ) ) {
-			// If head instruction is still in, re-insert to keep set coherent.
-			enqueueState( dequeueState( states.begin()->second ) );
-		} else if ( states.size() > 1 ) {
-			// If head instruction is out, remove it, unless the queue would become empty.
-			CLOUD9_DEBUG( "[SpaSearcher] Filtering ongoing state at instruction " << states.begin()->second->pc()->inst->getParent()->getParent()->getName().str() << ":" << states.begin()->second->pc()->inst->getDebugLoc().getLine() );
-			statesFiltered++;
-			for ( std::vector<FilteringEventHandler *>::iterator hit = filteringEventHandlers.begin(), hie = filteringEventHandlers.end(); hit != hie; hit++ )
-				(*hit)->onStateFiltered( states.begin()->second );
-			dequeueState( states.begin()->second );
+	void SpaSearcher::filterState( klee::ExecutionState *state ) {
+		dequeueState( state );
+		statesFiltered++;
+		for ( std::vector<FilteringEventHandler *>::iterator hit = filteringEventHandlers.begin(), hie = filteringEventHandlers.end(); hit != hie; hit++ )
+			(*hit)->onStateFiltered( state );
+	}
+
+	void SpaSearcher::reorderState( klee::ExecutionState *state ) {
+		enqueueState( dequeueState( states.begin()->second ) );
+		// Remove trailing filtered states, unless the queue would become empty.
+		for ( std::set<std::pair<std::vector<double>,klee::ExecutionState *> >::reverse_iterator it = states.rbegin(), ie = states.rend(); it != ie; it++ ) {
+			if ( (! checkState( it->second )) && states.size() > 1 )
+				filterState( it->second );
+			else
+				break;
 		}
+	}
+
+	klee::ExecutionState &SpaSearcher::selectState() {
+		// Reorder head state to keep set coherent.
+		reorderState( states.begin()->second );
 		CLOUD9_DEBUG( "[SpaSearcher] Queued: " << states.size()
 			<< "; Utility Range: [" << (states.size() ? utilityStr( states.rbegin()->first ) : "")
 			<< "; " << (states.size() ? utilityStr( states.begin()->first ) : "")
@@ -73,10 +87,7 @@ namespace SPA {
 			if ( checkState( *sit ) ) {
 				enqueueState( *sit );
 			} else {
-				CLOUD9_DEBUG( "[SpaSearcher] Filtering new state at instruction " << (*sit)->pc()->inst->getParent()->getParent()->getName().str() << ":" << (*sit)->pc()->inst->getDebugLoc().getLine() );
-				statesFiltered++;
-				for ( std::vector<FilteringEventHandler *>::iterator hit = filteringEventHandlers.begin(), hie = filteringEventHandlers.end(); hit != hie; hit++ )
-					(*hit)->onStateFiltered( *sit );
+				filterState( *sit );
 			}
 		}
 		for ( std::set<klee::ExecutionState *>::iterator it = removedStates.begin(), ie = removedStates.end(); it != ie; it++ ) {
@@ -88,8 +99,7 @@ namespace SPA {
 		}
 		statesDequeued += removedStates.size();
 
-		// Re-insert to keep set coherent.
 		if ( current )
-			enqueueState( dequeueState( current ) );
+			reorderState( current );
 	}
 }

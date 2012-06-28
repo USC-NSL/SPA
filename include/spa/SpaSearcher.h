@@ -26,6 +26,8 @@ namespace SPA {
 		bool checkState( klee::ExecutionState *state );
 		void enqueueState( klee::ExecutionState *state );
 		klee::ExecutionState *dequeueState( klee::ExecutionState *state );
+		void filterState( klee::ExecutionState *state );
+		void reorderState( klee::ExecutionState *state );
 
 	public:
 		explicit SpaSearcher( std::vector<StateUtility *> _stateUtilities )
