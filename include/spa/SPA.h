@@ -21,6 +21,7 @@
 #define SPA_API_ANNOTATION_FUNCTION				"spa_api_entry"
 #define SPA_MESSAGE_HANDLER_ANNOTATION_FUNCTION	"spa_message_handler_entry"
 #define SPA_CHECKPOINT_ANNOTATION_FUNCTION		"spa_checkpoint"
+#define SPA_WAYPOINT_ANNOTATION_FUNCTION		"spa_waypoint"
 
 #define SPA_PREFIX					"spa_"
 #define SPA_TAG_PREFIX				SPA_PREFIX "tag_"
@@ -31,6 +32,7 @@
 #define SPA_OUTPUT_PREFIX			SPA_PREFIX "out_"
 #define SPA_API_OUTPUT_PREFIX		SPA_OUTPUT_PREFIX "api_"
 #define SPA_MESSAGE_OUTPUT_PREFIX	SPA_OUTPUT_PREFIX "msg_"
+#define SPA_WAYPOINTS_VARIABLE		SPA_PREFIX "waypoints"
 
 #define SPA_HANDLERTYPE_TAG			"HandlerType"
 #define SPA_MESSAGEHANDLER_VALUE	"Message"

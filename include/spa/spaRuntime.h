@@ -4,6 +4,8 @@
 #include <stdarg.h>
 #include <klee/klee.h>
 
+#define SPA_MAX_WAYPOINTS 8
+
 typedef const char *SpaTag_t;
 typedef void (*SpaRuntimeHandler_t)( va_list );
 
@@ -89,6 +91,17 @@ extern "C" {
 	void __attribute__((noinline,weak)) spa_message_handler_entry() {
 		static SpaTag_t HandlerType;
 		spa_tag( HandlerType, "Message" );
+	}
+	void __attribute__((noinline,weak)) spa_waypoint( unsigned int id ) {
+		static bool init = false;
+		static uint8_t waypoints[SPA_MAX_WAYPOINTS / 8 + 1];
+		klee_make_symbolic( waypoints, sizeof( waypoints ), "spa_waypoints" );
+		if ( ! init ) {
+			bzero( waypoints, sizeof( waypoints ) );
+			init = true;
+		}
+		klee_assert( id < SPA_MAX_WAYPOINTS );
+		waypoints[id>>3] |= id & 0x7;
 	}
 #ifdef __cplusplus
 }
