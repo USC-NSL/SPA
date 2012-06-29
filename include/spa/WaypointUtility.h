@@ -7,10 +7,12 @@
 
 #include "spa/StateUtility.h"
 
+#include <spa/CFGBackwardFilter.h>
+
 namespace SPA {
 	class WaypointUtility : public StateUtility {
 	private:
-		std::map<unsigned int, InstructionFilter *> filters;
+		std::map<unsigned int, CFGBackwardFilter *> filters;
 		bool mandatory;
 
 	public:

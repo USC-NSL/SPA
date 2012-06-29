@@ -2,17 +2,16 @@
  * SPA - Systematic Protocol Analysis Framework
  */
 
-#include "llvm/Instructions.h"
+#include "spa/CFGBackwardFilter.h"
 
+#include "llvm/Instructions.h"
+#include <klee/Internal/Module/KInstruction.h>
 #include "cloud9/Logger.h"
 
-#include "spa/CFGBackwardIF.h"
-
 namespace SPA {
-	CFGBackwardIF::CFGBackwardIF( CFG &cfg, CG &cg, std::set<llvm::Instruction *> &targets ) {
+	CFGBackwardFilter::CFGBackwardFilter( CFG &cfg, CG &cg, std::set<llvm::Instruction *> &targets ) {
 		// Use a worklist to add all predecessors of target instruction.
 		std::set<llvm::Instruction *> worklist = targets;
-		std::set<llvm::Instruction *> reaching;
 		std::set<llvm::Function *> fnWorklist;
 		std::set<llvm::Function *> fnProcessed;
 
@@ -23,7 +22,7 @@ namespace SPA {
 			worklist.erase( it );
 
 			// Mark instruction as reaching.
-			reaching.insert( inst );
+			reaching[inst] = true;
 			std::set<llvm::Instruction *> p = cfg.getPredecessors( inst );
 			// Add all non-reaching predecessors to work list.
 			for ( it = p.begin(), ie = p.end(); it != ie; it++ )
@@ -52,7 +51,7 @@ namespace SPA {
 
 			// Add entire function to reaching set.
 			for ( std::vector<llvm::Instruction *>::const_iterator it2 = cfg.getInstructions( fn ).begin(), ie2 = cfg.getInstructions( fn ).end(); it2 != ie2; it2++ ) {
-				reaching.insert( *it2 );
+				reaching[*it2] = true;
 				for ( std::set<llvm::Function *>::iterator it3 = cg.getPossibleCallees( *it2 ).begin(), ie3 = cg.getPossibleCallees( *it2 ).end(); it3 != ie3; it3++ )
 					// Add possible called functions to function work list (maybe a call-site).
 					if ( ! fnProcessed.count( *it3 ) )
@@ -61,13 +60,33 @@ namespace SPA {
 		}
 
 		// Define filter out set as opposite of reaching set.
-		CLOUD9_DEBUG( "      Defining filter." );
 		for ( CFG::iterator it = cfg.begin(), ie = cfg.end(); it != ie; it++ )
 			if ( reaching.count( *it ) == 0 )
-				filterOut.insert( *it );
+				reaching[*it] = false;
 	}
 
-	bool CFGBackwardIF::checkInstruction( llvm::Instruction *instruction ) {
-		return filterOut.count( instruction ) == 0;
+	bool CFGBackwardFilter::checkInstruction( llvm::Instruction *instruction ) {
+		return reaching.count( instruction ) && reaching[instruction];
+	}
+
+	double CFGBackwardFilter::getUtility( const klee::ExecutionState *state ) {
+		for ( klee::ExecutionState::stack_ty::const_iterator it = state->stack().begin(), ie = state->stack().end(); it != ie; it++ ) {
+			if ( it->caller ) {
+				if ( reaching.count( it->caller->inst ) == 0 )
+					return UTILITY_DEFAULT;
+				else if ( ! reaching[it->caller->inst] )
+					return UTILITY_FILTER_OUT;
+			}
+		}
+		return UTILITY_DEFAULT;
+	}
+
+	std::string CFGBackwardFilter::getColor( CFG &cfg, CG &cg, llvm::Instruction *instruction ) {
+		if ( reaching.count( instruction ) == 0 )
+			return "grey";
+		else if ( reaching[instruction] )
+			return "white";
+		else
+			return "black";
 	}
 }

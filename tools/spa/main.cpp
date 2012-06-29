@@ -19,11 +19,10 @@
 #include "spa/CG.h"
 #include "spa/SPA.h"
 #include "spa/Path.h"
-#include "spa/CFGBackwardIF.h"
+#include "spa/CFGBackwardFilter.h"
 #include "spa/WhitelistIF.h"
 #include "spa/DummyIF.h"
 #include "spa/NegatedIF.h"
-#include "spa/InstructionFilterUtility.h"
 #include "spa/WaypointUtility.h"
 #include "spa/AstarUtility.h"
 #include "spa/PathFilter.h"
@@ -151,8 +150,8 @@ int main(int argc, char **argv, char **envp) {
 
 	// Create instruction filter.
 	CLOUD9_DEBUG( "   Creating CFG filter." );
-	SPA::InstructionFilter *filter = new SPA::CFGBackwardIF( cfg, cg, checkpoints );
-	spa.addStateUtility( new SPA::InstructionFilterUtility( filter ) );
+	SPA::CFGBackwardFilter *filter = new SPA::CFGBackwardFilter( cfg, cg, checkpoints );
+	spa.addStateUtility( filter );
 	for ( std::set<llvm::Instruction *>::iterator it = entryPoints.begin(), ie = entryPoints.end(); it != ie; it++ ) {
 		if ( ! filter->checkInstruction( *it ) ) {
 			CLOUD9_DEBUG( "Entry point at function " << (*it)->getParent()->getParent()->getName().str() << " is not included in filter." );
@@ -161,7 +160,7 @@ int main(int argc, char **argv, char **envp) {
 	}
 
 	// Create waypoint utility.
-	if ( 0 && ! waypoints.empty() ) {
+	if ( ! waypoints.empty() ) {
 		CLOUD9_DEBUG( "   Creating waypoint utility." );
 		spa.addStateUtility( new SPA::WaypointUtility( cfg, cg, waypoints, true ) );
 	}
