@@ -57,6 +57,26 @@ void __attribute__((weak)) __spa_output( void *var, size_t size, const char *var
 	spa_checkpoint();
 }
 
+#ifdef __cplusplus
+extern "C" {
+#endif// #ifdef __cplusplus
+	void __attribute__((noinline,weak)) spa_waypoint( unsigned int id ) {
+		static bool init = false;
+		static uint8_t waypoints[SPA_MAX_WAYPOINTS / 8 + 1];
+		static uint8_t *waypointsPtr;
+		if ( ! init ) {
+			bzero( waypoints, sizeof( waypoints ) );
+			klee_make_symbolic( &waypointsPtr, sizeof( waypointsPtr ), "spa_waypoints" );
+			waypointsPtr = waypoints;
+			init = true;
+		}
+		klee_assert( id < SPA_MAX_WAYPOINTS );
+		waypoints[id>>3] |= 1<<(id & 0x7);
+	}
+#ifdef __cplusplus
+}
+#endif// #ifdef __cplusplus
+
 #else // #ifdef ENABLE_SPA
 
 #define spa_default_invalid()
@@ -78,6 +98,8 @@ void __attribute__((weak)) __spa_output( void *var, size_t size, const char *var
 #define spa_msg_output( var, size, name )
 #define spa_msg_output_var( var )
 
+#define spa_waypoint( id )
+
 #endif // #ifdef ENABLE_SPA #else
 
 
@@ -91,17 +113,6 @@ extern "C" {
 	void __attribute__((noinline,weak)) spa_message_handler_entry() {
 		static SpaTag_t HandlerType;
 		spa_tag( HandlerType, "Message" );
-	}
-	void __attribute__((noinline,weak)) spa_waypoint( unsigned int id ) {
-		static bool init = false;
-		static uint8_t waypoints[SPA_MAX_WAYPOINTS / 8 + 1];
-		klee_make_symbolic( waypoints, sizeof( waypoints ), "spa_waypoints" );
-		if ( ! init ) {
-			bzero( waypoints, sizeof( waypoints ) );
-			init = true;
-		}
-		klee_assert( id < SPA_MAX_WAYPOINTS );
-		waypoints[id>>3] |= id & 0x7;
 	}
 #ifdef __cplusplus
 }
