@@ -288,23 +288,21 @@ static void udp_on_read_complete( pj_ioqueue_key_t *key,
 static void __attribute__((used)) spa_udp_on_read_complete_entry() {
 	spa_message_handler_entry();
 
-	char h[1000];
-	pjsip_rx_data_op_key read_op;
-	pjsip_rx_data rdata;
-	struct udp_transport tp;
-	uint8_t buf[1500];
-	spa_msg_input( buf, 1500, "message" );
+	uint8_t message[PJSIP_MAX_PKT_LEN];
+	spa_msg_input_var( message );
 	pj_ssize_t bytes_read;
 	spa_msg_input_size( bytes_read, "message" );
 
-	((struct read_operation *) &read_op)->buf = buf;
-	((pjsip_rx_data_op_key *) &read_op)->rdata = &rdata;
+	struct pjsip_rx_data rdata;
+	memcpy( rdata.pkt_info.packet, message, PJSIP_MAX_PKT_LEN );
+	rdata.tp_info.op_key.rdata = &rdata;
+	struct udp_transport tp;
 	rdata.tp_info.transport = (void *) &tp;
-    ((struct udp_transport*) ((pjsip_rx_data_op_key*) &read_op)->rdata->tp_info.transport)->is_closing = PJ_FALSE;
-    ((struct udp_transport*) ((pjsip_rx_data_op_key*) &read_op)->rdata->tp_info.transport)->is_paused = PJ_FALSE;
-    ((pj_sockaddr*) &((pjsip_rx_data_op_key*) &read_op)->rdata->pkt_info.src_addr)->addr.sa_family = PJ_AF_INET;
+    tp.is_closing = PJ_FALSE;
+    tp.is_paused = PJ_FALSE;
+    ((pj_sockaddr*) &rdata.pkt_info.src_addr)->addr.sa_family = PJ_AF_INET;
 
-	udp_on_read_complete( (pj_ioqueue_key_t *) h, (pj_ioqueue_op_key_t *) &read_op, bytes_read );
+	udp_on_read_complete( NULL, (pj_ioqueue_op_key_t *) &rdata.tp_info.op_key, bytes_read );
 }
 
 
