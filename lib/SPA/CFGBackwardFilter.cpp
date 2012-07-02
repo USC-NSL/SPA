@@ -12,8 +12,7 @@ namespace SPA {
 	CFGBackwardFilter::CFGBackwardFilter( CFG &cfg, CG &cg, std::set<llvm::Instruction *> &targets ) {
 		// Use a worklist to add all predecessors of target instruction.
 		std::set<llvm::Instruction *> worklist = targets;
-		std::set<llvm::Function *> fnWorklist;
-		std::set<llvm::Function *> fnProcessed;
+		std::set<llvm::Function *> pathFunctions;
 
 		CLOUD9_DEBUG( "      Exploring reverse path." );
 		while ( ! worklist.empty() ) {
@@ -28,8 +27,8 @@ namespace SPA {
 			for ( it = p.begin(), ie = p.end(); it != ie; it++ )
 				if ( reaching.count( *it ) == 0 )
 					worklist.insert( *it );
-			// Add possible called functions to function work list (maybe a call-site).
-			fnWorklist.insert( cg.getPossibleCallees( inst ).begin(), cg.getPossibleCallees( inst ).end() );
+			// Mark function as on direct path.
+			pathFunctions.insert( inst->getParent()->getParent() );
 			// Check if entry instruction.
 			if ( inst == &(inst->getParent()->getParent()->getEntryBlock().front()) ) {
 				p = cg.getPossibleCallers( inst->getParent()->getParent() );
@@ -40,28 +39,9 @@ namespace SPA {
 			}
 		}
 
-		CLOUD9_DEBUG( "      Exploring called functions." );
-		while ( ! fnWorklist.empty() ) {
-			std::set<llvm::Function *>::iterator it = fnWorklist.begin(), ie;
-			llvm::Function *fn = *it;
-			fnWorklist.erase( it );
-
-			// Mark function as processed.
-			fnProcessed.insert( fn );
-
-			// Add entire function to reaching set.
-			for ( std::vector<llvm::Instruction *>::const_iterator it2 = cfg.getInstructions( fn ).begin(), ie2 = cfg.getInstructions( fn ).end(); it2 != ie2; it2++ ) {
-				reaching[*it2] = true;
-				for ( std::set<llvm::Function *>::iterator it3 = cg.getPossibleCallees( *it2 ).begin(), ie3 = cg.getPossibleCallees( *it2 ).end(); it3 != ie3; it3++ )
-					// Add possible called functions to function work list (maybe a call-site).
-					if ( ! fnProcessed.count( *it3 ) )
-						fnWorklist.insert( *it3 );
-			}
-		}
-
-		// Define filter out set as opposite of reaching set.
+		// Define filter out set as opposite of reaching set within analyzed direct path functions.
 		for ( CFG::iterator it = cfg.begin(), ie = cfg.end(); it != ie; it++ )
-			if ( reaching.count( *it ) == 0 )
+			if ( pathFunctions.count( (*it)->getParent()->getParent() ) && ! reaching.count( *it ) )
 				reaching[*it] = false;
 	}
 
@@ -70,14 +50,22 @@ namespace SPA {
 	}
 
 	double CFGBackwardFilter::getUtility( const klee::ExecutionState *state ) {
+		bool known = true;
+		// Traverse call graph from root to current stack position.
+		// To filter out, must traverse a known reaching point, followed by a known non-reaching point.
+		// Assume a known reaching point was reached prior to the root.
 		for ( klee::ExecutionState::stack_ty::const_iterator it = state->stack().begin(), ie = state->stack().end(); it != ie; it++ ) {
 			if ( it->caller ) {
 				if ( reaching.count( it->caller->inst ) == 0 )
-					return UTILITY_DEFAULT;
-				else if ( ! reaching[it->caller->inst] )
+					known = false;
+				else if ( reaching[it->caller->inst] )
+					known = true;
+				else if ( known )
 					return UTILITY_FILTER_OUT;
 			}
 		}
+		if ( known && reaching.count( state->pc()->inst ) && ! reaching[state->pc()->inst] )
+			return UTILITY_FILTER_OUT;
 		return UTILITY_DEFAULT;
 	}
 
