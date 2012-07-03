@@ -19,8 +19,6 @@
 // FIXME: Move out of header, use llvm streams.
 #include <ostream>
 
-#include <spa/InstructionFilter.h>
-
 namespace llvm {
   class BasicBlock;
   class Function;

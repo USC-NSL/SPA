@@ -194,7 +194,6 @@ namespace SPA {
 
 	SPA::SPA( llvm::Module *_module, std::ostream &_output ) :
 		module( _module ), output( _output ),
-		instructionFilter( NULL ),
 		pathFilter( NULL ), outputFilteredPaths( true ), outputTerminalPaths( true ),
 		checkpointsFound( 0 ), filteredPathsFound( 0 ), terminalPathsFound( 0 ), outputtedPaths( 0 ) {
 
@@ -343,7 +342,6 @@ namespace SPA {
 
 	void SPA::start() {
 		assert( (outputFilteredPaths || outputTerminalPaths || ! checkpoints.empty()) && "No points to output data from." );
-		assert( ((! instructionFilter) || instructionFilter->checkInstruction( &module->getFunction( "main" )->getEntryBlock().front() )) && "main function is filtered out." );
 
 		int pArgc;
 		char **pArgv;
@@ -355,9 +353,9 @@ namespace SPA {
 		NoOutput = true;
 		theJobManager = new cloud9::worker::JobManager( module, "main", pArgc, pArgv, pEnvp );
 
-		if ( instructionFilter || stateUtility ) {
-			CLOUD9_INFO( "Replacing strategy stack with SPA filtering/utility." );
-			SpaSearcher *spaSearcher = new SpaSearcher( instructionFilter, stateUtility );
+		if ( ! stateUtilities.empty() ) {
+			CLOUD9_INFO( "Replacing strategy stack with SPA utility framework." );
+			SpaSearcher *spaSearcher = new SpaSearcher( stateUtilities );
 			spaSearcher->addFilteringEventHandler( this );
 			theJobManager->setStrategy(
 				new cloud9::worker::RandomJobFromStateStrategy(

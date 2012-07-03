@@ -19,10 +19,11 @@
 #include "spa/CG.h"
 #include "spa/SPA.h"
 #include "spa/Path.h"
-#include "spa/CFGBackwardIF.h"
+#include "spa/CFGBackwardFilter.h"
 #include "spa/WhitelistIF.h"
 #include "spa/DummyIF.h"
 #include "spa/NegatedIF.h"
+#include "spa/WaypointUtility.h"
 #include "spa/AstarUtility.h"
 #include "spa/PathFilter.h"
 
@@ -126,18 +127,42 @@ int main(int argc, char **argv, char **envp) {
 		CLOUD9_INFO( "   Checkpoint annotation function not present in module." );
 	assert( ! checkpoints.empty() && "No checkpoints found." );
 
+	CLOUD9_DEBUG( "   Setting up path waypoints." );
+	fn = module->getFunction( SPA_WAYPOINT_ANNOTATION_FUNCTION );
+	std::map<unsigned int, std::set<llvm::Instruction *> > waypoints;
+	if ( fn ) {
+		for ( std::set<llvm::Instruction *>::iterator it = cg.getDefiniteCallers( fn ).begin(), ie = cg.getDefiniteCallers( fn ).end(); it != ie; it++ ) {
+			const CallInst *callInst;
+			assert( callInst = dyn_cast<CallInst>( *it ) );
+			assert( callInst->getNumArgOperands() == 1 );
+			const llvm::ConstantInt *constInt;
+			assert( constInt = dyn_cast<llvm::ConstantInt>( callInst->getArgOperand( 0 ) ) );
+			uint64_t id = constInt->getValue().getLimitedValue();
+			CLOUD9_INFO( "      Found waypoint with id " << id << " in function: " << (*it)->getParent()->getParent()->getName().str() );
+			waypoints[id].insert( *it );
+		}
+	} else {
+		CLOUD9_INFO( "   Waypoint annotation function not present in module." );
+	}
+
 	for ( std::set<llvm::Instruction *>::iterator it = checkpoints.begin(), ie = checkpoints.end(); it != ie; it++ )
 		spa.addCheckpoint( *it );
 
 	// Create instruction filter.
 	CLOUD9_DEBUG( "   Creating CFG filter." );
-	SPA::InstructionFilter *filter = new SPA::CFGBackwardIF( cfg, cg, checkpoints );
-	spa.setInstructionFilter( filter );
+	SPA::CFGBackwardFilter *filter = new SPA::CFGBackwardFilter( cfg, cg, checkpoints );
+	spa.addStateUtility( filter );
 	for ( std::set<llvm::Instruction *>::iterator it = entryPoints.begin(), ie = entryPoints.end(); it != ie; it++ ) {
 		if ( ! filter->checkInstruction( *it ) ) {
 			CLOUD9_DEBUG( "Entry point at function " << (*it)->getParent()->getParent()->getName().str() << " is not included in filter." );
 			assert( false && "Entry point is filtered out." );
 		}
+	}
+
+	// Create waypoint utility.
+	if ( ! waypoints.empty() ) {
+		CLOUD9_DEBUG( "   Creating waypoint utility." );
+		spa.addStateUtility( new SPA::WaypointUtility( cfg, cg, waypoints, true ) );
 	}
 
 	// Create state utility function.
@@ -149,7 +174,7 @@ int main(int argc, char **argv, char **envp) {
 	else if ( Server && filter )
 		utility = new SPA::AstarUtility( cfg, cg, *filter );
 // 		utility = new SPA::TargetDistanceUtility( cfg, cg, *filter );
-	spa.setStateUtility( utility );
+	spa.addStateUtility( utility );
 
 	if ( DumpCFG.size() > 0 ) {
 		CLOUD9_DEBUG( "Dumping CFG to: " << DumpCFG.getValue() );
