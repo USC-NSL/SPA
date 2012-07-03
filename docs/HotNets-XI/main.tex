@@ -1,0 +1,72 @@
+\documentclass[10pt,twocolumn,letterpaper]{article}
+\usepackage[10pt,nocopyright,inchmargins]{sigmin}
+\usepackage[square,comma,numbers,sort&compress]{natbib}
+\floatsep 8pt plus 2pt minus 2pt       % Space between adjacent floats moved
+                                       % to top or bottom of text page.
+\textfloatsep 8pt plus 2pt minus 2pt   % Space between main text and floats
+                                       % at top or bottom of page.
+\dblfloatsep \floatsep
+\dbltextfloatsep \textfloatsep
+
+% Math packages 
+\usepackage{amsmath, amsthm, amsfonts, amssymb}
+\usepackage[dvips]{graphicx}
+\usepackage{color}
+\usepackage{xspace}
+\usepackage{url}
+\usepackage{mathptmx}
+\frenchspacing
+
+\renewcommand{\baselinestretch}{0.923}
+
+% \@ ensures latex won't consider . as an end of line et cetera
+\newcommand{\etc}{\emph{etc.}\@\xspace}
+\newcommand{\ie}{\emph{i.e.,}\xspace}
+\newcommand{\eg}{\emph{e.g.,}\xspace}
+\newcommand{\etal}{\emph{et al.}\@\xspace}
+
+% Space saving tricks 
+% Will modify section titles and the spacing above/below them, resulting in significant space-savings.
+\usepackage[small,compact]{titlesec} 
+% reduces the size of captions under tables and figures.
+\usepackage[small,it]{caption} 
+%\def\Section {\S}
+
+
+% Paper specific settings
+\newcommand{\ramesh}[1]{{\color{red}[\textsf{RG: #1}]}}
+
+\begin{document}
+
+%\title{}
+%\date{}
+%\maketitle
+\twocolumn[%
+\centerline{\LARGE \bf Controlled Data Sharing in an On-line World}
+%%\medskip
+%%\centerline{\bf Author's Name}
+\bigskip
+]
+% Add acknowledgment to the funding agency
+
+\begin{abstract}
+\input{abstract}
+\end{abstract}
+
+%% Content sections
+\input{introduction}
+\input{concept}
+\input{implementation}
+\input{results}
+\input{discussion}
+\input{related}
+\input{conclusion}
+
+%% References
+\begin{footnotesize}
+\bibsep=1pt
+\bibliographystyle{acm}
+\bibliography{references}
+\end{footnotesize}
+
+\end{document}
