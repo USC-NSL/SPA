@@ -1,2 +1,61 @@
 \section{Introduction}
 \label{sec:introduction}
+
+\begin{easylist}[itemize]
+	& Protocol interoperability background
+	&& Define problem
+	&&& Unexpected behavior resulting from the interaction between implementations of a protocol
+	&&& Failing to follow standard
+	&&& Incomplete implementations
+	&&& Bugs
+	&&& Ambiguous standard
+	&& Current solutions
+	&&& Manual testing
+	&&&& Black-box approach: compare to standard
+	&&&& Ad-hoc inputs / expectations
+	&&& Bake-offs
+	&&&& Validate across vendors
+	&&&& Ad-hoc test cases.
+
+	& Program analysis background
+	&& Symbolic execution
+	&&& Explain what it is with simple example.
+	&&& Typical use: white-box testing / automated test generation
+	&&&& Generate test inputs to increase coverage
+	&&&& Finds paths leading to errors (\eg divide by 0, failed assertions, null pointer, \etc)
+	&&&& Generate concrete input that follows path.
+
+	& Our proposal: apply systematic approach of program analysis to analyzing protocol implementations
+	&& Create a framework of analysis primitives
+	&& Allow primitives to be combined to create complex analyses
+	&& Primitives loosely model protocol implementations as finite state machines
+	&& Within this abstraction, the primitives allow one to retrieve data like:
+	&&& Determine relevant outputs / reachable states, as a function of inputs / initial states
+	&&& In particular, determine the reachability of certain statements
+	&&& Allow inputs, outputs, and state to be connected.
+	&&&& Piping output from one point to input of another (\eg modeling packet transmission)
+	&&& Allow concrete examples to be generated that satisfy relevant constraints.
+	&&& Provide simple run-time utilities that allow concrete values to be injected into the running program for testing and validation.
+
+	&& Using these primitives we have implemented the following analyses
+	&& Manipulation Attack finder.
+	&&& Reimplementation of the work from the MAX paper.
+	&& Message interoperability analyzer
+	&&& Describe basic conceptual approach: set difference of what receiver accepts and what sender can send
+
+	&& We also describe the following analyses that have not been fully developed:
+	&& Transaction interoperability analyzer
+	&&& Models multi-message transactions as multiple single message ones while tracking state across them.
+	&& Compact FSM extractor.
+	&&& Allows users to summarize state using reducing expressions.
+	&&&& \eg [sent seq.num, acknowledged seq.num] ($\sim2^{64}$ values) $\rightarrow$ {[acknowledged seq.num] - [sent seq.num]} ($\sim CWin$ values)
+	&&& Allows users to indicate states that exist in parallel and that may not need to be expanded in full cross-product.
+	&&&& \eg Sequence number progression is somewhat independent of congestion avoidance state.
+	&&&& Produces independent slices of global FSM that show only relevant aspects.
+	&&& Produces a global FSM from the cross-product of sender/receiver states.
+	&&& Despite reducing techniques, may be quite large; but can still be useful for some sanity checks and for recognizing patterns.
+	&&&& States from which there is no return.
+	&&&& Spurious transitions.
+
+	& The remainder of the paper...
+\end{easylist}

@@ -1,5 +1,7 @@
 \documentclass[10pt,twocolumn,letterpaper,inchmargins]{sig-alt-hotnets}
 
+\usepackage[ampersand]{easylist}
+\usepackage{xspace}
 \usepackage[colorinlistoftodos, textwidth=4cm, shadow]{todonotes}
 \usepackage{ulem}
 
@@ -21,18 +23,18 @@
 
 
 % \@ ensures latex won't consider . as an end of line et cetera
-\newcommand{\etc}{\emph{etc.}\@\xspace}
-\newcommand{\ie}{\emph{i.e.,}\xspace}
-\newcommand{\eg}{\emph{e.g.,}\xspace}
-\newcommand{\etal}{\emph{et al.}\@\xspace}
+\newcommand{\etc}{\textit{etc.}\@\xspace}
+\newcommand{\ie}{\textit{i.e.,}\xspace}
+\newcommand{\eg}{\textit{e.g.,}\xspace}
+\newcommand{\etal}{\textit{et al.}\@\xspace}
 
 
 % Paper specific settings
-\newcommand{\luis}[1]{{\todo{LDP: #1}}}
-\newcommand{\nupur}[1]{{\todo{NK: #1}}}
-\newcommand{\ratul}[1]{{\todo{RM: #1}}}
-\newcommand{\todd}[1]{{\todo{TM: #1}}}
-\newcommand{\ramesh}[1]{{\todo{RG: #1}}}
+\newcommand{\ramesh}[1]{\todo[inline,backgroundcolor=red!40]{RG: #1}}
+\newcommand{\todd}[1]{\todo[inline,backgroundcolor=yellow!40]{TM: #1}}
+\newcommand{\ratul}[1]{\todo[inline,backgroundcolor=green!40]{RM: #1}}
+\newcommand{\luis}[1]{\todo[inline,backgroundcolor=blue!40]{LDP: #1}}
+\newcommand{\nupur}[1]{\todo[inline,backgroundcolor=magenta!40]{NK: #1}}
 
 \begin{document}
 
@@ -51,15 +53,14 @@
 \input{concept}
 \input{implementation}
 \input{results}
-\input{discussion}
 \input{related}
 \input{conclusion}
 
 %% References
 \begin{footnotesize}
-%\bibsep=1pt
 \bibliographystyle{acm}
 \bibliography{references}
 \end{footnotesize}
 
 \end{document}
+% 
