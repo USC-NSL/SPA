@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/time.h>
 
 #include <unistd.h>
 #include <assert.h>
@@ -27,10 +28,10 @@
 #define ECN_REFLECTION_PROB_AT_RCVR   1
 
 //maximum number of packets for which the sender has not received a response
-#define MAX_PKTS_IN_FLIGHT 3
+#define MAX_PKTS_IN_FLIGHT 100
 
 //maximum number of packets to send for the sender; we exit when this limit is reached
-#define MAX_PKTS_TO_SEND_SNDR 10
+#define MAX_PKTS_TO_SEND_SNDR 500
 
 // Synchronization pipe.
 int fdpair[2];
@@ -71,17 +72,20 @@ int GetEcnBit(void * buffer) {
 // and then sends it to the receiver
 //
 void Route(int sockfd, void * buffer) {
+	static long packetNum = 0;
+	struct timeval t;
 
   if (Random() <= PKT_MARKING_PROB_AT_RTR) {
     SetEcnBit(buffer, 1);
   }
 
+  gettimeofday( &t, NULL );
   if (send(sockfd, buffer, PKT_SIZE, 0) <=0) {
     perror("Sender.Route.send");
     exit(1);
   }
 
-  printf("Sent packet with EcnBit %d\n", GetEcnBit(buffer));
+  printf("Sent packet %ld with EcnBit %d at time %lld\n", packetNum++, GetEcnBit(buffer), ((long long) t.tv_sec) * 1000000 + t.tv_usec );
 }
 
 void SenderHandlePacket( int sockfd, void *buffer, unsigned int length ) {
@@ -185,7 +189,7 @@ int RunSender() {
   
   //the timeout we use for the select call
   struct timeval tv;
-  tv.tv_sec = 1;     //1 second
+  tv.tv_sec = 5;     //1 second
   tv.tv_usec = 0;
 
   //the data buffer
