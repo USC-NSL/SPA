@@ -138,7 +138,7 @@ int main(int argc, char **argv, char **envp) {
 			const llvm::ConstantInt *constInt;
 			assert( constInt = dyn_cast<llvm::ConstantInt>( callInst->getArgOperand( 0 ) ) );
 			uint64_t id = constInt->getValue().getLimitedValue();
-			CLOUD9_INFO( "      Found waypoint with id " << id << " in function: " << (*it)->getParent()->getParent()->getName().str() );
+			CLOUD9_INFO( "      Found waypoint with id " << id << " in at " << (*it)->getParent()->getParent()->getName().str() << ":" << (*it)->getDebugLoc().getLine() );
 			waypoints[id].insert( *it );
 		}
 	} else {
@@ -150,8 +150,11 @@ int main(int argc, char **argv, char **envp) {
 
 	// Create instruction filter.
 	CLOUD9_DEBUG( "   Creating CFG filter." );
-	SPA::CFGBackwardFilter *filter = new SPA::CFGBackwardFilter( cfg, cg, checkpoints );
-	spa.addStateUtility( filter );
+	SPA::CFGBackwardFilter *filter = new SPA::CFGBackwardFilter( cfg, cg, spa.getMainFunction(), checkpoints );
+	if ( Client )
+		spa.addStateUtility( filter, false );
+	else if ( Server )
+		spa.addStateUtility( filter, true );
 	for ( std::set<llvm::Instruction *>::iterator it = entryPoints.begin(), ie = entryPoints.end(); it != ie; it++ ) {
 		if ( ! filter->checkInstruction( *it ) ) {
 			CLOUD9_DEBUG( "Entry point at function " << (*it)->getParent()->getParent()->getName().str() << " is not included in filter." );
@@ -160,9 +163,11 @@ int main(int argc, char **argv, char **envp) {
 	}
 
 	// Create waypoint utility.
+	SPA::WaypointUtility *waypointUtility = NULL;
 	if ( ! waypoints.empty() ) {
 		CLOUD9_DEBUG( "   Creating waypoint utility." );
-		spa.addStateUtility( new SPA::WaypointUtility( cfg, cg, waypoints, true ) );
+		waypointUtility = new SPA::WaypointUtility( cfg, cg, spa.getMainFunction(), waypoints, true );
+		spa.addStateUtility( waypointUtility, false );
 	}
 
 	// Create state utility function.
@@ -174,7 +179,7 @@ int main(int argc, char **argv, char **envp) {
 	else if ( Server && filter )
 		utility = new SPA::AstarUtility( cfg, cg, *filter );
 // 		utility = new SPA::TargetDistanceUtility( cfg, cg, *filter );
-	spa.addStateUtility( utility );
+	spa.addStateUtility( utility, false );
 
 	if ( DumpCFG.size() > 0 ) {
 		CLOUD9_DEBUG( "Dumping CFG to: " << DumpCFG.getValue() );
@@ -183,10 +188,10 @@ int main(int argc, char **argv, char **envp) {
 
 		std::map<SPA::InstructionFilter *, std::string> annotations;
 		annotations[new SPA::WhitelistIF( checkpoints )] = "style = \"filled\" fillcolor = \"red\"";
-		if ( filter )
-			annotations[new SPA::NegatedIF( filter )] = "style = \"filled\" fillcolor = \"grey\"";
+// 		if ( filter )
+// 			annotations[new SPA::NegatedIF( filter )] = "style = \"filled\" fillcolor = \"grey\"";
 
-		cfg.dump( dotFile, /*filter*/ NULL, annotations, utility /*NULL*/, false /*true*/ );
+		cfg.dump( dotFile, /*filter*/ NULL, annotations, /*utility*/ /*waypointUtility*/ filter /*NULL*/, false /*true*/ );
 
 		dotFile.flush();
 		dotFile.close();
@@ -194,12 +199,10 @@ int main(int argc, char **argv, char **envp) {
 	}
 
 	if ( Client ) {
-		spa.setOutputFilteredPaths( false );
 		spa.setOutputTerminalPaths( false );
 		spa.setPathFilter( new SpaClientPathFilter() );
 	} else if ( Server ) {
-		spa.setOutputFilteredPaths( true );
-		spa.setOutputTerminalPaths( true );
+		spa.setOutputTerminalPaths( false );
 		spa.setPathFilter( new SpaServerPathFilter() );
 	}
 

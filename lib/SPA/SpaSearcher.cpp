@@ -14,12 +14,14 @@
 
 
 namespace SPA {
-	bool SpaSearcher::checkState( klee::ExecutionState *state ) {
-		unsigned int u = 0;
-		for ( std::vector<StateUtility *>::iterator it = stateUtilities.begin(), ie = stateUtilities.end(); it != ie; it++, u++ ) {
+	bool SpaSearcher::checkState( klee::ExecutionState *state, unsigned int &id ) {
+		for ( std::vector<StateUtility *>::iterator it = stateUtilities.begin(), ie = stateUtilities.end(); it != ie; it++, id++ ) {
 			if ( (*it)->getUtility( state ) == UTILITY_FILTER_OUT ) {
-				CLOUD9_DEBUG( "[SpaSearcher] Filtering state due to utility " << u << " at:" );
+				CLOUD9_DEBUG( "[SpaSearcher] Filtering state due to utility " << id << " at "
+					<< state->pc()->inst->getParent()->getParent()->getName().str()
+					<< ":" << state->pc()->inst->getDebugLoc().getLine() );
 				klee::c9::printStateStack( std::cerr, *state ) << std::endl;
+				state->pc()->inst->dump();
 				return false;
 			}
 		}
@@ -49,26 +51,22 @@ namespace SPA {
 		return result.str();
 	}
 
-	void SpaSearcher::filterState( klee::ExecutionState *state ) {
-		dequeueState( state );
+	void SpaSearcher::filterState( klee::ExecutionState *state, unsigned int id ) {
+		state->filtered = true;
 		statesFiltered++;
 		for ( std::vector<FilteringEventHandler *>::iterator hit = filteringEventHandlers.begin(), hie = filteringEventHandlers.end(); hit != hie; hit++ )
-			(*hit)->onStateFiltered( state );
+			(*hit)->onStateFiltered( state, id );
 	}
 
 	void SpaSearcher::reorderState( klee::ExecutionState *state ) {
 		enqueueState( dequeueState( states.begin()->second ) );
-		// Remove trailing filtered states, unless the queue would become empty.
-		for ( std::set<std::pair<std::vector<double>,klee::ExecutionState *> >::reverse_iterator it = states.rbegin(), ie = states.rend(); it != ie; it++ ) {
-			if ( (! checkState( it->second )) && states.size() > 1 )
-				filterState( it->second );
-			else
-				break;
-		}
 	}
 
 	klee::ExecutionState &SpaSearcher::selectState() {
 		// Reorder head state to keep set coherent.
+		unsigned int id = 0;
+		if ( ! checkState( states.begin()->second, id ) )
+			filterState( states.begin()->second, id );
 		reorderState( states.begin()->second );
 		CLOUD9_DEBUG( "[SpaSearcher] Queued: " << states.size()
 			<< "; Utility Range: [" << (states.size() ? utilityStr( states.rbegin()->first ) : "")
@@ -83,23 +81,21 @@ namespace SPA {
 	}
 
 	void SpaSearcher::update( klee::ExecutionState *current, const std::set<klee::ExecutionState *> &addedStates, const std::set<klee::ExecutionState *> &removedStates) {
-		for ( std::set<klee::ExecutionState*>::iterator sit = addedStates.begin(), sie = addedStates.end(); sit != sie; sit++ ) {
-			if ( checkState( *sit ) ) {
-				enqueueState( *sit );
-			} else {
-				filterState( *sit );
-			}
-		}
+		for ( std::set<klee::ExecutionState*>::iterator sit = addedStates.begin(), sie = addedStates.end(); sit != sie; sit++ )
+			enqueueState( *sit );
 		for ( std::set<klee::ExecutionState *>::iterator it = removedStates.begin(), ie = removedStates.end(); it != ie; it++ ) {
 			dequeueState( *it );
 			CLOUD9_DEBUG( "[SpaSearcher] Dequeuing state at "
 				<< (*((*it)->pc())).inst->getParent()->getParent()->getName().str()
 				<< ":" << (*((*it)->pc())).inst->getDebugLoc().getLine() );
-			klee::c9::printStateStack( std::cerr, **it ) << std::endl;
+// 			klee::c9::printStateStack( std::cerr, **it ) << std::endl;
 		}
 		statesDequeued += removedStates.size();
 
-		if ( current )
-			reorderState( current );
+// 		if ( current )
+// 			reorderState( current );
+
+		if ( states.empty() )
+			CLOUD9_DEBUG( "[SpaSearcher] State queue is empty!" );
 	}
 }

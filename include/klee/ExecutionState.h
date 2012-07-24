@@ -127,6 +127,9 @@ public:
 
   ConstraintManager globalConstraints;
 
+  // Signals the path is no longer interesting and should be discarded.
+  bool filtered;
+
 
   // For a multi threaded ExecutionState
   threads_ty threads;

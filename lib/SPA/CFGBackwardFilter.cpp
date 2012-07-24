@@ -9,11 +9,11 @@
 #include "cloud9/Logger.h"
 
 namespace SPA {
-	CFGBackwardFilter::CFGBackwardFilter( CFG &cfg, CG &cg, std::set<llvm::Instruction *> &targets ) {
+	CFGBackwardFilter::CFGBackwardFilter( CFG &cfg, CG &cg, llvm::Function *_entryFunction, std::set<llvm::Instruction *> &targets ) :
+		entryFunction( _entryFunction ) {
 		// Use a worklist to add all predecessors of target instruction.
 		std::set<llvm::Instruction *> worklist = targets;
-		std::set<llvm::Function *> fnWorklist;
-		std::set<llvm::Function *> fnProcessed;
+		std::set<llvm::Function *> pathFunctions;
 
 		CLOUD9_DEBUG( "      Exploring reverse path." );
 		while ( ! worklist.empty() ) {
@@ -28,8 +28,8 @@ namespace SPA {
 			for ( it = p.begin(), ie = p.end(); it != ie; it++ )
 				if ( reaching.count( *it ) == 0 )
 					worklist.insert( *it );
-			// Add possible called functions to function work list (maybe a call-site).
-			fnWorklist.insert( cg.getPossibleCallees( inst ).begin(), cg.getPossibleCallees( inst ).end() );
+			// Mark function as on direct path.
+			pathFunctions.insert( inst->getParent()->getParent() );
 			// Check if entry instruction.
 			if ( inst == &(inst->getParent()->getParent()->getEntryBlock().front()) ) {
 				p = cg.getPossibleCallers( inst->getParent()->getParent() );
@@ -40,28 +40,9 @@ namespace SPA {
 			}
 		}
 
-		CLOUD9_DEBUG( "      Exploring called functions." );
-		while ( ! fnWorklist.empty() ) {
-			std::set<llvm::Function *>::iterator it = fnWorklist.begin(), ie;
-			llvm::Function *fn = *it;
-			fnWorklist.erase( it );
-
-			// Mark function as processed.
-			fnProcessed.insert( fn );
-
-			// Add entire function to reaching set.
-			for ( std::vector<llvm::Instruction *>::const_iterator it2 = cfg.getInstructions( fn ).begin(), ie2 = cfg.getInstructions( fn ).end(); it2 != ie2; it2++ ) {
-				reaching[*it2] = true;
-				for ( std::set<llvm::Function *>::iterator it3 = cg.getPossibleCallees( *it2 ).begin(), ie3 = cg.getPossibleCallees( *it2 ).end(); it3 != ie3; it3++ )
-					// Add possible called functions to function work list (maybe a call-site).
-					if ( ! fnProcessed.count( *it3 ) )
-						fnWorklist.insert( *it3 );
-			}
-		}
-
-		// Define filter out set as opposite of reaching set.
+		// Define filter out set as opposite of reaching set within analyzed direct path functions.
 		for ( CFG::iterator it = cfg.begin(), ie = cfg.end(); it != ie; it++ )
-			if ( reaching.count( *it ) == 0 )
+			if ( pathFunctions.count( (*it)->getParent()->getParent() ) && ! reaching.count( *it ) )
 				reaching[*it] = false;
 	}
 
@@ -70,14 +51,21 @@ namespace SPA {
 	}
 
 	double CFGBackwardFilter::getUtility( const klee::ExecutionState *state ) {
+		bool entryFound = false;
 		for ( klee::ExecutionState::stack_ty::const_iterator it = state->stack().begin(), ie = state->stack().end(); it != ie; it++ ) {
-			if ( it->caller ) {
-				if ( reaching.count( it->caller->inst ) == 0 )
-					return UTILITY_DEFAULT;
-				else if ( ! reaching[it->caller->inst] )
-					return UTILITY_FILTER_OUT;
+			if ( it->caller && it->caller->inst->getParent()->getParent() == entryFunction ) {
+				entryFound = true;
+				break;
 			}
 		}
+		if ( ! entryFound )
+			return UTILITY_DEFAULT;
+		if ( reaching.count( state->pc()->inst ) )
+			return reaching[state->pc()->inst] ? UTILITY_DEFAULT : UTILITY_FILTER_OUT;
+		// Traverse call stack upward until a known instruction shows up.
+		for ( klee::ExecutionState::stack_ty::const_reverse_iterator it = state->stack().rbegin(), ie = state->stack().rend(); it != ie; it++ )
+			if ( it->caller && reaching.count( it->caller->inst ) )
+				return reaching[it->caller->inst] ? UTILITY_DEFAULT : UTILITY_FILTER_OUT;
 		return UTILITY_DEFAULT;
 	}
 
@@ -87,6 +75,6 @@ namespace SPA {
 		else if ( reaching[instruction] )
 			return "white";
 		else
-			return "black";
+			return "dimgrey";
 	}
 }

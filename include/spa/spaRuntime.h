@@ -13,7 +13,7 @@ typedef void (*SpaRuntimeHandler_t)( va_list );
 #ifdef __cplusplus
 extern "C" {
 #endif// #ifdef __cplusplus
-	void __attribute__((noinline,weak)) spa_checkpoint() { asm( "" ); }
+	void __attribute__((noinline,weak)) spa_checkpoint() { return; }
 	void __attribute__((noinline)) spa_runtime_call( SpaRuntimeHandler_t handler, ... );
 #ifdef __cplusplus
 }

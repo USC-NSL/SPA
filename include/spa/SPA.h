@@ -53,8 +53,8 @@ namespace SPA {
 		std::ostream &output;
 		std::set<llvm::Instruction *> checkpoints;
 		std::vector<StateUtility *> stateUtilities;
+		std::vector<bool> outputFilteredPaths;
 		PathFilter *pathFilter;
-		bool outputFilteredPaths;
 		bool outputTerminalPaths;
 
 		unsigned long checkpointsFound, filteredPathsFound, terminalPathsFound, outputtedPaths;
@@ -67,11 +67,14 @@ namespace SPA {
 		SPA( llvm::Module *_module, std::ostream &_output );
 		void addInitFunction( llvm::Function *fn );
 		void addEntryFunction( llvm::Function *fn );
-		void addStateUtility( StateUtility *stateUtility ) { stateUtilities.push_back( stateUtility ); }
+		void addStateUtility( StateUtility *stateUtility, bool _outputFilteredPaths ) {
+			stateUtilities.push_back( stateUtility );
+			outputFilteredPaths.push_back( _outputFilteredPaths );
+		}
 		void setPathFilter( PathFilter *_pathFilter ) { pathFilter = _pathFilter; }
 		void addCheckpoint( llvm::Instruction *instruction ) { checkpoints.insert( instruction ); }
-		void setOutputFilteredPaths( bool _outputFilteredPaths ) { outputFilteredPaths = _outputFilteredPaths; }
 		void setOutputTerminalPaths( bool _outputTerminalPaths ) { outputTerminalPaths = _outputTerminalPaths; }
+		llvm::Function *getMainFunction() { return entryFunction; }
 		void start();
 
 		bool onStateBranching(klee::ExecutionState *state, klee::ForkTag forkTag) { return true; }
@@ -82,7 +85,7 @@ namespace SPA {
 
 		void onControlFlowEvent(klee::ExecutionState *kState, cloud9::worker::ControlFlowEvent event);
 		void onStateDestroy(klee::ExecutionState *kState, bool silenced);
-		void onStateFiltered( klee::ExecutionState *state );
+		void onStateFiltered( klee::ExecutionState *state, unsigned int id );
 	};
 }
 
