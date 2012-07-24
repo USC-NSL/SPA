@@ -15,9 +15,10 @@ namespace SPA {
 	class CFGBackwardFilter : public InstructionFilter, public StateUtility {
 	private:
 		std::map<llvm::Instruction *, bool> reaching;
+		llvm::Function *entryFunction;
 
 	public:
-		CFGBackwardFilter( CFG &cfg, CG &cg, std::set<llvm::Instruction *> &targets );
+		CFGBackwardFilter( CFG &cfg, CG &cg, llvm::Function *_entryFunction, std::set<llvm::Instruction *> &targets );
 		bool checkInstruction( llvm::Instruction *instruction );
 		double getUtility( const klee::ExecutionState *state );
 		std::string getColor( CFG &cfg, CG &cg, llvm::Instruction *instruction );

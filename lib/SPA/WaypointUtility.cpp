@@ -12,10 +12,10 @@
 #include <spa/SPA.h>
 
 namespace SPA {
-	WaypointUtility::WaypointUtility( CFG &cfg, CG &cg, std::map<unsigned int, std::set<llvm::Instruction *> > &waypoints, bool _mandatory ) :
+	WaypointUtility::WaypointUtility( CFG &cfg, CG &cg, llvm::Function *entryFunction, std::map<unsigned int, std::set<llvm::Instruction *> > &waypoints, bool _mandatory ) :
 		mandatory( _mandatory ) {
 		for ( std::map<unsigned int, std::set<llvm::Instruction *> >::iterator it = waypoints.begin(), ie = waypoints.end(); it != ie; it++ )
-			filters[it->first] = new CFGBackwardFilter( cfg, cg, it->second );
+			filters[it->first] = new CFGBackwardFilter( cfg, cg, entryFunction, it->second );
 	}
 
 	bool checkWaypoint( const klee::ExecutionState *state, unsigned int id ) {
@@ -49,8 +49,6 @@ namespace SPA {
 
 		klee::ref<klee::Expr> wp = os->read8( (id>>3) + ioffset );
 
-		CLOUD9_DEBUG( "Waypoint expression: " << wp );
-
 		assert( isa<klee::ConstantExpr>( wp ) && "Symbolic byte in waypoints." );
 		return cast<klee::ConstantExpr>( wp )->getZExtValue( 8 ) & 1<<(id & 0x7);
 	}
@@ -59,10 +57,6 @@ namespace SPA {
 		unsigned int count = 0;
 
 		for ( std::map<unsigned int, CFGBackwardFilter *>::iterator it = filters.begin(), ie = filters.end(); it != ie; it++ ) {
-			if ( it->second->getUtility( state ) == UTILITY_FILTER_OUT )
-				CLOUD9_DEBUG( "Instruction can't reach waypoint " << it->first );
-// 			if ( ! checkWaypoint( state, it->first ) )
-// 				CLOUD9_DEBUG( "Instruction hasn't visited waypoint " << it->first );
 			if ( it->second->getUtility( state ) != UTILITY_FILTER_OUT || checkWaypoint( state, it->first ) ) {
 				count++;
 				continue;
@@ -82,7 +76,7 @@ namespace SPA {
 
 		std::stringstream result;
 		// None = White, All = Green
-		result << "0.33+" << count / (double) filters.size() << "+1.0";
+		result << "0.33+" << ((double) count / (double) filters.size()) << "+1.0";
 		return result.str();
 	}
 }

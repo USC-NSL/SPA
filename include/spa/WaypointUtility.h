@@ -16,7 +16,7 @@ namespace SPA {
 		bool mandatory;
 
 	public:
-		WaypointUtility( CFG &cfg, CG &cg, std::map<unsigned int, std::set<llvm::Instruction *> > &_waypoints, bool _mandatory );
+		WaypointUtility( CFG &cfg, CG &cg, llvm::Function *entryFunction, std::map<unsigned int, std::set<llvm::Instruction *> > &_waypoints, bool _mandatory );
 		double getUtility( const klee::ExecutionState *state );
 		std::string getColor( CFG &cfg, CG &cg, llvm::Instruction *instruction );
 	};

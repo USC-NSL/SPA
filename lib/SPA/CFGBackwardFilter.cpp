@@ -9,7 +9,8 @@
 #include "cloud9/Logger.h"
 
 namespace SPA {
-	CFGBackwardFilter::CFGBackwardFilter( CFG &cfg, CG &cg, std::set<llvm::Instruction *> &targets ) {
+	CFGBackwardFilter::CFGBackwardFilter( CFG &cfg, CG &cg, llvm::Function *_entryFunction, std::set<llvm::Instruction *> &targets ) :
+		entryFunction( _entryFunction ) {
 		// Use a worklist to add all predecessors of target instruction.
 		std::set<llvm::Instruction *> worklist = targets;
 		std::set<llvm::Function *> pathFunctions;
@@ -50,22 +51,21 @@ namespace SPA {
 	}
 
 	double CFGBackwardFilter::getUtility( const klee::ExecutionState *state ) {
-		bool known = true;
-		// Traverse call graph from root to current stack position.
-		// To filter out, must traverse a known reaching point, followed by a known non-reaching point.
-		// Assume a known reaching point was reached prior to the root.
+		bool entryFound = false;
 		for ( klee::ExecutionState::stack_ty::const_iterator it = state->stack().begin(), ie = state->stack().end(); it != ie; it++ ) {
-			if ( it->caller ) {
-				if ( reaching.count( it->caller->inst ) == 0 )
-					known = false;
-				else if ( reaching[it->caller->inst] )
-					known = true;
-				else if ( known )
-					return UTILITY_FILTER_OUT;
+			if ( it->caller && it->caller->inst->getParent()->getParent() == entryFunction ) {
+				entryFound = true;
+				break;
 			}
 		}
-		if ( known && reaching.count( state->pc()->inst ) && ! reaching[state->pc()->inst] )
-			return UTILITY_FILTER_OUT;
+		if ( ! entryFound )
+			return UTILITY_DEFAULT;
+		if ( reaching.count( state->pc()->inst ) )
+			return reaching[state->pc()->inst] ? UTILITY_DEFAULT : UTILITY_FILTER_OUT;
+		// Traverse call stack upward until a known instruction shows up.
+		for ( klee::ExecutionState::stack_ty::const_reverse_iterator it = state->stack().rbegin(), ie = state->stack().rend(); it != ie; it++ )
+			if ( it->caller && reaching.count( it->caller->inst ) )
+				return reaching[it->caller->inst] ? UTILITY_DEFAULT : UTILITY_FILTER_OUT;
 		return UTILITY_DEFAULT;
 	}
 
@@ -75,6 +75,6 @@ namespace SPA {
 		else if ( reaching[instruction] )
 			return "white";
 		else
-			return "black";
+			return "dimgrey";
 	}
 }
