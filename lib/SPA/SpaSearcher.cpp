@@ -35,10 +35,6 @@ namespace SPA {
 			u.push_back( - (*it)->getUtility( state ) );
 		states.insert( std::pair<std::vector<double>, klee::ExecutionState *>( u, state ) );
 		oldUtilities[state] = u;
-
-		unsigned int id = 0;
-		if ( ! checkState( state, id ) )
-			filterState( state, id );
 	}
 
 	klee::ExecutionState *SpaSearcher::dequeueState( klee::ExecutionState *state ) {
@@ -68,6 +64,9 @@ namespace SPA {
 
 	klee::ExecutionState &SpaSearcher::selectState() {
 		// Reorder head state to keep set coherent.
+		unsigned int id = 0;
+		if ( ! checkState( states.begin()->second, id ) )
+			filterState( states.begin()->second, id );
 		reorderState( states.begin()->second );
 		CLOUD9_DEBUG( "[SpaSearcher] Queued: " << states.size()
 			<< "; Utility Range: [" << (states.size() ? utilityStr( states.rbegin()->first ) : "")
