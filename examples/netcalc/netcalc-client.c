@@ -53,7 +53,7 @@ nc_value_t executeQuery( nc_operator_t op, nc_value_t arg1, nc_value_t arg2 ) {
 	return response.value;
 }
 
-void SpaExecuteQueryEntry() {
+void __attribute__((used)) SpaExecuteQueryEntry() {
 	spa_api_entry();
 
 // 	struct addrinfo hints;
