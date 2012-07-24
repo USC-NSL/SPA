@@ -194,7 +194,7 @@ namespace SPA {
 
 	SPA::SPA( llvm::Module *_module, std::ostream &_output ) :
 		module( _module ), output( _output ),
-		pathFilter( NULL ), outputFilteredPaths( true ), outputTerminalPaths( true ),
+		pathFilter( NULL ), outputTerminalPaths( true ),
 		checkpointsFound( 0 ), filteredPathsFound( 0 ), terminalPathsFound( 0 ), outputtedPaths( 0 ) {
 
 		// Make sure to clean up properly before any exit point in the program
@@ -341,7 +341,14 @@ namespace SPA {
 	}
 
 	void SPA::start() {
-		assert( (outputFilteredPaths || outputTerminalPaths || ! checkpoints.empty()) && "No points to output data from." );
+		bool outputFP = false;
+		for ( std::vector<bool>::iterator it = outputFilteredPaths.begin(), ie = outputFilteredPaths.end(); it != ie; it++ ) {
+			if ( *it ) {
+				outputFP = true;
+				break;
+			}
+		}
+		assert( (outputFP || outputTerminalPaths || ! checkpoints.empty()) && "No points to output data from." );
 
 		int pArgc;
 		char **pArgv;
@@ -423,7 +430,7 @@ namespace SPA {
 	void SPA::onStateDestroy(klee::ExecutionState *kState, bool silenced) {
 		terminalPathsFound++;
 
-		if ( outputTerminalPaths ) {
+		if ( (! kState->filtered) && outputTerminalPaths ) {
 			assert( kState );
 
 			CLOUD9_DEBUG( "Processing terminal path." );
@@ -433,10 +440,10 @@ namespace SPA {
 		showStats();
 	}
 
-	void SPA::onStateFiltered( klee::ExecutionState *state ) {
+	void SPA::onStateFiltered( klee::ExecutionState *state, unsigned int id ) {
 		filteredPathsFound++;
 
-		if ( outputFilteredPaths ) {
+		if ( outputFilteredPaths[id] ) {
 			assert( state );
 
 			CLOUD9_DEBUG( "Processing filtered path." );

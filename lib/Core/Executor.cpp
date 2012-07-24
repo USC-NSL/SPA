@@ -1429,6 +1429,9 @@ static inline const llvm::fltSemantics * fpWidthToSemantics(unsigned width) {
 }
 
 void Executor::executeInstruction(ExecutionState &state, KInstruction *ki) {
+  if ( state.filtered ) {
+    return terminateStateOnExecError(state, "Filtered out.");
+  }
   Instruction *i = ki->inst;
   switch (i->getOpcode()) {
     // Control flow
