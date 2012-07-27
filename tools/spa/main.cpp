@@ -150,11 +150,11 @@ int main(int argc, char **argv, char **envp) {
 
 	// Create instruction filter.
 	CLOUD9_DEBUG( "   Creating CFG filter." );
-	SPA::CFGBackwardFilter *filter = new SPA::CFGBackwardFilter( cfg, cg, spa.getMainFunction(), checkpoints );
+	SPA::CFGBackwardFilter *filter = new SPA::CFGBackwardFilter( cfg, cg, checkpoints );
 	if ( Client )
-		spa.addStateUtility( filter, false );
+		spa.addStateUtilityBack( filter, false );
 	else if ( Server )
-		spa.addStateUtility( filter, true );
+		spa.addStateUtilityBack( filter, true );
 	for ( std::set<llvm::Instruction *>::iterator it = entryPoints.begin(), ie = entryPoints.end(); it != ie; it++ ) {
 		if ( ! filter->checkInstruction( *it ) ) {
 			CLOUD9_DEBUG( "Entry point at function " << (*it)->getParent()->getParent()->getName().str() << " is not included in filter." );
@@ -166,8 +166,8 @@ int main(int argc, char **argv, char **envp) {
 	SPA::WaypointUtility *waypointUtility = NULL;
 	if ( ! waypoints.empty() ) {
 		CLOUD9_DEBUG( "   Creating waypoint utility." );
-		waypointUtility = new SPA::WaypointUtility( cfg, cg, spa.getMainFunction(), waypoints, true );
-		spa.addStateUtility( waypointUtility, false );
+		waypointUtility = new SPA::WaypointUtility( cfg, cg, waypoints, true );
+		spa.addStateUtilityBack( waypointUtility, false );
 	}
 
 	// Create state utility function.
@@ -179,7 +179,7 @@ int main(int argc, char **argv, char **envp) {
 	else if ( Server && filter )
 		utility = new SPA::AstarUtility( cfg, cg, *filter );
 // 		utility = new SPA::TargetDistanceUtility( cfg, cg, *filter );
-	spa.addStateUtility( utility, false );
+	spa.addStateUtilityBack( utility, false );
 
 	if ( DumpCFG.size() > 0 ) {
 		CLOUD9_DEBUG( "Dumping CFG to: " << DumpCFG.getValue() );
@@ -202,7 +202,7 @@ int main(int argc, char **argv, char **envp) {
 		spa.setOutputTerminalPaths( false );
 		spa.setPathFilter( new SpaClientPathFilter() );
 	} else if ( Server ) {
-		spa.setOutputTerminalPaths( false );
+		spa.setOutputTerminalPaths( true );
 		spa.setPathFilter( new SpaServerPathFilter() );
 	}
 

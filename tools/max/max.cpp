@@ -83,8 +83,8 @@ int main(int argc, char **argv, char **envp) {
 // 	SPA::IntersectionIF filter = SPA::IntersectionIF();
 // 	filter.addIF( new SPA::CFGForwardIF( cfg, cg, messageHandlers ) );
 // 	filter.addIF( new SPA::CFGBackwardIF( cfg, cg, interestingInstructions ) );
-	SPA::CFGBackwardFilter filter = SPA::CFGBackwardFilter( cfg, cg, spa.getMainFunction(), interestingInstructions );
-	spa.addStateUtility( &filter, false );
+	SPA::CFGBackwardFilter filter = SPA::CFGBackwardFilter( cfg, cg, interestingInstructions );
+	spa.addStateUtilityBack( &filter, false );
 
 	if ( DumpCFG.size() > 0 ) {
 		CLOUD9_DEBUG( "Dumping CFG to: " << DumpCFG.getValue() );

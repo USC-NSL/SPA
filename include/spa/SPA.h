@@ -6,6 +6,7 @@
 #define __SPA_H__
 
 #include <iostream>
+#include <deque>
 #include <list>
 #include <map>
 
@@ -52,8 +53,8 @@ namespace SPA {
 		llvm::BasicBlock *entryReturnBB;
 		std::ostream &output;
 		std::set<llvm::Instruction *> checkpoints;
-		std::vector<StateUtility *> stateUtilities;
-		std::vector<bool> outputFilteredPaths;
+		std::deque<StateUtility *> stateUtilities;
+		std::deque<bool> outputFilteredPaths;
 		PathFilter *pathFilter;
 		bool outputTerminalPaths;
 
@@ -67,7 +68,11 @@ namespace SPA {
 		SPA( llvm::Module *_module, std::ostream &_output );
 		void addInitFunction( llvm::Function *fn );
 		void addEntryFunction( llvm::Function *fn );
-		void addStateUtility( StateUtility *stateUtility, bool _outputFilteredPaths ) {
+		void addStateUtilityFront( StateUtility *stateUtility, bool _outputFilteredPaths ) {
+			stateUtilities.push_front( stateUtility );
+			outputFilteredPaths.push_front( _outputFilteredPaths );
+		}
+		void addStateUtilityBack( StateUtility *stateUtility, bool _outputFilteredPaths ) {
 			stateUtilities.push_back( stateUtility );
 			outputFilteredPaths.push_back( _outputFilteredPaths );
 		}

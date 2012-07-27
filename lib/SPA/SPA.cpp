@@ -59,6 +59,7 @@
 
 #include <spa/SPA.h>
 #include <spa/SpaSearcher.h>
+#include <spa/RecoverStateUtility.h>
 #include <spa/Path.h>
 
 #define MAIN_ENTRY_FUNCTION	"__user_main"
@@ -73,6 +74,8 @@ namespace {
 	cl::opt<bool> StandAlone("stand-alone",
 		cl::desc("Enable running a worker in stand alone mode"),
 		cl::init(true));
+	cl::opt<std::string> RecoverState( "recover-state",
+		llvm::cl::desc( "Specifies a file with a previously saved processing queue to load." ) );
 
 	typedef enum {
 		START,
@@ -342,7 +345,7 @@ namespace SPA {
 
 	void SPA::start() {
 		bool outputFP = false;
-		for ( std::vector<bool>::iterator it = outputFilteredPaths.begin(), ie = outputFilteredPaths.end(); it != ie; it++ ) {
+		for ( std::deque<bool>::iterator it = outputFilteredPaths.begin(), ie = outputFilteredPaths.end(); it != ie; it++ ) {
 			if ( *it ) {
 				outputFP = true;
 				break;
@@ -360,9 +363,17 @@ namespace SPA {
 		NoOutput = true;
 		theJobManager = new cloud9::worker::JobManager( module, "main", pArgc, pArgv, pEnvp );
 
+		if ( RecoverState.size() > 0 ) {
+			CLOUD9_DEBUG( "Recovering state from: " << RecoverState.getValue() );
+			std::ifstream stateFile( RecoverState.getValue().c_str() );
+			assert( stateFile.is_open() && "Unable to open state file." );
+			addStateUtilityFront( new RecoverStateUtility( theJobManager, stateFile ), false );
+			stateFile.close();
+		}
+
 		if ( ! stateUtilities.empty() ) {
 			CLOUD9_INFO( "Replacing strategy stack with SPA utility framework." );
-			SpaSearcher *spaSearcher = new SpaSearcher( stateUtilities );
+			SpaSearcher *spaSearcher = new SpaSearcher( theJobManager, stateUtilities );
 			spaSearcher->addFilteringEventHandler( this );
 			theJobManager->setStrategy(
 				new cloud9::worker::RandomJobFromStateStrategy(
@@ -378,25 +389,25 @@ namespace SPA {
 
 		if (StandAlone) {
 			CLOUD9_INFO("Running in stand-alone mode. No load balancer involved.");
-			
+
 			theJobManager->processJobs(true, (int)MaxTime.getValue());
-			
+
 			cloud9::instrum::theInstrManager.recordEvent(cloud9::instrum::TimeOut, "Timeout");
-			
+
 			theJobManager->finalize();
 		} else {
 			cloud9::worker::CommManager commManager(theJobManager); // Handle outside communication
 			commManager.setup();
-			
+
 			theJobManager->processJobs(false, (int)MaxTime.getValue()); // Blocking when no jobs are on the queue
-			
+
 			cloud9::instrum::theInstrManager.recordEvent(cloud9::instrum::TimeOut, "Timeout");
-			
+
 			// The order here matters, in order to avoid memory corruption
 			commManager.finalize();
 			theJobManager->finalize();
 		}
-		
+
 		delete theJobManager;
 		theJobManager = NULL;
 	}
@@ -428,14 +439,16 @@ namespace SPA {
 	}
 
 	void SPA::onStateDestroy(klee::ExecutionState *kState, bool silenced) {
-		terminalPathsFound++;
+		if ( ! kState->filtered ) {
+			terminalPathsFound++;
 
-		if ( (! kState->filtered) && outputTerminalPaths ) {
-			assert( kState );
+			if ( outputTerminalPaths ) {
+				assert( kState );
 
-			CLOUD9_DEBUG( "Processing terminal path." );
+				CLOUD9_DEBUG( "Processing terminal path." );
 
-			processPath( kState );
+				processPath( kState );
+			}
 		}
 		showStats();
 	}

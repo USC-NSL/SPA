@@ -66,7 +66,9 @@ private:
 	ExecutionPath *parent;
 	int parentIndex;
 
+public:
 	ExecutionPath *getAbsolutePath();
+private:
 
 	ExecutionPath() : parent(NULL), parentIndex(0) { };
 public:
