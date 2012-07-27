@@ -9,8 +9,7 @@
 #include "cloud9/Logger.h"
 
 namespace SPA {
-	CFGBackwardFilter::CFGBackwardFilter( CFG &cfg, CG &cg, llvm::Function *_entryFunction, std::set<llvm::Instruction *> &targets ) :
-		entryFunction( _entryFunction ) {
+	CFGBackwardFilter::CFGBackwardFilter( CFG &cfg, CG &cg, std::set<llvm::Instruction *> &targets ) {
 		// Use a worklist to add all predecessors of target instruction.
 		std::set<llvm::Instruction *> worklist = targets;
 		std::set<llvm::Function *> pathFunctions;
@@ -51,21 +50,21 @@ namespace SPA {
 	}
 
 	double CFGBackwardFilter::getUtility( const klee::ExecutionState *state ) {
-		bool entryFound = false;
-		for ( klee::ExecutionState::stack_ty::const_iterator it = state->stack().begin(), ie = state->stack().end(); it != ie; it++ ) {
-			if ( it->caller && it->caller->inst->getParent()->getParent() == entryFunction ) {
-				entryFound = true;
-				break;
+		bool knownFound = false;
+		// Traverse call stack downward from root to current PC.
+		// A filter out will match this regexp: ^[Unknown]*[Reaching]+[!Reaching].*$
+		for ( klee::ExecutionState::stack_ty::const_reverse_iterator it = state->stack().rbegin(), ie = state->stack().rend(); it != ie; it++ ) {
+			if ( it->caller ) {
+				if ( reaching.count( it->caller->inst ) ) {
+					if ( knownFound && ! reaching[it->caller->inst] ) // Found non-reaching.
+						return UTILITY_FILTER_OUT;
+					knownFound = true;
+				} else {
+					if ( knownFound ) // Found unknown after reaching.
+						return UTILITY_DEFAULT;
+				}
 			}
 		}
-		if ( ! entryFound )
-			return UTILITY_DEFAULT;
-		if ( reaching.count( state->pc()->inst ) )
-			return reaching[state->pc()->inst] ? UTILITY_DEFAULT : UTILITY_FILTER_OUT;
-		// Traverse call stack upward until a known instruction shows up.
-		for ( klee::ExecutionState::stack_ty::const_reverse_iterator it = state->stack().rbegin(), ie = state->stack().rend(); it != ie; it++ )
-			if ( it->caller && reaching.count( it->caller->inst ) )
-				return reaching[it->caller->inst] ? UTILITY_DEFAULT : UTILITY_FILTER_OUT;
 		return UTILITY_DEFAULT;
 	}
 

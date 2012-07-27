@@ -12,10 +12,10 @@
 #include <spa/SPA.h>
 
 namespace SPA {
-	WaypointUtility::WaypointUtility( CFG &cfg, CG &cg, llvm::Function *entryFunction, std::map<unsigned int, std::set<llvm::Instruction *> > &waypoints, bool _mandatory ) :
+	WaypointUtility::WaypointUtility( CFG &cfg, CG &cg, std::map<unsigned int, std::set<llvm::Instruction *> > &waypoints, bool _mandatory ) :
 		mandatory( _mandatory ) {
 		for ( std::map<unsigned int, std::set<llvm::Instruction *> >::iterator it = waypoints.begin(), ie = waypoints.end(); it != ie; it++ )
-			filters[it->first] = new CFGBackwardFilter( cfg, cg, entryFunction, it->second );
+			filters[it->first] = new CFGBackwardFilter( cfg, cg, it->second );
 	}
 
 	bool checkWaypoint( const klee::ExecutionState *state, unsigned int id ) {
