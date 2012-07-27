@@ -13,7 +13,7 @@ typedef void (*SpaRuntimeHandler_t)( va_list );
 #ifdef __cplusplus
 extern "C" {
 #endif// #ifdef __cplusplus
-	void __attribute__((noinline,weak)) spa_checkpoint() { return; }
+	void __attribute__((noinline,weak)) spa_checkpoint() { static uint8_t i = 0; i++; } // Complicated NOP to prevent inlining.
 	void __attribute__((noinline)) spa_runtime_call( SpaRuntimeHandler_t handler, ... );
 #ifdef __cplusplus
 }
@@ -61,14 +61,14 @@ void __attribute__((weak)) __spa_output( void *var, size_t size, const char *var
 extern "C" {
 #endif// #ifdef __cplusplus
 	void __attribute__((noinline,weak)) spa_waypoint( unsigned int id ) {
-		static bool init = false;
+		static uint8_t init = 0;
 		static uint8_t waypoints[SPA_MAX_WAYPOINTS / 8 + 1];
 		static uint8_t *waypointsPtr;
 		if ( ! init ) {
 			bzero( waypoints, sizeof( waypoints ) );
 			klee_make_symbolic( &waypointsPtr, sizeof( waypointsPtr ), "spa_waypoints" );
 			waypointsPtr = waypoints;
-			init = true;
+			init = 1;
 		}
 		klee_assert( id < SPA_MAX_WAYPOINTS );
 		waypoints[id>>3] |= 1<<(id & 0x7);
