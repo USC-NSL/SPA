@@ -48,6 +48,8 @@ namespace SPA {
 	}
 
 	void TargetDistanceUtility::processWorklist( CFG &cfg, CG &cg, std::set<llvm::Instruction *> &worklist ) {
+		std::set<llvm::Function *> pathFunctions;
+
 		CLOUD9_DEBUG( "      Processing direct paths." );
 		while ( ! worklist.empty() ) {
 			std::set<llvm::Instruction *>::iterator it = worklist.begin(), ie;
@@ -70,10 +72,17 @@ namespace SPA {
 					updated = true;
 				}
 			}
+			// Mark function as on direct path.
+			pathFunctions.insert( inst->getParent()->getParent() );
 
 			if ( updated )
 				propagateChanges( cfg, cg, worklist, inst );
 		}
+
+		// Instructions in direct path functions but not on direct path are non-reaching.
+		for ( CFG::iterator it = cfg.begin(), ie = cfg.end(); it != ie; it++ )
+			if ( pathFunctions.count( (*it)->getParent()->getParent() ) && ! distances.count( *it ) )
+				distances[*it] = std::pair<double, bool>( +INFINITY, true );
 
 		CLOUD9_DEBUG( "      Processing indirect paths." );
 		for ( CFG::iterator it = cfg.begin(), ie = cfg.end(); it != ie; it++ ) {
