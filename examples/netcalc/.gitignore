@@ -1,4 +1,7 @@
 netcalc-client
 netcalc-server
 *.paths
+netcalc-client.bc.client.paths.log
+netcalc-server.bc.server.paths.log
+BadInputs.txt.log
 BadInputs.txt
