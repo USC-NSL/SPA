@@ -19,7 +19,7 @@ namespace SPA {
 		InstructionFilterUtility( InstructionFilter *_instructionFilter ) :
 			instructionFilter( _instructionFilter ) { }
 
-		double getUtility( const klee::ExecutionState *state ) {
+		double getUtility( klee::ExecutionState *state ) {
 			return instructionFilter->checkInstruction( state->pc()->inst ) ? UTILITY_DEFAULT : UTILITY_FILTER_OUT;
 		}
 

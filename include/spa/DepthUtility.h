@@ -11,7 +11,7 @@ namespace SPA {
 	class DepthUtility : public StateUtility {
 	public:
 		DepthUtility() { }
-		double getUtility( const klee::ExecutionState *state );
+		double getUtility( klee::ExecutionState *state );
 	};
 }
 

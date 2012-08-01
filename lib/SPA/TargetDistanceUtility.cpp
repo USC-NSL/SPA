@@ -113,7 +113,7 @@ namespace SPA {
 		}
 	}
 
-	double TargetDistanceUtility::getUtility( const klee::ExecutionState *state ) {
+	double TargetDistanceUtility::getUtility( klee::ExecutionState *state ) {
 		assert( state );
 
 		double result = - getDistance( state->pc()->inst );

@@ -53,7 +53,7 @@ namespace SPA {
 		return cast<klee::ConstantExpr>( wp )->getZExtValue( 8 ) & 1<<(id & 0x7);
 	}
 
-	double WaypointUtility::getUtility( const klee::ExecutionState *state ) {
+	double WaypointUtility::getUtility( klee::ExecutionState *state ) {
 		unsigned int count = 0;
 
 		for ( std::map<unsigned int, CFGBackwardFilter *>::iterator it = filters.begin(), ie = filters.end(); it != ie; it++ ) {

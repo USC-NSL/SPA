@@ -6,6 +6,7 @@
 #define __SPASEARCHER_H__
 
 #include <deque>
+#include <ctime>
 
 #include <klee/Searcher.h>
 #include <cloud9/worker/JobManager.h>
@@ -24,17 +25,18 @@ namespace SPA {
 		std::vector<FilteringEventHandler *> filteringEventHandlers;
 		unsigned long statesDequeued;
 		unsigned long statesFiltered;
+		time_t lastSaved;
 
 		bool checkState( klee::ExecutionState *state, unsigned int &id );
 		void enqueueState( klee::ExecutionState *state );
 		klee::ExecutionState *dequeueState( klee::ExecutionState *state );
 		void filterState( klee::ExecutionState *state, unsigned int id );
 		void reorderState( klee::ExecutionState *state );
-		void saveStates( std::ostream &out );
+		void saveStates();
 
 	public:
 		explicit SpaSearcher( cloud9::worker::JobManager *_jobManager, std::deque<StateUtility *> _stateUtilities )
-			: jobManager( _jobManager ), stateUtilities( _stateUtilities ), statesDequeued( 0 ), statesFiltered( 0 ) { };
+			: jobManager( _jobManager ), stateUtilities( _stateUtilities ), statesDequeued( 0 ), statesFiltered( 0 ) { time( &lastSaved ); };
 		void addFilteringEventHandler( FilteringEventHandler *handler ) { filteringEventHandlers.push_back( handler ); }
 		~SpaSearcher() { };
 

@@ -61,10 +61,11 @@ ExecutionState::ExecutionState(Executor *_executor, KFunction *kf)
     instsSinceCovNew(0),
     coveredNew(false),
     lastCoveredTime(sys::TimeValue::now()),
-    filtered(false),
     ptreeNode(0),
     crtForkReason(KLEE_FORK_DEFAULT),
     crtSpecialFork(NULL),
+    filtered(false),
+    recovered(false),
     wlistCounter(1),
     preemptions(0) {
 
@@ -79,9 +80,10 @@ ExecutionState::ExecutionState(Executor *_executor, const std::vector<ref<Expr> 
     fakeState(true),
     queryCost(0.),
     lastCoveredTime(sys::TimeValue::now()),
-    filtered(false),
     ptreeNode(0),
     globalConstraints(assumptions),
+    filtered(false),
+    recovered(false),
     wlistCounter(1),
     preemptions(0) {
 
@@ -307,6 +309,9 @@ ExecutionState *ExecutionState::branch() {
 
   weight *= .5;
   falseState->weight -= weight;
+
+  falseState->filtered = this->filtered;
+  falseState->recovered = this->recovered;
 
   return falseState;
 }

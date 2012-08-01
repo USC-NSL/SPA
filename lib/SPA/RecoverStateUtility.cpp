@@ -17,8 +17,8 @@ namespace SPA {
 			paths.insert( epsp->getPath( i )->getPath() );
 	}
 
-	double RecoverStateUtility::getUtility( const klee::ExecutionState *state ) {
-		if ( ! paths.empty() ) {
+	double RecoverStateUtility::getUtility( klee::ExecutionState *state ) {
+		if ( (! state->recovered) && (! paths.empty()) ) {
 			std::vector<cloud9::worker::WorkerTree::Node *> nodes;
 			nodes.push_back( &*state->getCloud9State()->getNode() );
 			std::vector<int> path = jobManager->getTree()->buildPathSet( nodes.begin(), nodes.end(), (std::map<cloud9::worker::WorkerTree::Node *,unsigned> *) NULL )->getPath( 0 )->getAbsolutePath()->getPath();
@@ -32,6 +32,7 @@ namespace SPA {
 					if ( path.size() < it->size() ) {
 						return UTILITY_DEFAULT + 1;
 					} else {
+						state->recovered = true;
 						return UTILITY_DEFAULT;
 					}
 				}

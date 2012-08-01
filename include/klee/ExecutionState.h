@@ -127,8 +127,10 @@ public:
 
   ConstraintManager globalConstraints;
 
+  // SPA state
   // Signals the path is no longer interesting and should be discarded.
   bool filtered;
+  bool recovered;
 
 
   // For a multi threaded ExecutionState
