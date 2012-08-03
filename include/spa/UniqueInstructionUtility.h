@@ -11,7 +11,7 @@ namespace SPA {
 	class UniqueInstructionUtility : public StateUtility {
 	public:
 		UniqueInstructionUtility() { }
-		double getUtility( const klee::ExecutionState *state );
+		double getUtility( klee::ExecutionState *state );
 	};
 }
 

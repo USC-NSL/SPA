@@ -7,7 +7,7 @@
 #include <cloud9/worker/TreeObjects.h>
 
 namespace SPA {
-	double UniqueInstructionUtility::getUtility( const klee::ExecutionState *state ) {
+	double UniqueInstructionUtility::getUtility( klee::ExecutionState *state ) {
 		assert( state );
 		assert( state->getCloud9State() );
 

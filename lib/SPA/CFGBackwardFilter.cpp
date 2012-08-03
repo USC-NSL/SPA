@@ -49,7 +49,7 @@ namespace SPA {
 		return reaching.count( instruction ) && reaching[instruction];
 	}
 
-	double CFGBackwardFilter::getUtility( const klee::ExecutionState *state ) {
+	double CFGBackwardFilter::getUtility( klee::ExecutionState *state ) {
 		bool knownFound = false;
 		// Traverse call stack downward from root to current PC.
 		// A filter out will match this regexp: ^[Unknown]*[Reaching]+[!Reaching].*$

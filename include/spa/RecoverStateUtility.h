@@ -18,7 +18,7 @@ namespace SPA {
 
 	public:
 		RecoverStateUtility( cloud9::worker::JobManager *_jobManager, std::istream &stateFile );
-		double getUtility( const klee::ExecutionState *state );
+		double getUtility( klee::ExecutionState *state );
 		std::string getColor( CFG &cfg, CG &cg, llvm::Instruction *instruction ) { return "white"; }
 	};
 }

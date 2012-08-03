@@ -73,7 +73,7 @@ int main(int argc, char **argv, char **envp) {
 	if ( pathFileName == "" )
 		pathFileName = InputFile + (Client ? ".client" : ".server") + ".paths";
 	CLOUD9_INFO( "Writing output to: " << pathFileName );
-	std::ofstream pathFile( pathFileName.c_str(), std::ios::out | std::ios::trunc );
+	std::ofstream pathFile( pathFileName.c_str(), std::ios::out | std::ios::app );
 	assert( pathFile.is_open() && "Unable to open path file." );
 	SPA::SPA spa = SPA::SPA( module, pathFile );
 

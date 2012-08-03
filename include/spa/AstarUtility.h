@@ -23,7 +23,7 @@ namespace SPA {
 		AstarUtility( CFG &cfg, CG &cg, InstructionFilter &filter ) :
 			targetDistance( cfg, cg, filter ) { }
 
-		double getUtility( const klee::ExecutionState *state ) {
+		double getUtility( klee::ExecutionState *state ) {
 			return targetDistance.getUtility( state ) - depth.getUtility( state );
 		}
 

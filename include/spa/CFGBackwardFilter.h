@@ -19,7 +19,7 @@ namespace SPA {
 	public:
 		CFGBackwardFilter( CFG &cfg, CG &cg, std::set<llvm::Instruction *> &targets );
 		bool checkInstruction( llvm::Instruction *instruction );
-		double getUtility( const klee::ExecutionState *state );
+		double getUtility( klee::ExecutionState *state );
 		std::string getColor( CFG &cfg, CG &cg, llvm::Instruction *instruction );
 	};
 }

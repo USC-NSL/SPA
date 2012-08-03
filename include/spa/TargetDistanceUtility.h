@@ -31,7 +31,7 @@ namespace SPA {
 	public:
 		TargetDistanceUtility( CFG &cfg, CG &cg, std::set<llvm::Instruction *> &targets );
 		TargetDistanceUtility( CFG &cfg, CG &cg, InstructionFilter &filter );
-		double getUtility( const klee::ExecutionState *state );
+		double getUtility( klee::ExecutionState *state );
 		std::string getColor( CFG &cfg, CG &cg, llvm::Instruction *instruction );
 	};
 }

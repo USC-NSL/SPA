@@ -28,7 +28,7 @@ namespace SPA {
 		 * @param state The state to check.
 		 * @return The utility metric for the given state (higher = more useful).
 		 */
-		virtual double getUtility( const klee::ExecutionState *state ) = 0;
+		virtual double getUtility( klee::ExecutionState *state ) = 0;
 
 		/**
 		 * Gives a Graphviz color for a given node to aid in debugging.

@@ -74,8 +74,6 @@ namespace {
 	cl::opt<bool> StandAlone("stand-alone",
 		cl::desc("Enable running a worker in stand alone mode"),
 		cl::init(true));
-	cl::opt<std::string> RecoverState( "recover-state",
-		llvm::cl::desc( "Specifies a file with a previously saved processing queue to load." ) );
 
 	typedef enum {
 		START,
@@ -92,6 +90,9 @@ namespace {
 }
 
 namespace SPA {
+	cl::opt<std::string> RecoverState( "recover-state",
+		llvm::cl::desc( "Specifies a file with a previously saved processing queue to load." ) );
+
 	static bool Interrupted = false;
 	cloud9::worker::JobManager *theJobManager;
 
