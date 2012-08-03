@@ -50,3 +50,5 @@ third_party/build/portaudio/os-auto.mak
 third_party/build/resample/.libresample-x86_64-unknown-linux-gnu.depend
 third_party/build/speex/.libspeex-x86_64-unknown-linux-gnu.depend
 third_party/build/srtp/.libsrtp-x86_64-unknown-linux-gnu.depend
+client.log
+pjsip-apps/bin/pjsua-x86_64-unknown-linux-gnu.bc.client.paths
