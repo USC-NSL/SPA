@@ -1,0 +1,7 @@
+#!/bin/sh
+
+CC='llvm-gcc' CFLAGS='-DENABLE_SPA -emit-llvm -use-gold-plugin -g' \
+	CXX='llvm-g++' CXXFLAGS='-DENABLE_SPA -emit-llvm -use-gold-plugin -g' \
+	CPP='llvm-cpp' LD='llvm-ld' NM='llvm-nm' \
+	AR='llvm-ar' RANLIB='llvm-ranlib' \
+	./configure
