@@ -23,6 +23,8 @@ namespace SPA {
 					functions.insert( ii->getCalledFunction() );
 					definiteCallees[*it].insert( ii->getCalledFunction() );
 					possibleCallees[*it].insert( ii->getCalledFunction() );
+				} else {
+// 					CLOUD9_INFO( "Indirect function call at " << (*it)->getParent()->getParent()->getName().str() << (*it)->getDebugLoc().getLine() );
 				}
 				definiteCallers[ii->getCalledFunction()].insert( *it );
 				possibleCallers[ii->getCalledFunction()].insert( *it );
@@ -32,6 +34,8 @@ namespace SPA {
 					functions.insert( ci->getCalledFunction() );
 					definiteCallees[*it].insert( ci->getCalledFunction() );
 					possibleCallees[*it].insert( ci->getCalledFunction() );
+				} else {
+// 					CLOUD9_INFO( "Indirect function call at " << (*it)->getParent()->getParent()->getName().str() << ":" << (*it)->getDebugLoc().getLine() );
 				}
 				definiteCallers[ci->getCalledFunction()].insert( *it );
 				possibleCallers[ci->getCalledFunction()].insert( *it );
@@ -66,5 +70,50 @@ namespace SPA {
 				}
 			}
 		}
+
+		// Warn about functions with no callers.
+		for ( std::map<llvm::Function *,std::set<llvm::Instruction *> >::iterator it = possibleCallers.begin(), ie = possibleCallers.end(); it != ie; it++ )
+			if ( it->second.empty() )
+				CLOUD9_INFO( "Found function without any callers: " << it->first->getName().str() );
+		// Warn about indirect calls without callees.
+		for ( std::map<llvm::Instruction *,std::set<llvm::Function *> >::iterator it = possibleCallees.begin(), ie = possibleCallees.end(); it != ie; it++ )
+			if ( it->second.empty() )
+				CLOUD9_INFO( "Found call-site without any callees: " << it->first );
+	}
+
+	void CG::dump( std::ostream &dotFile ) {
+		std::set<std::pair<llvm::Function *, llvm::Function *> > definiteCG;
+		std::set<std::pair<llvm::Function *, llvm::Function *> > possibleCG;
+
+		// Find CG edges.
+		for ( std::map<llvm::Instruction *,std::set<llvm::Function *> >::iterator it1 = definiteCallees.begin(), ie1 = definiteCallees.end(); it1 != ie1; it1++ )
+			for ( std::set<llvm::Function *>::iterator it2 = it1->second.begin(), ie2 = it1->second.end(); it2 != ie2; it2++ )
+				definiteCG.insert( std::pair<llvm::Function *, llvm::Function *>( it1->first->getParent()->getParent(), *it2 ) );
+		for ( std::map<llvm::Instruction *,std::set<llvm::Function *> >::iterator it1 = possibleCallees.begin(), ie1 = possibleCallees.end(); it1 != ie1; it1++ ) {
+			if ( ! it1->second.empty() ) {
+				for ( std::set<llvm::Function *>::iterator it2 = it1->second.begin(), ie2 = it1->second.end(); it2 != ie2; it2++ )
+					if ( definiteCG.count( std::pair<llvm::Function *, llvm::Function *>( it1->first->getParent()->getParent(), *it2 ) ) == 0 )
+						possibleCG.insert( std::pair<llvm::Function *, llvm::Function *>( it1->first->getParent()->getParent(), *it2 ) );
+			} else {
+				possibleCG.insert( std::pair<llvm::Function *, llvm::Function *>( it1->first->getParent()->getParent(), NULL ) );
+			}
+		}
+
+		// Generate CFG DOT file.
+		dotFile<< "digraph CG {" << std::endl;
+		// Add all functions.
+		for ( iterator it = begin(), ie = end(); it != ie; it++ ) {
+			dotFile << "	f" << *it << " [label = \"" << (*it)->getName().str() << "\"];";
+		}
+
+		// Definite CG.
+		dotFile << "	edge [color = \"blue\"];" << std::endl;
+		for ( std::set<std::pair<llvm::Function *, llvm::Function *> >::iterator it = definiteCG.begin(), ie = definiteCG.end(); it != ie; it++ )
+			dotFile << "	f" << it->first << " -> f" << it->second << ";";
+		dotFile << "	edge [color = \"cyan\"];" << std::endl;
+		for ( std::set<std::pair<llvm::Function *, llvm::Function *> >::iterator it = possibleCG.begin(), ie = possibleCG.end(); it != ie; it++ )
+			dotFile << "	f" << it->first << " -> f" << it->second << ";";
+
+		dotFile << "}" << std::endl;
 	}
 }
