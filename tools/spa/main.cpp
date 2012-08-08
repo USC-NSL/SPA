@@ -25,6 +25,7 @@
 #include "spa/NegatedIF.h"
 #include "spa/WaypointUtility.h"
 #include "spa/AstarUtility.h"
+#include "spa/FilteredUtility.h"
 #include "spa/PathFilter.h"
 
 extern std::string InputFile;
@@ -32,6 +33,15 @@ extern std::string InputFile;
 namespace {
 	llvm::cl::opt<std::string> DumpCFG( "dump-cfg",
 		llvm::cl::desc( "Dumps the analyzed program's annotated CFG to the given file, as a .dot file." ) );
+
+	llvm::cl::opt<std::string> DumpCG( "dump-cg",
+		llvm::cl::desc( "Dumps the analyzed program's CG to the given file, as a .dot file." ) );
+
+	llvm::cl::opt<bool> SaveSeeds( "save-seeds",
+		llvm::cl::desc( "Generates seed paths from seed inputs." ) );
+
+	llvm::cl::opt<std::string> SeedFile( "seed-file",
+		llvm::cl::desc( "Loads previously generated seed paths." ) );
 
 	llvm::cl::opt<std::string> PathFile( "path-file",
 		llvm::cl::desc( "Sets the output path file." ) );
@@ -84,16 +94,40 @@ int main(int argc, char **argv, char **envp) {
 	SPA::CFG cfg( module );
 	SPA::CG cg( cfg );
 
+	// Find seed IDs.
+	std::set<unsigned int> seedIDs;
+	if ( SaveSeeds ) {
+		CLOUD9_DEBUG( "   Setting up path seed generation." );
+		Function *fn = module->getFunction( SPA_SEED_ANNOTATION_FUNCTION );
+		assert( fn );
+		for ( std::set<llvm::Instruction *>::iterator it = cg.getDefiniteCallers( fn ).begin(), ie = cg.getDefiniteCallers( fn ).end(); it != ie; it++ ) {
+			const CallInst *callInst;
+			assert( callInst = dyn_cast<CallInst>( *it ) );
+			assert( callInst->getNumArgOperands() == 4 );
+			const llvm::ConstantInt *constInt;
+			assert( constInt = dyn_cast<llvm::ConstantInt>( callInst->getArgOperand( 0 ) ) );
+			uint64_t id = constInt->getValue().getLimitedValue();
+			if ( ! seedIDs.count( id ) )
+				CLOUD9_INFO( "      Found seed id: " << id );
+			seedIDs.insert( id );
+		}
+		assert( ! seedIDs.empty() );
+	}
+
 	// Find entry handlers.
 	std::set<llvm::Instruction *> entryPoints;
 	if ( Client ) {
 		Function *fn = module->getFunction( SPA_API_ANNOTATION_FUNCTION );
 		if ( fn ) {
 			std::set<llvm::Instruction *> apiCallers = cg.getDefiniteCallers( fn );
-			for ( std::set<llvm::Instruction *>::iterator it = apiCallers.begin(), ie = apiCallers.end(); it != ie; it++ ) {
-				CLOUD9_DEBUG( "   Found API entry function: " << (*it)->getParent()->getParent()->getName().str() );
-				spa.addEntryFunction( (*it)->getParent()->getParent() );
-				entryPoints.insert( *it );
+			for ( std::set<llvm::Instruction *>::iterator cit = apiCallers.begin(), cie = apiCallers.end(); cit != cie; cit++ ) {
+				CLOUD9_DEBUG( "   Found API entry function: " << (*cit)->getParent()->getParent()->getName().str() );
+				if ( seedIDs.empty() )
+					spa.addEntryFunction( (*cit)->getParent()->getParent() );
+				else
+					for ( std::set<unsigned int>::iterator sit = seedIDs.begin(), sie = seedIDs.end(); sit != sie; sit++ )
+						spa.addSeedEntryFunction( *sit, (*cit)->getParent()->getParent() );
+				entryPoints.insert( *cit );
 			}
 		} else {
 			CLOUD9_INFO( "   API annotation function not present in module." );
@@ -102,10 +136,14 @@ int main(int argc, char **argv, char **envp) {
 		Function *fn = module->getFunction( SPA_MESSAGE_HANDLER_ANNOTATION_FUNCTION );
 		if ( fn ) {
 			std::set<llvm::Instruction *> mhCallers = cg.getDefiniteCallers( fn );
-			for ( std::set<llvm::Instruction *>::iterator it = mhCallers.begin(), ie = mhCallers.end(); it != ie; it++ ) {
-				CLOUD9_DEBUG( "   Found message handler entry function: " << (*it)->getParent()->getParent()->getName().str() );
-				spa.addEntryFunction( (*it)->getParent()->getParent() );
-				entryPoints.insert( *it );
+			for ( std::set<llvm::Instruction *>::iterator cit = mhCallers.begin(), cie = mhCallers.end(); cit != cie; cit++ ) {
+				CLOUD9_DEBUG( "   Found message handler entry function: " << (*cit)->getParent()->getParent()->getName().str() );
+				if ( seedIDs.empty() )
+					spa.addEntryFunction( (*cit)->getParent()->getParent() );
+				else
+					for ( std::set<unsigned int>::iterator sit = seedIDs.begin(), sie = seedIDs.end(); sit != sie; sit++ )
+						spa.addSeedEntryFunction( *sit, (*cit)->getParent()->getParent() );
+				entryPoints.insert( *cit );
 			}
 		} else {
 			CLOUD9_INFO( "   Message handler annotation function not present in module." );
@@ -116,6 +154,18 @@ int main(int argc, char **argv, char **envp) {
 	// Rebuild full CFG and call-graph (changed by SPA after adding init/entry handlers).
 	cfg = SPA::CFG( module );
 	cg = SPA::CG( cfg );
+
+	if ( DumpCG.size() > 0 ) {
+		CLOUD9_DEBUG( "Dumping CG to: " << DumpCG.getValue() );
+		std::ofstream dotFile( DumpCG.getValue().c_str() );
+		assert( dotFile.is_open() && "Unable to open dump file." );
+
+		cg.dump( dotFile );
+
+		dotFile.flush();
+		dotFile.close();
+		return 0;
+	}
 
 	// Find checkpoints.
 	CLOUD9_DEBUG( "   Setting up path checkpoints." );
@@ -133,12 +183,16 @@ int main(int argc, char **argv, char **envp) {
 	if ( fn ) {
 		for ( std::set<llvm::Instruction *>::iterator it = cg.getDefiniteCallers( fn ).begin(), ie = cg.getDefiniteCallers( fn ).end(); it != ie; it++ ) {
 			const CallInst *callInst;
+			CLOUD9_INFO( "Found waypoint in function: " << (*it)->getParent()->getParent()->getName().str() );
 			assert( callInst = dyn_cast<CallInst>( *it ) );
-			assert( callInst->getNumArgOperands() == 1 );
+			if ( callInst->getNumArgOperands() != 1 ) {
+				CLOUD9_DEBUG( "Arguments: " << callInst->getNumArgOperands() );
+				assert( false && "Waypoint annotation function has wrong number of arguments." );
+			}
 			const llvm::ConstantInt *constInt;
 			assert( constInt = dyn_cast<llvm::ConstantInt>( callInst->getArgOperand( 0 ) ) );
 			uint64_t id = constInt->getValue().getLimitedValue();
-			CLOUD9_INFO( "      Found waypoint with id " << id << " in at " << (*it)->getParent()->getParent()->getName().str() << ":" << (*it)->getDebugLoc().getLine() );
+			CLOUD9_INFO( "      Found waypoint with id " << id << " at " << (*it)->getParent()->getParent()->getName().str() << ":" << (*it)->getDebugLoc().getLine() );
 			waypoints[id].insert( *it );
 		}
 	} else {
@@ -172,14 +226,16 @@ int main(int argc, char **argv, char **envp) {
 
 	// Create state utility function.
 	CLOUD9_DEBUG( "   Creating state utility function." );
-	SPA::StateUtility *utility = NULL;
-	if ( Client )
-		utility = new SPA::AstarUtility( cfg, cg, checkpoints );
-// 		utility = new SPA::TargetDistanceUtility( cfg, cg, checkpoints );
-	else if ( Server && filter )
-		utility = new SPA::AstarUtility( cfg, cg, *filter );
-// 		utility = new SPA::TargetDistanceUtility( cfg, cg, *filter );
-	spa.addStateUtilityBack( utility, false );
+	
+	spa.addStateUtilityBack( new SPA::FilteredUtility(), false );
+// 	spa.addStateUtilityBack( new SPA::DepthUtility(), false );
+	if ( Client ) {
+		spa.addStateUtilityBack( new SPA::AstarUtility( cfg, cg, checkpoints ), false );
+// 		spa.addStateUtilityBack( new SPA::TargetDistanceUtility( cfg, cg, checkpoints ), false );
+	} else if ( Server && filter ) {
+		spa.addStateUtilityBack( new SPA::AstarUtility( cfg, cg, *filter ), false );
+// 		spa.addStateUtilityBack( new SPA::TargetDistanceUtility( cfg, cg, *filter ), false );
+	}
 
 	if ( DumpCFG.size() > 0 ) {
 		CLOUD9_DEBUG( "Dumping CFG to: " << DumpCFG.getValue() );

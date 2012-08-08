@@ -17,19 +17,21 @@
 #include <cloud9/Logger.h>
 
 #define SAVE_STATE_PERIOD 10*60 // seconds
+#define QUEUE_LIMIT	10000
+#define DROP_TO		9000
 
 
 namespace SPA {
-	extern llvm::cl::opt<std::string> RecoverState;
-	llvm::cl::opt<std::string> SaveState( "save-state",
-		llvm::cl::desc( "Specifies a file to periodically save the processing queue to." ) );
+// 	extern llvm::cl::opt<std::string> RecoverState;
+// 	llvm::cl::opt<std::string> SaveState( "save-state",
+// 		llvm::cl::desc( "Specifies a file to periodically save the processing queue to." ) );
 
 	bool SpaSearcher::checkState( klee::ExecutionState *state, unsigned int &id ) {
 		for ( std::deque<StateUtility *>::iterator it = stateUtilities.begin(), ie = stateUtilities.end(); it != ie; it++, id++ ) {
 			if ( (*it)->getUtility( state ) == UTILITY_FILTER_OUT ) {
-// 				CLOUD9_DEBUG( "[SpaSearcher] Filtering state due to utility " << id << " at "
-// 					<< state->pc()->inst->getParent()->getParent()->getName().str()
-// 					<< ":" << state->pc()->inst->getDebugLoc().getLine() );
+				CLOUD9_DEBUG( "[SpaSearcher] Filtering state due to utility " << id << " at "
+					<< state->pc()->inst->getParent()->getParent()->getName().str()
+					<< ":" << state->pc()->inst->getDebugLoc().getLine() );
 // 				klee::c9::printStateStack( std::cerr, *state ) << std::endl;
 // 				state->pc()->inst->dump();
 				return false;
@@ -64,7 +66,7 @@ namespace SPA {
 	void SpaSearcher::filterState( klee::ExecutionState *state, unsigned int id ) {
 		state->filtered = true;
 		statesFiltered++;
-		if ( RecoverState.size() == 0 || state->recovered )
+// 		if ( RecoverState.size() == 0 || state->recovered )
 			for ( std::vector<FilteringEventHandler *>::iterator hit = filteringEventHandlers.begin(), hie = filteringEventHandlers.end(); hit != hie; hit++ )
 				(*hit)->onStateFiltered( state, id );
 	}
@@ -73,31 +75,39 @@ namespace SPA {
 		enqueueState( dequeueState( states.begin()->second ) );
 	}
 
-	void SpaSearcher::saveStates() {
-		std::vector<cloud9::worker::WorkerTree::Node *> nodes;
+	void SpaSearcher::reorderAllStates() {
+		std::set<std::pair<std::vector<double>,klee::ExecutionState *> > tempStates = states;
+		states.clear();
 
-		for ( std::set<std::pair<std::vector<double>,klee::ExecutionState *> >::iterator it = states.begin(), ie = states.end(); it != ie; it++ ) {
-			// Check if any state is in recovery and abort.
-			if ( RecoverState.size() > 0 && ! it->second->recovered )
-				return;
-			nodes.push_back( &*it->second->getCloud9State()->getNode() );
-		}
-
-		cloud9::ExecutionPathSetPin paths = jobManager->getTree()->buildPathSet( nodes.begin(), nodes.end(), (std::map<cloud9::worker::WorkerTree::Node *,unsigned> *) NULL );
-
-		CLOUD9_DEBUG( "Saving processing queue to: " << SaveState.getValue() );
-		std::ofstream stateFile( SaveState.getValue().c_str() );
-		assert( stateFile.is_open() && "Unable to open state file." );
-		for ( unsigned i = 0; i < paths->count(); i++ ) {
-			std::vector<int> path = paths->getPath( i )->getAbsolutePath()->getPath();
-			for ( std::vector<int>::const_iterator it = path.begin(), ie = path.end(); it != ie; it++ ) {
-				stateFile << *it;
-			}
-			stateFile << std::endl;
-		}
-		stateFile.flush();
-		stateFile.close();
+		for ( std::set<std::pair<std::vector<double>,klee::ExecutionState *> >::iterator it = tempStates.begin(), ie = tempStates.end(); it != ie; it++ )
+			enqueueState( it->second );
 	}
+
+// 	void SpaSearcher::saveStates() {
+// 		std::vector<cloud9::worker::WorkerTree::Node *> nodes;
+// 
+// 		for ( std::set<std::pair<std::vector<double>,klee::ExecutionState *> >::iterator it = states.begin(), ie = states.end(); it != ie; it++ ) {
+// 			// Check if any state is in recovery and abort.
+// 			if ( RecoverState.size() > 0 && ! it->second->recovered )
+// 				return;
+// 			nodes.push_back( &*it->second->getCloud9State()->getNode() );
+// 		}
+// 
+// 		cloud9::ExecutionPathSetPin paths = jobManager->getTree()->buildPathSet( nodes.begin(), nodes.end(), (std::map<cloud9::worker::WorkerTree::Node *,unsigned> *) NULL );
+// 
+// 		CLOUD9_DEBUG( "Saving processing queue to: " << SaveState.getValue() );
+// 		std::ofstream stateFile( SaveState.getValue().c_str() );
+// 		assert( stateFile.is_open() && "Unable to open state file." );
+// 		for ( unsigned i = 0; i < paths->count(); i++ ) {
+// 			std::vector<int> path = paths->getPath( i )->getAbsolutePath()->getPath();
+// 			for ( std::vector<int>::const_iterator it = path.begin(), ie = path.end(); it != ie; it++ ) {
+// 				stateFile << *it;
+// 			}
+// 			stateFile << std::endl;
+// 		}
+// 		stateFile.flush();
+// 		stateFile.close();
+// 	}
 
 	klee::ExecutionState &SpaSearcher::selectState() {
 		// Reorder head state to keep set coherent.
@@ -106,21 +116,29 @@ namespace SPA {
 			filterState( states.begin()->second, id );
 		else
 			reorderState( states.begin()->second );
+
+		if ( (! states.begin()->second->filtered) && states.size() > QUEUE_LIMIT ) {
+			int n = states.size() - DROP_TO;
+			CLOUD9_INFO( "[SpaSearcher] Dropping " << n << " states." );
+
+			for ( std::set<std::pair<std::vector<double>,klee::ExecutionState *> >::reverse_iterator it = states.rbegin(); n-- > 0; it++ )
+				it->second->filtered = true;
+			reorderAllStates();
+		}
+
+// 		if ( SaveState.size() > 0 && difftime( time( NULL ), lastSaved ) > SAVE_STATE_PERIOD ) {
+// 			saveStates();
+// 			lastSaved = time( NULL );
+// 		}
+
 		CLOUD9_DEBUG( "[SpaSearcher] Queued: " << states.size()
 			<< "; Utility Range: [" << (states.size() ? utilityStr( states.rbegin()->first ) : "")
 			<< "; " << (states.size() ? utilityStr( states.begin()->first ) : "")
 			<< "]; Processed: " << statesDequeued
 			<< "; Filtered: " << statesFiltered );
 
-		if ( SaveState.size() > 0 && difftime( time( NULL ), lastSaved ) > SAVE_STATE_PERIOD ) {
-			saveStates();
-			lastSaved = time( NULL );
-		}
-
-		CLOUD9_DEBUG( "[SpaSearcher] Selecting state at "
-			<< (*(states.begin()->second->pc())).inst->getParent()->getParent()->getName().str()
-			<< ":" << (*(states.begin()->second->pc())).inst->getDebugLoc().getLine() );
-// 		klee::c9::printStateStack( std::cerr, *states.begin()->second ) << std::endl;
+		CLOUD9_DEBUG( "[SpaSearcher] Selecting state:" );
+		klee::c9::printStateStack( std::cerr, *states.begin()->second ) << std::endl;
 		return *states.begin()->second;
 	}
 

@@ -15,6 +15,7 @@ namespace SPA {
 	private:
 		cloud9::worker::JobManager *jobManager;
 		std::set< std::vector<int> > paths;
+		unsigned long recoveredPaths;
 
 	public:
 		RecoverStateUtility( cloud9::worker::JobManager *_jobManager, std::istream &stateFile );

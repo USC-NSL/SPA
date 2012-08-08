@@ -67,6 +67,7 @@
 #define OLD_ENTRY_FUNCTION	"__spa_old_main"
 #define KLEE_INT_FUNCTION	"klee_int"
 #define HANDLER_ID_VAR_NAME	"spa_internal_HanderID"
+#define SEED_ID_VAR_NAME	"spa_internal_SeedID"
 extern cl::opt<double> MaxTime;
 extern cl::opt<bool> NoOutput;
 
@@ -90,8 +91,8 @@ namespace {
 }
 
 namespace SPA {
-	cl::opt<std::string> RecoverState( "recover-state",
-		llvm::cl::desc( "Specifies a file with a previously saved processing queue to load." ) );
+// 	cl::opt<std::string> RecoverState( "recover-state",
+// 		llvm::cl::desc( "Specifies a file with a previously saved processing queue to load." ) );
 
 	static bool Interrupted = false;
 	cloud9::worker::JobManager *theJobManager;
@@ -344,6 +345,25 @@ namespace SPA {
 		llvm::BranchInst::Create(entryReturnBB, swBB);
 	}
 
+	void SPA::addSeedEntryFunction( unsigned int seedID, llvm::Function *fn ) {
+		// case x:
+		// Create basic block for this case.
+		llvm::BasicBlock *swBB = llvm::BasicBlock::Create( module->getContext(), "", entryFunction, 0 );
+		entrySwitchInst->addCase( llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, handlerID++, true ) ), swBB );
+
+		// spa_internal_SeedID = seedID;
+		llvm::GlobalVariable *seedIDVar = module->getNamedGlobal ( SEED_ID_VAR_NAME );
+		assert( seedIDVar && "SeedID variable not declared in module." );
+		new StoreInst( ConstantInt::get( module->getContext(), APInt( 32, (uint64_t) seedID, false ) ), seedIDVar );
+
+		// handlerx();
+		llvm::CallInst *handlerCallInst = llvm::CallInst::Create( fn, "", swBB );
+		handlerCallInst->setCallingConv( llvm::CallingConv::C );
+		handlerCallInst->setTailCall( false );
+		// break;
+		llvm::BranchInst::Create(entryReturnBB, swBB);
+	}
+
 	void SPA::start() {
 		bool outputFP = false;
 		for ( std::deque<bool>::iterator it = outputFilteredPaths.begin(), ie = outputFilteredPaths.end(); it != ie; it++ ) {
@@ -364,13 +384,13 @@ namespace SPA {
 		NoOutput = true;
 		theJobManager = new cloud9::worker::JobManager( module, "main", pArgc, pArgv, pEnvp );
 
-		if ( RecoverState.size() > 0 ) {
-			CLOUD9_DEBUG( "Recovering state from: " << RecoverState.getValue() );
-			std::ifstream stateFile( RecoverState.getValue().c_str() );
-			assert( stateFile.is_open() && "Unable to open state file." );
-			addStateUtilityFront( new RecoverStateUtility( theJobManager, stateFile ), false );
-			stateFile.close();
-		}
+// 		if ( RecoverState.size() > 0 ) {
+// 			CLOUD9_DEBUG( "Recovering state from: " << RecoverState.getValue() );
+// 			std::ifstream stateFile( RecoverState.getValue().c_str() );
+// 			assert( stateFile.is_open() && "Unable to open state file." );
+// 			addStateUtilityFront( new RecoverStateUtility( theJobManager, stateFile ), false );
+// 			stateFile.close();
+// 		}
 
 		if ( ! stateUtilities.empty() ) {
 			CLOUD9_INFO( "Replacing strategy stack with SPA utility framework." );
@@ -391,7 +411,15 @@ namespace SPA {
 		if (StandAlone) {
 			CLOUD9_INFO("Running in stand-alone mode. No load balancer involved.");
 
-			theJobManager->processJobs(true, (int)MaxTime.getValue());
+// 			if ( RecoverState.size() > 0 ) {
+// 				std::ifstream stateFile( RecoverState.getValue().c_str() );
+// 				cloud9::ExecutionPathSetPin epsp = cloud9::ExecutionPathSet::parse( stateFile );
+// 				std::vector<long> replayInstrs;
+// 				theJobManager->importJobs(epsp, replayInstrs);
+// 				theJobManager->processLoop(true, false, (int)MaxTime.getValue());
+// 			} else {
+				theJobManager->processJobs(true, (int)MaxTime.getValue());
+// 			}
 
 			cloud9::instrum::theInstrManager.recordEvent(cloud9::instrum::TimeOut, "Timeout");
 
@@ -450,6 +478,8 @@ namespace SPA {
 
 				processPath( kState );
 			}
+		} else {
+			CLOUD9_DEBUG( "Filtered path destroyed." );
 		}
 		showStats();
 	}

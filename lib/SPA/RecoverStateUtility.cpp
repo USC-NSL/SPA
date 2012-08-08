@@ -10,12 +10,19 @@
 
 namespace SPA {
 	RecoverStateUtility::RecoverStateUtility( cloud9::worker::JobManager *_jobManager, std::istream &stateFile )
-		: jobManager( _jobManager ) {
+		: jobManager( _jobManager ), recoveredPaths( 0 ) {
 		cloud9::ExecutionPathSetPin epsp = cloud9::ExecutionPathSet::parse( stateFile );
 
 		for ( unsigned i = 0; i < epsp->count(); i++ )
 			paths.insert( epsp->getPath( i )->getPath() );
 	}
+
+// 	void printPath( std::string prefix, std::vector<int> path ) {
+// 		std::cerr << prefix;
+// 		for ( std::vector<int>::iterator it = path.begin(), ie = path.end(); it != ie; it++ )
+// 			std::cerr << *it;
+// 		std::cerr << std::endl;
+// 	}
 
 	double RecoverStateUtility::getUtility( klee::ExecutionState *state ) {
 		if ( (! state->recovered) && (! paths.empty()) ) {
@@ -30,17 +37,33 @@ namespace SPA {
 				for ( i = 0; i < size && path[i] == (*it)[i]; i++ );
 				if ( i == size ) {
 					if ( path.size() < it->size() ) {
-						return UTILITY_DEFAULT + 1;
+						CLOUD9_DEBUG( "Path still recovering (" << path.size() << "/" << it->size() << ")." );
+// 						printPath( "Current: ", path );
+// 						printPath( "Saved: ", *it );
+						return path.size();
 					} else {
+// 						printPath( "Current: ", path );
+// 						printPath( "Saved: ", *it );
 						state->recovered = true;
-						return UTILITY_DEFAULT;
+						CLOUD9_DEBUG( "Path done recovering." );
+						CLOUD9_DEBUG( "Recovered " << ++recoveredPaths << "/" << paths.size() << " paths." );
+						return UTILITY_PROCESS_LAST;
+					}
+				} else {
+					if ( path[i] < (*it)[i] ) {
+// 						CLOUD9_DEBUG( "Path filtered." );
+// 						printPath( "Current: ", path );
+						return UTILITY_FILTER_OUT;
 					}
 				}
 			}
 
+// 			CLOUD9_DEBUG( "Path filtered." );
+// 			printPath( "Current: ", path );
 			return UTILITY_FILTER_OUT;
 		} else {
-			return UTILITY_DEFAULT;
+			CLOUD9_DEBUG( "Path recovered." );
+			return UTILITY_PROCESS_LAST;
 		}
 	}
 }

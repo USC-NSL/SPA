@@ -1,6 +1,9 @@
 #ifndef __SPARUNTIME_H__
 #define __SPARUNTIME_H__
 
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
 #include <stdarg.h>
 #include <klee/klee.h>
 
@@ -45,6 +48,7 @@ SpaTag_t ValidPath;
 #define spa_msg_input_var( var ) spa_msg_input( &var, sizeof( var ), #var )
 #define spa_msg_output( var, size, name ) __spa_output( (void *) var, size, "spa_out_msg_" name, "spa_out_msg_size_" name )
 #define spa_msg_output_var( var ) spa_msg_output( &var, sizeof( var ), #var )
+
 void __attribute__((weak)) __spa_output( void *var, size_t size, const char *varName, const char *sizeName ) {
 	static SpaTag_t Output;
 	void *buffer = malloc( size );
@@ -55,6 +59,32 @@ void __attribute__((weak)) __spa_output( void *var, size_t size, const char *var
 	*bufSize = size;
 	spa_tag( Output, "1" );
 	spa_checkpoint();
+}
+
+#define spa_seed_var( id, var, value ) { \
+	typeof( var ) __v = value; \
+	spa_seed( id, &var, sizeof( var ), &__v ); \
+}
+
+#define spa_seed_file( id, var, fileName ) { \
+	if ( spa_internal_SeedID == id ) { \
+		struct stat st; \
+		klee_assert( stat( fileName, &st ) == 0 && "Unable to stat seed file." ); \
+		char seedValue[st.st_size]; \
+		FILE *file = fopen( fileName, "r" ); \
+		klee_assert( file && "Unable to open seed file." ); \
+		for ( int i = 0; feof( file ); seedValue[i++] = getc( file ) ); \
+		fclose( file ); \
+		spa_seed( id, var, st.st_size, seedValue ); \
+	} \
+}
+
+#define spa_seed_file_size( id, var, fileName ) { \
+	if ( spa_internal_SeedID == id ) { \
+		struct stat st; \
+		klee_assert( stat( fileName, &st ) == 0 && "Unable to stat seed file." ); \
+		var = st.st_size; \
+	} \
 }
 
 #ifdef __cplusplus
@@ -72,6 +102,12 @@ extern "C" {
 		}
 		klee_assert( id < SPA_MAX_WAYPOINTS );
 		waypoints[id>>3] |= 1<<(id & 0x7);
+	}
+
+	unsigned int spa_internal_SeedID;
+	void __attribute__((noinline,weak)) spa_seed( const unsigned int id, void *var, size_t size, const void *value ) {
+		if ( spa_internal_SeedID == id )
+			memcpy( var, value, size );
 	}
 #ifdef __cplusplus
 }
@@ -99,6 +135,11 @@ extern "C" {
 #define spa_msg_output_var( var )
 
 #define spa_waypoint( id )
+
+#define spa_seed_var( id, var, value )
+#define spa_seed_file( id, var, fileName )
+#define spa_seed_file_size( id, var, fileName )
+#define spa_seed( id, var, size, value )
 
 #endif // #ifdef ENABLE_SPA #else
 
