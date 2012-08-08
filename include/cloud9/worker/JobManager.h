@@ -190,7 +190,9 @@ private:
       WorkerTree::Node *pathEnd, WorkerTree::Node *&brokenEnd);
   void cleanInvalidJobs(WorkerTree::Node *rootNode);
 
+public:
   void processLoop(bool allowGrowth, bool blocking, unsigned int timeOut);
+private:
 
   void refineStatistics();
   void cleanupStatistics();

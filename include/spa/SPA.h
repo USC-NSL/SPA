@@ -23,6 +23,7 @@
 #define SPA_MESSAGE_HANDLER_ANNOTATION_FUNCTION	"spa_message_handler_entry"
 #define SPA_CHECKPOINT_ANNOTATION_FUNCTION		"spa_checkpoint"
 #define SPA_WAYPOINT_ANNOTATION_FUNCTION		"spa_waypoint"
+#define SPA_SEED_ANNOTATION_FUNCTION			"spa_seed"
 
 #define SPA_PREFIX					"spa_"
 #define SPA_TAG_PREFIX				SPA_PREFIX "tag_"
@@ -68,6 +69,7 @@ namespace SPA {
 		SPA( llvm::Module *_module, std::ostream &_output );
 		void addInitFunction( llvm::Function *fn );
 		void addEntryFunction( llvm::Function *fn );
+		void addSeedEntryFunction( unsigned int seedID, llvm::Function *fn );
 		void addStateUtilityFront( StateUtility *stateUtility, bool _outputFilteredPaths ) {
 			stateUtilities.push_front( stateUtility );
 			outputFilteredPaths.push_front( _outputFilteredPaths );

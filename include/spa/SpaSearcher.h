@@ -32,6 +32,7 @@ namespace SPA {
 		klee::ExecutionState *dequeueState( klee::ExecutionState *state );
 		void filterState( klee::ExecutionState *state, unsigned int id );
 		void reorderState( klee::ExecutionState *state );
+		void reorderAllStates();
 		void saveStates();
 
 	public:

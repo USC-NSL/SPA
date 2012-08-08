@@ -15,9 +15,9 @@ namespace SPA {
 #include "spa/CG.h"
 
 namespace SPA {
-#define UTILITY_PROCESS_FIRST	+INFINITY
-#define UTILITY_PROCESS_LAST	-DBL_MAX
-#define UTILITY_FILTER_OUT		-INFINITY
+#define UTILITY_PROCESS_FIRST	DBL_MAX
+#define UTILITY_PROCESS_LAST	-INFINITY
+#define UTILITY_FILTER_OUT		INFINITY
 #define UTILITY_DEFAULT			0
 
 	class StateUtility {

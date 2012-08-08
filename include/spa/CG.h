@@ -33,6 +33,8 @@ namespace SPA {
 		const std::set<llvm::Instruction *> &getPossibleCallers( llvm::Function *function ) { return possibleCallers[function]; }
 		const std::set<llvm::Function *> &getDefiniteCallees( llvm::Instruction *instruction ) { return definiteCallees[instruction]; }
 		const std::set<llvm::Function *> &getPossibleCallees( llvm::Instruction *instruction ) { return possibleCallees[instruction]; }
+		// Dumps CG as a GraphViz DOT-file.
+		void dump( std::ostream &dotFile );
 	};
 }
 

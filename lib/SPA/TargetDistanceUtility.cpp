@@ -60,15 +60,16 @@ namespace SPA {
 
 			// Check cost of successors.
 			for ( it = cfg.getSuccessors( inst ).begin(), ie = cfg.getSuccessors( inst ).end(); it != ie; it++ ) {
-				if ( distances[inst].first > distances[*it].first + 1 ) {
-					distances[inst] = std::pair<double, bool>( distances[*it].first + 1, true );
+				double d = cfg.getSuccessors( inst ).size() > 1 ? distances[*it].first + 1 : distances[*it].first;
+				if ( distances[inst].first > d ) {
+					distances[inst] = std::pair<double, bool>( d, true );
 					updated = true;
 				}
 			}
 			// Check cost of callees.
 			for ( std::set<llvm::Function *>::const_iterator it = cg.getPossibleCallees( inst ).begin(), ie = cg.getPossibleCallees( inst ).end(); it != ie; it++ ) {
-				if ( (! (*it)->empty()) && distances[inst].first > distances[&(*it)->getEntryBlock().front()].first + 1 ) {
-					distances[inst] = std::pair<double, bool>( distances[&(*it)->getEntryBlock().front()].first + 1, true );
+				if ( (! (*it)->empty()) && distances[inst].first > distances[&(*it)->getEntryBlock().front()].first ) {
+					distances[inst] = std::pair<double, bool>( distances[&(*it)->getEntryBlock().front()].first, true );
 					updated = true;
 				}
 			}
@@ -102,8 +103,9 @@ namespace SPA {
 			// Check cost of successors.
 			bool updated = false;
 			for ( it = cfg.getSuccessors( inst ).begin(), ie = cfg.getSuccessors( inst ).end(); it != ie; it++ ) {
-				if ( distances[inst].first > distances[*it].first + 1 ) {
-					distances[inst] = std::pair<double, bool>( distances[*it].first + 1, false );
+				double d = cfg.getSuccessors( inst ).size() > 1 ? distances[*it].first + 1 : distances[*it].first;
+				if ( distances[inst].first > d ) {
+					distances[inst] = std::pair<double, bool>( d, false );
 					updated = true;
 				}
 			}
