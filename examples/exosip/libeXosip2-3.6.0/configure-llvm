@@ -1,0 +1,15 @@
+#!/bin/sh
+
+CC='llvm-gcc' CFLAGS='-DENABLE_SPA -emit-llvm -use-gold-plugin -O0 -g -I/usr/local/bin/spa/examples/exosip/libosip2-3.6.0/include' \
+CXX='llvm-g++' CXXFLAGS='-DENABLE_SPA -emit-llvm -use-gold-plugin -O0 -g -I/usr/local/bin/spa/examples/exosip/libosip2-3.6.0/include' \
+CPP='llvm-cpp' LD='llvm-ld' AR='echo' RANLIB='echo' ./configure \
+--disable-shared \
+--enable-static \
+--disable-tools \
+--enable-debug \
+--disable-trace \
+--disable-mpatrol \
+--disable-gprof \
+--disable-mt \
+--disable-openssl \
+--disable-srvrec

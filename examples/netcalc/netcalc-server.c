@@ -15,6 +15,8 @@ SpaTag_t QueryValid;
 // Handles the query and computes the response.
 void handleQuery( nc_query_t &query, nc_response_t &response ) {
 	spa_msg_input_var( query );
+	spa_seed_file( 1, &query, "query.seed" );
+// 	spa_seed( 1, &query, sizeof( query ), "\0\0\0\0\171\171\171\171\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0" );
 
 	response.err = NC_OK;
 
