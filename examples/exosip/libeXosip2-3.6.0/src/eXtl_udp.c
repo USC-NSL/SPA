@@ -31,6 +31,8 @@
 #include "inet_ntop.h"
 #endif
 
+#include <spa/spaRuntime.h>
+
 extern eXosip_t eXosip;
 
 #if defined(_WIN32_WCE)
@@ -440,7 +442,8 @@ static int eXtl_update_local_target(osip_message_t * req)
 #define INET6_ADDRSTRLEN 46
 #endif
 
-static int
+// static int
+int
 udp_tl_send_message(osip_transaction_t * tr, osip_message_t * sip, char *host,
 					int port, int out_socket)
 {
@@ -687,6 +690,8 @@ udp_tl_send_message(osip_transaction_t * tr, osip_message_t * sip, char *host,
 		if (tr->nict_context != NULL)
 			osip_nict_set_destination(tr->nict_context, osip_strdup(ipbuf), port);
 	}
+
+	spa_msg_output( message, length, "message" );
 
 	if (0 >
 		sendto(udp_socket, (const void *) message, length, 0,

@@ -1587,8 +1587,10 @@ int eXosip_read_message(int max_message_nb, int sec_max, int usec_max)
 		int wakeup_socket = jpipe_get_read_descr(eXosip.j_socketctl);
 #endif
 
-		FD_ZERO(&osip_fdset);
-		FD_ZERO(&osip_wrset);
+// 		FD_ZERO(&osip_fdset);
+		bzero( &osip_fdset, sizeof( osip_fdset ) );
+// 		FD_ZERO(&osip_wrset);
+		bzero( &osip_wrset, sizeof( osip_wrset ) );
 		eXtl_udp.tl_set_fdset(&osip_fdset, &osip_wrset, &max);
 		eXtl_tcp.tl_set_fdset(&osip_fdset, &osip_wrset, &max);
 #ifdef HAVE_OPENSSL_SSL_H

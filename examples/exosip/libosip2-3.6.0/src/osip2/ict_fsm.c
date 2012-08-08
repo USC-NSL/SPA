@@ -216,7 +216,8 @@ void ict_snd_invite(osip_transaction_t * ict, osip_event_t * evt)
 	/* Here we have ict->orig_request == NULL */
 	ict->orig_request = evt->sip;
 
-	i = osip->cb_send_message(ict, evt->sip, ict->ict_context->destination,
+	i = cb_snd_message(ict, evt->sip, ict->ict_context->destination,
+// 	i = osip->cb_send_message(ict, evt->sip, ict->ict_context->destination,
 							  ict->ict_context->port, ict->out_socket);
 
 	if (i < 0) {

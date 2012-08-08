@@ -29,6 +29,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+#include <spa/spaRuntime.h>
+
 #include <osipparser2/osip_port.h>
 #include <osipparser2/osip_message.h>
 #include <osipparser2/osip_parser.h>
@@ -240,6 +242,7 @@ int osip_from_parse(osip_from_t * from, const char *hvalue)
 		if (i != 0)
 			return i;
 	}
+	spa_waypoint( 1 );
 	return OSIP_SUCCESS;
 }
 

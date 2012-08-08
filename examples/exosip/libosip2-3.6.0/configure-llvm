@@ -7,6 +7,5 @@ CC='llvm-gcc' CFLAGS='-DENABLE_SPA -emit-llvm -use-gold-plugin -O0 -g' CXX='llvm
 --disable-trace \
 --disable-mpatrol \
 --disable-gprof \
---enable-minisize \
 --disable-mt \
 --enable-test
