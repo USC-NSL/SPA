@@ -13,16 +13,11 @@
 #define SPA_PATH_START						"--- PATH START ---"
 #define SPA_PATH_SYMBOLS_START				"--- SYMBOLS START ---"
 #define SPA_PATH_SYMBOL_DELIMITER			"	"
-#define SPA_PATH_SYMBOL_HASVALUE			"1"
-#define SPA_PATH_SYMBOL_NOVALUE				"0"
 #define SPA_PATH_SYMBOLS_END				"--- SYMBOLS END ---"
 #define SPA_PATH_TAGS_START					"--- TAGS START ---"
 #define SPA_PATH_TAG_DELIMITER				"	"
 #define SPA_PATH_TAGS_END					"--- TAGS END ---"
 #define SPA_PATH_KQUERY_START				"--- KQUERY START ---"
-#define SPA_PATH_KQUERY_CONSTRAINTS_START	"(query ["
-#define SPA_PATH_KQUERY_EXPRESSIONS_START	"] false ["
-#define SPA_PATH_KQUERY_EXPRESSIONS_END		"])"
 #define SPA_PATH_KQUERY_END					"--- KQUERY END ---"
 #define SPA_PATH_END						"--- PATH END ---"
 #define SPA_PATH_COMMENT					"#"
@@ -33,7 +28,7 @@ namespace SPA {
 	private:
 		std::set<const klee::Array *> symbols;
 		std::map<std::string, const klee::Array *> symbolNames;
-		std::map<std::string, std::vector<klee::ref<klee::Expr> > > symbolValues;
+		std::map<std::string, std::vector<klee::ref<klee::Expr> > > outputValues;
 		std::map<std::string, std::string> tags;
 		klee::ConstraintManager constraints;
 
@@ -46,18 +41,26 @@ namespace SPA {
 			return symbolNames.count( name ) ? symbolNames.find( name )->second : NULL;
 		}
 
-		size_t getSymbolValueSize( std::string name ) const {
-			return symbolValues.count( name ) ? symbolValues.find( name )->second.size() : 0;
+		bool hasOutput( std::string name ) const {
+			return outputValues.count( name ) > 0;
 		}
 
-		const klee::ref<klee::Expr> getSymbolValue( std::string name, int offset ) const {
-			assert( offset >=0 && offset < getSymbolValueSize( name ) && "Symbol offset out of bounds." );
-			return symbolValues.find( name )->second[offset];
+		size_t getOutputSize( std::string name ) const {
+			return outputValues.count( name ) ? outputValues.find( name )->second.size() : 0;
+		}
+
+		const klee::ref<klee::Expr> getOutputValue( std::string name, int offset ) const {
+			assert( offset >=0 && offset < getOutputSize( name ) && "Symbol offset out of bounds." );
+			return outputValues.find( name )->second[offset];
 		}
 
 		std::map<std::string, const klee::Array *>::const_iterator beginSymbols() { return symbolNames.begin(); }
 
 		std::map<std::string, const klee::Array *>::const_iterator endSymbols() { return symbolNames.end(); }
+
+		std::map<std::string, std::vector<klee::ref<klee::Expr> > >::const_iterator beginOutputs() { return outputValues.begin(); }
+
+		std::map<std::string, std::vector<klee::ref<klee::Expr> > >::const_iterator endOutputs() { return outputValues.end(); }
 
 		std::string getTag( std::string key ) const {
 			return tags.count( key ) ? tags.find( key )->second : std::string();

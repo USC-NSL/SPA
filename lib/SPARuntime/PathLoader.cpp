@@ -3,6 +3,7 @@
  */
 
 #include <list>
+#include <sstream>
 
 #include "llvm/Support/MemoryBuffer.h"
 
@@ -58,7 +59,7 @@ namespace SPA {
 		LoadState_t state = START;
 		Path *path = NULL;
 		std::map<std::string, std::string> arrayToName;
-		std::list<std::string> symbolsWithValue;
+		std::vector<std::pair<std::string,size_t> > symbolValueSize;
 		std::string kQuery;
 		while ( input.good() ) {
 			std::string line;
@@ -72,7 +73,7 @@ namespace SPA {
 				changeState( START, PATH );
 				path = new Path();
 				arrayToName.clear();
-				symbolsWithValue.clear();
+				symbolValueSize.clear();
 				kQuery = "";
 			} else if ( line == SPA_PATH_SYMBOLS_START ) {
 				changeState( PATH, SYMBOLS );
@@ -99,18 +100,16 @@ namespace SPA {
 					} else if ( klee::expr::QueryCommand *QC = dyn_cast<klee::expr::QueryCommand>( D ) ) {
 						path->constraints = klee::ConstraintManager( QC->Constraints );
 
-						if ( ! symbolsWithValue.empty() ) {
-							std::list<std::string>::iterator curSymbol = symbolsWithValue.begin();
-							unsigned b = path->symbolNames[*curSymbol]->size;
-							for ( std::vector<klee::ref<klee::Expr> >::const_iterator it = QC->Values.begin(), ie = QC->Values.end(); it != ie; it++, b-- ) {
-								if ( b == 0 ) {
-									assert( ++curSymbol != symbolsWithValue.end() && "Too many expressions in path file kquery." );
-									b = path->symbolNames[*curSymbol]->size;
-								}
-								path->symbolValues[*curSymbol].push_back( *it );
+						std::vector<std::pair<std::string,size_t> >::iterator sit = symbolValueSize.begin(), sie = symbolValueSize.end();
+						unsigned b = sit != sie ? sit->second : 0;
+						for ( std::vector<klee::ref<klee::Expr> >::const_iterator vit = QC->Values.begin(), vie = QC->Values.end(); vit != vie; vit++, b-- ) {
+							if ( b == 0 ) {
+								assert( ++sit != sie && "Too many expressions in path file kquery." );
+								b = sit->second;
 							}
-							assert( (b == 0) && (++curSymbol == symbolsWithValue.end()) && "Too few expressions in path file kquery." );
+							path->outputValues[sit->first].push_back( *vit );
 						}
+						assert( (b == 0) && (++sit == sie) && "Too few expressions in path file kquery." );
 
 						delete D;
 						break;
@@ -131,10 +130,11 @@ namespace SPA {
 						std::vector<std::string> s = split( line, SPA_PATH_SYMBOL_DELIMITER );
 						assert( s.size() == 3 && "Invalid symbol specification in path file." );
 						arrayToName[s[1]] = s[0];
-						if ( s[2] == SPA_PATH_SYMBOL_HASVALUE )
-							symbolsWithValue.push_back( s[0] );
-						else
-							assert( s[2] == SPA_PATH_SYMBOL_NOVALUE && "Invalid symbol specification in path file." );
+						std::stringstream ss( s[2] );
+						size_t vs = 0;
+						ss >> vs;
+						if ( vs > 0 )
+							symbolValueSize.push_back( std::pair<std::string,size_t>( s[0], vs ) );
 					} break;
 					case TAGS : {
 						std::vector<std::string> s = split( line, SPA_PATH_TAG_DELIMITER );

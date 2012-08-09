@@ -7,6 +7,7 @@
 #include "../../lib/Core/Memory.h"
 #include "klee/ExecutionState.h"
 #include "klee/ExprBuilder.h"
+#include "klee/util/ExprPPrinter.h"
 #include <expr/Parser.h>
 
 #include <spa/SPA.h>
@@ -61,7 +62,7 @@ namespace SPA {
 				if ( name.compare( 0, strlen( SPA_OUTPUT_PREFIX ), SPA_OUTPUT_PREFIX ) == 0 || name.compare( 0, strlen( SPA_STATE_PREFIX ), SPA_STATE_PREFIX ) == 0 )
 					if ( const klee::ObjectState *os = kState->addressSpace().findObject( (*it).first ) )
 						for ( unsigned int i = 0; i < os->size; i++ )
-							symbolValues[name].push_back( os->read8( i ) );
+							outputValues[name].push_back( os->read8( i ) );
 			}
 		}
 		constraints = kState->constraints();
@@ -73,7 +74,7 @@ namespace SPA {
 		for ( std::map<std::string, const klee::Array *>::const_iterator it = path.symbolNames.begin(), ie = path.symbolNames.end(); it != ie; it++ )
 			stream << it->first << SPA_PATH_SYMBOL_DELIMITER
 				<< it->second->name << SPA_PATH_SYMBOL_DELIMITER
-				<< (path.symbolValues.count( it->first ) ? SPA_PATH_SYMBOL_HASVALUE : SPA_PATH_SYMBOL_NOVALUE) << std::endl;
+				<< (path.outputValues.count( it->first ) ? path.outputValues.find(it->first)->second.size() : 0) << std::endl;
 		stream << SPA_PATH_SYMBOLS_END << std::endl;
 
 		stream << SPA_PATH_TAGS_START << std::endl;
@@ -82,26 +83,14 @@ namespace SPA {
 		stream << SPA_PATH_TAGS_END << std::endl;
 
 		stream << SPA_PATH_KQUERY_START << std::endl;
-		for ( std::set<const klee::Array *>::iterator it2 = path.symbols.begin(), ie2 = path.symbols.end(); it2 != ie2; it2++ )
-			stream << "array " << (*it2)->name << "[" << (*it2)->size << "] : w32 -> w8 = symbolic" << std::endl;
-
-		stream << SPA_PATH_KQUERY_CONSTRAINTS_START << std::endl;
-		for ( klee::ConstraintManager::constraint_iterator it = path.getConstraints().begin(), ie = path.getConstraints().end(); it != ie; it++)
-			stream << *it << std::endl;
-
-		stream << SPA_PATH_KQUERY_EXPRESSIONS_START << std::endl;
-		// Symbolic values.
-		for ( std::map<std::string, const klee::Array *>::const_iterator it = path.symbolNames.begin(), ie = path.symbolNames.end(); it != ie; it++ ) {
-			if ( path.symbolValues.count( it->first ) ) {
-				for ( std::vector<klee::ref<klee::Expr> >::const_iterator it2 = path.symbolValues.find( it->first )->second.begin(), ie2 = path.symbolValues.find( it->first )->second.end(); it2 != ie2; it2++ ) {
-					if ( (*it2)->getKind() == klee::Expr::Constant )
-						stream << "(w8 " << *it2 << ")" << std::endl;
-					else
-						stream << *it2 << std::endl;
-				}
-			}
-		}
-		stream << SPA_PATH_KQUERY_EXPRESSIONS_END << std::endl;
+		klee::ExprBuilder *exprBuilder = klee::createDefaultExprBuilder();
+		std::vector<klee::ref<klee::Expr> > evalExprs;
+		for ( std::map<std::string, const klee::Array *>::const_iterator it = path.symbolNames.begin(), ie = path.symbolNames.end(); it != ie; it++ )
+			if ( path.outputValues.count( it->first ) )
+				for ( std::vector<klee::ref<klee::Expr> >::const_iterator it2 = path.outputValues.find( it->first )->second.begin(), ie2 = path.outputValues.find( it->first )->second.end(); it2 != ie2; it2++ )
+					evalExprs.push_back( *it2 );
+		klee::ExprPPrinter::printQuery( stream, path.getConstraints(), exprBuilder->False(),
+			&evalExprs[0], &evalExprs[0] + evalExprs.size(), NULL, NULL, true );
 		stream << SPA_PATH_KQUERY_END << std::endl;
 
 		return stream << SPA_PATH_END << std::endl;
