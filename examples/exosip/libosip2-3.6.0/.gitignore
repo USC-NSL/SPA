@@ -68,3 +68,16 @@ src/test/.deps/
 src/test/Makefile
 src/test/res/Makefile
 stamp-h1
+src/osipparser2/osip_accept.lo
+src/osipparser2/osip_accept_encoding.lo
+src/osipparser2/osip_accept_language.lo
+src/osipparser2/osip_alert_info.lo
+src/osipparser2/osip_allow.lo
+src/osipparser2/osip_authentication_info.lo
+src/osipparser2/osip_call_info.lo
+src/osipparser2/osip_content_disposition.lo
+src/osipparser2/osip_content_encoding.lo
+src/osipparser2/osip_error_info.lo
+src/osipparser2/osip_proxy_authentication_info.lo
+src/osipparser2/sdp_accessor.lo
+src/osipparser2/sdp_message.lo

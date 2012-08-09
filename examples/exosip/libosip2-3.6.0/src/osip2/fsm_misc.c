@@ -55,6 +55,7 @@ fsm_callmethod(type_t type, state_t state,
 		/* No transition found for this event */
 		return OSIP_UNDEFINED_ERROR;	/* error */
 	}
-	transition->method(transaction, sipevent);
+	ict_snd_invite(transaction, sipevent);
+// 	transition->method(transaction, sipevent);
 	return OSIP_SUCCESS;		/* ok */
 }

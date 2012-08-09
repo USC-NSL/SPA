@@ -546,36 +546,38 @@ static int _eXosip_default_gateway_ipv6(char *address, int size);
 static int
 _eXosip_default_gateway_with_getifaddrs(int type, char *address, int size)
 {
-	struct ifaddrs *ifp;
-
-	struct ifaddrs *ifpstart;
-
-	int ret = -1;
-
-	if (getifaddrs(&ifpstart) < 0) {
-		return OSIP_NO_NETWORK;
-	}
-
-	for (ifp = ifpstart; ifp != NULL; ifp = ifp->ifa_next) {
-		if (ifp->ifa_addr && ifp->ifa_addr->sa_family == type
-			&& (ifp->ifa_flags & IFF_RUNNING) && !(ifp->ifa_flags & IFF_LOOPBACK))
-		{
-			getnameinfo(ifp->ifa_addr,
-						(type == AF_INET6) ?
-						sizeof(struct sockaddr_in6) : sizeof(struct sockaddr_in),
-						address, size, NULL, 0, NI_NUMERICHOST);
-			if (strchr(address, '%') == NULL) {	/*avoid ipv6 link-local addresses */
-				OSIP_TRACE(osip_trace
-						   (__FILE__, __LINE__, OSIP_INFO2, NULL,
-							"_eXosip_default_gateway_with_getifaddrs(): found %s\n",
-							address));
-				ret = 0;
-				break;
-			}
-		}
-	}
-	freeifaddrs(ifpstart);
-	return ret;
+	snprintf(address, size, "127.0.0.1");
+	return 0;
+// 	struct ifaddrs *ifp;
+// 
+// 	struct ifaddrs *ifpstart;
+// 
+// 	int ret = -1;
+// 
+// 	if (getifaddrs(&ifpstart) < 0) {
+// 		return OSIP_NO_NETWORK;
+// 	}
+// 
+// 	for (ifp = ifpstart; ifp != NULL; ifp = ifp->ifa_next) {
+// 		if (ifp->ifa_addr && ifp->ifa_addr->sa_family == type
+// 			&& (ifp->ifa_flags & IFF_RUNNING) && !(ifp->ifa_flags & IFF_LOOPBACK))
+// 		{
+// 			getnameinfo(ifp->ifa_addr,
+// 						(type == AF_INET6) ?
+// 						sizeof(struct sockaddr_in6) : sizeof(struct sockaddr_in),
+// 						address, size, NULL, 0, NI_NUMERICHOST);
+// 			if (strchr(address, '%') == NULL) {	/*avoid ipv6 link-local addresses */
+// 				OSIP_TRACE(osip_trace
+// 						   (__FILE__, __LINE__, OSIP_INFO2, NULL,
+// 							"_eXosip_default_gateway_with_getifaddrs(): found %s\n",
+// 							address));
+// 				ret = 0;
+// 				break;
+// 			}
+// 		}
+// 	}
+// 	freeifaddrs(ifpstart);
+// 	return ret;
 }
 #endif
 

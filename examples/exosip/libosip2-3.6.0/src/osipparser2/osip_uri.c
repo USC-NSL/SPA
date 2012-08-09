@@ -22,6 +22,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+#include <spa/spaRuntime.h>
+
 /* allocate a new url structure */
 /* OUTPUT: osip_uri_t *url | structure to save results.   */
 /* OUTPUT: err_t *err | structure to store error.   */
@@ -131,6 +133,7 @@ int osip_uri_parse(osip_uri_t * url, const char *buf)
 		if (url->string == NULL)
 			return OSIP_NOMEM;
 		osip_strncpy(url->string, tmp + 1, i);
+		spa_waypoint(2);
 		return OSIP_SUCCESS;
 	}
 
@@ -247,6 +250,7 @@ int osip_uri_parse(osip_uri_t * url, const char *buf)
 		return OSIP_NOMEM;
 	osip_clrncpy(url->host, host + 1, port - host - 1);
 
+	spa_waypoint(2);
 	return OSIP_SUCCESS;
 }
 
