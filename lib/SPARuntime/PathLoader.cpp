@@ -109,7 +109,10 @@ namespace SPA {
 							}
 							path->outputValues[sit->first].push_back( *vit );
 						}
-						assert( (b == 0) && (++sit == sie) && "Too few expressions in path file kquery." );
+						if ( b != 0 || ((! symbolValueSize.empty()) && ++sit != sie) ) {
+							CLOUD9_ERROR( "Too few expressions in path file kquery. Error near line " << lineNumber << "." );
+							assert( false && "Invalid path file." );
+						}
 
 						delete D;
 						break;

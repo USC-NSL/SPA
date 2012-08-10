@@ -154,3 +154,67 @@ void ConstraintManager::addConstraint(ref<Expr> e) {
   e = simplifyExpr(e);
   addConstraintInternal(e);
 }
+
+bool ConstraintManager::addAndCheckConstraint(ref<Expr> e) {
+  e = simplifyExpr(e);
+  return addAndCheckConstraintInternal(e);
+}
+
+bool ConstraintManager::addAndCheckConstraintInternal(ref<Expr> e) {
+  // rewrite any known equalities 
+
+  // XXX should profile the effects of this and the overhead.
+  // traversing the constraints looking for equalities is hardly the
+  // slowest thing we do, but it is probably nicer to have a
+  // ConstraintSet ADT which efficiently remembers obvious patterns
+  // (byte-constant comparison).
+
+  switch (e->getKind()) {
+  case Expr::Constant:
+    return cast<ConstantExpr>(e)->isTrue();
+    break;
+
+    // split to enable finer grained independence and other optimizations
+  case Expr::And: {
+    BinaryExpr *be = cast<BinaryExpr>(e);
+    return addAndCheckConstraintInternal(be->left) &&
+		addAndCheckConstraintInternal(be->right);
+    break;
+  }
+
+  case Expr::Eq: {
+    BinaryExpr *be = cast<BinaryExpr>(e);
+    if (isa<ConstantExpr>(be->left)) {
+      ExprReplaceVisitor visitor(be->right, be->left);
+      if ( ! rewriteAndCheckConstraints(visitor) )
+        return false;
+    }
+    constraints.push_back(e);
+    break;
+  }
+    
+  default:
+    constraints.push_back(e);
+    break;
+  }
+  return true;
+}
+
+bool ConstraintManager::rewriteAndCheckConstraints(ExprVisitor &visitor) {
+  ConstraintManager::constraints_ty old;
+
+  constraints.swap(old);
+  for (ConstraintManager::constraints_ty::iterator 
+         it = old.begin(), ie = old.end(); it != ie; ++it) {
+    ref<Expr> &ce = *it;
+    ref<Expr> e = visitor.visit(ce);
+
+    if (e!=ce) {
+      if ( ! addAndCheckConstraintInternal(e) ) // enable further reductions
+        return false;
+    } else {
+      constraints.push_back(ce);
+    }
+  }
+  return true;
+}

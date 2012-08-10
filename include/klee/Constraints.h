@@ -64,7 +64,10 @@ public:
   bool operator==(const ConstraintManager &other) const {
     return constraints == other.constraints;
   }
-  
+
+  // SPA added functions to prevent failed assertions.
+  bool addAndCheckConstraint(ref<Expr> e);
+
 private:
   std::vector< ref<Expr> > constraints;
 
@@ -72,6 +75,11 @@ private:
   bool rewriteConstraints(ExprVisitor &visitor);
 
   void addConstraintInternal(ref<Expr> e);
+
+  // SPA added functions to prevent failed assertions.
+  bool addAndCheckConstraintInternal(ref<Expr> e);
+  // Returns false if constraints become trivially UNSAT.
+  bool rewriteAndCheckConstraints(ExprVisitor &visitor);
 };
 
 }
