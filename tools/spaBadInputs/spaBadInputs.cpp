@@ -143,10 +143,21 @@ int main(int argc, char **argv, char **envp) {
 			if ( solver->getInitialValues( klee::Query( cm, exprBuilder->False() ), objects, result ) ) {
 				std::cerr << "Found solution." << std::endl;
 				for ( size_t i = 0; i < result.size(); i++ ) {
-					std::cout << objectNames[i] << "[" << result[i].size() << "] = {";
-					for ( std::vector<unsigned char>::iterator it = result[i].begin(), ie = result[i].end(); it != ie; it++ )
+					bool printable = true;
+					std::cout << "uint8_t " << objectNames[i] << "[" << result[i].size() << "] = {";
+					for ( std::vector<unsigned char>::iterator it = result[i].begin(), ie = result[i].end(); it != ie; it++ ) {
 						std::cout << " " << (int) *it << (it != result[i].end() ? "," : "");
+						if ( ! isprint( *it ) )
+							printable = false;
+					}
 					std::cout << " };" << std::endl;
+					if ( printable ) {
+						std::cout << "char *" << objectNames[i] << " = \"";
+						for ( std::vector<unsigned char>::iterator it = result[i].begin(), ie = result[i].end(); it != ie; it++ )
+							std::cout << (char) *it;
+						std::cout << "\";" << std::endl;
+					}
+					std::cout << std::endl;
 				}
 				std::cout << "// -----------------------------------------------------------------------------" << std::endl;
 			} else {
