@@ -65,7 +65,6 @@ ExecutionState::ExecutionState(Executor *_executor, KFunction *kf)
     crtForkReason(KLEE_FORK_DEFAULT),
     crtSpecialFork(NULL),
     filtered(false),
-    recovered(false),
     wlistCounter(1),
     preemptions(0) {
 
@@ -83,7 +82,6 @@ ExecutionState::ExecutionState(Executor *_executor, const std::vector<ref<Expr> 
     ptreeNode(0),
     globalConstraints(assumptions),
     filtered(false),
-    recovered(false),
     wlistCounter(1),
     preemptions(0) {
 
@@ -311,7 +309,6 @@ ExecutionState *ExecutionState::branch() {
   falseState->weight -= weight;
 
   falseState->filtered = this->filtered;
-  falseState->recovered = this->recovered;
 
   return falseState;
 }

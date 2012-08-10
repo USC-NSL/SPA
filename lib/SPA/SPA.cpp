@@ -59,7 +59,6 @@
 
 #include <spa/SPA.h>
 #include <spa/SpaSearcher.h>
-#include <spa/RecoverStateUtility.h>
 #include <spa/Path.h>
 
 #define MAIN_ENTRY_FUNCTION	"__user_main"
@@ -91,8 +90,8 @@ namespace {
 }
 
 namespace SPA {
-// 	cl::opt<std::string> RecoverState( "recover-state",
-// 		llvm::cl::desc( "Specifies a file with a previously saved processing queue to load." ) );
+	cl::opt<std::string> RecoverState( "recover-state",
+		llvm::cl::desc( "Specifies a file with a previously saved processing queue to load." ) );
 
 	static bool Interrupted = false;
 	cloud9::worker::JobManager *theJobManager;
@@ -384,14 +383,6 @@ namespace SPA {
 		NoOutput = true;
 		theJobManager = new cloud9::worker::JobManager( module, "main", pArgc, pArgv, pEnvp );
 
-// 		if ( RecoverState.size() > 0 ) {
-// 			CLOUD9_DEBUG( "Recovering state from: " << RecoverState.getValue() );
-// 			std::ifstream stateFile( RecoverState.getValue().c_str() );
-// 			assert( stateFile.is_open() && "Unable to open state file." );
-// 			addStateUtilityFront( new RecoverStateUtility( theJobManager, stateFile ), false );
-// 			stateFile.close();
-// 		}
-
 		if ( ! stateUtilities.empty() ) {
 			CLOUD9_INFO( "Replacing strategy stack with SPA utility framework." );
 			SpaSearcher *spaSearcher = new SpaSearcher( theJobManager, stateUtilities );
@@ -411,15 +402,18 @@ namespace SPA {
 		if (StandAlone) {
 			CLOUD9_INFO("Running in stand-alone mode. No load balancer involved.");
 
-// 			if ( RecoverState.size() > 0 ) {
-// 				std::ifstream stateFile( RecoverState.getValue().c_str() );
-// 				cloud9::ExecutionPathSetPin epsp = cloud9::ExecutionPathSet::parse( stateFile );
-// 				std::vector<long> replayInstrs;
-// 				theJobManager->importJobs(epsp, replayInstrs);
-// 				theJobManager->processLoop(true, false, (int)MaxTime.getValue());
-// 			} else {
+			if ( RecoverState.size() > 0 ) {
+				CLOUD9_DEBUG( "Recovering state from: " << RecoverState.getValue() );
+				std::ifstream stateFile( RecoverState.getValue().c_str() );
+				assert( stateFile.is_open() && "Unable to open state file." );
+				cloud9::ExecutionPathSetPin epsp = cloud9::ExecutionPathSet::parse( stateFile );
+				stateFile.close();
+				std::vector<long> replayInstrs;
+				theJobManager->importJobs(epsp, replayInstrs);
+				theJobManager->processLoop(true, false, (int)MaxTime.getValue());
+			} else {
 				theJobManager->processJobs(true, (int)MaxTime.getValue());
-// 			}
+			}
 
 			cloud9::instrum::theInstrManager.recordEvent(cloud9::instrum::TimeOut, "Timeout");
 
