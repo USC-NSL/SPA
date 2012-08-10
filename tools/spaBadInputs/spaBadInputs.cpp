@@ -142,6 +142,10 @@ int main(int argc, char **argv, char **envp) {
 			std::vector< std::vector<unsigned char> > result;
 			if ( solver->getInitialValues( klee::Query( cm, exprBuilder->False() ), objects, result ) ) {
 				std::cerr << "Found solution." << std::endl;
+				std::cerr << "Client Path:" << std::endl;
+				std::cerr << *cp;
+				std::cerr << "Server Path:" << std::endl;
+				std::cerr << *sp;
 				for ( size_t i = 0; i < result.size(); i++ ) {
 					bool printable = true;
 					std::cout << "uint8_t " << objectNames[i] << "[" << result[i].size() << "] = {";
