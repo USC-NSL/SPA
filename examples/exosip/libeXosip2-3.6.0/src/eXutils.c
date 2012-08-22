@@ -602,56 +602,59 @@ int eXosip_guess_ip_for_via(int family, char *address, int size)
  */
 static int _eXosip_default_gateway_ipv4(char *address, int size)
 {
-#ifdef __APPLE_CC__
-	int len;
-#else
-	unsigned int len;
-#endif
-	int sock_rt, on = 1;
-
-	struct sockaddr_in iface_out;
-
-	struct sockaddr_in remote;
-
-	memset(&remote, 0, sizeof(struct sockaddr_in));
-
-	remote.sin_family = AF_INET;
-	remote.sin_addr.s_addr = inet_addr(eXosip.ipv4_for_gateway);
-	remote.sin_port = htons(11111);
-
-	memset(&iface_out, 0, sizeof(iface_out));
-	sock_rt = socket(AF_INET, SOCK_DGRAM, 0);
-
-	if (setsockopt(sock_rt, SOL_SOCKET, SO_BROADCAST, &on, sizeof(on)) == -1) {
-		perror("DEBUG: [get_output_if] setsockopt(SOL_SOCKET, SO_BROADCAST");
-		close(sock_rt);
-		snprintf(address, size, "127.0.0.1");
-		return OSIP_NO_NETWORK;
-	}
-
-	if (connect
-		(sock_rt, (struct sockaddr *) &remote, sizeof(struct sockaddr_in)) == -1) {
-		perror("DEBUG: [get_output_if] connect");
-		close(sock_rt);
-		snprintf(address, size, "127.0.0.1");
-		return OSIP_NO_NETWORK;
-	}
-
-	len = sizeof(iface_out);
-	if (getsockname(sock_rt, (struct sockaddr *) &iface_out, &len) == -1) {
-		perror("DEBUG: [get_output_if] getsockname");
-		close(sock_rt);
-		snprintf(address, size, "127.0.0.1");
-		return OSIP_NO_NETWORK;
-	}
-
-	close(sock_rt);
-	if (iface_out.sin_addr.s_addr == 0) {	/* what is this case?? */
-		snprintf(address, size, "127.0.0.1");
-		return OSIP_NO_NETWORK;
-	}
-	osip_strncpy(address, inet_ntoa(iface_out.sin_addr), size - 1);
+	snprintf(address, size, "127.0.0.1");
 	return OSIP_SUCCESS;
+
+// #ifdef __APPLE_CC__
+// 	int len;
+// #else
+// 	unsigned int len;
+// #endif
+// 	int sock_rt, on = 1;
+// 
+// 	struct sockaddr_in iface_out;
+// 
+// 	struct sockaddr_in remote;
+// 
+// 	memset(&remote, 0, sizeof(struct sockaddr_in));
+// 
+// 	remote.sin_family = AF_INET;
+// 	remote.sin_addr.s_addr = inet_addr(eXosip.ipv4_for_gateway);
+// 	remote.sin_port = htons(11111);
+// 
+// 	memset(&iface_out, 0, sizeof(iface_out));
+// 	sock_rt = socket(AF_INET, SOCK_DGRAM, 0);
+// 
+// 	if (setsockopt(sock_rt, SOL_SOCKET, SO_BROADCAST, &on, sizeof(on)) == -1) {
+// 		perror("DEBUG: [get_output_if] setsockopt(SOL_SOCKET, SO_BROADCAST");
+// 		close(sock_rt);
+// 		snprintf(address, size, "127.0.0.1");
+// 		return OSIP_NO_NETWORK;
+// 	}
+// 
+// 	if (connect
+// 		(sock_rt, (struct sockaddr *) &remote, sizeof(struct sockaddr_in)) == -1) {
+// 		perror("DEBUG: [get_output_if] connect");
+// 		close(sock_rt);
+// 		snprintf(address, size, "127.0.0.1");
+// 		return OSIP_NO_NETWORK;
+// 	}
+// 
+// 	len = sizeof(iface_out);
+// 	if (getsockname(sock_rt, (struct sockaddr *) &iface_out, &len) == -1) {
+// 		perror("DEBUG: [get_output_if] getsockname");
+// 		close(sock_rt);
+// 		snprintf(address, size, "127.0.0.1");
+// 		return OSIP_NO_NETWORK;
+// 	}
+// 
+// 	close(sock_rt);
+// 	if (iface_out.sin_addr.s_addr == 0) {	/* what is this case?? */
+// 		snprintf(address, size, "127.0.0.1");
+// 		return OSIP_NO_NETWORK;
+// 	}
+// 	osip_strncpy(address, inet_ntoa(iface_out.sin_addr), size - 1);
+// 	return OSIP_SUCCESS;
 }
 
 

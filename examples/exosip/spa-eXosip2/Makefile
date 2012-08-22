@@ -27,10 +27,10 @@ run-spa: $(PATHS)
 .PRECIOUS: $(PATHS)
 
 client.paths: client.bc $(SPA_EXE)
-	$(SPA) --path-file $@ --client $< 2>&1 | gzip > $@.log.gz
+	$(SPA) --path-file $@ --client $< 2>&1 | tee $@.log
 
 server.paths: server.bc $(SPA_EXE)
-	$(SPA) --path-file $@ --server $< 2>&1 | gzip > $@.log.gz
+	$(SPA) --path-file $@ --server $< 2>&1 | tee $@.log
 
 clean:
 	rm -f $(TARGETS) $(BC_TARGETS) $(PATHS)

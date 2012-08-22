@@ -1606,10 +1606,11 @@ int eXosip_read_message(int max_message_nb, int sec_max, int usec_max)
 			max = wakeup_socket;
 #endif
 
-		if ((sec_max == -1) || (usec_max == -1))
-			i = select(max + 1, &osip_fdset, NULL, NULL, NULL);
-		else
-			i = select(max + 1, &osip_fdset, NULL, NULL, &tv);
+		i = 0;
+// 		if ((sec_max == -1) || (usec_max == -1))
+// 			i = select(max + 1, &osip_fdset, NULL, NULL, NULL);
+// 		else
+// 			i = select(max + 1, &osip_fdset, NULL, NULL, &tv);
 
 #if defined (_WIN32_WCE)
 		/* TODO: fix me for wince */
