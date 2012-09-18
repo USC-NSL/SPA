@@ -1,7 +1,7 @@
-PATHS = client.paths
-TARGETS = client
+PATHS = client.paths server.paths
+TARGETS = client server
 LIBS = ../libeXosip2-3.6.0/libexosip2.o
-BC_TARGETS = client.bc
+BC_TARGETS = client.bc server.bc
 BC_LIBS = ../libeXosip2-3.6.0/libexosip2.bc
 CC = gcc -Wall -g -I/usr/local/bin/spa/examples/exosip/libosip2-3.6.0/include -I/usr/local/bin/spa/examples/exosip/libeXosip2-3.6.0/include
 LLVM_CC = llvm-gcc -Wall -g -O0 --emit-llvm -I/usr/local/bin/spa/examples/exosip/libosip2-3.6.0/include -I/usr/local/bin/spa/examples/exosip/libeXosip2-3.6.0/include
