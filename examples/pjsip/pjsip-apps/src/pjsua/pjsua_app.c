@@ -2515,6 +2515,7 @@ static void on_incoming_call(pjsua_acc_id acc_id, pjsua_call_id call_id,
     pjsua_call_get_info(call_id, &call_info);
 
 	spa_valid_path();
+	printf( "[SPA] Valid path.\n" );
 
     if (current_call==PJSUA_INVALID_ID)
 	current_call = call_id;

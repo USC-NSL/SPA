@@ -25,6 +25,8 @@
 #include "eXosip2.h"
 #include <eXosip2/eXosip.h>
 
+#include <spa/spaRuntime.h>
+
 #ifndef WIN32
 #include <sys/types.h>
 #include <sys/socket.h>
@@ -1523,9 +1525,10 @@ _eXosip_handle_incoming_message(char *buf, size_t length, int socket,
 	}
 
 	if (MSG_IS_REQUEST(se->sip)) {
-		if (MSG_IS_INVITE(se->sip))
+		if (MSG_IS_INVITE(se->sip)) {
 			se->type = RCV_REQINVITE;
-		else if (MSG_IS_ACK(se->sip))
+			spa_valid_path();
+		} else if (MSG_IS_ACK(se->sip))
 			se->type = RCV_REQACK;
 		else
 			se->type = RCV_REQUEST;
@@ -1606,10 +1609,11 @@ int eXosip_read_message(int max_message_nb, int sec_max, int usec_max)
 			max = wakeup_socket;
 #endif
 
-		if ((sec_max == -1) || (usec_max == -1))
-			i = select(max + 1, &osip_fdset, NULL, NULL, NULL);
-		else
-			i = select(max + 1, &osip_fdset, NULL, NULL, &tv);
+		i = 0;
+// 		if ((sec_max == -1) || (usec_max == -1))
+// 			i = select(max + 1, &osip_fdset, NULL, NULL, NULL);
+// 		else
+// 			i = select(max + 1, &osip_fdset, NULL, NULL, &tv);
 
 #if defined (_WIN32_WCE)
 		/* TODO: fix me for wince */

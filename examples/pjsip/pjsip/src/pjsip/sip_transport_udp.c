@@ -129,6 +129,8 @@ static void udp_on_read_complete( pj_ioqueue_key_t *key,
     int i;
     pj_status_t status;
 
+	printf( "Incoming message.\n" );
+
     /* Don't do anything if transport is closing. */
     if (tp->is_closing) {
 	tp->is_closing++;

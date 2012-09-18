@@ -32,6 +32,8 @@
 #endif
 
 #include <spa/spaRuntime.h>
+#include <assert.h>
+#include <netinet/in.h>
 
 extern eXosip_t eXosip;
 
@@ -691,28 +693,34 @@ udp_tl_send_message(osip_transaction_t * tr, osip_message_t * sip, char *host,
 			osip_nict_set_destination(tr->nict_context, osip_strdup(ipbuf), port);
 	}
 
+// 	assert( ((struct sockaddr *) &addr)->sa_family == AF_INET );
+// 	struct in_addr a;
+// 	inet_pton( AF_INET, "127.0.0.1", &a );
+// 	assert( ((struct sockaddr_in *) &addr)->sin_addr.s_addr == a.s_addr );
+// 	assert( ((struct sockaddr_in *) &addr)->sin_port == htons( 5060 ) );
 	spa_msg_output( message, length, "message" );
+	assert( length == sendto(udp_socket, (const void *) message, length, 0, (struct sockaddr *) &addr, len) );
+	printf( "[SPA] Sending message.\n" );
+// 	if (0 >
+// 		sendto(udp_socket, (const void *) message, length, 0,
+// 			   (struct sockaddr *) &addr, len))
+// 	{
+// #ifndef MINISIZE
+// 		if (naptr_record!=NULL)
+// 		{
+// 			/* rotate on failure! */
+// 			if (eXosip_dnsutils_rotate_srv(&naptr_record->sipudp_record)>0)
+// 			{
+// 				osip_free(message);
+// 				return OSIP_SUCCESS + 1;	/* retry for next retransmission! */
+// 			}
+// 		}
+// #endif
+// 		/* SIP_NETWORK_ERROR; */
+// 		osip_free(message);
+// 		return -1;
+// 	}
 
-	if (0 >
-		sendto(udp_socket, (const void *) message, length, 0,
-			   (struct sockaddr *) &addr, len))
-	{
-#ifndef MINISIZE
-		if (naptr_record!=NULL)
-		{
-			/* rotate on failure! */
-			if (eXosip_dnsutils_rotate_srv(&naptr_record->sipudp_record)>0)
-			{
-				osip_free(message);
-				return OSIP_SUCCESS + 1;	/* retry for next retransmission! */
-			}
-		}
-#endif
-		/* SIP_NETWORK_ERROR; */
-		osip_free(message);
-		return -1;
-	}
-	
 	if (eXosip.keep_alive > 0) {
 		if (MSG_IS_REGISTER(sip)) {
 			eXosip_reg_t *reg = NULL;

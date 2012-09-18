@@ -1,7 +1,7 @@
-PATHS = client.paths
-TARGETS = client
+PATHS = client.paths server.paths
+TARGETS = client server
 LIBS = ../libeXosip2-3.6.0/libexosip2.o
-BC_TARGETS = client.bc
+BC_TARGETS = client.bc server.bc
 BC_LIBS = ../libeXosip2-3.6.0/libexosip2.bc
 CC = gcc -Wall -g -I/usr/local/bin/spa/examples/exosip/libosip2-3.6.0/include -I/usr/local/bin/spa/examples/exosip/libeXosip2-3.6.0/include
 LLVM_CC = llvm-gcc -Wall -g -O0 --emit-llvm -I/usr/local/bin/spa/examples/exosip/libosip2-3.6.0/include -I/usr/local/bin/spa/examples/exosip/libeXosip2-3.6.0/include
@@ -27,10 +27,10 @@ run-spa: $(PATHS)
 .PRECIOUS: $(PATHS)
 
 client.paths: client.bc $(SPA_EXE)
-	$(SPA) --path-file $@ --client $< 2>&1 | gzip > $@.log.gz
+	$(SPA) --path-file $@ --client $< 2>&1 | tee $@.log
 
 server.paths: server.bc $(SPA_EXE)
-	$(SPA) --path-file $@ --server $< 2>&1 | gzip > $@.log.gz
+	$(SPA) --path-file $@ --server $< 2>&1 | tee $@.log
 
 clean:
 	rm -f $(TARGETS) $(BC_TARGETS) $(PATHS)
