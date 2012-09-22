@@ -61,6 +61,8 @@ void __attribute__((weak)) __spa_output( void *var, size_t size, const char *var
 	spa_checkpoint();
 }
 
+#define spa_assume( x ) klee_assume( x )
+
 #define spa_seed_var( id, var, value ) { \
 	typeof( var ) __v = value; \
 	spa_seed( id, &var, sizeof( var ), &__v ); \
@@ -135,6 +137,8 @@ extern "C" {
 #define spa_msg_output_var( var )
 
 #define spa_waypoint( id )
+
+#define spa_assume( x )
 
 #define spa_seed_var( id, var, value )
 #define spa_seed_file( id, var, fileName )

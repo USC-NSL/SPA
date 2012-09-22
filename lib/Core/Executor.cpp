@@ -2829,6 +2829,7 @@ void Executor::terminateStateOnError(ExecutionState &state,
     } else {
       klee_message("ERROR: %s", message.c_str());
     }
+// 	klee::c9::printStateStack( std::cerr, state ) << std::endl;
     if (!EmitAllErrors)
       klee_message("NOTE: now ignoring this error at this location");
 
