@@ -1590,10 +1590,13 @@ int eXosip_read_message(int max_message_nb, int sec_max, int usec_max)
 		int wakeup_socket = jpipe_get_read_descr(eXosip.j_socketctl);
 #endif
 
-// 		FD_ZERO(&osip_fdset);
+#ifdef ENABLE_SPA
 		bzero( &osip_fdset, sizeof( osip_fdset ) );
-// 		FD_ZERO(&osip_wrset);
 		bzero( &osip_wrset, sizeof( osip_wrset ) );
+#else
+		FD_ZERO(&osip_fdset);
+		FD_ZERO(&osip_wrset);
+#endif
 		eXtl_udp.tl_set_fdset(&osip_fdset, &osip_wrset, &max);
 		eXtl_tcp.tl_set_fdset(&osip_fdset, &osip_wrset, &max);
 #ifdef HAVE_OPENSSL_SSL_H
@@ -1610,10 +1613,12 @@ int eXosip_read_message(int max_message_nb, int sec_max, int usec_max)
 #endif
 
 		i = 0;
-// 		if ((sec_max == -1) || (usec_max == -1))
-// 			i = select(max + 1, &osip_fdset, NULL, NULL, NULL);
-// 		else
-// 			i = select(max + 1, &osip_fdset, NULL, NULL, &tv);
+#ifndef ENABLE_SPA
+		if ((sec_max == -1) || (usec_max == -1))
+			i = select(max + 1, &osip_fdset, NULL, NULL, NULL);
+		else
+			i = select(max + 1, &osip_fdset, NULL, NULL, &tv);
+#endif
 
 #if defined (_WIN32_WCE)
 		/* TODO: fix me for wince */
