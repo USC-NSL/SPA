@@ -3,6 +3,9 @@
 
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 #include <unistd.h>
 #include <stdarg.h>
 #include <klee/klee.h>
@@ -31,13 +34,14 @@ void __attribute__((weak)) __spa_tag( SpaTag_t *var, const char *varName, SpaTag
 	*var = value;
 }
 
-SpaTag_t ValidPath;
-#define spa_default_invalid() spa_tag( ValidPath, "0" );
-#define spa_default_valid() spa_tag( ValidPath, "1" );
-#define spa_invalid_path() spa_tag( ValidPath, "0" ); spa_checkpoint();
-#define spa_valid_path() spa_tag( ValidPath, "1" ); spa_checkpoint();
 
-#define spa_api_input( var, size, name ) klee_make_symbolic( var, size, "spa_in_api_" name )
+SpaTag_t ValidPath;
+#define spa_default_invalid() spa_tag( ValidPath, "0" )
+#define spa_default_valid() spa_tag( ValidPath, "1" )
+#define spa_invalid_path() spa_tag( ValidPath, "0" ); spa_runtime_call( spaInvalidHandler ); spa_checkpoint()
+#define spa_valid_path() spa_tag( ValidPath, "1" ); spa_runtime_call( spaValidHandler ); spa_checkpoint()
+
+#define spa_api_input( var, size, name ) klee_make_symbolic( var, size, "spa_in_api_" name ); spa_runtime_call( spaAPIInputHandler, var, size, name )
 #define spa_api_input_var( var ) spa_api_input( &var, sizeof( var ), #var )
 #define spa_state( var, size, name ) klee_make_symbolic( var, size, "spa_state_" name )
 #define spa_state_var( var ) spa_state( &var, sizeof( var ), #var )
@@ -92,6 +96,10 @@ void __attribute__((weak)) __spa_output( void *var, size_t size, const char *var
 #ifdef __cplusplus
 extern "C" {
 #endif// #ifdef __cplusplus
+	void spaAPIInputHandler( va_list args );
+	void spaValidHandler( va_list args );
+	void spaInvalidHandler( va_list args );
+
 	void __attribute__((noinline,weak)) spa_waypoint( unsigned int id ) {
 		static uint8_t init = 0;
 		static uint8_t waypoints[SPA_MAX_WAYPOINTS / 8 + 1];
@@ -119,8 +127,8 @@ extern "C" {
 
 #define spa_default_invalid()
 #define spa_default_valid()
-#define spa_invalid_path()
-#define spa_valid_path()
+#define spa_invalid_path() printf( "[SPA] Invalid Path." )
+#define spa_valid_path() printf( "[SPA] Valid Path." )
 
 #define spa_tag( var, value )
 
