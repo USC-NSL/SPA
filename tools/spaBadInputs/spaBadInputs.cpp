@@ -36,10 +36,17 @@ namespace {
 	llvm::cl::opt<std::string> ServerPathFile("server", llvm::cl::desc(
 		"Specifies the server path file."));
 
+	llvm::cl::opt<std::string> OutputFile("o", llvm::cl::desc(
+		"Specifies the file to write output data to."));
+
+	llvm::cl::opt<std::string> DebugFile("d", llvm::cl::desc(
+		"Specifies the file to write debug data to."));
+	
 	llvm::cl::opt<bool> Follow("f", llvm::cl::desc(
 		"Follows input files as they are generated."));
 }
 
+std::ofstream output, debug;
 unsigned long solutions = 0;
 
 class ClientPathFilter : public SPA::PathFilter {
@@ -144,24 +151,36 @@ bool processPaths( SPA::Path *cp, SPA::Path *sp ) {
 		if ( ! results.count( result ) ) {
 			results.insert( result );
 // 			std::cerr << "Found solution." << std::endl;
-			std::cout << "/*********" << std::endl;
-			std::cout << "Client Path:" << std::endl;
-			std::cout << std::endl << *cp << std::endl << std::endl;
-			std::cout << "Server Path:" << std::endl;
-			std::cout << std::endl << *sp << std::endl << std::endl;
-			std::cout << "*********/" << std::endl << std::endl;
+
+			std::ostream &o = output.is_open() ? output : std::cout;
+			std::ostream &d = debug.is_open() ? debug : std::cout;
+
 			for ( size_t i = 0; i < result.size(); i++ ) {
-				std::cout << "uint8_t " << objectNames[i] << "[" << result[i].size() << "] = {";
+				o << objectNames[i];
 				for ( std::vector<unsigned char>::iterator it = result[i].begin(), ie = result[i].end(); it != ie; it++ )
-					std::cout << " " << (int) *it << (it != result[i].end() ? "," : "");
-				std::cout << " };" << std::endl;
-				std::cout << "char " << objectNames[i] << "[" << result[i].size() << "] = \"";
-				for ( std::vector<unsigned char>::iterator it = result[i].begin(), ie = result[i].end(); it != ie && *it != '\0'; it++ )
-					std::cout << escapeChar( *it );
-				std::cout << "\";" << std::endl;
-				std::cout << std::endl;
+					o << " " << std::hex << (int) *it;
+				o << std::endl;
 			}
-			std::cout << "// -----------------------------------------------------------------------------" << std::endl;
+			o << std::endl;
+
+			d << "/*********" << std::endl;
+			d << "Client Path:" << std::endl;
+			d << std::endl << *cp << std::endl << std::endl;
+			d << "Server Path:" << std::endl;
+			d << std::endl << *sp << std::endl << std::endl;
+			d << "*********/" << std::endl << std::endl;
+			for ( size_t i = 0; i < result.size(); i++ ) {
+				d << "uint8_t " << objectNames[i] << "[" << result[i].size() << "] = {";
+				for ( std::vector<unsigned char>::iterator it = result[i].begin(), ie = result[i].end(); it != ie; it++ )
+					d << " " << (int) *it << (it != result[i].end() ? "," : "");
+				d << " };" << std::endl;
+				d << "char " << objectNames[i] << "[" << result[i].size() << "] = \"";
+				for ( std::vector<unsigned char>::iterator it = result[i].begin(), ie = result[i].end(); it != ie && *it != '\0'; it++ )
+					d << escapeChar( *it );
+				d << "\";" << std::endl;
+				d << std::endl;
+			}
+			d << "// -----------------------------------------------------------------------------" << std::endl;
 			solutions++;
 			return true;
 		} else {
@@ -201,6 +220,14 @@ int main(int argc, char **argv, char **envp) {
 		totalServerPaths++;
 	serverPathLoader.restart();
 	std::cerr << "Found " << totalServerPaths << " initial paths." << std::endl;
+
+	if ( OutputFile.size() > 0 ) {
+		output.open( OutputFile.getValue().c_str() );
+	}
+
+	if ( DebugFile.size() > 0 ) {
+		debug.open( DebugFile.getValue().c_str() );
+	}
 
 	SPA::Path *cp = clientPathLoader.getPath(), *sp = serverPathLoader.getPath();
 	assert( cp && sp );
