@@ -1,7 +1,11 @@
-netcalc-client
-netcalc-server
-*.paths
+BadInputs.tested
+BadInputs.tested.log
+BadInputs.untested
+BadInputs.untested.debug
+BadInputs.untested.log
+netcalc-client.bc.client.paths
 netcalc-client.bc.client.paths.log
+netcalc-client.test
+netcalc-server.bc.server.paths
 netcalc-server.bc.server.paths.log
-BadInputs.txt.log
-BadInputs.txt
+netcalc-server.test
