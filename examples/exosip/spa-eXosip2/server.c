@@ -19,14 +19,31 @@ void __attribute__((noinline,used)) spa_HandleInvite() {
 // 	assert( eXosip_set_socket( IPPROTO_UDP, socket( AF_INET, SOCK_DGRAM, 0 ), 5060 ) == OSIP_SUCCESS );
 	assert( eXosip_listen_addr( IPPROTO_UDP, "0.0.0.0", 5060, AF_INET, 0) == OSIP_SUCCESS );
 
-	char message[SIP_MESSAGE_MAX_LENGTH + 1];
-	size_t len;
-	spa_msg_input_var( message );
-	spa_msg_input_size( len, "message" );
+// 	char message[SIP_MESSAGE_MAX_LENGTH + 1];
+// 	size_t len;
+// 	spa_msg_input_var( message );
+// 	spa_msg_input_size( len, "message" );
+// 
+// 	_eXosip_handle_incoming_message( message, len, 0, "127.0.0.1", 5060 );
 
-	_eXosip_handle_incoming_message( message, len, 0, "127.0.0.1", 5060 );
-
-// 	assert( eXosip_execute() == OSIP_SUCCESS );
+	printf( "Ready.\n" );
+	while ( 1 ) {
+		assert( eXosip_execute() == OSIP_SUCCESS );
+		eXosip_event_t *e = eXosip_event_wait( 0, 50 );
+		eXosip_automatic_action();
+		if ( e == NULL )
+			continue;
+		switch ( e->type ) {
+			case EXOSIP_CALL_INVITE:
+				printf( "Incoming call.\n" );
+				break;
+			default:
+				printf( "Other event.\n" );
+				break;
+		}
+		eXosip_event_free( e );
+	}
+	printf( "Done.\n" );
 	eXosip_quit();
 }
 

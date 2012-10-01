@@ -18,11 +18,15 @@ void __attribute__((noinline,used)) spa_SendInvite() {
 // 	char to[30];
 // 	spa_api_input_var( to );
 
-	char from[] = "<sip:from@127.0.0.1:5061>";
-// 	char to[] = "<sip:to@127.0.0.1:5060>";
+// 	char from[] = "<sip:from@127.0.0.1:5061>";
+	char to[] = "<sip:to@127.0.0.1:5060>";
 
-// 	char from[30] = "<sip:@";
-	char to[30] = "SIP@:";
+// PJSIP Bad Inputs
+	char from[30] = "<sip:@"; // Good in eXoSIP server.
+// 	char to[30] = "SIP@:";
+
+// eXoSIP Bad Inputs
+// 	char to[30] = "SIP@:";
 
 // 	spa_assume( from[0] == '<' );
 // 	spa_assume( from[1] == 's' );
@@ -85,7 +89,7 @@ void __attribute__((noinline,used)) spa_SendInvite() {
 // 	spa_assume( to[sizeof(to)-1] == '\0' );
 // 	to[sizeof(to)-1] = '\0';
 // 	spa_assume( from[10] == '\0' );
-	to[6] = '\0';
+// 	to[6] = '\0';
 
 // 	char from_uri[sizeof(from)+30];
 // 	from_uri[0] = '\0';
@@ -99,8 +103,10 @@ void __attribute__((noinline,used)) spa_SendInvite() {
 // 	strcat( to_uri, to );
 // 	strcat( to_uri, "@127.0.0.1:5060>" );
 
-// 	strcat( from, "@127.0.0.1:5061>" );
-	strcat( to, "@127.0.0.1:5060>" );
+	strcat( from, "@127.0.0.1:5061>" );
+// 	strcat( to, "@127.0.0.1:5060>" );
+
+	printf( "Sending INVITE with from = \"%s\", to = \"%s\"\n", from, to );
 
 	osip_message_t *invite;
 
