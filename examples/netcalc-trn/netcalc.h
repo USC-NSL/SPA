@@ -1,7 +1,8 @@
 #define NETCALC_UDP_PORT 3141
 
 typedef enum {
-	NC_ADDITION = 0,
+	NC_CAPABILITY = 0,
+	NC_ADDITION,
 	NC_SUBTRACTION,
 	NC_MUTIPLICATION,
 	NC_DIVISION,
@@ -13,6 +14,7 @@ typedef enum {
 // Convert operator to it name.
 std::string getOpName( nc_operator_t op ) {
 	switch ( op ) {
+		case NC_CAPABILITY :	return "Capabilities";
 		case NC_ADDITION :		return "+";
 		case NC_SUBTRACTION :	return "-";
 		case NC_MUTIPLICATION :	return "*";
@@ -32,14 +34,6 @@ nc_operator_t getOpByName( std::string name ) {
 	return NC_OPERATOR_END;
 }
 
-typedef long nc_value_t;
-
-typedef struct {
-	nc_operator_t op;
-	nc_value_t arg1;
-	nc_value_t arg2;
-} nc_query_t;
-
 typedef enum {
 	NC_OK = 0,
 	NC_BADINPUT,
@@ -57,6 +51,14 @@ std::string getErrText( nc_error_t err ) {
 		default :			return "Unknown error.";
 	}
 }
+
+typedef long nc_value_t;
+
+typedef struct {
+	nc_operator_t op;
+	nc_value_t arg1;
+	nc_value_t arg2;
+} nc_query_t;
 
 typedef struct {
 	nc_error_t err;

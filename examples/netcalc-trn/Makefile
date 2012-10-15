@@ -4,17 +4,19 @@ CFGS = netcalc-client.pdf netcalc-server.pdf
 TARGETS = netcalc-client netcalc-server
 BC_TARGETS = netcalc-client.bc netcalc-server.bc
 TEST_TARGETS = netcalc-client.test netcalc-server.test
+LOG_TARGETS = netcalc-client.logtest netcalc-server.logtest
 HEADERS = netcalc.h
 LLVM_CC = /usr/local/bin/llvm-gcc4.2-2.9-x86_64-linux/bin/llvm-g++ -Wall -g --emit-llvm
 CC = g++ -Wall -g
 SPA_EXE = /usr/local/bin/spa/Release+Asserts/bin/spa
 SPA = $(SPA_EXE) --stand-alone --libc=uclibc --posix-runtime
 LIB_SPA_TEST_MODULE = /usr/local/bin/spa/Release+Asserts/lib/libSpaTestModule.so
+LIB_SPA_LOG_MODULE = /usr/local/bin/spa/Release+Asserts/lib/libSpaLogModule.so
 
 
 default: all
 
-all: $(TARGETS) $(BC_TARGETS) $(TEST_TARGETS)
+all: $(TARGETS) $(BC_TARGETS) $(TEST_TARGETS) $(LOG_TARGETS)
 
 %: %.c $(HEADERS)
 	$(CC) -o $@ $<
@@ -24,6 +26,9 @@ all: $(TARGETS) $(BC_TARGETS) $(TEST_TARGETS)
 
 %.test: %.c $(HEADERS) $(LIB_SPA_TEST_MODULE)
 	$(CC) -DENABLE_SPA -o $@ $< $(LIB_SPA_TEST_MODULE)
+
+%.logtest: %.c $(HEADERS) $(LIB_SPA_LOG_MODULE)
+	$(CC) -DENABLE_SPA -o $@ $< $(LIB_SPA_LOG_MODULE)
 
 %.bc.client.paths: %.bc $(SPA_EXE)
 	$(SPA) --client $^ 2>&1 | tee $@.log
@@ -51,5 +56,5 @@ cfg: $(CFGS)
 run-spa: BadInputs.tested
 
 clean:
-	rm -f $(TARGETS) $(BC_TARGETS) $(TEST_TARGETS) $(PATHS) $(BADINPUTS) $(CFGS) $(CFGS:.pdf=.dot)
+	rm -f $(TARGETS) $(BC_TARGETS) $(TEST_TARGETS) $(LOG_TARGETS) $(PATHS) $(BADINPUTS) $(CFGS) $(CFGS:.pdf=.dot)
 	rm -rf *.log klee-out-* klee-last

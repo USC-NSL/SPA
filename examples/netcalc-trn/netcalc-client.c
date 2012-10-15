@@ -17,10 +17,14 @@
 int sock;
 struct addrinfo *server;
 
+nc_operator_t capability = NC_CAPABILITY;
+
 std::list<nc_value_t> stack;
 
 // Executes a single query on the remote server.
 nc_value_t executeQuery( nc_operator_t op, nc_value_t arg1, nc_value_t arg2 ) {
+	spa_state_var( capability );
+
 	spa_api_input_var( op );
 	spa_api_input_var( arg1 );
 	spa_api_input_var( arg2 );
@@ -33,9 +37,10 @@ nc_value_t executeQuery( nc_operator_t op, nc_value_t arg1, nc_value_t arg2 ) {
 	spa_seed_var( 2, arg1, 2 );
 	spa_seed_var( 2, arg2, 1 );
 
-	assert( op >= 0 && op < NC_OPERATOR_END && "Invalid operator in query.");
-// 	assert( (op != NC_DIVISION || arg2 != 0) && "Division by zero.");
-// 	assert( (op != NC_MODULO || arg2 != 0) && "Modulo by zero.");
+	assert( (op == NC_CAPABILITY || (op >= 0 && op <= capability)) && "Invalid operator in query.");
+// 	assert( (op == NC_CAPABILITY || (op >= 0 && op <  capability)) && "Invalid operator in query.");
+	assert( (op != NC_DIVISION || arg2 != 0) && "Division by zero.");
+	assert( (op != NC_MODULO || arg2 != 0) && "Modulo by zero.");
 
 	nc_query_t query;
 	query.op = op;
@@ -51,13 +56,21 @@ nc_value_t executeQuery( nc_operator_t op, nc_value_t arg1, nc_value_t arg2 ) {
 	assert( recv( sock, &response, sizeof( response ), 0 ) == sizeof( response ) );
 	// Output operation.
 	if ( response.err == NC_OK ) {
-		std::cerr << "	" << query.arg1 << " " << getOpName( query.op ) << " " << query.arg2 << " = " << response.value << std::endl;
+		if ( query.op == NC_CAPABILITY )
+			std::cerr << "	" << getOpName( query.op ) << " = " << response.value << std::endl;
+		else
+			std::cerr << "	" << query.arg1 << " " << getOpName( query.op ) << " " << query.arg2 << " = " << response.value << std::endl;
 	} else {
 		std::cerr << "Error: " << getErrText( response.err ) << std::endl;
 	}
 	assert( response.err == NC_OK && "Query failed." );
 
 	return response.value;
+}
+
+void discoverCapability() {
+	if ( capability == NC_CAPABILITY )
+		capability = (nc_operator_t) executeQuery( NC_CAPABILITY, 0, 0 );
 }
 
 void __attribute__((used)) SpaExecuteQueryEntry() {
@@ -72,6 +85,7 @@ void __attribute__((used)) SpaExecuteQueryEntry() {
 // 	((struct sockaddr_in *) server->ai_addr)->sin_port = htons( NETCALC_UDP_PORT );
 // 	assert( (sock = socket( server->ai_family, server->ai_socktype, server->ai_protocol )) >= 0 && "Host could not be resolved." );
 
+	capability = (nc_operator_t) (NC_DIVISION + 1);
 	executeQuery( NC_ADDITION, 0, 0 );
 }
 
@@ -141,6 +155,7 @@ int main( int argc, char **argv ) {
 	}
 	assert( sock >= 0 && "Host could not be resolved." );
 
+	discoverCapability();
 	executeRPN( args );
 
 	freeaddrinfo( result );

@@ -22,6 +22,10 @@ void handleQuery( nc_query_t &query, nc_response_t &response ) {
 
 	// Check operator.
 	switch ( query.op ) {
+		case NC_CAPABILITY : {
+			response.value = NC_DIVISION + 1;
+// 			response.value = NC_MODULO + 1;
+		} break;
 		case NC_ADDITION : {
 			response.value = query.arg1 + query.arg2;
 		} break;
