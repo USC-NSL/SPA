@@ -24,7 +24,7 @@ std::list<nc_value_t> stack;
 // Executes a single query on the remote server.
 nc_value_t executeQuery( nc_operator_t op, nc_value_t arg1, nc_value_t arg2 ) {
 	spa_state_var( capability );
-
+	
 	spa_api_input_var( op );
 	spa_api_input_var( arg1 );
 	spa_api_input_var( arg2 );
@@ -85,7 +85,7 @@ void __attribute__((used)) SpaExecuteQueryEntry() {
 // 	((struct sockaddr_in *) server->ai_addr)->sin_port = htons( NETCALC_UDP_PORT );
 // 	assert( (sock = socket( server->ai_family, server->ai_socktype, server->ai_protocol )) >= 0 && "Host could not be resolved." );
 
-	capability = (nc_operator_t) (NC_DIVISION + 1);
+// 	capability = (nc_operator_t) (NC_DIVISION + 1);
 	executeQuery( NC_ADDITION, 0, 0 );
 }
 

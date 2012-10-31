@@ -5,7 +5,11 @@ BadInputs.untested.debug
 BadInputs.untested.log
 netcalc-client.bc.client.paths
 netcalc-client.bc.client.paths.log
-netcalc-client.test
 netcalc-server.bc.server.paths
 netcalc-server.bc.server.paths.log
-netcalc-server.test
+netcalc-client.e2etest.exe
+netcalc-client.exe
+netcalc-client.log.exe
+netcalc-server.e2etest.exe
+netcalc-server.exe
+netcalc-server.log.exe

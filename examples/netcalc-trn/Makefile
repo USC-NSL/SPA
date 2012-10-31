@@ -1,10 +1,11 @@
 BADINPUTS = BadInputs.untested BadInputs.tested
 PATHS = netcalc-client.bc.client.paths netcalc-server.bc.server.paths
+CLIENT_STATE = netcalc-client.state
 CFGS = netcalc-client.pdf netcalc-server.pdf
-TARGETS = netcalc-client netcalc-server
+TARGETS = netcalc-client.exe netcalc-server.exe
 BC_TARGETS = netcalc-client.bc netcalc-server.bc
-TEST_TARGETS = netcalc-client.test netcalc-server.test
-LOG_TARGETS = netcalc-client.logtest netcalc-server.logtest
+TEST_TARGETS = netcalc-client.e2etest.exe netcalc-server.e2etest.exe
+LOG_TARGETS = netcalc-client.log.exe netcalc-server.log.exe
 HEADERS = netcalc.h
 LLVM_CC = /usr/local/bin/llvm-gcc4.2-2.9-x86_64-linux/bin/llvm-g++ -Wall -g --emit-llvm
 CC = g++ -Wall -g
@@ -18,29 +19,29 @@ default: all
 
 all: $(TARGETS) $(BC_TARGETS) $(TEST_TARGETS) $(LOG_TARGETS)
 
-%: %.c $(HEADERS)
+%.exe: %.c $(HEADERS)
 	$(CC) -o $@ $<
 
 %.bc: %.c $(HEADERS)
 	$(LLVM_CC) -DENABLE_SPA -c -o $@ $<
 
-%.test: %.c $(HEADERS) $(LIB_SPA_TEST_MODULE)
+%.e2etest.exe: %.c $(HEADERS) $(LIB_SPA_TEST_MODULE)
 	$(CC) -DENABLE_SPA -o $@ $< $(LIB_SPA_TEST_MODULE)
 
-%.logtest: %.c $(HEADERS) $(LIB_SPA_LOG_MODULE)
+%.log.exe: %.c $(HEADERS) $(LIB_SPA_LOG_MODULE)
 	$(CC) -DENABLE_SPA -o $@ $< $(LIB_SPA_LOG_MODULE)
 
-%.bc.client.paths: %.bc $(SPA_EXE)
-	$(SPA) --client $^ 2>&1 | tee $@.log
+%.bc.client.paths: %.bc $(CLIENT_STATE) $(SPA_EXE)
+	$(SPA) --init-values $(CLIENT_STATE) --client $< 2>&1 | tee $@.log
 
 %.bc.server.paths: %.bc $(SPA_EXE)
-	$(SPA) --server $^ 2>&1 | tee $@.log
+	$(SPA) --server $< 2>&1 | tee $@.log
 
 BadInputs.untested: $(PATHS)
 	spaBadInputs -client netcalc-client.bc.client.paths -server netcalc-server.bc.server.paths -o $@ -d $@.debug 2>&1 | tee $@.log
 
 BadInputs.tested: BadInputs.untested $(TEST_TARGETS)
-	spaTest $< $@ './netcalc-client.test 1 1 +' './netcalc-server.test' 2>&1 | tee $@.log
+	spaE2ETest $< $@ './netcalc-client.e2etest.exe 1 1 +' './netcalc-server.e2etest.exe' 2>&1 | tee $@.log
 
 netcalc-client.dot: netcalc-client.bc $(SPA_EXE)
 	spa --stand-alone --dump-cfg $@ --client $^
