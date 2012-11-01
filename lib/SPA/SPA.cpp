@@ -61,12 +61,14 @@
 #include <spa/SpaSearcher.h>
 #include <spa/Path.h>
 
-#define MAIN_ENTRY_FUNCTION	"__user_main"
+#define MAIN_ENTRY_FUNCTION				"__user_main"
 #define ALTERNATIVE_MAIN_ENTRY_FUNCTION	"main"
-#define OLD_ENTRY_FUNCTION	"__spa_old_main"
-#define KLEE_INT_FUNCTION	"klee_int"
-#define HANDLER_ID_VAR_NAME	"spa_internal_HanderID"
-#define SEED_ID_VAR_NAME	"spa_internal_SeedID"
+#define OLD_ENTRY_FUNCTION				"__spa_old_main"
+#define KLEE_INT_FUNCTION				"klee_int"
+#define MALLOC_FUNCTION					"malloc"
+#define INIT_VALUE_ID_VAR_NAME			"spa_internal_initValueID"
+#define HANDLER_ID_VAR_NAME				"spa_internal_HanderID"
+#define SEED_ID_VAR_NAME				"spa_internal_SeedID"
 extern cl::opt<double> MaxTime;
 extern cl::opt<bool> NoOutput;
 
@@ -245,10 +247,19 @@ namespace SPA {
 	 * 		init1();
 	 * 		init2();
 	 * 		(...)
+	 *		int initValueID = klee_int( "initValueID" );
+	 *		switch ( initValueID ) {
+	 *			case 1:
+	 * 				var = malloc( value.length );
+	 * 				var[0] = value[0]; (...);
+	 * 			break;
+	 *			(...)
+	 * 			default: return 0;
+	 *		}
 	 *		int handlerID = klee_int( "handlerID" );
 	 *		switch ( handlerID ) {
 	 *			case 1: handler1(); break;
-	 *			case 2: handler1(); break;
+	 *			case 2: spa_internal_SeedID = seedID; handler2(); break;
 	 *			(...)
 	 *		}
 	 *		return 0;
@@ -277,47 +288,72 @@ namespace SPA {
 		llvm::Value *argvVar = args++;
 		argvVar->setName( "argv" );
 
-		// Create the entry and return basic blocks.
+		// Create the entry, handler, and return basic blocks.
 		llvm::BasicBlock* entryBB = llvm::BasicBlock::Create( module->getContext(), "", entryFunction, 0);
+		entryHandlerBB = llvm::BasicBlock::Create( module->getContext(), "", entryFunction, 0);
 		entryReturnBB = llvm::BasicBlock::Create( module->getContext(), "", entryFunction, 0);
 
 		// Allocate arguments.
 		new llvm::StoreInst( argcVar, new llvm::AllocaInst( llvm::IntegerType::get( module->getContext(), 32 ), "", entryBB ), false, entryBB );
 		new llvm::StoreInst( argvVar, new llvm::AllocaInst( llvm::PointerType::get( llvm::PointerType::get( llvm::IntegerType::get( module->getContext(), 8 ), 0 ), 0 ), "", entryBB ), false, entryBB );
+
 		// Get klee_int function.
 		llvm::Function *kleeIntFunction = module->getFunction( KLEE_INT_FUNCTION );
 		if ( ! kleeIntFunction ) {
 			kleeIntFunction = llvm::Function::Create(
 				llvm::FunctionType::get(
 					llvm::IntegerType::get( module->getContext(), 32 ),
-										llvm::ArrayRef<const llvm::Type *>( llvm::PointerType::get( llvm::IntegerType::get( module->getContext(), 8 ), 0 ) ).vec(),
-										false ),
-										llvm::GlobalValue::ExternalLinkage, KLEE_INT_FUNCTION, module );
+					llvm::ArrayRef<const llvm::Type *>( llvm::PointerType::get( llvm::IntegerType::get( module->getContext(), 8 ), 0 ) ).vec(),
+					false ),
+				llvm::GlobalValue::ExternalLinkage, KLEE_INT_FUNCTION, module );
 			kleeIntFunction->setCallingConv( llvm::CallingConv::C );
 		}
-		// Create handlerID variable.
-		llvm::GlobalVariable *handlerIDVarName = new llvm::GlobalVariable(
+		// Create initValueID variable.
+		llvm::GlobalVariable *initValueIDVarName = new llvm::GlobalVariable(
 			*module,
-			llvm::ArrayType::get( llvm::IntegerType::get( module->getContext(), 8 ), strlen( HANDLER_ID_VAR_NAME ) + 1 ),
-																		  true,
-																	llvm::GlobalValue::PrivateLinkage,
-																	NULL,
-																	HANDLER_ID_VAR_NAME );
-		handlerIDVarName->setInitializer( llvm::ConstantArray::get( module->getContext(), HANDLER_ID_VAR_NAME, true ) );
-		// handlerID = klee_int();
+			llvm::ArrayType::get( llvm::IntegerType::get( module->getContext(), 8 ), strlen( INIT_VALUE_ID_VAR_NAME ) + 1 ),
+			true,
+			llvm::GlobalValue::PrivateLinkage,
+			NULL,
+			INIT_VALUE_ID_VAR_NAME );
+		initValueIDVarName->setInitializer( llvm::ConstantArray::get( module->getContext(), INIT_VALUE_ID_VAR_NAME, true ) );
+		// initValueID = klee_int();
 		llvm::Constant *idxs[] = {llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, 0, true ) ), llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, 0, true ) )};
 		llvm::CallInst *kleeIntCall = llvm::CallInst::Create(
 			kleeIntFunction,
-			llvm::ConstantExpr::getGetElementPtr( handlerIDVarName, idxs, 2, false ),
+			llvm::ConstantExpr::getGetElementPtr( initValueIDVarName, idxs, 2, false ),
 			"", entryBB);
 		kleeIntCall->setCallingConv(llvm::CallingConv::C);
 		kleeIntCall->setTailCall(false);
 		// Init handlers will be later added before this point.
 		initHandlerPlaceHolder = kleeIntCall;
 		// switch ( handlerID )
-		entrySwitchInst = llvm::SwitchInst::Create( kleeIntCall, entryReturnBB, 1, entryBB );
+		initValueSwitchInst = llvm::SwitchInst::Create( kleeIntCall, entryReturnBB, 1, entryBB );
 		// Entry handlers will be later added starting with id = 1.
-		handlerID = 1;
+		initValueID = 1;
+
+		// Create handlerID variable.
+		llvm::GlobalVariable *handlerIDVarName = new llvm::GlobalVariable(
+			*module,
+			llvm::ArrayType::get( llvm::IntegerType::get( module->getContext(), 8 ), strlen( HANDLER_ID_VAR_NAME ) + 1 ),
+			true,
+			llvm::GlobalValue::PrivateLinkage,
+			NULL,
+			HANDLER_ID_VAR_NAME );
+		handlerIDVarName->setInitializer( llvm::ConstantArray::get( module->getContext(), HANDLER_ID_VAR_NAME, true ) );
+		// handlerID = klee_int();
+// 		llvm::Constant *idxs[] = {llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, 0, true ) ), llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, 0, true ) )};
+		/*llvm::CallInst **/kleeIntCall = llvm::CallInst::Create(
+			kleeIntFunction,
+			llvm::ConstantExpr::getGetElementPtr( handlerIDVarName, idxs, 2, false ),
+			"", entryHandlerBB);
+		kleeIntCall->setCallingConv(llvm::CallingConv::C);
+		kleeIntCall->setTailCall(false);
+		// switch ( handlerID )
+		entryHandlerSwitchInst = llvm::SwitchInst::Create( kleeIntCall, entryReturnBB, 1, entryHandlerBB );
+		// Entry handlers will be later added starting with id = 1.
+		entryHandlerID = 1;
+
 		// return 0;
 		llvm::ReturnInst::Create( module->getContext(), llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, 0, true ) ), entryReturnBB );
 
@@ -335,7 +371,7 @@ namespace SPA {
 		// case x:
 		// Create basic block for this case.
 		llvm::BasicBlock *swBB = llvm::BasicBlock::Create( module->getContext(), "", entryFunction, 0 );
-		entrySwitchInst->addCase( llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, handlerID++, true ) ), swBB );
+		entryHandlerSwitchInst->addCase( llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, entryHandlerID++, true ) ), swBB );
 		// handlerx();
 		llvm::CallInst *handlerCallInst = llvm::CallInst::Create( fn, "", swBB );
 		handlerCallInst->setCallingConv( llvm::CallingConv::C );
@@ -348,7 +384,7 @@ namespace SPA {
 		// case x:
 		// Create basic block for this case.
 		llvm::BasicBlock *swBB = llvm::BasicBlock::Create( module->getContext(), "", entryFunction, 0 );
-		entrySwitchInst->addCase( llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, handlerID++, true ) ), swBB );
+		entryHandlerSwitchInst->addCase( llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, entryHandlerID++, true ) ), swBB );
 
 		// spa_internal_SeedID = seedID;
 		llvm::GlobalVariable *seedIDVar = module->getNamedGlobal ( SEED_ID_VAR_NAME );
@@ -361,6 +397,50 @@ namespace SPA {
 		handlerCallInst->setTailCall( false );
 		// break;
 		llvm::BranchInst::Create(entryReturnBB, swBB);
+	}
+
+	void SPA::addInitialValues( std::map<llvm::Value *, std::vector<uint8_t> > values ) {
+		// Get malloc function.
+		llvm::Function *mallocFunction = module->getFunction( MALLOC_FUNCTION );
+		if ( ! mallocFunction ) {
+			mallocFunction = llvm::Function::Create(
+				FunctionType::get(
+					PointerType::get( IntegerType::get( module->getContext(), 8 ), 0 ),
+								  llvm::ArrayRef<const llvm::Type *>( IntegerType::get( module->getContext(), 64 ) ).vec(),
+								  false ),
+								  GlobalValue::ExternalLinkage, "malloc", module );
+			mallocFunction->setCallingConv( CallingConv::C );
+		}
+
+		// case x:
+		// Create basic block for this case.
+		llvm::BasicBlock *swBB = llvm::BasicBlock::Create( module->getContext(), "", entryFunction, 0 );
+		initValueSwitchInst->addCase( llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, initValueID++, true ) ), swBB );
+
+		// Iterate over values to initialize.
+		for ( std::map<llvm::Value *, std::vector<uint8_t> >::iterator it = values.begin(), ie = values.end(); it != ie; it++ ) {
+			// %1 = malloc( value.length );
+			CallInst* mallocCallInst = CallInst::Create( mallocFunction, llvm::ConstantInt::get( module->getContext(), llvm::APInt( 64, it->second.size(), true ) ), "", swBB );
+			mallocCallInst->setCallingConv( CallingConv::C );
+			mallocCallInst->setTailCall( true );
+			// var = %1
+			new StoreInst( mallocCallInst, it->first, false, swBB );
+
+			// Iterator over initial value bytes.
+			for ( unsigned int i = 0; i < it->second.size(); i++ ) {
+				// var[i] = value[i];
+				new StoreInst(
+					llvm::ConstantInt::get( module->getContext(), llvm::APInt( 8, it->second[i], true ) ),
+					GetElementPtrInst::Create( mallocCallInst, llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, i, true ) ), "", swBB), false, swBB );
+			}
+		}
+
+		// break;
+		llvm::BranchInst::Create( entryHandlerBB, swBB );
+	}
+
+	void SPA::addSymbolicInitialValues() {
+		addInitialValues( std::map<llvm::Value *, std::vector<uint8_t> >() );
 	}
 
 	void SPA::start() {
