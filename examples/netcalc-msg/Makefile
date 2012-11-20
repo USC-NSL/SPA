@@ -26,10 +26,10 @@ all: $(TARGETS) $(BC_TARGETS) $(TEST_TARGETS)
 	$(CC) -DENABLE_SPA -o $@ $< $(LIB_SPA_TEST_MODULE)
 
 %.bc.client.paths: %.bc $(SPA_EXE)
-	$(SPA) --client $^ 2>&1 | tee $@.log
+	$(SPA) --client $< 2>&1 | tee $@.log
 
 %.bc.server.paths: %.bc $(SPA_EXE)
-	$(SPA) --server $^ 2>&1 | tee $@.log
+	$(SPA) --server $< 2>&1 | tee $@.log
 
 BadInputs.untested: $(PATHS)
 	spaBadInputs -client netcalc-client.bc.client.paths -server netcalc-server.bc.server.paths -o $@ -d $@.debug 2>&1 | tee $@.log

@@ -4,7 +4,7 @@ CLIENT_STATE = netcalc-client.state
 CFGS = netcalc-client.pdf netcalc-server.pdf
 TARGETS = netcalc-client.exe netcalc-server.exe
 BC_TARGETS = netcalc-client.bc netcalc-server.bc
-TEST_TARGETS = netcalc-client.e2etest.exe netcalc-server.e2etest.exe
+TEST_TARGETS = netcalc-client.e2etest.exe netcalc-server.e2etest.exe netcalc-client.htest.exe netcalc-server.htest.exe
 LOG_TARGETS = netcalc-client.log.exe netcalc-server.log.exe
 HEADERS = netcalc.h
 LLVM_CC = /usr/local/bin/llvm-gcc4.2-2.9-x86_64-linux/bin/llvm-g++ -Wall -g --emit-llvm
@@ -27,6 +27,16 @@ all: $(TARGETS) $(BC_TARGETS) $(TEST_TARGETS) $(LOG_TARGETS)
 
 %.e2etest.exe: %.c $(HEADERS) $(LIB_SPA_TEST_MODULE)
 	$(CC) -DENABLE_SPA -o $@ $< $(LIB_SPA_TEST_MODULE)
+
+netcalc-client.htest.exe: netcalc-client.bc
+	spaHandlerTest --client $< --output netcalc-client.htest.bc
+	llc netcalc-client.htest.bc -o netcalc-client.htest.s
+	$(CC) -o $@ netcalc-client.htest.s $(LIB_SPA_TEST_MODULE)
+
+netcalc-server.htest.exe: netcalc-server.bc
+	spaHandlerTest --server $< --output netcalc-server.htest.bc
+	llc netcalc-server.htest.bc -o netcalc-server.htest.s
+	$(CC) -o $@ netcalc-server.htest.s $(LIB_SPA_TEST_MODULE)
 
 %.log.exe: %.c $(HEADERS) $(LIB_SPA_LOG_MODULE)
 	$(CC) -DENABLE_SPA -o $@ $< $(LIB_SPA_LOG_MODULE)
