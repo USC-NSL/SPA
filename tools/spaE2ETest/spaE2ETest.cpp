@@ -30,7 +30,7 @@ int main(int argc, char **argv, char **envp) {
 			std::string value;
 			if ( d != std::string::npos )
 				value = line.substr( d + 1, std::string::npos );
-			setenv( ( std::string( "SPA_" ) + name).c_str(), value.c_str(), 1 );
+			setenv( name.c_str(), value.c_str(), 1 );
 		} else {
 			if ( ! bundle.empty() ) {
 				std::cerr << "Processing test case." << std::endl;

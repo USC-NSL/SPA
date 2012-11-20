@@ -23,6 +23,7 @@
 #define SPA_MESSAGE_HANDLER_ANNOTATION_FUNCTION	"spa_message_handler_entry"
 #define SPA_CHECKPOINT_ANNOTATION_FUNCTION		"spa_checkpoint"
 #define SPA_WAYPOINT_ANNOTATION_FUNCTION		"spa_waypoint"
+#define SPA_INPUT_ANNOTATION_FUNCTION			"spa_input"
 #define SPA_SEED_ANNOTATION_FUNCTION			"spa_seed"
 
 #define SPA_PREFIX					"spa_"
@@ -49,8 +50,11 @@ namespace SPA {
 		llvm::Module *module;
 		llvm::Function *entryFunction;
 		llvm::Instruction *initHandlerPlaceHolder;
-		llvm::SwitchInst *entrySwitchInst;
-		uint32_t handlerID;
+		llvm::SwitchInst *initValueSwitchInst;
+		llvm::SwitchInst *entryHandlerSwitchInst;
+		uint32_t initValueID;
+		uint32_t entryHandlerID;
+		llvm::BasicBlock *entryHandlerBB;
 		llvm::BasicBlock *entryReturnBB;
 		std::ostream &output;
 		std::set<llvm::Instruction *> checkpoints;
@@ -70,6 +74,8 @@ namespace SPA {
 		void addInitFunction( llvm::Function *fn );
 		void addEntryFunction( llvm::Function *fn );
 		void addSeedEntryFunction( unsigned int seedID, llvm::Function *fn );
+		void addInitialValues( std::map<llvm::Value *, std::vector<uint8_t> > values );
+		void addSymbolicInitialValues();
 		void addStateUtilityFront( StateUtility *stateUtility, bool _outputFilteredPaths ) {
 			stateUtilities.push_front( stateUtility );
 			outputFilteredPaths.push_front( _outputFilteredPaths );

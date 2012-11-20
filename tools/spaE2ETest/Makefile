@@ -1,5 +1,5 @@
 LEVEL = ../..
-TOOLNAME = spaTest
+TOOLNAME = spaE2ETest
 
 include $(LEVEL)/Makefile.config
 

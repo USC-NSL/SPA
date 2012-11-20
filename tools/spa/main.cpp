@@ -1,4 +1,6 @@
 #include <fstream>
+#include <sstream>
+#include <iterator>
 
 #include "llvm/Support/CommandLine.h"
 
@@ -37,11 +39,14 @@ namespace {
 	llvm::cl::opt<std::string> DumpCG( "dump-cg",
 		llvm::cl::desc( "Dumps the analyzed program's CG to the given file, as a .dot file." ) );
 
-	llvm::cl::opt<bool> SaveSeeds( "save-seeds",
-		llvm::cl::desc( "Generates seed paths from seed inputs." ) );
+// 	llvm::cl::opt<bool> SaveSeeds( "save-seeds",
+// 		llvm::cl::desc( "Generates seed paths from seed inputs." ) );
+// 
+// 	llvm::cl::opt<std::string> SeedFile( "seed-file",
+// 		llvm::cl::desc( "Loads previously generated seed paths." ) );
 
-	llvm::cl::opt<std::string> SeedFile( "seed-file",
-		llvm::cl::desc( "Loads previously generated seed paths." ) );
+	llvm::cl::opt<std::string> InitValueFile( "init-values",
+		llvm::cl::desc( "Loads initial values (typically state) from the specified file." ) );
 
 	llvm::cl::opt<std::string> PathFile( "path-file",
 		llvm::cl::desc( "Sets the output path file." ) );
@@ -94,25 +99,85 @@ int main(int argc, char **argv, char **envp) {
 	SPA::CFG cfg( module );
 	SPA::CG cg( cfg );
 
-	// Find seed IDs.
-	std::set<unsigned int> seedIDs;
-	if ( SaveSeeds ) {
-		CLOUD9_DEBUG( "   Setting up path seed generation." );
-		Function *fn = module->getFunction( SPA_SEED_ANNOTATION_FUNCTION );
+	if ( InitValueFile.size() > 0 ) {
+		CLOUD9_DEBUG( "   Setting up initial values." );
+		Function *fn = module->getFunction( SPA_INPUT_ANNOTATION_FUNCTION );
 		assert( fn );
+		std::map<std::string,llvm::Value *> initValueVars;
 		for ( std::set<llvm::Instruction *>::iterator it = cg.getDefiniteCallers( fn ).begin(), ie = cg.getDefiniteCallers( fn ).end(); it != ie; it++ ) {
 			const CallInst *callInst;
 			assert( callInst = dyn_cast<CallInst>( *it ) );
 			assert( callInst->getNumArgOperands() == 4 );
-			const llvm::ConstantInt *constInt;
-			assert( constInt = dyn_cast<llvm::ConstantInt>( callInst->getArgOperand( 0 ) ) );
-			uint64_t id = constInt->getValue().getLimitedValue();
-			if ( ! seedIDs.count( id ) )
-				CLOUD9_INFO( "      Found seed id: " << id );
-			seedIDs.insert( id );
+			llvm::User *u;
+			assert( u = dyn_cast<User>( callInst->getArgOperand( 2 ) ) );
+			llvm::GlobalVariable *gv;
+			assert( gv = dyn_cast<GlobalVariable>( u->getOperand( 0 ) ) );
+			llvm::ConstantArray *ca;
+			assert( ca = dyn_cast<ConstantArray>( gv->getInitializer() ) );
+
+			CLOUD9_INFO( "      Found input " << ca->getAsString() << "." );
+			// string reconversion to fix LLVM bug (includes null in std::string).
+			initValueVars[ca->getAsString().c_str()] = callInst->getArgOperand( 3 );
 		}
-		assert( ! seedIDs.empty() );
+
+		std::ifstream initValueFile( InitValueFile.c_str() );
+		assert( initValueFile.is_open() );
+		std::map<llvm::Value *, std::vector<uint8_t> > initValues;
+		while ( initValueFile.good() ) {
+			std::string line;
+			getline( initValueFile, line );
+			if ( ! line.empty() ) {
+				std::string name;
+				std::vector<uint8_t> value;
+				std::stringstream ss( line );
+				ss >> name;
+				if ( initValueVars.count( name ) > 0 ) {
+					ss << std::hex;
+					while ( ss.good() ) {
+						int v;
+						ss >> v;
+						value.push_back( v );
+					}
+					initValues[initValueVars[name]] = value;
+					CLOUD9_DEBUG( "      Found initial value for " << name << "." );
+				}
+			} else {
+				if ( ! initValues.empty() ) {
+					CLOUD9_INFO( "      Adding initial value set." );
+					spa.addInitialValues( initValues );
+					initValues.clear();
+				}
+			}
+		}
+		if ( ! initValues.empty() ) {
+			CLOUD9_INFO( "      Adding initial value set." );
+			spa.addInitialValues( initValues );
+		}
+	} else {
+		CLOUD9_INFO( "      No initial input values given, leaving symbolic." );
+		spa.addSymbolicInitialValues();
 	}
+
+
+// 	// Find seed IDs.
+// 	std::set<unsigned int> seedIDs;
+// 	if ( SaveSeeds ) {
+// 		CLOUD9_DEBUG( "   Setting up path seed generation." );
+// 		Function *fn = module->getFunction( SPA_SEED_ANNOTATION_FUNCTION );
+// 		assert( fn );
+// 		for ( std::set<llvm::Instruction *>::iterator it = cg.getDefiniteCallers( fn ).begin(), ie = cg.getDefiniteCallers( fn ).end(); it != ie; it++ ) {
+// 			const CallInst *callInst;
+// 			assert( callInst = dyn_cast<CallInst>( *it ) );
+// 			assert( callInst->getNumArgOperands() == 4 );
+// 			const llvm::ConstantInt *constInt;
+// 			assert( constInt = dyn_cast<llvm::ConstantInt>( callInst->getArgOperand( 0 ) ) );
+// 			uint64_t id = constInt->getValue().getLimitedValue();
+// 			if ( ! seedIDs.count( id ) )
+// 				CLOUD9_INFO( "      Found seed id: " << id );
+// 			seedIDs.insert( id );
+// 		}
+// 		assert( ! seedIDs.empty() );
+// 	}
 
 	// Find entry handlers.
 	std::set<llvm::Instruction *> entryPoints;
@@ -122,11 +187,11 @@ int main(int argc, char **argv, char **envp) {
 			std::set<llvm::Instruction *> apiCallers = cg.getDefiniteCallers( fn );
 			for ( std::set<llvm::Instruction *>::iterator cit = apiCallers.begin(), cie = apiCallers.end(); cit != cie; cit++ ) {
 				CLOUD9_DEBUG( "   Found API entry function: " << (*cit)->getParent()->getParent()->getName().str() );
-				if ( seedIDs.empty() )
+// 				if ( seedIDs.empty() )
 					spa.addEntryFunction( (*cit)->getParent()->getParent() );
-				else
-					for ( std::set<unsigned int>::iterator sit = seedIDs.begin(), sie = seedIDs.end(); sit != sie; sit++ )
-						spa.addSeedEntryFunction( *sit, (*cit)->getParent()->getParent() );
+// 				else
+// 					for ( std::set<unsigned int>::iterator sit = seedIDs.begin(), sie = seedIDs.end(); sit != sie; sit++ )
+// 						spa.addSeedEntryFunction( *sit, (*cit)->getParent()->getParent() );
 				entryPoints.insert( *cit );
 			}
 		} else {
@@ -138,11 +203,11 @@ int main(int argc, char **argv, char **envp) {
 			std::set<llvm::Instruction *> mhCallers = cg.getDefiniteCallers( fn );
 			for ( std::set<llvm::Instruction *>::iterator cit = mhCallers.begin(), cie = mhCallers.end(); cit != cie; cit++ ) {
 				CLOUD9_DEBUG( "   Found message handler entry function: " << (*cit)->getParent()->getParent()->getName().str() );
-				if ( seedIDs.empty() )
+// 				if ( seedIDs.empty() )
 					spa.addEntryFunction( (*cit)->getParent()->getParent() );
-				else
-					for ( std::set<unsigned int>::iterator sit = seedIDs.begin(), sie = seedIDs.end(); sit != sie; sit++ )
-						spa.addSeedEntryFunction( *sit, (*cit)->getParent()->getParent() );
+// 				else
+// 					for ( std::set<unsigned int>::iterator sit = seedIDs.begin(), sie = seedIDs.end(); sit != sie; sit++ )
+// 						spa.addSeedEntryFunction( *sit, (*cit)->getParent()->getParent() );
 				entryPoints.insert( *cit );
 			}
 		} else {
