@@ -21,6 +21,16 @@ extern "C" {
 #endif// #ifdef __cplusplus
 	void __attribute__((noinline,weak)) spa_checkpoint() { static uint8_t i = 0; i++; } // Complicated NOP to prevent inlining.
 	void __attribute__((noinline)) spa_runtime_call( SpaRuntimeHandler_t handler, ... );
+
+	void spa_api_input_handler( va_list args );
+	void spa_state_handler( va_list args );
+	void spa_api_output_handler( va_list args );
+	void spa_msg_input_handler( va_list args );
+	void spa_msg_input_size_handler( va_list args );
+	void spa_msg_output_handler( va_list args );
+	void spa_tag_handler( va_list args );
+	void spa_valid_path_handler( va_list args );
+	void spa_invalid_path_handler( va_list args );
 #ifdef __cplusplus
 }
 #endif// #ifdef __cplusplus
@@ -28,7 +38,7 @@ extern "C" {
 
 #ifdef ENABLE_SPA
 
-#define spa_tag( var, value ) __spa_tag( &var, "spa_tag_" #var, value )
+#define spa_tag( var, value ) __spa_tag( &var, "spa_tag_" #var, value ); spa_runtime_call( spa_tag_handler, "spa_tag_" #var, value )
 void __attribute__((weak)) __spa_tag( SpaTag_t *var, const char *varName, SpaTag_t value ) {
 	klee_make_symbolic( var, sizeof( char * ), varName );
 	*var = value;
@@ -44,7 +54,7 @@ SpaTag_t ValidPath;
 #define spa_api_input( var, size, token ) { \
 	static uint8_t * spa_in_api_init_ ## token = NULL; \
 	spa_input( var, size, "spa_in_api_" # token, &spa_in_api_init_ ## token ); \
-	spa_runtime_call( spa_api_input_handler, var, size, #token ); \
+	spa_runtime_call( spa_api_input_handler, var, size, "spa_in_api_" # token ); \
 }
 #define spa_api_input_var( var ) spa_api_input( &var, sizeof( var ), var )
 
@@ -55,13 +65,13 @@ SpaTag_t ValidPath;
 }
 #define spa_state_var( var ) spa_state( &var, sizeof( var ), var )
 
-#define spa_api_output( var, size, name ) __spa_output( (void *) var, size, "spa_out_api_" name ); spa_runtime_call( spa_api_output_handler, var, size, name )
+#define spa_api_output( var, size, name ) __spa_output( (void *) var, size, "spa_out_api_" name ); spa_runtime_call( spa_api_output_handler, var, size, "spa_out_api_" name )
 #define spa_api_output_var( var ) spa_api_output( var, sizeof( var ), #var )
 
-#define spa_msg_input( var, size, name ) klee_make_symbolic( var, size, "spa_in_msg_" name ); spa_runtime_call( spa_msg_input_handler, var, size, name )
-#define spa_msg_input_size( var, name ) klee_make_symbolic( &var, sizeof( var ), "spa_in_msg_size_" name ); spa_runtime_call( spa_msg_input_size_handler, var, name )
+#define spa_msg_input( var, size, name ) klee_make_symbolic( var, size, "spa_in_msg_" name ); spa_runtime_call( spa_msg_input_handler, var, size, "spa_in_msg_" name )
+#define spa_msg_input_size( var, name ) klee_make_symbolic( &var, sizeof( var ), "spa_in_msg_size_" name ); spa_runtime_call( spa_msg_input_size_handler, var, "spa_in_msg_size_" name )
 #define spa_msg_input_var( var ) spa_msg_input( &var, sizeof( var ), #var )
-#define spa_msg_output( var, size, name ) __spa_output( (void *) var, size, "spa_out_msg_" name, "spa_out_msg_size_" name ); spa_runtime_call( spa_msg_output_handler, var, size, name )
+#define spa_msg_output( var, size, name ) __spa_output( (void *) var, size, "spa_out_msg_" name, "spa_out_msg_size_" name ); spa_runtime_call( spa_msg_output_handler, var, size, "spa_out_msg_" name )
 #define spa_msg_output_var( var ) spa_msg_output( &var, sizeof( var ), #var )
 
 void __attribute__((weak)) __spa_output( void *var, size_t size, const char *varName, const char *sizeName ) {
@@ -107,15 +117,6 @@ void __attribute__((weak)) __spa_output( void *var, size_t size, const char *var
 #ifdef __cplusplus
 extern "C" {
 #endif// #ifdef __cplusplus
-	void spa_api_input_handler( va_list args );
-	void spa_state_handler( va_list args );
-	void spa_api_output_handler( va_list args );
-	void spa_msg_input_handler( va_list args );
-	void spa_msg_input_size_handler( va_list args );
-	void spa_msg_output_handler( va_list args );
-	void spa_valid_path_handler( va_list args );
-	void spa_invalid_path_handler( va_list args );
-
 	void __attribute__((noinline,weak)) spa_input( void *var, size_t size, const char varName[], uint8_t **initialValue ) {
 		if ( *initialValue ) {
 			memcpy( var, *initialValue, size );
