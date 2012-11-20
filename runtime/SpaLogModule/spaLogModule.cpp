@@ -8,7 +8,8 @@
 #include <spa/spaRuntimeImpl.h>
 
 unsigned long eventID = 0;
-std::map< std::string,std::pair<void *, size_t> > stateVars;
+std::map< std::string, std::pair<void *, size_t> > stateVars;
+std::map<std::string, std::string> tags;
 
 std::ostream &log() {
 	static std::ofstream logFile;
@@ -35,6 +36,9 @@ void dumpState() {
 			log() << " " << std::hex << (int) *var;
 		log() << std::endl;
 	}
+
+	for ( std::map<std::string, std::string>::iterator it = tags.begin(), ie = tags.end(); it != ie; it++ )
+		log() << it->first << " = " << it-> second << std::endl;
 }
 
 std::string curTime() {
@@ -112,6 +116,16 @@ extern "C" {
 		for ( ; size > 0; var++, size-- )
 			log() << " " << std::hex << (int) *var;
 		log() << std::endl;
+		dumpState();
+	}
+
+	void spa_tag_handler( va_list args ) {
+		const char *key = va_arg( args, const char * );
+		const char *value = va_arg( args, const char * );
+
+		tags[key] = value;
+
+		log() << "Event " << eventID++ << " - Tag " << key << " set on " << curTime() << std::endl;
 		dumpState();
 	}
 
