@@ -30,6 +30,7 @@
 #define SPA_TAG_PREFIX				SPA_PREFIX "tag_"
 #define SPA_STATE_PREFIX			SPA_PREFIX "state_"
 #define SPA_INPUT_PREFIX			SPA_PREFIX "in_"
+#define SPA_INIT_PREFIX				SPA_PREFIX "init_"
 #define SPA_API_INPUT_PREFIX		SPA_INPUT_PREFIX "api_"
 #define SPA_MESSAGE_INPUT_PREFIX	SPA_INPUT_PREFIX "msg_"
 #define SPA_OUTPUT_PREFIX			SPA_PREFIX "out_"
@@ -41,6 +42,7 @@
 #define SPA_MESSAGEHANDLER_VALUE	"Message"
 #define SPA_APIHANDLER_VALUE		"API"
 #define SPA_OUTPUT_TAG				"Output"
+#define SPA_OUTPUT_VALUE			"1"
 #define SPA_VALIDPATH_TAG			"ValidPath"
 #define SPA_VALIDPATH_VALUE			"1"
 

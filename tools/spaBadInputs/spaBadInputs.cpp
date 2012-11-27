@@ -138,7 +138,7 @@ bool processPaths( SPA::Path *cp, SPA::Path *sp ) {
 	std::vector<const klee::Array*> objects;
 	for ( std::map<std::string, const klee::Array *>::const_iterator it = cp->beginSymbols(), ie = cp->endSymbols(); it != ie; it++ ) {
 		if ( it->first.compare( 0, strlen( SPA_API_INPUT_PREFIX ), SPA_API_INPUT_PREFIX ) == 0 ) {
-			objectNames.push_back( it->first.substr( strlen( SPA_API_INPUT_PREFIX ) ) );
+			objectNames.push_back( it->first );
 			objects.push_back( it->second );
 		}
 	}
@@ -155,6 +155,28 @@ bool processPaths( SPA::Path *cp, SPA::Path *sp ) {
 			std::ostream &o = output.is_open() ? output : std::cout;
 			std::ostream &d = debug.is_open() ? debug : std::cout;
 
+			for ( std::map<std::string, std::vector<klee::ref<klee::Expr> > >::const_iterator oit = cp->beginOutputs(), oie = cp->endOutputs(); oit != oie; oit++ ) {
+				if ( oit->first.compare( 0, strlen( SPA_INIT_PREFIX ), SPA_INIT_PREFIX ) == 0 ) {
+					o << SPA_PREFIX + oit->first.substr( strlen( SPA_INIT_PREFIX ) );
+					for ( std::vector<klee::ref<klee::Expr> >::const_iterator bit = oit->second.begin(), bie = oit->second.end(); bit != bie; bit++ ) {
+						klee::ConstantExpr *ce;
+						assert( (ce = dyn_cast<klee::ConstantExpr>( bit->get() )) && "Initial value is not constant." );
+						o << " " << std::hex << (int) ce->getZExtValue( 8 );
+					}
+					o << std::endl;
+				}
+			}
+			for ( std::map<std::string, std::vector<klee::ref<klee::Expr> > >::const_iterator oit = sp->beginOutputs(), oie = sp->endOutputs(); oit != oie; oit++ ) {
+				if ( oit->first.compare( 0, strlen( SPA_INIT_PREFIX ), SPA_INIT_PREFIX ) == 0 ) {
+					o << SPA_PREFIX + oit->first.substr( strlen( SPA_INIT_PREFIX ) );
+					for ( std::vector<klee::ref<klee::Expr> >::const_iterator bit = oit->second.begin(), bie = oit->second.end(); bit != bie; bit++ ) {
+						klee::ConstantExpr *ce;
+						assert( (ce = dyn_cast<klee::ConstantExpr>( bit->get() )) && "Initial value is not constant." );
+						o << " " << std::hex << (int) ce->getZExtValue( 8 );
+					}
+					o << std::endl;
+				}
+			}
 			for ( size_t i = 0; i < result.size(); i++ ) {
 				o << objectNames[i];
 				for ( std::vector<unsigned char>::iterator it = result[i].begin(), ie = result[i].end(); it != ie; it++ )

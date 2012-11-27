@@ -59,7 +59,7 @@ namespace SPA {
 				symbolNames[name] = it->second;
 
 				// Symbolic value.
-				if ( name.compare( 0, strlen( SPA_OUTPUT_PREFIX ), SPA_OUTPUT_PREFIX ) == 0 || name.compare( 0, strlen( SPA_STATE_PREFIX ), SPA_STATE_PREFIX ) == 0 )
+				if ( name.compare( 0, strlen( SPA_OUTPUT_PREFIX ), SPA_OUTPUT_PREFIX ) == 0 || name.compare( 0, strlen( SPA_STATE_PREFIX ), SPA_STATE_PREFIX ) == 0 || name.compare( 0, strlen( SPA_INIT_PREFIX ), SPA_INIT_PREFIX ) == 0 )
 					if ( const klee::ObjectState *os = kState->addressSpace().findObject( (*it).first ) )
 						for ( unsigned int i = 0; i < os->size; i++ )
 							outputValues[name].push_back( os->read8( i ) );
