@@ -37,6 +37,7 @@ netcalc-server.htest.exe: netcalc-server.bc
 	spaHandlerTest --server $< --output netcalc-server.htest.bc
 	llc netcalc-server.htest.bc -o netcalc-server.htest.s
 	$(CC) -o $@ netcalc-server.htest.s $(LIB_SPA_TEST_MODULE)
+	rm netcalc-server.htest.s
 
 %.log.exe: %.c $(HEADERS) $(LIB_SPA_LOG_MODULE)
 	$(CC) -DENABLE_SPA -o $@ $< $(LIB_SPA_LOG_MODULE)
@@ -51,7 +52,7 @@ BadInputs.untested: $(PATHS)
 	spaBadInputs -client netcalc-client.bc.client.paths -server netcalc-server.bc.server.paths -o $@ -d $@.debug 2>&1 | tee $@.log
 
 BadInputs.tested: BadInputs.untested $(TEST_TARGETS)
-	spaE2ETest $< $@ './netcalc-client.e2etest.exe 1 1 +' './netcalc-server.e2etest.exe' 2>&1 | tee $@.log
+	spaHandlerTest --client ./netcalc-client.htest.exe --server ./netcalc-server.htest.exe --input $< --output $@ 2>&1 | tee $@.log
 
 netcalc-client.dot: netcalc-client.bc $(SPA_EXE)
 	spa --stand-alone --dump-cfg $@ --client $^

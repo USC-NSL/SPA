@@ -14,5 +14,6 @@ netcalc-server.e2etest.exe
 netcalc-server.exe
 netcalc-server.log.exe
 netcalc-client.htest.exe
+netcalc-server.htest.exe
 netcalc-client.htest.s
 netcalc-client.untested
