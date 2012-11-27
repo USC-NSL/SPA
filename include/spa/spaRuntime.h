@@ -53,14 +53,14 @@ SpaTag_t ValidPath;
 
 #define spa_api_input( var, size, token ) { \
 	static uint8_t * spa_in_api_init_ ## token = NULL; \
-	spa_input( var, size, "spa_in_api_" # token, &spa_in_api_init_ ## token ); \
+	spa_input( var, size, "spa_in_api_" # token, &spa_in_api_init_ ## token, "spa_init_in_api_" # token ); \
 	spa_runtime_call( spa_api_input_handler, var, size, "spa_in_api_" # token ); \
 }
 #define spa_api_input_var( var ) spa_api_input( &var, sizeof( var ), var )
 
 #define spa_state( var, size, token ) { \
 	static uint8_t * spa_state_init_ ## token = NULL; \
-	spa_input( var, size, "spa_state_" # token, &spa_state_init_ ## token ); \
+	spa_input( var, size, "spa_state_" # token, &spa_state_init_ ## token, "spa_init_state_" # token ); \
 	spa_runtime_call( spa_state_handler, var, size, "spa_state_" # token ); \
 }
 #define spa_state_var( var ) spa_state( &var, sizeof( var ), var )
@@ -117,11 +117,14 @@ void __attribute__((weak)) __spa_output( void *var, size_t size, const char *var
 #ifdef __cplusplus
 extern "C" {
 #endif// #ifdef __cplusplus
-	void __attribute__((noinline,weak)) spa_input( void *var, size_t size, const char varName[], uint8_t **initialValue ) {
+	void __attribute__((noinline,weak)) spa_input( void *var, size_t size, const char varName[], uint8_t **initialValue, const char initialValueName[] ) {
+		klee_make_symbolic( var, size, varName );
+
 		if ( *initialValue ) {
 			memcpy( var, *initialValue, size );
-		} else {
-			klee_make_symbolic( var, size, varName );
+
+			klee_make_symbolic( *initialValue, size, initialValueName );
+			memcpy( *initialValue, var, size );
 		}
 	}
 

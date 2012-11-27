@@ -107,7 +107,7 @@ int main(int argc, char **argv, char **envp) {
 		for ( std::set<llvm::Instruction *>::iterator it = cg.getDefiniteCallers( fn ).begin(), ie = cg.getDefiniteCallers( fn ).end(); it != ie; it++ ) {
 			const CallInst *callInst;
 			assert( callInst = dyn_cast<CallInst>( *it ) );
-			assert( callInst->getNumArgOperands() == 4 );
+			assert( callInst->getNumArgOperands() == 5 );
 			llvm::User *u;
 			assert( u = dyn_cast<User>( callInst->getArgOperand( 2 ) ) );
 			llvm::GlobalVariable *gv;

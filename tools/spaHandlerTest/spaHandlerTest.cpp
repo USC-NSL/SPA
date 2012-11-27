@@ -31,6 +31,8 @@
 #define ALTERNATIVE_MAIN_ENTRY_FUNCTION	"main"
 #define OLD_ENTRY_FUNCTION				"__spa_old_main"
 
+#define LOG_FILE_VARIABLE				"SPA_LOG_FILE"
+
 extern std::string InputFile;
 
 namespace {
@@ -127,7 +129,7 @@ void xformClient() {
 void xformServer() {
 	std::cerr << "Loading server byte-code from: " << Server << std::endl;
 	llvm::OwningPtr<llvm::MemoryBuffer> mb;
-	assert( llvm::MemoryBuffer::getFile( Server.c_str(), mb ) );
+	assert( llvm::MemoryBuffer::getFile( Server.c_str(), mb ) == 0 );
 
 	llvm::LLVMContext ctx;
 	llvm::Module *module;
@@ -186,13 +188,13 @@ void runTests() {
 				std::cerr << "Processing test case." << std::endl;
 
 				std::string logFileName = tmpnam( NULL );
-				std::cerr << "Logging results to: " << logFileName << std::endl;
+				std::cerr << "Logging client results to: " << logFileName << std::endl;
 
 				pid_t pid = fork();
 				assert( pid >= 0 && "Error forking client process." );
 				if ( pid == 0 ) {
 					setpgid( 0, 0 );
-					setenv( "SPA_LOG_FILE", logFileName.c_str(), 1 );
+					setenv( LOG_FILE_VARIABLE, logFileName.c_str(), 1 );
 					std::cerr << "Launching client handler: " << Client << std::endl;
 					exit( system( Client.c_str() ) );
 				}
@@ -206,40 +208,68 @@ void runTests() {
 
 				std::cerr << "Processing outputs." << std::endl;
 				std::ifstream logFile( logFileName.c_str() );
-				std::string prefix = "spa_out_msg_";
+				bool output = false;
 				while ( logFile.good() ) {
 					std::getline( logFile, line );
-					if ( line.compare( 0, prefix.size(), prefix ) == 0 ) {
+					if ( line.compare( 0, strlen( SPA_MESSAGE_OUTPUT_PREFIX ), SPA_MESSAGE_OUTPUT_PREFIX ) == 0 ) {
 						std::cerr << "Transforming: " << line << std::endl;
 						size_t boundary = line.find( ' ' );
-						assert( boundary != std::string::npos && "Malformed output." );
-						std::string name = "spa_in_msg_" + line.substr( prefix.size(), boundary - prefix.size() );
-						std::string value = line.substr( boundary, line.size() - boundary );
+						assert( boundary != std::string::npos && boundary < line.size() - 1 && "Malformed output." );
+						std::string name = SPA_MESSAGE_INPUT_PREFIX + line.substr( strlen( SPA_MESSAGE_OUTPUT_PREFIX ), boundary - strlen( SPA_MESSAGE_OUTPUT_PREFIX ) );
+						std::string value = line.substr( boundary + 1 );
 						setenv( name.c_str(), value.c_str(), 1 );
+					} else if ( line.compare( 0, strlen( SPA_TAG_PREFIX SPA_OUTPUT_TAG ), SPA_TAG_PREFIX SPA_OUTPUT_TAG ) == 0 ) {
+						size_t boundary = line.find( ' ' );
+						assert( boundary != std::string::npos && boundary < line.size() - 1 && "Malformed tag." );
+						std::string value = line.substr( boundary + 1 );
+						output = (value == SPA_OUTPUT_VALUE);
 					}
 				}
 				logFile.close();
 				remove( logFileName.c_str() );
 
-				pid = fork();
-				assert( pid >= 0 && "Error forking server process." );
-				if ( pid == 0 ) {
-					setpgid( 0, 0 );
-					std::cerr << "Launching server handler: " << Server << std::endl;
-					exit( system( Server.c_str() ) );
-				}
-				sleep( 1 );
-				std::cerr << "Killing process." << std::endl;
-				kill( pid, SIGTERM );
+				if ( output ) {
+					logFileName = tmpnam( NULL );
+					std::cerr << "Logging server results to: " << logFileName << std::endl;
 
-// 				std::cerr << "Waiting for process." << std::endl;
-				assert( waitpid( pid, &status, 0 ) != -1 );
+					pid = fork();
+					assert( pid >= 0 && "Error forking server process." );
+					if ( pid == 0 ) {
+						setpgid( 0, 0 );
+						setenv( LOG_FILE_VARIABLE, logFileName.c_str(), 1 );
+						std::cerr << "Launching server handler: " << Server << std::endl;
+						exit( system( Server.c_str() ) );
+					}
+					sleep( 1 );
+					std::cerr << "Killing process." << std::endl;
+					kill( pid, SIGTERM );
 
-				if ( (! WIFEXITED( status )) || WEXITSTATUS( status ) == 201 ) {
-					std::cerr << "Found true positive. Outputting" << std::endl;
-					outputFile << bundle << std::endl;
+	// 				std::cerr << "Waiting for process." << std::endl;
+					assert( waitpid( pid, &status, 0 ) != -1 );
+
+					std::cerr << "Processing results." << std::endl;
+					std::ifstream logFile( logFileName.c_str() );
+					bool validPath = false;
+					while ( logFile.good() ) {
+						std::getline( logFile, line );
+						if ( line.compare( 0, strlen( SPA_TAG_PREFIX SPA_VALIDPATH_TAG ), SPA_TAG_PREFIX SPA_VALIDPATH_TAG ) == 0 ) {
+							size_t boundary = line.find( ' ' );
+							assert( boundary != std::string::npos && "Malformed tag." );
+							std::string value = line.substr( boundary, line.size() - boundary );
+							validPath = (value == SPA_VALIDPATH_VALUE);
+						}
+					}
+					logFile.close();
+					remove( logFileName.c_str() );
+
+					if ( ! validPath ) {
+						std::cerr << "Found true positive. Outputting" << std::endl;
+						outputFile << bundle << std::endl;
+					} else {
+						std::cerr << "Found false positive (valid on server). Filtering." << std::endl;
+					}
 				} else {
-					std::cerr << "Found false positive. Filtering." << std::endl;
+					std::cerr << "Found false positive (no client message). Filtering." << std::endl;
 				}
 				bundle.clear();
 				std::cerr << "--------------------------------------------------" << std::endl;

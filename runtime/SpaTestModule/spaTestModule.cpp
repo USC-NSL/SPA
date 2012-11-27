@@ -25,7 +25,7 @@ void handle_input( uint8_t *var, size_t size, const char *name ) {
 // 		std::cerr << n << " ";
 		*(var++) = n;
 	}
-	std::cerr << std::endl;
+// 	std::cerr << std::endl;
 	assert( size == 0 && "Variable size mismatch." );
 }
 
