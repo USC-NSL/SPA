@@ -254,8 +254,8 @@ void runTests() {
 						std::getline( logFile, line );
 						if ( line.compare( 0, strlen( SPA_TAG_PREFIX SPA_VALIDPATH_TAG ), SPA_TAG_PREFIX SPA_VALIDPATH_TAG ) == 0 ) {
 							size_t boundary = line.find( ' ' );
-							assert( boundary != std::string::npos && "Malformed tag." );
-							std::string value = line.substr( boundary, line.size() - boundary );
+							assert( boundary != std::string::npos && boundary < line.size() - 1 && "Malformed tag." );
+							std::string value = line.substr( boundary + 1 );
 							validPath = (value == SPA_VALIDPATH_VALUE);
 						}
 					}
