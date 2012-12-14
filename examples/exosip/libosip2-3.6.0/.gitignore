@@ -81,3 +81,4 @@ src/osipparser2/osip_error_info.lo
 src/osipparser2/osip_proxy_authentication_info.lo
 src/osipparser2/sdp_accessor.lo
 src/osipparser2/sdp_message.lo
+autom4te.cache/

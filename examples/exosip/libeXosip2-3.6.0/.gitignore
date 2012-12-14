@@ -51,3 +51,4 @@ src/sdp_offans.lo
 src/udp.lo
 stamp-h1
 tools/.deps/
+autom4te.cache/
