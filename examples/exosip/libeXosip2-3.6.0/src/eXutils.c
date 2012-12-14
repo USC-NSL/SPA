@@ -546,7 +546,7 @@ static int _eXosip_default_gateway_ipv6(char *address, int size);
 static int
 _eXosip_default_gateway_with_getifaddrs(int type, char *address, int size)
 {
-#ifdef ENABLE_SPA
+#ifdef ENABLE_KLEE
 	snprintf(address, size, "127.0.0.1");
 	return 0;
 #else
@@ -605,7 +605,7 @@ int eXosip_guess_ip_for_via(int family, char *address, int size)
  */
 static int _eXosip_default_gateway_ipv4(char *address, int size)
 {
-#ifdef ENABLE_SPA
+#ifdef ENABLE_KLEE
 	snprintf(address, size, "127.0.0.1");
 	return OSIP_SUCCESS;
 #else

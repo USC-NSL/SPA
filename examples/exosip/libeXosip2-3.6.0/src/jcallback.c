@@ -193,7 +193,7 @@ cb_snd_message(osip_transaction_t * tr, osip_message_t * sip, char *host,
 
 	i = -1;
 	if (osip_strcasecmp(via->protocol, "udp") == 0) {
-#ifdef ENABLE_SPA
+#ifdef ENABLE_KLEE
 		i = udp_tl_send_message(tr, sip, host, port, out_socket);
 #else
 		i = eXtl_udp.tl_send_message(tr, sip, host, port, out_socket);

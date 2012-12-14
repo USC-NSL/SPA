@@ -1483,6 +1483,10 @@ _eXosip_handle_incoming_message(char *buf, size_t length, int socket,
 	int i;
 	osip_event_t *se;
 
+	/* SPA input message declaration */
+	spa_msg_input( buf, SIP_MESSAGE_MAX_LENGTH + 1, "message" );
+	spa_msg_input_size( length, "message" );
+
 	se = (osip_event_t *) osip_malloc(sizeof(osip_event_t));
 	if (se == NULL)
 		return OSIP_NOMEM;
@@ -1590,7 +1594,7 @@ int eXosip_read_message(int max_message_nb, int sec_max, int usec_max)
 		int wakeup_socket = jpipe_get_read_descr(eXosip.j_socketctl);
 #endif
 
-#ifdef ENABLE_SPA
+#ifdef ENABLE_KLEE
 		bzero( &osip_fdset, sizeof( osip_fdset ) );
 		bzero( &osip_wrset, sizeof( osip_wrset ) );
 #else
@@ -1613,7 +1617,7 @@ int eXosip_read_message(int max_message_nb, int sec_max, int usec_max)
 #endif
 
 		i = 0;
-#ifndef ENABLE_SPA
+#ifndef ENABLE_KLEE
 		if ((sec_max == -1) || (usec_max == -1))
 			i = select(max + 1, &osip_fdset, NULL, NULL, NULL);
 		else

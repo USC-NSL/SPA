@@ -21,9 +21,6 @@ void __attribute__((noinline,used)) spa_HandleInvite() {
 
 // 	char message[SIP_MESSAGE_MAX_LENGTH + 1];
 // 	size_t len;
-// 	spa_msg_input_var( message );
-// 	spa_msg_input_size( len, "message" );
-// 
 // 	_eXosip_handle_incoming_message( message, len, 0, "127.0.0.1", 5060 );
 
 	printf( "Ready.\n" );
