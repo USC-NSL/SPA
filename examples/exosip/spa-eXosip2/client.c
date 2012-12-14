@@ -6,8 +6,19 @@
 
 #include <eXosip2/eX_setup.h>
 #include <eXosip2/eX_call.h>
+#include "../libeXosip2-3.6.0/src/eXosip2.h"
+
+extern eXosip_t eXosip;
 
 #include <spa/spaRuntime.h>
+
+void spa_DeclareState() {
+	osip_transaction_t *tmp = eXosip.j_calls->c_out_tr;
+	spa_state( eXosip.j_calls, sizeof( eXosip_call_t ), "eXosip_j_calls" );
+	eXosip.j_calls->c_out_tr = tmp;
+
+	spa_state( eXosip.j_calls->c_out_tr, sizeof( osip_transaction_t ), "eXosip_j_calls_c_out_tr" );
+}
 
 void __attribute__((noinline,used)) spa_SendInvite() {
 	spa_api_entry();
@@ -18,11 +29,11 @@ void __attribute__((noinline,used)) spa_SendInvite() {
 // 	char to[30];
 // 	spa_api_input_var( to );
 
-// 	char from[] = "<sip:from@127.0.0.1:5061>";
+	char from[] = "<sip:from@127.0.0.1:5061>";
 	char to[] = "<sip:to@127.0.0.1:5060>";
 
 // PJSIP Bad Inputs
-	char from[30] = "<sip:@"; // Good in eXoSIP server.
+// 	char from[30] = "<sip:@"; // Good in eXoSIP server.
 // 	char to[30] = "SIP@:";
 
 // eXoSIP Bad Inputs
@@ -103,9 +114,11 @@ void __attribute__((noinline,used)) spa_SendInvite() {
 // 	strcat( to_uri, to );
 // 	strcat( to_uri, "@127.0.0.1:5060>" );
 
-	strcat( from, "@127.0.0.1:5061>" );
+// 	strcat( from, "@127.0.0.1:5061>" );
 // 	strcat( to, "@127.0.0.1:5060>" );
 
+// 	spa_api_input_var( from );
+// 	spa_api_input_var( to );
 	printf( "Sending INVITE with from = \"%s\", to = \"%s\"\n", from, to );
 
 	osip_message_t *invite;
@@ -118,13 +131,79 @@ void __attribute__((noinline,used)) spa_SendInvite() {
 	assert( eXosip_call_build_initial_invite( &invite, to, from, NULL, NULL ) == OSIP_SUCCESS );
 // 	assert( eXosip_call_build_initial_invite( &invite, to_uri, from_uri, NULL, NULL ) == OSIP_SUCCESS );
 // 	assert( eXosip_call_build_initial_invite( &invite, "<sip:to@127.0.0.1>", "<sip:from@127.0.0.1:5061>", NULL, NULL ) == OSIP_SUCCESS );
+
 	assert( eXosip_call_send_initial_invite( invite ) >= 0 );
+
+	spa_DeclareState();
+
 	assert( eXosip_execute() == OSIP_SUCCESS );
+}
+
+void __attribute__((noinline,used)) spa_HandleResponse() {
+	spa_message_handler_entry();
+
+	assert( eXosip_init() == OSIP_SUCCESS );
+	assert( eXosip_listen_addr( IPPROTO_UDP, "0.0.0.0", 5061, AF_INET, 0) == OSIP_SUCCESS );
+
+	char from[] = "<sip:from@127.0.0.1:5061>";
+	char to[] = "<sip:to@127.0.0.1:5060>";
+	osip_message_t *invite;
+	assert( eXosip_call_build_initial_invite( &invite, to, from, NULL, NULL ) == OSIP_SUCCESS );
+
+	eXosip_call_t *jc;
+	osip_transaction_t *transaction;
+	osip_event_t *sipevent;
+
+	// Taken from eXosip_call_send_initial_invite.
+	assert( invite != NULL );
+	assert( eXosip_call_init(&jc) == 0 );
+	assert( _eXosip_transaction_init(&transaction, ICT, eXosip.j_osip, invite) == 0 );
+	jc->c_out_tr = transaction;
+	sipevent = osip_new_outgoing_sipmessage(invite);
+	sipevent->transactionid = transaction->transactionid;
+	osip_transaction_set_your_instance(transaction, __eXosip_new_jinfo(jc, NULL, NULL, NULL));
+	osip_transaction_add_event(transaction, sipevent);
+	jc->external_reference = NULL;
+	ADD_ELEMENT(eXosip.j_calls, jc);
+// 	eXosip_update();			/* fixed? */
+// 	__eXosip_wakeup();
+
+	spa_DeclareState();
+
+// 	char message[SIP_MESSAGE_MAX_LENGTH + 1];
+// 	size_t len;
+// 	_eXosip_handle_incoming_message( message, len, 0, "127.0.0.1", 5060 );
+
+	printf( "Ready.\n" );
+	while ( 1 ) {
+		assert( eXosip_execute() == OSIP_SUCCESS );
+		eXosip_event_t *e = eXosip_event_wait( 0, 50 );
+		eXosip_automatic_action();
+		if ( e == NULL )
+			continue;
+		switch ( e->type ) {
+			case EXOSIP_CALL_PROCEEDING:
+				printf( "Call proceeding.\n" );
+				break;
+			case EXOSIP_CALL_ACK:
+				printf( "Call ack.\n" );
+				break;
+			case EXOSIP_CALL_ANSWERED:
+				printf( "Call answered.\n" );
+				break;
+			default:
+				printf( "Other event: %d.\n", e->type );
+				break;
+		}
+		eXosip_event_free( e );
+	}
+	printf( "Done.\n" );
 	eXosip_quit();
 }
 
 int main( int argc, char **argv ) {
-	spa_SendInvite();
+// 	spa_SendInvite();
+	spa_HandleResponse();
 
 	return 0;
 }
