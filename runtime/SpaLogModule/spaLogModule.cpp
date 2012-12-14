@@ -25,16 +25,45 @@ std::ostream &log() {
 	return logFile;
 }
 
+std::string escapeChar( char c ) {
+	if ( c == '\n' )
+		return "\\n";
+	if ( c == '\r' )
+		return "\\r";
+	if ( c == '\\' )
+		return "\\\\";
+	if ( c == '\n' )
+		return "\\n";
+	if ( c == '\'' )
+		return "\\'";
+	if ( c == '\"' )
+		return "\\\"";
+	if ( isprint( c ) )
+		return std::string( 1, c );
+	
+	char s[5];
+	snprintf( s, sizeof( s ), "\\x%x", c );
+	return s;
+}
+
+void outputVar( std::string name, uint8_t *var, size_t size ) {
+	log() << name;
+	for ( size_t i = 0; i < size; i++ )
+		log() << " " << std::hex << (int) var[i];
+	log() << std::endl;
+	log() << name << " = \"";
+	for ( size_t i = 0; i < size; i++ )
+		log() << escapeChar( var[i] );
+	log() << "\"" << std::endl;
+}
+
 void dumpState() {
 	for ( std::map< std::string,std::pair<void *, size_t> >::iterator it = stateVars.begin(), ie = stateVars.end(); it != ie; it++ ) {
 		std::string name = it->first;
 		uint8_t *var = (uint8_t *) it->second.first;
 		size_t size = it->second.second;
 
-		log() << name;
-		for ( ; size > 0; var++, size-- )
-			log() << " " << std::hex << (int) *var;
-		log() << std::endl;
+		outputVar( name, var, size );
 	}
 
 	for ( std::map<std::string, std::string>::iterator it = tags.begin(), ie = tags.end(); it != ie; it++ )
@@ -56,10 +85,7 @@ extern "C" {
 		const char *name = va_arg( args, const char * );
 
 		log() << "Event " << eventID++ << " - API Input on " << curTime() << std::endl;
-		log() << name;
-		for ( ; size > 0; var++, size-- )
-			log() << " " << std::hex << (int) *var;
-		log() << std::endl;
+		outputVar( name, var, size );
 		dumpState();
 	}
 
@@ -67,6 +93,8 @@ extern "C" {
 		void *var = va_arg( args, void * );
 		size_t size = va_arg( args, size_t );
 		const char *name = va_arg( args, const char * );
+
+		assert( var && "Declared NULL state variable." );
 
 		stateVars[name] = std::pair<void *, size_t>( var, size );
 	}
@@ -77,10 +105,7 @@ extern "C" {
 		const char *name = va_arg( args, const char * );
 
 		log() << "Event " << eventID++ << " - API Output on " << curTime() << std::endl;
-		log() << name;
-		for ( ; size > 0; var++, size-- )
-			log() << " " << std::hex << (int) *var;
-		log() << std::endl;
+		outputVar( name, var, size );
 		dumpState();
 	}
 
@@ -90,10 +115,7 @@ extern "C" {
 		const char *name = va_arg( args, const char * );
 
 		log() << "Event " << eventID++ << " - Message Input on " << curTime() << std::endl;
-		log() << name;
-		for ( ; size > 0; var++, size-- )
-			log() << " " << std::hex << (int) *var;
-		log() << std::endl;
+		outputVar( name, var, size );
 		dumpState();
 	}
 
@@ -112,10 +134,7 @@ extern "C" {
 		const char *name = va_arg( args, const char * );
 
 		log() << "Event " << eventID++ << " - Message Output on " << curTime() << std::endl;
-		log() << name;
-		for ( ; size > 0; var++, size-- )
-			log() << " " << std::hex << (int) *var;
-		log() << std::endl;
+		outputVar( name, var, size );
 		dumpState();
 	}
 

@@ -14,7 +14,7 @@ void handle_input( uint8_t *var, size_t size, const char *name ) {
 		return;
 	}
 
-	std::cerr << "Injecting value for " << name << "[" << size << "] = " << value << std::endl;
+	std::cerr << "Injecting value for " << name /*<< "[" << size << "] = " << value*/ << std::endl;
 
 	std::stringstream ss( value );
 
