@@ -51,17 +51,17 @@ SpaTag_t ValidPath;
 #define spa_invalid_path() spa_tag( ValidPath, "0" ); spa_runtime_call( spa_invalid_path_handler ); spa_checkpoint()
 #define spa_valid_path() spa_tag( ValidPath, "1" ); spa_runtime_call( spa_valid_path_handler ); spa_checkpoint()
 
-#define spa_api_input( var, size, token ) { \
-	static uint8_t * spa_in_api_init_ ## token = NULL; \
-	spa_input( var, size, "spa_in_api_" # token, &spa_in_api_init_ ## token, "spa_init_in_api_" # token ); \
-	spa_runtime_call( spa_api_input_handler, var, size, "spa_in_api_" # token ); \
+#define spa_api_input( var, size, name ) { \
+	static uint8_t * initialValue = NULL; \
+	spa_input( var, size, "spa_in_api_" name, &initialValue, "spa_init_in_api_" name ); \
+	spa_runtime_call( spa_api_input_handler, var, size, "spa_in_api_" name ); \
 }
 #define spa_api_input_var( var ) spa_api_input( &var, sizeof( var ), var )
 
-#define spa_state( var, size, token ) { \
-	static uint8_t * spa_state_init_ ## token = NULL; \
-	spa_input( var, size, "spa_state_" # token, &spa_state_init_ ## token, "spa_init_state_" # token ); \
-	spa_runtime_call( spa_state_handler, var, size, "spa_state_" # token ); \
+#define spa_state( var, size, name ) { \
+	static uint8_t * initialValue = NULL; \
+	spa_input( var, size, "spa_state_" name, &initialValue, "spa_init_state_" name ); \
+	spa_runtime_call( spa_state_handler, var, size, "spa_state_" name ); \
 }
 #define spa_state_var( var ) spa_state( &var, sizeof( var ), var )
 
@@ -69,7 +69,7 @@ SpaTag_t ValidPath;
 #define spa_api_output_var( var ) spa_api_output( var, sizeof( var ), #var )
 
 #define spa_msg_input( var, size, name ) klee_make_symbolic( var, size, "spa_in_msg_" name ); spa_runtime_call( spa_msg_input_handler, var, size, "spa_in_msg_" name )
-#define spa_msg_input_size( var, name ) klee_make_symbolic( &var, sizeof( var ), "spa_in_msg_size_" name ); spa_runtime_call( spa_msg_input_size_handler, var, "spa_in_msg_size_" name )
+#define spa_msg_input_size( var, name ) klee_make_symbolic( &var, sizeof( var ), "spa_in_msg_size_" name ); spa_runtime_call( spa_msg_input_size_handler, &var, "spa_in_msg_size_" name )
 #define spa_msg_input_var( var ) spa_msg_input( &var, sizeof( var ), #var )
 #define spa_msg_output( var, size, name ) __spa_output( (void *) var, size, "spa_out_msg_" name, "spa_out_msg_size_" name ); spa_runtime_call( spa_msg_output_handler, var, size, "spa_out_msg_" name )
 #define spa_msg_output_var( var ) spa_msg_output( &var, sizeof( var ), #var )
