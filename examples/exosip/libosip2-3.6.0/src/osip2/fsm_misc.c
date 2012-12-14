@@ -55,7 +55,7 @@ fsm_callmethod(type_t type, state_t state,
 		/* No transition found for this event */
 		return OSIP_UNDEFINED_ERROR;	/* error */
 	}
-#ifdef ENABLE_SPA
+#ifdef ENABLE_KLEE
 	ict_snd_invite(transaction, sipevent);
 #else
 	transition->method(transaction, sipevent);

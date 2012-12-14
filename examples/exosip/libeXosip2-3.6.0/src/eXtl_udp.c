@@ -696,7 +696,7 @@ udp_tl_send_message(osip_transaction_t * tr, osip_message_t * sip, char *host,
 	}
 
 	spa_msg_output( message, length, "message" );
-#ifdef ENABLE_SPA
+#ifdef ENABLE_KLEE
 	assert( length == sendto(udp_socket, (const void *) message, length, 0, (struct sockaddr *) &addr, len) );
 #else
 	if (0 >
