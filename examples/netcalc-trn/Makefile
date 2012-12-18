@@ -32,6 +32,7 @@ netcalc-client.htest.exe: netcalc-client.bc
 	spaHandlerTest --client $< --output netcalc-client.htest.bc
 	llc netcalc-client.htest.bc -o netcalc-client.htest.s
 	$(CC) -o $@ netcalc-client.htest.s $(LIB_SPA_TEST_MODULE)
+	rm netcalc-client.htest.s
 
 netcalc-server.htest.exe: netcalc-server.bc
 	spaHandlerTest --server $< --output netcalc-server.htest.bc
