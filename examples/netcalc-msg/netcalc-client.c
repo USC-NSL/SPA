@@ -45,17 +45,25 @@ nc_value_t executeQuery( nc_operator_t op, nc_value_t arg1, nc_value_t arg2 ) {
 	spa_msg_output_var( query );
 
 	// Send query.
+#ifndef ENABLE_KLEE
 	assert( sendto( sock, &query, sizeof( query ), 0, server->ai_addr, server->ai_addrlen ) == sizeof( query ) );
+#endif
 	// Get response.
 	nc_response_t response;
+#ifndef ENABLE_KLEE
 	assert( recv( sock, &response, sizeof( response ), 0 ) == sizeof( response ) );
+#endif
+	spa_msg_input_var( response );
+
 	// Output operation.
 	if ( response.err == NC_OK ) {
-		std::cerr << "	" << query.arg1 << " " << getOpName( query.op ) << " " << query.arg2 << " = " << response.value << std::endl;
+// 		std::cerr << "	" << query.arg1 << " " << getOpName( query.op ) << " " << query.arg2 << " = " << response.value << std::endl;
+		spa_valid_path();
 	} else {
-		std::cerr << "Error: " << getErrText( response.err ) << std::endl;
+// 		std::cerr << "Error: " << getErrText( response.err ) << std::endl;
+		spa_invalid_path();
 	}
-	assert( response.err == NC_OK && "Query failed." );
+// 	assert( response.err == NC_OK && "Query failed." );
 
 	return response.value;
 }
