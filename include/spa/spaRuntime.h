@@ -56,14 +56,14 @@ SpaTag_t ValidPath;
 	spa_input( var, size, "spa_in_api_" name, &initialValue, "spa_init_in_api_" name ); \
 	spa_runtime_call( spa_api_input_handler, var, size, "spa_in_api_" name ); \
 }
-#define spa_api_input_var( var ) spa_api_input( &var, sizeof( var ), var )
+#define spa_api_input_var( var ) spa_api_input( &var, sizeof( var ), #var )
 
 #define spa_state( var, size, name ) { \
 	static uint8_t * initialValue = NULL; \
 	spa_input( var, size, "spa_state_" name, &initialValue, "spa_init_state_" name ); \
 	spa_runtime_call( spa_state_handler, var, size, "spa_state_" name ); \
 }
-#define spa_state_var( var ) spa_state( &var, sizeof( var ), var )
+#define spa_state_var( var ) spa_state( &var, sizeof( var ), #var )
 
 #define spa_api_output( var, size, name ) __spa_output( (void *) var, size, "spa_out_api_" name ); spa_runtime_call( spa_api_output_handler, var, size, "spa_out_api_" name )
 #define spa_api_output_var( var ) spa_api_output( var, sizeof( var ), #var )
@@ -83,7 +83,7 @@ void __attribute__((weak)) __spa_output( void *var, size_t size, const char *var
 	klee_make_symbolic( bufSize, sizeof( size_t ), sizeName );
 	*bufSize = size;
 	spa_tag( Output, "1" );
-	spa_checkpoint();
+// 	spa_checkpoint();
 }
 
 #define spa_assume( x ) klee_assume( x )

@@ -262,6 +262,7 @@ namespace SPA {
 	 *			case 2: spa_internal_SeedID = seedID; handler2(); break;
 	 *			(...)
 	 *		}
+	 * 		(...)
 	 *		return 0;
 	 *	}
 	 */
@@ -288,14 +289,15 @@ namespace SPA {
 		llvm::Value *argvVar = args++;
 		argvVar->setName( "argv" );
 
-		// Create the entry, handler, and return basic blocks.
-		llvm::BasicBlock* entryBB = llvm::BasicBlock::Create( module->getContext(), "", entryFunction, 0);
-		entryHandlerBB = llvm::BasicBlock::Create( module->getContext(), "", entryFunction, 0);
-		entryReturnBB = llvm::BasicBlock::Create( module->getContext(), "", entryFunction, 0);
+		// Create the entry, current and next handler, and return basic blocks.
+		llvm::BasicBlock* initBB = llvm::BasicBlock::Create( module->getContext(), "", entryFunction, 0);
+		firstHandlerBB = llvm::BasicBlock::Create( module->getContext(), "", entryFunction, 0);
+		nextHandlerBB = firstHandlerBB;
+		returnBB = llvm::BasicBlock::Create( module->getContext(), "", entryFunction, 0);
 
 		// Allocate arguments.
-		new llvm::StoreInst( argcVar, new llvm::AllocaInst( llvm::IntegerType::get( module->getContext(), 32 ), "", entryBB ), false, entryBB );
-		new llvm::StoreInst( argvVar, new llvm::AllocaInst( llvm::PointerType::get( llvm::PointerType::get( llvm::IntegerType::get( module->getContext(), 8 ), 0 ), 0 ), "", entryBB ), false, entryBB );
+		new llvm::StoreInst( argcVar, new llvm::AllocaInst( llvm::IntegerType::get( module->getContext(), 32 ), "", initBB ), false, initBB );
+		new llvm::StoreInst( argvVar, new llvm::AllocaInst( llvm::PointerType::get( llvm::PointerType::get( llvm::IntegerType::get( module->getContext(), 8 ), 0 ), 0 ), "", initBB ), false, initBB );
 
 		// Get klee_int function.
 		llvm::Function *kleeIntFunction = module->getFunction( KLEE_INT_FUNCTION );
@@ -322,18 +324,18 @@ namespace SPA {
 		llvm::CallInst *kleeIntCall = llvm::CallInst::Create(
 			kleeIntFunction,
 			llvm::ConstantExpr::getGetElementPtr( initValueIDVarName, idxs, 2, false ),
-			"", entryBB);
+			"", initBB );
 		kleeIntCall->setCallingConv(llvm::CallingConv::C);
 		kleeIntCall->setTailCall(false);
 		// Init handlers will be later added before this point.
 		initHandlerPlaceHolder = kleeIntCall;
 		// switch ( handlerID )
-		initValueSwitchInst = llvm::SwitchInst::Create( kleeIntCall, entryReturnBB, 1, entryBB );
+		initValueSwitchInst = llvm::SwitchInst::Create( kleeIntCall, returnBB, 1, initBB );
 		// Entry handlers will be later added starting with id = 1.
 		initValueID = 1;
 
 		// Create handlerID variable.
-		llvm::GlobalVariable *handlerIDVarName = new llvm::GlobalVariable(
+		handlerIDVarName = new llvm::GlobalVariable(
 			*module,
 			llvm::ArrayType::get( llvm::IntegerType::get( module->getContext(), 8 ), strlen( HANDLER_ID_VAR_NAME ) + 1 ),
 			true,
@@ -341,24 +343,16 @@ namespace SPA {
 			NULL,
 			HANDLER_ID_VAR_NAME );
 		handlerIDVarName->setInitializer( llvm::ConstantArray::get( module->getContext(), HANDLER_ID_VAR_NAME, true ) );
-		// handlerID = klee_int();
-// 		llvm::Constant *idxs[] = {llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, 0, true ) ), llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, 0, true ) )};
-		/*llvm::CallInst **/kleeIntCall = llvm::CallInst::Create(
-			kleeIntFunction,
-			llvm::ConstantExpr::getGetElementPtr( handlerIDVarName, idxs, 2, false ),
-			"", entryHandlerBB);
-		kleeIntCall->setCallingConv(llvm::CallingConv::C);
-		kleeIntCall->setTailCall(false);
-		// switch ( handlerID )
-		entryHandlerSwitchInst = llvm::SwitchInst::Create( kleeIntCall, entryReturnBB, 1, entryHandlerBB );
-		// Entry handlers will be later added starting with id = 1.
-		entryHandlerID = 1;
+
+		// Set up basic blocks to add entry handlers.
+		llvm::BranchInst::Create( returnBB, nextHandlerBB );
+		newEntryLevel();
 
 		// return 0;
-		llvm::ReturnInst::Create( module->getContext(), llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, 0, true ) ), entryReturnBB );
+		llvm::ReturnInst::Create( module->getContext(), llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, 0, true ) ), returnBB );
 
 // 		module->dump();
-		// 		entryFunction->dump();
+// 		entryFunction->dump();
 	}
 
 	void SPA::addInitFunction( llvm::Function *fn ) {
@@ -377,7 +371,7 @@ namespace SPA {
 		handlerCallInst->setCallingConv( llvm::CallingConv::C );
 		handlerCallInst->setTailCall( false );
 		// break;
-		llvm::BranchInst::Create(entryReturnBB, swBB);
+		llvm::BranchInst::Create(nextHandlerBB, swBB);
 	}
 
 	void SPA::addSeedEntryFunction( unsigned int seedID, llvm::Function *fn ) {
@@ -396,7 +390,39 @@ namespace SPA {
 		handlerCallInst->setCallingConv( llvm::CallingConv::C );
 		handlerCallInst->setTailCall( false );
 		// break;
-		llvm::BranchInst::Create(entryReturnBB, swBB);
+		llvm::BranchInst::Create(nextHandlerBB, swBB);
+	}
+
+	void SPA::newEntryLevel() {
+		// Get klee_int function.
+		llvm::Function *kleeIntFunction = module->getFunction( KLEE_INT_FUNCTION );
+		if ( ! kleeIntFunction ) {
+			kleeIntFunction = llvm::Function::Create(
+				llvm::FunctionType::get(
+					llvm::IntegerType::get( module->getContext(), 32 ),
+					llvm::ArrayRef<const llvm::Type *>( llvm::PointerType::get( llvm::IntegerType::get( module->getContext(), 8 ), 0 ) ).vec(),
+					false ),
+				llvm::GlobalValue::ExternalLinkage, KLEE_INT_FUNCTION, module );
+			kleeIntFunction->setCallingConv( llvm::CallingConv::C );
+		}
+
+		// Remove the temporary branch instruction.
+		nextHandlerBB->begin()->eraseFromParent();
+		// handlerID = klee_int();
+		llvm::Constant *idxs[] = {llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, 0, true ) ), llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, 0, true ) )};
+		llvm::CallInst *kleeIntCall = llvm::CallInst::Create(
+			kleeIntFunction,
+			llvm::ConstantExpr::getGetElementPtr( handlerIDVarName, idxs, 2, false ),
+			"", nextHandlerBB );
+		kleeIntCall->setCallingConv(llvm::CallingConv::C);
+		kleeIntCall->setTailCall(false);
+		// switch ( handlerID )
+		entryHandlerSwitchInst = llvm::SwitchInst::Create( kleeIntCall, returnBB, 1, nextHandlerBB );
+		// Entry handlers will be later added starting with id = 1.
+		entryHandlerID = 1;
+
+		nextHandlerBB = llvm::BasicBlock::Create( module->getContext(), "", entryFunction, 0);
+		llvm::BranchInst::Create( returnBB, nextHandlerBB );
 	}
 
 	void SPA::addInitialValues( std::map<llvm::Value *, std::vector<uint8_t> > values ) {
@@ -436,7 +462,7 @@ namespace SPA {
 		}
 
 		// break;
-		llvm::BranchInst::Create( entryHandlerBB, swBB );
+		llvm::BranchInst::Create( firstHandlerBB, swBB );
 	}
 
 	void SPA::addSymbolicInitialValues() {
@@ -444,6 +470,8 @@ namespace SPA {
 	}
 
 	void SPA::start() {
+// 		entryFunction->dump();
+
 		bool outputFP = false;
 		for ( std::deque<bool>::iterator it = outputFilteredPaths.begin(), ie = outputFilteredPaths.end(); it != ie; it++ ) {
 			if ( *it ) {

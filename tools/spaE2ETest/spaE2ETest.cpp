@@ -63,7 +63,8 @@ int main(int argc, char **argv, char **envp) {
 // 				std::cerr << "Waiting for client." << std::endl;
 				assert( waitpid( clientPID, &clientStatus, 0 ) != -1 );
 
-				if ( (! WIFEXITED( serverStatus )) || WEXITSTATUS( serverStatus ) == 201 ) {
+				if ( (! WIFEXITED( serverStatus )) || WEXITSTATUS( serverStatus ) == 201 ||
+					(! WIFEXITED( clientStatus )) || WEXITSTATUS( clientStatus ) == 201 ) {
 					std::cerr << "Found true positive. Outputting" << std::endl;
 					outputFile << bundle << std::endl;
 				} else {

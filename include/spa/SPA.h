@@ -52,12 +52,14 @@ namespace SPA {
 		llvm::Module *module;
 		llvm::Function *entryFunction;
 		llvm::Instruction *initHandlerPlaceHolder;
+		llvm::GlobalVariable *handlerIDVarName;
 		llvm::SwitchInst *initValueSwitchInst;
 		llvm::SwitchInst *entryHandlerSwitchInst;
 		uint32_t initValueID;
 		uint32_t entryHandlerID;
-		llvm::BasicBlock *entryHandlerBB;
-		llvm::BasicBlock *entryReturnBB;
+		llvm::BasicBlock *firstHandlerBB;
+		llvm::BasicBlock *nextHandlerBB;
+		llvm::BasicBlock *returnBB;
 		std::ostream &output;
 		std::set<llvm::Instruction *> checkpoints;
 		std::deque<StateUtility *> stateUtilities;
@@ -76,6 +78,7 @@ namespace SPA {
 		void addInitFunction( llvm::Function *fn );
 		void addEntryFunction( llvm::Function *fn );
 		void addSeedEntryFunction( unsigned int seedID, llvm::Function *fn );
+		void newEntryLevel();
 		void addInitialValues( std::map<llvm::Value *, std::vector<uint8_t> > values );
 		void addSymbolicInitialValues();
 		void addStateUtilityFront( StateUtility *stateUtility, bool _outputFilteredPaths ) {
