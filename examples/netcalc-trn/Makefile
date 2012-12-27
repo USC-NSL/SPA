@@ -32,13 +32,13 @@ netcalc-client.htest.exe: netcalc-client.bc
 	spaHandlerTest --client $< --output netcalc-client.htest.bc
 	llc netcalc-client.htest.bc -o netcalc-client.htest.s
 	$(CC) -o $@ netcalc-client.htest.s $(LIB_SPA_TEST_MODULE)
-	rm netcalc-client.htest.s
+	rm netcalc-client.htest.bc netcalc-client.htest.s
 
 netcalc-server.htest.exe: netcalc-server.bc
 	spaHandlerTest --server $< --output netcalc-server.htest.bc
 	llc netcalc-server.htest.bc -o netcalc-server.htest.s
 	$(CC) -o $@ netcalc-server.htest.s $(LIB_SPA_TEST_MODULE)
-	rm netcalc-server.htest.s
+	rm netcalc-server.htest.bc netcalc-server.htest.s
 
 %.log.exe: %.c $(HEADERS) $(LIB_SPA_LOG_MODULE)
 	$(CC) -DENABLE_SPA -o $@ $< $(LIB_SPA_LOG_MODULE)

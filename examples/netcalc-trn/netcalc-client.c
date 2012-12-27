@@ -21,6 +21,29 @@ nc_operator_t capability = NC_CAPABILITY;
 
 std::list<nc_value_t> stack;
 
+void discoverCapability() {
+	if ( capability == NC_CAPABILITY ) {
+		nc_query_t capabilityRequest;
+		nc_response_t capabilityResponse;
+
+		capabilityRequest.op = NC_CAPABILITY;
+		capabilityRequest.arg1 = capabilityRequest.arg2 = 0;
+
+		spa_msg_output_var( capabilityRequest );
+
+#ifndef ENABLE_KLEE
+		assert( sendto( sock, &capabilityRequest, sizeof( capabilityRequest ), 0, server->ai_addr, server->ai_addrlen ) == sizeof( capabilityRequest ) );
+		assert( recv( sock, &capabilityResponse, sizeof( capabilityResponse ), 0 ) == sizeof( capabilityResponse ) );
+#endif
+
+		spa_msg_input_var( capabilityResponse );
+
+		assert( capabilityResponse.err == NC_OK && "Query failed." );
+
+		capability = (nc_operator_t) capabilityResponse.value;
+	}
+}
+
 // Executes a single query on the remote server.
 nc_value_t executeQuery( nc_operator_t op, nc_value_t arg1, nc_value_t arg2 ) {
 	spa_state_var( capability );
@@ -36,6 +59,8 @@ nc_value_t executeQuery( nc_operator_t op, nc_value_t arg1, nc_value_t arg2 ) {
 	spa_seed_var( 2, op, NC_SUBTRACTION );
 	spa_seed_var( 2, arg1, 2 );
 	spa_seed_var( 2, arg2, 1 );
+
+	discoverCapability();
 
 	assert( (op == NC_CAPABILITY || (op >= 0 && op <= capability)) && "Invalid operator in query.");
 // 	assert( (op == NC_CAPABILITY || (op >= 0 && op <  capability)) && "Invalid operator in query.");
@@ -66,11 +91,6 @@ nc_value_t executeQuery( nc_operator_t op, nc_value_t arg1, nc_value_t arg2 ) {
 	assert( response.err == NC_OK && "Query failed." );
 
 	return response.value;
-}
-
-void discoverCapability() {
-	if ( capability == NC_CAPABILITY )
-		capability = (nc_operator_t) executeQuery( NC_CAPABILITY, 0, 0 );
 }
 
 void __attribute__((used)) SpaExecuteQueryEntry() {
@@ -155,7 +175,6 @@ int main( int argc, char **argv ) {
 	}
 	assert( sock >= 0 && "Host could not be resolved." );
 
-	discoverCapability();
 	executeRPN( args );
 
 	freeaddrinfo( result );
