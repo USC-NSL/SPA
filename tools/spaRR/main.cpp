@@ -62,16 +62,19 @@ namespace {
 class SpaClientPathFilter : public SPA::PathFilter {
 public:
 	bool checkPath( SPA::Path &path ) {
-		return (! path.getTag( SPA_OUTPUT_TAG ).empty());
+		return (! path.getTag( SPA_OUTPUT_TAG ).empty()) &&
+			(! path.getTag( SPA_VALIDPATH_TAG ).empty()) &&
+			path.getTag( SPA_VALIDPATH_TAG ) != SPA_VALIDPATH_VALUE;
 	}
 };
 
 class SpaServerPathFilter : public SPA::PathFilter {
 public:
 	bool checkPath( SPA::Path &path ) {
-		return path.getTag( SPA_HANDLERTYPE_TAG ) == SPA_MESSAGEHANDLER_VALUE &&
-			(path.getTag( SPA_VALIDPATH_TAG ) != SPA_VALIDPATH_VALUE || 
-				(! path.getTag( SPA_OUTPUT_TAG ).empty()));
+// 		return (! path.getTag( SPA_OUTPUT_TAG ).empty()) ||
+// 			path.getTag( SPA_VALIDPATH_TAG ) != SPA_VALIDPATH_VALUE;
+		return (! path.getTag( SPA_OUTPUT_TAG ).empty()) &&
+			path.getTag( SPA_VALIDPATH_TAG ) == SPA_VALIDPATH_VALUE;
 	}
 };
 
@@ -309,10 +312,10 @@ int main(int argc, char **argv, char **envp) {
 // 	spa.addStateUtilityBack( new SPA::DepthUtility(), false );
 	if ( Client ) {
 		spa.addStateUtilityBack( new SPA::AstarUtility( cfg, cg, checkpoints ), false );
-// 		spa.addStateUtilityBack( new SPA::TargetDistanceUtility( cfg, cg, checkpoints ), false );
+		spa.addStateUtilityBack( new SPA::TargetDistanceUtility( cfg, cg, checkpoints ), false );
 	} else if ( Server && filter ) {
 		spa.addStateUtilityBack( new SPA::AstarUtility( cfg, cg, *filter ), false );
-// 		spa.addStateUtilityBack( new SPA::TargetDistanceUtility( cfg, cg, *filter ), false );
+		spa.addStateUtilityBack( new SPA::TargetDistanceUtility( cfg, cg, *filter ), false );
 	}
 
 	if ( DumpCFG.size() > 0 ) {
