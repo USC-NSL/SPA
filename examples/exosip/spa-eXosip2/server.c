@@ -24,7 +24,7 @@ void __attribute__((noinline,used)) spa_HandleInvite() {
 // 	_eXosip_handle_incoming_message( message, len, 0, "127.0.0.1", 5060 );
 
 	printf( "Ready.\n" );
-	while ( 1 ) {
+	do {
 		assert( eXosip_execute() == OSIP_SUCCESS );
 		eXosip_event_t *e = eXosip_event_wait( 0, 50 );
 		eXosip_automatic_action();
@@ -39,7 +39,7 @@ void __attribute__((noinline,used)) spa_HandleInvite() {
 				break;
 		}
 		eXosip_event_free( e );
-	}
+	} while ( 0 );
 	printf( "Done.\n" );
 	eXosip_quit();
 }
