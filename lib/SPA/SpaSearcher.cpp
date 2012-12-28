@@ -18,8 +18,8 @@
 #include <cloud9/Logger.h>
 
 #define SAVE_STATE_PERIOD 30 // seconds
-#define QUEUE_LIMIT	20000
-#define DROP_TO		19000
+#define QUEUE_LIMIT	100000
+#define DROP_TO		 90000
 
 
 namespace SPA {
@@ -138,8 +138,8 @@ namespace SPA {
 			<< "]; Processed: " << statesDequeued
 			<< "; Filtered: " << statesFiltered );
 
-// 		CLOUD9_DEBUG( "[SpaSearcher] Selecting state:" );
-// 		klee::c9::printStateStack( std::cerr, *states.begin()->second ) << std::endl;
+		CLOUD9_DEBUG( "[SpaSearcher] Selecting state:" );
+		klee::c9::printStateStack( std::cerr, *states.begin()->second ) << std::endl;
 		return *states.begin()->second;
 	}
 

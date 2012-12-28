@@ -570,6 +570,9 @@ namespace SPA {
 	}
 
 	void SPA::onStateDestroy(klee::ExecutionState *kState, bool silenced) {
+		CLOUD9_DEBUG( "Destroying path at:" );
+		klee::c9::printStateStack( std::cerr, *kState ) << std::endl;
+
 		if ( ! kState->filtered ) {
 			terminalPathsFound++;
 
