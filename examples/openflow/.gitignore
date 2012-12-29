@@ -36,3 +36,14 @@ cscope.*
 ext.m4
 ext.mk
 tags
+controller/.dirstamp
+lib/.dirstamp
+lib/dirs.c
+secchan/.dirstamp
+tests/.dirstamp
+tests/test-flows
+tests/test-hmap
+udatapath/.dirstamp
+utilities/.dirstamp
+utilities/ofp-parse-leaks
+
