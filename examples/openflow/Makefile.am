@@ -64,5 +64,4 @@ include udatapath/automake.mk
 include tests/automake.mk
 include include/automake.mk
 include third-party/automake.mk
-include debian/automake.mk
 include hw-lib/automake.mk
