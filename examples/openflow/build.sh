@@ -1,7 +1,7 @@
 ./configure-llvm
 make -skj8
 
-#build stuff that normally requires `find lib | grep '\.o$'`
+#build stuff that normally requires lib/libopenflow.a
 
 llvm-gcc -Wstrict-prototypes -fomit-frame-pointer -DENABLE_SPA -DENABLE_KLEE -emit-llvm -use-gold-plugin -O0 -g -Wall -Wno-sign-compare -Wpointer-arith -Wdeclaration-after-statement -Wformat-security -Wswitch-enum -Wunused-parameter -Wstrict-aliasing -Wbad-function-cast -Wcast-align -Wstrict-prototypes -Wold-style-definition -Wmissing-prototypes -Wmissing-field-initializers -Wno-override-init   -o secchan/ofprotocol secchan/discovery.o secchan/emerg-flow.o secchan/fail-open.o secchan/failover.o secchan/in-band.o secchan/port-watcher.o secchan/protocol-stat.o secchan/ratelimit.o secchan/secchan.o secchan/status.o secchan/stp-secchan.o `find lib | grep '\.o'` -ldl
 
@@ -26,4 +26,6 @@ llvm-gcc -Wstrict-prototypes -fomit-frame-pointer -DENABLE_SPA -DENABLE_KLEE -em
 llvm-gcc -Wstrict-prototypes -fomit-frame-pointer -DENABLE_SPA -DENABLE_KLEE -emit-llvm -use-gold-plugin -O0 -g -Wall -Wno-sign-compare -Wpointer-arith -Wdeclaration-after-statement -Wformat-security -Wswitch-enum -Wunused-parameter -Wstrict-aliasing -Wbad-function-cast -Wcast-align -Wstrict-prototypes -Wold-style-definition -Wmissing-prototypes -Wmissing-field-initializers -Wno-override-init   -o tests/test-dhcp-client tests/test-dhcp-client.o `find lib | grep '\.o$'` -ldl 
 
 llvm-gcc -Wstrict-prototypes -fomit-frame-pointer -DENABLE_SPA -DENABLE_KLEE -emit-llvm -use-gold-plugin -O0 -g -Wall -Wno-sign-compare -Wpointer-arith -Wdeclaration-after-statement -Wformat-security -Wswitch-enum -Wunused-parameter -Wstrict-aliasing -Wbad-function-cast -Wcast-align -Wstrict-prototypes -Wold-style-definition -Wmissing-prototypes -Wmissing-field-initializers -Wno-override-init   -o tests/test-stp tests/test-stp.o `find lib | grep '\.o$'` 
+
+make -skj8
 
