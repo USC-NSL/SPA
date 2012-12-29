@@ -46,4 +46,4 @@ tests/test-hmap
 udatapath/.dirstamp
 utilities/.dirstamp
 utilities/ofp-parse-leaks
-
+*.swp
