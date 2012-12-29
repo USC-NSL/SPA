@@ -1,0 +1,11 @@
+Build instructions:
+   gcc version:
+      configure with:
+         mkdir build
+         cd build
+         LDFLAGS=-lpthread ../configure --with-boost=/opt/boost_1_46_1_gcc --with-boost-libdir=/opt/boost_1_46_1_gcc/lib
+      build with:
+         make -j8
+      run with (from build directory):
+         cd src
+         LD_LIBRARY_PATH=/opt/boost_1_46_1_gcc/lib/ ./nox_core
