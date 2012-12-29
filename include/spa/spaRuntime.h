@@ -79,8 +79,18 @@ SpaTag_t ValidPath;
 #define spa_api_output( var, size, name ) do { __spa_output( (void *) var, size, "spa_out_api_" name ); spa_runtime_call( spa_api_output_handler, var, size, "spa_out_api_" name ); while ( 0 )
 #define spa_api_output_var( var ) spa_api_output( var, sizeof( var ), #var )
 
-#define spa_msg_input( var, size, name ) do { klee_make_symbolic( var, size, "spa_in_msg_" name ); spa_runtime_call( spa_msg_input_handler, var, size, "spa_in_msg_" name ); } while ( 0 )
-#define spa_msg_input_size( var, name ) do { klee_make_symbolic( &var, sizeof( var ), "spa_in_msg_size_" name ); spa_runtime_call( spa_msg_input_size_handler, &var, "spa_in_msg_size_" name ); } while ( 0 )
+SpaTag_t MsgReceived;
+#define spa_msg_input( var, size, name ) do { \
+	static uint8_t * initialValue = NULL; \
+	spa_input( var, size, "spa_in_msg_" name, &initialValue, "spa_init_in_msg_" name ); \
+	spa_tag( MsgReceived, "1" ); \
+	spa_runtime_call( spa_msg_input_handler, var, size, "spa_in_msg_" name ); \
+} while ( 0 )
+#define spa_msg_input_size( var, name ) do { \
+	static uint8_t * initialValue = NULL; \
+	spa_input( &var, sizeof( var ), "spa_in_msg_size_" name, &initialValue, "spa_init_in_msg_size_" name ); \
+	spa_runtime_call( spa_msg_input_size_handler, &var, "spa_in_msg_size_" name ); \
+} while ( 0 )
 #define spa_msg_input_var( var ) spa_msg_input( &var, sizeof( var ), #var )
 #define spa_msg_output( var, size, name ) do { __spa_output( (void *) var, size, "spa_out_msg_" name, "spa_out_msg_size_" name ); spa_runtime_call( spa_msg_output_handler, var, size, "spa_out_msg_" name ); } while ( 0 )
 #define spa_msg_output_var( var ) spa_msg_output( &var, sizeof( var ), #var )

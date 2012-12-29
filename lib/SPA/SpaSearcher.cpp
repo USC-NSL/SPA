@@ -138,8 +138,8 @@ namespace SPA {
 			<< "]; Processed: " << statesDequeued
 			<< "; Filtered: " << statesFiltered );
 
-		CLOUD9_DEBUG( "[SpaSearcher] Selecting state:" );
-		klee::c9::printStateStack( std::cerr, *states.begin()->second ) << std::endl;
+// 		CLOUD9_DEBUG( "[SpaSearcher] Selecting state:" );
+// 		klee::c9::printStateStack( std::cerr, *states.begin()->second ) << std::endl;
 		return *states.begin()->second;
 	}
 

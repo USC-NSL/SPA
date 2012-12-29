@@ -33,8 +33,12 @@ std::ostream &log() {
 	static std::ofstream logFile;
 
 	if ( ! logFile.is_open() ) {
-		char *filename = getenv( "SPA_LOG_FILE" );
-		assert( filename && "SPA_LOG_FILE not defined in environment." );
+		const char *filename = getenv( "SPA_LOG_FILE" );
+// 		assert( filename && "SPA_LOG_FILE not defined in environment." );
+		if ( filename == NULL ) {
+			std::cerr << "SPA_LOG_FILE not defined in environment. Logging to /dev/null." << std::endl;
+			filename = "/dev/null";
+		}
 
 		logFile.open( filename, std::ios_base::out | std::ios_base::app );
 		assert( logFile.is_open() && "Unable to open SPA log file." );
@@ -111,7 +115,7 @@ extern "C" {
 
 	void spa_valid_path_handler( va_list args ) {
 		std::cerr << "Valid path." << std::endl;
-		exit( 200 );
+// 		exit( 200 );
 	}
 
 	void spa_invalid_path_handler( va_list args ) {

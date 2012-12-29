@@ -561,6 +561,11 @@ namespace SPA {
 	}
 
 	void SPA::onControlFlowEvent( klee::ExecutionState *kState, cloud9::worker::ControlFlowEvent event ) {
+// 		if ( event == cloud9::worker::STEP ) {
+// 			CLOUD9_DEBUG( "Current state at:" );
+// 			klee::c9::printStateStack( std::cerr, *kState ) << std::endl;
+// 		}
+
 		if ( event == cloud9::worker::STEP && checkpoints.count( kState->pc()->inst ) ) {
 			CLOUD9_DEBUG( "Processing checkpoint path." );
 			checkpointsFound++;
@@ -570,8 +575,8 @@ namespace SPA {
 	}
 
 	void SPA::onStateDestroy(klee::ExecutionState *kState, bool silenced) {
-		CLOUD9_DEBUG( "Destroying path at:" );
-		klee::c9::printStateStack( std::cerr, *kState ) << std::endl;
+// 		CLOUD9_DEBUG( "Destroying path at:" );
+// 		klee::c9::printStateStack( std::cerr, *kState ) << std::endl;
 
 		if ( ! kState->filtered ) {
 			terminalPathsFound++;
