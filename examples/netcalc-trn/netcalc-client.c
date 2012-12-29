@@ -31,7 +31,7 @@ void discoverCapability() {
 
 		spa_msg_output_var( capabilityRequest );
 
-#ifndef ENABLE_KLEE
+#ifndef ENABLE_SPA
 		assert( sendto( sock, &capabilityRequest, sizeof( capabilityRequest ), 0, server->ai_addr, server->ai_addrlen ) == sizeof( capabilityRequest ) );
 		assert( recv( sock, &capabilityResponse, sizeof( capabilityResponse ), 0 ) == sizeof( capabilityResponse ) );
 #endif
@@ -41,54 +41,61 @@ void discoverCapability() {
 		assert( capabilityResponse.err == NC_OK && "Query failed." );
 
 		capability = (nc_operator_t) capabilityResponse.value;
+		printf( "Discovered server capability: %d\n", capability );
 	}
 }
 
 // Executes a single query on the remote server.
 nc_value_t executeQuery( nc_operator_t op, nc_value_t arg1, nc_value_t arg2 ) {
-	spa_state_var( capability );
+// 	spa_state_var( capability );
 	
 	spa_api_input_var( op );
 	spa_api_input_var( arg1 );
 	spa_api_input_var( arg2 );
 
-	spa_seed_var( 1, op, NC_ADDITION );
-	spa_seed_var( 1, arg1, 1 );
-	spa_seed_var( 1, arg2, 2 );
-
-	spa_seed_var( 2, op, NC_SUBTRACTION );
-	spa_seed_var( 2, arg1, 2 );
-	spa_seed_var( 2, arg2, 1 );
+// 	spa_seed_var( 1, op, NC_ADDITION );
+// 	spa_seed_var( 1, arg1, 1 );
+// 	spa_seed_var( 1, arg2, 2 );
+// 
+// 	spa_seed_var( 2, op, NC_SUBTRACTION );
+// 	spa_seed_var( 2, arg1, 2 );
+// 	spa_seed_var( 2, arg2, 1 );
 
 	discoverCapability();
 
-	assert( (op == NC_CAPABILITY || (op >= 0 && op <= capability)) && "Invalid operator in query.");
+	assert( op > NC_CAPABILITY && op <= capability && "Invalid operator in query.");
 // 	assert( (op == NC_CAPABILITY || (op >= 0 && op <  capability)) && "Invalid operator in query.");
-	assert( (op != NC_DIVISION || arg2 != 0) && "Division by zero.");
-	assert( (op != NC_MODULO || arg2 != 0) && "Modulo by zero.");
+// 	assert( (op != NC_DIVISION || arg2 != 0) && "Division by zero.");
+// 	assert( (op != NC_MODULO || arg2 != 0) && "Modulo by zero.");
 
 	nc_query_t query;
+	nc_response_t response;
 	query.op = op;
 	query.arg1 = arg1;
 	query.arg2 = arg2;
 
 	spa_msg_output_var( query );
 
+#ifndef ENABLE_KLEE
 	// Send query.
 	assert( sendto( sock, &query, sizeof( query ), 0, server->ai_addr, server->ai_addrlen ) == sizeof( query ) );
 	// Get response.
-	nc_response_t response;
 	assert( recv( sock, &response, sizeof( response ), 0 ) == sizeof( response ) );
+#endif
+
+	spa_msg_input_var( response );
+
 	// Output operation.
-	if ( response.err == NC_OK ) {
-		if ( query.op == NC_CAPABILITY )
-			std::cerr << "	" << getOpName( query.op ) << " = " << response.value << std::endl;
-		else
-			std::cerr << "	" << query.arg1 << " " << getOpName( query.op ) << " " << query.arg2 << " = " << response.value << std::endl;
-	} else {
-		std::cerr << "Error: " << getErrText( response.err ) << std::endl;
-	}
+// 	if ( response.err == NC_OK ) {
+// 		if ( query.op == NC_CAPABILITY )
+// 			std::cerr << "	" << getOpName( query.op ) << " = " << response.value << std::endl;
+// 		else
+// 			std::cerr << "	" << query.arg1 << " " << getOpName( query.op ) << " " << query.arg2 << " = " << response.value << std::endl;
+// 	} else {
+// 		std::cerr << "Error: " << getErrText( response.err ) << std::endl;
+// 	}
 	assert( response.err == NC_OK && "Query failed." );
+	spa_valid_path();
 
 	return response.value;
 }
