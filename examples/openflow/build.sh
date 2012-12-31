@@ -2,7 +2,7 @@
 echo
 echo
 echo
-`cat llvm-vars` make -skj8
+make -skj8
 echo
 echo
 echo
