@@ -296,10 +296,10 @@ int main(int argc, char **argv, char **envp) {
 // 	spa.addStateUtilityBack( new SPA::DepthUtility(), false );
 	if ( Client ) {
 		spa.addStateUtilityBack( new SPA::AstarUtility( cfg, cg, checkpoints ), false );
-// 		spa.addStateUtilityBack( new SPA::TargetDistanceUtility( cfg, cg, checkpoints ), false );
+		spa.addStateUtilityBack( new SPA::TargetDistanceUtility( cfg, cg, checkpoints ), false );
 	} else if ( Server && filter ) {
 		spa.addStateUtilityBack( new SPA::AstarUtility( cfg, cg, *filter ), false );
-// 		spa.addStateUtilityBack( new SPA::TargetDistanceUtility( cfg, cg, *filter ), false );
+		spa.addStateUtilityBack( new SPA::TargetDistanceUtility( cfg, cg, *filter ), false );
 	}
 
 	if ( DumpCFG.size() > 0 ) {

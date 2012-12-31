@@ -43,6 +43,8 @@
 #define SPA_APIHANDLER_VALUE		"API"
 #define SPA_OUTPUT_TAG				"Output"
 #define SPA_OUTPUT_VALUE			"1"
+#define SPA_MSGRECEIVED_TAG			"MsgReceived"
+#define SPA_MSGRECEIVED_VALUE		"1"
 #define SPA_VALIDPATH_TAG			"ValidPath"
 #define SPA_VALIDPATH_VALUE			"1"
 

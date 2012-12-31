@@ -36,9 +36,20 @@ extern "C" {
 #endif// #ifdef __cplusplus
 
 
+#ifdef ENABLE_KLEE
+
+#define spa_assume( x ) klee_assume( x )
+
+#else // #ifdef ENABLE_KLEE
+
+#define spa_assume( x ) assert( x )
+
+#endif // #ifdef ENABLE_KLEE #else
+
+
 #ifdef ENABLE_SPA
 
-#define spa_tag( var, value ) __spa_tag( &var, "spa_tag_" #var, value ); spa_runtime_call( spa_tag_handler, "spa_tag_" #var, value )
+#define spa_tag( var, value ) do { __spa_tag( &var, "spa_tag_" #var, value ); spa_runtime_call( spa_tag_handler, "spa_tag_" #var, value ); } while ( 0 )
 void __attribute__((weak)) __spa_tag( SpaTag_t *var, const char *varName, SpaTag_t value ) {
 	klee_make_symbolic( var, sizeof( char * ), varName );
 	*var = value;
@@ -48,52 +59,48 @@ void __attribute__((weak)) __spa_tag( SpaTag_t *var, const char *varName, SpaTag
 SpaTag_t ValidPath;
 #define spa_default_invalid() spa_tag( ValidPath, "0" )
 #define spa_default_valid() spa_tag( ValidPath, "1" )
-#define spa_invalid_path() spa_tag( ValidPath, "0" ); spa_runtime_call( spa_invalid_path_handler ); spa_checkpoint()
-#define spa_valid_path() spa_tag( ValidPath, "1" ); spa_runtime_call( spa_valid_path_handler ); spa_checkpoint()
+#define spa_invalid_path() do { spa_tag( ValidPath, "0" ); spa_runtime_call( spa_invalid_path_handler ); spa_waypoint( SPA_MAX_WAYPOINTS - 2 ); spa_checkpoint(); } while ( 0 )
+#define spa_valid_path() do { spa_tag( ValidPath, "1" ); spa_runtime_call( spa_valid_path_handler ); spa_waypoint( SPA_MAX_WAYPOINTS - 2 ); spa_checkpoint(); } while ( 0 )
 
-#define spa_api_input( var, size, name ) { \
+#define spa_api_input( var, size, name ) do { \
 	static uint8_t * initialValue = NULL; \
 	spa_input( var, size, "spa_in_api_" name, &initialValue, "spa_init_in_api_" name ); \
 	spa_runtime_call( spa_api_input_handler, var, size, "spa_in_api_" name ); \
-}
+} while ( 0 )
 #define spa_api_input_var( var ) spa_api_input( &var, sizeof( var ), #var )
 
-#define spa_state( var, size, name ) { \
+#define spa_state( var, size, name ) do { \
 	static uint8_t * initialValue = NULL; \
 	spa_input( var, size, "spa_state_" name, &initialValue, "spa_init_state_" name ); \
 	spa_runtime_call( spa_state_handler, var, size, "spa_state_" name ); \
-}
+} while ( 0 )
 #define spa_state_var( var ) spa_state( &var, sizeof( var ), #var )
 
-#define spa_api_output( var, size, name ) __spa_output( (void *) var, size, "spa_out_api_" name ); spa_runtime_call( spa_api_output_handler, var, size, "spa_out_api_" name )
+#define spa_api_output( var, size, name ) do { __spa_output( (void *) var, size, "spa_out_api_" name ); spa_runtime_call( spa_api_output_handler, var, size, "spa_out_api_" name ); while ( 0 )
 #define spa_api_output_var( var ) spa_api_output( var, sizeof( var ), #var )
 
-#define spa_msg_input( var, size, name ) klee_make_symbolic( var, size, "spa_in_msg_" name ); spa_runtime_call( spa_msg_input_handler, var, size, "spa_in_msg_" name )
-#define spa_msg_input_size( var, name ) klee_make_symbolic( &var, sizeof( var ), "spa_in_msg_size_" name ); spa_runtime_call( spa_msg_input_size_handler, &var, "spa_in_msg_size_" name )
+SpaTag_t MsgReceived;
+#define spa_msg_input( var, size, name ) do { \
+	static uint8_t * initialValue = NULL; \
+	spa_input( var, size, "spa_in_msg_" name, &initialValue, "spa_init_in_msg_" name ); \
+	spa_tag( MsgReceived, "1" ); \
+	spa_runtime_call( spa_msg_input_handler, var, size, "spa_in_msg_" name ); \
+} while ( 0 )
+#define spa_msg_input_size( var, name ) do { \
+	static uint8_t * initialValue = NULL; \
+	spa_input( &var, sizeof( var ), "spa_in_msg_size_" name, &initialValue, "spa_init_in_msg_size_" name ); \
+	spa_runtime_call( spa_msg_input_size_handler, &var, "spa_in_msg_size_" name ); \
+} while ( 0 )
 #define spa_msg_input_var( var ) spa_msg_input( &var, sizeof( var ), #var )
-#define spa_msg_output( var, size, name ) __spa_output( (void *) var, size, "spa_out_msg_" name, "spa_out_msg_size_" name ); spa_runtime_call( spa_msg_output_handler, var, size, "spa_out_msg_" name )
+#define spa_msg_output( var, size, name ) do { __spa_output( (void *) var, size, "spa_out_msg_" name, "spa_out_msg_size_" name ); spa_runtime_call( spa_msg_output_handler, var, size, "spa_out_msg_" name ); } while ( 0 )
 #define spa_msg_output_var( var ) spa_msg_output( &var, sizeof( var ), #var )
 
-void __attribute__((weak)) __spa_output( void *var, size_t size, const char *varName, const char *sizeName ) {
-	static SpaTag_t Output;
-	void *buffer = malloc( size );
-	klee_make_symbolic( buffer, size, varName );
-	memcpy( buffer, var, size );
-	size_t *bufSize = (size_t *) malloc( sizeof( size_t ) );
-	klee_make_symbolic( bufSize, sizeof( size_t ), sizeName );
-	*bufSize = size;
-	spa_tag( Output, "1" );
-// 	spa_checkpoint();
-}
-
-#define spa_assume( x ) klee_assume( x )
-
-#define spa_seed_var( id, var, value ) { \
+#define spa_seed_var( id, var, value ) do { \
 	typeof( var ) __v = value; \
 	spa_seed( id, &var, sizeof( var ), &__v ); \
-}
+} while ( 0 )
 
-#define spa_seed_file( id, var, fileName ) { \
+#define spa_seed_file( id, var, fileName ) do { \
 	if ( spa_internal_SeedID == id ) { \
 		struct stat st; \
 		klee_assert( stat( fileName, &st ) == 0 && "Unable to stat seed file." ); \
@@ -104,15 +111,15 @@ void __attribute__((weak)) __spa_output( void *var, size_t size, const char *var
 		fclose( file ); \
 		spa_seed( id, var, st.st_size, seedValue ); \
 	} \
-}
+} while ( 0 )
 
-#define spa_seed_file_size( id, var, fileName ) { \
+#define spa_seed_file_size( id, var, fileName ) do { \
 	if ( spa_internal_SeedID == id ) { \
 		struct stat st; \
 		klee_assert( stat( fileName, &st ) == 0 && "Unable to stat seed file." ); \
 		var = st.st_size; \
 	} \
-}
+} while ( 0 )
 
 #ifdef __cplusplus
 extern "C" {
@@ -150,6 +157,19 @@ extern "C" {
 #ifdef __cplusplus
 }
 #endif// #ifdef __cplusplus
+
+void __attribute__((weak)) __spa_output( void *var, size_t size, const char *varName, const char *sizeName ) {
+	static SpaTag_t Output;
+	void *buffer = malloc( size );
+	klee_make_symbolic( buffer, size, varName );
+	memcpy( buffer, var, size );
+	size_t *bufSize = (size_t *) malloc( sizeof( size_t ) );
+	klee_make_symbolic( bufSize, sizeof( size_t ), sizeName );
+	*bufSize = size;
+	spa_tag( Output, "1" );
+	// 	spa_checkpoint();
+	spa_waypoint( SPA_MAX_WAYPOINTS - 1 );
+}
 
 #else // #ifdef ENABLE_SPA
 

@@ -55,14 +55,19 @@ void handleQuery( nc_query_t &query, nc_response_t &response ) {
 	}
 
 	// Output the operation.
-	if ( response.err == NC_OK ) {
+// 	if ( response.err == NC_OK ) {
 // 		std::cout << query.arg1 << " " << getOpName( query.op ) << " " << query.arg2 << " = " << response.value << std::endl;
-		spa_valid_path();
-	} else {
+// 		spa_valid_path();
+// 	} else {
 // 		std::cerr << "Error: " << getErrText( response.err ) << std::endl;
-	}
+// 	}
 
 	spa_msg_output_var( response );
+	if ( response.err != NC_BADINPUT ) {
+		spa_valid_path();
+	} else {
+		spa_invalid_path();
+	}
 }
 
 void SpaHandleQueryEntry() {

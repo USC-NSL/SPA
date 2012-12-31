@@ -62,16 +62,21 @@ namespace {
 class SpaClientPathFilter : public SPA::PathFilter {
 public:
 	bool checkPath( SPA::Path &path ) {
-		return (! path.getTag( SPA_OUTPUT_TAG ).empty());
+		return path.getTag( SPA_OUTPUT_TAG ) == SPA_OUTPUT_VALUE &&
+			path.getTag( SPA_MSGRECEIVED_TAG ) == SPA_MSGRECEIVED_VALUE &&
+			path.getTag( SPA_VALIDPATH_TAG ) != SPA_VALIDPATH_VALUE;
 	}
 };
 
 class SpaServerPathFilter : public SPA::PathFilter {
 public:
 	bool checkPath( SPA::Path &path ) {
-		return path.getTag( SPA_HANDLERTYPE_TAG ) == SPA_MESSAGEHANDLER_VALUE &&
-			(path.getTag( SPA_VALIDPATH_TAG ) != SPA_VALIDPATH_VALUE || 
-				(! path.getTag( SPA_OUTPUT_TAG ).empty()));
+// 		return path.getTag( SPA_MSGRECEIVED_TAG ) == SPA_MSGRECEIVED_VALUE &&
+// 			(path.getTag( SPA_OUTPUT_TAG ) == SPA_OUTPUT_VALUE ||
+// 				path.getTag( SPA_VALIDPATH_TAG ) != SPA_VALIDPATH_VALUE);
+		return path.getTag( SPA_MSGRECEIVED_TAG ) == SPA_MSGRECEIVED_VALUE &&
+			path.getTag( SPA_OUTPUT_TAG ) == SPA_OUTPUT_VALUE &&
+			path.getTag( SPA_VALIDPATH_TAG ) == SPA_VALIDPATH_VALUE;
 	}
 };
 
@@ -115,7 +120,7 @@ int main(int argc, char **argv, char **envp) {
 			llvm::ConstantArray *ca;
 			assert( ca = dyn_cast<ConstantArray>( gv->getInitializer() ) );
 
-			CLOUD9_INFO( "      Found input " << ca->getAsString() << "." );
+			CLOUD9_INFO( "      Found input " << ca->getAsString().c_str() << "." );
 			// string reconversion to fix LLVM bug (includes null in std::string).
 			initValueVars[ca->getAsString().c_str()] = callInst->getArgOperand( 3 );
 		}
@@ -131,19 +136,19 @@ int main(int argc, char **argv, char **envp) {
 				std::vector<uint8_t> value;
 				std::stringstream ss( line );
 				ss >> name;
-				if ( initValueVars.count( name ) > 0 ) {
-					ss << std::hex;
-					while ( ss.good() ) {
-						int v;
-						ss >> v;
-						value.push_back( v );
-					}
-					initValues[initValueVars[name]] = value;
-					CLOUD9_DEBUG( "      Found initial value for " << name << "." );
+				ss << std::hex;
+				while ( ss.good() ) {
+					int v;
+					ss >> v;
+					value.push_back( v );
 				}
+
+				CLOUD9_DEBUG( "      Found initial value for " << name << "[" << value.size() << "]" << "." );
+				assert( initValueVars.count( name ) > 0 && "Initial value defined but not used." );
+				initValues[initValueVars[name]] = value;
 			} else {
 				if ( ! initValues.empty() ) {
-					CLOUD9_INFO( "      Adding initial value set." );
+					CLOUD9_INFO( "      Adding set of " << initValues.size() << " initial values." );
 					spa.addInitialValues( initValues );
 					initValues.clear();
 				}
@@ -283,9 +288,9 @@ int main(int argc, char **argv, char **envp) {
 	// Create instruction filter.
 	CLOUD9_DEBUG( "   Creating CFG filter." );
 	SPA::CFGBackwardFilter *filter = new SPA::CFGBackwardFilter( cfg, cg, checkpoints );
-	if ( Client )
-		spa.addStateUtilityBack( filter, false );
-	else if ( Server )
+// 	if ( Client )
+// 		spa.addStateUtilityBack( filter, false );
+// 	else if ( Server )
 		spa.addStateUtilityBack( filter, true );
 	for ( std::set<llvm::Instruction *>::iterator it = entryPoints.begin(), ie = entryPoints.end(); it != ie; it++ ) {
 		if ( ! filter->checkInstruction( *it ) ) {
@@ -307,13 +312,13 @@ int main(int argc, char **argv, char **envp) {
 	
 	spa.addStateUtilityBack( new SPA::FilteredUtility(), false );
 // 	spa.addStateUtilityBack( new SPA::DepthUtility(), false );
-	if ( Client ) {
-		spa.addStateUtilityBack( new SPA::AstarUtility( cfg, cg, checkpoints ), false );
+// 	if ( Client ) {
+// 		spa.addStateUtilityBack( new SPA::AstarUtility( cfg, cg, checkpoints ), false );
 // 		spa.addStateUtilityBack( new SPA::TargetDistanceUtility( cfg, cg, checkpoints ), false );
-	} else if ( Server && filter ) {
+// 	} else if ( Server && filter ) {
 		spa.addStateUtilityBack( new SPA::AstarUtility( cfg, cg, *filter ), false );
-// 		spa.addStateUtilityBack( new SPA::TargetDistanceUtility( cfg, cg, *filter ), false );
-	}
+		spa.addStateUtilityBack( new SPA::TargetDistanceUtility( cfg, cg, *filter ), false );
+// 	}
 
 	if ( DumpCFG.size() > 0 ) {
 		CLOUD9_DEBUG( "Dumping CFG to: " << DumpCFG.getValue() );
@@ -333,7 +338,8 @@ int main(int argc, char **argv, char **envp) {
 	}
 
 	if ( Client ) {
-		spa.setOutputTerminalPaths( false );
+// 		spa.setOutputTerminalPaths( false );
+		spa.setOutputTerminalPaths( true );
 		spa.setPathFilter( new SpaClientPathFilter() );
 	} else if ( Server ) {
 		spa.setOutputTerminalPaths( true );
