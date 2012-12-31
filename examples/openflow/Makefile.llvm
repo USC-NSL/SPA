@@ -1,0 +1,43 @@
+LDFLAGS='-lLLVMCore -lLLVMSupport -L/usr/local/bin/llvm/Release+Asserts/lib -lpthread -ldl -lm'
+CC=" ${LDFLAGS}"
+LIB_OBJ='lib/dhcp-client.o lib/util.o lib/vlog.o lib/vconn-unix.o lib/dynamic-string.o lib/fatal-signal.o lib/dirs.o lib/hash.o lib/backtrace.o lib/learning-switch.o lib/svec.o lib/bitmap.o lib/random.o lib/port-array.o lib/vconn.o lib/ofpbuf.o lib/vconn-stream.o lib/fault.o lib/vconn-netlink.o lib/stp.o lib/tag.o lib/process.o lib/flow.o lib/leak-checker.o lib/dhcp.o lib/socket-util.o lib/queue.o lib/hmap.o lib/vconn-tcp.o lib/poll-loop.o lib/timeval.o lib/ofp-print.o lib/list.o lib/daemon.o lib/pcap.o lib/dpif.o lib/signals.o lib/command-line.o lib/rconn.o lib/netdev.o lib/ofpstat.o lib/shash.o lib/mac-learning.o lib/vlog-socket.o lib/csum.o lib/netlink.o'
+.PHONY: all
+
+all: secchan/ofprotocol controller/controller utilities/vlogconf utilities/dpctl utilities/ofp-discover utilities/ofp-kill udatapath/ofdatapath tests/test-flows tests/test-hmap tests/test-list tests/test-dhcp-client tests/test-stp
+
+secchan/ofprotocol: secchan/discovery.o secchan/emerg-flow.o secchan/fail-open.o secchan/failover.o secchan/in-band.o secchan/port-watcher.o secchan/protocol-stat.o secchan/ratelimit.o secchan/secchan.o secchan/status.o secchan/stp-secchan.o ${LIB_OBJ}
+	${CC}$@ $^
+
+controller/controller: controller/controller.o ${LIB_OBJ}
+	${CC}$@ $^
+
+utilities/vlogconf: utilities/vlogconf.o ${LIB_OBJ}
+	${CC}$@ $^
+
+utilities/dpctl: utilities/dpctl.o ${LIB_OBJ}
+	${CC}$@ $^
+
+utilities/ofp-discover: utilities/ofp-discover.o  ${LIB_OBJ}
+	${CC}$@ $^
+
+utilities/ofp-kill: utilities/ofp-kill.o  ${LIB_OBJ}
+	${CC}$@ $^
+
+udatapath/ofdatapath: udatapath/udatapath_ofdatapath-chain.o udatapath/udatapath_ofdatapath-crc32.o udatapath/udatapath_ofdatapath-datapath.o udatapath/udatapath_ofdatapath-dp_act.o udatapath/udatapath_ofdatapath-of_ext_msg.o udatapath/udatapath_ofdatapath-udatapath.o udatapath/udatapath_ofdatapath-private-msg.o udatapath/udatapath_ofdatapath-switch-flow.o udatapath/udatapath_ofdatapath-table-hash.o udatapath/udatapath_ofdatapath-table-linear.o ${LIB_OBJ}
+	${CC}$@ $^
+
+tests/test-flows: tests/test-flows.o  ${LIB_OBJ}
+	${CC}$@ $^
+
+tests/test-hmap: tests/test-hmap.o  ${LIB_OBJ}
+	${CC}$@ $^
+
+tests/test-list: tests/test-list.o  ${LIB_OBJ}
+	${CC}$@ $^
+
+tests/test-dhcp-client: tests/test-dhcp-client.o ${LIB_OBJ} 
+	${CC}$@ $^
+
+tests/test-stp: tests/test-stp.o ${LIB_OBJ}
+	${CC}$@ $^
+
