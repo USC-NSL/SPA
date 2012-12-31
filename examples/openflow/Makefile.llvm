@@ -22,38 +22,38 @@ dummy/dummylibdl.o: dummy/dummylibdl.c
 	${CC} ${CFLAGS} -c -o $@ $^
 
 secchan/ofprotocol: secchan/discovery.o secchan/emerg-flow.o secchan/fail-open.o secchan/failover.o secchan/in-band.o secchan/port-watcher.o secchan/protocol-stat.o secchan/ratelimit.o secchan/secchan.o secchan/status.o secchan/stp-secchan.o ${LIB_OBJ}
-	${CC} ${CFLAGS} -o $@ $^
+	${LD}  -o $@ $^
 
 controller/controller: controller/controller.o ${LIB_OBJ}
-	${CC} ${CFLAGS} -o $@ $^
+	${LD}  -o $@ $^
 
 utilities/vlogconf: utilities/vlogconf.o ${LIB_OBJ}
-	${CC} ${CFLAGS} -o $@ $^
+	${LD}  -o $@ $^
 
 utilities/dpctl: utilities/dpctl.o ${LIB_OBJ}
-	${CC} ${CFLAGS} -o $@ $^
+	${LD}  -o $@ $^
 
 utilities/ofp-discover: utilities/ofp-discover.o  ${LIB_OBJ}
-	${CC} ${CFLAGS} -o $@ $^
+	${LD}  -o $@ $^
 
 utilities/ofp-kill: utilities/ofp-kill.o  ${LIB_OBJ}
-	${CC} ${CFLAGS} -o $@ $^
+	${LD}  -o $@ $^
 
 udatapath/ofdatapath: udatapath/udatapath_ofdatapath-chain.o udatapath/udatapath_ofdatapath-crc32.o udatapath/udatapath_ofdatapath-datapath.o udatapath/udatapath_ofdatapath-dp_act.o udatapath/udatapath_ofdatapath-of_ext_msg.o udatapath/udatapath_ofdatapath-udatapath.o udatapath/udatapath_ofdatapath-private-msg.o udatapath/udatapath_ofdatapath-switch-flow.o udatapath/udatapath_ofdatapath-table-hash.o udatapath/udatapath_ofdatapath-table-linear.o ${LIB_OBJ}
-	${CC} ${CFLAGS} -o $@ $^
+	${LD}  -o $@ $^
 
 tests/test-flows: tests/test-flows.o  ${LIB_OBJ}
-	${CC} ${CFLAGS} -o $@ $^
+	${LD}  -o $@ $^
 
 tests/test-hmap: tests/test-hmap.o  ${LIB_OBJ}
-	${CC} ${CFLAGS} -o $@ $^
+	${LD}  -o $@ $^
 
 tests/test-list: tests/test-list.o  ${LIB_OBJ}
-	${CC} ${CFLAGS} -o $@ $^
+	${LD}  -o $@ $^
 
 tests/test-dhcp-client: tests/test-dhcp-client.o ${LIB_OBJ} 
-	${CC} ${CFLAGS} -o $@ $^
+	${LD}  -o $@ $^
 
 tests/test-stp: tests/test-stp.o ${LIB_OBJ}
-	${CC} ${CFLAGS} -o $@ $^
+	${LD}  -o $@ $^
 
