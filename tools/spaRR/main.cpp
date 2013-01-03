@@ -127,20 +127,27 @@ int main(int argc, char **argv, char **envp) {
 
 		std::ifstream initValueFile( InitValueFile.c_str() );
 		assert( initValueFile.is_open() );
-		std::map<llvm::Value *, std::vector<uint8_t> > initValues;
+		std::map<llvm::Value *, std::vector<std::pair<bool,uint8_t> > > initValues;
 		while ( initValueFile.good() ) {
 			std::string line;
 			getline( initValueFile, line );
 			if ( ! line.empty() ) {
 				std::string name;
-				std::vector<uint8_t> value;
+				std::vector<std::pair<bool,uint8_t> > value;
 				std::stringstream ss( line );
 				ss >> name;
 				ss << std::hex;
 				while ( ss.good() ) {
 					int v;
 					ss >> v;
-					value.push_back( v );
+					if ( ! ss.fail() ) {
+						value.push_back( std::pair<bool,uint8_t>( true, v ) );
+					} else {
+						value.push_back( std::pair<bool,uint8_t>( false, 0 ) );
+						ss.clear();
+						std::string dummy;
+						ss >> dummy;
+					}
 				}
 
 				CLOUD9_DEBUG( "      Found initial value for " << name << "[" << value.size() << "]" << "." );
@@ -312,13 +319,21 @@ int main(int argc, char **argv, char **envp) {
 	
 	spa.addStateUtilityBack( new SPA::FilteredUtility(), false );
 // 	spa.addStateUtilityBack( new SPA::DepthUtility(), false );
-// 	if ( Client ) {
+	if ( Client ) {
 // 		spa.addStateUtilityBack( new SPA::AstarUtility( cfg, cg, checkpoints ), false );
 // 		spa.addStateUtilityBack( new SPA::TargetDistanceUtility( cfg, cg, checkpoints ), false );
-// 	} else if ( Server && filter ) {
-		spa.addStateUtilityBack( new SPA::AstarUtility( cfg, cg, *filter ), false );
-		spa.addStateUtilityBack( new SPA::TargetDistanceUtility( cfg, cg, *filter ), false );
-// 	}
+		if ( filter ) {
+			spa.addStateUtilityBack( new SPA::AstarUtility( cfg, cg, *filter ), false );
+			spa.addStateUtilityBack( new SPA::TargetDistanceUtility( cfg, cg, *filter ), false );
+		}
+	} else if ( Server ) {
+// 		if ( filter ) {
+// 			spa.addStateUtilityBack( new SPA::AstarUtility( cfg, cg, *filter ), false );
+// 			spa.addStateUtilityBack( new SPA::TargetDistanceUtility( cfg, cg, *filter ), false );
+// 		}
+		spa.addStateUtilityBack( new SPA::AstarUtility( cfg, cg, checkpoints ), false );
+		spa.addStateUtilityBack( new SPA::TargetDistanceUtility( cfg, cg, checkpoints ), false );
+	}
 
 	if ( DumpCFG.size() > 0 ) {
 		CLOUD9_DEBUG( "Dumping CFG to: " << DumpCFG.getValue() );

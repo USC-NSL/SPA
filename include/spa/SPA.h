@@ -81,8 +81,8 @@ namespace SPA {
 		void addEntryFunction( llvm::Function *fn );
 		void addSeedEntryFunction( unsigned int seedID, llvm::Function *fn );
 		void newEntryLevel();
-		void addInitialValues( std::map<llvm::Value *, std::vector<uint8_t> > values );
-		void addSymbolicInitialValues();
+		void addInitialValues( std::map<llvm::Value *, std::vector<std::pair<bool,uint8_t> > > values );
+		void addSymbolicInitialValues() { addInitialValues( std::map<llvm::Value *, std::vector<std::pair<bool,uint8_t> > >() ); }
 		void addStateUtilityFront( StateUtility *stateUtility, bool _outputFilteredPaths ) {
 			stateUtilities.push_front( stateUtility );
 			outputFilteredPaths.push_front( _outputFilteredPaths );
