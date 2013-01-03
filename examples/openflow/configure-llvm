@@ -1,8 +1,13 @@
 #!/bin/sh
-
-CC='llvm-gcc' CFLAGS='-DENABLE_SPA -DENABLE_KLEE -emit-llvm -use-gold-plugin -O0 -g' \
-CXX='llvm-g++' CXXFLAGS='-DENABLE_SPA -DENABLE_KLEE -emit-llvm -use-gold-plugin -O0 -g' \
-CPP='llvm-cpp' LD='llvm-ld' AR='echo' RANLIB='echo' ./configure \
+CC='llvm-gcc' \
+CFLAGS='-DENABLE_SPA -DENABLE_KLEE -emit-llvm -use-gold-plugin -O0 -g' \
+CXX='llvm-g++' \
+CXXFLAGS='-DENABLE_SPA -DENABLE_KLEE -emit-llvm -use-gold-plugin -O0 -g' \
+CPP='llvm-cpp' \
+LD='llvm-ld' \
+AR='echo' \
+RANLIB='echo' \
+./configure \
 --enable-ndebug \
 --disable-ssl \
 --disable-largefile
