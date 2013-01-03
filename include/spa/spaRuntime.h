@@ -63,15 +63,15 @@ SpaTag_t ValidPath;
 #define spa_valid_path() do { spa_tag( ValidPath, "1" ); spa_runtime_call( spa_valid_path_handler ); spa_waypoint( SPA_MAX_WAYPOINTS - 2 ); spa_checkpoint(); } while ( 0 )
 
 #define spa_api_input( var, size, name ) do { \
-	static uint8_t * initialValue = NULL; \
-	spa_input( var, size, "spa_in_api_" name, &initialValue, "spa_init_in_api_" name ); \
+	static uint8_t *initialValue[2] = { NULL, NULL }; \
+	spa_input( var, size, "spa_in_api_" name, initialValue, "spa_init_in_api_" name ); \
 	spa_runtime_call( spa_api_input_handler, var, size, "spa_in_api_" name ); \
 } while ( 0 )
 #define spa_api_input_var( var ) spa_api_input( &var, sizeof( var ), #var )
 
 #define spa_state( var, size, name ) do { \
-	static uint8_t * initialValue = NULL; \
-	spa_input( var, size, "spa_state_" name, &initialValue, "spa_init_state_" name ); \
+	static uint8_t *initialValue[2] = { NULL, NULL }; \
+	spa_input( var, size, "spa_state_" name, initialValue, "spa_init_state_" name ); \
 	spa_runtime_call( spa_state_handler, var, size, "spa_state_" name ); \
 } while ( 0 )
 #define spa_state_var( var ) spa_state( &var, sizeof( var ), #var )
@@ -81,14 +81,14 @@ SpaTag_t ValidPath;
 
 SpaTag_t MsgReceived;
 #define spa_msg_input( var, size, name ) do { \
-	static uint8_t * initialValue = NULL; \
-	spa_input( var, size, "spa_in_msg_" name, &initialValue, "spa_init_in_msg_" name ); \
+	static uint8_t *initialValue[2] = { NULL, NULL }; \
+	spa_input( var, size, "spa_in_msg_" name, initialValue, "spa_init_in_msg_" name ); \
 	spa_tag( MsgReceived, "1" ); \
 	spa_runtime_call( spa_msg_input_handler, var, size, "spa_in_msg_" name ); \
 } while ( 0 )
 #define spa_msg_input_size( var, name ) do { \
-	static uint8_t * initialValue = NULL; \
-	spa_input( &var, sizeof( var ), "spa_in_msg_size_" name, &initialValue, "spa_init_in_msg_size_" name ); \
+	static uint8_t *initialValue[2] = { NULL, NULL }; \
+	spa_input( &var, sizeof( var ), "spa_in_msg_size_" name, initialValue, "spa_init_in_msg_size_" name ); \
 	spa_runtime_call( spa_msg_input_size_handler, &var, "spa_in_msg_size_" name ); \
 } while ( 0 )
 #define spa_msg_input_var( var ) spa_msg_input( &var, sizeof( var ), #var )
@@ -124,14 +124,26 @@ SpaTag_t MsgReceived;
 #ifdef __cplusplus
 extern "C" {
 #endif// #ifdef __cplusplus
-	void __attribute__((noinline,weak)) spa_input( void *var, size_t size, const char varName[], uint8_t **initialValue, const char initialValueName[] ) {
+	void __attribute__((noinline,weak)) spa_input( void *var, size_t size, const char varName[], uint8_t *initialValue[], const char initialValueName[] ) {
 		klee_make_symbolic( var, size, varName );
 
-		if ( *initialValue ) {
-			memcpy( var, *initialValue, size );
-
-			klee_make_symbolic( *initialValue, size, initialValueName );
-			memcpy( *initialValue, var, size );
+		// Check if initial assumptions are specified.
+		if ( initialValue[0] && initialValue[1] ) {
+			bool concrete = true;
+			// For each byte, check symbolic mask and specified assumption.
+			for ( size_t i = 0; i < size; i++ ) {
+				if ( initialValue[1][i] ) { // Concrete byte.
+					spa_assume( ((uint8_t *) var)[i] == initialValue[0][i] );
+				} else { // Symbolic byte.
+					concrete = false;
+				}
+			}
+			// Output initial value if it is fully concrete.
+			if ( concrete ) {
+				void *buffer = malloc( size );
+				klee_make_symbolic( buffer, size, initialValueName );
+				memcpy( buffer, initialValue[0], size );
+			}
 		}
 	}
 
