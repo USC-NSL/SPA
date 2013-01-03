@@ -1,6 +1,7 @@
 BADINPUTS = BadInputs.untested BadInputs.tested
 PATHS = netcalc-client.bc.client.paths netcalc-server.bc.server.paths
 CLIENT_INPUTS = netcalc-client.in
+SERVER_INPUTS = netcalc-server.in
 CFGS = netcalc-client.pdf netcalc-server.pdf
 TARGETS = netcalc-client.exe netcalc-server.exe
 BC_TARGETS = netcalc-client.bc netcalc-server.bc
@@ -47,8 +48,8 @@ all: $(TARGETS) $(BC_TARGETS) $(TEST_TARGETS) $(LOG_TARGETS)
 %.bc.client.paths: %.bc $(CLIENT_INPUTS) $(SPA_EXE)
 	$(SPA) --init-values $(CLIENT_INPUTS) --client $< 2>&1 | tee $@.log
 
-%.bc.server.paths: %.bc $(SPA_EXE)
-	$(SPA) --server $< 2>&1 | tee $@.log
+%.bc.server.paths: %.bc $(SERVER_INPUTS) $(SPA_EXE)
+	$(SPA) --init-values $(SERVER_INPUTS) --server $< 2>&1 | tee $@.log
 
 BadInputs.untested: $(PATHS)
 	spaBadInputs -client netcalc-client.bc.client.paths -server netcalc-server.bc.server.paths -o $@ -d $@.debug 2>&1 | tee $@.log
@@ -74,4 +75,4 @@ run-spa: BadInputs.tested
 
 clean:
 	rm -f $(TARGETS) $(BC_TARGETS) $(TEST_TARGETS) $(LOG_TARGETS) $(PATHS) $(BADINPUTS) $(CFGS) $(CFGS:.pdf=.dot)
-	rm -rf *.log klee-out-* klee-last
+	rm -rf *.log *.debug klee-out-* klee-last
