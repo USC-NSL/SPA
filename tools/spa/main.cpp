@@ -122,13 +122,13 @@ int main(int argc, char **argv, char **envp) {
 
 		std::ifstream initValueFile( InitValueFile.c_str() );
 		assert( initValueFile.is_open() );
-		std::map<llvm::Value *, std::vector<uint8_t> > initValues;
+		std::map<llvm::Value *, std::vector<std::pair<bool,uint8_t> > > initValues;
 		while ( initValueFile.good() ) {
 			std::string line;
 			getline( initValueFile, line );
 			if ( ! line.empty() ) {
 				std::string name;
-				std::vector<uint8_t> value;
+				std::vector<std::pair<bool,uint8_t> > value;
 				std::stringstream ss( line );
 				ss >> name;
 				if ( initValueVars.count( name ) > 0 ) {
@@ -136,7 +136,14 @@ int main(int argc, char **argv, char **envp) {
 					while ( ss.good() ) {
 						int v;
 						ss >> v;
-						value.push_back( v );
+						if ( ! ss.fail() ) {
+							value.push_back( std::pair<bool,uint8_t>( true, v ) );
+						} else {
+							value.push_back( std::pair<bool,uint8_t>( false, 0 ) );
+							ss.clear();
+							std::string dummy;
+							ss >> dummy;
+						}
 					}
 					initValues[initValueVars[name]] = value;
 					CLOUD9_DEBUG( "      Found initial value for " << name << "." );

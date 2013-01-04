@@ -31,7 +31,7 @@ void discoverCapability() {
 
 		spa_msg_output_var( capabilityRequest );
 
-#ifndef ENABLE_SPA
+#ifndef ENABLE_KLEE
 		assert( sendto( sock, &capabilityRequest, sizeof( capabilityRequest ), 0, server->ai_addr, server->ai_addrlen ) == sizeof( capabilityRequest ) );
 		assert( recv( sock, &capabilityResponse, sizeof( capabilityResponse ), 0 ) == sizeof( capabilityResponse ) );
 #endif

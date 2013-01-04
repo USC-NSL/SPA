@@ -425,7 +425,7 @@ namespace SPA {
 		llvm::BranchInst::Create( returnBB, nextHandlerBB );
 	}
 
-	void SPA::addInitialValues( std::map<llvm::Value *, std::vector<uint8_t> > values ) {
+	void SPA::addInitialValues( std::map<llvm::Value *, std::vector<std::pair<bool,uint8_t> > > values ) {
 		// Get malloc function.
 		llvm::Function *mallocFunction = module->getFunction( MALLOC_FUNCTION );
 		if ( ! mallocFunction ) {
@@ -444,29 +444,39 @@ namespace SPA {
 		initValueSwitchInst->addCase( llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, initValueID++, true ) ), swBB );
 
 		// Iterate over values to initialize.
-		for ( std::map<llvm::Value *, std::vector<uint8_t> >::iterator it = values.begin(), ie = values.end(); it != ie; it++ ) {
+		for ( std::map<llvm::Value *, std::vector<std::pair<bool,uint8_t> > >::iterator it = values.begin(), ie = values.end(); it != ie; it++ ) {
+			// Store concrete values.
 			// %1 = malloc( value.length );
 			CallInst* mallocCallInst = CallInst::Create( mallocFunction, llvm::ConstantInt::get( module->getContext(), llvm::APInt( 64, it->second.size(), true ) ), "", swBB );
 			mallocCallInst->setCallingConv( CallingConv::C );
 			mallocCallInst->setTailCall( true );
-			// var = %1
-			new StoreInst( mallocCallInst, it->first, false, swBB );
-
+			// var[0] = %1
+			new StoreInst( mallocCallInst, GetElementPtrInst::Create( it->first, llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, 0, true ) ), "", swBB), false, swBB );
 			// Iterator over initial value bytes.
 			for ( unsigned int i = 0; i < it->second.size(); i++ ) {
-				// var[i] = value[i];
+				// %1[i] = value[i];
 				new StoreInst(
-					llvm::ConstantInt::get( module->getContext(), llvm::APInt( 8, it->second[i], true ) ),
+					llvm::ConstantInt::get( module->getContext(), llvm::APInt( 8, it->second[i].second, true ) ),
+					GetElementPtrInst::Create( mallocCallInst, llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, i, true ) ), "", swBB), false, swBB );
+			}
+			// Store concrete/symbol mask.
+			// %2 = malloc( value.length );
+			mallocCallInst = CallInst::Create( mallocFunction, llvm::ConstantInt::get( module->getContext(), llvm::APInt( 64, it->second.size(), true ) ), "", swBB );
+			mallocCallInst->setCallingConv( CallingConv::C );
+			mallocCallInst->setTailCall( true );
+			// var[1] = %2
+			new StoreInst( mallocCallInst, GetElementPtrInst::Create( it->first, llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, 1, true ) ), "", swBB), false, swBB );
+			// Iterator over initial value mask.
+			for ( unsigned int i = 0; i < it->second.size(); i++ ) {
+				// %2[i] = value[i];
+				new StoreInst(
+					llvm::ConstantInt::get( module->getContext(), llvm::APInt( 8, it->second[i].first ? 1 : 0, true ) ),
 					GetElementPtrInst::Create( mallocCallInst, llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, i, true ) ), "", swBB), false, swBB );
 			}
 		}
 
 		// break;
 		llvm::BranchInst::Create( firstHandlerBB, swBB );
-	}
-
-	void SPA::addSymbolicInitialValues() {
-		addInitialValues( std::map<llvm::Value *, std::vector<uint8_t> >() );
 	}
 
 	void SPA::start() {
