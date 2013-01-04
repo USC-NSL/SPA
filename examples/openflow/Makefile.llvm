@@ -55,7 +55,7 @@ tests/test-stp: tests/test-stp.o ${LIB_OBJ}
 	${LD}  -o $@ $^
 
 instrumentation/test.o: instrumentation/test.c
-	${CC} -I lib -I include -c -o $@ $^
+	${CC} ${CFLAGS} -I lib -I include -c -o $@ $^
 
 instrumentation/test: instrumentation/test.o ${LIB_OBJ}
 	${LD}  -o $@ $^
