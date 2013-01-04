@@ -47,3 +47,5 @@ udatapath/.dirstamp
 utilities/.dirstamp
 utilities/ofp-parse-leaks
 *.swp
+*.bc
+
