@@ -1,10 +1,11 @@
+PROCNUM=`grep -i processor /proc/cpuinfo | wc -l`
 ./configure-llvm
 echo
 echo
 echo
-make -skj8
+make -skj${PROCNUM}
 echo
 echo
 echo
-make -skj8 -f Makefile.llvm
+make -kj${PROCNUM} -f Makefile.llvm
 
