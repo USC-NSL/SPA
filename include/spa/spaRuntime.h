@@ -129,13 +129,14 @@ extern "C" {
 
 		// Check if initial assumptions are specified.
 		if ( initialValue[0] && initialValue[1] ) {
-			bool concrete = true;
+			uint8_t concrete = 1;
 			// For each byte, check symbolic mask and specified assumption.
-			for ( size_t i = 0; i < size; i++ ) {
+			size_t i;
+			for ( i = 0; i < size; i++ ) {
 				if ( initialValue[1][i] ) { // Concrete byte.
 					spa_assume( ((uint8_t *) var)[i] == initialValue[0][i] );
 				} else { // Symbolic byte.
-					concrete = false;
+					concrete = 0;
 				}
 			}
 			// Output initial value if it is fully concrete.
