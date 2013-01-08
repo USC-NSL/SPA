@@ -40,6 +40,8 @@
 #include <stdlib.h>
 #include <time.h>
 
+#include <spa/spaRuntime.h>
+
 #include "flow.h"
 #include "mac-learning.h"
 #include "ofpbuf.h"
@@ -302,10 +304,14 @@ lswitch_process_packet(struct lswitch *sw, struct rconn *rconn,
     const struct processor *p;
     struct ofp_header *oh;
 
+    spa_msg_input_var( msg );
+    spa_seed_file( 1, &msg, "query.seed" );
+
     oh = msg->data;
     if (sw->datapath_id == 0
         && oh->type != OFPT_ECHO_REQUEST
         && oh->type != OFPT_FEATURES_REPLY) {
+        spa_valid_path();
         send_features_request(sw, rconn);
         return;
     }
@@ -317,11 +323,13 @@ lswitch_process_packet(struct lswitch *sw, struct rconn *rconn,
                              "type %"PRIu8" (min %zu)", sw->datapath_id,
                              rconn_get_name(rconn), msg->size, oh->type,
                              p->min_size);
+                spa_invalid_path();
                 return;
             }
             if (p->handler) {
                 (p->handler)(sw, rconn, msg->data);
             }
+            spa_valid_path();
             return;
         }
     }
@@ -331,6 +339,7 @@ lswitch_process_packet(struct lswitch *sw, struct rconn *rconn,
                     sw->datapath_id, p);
         free(p);
     }
+    spa_invalid_path();
 }
 
 static void

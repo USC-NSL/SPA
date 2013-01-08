@@ -1,10 +1,10 @@
 #!/bin/sh
 CC='llvm-gcc' \
-CFLAGS='-DENABLE_SPA -DENABLE_KLEE -emit-llvm -use-gold-plugin -O0 -g' \
+CFLAGS='-DENABLE_SPA -DENABLE_KLEE -emit-llvm -use-gold-plugin -O0 -g -std=c99' \
 CXX='llvm-g++' \
 CXXFLAGS='-DENABLE_SPA -DENABLE_KLEE -emit-llvm -use-gold-plugin -O0 -g' \
 CPP='llvm-cpp' \
-LD='llvm-ld' \
+LD='llvm-ld -disable-opt' \
 AR='echo' \
 RANLIB='echo' \
 ./configure \
