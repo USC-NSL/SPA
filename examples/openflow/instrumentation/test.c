@@ -6,6 +6,13 @@
 
 #include <spa/spaRuntime.h>
 
+
+
+
+
+
+
+
 void SpaHandleQueryEntry() {
    spa_message_handler_entry();
    struct lswitch* sw;
