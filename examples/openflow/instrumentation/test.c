@@ -6,7 +6,7 @@
 
 #include <spa/spaRuntime.h>
 
-void SpaHandleQueryEntry() {
+void __attribute__((noinline,used)) SpaHandleQueryEntry() {
    spa_message_handler_entry();
    struct ofpbuf buf;
    buf.data = malloc(1500);
