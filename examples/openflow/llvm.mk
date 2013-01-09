@@ -1,4 +1,4 @@
-LD=llvm-ld
+LD=llvm-ld -disable-opt
 CXX=llvm-g++
 AR=echo
 RANLIB=echo
