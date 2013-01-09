@@ -304,8 +304,8 @@ lswitch_process_packet(struct lswitch *sw, struct rconn *rconn,
     const struct processor *p;
     struct ofp_header *oh;
 
-    spa_msg_input_var( msg );
-    spa_seed_file( 1, &msg, "query.seed" );
+    spa_msg_input( msg->data, 1500, "message" );
+    spa_msg_input_size( msg->size, "message" );
 
     oh = msg->data;
     if (sw->datapath_id == 0

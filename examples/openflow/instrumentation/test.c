@@ -6,19 +6,13 @@
 
 #include <spa/spaRuntime.h>
 
-
-
-
-
-
-
-
 void SpaHandleQueryEntry() {
    spa_message_handler_entry();
-   struct lswitch* sw;
-   struct rconn* rc;
-   struct ofpbuf* buf;
-   lswitch_process_packet(sw,rc,buf);
+   struct ofpbuf buf;
+   buf.data = malloc(1500);
+   buf.size = 1500;
+
+   lswitch_process_packet(NULL, NULL, buf);
 }
 
 int main(int argc, char** argv) {
