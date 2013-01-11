@@ -48,4 +48,5 @@ utilities/.dirstamp
 utilities/ofp-parse-leaks
 *.swp
 *.bc
-
+server.paths
+server.paths.log

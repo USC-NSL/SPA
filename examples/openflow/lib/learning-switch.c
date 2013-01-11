@@ -263,6 +263,8 @@ void
 lswitch_process_packet(struct lswitch *sw, struct rconn *rconn,
                        const struct ofpbuf *msg)
 {
+    spa_msg_input( msg->data, 1500, "message" );
+    spa_msg_input_size( msg->size, "message" );
     struct processor {
         uint8_t type;
         size_t min_size;
@@ -304,8 +306,6 @@ lswitch_process_packet(struct lswitch *sw, struct rconn *rconn,
     const struct processor *p;
     struct ofp_header *oh;
 
-    spa_msg_input( msg->data, 1500, "message" );
-    spa_msg_input_size( msg->size, "message" );
 
     oh = msg->data;
     if (sw->datapath_id == 0
@@ -367,6 +367,7 @@ send_features_request(struct lswitch *sw, struct rconn *rconn)
 static void
 queue_tx(struct lswitch *sw, struct rconn *rconn, struct ofpbuf *b)
 {
+#ifndef ENABLE_SPA
     int retval = rconn_send_with_limit(rconn, b, &sw->n_queued, 10);
     if (retval && retval != ENOTCONN) {
         if (retval == EAGAIN) {
@@ -378,6 +379,7 @@ queue_tx(struct lswitch *sw, struct rconn *rconn, struct ofpbuf *b)
                          strerror(retval));
         }
     }
+#endif
 }
 
 static void
