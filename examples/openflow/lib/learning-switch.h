@@ -46,5 +46,8 @@ void lswitch_destroy(struct lswitch *);
 void lswitch_process_packet(struct lswitch *, struct rconn *,
                             const struct ofpbuf *);
 
+#ifdef ENABLE_SPA
+struct lswitch* spa_switch_create();
+#endif
 
 #endif /* learning-switch.h */
