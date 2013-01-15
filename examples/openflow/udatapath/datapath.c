@@ -950,11 +950,24 @@ dp_output_control(struct datapath *dp, struct ofpbuf *buffer, int in_port,
     size_t total_len;
     uint32_t buffer_id;
 
+#ifdef ENABLE_SPA
+    spa_api_input( buffer->data, 1500, "message" );
+    spa_api_input_var( in_port );
+#endif
+
+#ifndef ENABLE_INSTRUMENTATION
     buffer_id = save_buffer(buffer);
+#else
+    buffer_id = 0;
+#endif
+
     total_len = buffer->size;
+
+#ifndef ENABLE_INSTRUMENTATION
     if (buffer_id != UINT32_MAX && buffer->size > max_len) {
         buffer->size = max_len;
     }
+#endif
 
     opi = ofpbuf_push_uninit(buffer, offsetof(struct ofp_packet_in, data));
     opi->header.version = OFP_VERSION;
@@ -966,7 +979,12 @@ dp_output_control(struct datapath *dp, struct ofpbuf *buffer, int in_port,
     opi->in_port        = htons(in_port);
     opi->reason         = reason;
     opi->pad            = 0;
+#ifndef ENABLE_INSTRUMENTATION
     send_openflow_buffer(dp, buffer, NULL);
+#endif
+
+#ifdef ENABLE_SPA
+    spa_msg_output( buffer->data, 1500, "message" );
 }
 
 static void

@@ -1,4 +1,5 @@
 #!/bin/bash
+CFLAGS='-DENABLE_INSTRUMENTATION' \
 ./configure \
 --enable-ndebug \
 --disable-ssl \

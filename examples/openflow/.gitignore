@@ -50,3 +50,8 @@ utilities/ofp-parse-leaks
 *.bc
 server.paths
 server.paths.log
+instrumentation/test-client
+instrumentation/test-server
+client.paths
+client.paths.log
+

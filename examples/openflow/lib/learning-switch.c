@@ -30,7 +30,6 @@
  * advertising or publicity pertaining to the Software or any
  * derivatives without specific, written prior permission.
  */
-
 #include <config.h>
 #include "learning-switch.h"
 
@@ -263,8 +262,10 @@ void
 lswitch_process_packet(struct lswitch *sw, struct rconn *rconn,
                        const struct ofpbuf *msg)
 {
+#ifdef ENABLE_SPA
     spa_msg_input( msg->data, 1500, "message" );
     spa_msg_input_size( msg->size, "message" );
+#endif
     struct processor {
         uint8_t type;
         size_t min_size;
@@ -311,7 +312,9 @@ lswitch_process_packet(struct lswitch *sw, struct rconn *rconn,
     if (sw->datapath_id == 0
         && oh->type != OFPT_ECHO_REQUEST
         && oh->type != OFPT_FEATURES_REPLY) {
+#ifdef ENABLE_SPA
         spa_valid_path();
+#endif
         send_features_request(sw, rconn);
         return;
     }
@@ -329,7 +332,9 @@ lswitch_process_packet(struct lswitch *sw, struct rconn *rconn,
             if (p->handler) {
                 (p->handler)(sw, rconn, msg->data);
             }
+#ifdef ENABLE_SPA
             spa_valid_path();
+#endif
             return;
         }
     }
@@ -339,7 +344,9 @@ lswitch_process_packet(struct lswitch *sw, struct rconn *rconn,
                     sw->datapath_id, p);
         free(p);
     }
+#ifdef ENABLE_SPA
     spa_invalid_path();
+#endif
 }
 
 static void
@@ -368,6 +375,7 @@ static void
 queue_tx(struct lswitch *sw, struct rconn *rconn, struct ofpbuf *b)
 {
 #ifndef ENABLE_SPA
+#ifndef ENABLE_INSTRUMENTATION
     int retval = rconn_send_with_limit(rconn, b, &sw->n_queued, 10);
     if (retval && retval != ENOTCONN) {
         if (retval == EAGAIN) {
@@ -379,6 +387,7 @@ queue_tx(struct lswitch *sw, struct rconn *rconn, struct ofpbuf *b)
                          strerror(retval));
         }
     }
+#endif
 #endif
 }
 
