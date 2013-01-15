@@ -15,7 +15,7 @@ void __attribute__((noinline,used)) SpaHandleQueryEntry() {
    buf.data = (void*)(((char*)malloc(3000)) + 1500);
    buf.size = 1500;
 
-   dp_output_control(NULL, &buf, 0, 1500, OFPR_NO_MATCH);
+   dp_output_control(NULL, &buf, 0, OFP_DEFAULT_MISS_SEND_LEN, OFPR_NO_MATCH);
 }
 /*
 int main(int argc, char** argv) {
