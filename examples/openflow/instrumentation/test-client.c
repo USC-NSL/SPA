@@ -9,7 +9,7 @@ struct lswitch;
 
 void __attribute__((noinline,used)) SpaHandleQueryEntry() {
 #ifdef ENABLE_SPA
-   spa_message_handler_entry();
+   spa_api_entry();
 #endif
    struct ofpbuf buf;
    buf.data = malloc(1500);

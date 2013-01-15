@@ -31,6 +31,10 @@
  * derivatives without specific, written prior permission.
  */
 
+#ifdef ENABLE_SPA
+#include <spa/spaRuntime.h>
+#endif
+
 #include "datapath.h"
 #include <arpa/inet.h>
 #include <assert.h>
@@ -985,6 +989,7 @@ dp_output_control(struct datapath *dp, struct ofpbuf *buffer, int in_port,
 
 #ifdef ENABLE_SPA
     spa_msg_output( buffer->data, 1500, "message" );
+#endif
 }
 
 static void
