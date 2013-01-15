@@ -988,7 +988,7 @@ dp_output_control(struct datapath *dp, struct ofpbuf *buffer, int in_port,
 #endif
 
 #ifdef ENABLE_SPA
-    spa_msg_output( buffer->data, OFP_DEFAULT_MISS_SEND_LEN, "message" );
+    spa_msg_output( buffer->data, buffer->size, "message" );
 #endif
 }
 
