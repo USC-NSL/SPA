@@ -57,7 +57,7 @@ tests/test-stp: tests/test-stp.o ${LIB_OBJ}
 instrumentation/test-client.o: instrumentation/test-client.c
 	${CC} ${CFLAGS} -I lib -I include -I udatapath -c -o $@ $^
 
-instrumentation/test-client: instrumentation/test-client.o ${LIB_OBJ} udatapath/udatapath_ofdatapath-datapath.o
+instrumentation/test-client: instrumentation/test-client.o ${LIB_OBJ} udatapath/udatapath_ofdatapath-datapath.o udatapath/udatapath_ofdatapath-udatapath.o
 	${LD}  -o $@ $^
 
 instrumentation/test-server.o: instrumentation/test-server.c

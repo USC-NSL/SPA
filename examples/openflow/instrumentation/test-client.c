@@ -12,14 +12,15 @@ void __attribute__((noinline,used)) SpaHandleQueryEntry() {
    spa_api_entry();
 #endif
    struct ofpbuf buf;
-   buf.data = malloc(1500);
+   buf.data = (void*)(((char*)malloc(3000)) + 1500);
    buf.size = 1500;
 
    dp_output_control(NULL, &buf, 0, 1500, OFPR_NO_MATCH);
 }
-
+/*
 int main(int argc, char** argv) {
    SpaHandleQueryEntry();
    return 0;
 }
+*/
 

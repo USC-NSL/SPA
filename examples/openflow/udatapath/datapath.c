@@ -959,7 +959,7 @@ dp_output_control(struct datapath *dp, struct ofpbuf *buffer, int in_port,
     spa_api_input_var( in_port );
 #endif
 
-#ifndef ENABLE_INSTRUMENTATION
+#ifndef ENABLE_SPA
     buffer_id = save_buffer(buffer);
 #else
     buffer_id = 0;
@@ -967,7 +967,7 @@ dp_output_control(struct datapath *dp, struct ofpbuf *buffer, int in_port,
 
     total_len = buffer->size;
 
-#ifndef ENABLE_INSTRUMENTATION
+#ifndef ENABLE_SPA
     if (buffer_id != UINT32_MAX && buffer->size > max_len) {
         buffer->size = max_len;
     }
@@ -983,7 +983,7 @@ dp_output_control(struct datapath *dp, struct ofpbuf *buffer, int in_port,
     opi->in_port        = htons(in_port);
     opi->reason         = reason;
     opi->pad            = 0;
-#ifndef ENABLE_INSTRUMENTATION
+#ifndef ENABLE_SPA
     send_openflow_buffer(dp, buffer, NULL);
 #endif
 
