@@ -264,6 +264,7 @@ lswitch_process_packet(struct lswitch *sw, struct rconn *rconn,
 {
 #ifdef ENABLE_SPA
     spa_msg_input( msg->data, 1500, "message" );
+    spa_msg_input_var( sw->datapath_id );
     spa_msg_input_size( msg->size, "message" );
 #endif
     struct processor {
@@ -315,17 +316,21 @@ lswitch_process_packet(struct lswitch *sw, struct rconn *rconn,
 #ifdef ENABLE_SPA
         spa_valid_path();
 #endif
+#ifndef ENABLE_SPA
         send_features_request(sw, rconn);
+#endif
         return;
     }
 
     for (p = processors; p < &processors[n_processors]; p++) {
         if (oh->type == p->type) {
             if (msg->size < p->min_size) {
+#ifndef ENABLE_SPA
                 VLOG_WARN_RL(&rl, "%012llx: %s: too short (%zu bytes) for "
                              "type %"PRIu8" (min %zu)", sw->datapath_id,
                              rconn_get_name(rconn), msg->size, oh->type,
                              p->min_size);
+#endif
                 spa_invalid_path();
                 return;
             }
@@ -338,12 +343,14 @@ lswitch_process_packet(struct lswitch *sw, struct rconn *rconn,
             return;
         }
     }
+#ifndef ENABLE_SPA
     if (VLOG_IS_DBG_ENABLED()) {
         char *p = ofp_to_string(msg->data, msg->size, 2);
         VLOG_DBG_RL(&rl, "%012llx: OpenFlow packet ignored: %s",
                     sw->datapath_id, p);
         free(p);
     }
+#endif
 #ifdef ENABLE_SPA
     spa_invalid_path();
 #endif
@@ -374,8 +381,6 @@ send_features_request(struct lswitch *sw, struct rconn *rconn)
 static void
 queue_tx(struct lswitch *sw, struct rconn *rconn, struct ofpbuf *b)
 {
-#ifndef ENABLE_SPA
-#ifndef ENABLE_INSTRUMENTATION
     int retval = rconn_send_with_limit(rconn, b, &sw->n_queued, 10);
     if (retval && retval != ENOTCONN) {
         if (retval == EAGAIN) {
@@ -387,8 +392,6 @@ queue_tx(struct lswitch *sw, struct rconn *rconn, struct ofpbuf *b)
                          strerror(retval));
         }
     }
-#endif
-#endif
 }
 
 static void
@@ -676,4 +679,13 @@ process_stats_reply(struct lswitch *sw, struct rconn *rconn, void *osr_)
         sw->last_reply = time_msec();
     }
 }
+
+#ifdef ENABLE_SPA
+struct lswitch*
+spa_switch_create()
+{
+   struct lswitch* sw = malloc(sizeof(struct lswitch));
+   return sw;
+}
+#endif
 

@@ -1,5 +1,5 @@
 #!/bin/bash
-CFLAGS='-DENABLE_INSTRUMENTATION' \
+CFLAGS='-DUDATAPATH_AS_LIB' \
 ./configure \
 --enable-ndebug \
 --disable-ssl \

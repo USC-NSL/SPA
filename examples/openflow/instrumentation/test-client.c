@@ -17,10 +17,10 @@ void __attribute__((noinline,used)) SpaHandleQueryEntry() {
 
    dp_output_control(NULL, &buf, 0, OFP_DEFAULT_MISS_SEND_LEN, OFPR_NO_MATCH);
 }
-/*
+
 int main(int argc, char** argv) {
    SpaHandleQueryEntry();
    return 0;
 }
-*/
+
 

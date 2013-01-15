@@ -66,4 +66,12 @@ instrumentation/test-server.o: instrumentation/test-server.c
 instrumentation/test-server: instrumentation/test-server.o ${LIB_OBJ}
 	${LD}  -o $@ $^
 
+server.paths: instrumentation/test-server.bc
+	./spa-server.sh
+
+client.paths: instrumentation/test-client.bc
+	./test-client.sh
+
+badinputs.untested: server.paths client.paths
+	./spa-badinputs.sh
 
