@@ -682,12 +682,11 @@ process_stats_reply(struct lswitch *sw, struct rconn *rconn, void *osr_)
     }
 }
 
-#ifdef ENABLE_SPA
+//added for instrumentation
 struct lswitch* __attribute__((noinline,used))
 spa_switch_create()
 {
    struct lswitch* sw = malloc(sizeof(struct lswitch));
    return sw;
 }
-#endif
 
