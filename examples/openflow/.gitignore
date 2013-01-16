@@ -54,6 +54,7 @@ instrumentation/test-client
 instrumentation/test-server
 client.paths
 client.paths.log
-openflow-badinputs.untested
-openflow-badinputs.untested.debug
-openflow-badinputs.untested.log
+badinputs.untested
+badinputs.untested.debug
+badinputs.untested.log
+

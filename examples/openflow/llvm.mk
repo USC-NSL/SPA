@@ -70,7 +70,7 @@ server.paths: instrumentation/test-server.bc
 	./spa-server.sh
 
 client.paths: instrumentation/test-client.bc
-	./test-client.sh
+	./spa-client.sh
 
 badinputs.untested: server.paths client.paths
 	./spa-badinputs.sh
