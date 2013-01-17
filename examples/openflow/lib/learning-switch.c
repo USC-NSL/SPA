@@ -336,9 +336,11 @@ lswitch_process_packet(struct lswitch *sw, struct rconn *rconn,
                 spa_invalid_path();
                 return;
             }
+#ifndef ENABLE_SPA
             if (p->handler) {
                 (p->handler)(sw, rconn, msg->data);
             }
+#endif
 #ifdef ENABLE_SPA
             spa_valid_path();
 #endif

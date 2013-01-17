@@ -955,7 +955,8 @@ dp_output_control(struct datapath *dp, struct ofpbuf *buffer, int in_port,
     uint32_t buffer_id;
 
 #ifdef ENABLE_SPA
-    spa_api_input( buffer->data, 1500, "message" );
+    spa_api_input( &(buffer->size), sizeof(buffer->size), "size");
+    spa_api_input( buffer->data, 1500, "in_message" );
     spa_api_input_var( in_port );
     spa_api_input_var ( max_len );
     spa_api_input_var ( reason );
