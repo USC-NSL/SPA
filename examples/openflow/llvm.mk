@@ -16,7 +16,7 @@ BIN=secchan/ofprotocol controller/controller utilities/vlogconf utilities/dpctl 
 all: ${BIN}
 
 clean:
-	rm -f ${BIN} */*.bc instrumentation/test.o
+	rm -f ${BIN} */*.bc instrumentation/test-server.o instrumentation/test-client.o
 
 secchan/ofprotocol: secchan/discovery.o secchan/emerg-flow.o secchan/fail-open.o secchan/failover.o secchan/in-band.o secchan/port-watcher.o secchan/protocol-stat.o secchan/ratelimit.o secchan/secchan.o secchan/status.o secchan/stp-secchan.o ${LIB_OBJ}
 	${LD}  -o $@ $^
