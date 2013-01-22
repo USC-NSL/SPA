@@ -1,6 +1,6 @@
 #!/bin/sh
 
-CFLAGS='-O0 -g' ./configure \
+CFLAGS='-O0 -g -DENABLE_SPA' LDFLAGS='/usr/local/bin/spa/Release+Asserts/lib/libSpaTestModule.so' ./configure \
 --disable-floating-point \
 --disable-sound \
 --disable-oss \
