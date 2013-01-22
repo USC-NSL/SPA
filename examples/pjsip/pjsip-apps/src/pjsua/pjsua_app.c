@@ -2408,6 +2408,9 @@ static void on_call_state(pjsua_call_id call_id, pjsip_event *e)
 
     if (call_info.state == PJSIP_INV_STATE_DISCONNECTED) {
 
+// 	spa_valid_path();
+	printf( "[SPA] Valid path.\n" );
+
 	/* Stop all ringback for this call */
 	ring_stop(call_id);
 
@@ -2514,7 +2517,7 @@ static void on_incoming_call(pjsua_acc_id acc_id, pjsua_call_id call_id,
 
     pjsua_call_get_info(call_id, &call_info);
 
-	spa_valid_path();
+// 	spa_valid_path();
 	printf( "[SPA] Valid path.\n" );
 
     if (current_call==PJSUA_INVALID_ID)
@@ -3423,6 +3426,10 @@ static void conf_list(void)
 }
 
 
+void endpt_send_callback( void *token, pjsip_event *event ) {
+	printf( "endpt_send_callback\n" );
+}
+
 /*
  * Send arbitrary request to remote host
  */
@@ -3441,7 +3448,7 @@ static void send_request(char *cstr_method, const pj_str_t *dst_uri)
 
     status = pjsua_acc_create_request(current_acc, &method, dst_uri, &tdata);
 
-    status = pjsip_endpt_send_request(endpt, tdata, -1, NULL, NULL);
+    status = pjsip_endpt_send_request(endpt, tdata, -1, NULL, endpt_send_callback);
     if (status != PJ_SUCCESS) {
 	pjsua_perror(THIS_FILE, "Unable to send request", status);
 	return;
