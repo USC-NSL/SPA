@@ -1,9 +1,11 @@
 #!/bin/sh
 
+rm -f libexosip2.bc libexosip2-dbg.o libexosip2-test.o
+
 make -skj clean
 ./configure-llvm
 make -skj8
-llvm-ld -r src/*.o ../libosip2-3.6.0/libosip2.bc -o libexosip2.bc
+llvm-ld -disable-opt -r src/*.o ../libosip2-3.6.0/libosip2.bc -o libexosip2.bc
 
 make -skj clean
 ./configure-dbg
