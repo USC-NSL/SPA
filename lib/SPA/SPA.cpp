@@ -250,8 +250,12 @@ namespace SPA {
 	 *		int initValueID = klee_int( "initValueID" );
 	 *		switch ( initValueID ) {
 	 *			case 1:
-	 * 				var = malloc( value.length );
-	 * 				var[0] = value[0]; (...);
+	 *				var = malloc( (numValues + 1) * 2 );
+	 * 				var[0] = malloc( values[0].length );
+	 * 				var[0][0] = values[0][0]; (...);
+	 * 				var[1] = malloc( valueMasks[0].length );
+	 *				var[1][0] = valueMasks[0][0]; (...);
+	 *				(...);
 	 * 			break;
 	 *			(...)
 	 * 			default: return 0;
@@ -374,24 +378,24 @@ namespace SPA {
 		llvm::BranchInst::Create(nextHandlerBB, swBB);
 	}
 
-	void SPA::addSeedEntryFunction( unsigned int seedID, llvm::Function *fn ) {
-		// case x:
-		// Create basic block for this case.
-		llvm::BasicBlock *swBB = llvm::BasicBlock::Create( module->getContext(), "", entryFunction, 0 );
-		entryHandlerSwitchInst->addCase( llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, entryHandlerID++, true ) ), swBB );
-
-		// spa_internal_SeedID = seedID;
-		llvm::GlobalVariable *seedIDVar = module->getNamedGlobal ( SEED_ID_VAR_NAME );
-		assert( seedIDVar && "SeedID variable not declared in module." );
-		new StoreInst( ConstantInt::get( module->getContext(), APInt( 32, (uint64_t) seedID, false ) ), seedIDVar );
-
-		// handlerx();
-		llvm::CallInst *handlerCallInst = llvm::CallInst::Create( fn, "", swBB );
-		handlerCallInst->setCallingConv( llvm::CallingConv::C );
-		handlerCallInst->setTailCall( false );
-		// break;
-		llvm::BranchInst::Create(nextHandlerBB, swBB);
-	}
+// 	void SPA::addSeedEntryFunction( unsigned int seedID, llvm::Function *fn ) {
+// 		// case x:
+// 		// Create basic block for this case.
+// 		llvm::BasicBlock *swBB = llvm::BasicBlock::Create( module->getContext(), "", entryFunction, 0 );
+// 		entryHandlerSwitchInst->addCase( llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, entryHandlerID++, true ) ), swBB );
+// 
+// 		// spa_internal_SeedID = seedID;
+// 		llvm::GlobalVariable *seedIDVar = module->getNamedGlobal ( SEED_ID_VAR_NAME );
+// 		assert( seedIDVar && "SeedID variable not declared in module." );
+// 		new StoreInst( ConstantInt::get( module->getContext(), APInt( 32, (uint64_t) seedID, false ) ), seedIDVar );
+// 
+// 		// handlerx();
+// 		llvm::CallInst *handlerCallInst = llvm::CallInst::Create( fn, "", swBB );
+// 		handlerCallInst->setCallingConv( llvm::CallingConv::C );
+// 		handlerCallInst->setTailCall( false );
+// 		// break;
+// 		llvm::BranchInst::Create(nextHandlerBB, swBB);
+// 	}
 
 	void SPA::newEntryLevel() {
 		// Get klee_int function.
@@ -425,16 +429,16 @@ namespace SPA {
 		llvm::BranchInst::Create( returnBB, nextHandlerBB );
 	}
 
-	void SPA::addInitialValues( std::map<llvm::Value *, std::vector<std::pair<bool,uint8_t> > > values ) {
+	void SPA::addInitialValues( std::map<llvm::Value *, std::vector<std::vector<std::pair<bool,uint8_t> > > > values ) {
 		// Get malloc function.
 		llvm::Function *mallocFunction = module->getFunction( MALLOC_FUNCTION );
 		if ( ! mallocFunction ) {
 			mallocFunction = llvm::Function::Create(
 				FunctionType::get(
 					PointerType::get( IntegerType::get( module->getContext(), 8 ), 0 ),
-								  llvm::ArrayRef<const llvm::Type *>( IntegerType::get( module->getContext(), 64 ) ).vec(),
-								  false ),
-								  GlobalValue::ExternalLinkage, "malloc", module );
+					llvm::ArrayRef<const llvm::Type *>( IntegerType::get( module->getContext(), 64 ) ).vec(),
+					false ),
+				GlobalValue::ExternalLinkage, "malloc", module );
 			mallocFunction->setCallingConv( CallingConv::C );
 		}
 
@@ -443,35 +447,49 @@ namespace SPA {
 		llvm::BasicBlock *swBB = llvm::BasicBlock::Create( module->getContext(), "", entryFunction, 0 );
 		initValueSwitchInst->addCase( llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, initValueID++, true ) ), swBB );
 
-		// Iterate over values to initialize.
-		for ( std::map<llvm::Value *, std::vector<std::pair<bool,uint8_t> > >::iterator it = values.begin(), ie = values.end(); it != ie; it++ ) {
+		// Iterate over variables to initialize.
+		for ( std::map<llvm::Value *, std::vector<std::vector<std::pair<bool,uint8_t> > > >::iterator varit = values.begin(), varie = values.end(); varit != varie; varit++ ) {
 			// Store concrete values.
-			// %1 = malloc( value.length );
-			CallInst* mallocCallInst = CallInst::Create( mallocFunction, llvm::ConstantInt::get( module->getContext(), llvm::APInt( 64, it->second.size(), true ) ), "", swBB );
-			mallocCallInst->setCallingConv( CallingConv::C );
-			mallocCallInst->setTailCall( true );
-			// var[0] = %1
-			new StoreInst( mallocCallInst, GetElementPtrInst::Create( it->first, llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, 0, true ) ), "", swBB), false, swBB );
-			// Iterator over initial value bytes.
-			for ( unsigned int i = 0; i < it->second.size(); i++ ) {
-				// %1[i] = value[i];
-				new StoreInst(
-					llvm::ConstantInt::get( module->getContext(), llvm::APInt( 8, it->second[i].second, true ) ),
-					GetElementPtrInst::Create( mallocCallInst, llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, i, true ) ), "", swBB), false, swBB );
-			}
-			// Store concrete/symbol mask.
-			// %2 = malloc( value.length );
-			mallocCallInst = CallInst::Create( mallocFunction, llvm::ConstantInt::get( module->getContext(), llvm::APInt( 64, it->second.size(), true ) ), "", swBB );
-			mallocCallInst->setCallingConv( CallingConv::C );
-			mallocCallInst->setTailCall( true );
-			// var[1] = %2
-			new StoreInst( mallocCallInst, GetElementPtrInst::Create( it->first, llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, 1, true ) ), "", swBB), false, swBB );
-			// Iterator over initial value mask.
-			for ( unsigned int i = 0; i < it->second.size(); i++ ) {
-				// %2[i] = value[i];
-				new StoreInst(
-					llvm::ConstantInt::get( module->getContext(), llvm::APInt( 8, it->second[i].first ? 1 : 0, true ) ),
-					GetElementPtrInst::Create( mallocCallInst, llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, i, true ) ), "", swBB), false, swBB );
+			// %1 = malloc( (numValues + 1) * 2 );
+			CallInst *varMallocCallInst = CallInst::Create( mallocFunction, llvm::ConstantInt::get( module->getContext(), llvm::APInt( 64, (varit->second.size() + 1) * 2 * 8, true ) ), "", swBB );
+			varMallocCallInst->setCallingConv( CallingConv::C );
+			varMallocCallInst->setTailCall( true );
+			CastInst *varMalloc = new BitCastInst( varMallocCallInst, PointerType::get( PointerType::get( IntegerType::get( module->getContext(), 8), 0), 0), "", swBB);
+			// var = %1;
+			new StoreInst( varMalloc, GetElementPtrInst::Create( varit->first, llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, 0, true ) ), "", swBB), false, swBB );
+			// Iterate distinct initial values for this variable.
+			unsigned int offset = 0, numSymbolic = 0;
+			for ( std::vector<std::vector<std::pair<bool,uint8_t> > >::iterator valit = varit->second.begin(), valie = varit->second.end(); valit != valie; valit++, offset += 2 ) {
+				// %2 = malloc( values[it].length );
+				CallInst* valMallocCallInst = CallInst::Create( mallocFunction, llvm::ConstantInt::get( module->getContext(), llvm::APInt( 64, valit->size(), true ) ), "", swBB );
+				valMallocCallInst->setCallingConv( CallingConv::C );
+				valMallocCallInst->setTailCall( true );
+				CastInst *valMalloc = new BitCastInst( valMallocCallInst, PointerType::get( IntegerType::get( module->getContext(), 8), 0), "", swBB);
+				// %1[offset+0] = %2;
+				new StoreInst( valMalloc, GetElementPtrInst::Create( varMalloc, llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, offset + 0, true ) ), "", swBB), false, swBB );
+				// %3 = malloc( valueMasks[it].length );
+				CallInst* maskMallocCallInst = CallInst::Create( mallocFunction, llvm::ConstantInt::get( module->getContext(), llvm::APInt( 64, valit->size(), true ) ), "", swBB );
+				maskMallocCallInst->setCallingConv( CallingConv::C );
+				maskMallocCallInst->setTailCall( true );
+				CastInst *maskMalloc = new BitCastInst( maskMallocCallInst, PointerType::get( IntegerType::get( module->getContext(), 8), 0), "", swBB);
+				// %1[offset+1] = %2;
+				new StoreInst( maskMalloc, GetElementPtrInst::Create( varMalloc, llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, offset + 1, true ) ), "", swBB), false, swBB );
+				// Iterator over initial value bytes and mask.
+				bool containsSymbol = false;
+				for ( unsigned int i = 0; i < valit->size(); i++ ) {
+					// %2[i] = value[it][i];
+					new StoreInst(
+						llvm::ConstantInt::get( module->getContext(), llvm::APInt( 8, (*valit)[i].second, true ) ),
+						GetElementPtrInst::Create( valMalloc, llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, i, true ) ), "", swBB), false, swBB );
+					// %3[i] = valueMasks[it][i];
+					new StoreInst(
+						llvm::ConstantInt::get( module->getContext(), llvm::APInt( 8, (*valit)[i].first ? 1 : 0, true ) ),
+						GetElementPtrInst::Create( maskMalloc, llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, i, true ) ), "", swBB), false, swBB );
+					if ( ! (*valit)[i].first )
+						containsSymbol = true;
+				}
+				if ( containsSymbol )
+					assert( ++numSymbolic <= 1 && "More than one symbolic initial values declared for a single variable." );
 			}
 		}
 

@@ -102,6 +102,7 @@ extern "C" {
 	void spa_api_output_handler( va_list args ) {
 		uint8_t *var = (uint8_t *) va_arg( args, void * );
 		size_t size = va_arg( args, size_t );
+		size_t maxSize = va_arg( args, size_t );
 		const char *name = va_arg( args, const char * );
 
 		log() << "Event " << eventID++ << " - API Output on " << curTime() << std::endl;
@@ -120,17 +121,19 @@ extern "C" {
 	}
 
 	void spa_msg_input_size_handler( va_list args ) {
-		size_t *var = va_arg( args, size_t * );
+		uint8_t *var = (uint8_t *) va_arg( args, void * );
+		size_t size = va_arg( args, size_t );
 		const char *name = va_arg( args, const char * );
 
 		log() << "Event " << eventID++ << " - Message Input Size on " << curTime() << std::endl;
-		log() << name << " " << *var << std::endl;
+		outputVar( name, var, size );
 		dumpState();
 	}
 
 	void spa_msg_output_handler( va_list args ) {
 		uint8_t *var = (uint8_t *) va_arg( args, void * );
 		size_t size = va_arg( args, size_t );
+		size_t maxSize = va_arg( args, size_t );
 		const char *name = va_arg( args, const char * );
 
 		log() << "Event " << eventID++ << " - Message Output on " << curTime() << std::endl;

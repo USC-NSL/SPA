@@ -23,8 +23,9 @@
 #define SPA_MESSAGE_HANDLER_ANNOTATION_FUNCTION	"spa_message_handler_entry"
 #define SPA_CHECKPOINT_ANNOTATION_FUNCTION		"spa_checkpoint"
 #define SPA_WAYPOINT_ANNOTATION_FUNCTION		"spa_waypoint"
+#define SPA_RETURN_ANNOTATION_FUNCTION			"spa_return"
 #define SPA_INPUT_ANNOTATION_FUNCTION			"spa_input"
-#define SPA_SEED_ANNOTATION_FUNCTION			"spa_seed"
+// #define SPA_SEED_ANNOTATION_FUNCTION			"spa_seed"
 
 #define SPA_PREFIX					"spa_"
 #define SPA_TAG_PREFIX				SPA_PREFIX "tag_"
@@ -47,6 +48,9 @@
 #define SPA_MSGRECEIVED_VALUE		"1"
 #define SPA_VALIDPATH_TAG			"ValidPath"
 #define SPA_VALIDPATH_VALUE			"1"
+
+#define LOG_FILE_VARIABLE			"SPA_LOG_FILE"
+
 
 namespace SPA {
 	class SPA : public cloud9::worker::StateEventHandler, FilteringEventHandler {
@@ -79,10 +83,10 @@ namespace SPA {
 		SPA( llvm::Module *_module, std::ostream &_output );
 		void addInitFunction( llvm::Function *fn );
 		void addEntryFunction( llvm::Function *fn );
-		void addSeedEntryFunction( unsigned int seedID, llvm::Function *fn );
+// 		void addSeedEntryFunction( unsigned int seedID, llvm::Function *fn );
 		void newEntryLevel();
-		void addInitialValues( std::map<llvm::Value *, std::vector<std::pair<bool,uint8_t> > > values );
-		void addSymbolicInitialValues() { addInitialValues( std::map<llvm::Value *, std::vector<std::pair<bool,uint8_t> > >() ); }
+		void addInitialValues( std::map<llvm::Value *, std::vector<std::vector<std::pair<bool,uint8_t> > > > values );
+		void addSymbolicInitialValues() { addInitialValues( std::map<llvm::Value *, std::vector<std::vector<std::pair<bool,uint8_t> > > >() ); }
 		void addStateUtilityFront( StateUtility *stateUtility, bool _outputFilteredPaths ) {
 			stateUtilities.push_front( stateUtility );
 			outputFilteredPaths.push_front( _outputFilteredPaths );
