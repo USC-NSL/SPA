@@ -18,10 +18,10 @@ namespace SPA {
 		TargetDistanceUtility targetDistance;
 
 	public:
-		AstarUtility( CFG &cfg, CG &cg, std::set<llvm::Instruction *> &targets ) :
-			targetDistance( cfg, cg, targets ) { }
-		AstarUtility( CFG &cfg, CG &cg, InstructionFilter &filter ) :
-			targetDistance( cfg, cg, filter ) { }
+		AstarUtility( llvm::Module *module, CFG &cfg, CG &cg, std::set<llvm::Instruction *> &targets ) :
+			targetDistance( module, cfg, cg, targets ) { }
+		AstarUtility( llvm::Module *module, CFG &cfg, CG &cg, InstructionFilter &filter ) :
+			targetDistance( module, cfg, cg, filter ) { }
 
 		double getUtility( klee::ExecutionState *state ) {
 			return targetDistance.getUtility( state ) - depth.getUtility( state );
