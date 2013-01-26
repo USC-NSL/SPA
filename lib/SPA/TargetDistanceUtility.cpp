@@ -2,6 +2,7 @@
  * SPA - Systematic Protocol Analysis Framework
  */
 
+#include <spa/SPA.h>
 #include <spa/TargetDistanceUtility.h>
 
 #include <sstream>
@@ -9,7 +10,7 @@
 
 
 namespace SPA {
-	TargetDistanceUtility::TargetDistanceUtility( CFG &cfg, CG &cg, InstructionFilter &filter ) {
+	TargetDistanceUtility::TargetDistanceUtility( llvm::Module *module, CFG &cfg, CG &cg, InstructionFilter &filter ) {
 		std::set<llvm::Instruction *> worklist;
 
 		for ( CFG::iterator it = cfg.begin(), ie = cfg.end(); it != ie; it++ ) {
@@ -22,10 +23,10 @@ namespace SPA {
 		}
 
 		assert( (! worklist.empty()) && "Filter must exclude something." );
-		processWorklist( cfg, cg, worklist );
+		processWorklist( module, cfg, cg, worklist );
 	}
 
-	TargetDistanceUtility::TargetDistanceUtility( CFG &cfg, CG &cg, std::set<llvm::Instruction *> &targets ) {
+	TargetDistanceUtility::TargetDistanceUtility( llvm::Module *module, CFG &cfg, CG &cg, std::set<llvm::Instruction *> &targets ) {
 		std::set<llvm::Instruction *> worklist;
 
 		for ( CFG::iterator it = cfg.begin(), ie = cfg.end(); it != ie; it++ )
@@ -36,7 +37,7 @@ namespace SPA {
 			propagateChanges( cfg, cg, worklist, *it );
 		}
 
-		processWorklist( cfg, cg, worklist );
+		processWorklist( module, cfg, cg, worklist );
 	}
 
 	void TargetDistanceUtility::propagateChanges( CFG &cfg, CG &cg, std::set<llvm::Instruction *> &worklist, llvm::Instruction *instruction ) {
@@ -47,7 +48,7 @@ namespace SPA {
 			worklist.insert( cg.getPossibleCallers( instruction->getParent()->getParent() ).begin(), cg.getPossibleCallers( instruction->getParent()->getParent() ).end() );
 	}
 
-	void TargetDistanceUtility::processWorklist( CFG &cfg, CG &cg, std::set<llvm::Instruction *> &worklist ) {
+	void TargetDistanceUtility::processWorklist( llvm::Module *module, CFG &cfg, CG &cg, std::set<llvm::Instruction *> &worklist ) {
 		std::set<llvm::Function *> pathFunctions;
 
 		CLOUD9_DEBUG( "      Processing direct paths." );
@@ -86,8 +87,28 @@ namespace SPA {
 				distances[*it] = std::pair<double, bool>( +INFINITY, true );
 
 		CLOUD9_DEBUG( "      Processing indirect paths." );
+		std::set<llvm::Function *> spaReturnFunctions;
+		Function *fn = module->getFunction( SPA_RETURN_ANNOTATION_FUNCTION );
+		if ( fn ) {
+			std::set<llvm::Instruction *> spaReturnSuccessors = cg.getDefiniteCallers( fn );
+			for ( std::set<llvm::Instruction *>::iterator it = spaReturnSuccessors.begin(), ie = spaReturnSuccessors.end(); it != ie; it++ )
+				worklist.insert( cfg.getPredecessors( *it ).begin(), cfg.getPredecessors( *it ).end() );
+			while ( ! spaReturnSuccessors.empty() ) {
+				llvm::Instruction *inst = *spaReturnSuccessors.begin();
+				spaReturnSuccessors.erase( spaReturnSuccessors.begin() );
+				distances[inst] = std::pair<double, bool>( 0, false );
+				spaReturnSuccessors.insert( cfg.getSuccessors( inst ).begin(), cfg.getSuccessors( inst ).end() );
+				if ( ! spaReturnFunctions.count( inst->getParent()->getParent() ) ) {
+					CLOUD9_DEBUG( "      Found spa_return in function: " << inst->getParent()->getParent()->getName().str() << "." );
+					spaReturnFunctions.insert( inst->getParent()->getParent() );
+				}
+			}
+		} else {
+			CLOUD9_DEBUG( "      Found no spa_returns." );
+		}
 		for ( CFG::iterator it = cfg.begin(), ie = cfg.end(); it != ie; it++ ) {
-			if ( (! distances[*it].second) && cfg.getSuccessors( *it ).empty() ) {
+			// Initialize costs of return instructions in functions without spa_returns.
+			if ( ! distances[*it].second && cfg.getSuccessors( *it ).empty() && ! spaReturnFunctions.count( (*it)->getParent()->getParent() ) ) {
 				distances[*it] = std::pair<double, bool>( 0, false );
 				worklist.insert( cfg.getPredecessors( *it ).begin(), cfg.getPredecessors( *it ).end() );
 			}

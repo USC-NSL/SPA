@@ -108,26 +108,32 @@ int main(int argc, char **argv, char **envp) {
 		CLOUD9_DEBUG( "   Setting up initial values." );
 		Function *fn = module->getFunction( SPA_INPUT_ANNOTATION_FUNCTION );
 		assert( fn );
-		std::map<std::string,llvm::Value *> initValueVars;
+		std::map<std::string,std::pair<llvm::Value *,size_t> > initValueVars;
 		for ( std::set<llvm::Instruction *>::iterator it = cg.getDefiniteCallers( fn ).begin(), ie = cg.getDefiniteCallers( fn ).end(); it != ie; it++ ) {
 			const CallInst *callInst;
 			assert( callInst = dyn_cast<CallInst>( *it ) );
 			assert( callInst->getNumArgOperands() == 5 );
+			const llvm::ConstantInt *ci;
+			assert( ci = dyn_cast<llvm::ConstantInt>( callInst->getArgOperand( 1 ) ) );
+			uint64_t size = ci->getValue().getLimitedValue();
 			llvm::User *u;
 			assert( u = dyn_cast<User>( callInst->getArgOperand( 2 ) ) );
 			llvm::GlobalVariable *gv;
 			assert( gv = dyn_cast<GlobalVariable>( u->getOperand( 0 ) ) );
 			llvm::ConstantArray *ca;
 			assert( ca = dyn_cast<ConstantArray>( gv->getInitializer() ) );
-
-			CLOUD9_INFO( "      Found input " << ca->getAsString().c_str() << "." );
 			// string reconversion to fix LLVM bug (includes null in std::string).
-			initValueVars[ca->getAsString().c_str()] = callInst->getArgOperand( 3 );
+			std::string name = ca->getAsString().c_str();
+			llvm::Value *var = callInst->getArgOperand( 3 );
+
+			CLOUD9_INFO( "      Found input " << name << "[" << size << "]." );
+			assert( initValueVars.count( name ) == 0 && "Input multiply declared.");
+			initValueVars[name] = std::pair<llvm::Value *,size_t>( var, size );
 		}
 
 		std::ifstream initValueFile( InitValueFile.c_str() );
 		assert( initValueFile.is_open() );
-		std::map<llvm::Value *, std::vector<std::pair<bool,uint8_t> > > initValues;
+		std::map<llvm::Value *, std::vector<std::vector<std::pair<bool,uint8_t> > > > initValues;
 		while ( initValueFile.good() ) {
 			std::string line;
 			getline( initValueFile, line );
@@ -152,7 +158,13 @@ int main(int argc, char **argv, char **envp) {
 
 				CLOUD9_DEBUG( "      Found initial value for " << name << "[" << value.size() << "]" << "." );
 				assert( initValueVars.count( name ) > 0 && "Initial value defined but not used." );
-				initValues[initValueVars[name]] = value;
+				assert( initValueVars[name].second >= value.size() && "Initial value doesn't fit in variable." );
+
+				// Pad value with concrete 0s to fill variable.
+				for ( size_t i = value.size(); i < initValueVars[name].second; i++ )
+					value.push_back( std::pair<bool,uint8_t>( true, 0 ) );
+
+				initValues[initValueVars[name].first].push_back( value );
 			} else {
 				if ( ! initValues.empty() ) {
 					CLOUD9_INFO( "      Adding set of " << initValues.size() << " initial values." );
@@ -169,7 +181,6 @@ int main(int argc, char **argv, char **envp) {
 		CLOUD9_INFO( "      No initial input values given, leaving symbolic." );
 		spa.addSymbolicInitialValues();
 	}
-
 
 // 	// Find seed IDs.
 // 	std::set<unsigned int> seedIDs;
@@ -323,16 +334,16 @@ int main(int argc, char **argv, char **envp) {
 // 		spa.addStateUtilityBack( new SPA::AstarUtility( cfg, cg, checkpoints ), false );
 // 		spa.addStateUtilityBack( new SPA::TargetDistanceUtility( cfg, cg, checkpoints ), false );
 		if ( filter ) {
-			spa.addStateUtilityBack( new SPA::AstarUtility( cfg, cg, *filter ), false );
-			spa.addStateUtilityBack( new SPA::TargetDistanceUtility( cfg, cg, *filter ), false );
+			spa.addStateUtilityBack( new SPA::AstarUtility( module, cfg, cg, *filter ), false );
+			spa.addStateUtilityBack( new SPA::TargetDistanceUtility( module, cfg, cg, *filter ), false );
 		}
 	} else if ( Server ) {
 // 		if ( filter ) {
-// 			spa.addStateUtilityBack( new SPA::AstarUtility( cfg, cg, *filter ), false );
-// 			spa.addStateUtilityBack( new SPA::TargetDistanceUtility( cfg, cg, *filter ), false );
+// 			spa.addStateUtilityBack( new SPA::AstarUtility( module, cfg, cg, *filter ), false );
+// 			spa.addStateUtilityBack( new SPA::TargetDistanceUtility( module, cfg, cg, *filter ), false );
 // 		}
-		spa.addStateUtilityBack( new SPA::AstarUtility( cfg, cg, checkpoints ), false );
-		spa.addStateUtilityBack( new SPA::TargetDistanceUtility( cfg, cg, checkpoints ), false );
+		spa.addStateUtilityBack( new SPA::AstarUtility( module, cfg, cg, checkpoints ), false );
+		spa.addStateUtilityBack( new SPA::TargetDistanceUtility( module, cfg, cg, checkpoints ), false );
 	}
 
 	if ( DumpCFG.size() > 0 ) {
