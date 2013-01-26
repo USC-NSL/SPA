@@ -31,6 +31,8 @@
 #include <pj/string.h>
 
 #include "../../../pjlib/src/pj/ioqueue_common_abs.h"
+
+#include <pjsua-lib/pjsua.h>
 #include <spa/spaRuntime.h>
 
 
@@ -287,26 +289,25 @@ static void udp_on_read_complete( pj_ioqueue_key_t *key,
     }
 }
 
-static void __attribute__((used)) spa_udp_on_read_complete_entry() {
-	spa_message_handler_entry();
-
-	uint8_t message[PJSIP_MAX_PKT_LEN];
-	spa_msg_input_var( message );
-	pj_ssize_t bytes_read;
-	spa_msg_input_size( bytes_read, "message" );
-
-	struct pjsip_rx_data rdata;
-	memcpy( rdata.pkt_info.packet, message, PJSIP_MAX_PKT_LEN );
-	rdata.tp_info.op_key.rdata = &rdata;
-	struct udp_transport tp;
-	rdata.tp_info.transport = (void *) &tp;
-    tp.is_closing = PJ_FALSE;
-    tp.is_paused = PJ_FALSE;
-    ((pj_sockaddr*) &rdata.pkt_info.src_addr)->addr.sa_family = PJ_AF_INET;
-
-	udp_on_read_complete( NULL, (pj_ioqueue_op_key_t *) &rdata.tp_info.op_key, bytes_read );
-}
-
+// static void __attribute__((used)) spa_udp_on_read_complete_entry() {
+// 	spa_message_handler_entry();
+// 
+// 	uint8_t message[PJSIP_MAX_PKT_LEN];
+// 	spa_msg_input_var( message );
+// 	pj_ssize_t bytes_read;
+// 	spa_msg_input_size( bytes_read, "message" );
+// 
+// 	struct pjsip_rx_data rdata;
+// 	memcpy( rdata.pkt_info.packet, message, PJSIP_MAX_PKT_LEN );
+// 	rdata.tp_info.op_key.rdata = &rdata;
+// 	struct udp_transport tp;
+// 	rdata.tp_info.transport = (void *) &tp;
+//     tp.is_closing = PJ_FALSE;
+//     tp.is_paused = PJ_FALSE;
+//     ((pj_sockaddr*) &rdata.pkt_info.src_addr)->addr.sa_family = PJ_AF_INET;
+// 
+// 	udp_on_read_complete( NULL, (pj_ioqueue_op_key_t *) &rdata.tp_info.op_key, bytes_read );
+// }
 
 /*
  * udp_on_write_complete()

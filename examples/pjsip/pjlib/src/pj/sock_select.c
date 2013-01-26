@@ -45,7 +45,7 @@ PJ_DEF(void) PJ_FD_ZERO(pj_fd_set_t *fdsetp)
     PJ_CHECK_STACK();
     pj_assert(sizeof(pj_fd_set_t)-sizeof(pj_sock_t) >= sizeof(fd_set));
 
-#ifdef ENABLE_SPA // SPA: FD_ZERO uses unsupported inline asm.
+#ifdef ENABLE_KLEE // SPA: FD_ZERO uses unsupported inline asm.
 	bzero( PART_FDSET(fdsetp), sizeof( fd_set ) );
 #else
     FD_ZERO(PART_FDSET(fdsetp));
@@ -111,7 +111,11 @@ PJ_DEF(int) pj_sock_select( int n,
 	p_os_timeout = NULL;
     }
 
+#ifdef ENABLE_KLEE
+	return 1;
+#else
     return select(n, PART_FDSET_OR_NULL(readfds), PART_FDSET_OR_NULL(writefds),
 		  PART_FDSET_OR_NULL(exceptfds), p_os_timeout);
+#endif
 }
 

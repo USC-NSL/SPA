@@ -84,8 +84,14 @@ static void setup_socket_signal()
 
 #endif
 
+void spa_options_entry();
+
 int main(int argc, char *argv[])
 {
+#ifdef ENABLE_SPA
+	spa_options_entry();
+	return 0;
+#endif
     setup_socket_signal();
 
     do {

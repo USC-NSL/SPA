@@ -30,6 +30,8 @@ PJ_DEF(void) pj_srand(unsigned int seed)
 PJ_DEF(int) pj_rand(void)
 {
     PJ_CHECK_STACK();
-    return platform_rand();
+//     return platform_rand();
+	static int i = 1;
+	return i++;
 }
 

@@ -1,5 +1,5 @@
 PROCNUM=`grep -i processor /proc/cpuinfo | wc -l`
-./configure-llvm
+./configure-gcc
 echo
 echo
 echo
@@ -8,5 +8,6 @@ make -skj${PROCNUM}
 echo
 echo
 echo
-make -f llvm.mk clean
-make -kj${PROCNUM} -f llvm.mk
+make -f gcc.mk clean
+make -kj${PROCNUM} -f gcc.mk
+

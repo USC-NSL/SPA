@@ -1,4 +1,5 @@
 #!/bin/bash
+CFLAGS='-DUDATAPATH_AS_LIB' \
 ./configure \
 --enable-ndebug \
 --disable-ssl \

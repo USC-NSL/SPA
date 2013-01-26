@@ -1,4 +1,4 @@
-LD=llvm-ld
+LD=llvm-ld -disable-opt
 CXX=llvm-g++
 AR=echo
 RANLIB=echo
@@ -10,13 +10,13 @@ CPP=llvm-cpp
 
 LIB_OBJ=lib/dhcp-client.o lib/util.o lib/vlog.o lib/vconn-unix.o lib/dynamic-string.o lib/fatal-signal.o lib/dirs.o lib/hash.o lib/backtrace.o lib/learning-switch.o lib/svec.o lib/bitmap.o lib/random.o lib/port-array.o lib/vconn.o lib/ofpbuf.o lib/vconn-stream.o lib/fault.o lib/vconn-netlink.o lib/stp.o lib/tag.o lib/process.o lib/flow.o lib/leak-checker.o lib/dhcp.o lib/socket-util.o lib/queue.o lib/hmap.o lib/vconn-tcp.o lib/poll-loop.o lib/timeval.o lib/ofp-print.o lib/list.o lib/daemon.o lib/pcap.o lib/dpif.o lib/signals.o lib/command-line.o lib/rconn.o lib/netdev.o lib/ofpstat.o lib/shash.o lib/mac-learning.o lib/vlog-socket.o lib/csum.o lib/netlink.o
 
-BIN=secchan/ofprotocol controller/controller utilities/vlogconf utilities/dpctl utilities/ofp-discover utilities/ofp-kill udatapath/ofdatapath tests/test-flows tests/test-hmap tests/test-list tests/test-dhcp-client tests/test-stp instrumentation/test
+BIN=secchan/ofprotocol controller/controller utilities/vlogconf utilities/dpctl utilities/ofp-discover utilities/ofp-kill udatapath/ofdatapath tests/test-flows tests/test-hmap tests/test-list tests/test-dhcp-client tests/test-stp instrumentation/test-server instrumentation/test-client
 .PHONY: all clean
 
 all: ${BIN}
 
 clean:
-	rm -f ${BIN} */*.bc instrumentation/test.o
+	rm -f ${BIN} */*.bc instrumentation/test-server.o instrumentation/test-client.o
 
 secchan/ofprotocol: secchan/discovery.o secchan/emerg-flow.o secchan/fail-open.o secchan/failover.o secchan/in-band.o secchan/port-watcher.o secchan/protocol-stat.o secchan/ratelimit.o secchan/secchan.o secchan/status.o secchan/stp-secchan.o ${LIB_OBJ}
 	${LD}  -o $@ $^
@@ -54,9 +54,24 @@ tests/test-dhcp-client: tests/test-dhcp-client.o ${LIB_OBJ}
 tests/test-stp: tests/test-stp.o ${LIB_OBJ}
 	${LD}  -o $@ $^
 
-instrumentation/test.o: instrumentation/test.c
+instrumentation/test-client.o: instrumentation/test-client.c
+	${CC} ${CFLAGS} -I lib -I include -I udatapath -c -o $@ $^
+
+instrumentation/test-client: instrumentation/test-client.o ${LIB_OBJ} udatapath/udatapath_ofdatapath-datapath.o udatapath/udatapath_ofdatapath-udatapath.o
+	${LD}  -o $@ $^
+
+instrumentation/test-server.o: instrumentation/test-server.c
 	${CC} ${CFLAGS} -I lib -I include -c -o $@ $^
 
-instrumentation/test: instrumentation/test.o ${LIB_OBJ}
+instrumentation/test-server: instrumentation/test-server.o ${LIB_OBJ}
 	${LD}  -o $@ $^
+
+server.paths: instrumentation/test-server.bc
+	./spa-server.sh
+
+client.paths: instrumentation/test-client.bc
+	./spa-client.sh
+
+badinputs.untested: server.paths client.paths
+	./spa-badinputs.sh
 

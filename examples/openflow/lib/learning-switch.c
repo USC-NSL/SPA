@@ -30,7 +30,6 @@
  * advertising or publicity pertaining to the Software or any
  * derivatives without specific, written prior permission.
  */
-
 #include <config.h>
 #include "learning-switch.h"
 
@@ -263,6 +262,10 @@ void
 lswitch_process_packet(struct lswitch *sw, struct rconn *rconn,
                        const struct ofpbuf *msg)
 {
+#ifdef ENABLE_SPA
+    spa_msg_input( msg->data, 1500, "message" );
+    spa_msg_input_size( msg->size, "message" );
+#endif
     struct processor {
         uint8_t type;
         size_t min_size;
@@ -304,15 +307,17 @@ lswitch_process_packet(struct lswitch *sw, struct rconn *rconn,
     const struct processor *p;
     struct ofp_header *oh;
 
-    spa_msg_input_var( msg );
-    spa_seed_file( 1, &msg, "query.seed" );
 
     oh = msg->data;
     if (sw->datapath_id == 0
         && oh->type != OFPT_ECHO_REQUEST
         && oh->type != OFPT_FEATURES_REPLY) {
+#ifdef ENABLE_SPA
         spa_valid_path();
+#endif
+#ifndef ENABLE_SPA
         send_features_request(sw, rconn);
+#endif
         return;
     }
 
@@ -321,25 +326,38 @@ lswitch_process_packet(struct lswitch *sw, struct rconn *rconn,
             if (msg->size < p->min_size) {
                 VLOG_WARN_RL(&rl, "%012llx: %s: too short (%zu bytes) for "
                              "type %"PRIu8" (min %zu)", sw->datapath_id,
-                             rconn_get_name(rconn), msg->size, oh->type,
+#ifndef ENABLE_SPA
+                             rconn_get_name(rconn),
+#else
+                            "<rconn-name>",
+#endif
+                             msg->size, oh->type,
                              p->min_size);
                 spa_invalid_path();
                 return;
             }
+#ifndef ENABLE_SPA
             if (p->handler) {
                 (p->handler)(sw, rconn, msg->data);
             }
+#endif
+#ifdef ENABLE_SPA
             spa_valid_path();
+#endif
             return;
         }
     }
+//#ifndef ENABLE_SPA
     if (VLOG_IS_DBG_ENABLED()) {
         char *p = ofp_to_string(msg->data, msg->size, 2);
         VLOG_DBG_RL(&rl, "%012llx: OpenFlow packet ignored: %s",
                     sw->datapath_id, p);
         free(p);
     }
+//#endif
+#ifdef ENABLE_SPA
     spa_invalid_path();
+#endif
 }
 
 static void
@@ -664,5 +682,13 @@ process_stats_reply(struct lswitch *sw, struct rconn *rconn, void *osr_)
     } else {
         sw->last_reply = time_msec();
     }
+}
+
+//added for instrumentation
+struct lswitch* __attribute__((noinline,used))
+spa_switch_create()
+{
+   struct lswitch* sw = malloc(sizeof(struct lswitch));
+   return sw;
 }
 
