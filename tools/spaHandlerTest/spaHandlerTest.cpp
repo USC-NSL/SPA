@@ -31,8 +31,6 @@
 #define ALTERNATIVE_MAIN_ENTRY_FUNCTION	"main"
 #define OLD_ENTRY_FUNCTION				"__spa_old_main"
 
-#define LOG_FILE_VARIABLE				"SPA_LOG_FILE"
-
 extern std::string InputFile;
 
 namespace {
