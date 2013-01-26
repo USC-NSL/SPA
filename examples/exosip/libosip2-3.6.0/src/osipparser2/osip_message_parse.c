@@ -24,6 +24,8 @@
 #include <osipparser2/osip_parser.h>
 #include "parser.h"
 
+#include <spa/spaRuntime.h>
+
 static void osip_util_replace_all_lws(char *sip_message);
 static int osip_message_set__header(osip_message_t * sip, const char *hname,
 									const char *hvalue);
@@ -344,10 +346,14 @@ int __osip_find_next_crlf(const char *start_of_header, const char **end_of_heade
 		OSIP_TRACE(osip_trace
 				   (__FILE__, __LINE__, OSIP_BUG, NULL,
 					"Message that contains LWS must be processed with osip_util_replace_all_lws(char *tmp) before being parsed.\n"));
+
+		spa_return();
 		return -2;
 	}
 
 	*end_of_header = soh + 1;
+
+	spa_return();
 	return OSIP_SUCCESS;
 }
 
@@ -598,6 +604,7 @@ msg_headers_parse(osip_message_t * sip, const char *start_of_header,
 			OSIP_TRACE(osip_trace
 					   (__FILE__, __LINE__, OSIP_INFO1, NULL,
 						"SIP message does not end with CRLFCRLF\n"));
+			spa_return();
 			return OSIP_SUCCESS;
 		}
 
@@ -614,6 +621,7 @@ msg_headers_parse(osip_message_t * sip, const char *start_of_header,
 		/* CRLFCRLF (also CRCR and LFLF are allowed) */
 		if ((start_of_header[0] == '\r') || (start_of_header[0] == '\n')) {
 			*body = start_of_header;
+			spa_return();
 			return OSIP_SUCCESS;	/* end of header found        */
 		}
 
@@ -909,6 +917,7 @@ _osip_message_parse(osip_message_t * sip, const char *buf, size_t length,
 		if (sip->content_length == NULL)
 			osip_message_set_content_length(sip, "0");
 		osip_free(beg);
+		spa_return();
 		return OSIP_SUCCESS;	/* no body found */
 	}
 
@@ -925,6 +934,7 @@ _osip_message_parse(osip_message_t * sip, const char *buf, size_t length,
 	if (sip->content_length == NULL)
 		osip_message_set_content_length(sip, "0");
 
+	spa_return();
 	return OSIP_SUCCESS;
 }
 

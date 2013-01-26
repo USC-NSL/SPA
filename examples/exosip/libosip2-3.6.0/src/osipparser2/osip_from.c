@@ -242,7 +242,7 @@ int osip_from_parse(osip_from_t * from, const char *hvalue)
 		if (i != 0)
 			return i;
 	}
-	spa_waypoint( 1 );
+	spa_return();
 	return OSIP_SUCCESS;
 }
 
