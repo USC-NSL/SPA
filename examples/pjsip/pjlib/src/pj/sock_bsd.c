@@ -725,7 +725,7 @@ PJ_DEF(pj_status_t) pj_sock_recvfrom(pj_sock_t sock,
     PJ_ASSERT_RETURN(from && fromlen, (*len=-1, PJ_EINVAL));
 
 #ifdef ENABLE_KLEE
-	spa_msg_input( buf, *len, "message" );
+	spa_msg_input( buf, 2000/*PJSIP_MAX_PKT_LEN*//* *len*/, "message" );
 	spa_msg_input_size( *len, "message" );
 	((struct sockaddr_in *) from)->sin_family = AF_INET;
 	((struct sockaddr_in *) from)->sin_port = htons( 5061 );

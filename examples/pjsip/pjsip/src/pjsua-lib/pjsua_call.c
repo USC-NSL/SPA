@@ -342,74 +342,74 @@ static int call_get_secure_level(pjsua_call *call)
 */
 
 
-void __attribute__((used)) spa_call_make_call_entry() {
-// 	spa_api_entry();
-
-	// Symbolic API inputs. Values are just place holders.
-	char *from_id = malloc( 100 );
-	spa_api_input( from_id, 100, "from_id" );
-// 	klee_assume( from_id[99] == '\0' );
-	strcpy( from_id, "sip:caller@domain.com" );
-
-	char *to_url = malloc( 100 );
-	spa_api_input( to_url, 100, "to_url" );
-// 	klee_assume( to_url[99] == '\0' );
-	strcpy( from_id, "sip:callee@localhost" );
-
-	pjsua_acc_id acc_id;
-
-	/* Create pjsua first! */
-	if (pjsua_create() != PJ_SUCCESS) return;
-
-	/* Check valid SIP URL */
-	if (pjsua_verify_url(to_url) != PJ_SUCCESS) return;
-
-	/* Init pjsua */
-	{
-		pjsua_config cfg;
-		pjsua_logging_config log_cfg;
-
-		pjsua_config_default(&cfg);
-		pjsua_logging_config_default(&log_cfg);
-		log_cfg.console_level = 4;
-
-		if (pjsua_init(&cfg, &log_cfg, NULL) != PJ_SUCCESS) return;
-		if (pjsua_set_null_snd_dev() != PJ_SUCCESS) return;
-	}
-
-	/* Add UDP transport. */
-	{
-		pjsua_transport_config cfg;
-
-		pjsua_transport_config_default(&cfg);
-		cfg.port = 5061;
-		if (pjsua_transport_create(PJSIP_TRANSPORT_UDP, &cfg, NULL) != PJ_SUCCESS) return;
-	}
-
-	/* Initialization is done, now start pjsua */
-	if (pjsua_start() != PJ_SUCCESS) return;
-
-	/* Register to SIP server by creating SIP account. */
-	{
-		pjsua_acc_config cfg;
-
-		pjsua_acc_config_default(&cfg);
-		cfg.id = pj_str(from_id);
-
-		if (pjsua_acc_add(&cfg, PJ_TRUE, &acc_id) != PJ_SUCCESS) return;
-	}
-
-	/* Make call to the URL. */
-	{
-		pj_str_t uri = pj_str(to_url);
-		if (pjsua_call_make_call(acc_id, &uri, 0, NULL, NULL, NULL) != PJ_SUCCESS) return;
-	}
-
-	/* Destroy pjsua */
-	pjsua_destroy();
-
-	return;
-}
+// void __attribute__((used)) spa_call_make_call_entry() {
+// // 	spa_api_entry();
+// 
+// 	// Symbolic API inputs. Values are just place holders.
+// 	char *from_id = malloc( 100 );
+// 	spa_api_input( from_id, 100, "from_id" );
+// // 	klee_assume( from_id[99] == '\0' );
+// 	strcpy( from_id, "sip:caller@domain.com" );
+// 
+// 	char *to_url = malloc( 100 );
+// 	spa_api_input( to_url, 100, "to_url" );
+// // 	klee_assume( to_url[99] == '\0' );
+// 	strcpy( from_id, "sip:callee@localhost" );
+// 
+// 	pjsua_acc_id acc_id;
+// 
+// 	/* Create pjsua first! */
+// 	if (pjsua_create() != PJ_SUCCESS) return;
+// 
+// 	/* Check valid SIP URL */
+// 	if (pjsua_verify_url(to_url) != PJ_SUCCESS) return;
+// 
+// 	/* Init pjsua */
+// 	{
+// 		pjsua_config cfg;
+// 		pjsua_logging_config log_cfg;
+// 
+// 		pjsua_config_default(&cfg);
+// 		pjsua_logging_config_default(&log_cfg);
+// 		log_cfg.console_level = 4;
+// 
+// 		if (pjsua_init(&cfg, &log_cfg, NULL) != PJ_SUCCESS) return;
+// 		if (pjsua_set_null_snd_dev() != PJ_SUCCESS) return;
+// 	}
+// 
+// 	/* Add UDP transport. */
+// 	{
+// 		pjsua_transport_config cfg;
+// 
+// 		pjsua_transport_config_default(&cfg);
+// 		cfg.port = 5061;
+// 		if (pjsua_transport_create(PJSIP_TRANSPORT_UDP, &cfg, NULL) != PJ_SUCCESS) return;
+// 	}
+// 
+// 	/* Initialization is done, now start pjsua */
+// 	if (pjsua_start() != PJ_SUCCESS) return;
+// 
+// 	/* Register to SIP server by creating SIP account. */
+// 	{
+// 		pjsua_acc_config cfg;
+// 
+// 		pjsua_acc_config_default(&cfg);
+// 		cfg.id = pj_str(from_id);
+// 
+// 		if (pjsua_acc_add(&cfg, PJ_TRUE, &acc_id) != PJ_SUCCESS) return;
+// 	}
+// 
+// 	/* Make call to the URL. */
+// 	{
+// 		pj_str_t uri = pj_str(to_url);
+// 		if (pjsua_call_make_call(acc_id, &uri, 0, NULL, NULL, NULL) != PJ_SUCCESS) return;
+// 	}
+// 
+// 	/* Destroy pjsua */
+// 	pjsua_destroy();
+// 
+// 	return;
+// }
 
 static void endpt_send_callback( void *token, pjsip_event *event ) {
 	spa_valid_path();
