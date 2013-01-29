@@ -271,6 +271,10 @@ void processPaths( SPA::Path *cp, SPA::Path *sp ) {
 // 	std::cerr << "	Path pair constraints:" << std::endl;
 // 	showConstraints( cm );
 
+	// Add client handler id, to reproduce test later.
+	objectNames.push_back( SPA_HANDLERID_VARIABLE );
+	objects.push_back( cp->getSymbol( SPA_HANDLERID_VARIABLE ) );
+
 	std::vector< std::vector<unsigned char> > result;
 	if ( solver->getInitialValues( klee::Query( cm, exprBuilder->False() ), objects, result ) ) {
 		int fd = open( OutputFile.getValue().c_str(), O_APPEND );
@@ -337,6 +341,9 @@ void processJob( SPA::Path *cp, SPA::Path *sp, bool deletecp, bool deletesp ) {
 				return;
 		}
 
+		if ( queue.size() == 0 )
+			return;
+
 		while ( runningWorkers >= numWorkers ) {
 			int status = 0;
 			assert ( wait( &status ) > 0 );
@@ -372,9 +379,7 @@ void processJob( SPA::Path *cp, SPA::Path *sp, bool deletecp, bool deletesp ) {
 }
 
 void flushJobs() {
-	if ( queue.size() > 0 ) {
-		processJob( NULL, NULL, false, false );
-	}
+	processJob( NULL, NULL, false, false );
 
 	while ( runningWorkers > 0 ) {
 		int status = 0;
@@ -523,6 +528,7 @@ int main(int argc, char **argv, char **envp) {
 		}
 
 		if ( ! processing && Follow ) {
+			processJob( NULL, NULL, false, false );
 			std::cerr << "Reached end of path files, sleeping." << std::endl;
 			sleep( 1 );
 		}

@@ -49,6 +49,10 @@
 #define SPA_VALIDPATH_TAG			"ValidPath"
 #define SPA_VALIDPATH_VALUE			"1"
 
+#define SPA_INITVALUEID_VARIABLE	"spa_internal_initValueID"
+#define SPA_HANDLERID_VARIABLE		"spa_internal_HanderID"
+#define SPA_SEEDID_VARIABLE			"spa_internal_SeedID"
+
 #define LOG_FILE_VARIABLE			"SPA_LOG_FILE"
 
 
