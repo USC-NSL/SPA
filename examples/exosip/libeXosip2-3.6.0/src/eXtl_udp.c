@@ -446,9 +446,7 @@ static int eXtl_update_local_target(osip_message_t * req)
 #define INET6_ADDRSTRLEN 46
 #endif
 
-// static int
-int
-udp_tl_send_message(osip_transaction_t * tr, osip_message_t * sip, char *host,
+/*static*/ int udp_tl_send_message(osip_transaction_t * tr, osip_message_t * sip, char *host,
 					int port, int out_socket)
 {
 	int len = 0;
@@ -695,7 +693,7 @@ udp_tl_send_message(osip_transaction_t * tr, osip_message_t * sip, char *host,
 			osip_nict_set_destination(tr->nict_context, osip_strdup(ipbuf), port);
 	}
 
-	spa_msg_output( message, length, "message" );
+	spa_msg_output( message, length, SIP_MESSAGE_MAX_LENGTH, "message" );
 #ifdef ENABLE_KLEE
 	assert( length == sendto(udp_socket, (const void *) message, length, 0, (struct sockaddr *) &addr, len) );
 #else

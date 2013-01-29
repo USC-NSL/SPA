@@ -339,6 +339,7 @@ osip_body_parse_mime(osip_body_t * body, const char *start_of_body, size_t lengt
 
 	body->body[body->length] = '\0';
 
+	spa_return();
 	return OSIP_SUCCESS;
 
 }

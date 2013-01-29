@@ -133,7 +133,7 @@ int osip_uri_parse(osip_uri_t * url, const char *buf)
 		if (url->string == NULL)
 			return OSIP_NOMEM;
 		osip_strncpy(url->string, tmp + 1, i);
-		spa_waypoint(2);
+		spa_return();
 		return OSIP_SUCCESS;
 	}
 
@@ -250,7 +250,7 @@ int osip_uri_parse(osip_uri_t * url, const char *buf)
 		return OSIP_NOMEM;
 	osip_clrncpy(url->host, host + 1, port - host - 1);
 
-	spa_waypoint(2);
+	spa_return();
 	return OSIP_SUCCESS;
 }
 
