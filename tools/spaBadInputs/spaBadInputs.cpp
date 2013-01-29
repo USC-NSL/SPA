@@ -34,9 +34,7 @@
 
 #define DEFAULT_NUM_JOBS_PER_WORKER	100
 #define DEFAULT_NUM_WORKERS			1
-#define CHECKPOINT_TIME				60 // seconds
-#define CHECKPOINT_FILE		"spaBadInputs.checkpoint"
-#define NAMED_SEMAPHORE		"/spaBadInputs"
+#define CHECKPOINT_TIME				600 // seconds
 
 namespace {
 	llvm::cl::opt<std::string> ClientPathFile("client", llvm::cl::desc(
@@ -51,8 +49,8 @@ namespace {
 	llvm::cl::opt<std::string> DebugFile("d", llvm::cl::desc(
 		"Specifies the file to write debug data to."));
 
-// 	llvm::cl::opt<bool> Follow("f", llvm::cl::desc(
-// 		"Follows input files as they are generated."));
+	llvm::cl::opt<bool> Follow("f", llvm::cl::desc(
+		"Follows input files as they are generated."));
 
 	llvm::cl::opt<int> NumWorkers("p", llvm::cl::desc(
 		"Number of parallel workers to create."));
@@ -62,7 +60,7 @@ namespace {
 }
 
 typedef struct {
-	std::set<std::vector< std::vector<unsigned char> > > results;
+	unsigned long solutions;
 } GlobalData_t;
 
 typedef struct {
@@ -279,46 +277,49 @@ void processPaths( SPA::Path *cp, SPA::Path *sp ) {
 		assert( fd >= 0 && "Unable to open output file for locking." );
 		assert( flock( fd, LOCK_EX ) == 0 && "Unable to lock output file." );
 		std::cerr << "	Found solution." << std::endl;
+		gd->solutions++;
 
-		if ( ! gd->results.count( result ) ) {
-			gd->results.insert( result );
+		std::ostream &o = output.is_open() ? output : std::cout;
+		std::ostream &d = debug.is_open() ? debug : std::cout;
 
-			std::ostream &o = output.is_open() ? output : std::cout;
-			std::ostream &d = debug.is_open() ? debug : std::cout;
-
-			for ( size_t i = 0; i < result.size(); i++ ) {
+		for ( size_t i = 0; i < result.size(); i++ ) {
 // 				std::cerr << "	Outputting solution for: " << objectNames[i] << std::endl;
-				o << objectNames[i];
-				for ( std::vector<unsigned char>::iterator it = result[i].begin(), ie = result[i].end(); it != ie; it++ )
-					o << " " << std::hex << (int) *it;
-				o << std::endl;
-			}
+			o << objectNames[i];
+			for ( std::vector<unsigned char>::iterator it = result[i].begin(), ie = result[i].end(); it != ie; it++ )
+				o << " " << std::hex << (int) *it;
 			o << std::endl;
-
-			d << "/*********" << std::endl;
-			d << "Client Path:" << std::endl;
-			d << std::endl << *cp << std::endl << std::endl;
-			d << "Server Path:" << std::endl;
-			d << std::endl << *sp << std::endl << std::endl;
-			d << "*********/" << std::endl << std::endl;
-			for ( size_t i = 0; i < result.size(); i++ ) {
-				d << "uint8_t " << objectNames[i] << "[" << result[i].size() << "] = {";
-				for ( std::vector<unsigned char>::iterator it = result[i].begin(), ie = result[i].end(); it != ie; it++ )
-					d << " " << (int) *it << (it != result[i].end() ? "," : "");
-				d << " };" << std::endl;
-				d << "char " << objectNames[i] << "[" << result[i].size() << "] = \"";
-				for ( std::vector<unsigned char>::iterator it = result[i].begin(), ie = result[i].end(); it != ie && *it != '\0'; it++ )
-					d << escapeChar( *it );
-				d << "\";" << std::endl;
-				d << std::endl;
-			}
-			d << "// -----------------------------------------------------------------------------" << std::endl;
-		} else {
-			std::cerr << "	Redundant result." << std::endl;
 		}
+		o << std::endl;
+
+		d << "/*********" << std::endl;
+		d << "Client Path:" << std::endl;
+		d << std::endl << *cp << std::endl << std::endl;
+		d << "Server Path:" << std::endl;
+		d << std::endl << *sp << std::endl << std::endl;
+		d << "*********/" << std::endl << std::endl;
+		for ( size_t i = 0; i < result.size(); i++ ) {
+			d << "uint8_t " << objectNames[i] << "[" << result[i].size() << "] = {";
+			for ( std::vector<unsigned char>::iterator it = result[i].begin(), ie = result[i].end(); it != ie; it++ )
+				d << " " << (int) *it << (it != result[i].end() ? "," : "");
+			d << " };" << std::endl;
+			d << "char " << objectNames[i] << "[" << result[i].size() << "] = \"";
+			for ( std::vector<unsigned char>::iterator it = result[i].begin(), ie = result[i].end(); it != ie && *it != '\0'; it++ )
+				d << escapeChar( *it );
+			d << "\";" << std::endl;
+			d << std::endl;
+		}
+		d << "// -----------------------------------------------------------------------------" << std::endl;
+
+		assert( flock( fd, LOCK_UN ) == 0 && "Unable to unlock output file." );
+		assert( close( fd ) == 0 && "Unable to close output file for locking." );
 	} else {
 		std::cerr << "	Could not solve constraint." << std::endl;
 	}
+}
+
+void handleSignal( int n ) {
+	std::cerr << "Finishing current jobs." << std::endl;
+	shutdown = true;
 }
 
 void processJob( SPA::Path *cp, SPA::Path *sp, bool deletecp, bool deletesp ) {
@@ -346,10 +347,13 @@ void processJob( SPA::Path *cp, SPA::Path *sp, bool deletecp, bool deletesp ) {
 		assert( pid >= 0 && "Error forking worker process." );
 
 		if ( pid == 0 ) {
+			signal( SIGINT, SIG_IGN );
 			for ( std::list<job_t *>::iterator it = queue.begin(), ie = queue.end(); it != ie; it++ )
 				processPaths( (*it)->cp, (*it)->sp );
 			exit( 0 );
 		} else {
+			signal( SIGINT, handleSignal );
+
 			runningWorkers++;
 
 			for ( std::list<job_t *>::iterator it = queue.begin(), ie = queue.end(); it != ie; it++ ) {
@@ -379,7 +383,7 @@ void flushJobs() {
 	}
 }
 
-bool checkpoint( unsigned long &clientPath, unsigned long &serverPath, unsigned long &processed ) {
+bool checkpoint( std::string cpFileName, unsigned long &clientPath, unsigned long &serverPath, unsigned long &processed ) {
 	static time_t last = 0;
 	time_t now = time( NULL );
 
@@ -387,7 +391,7 @@ bool checkpoint( unsigned long &clientPath, unsigned long &serverPath, unsigned 
 		flushJobs();
 		last = time( NULL );
 		{
-			std::ifstream cpFile( CHECKPOINT_FILE );
+			std::ifstream cpFile( cpFileName.c_str() );
 			unsigned long c = 0, s = 0, p = 0;
 			cpFile >> c >> s >> p;
 			if ( cpFile.is_open() && (c > clientPath || s > serverPath || p > processed) ) {
@@ -399,7 +403,7 @@ bool checkpoint( unsigned long &clientPath, unsigned long &serverPath, unsigned 
 			}
 		}
 		{
-			std::ofstream cpFile( CHECKPOINT_FILE );
+			std::ofstream cpFile( cpFileName.c_str() );
 			assert( cpFile.is_open() && "Unable to open checkpoint file." );
 			cpFile << clientPath << " " << serverPath << " " << processed << std::endl;
 			cpFile.flush();
@@ -409,14 +413,6 @@ bool checkpoint( unsigned long &clientPath, unsigned long &serverPath, unsigned 
 	}
 
 	return false;
-}
-
-void handleSignal( int n ) {
-	if ( shutdown ) {
-		std::cerr << "Interrupted uncleanly." << std::endl;
-		exit( 1 );
-	}
-	shutdown = true;
 }
 
 int main(int argc, char **argv, char **envp) {
@@ -456,13 +452,14 @@ int main(int argc, char **argv, char **envp) {
 	assert( OutputFile.size() > 0 && "No output file specified." );
 	output.open( OutputFile.getValue().c_str(), std::ios_base::out | std::ios_base::app );
 	assert( output.is_open() && "Unable to open output file." );
+	std::string cpFileName = OutputFile.getValue() + ".checkpoint";
 
 	if ( DebugFile.size() > 0 ) {
 		debug.open( DebugFile.getValue().c_str() );
 	}
 
 	gd = (GlobalData_t *) mmap( NULL, sizeof( GlobalData_t ), PROT_READ | PROT_WRITE, MAP_SHARED | MAP_ANONYMOUS, -1, 0 );
-	gd->results = std::set<std::vector< std::vector<unsigned char> > >();
+	gd->solutions = 0;
 
 	assert( NumWorkers >= 0 && "Invalid number of parallel workers." );
 	numWorkers = NumWorkers > 0 ? NumWorkers : DEFAULT_NUM_WORKERS;
@@ -489,10 +486,12 @@ int main(int argc, char **argv, char **envp) {
 	do {
 		processing = false;
 		// Save a checkpoint to recover from failure.
-		if ( checkpoint( clientPath, serverPath, processed ) ) {
+		if ( checkpoint( cpFileName, clientPath, serverPath, processed ) ) {
 			clientPathLoader.restart();
 			for ( unsigned long i = 1; i <= clientPath; i++ )
 				assert( (cp = clientPathLoader.getPath()) && "Unable to load client path file to checkpoint position.");
+			for ( unsigned long i = 1; i <= serverPath; i++ )
+				assert( (sp = serverPathLoader.getPath()) && "Unable to load server path file to checkpoint position.");
 		}
 		if ( shutdown ) {
 			std::cerr << "Interrupted cleanly." << std::endl;
@@ -504,7 +503,7 @@ int main(int argc, char **argv, char **envp) {
 			serverPathLoader.restart();
 			for ( unsigned long i = 1; i <= serverPath; i++ ) {
 				assert( (sp = serverPathLoader.getPath()) );
-				std::cerr << "Processing client path " << clientPath << "/" << totalClientPaths << " with server path " << i << "/" << totalServerPaths << " (pair " << processed << "/" << (totalClientPaths * totalServerPaths) << " - " << (processed * 100 / totalClientPaths / totalServerPaths) << "%). Found " << gd->results.size() << " solutions." << std::endl;
+				std::cerr << "Processing client path " << clientPath << "/" << totalClientPaths << " with server path " << i << "/" << totalServerPaths << " (pair " << processed << "/" << (totalClientPaths * totalServerPaths) << " - " << (processed * 100 / totalClientPaths / totalServerPaths) << "%). Found " << gd->solutions << " solutions." << std::endl;
 				processJob( cp, sp, i == serverPath, true );
 				processed++;
 			}
@@ -516,13 +515,19 @@ int main(int argc, char **argv, char **envp) {
 			clientPathLoader.restart();
 			for ( unsigned long i = 1; i <= clientPath; i++ ) {
 				assert( (cp = clientPathLoader.getPath()) );
-				std::cerr << "Processing client path " << i << "/" << totalClientPaths << " with server path " << serverPath << "/" << totalServerPaths << " (pair " << processed << "/" << (totalClientPaths * totalServerPaths) << " - " << (processed * 100 / totalClientPaths / totalServerPaths) << "%). Found " << gd->results.size() << " solutions." << std::endl;
+				std::cerr << "Processing client path " << i << "/" << totalClientPaths << " with server path " << serverPath << "/" << totalServerPaths << " (pair " << processed << "/" << (totalClientPaths * totalServerPaths) << " - " << (processed * 100 / totalClientPaths / totalServerPaths) << "%). Found " << gd->solutions << " solutions." << std::endl;
 				processJob( cp, sp, true, i == clientPath );
 				processed++;
 			}
 			processing = true;
 		}
-	} while ( processing );
+
+		if ( ! processing && Follow ) {
+			std::cerr << "Reached end of path files, sleeping." << std::endl;
+			sleep( 1 );
+		}
+	} while ( processing || Follow );
 	flushJobs();
-	remove( CHECKPOINT_FILE );
+	remove( cpFileName.c_str() );
+	std::cerr << "Done. Found " << gd->solutions << " solutions." << std::endl;
 }
