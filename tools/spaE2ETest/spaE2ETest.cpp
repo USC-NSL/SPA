@@ -41,6 +41,7 @@ int main(int argc, char **argv, char **envp) {
 	}
 	inputFile.close();
 
+	unsigned long numTestcases = 0;
 	inputFile.open( inputFileName );
 	std::ofstream outputFile( outputFileName );
 
@@ -60,10 +61,10 @@ int main(int argc, char **argv, char **envp) {
 			setenv( name.c_str(), value.c_str(), 1 );
 		} else {
 			if ( ! bundle.empty() ) {
+				std::cerr << "Processing test case: " << ++numTestcases << std::endl;
 				if ( testedBundles.count( bundle ) ) {
 					std::cerr << "Redundant test case. Ignoring." << std::endl;
 				} else {
-					std::cerr << "Processing test case." << std::endl;
 					testedBundles.insert( bundle );
 
 					std::string serverLog = tmpnam( NULL );
