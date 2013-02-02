@@ -313,7 +313,6 @@ int main(int argc, char **argv, char **envp) {
 	CLOUD9_DEBUG( "   Creating state utility function." );
 	
 	spa.addStateUtilityBack( new SPA::FilteredUtility(), false );
-// 	spa.addStateUtilityBack( new SPA::DepthUtility(), false );
 	if ( Client ) {
 		spa.addStateUtilityBack( new SPA::AstarUtility( module, cfg, cg, checkpoints ), false );
 		spa.addStateUtilityBack( new SPA::TargetDistanceUtility( module, cfg, cg, checkpoints ), false );
@@ -321,6 +320,8 @@ int main(int argc, char **argv, char **envp) {
 		spa.addStateUtilityBack( new SPA::AstarUtility( module, cfg, cg, *filter ), false );
 		spa.addStateUtilityBack( new SPA::TargetDistanceUtility( module, cfg, cg, *filter ), false );
 	}
+	// All else being the same, go DFS.
+	spa.addStateUtilityBack( new SPA::DepthUtility(), false );
 
 	if ( DumpCFG.size() > 0 ) {
 		CLOUD9_DEBUG( "Dumping CFG to: " << DumpCFG.getValue() );

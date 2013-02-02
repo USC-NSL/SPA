@@ -345,6 +345,8 @@ int main(int argc, char **argv, char **envp) {
 		spa.addStateUtilityBack( new SPA::AstarUtility( module, cfg, cg, checkpoints ), false );
 		spa.addStateUtilityBack( new SPA::TargetDistanceUtility( module, cfg, cg, checkpoints ), false );
 	}
+	// All else being the same, go DFS.
+	spa.addStateUtilityBack( new SPA::DepthUtility(), false );
 
 	if ( DumpCFG.size() > 0 ) {
 		CLOUD9_DEBUG( "Dumping CFG to: " << DumpCFG.getValue() );
