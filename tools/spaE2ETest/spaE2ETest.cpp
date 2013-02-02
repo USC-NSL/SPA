@@ -11,15 +11,23 @@
 
 
 int main(int argc, char **argv, char **envp) {
-	if ( argc != 5 ) {
-		std::cerr << "Usage: " << argv[0] << " <input-file> <output-file> <client-cmd> <server-cmd>" << std::endl;
+	if ( argc < 5 || argc > 6  ) {
+		std::cerr << "Usage: " << argv[0] << " [-f] <input-file> <output-file> <client-cmd> <server-cmd>" << std::endl;
 
 		return -1;
 	}
-	char *inputFileName		= argv[1];
-	char *outputFileName	= argv[2];
-	char *clientCmd			= argv[3];
-	char *serverCmd			= argv[4];
+
+	bool follow = false;
+
+	unsigned int arg = 1;
+	if ( std::string( "-f" ) == argv[arg] ) {
+		follow = true;
+		arg++;
+	}
+	char *inputFileName		= argv[arg++];
+	char *outputFileName	= argv[arg++];
+	char *clientCmd			= argv[arg++];
+	char *serverCmd			= argv[arg++];
 
 	// Load previously confirmed results to prevent redundant results.
 	std::ifstream inputFile( outputFileName );
@@ -41,11 +49,19 @@ int main(int argc, char **argv, char **envp) {
 	}
 	inputFile.close();
 
-	unsigned long numTestcases = 0;
+	unsigned long numTestCases = 0;
+	unsigned long truePositives = testedBundles.size();
+	unsigned long falsePositives = 0;
 	inputFile.open( inputFileName );
-	std::ofstream outputFile( outputFileName );
+	std::ofstream outputFile( outputFileName, std::ios_base::app );
 
-	while ( inputFile.good() ) {
+	while ( inputFile.good() || follow ) {
+		if ( follow && ! inputFile.good() ) {
+			std::cerr << "Reached end of input. Sleeping." << std::endl;
+			sleep( 1 );
+			inputFile.clear();
+			continue;
+		}
 		std::string line;
 		std::getline( inputFile, line );
 
@@ -61,10 +77,11 @@ int main(int argc, char **argv, char **envp) {
 			setenv( name.c_str(), value.c_str(), 1 );
 		} else {
 			if ( ! bundle.empty() ) {
-				std::cerr << "Processing test case: " << ++numTestcases << std::endl;
+				numTestCases++;
 				if ( testedBundles.count( bundle ) ) {
 					std::cerr << "Redundant test case. Ignoring." << std::endl;
 				} else {
+					std::cerr << "Processing test case." << std::endl;
 					testedBundles.insert( bundle );
 
 					std::string serverLog = tmpnam( NULL );
@@ -105,14 +122,14 @@ int main(int argc, char **argv, char **envp) {
 
 					std::cerr << "Processing outputs." << std::endl;
 					std::ifstream logFile( clientLog.c_str() );
-					assert( logFile.is_open() && "Unable to open client log file." );
+// 					assert( logFile.is_open() && "Unable to open client log file." );
 					bool clientValid = false;
 					while ( logFile.good() ) {
 						std::getline( logFile, line );
-						if ( line.compare( 0, strlen( SPA_TAG_PREFIX SPA_VALIDPATH_TAG ), SPA_TAG_PREFIX SPA_VALIDPATH_TAG ) == 0 ) {
+						if ( line.compare( 0, strlen( SPA_TAG_PREFIX SPA_OUTPUT_TAG ), SPA_TAG_PREFIX SPA_OUTPUT_TAG ) == 0 ) {
 							size_t boundary = line.find( ' ' );
 							assert( boundary != std::string::npos && boundary < line.size() - 1 && "Malformed tag." );
-							clientValid = (line.substr( boundary + 1 ) == SPA_VALIDPATH_VALUE);
+							clientValid = (line.substr( boundary + 1 ) == SPA_OUTPUT_VALUE);
 						}
 					}
 					logFile.close();
@@ -134,15 +151,18 @@ int main(int argc, char **argv, char **envp) {
 					remove( serverLog.c_str() );
 					std::cerr << "Server validity: " << serverValid << std::endl;
 
-					if ( (! clientValid) /*|| (! serverValid)*/ ) {
+					if ( clientValid && (! serverValid) ) {
 						std::cerr << "Found true positive. Outputting" << std::endl;
+						truePositives++;
 						outputFile << bundle << std::endl;
 					} else {
 						std::cerr << "Found false positive. Filtering." << std::endl;
+						falsePositives++;
 					}
 					std::cerr << "--------------------------------------------------" << std::endl;
 				}
 				bundle.clear();
+				std::cerr << "Processed " << numTestCases << " test cases: " << truePositives << " true positives, " << falsePositives << " false positives." << std::endl;
 			}
 		}
 	}
