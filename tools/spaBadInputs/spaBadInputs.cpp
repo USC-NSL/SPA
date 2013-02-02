@@ -476,8 +476,16 @@ int main(int argc, char **argv, char **envp) {
 	assert( NumJobsPerWorker >= 0 && "Invalid number of jobs per workers." );
 	numJobsPerWorker = NumJobsPerWorker > 0 ? NumJobsPerWorker : DEFAULT_NUM_JOBS_PER_WORKER;
 
-	cp = clientPathLoader.getPath();
-	sp = serverPathLoader.getPath();
+	while ( (! (cp = clientPathLoader.getPath())) && Follow ) {
+		std::cerr << "Client path file is empty. Sleeping." << std::endl;
+		sleep( 1 );
+	}
+
+	while ( (! (sp = serverPathLoader.getPath())) && Follow ) {
+		std::cerr << "Server path file is empty. Sleeping." << std::endl;
+		sleep( 1 );
+	}
+
 	assert( cp && sp );
 	std::cerr << "Processing client path 1/" << totalClientPaths << " with server path 1/" << totalServerPaths << "." << std::endl;
 	processJob( cp, sp, true, true );
