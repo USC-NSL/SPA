@@ -98,7 +98,7 @@ int main(int argc, char **argv, char **envp) {
 
 	// Get full CFG and call-graph.
 	SPA::CFG cfg( module );
-	SPA::CG cg( cfg );
+	SPA::CG cg( module );
 
 	if ( InitValueFile.size() > 0 ) {
 		CLOUD9_DEBUG( "   Setting up initial values." );
@@ -237,7 +237,7 @@ int main(int argc, char **argv, char **envp) {
 
 	// Rebuild full CFG and call-graph (changed by SPA after adding init/entry handlers).
 	cfg = SPA::CFG( module );
-	cg = SPA::CG( cfg );
+	cg = SPA::CG( module );
 
 	if ( DumpCG.size() > 0 ) {
 		CLOUD9_DEBUG( "Dumping CG to: " << DumpCG.getValue() );
@@ -294,10 +294,11 @@ int main(int argc, char **argv, char **envp) {
 		spa.addStateUtilityBack( filter, false );
 	else if ( Server )
 		spa.addStateUtilityBack( filter, true );
+
 	for ( std::set<llvm::Instruction *>::iterator it = entryPoints.begin(), ie = entryPoints.end(); it != ie; it++ ) {
 		if ( ! filter->checkInstruction( *it ) ) {
 			CLOUD9_DEBUG( "Entry point at function " << (*it)->getParent()->getParent()->getName().str() << " is not included in filter." );
-// 			assert( false && "Entry point is filtered out." );
+			assert( false && "Entry point is filtered out." );
 		}
 	}
 
@@ -333,7 +334,8 @@ int main(int argc, char **argv, char **envp) {
 // 		if ( filter )
 // 			annotations[new SPA::NegatedIF( filter )] = "style = \"filled\" fillcolor = \"grey\"";
 
-		cfg.dump( dotFile, /*filter*/ NULL, annotations, /*utility*/ /*waypointUtility*/ /*filter*/ /*NULL*/ new SPA::TargetDistanceUtility( module, cfg, cg, checkpoints ), false /*true*/ );
+		cfg.dump( dotFile, cg, /*filter*/ NULL, annotations, /*utility*/ /*waypointUtility*/ /*filter*/ /*NULL*/ new SPA::TargetDistanceUtility( module, cfg, cg, checkpoints ), /*FULL*/ /*BASICBLOCK*/ FUNCTION );
+// 		cg.dump( dotFile );
 
 		dotFile.flush();
 		dotFile.close();

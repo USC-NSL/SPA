@@ -61,7 +61,7 @@ int main(int argc, char **argv, char **envp) {
 	// Get full CFG and call-graph.
 	CLOUD9_DEBUG( "   Building CFG & CG." );
 	SPA::CFG cfg( module );
-	SPA::CG cg( cfg );
+	SPA::CG cg( module );
 
 	CLOUD9_DEBUG( "   Creating CFG filter." );
 	// Find message handling function entry points.
@@ -96,8 +96,8 @@ int main(int argc, char **argv, char **envp) {
 		annotations[new SPA::WhitelistIF( interestingInstructions )] = "style = \"filled\" color = \"red\"";
 		annotations[new SPA::NegatedIF( &filter )] = "style = \"filled\"";
 
-// 		cfg.dump( dotFile, NULL, annotations, NULL, false );
-		cfg.dump( dotFile, &filter, annotations, NULL, false );
+// 		cfg.dump( dotFile, NULL, annotations, NULL, FULL );
+		cfg.dump( dotFile, cg, &filter, annotations, NULL, FULL );
 
 		dotFile.flush();
 		dotFile.close();

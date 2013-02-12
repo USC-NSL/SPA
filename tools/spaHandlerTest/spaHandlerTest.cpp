@@ -104,7 +104,7 @@ void xformClient() {
 	assert( module = llvm::ParseBitcodeFile( mb.get(), ctx ) );
 
 	SPA::CFG cfg( module );
-	SPA::CG cg( cfg );
+	SPA::CG cg( module );
 
 	llvm::Function *fn;
 	assert( (fn = module->getFunction( SPA_API_ANNOTATION_FUNCTION )) && "API annotation function not present in module." );
@@ -134,7 +134,7 @@ void xformServer() {
 	assert( module = llvm::ParseBitcodeFile( mb.get(), ctx ) );
 
 	SPA::CFG cfg( module );
-	SPA::CG cg( cfg );
+	SPA::CG cg( module );
 	
 	Function *fn;
 	assert( (fn = module->getFunction( SPA_MESSAGE_HANDLER_ANNOTATION_FUNCTION )) && "Message handler annotation function not present in module." );

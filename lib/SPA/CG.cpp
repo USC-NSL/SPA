@@ -14,31 +14,36 @@
 using namespace llvm;
 
 namespace SPA {
-	CG::CG( CFG &cfg ) {
-		// Iterate instructions.
-		for ( CFG::iterator it = cfg.begin(), ie = cfg.end(); it != ie; it++ ) {
-			// Check for CallInst or InvokeInst.
-			if ( const InvokeInst *ii = dyn_cast<InvokeInst>( *it ) ) {
-				if ( ii->getCalledFunction() ) {
-					functions.insert( ii->getCalledFunction() );
-					definiteCallees[*it].insert( ii->getCalledFunction() );
-					possibleCallees[*it].insert( ii->getCalledFunction() );
-				} else {
-// 					CLOUD9_INFO( "Indirect function call at " << (*it)->getParent()->getParent()->getName().str() << (*it)->getDebugLoc().getLine() );
+	CG::CG( llvm::Module *module ) {
+		// Iterate functions.
+		for ( Module::iterator mit = module->begin(), mie = module->end(); mit != mie; mit++ ) {
+			functions.insert( &*mit );
+			// Iterate basic blocks.
+			for ( Function::iterator fit = mit->begin(), fie = mit->end(); fit != fie; fit++ ) {
+				// Iterate instructions.
+				for ( BasicBlock::iterator bbit = fit->begin(), bbie = fit->end(); bbit != bbie; bbit++ ) {
+					// Check for CallInst or InvokeInst.
+					if ( const InvokeInst *ii = dyn_cast<InvokeInst>( &*bbit ) ) {
+						if ( ii->getCalledFunction() ) {
+							definiteCallees[&*bbit].insert( ii->getCalledFunction() );
+							possibleCallees[&*bbit].insert( ii->getCalledFunction() );
+						} else {
+// 							CLOUD9_DEBUG( "Indirect function call at " << ii->getParent()->getParent()->getName().str() << ii->getDebugLoc().getLine() );
+						}
+						definiteCallers[ii->getCalledFunction()].insert( &*bbit );
+						possibleCallers[ii->getCalledFunction()].insert( &*bbit );
+					}
+					if ( const CallInst *ci = dyn_cast<CallInst>( &*bbit ) ) {
+						if ( ci->getCalledFunction() ) {
+							definiteCallees[&*bbit].insert( ci->getCalledFunction() );
+							possibleCallees[&*bbit].insert( ci->getCalledFunction() );
+						} else {
+// 							CLOUD9_DEBUG( "Indirect function call at " << ci->getParent()->getParent()->getName().str() << ":" << ci->getDebugLoc().getLine() );
+						}
+						definiteCallers[ci->getCalledFunction()].insert( &*bbit );
+						possibleCallers[ci->getCalledFunction()].insert( &*bbit );
+					}
 				}
-				definiteCallers[ii->getCalledFunction()].insert( *it );
-				possibleCallers[ii->getCalledFunction()].insert( *it );
-			}
-			if ( const CallInst *ci = dyn_cast<CallInst>( *it ) ) {
-				if ( ci->getCalledFunction() ) {
-					functions.insert( ci->getCalledFunction() );
-					definiteCallees[*it].insert( ci->getCalledFunction() );
-					possibleCallees[*it].insert( ci->getCalledFunction() );
-				} else {
-// 					CLOUD9_INFO( "Indirect function call at " << (*it)->getParent()->getParent()->getName().str() << ":" << (*it)->getDebugLoc().getLine() );
-				}
-				definiteCallers[ci->getCalledFunction()].insert( *it );
-				possibleCallers[ci->getCalledFunction()].insert( *it );
 			}
 		}
 
@@ -50,10 +55,9 @@ namespace SPA {
 				for ( unsigned i = 0; i < ii->getNumArgOperands(); i++ )
 					argTypes.push_back( ii->getArgOperand( i )->getType() );
 			}
-			if ( const CallInst *ci = dyn_cast<CallInst>( *iit ) ) {
+			if ( const CallInst *ci = dyn_cast<CallInst>( *iit ) )
 				for ( unsigned i = 0; i < ci->getNumArgOperands(); i++ )
 					argTypes.push_back( ci->getArgOperand( i )->getType() );
-			}
 			// Look for functions of same type.
 			for ( CG::iterator fit = begin(), fie = end(); fit != fie; fit++ ) {
 				// Compare argument arity and type.
@@ -64,6 +68,7 @@ namespace SPA {
 							break;
 					if ( i == argTypes.size() ) {
 						// Found possible match.
+// 						CLOUD9_DEBUG( "Resolving indirect call at " << (*iit)->getParent()->getParent()->getName().str() << ":" << (*iit)->getDebugLoc().getLine() << " to " << (*fit)->getName().str() );
 						possibleCallers[*fit].insert( *iit );
 						possibleCallees[*iit].insert( *fit );
 					}
@@ -99,20 +104,20 @@ namespace SPA {
 			}
 		}
 
-		// Generate CFG DOT file.
+		// Generate CG DOT file.
 		dotFile<< "digraph CG {" << std::endl;
 		// Add all functions.
 		for ( iterator it = begin(), ie = end(); it != ie; it++ ) {
-			dotFile << "	f" << *it << " [label = \"" << (*it)->getName().str() << "\"];";
+			dotFile << "	f" << *it << " [label = \"" << (*it)->getName().str() << "\"];" << std::endl;
 		}
 
 		// Definite CG.
 		dotFile << "	edge [color = \"blue\"];" << std::endl;
 		for ( std::set<std::pair<llvm::Function *, llvm::Function *> >::iterator it = definiteCG.begin(), ie = definiteCG.end(); it != ie; it++ )
-			dotFile << "	f" << it->first << " -> f" << it->second << ";";
+			dotFile << "	f" << it->first << " -> f" << it->second << ";" << std::endl;
 		dotFile << "	edge [color = \"cyan\"];" << std::endl;
 		for ( std::set<std::pair<llvm::Function *, llvm::Function *> >::iterator it = possibleCG.begin(), ie = possibleCG.end(); it != ie; it++ )
-			dotFile << "	f" << it->first << " -> f" << it->second << ";";
+			dotFile << "	f" << it->first << " -> f" << it->second << ";" << std::endl;
 
 		dotFile << "}" << std::endl;
 	}
