@@ -350,8 +350,17 @@ void processJob( SPA::Path *cp, SPA::Path *sp, bool deletecp, bool deletesp ) {
 			runningWorkers--;
 		}
 
-		int pid = fork();
-		assert( pid >= 0 && "Error forking worker process." );
+		int pid;
+		while ( (pid = fork()) < 0 ) {
+			// Unable to fork: wait for remaining workers.
+			std::cerr << "Error forking worker process. Sleeping and waiting on running jobs." << std::endl;
+			sleep( 1 );
+			while ( runningWorkers > 0 ) {
+				int status = 0;
+				assert( wait( &status ) > 0 );
+				runningWorkers--;
+			}
+		}
 
 		if ( pid == 0 ) {
 			signal( SIGINT, SIG_IGN );
