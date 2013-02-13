@@ -28,6 +28,8 @@ namespace SPA {
 				if ( reaching.count( *it ) == 0 )
 					worklist.insert( *it );
 			// Mark function as on direct path.
+// 			if ( pathFunctions.count( inst->getParent()->getParent() ) == 0 )
+// 				CLOUD9_DEBUG( "		Direct path function: " << inst->getParent()->getParent()->getName().str() );
 			pathFunctions.insert( inst->getParent()->getParent() );
 			// Check if entry instruction.
 			if ( inst == &(inst->getParent()->getParent()->getEntryBlock().front()) ) {

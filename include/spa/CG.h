@@ -26,7 +26,7 @@ namespace SPA {
 	public:
 		typedef std::set<llvm::Function *>::iterator iterator;
 
-		CG( CFG &cfg );
+		CG( llvm::Module *module );
 		iterator begin() { return functions.begin(); }
 		iterator end() { return functions.end(); }
 		const std::set<llvm::Instruction *> &getDefiniteCallers( llvm::Function *function ) { return definiteCallers[function]; }

@@ -16,8 +16,15 @@ namespace SPA {
 #include "llvm/Module.h"
 #include "llvm/Instruction.h"
 
+#include "spa/CG.h"
 #include "spa/InstructionFilter.h"
 #include "spa/StateUtility.h"
+
+typedef enum {
+	FULL,
+	BASICBLOCK,
+	FUNCTION,
+} compactness_t;
 
 namespace SPA {
 	class CFG {
@@ -39,7 +46,7 @@ namespace SPA {
 		const std::set<llvm::Instruction *> &getSuccessors( llvm::Instruction *instruction );
 		const std::set<llvm::Instruction *> &getPredecessors( llvm::Instruction *instruction );
 		// Dumps CFG as a GraphViz DOT-file.
-		void dump( std::ostream &dotFile, InstructionFilter *filter, std::map<InstructionFilter *, std::string> &annotations, StateUtility *utility, bool compact );
+		void dump( std::ostream &dotFile, SPA::CG &cg, InstructionFilter *filter, std::map<InstructionFilter *, std::string> &annotations, StateUtility *utility, compactness_t compactness );
 	};
 }
 

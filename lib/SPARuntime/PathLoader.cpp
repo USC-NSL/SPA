@@ -56,6 +56,10 @@ namespace SPA {
 		state = to;
 
 	Path *PathLoader::getPath() {
+		// Save current position in case of failure.
+		unsigned long checkpointLN = lineNumber;
+		std::streampos checkpointPos = input.tellg();
+
 		LoadState_t state = START;
 		Path *path = NULL;
 		std::map<std::string, std::string> arrayToName;
@@ -153,6 +157,11 @@ namespace SPA {
 				}
 			}
 		}
+
+		// Might have found an incomplete path, restore checkpoint position.
+		input.clear();
+		input.seekg( checkpointPos, std::ios::beg );
+		lineNumber = checkpointLN;
 
 		return NULL;
 	}

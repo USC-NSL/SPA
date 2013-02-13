@@ -66,9 +66,6 @@
 #define OLD_ENTRY_FUNCTION				"__spa_old_main"
 #define KLEE_INT_FUNCTION				"klee_int"
 #define MALLOC_FUNCTION					"malloc"
-#define INIT_VALUE_ID_VAR_NAME			"spa_internal_initValueID"
-#define HANDLER_ID_VAR_NAME				"spa_internal_HanderID"
-#define SEED_ID_VAR_NAME				"spa_internal_SeedID"
 extern cl::opt<double> MaxTime;
 extern cl::opt<bool> NoOutput;
 
@@ -317,12 +314,12 @@ namespace SPA {
 		// Create initValueID variable.
 		llvm::GlobalVariable *initValueIDVarName = new llvm::GlobalVariable(
 			*module,
-			llvm::ArrayType::get( llvm::IntegerType::get( module->getContext(), 8 ), strlen( INIT_VALUE_ID_VAR_NAME ) + 1 ),
+			llvm::ArrayType::get( llvm::IntegerType::get( module->getContext(), 8 ), strlen( SPA_INITVALUEID_VARIABLE ) + 1 ),
 			true,
 			llvm::GlobalValue::PrivateLinkage,
 			NULL,
-			INIT_VALUE_ID_VAR_NAME );
-		initValueIDVarName->setInitializer( llvm::ConstantArray::get( module->getContext(), INIT_VALUE_ID_VAR_NAME, true ) );
+			SPA_INITVALUEID_VARIABLE );
+		initValueIDVarName->setInitializer( llvm::ConstantArray::get( module->getContext(), SPA_INITVALUEID_VARIABLE, true ) );
 		// initValueID = klee_int();
 		llvm::Constant *idxs[] = {llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, 0, true ) ), llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, 0, true ) )};
 		llvm::CallInst *kleeIntCall = llvm::CallInst::Create(
@@ -341,12 +338,12 @@ namespace SPA {
 		// Create handlerID variable.
 		handlerIDVarName = new llvm::GlobalVariable(
 			*module,
-			llvm::ArrayType::get( llvm::IntegerType::get( module->getContext(), 8 ), strlen( HANDLER_ID_VAR_NAME ) + 1 ),
+			llvm::ArrayType::get( llvm::IntegerType::get( module->getContext(), 8 ), strlen( SPA_HANDLERID_VARIABLE ) + 1 ),
 			true,
 			llvm::GlobalValue::PrivateLinkage,
 			NULL,
-			HANDLER_ID_VAR_NAME );
-		handlerIDVarName->setInitializer( llvm::ConstantArray::get( module->getContext(), HANDLER_ID_VAR_NAME, true ) );
+			SPA_HANDLERID_VARIABLE );
+		handlerIDVarName->setInitializer( llvm::ConstantArray::get( module->getContext(), SPA_HANDLERID_VARIABLE, true ) );
 
 		// Set up basic blocks to add entry handlers.
 		llvm::BranchInst::Create( returnBB, nextHandlerBB );
