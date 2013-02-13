@@ -25,13 +25,13 @@
 
 /* The stringified version. This may have -DEV appended for non-released
    versions. */
-#define SPINDLY_VERSION "0.1.0-20130213"
+#define SPINDLY_VERSION                             "0.1.0-DEV"
 
 /* The numeric version number is also available "in parts" by using these
    defines: */
-#define SPINDLY_VERSION_MAJOR 0
-#define SPINDLY_VERSION_MINOR 1
-#define SPINDLY_VERSION_PATCH 0
+#define SPINDLY_VERSION_MAJOR                       0
+#define SPINDLY_VERSION_MINOR                       1
+#define SPINDLY_VERSION_PATCH                       0
 
 /* This is the numeric version of the spindly version number, meant for easier
    parsing and comparions by programs. The SPINDLY_VERSION_NUM define will
@@ -48,7 +48,7 @@
    and it is always a greater number in a more recent release. It makes
    comparisons with greater than and less than work.
 */
-#define SPINDLY_VERSION_NUM 0x000100
+#define SPINDLY_VERSION_NUM                         0x000100
 
 /*
  * This is the date and time when the full source package was created. The
@@ -59,7 +59,7 @@
  *
  * "Mon Feb 12 11:35:33 UTC 2007"
  */
-#define SPINDLY_TIMESTAMP "Wed Feb 13 03:10:11 UTC 2013"
+#define SPINDLY_TIMESTAMP "DEV"
 
 /* A few generic types and forward-declarations */
 
