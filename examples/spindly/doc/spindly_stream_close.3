@@ -1,0 +1,19 @@
+.TH spindly_template 3 "9 Jul 2012" "spindly 0.1" "spindly manual"
+.SH NAME
+spindly_template - short function description
+.SH SYNOPSIS
+.nf
+#include <spindly.h>
+
+spindly_error_t spindly_stream_close(struct spindly_stream *stream);
+.fi
+.SH DESCRIPTION
+Close the \fIstream\fP. Can be used as a response to a
+\fBSPINDLY_DX_STREAM_KILL\fP or \foBSPINDLY_DX_STREAM_REQ\fP message, or just
+when the stream is considered done.
+.SH RETURN VALUE
+Returns a spindly_error_t error code. See \fIspindly-errors(3)\fP.
+.SH SEE ALSO
+.BR spindly_phys_demux(3),
+.BR spindly_stream_ack(3),
+.BR spindly_stream_new(3)

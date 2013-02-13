@@ -1,0 +1,144 @@
+API guidelines
+==============
+
+- Provide an easy API that provides multiple streams over a single connection
+
+- The exact SPDY functionality and protocol details are not exposed to the
+  application. Usage of this API shall require no intimate knowledge of SPDY.
+
+- Transport layer agnostic. Spindly functions read from and send to memory
+  buffers to allow the application to send/recv data in whatever way it thinks
+  is fine
+
+- No global data, everything thread-safe. No thread code used.
+
+- Keep internal data/structs private and hidden from the app
+
+- Try make the API work for multiple SPDY protocol versions
+
+- Attempt to avoid superfluous memory copies
+
+- Allow applications to completely replace the default memory functions
+
+(only functions not just documented in their own man pages are still
+documented here)
+
+Handling of the "physical" connection
+=====================================
+
+RESULT = spindly_phys_settings(PHYS, SETTINGS);
+
+  Change one or more settings associated with the connection. This will result
+  in a SPINDLY_DX_SETTINGS message to end up on the remote side.
+
+
+handle separate streams over the physical connection
+====================================================
+
+RESULT = spindly_stream_data(STREAM, DATA, DATALEN, HANDLED);
+
+  Send data on this specific stream. If the stream is not yet acked by the
+  remote, the data will be held locally until it gets acked and sent later.
+
+  This function will not copy data. It will just store a reference to it.  The
+  application is responsible to maintain the data until spindly has called the
+  callback telling that the data has been consumed.
+
+  HANDLED is a custom pointer. It will be passed in to the STREAM->consumed
+  callback when this data chunk has been handled by spindly.
+
+  When adding data or headers etc on multiple streams, it should be noted that
+  the streams' outgoing buffers are drained in prio order when
+  spindly_phys_outgoing() is called.
+
+RESULT = spindly_stream_headers(STREAM, HEADERS, &HANDLED);
+
+  Send headers on this specific stream.
+
+  This function will not copy data. It will just store a reference to it.  The
+  application is responsible to maintain the data until spindly has called the
+  callback telling that the data has been consumed.
+
+  HANDLED is a custom pointer. It will be passed in to the STREAM->consumed
+  callback when these headers have been handled by spindly.
+
+RESULT = spindly_stream_window(STREAM, DELTA);
+
+  TODO: Modify the WINDOW SIZE with DELTA ...
+
+PHYS = spindly_stream_getphys(STREAM);
+
+  Figure out the physical handle a particular stream is associated with.
+
+
+HTTP helpers
+============
+
+ uhm...
+
+
+==============================================================================
+ Pseudo code: an app that sets up two streams over a phyiscal connection in
+ the client side.
+==============================================================================
+
+
+ PHYS = spindly_phys_init(CLIENT, 2);
+
+ spindly_stream_new(PHYS, &STREAM1, "1");
+
+ spindly_stream_new(PHYS, &STREAM2, "2");
+
+ spindly_phys_outgoing(PHYS, &DATATOSEND);
+
+ send(DATATOSEND); /* over TCP to the physical server */
+
+ while( !until data comes OR data can be sent ) {
+
+   do {
+     spindly_phys_outgoing(PHYS, &data, &len);
+     if(len) { /* there is data to send */
+       bytes_sent = send(TCP, data, len);
+
+       /* tell spindly how much we actually sent */
+       spindly_phys_sent(PHYS, bytes_sent);
+
+       if(bytes_sent != len)
+         break; /* we filled up */
+     }
+   } while (len); /* as long as there were chunks, go on */
+
+   number_of_bytes = recv( storeincoming ); /* read from TCP */
+
+   spindly_phys_incoming(PHYS, storeincoming, number_of_bytes);
+
+   do {
+     spindly_phys_demux(PHYS, &MESSAGE, &PTR);
+
+     switch(MESSAGE) {
+       case SPINDLY_DX_NONE:
+         /* no message in the pipe */
+         break;
+       case SPINDLY_DX_STREAM_ACK:
+         /* one (more) of our streams is now setup, send data */
+         spindly_stream_send(PTR->stream, "hello", 5);
+         break;
+       case SPINDLY_DX_STREAM_REQ:
+         /* the peer wants to setup a stream, allow it? */
+         spindly_stream_ack(PTR->stream); /* sure! */
+         break;
+       case SPINDLY_DX_STREAM_KILL:
+         /* the stream is killed, kill the stream handle */
+         spindly_stream_close(PTR->stream);
+         break;
+       case SPINDLY_DX_DATA:
+         /* data arrives on a stream */
+         write(1, PTR->data, PTR->len); /* write to stdout */
+         break;
+       ...
+     }
+
+     /* loop around as long as there are messages to handle */
+   } while( MESSAGE != SPINDLY_DX_NONE );
+
+ } /* while () */ 

@@ -1,0 +1,906 @@
+   Changelog for the spindly project. Generated with git2news.pl
+
+Daniel Stenberg (15 Jul 2012)
+- spindly_stream_close.3: added a SEE ALSO function
+
+- API: remove functions documented in man pages
+  
+  To avoid having the documented functionality in two places that could
+  potentially differ, all functions with man page versions are now gone
+  from this file.
+
+- spindly_stream_ack.3: stream_nack is now stream_close
+
+- spindly_stream_window.3: added templated version
+
+- spindly_stream_nack: removed from API
+  
+  spindly_stream_close() is used instead of spindly_stream_nack()
+
+- spindly_stream_close.3: initial documentation
+
+- spindly_stream_new.3: remove ERRORS section
+  
+  it's not used
+
+- spindly_phys_demux.3: more info on messages
+
+- spindly_phys_demux.3 clarify SPINDLY_DX_GOAWAY and SPINDLY_DX_STREAM_KILL
+  
+  After Tatsuhiro's mail at:
+  http://spindly.haxx.se/mail/spdy-library-archive-2012-07/0010.shtml
+
+- man-pages: added first take of man pages
+  
+  I went through API and spindly.h and added embryos for each function
+  currently planned and existing.
+
+- demo: add printf logging to describe what happens
+
+- demo: embro at actually using spindly_ calls once connected
+
+- hash: minor code indent fixes
+
+- API: spindly_phys_incoming gets flags
+  
+  So that we can tell it to forcibly copy the data as it is just so
+  convenient at times.
+
+- [James McLaughlin brought this change]
+
+  Add phys outgoing data callback to API doc
+
+- [Shayan Pooya brought this change]
+
+  Factored spdy_stream.[ch] files out.
+  
+  * There is not much sense in maintaining both spindly_stream and spdy_stream
+  files. Only one method in spdy_stream was used anyway. This method was moved to
+  spindly_stream, and spdy_stream was removed from the Makefile.am.
+
+- [Shayan Pooya brought this change]
+
+  Added cscope files to git ignore list.
+
+- [Shayan Pooya brought this change]
+
+  hash: use spindly_error_t return codes
+
+- [Shayan Pooya brought this change]
+
+  correct dir name!
+
+- README: update
+  
+  Remove leftovers from the past and make more accurate claims about the
+  fact that we most likely will never merge back with libsdpy again.
+
+- stream_acknack: set and check stream state
+
+- test spindly_phys_sent
+
+- test spindly: verify SPINDLY_DX_STREAM_ACK
+  
+  And clarified the comments somewhat about which parts are the client side
+  and which are the server side
+
+- SPINDLY_DX_STREAM_ACK: added
+  
+  A received SYN_REPLY now gets hanled properly by demux
+
+- SPINDLYE_PROTOCOL: error code when bad SPDY is received
+  
+  Also removed factual errors in comments
+
+- SYN_REPLY: first real take
+  
+  Made the code actually generate the correct frame and test for what
+  I believe is valid protocol
+
+- _spindly_stream_init: fix streamid confusions
+
+- spindly_phys_demux: assert on un-implemented frames
+
+- _spindly_phys_add_stream: don't bump the streamid here
+
+- comment: reminder that spindly_phys_incoming() doesn't copy
+
+- list handling: remove from pendq as well
+  
+  Forgot to also remove the entry from pendq when getting one to add to the
+  outq...
+
+- spindly_phys_sent: reject too big values
+
+- spindly_phys_sent: added to work as documented
+
+- API: updated and slightly clarified
+
+- spindly_outdata: use a list of outgoing nodes
+  
+  Now all functions that generate binary outgoing SPDY protocol data will
+  fetch a node from the phys->pendq list to generate the binary in and
+  then add that node last in the phys->outq list. spindly_phys_outgoing()
+  then returns data from outq and puts the node back in phys->pendq.
+
+- list: added minor comments
+
+- unify error codes
+  
+  Only use SPINDLYE_* error defines so that there's no need to translate
+  internal error codes to external numbers when returning errors.
+  
+  Done with a simple #define approach for now to avoid having to modify
+  so much source code.
+
+- zlib: per phys, not per stream
+  
+  Move the zlib context to the spindly_phys struct as they are per
+  connection and not per stream.
+  
+  Reported by: Tatsuhiro Tsujikawa
+  Bug: https://github.com/bagder/spindly/issues/1
+
+- SYN_REPLY: first tests
+  
+  Added verification that the SYN_REPLY outgoing frame is indeed correct.
+  It currently fails and I need to reconsider the queueing of outgoing
+  data. The test also currently doesn't even obey the API doc, that too
+  needs to be fixed/synced.
+
+- SPDY: use the correct protocol version in the outgoing frames
+
+- ack/nack streams
+  
+  First implementations of spindly_stream_ack and spindly_stream_nack
+
+- includes: move (back) spdy_ headers to src/
+  
+  Only keep public headers in include/. The spdy_* headers are for the
+  internal building block API and there's no point in separating them out
+  from the source dir.
+
+- _spindly_stream_init: accept a streamid
+  
+  when the other side sends SYN_STREAM it provides the streamid
+
+- spindly_phys_demux: SPINDLY_DX_STREAM_REQ has a stream
+  
+  Now the code creates a proper stream handle to return when a
+  SPINDLY_DX_STREAM_REQ is returned from demux.
+
+- stream: receive syn_stream
+  
+  - implemented a streamid to stream struct hash
+  - made the zlib context get created when the new stream is made
+  - remade a lot of internal APIs
+
+- spindly_stream_new: generate a full SYN_STREAM
+  
+  Added more code so that a full and real SPDY control frame is created to
+  get sent for the new stream. Updated the test case accordingly.
+
+- [James Morrison brought this change]
+
+  docs: run with the correct doxygen file
+
+- [James Morrison brought this change]
+
+  demo: make client/server send basic data
+
+- phys/stream tests: basic verification
+  
+  Verify that a spindly_stream_new() call generates a fine SYN_STREAM
+  frame to send.
+  
+  Clear the frame properly when inited.
+
+- test_spindly_phys_init: test SPINDLY_SIDE_SERVER too
+
+- tests: switched to unsigned char *
+
+- spindly_phys_demux: first steps towards implementation
+  
+  Just some basics put together, not working yet.
+
+- spindly_phys_incoming: first code
+  
+  Adjusted the proto according to docs/API and added code that appends the
+  given data in the "incoming queue" of the phys handle
+
+- spindly_stream_new: free struct on failure
+
+- stream_new: initial working(?) code
+  
+  Added functions that can create a control frame and then init it as a
+  SYN_STREAM frame so that we can generate the first binary frame on demand.
+  
+  Also converted lots of pointless const variables to defines, and removed
+  the externs from the header files.
+
+- README: include the protocol specs for easier reference
+
+- [James Morrison brought this change]
+
+  build: add zlib use
+
+- HACKING: some guidelines on spindly hacking
+
+- source code headers: added
+  
+  I created a simple source code header with project info, a copyright
+  line and a short license info text and insert it in all files I've
+  created.
+
+- LICENSE: add myself as copyright owner too
+
+- spindly_phys_outgoing: the first tiny step
+
+- spindly_stream_new: now appends to outgoing queue
+
+- spindly_stream_new: do more SPDY things
+
+- spindly_stream_new: added
+
+- list.[ch]: new linked list functions
+
+- demo: server and client demo embryo
+  
+  This is still just doing basic TCP stuff and nothing else.
+
+- spindly_stream_new: the first few bytes of code
+
+- TODO: updated
+  
+  Removed two things now done, mention the memory functions need to be
+  used by the spdy_ functions too
+
+- bool: use 'bool' for boolean type
+  
+  This is meant to work portably for C89 and later, and use the C99 bool
+  type if available.
+
+- re-indented include/
+  
+  Using the same GNU indent setup as commit 35e98771959c6
+
+- sizeof char == 1
+  
+  There's no need for us to pretend we are going to build or run on
+  systems where sizeof(char) isn't 1 so just removing those pieces make
+  the code easier to follow.
+
+- spdy_data_frame_init: add missing return code
+
+- source code re-indent
+  
+  The source files in src/ were all reindented with GNU indent right now.
+  No other changes. The following options were used in the conversion:
+  
+  indent \
+  --braces-on-if-line \
+  --braces-after-struct-decl-line \
+  --no-space-after-casts \
+  --line-length 79 \
+  --comment-line-length 79 \
+  --cuddle-else \
+  --no-tabs \
+  --indent-level 2 \
+  --no-space-after-for \
+  --no-space-after-if \
+  --no-space-after-while \
+  --no-space-after-function-call-names \
+  --dont-break-procedure-type \
+  -T spdy_syn_stream \
+  -T spdy_data \
+  -T spdy_control_frame \
+  -T spdy_data_frame \
+  -T spdy_frame \
+  -T spdy_headers \
+  -T spdy_nv_pair \
+  -T spdy_nv_block \
+  -T spdy_rst_stream \
+  -T spdy_stream \
+  -T spdy_syn_reply \
+  -T spdy_zlib_context \
+  -T spindly_demux_t \
+  -T size_t
+
+- [Cédric Deltheil brought this change]
+
+  bin/read_dump: fix compiler errors and simplify
+  
+  This tool now loads the input file in memory and delegates the whole
+  parsing to the frame structure.
+
+- [Cédric Deltheil brought this change]
+
+  spdy_data_frame: add a convenient init function
+  
+  This init function is useful to properly initialize the internal
+  `stream_id` variable which is required to make sure the parsing works
+  properly.
+
+- pack headers: don't malloc, used provided buffer + size
+  
+  This also fixes memory leaks in the tests
+
+- memory leaks: fix more leaks with destroy functions
+  
+  ... and added calls to the new destroy functions in the tests so that
+  they don't leak memory.
+
+- bin: fix -I include path
+  
+  Adapt to the rename of the include directory
+
+- SPDYDEBUG: make it C89 compliant
+
+- check_spdy_nv_block: remove duplicate call
+
+- spdy_nv_block_destroy: do not free the root struct
+  
+  It is no longer a malloc of its own
+
+- tests: fix memory leaking tests
+
+- test_spdy_nv_block_parse_pack: fix memory leaking test case
+
+- spdy_nv_block_inflate_parse: fix memory leak
+
+- frame: introduce *destroy() functions to fix memory leaks
+  
+  A bunch of test cases adjusted accordingly
+
+- syn_stream/syn_reply: use embedded nv_block structs
+  
+  Avoids superfluous mallocs and memory leaks.
+
+- spdy_control_frame: use embedded sub-structs instead of pointers
+  
+  Simplifies code for a few extra bytes and removes memory leaks.
+
+- spdy_frame: use embedded frame/control structs
+  
+  Instead of doing pointers and mallocs for the sub structs. This fixes
+  memory leaks and makes the code simpler.
+
+- tests: first simply_* test case embryo
+
+- spindly_phys_init: modified the proto
+
+- tests: avoid memory leaks by cleaning up zlib contexts
+
+- API + spindly.h: updated
+  
+  - removed much of the need for internal data copies, so there's no need
+    for those big local buffers in each handle
+  - introduced callbacks to signal when data have been used
+  - renamed a few things
+  - changed some prototypes
+  - introduced a way to config both PHYS and STREAM handles
+  - added some initial code
+  - removed some of the descriptions from spindly.h since when the API
+    document gets updated it gets annoying to have to update on two
+    places!
+
+- include: spindly.h gets installed
+
+- include: renamed from "includes"
+  
+  I find 'include' to be the more common name for the generic
+  include directory.
+
+- [Noah Campbell brought this change]
+
+  tests: Use pkg-config for check
+  
+  ... so check can reside in non-standard locations (for example port on
+  OSX)
+
+- API: updated, added template functions, structs etc
+  
+  spindly_phys.c is for the implementation of all the functions targeted
+  for the spindly_phys_*() series according to the API.  There's no code
+  filled in yet.
+  
+  spindly_stream.c is for the spindly_stream_*() function implementations.
+  
+  The API doc now has a little psudo code code section
+
+- [Rob Ward brought this change]
+
+  Minor formatting change to improve readability
+
+- [Rob Ward brought this change]
+
+  Another minor spelling mistake in spdy_nv_block.c
+
+- [Rob Ward brought this change]
+
+  Fix spelling mistake in debug for read_stream.c
+
+- [Rob Ward brought this change]
+
+  Fix potential memory leaks in read_dump.c
+  
+  In functions handle_control_frame & handle_data_frame if fread were
+  to fail the functions return without freeing payload
+
+- [Rob Ward brought this change]
+
+  Fix minor formatiing issues in code of read_dump
+
+- [Rob Ward brought this change]
+
+  Fix readability of main func in create_nv_block.c
+  
+  Changes if statements so exit is on newline
+
+- [Rob Ward brought this change]
+
+  More minor spelling mistakes in code comments
+
+- [Rob Ward brought this change]
+
+  Fix spelling mistake in doxygen header
+  
+  recevied -> received
+
+- [Rob Ward brought this change]
+
+  Fix doxygen function headers
+  
+  Fixes headers in order to remove warnings generated when running doxygen
+  
+  Fixes following warnings:
+  
+  /home/rob/Programming/spindly/src/spdy_control_frame.c:21: warning: argument 'data_length' of command @param is not found in the argument list of spdy_control_frame_parse_header(spdy_control_frame *frame, spdy_data *data)
+  /home/rob/Programming/spindly/src/spdy_data_frame.c:13: warning: argument 'data_length' of command @param is not found in the argument list of spdy_data_frame_parse_header(spdy_data_frame *frame, spdy_data *data)
+  /home/rob/Programming/spindly/src/spdy_nv_block.c:93: warning: argument 'nv_block' of command @param is not found in the argument list of spdy_nv_block_parse(spdy_nv_block *block, char *data, size_t data_length)
+  /home/rob/Programming/spindly/src/spdy_nv_block.c:93: warning: The following parameters of spdy_nv_block_parse(spdy_nv_block *block, char *data, size_t data_length) are not documented:
+    parameter 'block'
+  /home/rob/Programming/spindly/src/spdy_stream.c:11: warning: The following parameters of spdy_stream_init(spdy_stream *stream, _Bool store_received_data, _Bool store_frames, spdy_zlib_context *in, spdy_zlib_context *out) are not documented:
+    parameter 'in'
+    parameter 'out'
+  /home/rob/Programming/spindly/src/spdy_syn_reply.c:14: warning: argument 'data_length' of command @param is not found in the argument list of spdy_syn_reply_parse_header(spdy_syn_reply *syn_reply, spdy_data *data)
+  /home/rob/Programming/spindly/src/spdy_syn_stream.c:14: warning: argument 'data_length' of command @param is not found in the argument list of spdy_syn_stream_parse_header(spdy_syn_stream *syn_stream, spdy_data *data)
+
+- spindly.h: add missing #ifdef
+
+- API: edited
+  
+  I renamed a bit, added some more and clarified etc.
+
+- maketgz: provide scripts to build release tarballs
+  
+  Usage: 'maketgz [version]'
+  
+  It runs git2news.pl to generate a changelong in 'NEWS' directly from
+  git.
+
+- version: get version number from new header
+
+- gitignore: ignore TAGS
+  
+  'make tags' produces it
+
+- bin: makefile fix to make them build
+  
+  disabled 'read_stream' from being build as it clearly doesn't use the
+  API properly
+
+- bin: C89'ify the source code
+
+- automake: fixed the bin and includes dir
+  
+  now 'make dist' works
+
+- spdy_setup.h: new header
+  
+  spdy_setup.h will include the configure generated config.h file, or
+  human edited etc that might be necessary for various platforms.
+
+- TODO: add some details, remove autotools since now done
+
+- README: fill in some updates
+
+- doc: automake'ified the dir
+
+- autotooled: automake and libtool are now used
+
+- tests: fixed accesses of uninitialized memory
+  
+  Thanks valgrind. Pro-tip: run tests with CK_FORK=no to prevent check
+  from firing up new processes.
+
+- .gitignore: ignore autoconf related files
+
+- autoconf: initial support
+  
+  Run 'autoconf' and 'autoheader' then './configure'
+
+- [Rob Ward brought this change]
+
+  Fix spelling mistake of doc/resources and change Doxyfile to use new name
+
+- [Rob Ward brought this change]
+
+  Minor spelling mistake in API documentation
+
+- remerge: the libspdy git repo into here
+
+- remove old import
+
+- TODO: updated slightly
+  
+  As I decided to move forward and setup the mailing list etc I just
+  edit this list somewhat.
+
+- README: point out mailing list
+  
+  http://cool.haxx.se/cgi-bin/mailman/listinfo/spdy-library
+
+Thomas (nezza-_-) Roth (19 Oct 2011)
+- spdy_syn_reply: Fix C89 incompatibility introduced in last changed.
+
+- spdy_syn_reply: spdy_syn_reply_parse was not allocation space for the NV block.
+
+- spdy_control_frame: Wasn't setting the _header_parsed stateflag.
+
+- spdy_stream: Working on data handling.
+
+- spdy_frame: Add missing declaration & changed memory allocation in spdy_frame_parse.
+
+- spdy_control_frame: 'obj' union with points to all types instead of void * type_obj.
+
+- spdy_stream: Managing frames by chaining them together instead of keeping an array with references.
+
+- spdy_frame: Add union for easier access to the different frame types.
+
+- Remove dead code.
+
+- Rework the data handling. Not yet integrated in all parts.
+
+- spdy_string: Ship failback implementations for non-standard string functions.
+
+- spdy_nv_block: Rework & clean-up. (In progress, but still works.)
+
+Daniel Stenberg (18 Oct 2011)
+- README: we are in contact
+  
+  Back more to the orginal track, work with libspdy author
+
+Thomas (nezza-_-) Roth (18 Oct 2011)
+- Make checks C89 compatible and set compilerstandard to C89.
+
+- Fix some returns and add minor documentation.
+
+- Make libspdy C89 compatible. (Except for one warning in the zlib dict.)
+
+Daniel Stenberg (18 Oct 2011)
+- TODO: in touch!
+
+- spdy_frame_parse_header: avoid unnecessary bit shift
+  
+  clearer code with less explanation needed
+
+- API: first draft
+
+Thomas (nezza-_-) Roth (18 Oct 2011)
+- .gitignore: Add doc/latex/ directory.
+
+- Add 'includes/' to Doxyfile.
+
+- Add 'includes' into README.
+
+- Fix network-data to integer conversion for platforms which forbid unaligned access.
+
+- Create 'includes' directory and put all (external accessed) headerfiles there.
+
+Daniel Stenberg (17 Oct 2011)
+- TODO: add some initial work items
+
+- README: add my current thoughts and ideas
+
+- c89: convert all source to C89 compliant code
+
+Thomas (nezza-_-) Roth (2 Sep 2011)
+- .gitignore: Added the missing binaries.
+
+- Doxyfile: Added bin/ to the INPUT paths.
+
+- spdy_frame.c: Added additional documentation to a line someone was complaining about.
+
+- spdy_stream.c: Changed init function to use memset. (Except for the pointers.)
+
+- Added bin/create_nv_block.c
+  This will become a sample on how to craft an NV-Block yourself.
+
+- spdy_nv_block.c: Removed old, commented out & broken code.
+
+- doc/mainpage: Just a small typo fix.
+
+- read_dump: Fixed function calls & removed NV block destroying. (Broken right now!)
+
+- Changed allocation point of nv_block. (Was mallocing at temporary address.)
+
+- spdy_control_frame: Minor documentation improvements.
+
+- Minor documentation fixes.
+
+- Doxyfile: Also generate Latex output.
+
+- spdy_control_frame: New parse calls as well as NULLing pointers on failed parsing.
+
+- tests: Refreshed for last changes.
+
+- spdy_syn_reply: Use frame_length in parse call to ensure that zlib is using the right data.
+
+- spdy_syn_stream: Use frame_length in parse call to ensure that zlib is using the right data.
+
+- spdy_headers: Use frame_length in parse call to ensure that zlib is using the right data.
+
+- read_stream: Fixed for working with control frames.
+
+- Makefile: Added splint call.
+
+- Integrated spdy_nv_block_inflate_parse
+
+- spdy_nv_block: Added spdy_nv_block_inflate_parse.
+
+- spdy_stream: Added control frame handler to header.
+
+- syn_stream: Minor documentation and returncode changes.
+
+- spdy_control_frame: HEADERS support.
+
+- Added spdy_headers control frame type.
+
+- spdy_stream: Cleanup and dead code removal.
+
+- read_stream: Added data frame support.
+
+- Makefile: Target 'tags' is now phony.
+
+- Makefile: Added read_stream target.
+
+- spdy_stream: Doxygen documentation.
+
+- spdy_data_frame: Undocumented parameter fix.
+
+- Added read_stream work in progress.
+
+- spdy_frame: Added support for data frames.
+
+- Checks for spdy_data_frame_parse
+
+- Checks for spdy_data_frame_parse
+
+- spdy_data_frame: Added spdy_data_frame_parse.
+
+- Minor syntax corrections.
+
+- spdy_zlib: Removed old comment.
+
+- check_spdy_zlib: Removed data_used.
+
+- spdy_syn_stream/reply: Removed data_used.
+
+- spdy_zlib: Removed comment.
+
+- spdy_zlib: Removed data_used.
+
+- read_dump: Using spdy_data now.
+
+- spdy_data: Struct documentation
+
+- Changed tests to use spdy_data
+
+- Changed most of the API to use spdy_data instead of splitted arguments.
+
+- Added spdy_data structure for data handling in libspdy.
+
+- data_used rolled out, but still WIP. Thinking about other ways to do it.
+
+- spdy_zlib: Renamed macro 'CHUNK' to 'SPDY_ZLIB_CHUNK' to avoid name collisions.
+
+- Started adding data_used to frame functions. 1 failed unit test at this point. (WIP)
+
+- spdy_zlib: Documentation and error handling update.
+
+- mainpage: Platform independence.
+
+- read_dump: Was still using the old errorhandling.
+
+- spdy_syn_reply: Was still using the old errorhandling.
+
+- spdy_frame_parse implementation
+
+- spdy_control_frame spdy_syn_stream: Faulty error and data handling.
+
+- check_spdy_control_frame: Test for spdy_contorl_frame_parse.
+
+- mainpage: changes.
+
+- read_dump: In Makefile and added executable to gitignore. Also 'fixed' an unused warning.
+
+- read_dump: Matched to new spdy_frame_parse_header syntax.
+
+- spdy_zlib: Documented hard to read memcpy
+
+- README changes
+
+- Reintended some stuff.
+
+- gitignore: Added 'tags'
+
+- Added LICENSE.
+
+- spdy_control_frame: Started implementing control_frame parsing.
+
+- Added WIP spdy_stream.
+
+- spdy_control_frame: Added missing frees.
+
+- spdy_control_frame, spdy_frame: Added missing documentation for data_length parameter.
+
+- Added length parameter to spdy_frame.
+
+- Ignore doc/html/ and doc/man/ in .gitignore.
+
+- Introduced error handling. See SPDY_ERRORS.
+
+- read_dump: Fix for new nv_block_destroy.
+
+- Added spdy_rst_stream to Makefile.
+
+- Added spdy_rst_stream tests.
+
+- Added spdy_rst_stream.
+
+- Added RST_STREAM testdata.
+
+- checks: Removed useless includes.
+
+- spdy_zlib: Removed useless include.
+
+- spdy_syn_stream: Additional include. (Was indirect included before.)
+
+- spdy_syn_reply: Fixed wrong type of stream id.
+
+- spdy_nv_block_destroy: Additional checks and freeing of the nv_block.
+
+- Updated read_dump sample.
+
+- spdy_frame: initalize child 'frame' to NULL.
+
+- Added spdy_zlib_inflate_end
+
+- spdy_syn_reply: Fix debug message typo.
+
+- Added spdy_nv_block_destroy.
+
+- Added spdy_syn_stream to Makefile.
+
+- Renamed and added testdata.
+
+- Added spdy_syn_reply tests to check_spdy.
+
+- Added spdy_syn_reply tests.
+
+- Added spdy_syn_reply.
+
+- spdy_syn_stream: Minor fixes.
+
+- Doxyfile: Quite output.
+
+- Added spdy_syn_stream tests to check_spdy
+
+- Added spdy_syn_stream tests.
+
+- Added spdy_syn_stream.
+
+- spdy_nv_block: Minor intendation fix.
+
+- bin: Added read_dump code example
+
+- check_spdy_nv_block: Removed old include.
+
+- spdy_nv_block: Removed potential overflow in pack.
+
+- check_spdy_zlib: Fixed tests.
+
+- spdy_zlib_context: Added documentation.
+
+- Refreshed documentation
+
+- spdy_zlib: Added spdy_zlib_context for inflating multiple frames on the same stream.
+
+- Refreshed documentation
+
+- check_spdy_nv_block: Use length when calling the parser.
+
+- spdy_nv_block: Parser now takes a length for the data to prevent reading out of bounds.
+
+- spdy_log: New logging functionality for debugging.
+
+- Refreshed documentation
+
+- spdy_control_frame: Added new function 'get_type_name'
+
+- spdy_control_frame: Added SPDY_CTRL_TYPES enum containing all control frame types.
+
+- check_spdy_nv_block: Checks for packing.
+
+- spdy_zlib: Documentation fix.
+
+- spdy_nv_block: Added pack support.
+
+- Doxyfile: Using shortnames.
+
+- Refreshed documentation
+
+- spdy_zlib: Bugfixes and documentation.
+
+- Added tests for spdy_zlib
+
+- spdy_zlib: Working inflate.
+
+- Added spdy_zlib (Not working yet.)
+
+- More checks for data and control frame header functions.
+
+- Added doc/ressources for additional documentation ressources.
+
+- Extended spdy_frame unittests.
+
+- Added spdy_data_frame support and tests.
+
+- Added unittest for spdy_control_frame_pack_header
+
+- Added spdy_control_frame_pack_header functionality.
+
+- Added control frame support in spdy_frame and moved TODOs into the header in several files.
+
+- Update makefile and doxyfile
+
+- Added checks for spdy_control_frame
+
+- Outsourced testdata in seperate file.
+
+- Added spdy_control_frame header parser
+
+- Added documentation for spdy_frame
+
+- Added checks and gource to gitignore
+
+- Advanced check for spdy_nv_block_parse
+
+- Working on spdy_frame header parsing and changed checks to use subsuites.
+
+- Splitted unittests for future multisuite support.
+
+- Added .gitignore
+
+- Moved sourcefiles into src/
+
+- spdy_nv_block_parse working and added testsuite
+
+- Fixed documentation in spdy_frame.h
+
+- Add missing placeholder sourcefile.
+
+- Added Name/Value pair header and placeholder sourcefile.
+
+- Fixed typo in Doxyfile.
+
+- Added gource to makefile. (For teh lulz
+
+- Added documentation tags to spdy_frame.h
+
+- Added doxyfile
+
+- Added Makefile and spdy_frame.c placeholder
+
+- Added README and spdy_frame header
