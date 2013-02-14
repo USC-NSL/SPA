@@ -1,0 +1,677 @@
+commit 7342ce71455562a0ac1ce22d447f3a4690831c7b
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2013-01-12
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2013-01-12
+
+    Bump up version number to 0.3.7 and LT revision to 5:0:0
+
+commit 262d77f777e220bed72c6d5fde33b6a91fc3d93b
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2013-01-12
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2013-01-12
+
+    Update NEWS for 0.3.7 release
+
+commit 0c8c6614d7bfe6e52a32fbf3d61cfc2528ac68d8
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2013-01-12
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2013-01-12
+
+    doc: Move links to sidebar
+
+commit 776092915301a74c66086f4b0b0e1d98c65ede7d
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2013-01-12
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2013-01-12
+
+    doc: Update copyright year
+
+commit 84db4f256e34cd3da0e19b243d69781e5b5e186c
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2013-01-12
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2013-01-12
+
+    Add proxy.pac.sample to EXTRA_DIST
+
+commit 757e6d7066377b864a4470ba88c1c10bbe09a767
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2013-01-12
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2013-01-12
+
+    Add sample pac file and release script
+
+commit 040d1452acf7ebbd6cd7958535658b2ceb31a5a8
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2013-01-12
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2013-01-12
+
+    Update README.rst
+
+commit dc2fe52e572f10c5c2f3c6c313a6f98f6b68d354
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2013-01-12
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2013-01-12
+
+    shrpx: Add missing \n to help message
+
+commit c45726b9e1faadd6f9d2e0099f10b8002acd7d05
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2013-01-11
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2013-01-11
+
+    Add AC_SYS_LARGEFILE
+
+commit ae8e5b7a95c616050262cd1ca56a823b9f63b6b9
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2013-01-11
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2013-01-11
+
+    spdycat: Add -d option to POST data
+
+commit 28489fd6a83ea7420315881e96ecc4344b807620
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2013-01-11
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2013-01-11
+
+    shrpx: Set TCP_NODELAY to downstream sockets
+
+commit e454cc13019eed2971fb71eef94937dbfe4db79f
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2013-01-11
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2013-01-11
+
+    shrpx: Remove warn log from upstream_{read,write}cb
+
+commit c306402a20a2bc50ba4700af40e8baaed52922d5
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2013-01-09
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2013-01-09
+
+    shrpx: Capitalize header field name in HTTP downstream connection
+
+commit c45fa16f9471aaba086b131b43f21e6a2179fa98
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2013-01-09
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2013-01-09
+
+    shrpx: Add --no-via option
+    
+    If --no-via option is given, shrpx does not append to Via header
+    field. If Via header field is received, it is left unaltered.
+
+commit 4d1f1f2395d35e2a01e5d9f0dfe4c5af68fa9d80
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2013-01-09
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2013-01-09
+
+    shrpx: Log IP version number when getaddrinfo failed
+
+commit 6da492c4e80266876ac5fb0bff8e2af52e4c959d
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2013-01-09
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2013-01-09
+
+    Remove uri.{cc,h} and use http_parser_parse_url() instead
+
+commit 633e85246f6e05a743e92e929a46c6d1dbc42b6f
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2013-01-05
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2013-01-05
+
+    Include http-parser/http_parser.h locally
+
+commit 6a4a0e7f8ceb8878988966e759799eb16ee9c6c7
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2013-01-05
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2013-01-05
+
+    Remove useless extern "C"
+
+commit 58f92d48c984e6f51b5dcac2fb28d737725b1017
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-12-23
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-12-23
+
+    Add remarks about callbacks and spdylay_session_{recv,send}
+
+commit be5066c450c81a2a674b691e3bdb2187dc5a4f33
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-12-23
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-12-23
+
+    Updated http-parser
+
+commit 92260ccc81682720a22464a45b9bacc18e38dcbf
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-12-20
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-12-20
+
+    Add patch for http-parser to handle tunneling connection transparently
+
+commit 9425f8a45f306c1d2bee59d05bd829074ac359e0
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-12-17
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-12-17
+
+    shrpx: Handle graceful shutdown in SPDY backend
+
+commit 3ba73db7d79de5a7e3a00f600ec4467699a176cf
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-12-14
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-12-14
+
+    shrpx: Remove unused function modify_location_header_value
+
+commit 4d80a26188c1adfd070392ef27798b9178987a88
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-12-12
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-12-12
+
+    spdycat: Log error when no supported SPDY version was negotiated
+
+commit 8c456674cf3a1ffded8b74cb817ddce49e351da4
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-12-09
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-12-09
+
+    shrpx: Remove upstream_spdy_stream and upstream_spdy_stream_close
+    
+    upstream_response logs more detailed information.
+
+commit 90eebbc88c4534fb3a92a7b75c9efbe2061bb5f7
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-12-09
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-12-09
+
+    shrpx: Log status code, method, path and HTTP version in accesslog
+
+commit 6ef9b7430dcbd0294ff1c9d670e36b592c4cdf08
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-12-09
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-12-09
+
+    shrpx: Color HTTP headers in console log
+
+commit 9b1f36d274459d12866abb1da47d8fe891131650
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-12-09
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-12-09
+
+    shrpx: Color severity level in terminal
+    
+    Color severity level if stderr refers to a terminal.
+
+commit bbf6c185756d3f3c3df4877a4ca5c15c81396529
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-12-09
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-12-09
+
+    shrpx: Log format change
+    
+    Added macros which log messages from the following components are
+    prefixed with their component name + object pointer address:
+    
+    ListenHandler: LISTEN
+    ThreadEventReceiver: THREAD_RECV
+    Upstream: UPSTREAM
+    Downstream: DOWNSTREAM
+    DownstreamConnection: DCONN
+    SpdySession: DSPDY
+
+commit 4d0db62f1da49fd3819f9eb301595bf537198ff4
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-12-08
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-12-08
+
+    examples: Remove unused htparse
+
+commit 65e965791ffa9c48c1764d3a08f9f675bada7607
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-12-07
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-12-07
+
+    shrpx: Replace strncpy + putting null with memcpy in ssl_pem_passwd_cb
+
+commit 06220f7fdff5b088386a53451cde8a5f5d47687c
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-12-07
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-12-07
+
+    shrpx: Make is_secure() static
+
+commit cbf8ccf7d10cfd80b6697d1ba94f22d14d68d693
+Author:     Raul Gutierrez Segales <rgs@itevenworks.net>
+AuthorDate: 2012-12-02
+Commit:     Raul Gutierrez Segales <rgs@itevenworks.net>
+CommitDate: 2012-12-03
+
+    [shrpx] read private key's passwd from a file
+    
+    This avoids the need to provide the password for your
+    private key interactively.
+    
+    It can be used via --private-key-passwd-file or private-key-passwd-file
+    in the given config file. The first line in the file
+    (without \n) will be treated as the passwd. There isn't
+    any validation and all lines after the first one (if any)
+    are ignored.
+    
+    The security model behind this is a bit simplistic so I
+    am open to better ideas. Basically your password file
+    should be root:root (700) and you *should* drop root
+    and run as an unprivileged user.
+    
+    If the file exists and a line can be read then a callback
+    will be set for the SSL ctxt and it'll feed the passwd
+    when the private key is read (if password is needed).
+    
+    If the file exists with the wrong permisions it'll be
+    logged and ignored.
+
+commit f97110f092df439bfca4f101f70b422b92ddf216
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-11-25
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-11-25
+
+    spdycat, spdyd: Support SPDY without SSL/TLS
+    
+    Use --no-tls option to disable SSL/TLS and specify SPDY protocol
+    version using -2 or -3.
+
+commit 58b1da39e36eec5eaa8db4f576fc647c9e9d35f8
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-11-24
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-11-24
+
+    Update REAME.rst
+
+commit 50211bc1ad4f21e544d8fae9c09509cbbf3c9e0b
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-11-23
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-11-23
+
+    shrpx: Replace "https" with "http" in log message in shrpx_https_upstream.cc
+
+commit 282b8b567a3e2b78c5f23415f9e9e1593beddd58
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-11-23
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-11-23
+
+    shrpx: Log upstream https request headers
+
+commit 8f62441112d38dfbc59821c53b2b071791efdf80
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-11-23
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-11-23
+
+    src: Rewrite util::stripIter
+
+commit baf2dc3ddfccff0db5e828ce0842a3709818c42f
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-11-23
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-11-23
+
+    shrpx: Add --backend-ipv4 and --backend-ipv6 options.
+
+commit df7023bd92cf73c42feab067f20c394755abfc82
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-11-23
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-11-23
+
+    Update README.rst
+
+commit 7a21905312a8aaa394736f60cb94b2864bb2158c
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-11-22
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-11-22
+
+    shrpx: Remove Config ctor and fill all initial values in fill_default_config()
+
+commit c1332a35a5241c2c054e8dcf4b08e6501ba37835
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-11-22
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-11-22
+
+    shrpx: Add -v, --version option
+
+commit 774e64d2b48e9df013f0769ee6dd5847970873f6
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-11-22
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-11-22
+
+    shrpx: Group up options in -h output
+
+commit 9c70c1b8678bbdf3005ba8253d516c3a98551150
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-11-22
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-11-22
+
+    shrpx: Code cleanup
+
+commit 4349d429880207fd4b40b3dd6042c6da03234864
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-11-22
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-11-22
+
+    shrpx: Add usage for <PRIVATE_KEY> <CERT>
+
+commit 9aa7af2c7f5b582c94b8307023a15c88e38c9447
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-11-22
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-11-22
+
+    shrpx: Use SNI TLS extension in client mode
+
+commit d589f4c74c90ddbaef4d037f8f40567eba03fed7
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-11-22
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-11-22
+
+    shrpx: Verify backend server's certificate in client mode
+    
+    The -k, --insecure option is added to skip this verification.  The
+    system wide trusted CA certificates will be loaded at startup. The
+    --cacert option is added to specify the trusted CA certificate file.
+
+commit 8a5db1751e16e2b5701ef95d3ef138579fc67540
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-11-22
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-11-22
+
+    shrpx: Check the length of output buffer in write callback
+    
+    Possibly because of deferred callback, we may get this callback when
+    the output buffer is not empty.
+
+commit 81adb6bc7fd3a5c8ce9234fee0931ac40ebe9267
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-11-21
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-11-21
+
+    shrpx: Implement downstream SPDY flow control
+
+commit 0bf15a769499e4f999ffafa47a9a5ef0023ac3de
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-11-21
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-11-21
+
+    Rename --client-mode as --client and add --client-proxy
+    
+    With --client-proxy option, shrpx makes sure that the request path is
+    an absolute URI, otherwise it will return 400 status code.
+
+commit fa552c67882ed9dbd76cf1d0b0029b4b2f310d77
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-11-21
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-11-21
+
+    shrpx: Share SPDY session among multiple frontend connections per thread
+    
+    In client mode, now SPDY connection to the backend server is
+    established per thread.  The frontend connections which belong to the
+    same thread share the SPDY connection.
+
+commit ae30e7f71b97542cde64a8c243def277f084aef0
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-11-19
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-11-19
+
+    shrpx: Split request path into SPDY specific headers
+
+commit bebea5e16a442f910ea5fbcb82e2b1a0f6b3fb2a
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-11-19
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-11-19
+
+    Update http-parser
+
+commit 542fd6420b5eb2b669591c6bed18bccb6f8ca0df
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-11-19
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-11-19
+
+    Fix recursive HttpsUpstream::on_read() call
+    
+    Don't call HttpsUpstream::resume_read() from the call tree of
+    on_read().  Avoid parsing next http data after parse error.
+
+commit 077275e7835e5fd56f691e63e4408a33b0081cce
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-11-19
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-11-19
+
+    Fix typo SPDY/3
+
+commit aa07076f292b10649c9406a969a56869927af9f1
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-11-18
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-11-18
+
+    shrpx: Don't propagate expect: 100-continue to backend
+
+commit 52c4d26927af5c3d0a3f9be1cd84a4f0e93326e5
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-11-18
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-11-18
+
+    shrpx: Deadlock with upload data in clinet mode
+
+commit 19bf97b3e5f304c75b813dd09645df6e61410dc1
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-11-18
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-11-18
+
+    Support x-forwarded-proto and x-forwarded-for in SpdyDownstreamConnection
+
+commit d29d0338306c367c7830d3dba3739e5d869e93a3
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-11-18
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-11-18
+
+    Update README.rst
+
+commit b2d530783efc2b1dabdc860e6ce36c0ffb287a9b
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-11-18
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-11-18
+
+    Update README.rst
+
+commit 026f4ca3a204828ebfbacd6ad3f44242840acc23
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-11-18
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-11-18
+
+    Add --client-mode option
+    
+    With --client-mode option, shrpx now accepts unencrypted HTTP
+    connections and communicates with backend server in SPDY.  In short,
+    this is the "reversed" operation mode against normal mode.  This may
+    be useful for testing purpose because it can sit between HTTP client
+    and shrpx "normal" mode.
+
+commit aa64a7f7f56b62b4edb3072b3445ff82dea60b63
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-11-18
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-11-18
+
+    Don't send response-body for 304 response
+
+commit d81827c073794baaad3300aa5569cd917d96b4a3
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-11-14
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-11-14
+
+    Update GOAWAY INTERNAL_ERROR value according to SPDY/3 spec change
+
+commit 47484438997863406eab61b79096949638c546e3
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-11-14
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-11-14
+
+    shrpx: Log detailed error description in SSL code
+
+commit 8a2020362d1d1167e9871bd00b1fe8a7674d9c24
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-11-14
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-11-14
+
+    tests: Use traditional C-style comments
+
+commit 6f6f6ffc410631ccfc29d27945d079ed532352a3
+Author:     Raul Gutierrez Segales <rgs@itevenworks.net>
+AuthorDate: 2012-10-27
+Commit:     Raul Gutierrez Segales <rgs@itevenworks.net>
+CommitDate: 2012-10-27
+
+    [shrpx] fix password handling for certs keys
+    
+    We should only call daemon() after ListenHandler is
+    instantiated, where  SSL_CTX_use_PrivateKey_file is called,
+    otherwise we have no stdin/stdout to get the password for
+    keyfile.
+
+commit 45f302f3637d22bde525be34f82a08bcb4066fad
+Author:     Raul Gutierrez Segales <rgs@itevenworks.net>
+AuthorDate: 2012-10-27
+Commit:     Raul Gutierrez Segales <rgs@itevenworks.net>
+CommitDate: 2012-10-27
+
+    fedora: add spec file
+    
+    We should probably make this spec file a template and integrate
+    it with our build process (make package?). Will follow-up with
+    that eventually.
+
+commit fdc19550fcae3d1b125c5c3080b12a2d6bc83bb6
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-10-16
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-10-16
+
+    spdyd: Open file with O_BINARY flag
+
+commit 22840dbfaf9178d93c946d62af8a761d400ea2b5
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-10-14
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-10-14
+
+    spdycat: Handle timeout in connect and SSL/TLS handshake
+
+commit a28e1c6e7d79454284fec7b8279eb895912861d0
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-10-06
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-10-06
+
+    Add src/.gitignore and edit examples/.gitignore
+
+commit 2ea0c1c1b02351239c3bab55ae4ef6321ea114d8
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-10-05
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-10-05
+
+    Add missing url_parser.c
+
+commit 46e7da2166a897f0902592fd5f10457d92d58956
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-10-05
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-10-05
+
+    Get rid of flags member in spdylay_map
+
+commit 24e932dfa2e736419feb4c08539f5f51949934b4
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-10-04
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-10-05
+
+    Iterative treap implementation
+    
+    This change implements spdylay_map functions in iterative approach
+    instead of original recursive approach. The iterative version is
+    overall faster than recursive one. The traversal function
+    (spdylay_map_each) is slightly slower but it is not noticeable.
+
+commit 9378b74fc328177830edec58e74e688a5d476e62
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-10-04
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-10-04
+
+    spdycat: Rewritten time_delta
+
+commit 53b7b0eda9f1e021bc33379f61f26d8a92917228
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2012-10-02
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2012-10-02
+
+    Bump up version number to 0.3.7-DEV
