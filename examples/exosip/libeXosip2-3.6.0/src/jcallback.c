@@ -193,11 +193,7 @@ cb_snd_message(osip_transaction_t * tr, osip_message_t * sip, char *host,
 
 	i = -1;
 	if (osip_strcasecmp(via->protocol, "udp") == 0) {
-#ifdef ENABLE_KLEE
-		i = udp_tl_send_message(tr, sip, host, port, out_socket);
-#else
 		i = eXtl_udp.tl_send_message(tr, sip, host, port, out_socket);
-#endif
 	} else if (osip_strcasecmp(via->protocol, "tcp") == 0) {
 		i = eXtl_tcp.tl_send_message(tr, sip, host, port, out_socket);
 	}

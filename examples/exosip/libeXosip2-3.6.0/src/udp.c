@@ -1531,7 +1531,6 @@ _eXosip_handle_incoming_message(char *buf, size_t length, int socket,
 	if (MSG_IS_REQUEST(se->sip)) {
 		if (MSG_IS_INVITE(se->sip)) {
 			se->type = RCV_REQINVITE;
-			spa_valid_path();
 		} else if (MSG_IS_ACK(se->sip))
 			se->type = RCV_REQACK;
 		else
