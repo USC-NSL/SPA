@@ -1,0 +1,11 @@
+#!/bin/sh
+
+CFLAGS='-DENABLE_SPA -DSPA_FIXES -O0 -g' CXXFLAGS='-O0 -g' AR='echo' RANLIB='echo' ./configure \
+--disable-shared \
+--enable-static \
+--enable-debug \
+--disable-trace \
+--disable-mpatrol \
+--disable-gprof \
+--disable-mt \
+--enable-test

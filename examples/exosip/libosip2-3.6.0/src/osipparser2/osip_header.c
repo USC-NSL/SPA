@@ -41,6 +41,26 @@ osip_message_set_header(osip_message_t * sip, const char *hname,
 	if (sip == NULL || hname == NULL)
 		return OSIP_BADPARAMETER;
 
+#ifdef SPA_FIXES
+	{
+		char *c;
+		/* Header name must be all graph chars */
+		for ( c = hname; *c; c++ )
+			if ( ! isgraph( *c ) )
+				return OSIP_BADPARAMETER;
+		if ( hvalue ) {
+			/* Header value must not have control chars */
+			for ( c = hvalue; *c; c++ )
+				if ( iscntrl( *c ) )
+					return OSIP_BADPARAMETER;
+			/* Header value must have at least one graph char */
+			for ( c = hvalue; *c && ! isgraph( *c ); c++ );
+			if ( ! *c )
+				return OSIP_BADPARAMETER;
+		}
+	}
+#endif
+
 	i = osip_header_init(&h);
 	if (i != 0)
 		return i;

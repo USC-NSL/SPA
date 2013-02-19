@@ -115,6 +115,16 @@ eXosip_subscribe_build_initial_request(osip_message_t ** sub, const char *to,
 	if (route == NULL || *route == '\0')
 		route = NULL;
 
+#ifdef SPA_FIXES
+	{
+		char *c;
+		/* event must be all alfa-numeric chars */
+		for ( c = event; *c; c++ )
+			if ( ! isalnum( *c ) )
+				return OSIP_BADPARAMETER;
+	}
+#endif
+
 	i = osip_to_init(&_to);
 	if (i != 0)
 		return i;
