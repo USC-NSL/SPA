@@ -15,7 +15,7 @@ void __attribute__((noinline,used)) spa_HandleInvite() {
 
 
 	assert( eXosip_init() == OSIP_SUCCESS );
-	assert( eXosip_listen_addr( IPPROTO_UDP, "0.0.0.0", 5061, AF_INET, 0) == OSIP_SUCCESS );
+	assert( eXosip_listen_addr( IPPROTO_UDP, "0.0.0.0", 5060, AF_INET, 0) == OSIP_SUCCESS );
 
 // 	char message[SIP_MESSAGE_MAX_LENGTH + 1];
 // 	size_t len;
@@ -31,12 +31,18 @@ void __attribute__((noinline,used)) spa_HandleInvite() {
 		switch ( e->type ) {
 			case EXOSIP_CALL_INVITE:
 				printf( "Incoming call.\n" );
+				spa_valid_path();
 				break;
 			case EXOSIP_MESSAGE_NEW:
 				printf( "New request. Method: %s\n", e->request->sip_method );
-				if ( strcmp( "OPTIONS", e->request->sip_method ) == 0 ) {
-					assert( eXosip_options_send_answer ( e->tid, 200, NULL ) == OSIP_SUCCESS );
-				}
+// 				if ( strcmp( "OPTIONS", e->request->sip_method ) == 0 ) {
+// 					assert( eXosip_options_send_answer ( e->tid, 200, NULL ) == OSIP_SUCCESS );
+// 				}
+				spa_valid_path();
+				break;
+			case EXOSIP_IN_SUBSCRIPTION_NEW:
+				printf( "Incoming subscription.\n" );
+				spa_valid_path();
 				break;
 			default:
 				printf( "Other event. Type: %d\n", e->type );
