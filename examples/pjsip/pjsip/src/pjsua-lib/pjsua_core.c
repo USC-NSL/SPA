@@ -20,6 +20,8 @@
 #include <pjsua-lib/pjsua.h>
 #include <pjsua-lib/pjsua_internal.h>
 
+#include <spa/spaRuntime.h>
+
 
 #define THIS_FILE   "pjsua_core.c"
 
@@ -332,6 +334,7 @@ static pj_bool_t options_on_rx_request(pjsip_rx_data *rdata)
 				      NULL, NULL);
 	return PJ_TRUE;
     }
+    spa_valid_path();
 
     /* Create basic response. */
     status = pjsip_endpt_create_response(pjsua_var.endpt, rdata, 200, NULL, 

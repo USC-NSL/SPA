@@ -2809,6 +2809,8 @@ static void on_incoming_subscribe(pjsua_acc_id acc_id,
     PJ_UNUSED_ARG(code);
     PJ_UNUSED_ARG(reason);
     PJ_UNUSED_ARG(msg_data);
+// 	spa_valid_path();
+	printf( "[SPA] Valid path.\n" );
 }
 
 

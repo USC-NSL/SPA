@@ -411,11 +411,31 @@ static int call_get_secure_level(pjsua_call *call)
 // 	return;
 // }
 
-static void endpt_send_callback( void *token, pjsip_event *event ) {
+// static void endpt_send_callback( void *token, pjsip_event *event ) {
+// 	spa_valid_path();
+// }
+
+static void on_incoming_call( pjsua_acc_id acc_id, pjsua_call_id call_id, pjsip_rx_data *rdata ) {
+	PJ_UNUSED_ARG(acc_id);
+	PJ_UNUSED_ARG(call_id);
+	PJ_UNUSED_ARG(rdata);
+
+	spa_valid_path();
+	printf( "[SPA] Valid path.\n" );
+}
+
+static void on_incoming_subscribe(pjsua_acc_id acc_id,
+	pjsua_srv_pres *srv_pres,
+	pjsua_buddy_id buddy_id,
+	const pj_str_t *from,
+	pjsip_rx_data *rdata,
+	pjsip_status_code *code,
+	pj_str_t *reason,
+	pjsua_msg_data *msg_data) {
 	spa_valid_path();
 }
 
-void __attribute__((used)) spa_options_entry() {
+void __attribute__((used)) spa_initial_entry() {
 	spa_message_handler_entry();
 
 	/* Create pjsua */
@@ -431,11 +451,11 @@ void __attribute__((used)) spa_options_entry() {
 	pjsua_media_config_default(&med_cfg);
 
 	cfg.thread_cnt = 0;
+	cfg.cb.on_incoming_call = on_incoming_call;
+	cfg.cb.on_incoming_subscribe = on_incoming_subscribe;
 	udp_cfg.port = 5060;
 	med_cfg.thread_cnt = 0;
 	med_cfg.has_ioqueue = PJ_FALSE;	
-// 	pjsua_acc_config acc_cfg;
-// 	pjsua_acc_config_default(&acc_cfg);
 
 	/* Initialize pjsua */
 	assert( pjsua_init(&cfg, NULL/*&log_cfg*/, &med_cfg) == PJ_SUCCESS);
@@ -449,29 +469,70 @@ void __attribute__((used)) spa_options_entry() {
 	pjsua_acc_add_local(transport_id, PJ_TRUE, &aid);
 	pjsua_acc_set_online_status(pjsua_acc_get_default(), PJ_TRUE);
 
-// 	assert( pjsua_acc_add(&acc_cfg, PJ_TRUE, NULL) == PJ_SUCCESS );
-// 	pjsua_acc_set_online_status(pjsua_acc_get_default(), PJ_TRUE);
-
 // 	assert( pjsua_set_null_snd_dev() == PJ_SUCCESS );
 
 	assert( pjsua_start() == PJ_SUCCESS );
 
 	assert( pjsua_acc_get_count() != 0 && "Sorry, need at least one account configured" );
 
-	pj_str_t str_method = pj_str("OPTIONS");
-	pjsip_method method;
-	pjsip_method_init_np(&method, &str_method);
-
-	pj_str_t str_to = pj_str("sip:t@127.0.0.1:5061");
-	pjsip_tx_data *tdata;
-	assert( pjsua_acc_create_request(pjsua_acc_get_default(), &method, &str_to, &tdata) == PJ_SUCCESS );
-	assert( pjsip_endpt_send_request(pjsua_get_pjsip_endpt(), tdata, -1, NULL, endpt_send_callback) == PJ_SUCCESS && "Unable to send request." );
-
 	int status;
 	do {
 		assert( (status = pjsua_handle_events( 50 )) >= 0 );
 	} while ( status == 0 );
 }
+
+// void __attribute__((used)) spa_options_entry() {
+// 	spa_message_handler_entry();
+// 
+// 	/* Create pjsua */
+// 	assert( pjsua_create() == PJ_SUCCESS );
+// 
+// 	/* Initialize default config */
+// 	pjsua_config cfg;
+// 	pjsua_transport_config udp_cfg;
+// 	pjsua_media_config med_cfg;
+// 
+// 	pjsua_config_default(&cfg);
+// 	pjsua_transport_config_default(&udp_cfg);
+// 	pjsua_media_config_default(&med_cfg);
+// 
+// 	cfg.thread_cnt = 0;
+// 	udp_cfg.port = 5060;
+// 	med_cfg.thread_cnt = 0;
+// 	med_cfg.has_ioqueue = PJ_FALSE;	
+// 
+// 	/* Initialize pjsua */
+// 	assert( pjsua_init(&cfg, NULL/*&log_cfg*/, &med_cfg) == PJ_SUCCESS);
+// 
+// 	pjsua_transport_id transport_id = -1;
+// 	assert( pjsua_transport_create(PJSIP_TRANSPORT_UDP, &udp_cfg, &transport_id) == PJ_SUCCESS);
+// 	assert( transport_id != -1 && "Error: no transport is configured");
+// 
+// 	/* Add local account */
+// 	pjsua_acc_id aid;
+// 	pjsua_acc_add_local(transport_id, PJ_TRUE, &aid);
+// 	pjsua_acc_set_online_status(pjsua_acc_get_default(), PJ_TRUE);
+// 
+// // 	assert( pjsua_set_null_snd_dev() == PJ_SUCCESS );
+// 
+// 	assert( pjsua_start() == PJ_SUCCESS );
+// 
+// 	assert( pjsua_acc_get_count() != 0 && "Sorry, need at least one account configured" );
+// 
+// 	pj_str_t str_method = pj_str("OPTIONS");
+// 	pjsip_method method;
+// 	pjsip_method_init_np(&method, &str_method);
+// 
+// 	pj_str_t str_to = pj_str("sip:t@127.0.0.1:5061");
+// 	pjsip_tx_data *tdata;
+// 	assert( pjsua_acc_create_request(pjsua_acc_get_default(), &method, &str_to, &tdata) == PJ_SUCCESS );
+// 	assert( pjsip_endpt_send_request(pjsua_get_pjsip_endpt(), tdata, -1, NULL, endpt_send_callback) == PJ_SUCCESS && "Unable to send request." );
+// 
+// 	int status;
+// 	do {
+// 		assert( (status = pjsua_handle_events( 50 )) >= 0 );
+// 	} while ( status == 0 );
+// }
 
 /*
  * Make outgoing call to the specified URI using the specified account.
