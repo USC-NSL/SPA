@@ -53,3 +53,7 @@ third_party/build/srtp/.libsrtp-x86_64-unknown-linux-gnu.depend
 third_party/build/portaudio/.libportaudio-x86_64-unknown-linux-gnu.depend
 client.log
 pjsip-apps/bin/pjsua-x86_64-unknown-linux-gnu.bc.client.paths
+pjsip.paths
+pjsip.paths.log
+pjsua.dbg.exe
+pjsua.test.exe
