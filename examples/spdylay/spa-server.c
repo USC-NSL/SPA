@@ -1,3 +1,5 @@
+#include <assert.h>
+
 #include <spdylay/spdylay.h>
 
 #define SPDY_VERSION		SPDYLAY_PROTO_SPDY3
@@ -6,11 +8,13 @@
 #define PUSH_PATH			"/"
 #define PUSH_HOST			"127.0.0.1"
 #define PUSH_PORT			6121
+#define PUSH_PRIORITY		3
 #define RESPONSE_STATUS		"200 OK"
 #define RESPONSE_VERSION	"HTTP/1.1"
 
 #define RESPONSE_HOSTPATH	RESPONSE_HOST ":" #RESPONSE_PORT
 
+int32_t stream_id = -1;
 
 int main( int argc, char **argv ) {
 	spdylay_session_callbacks callbacks;
@@ -36,10 +40,10 @@ int main( int argc, char **argv ) {
 	assert( spdylay_session_server_new( &session, SPDY_VERSION, &callbacks, "SPDY Server Session" ) == SPDYLAY_OK );
 
 	char *nv[] = {
-		":status",	REQUEST_STATUS,
-		":version",	REQUEST_VERSION,
+		":status",	RESPONSE_STATUS,
+		":version",	RESPONSE_VERSION,
 	};
-	assert( spdylay_submit_response( session, int32_t stream_id, nv, NULL ) == SPDYLAY_OK );
+	assert( spdylay_submit_response( session, stream_id, nv, NULL ) == SPDYLAY_OK );
 
 	assert( spdylay_session_send( session ) == SPDYLAY_OK );
 	assert( spdylay_session_mem_recv( session, buf, len) == len );

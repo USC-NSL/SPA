@@ -1,18 +1,35 @@
+#include <assert.h>
+
 #include <spdylay/spdylay.h>
 
-#define SPDY_VERSION	SPDYLAY_PROTO_SPDY3
-#define REQUEST_METHOD	"GET"
-#define REQUEST_SCHEME	"http"
-#define REQUEST_PATH	"/"
-#define REQUEST_PATH	"/"
-#define REQUEST_HOST	"127.0.0.1"
-#define REQUEST_PORT	6121
-#define REQUEST_VERSION	"HTTP/1.1"
+#define SPDY_VERSION		SPDYLAY_PROTO_SPDY3
+#define REQUEST_METHOD		"GET"
+#define REQUEST_SCHEME		"http"
+#define REQUEST_PATH		"/"
+#define REQUEST_HOST		"127.0.0.1"
+#define REQUEST_PORT		6121
+#define REQUEST_VERSION		"HTTP/1.1"
+#define REQUEST_PRIORITY	3
 
-#define REQUEST_HOSTPATH	REQUEST_HOST ":" #REQUEST_PORT
+#define STR( x ) #x
+#define REQUEST_HOSTPATH	REQUEST_HOST ":" STR( REQUEST_PORT )
 
 
-int main( int argc, char **argv ) {
+void __attribute__((noinline,used)) spa_SendRequest() {
+	int sock;
+	struct hostent *serverHost;
+	struct sockaddr_in serverAddr;
+
+	bzero( &serverAddr, sizeof( serverAddr ) );
+	serv_addr.sin_family = AF_INET;
+	bcopy( serverHost->h_addr, &serverAddr.sin_addr.s_addr, serverHost->h_length );
+	serv_addr.sin_port = htons(PORT);
+
+	assert( (sock = socket( AF_INET, SOCK_STREAM, 0 )) >= 0 && "Error opening socket." );
+	assert( (serverHost = gethostbyname( HOST )) != NULL && "Host not found." );
+	assert( connect(sockfd,&serv_addr,sizeof(serv_addr)) >= 0 && "Error connecting to host." );
+	// 	assert( fcntl( sock, F_SETFL, fcntl( sock, F_GETFL ) | O_NONBLOCK ) >= 0 && "Error setting non-blocking socket option." );
+
 	spdylay_session_callbacks callbacks;
 	callbacks.send_callback = NULL; // Callback function invoked when the |session| wants to send data to the remote peer.
 	callbacks.recv_callback = NULL; // Callback function invoked when the |session| wants to receive data from the remote peer.
@@ -44,10 +61,24 @@ int main( int argc, char **argv ) {
 		":version",	REQUEST_VERSION,
 		":host",	REQUEST_HOSTPATH,
 	};
-	assert( spdylay_submit_request( session, REQUEST_PRIORITY, const char **nv, NULL, "SPDY Client Stream 1" ) == SPDYLAY_OK );
+	assert( spdylay_submit_request( session, REQUEST_PRIORITY, nv, NULL, "SPDY Client Stream 1" ) == SPDYLAY_OK );
 	
 	assert( spdylay_session_send( session ) == SPDYLAY_OK );
-	assert( spdylay_session_mem_recv( session, buf, len) == len );
+	assert( send( sock, data, len, 0 ) == len );
+
+	unsigned char buf[RECEIVE_BUFFER_SIZE];
+	ssize_t len = 0;
+	do {
+		len = recv( sock, buf, len, MSG_DONTWAIT );
+		assert( len >= 0 && "Error receiving network data." );
+		if ( len > 0 ) {
+			assert( spdylay_session_mem_recv( session, buf, len) == len );
+		}
+	} while ( len > 0 );
 
 	spdylay_session_del( session );
+}
+
+int main( int argc, char **argv ) {
+	spa_SendRequest();
 }

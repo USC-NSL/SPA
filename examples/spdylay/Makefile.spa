@@ -1,0 +1,62 @@
+PATHS = spa-client.paths spa-server.paths
+LOGS = spa-client.log spa-server.log
+TARGETS = spa-client.exe spa-server.exe
+DBG_LIBS = libspdylay-dbg.o
+TEST_LIBS = libspdylay-test.o
+BC_TARGETS = spa-client.bc spa-server.bc
+BC_LIBS = libspdylay.bc
+TEST_TARGETS = spa-client.e2etest.exe spa-server.e2etest.exe
+LOG_TARGETS = spa-client.log.exe spa-server.log.exe
+CC = gcc -Wall -g -Ilib/includes
+LLVM_CC = llvm-gcc -Wall -g -O0 --emit-llvm -Ilib/includes
+LLVM_LD = llvm-ld -r -disable-opt
+LIB_SPA_TEST_MODULE = /usr/local/bin/spa/Release+Asserts/lib/libSpaTestModule.so
+LIB_SPA_LOG_MODULE = /usr/local/bin/spa/Release+Asserts/lib/libSpaLogModule.so
+SPA_EXE = /usr/local/bin/spa/Release+Asserts/bin/spa
+# SPA_EXE = /usr/local/bin/spa/Release+Asserts/bin/spaRR
+SPA = time $(SPA_EXE) --stand-alone --libc=uclibc --posix-runtime
+
+default: all
+
+all: $(TARGETS) $(BC_TARGETS) $(LOG_TARGETS) $(TEST_TARGETS)
+
+run-spa: $(PATHS)
+
+%.exe: %.c $(DBG_LIBS)
+	$(CC) $^ -o $@
+
+%.log.exe: %.c $(TEST_LIBS) $(LIB_SPA_LOG_MODULE)
+	$(CC) -DENABLE_SPA -o $@ $^
+
+%.log: %.log.exe
+	SPA_LOG_FILE=$@ ./$<
+
+%.e2etest.exe: %.c $(TEST_LIBS) $(LIB_SPA_TEST_MODULE)
+	$(CC) -DENABLE_SPA -o $@ $^
+
+%.bc.o: %.c
+	$(LLVM_CC) -DENABLE_SPA -DENABLE_KLEE -c $< -o $@
+
+%.bc: %.bc.o $(BC_LIBS)
+	$(LLVM_LD) $(BC_LIBS) $< -o $@
+
+.PRECIOUS: $(PATHS) $(LOGS)
+
+spa-client.paths: spa-client.bc $(SPA_EXE)
+	$(SPA) --path-file $@ --client $< 2>&1 | tee $@.log
+
+spa-server.paths: spa-server.bc $(SPA_EXE)
+	$(SPA) --path-file $@ --server $< 2>&1 | tee $@.log
+
+client.dot: client.bc $(SPA_EXE)
+	spa --stand-alone --dump-cfg $@ --client $< 2>&1 | tee $@.log
+
+server.dot: server.bc $(SPA_EXE)
+	spa --stand-alone --dump-cfg $@ --server $< 2>&1 | tee $@.log
+
+%.pdf: %.dot
+	dot -Tpdf -o $@ $<
+
+clean:
+	rm -f $(TARGETS) $(BC_TARGETS) $(BC_TARGETS:.bc=.bc.o) $(TEST_TARGETS) $(TEST_TARGETS:.exe=.bc) $(LOG_TARGETS) $(PATHS) $(LOGS)
+	rm -rf *.log klee-out-* klee-last

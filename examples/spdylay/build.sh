@@ -28,6 +28,7 @@ AR='echo' RANLIB='echo' ./configure \
 	--disable-shared \
 	--enable-static
 make -skj8
+llvm-ld -disable-opt -r lib/*.o -o libspdylay-dbg.o
 
 # make -skj clean
 # CFLAGS='-DENABLE_SPA -O0 -g' \
