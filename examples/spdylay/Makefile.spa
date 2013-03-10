@@ -23,7 +23,7 @@ all: $(TARGETS) $(BC_TARGETS) $(LOG_TARGETS) $(TEST_TARGETS)
 run-spa: $(PATHS)
 
 %.exe: %.c $(DBG_LIBS)
-	$(CC) $^ -o $@
+	$(CC) $^ -lz -o $@
 
 %.log.exe: %.c $(TEST_LIBS) $(LIB_SPA_LOG_MODULE)
 	$(CC) -DENABLE_SPA -o $@ $^

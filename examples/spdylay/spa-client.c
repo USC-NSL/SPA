@@ -1,6 +1,13 @@
+#include <stdio.h>
+#include <strings.h>
 #include <assert.h>
+#include <netdb.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
 
 #include <spdylay/spdylay.h>
+
+#include <spa/spaRuntime.h>
 
 #define SPDY_VERSION		SPDYLAY_PROTO_SPDY3
 #define REQUEST_METHOD		"GET"
@@ -10,28 +17,44 @@
 #define REQUEST_PORT		6121
 #define REQUEST_VERSION		"HTTP/1.1"
 #define REQUEST_PRIORITY	3
+#define RECEIVE_BUFFER_SIZE	100
 
 #define STR( x ) #x
 #define REQUEST_HOSTPATH	REQUEST_HOST ":" STR( REQUEST_PORT )
 
 
+int sock = -1;
+
+ssize_t send_callback( spdylay_session *session, const uint8_t *data, size_t length, int flags, void *user_data ) {
+	printf( "Sending data for %s\n", (char *) user_data );
+
+	spa_msg_output( data, length, 1024, "request" );
+#ifndef ENABLE_KLEE
+	assert( send( sock, data, length, 0 ) == length );
+#endif // #ifndef ENABLE_KLEE	
+
+	return length;
+}
+
 void __attribute__((noinline,used)) spa_SendRequest() {
-	int sock;
+	spa_api_entry();
+// 	spa_api_input_var();
+
 	struct hostent *serverHost;
 	struct sockaddr_in serverAddr;
 
+	assert( (serverHost = gethostbyname( REQUEST_HOST )) != NULL && "Host not found." );
 	bzero( &serverAddr, sizeof( serverAddr ) );
-	serv_addr.sin_family = AF_INET;
+	serverAddr.sin_family = AF_INET;
 	bcopy( serverHost->h_addr, &serverAddr.sin_addr.s_addr, serverHost->h_length );
-	serv_addr.sin_port = htons(PORT);
+	serverAddr.sin_port = htons( REQUEST_PORT );
 
 	assert( (sock = socket( AF_INET, SOCK_STREAM, 0 )) >= 0 && "Error opening socket." );
-	assert( (serverHost = gethostbyname( HOST )) != NULL && "Host not found." );
-	assert( connect(sockfd,&serv_addr,sizeof(serv_addr)) >= 0 && "Error connecting to host." );
-	// 	assert( fcntl( sock, F_SETFL, fcntl( sock, F_GETFL ) | O_NONBLOCK ) >= 0 && "Error setting non-blocking socket option." );
+	assert( connect( sock, (struct sockaddr *) &serverAddr, sizeof( serverAddr ) ) >= 0 && "Error connecting to host." );
+// 	assert( fcntl( sock, F_SETFL, fcntl( sock, F_GETFL ) | O_NONBLOCK ) >= 0 && "Error setting non-blocking socket option." );
 
 	spdylay_session_callbacks callbacks;
-	callbacks.send_callback = NULL; // Callback function invoked when the |session| wants to send data to the remote peer.
+	callbacks.send_callback = send_callback; // Callback function invoked when the |session| wants to send data to the remote peer.
 	callbacks.recv_callback = NULL; // Callback function invoked when the |session| wants to receive data from the remote peer.
 	callbacks.on_ctrl_recv_callback = NULL; // Callback function invoked by `spdylay_session_recv()` when a control frame is received.
 	callbacks.on_invalid_ctrl_recv_callback = NULL; // Callback function invoked by `spdylay_session_recv()` when an invalid control frame is received.
@@ -54,7 +77,7 @@ void __attribute__((noinline,used)) spa_SendRequest() {
 
 // 	assert( spdylay_session_set_initial_client_cert_origin( session, REQUEST_SCHEME, REQUEST_HOST, REQUEST_PORT ) == SPDYLAY_OK );
 
-	char *nv[] = {
+	const char *nv[] = {
 		":method",	REQUEST_METHOD,
 		":scheme",	REQUEST_SCHEME,
 		":path",	REQUEST_PATH,
@@ -64,12 +87,14 @@ void __attribute__((noinline,used)) spa_SendRequest() {
 	assert( spdylay_submit_request( session, REQUEST_PRIORITY, nv, NULL, "SPDY Client Stream 1" ) == SPDYLAY_OK );
 	
 	assert( spdylay_session_send( session ) == SPDYLAY_OK );
-	assert( send( sock, data, len, 0 ) == len );
 
 	unsigned char buf[RECEIVE_BUFFER_SIZE];
 	ssize_t len = 0;
 	do {
+#ifndef ENABLE_KLEE
 		len = recv( sock, buf, len, MSG_DONTWAIT );
+#endif // #ifndef ENABLE_KLEE	
+// 		spa_msg_input( buf, RECEIVE_BUFFER_SIZE, "response" );
 		assert( len >= 0 && "Error receiving network data." );
 		if ( len > 0 ) {
 			assert( spdylay_session_mem_recv( session, buf, len) == len );
@@ -81,4 +106,6 @@ void __attribute__((noinline,used)) spa_SendRequest() {
 
 int main( int argc, char **argv ) {
 	spa_SendRequest();
+
+	return 0;
 }

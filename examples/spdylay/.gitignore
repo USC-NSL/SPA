@@ -33,3 +33,5 @@ stamp-h1
 tests/.deps/
 tests/Makefile
 tests/testdata/Makefile
+spa-client.exe
+spa-server.exe
