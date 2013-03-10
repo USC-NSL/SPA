@@ -26,13 +26,13 @@ run-spa: $(PATHS)
 	$(CC) $^ -lz -o $@
 
 %.log.exe: %.c $(TEST_LIBS) $(LIB_SPA_LOG_MODULE)
-	$(CC) -DENABLE_SPA -o $@ $^
+	$(CC) -DENABLE_SPA -lz -o $@ $^
 
 %.log: %.log.exe
 	SPA_LOG_FILE=$@ ./$<
 
 %.e2etest.exe: %.c $(TEST_LIBS) $(LIB_SPA_TEST_MODULE)
-	$(CC) -DENABLE_SPA -o $@ $^
+	$(CC) -DENABLE_SPA -lz -o $@ $^
 
 %.bc.o: %.c
 	$(LLVM_CC) -DENABLE_SPA -DENABLE_KLEE -c $< -o $@

@@ -254,6 +254,7 @@ int spdylay_zlib_deflate_hd_init(spdylay_zlib *deflater, int comp,
   if(hd_dict == NULL) {
     return SPDYLAY_ERR_UNSUPPORTED_VERSION;
   }
+#ifndef ENABLE_KLEE
   if(Z_OK != deflateInit2(&deflater->zst,
                           comp ? COMPRESSION_LEVEL : Z_NO_COMPRESSION,
                           Z_DEFLATED, WINDOW_BITS, MEM_LEVEL,
@@ -265,6 +266,7 @@ int spdylay_zlib_deflate_hd_init(spdylay_zlib *deflater, int comp,
     spdylay_zlib_deflate_free(deflater);
     return SPDYLAY_ERR_ZLIB;
   }
+#endif // #ifndef ENABLE_KLEE
   return 0;
 }
 
@@ -282,20 +284,26 @@ int spdylay_zlib_inflate_hd_init(spdylay_zlib *inflater, uint16_t version)
   if(hd_dict == NULL) {
     return SPDYLAY_ERR_UNSUPPORTED_VERSION;
   }
+#ifndef ENABLE_KLEE
   if(Z_OK != inflateInit(&inflater->zst)) {
     return SPDYLAY_ERR_ZLIB;
   }
+#endif // #ifndef ENABLE_KLEE
   return 0;
 }
 
 void spdylay_zlib_deflate_free(spdylay_zlib *deflater)
 {
+#ifndef ENABLE_KLEE
   deflateEnd(&deflater->zst);
+#endif // #ifndef ENABLE_KLEE
 }
 
 void spdylay_zlib_inflate_free(spdylay_zlib *inflater)
 {
+#ifndef ENABLE_KLEE
   inflateEnd(&inflater->zst);
+#endif // #ifndef ENABLE_KLEE
 }
 
 ssize_t spdylay_zlib_deflate_hd(spdylay_zlib *deflater,
@@ -307,17 +315,26 @@ ssize_t spdylay_zlib_deflate_hd(spdylay_zlib *deflater,
   deflater->zst.next_in = (uint8_t*)in;
   deflater->zst.avail_out = outlen;
   deflater->zst.next_out = out;
+#ifndef ENABLE_KLEE
   r = deflate(&deflater->zst, Z_SYNC_FLUSH);
   if(r == Z_OK) {
     return outlen-deflater->zst.avail_out;
   } else {
     return SPDYLAY_ERR_ZLIB;
   }
+#else // #ifndef ENABLE_KLEE
+memmove( out, in, inlen );
+  return inlen;
+#endif // #ifndef ENABLE_KLEE #else
 }
 
 size_t spdylay_zlib_deflate_hd_bound(spdylay_zlib *deflater, size_t len)
 {
+#ifndef ENABLE_KLEE
   return deflateBound(&deflater->zst, len);
+#else // #ifndef ENABLE_KLEE
+  return len;
+#endif // #ifndef ENABLE_KLEE #else
 }
 
 ssize_t spdylay_zlib_inflate_hd(spdylay_zlib *inflater,
@@ -335,6 +352,7 @@ ssize_t spdylay_zlib_inflate_hd(spdylay_zlib *inflater,
     }
     inflater->zst.avail_out = spdylay_buffer_avail(buf);
     inflater->zst.next_out = spdylay_buffer_get(buf);
+#ifndef ENABLE_KLEE
     r = inflate(&inflater->zst, Z_NO_FLUSH);
     if(r == Z_STREAM_ERROR || r == Z_STREAM_END || r == Z_DATA_ERROR) {
       return SPDYLAY_ERR_ZLIB;
@@ -356,6 +374,12 @@ ssize_t spdylay_zlib_inflate_hd(spdylay_zlib *inflater,
         break;
       }
     }
+#else // #ifndef ENABLE_KLEE
+	assert( spdylay_buffer_avail(buf) >= inlen );
+	memmove( spdylay_buffer_get(buf), in, inlen );
+	spdylay_buffer_advance(buf, inlen);
+	break;
+#endif // #ifndef ENABLE_KLEE #else
   }
   return spdylay_buffer_length(buf);
 }

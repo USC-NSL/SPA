@@ -35,3 +35,7 @@ tests/Makefile
 tests/testdata/Makefile
 spa-client.exe
 spa-server.exe
+spa-client.e2etest.exe
+spa-server.e2etest.exe
+spa-client.log.exe
+spa-server.log.exe
