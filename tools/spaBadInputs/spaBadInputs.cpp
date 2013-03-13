@@ -1,5 +1,6 @@
 #include <assert.h>
 #include <string.h>
+#include <errno.h>
 #include <sys/mman.h>
 #include <sys/file.h>
 #include <sys/wait.h>
@@ -34,7 +35,7 @@
 
 #define DEFAULT_NUM_JOBS_PER_WORKER	100
 #define DEFAULT_NUM_WORKERS			1
-#define CHECKPOINT_TIME				600 // seconds
+#define CHECKPOINT_TIME				60 // seconds
 
 namespace {
 	llvm::cl::opt<std::string> ClientPathFile("client", llvm::cl::desc(
@@ -351,18 +352,25 @@ void processJob( SPA::Path *cp, SPA::Path *sp, bool deletecp, bool deletesp ) {
 		}
 
 		int pid;
-		while ( (pid = fork()) < 0 ) {
+		if ( (pid = fork()) < 0 ) {
 			// Unable to fork: wait for remaining workers.
-			std::cerr << "Error forking worker process. Sleeping and waiting on running jobs." << std::endl;
-			sleep( 1 );
+			std::cerr << "Error forking worker process. Waiting on running jobs." << std::endl;
 			while ( runningWorkers > 0 ) {
 				int status = 0;
 				assert( wait( &status ) > 0 );
 				runningWorkers--;
 			}
-		}
 
-		if ( pid == 0 ) {
+			for ( std::list<job_t *>::iterator it = queue.begin(), ie = queue.end(); it != ie; it++ ) {
+				processPaths( (*it)->cp, (*it)->sp );
+				if ( (*it)->deletecp )
+					delete (*it)->cp;
+				if ( (*it)->deletesp )
+					delete (*it)->sp;
+				delete *it;
+			}
+			queue.clear();
+		} else if ( pid == 0 ) {
 			signal( SIGINT, SIG_IGN );
 			for ( std::list<job_t *>::iterator it = queue.begin(), ie = queue.end(); it != ie; it++ )
 				processPaths( (*it)->cp, (*it)->sp );
