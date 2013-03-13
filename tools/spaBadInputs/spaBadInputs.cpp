@@ -383,7 +383,8 @@ void processJob( SPA::Path *cp, SPA::Path *sp, bool deletecp, bool deletesp ) {
 			queue.clear();
 		}
 	} else {
-		processPaths( cp, sp );
+		if ( cp && sp )
+			processPaths( cp, sp );
 	}
 }
 
