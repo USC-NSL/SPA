@@ -33,9 +33,9 @@
 #include "spa/PathLoader.h"
 
 
-#define DEFAULT_NUM_JOBS_PER_WORKER	100
+#define DEFAULT_NUM_JOBS_PER_WORKER	1000
 #define DEFAULT_NUM_WORKERS			1
-#define CHECKPOINT_TIME				60 // seconds
+#define CHECKPOINT_TIME				300 // seconds
 
 namespace {
 	llvm::cl::opt<std::string> ClientPathFile("client", llvm::cl::desc(
@@ -123,7 +123,7 @@ std::string escapeChar( unsigned char c ) {
 void processPaths( SPA::Path *cp, SPA::Path *sp ) {
 	// Check if valid transaction.
 	if ( cp->getTag( SPA_VALIDPATH_TAG ) == SPA_VALIDPATH_VALUE && sp->getTag( SPA_VALIDPATH_TAG ) == SPA_VALIDPATH_VALUE ) {
-		std::cerr << "	Not invalid path pair." << std::endl;
+// 		std::cerr << "	Not invalid path pair." << std::endl;
 		return;
 	}
 
@@ -166,7 +166,7 @@ void processPaths( SPA::Path *cp, SPA::Path *sp ) {
 							exprBuilder->Read( ul, exprBuilder->Constant( offset, klee::Expr::Int32 ) ),
 							sp->getOutputValue( serverOutName, offset ) );
 						if ( ! cm.addAndCheckConstraint( e ) ) {
-							std::cerr << "	Constraints trivially UNSAT." << std::endl;
+// 							std::cerr << "	Constraints trivially UNSAT." << std::endl;
 // 							showConstraints( cm );
 // 							std::cerr << "		New constraint:" << std::endl << e << std::endl;
 							return;
@@ -196,7 +196,7 @@ void processPaths( SPA::Path *cp, SPA::Path *sp ) {
 					exprBuilder->Read( ul, exprBuilder->Constant( offset, klee::Expr::Int32 ) ),
 					cp->getOutputValue( initOutName, offset ) );
 				if ( ! cm.addAndCheckConstraint( e ) ) {
-					std::cerr << "	Constraints trivially UNSAT." << std::endl;
+// 					std::cerr << "	Constraints trivially UNSAT." << std::endl;
 //					showConstraints( cm );
 //					std::cerr << "		New constraint:" << std::endl << e << std::endl;
 					return;
@@ -224,7 +224,7 @@ void processPaths( SPA::Path *cp, SPA::Path *sp ) {
 							exprBuilder->Read( ul, exprBuilder->Constant( offset, klee::Expr::Int32 ) ),
 							cp->getOutputValue( clientOutName, offset ) );
 						if ( ! cm.addAndCheckConstraint( e ) ) {
-							std::cerr << "	Constraints trivially UNSAT." << std::endl;
+// 							std::cerr << "	Constraints trivially UNSAT." << std::endl;
 // 							showConstraints( cm );
 // 							std::cerr << "		New constraint:" << std::endl << e << std::endl;
 							return;
@@ -255,7 +255,7 @@ void processPaths( SPA::Path *cp, SPA::Path *sp ) {
 					exprBuilder->Read( ul, exprBuilder->Constant( offset, klee::Expr::Int32 ) ),
 					sp->getOutputValue( initOutName, offset ) );
 				if ( ! cm.addAndCheckConstraint( e ) ) {
-					std::cerr << "	Constraints trivially UNSAT." << std::endl;
+// 					std::cerr << "	Constraints trivially UNSAT." << std::endl;
 //					showConstraints( cm );
 //					std::cerr << "		New constraint:" << std::endl << e << std::endl;
 					return;
@@ -265,7 +265,7 @@ void processPaths( SPA::Path *cp, SPA::Path *sp ) {
 	}
 
 	if ( ! connected ) {
-		std::cerr << "	Client and server not connected." << std::endl;
+// 		std::cerr << "	Client and server not connected." << std::endl;
 		return;
 	}
 
@@ -281,7 +281,7 @@ void processPaths( SPA::Path *cp, SPA::Path *sp ) {
 		int fd = open( OutputFile.getValue().c_str(), O_APPEND );
 		assert( fd >= 0 && "Unable to open output file for locking." );
 		assert( flock( fd, LOCK_EX ) == 0 && "Unable to lock output file." );
-		std::cerr << "	Found solution." << std::endl;
+// 		std::cerr << "	Found solution." << std::endl;
 		gd->solutions++;
 
 		std::ostream &o = output.is_open() ? output : std::cout;
@@ -318,7 +318,7 @@ void processPaths( SPA::Path *cp, SPA::Path *sp ) {
 		assert( flock( fd, LOCK_UN ) == 0 && "Unable to unlock output file." );
 		assert( close( fd ) == 0 && "Unable to close output file for locking." );
 	} else {
-		std::cerr << "	Could not solve constraint." << std::endl;
+// 		std::cerr << "	Could not solve constraint." << std::endl;
 	}
 }
 
@@ -352,25 +352,8 @@ void processJob( SPA::Path *cp, SPA::Path *sp, bool deletecp, bool deletesp ) {
 		}
 
 		int pid;
-		if ( (pid = fork()) < 0 ) {
-			// Unable to fork: wait for remaining workers.
-			std::cerr << "Error forking worker process. Waiting on running jobs." << std::endl;
-			while ( runningWorkers > 0 ) {
-				int status = 0;
-				assert( wait( &status ) > 0 );
-				runningWorkers--;
-			}
-
-			for ( std::list<job_t *>::iterator it = queue.begin(), ie = queue.end(); it != ie; it++ ) {
-				processPaths( (*it)->cp, (*it)->sp );
-				if ( (*it)->deletecp )
-					delete (*it)->cp;
-				if ( (*it)->deletesp )
-					delete (*it)->sp;
-				delete *it;
-			}
-			queue.clear();
-		} else if ( pid == 0 ) {
+		assert( (pid = fork()) >= 0 && "Error spawning worker process." );
+		if ( pid == 0 ) {
 			signal( SIGINT, SIG_IGN );
 			for ( std::list<job_t *>::iterator it = queue.begin(), ie = queue.end(); it != ie; it++ )
 				processPaths( (*it)->cp, (*it)->sp );
@@ -406,33 +389,34 @@ void flushJobs() {
 	}
 }
 
-bool checkpoint( std::string cpFileName, unsigned long &clientPath, unsigned long &serverPath, unsigned long &processed ) {
+bool saveCheckpoint( std::string cpFileName, unsigned long clientPath, unsigned long serverPath, unsigned long solutions, unsigned long totalClientPaths, unsigned long totalServerPaths ) {
 	static time_t last = 0;
 	time_t now = time( NULL );
 
 	if ( shutdown || difftime( now, last ) > CHECKPOINT_TIME ) {
 		flushJobs();
 		last = time( NULL );
-		{
-			std::ifstream cpFile( cpFileName.c_str() );
-			unsigned long c = 0, s = 0, p = 0;
-			cpFile >> c >> s >> p;
-			if ( cpFile.is_open() && (c > clientPath || s > serverPath || p > processed) ) {
-				std::cerr << "Restarting from checkpoint. Expect some redundant results." << std::endl;
-				clientPath = c;
-				serverPath = s;
-				processed = p;
-				return true;
-			}
-		}
-		{
-			std::ofstream cpFile( cpFileName.c_str() );
-			assert( cpFile.is_open() && "Unable to open checkpoint file." );
-			cpFile << clientPath << " " << serverPath << " " << processed << std::endl;
-			cpFile.flush();
-			cpFile.close();
-			return false;
-		}
+		std::ofstream cpFile( cpFileName.c_str() );
+		assert( cpFile.is_open() && "Unable to open checkpoint file." );
+		cpFile << clientPath << " " << serverPath << " " << totalClientPaths << " " << totalServerPaths << " " << solutions << std::endl;
+		cpFile.flush();
+		cpFile.close();
+		return true;
+	}
+
+	return false;
+}
+
+bool restoreCheckpoint( std::string cpFileName,
+		unsigned long &clientPath, unsigned long &serverPath,
+		unsigned long &processed, unsigned long &solutions,
+		unsigned long &totalClientPaths, unsigned long &totalServerPaths ) {
+	std::ifstream cpFile( cpFileName.c_str() );
+	if ( cpFile.is_open() ) {
+		std::cerr << "Restarting from checkpoint. Expect some redundant results." << std::endl;
+		cpFile >> clientPath >> serverPath >> totalClientPaths >> totalServerPaths >> solutions;
+		processed = clientPath * serverPath;
+		return true;
 	}
 
 	return false;
@@ -442,35 +426,13 @@ int main(int argc, char **argv, char **envp) {
 	// Fill up every global cl::opt object declared in the program
 	cl::ParseCommandLineOptions( argc, argv, "Systematic Protocol Analyzer - Bad Input Generator" );
 
-	SPA::Path *cp, *sp;
-
 	assert( ClientPathFile.size() > 0 && "No client path file specified." );
-	std::cerr << "Loading client path data." << std::endl;
 	std::ifstream clientFile( ClientPathFile.getValue().c_str() );
 	assert( clientFile.is_open() && "Unable to open path file." );
-	SPA::PathLoader clientPathLoader( clientFile );
-	clientPathLoader.setFilter( new ClientPathFilter() );
-	unsigned long totalClientPaths = 0;
-	while ( (cp = clientPathLoader.getPath()) ) {
-		delete cp;
-		totalClientPaths++;
-	}
-	clientPathLoader.restart();
-	std::cerr << "Found " << totalClientPaths << " initial paths." << std::endl;
 
 	assert( ServerPathFile.size() > 0 && "No server path file specified." );
-	std::cerr << "Loading server path data." << std::endl;
 	std::ifstream serverFile( ServerPathFile.getValue().c_str() );
 	assert( serverFile.is_open() && "Unable to open path file." );
-	SPA::PathLoader serverPathLoader( serverFile );
-	serverPathLoader.setFilter( new ServerPathFilter() );
-	unsigned long totalServerPaths = 0;
-	while ( (sp = serverPathLoader.getPath()) ) {
-		delete sp;
-		totalServerPaths++;
-	}
-	serverPathLoader.restart();
-	std::cerr << "Found " << totalServerPaths << " initial paths." << std::endl;
 
 	assert( OutputFile.size() > 0 && "No output file specified." );
 	output.open( OutputFile.getValue().c_str(), std::ios_base::out | std::ios_base::app );
@@ -494,72 +456,117 @@ int main(int argc, char **argv, char **envp) {
 	assert( NumJobsPerWorker >= 0 && "Invalid number of jobs per workers." );
 	numJobsPerWorker = NumJobsPerWorker > 0 ? NumJobsPerWorker : DEFAULT_NUM_JOBS_PER_WORKER;
 
-	while ( (! (cp = clientPathLoader.getPath())) && Follow ) {
-		std::cerr << "Client path file is empty. Sleeping." << std::endl;
-		sleep( 1 );
-	}
-
-	while ( (! (sp = serverPathLoader.getPath())) && Follow ) {
-		std::cerr << "Server path file is empty. Sleeping." << std::endl;
-		sleep( 1 );
-	}
-
-	assert( cp && sp );
-	std::cerr << "Processing client path 1/" << totalClientPaths << " with server path 1/" << totalServerPaths << "." << std::endl;
-	processJob( cp, sp, true, true );
-
 	signal( SIGINT, handleSignal );
 
-	unsigned long clientPath = 1;
-	unsigned long serverPath = 1;
-	unsigned long processed = 1;
-	bool processing;
-	do {
-		processing = false;
-		// Save a checkpoint to recover from failure.
-		if ( checkpoint( cpFileName, clientPath, serverPath, processed ) ) {
+	while ( true ) {
+		int pid;
+		assert( (pid = fork()) >= 0 && "Error spawning work coordinator process." );
+		if ( pid == 0 ) { // Child process: work coordinator.
+			SPA::PathLoader clientPathLoader( clientFile );
+			clientPathLoader.setFilter( new ClientPathFilter() );
 			clientPathLoader.restart();
-			for ( unsigned long i = 1; i <= clientPath; i++ )
-				assert( (cp = clientPathLoader.getPath()) && "Unable to load client path file to checkpoint position.");
-			for ( unsigned long i = 1; i <= serverPath; i++ )
-				assert( (sp = serverPathLoader.getPath()) && "Unable to load server path file to checkpoint position.");
-		}
-		if ( shutdown ) {
-			std::cerr << "Interrupted cleanly." << std::endl;
-			exit( 0 );
-		}
-
-		if ( (cp = clientPathLoader.getPath()) ) {
-			clientPath++;
+			SPA::PathLoader serverPathLoader( serverFile );
+			serverPathLoader.setFilter( new ServerPathFilter() );
 			serverPathLoader.restart();
-			for ( unsigned long i = 1; i <= serverPath; i++ ) {
-				assert( (sp = serverPathLoader.getPath()) );
-				std::cerr << "Processing client path " << clientPath << "/" << totalClientPaths << " with server path " << i << "/" << totalServerPaths << " (pair " << processed << "/" << (totalClientPaths * totalServerPaths) << " - " << (processed * 100 / totalClientPaths / totalServerPaths) << "%). Found " << gd->solutions << " solutions." << std::endl;
-				processJob( cp, sp, i == serverPath, true );
-				processed++;
-			}
-			processing = true;
-		}
 
-		if ( (sp = serverPathLoader.getPath()) ) {
-			serverPath++;
-			clientPathLoader.restart();
-			for ( unsigned long i = 1; i <= clientPath; i++ ) {
-				assert( (cp = clientPathLoader.getPath()) );
-				std::cerr << "Processing client path " << i << "/" << totalClientPaths << " with server path " << serverPath << "/" << totalServerPaths << " (pair " << processed << "/" << (totalClientPaths * totalServerPaths) << " - " << (processed * 100 / totalClientPaths / totalServerPaths) << "%). Found " << gd->solutions << " solutions." << std::endl;
-				processJob( cp, sp, true, i == clientPath );
-				processed++;
-			}
-			processing = true;
-		}
+			SPA::Path *cp, *sp;
+			unsigned long clientPath = 0, serverPath = 0;
+			unsigned long totalClientPaths = 0, totalServerPaths;
+			unsigned long processed;
+			if ( restoreCheckpoint( cpFileName, clientPath, serverPath, processed, gd->solutions, totalClientPaths, totalServerPaths ) ) {
+				std::cerr << "Restoring client path." << std::endl;
+				for ( unsigned long i = 1; i <= clientPath; i++ )
+					assert( (cp = clientPathLoader.getPath()) && "Unable to load client path file to checkpoint position.");
+				std::cerr << "Restoring server path." << std::endl;
+				for ( unsigned long i = 1; i <= serverPath; i++ )
+					assert( (sp = serverPathLoader.getPath()) && "Unable to load server path file to checkpoint position.");
+			} else {
+				while ( (! (cp = clientPathLoader.getPath())) && Follow ) {
+					std::cerr << "Client path file is empty. Sleeping." << std::endl;
+					sleep( 1 );
+				}
+				while ( (! (sp = serverPathLoader.getPath())) && Follow ) {
+					std::cerr << "Server path file is empty. Sleeping." << std::endl;
+					sleep( 1 );
+				}
+				assert( cp && sp && "Empty path file.");
 
-		if ( ! processing && Follow ) {
-			processJob( NULL, NULL, false, false );
-			std::cerr << "Reached end of path files, sleeping." << std::endl;
-			sleep( 1 );
+				totalClientPaths = 1;
+				while ( (cp = clientPathLoader.getPath()) ) {
+					delete cp;
+					totalClientPaths++;
+				}
+				clientPathLoader.restart();
+				std::cerr << "Found " << totalClientPaths << " initial client paths." << std::endl;
+
+				totalServerPaths = 1;
+				while ( (sp = serverPathLoader.getPath()) ) {
+					delete sp;
+					totalServerPaths++;
+				}
+				serverPathLoader.restart();
+				std::cerr << "Found " << totalServerPaths << " initial server paths." << std::endl;
+
+				std::cerr << "Processing client path 1/" << totalClientPaths << " with server path 1/" << totalServerPaths << "." << std::endl;
+				cp = clientPathLoader.getPath();
+				sp = serverPathLoader.getPath();
+				assert( cp && sp && "Empty path file.");
+				clientPath = 1;
+				serverPath = 1;
+				processJob( cp, sp, true, true );
+				processed = 1;
+			}
+
+			bool processing;
+			do {
+				processing = false;
+				// Save a checkpoint to recover from failure.
+				saveCheckpoint( cpFileName, clientPath, serverPath, gd->solutions, totalClientPaths, totalServerPaths );
+
+				if ( (cp = clientPathLoader.getPath()) ) {
+					clientPath++;
+					serverPathLoader.restart();
+					for ( unsigned long i = 1; i <= serverPath; i++ ) {
+						assert( (sp = serverPathLoader.getPath()) );
+						std::cerr << "Processing client path " << clientPath << "/" << totalClientPaths << " with server path " << i << "/" << totalServerPaths << " (pair " << processed << "/" << (totalClientPaths * totalServerPaths) << " - " << (processed * 100 / totalClientPaths / totalServerPaths) << "%). Found " << gd->solutions << " solutions." << std::endl;
+						processJob( cp, sp, i == serverPath, true );
+						processed++;
+					}
+					processing = true;
+				}
+
+				if ( (sp = serverPathLoader.getPath()) ) {
+					serverPath++;
+					clientPathLoader.restart();
+					for ( unsigned long i = 1; i <= clientPath; i++ ) {
+						assert( (cp = clientPathLoader.getPath()) );
+						std::cerr << "Processing client path " << i << "/" << totalClientPaths << " with server path " << serverPath << "/" << totalServerPaths << " (pair " << processed << "/" << (totalClientPaths * totalServerPaths) << " - " << (processed * 100 / totalClientPaths / totalServerPaths) << "%). Found " << gd->solutions << " solutions." << std::endl;
+						processJob( cp, sp, true, i == clientPath );
+						processed++;
+					}
+					processing = true;
+				}
+
+				if ( ! processing && Follow ) {
+					processJob( NULL, NULL, false, false );
+					std::cerr << "Reached end of path files, sleeping." << std::endl;
+					sleep( 1 );
+				}
+			} while ( processing || Follow );
+			flushJobs();
+			remove( cpFileName.c_str() );
+		} else { // Parent process: re-spawner.
+			int status = 0;
+			assert ( wait( &status ) > 0 );
+			if ( WIFEXITED( status ) && WEXITSTATUS( status ) == 0 ) {
+				std::cerr << "Done. Found " << gd->solutions << " solutions." << std::endl;
+				break;
+			}
+			if ( shutdown ) {
+				std::cerr << "Interrupted cleanly." << std::endl;
+				break;
+			}
+			std::cerr << "Coordinator process died. Re-spawning." << std::endl;
 		}
-	} while ( processing || Follow );
-	flushJobs();
-	remove( cpFileName.c_str() );
-	std::cerr << "Done. Found " << gd->solutions << " solutions." << std::endl;
+	}
 }
