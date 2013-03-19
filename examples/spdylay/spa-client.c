@@ -9,7 +9,8 @@
 
 #include <spa/spaRuntime.h>
 
-#define SPDY_VERSION		SPDYLAY_PROTO_SPDY3
+#define SPDY_VERSION		SPDYLAY_PROTO_SPDY2
+// #define SPDY_VERSION		SPDYLAY_PROTO_SPDY3
 #define REQUEST_METHOD		"GET"
 #define REQUEST_SCHEME		"http"
 #define REQUEST_PATH		"/"
@@ -17,6 +18,9 @@
 #define REQUEST_PORT		6121
 #define REQUEST_VERSION		"HTTP/1.1"
 #define REQUEST_PRIORITY	3
+#define REQUEST_MAXPAIRS	3
+#define REQUEST_MAXNAME		2
+#define REQUEST_MAXVALUE	1
 #define RECEIVE_BUFFER_SIZE	1500
 
 #define QUOTE( str ) #str
@@ -99,12 +103,13 @@ void ctrl_recv_callback( spdylay_session *session, spdylay_frame_type type, spdy
 
 void data_chunk_recv_callback( spdylay_session *session, uint8_t flags, int32_t stream_id, const uint8_t *data, size_t len, void *user_data ) {
 	printf( "Received data on stream %d of %s: \"%s\"\n", stream_id, (char *) user_data, data );
+	spa_valid_path();
 }
 
 void __attribute__((noinline,used)) spa_SendRequest() {
 	spa_api_entry();
-// 	spa_api_input_var();
 
+#ifndef ENABLE_KLEE
 	struct hostent *serverHost;
 	struct sockaddr_in serverAddr;
 
@@ -118,6 +123,7 @@ void __attribute__((noinline,used)) spa_SendRequest() {
 	assert( connect( sock, (struct sockaddr *) &serverAddr, sizeof( serverAddr ) ) >= 0 && "Error connecting to host." );
 // 	assert( fcntl( sock, F_SETFL, fcntl( sock, F_GETFL ) | O_NONBLOCK ) >= 0 && "Error setting non-blocking socket option." );
 	printf( "Connected to remote host.\n" );
+#endif // #ifndef ENABLE_KLEE
 
 	spdylay_session_callbacks callbacks;
 	callbacks.send_callback = send_callback; // Callback function invoked when the |session| wants to send data to the remote peer.
@@ -139,10 +145,35 @@ void __attribute__((noinline,used)) spa_SendRequest() {
 	callbacks.on_unknown_ctrl_recv_callback = NULL; // Callback function invoked when the received control frame type is unknown.
 
 	spdylay_session *session;
-	assert( spdylay_session_client_new( &session, SPDY_VERSION, &callbacks, "SPDY Client Session" ) == SPDYLAY_OK );
+	uint16_t clientVersion = SPDY_VERSION;
+#ifndef ANALYZE_RESPONSE
+// 	spa_api_input_var( clientVersion );
+#endif // #ifndef ANALYZE_RESPONSE
+	assert( spdylay_session_client_new( &session, clientVersion, &callbacks, "SPDY Client Session" ) == SPDYLAY_OK );
 
-// 	assert( spdylay_session_set_initial_client_cert_origin( session, REQUEST_SCHEME, REQUEST_HOST, REQUEST_PORT ) == SPDYLAY_OK );
+	uint8_t priority = REQUEST_PRIORITY;
+#ifndef ANALYZE_RESPONSE
+	spa_api_input_var( priority );
+#endif // #ifndef ANALYZE_RESPONSE
 
+#if defined( ENABLE_SPA ) && ! defined( ANALYZE_RESPONSE )
+	uint8_t numPairs = 0;
+	char name[REQUEST_MAXNAME + 1], value[REQUEST_MAXVALUE + 1];
+	spa_api_input_var( numPairs );
+	spa_assume( numPairs <= REQUEST_MAXPAIRS );
+	spa_api_input_var( name );
+	spa_assume( name[sizeof( name ) - 1] == '\0' );
+	spa_api_input_var( value );
+	spa_assume( value[sizeof( value ) - 1] == '\0' );
+
+	const char *nv[2 * (REQUEST_MAXPAIRS + 1)];
+	uint8_t i;
+	for ( i = 0; i < numPairs; i++ ) {
+		nv[2*i] = name;
+		nv[2*i+1] = value;
+	}
+	nv[2*numPairs] = NULL;
+#else // #if defined( ENABLE_SPA ) && ! defined( ANALYZE_RESPONSE )
 	const char *nv[] = {
 		":method",	REQUEST_METHOD,
 		":scheme",	REQUEST_SCHEME,
@@ -151,8 +182,9 @@ void __attribute__((noinline,used)) spa_SendRequest() {
 		":host",	REQUEST_HOSTPATH,
 		NULL
 	};
-	assert( spdylay_submit_request( session, REQUEST_PRIORITY, nv, NULL, "SPDY Client Stream 1" ) == SPDYLAY_OK );
-	
+#endif // #if defined( ENABLE_SPA ) && ! defined( ANALYZE_RESPONSE ) #else
+	assert( spdylay_submit_request( session, priority, nv, NULL, "SPDY Client Stream 1" ) == SPDYLAY_OK );
+
 	assert( spdylay_session_send( session ) == SPDYLAY_OK );
 
 	unsigned char buf[RECEIVE_BUFFER_SIZE];
@@ -175,7 +207,11 @@ void __attribute__((noinline,used)) spa_SendRequest() {
 
 	printf( "Closing down session.\n" );
 	spdylay_session_del( session );
-}
+
+#ifndef ENABLE_KLEE
+	assert( close( sock ) == 0 );
+#endif // #ifndef ENABLE_KLEE	
+	}
 
 int main( int argc, char **argv ) {
 	spa_SendRequest();

@@ -10,7 +10,8 @@
 #include <spa/spaRuntime.h>
 
 #define SERVER_PORT			6121
-#define SPDY_VERSION		SPDYLAY_PROTO_SPDY3
+#define SPDY_VERSION		SPDYLAY_PROTO_SPDY2
+// #define SPDY_VERSION		SPDYLAY_PROTO_SPDY3
 #define PUSH_METHOD			"GET"
 #define PUSH_SCHEME			"http"
 #define PUSH_PATH			"/"
@@ -18,7 +19,11 @@
 #define PUSH_PRIORITY		3
 #define RESPONSE_STATUS		"200 OK"
 #define RESPONSE_VERSION	"HTTP/1.1"
+#define RESPONSE_MAXPAIRS	3
+#define RESPONSE_MAXNAME	2
+#define RESPONSE_MAXVALUE	1
 #define RESPONSE_DATA		"Response Data"
+#define RESPONSE_MAX_DATA	2
 #define RECEIVE_BUFFER_SIZE	1500
 
 #define PUSH_HOSTPATH	PUSH_HOST ":" #SERVER_PORT
@@ -27,8 +32,10 @@ int connectionSock = -1;
 int32_t stream_id = -1;
 
 ssize_t send_callback( spdylay_session *session, const uint8_t *data, size_t length, int flags, void *user_data ) {
+#ifndef ENABLE_KLEE	
 	printf( "Sending %d bytes of data for %s\n", (int) length, (char *) user_data );
-	
+#endif // #ifndef ENABLE_KLEE	
+
 	spa_msg_output( data, length, 1024, "response" );
 #ifndef ENABLE_KLEE
 	assert( send( connectionSock, data, length, 0 ) == length );
@@ -99,21 +106,57 @@ void ctrl_recv_callback( spdylay_session *session, spdylay_frame_type type, spdy
 
 ssize_t read_callback( spdylay_session *session, int32_t stream_id, uint8_t *buf, size_t length, int *eof, spdylay_data_source *source, void *user_data ) {
 	printf( "Generating data for stream %d of %s.\n", stream_id, (char *) user_data );
+
+#ifndef ANALYZE_RESPONSE
 	assert( length >= sizeof( RESPONSE_DATA ) && "Not enough buffer space to send all response data at once." );
+
 	bcopy( RESPONSE_DATA, buf, sizeof( RESPONSE_DATA ) );
 	*eof = 1;
+
 	return sizeof( RESPONSE_DATA );
+#else // #ifndef ANALYZE_RESPONSE
+	ssize_t dataLength = 0;
+	spa_api_input_var( dataLength );
+	spa_assume( dataLength <= RESPONSE_MAX_DATA );
+
+	uint8_t data[RESPONSE_MAX_DATA];
+	spa_api_input_var( data );
+	bcopy( data, buf, dataLength );
+
+	assert( length >= dataLength );
+	*eof = 1;
+	return dataLength;
+#endif // #ifndef ANALYZE_RESPONSE #else
 }
 
 void request_recv_callback( spdylay_session *session, int32_t stream_id, void *user_data ) {
 	printf( "Receiving request on stream %d of %s\n", stream_id, (char *) user_data );
 	spa_valid_path();
 
+#ifdef ENABLE_SPA
+	uint8_t numPairs = 0;
+	char name[RESPONSE_MAXNAME + 1], value[RESPONSE_MAXVALUE + 1];
+	spa_api_input_var( numPairs );
+	spa_assume( numPairs <= RESPONSE_MAXPAIRS );
+	spa_api_input_var( name );
+	spa_assume( name[sizeof( name ) - 1] == '\0' );
+	spa_api_input_var( value );
+	spa_assume( value[sizeof( value ) - 1] == '\0' );
+
+	const char *nv[2 * (RESPONSE_MAXPAIRS + 1)];
+	uint8_t i;
+	for ( i = 0; i < numPairs; i++ ) {
+		nv[2*i] = name;
+		nv[2*i+1] = value;
+	}
+	nv[2*numPairs] = NULL;
+#else // #ifdef ENABLE_SPA
 	const char *nv[] = {
 		":status",	RESPONSE_STATUS,
 		":version",	RESPONSE_VERSION,
 		NULL
 	};
+#endif // #ifdef ENABLE_SPA Else
 
 	spdylay_data_provider dp;
 	dp.source.ptr = NULL;
@@ -126,10 +169,15 @@ void request_recv_callback( spdylay_session *session, int32_t stream_id, void *u
 void __attribute__((noinline,used)) spa_HandleRequest() {
 	spa_message_handler_entry();
 
+#ifndef ENABLE_KLEE
 	int listenSock;
 	struct sockaddr_in serverAddr;
 
 	assert( (listenSock = socket( AF_INET, SOCK_STREAM, 0 )) >= 0 && "Error opening socket." );
+	{
+		int yes = 1;
+		assert( setsockopt( listenSock, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof( yes ) ) == 0 );
+	}
 
 	bzero( &serverAddr, sizeof( serverAddr ) );
 	serverAddr.sin_family = AF_INET;
@@ -142,6 +190,7 @@ void __attribute__((noinline,used)) spa_HandleRequest() {
 
 	assert( (connectionSock = accept( listenSock, NULL, NULL )) >= 0 );
 	printf( "Accepting request.\n" );
+#endif // #ifndef ENABLE_KLEE
 
 	spdylay_session_callbacks callbacks;
 	callbacks.send_callback = send_callback; // Callback function invoked when the |session| wants to send data to the remote peer.
@@ -163,7 +212,10 @@ void __attribute__((noinline,used)) spa_HandleRequest() {
 	callbacks.on_unknown_ctrl_recv_callback = NULL; // Callback function invoked when the received control frame type is unknown.
 
 	spdylay_session *session;
-	assert( spdylay_session_server_new( &session, SPDY_VERSION, &callbacks, "SPDY Server Session" ) == SPDYLAY_OK );
+	uint16_t serverVersion = SPDY_VERSION;
+// 	spa_api_input_var( serverVersion );
+	spa_assume( SPDY_VERSION == SPDYLAY_PROTO_SPDY2 || SPDY_VERSION == SPDYLAY_PROTO_SPDY3 );
+	assert( spdylay_session_server_new( &session, serverVersion, &callbacks, "SPDY Server Session" ) == SPDYLAY_OK );
 
 	unsigned char buf[RECEIVE_BUFFER_SIZE];
 	ssize_t len = 0;
@@ -176,7 +228,9 @@ void __attribute__((noinline,used)) spa_HandleRequest() {
 
 		assert( len >= 0 && "Error receiving network data." );
 		if ( len > 0 ) {
+#ifndef ENABLE_KLEE
 			printf( "Received %d bytes of data.\n", (int) len );
+#endif // #ifndef ENABLE_KLEE	
 			assert( spdylay_session_mem_recv( session, buf, len) == len );
 		}
 #ifdef ENABLE_SPA
@@ -187,6 +241,11 @@ void __attribute__((noinline,used)) spa_HandleRequest() {
 
 	printf( "Closing down session.\n" );
 	spdylay_session_del( session );
+
+#ifndef ENABLE_KLEE
+	assert( close( connectionSock ) == 0 );
+	assert( close( listenSock ) == 0 );
+#endif // #ifndef ENABLE_KLEE	
 }
 
 int main( int argc, char **argv ) {
