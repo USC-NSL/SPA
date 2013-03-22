@@ -45,6 +45,7 @@ ssize_t send_callback( spdylay_session *session, const uint8_t *data, size_t len
 }
 
 void ctrl_recv_callback( spdylay_session *session, spdylay_frame_type type, spdylay_frame *frame, void *user_data ) {
+#ifndef ENABLE_KLEE
 	switch ( type ) {
 		case SPDYLAY_SYN_STREAM: { // The SYN_STREAM control frame.
 			printf( "Received SYN_STREAM control frame on %s.\n", (char *) user_data );
@@ -102,6 +103,7 @@ void ctrl_recv_callback( spdylay_session *session, spdylay_frame_type type, spdy
 			printf( "Received unknown control frame type on %s.\n", (char *) user_data );
 			break;
 	}
+#endif // #ifndef ENABLE_KLEE	
 }
 
 ssize_t read_callback( spdylay_session *session, int32_t stream_id, uint8_t *buf, size_t length, int *eof, spdylay_data_source *source, void *user_data ) {
@@ -130,8 +132,12 @@ ssize_t read_callback( spdylay_session *session, int32_t stream_id, uint8_t *buf
 }
 
 void request_recv_callback( spdylay_session *session, int32_t stream_id, void *user_data ) {
+#ifndef ENABLE_KLEE	
 	printf( "Receiving request on stream %d of %s\n", stream_id, (char *) user_data );
+#endif // #ifndef ENABLE_KLEE	
+#ifndef ANALYZE_RESPONSE
 	spa_valid_path();
+#endif // #ifndef ANALYZE_RESPONSE
 
 #ifdef ENABLE_SPA
 	uint8_t numPairs = 0;
@@ -156,7 +162,7 @@ void request_recv_callback( spdylay_session *session, int32_t stream_id, void *u
 		":version",	RESPONSE_VERSION,
 		NULL
 	};
-#endif // #ifdef ENABLE_SPA Else
+#endif // #ifdef ENABLE_SPA #else
 
 	spdylay_data_provider dp;
 	dp.source.ptr = NULL;
@@ -167,7 +173,11 @@ void request_recv_callback( spdylay_session *session, int32_t stream_id, void *u
 }
 
 void __attribute__((noinline,used)) spa_HandleRequest() {
+#ifndef ANALYZE_RESPONSE
 	spa_message_handler_entry();
+#else
+	spa_api_entry();
+#endif // #ifndef ANALYZE_RESPONSE #else
 
 #ifndef ENABLE_KLEE
 	int listenSock;
@@ -213,8 +223,10 @@ void __attribute__((noinline,used)) spa_HandleRequest() {
 
 	spdylay_session *session;
 	uint16_t serverVersion = SPDY_VERSION;
+#ifndef ANALYZE_RESPONSE
 // 	spa_api_input_var( serverVersion );
 	spa_assume( SPDY_VERSION == SPDYLAY_PROTO_SPDY2 || SPDY_VERSION == SPDYLAY_PROTO_SPDY3 );
+#endif // #ifndef ANALYZE_RESPONSE
 	assert( spdylay_session_server_new( &session, serverVersion, &callbacks, "SPDY Server Session" ) == SPDYLAY_OK );
 
 	unsigned char buf[RECEIVE_BUFFER_SIZE];

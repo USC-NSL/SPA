@@ -7,8 +7,8 @@ BC_TARGETS = spa-client.bc spa-server.bc
 BC_LIBS = libspdylay.bc
 TEST_TARGETS = spa-client.e2etest.exe spa-server.e2etest.exe
 LOG_TARGETS = spa-client.log.exe spa-server.log.exe
-CC = gcc -Wall -g -Ilib/includes
-LLVM_CC = llvm-gcc -Wall -g -O0 --emit-llvm -Ilib/includes
+CC = gcc -Wall -g -Ilib/includes -DANALYZE_RESPONSE
+LLVM_CC = llvm-gcc -Wall -g -O0 --emit-llvm -Ilib/includes -DANALYZE_RESPONSE
 LLVM_LD = llvm-ld -r -disable-opt
 LIB_SPA_TEST_MODULE = /usr/local/bin/spa/Release+Asserts/lib/libSpaTestModule.so
 LIB_SPA_LOG_MODULE = /usr/local/bin/spa/Release+Asserts/lib/libSpaLogModule.so
@@ -67,7 +67,8 @@ server.dot: server.bc $(SPA_EXE)
 	dot -Tpdf -o $@ $<
 
 clean:
-	rm -f $(TARGETS) $(BC_TARGETS) $(BC_TARGETS:.bc=.bc.o) $(TEST_TARGETS) $(TEST_TARGETS:.exe=.bc) $(LOG_TARGETS) $(PATHS) $(LOGS)
+	rm -f $(TARGETS) $(BC_TARGETS) $(BC_TARGETS:.bc=.bc.o) $(TEST_TARGETS) $(TEST_TARGETS:.exe=.bc) $(LOG_TARGETS)
+# 	rm -f $(PATHS) $(LOGS)
 # 	rm -f BadInputs.untested BadInputs.untested.debug BadInputs.untested.log BadInputs.untested.checkpoint
 # 	rm -f BadInputs.tested BadInputs.tested.log
 	rm -rf *.log klee-out-* klee-last
