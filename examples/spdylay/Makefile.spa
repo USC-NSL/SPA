@@ -7,20 +7,20 @@ BC_TARGETS = spa-client.bc spa-server.bc
 BC_LIBS = libspdylay.bc
 TEST_TARGETS = spa-client.e2etest.exe spa-server.e2etest.exe
 LOG_TARGETS = spa-client.log.exe spa-server.log.exe
-CC = gcc -Wall -g -Ilib/includes
-LLVM_CC = llvm-gcc -Wall -g -O0 --emit-llvm -Ilib/includes
+CC = gcc -Wall -g -Ilib/includes -DANALYZE_RESPONSE
+LLVM_CC = llvm-gcc -Wall -g -O0 --emit-llvm -Ilib/includes -DANALYZE_RESPONSE
 LLVM_LD = llvm-ld -r -disable-opt
 LIB_SPA_TEST_MODULE = /usr/local/bin/spa/Release+Asserts/lib/libSpaTestModule.so
 LIB_SPA_LOG_MODULE = /usr/local/bin/spa/Release+Asserts/lib/libSpaLogModule.so
 SPA_EXE = /usr/local/bin/spa/Release+Asserts/bin/spa
 # SPA_EXE = /usr/local/bin/spa/Release+Asserts/bin/spaRR
-SPA = time $(SPA_EXE) --stand-alone --libc=uclibc --posix-runtime
+SPA = time $(SPA_EXE) --stand-alone --libc=uclibc --posix-runtime --max-stp-time=1 --max-instruction-time=1
 
 default: all
 
 all: $(TARGETS) $(BC_TARGETS) $(LOG_TARGETS) $(TEST_TARGETS)
 
-run-spa: $(PATHS)
+run-spa: BadInputs.tested
 
 %.exe: %.c $(DBG_LIBS)
 	$(CC) $^ -lz -o $@
@@ -48,6 +48,15 @@ spa-client.paths: spa-client.bc $(SPA_EXE)
 spa-server.paths: spa-server.bc $(SPA_EXE)
 	$(SPA) --path-file $@ --server $< 2>&1 | tee $@.log
 
+BadInputs.untested: $(PATHS)
+	spaBadInputs -p 8 -client spa-client.paths -server spa-server.paths -o $@ -d $@.debug 2>&1 | tee $@.log
+
+BadInputs.tested: BadInputs.untested $(TEST_TARGETS)
+	spaE2ETest $< $@ './spa-client.e2etest.exe' './spa-server.e2etest.exe' 2>&1 | tee $@.log
+
+%.tested.txt: %.tested
+	spaTest2Str $< $@ 2>&1 | tee $@.log
+
 client.dot: client.bc $(SPA_EXE)
 	spa --stand-alone --dump-cfg $@ --client $< 2>&1 | tee $@.log
 
@@ -58,5 +67,8 @@ server.dot: server.bc $(SPA_EXE)
 	dot -Tpdf -o $@ $<
 
 clean:
-	rm -f $(TARGETS) $(BC_TARGETS) $(BC_TARGETS:.bc=.bc.o) $(TEST_TARGETS) $(TEST_TARGETS:.exe=.bc) $(LOG_TARGETS) $(PATHS) $(LOGS)
+	rm -f $(TARGETS) $(BC_TARGETS) $(BC_TARGETS:.bc=.bc.o) $(TEST_TARGETS) $(TEST_TARGETS:.exe=.bc) $(LOG_TARGETS)
+# 	rm -f $(PATHS) $(LOGS)
+# 	rm -f BadInputs.untested BadInputs.untested.debug BadInputs.untested.log BadInputs.untested.checkpoint
+# 	rm -f BadInputs.tested BadInputs.tested.log
 	rm -rf *.log klee-out-* klee-last
