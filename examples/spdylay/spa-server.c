@@ -119,7 +119,7 @@ ssize_t read_callback( spdylay_session *session, int32_t stream_id, uint8_t *buf
 #else // #ifndef ANALYZE_RESPONSE
 	ssize_t dataLength = 0;
 	spa_api_input_var( dataLength );
-	spa_assume( dataLength <= RESPONSE_MAX_DATA );
+	spa_assume( 0 <= dataLength && dataLength <= RESPONSE_MAX_DATA );
 
 	uint8_t data[RESPONSE_MAX_DATA];
 	spa_api_input_var( data );
@@ -225,7 +225,7 @@ void __attribute__((noinline,used)) spa_HandleRequest() {
 	uint16_t serverVersion = SPDY_VERSION;
 #ifndef ANALYZE_RESPONSE
 // 	spa_api_input_var( serverVersion );
-	spa_assume( SPDY_VERSION == SPDYLAY_PROTO_SPDY2 || SPDY_VERSION == SPDYLAY_PROTO_SPDY3 );
+	spa_assume( serverVersion == SPDYLAY_PROTO_SPDY2 || serverVersion == SPDYLAY_PROTO_SPDY3 );
 #endif // #ifndef ANALYZE_RESPONSE
 	assert( spdylay_session_server_new( &session, serverVersion, &callbacks, "SPDY Server Session" ) == SPDYLAY_OK );
 
