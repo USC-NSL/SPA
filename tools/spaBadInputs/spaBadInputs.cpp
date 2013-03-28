@@ -35,7 +35,7 @@
 
 #define DEFAULT_NUM_JOBS_PER_WORKER	1000
 #define DEFAULT_NUM_WORKERS			1
-#define CHECKPOINT_TIME				300 // seconds
+#define CHECKPOINT_TIME				600 // seconds
 
 namespace {
 	llvm::cl::opt<std::string> ClientPathFile("client", llvm::cl::desc(
@@ -62,6 +62,7 @@ namespace {
 
 typedef struct {
 	unsigned long solutions;
+	unsigned long cpuTime;
 } GlobalData_t;
 
 typedef struct {
@@ -355,8 +356,18 @@ void processJob( SPA::Path *cp, SPA::Path *sp, bool deletecp, bool deletesp ) {
 		assert( (pid = fork()) >= 0 && "Error spawning worker process." );
 		if ( pid == 0 ) {
 			signal( SIGINT, SIG_IGN );
+			time_t startTime = time( NULL );
 			for ( std::list<job_t *>::iterator it = queue.begin(), ie = queue.end(); it != ie; it++ )
 				processPaths( (*it)->cp, (*it)->sp );
+			time_t now = time( NULL );
+
+			int fd = open( OutputFile.getValue().c_str(), O_APPEND );
+			assert( fd >= 0 && "Unable to open output file for locking." );
+			assert( flock( fd, LOCK_EX ) == 0 && "Unable to lock output file." );
+			gd->cpuTime += difftime( now, startTime );
+			assert( flock( fd, LOCK_UN ) == 0 && "Unable to unlock output file." );
+			assert( close( fd ) == 0 && "Unable to close output file for locking." );
+
 			exit( 0 );
 		} else {
 			signal( SIGINT, handleSignal );
@@ -389,7 +400,11 @@ void flushJobs() {
 	}
 }
 
-bool saveCheckpoint( std::string cpFileName, unsigned long clientPath, unsigned long serverPath, unsigned long solutions, unsigned long totalClientPaths, unsigned long totalServerPaths ) {
+bool saveCheckpoint( std::string cpFileName,
+		unsigned long clientPath, unsigned long serverPath,
+		unsigned long solutions,
+		unsigned long totalClientPaths, unsigned long totalServerPaths,
+		unsigned long cpuTime ) {
 	static time_t last = 0;
 	time_t now = time( NULL );
 
@@ -398,7 +413,7 @@ bool saveCheckpoint( std::string cpFileName, unsigned long clientPath, unsigned 
 		last = time( NULL );
 		std::ofstream cpFile( cpFileName.c_str() );
 		assert( cpFile.is_open() && "Unable to open checkpoint file." );
-		cpFile << clientPath << " " << serverPath << " " << totalClientPaths << " " << totalServerPaths << " " << solutions << std::endl;
+		cpFile << clientPath << " " << serverPath << " " << totalClientPaths << " " << totalServerPaths << " " << solutions << " " << cpuTime << std::endl;
 		cpFile.flush();
 		cpFile.close();
 		return true;
@@ -410,11 +425,12 @@ bool saveCheckpoint( std::string cpFileName, unsigned long clientPath, unsigned 
 bool restoreCheckpoint( std::string cpFileName,
 		unsigned long &clientPath, unsigned long &serverPath,
 		unsigned long &processed, unsigned long &solutions,
-		unsigned long &totalClientPaths, unsigned long &totalServerPaths ) {
+		unsigned long &totalClientPaths, unsigned long &totalServerPaths,
+		unsigned long &cpuTime ) {
 	std::ifstream cpFile( cpFileName.c_str() );
 	if ( cpFile.is_open() ) {
 		std::cerr << "Restarting from checkpoint. Expect some redundant results." << std::endl;
-		cpFile >> clientPath >> serverPath >> totalClientPaths >> totalServerPaths >> solutions;
+		cpFile >> clientPath >> serverPath >> totalClientPaths >> totalServerPaths >> solutions >> cpuTime;
 		processed = clientPath * serverPath;
 		return true;
 	}
@@ -445,6 +461,7 @@ int main(int argc, char **argv, char **envp) {
 
 	gd = (GlobalData_t *) mmap( NULL, sizeof( GlobalData_t ), PROT_READ | PROT_WRITE, MAP_SHARED | MAP_ANONYMOUS, -1, 0 );
 	gd->solutions = 0;
+	gd->cpuTime = 0;
 
 	assert( NumWorkers >= 0 && "Invalid number of parallel workers." );
 	numWorkers = NumWorkers > 0 ? NumWorkers : DEFAULT_NUM_WORKERS;
@@ -473,7 +490,7 @@ int main(int argc, char **argv, char **envp) {
 			unsigned long clientPath = 0, serverPath = 0;
 			unsigned long totalClientPaths = 0, totalServerPaths;
 			unsigned long processed;
-			if ( restoreCheckpoint( cpFileName, clientPath, serverPath, processed, gd->solutions, totalClientPaths, totalServerPaths ) ) {
+			if ( restoreCheckpoint( cpFileName, clientPath, serverPath, processed, gd->solutions, totalClientPaths, totalServerPaths, gd->cpuTime ) ) {
 				std::cerr << "Restoring client path." << std::endl;
 				for ( unsigned long i = 1; i <= clientPath; i++ )
 					assert( (cp = clientPathLoader.getPath()) && "Unable to load client path file to checkpoint position.");
@@ -521,7 +538,7 @@ int main(int argc, char **argv, char **envp) {
 			do {
 				processing = false;
 				// Save a checkpoint to recover from failure.
-				saveCheckpoint( cpFileName, clientPath, serverPath, gd->solutions, totalClientPaths, totalServerPaths );
+				saveCheckpoint( cpFileName, clientPath, serverPath, gd->solutions, totalClientPaths, totalServerPaths, gd->cpuTime );
 
 				if ( (cp = clientPathLoader.getPath()) ) {
 					clientPath++;
@@ -555,11 +572,15 @@ int main(int argc, char **argv, char **envp) {
 			} while ( processing || Follow );
 			flushJobs();
 			remove( cpFileName.c_str() );
+			exit( 0 );
 		} else { // Parent process: re-spawner.
 			int status = 0;
-			assert ( wait( &status ) > 0 );
+			time_t startTime = time( NULL );
+			assert ( waitpid( pid, &status, 0 ) > 0 );
 			if ( WIFEXITED( status ) && WEXITSTATUS( status ) == 0 ) {
+				time_t now = time( NULL );
 				std::cerr << "Done. Found " << gd->solutions << " solutions." << std::endl;
+				std::cerr << "Elapsed Time: " << difftime( now, startTime ) << ", CPU Time:" << gd->cpuTime << std::endl;
 				break;
 			}
 			if ( shutdown ) {
