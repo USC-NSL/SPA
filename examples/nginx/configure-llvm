@@ -34,8 +34,8 @@ CPP='llvm-cpp' \
 	--without-mail_pop3_module \
 	--without-mail_imap_module \
 	--without-mail_smtp_module \
-	--with-cc=llvm-gcc \
-	--with-cpp=llvm-cpp \
-	--with-cc-opt=-DENABLE_SPA -DENABLE_KLEE -emit-llvm -use-gold-plugin -O0 -g \
-	--with-ld-opt=-disable-opt \
+	--with-cc="llvm-gcc" \
+	--with-cpp="llvm-cpp" \
+	--with-cc-opt="-DENABLE_SPA -DENABLE_KLEE -emit-llvm -use-gold-plugin -O0 -g" \
+	--with-ld-opt="-disable-opt" \
 	--without-pcre
