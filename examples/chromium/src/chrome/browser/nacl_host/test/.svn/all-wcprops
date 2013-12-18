@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/183042/trunk/src/chrome/browser/nacl_host/test
+END
+debug_stub_browser_tests.py
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/174772/trunk/src/chrome/browser/nacl_host/test/debug_stub_browser_tests.py
+END
+mock_nacl_gdb.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/183042/trunk/src/chrome/browser/nacl_host/test/mock_nacl_gdb.gyp
+END
+nacl_gdb_browsertest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/181638/trunk/src/chrome/browser/nacl_host/test/nacl_gdb_browsertest.cc
+END
+mock_nacl_gdb.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/181638/trunk/src/chrome/browser/nacl_host/test/mock_nacl_gdb.cc
+END
+gdb_debug_stub_browsertest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/181638/trunk/src/chrome/browser/nacl_host/test/gdb_debug_stub_browsertest.cc
+END
+gdb_rsp.py
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/171805/trunk/src/chrome/browser/nacl_host/test/gdb_rsp.py
+END

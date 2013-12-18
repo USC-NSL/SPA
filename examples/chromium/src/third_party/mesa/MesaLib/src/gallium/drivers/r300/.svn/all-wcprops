@@ -1,0 +1,281 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300
+END
+r300_render_translate.c
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_render_translate.c
+END
+r300_render_stencilref.c
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_render_stencilref.c
+END
+r300_vs.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_vs.h
+END
+r300_emit.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_emit.c
+END
+r300_texture_desc.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_texture_desc.c
+END
+r300_texture.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_texture.c
+END
+r300_winsys.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_winsys.h
+END
+r300_emit.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_emit.h
+END
+r300_texture_desc.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_texture_desc.h
+END
+r300_texture.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_texture.h
+END
+r300_vs_draw.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_vs_draw.c
+END
+r300_screen_buffer.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_screen_buffer.c
+END
+r300_cs.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_cs.h
+END
+r300_screen_buffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_screen_buffer.h
+END
+r300_screen.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_screen.c
+END
+r300_shader_semantics.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_shader_semantics.h
+END
+r300_flush.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_flush.c
+END
+r300_defines.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_defines.h
+END
+r300_screen.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_screen.h
+END
+r300_transfer.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_transfer.c
+END
+r300_debug.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_debug.c
+END
+r300_resource.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_resource.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/Makefile
+END
+r300_transfer.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_transfer.h
+END
+r300_blit.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_blit.c
+END
+r300_tgsi_to_rc.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_tgsi_to_rc.c
+END
+r300_chipset.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_chipset.c
+END
+r300_tgsi_to_rc.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_tgsi_to_rc.h
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/SConscript
+END
+r300_chipset.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_chipset.h
+END
+r300_query.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_query.c
+END
+r300_state_inlines.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_state_inlines.h
+END
+r300_fs.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_fs.c
+END
+r300_fs.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_fs.h
+END
+r300_render.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_render.c
+END
+r300_state.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_state.c
+END
+r300_hyperz.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_hyperz.c
+END
+r300_state_derived.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_state_derived.c
+END
+r300_reg.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_reg.h
+END
+r300_public.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_public.h
+END
+r300_context.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_context.c
+END
+r300_hyperz.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_hyperz.h
+END
+r300_state_derived.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_state_derived.h
+END
+r300_vs.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_vs.c
+END
+r300_cb.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_cb.h
+END
+r300_context.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r300/r300_context.h
+END

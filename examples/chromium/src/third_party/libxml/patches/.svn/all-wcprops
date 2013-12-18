@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/87153/trunk/src/third_party/libxml/patches
+END
+icu-configure
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/52725/trunk/src/third_party/libxml/patches/icu-configure
+END
+icu
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/52725/trunk/src/third_party/libxml/patches/icu
+END
+icu-win32
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/52725/trunk/src/third_party/libxml/patches/icu-win32
+END
+xmlregexp-bogus-cast
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/52725/trunk/src/third_party/libxml/patches/xmlregexp-bogus-cast
+END
+win32-clobber-makefile
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/52725/trunk/src/third_party/libxml/patches/win32-clobber-makefile
+END
+LoadLibraryA
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/52725/trunk/src/third_party/libxml/patches/LoadLibraryA
+END
+bug_651202
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/87153/trunk/src/third_party/libxml/patches/bug_651202
+END

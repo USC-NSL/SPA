@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/195524/trunk/src/ash/wm/gestures
+END
+shelf_gesture_handler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/194609/trunk/src/ash/wm/gestures/shelf_gesture_handler.cc
+END
+two_finger_drag_handler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/194609/trunk/src/ash/wm/gestures/two_finger_drag_handler.cc
+END
+shelf_gesture_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/156382/trunk/src/ash/wm/gestures/shelf_gesture_handler.h
+END
+two_finger_drag_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/164094/trunk/src/ash/wm/gestures/two_finger_drag_handler.h
+END
+system_pinch_handler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/187122/trunk/src/ash/wm/gestures/system_pinch_handler.cc
+END
+system_pinch_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/153984/trunk/src/ash/wm/gestures/system_pinch_handler.h
+END
+border_gesture_handler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/195524/trunk/src/ash/wm/gestures/border_gesture_handler.cc
+END
+tray_gesture_handler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/180796/trunk/src/ash/wm/gestures/tray_gesture_handler.cc
+END
+border_gesture_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/195524/trunk/src/ash/wm/gestures/border_gesture_handler.h
+END
+tray_gesture_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/180796/trunk/src/ash/wm/gestures/tray_gesture_handler.h
+END
+long_press_affordance_handler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/175389/trunk/src/ash/wm/gestures/long_press_affordance_handler.cc
+END
+long_press_affordance_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/162219/trunk/src/ash/wm/gestures/long_press_affordance_handler.h
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/171179/trunk/src/ash/wm/gestures/OWNERS
+END

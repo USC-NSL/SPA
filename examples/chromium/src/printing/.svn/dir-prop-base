@@ -1,0 +1,19 @@
+K 10
+svn:ignore
+V 257
+cups.vcproj
+printing.xcodeproj
+printing.sln
+printing.vcproj
+printing_unittests.vcproj
+SConstruct
+printing.scons
+printing_main.scons
+printing_unittests.scons
+printing.mk
+printing_unittests.mk
+printing.target.mk
+printing.Makefile
+printing_unittests.target.mk
+
+END

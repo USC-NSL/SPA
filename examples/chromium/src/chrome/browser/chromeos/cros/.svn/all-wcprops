@@ -1,0 +1,215 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/196735/trunk/src/chrome/browser/chromeos/cros
+END
+mock_cert_library.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/196159/trunk/src/chrome/browser/chromeos/cros/mock_cert_library.h
+END
+cros_in_process_browser_test.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/146163/trunk/src/chrome/browser/chromeos/cros/cros_in_process_browser_test.h
+END
+enum_mapper.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/146163/trunk/src/chrome/browser/chromeos/cros/enum_mapper.h
+END
+network_library_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/196735/trunk/src/chrome/browser/chromeos/cros/network_library_unittest.cc
+END
+network_property_ui_data_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/193364/trunk/src/chrome/browser/chromeos/cros/network_property_ui_data_unittest.cc
+END
+certificate_pattern_matcher.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/193364/trunk/src/chrome/browser/chromeos/cros/certificate_pattern_matcher.cc
+END
+network_library_impl_cros.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/178823/trunk/src/chrome/browser/chromeos/cros/network_library_impl_cros.h
+END
+network_constants.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/193364/trunk/src/chrome/browser/chromeos/cros/network_constants.h
+END
+mock_network_library.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/196735/trunk/src/chrome/browser/chromeos/cros/mock_network_library.h
+END
+network_library_impl_base.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/196735/trunk/src/chrome/browser/chromeos/cros/network_library_impl_base.h
+END
+mock_cert_library.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/137066/trunk/src/chrome/browser/chromeos/cros/mock_cert_library.cc
+END
+native_network_constants.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/174710/trunk/src/chrome/browser/chromeos/cros/native_network_constants.cc
+END
+network_library_impl_stub.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/185273/trunk/src/chrome/browser/chromeos/cros/network_library_impl_stub.cc
+END
+cros_in_process_browser_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/94720/trunk/src/chrome/browser/chromeos/cros/cros_in_process_browser_test.cc
+END
+cros_library.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/196159/trunk/src/chrome/browser/chromeos/cros/cros_library.h
+END
+network_library_impl_stub.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/185270/trunk/src/chrome/browser/chromeos/cros/network_library_impl_stub.h
+END
+native_network_constants.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/174710/trunk/src/chrome/browser/chromeos/cros/native_network_constants.h
+END
+network_parser.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/184626/trunk/src/chrome/browser/chromeos/cros/network_parser.cc
+END
+network_parser.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/155477/trunk/src/chrome/browser/chromeos/cros/network_parser.h
+END
+native_network_parser.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/189051/trunk/src/chrome/browser/chromeos/cros/native_network_parser.cc
+END
+native_network_parser.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/155477/trunk/src/chrome/browser/chromeos/cros/native_network_parser.h
+END
+network_library.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/193364/trunk/src/chrome/browser/chromeos/cros/network_library.cc
+END
+network_library.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/196735/trunk/src/chrome/browser/chromeos/cros/network_library.h
+END
+cros_mock.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/196159/trunk/src/chrome/browser/chromeos/cros/cros_mock.cc
+END
+cros_mock.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/196159/trunk/src/chrome/browser/chromeos/cros/cros_mock.h
+END
+cert_library.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/196159/trunk/src/chrome/browser/chromeos/cros/cert_library.cc
+END
+network_property_ui_data.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/193364/trunk/src/chrome/browser/chromeos/cros/network_property_ui_data.cc
+END
+cert_library.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/196159/trunk/src/chrome/browser/chromeos/cros/cert_library.h
+END
+certificate_pattern_matcher.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/193364/trunk/src/chrome/browser/chromeos/cros/certificate_pattern_matcher.h
+END
+network_library_impl_cros.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/184626/trunk/src/chrome/browser/chromeos/cros/network_library_impl_cros.cc
+END
+network_property_ui_data.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/193364/trunk/src/chrome/browser/chromeos/cros/network_property_ui_data.h
+END
+mock_network_library.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/176790/trunk/src/chrome/browser/chromeos/cros/mock_network_library.cc
+END
+network_library_impl_base.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/196735/trunk/src/chrome/browser/chromeos/cros/network_library_impl_base.cc
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/182489/trunk/src/chrome/browser/chromeos/cros/OWNERS
+END
+cros_library.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/196159/trunk/src/chrome/browser/chromeos/cros/cros_library.cc
+END

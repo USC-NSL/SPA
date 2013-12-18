@@ -1,0 +1,52 @@
+10
+
+dir
+197479
+http://src.chromium.org/svn/trunk/src/chrome/test/data/extensions/management
+http://src.chromium.org/svn
+
+
+
+2013-01-08T15:10:31.289841Z
+175527
+kalman@chromium.org
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4ff67af0-8c30-449e-8e8b-ad334ec8d88c
+
+packaged_app
+dir
+
+self_uninstall_helper
+dir
+
+self_uninstall
+dir
+
+simple_extension
+dir
+
+uninstall_extension
+dir
+
+install_event
+dir
+
+launch_app
+dir
+
+launch_app_from_background
+dir
+

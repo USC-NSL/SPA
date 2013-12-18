@@ -1,0 +1,581 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965
+END
+brw_context.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_context.c
+END
+brw_state.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_state.h
+END
+brw_state_debug.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_state_debug.c
+END
+brw_clip.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_clip.c
+END
+brw_vs.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_vs.c
+END
+brw_context.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_context.h
+END
+brw_wm_pass0.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_wm_pass0.c
+END
+brw_wm_pass2.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_wm_pass2.c
+END
+brw_clip.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_clip.h
+END
+brw_vs.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_vs.h
+END
+intel_structs.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/intel_structs.h
+END
+brw_clip_line.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_clip_line.c
+END
+brw_vs_surface_state.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_vs_surface_state.c
+END
+brw_draw_upload.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_draw_upload.c
+END
+brw_winsys.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_winsys.h
+END
+brw_winsys_debug.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_winsys_debug.c
+END
+brw_clip_tri.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_clip_tri.c
+END
+brw_sf.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_sf.c
+END
+brw_wm_fp.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_wm_fp.c
+END
+brw_eu.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_eu.c
+END
+brw_sf.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_sf.h
+END
+brw_eu.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_eu.h
+END
+brw_screen.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_screen.c
+END
+brw_disasm.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_disasm.c
+END
+brw_pipe_query.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_pipe_query.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/Makefile
+END
+brw_screen.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_screen.h
+END
+brw_clip_util.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_clip_util.c
+END
+brw_disasm.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_disasm.h
+END
+brw_resource.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_resource.c
+END
+brw_clip_state.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_clip_state.c
+END
+brw_gs_emit.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_gs_emit.c
+END
+brw_wm_debug.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_wm_debug.c
+END
+brw_pipe_vertex.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_pipe_vertex.c
+END
+brw_debug.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_debug.h
+END
+brw_wm_surface_state.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_wm_surface_state.c
+END
+brw_resource.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_resource.h
+END
+brw_pipe_clear.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_pipe_clear.c
+END
+brw_vs_emit.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_vs_emit.c
+END
+brw_clip_unfilled.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_clip_unfilled.c
+END
+brw_batchbuffer.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_batchbuffer.c
+END
+brw_pipe_sampler.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_pipe_sampler.c
+END
+brw_batchbuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_batchbuffer.h
+END
+brw_pipe_depth.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_pipe_depth.c
+END
+brw_reg.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_reg.h
+END
+brw_public.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_public.h
+END
+brw_state_upload.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_state_upload.c
+END
+brw_cc.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_cc.c
+END
+brw_wm_iz.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_wm_iz.c
+END
+brw_sf_emit.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_sf_emit.c
+END
+brw_pipe_rast.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_pipe_rast.c
+END
+brw_screen_surface.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_screen_surface.c
+END
+brw_wm_pass1.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_wm_pass1.c
+END
+brw_pipe_rast.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_pipe_rast.h
+END
+brw_structs_dump.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_structs_dump.c
+END
+brw_pipe_flush.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_pipe_flush.c
+END
+brw_curbe.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_curbe.c
+END
+brw_clip_point.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_clip_point.c
+END
+brw_pipe_blend.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_pipe_blend.c
+END
+brw_structs_dump.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_structs_dump.h
+END
+brw_state_cache.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_state_cache.c
+END
+brw_resource_texture_layout.c
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_resource_texture_layout.c
+END
+brw_resource_texture.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_resource_texture.c
+END
+brw_pipe_misc.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_pipe_misc.c
+END
+brw_gs.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_gs.c
+END
+brw_types.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_types.h
+END
+brw_structs.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_structs.h
+END
+brw_gs.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_gs.h
+END
+brw_eu_debug.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_eu_debug.c
+END
+brw_resource_buffer.c
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_resource_buffer.c
+END
+brw_defines.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_defines.h
+END
+brw_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_util.h
+END
+brw_wm.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_wm.c
+END
+brw_wm_constant_buffer.c
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_wm_constant_buffer.c
+END
+brw_eu_emit.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_eu_emit.c
+END
+brw_urb.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_urb.c
+END
+brw_vs_state.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_vs_state.c
+END
+brw_wm.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_wm.h
+END
+brw_misc_state.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_misc_state.c
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/SConscript
+END
+brw_draw.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_draw.c
+END
+brw_wm_emit.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_wm_emit.c
+END
+brw_draw.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_draw.h
+END
+brw_structs_dump.py
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_structs_dump.py
+END
+brw_pipe_fb.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_pipe_fb.c
+END
+brw_wm_glsl.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_wm_glsl.c
+END
+intel_decode.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/intel_decode.c
+END
+brw_eu_util.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_eu_util.c
+END
+brw_wm_sampler_state.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_wm_sampler_state.c
+END
+brw_swtnl.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_swtnl.c
+END
+brw_sf_state.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_sf_state.c
+END
+brw_gs_state.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_gs_state.c
+END
+intel_decode.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/intel_decode.h
+END
+brw_state_batch.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_state_batch.c
+END
+brw_pipe_shader.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_pipe_shader.c
+END
+brw_wm_state.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/i965/brw_wm_state.c
+END

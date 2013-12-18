@@ -1,0 +1,11 @@
+K 10
+svn:ignore
+V 145
+SConstruct
+gtk_clipboard_dump.scons
+gtk_clipboard_dump_main.scons
+gtk_clipboard_dump.mk
+gtk_clipboard_dump.target.mk
+gtk_clipboard_dump.Makefile
+
+END

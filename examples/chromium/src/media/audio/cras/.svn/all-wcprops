@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/191976/trunk/src/media/audio/cras
+END
+cras_unified.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/191976/trunk/src/media/audio/cras/cras_unified.cc
+END
+cras_unified.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/191976/trunk/src/media/audio/cras/cras_unified.h
+END
+audio_manager_cras.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/191976/trunk/src/media/audio/cras/audio_manager_cras.cc
+END
+audio_manager_cras.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/186698/trunk/src/media/audio/cras/audio_manager_cras.h
+END
+cras_input_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/190087/trunk/src/media/audio/cras/cras_input_unittest.cc
+END
+cras_input.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/191976/trunk/src/media/audio/cras/cras_input.cc
+END
+cras_input.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/183483/trunk/src/media/audio/cras/cras_input.h
+END
+cras_unified_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/191976/trunk/src/media/audio/cras/cras_unified_unittest.cc
+END

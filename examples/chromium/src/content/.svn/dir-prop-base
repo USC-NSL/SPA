@@ -1,0 +1,15 @@
+K 10
+svn:ignore
+V 213
+content_browser.vcproj
+content_ppapi_plugin.vcproj
+content_common.vcproj
+content_gpu.vcproj
+content_utility.vcproj
+content_worker.vcproj
+content.sln
+content_plugin.vcproj
+content_renderer.vcproj
+content.xcodeproj
+
+END

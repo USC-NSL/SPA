@@ -1,0 +1,215 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/197192/trunk/src/chrome/common/extensions/permissions
+END
+socket_permission_data.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/197192/trunk/src/chrome/common/extensions/permissions/socket_permission_data.h
+END
+bluetooth_device_permission.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/172965/trunk/src/chrome/common/extensions/permissions/bluetooth_device_permission.h
+END
+api_permission_set.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/162882/trunk/src/chrome/common/extensions/permissions/api_permission_set.h
+END
+permission_message.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/195743/trunk/src/chrome/common/extensions/permissions/permission_message.h
+END
+socket_permission_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/197192/trunk/src/chrome/common/extensions/permissions/socket_permission_unittest.cc
+END
+socket_permission.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/171559/trunk/src/chrome/common/extensions/permissions/socket_permission.cc
+END
+chrome_api_permissions.cc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/196874/trunk/src/chrome/common/extensions/permissions/chrome_api_permissions.cc
+END
+permission_set_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/196959/trunk/src/chrome/common/extensions/permissions/permission_set_unittest.cc
+END
+chrome_api_permissions.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/192252/trunk/src/chrome/common/extensions/permissions/chrome_api_permissions.h
+END
+media_galleries_permission_data.cc
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/182097/trunk/src/chrome/common/extensions/permissions/media_galleries_permission_data.cc
+END
+media_galleries_permission_data.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/177294/trunk/src/chrome/common/extensions/permissions/media_galleries_permission_data.h
+END
+media_galleries_permission_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/192252/trunk/src/chrome/common/extensions/permissions/media_galleries_permission_unittest.cc
+END
+media_galleries_permission.cc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/182097/trunk/src/chrome/common/extensions/permissions/media_galleries_permission.cc
+END
+set_disjunction_permission.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/173518/trunk/src/chrome/common/extensions/permissions/set_disjunction_permission.h
+END
+scoped_testing_permissions_info.cc
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/192252/trunk/src/chrome/common/extensions/permissions/scoped_testing_permissions_info.cc
+END
+api_permission.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/192252/trunk/src/chrome/common/extensions/permissions/api_permission.cc
+END
+usb_device_permission.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/172271/trunk/src/chrome/common/extensions/permissions/usb_device_permission.h
+END
+api_permission.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/195743/trunk/src/chrome/common/extensions/permissions/api_permission.h
+END
+bluetooth_device_permission_data.cc
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/193040/trunk/src/chrome/common/extensions/permissions/bluetooth_device_permission_data.cc
+END
+permissions_info.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/192252/trunk/src/chrome/common/extensions/permissions/permissions_info.cc
+END
+bluetooth_device_permission_data.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/173518/trunk/src/chrome/common/extensions/permissions/bluetooth_device_permission_data.h
+END
+api_permission_set_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/192252/trunk/src/chrome/common/extensions/permissions/api_permission_set_unittest.cc
+END
+permission_message.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/181564/trunk/src/chrome/common/extensions/permissions/permission_message.cc
+END
+api_permission_set.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/192252/trunk/src/chrome/common/extensions/permissions/api_permission_set.cc
+END
+bluetooth_device_permission.cc
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/178798/trunk/src/chrome/common/extensions/permissions/bluetooth_device_permission.cc
+END
+socket_permission.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/171559/trunk/src/chrome/common/extensions/permissions/socket_permission.h
+END
+permission_set.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/192720/trunk/src/chrome/common/extensions/permissions/permission_set.cc
+END
+permission_set.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/192720/trunk/src/chrome/common/extensions/permissions/permission_set.h
+END
+usb_device_permission_data.cc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/185315/trunk/src/chrome/common/extensions/permissions/usb_device_permission_data.cc
+END
+usb_device_permission_data.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/173518/trunk/src/chrome/common/extensions/permissions/usb_device_permission_data.h
+END
+media_galleries_permission.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/182097/trunk/src/chrome/common/extensions/permissions/media_galleries_permission.h
+END
+usb_device_permission.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/173014/trunk/src/chrome/common/extensions/permissions/usb_device_permission.cc
+END
+scoped_testing_permissions_info.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/192252/trunk/src/chrome/common/extensions/permissions/scoped_testing_permissions_info.h
+END
+permissions_info.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/192252/trunk/src/chrome/common/extensions/permissions/permissions_info.h
+END
+socket_permission_data.cc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/197192/trunk/src/chrome/common/extensions/permissions/socket_permission_data.cc
+END

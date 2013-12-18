@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/185391/trunk/src/chrome/browser/speech/extension_api
+END
+tts_extension_api_constants.cc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/135933/trunk/src/chrome/browser/speech/extension_api/tts_extension_api_constants.cc
+END
+tts_extension_api_constants.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/146163/trunk/src/chrome/browser/speech/extension_api/tts_extension_api_constants.h
+END
+extension_manifests_tts_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/176016/trunk/src/chrome/browser/speech/extension_api/extension_manifests_tts_unittest.cc
+END
+tts_extension_apitest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/178615/trunk/src/chrome/browser/speech/extension_api/tts_extension_apitest.cc
+END
+tts_extension_api.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/185391/trunk/src/chrome/browser/speech/extension_api/tts_extension_api.cc
+END
+tts_extension_api.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/178615/trunk/src/chrome/browser/speech/extension_api/tts_extension_api.h
+END
+tts_engine_extension_api.cc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/178615/trunk/src/chrome/browser/speech/extension_api/tts_engine_extension_api.cc
+END
+tts_engine_extension_api.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/177787/trunk/src/chrome/browser/speech/extension_api/tts_engine_extension_api.h
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/128709/trunk/src/chrome/browser/speech/extension_api/OWNERS
+END

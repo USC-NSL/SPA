@@ -1,0 +1,215 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r600
+END
+r600_resource.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r600/r600_resource.c
+END
+r600_sq.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r600/r600_sq.h
+END
+r600d.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r600/r600d.h
+END
+r600_context.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r600/r600_context.h
+END
+r600_blit.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r600/r600_blit.c
+END
+r600_resource.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r600/r600_resource.h
+END
+r600_draw.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r600/r600_draw.c
+END
+r600_texture.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r600/r600_texture.c
+END
+r600_opcodes.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r600/r600_opcodes.h
+END
+eg_hw_states.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r600/eg_hw_states.c
+END
+eg_states_inc.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r600/eg_states_inc.h
+END
+r600_shader.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r600/r600_shader.c
+END
+r600_buffer.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r600/r600_buffer.c
+END
+eg_state_inlines.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r600/eg_state_inlines.h
+END
+r600_shader.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r600/r600_shader.h
+END
+r600_helper.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r600/r600_helper.c
+END
+r600_public.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r600/r600_public.h
+END
+eg_asm.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r600/eg_asm.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r600/Makefile
+END
+r700_sq.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r600/r700_sq.h
+END
+eg_sq.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r600/eg_sq.h
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r600/SConscript
+END
+r600_states_inc.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r600/r600_states_inc.h
+END
+r600_hw_states.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r600/r600_hw_states.c
+END
+r600_query.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r600/r600_query.c
+END
+r600_state_inlines.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r600/r600_state_inlines.h
+END
+radeon.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r600/radeon.h
+END
+r600_screen.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r600/r600_screen.c
+END
+r600_state.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r600/r600_state.c
+END
+r600_asm.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r600/r600_asm.c
+END
+r700_asm.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r600/r700_asm.c
+END
+r600_screen.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r600/r600_screen.h
+END
+evergreend.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r600/evergreend.h
+END
+r600_context.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r600/r600_context.c
+END
+r600_asm.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/r600/r600_asm.h
+END

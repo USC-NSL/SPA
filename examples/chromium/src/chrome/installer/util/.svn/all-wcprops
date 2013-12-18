@@ -1,0 +1,977 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/197434/trunk/src/chrome/installer/util
+END
+installer_util_unittests.rc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/78921/trunk/src/chrome/installer/util/installer_util_unittests.rc
+END
+uninstall_metrics_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/193975/trunk/src/chrome/installer/util/uninstall_metrics_unittest.cc
+END
+copy_reg_key_work_item.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/182368/trunk/src/chrome/installer/util/copy_reg_key_work_item.cc
+END
+work_item.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/181663/trunk/src/chrome/installer/util/work_item.cc
+END
+lzma_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/180245/trunk/src/chrome/installer/util/lzma_util.h
+END
+app_commands.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/146163/trunk/src/chrome/installer/util/app_commands.h
+END
+move_tree_work_item.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/184344/trunk/src/chrome/installer/util/move_tree_work_item.h
+END
+google_chrome_sxs_distribution.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/188494/trunk/src/chrome/installer/util/google_chrome_sxs_distribution.h
+END
+copy_tree_work_item.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/184344/trunk/src/chrome/installer/util/copy_tree_work_item.h
+END
+util_constants.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/185432/trunk/src/chrome/installer/util/util_constants.h
+END
+chrome_app_host_operations.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/188494/trunk/src/chrome/installer/util/chrome_app_host_operations.h
+END
+product.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/188494/trunk/src/chrome/installer/util/product.cc
+END
+conditional_work_item_list.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/184344/trunk/src/chrome/installer/util/conditional_work_item_list.h
+END
+user_experiment.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/191005/trunk/src/chrome/installer/util/user_experiment.h
+END
+channel_info.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/185432/trunk/src/chrome/installer/util/channel_info.cc
+END
+channel_info.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/185432/trunk/src/chrome/installer/util/channel_info.h
+END
+delete_reg_key_work_item.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/101684/trunk/src/chrome/installer/util/delete_reg_key_work_item.cc
+END
+work_item_list_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/181663/trunk/src/chrome/installer/util/work_item_list_unittest.cc
+END
+wmi_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/159427/trunk/src/chrome/installer/util/wmi_unittest.cc
+END
+chrome_frame_operations.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/188494/trunk/src/chrome/installer/util/chrome_frame_operations.h
+END
+copy_reg_key_work_item_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/182368/trunk/src/chrome/installer/util/copy_reg_key_work_item_unittest.cc
+END
+chromium_binaries_distribution.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/154600/trunk/src/chrome/installer/util/chromium_binaries_distribution.h
+END
+install_util_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/181663/trunk/src/chrome/installer/util/install_util_unittest.cc
+END
+delete_tree_work_item.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/193728/trunk/src/chrome/installer/util/delete_tree_work_item.h
+END
+logging_installer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/184355/trunk/src/chrome/installer/util/logging_installer.cc
+END
+move_tree_work_item_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/184356/trunk/src/chrome/installer/util/move_tree_work_item_unittest.cc
+END
+logging_installer.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/180245/trunk/src/chrome/installer/util/logging_installer.h
+END
+self_reg_work_item.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/100224/trunk/src/chrome/installer/util/self_reg_work_item.cc
+END
+google_chrome_distribution.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/193975/trunk/src/chrome/installer/util/google_chrome_distribution.cc
+END
+copy_tree_work_item_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/181663/trunk/src/chrome/installer/util/copy_tree_work_item_unittest.cc
+END
+installation_validator.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/182914/trunk/src/chrome/installer/util/installation_validator.h
+END
+chrome_app_host_distribution.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/168722/trunk/src/chrome/installer/util/chrome_app_host_distribution.h
+END
+callback_work_item_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/154352/trunk/src/chrome/installer/util/callback_work_item_unittest.cc
+END
+duplicate_tree_detector.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/181663/trunk/src/chrome/installer/util/duplicate_tree_detector.cc
+END
+product_operations.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/188494/trunk/src/chrome/installer/util/product_operations.h
+END
+delete_reg_key_work_item_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/101684/trunk/src/chrome/installer/util/delete_reg_key_work_item_unittest.cc
+END
+create_reg_key_work_item_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/181663/trunk/src/chrome/installer/util/create_reg_key_work_item_unittest.cc
+END
+chrome_binaries_operations.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/188494/trunk/src/chrome/installer/util/chrome_binaries_operations.h
+END
+wmi.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/146163/trunk/src/chrome/installer/util/wmi.h
+END
+delete_tree_work_item_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/181663/trunk/src/chrome/installer/util/delete_tree_work_item_unittest.cc
+END
+installer_util_test_common.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/184344/trunk/src/chrome/installer/util/installer_util_test_common.cc
+END
+compat_checks_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/11331/trunk/src/chrome/installer/util/compat_checks_unittest.cc
+END
+move_tree_work_item.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/181663/trunk/src/chrome/installer/util/move_tree_work_item.cc
+END
+google_chrome_sxs_distribution.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/188494/trunk/src/chrome/installer/util/google_chrome_sxs_distribution.cc
+END
+chrome_app_host_operations.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/188494/trunk/src/chrome/installer/util/chrome_app_host_operations.cc
+END
+app_command.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/181457/trunk/src/chrome/installer/util/app_command.cc
+END
+callback_work_item.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/154352/trunk/src/chrome/installer/util/callback_work_item.h
+END
+product_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/184355/trunk/src/chrome/installer/util/product_unittest.cc
+END
+language_selector_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/131867/trunk/src/chrome/installer/util/language_selector_unittest.cc
+END
+chrome_browser_sxs_operations.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/188494/trunk/src/chrome/installer/util/chrome_browser_sxs_operations.h
+END
+duplicate_tree_detector.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/180245/trunk/src/chrome/installer/util/duplicate_tree_detector.h
+END
+html_dialog.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/146163/trunk/src/chrome/installer/util/html_dialog.h
+END
+google_chrome_binaries_distribution.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/146163/trunk/src/chrome/installer/util/google_chrome_binaries_distribution.h
+END
+master_preferences_dummy.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/183840/trunk/src/chrome/installer/util/master_preferences_dummy.cc
+END
+create_reg_key_work_item.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/146163/trunk/src/chrome/installer/util/create_reg_key_work_item.h
+END
+delete_after_reboot_helper_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/181663/trunk/src/chrome/installer/util/delete_after_reboot_helper_unittest.cc
+END
+chrome_binaries_operations.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/188494/trunk/src/chrome/installer/util/chrome_binaries_operations.cc
+END
+wmi.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/68184/trunk/src/chrome/installer/util/wmi.cc
+END
+installer_state.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195456/trunk/src/chrome/installer/util/installer_state.h
+END
+auto_launch_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/180245/trunk/src/chrome/installer/util/auto_launch_util.h
+END
+uninstall_metrics.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/193975/trunk/src/chrome/installer/util/uninstall_metrics.h
+END
+work_item.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/180245/trunk/src/chrome/installer/util/work_item.h
+END
+shell_util_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/181663/trunk/src/chrome/installer/util/shell_util_unittest.cc
+END
+set_reg_value_work_item_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/184344/trunk/src/chrome/installer/util/set_reg_value_work_item_unittest.cc
+END
+html_dialog_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/91507/trunk/src/chrome/installer/util/html_dialog_impl.cc
+END
+registry_key_backup.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/146163/trunk/src/chrome/installer/util/registry_key_backup.h
+END
+delete_reg_value_work_item_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/184344/trunk/src/chrome/installer/util/delete_reg_value_work_item_unittest.cc
+END
+google_update_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/185315/trunk/src/chrome/installer/util/google_update_util.cc
+END
+self_cleaning_temp_dir_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/184355/trunk/src/chrome/installer/util/self_cleaning_temp_dir_unittest.cc
+END
+google_update_experiment_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/189139/trunk/src/chrome/installer/util/google_update_experiment_util.cc
+END
+callback_work_item.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/154352/trunk/src/chrome/installer/util/callback_work_item.cc
+END
+google_update_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/182268/trunk/src/chrome/installer/util/google_update_util.h
+END
+google_update_experiment_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/189139/trunk/src/chrome/installer/util/google_update_experiment_util.h
+END
+user_experiment.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/191005/trunk/src/chrome/installer/util/user_experiment.cc
+END
+conditional_work_item_list.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/70426/trunk/src/chrome/installer/util/conditional_work_item_list.cc
+END
+run_all_unittests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/159908/trunk/src/chrome/installer/util/run_all_unittests.cc
+END
+create_dir_work_item.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/181663/trunk/src/chrome/installer/util/create_dir_work_item.cc
+END
+helper.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/180245/trunk/src/chrome/installer/util/helper.h
+END
+product.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/188494/trunk/src/chrome/installer/util/product.h
+END
+google_chrome_binaries_distribution.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/134543/trunk/src/chrome/installer/util/google_chrome_binaries_distribution.cc
+END
+chrome_frame_distribution.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/168722/trunk/src/chrome/installer/util/chrome_frame_distribution.h
+END
+fake_installation_state.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/184344/trunk/src/chrome/installer/util/fake_installation_state.h
+END
+work_item_list.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/184344/trunk/src/chrome/installer/util/work_item_list.cc
+END
+installer_state_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/197434/trunk/src/chrome/installer/util/installer_state_unittest.cc
+END
+work_item_list.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/180737/trunk/src/chrome/installer/util/work_item_list.h
+END
+delete_after_reboot_helper.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/146163/trunk/src/chrome/installer/util/delete_after_reboot_helper.h
+END
+chromium_binaries_distribution.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/154600/trunk/src/chrome/installer/util/chromium_binaries_distribution.cc
+END
+l10n_string_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/146163/trunk/src/chrome/installer/util/l10n_string_util.h
+END
+google_update_settings.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/189139/trunk/src/chrome/installer/util/google_update_settings.h
+END
+registry_test_data.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/182368/trunk/src/chrome/installer/util/registry_test_data.cc
+END
+copy_reg_key_work_item.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/182368/trunk/src/chrome/installer/util/copy_reg_key_work_item.h
+END
+installation_state.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/184355/trunk/src/chrome/installer/util/installation_state.cc
+END
+install_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/184355/trunk/src/chrome/installer/util/install_util.cc
+END
+installer_util_test_common.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/180245/trunk/src/chrome/installer/util/installer_util_test_common.h
+END
+registry_key_backup_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/182368/trunk/src/chrome/installer/util/registry_key_backup_unittest.cc
+END
+install_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/195456/trunk/src/chrome/installer/util/install_util.h
+END
+installation_validator_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/184344/trunk/src/chrome/installer/util/installation_validator_unittest.cc
+END
+shell_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/197423/trunk/src/chrome/installer/util/shell_util.h
+END
+set_reg_value_work_item.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/146163/trunk/src/chrome/installer/util/set_reg_value_work_item.h
+END
+installation_validator.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/185432/trunk/src/chrome/installer/util/installation_validator.cc
+END
+master_preferences_constants.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/191256/trunk/src/chrome/installer/util/master_preferences_constants.cc
+END
+using_util.vsprops
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/17713/trunk/src/chrome/installer/util/using_util.vsprops
+END
+google_chrome_distribution.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/193975/trunk/src/chrome/installer/util/google_chrome_distribution.h
+END
+master_preferences_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/186681/trunk/src/chrome/installer/util/master_preferences_unittest.cc
+END
+self_cleaning_temp_dir.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/184344/trunk/src/chrome/installer/util/self_cleaning_temp_dir.h
+END
+chrome_browser_operations.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/188494/trunk/src/chrome/installer/util/chrome_browser_operations.cc
+END
+eula_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/181663/trunk/src/chrome/installer/util/eula_util.cc
+END
+chrome_browser_operations.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/188494/trunk/src/chrome/installer/util/chrome_browser_operations.h
+END
+eula_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/180052/trunk/src/chrome/installer/util/eula_util.h
+END
+delete_reg_key_work_item.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/146163/trunk/src/chrome/installer/util/delete_reg_key_work_item.h
+END
+delete_after_reboot_helper.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/183066/trunk/src/chrome/installer/util/delete_after_reboot_helper.cc
+END
+installer_state.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/185432/trunk/src/chrome/installer/util/installer_state.cc
+END
+lzma_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/181663/trunk/src/chrome/installer/util/lzma_util.cc
+END
+compat_checks.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/185315/trunk/src/chrome/installer/util/compat_checks.cc
+END
+shell_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/197423/trunk/src/chrome/installer/util/shell_util.cc
+END
+set_reg_value_work_item.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/74675/trunk/src/chrome/installer/util/set_reg_value_work_item.cc
+END
+compat_checks.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/146163/trunk/src/chrome/installer/util/compat_checks.h
+END
+registry_key_backup.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/194672/trunk/src/chrome/installer/util/registry_key_backup.cc
+END
+installation_validation_helper.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/191562/trunk/src/chrome/installer/util/installation_validation_helper.cc
+END
+self_cleaning_temp_dir.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/181663/trunk/src/chrome/installer/util/self_cleaning_temp_dir.cc
+END
+master_preferences.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/185432/trunk/src/chrome/installer/util/master_preferences.h
+END
+product_state_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/98100/trunk/src/chrome/installer/util/product_state_unittest.cc
+END
+duplicate_tree_detector_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/181663/trunk/src/chrome/installer/util/duplicate_tree_detector_unittest.cc
+END
+channel_info_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/117810/trunk/src/chrome/installer/util/channel_info_unittest.cc
+END
+browser_distribution.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/188494/trunk/src/chrome/installer/util/browser_distribution.cc
+END
+google_chrome_distribution_dummy.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/193975/trunk/src/chrome/installer/util/google_chrome_distribution_dummy.cc
+END
+language_selector.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/134966/trunk/src/chrome/installer/util/language_selector.cc
+END
+create_dir_work_item.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/184344/trunk/src/chrome/installer/util/create_dir_work_item.h
+END
+installer_util_unittests_resource.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/146163/trunk/src/chrome/installer/util/installer_util_unittests_resource.h
+END
+language_selector.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/146163/trunk/src/chrome/installer/util/language_selector.h
+END
+l10n_string_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/193728/trunk/src/chrome/installer/util/l10n_string_util.cc
+END
+app_commands.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/76783/trunk/src/chrome/installer/util/app_commands.cc
+END
+logging_installer_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/184344/trunk/src/chrome/installer/util/logging_installer_unittest.cc
+END
+installation_state.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/195456/trunk/src/chrome/installer/util/installation_state.h
+END
+self_reg_work_item.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/146163/trunk/src/chrome/installer/util/self_reg_work_item.h
+END
+fake_product_state.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/181663/trunk/src/chrome/installer/util/fake_product_state.h
+END
+copy_tree_work_item.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/181663/trunk/src/chrome/installer/util/copy_tree_work_item.cc
+END
+util_constants.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/185432/trunk/src/chrome/installer/util/util_constants.cc
+END
+google_update_constants.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/181457/trunk/src/chrome/installer/util/google_update_constants.cc
+END
+delete_reg_value_work_item.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/141412/trunk/src/chrome/installer/util/delete_reg_value_work_item.cc
+END
+installation_validation_helper.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/146163/trunk/src/chrome/installer/util/installation_validation_helper.h
+END
+master_preferences.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/185432/trunk/src/chrome/installer/util/master_preferences.cc
+END
+delete_reg_value_work_item.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/146163/trunk/src/chrome/installer/util/delete_reg_value_work_item.h
+END
+create_dir_work_item_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/181663/trunk/src/chrome/installer/util/create_dir_work_item_unittest.cc
+END
+product_unittest.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/184344/trunk/src/chrome/installer/util/product_unittest.h
+END
+browser_distribution.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/188494/trunk/src/chrome/installer/util/browser_distribution.h
+END
+chrome_frame_distribution.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/168722/trunk/src/chrome/installer/util/chrome_frame_distribution.cc
+END
+google_update_settings_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/178113/trunk/src/chrome/installer/util/google_update_settings_unittest.cc
+END
+google_update_settings.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/189139/trunk/src/chrome/installer/util/google_update_settings.cc
+END
+lzma_util_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/181663/trunk/src/chrome/installer/util/lzma_util_unittest.cc
+END
+auto_launch_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/184355/trunk/src/chrome/installer/util/auto_launch_util.cc
+END
+uninstall_metrics.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/193975/trunk/src/chrome/installer/util/uninstall_metrics.cc
+END
+delete_tree_work_item.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/181663/trunk/src/chrome/installer/util/delete_tree_work_item.cc
+END
+registry_test_data.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/182368/trunk/src/chrome/installer/util/registry_test_data.h
+END
+chrome_app_host_distribution.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/179704/trunk/src/chrome/installer/util/chrome_app_host_distribution.cc
+END
+master_preferences_constants.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/191256/trunk/src/chrome/installer/util/master_preferences_constants.h
+END
+google_update_constants.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/181457/trunk/src/chrome/installer/util/google_update_constants.h
+END
+helper.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/184344/trunk/src/chrome/installer/util/helper.cc
+END
+chrome_browser_sxs_operations.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/188494/trunk/src/chrome/installer/util/chrome_browser_sxs_operations.cc
+END
+app_command.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/181457/trunk/src/chrome/installer/util/app_command.h
+END
+create_reg_key_work_item.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/183043/trunk/src/chrome/installer/util/create_reg_key_work_item.cc
+END
+chrome_frame_operations.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/188494/trunk/src/chrome/installer/util/chrome_frame_operations.cc
+END

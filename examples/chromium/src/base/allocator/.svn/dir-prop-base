@@ -1,0 +1,17 @@
+K 10
+svn:ignore
+V 216
+allocator.sln
+allocator.vcproj
+allocator_unittests.vcproj
+libcmt.vcproj
+allocator_unittests.scons
+allocator.Makefile
+allocator_unittests.target.mk
+allocator.scons
+SConstruct
+allocator_main.scons
+allocator.target.mk
+
+
+END

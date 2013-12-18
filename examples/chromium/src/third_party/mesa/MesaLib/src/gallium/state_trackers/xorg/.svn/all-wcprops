@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/123192/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/xorg
+END
+xorg_tracker.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/xorg/xorg_tracker.h
+END
+xorg_output.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/xorg/xorg_output.c
+END
+xorg_dri2.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/xorg/xorg_dri2.c
+END
+xorg_winsys.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/xorg/xorg_winsys.h
+END
+xorg_composite.c
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/xorg/xorg_composite.c
+END
+xorg_exa_tgsi.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/xorg/xorg_exa_tgsi.c
+END
+xorg_renderer.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/xorg/xorg_renderer.c
+END
+xorg_composite.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/xorg/xorg_composite.h
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/xorg/SConscript
+END
+xorg_exa_tgsi.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/xorg/xorg_exa_tgsi.h
+END
+xorg_renderer.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/xorg/xorg_renderer.h
+END
+xorg_exa.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/xorg/xorg_exa.c
+END
+xorg_exa.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/xorg/xorg_exa.h
+END
+xorg_driver.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/xorg/xorg_driver.c
+END
+xorg_crtc.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/xorg/xorg_crtc.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/xorg/Makefile
+END
+xorg_xv.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/xorg/xorg_xv.c
+END

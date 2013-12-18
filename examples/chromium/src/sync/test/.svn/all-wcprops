@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/197441/trunk/src/sync/test
+END
+test_transaction_observer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/168972/trunk/src/sync/test/test_transaction_observer.cc
+END
+test_directory_backing_store.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/175248/trunk/src/sync/test/test_directory_backing_store.cc
+END
+null_directory_change_delegate.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/167061/trunk/src/sync/test/null_directory_change_delegate.cc
+END
+callback_counter.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/146677/trunk/src/sync/test/callback_counter.h
+END
+test_transaction_observer.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/168972/trunk/src/sync/test/test_transaction_observer.h
+END
+test_directory_backing_store.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/191767/trunk/src/sync/test/test_directory_backing_store.h
+END
+null_directory_change_delegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/167061/trunk/src/sync/test/null_directory_change_delegate.h
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/177864/trunk/src/sync/test/DEPS
+END
+fake_extensions_activity_monitor.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/144820/trunk/src/sync/test/fake_extensions_activity_monitor.cc
+END
+fake_sync_encryption_handler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/173830/trunk/src/sync/test/fake_sync_encryption_handler.cc
+END
+fake_extensions_activity_monitor.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/146074/trunk/src/sync/test/fake_extensions_activity_monitor.h
+END
+local_sync_test_server.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/181640/trunk/src/sync/test/local_sync_test_server.cc
+END
+fake_sync_encryption_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/173830/trunk/src/sync/test/fake_sync_encryption_handler.h
+END
+fake_encryptor.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/144820/trunk/src/sync/test/fake_encryptor.cc
+END
+fake_encryptor.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/146074/trunk/src/sync/test/fake_encryptor.h
+END
+local_sync_test_server.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/181640/trunk/src/sync/test/local_sync_test_server.h
+END
+null_transaction_observer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/147675/trunk/src/sync/test/null_transaction_observer.cc
+END
+null_transaction_observer.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/147675/trunk/src/sync/test/null_transaction_observer.h
+END

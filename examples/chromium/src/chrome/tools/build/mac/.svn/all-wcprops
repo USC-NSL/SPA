@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/184545/trunk/src/chrome/tools/build/mac
+END
+copy_keychain_reauthorize.sh
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/140955/trunk/src/chrome/tools/build/mac/copy_keychain_reauthorize.sh
+END
+verify_order
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/32539/trunk/src/chrome/tools/build/mac/verify_order
+END
+FILES.cfg
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/173082/trunk/src/chrome/tools/build/mac/FILES.cfg
+END
+dump_product_syms
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/184545/trunk/src/chrome/tools/build/mac/dump_product_syms
+END
+TESTS
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/178455/trunk/src/chrome/tools/build/mac/TESTS
+END
+build_app_dmg
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/132424/trunk/src/chrome/tools/build/mac/build_app_dmg
+END
+make_locale_dirs.sh
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/97984/trunk/src/chrome/tools/build/mac/make_locale_dirs.sh
+END
+clean_up_old_versions
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/30188/trunk/src/chrome/tools/build/mac/clean_up_old_versions
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/83367/trunk/src/chrome/tools/build/mac/OWNERS
+END
+generate_localizer
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/160491/trunk/src/chrome/tools/build/mac/generate_localizer
+END

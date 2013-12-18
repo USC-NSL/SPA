@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/194766/trunk/src/sync/sessions
+END
+ordered_commit_set_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/147675/trunk/src/sync/sessions/ordered_commit_set_unittest.cc
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/174801/trunk/src/sync/sessions/DEPS
+END
+ordered_commit_set.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/147675/trunk/src/sync/sessions/ordered_commit_set.cc
+END
+ordered_commit_set.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/174801/trunk/src/sync/sessions/ordered_commit_set.h
+END
+test_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/165474/trunk/src/sync/sessions/test_util.cc
+END
+nudge_tracker_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/194766/trunk/src/sync/sessions/nudge_tracker_unittest.cc
+END
+debug_info_getter.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/174801/trunk/src/sync/sessions/debug_info_getter.h
+END
+nudge_tracker.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/194766/trunk/src/sync/sessions/nudge_tracker.cc
+END
+test_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/165474/trunk/src/sync/sessions/test_util.h
+END
+sync_session_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/191458/trunk/src/sync/sessions/sync_session_unittest.cc
+END
+sync_session.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/191458/trunk/src/sync/sessions/sync_session.cc
+END
+nudge_tracker.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/194766/trunk/src/sync/sessions/nudge_tracker.h
+END
+sync_session.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/191458/trunk/src/sync/sessions/sync_session.h
+END
+sync_session_context.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/185721/trunk/src/sync/sessions/sync_session_context.cc
+END
+status_controller_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/188266/trunk/src/sync/sessions/status_controller_unittest.cc
+END
+sync_session_context.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/185721/trunk/src/sync/sessions/sync_session_context.h
+END
+status_controller.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/188266/trunk/src/sync/sessions/status_controller.cc
+END
+status_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/188266/trunk/src/sync/sessions/status_controller.h
+END

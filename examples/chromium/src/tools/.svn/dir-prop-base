@@ -1,0 +1,11 @@
+K 10
+svn:ignore
+V 49
+deps2git
+distcc
+grit
+gyp
+histograms
+swarm_client
+
+END

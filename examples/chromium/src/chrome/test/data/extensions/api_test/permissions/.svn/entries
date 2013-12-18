@@ -1,0 +1,67 @@
+10
+
+dir
+197479
+http://src.chromium.org/svn/trunk/src/chrome/test/data/extensions/api_test/permissions
+http://src.chromium.org/svn
+
+
+
+2013-02-13T19:43:47.027768Z
+182287
+kalman@chromium.org
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4ff67af0-8c30-449e-8e8b-ad334ec8d88c
+
+file_access_yes
+dir
+
+optional_gesture
+dir
+
+experimental_disabled
+dir
+
+optional_deny
+dir
+
+favicon
+dir
+
+optional
+dir
+
+host_subsets
+dir
+
+always_allowed
+dir
+
+disabled
+dir
+
+nacl_enabled
+dir
+
+enabled
+dir
+
+complex_optional
+dir
+
+file_access_no
+dir
+

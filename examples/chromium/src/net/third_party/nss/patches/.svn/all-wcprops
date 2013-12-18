@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/196795/trunk/src/net/third_party/nss/patches
+END
+falsestartnpn.patch
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/167455/trunk/src/net/third_party/nss/patches/falsestartnpn.patch
+END
+channelid.patch
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/167455/trunk/src/net/third_party/nss/patches/channelid.patch
+END
+ecpointform.patch
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/167455/trunk/src/net/third_party/nss/patches/ecpointform.patch
+END
+sslkeylogerror.patch
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/167455/trunk/src/net/third_party/nss/patches/sslkeylogerror.patch
+END
+cbc.patch
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/181526/trunk/src/net/third_party/nss/patches/cbc.patch
+END
+didhandshakeresume.patch
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/167455/trunk/src/net/third_party/nss/patches/didhandshakeresume.patch
+END
+dtlsinitclist.patch
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/181545/trunk/src/net/third_party/nss/patches/dtlsinitclist.patch
+END
+tlsunique.patch
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/167455/trunk/src/net/third_party/nss/patches/tlsunique.patch
+END
+clientauth.patch
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/167868/trunk/src/net/third_party/nss/patches/clientauth.patch
+END
+getrequestedclientcerttypes.patch
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/167455/trunk/src/net/third_party/nss/patches/getrequestedclientcerttypes.patch
+END
+cachecerts.patch
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/167455/trunk/src/net/third_party/nss/patches/cachecerts.patch
+END
+restartclientauth.patch
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/167455/trunk/src/net/third_party/nss/patches/restartclientauth.patch
+END
+ocspstapling.patch
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/167455/trunk/src/net/third_party/nss/patches/ocspstapling.patch
+END
+applypatches.sh
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/196795/trunk/src/net/third_party/nss/patches/applypatches.sh
+END
+secretexporterlocks.patch
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/167455/trunk/src/net/third_party/nss/patches/secretexporterlocks.patch
+END
+peercertchain.patch
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/167455/trunk/src/net/third_party/nss/patches/peercertchain.patch
+END
+renegoscsv.patch
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/167455/trunk/src/net/third_party/nss/patches/renegoscsv.patch
+END
+versionskew.patch
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/167455/trunk/src/net/third_party/nss/patches/versionskew.patch
+END
+negotiatedextension.patch
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/167455/trunk/src/net/third_party/nss/patches/negotiatedextension.patch
+END
+aes256keylength.patch
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/185681/trunk/src/net/third_party/nss/patches/aes256keylength.patch
+END

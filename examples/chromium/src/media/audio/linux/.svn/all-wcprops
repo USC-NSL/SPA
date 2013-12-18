@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/196227/trunk/src/media/audio/linux
+END
+audio_manager_linux.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/186698/trunk/src/media/audio/linux/audio_manager_linux.h
+END
+alsa_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/130288/trunk/src/media/audio/linux/alsa_util.cc
+END
+alsa_output_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/195626/trunk/src/media/audio/linux/alsa_output_unittest.cc
+END
+alsa_input.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/196227/trunk/src/media/audio/linux/alsa_input.cc
+END
+alsa_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/130288/trunk/src/media/audio/linux/alsa_util.h
+END
+alsa_output.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/196227/trunk/src/media/audio/linux/alsa_output.cc
+END
+alsa_wrapper.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/159680/trunk/src/media/audio/linux/alsa_wrapper.cc
+END
+alsa_input.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/192779/trunk/src/media/audio/linux/alsa_input.h
+END
+alsa_output.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/191566/trunk/src/media/audio/linux/alsa_output.h
+END
+alsa_wrapper.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/140538/trunk/src/media/audio/linux/alsa_wrapper.h
+END
+audio_manager_linux.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/195875/trunk/src/media/audio/linux/audio_manager_linux.cc
+END

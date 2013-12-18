@@ -1,0 +1,173 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/197181/trunk/src/android_webview/java/src/org/chromium/android_webview
+END
+SslUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/184643/trunk/src/android_webview/java/src/org/chromium/android_webview/SslUtil.java
+END
+AndroidProtocolHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/164213/trunk/src/android_webview/java/src/org/chromium/android_webview/AndroidProtocolHandler.java
+END
+JsResultReceiver.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/157815/trunk/src/android_webview/java/src/org/chromium/android_webview/JsResultReceiver.java
+END
+AwContentsClientBridge.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/192445/trunk/src/android_webview/java/src/org/chromium/android_webview/AwContentsClientBridge.java
+END
+AwContentsClientCallbackHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/188171/trunk/src/android_webview/java/src/org/chromium/android_webview/AwContentsClientCallbackHelper.java
+END
+JsPromptResultReceiver.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/157815/trunk/src/android_webview/java/src/org/chromium/android_webview/JsPromptResultReceiver.java
+END
+AwContentsIoThreadClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/188171/trunk/src/android_webview/java/src/org/chromium/android_webview/AwContentsIoThreadClient.java
+END
+JavaBrowserViewRendererHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/!svn/ver/182717/trunk/src/android_webview/java/src/org/chromium/android_webview/JavaBrowserViewRendererHelper.java
+END
+JsResultHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/192445/trunk/src/android_webview/java/src/org/chromium/android_webview/JsResultHandler.java
+END
+InterceptedRequestData.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/162141/trunk/src/android_webview/java/src/org/chromium/android_webview/InterceptedRequestData.java
+END
+AwBrowserProcess.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/191695/trunk/src/android_webview/java/src/org/chromium/android_webview/AwBrowserProcess.java
+END
+AwWebContentsDelegate.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/195135/trunk/src/android_webview/java/src/org/chromium/android_webview/AwWebContentsDelegate.java
+END
+AwResource.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/162205/trunk/src/android_webview/java/src/org/chromium/android_webview/AwResource.java
+END
+AwContentVideoViewDelegate.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/193634/trunk/src/android_webview/java/src/org/chromium/android_webview/AwContentVideoViewDelegate.java
+END
+DefaultVideoPosterRequestHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/!svn/ver/190839/trunk/src/android_webview/java/src/org/chromium/android_webview/DefaultVideoPosterRequestHandler.java
+END
+AwWebContentsDelegateAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/195135/trunk/src/android_webview/java/src/org/chromium/android_webview/AwWebContentsDelegateAdapter.java
+END
+AwBrowserContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/196468/trunk/src/android_webview/java/src/org/chromium/android_webview/AwBrowserContext.java
+END
+AwFormDatabase.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/196468/trunk/src/android_webview/java/src/org/chromium/android_webview/AwFormDatabase.java
+END
+AwLayoutSizer.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/195135/trunk/src/android_webview/java/src/org/chromium/android_webview/AwLayoutSizer.java
+END
+AwContentsClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/197181/trunk/src/android_webview/java/src/org/chromium/android_webview/AwContentsClient.java
+END
+AwContents.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/197181/trunk/src/android_webview/java/src/org/chromium/android_webview/AwContents.java
+END
+HttpAuthDatabase.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/162564/trunk/src/android_webview/java/src/org/chromium/android_webview/HttpAuthDatabase.java
+END
+AwHttpAuthHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/174633/trunk/src/android_webview/java/src/org/chromium/android_webview/AwHttpAuthHandler.java
+END
+AwGeolocationPermissions.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/187989/trunk/src/android_webview/java/src/org/chromium/android_webview/AwGeolocationPermissions.java
+END
+AwSettings.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/196399/trunk/src/android_webview/java/src/org/chromium/android_webview/AwSettings.java
+END
+AwQuotaManagerBridge.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/184139/trunk/src/android_webview/java/src/org/chromium/android_webview/AwQuotaManagerBridge.java
+END
+ErrorCodeConversionHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/160373/trunk/src/android_webview/java/src/org/chromium/android_webview/ErrorCodeConversionHelper.java
+END
+AwCookieManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/174262/trunk/src/android_webview/java/src/org/chromium/android_webview/AwCookieManager.java
+END

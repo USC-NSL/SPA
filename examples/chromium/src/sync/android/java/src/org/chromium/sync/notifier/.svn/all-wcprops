@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/191025/trunk/src/sync/android/java/src/org/chromium/sync/notifier
+END
+SyncStatusHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/189574/trunk/src/sync/android/java/src/org/chromium/sync/notifier/SyncStatusHelper.java
+END
+InvalidationService.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/188361/trunk/src/sync/android/java/src/org/chromium/sync/notifier/InvalidationService.java
+END
+InvalidationPreferences.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/179048/trunk/src/sync/android/java/src/org/chromium/sync/notifier/InvalidationPreferences.java
+END
+SyncContentResolverDelegate.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/178670/trunk/src/sync/android/java/src/org/chromium/sync/notifier/SyncContentResolverDelegate.java
+END
+InvalidationController.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/191025/trunk/src/sync/android/java/src/org/chromium/sync/notifier/InvalidationController.java
+END
+SystemSyncContentResolverDelegate.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/178670/trunk/src/sync/android/java/src/org/chromium/sync/notifier/SystemSyncContentResolverDelegate.java
+END

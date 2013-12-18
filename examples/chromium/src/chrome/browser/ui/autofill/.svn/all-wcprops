@@ -1,0 +1,233 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/197470/trunk/src/chrome/browser/ui/autofill
+END
+autofill_popup_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/193540/trunk/src/chrome/browser/ui/autofill/autofill_popup_view.cc
+END
+autofill_dialog_controller_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/197470/trunk/src/chrome/browser/ui/autofill/autofill_dialog_controller_unittest.cc
+END
+account_chooser_model.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/194928/trunk/src/chrome/browser/ui/autofill/account_chooser_model.h
+END
+autofill_dialog_models.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/197470/trunk/src/chrome/browser/ui/autofill/autofill_dialog_models.cc
+END
+autofill_dialog_models.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/195616/trunk/src/chrome/browser/ui/autofill/autofill_dialog_models.h
+END
+autofill_popup_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/193540/trunk/src/chrome/browser/ui/autofill/autofill_popup_controller.h
+END
+autofill_popup_controller_browsertest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/195562/trunk/src/chrome/browser/ui/autofill/autofill_popup_controller_browsertest.cc
+END
+mock_autofill_dialog_controller.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/195649/trunk/src/chrome/browser/ui/autofill/mock_autofill_dialog_controller.cc
+END
+country_combobox_model.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/195711/trunk/src/chrome/browser/ui/autofill/country_combobox_model.cc
+END
+country_combobox_model.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/193982/trunk/src/chrome/browser/ui/autofill/country_combobox_model.h
+END
+autocheckout_bubble_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/197213/trunk/src/chrome/browser/ui/autofill/autocheckout_bubble_controller.h
+END
+autofill_dialog_types.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/196336/trunk/src/chrome/browser/ui/autofill/autofill_dialog_types.h
+END
+autofill_dialog_controller_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/196820/trunk/src/chrome/browser/ui/autofill/autofill_dialog_controller_impl.h
+END
+autofill_popup_controller_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/196529/trunk/src/chrome/browser/ui/autofill/autofill_popup_controller_impl.cc
+END
+autofill_dialog_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/195722/trunk/src/chrome/browser/ui/autofill/autofill_dialog_view.cc
+END
+tab_autofill_manager_delegate.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/197213/trunk/src/chrome/browser/ui/autofill/tab_autofill_manager_delegate.cc
+END
+data_model_wrapper.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/195071/trunk/src/chrome/browser/ui/autofill/data_model_wrapper.cc
+END
+data_model_wrapper.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/195071/trunk/src/chrome/browser/ui/autofill/data_model_wrapper.h
+END
+tab_autofill_manager_delegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/197213/trunk/src/chrome/browser/ui/autofill/tab_autofill_manager_delegate.h
+END
+account_chooser_model_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/194928/trunk/src/chrome/browser/ui/autofill/account_chooser_model_unittest.cc
+END
+account_chooser_model.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/197470/trunk/src/chrome/browser/ui/autofill/account_chooser_model.cc
+END
+autofill_popup_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/194896/trunk/src/chrome/browser/ui/autofill/autofill_popup_view.h
+END
+autofill_dialog_models_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/194928/trunk/src/chrome/browser/ui/autofill/autofill_dialog_models_unittest.cc
+END
+autofill_dialog_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/195616/trunk/src/chrome/browser/ui/autofill/autofill_dialog_controller.h
+END
+autofill_popup_controller_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/196529/trunk/src/chrome/browser/ui/autofill/autofill_popup_controller_unittest.cc
+END
+autofill_dialog_controller_browsertest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/195892/trunk/src/chrome/browser/ui/autofill/autofill_dialog_controller_browsertest.cc
+END
+autocheckout_bubble.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/187388/trunk/src/chrome/browser/ui/autofill/autocheckout_bubble.cc
+END
+autocheckout_bubble_controller_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/197213/trunk/src/chrome/browser/ui/autofill/autocheckout_bubble_controller_unittest.cc
+END
+autocheckout_bubble.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/187388/trunk/src/chrome/browser/ui/autofill/autocheckout_bubble.h
+END
+autocheckout_bubble_controller.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/197213/trunk/src/chrome/browser/ui/autofill/autocheckout_bubble_controller.cc
+END
+mock_autofill_dialog_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/195649/trunk/src/chrome/browser/ui/autofill/mock_autofill_dialog_controller.h
+END
+testable_autofill_dialog_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/195722/trunk/src/chrome/browser/ui/autofill/testable_autofill_dialog_view.h
+END
+autofill_dialog_types.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/195616/trunk/src/chrome/browser/ui/autofill/autofill_dialog_types.cc
+END
+autofill_dialog_controller_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/197470/trunk/src/chrome/browser/ui/autofill/autofill_dialog_controller_impl.cc
+END
+data_model_wrapper_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/191042/trunk/src/chrome/browser/ui/autofill/data_model_wrapper_unittest.cc
+END
+autofill_popup_controller_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/196210/trunk/src/chrome/browser/ui/autofill/autofill_popup_controller_impl.h
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/196422/trunk/src/chrome/browser/ui/autofill/OWNERS
+END
+autofill_dialog_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/195892/trunk/src/chrome/browser/ui/autofill/autofill_dialog_view.h
+END

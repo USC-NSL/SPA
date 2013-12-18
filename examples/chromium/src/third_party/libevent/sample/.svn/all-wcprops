@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/32656/trunk/src/third_party/libevent/sample
+END
+event-test.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/2345/trunk/src/third_party/libevent/sample/event-test.c
+END
+Makefile.in
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/32656/trunk/src/third_party/libevent/sample/Makefile.in
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/2345/trunk/src/third_party/libevent/sample/Makefile.am
+END
+signal-test.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/32656/trunk/src/third_party/libevent/sample/signal-test.c
+END
+time-test.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/2345/trunk/src/third_party/libevent/sample/time-test.c
+END

@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/197102/trunk/src/chrome/browser/search
+END
+local_ntp_source.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/196184/trunk/src/chrome/browser/search/local_ntp_source.cc
+END
+local_ntp_source.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/196184/trunk/src/chrome/browser/search/local_ntp_source.h
+END
+instant_service.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/196184/trunk/src/chrome/browser/search/instant_service.cc
+END
+instant_service.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/190052/trunk/src/chrome/browser/search/instant_service.h
+END
+search_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/197102/trunk/src/chrome/browser/search/search_unittest.cc
+END
+search.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/197102/trunk/src/chrome/browser/search/search.cc
+END
+suggestion_source_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/196184/trunk/src/chrome/browser/search/suggestion_source_unittest.cc
+END
+suggestion_source.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/196184/trunk/src/chrome/browser/search/suggestion_source.cc
+END
+search.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/197102/trunk/src/chrome/browser/search/search.h
+END
+suggestion_source.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/196184/trunk/src/chrome/browser/search/suggestion_source.h
+END
+instant_io_context.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/196184/trunk/src/chrome/browser/search/instant_io_context.cc
+END
+instant_io_context.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/190052/trunk/src/chrome/browser/search/instant_io_context.h
+END
+instant_service_factory.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/196777/trunk/src/chrome/browser/search/instant_service_factory.cc
+END
+instant_service_factory.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/196777/trunk/src/chrome/browser/search/instant_service_factory.h
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/188880/trunk/src/chrome/browser/search/OWNERS
+END

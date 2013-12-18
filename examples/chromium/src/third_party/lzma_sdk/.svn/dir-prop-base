@@ -1,0 +1,12 @@
+K 10
+svn:ignore
+V 115
+7z_C.vcproj
+lzma_sdk.Makefile
+lzma_sdk.sln
+lzma_sdk.target.mk
+lzma_sdk.vcproj
+lzma_sdk.xcodeproj
+lzma_sdk64.vcproj
+
+END

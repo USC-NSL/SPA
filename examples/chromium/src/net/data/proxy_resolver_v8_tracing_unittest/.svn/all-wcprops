@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/183743/trunk/src/net/data/proxy_resolver_v8_tracing_unittest
+END
+dns.js
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/179714/trunk/src/net/data/proxy_resolver_v8_tracing_unittest/dns.js
+END
+terminate.js
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/183743/trunk/src/net/data/proxy_resolver_v8_tracing_unittest/terminate.js
+END
+error.js
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/179714/trunk/src/net/data/proxy_resolver_v8_tracing_unittest/error.js
+END
+simple.js
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/179714/trunk/src/net/data/proxy_resolver_v8_tracing_unittest/simple.js
+END
+simple_dns.js
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/179714/trunk/src/net/data/proxy_resolver_v8_tracing_unittest/simple_dns.js
+END
+too_many_empty_alerts.js
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/179714/trunk/src/net/data/proxy_resolver_v8_tracing_unittest/too_many_empty_alerts.js
+END
+dns_during_init.js
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/179714/trunk/src/net/data/proxy_resolver_v8_tracing_unittest/dns_during_init.js
+END
+too_many_alerts.js
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/179714/trunk/src/net/data/proxy_resolver_v8_tracing_unittest/too_many_alerts.js
+END
+global_sideffects1.js
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/179714/trunk/src/net/data/proxy_resolver_v8_tracing_unittest/global_sideffects1.js
+END
+global_sideffects2.js
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/179714/trunk/src/net/data/proxy_resolver_v8_tracing_unittest/global_sideffects2.js
+END
+global_sideffects3.js
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/179714/trunk/src/net/data/proxy_resolver_v8_tracing_unittest/global_sideffects3.js
+END
+global_sideffects4.js
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/179714/trunk/src/net/data/proxy_resolver_v8_tracing_unittest/global_sideffects4.js
+END

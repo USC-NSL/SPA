@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/197206/trunk/src/content/renderer/dom_storage
+END
+dom_storage_dispatcher.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/163061/trunk/src/content/renderer/dom_storage/dom_storage_dispatcher.h
+END
+webstoragearea_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/197206/trunk/src/content/renderer/dom_storage/webstoragearea_impl.cc
+END
+webstoragearea_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/181202/trunk/src/content/renderer/dom_storage/webstoragearea_impl.h
+END
+webstoragenamespace_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/176339/trunk/src/content/renderer/dom_storage/webstoragenamespace_impl.cc
+END
+webstoragenamespace_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/186858/trunk/src/content/renderer/dom_storage/webstoragenamespace_impl.h
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/166196/trunk/src/content/renderer/dom_storage/DEPS
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/136188/trunk/src/content/renderer/dom_storage/OWNERS
+END
+dom_storage_dispatcher.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/173690/trunk/src/content/renderer/dom_storage/dom_storage_dispatcher.cc
+END

@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/169615/trunk/src/ui/base/accelerators
+END
+accelerator_manager_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/154817/trunk/src/ui/base/accelerators/accelerator_manager_unittest.cc
+END
+platform_accelerator_gtk.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/169615/trunk/src/ui/base/accelerators/platform_accelerator_gtk.cc
+END
+accelerator_manager.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/166139/trunk/src/ui/base/accelerators/accelerator_manager.cc
+END
+platform_accelerator_cocoa.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/169615/trunk/src/ui/base/accelerators/platform_accelerator_cocoa.h
+END
+platform_accelerator_gtk.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/169615/trunk/src/ui/base/accelerators/platform_accelerator_gtk.h
+END
+accelerator_manager.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/166139/trunk/src/ui/base/accelerators/accelerator_manager.h
+END
+platform_accelerator_cocoa.mm
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/169615/trunk/src/ui/base/accelerators/platform_accelerator_cocoa.mm
+END
+accelerator.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/169615/trunk/src/ui/base/accelerators/accelerator.cc
+END
+accelerator.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/169615/trunk/src/ui/base/accelerators/accelerator.h
+END
+platform_accelerator.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/169615/trunk/src/ui/base/accelerators/platform_accelerator.h
+END

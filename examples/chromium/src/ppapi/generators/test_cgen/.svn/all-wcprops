@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/171499/trunk/src/ppapi/generators/test_cgen
+END
+interface.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/171499/trunk/src/ppapi/generators/test_cgen/interface.h
+END
+interface.idl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/171499/trunk/src/ppapi/generators/test_cgen/interface.idl
+END
+enum_typedef.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/171499/trunk/src/ppapi/generators/test_cgen/enum_typedef.h
+END
+enum_typedef.idl
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/171499/trunk/src/ppapi/generators/test_cgen/enum_typedef.idl
+END
+stdint.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/97752/trunk/src/ppapi/generators/test_cgen/stdint.h
+END
+stdint.idl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/102793/trunk/src/ppapi/generators/test_cgen/stdint.idl
+END
+structs.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/171499/trunk/src/ppapi/generators/test_cgen/structs.h
+END
+structs.idl
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/171499/trunk/src/ppapi/generators/test_cgen/structs.idl
+END

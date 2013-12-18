@@ -1,0 +1,209 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/196960/trunk/src/jingle/notifier/listener
+END
+push_notifications_subscribe_task.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/151367/trunk/src/jingle/notifier/listener/push_notifications_subscribe_task.cc
+END
+push_notifications_subscribe_task.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/110546/trunk/src/jingle/notifier/listener/push_notifications_subscribe_task.h
+END
+non_blocking_push_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/196921/trunk/src/jingle/notifier/listener/non_blocking_push_client.cc
+END
+non_blocking_push_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/164385/trunk/src/jingle/notifier/listener/non_blocking_push_client.h
+END
+fake_push_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/164385/trunk/src/jingle/notifier/listener/fake_push_client.cc
+END
+xml_element_util_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/79524/trunk/src/jingle/notifier/listener/xml_element_util_unittest.cc
+END
+push_notifications_send_update_task.cc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/164385/trunk/src/jingle/notifier/listener/push_notifications_send_update_task.cc
+END
+fake_push_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/164385/trunk/src/jingle/notifier/listener/fake_push_client.h
+END
+xml_element_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/54355/trunk/src/jingle/notifier/listener/xml_element_util.cc
+END
+push_notifications_send_update_task.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/110546/trunk/src/jingle/notifier/listener/push_notifications_send_update_task.h
+END
+push_notifications_listen_task.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/164385/trunk/src/jingle/notifier/listener/push_notifications_listen_task.cc
+END
+fake_push_client_observer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/142806/trunk/src/jingle/notifier/listener/fake_push_client_observer.cc
+END
+push_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/142560/trunk/src/jingle/notifier/listener/push_client.cc
+END
+push_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/164385/trunk/src/jingle/notifier/listener/push_client.h
+END
+xmpp_push_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/171172/trunk/src/jingle/notifier/listener/xmpp_push_client.cc
+END
+xmpp_push_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/164385/trunk/src/jingle/notifier/listener/xmpp_push_client.h
+END
+notification_defines.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/152158/trunk/src/jingle/notifier/listener/notification_defines.cc
+END
+notification_constants.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/78385/trunk/src/jingle/notifier/listener/notification_constants.h
+END
+push_client_observer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/164385/trunk/src/jingle/notifier/listener/push_client_observer.cc
+END
+notification_defines.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/138431/trunk/src/jingle/notifier/listener/notification_defines.h
+END
+send_ping_task_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/164385/trunk/src/jingle/notifier/listener/send_ping_task_unittest.cc
+END
+send_ping_task.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/164385/trunk/src/jingle/notifier/listener/send_ping_task.cc
+END
+push_notifications_subscribe_task_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/85088/trunk/src/jingle/notifier/listener/push_notifications_subscribe_task_unittest.cc
+END
+non_blocking_push_client_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/196960/trunk/src/jingle/notifier/listener/non_blocking_push_client_unittest.cc
+END
+push_notifications_send_update_task_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/98551/trunk/src/jingle/notifier/listener/push_notifications_send_update_task_unittest.cc
+END
+xml_element_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/51216/trunk/src/jingle/notifier/listener/xml_element_util.h
+END
+push_notifications_listen_task.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/164385/trunk/src/jingle/notifier/listener/push_notifications_listen_task.h
+END
+push_client_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/196960/trunk/src/jingle/notifier/listener/push_client_unittest.cc
+END
+fake_push_client_observer.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/142806/trunk/src/jingle/notifier/listener/fake_push_client_observer.h
+END
+xmpp_push_client_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/196960/trunk/src/jingle/notifier/listener/xmpp_push_client_unittest.cc
+END
+notification_defines_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/152158/trunk/src/jingle/notifier/listener/notification_defines_unittest.cc
+END
+notification_constants.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/78385/trunk/src/jingle/notifier/listener/notification_constants.cc
+END
+push_client_observer.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/164385/trunk/src/jingle/notifier/listener/push_client_observer.h
+END
+send_ping_task.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/164385/trunk/src/jingle/notifier/listener/send_ping_task.h
+END

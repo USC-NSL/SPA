@@ -1,0 +1,34 @@
+K 10
+svn:ignore
+V 617
+Debug
+Release
+copy_npapi_pepper_test_plugin.vcproj
+copy_npapi_test_plugin.vcproj
+layout_test_helper.vcproj
+npapi_pepper_test_plugin.vcproj
+npapi_test_common.vcproj
+npapi_test_plugin.vcproj
+pull_in_DumpRenderTree.target.mk
+pull_in_DumpRenderTree.vcproj
+pull_in_webkit_unit_tests.target.mk
+pull_in_webkit_unit_tests.vcproj
+test_shell.target.mk
+test_shell.vcproj
+test_shell_common.target.mk
+test_shell_common.vcproj
+test_shell_pak.target.mk
+test_shell_pak.vcproj
+test_shell_resources.target.mk
+test_shell_test_support.vcproj
+test_shell_tests.target.mk
+test_shell_tests.vcproj
+webkit.Makefile
+webkit.sln
+webkit.xcodeproj
+
+K 13
+svn:mergeinfo
+V 77
+/branches/chrome_webkit_merge_branch/src/webkit:3734-4217,4606-5108,5177-5263
+END

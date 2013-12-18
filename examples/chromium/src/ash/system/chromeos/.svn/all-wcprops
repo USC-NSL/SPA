@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/197446/trunk/src/ash/system/chromeos
+END
+keyboard_brightness_controller.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/170415/trunk/src/ash/system/chromeos/keyboard_brightness_controller.cc
+END
+keyboard_brightness_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/163616/trunk/src/ash/system/chromeos/keyboard_brightness_controller.h
+END
+tray_display.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/197446/trunk/src/ash/system/chromeos/tray_display.cc
+END
+tray_display.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/186625/trunk/src/ash/system/chromeos/tray_display.h
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/162733/trunk/src/ash/system/chromeos/DEPS
+END
+label_tray_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/197372/trunk/src/ash/system/chromeos/label_tray_view.cc
+END
+label_tray_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/197372/trunk/src/ash/system/chromeos/label_tray_view.h
+END

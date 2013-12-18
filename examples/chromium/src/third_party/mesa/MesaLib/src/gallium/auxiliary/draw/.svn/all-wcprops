@@ -1,0 +1,359 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw
+END
+draw_vertex.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_vertex.h
+END
+draw_vs_llvm.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_vs_llvm.c
+END
+draw_context.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_context.c
+END
+draw_pt_decompose.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_pt_decompose.h
+END
+draw_llvm_translate.c
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_llvm_translate.c
+END
+draw_context.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_context.h
+END
+draw_vs_aos.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_vs_aos.c
+END
+draw_vs_aos.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_vs_aos.h
+END
+draw_pt_post_vs.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_pt_post_vs.c
+END
+draw_pt_emit.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_pt_emit.c
+END
+draw_vs_sse.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_vs_sse.c
+END
+draw_pipe_clip.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_pipe_clip.c
+END
+draw_vbuf.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_vbuf.h
+END
+draw_pipe_flatshade.c
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_pipe_flatshade.c
+END
+draw_pipe_aapoint.c
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_pipe_aapoint.c
+END
+draw_pt_vsplit_tmp.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_pt_vsplit_tmp.h
+END
+draw_llvm_sample.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_llvm_sample.c
+END
+draw_pipe_wide_line.c
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_pipe_wide_line.c
+END
+draw_pipe_pstipple.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_pipe_pstipple.c
+END
+draw_private.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_private.h
+END
+draw_pt_fetch_shade_pipeline_llvm.c
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_pt_fetch_shade_pipeline_llvm.c
+END
+draw_pt_util.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_pt_util.c
+END
+draw_split_tmp.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_split_tmp.h
+END
+draw_vs_varient.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_vs_varient.c
+END
+draw_vs_aos_io.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_vs_aos_io.c
+END
+draw_pt.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_pt.c
+END
+draw_pt_vsplit.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_pt_vsplit.c
+END
+draw_so_emit_tmp.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_so_emit_tmp.h
+END
+draw_pt_fetch_shade_pipeline.c
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_pt_fetch_shade_pipeline.c
+END
+draw_pt.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_pt.h
+END
+draw_vs.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_vs.c
+END
+draw_pipe_util.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_pipe_util.c
+END
+draw_vs_ppc.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_vs_ppc.c
+END
+draw_pipe_twoside.c
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_pipe_twoside.c
+END
+draw_pt_fetch.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_pt_fetch.c
+END
+draw_vs_exec.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_vs_exec.c
+END
+draw_pipe_stipple.c
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_pipe_stipple.c
+END
+draw_pipe.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_pipe.c
+END
+draw_vs.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_vs.h
+END
+draw_gs_tmp.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_gs_tmp.h
+END
+draw_pipe.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_pipe.h
+END
+draw_pt_so_emit.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_pt_so_emit.c
+END
+draw_pipe_offset.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_pipe_offset.c
+END
+draw_decompose_tmp.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_decompose_tmp.h
+END
+draw_pipe_validate.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_pipe_validate.c
+END
+draw_pipe_aaline.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_pipe_aaline.c
+END
+draw_gs.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_gs.c
+END
+draw_llvm.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_llvm.c
+END
+draw_pt_fetch_emit.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_pt_fetch_emit.c
+END
+draw_pipe_cull.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_pipe_cull.c
+END
+draw_cliptest_tmp.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_cliptest_tmp.h
+END
+draw_vertex.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_vertex.c
+END
+draw_pipe_wide_point.c
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_pipe_wide_point.c
+END
+draw_gs.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_gs.h
+END
+draw_pt_fetch_shade_emit.c
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_pt_fetch_shade_emit.c
+END
+draw_vs_aos_machine.c
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_vs_aos_machine.c
+END
+draw_pipe_vbuf.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_pipe_vbuf.c
+END
+draw_pipe_unfilled.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_pipe_unfilled.c
+END
+draw_llvm.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/draw/draw_llvm.h
+END

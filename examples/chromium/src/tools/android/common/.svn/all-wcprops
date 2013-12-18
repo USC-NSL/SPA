@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/167739/trunk/src/tools/android/common
+END
+common.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/165422/trunk/src/tools/android/common/common.gyp
+END
+daemon.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/167739/trunk/src/tools/android/common/daemon.cc
+END
+adb_connection.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/167739/trunk/src/tools/android/common/adb_connection.cc
+END
+daemon.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/146163/trunk/src/tools/android/common/daemon.h
+END
+net.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/122630/trunk/src/tools/android/common/net.cc
+END
+adb_connection.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/146163/trunk/src/tools/android/common/adb_connection.h
+END
+net.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/146163/trunk/src/tools/android/common/net.h
+END

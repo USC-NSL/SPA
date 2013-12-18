@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/188857/trunk/src/third_party/cacheinvalidation/overrides/google/cacheinvalidation/deps
+END
+callback.h
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/167876/trunk/src/third_party/cacheinvalidation/overrides/google/cacheinvalidation/deps/callback.h
+END
+googletest.h
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/126584/trunk/src/third_party/cacheinvalidation/overrides/google/cacheinvalidation/deps/googletest.h
+END
+sha1-digest-function.h
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/!svn/ver/126584/trunk/src/third_party/cacheinvalidation/overrides/google/cacheinvalidation/deps/sha1-digest-function.h
+END
+stl-namespace.h
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/126584/trunk/src/third_party/cacheinvalidation/overrides/google/cacheinvalidation/deps/stl-namespace.h
+END
+time.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/126584/trunk/src/third_party/cacheinvalidation/overrides/google/cacheinvalidation/deps/time.h
+END
+gmock.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/126584/trunk/src/third_party/cacheinvalidation/overrides/google/cacheinvalidation/deps/gmock.h
+END
+random.h
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/126584/trunk/src/third_party/cacheinvalidation/overrides/google/cacheinvalidation/deps/random.h
+END
+mutex.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/126584/trunk/src/third_party/cacheinvalidation/overrides/google/cacheinvalidation/deps/mutex.h
+END
+scoped_ptr.h
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/126584/trunk/src/third_party/cacheinvalidation/overrides/google/cacheinvalidation/deps/scoped_ptr.h
+END
+string_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/188857/trunk/src/third_party/cacheinvalidation/overrides/google/cacheinvalidation/deps/string_util.h
+END
+logging.h
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/126584/trunk/src/third_party/cacheinvalidation/overrides/google/cacheinvalidation/deps/logging.h
+END

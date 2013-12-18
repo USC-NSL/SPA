@@ -1,0 +1,179 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/197204/trunk/src/webkit/quota
+END
+mock_quota_manager_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/197204/trunk/src/webkit/quota/mock_quota_manager_unittest.cc
+END
+mock_quota_manager.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/197204/trunk/src/webkit/quota/mock_quota_manager.cc
+END
+mock_special_storage_policy.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/194748/trunk/src/webkit/quota/mock_special_storage_policy.cc
+END
+mock_quota_manager.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/180245/trunk/src/webkit/quota/mock_quota_manager.h
+END
+mock_special_storage_policy.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/196659/trunk/src/webkit/quota/mock_special_storage_policy.h
+END
+quota_temporary_storage_evictor_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/197204/trunk/src/webkit/quota/quota_temporary_storage_evictor_unittest.cc
+END
+quota_temporary_storage_evictor.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/197204/trunk/src/webkit/quota/quota_temporary_storage_evictor.cc
+END
+mock_storage_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/197204/trunk/src/webkit/quota/mock_storage_client.cc
+END
+quota_task.cc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/161307/trunk/src/webkit/quota/quota_task.cc
+END
+quota_temporary_storage_evictor.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/164329/trunk/src/webkit/quota/quota_temporary_storage_evictor.h
+END
+quota_database_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/180245/trunk/src/webkit/quota/quota_database_unittest.cc
+END
+quota_task.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/164329/trunk/src/webkit/quota/quota_task.h
+END
+mock_storage_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/121444/trunk/src/webkit/quota/mock_storage_client.h
+END
+quota_database.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/180245/trunk/src/webkit/quota/quota_database.cc
+END
+usage_tracker_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/196659/trunk/src/webkit/quota/usage_tracker_unittest.cc
+END
+quota_database.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/184344/trunk/src/webkit/quota/quota_database.h
+END
+quota_types.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/193914/trunk/src/webkit/quota/quota_types.h
+END
+usage_tracker.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/197204/trunk/src/webkit/quota/usage_tracker.cc
+END
+usage_tracker.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/196659/trunk/src/webkit/quota/usage_tracker.h
+END
+webkit_quota.gypi
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/166188/trunk/src/webkit/quota/webkit_quota.gypi
+END
+quota_manager_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/197204/trunk/src/webkit/quota/quota_manager_unittest.cc
+END
+quota_manager.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/197204/trunk/src/webkit/quota/quota_manager.cc
+END
+special_storage_policy.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/195478/trunk/src/webkit/quota/special_storage_policy.cc
+END
+quota_manager.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/196659/trunk/src/webkit/quota/quota_manager.h
+END
+special_storage_policy.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/195478/trunk/src/webkit/quota/special_storage_policy.h
+END
+quota_status_code.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/166188/trunk/src/webkit/quota/quota_status_code.cc
+END
+quota_status_code.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/171133/trunk/src/webkit/quota/quota_status_code.h
+END
+quota_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/164329/trunk/src/webkit/quota/quota_client.h
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/81357/trunk/src/webkit/quota/OWNERS
+END

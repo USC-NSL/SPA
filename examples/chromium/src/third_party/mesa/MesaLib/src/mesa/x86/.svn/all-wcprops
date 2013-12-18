@@ -1,0 +1,215 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/147480/trunk/src/third_party/mesa/MesaLib/src/mesa/x86
+END
+sse.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/x86/sse.h
+END
+common_x86_features.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/x86/common_x86_features.h
+END
+common_x86_asm.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/x86/common_x86_asm.h
+END
+sse_xform1.S
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/x86/sse_xform1.S
+END
+mmx.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/x86/mmx.h
+END
+sse_xform2.S
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/x86/sse_xform2.S
+END
+sse_xform3.S
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/x86/sse_xform3.S
+END
+clip_args.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/x86/clip_args.h
+END
+sse_xform4.S
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/x86/sse_xform4.S
+END
+gen_matypes.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/x86/gen_matypes.c
+END
+x86_cliptest.S
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/x86/x86_cliptest.S
+END
+read_rgba_span_x86.S
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/x86/read_rgba_span_x86.S
+END
+xform_args.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/x86/xform_args.h
+END
+sse_normal.S
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/x86/sse_normal.S
+END
+3dnow.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/x86/3dnow.c
+END
+norm_args.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/x86/norm_args.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/x86/Makefile
+END
+common_x86.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/x86/common_x86.c
+END
+3dnow.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/x86/3dnow.h
+END
+x86_xform.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/x86/x86_xform.c
+END
+read_rgba_span_x86.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/x86/read_rgba_span_x86.h
+END
+x86_xform2.S
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/x86/x86_xform2.S
+END
+x86_xform3.S
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/x86/x86_xform3.S
+END
+x86_xform4.S
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/x86/x86_xform4.S
+END
+x86_xform.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/x86/x86_xform.h
+END
+3dnow_xform1.S
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/x86/3dnow_xform1.S
+END
+3dnow_xform2.S
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/x86/3dnow_xform2.S
+END
+3dnow_xform3.S
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/x86/3dnow_xform3.S
+END
+3dnow_xform4.S
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/x86/3dnow_xform4.S
+END
+common_x86_asm.S
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/x86/common_x86_asm.S
+END
+assyntax.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/x86/assyntax.h
+END
+3dnow_normal.S
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/x86/3dnow_normal.S
+END
+mmx_blend.S
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/x86/mmx_blend.S
+END
+sse.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/x86/sse.c
+END
+mmx_blendtmp.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/147480/trunk/src/third_party/mesa/MesaLib/src/mesa/x86/mmx_blendtmp.h
+END

@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/161638/trunk/src/base/third_party/dmg_fp
+END
+README.chromium
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/161638/trunk/src/base/third_party/dmg_fp/README.chromium
+END
+g_fmt.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/49939/trunk/src/base/third_party/dmg_fp/g_fmt.cc
+END
+gcc_64_bit.patch
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/21901/trunk/src/base/third_party/dmg_fp/gcc_64_bit.patch
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/42016/trunk/src/base/third_party/dmg_fp/LICENSE
+END
+dmg_fp.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/10791/trunk/src/base/third_party/dmg_fp/dmg_fp.h
+END
+gcc_warnings.patch
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/15236/trunk/src/base/third_party/dmg_fp/gcc_warnings.patch
+END
+mac_wextra.patch
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/49939/trunk/src/base/third_party/dmg_fp/mac_wextra.patch
+END
+win_vs2012.patch
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/161638/trunk/src/base/third_party/dmg_fp/win_vs2012.patch
+END
+dtoa.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/161638/trunk/src/base/third_party/dmg_fp/dtoa.cc
+END
+dtoa_wrapper.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/119173/trunk/src/base/third_party/dmg_fp/dtoa_wrapper.cc
+END
+float_precision_crash.patch
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/137020/trunk/src/base/third_party/dmg_fp/float_precision_crash.patch
+END

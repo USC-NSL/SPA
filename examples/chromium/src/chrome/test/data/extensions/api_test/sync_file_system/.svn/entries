@@ -1,0 +1,58 @@
+10
+
+dir
+197479
+http://src.chromium.org/svn/trunk/src/chrome/test/data/extensions/api_test/sync_file_system
+http://src.chromium.org/svn
+
+
+
+2013-03-25T03:37:27.690731Z
+190330
+kinuko@chromium.org
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4ff67af0-8c30-449e-8e8b-ad334ec8d88c
+
+get_file_status
+dir
+
+conflict_resolution_policy
+dir
+
+delete_file_system
+dir
+
+on_file_status_changed
+dir
+
+on_service_status_changed
+dir
+
+get_file_statuses
+dir
+
+write_file_then_get_usage
+dir
+
+request_file_system
+dir
+
+on_file_status_changed_deleted
+dir
+
+get_usage_and_quota
+dir
+

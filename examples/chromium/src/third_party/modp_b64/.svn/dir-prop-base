@@ -1,0 +1,14 @@
+K 10
+svn:ignore
+V 143
+modp_b64.xcodeproj
+modp_b64.sln
+modp_b64.vcproj
+SConstruct
+modp_b64.scons
+modp_b64_main.scons
+modp_b64.mk
+modp_b64.target.mk
+modp_b64.Makefile
+
+END

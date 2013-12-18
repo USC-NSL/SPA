@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/r600/drm
+END
+r600d.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/r600/drm/r600d.h
+END
+bof.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/r600/drm/bof.c
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/r600/drm/SConscript
+END
+radeon.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/r600/drm/radeon.c
+END
+radeon_state.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/r600/drm/radeon_state.c
+END
+gen_r600_states.py
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/r600/drm/gen_r600_states.py
+END
+bof.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/r600/drm/bof.h
+END
+gen_eg_states.py
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/r600/drm/gen_eg_states.py
+END
+radeon_priv.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/r600/drm/radeon_priv.h
+END
+r600_states.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/r600/drm/r600_states.h
+END
+radeon_pciid.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/r600/drm/radeon_pciid.c
+END
+eg_states.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/r600/drm/eg_states.h
+END
+radeon_draw.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/r600/drm/radeon_draw.c
+END
+radeon_ctx.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/r600/drm/radeon_ctx.c
+END
+r600_state.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/r600/drm/r600_state.c
+END
+radeon_bo.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/r600/drm/radeon_bo.c
+END
+r600_drm.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/r600/drm/r600_drm.c
+END
+r600_drm_public.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/r600/drm/r600_drm_public.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/r600/drm/Makefile
+END

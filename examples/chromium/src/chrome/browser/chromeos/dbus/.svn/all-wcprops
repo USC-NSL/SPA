@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/194602/trunk/src/chrome/browser/chromeos/dbus
+END
+proxy_resolution_service_provider_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/171482/trunk/src/chrome/browser/chromeos/dbus/proxy_resolution_service_provider_unittest.cc
+END
+proxy_resolution_service_provider.cc
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/181266/trunk/src/chrome/browser/chromeos/dbus/proxy_resolution_service_provider.cc
+END
+proxy_resolution_service_provider.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/146163/trunk/src/chrome/browser/chromeos/dbus/proxy_resolution_service_provider.h
+END
+cros_dbus_service_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/128700/trunk/src/chrome/browser/chromeos/dbus/cros_dbus_service_unittest.cc
+END
+cros_dbus_service.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/191660/trunk/src/chrome/browser/chromeos/dbus/cros_dbus_service.cc
+END
+cros_dbus_service.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/170329/trunk/src/chrome/browser/chromeos/dbus/cros_dbus_service.h
+END
+service_provider_test_helper.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/181266/trunk/src/chrome/browser/chromeos/dbus/service_provider_test_helper.cc
+END
+service_provider_test_helper.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/181266/trunk/src/chrome/browser/chromeos/dbus/service_provider_test_helper.h
+END
+display_power_service_provider.cc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/191558/trunk/src/chrome/browser/chromeos/dbus/display_power_service_provider.cc
+END
+printer_service_provider_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/171961/trunk/src/chrome/browser/chromeos/dbus/printer_service_provider_unittest.cc
+END
+printer_service_provider.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/194602/trunk/src/chrome/browser/chromeos/dbus/printer_service_provider.cc
+END
+display_power_service_provider.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/190456/trunk/src/chrome/browser/chromeos/dbus/display_power_service_provider.h
+END
+printer_service_provider.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/171961/trunk/src/chrome/browser/chromeos/dbus/printer_service_provider.h
+END
+liveness_service_provider.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/185442/trunk/src/chrome/browser/chromeos/dbus/liveness_service_provider.cc
+END
+liveness_service_provider.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/170329/trunk/src/chrome/browser/chromeos/dbus/liveness_service_provider.h
+END
+org.chromium.LibCrosService.conf
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/186625/trunk/src/chrome/browser/chromeos/dbus/org.chromium.LibCrosService.conf
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/148406/trunk/src/chrome/browser/chromeos/dbus/OWNERS
+END

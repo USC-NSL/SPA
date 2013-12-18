@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/147151/trunk/src/sandbox/win/src/sidestep
+END
+mini_disassembler.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/147151/trunk/src/sandbox/win/src/sidestep/mini_disassembler.h
+END
+mini_disassembler_types.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/147151/trunk/src/sandbox/win/src/sidestep/mini_disassembler_types.h
+END
+preamble_patcher.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/147151/trunk/src/sandbox/win/src/sidestep/preamble_patcher.h
+END
+ia32_opcode_map.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/147151/trunk/src/sandbox/win/src/sidestep/ia32_opcode_map.cpp
+END
+preamble_patcher_with_stub.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/147151/trunk/src/sandbox/win/src/sidestep/preamble_patcher_with_stub.cpp
+END
+ia32_modrm_map.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/147151/trunk/src/sandbox/win/src/sidestep/ia32_modrm_map.cpp
+END
+mini_disassembler.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/147151/trunk/src/sandbox/win/src/sidestep/mini_disassembler.cpp
+END

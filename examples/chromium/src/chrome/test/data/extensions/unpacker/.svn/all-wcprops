@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/153583/trunk/src/chrome/test/data/extensions/unpacker
+END
+no_locale_data.crx
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/32345/trunk/src/chrome/test/data/extensions/unpacker/no_locale_data.crx
+END
+no_l10n.crx
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/32345/trunk/src/chrome/test/data/extensions/unpacker/no_l10n.crx
+END
+missing_default_data.crx
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/32345/trunk/src/chrome/test/data/extensions/unpacker/missing_default_data.crx
+END
+bad_image.crx
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/153583/trunk/src/chrome/test/data/extensions/unpacker/bad_image.crx
+END
+bad_zip.crx
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/153583/trunk/src/chrome/test/data/extensions/unpacker/bad_zip.crx
+END
+invalid_default_locale.crx
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/32345/trunk/src/chrome/test/data/extensions/unpacker/invalid_default_locale.crx
+END
+has_default_missing_locales.crx
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/32345/trunk/src/chrome/test/data/extensions/unpacker/has_default_missing_locales.crx
+END
+missing_default_has_locales.crx
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/32345/trunk/src/chrome/test/data/extensions/unpacker/missing_default_has_locales.crx
+END
+invalid_messages_file.crx
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/32345/trunk/src/chrome/test/data/extensions/unpacker/invalid_messages_file.crx
+END
+missing_messages_file.crx
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/32345/trunk/src/chrome/test/data/extensions/unpacker/missing_messages_file.crx
+END
+empty_default_locale.crx
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/32345/trunk/src/chrome/test/data/extensions/unpacker/empty_default_locale.crx
+END
+bad_path.crx
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/153583/trunk/src/chrome/test/data/extensions/unpacker/bad_path.crx
+END
+good_l10n.crx
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/32345/trunk/src/chrome/test/data/extensions/unpacker/good_l10n.crx
+END
+good_package.crx
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/153583/trunk/src/chrome/test/data/extensions/unpacker/good_package.crx
+END

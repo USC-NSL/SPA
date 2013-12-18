@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/196711/trunk/src/ui/gl/android
+END
+surface_texture_listener.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/196086/trunk/src/ui/gl/android/surface_texture_listener.cc
+END
+surface_texture_listener.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/196282/trunk/src/ui/gl/android/surface_texture_listener.h
+END
+gl_jni_registrar.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/196086/trunk/src/ui/gl/android/gl_jni_registrar.cc
+END
+surface_texture_bridge.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/196711/trunk/src/ui/gl/android/surface_texture_bridge.cc
+END
+gl_jni_registrar.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/196086/trunk/src/ui/gl/android/gl_jni_registrar.h
+END
+scoped_java_surface.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/196086/trunk/src/ui/gl/android/scoped_java_surface.cc
+END
+surface_texture_bridge.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/196282/trunk/src/ui/gl/android/surface_texture_bridge.h
+END
+scoped_java_surface.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/196282/trunk/src/ui/gl/android/scoped_java_surface.h
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/196086/trunk/src/ui/gl/android/OWNERS
+END

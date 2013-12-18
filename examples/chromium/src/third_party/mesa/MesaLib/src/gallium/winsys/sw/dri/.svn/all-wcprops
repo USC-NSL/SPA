@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/sw/dri
+END
+dri_sw_winsys.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/sw/dri/dri_sw_winsys.c
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/sw/dri/SConscript
+END
+dri_sw_winsys.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/sw/dri/dri_sw_winsys.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/sw/dri/Makefile
+END

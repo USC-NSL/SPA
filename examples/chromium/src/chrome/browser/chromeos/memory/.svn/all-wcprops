@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/196779/trunk/src/chrome/browser/chromeos/memory
+END
+low_memory_observer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/196482/trunk/src/chrome/browser/chromeos/memory/low_memory_observer.cc
+END
+low_memory_observer.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/161224/trunk/src/chrome/browser/chromeos/memory/low_memory_observer.h
+END
+oom_priority_manager_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/183955/trunk/src/chrome/browser/chromeos/memory/oom_priority_manager_unittest.cc
+END
+oom_priority_manager.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/196779/trunk/src/chrome/browser/chromeos/memory/oom_priority_manager.cc
+END
+oom_priority_manager.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/183955/trunk/src/chrome/browser/chromeos/memory/oom_priority_manager.h
+END
+oom_priority_manager_browsertest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/196482/trunk/src/chrome/browser/chromeos/memory/oom_priority_manager_browsertest.cc
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/161224/trunk/src/chrome/browser/chromeos/memory/OWNERS
+END

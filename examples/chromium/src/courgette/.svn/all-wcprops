@@ -1,0 +1,323 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/193134/trunk/src/courgette
+END
+ensemble.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/108019/trunk/src/courgette/ensemble.h
+END
+types_elf.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/109089/trunk/src/courgette/types_elf.h
+END
+courgette_tool.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/184344/trunk/src/courgette/courgette_tool.cc
+END
+encode_decode_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/109089/trunk/src/courgette/encode_decode_unittest.cc
+END
+disassembler_win32_x86_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/107260/trunk/src/courgette/disassembler_win32_x86_unittest.cc
+END
+disassembler_win32_x86.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/109172/trunk/src/courgette/disassembler_win32_x86.cc
+END
+courgette_minimal_tool.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/21253/trunk/src/courgette/courgette_minimal_tool.cc
+END
+simple_delta.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/40991/trunk/src/courgette/simple_delta.h
+END
+encoded_program_fuzz_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/109089/trunk/src/courgette/encoded_program_fuzz_unittest.cc
+END
+crc.cc
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/112565/trunk/src/courgette/crc.cc
+END
+assembly_program.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/193134/trunk/src/courgette/assembly_program.h
+END
+base_test_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/181655/trunk/src/courgette/base_test_unittest.cc
+END
+crc.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/40991/trunk/src/courgette/crc.h
+END
+memory_allocator.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/190069/trunk/src/courgette/memory_allocator.h
+END
+disassembler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/109089/trunk/src/courgette/disassembler.cc
+END
+adjustment_method_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/80648/trunk/src/courgette/adjustment_method_unittest.cc
+END
+disassembler_elf_32_x86.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/109089/trunk/src/courgette/disassembler_elf_32_x86.h
+END
+adjustment_method.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/188857/trunk/src/courgette/adjustment_method.cc
+END
+disassembler.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/109089/trunk/src/courgette/disassembler.h
+END
+memory_monitor.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/188857/trunk/src/courgette/memory_monitor.cc
+END
+patch_generator_x86_32.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/109089/trunk/src/courgette/patch_generator_x86_32.h
+END
+streams.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/80648/trunk/src/courgette/streams.h
+END
+difference_estimator.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/40991/trunk/src/courgette/difference_estimator.cc
+END
+versioning_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/106793/trunk/src/courgette/versioning_unittest.cc
+END
+difference_estimator.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/40991/trunk/src/courgette/difference_estimator.h
+END
+bsdiff_memory_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/193040/trunk/src/courgette/bsdiff_memory_unittest.cc
+END
+region.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/40991/trunk/src/courgette/region.h
+END
+ensemble_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/107288/trunk/src/courgette/ensemble_unittest.cc
+END
+encoded_program.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/109089/trunk/src/courgette/encoded_program.h
+END
+ensemble.cc
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/107260/trunk/src/courgette/ensemble.cc
+END
+adjustment_method_2.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/107260/trunk/src/courgette/adjustment_method_2.cc
+END
+ensemble_apply.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/184356/trunk/src/courgette/ensemble_apply.cc
+END
+patcher_x86_32.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/148592/trunk/src/courgette/patcher_x86_32.h
+END
+simple_delta.cc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/63407/trunk/src/courgette/simple_delta.cc
+END
+courgette.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/184344/trunk/src/courgette/courgette.h
+END
+disassembler_win32_x86.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/108019/trunk/src/courgette/disassembler_win32_x86.h
+END
+assembly_program.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/109089/trunk/src/courgette/assembly_program.cc
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/15700/trunk/src/courgette/DEPS
+END
+types_win_pe.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/107260/trunk/src/courgette/types_win_pe.h
+END
+memory_allocator.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/190069/trunk/src/courgette/memory_allocator.cc
+END
+base_test_unittest.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/181655/trunk/src/courgette/base_test_unittest.h
+END
+disassembler_elf_32_x86_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/109172/trunk/src/courgette/disassembler_elf_32_x86_unittest.cc
+END
+courgette.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/181636/trunk/src/courgette/courgette.gyp
+END
+disassembler_elf_32_x86.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/148592/trunk/src/courgette/disassembler_elf_32_x86.cc
+END
+ensemble_create.cc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/109089/trunk/src/courgette/ensemble_create.cc
+END
+streams_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/79030/trunk/src/courgette/streams_unittest.cc
+END
+run_all_unittests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/56399/trunk/src/courgette/run_all_unittests.cc
+END
+streams.cc
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/80648/trunk/src/courgette/streams.cc
+END
+difference_estimator_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/21042/trunk/src/courgette/difference_estimator_unittest.cc
+END
+adjustment_method.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/40991/trunk/src/courgette/adjustment_method.h
+END
+encoded_program_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/140077/trunk/src/courgette/encoded_program_unittest.cc
+END
+encoded_program.cc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/109089/trunk/src/courgette/encoded_program.cc
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/126289/trunk/src/courgette/OWNERS
+END

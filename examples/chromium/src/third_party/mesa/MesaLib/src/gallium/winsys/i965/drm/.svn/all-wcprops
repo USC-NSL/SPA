@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/i965/drm
+END
+i965_drm_winsys.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/i965/drm/i965_drm_winsys.h
+END
+i965_drm_public.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/i965/drm/i965_drm_public.h
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/i965/drm/SConscript
+END
+i965_drm_buffer.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/i965/drm/i965_drm_buffer.c
+END
+i965_drm_winsys.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/i965/drm/i965_drm_winsys.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/i965/drm/Makefile
+END

@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/189139/trunk/src/chrome/installer/gcapi
+END
+gcapi_reactivation.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/129129/trunk/src/chrome/installer/gcapi/gcapi_reactivation.cc
+END
+gcapi.def
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/167858/trunk/src/chrome/installer/gcapi/gcapi.def
+END
+gcapi_reactivation.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/146163/trunk/src/chrome/installer/gcapi/gcapi_reactivation.h
+END
+gcapi_dll.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/175671/trunk/src/chrome/installer/gcapi/gcapi_dll.cc
+END
+gcapi_test.rc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/78921/trunk/src/chrome/installer/gcapi/gcapi_test.rc
+END
+gcapi_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/123755/trunk/src/chrome/installer/gcapi/gcapi_test.cc
+END
+gcapi.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/184344/trunk/src/chrome/installer/gcapi/gcapi.cc
+END
+gcapi.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/167858/trunk/src/chrome/installer/gcapi/gcapi.h
+END
+gcapi_omaha_experiment.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/189139/trunk/src/chrome/installer/gcapi/gcapi_omaha_experiment.cc
+END
+gcapi_last_run_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/184355/trunk/src/chrome/installer/gcapi/gcapi_last_run_test.cc
+END
+resource.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/146163/trunk/src/chrome/installer/gcapi/resource.h
+END
+gcapi_omaha_experiment.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/175671/trunk/src/chrome/installer/gcapi/gcapi_omaha_experiment.h
+END
+gcapi_reactivation_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/184355/trunk/src/chrome/installer/gcapi/gcapi_reactivation_test.cc
+END

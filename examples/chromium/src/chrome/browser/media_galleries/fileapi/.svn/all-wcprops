@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/196693/trunk/src/chrome/browser/media_galleries/fileapi
+END
+mtp_device_map_service.cc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/196265/trunk/src/chrome/browser/media_galleries/fileapi/mtp_device_map_service.cc
+END
+mtp_device_map_service.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/196265/trunk/src/chrome/browser/media_galleries/fileapi/mtp_device_map_service.h
+END
+media_path_filter.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/196265/trunk/src/chrome/browser/media_galleries/fileapi/media_path_filter.cc
+END
+media_path_filter.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/196265/trunk/src/chrome/browser/media_galleries/fileapi/media_path_filter.h
+END
+mtp_device_async_delegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/196265/trunk/src/chrome/browser/media_galleries/fileapi/mtp_device_async_delegate.h
+END
+mtp_device_file_system_config.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/196265/trunk/src/chrome/browser/media_galleries/fileapi/mtp_device_file_system_config.h
+END
+native_media_file_util_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/196265/trunk/src/chrome/browser/media_galleries/fileapi/native_media_file_util_unittest.cc
+END
+native_media_file_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/196265/trunk/src/chrome/browser/media_galleries/fileapi/native_media_file_util.cc
+END
+native_media_file_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/196265/trunk/src/chrome/browser/media_galleries/fileapi/native_media_file_util.h
+END
+filtering_file_enumerator.cc
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/196265/trunk/src/chrome/browser/media_galleries/fileapi/filtering_file_enumerator.cc
+END
+filtering_file_enumerator.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/196265/trunk/src/chrome/browser/media_galleries/fileapi/filtering_file_enumerator.h
+END
+media_file_system_mount_point_provider.cc
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/196265/trunk/src/chrome/browser/media_galleries/fileapi/media_file_system_mount_point_provider.cc
+END
+device_media_async_file_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/196640/trunk/src/chrome/browser/media_galleries/fileapi/device_media_async_file_util.cc
+END
+media_file_system_mount_point_provider.h
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/196265/trunk/src/chrome/browser/media_galleries/fileapi/media_file_system_mount_point_provider.h
+END
+device_media_async_file_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/196640/trunk/src/chrome/browser/media_galleries/fileapi/device_media_async_file_util.h
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/196693/trunk/src/chrome/browser/media_galleries/fileapi/OWNERS
+END

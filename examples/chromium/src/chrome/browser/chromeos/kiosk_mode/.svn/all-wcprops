@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/195951/trunk/src/chrome/browser/chromeos/kiosk_mode
+END
+kiosk_mode_idle_logout.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/185910/trunk/src/chrome/browser/chromeos/kiosk_mode/kiosk_mode_idle_logout.h
+END
+mock_kiosk_mode_settings.cc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/130339/trunk/src/chrome/browser/chromeos/kiosk_mode/mock_kiosk_mode_settings.cc
+END
+mock_kiosk_mode_settings.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/146163/trunk/src/chrome/browser/chromeos/kiosk_mode/mock_kiosk_mode_settings.h
+END
+kiosk_mode_settings_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/195951/trunk/src/chrome/browser/chromeos/kiosk_mode/kiosk_mode_settings_unittest.cc
+END
+kiosk_mode_screensaver.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/195442/trunk/src/chrome/browser/chromeos/kiosk_mode/kiosk_mode_screensaver.cc
+END
+kiosk_mode_settings.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/188034/trunk/src/chrome/browser/chromeos/kiosk_mode/kiosk_mode_settings.cc
+END
+kiosk_mode_screensaver.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/184344/trunk/src/chrome/browser/chromeos/kiosk_mode/kiosk_mode_screensaver.h
+END
+kiosk_mode_settings.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/188034/trunk/src/chrome/browser/chromeos/kiosk_mode/kiosk_mode_settings.h
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/149323/trunk/src/chrome/browser/chromeos/kiosk_mode/OWNERS
+END
+kiosk_mode_idle_logout_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/185292/trunk/src/chrome/browser/chromeos/kiosk_mode/kiosk_mode_idle_logout_unittest.cc
+END
+kiosk_mode_idle_logout.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/185910/trunk/src/chrome/browser/chromeos/kiosk_mode/kiosk_mode_idle_logout.cc
+END

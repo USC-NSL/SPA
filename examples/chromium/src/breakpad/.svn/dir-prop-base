@@ -1,0 +1,29 @@
+K 10
+svn:ignore
+V 542
+src
+SConstruct
+breakpad.Makefile
+breakpad.sln
+breakpad.xcodeproj
+breakpad_client.mk
+breakpad_client.scons
+breakpad_client.target.mk
+breakpad_handler.vcproj
+breakpad_handler_dll.vcproj
+breakpad_handler_win64.vcproj
+breakpad_main.scons
+breakpad_processor_support.target.mk
+breakpad_sender.vcproj
+breakpad_sender_win64.vcproj
+breakpad_unittests.mk
+breakpad_unittests.scons
+breakpad_unittests.target.mk
+generate_test_dump.mk
+generate_test_dump.scons
+generate_test_dump.target.mk
+minidump-2-core.target.mk
+minidump_2_core.mk
+minidump_2_core.scons
+
+END

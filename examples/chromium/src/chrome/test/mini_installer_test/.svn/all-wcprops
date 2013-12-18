@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/193855/trunk/src/chrome/test/mini_installer_test
+END
+installer_test_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/184344/trunk/src/chrome/test/mini_installer_test/installer_test_util.h
+END
+run_all_unittests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/181663/trunk/src/chrome/test/mini_installer_test/run_all_unittests.cc
+END
+test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/184344/trunk/src/chrome/test/mini_installer_test/test.cc
+END
+installer_path_provider.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/181663/trunk/src/chrome/test/mini_installer_test/installer_path_provider.cc
+END
+mini_installer_test_constants.cc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/180878/trunk/src/chrome/test/mini_installer_test/mini_installer_test_constants.cc
+END
+installer_path_provider.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/184344/trunk/src/chrome/test/mini_installer_test/installer_path_provider.h
+END
+mini_installer_test_constants.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/180878/trunk/src/chrome/test/mini_installer_test/mini_installer_test_constants.h
+END
+switch_builder.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/144580/trunk/src/chrome/test/mini_installer_test/switch_builder.cc
+END
+installer_test_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/193855/trunk/src/chrome/test/mini_installer_test/installer_test_util.cc
+END
+switch_builder.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/146163/trunk/src/chrome/test/mini_installer_test/switch_builder.h
+END

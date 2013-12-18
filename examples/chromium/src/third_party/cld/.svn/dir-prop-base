@@ -1,0 +1,13 @@
+K 10
+svn:ignore
+V 96
+cld.scons
+SConstruct
+cld_main.scons
+cld.target.mk
+cld.Makefile
+cld.sln
+cld.vcproj
+cld.xcodeproj
+
+END

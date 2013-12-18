@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/nouveau
+END
+nouveau_screen.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/nouveau/nouveau_screen.c
+END
+nouveau_stateobj.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/nouveau/nouveau_stateobj.h
+END
+nouveau_winsys.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/nouveau/nouveau_winsys.h
+END
+nouveau_statebuf.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/nouveau/nouveau_statebuf.h
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/nouveau/SConscript
+END
+nouveau_screen.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/nouveau/nouveau_screen.h
+END
+nv_m2mf.xml.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/nouveau/nv_m2mf.xml.h
+END
+nouveau_gldefs.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/nouveau/nouveau_gldefs.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/nouveau/Makefile
+END
+nv_object.xml.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/nouveau/nv_object.xml.h
+END

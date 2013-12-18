@@ -1,0 +1,353 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/196735/trunk/src/chromeos/test/data/network
+END
+translation_of_shill_l2tpipsec.onc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/186156/trunk/src/chromeos/test/data/network/translation_of_shill_l2tpipsec.onc
+END
+uidata_for_wifi_psk.json
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/193364/trunk/src/chromeos/test/data/network/uidata_for_wifi_psk.json
+END
+certificate-web-authority-update.onc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/193111/trunk/src/chromeos/test/data/network/certificate-web-authority-update.onc
+END
+managed_vpn_without_recommended.onc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/173393/trunk/src/chromeos/test/data/network/managed_vpn_without_recommended.onc
+END
+valid_openvpn.onc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/185014/trunk/src/chromeos/test/data/network/valid_openvpn.onc
+END
+shill_l2tpipsec_clientcert.json
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/176312/trunk/src/chromeos/test/data/network/shill_l2tpipsec_clientcert.json
+END
+certificate-server-update.onc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/193111/trunk/src/chromeos/test/data/network/certificate-server-update.onc
+END
+certificate-authority.onc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/192324/trunk/src/chromeos/test/data/network/certificate-authority.onc
+END
+translation_of_shill_openvpn_with_errors.onc
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/178611/trunk/src/chromeos/test/data/network/translation_of_shill_openvpn_with_errors.onc
+END
+shill_openvpn.json
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/185014/trunk/src/chromeos/test/data/network/shill_openvpn.json
+END
+toplevel_openvpn_clientcert.onc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/193111/trunk/src/chromeos/test/data/network/toplevel_openvpn_clientcert.onc
+END
+device_policy.onc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/172446/trunk/src/chromeos/test/data/network/device_policy.onc
+END
+shill_wifi_with_state.json
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/186156/trunk/src/chromeos/test/data/network/shill_wifi_with_state.json
+END
+valid_openvpn_clientcert.onc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/176312/trunk/src/chromeos/test/data/network/valid_openvpn_clientcert.onc
+END
+uidata_for_wifi_clientref.json
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/193364/trunk/src/chromeos/test/data/network/uidata_for_wifi_clientref.json
+END
+toplevel_partially_invalid.onc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/176520/trunk/src/chromeos/test/data/network/toplevel_partially_invalid.onc
+END
+augmented_merge.json
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/195267/trunk/src/chromeos/test/data/network/augmented_merge.json
+END
+toplevel_wifi_wep_proxy.onc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/176520/trunk/src/chromeos/test/data/network/toplevel_wifi_wep_proxy.onc
+END
+toplevel_wifi_remove.onc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/176520/trunk/src/chromeos/test/data/network/toplevel_wifi_remove.onc
+END
+certificate-server.onc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/193111/trunk/src/chromeos/test/data/network/certificate-server.onc
+END
+shill_openvpn_clientcert.json
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/176312/trunk/src/chromeos/test/data/network/shill_openvpn_clientcert.json
+END
+translation_of_shill_wifi_with_state.onc
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/186156/trunk/src/chromeos/test/data/network/translation_of_shill_wifi_with_state.onc
+END
+managed_toplevel1.onc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/176520/trunk/src/chromeos/test/data/network/managed_toplevel1.onc
+END
+managed_toplevel2.onc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/193111/trunk/src/chromeos/test/data/network/managed_toplevel2.onc
+END
+valid_wifi_clientcert.onc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/176312/trunk/src/chromeos/test/data/network/valid_wifi_clientcert.onc
+END
+toplevel_wifi_open.onc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/176520/trunk/src/chromeos/test/data/network/toplevel_wifi_open.onc
+END
+managed_toplevel_wifi_peap.onc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/176520/trunk/src/chromeos/test/data/network/managed_toplevel_wifi_peap.onc
+END
+broken-encrypted-iterations.onc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/172446/trunk/src/chromeos/test/data/network/broken-encrypted-iterations.onc
+END
+valid_wifi_psk.onc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/176312/trunk/src/chromeos/test/data/network/valid_wifi_psk.onc
+END
+settings_with_normalization.json
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/172446/trunk/src/chromeos/test/data/network/settings_with_normalization.json
+END
+toplevel_wifi_wpa_psk.onc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/176520/trunk/src/chromeos/test/data/network/toplevel_wifi_wpa_psk.onc
+END
+encrypted.onc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/172446/trunk/src/chromeos/test/data/network/encrypted.onc
+END
+shill_wifi_psk.json
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/184425/trunk/src/chromeos/test/data/network/shill_wifi_psk.json
+END
+shill_openvpn_with_errors.json
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/178611/trunk/src/chromeos/test/data/network/shill_openvpn_with_errors.json
+END
+uidata_for_wifi_clientcert.json
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/193364/trunk/src/chromeos/test/data/network/uidata_for_wifi_clientcert.json
+END
+shill_ethernet.json
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/176312/trunk/src/chromeos/test/data/network/shill_ethernet.json
+END
+broken-encrypted-zero-iterations.onc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/172446/trunk/src/chromeos/test/data/network/broken-encrypted-zero-iterations.onc
+END
+valid_wifi_clientref.onc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/176312/trunk/src/chromeos/test/data/network/valid_wifi_clientref.onc
+END
+uidata_for_l2tpipsec_clientcert.json
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/193364/trunk/src/chromeos/test/data/network/uidata_for_l2tpipsec_clientcert.json
+END
+toplevel_wifi_leap.onc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/176520/trunk/src/chromeos/test/data/network/toplevel_wifi_leap.onc
+END
+toplevel_wifi_eap_clientcert.onc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/193111/trunk/src/chromeos/test/data/network/toplevel_wifi_eap_clientcert.onc
+END
+shill_wifi_clientref.json
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/184425/trunk/src/chromeos/test/data/network/shill_wifi_clientref.json
+END
+user.onc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/172446/trunk/src/chromeos/test/data/network/user.onc
+END
+certificate-client-update.onc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/172446/trunk/src/chromeos/test/data/network/certificate-client-update.onc
+END
+managed_vpn.onc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/173393/trunk/src/chromeos/test/data/network/managed_vpn.onc
+END
+invalid_settings_with_repairs.json
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/196735/trunk/src/chromeos/test/data/network/invalid_settings_with_repairs.json
+END
+certificate-web-authority.onc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/193111/trunk/src/chromeos/test/data/network/certificate-web-authority.onc
+END
+decrypted.onc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/172446/trunk/src/chromeos/test/data/network/decrypted.onc
+END
+valid_l2tpipsec.onc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/172446/trunk/src/chromeos/test/data/network/valid_l2tpipsec.onc
+END
+uidata_for_openvpn_clientcert.json
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/193364/trunk/src/chromeos/test/data/network/uidata_for_openvpn_clientcert.json
+END
+managed_ethernet.onc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/173393/trunk/src/chromeos/test/data/network/managed_ethernet.onc
+END
+shill_l2tpipsec.json
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/172446/trunk/src/chromeos/test/data/network/shill_l2tpipsec.json
+END
+toplevel_with_unknown_fields.onc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/176520/trunk/src/chromeos/test/data/network/toplevel_with_unknown_fields.onc
+END
+managed_toplevel_l2tpipsec.onc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/176520/trunk/src/chromeos/test/data/network/managed_toplevel_l2tpipsec.onc
+END
+repaired_toplevel_partially_invalid.onc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/196735/trunk/src/chromeos/test/data/network/repaired_toplevel_partially_invalid.onc
+END
+certificate-client.onc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/172446/trunk/src/chromeos/test/data/network/certificate-client.onc
+END
+shill_wifi_clientcert.json
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/184425/trunk/src/chromeos/test/data/network/shill_wifi_clientcert.json
+END
+valid_l2tpipsec_clientcert.onc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/176312/trunk/src/chromeos/test/data/network/valid_l2tpipsec_clientcert.onc
+END

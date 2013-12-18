@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/184344/trunk/src/content/browser/dom_storage
+END
+dom_storage_message_filter.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/175002/trunk/src/content/browser/dom_storage/dom_storage_message_filter.cc
+END
+dom_storage_message_filter.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/182380/trunk/src/content/browser/dom_storage/dom_storage_message_filter.h
+END
+session_storage_namespace_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/163944/trunk/src/content/browser/dom_storage/session_storage_namespace_impl.cc
+END
+dom_storage_browsertest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/175156/trunk/src/content/browser/dom_storage/dom_storage_browsertest.cc
+END
+session_storage_namespace_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/163944/trunk/src/content/browser/dom_storage/session_storage_namespace_impl.h
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/166196/trunk/src/content/browser/dom_storage/DEPS
+END
+dom_storage_context_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/184344/trunk/src/content/browser/dom_storage/dom_storage_context_impl.cc
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/127025/trunk/src/content/browser/dom_storage/OWNERS
+END
+dom_storage_context_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/180245/trunk/src/content/browser/dom_storage/dom_storage_context_impl.h
+END

@@ -1,0 +1,167 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/147480/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/mach64
+END
+mach64_dd.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/mach64/mach64_dd.h
+END
+mach64_lock.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/mach64/mach64_lock.h
+END
+mach64_vbtmp.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/147480/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/mach64/mach64_vbtmp.h
+END
+mach64_texmem.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/mach64/mach64_texmem.c
+END
+mach64_tex.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/147480/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/mach64/mach64_tex.c
+END
+mach64_span.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/mach64/mach64_span.c
+END
+mach64_texstate.c
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/147480/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/mach64/mach64_texstate.c
+END
+mach64_native_vbtmp.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/147480/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/mach64/mach64_native_vbtmp.h
+END
+mach64_tex.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/147480/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/mach64/mach64_tex.h
+END
+mach64_span.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/mach64/mach64_span.h
+END
+mach64_vb.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/147480/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/mach64/mach64_vb.c
+END
+mach64_ioctl.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/mach64/mach64_ioctl.c
+END
+mach64_vb.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/147480/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/mach64/mach64_vb.h
+END
+mach64_native_vb.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/147480/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/mach64/mach64_native_vb.c
+END
+mach64_screen.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/mach64/mach64_screen.c
+END
+mach64_ioctl.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/147480/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/mach64/mach64_ioctl.h
+END
+mach64_state.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/mach64/mach64_state.c
+END
+mach64_tris.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/147480/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/mach64/mach64_tris.c
+END
+mach64_reg.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/147480/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/mach64/mach64_reg.h
+END
+mach64_screen.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/147480/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/mach64/mach64_screen.h
+END
+mach64_context.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/mach64/mach64_context.c
+END
+mach64_state.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/mach64/mach64_state.h
+END
+mach64_tris.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/147480/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/mach64/mach64_tris.h
+END
+mach64_dd.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/147480/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/mach64/mach64_dd.c
+END
+mach64_lock.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/147480/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/mach64/mach64_lock.c
+END
+mach64_context.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/mach64/mach64_context.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/mach64/Makefile
+END

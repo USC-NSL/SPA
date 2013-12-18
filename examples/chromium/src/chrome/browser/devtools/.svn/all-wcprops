@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/196953/trunk/src/chrome/browser/devtools
+END
+browser_list_tabcontents_provider.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/194288/trunk/src/chrome/browser/devtools/browser_list_tabcontents_provider.cc
+END
+remote_debugging_server.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/192982/trunk/src/chrome/browser/devtools/remote_debugging_server.cc
+END
+adb_client_socket.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/194170/trunk/src/chrome/browser/devtools/adb_client_socket.cc
+END
+devtools_file_helper.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/196706/trunk/src/chrome/browser/devtools/devtools_file_helper.cc
+END
+browser_list_tabcontents_provider.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/194288/trunk/src/chrome/browser/devtools/browser_list_tabcontents_provider.h
+END
+remote_debugging_server.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/184094/trunk/src/chrome/browser/devtools/remote_debugging_server.h
+END
+adb_client_socket.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/194170/trunk/src/chrome/browser/devtools/adb_client_socket.h
+END
+devtools_file_helper.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/196706/trunk/src/chrome/browser/devtools/devtools_file_helper.h
+END
+devtools_toggle_action.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/173903/trunk/src/chrome/browser/devtools/devtools_toggle_action.h
+END
+tethering_adb_filter.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/196953/trunk/src/chrome/browser/devtools/tethering_adb_filter.cc
+END
+tethering_adb_filter.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/194288/trunk/src/chrome/browser/devtools/tethering_adb_filter.h
+END
+devtools_adb_bridge.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/196434/trunk/src/chrome/browser/devtools/devtools_adb_bridge.cc
+END
+devtools_adb_bridge.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/195806/trunk/src/chrome/browser/devtools/devtools_adb_bridge.h
+END
+devtools_window.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/196706/trunk/src/chrome/browser/devtools/devtools_window.cc
+END
+devtools_window.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/196706/trunk/src/chrome/browser/devtools/devtools_window.h
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/173903/trunk/src/chrome/browser/devtools/OWNERS
+END
+devtools_sanity_browsertest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/193099/trunk/src/chrome/browser/devtools/devtools_sanity_browsertest.cc
+END

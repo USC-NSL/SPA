@@ -1,0 +1,14 @@
+K 10
+svn:ignore
+V 111
+zlib.xcodeproj
+zlib.sln
+zlib.vcproj
+SConstruct
+zlib.scons
+zlib_main.scons
+zlib.mk
+zlib.target.mk
+zlib.Makefile
+
+END

@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/193838/trunk/src/chrome/common/extensions/api/extension_action
+END
+script_badge_manifest_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/193838/trunk/src/chrome/common/extensions/api/extension_action/script_badge_manifest_unittest.cc
+END
+browser_action_handler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/190455/trunk/src/chrome/common/extensions/api/extension_action/browser_action_handler.cc
+END
+page_action_manifest_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/185391/trunk/src/chrome/common/extensions/api/extension_action/page_action_manifest_unittest.cc
+END
+browser_action_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/187771/trunk/src/chrome/common/extensions/api/extension_action/browser_action_handler.h
+END
+script_badge_handler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/193838/trunk/src/chrome/common/extensions/api/extension_action/script_badge_handler.cc
+END
+script_badge_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/185391/trunk/src/chrome/common/extensions/api/extension_action/script_badge_handler.h
+END
+browser_action_manifest_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/193040/trunk/src/chrome/common/extensions/api/extension_action/browser_action_manifest_unittest.cc
+END
+page_action_handler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/190455/trunk/src/chrome/common/extensions/api/extension_action/page_action_handler.cc
+END
+action_info.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/190455/trunk/src/chrome/common/extensions/api/extension_action/action_info.cc
+END
+page_action_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/187771/trunk/src/chrome/common/extensions/api/extension_action/page_action_handler.h
+END
+action_info.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/190455/trunk/src/chrome/common/extensions/api/extension_action/action_info.h
+END

@@ -1,0 +1,365 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/197200/trunk/src/net/dns
+END
+dns_config_service.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/181571/trunk/src/net/dns/dns_config_service.h
+END
+dns_transaction.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/146163/trunk/src/net/dns/dns_transaction.h
+END
+host_resolver.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/189485/trunk/src/net/dns/host_resolver.h
+END
+dns_response_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/195937/trunk/src/net/dns/dns_response_unittest.cc
+END
+dns_response.cc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/195937/trunk/src/net/dns/dns_response.cc
+END
+host_cache.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/193455/trunk/src/net/dns/host_cache.h
+END
+dns_hosts_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/128498/trunk/src/net/dns/dns_hosts_unittest.cc
+END
+dns_hosts.cc
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/181543/trunk/src/net/dns/dns_hosts.cc
+END
+dns_config_service_win_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/176867/trunk/src/net/dns/dns_config_service_win_unittest.cc
+END
+address_sorter_posix.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/179219/trunk/src/net/dns/address_sorter_posix.cc
+END
+notify_watcher_mac.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/167739/trunk/src/net/dns/notify_watcher_mac.cc
+END
+dns_config_service_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/191432/trunk/src/net/dns/dns_config_service_win.cc
+END
+address_sorter_posix.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/151750/trunk/src/net/dns/address_sorter_posix.h
+END
+notify_watcher_mac.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/146163/trunk/src/net/dns/notify_watcher_mac.h
+END
+single_request_host_resolver.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/197200/trunk/src/net/dns/single_request_host_resolver.cc
+END
+dns_query_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/113640/trunk/src/net/dns/dns_query_unittest.cc
+END
+single_request_host_resolver.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/189485/trunk/src/net/dns/single_request_host_resolver.h
+END
+dns_config_service_posix_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/147666/trunk/src/net/dns/dns_config_service_posix_unittest.cc
+END
+serial_worker.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/146163/trunk/src/net/dns/serial_worker.h
+END
+host_resolver_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/195406/trunk/src/net/dns/host_resolver_impl.cc
+END
+host_resolver_proc.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/194359/trunk/src/net/dns/host_resolver_proc.cc
+END
+host_resolver_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/193455/trunk/src/net/dns/host_resolver_impl.h
+END
+dns_test_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/172780/trunk/src/net/dns/dns_test_util.h
+END
+mapped_host_resolver_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/193040/trunk/src/net/dns/mapped_host_resolver_unittest.cc
+END
+host_resolver_proc.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/194663/trunk/src/net/dns/host_resolver_proc.h
+END
+dns_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/151750/trunk/src/net/dns/dns_client.h
+END
+mapped_host_resolver.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/189485/trunk/src/net/dns/mapped_host_resolver.cc
+END
+address_sorter.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/151750/trunk/src/net/dns/address_sorter.h
+END
+dns_socket_pool.cc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/174227/trunk/src/net/dns/dns_socket_pool.cc
+END
+dns_session_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/173038/trunk/src/net/dns/dns_session_unittest.cc
+END
+dns_socket_pool.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/174227/trunk/src/net/dns/dns_socket_pool.h
+END
+dns_config_service_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/174472/trunk/src/net/dns/dns_config_service_unittest.cc
+END
+dns_transaction_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/180944/trunk/src/net/dns/dns_transaction_unittest.cc
+END
+host_resolver.cc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/193455/trunk/src/net/dns/host_resolver.cc
+END
+host_cache_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/193455/trunk/src/net/dns/host_cache_unittest.cc
+END
+address_sorter_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/172768/trunk/src/net/dns/address_sorter_win.cc
+END
+host_cache.cc
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/193455/trunk/src/net/dns/host_cache.cc
+END
+dns_response.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/195937/trunk/src/net/dns/dns_response.h
+END
+address_sorter_posix_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/151750/trunk/src/net/dns/address_sorter_posix_unittest.cc
+END
+dns_hosts.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/184344/trunk/src/net/dns/dns_hosts.h
+END
+single_request_host_resolver_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/193040/trunk/src/net/dns/single_request_host_resolver_unittest.cc
+END
+dns_protocol.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/146163/trunk/src/net/dns/dns_protocol.h
+END
+serial_worker_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/112153/trunk/src/net/dns/serial_worker_unittest.cc
+END
+mock_host_resolver.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/194359/trunk/src/net/dns/mock_host_resolver.cc
+END
+dns_config_service_win.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/191432/trunk/src/net/dns/dns_config_service_win.h
+END
+serial_worker.cc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/131366/trunk/src/net/dns/serial_worker.cc
+END
+dns_query.cc
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/129476/trunk/src/net/dns/dns_query.cc
+END
+mock_host_resolver.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/189485/trunk/src/net/dns/mock_host_resolver.h
+END
+dns_query.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/194055/trunk/src/net/dns/dns_query.h
+END
+dns_config_service_posix.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/184344/trunk/src/net/dns/dns_config_service_posix.cc
+END
+dns_config_service_posix.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/156055/trunk/src/net/dns/dns_config_service_posix.h
+END
+host_resolver_impl_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/194663/trunk/src/net/dns/host_resolver_impl_unittest.cc
+END
+dns_test_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/172780/trunk/src/net/dns/dns_test_util.cc
+END
+address_sorter_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/151750/trunk/src/net/dns/address_sorter_unittest.cc
+END
+dns_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/179609/trunk/src/net/dns/dns_client.cc
+END
+mapped_host_resolver.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/189485/trunk/src/net/dns/mapped_host_resolver.h
+END
+dns_session.cc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/184567/trunk/src/net/dns/dns_session.cc
+END
+dns_session.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/174227/trunk/src/net/dns/dns_session.h
+END
+dns_config_service.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/194816/trunk/src/net/dns/dns_config_service.cc
+END
+dns_transaction.cc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/194055/trunk/src/net/dns/dns_transaction.cc
+END

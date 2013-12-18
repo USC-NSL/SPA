@@ -1,0 +1,137 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/197207/trunk/src/apps
+END
+app_restore_service_factory.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/196777/trunk/src/apps/app_restore_service_factory.h
+END
+shortcut_manager_factory.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/196777/trunk/src/apps/shortcut_manager_factory.cc
+END
+shortcut_manager_factory.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/196777/trunk/src/apps/shortcut_manager_factory.h
+END
+app_launcher.cc
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/195158/trunk/src/apps/app_launcher.cc
+END
+field_trial_names.cc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/190772/trunk/src/apps/field_trial_names.cc
+END
+app_launcher.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/195158/trunk/src/apps/app_launcher.h
+END
+app_restore_service.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/192240/trunk/src/apps/app_restore_service.cc
+END
+field_trial_names.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/190772/trunk/src/apps/field_trial_names.h
+END
+app_restore_service.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/192240/trunk/src/apps/app_restore_service.h
+END
+shortcut_manager.cc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/197207/trunk/src/apps/shortcut_manager.cc
+END
+app_restore_service_browsertest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/190394/trunk/src/apps/app_restore_service_browsertest.cc
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/190306/trunk/src/apps/DEPS
+END
+shortcut_manager.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/186648/trunk/src/apps/shortcut_manager.h
+END
+app_launch_for_metro_restart_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/197202/trunk/src/apps/app_launch_for_metro_restart_win.cc
+END
+app_launch_for_metro_restart_win.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/190306/trunk/src/apps/app_launch_for_metro_restart_win.h
+END
+prefs.cc
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/196058/trunk/src/apps/prefs.cc
+END
+pref_names.cc
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/195158/trunk/src/apps/pref_names.cc
+END
+prefs.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/181875/trunk/src/apps/prefs.h
+END
+pref_names.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/195158/trunk/src/apps/pref_names.h
+END
+apps.gypi
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/195158/trunk/src/apps/apps.gypi
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/178688/trunk/src/apps/OWNERS
+END
+app_restore_service_factory.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/196777/trunk/src/apps/app_restore_service_factory.cc
+END

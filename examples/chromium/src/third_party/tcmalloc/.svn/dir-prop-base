@@ -1,0 +1,13 @@
+K 10
+svn:ignore
+V 124
+tcmalloc
+libcmt.vcproj
+tcmalloc.sln
+tcmalloc.vcproj
+tcmalloc_unittests.vcproj
+tcmalloc.scons
+tcmalloc_main.scons
+SConstruct
+
+END

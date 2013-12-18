@@ -1,0 +1,335 @@
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/77/trunk/src/session
+END
+mock_session_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/53/trunk/src/session/mock_session_handler.h
+END
+session_converter_interface.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/77/trunk/src/session/session_converter_interface.h
+END
+session_test.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/77/trunk/src/session/session_test.gyp
+END
+session.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/77/trunk/src/session/session.gyp
+END
+state.proto
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/77/trunk/src/session/state.proto
+END
+session_watch_dog_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/61/trunk/src/session/session_watch_dog_test.cc
+END
+session_handler_interface.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/53/trunk/src/session/session_handler_interface.h
+END
+session_watch_dog.cc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/61/trunk/src/session/session_watch_dog.cc
+END
+key_parser.cc
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/61/trunk/src/session/key_parser.cc
+END
+session_factory_manager.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/61/trunk/src/session/session_factory_manager.h
+END
+session_server_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/77/trunk/src/session/session_server_test.cc
+END
+gen_session_stress_test_data.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/53/trunk/src/session/gen_session_stress_test_data.py
+END
+session_converter_stress_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/77/trunk/src/session/session_converter_stress_test.cc
+END
+session_observer_interface.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/53/trunk/src/session/session_observer_interface.h
+END
+session_converter.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/77/trunk/src/session/session_converter.h
+END
+session_usage_observer_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/77/trunk/src/session/session_usage_observer_test.cc
+END
+session_usage_observer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/77/trunk/src/session/session_usage_observer.cc
+END
+commands.proto
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/77/trunk/src/session/commands.proto
+END
+japanese_session_factory.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/61/trunk/src/session/japanese_session_factory.cc
+END
+session_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/77/trunk/src/session/session_test.cc
+END
+session_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/61/trunk/src/session/session_handler.h
+END
+random_keyevents_generator_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/61/trunk/src/session/random_keyevents_generator_test.cc
+END
+session_handler_stress_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/61/trunk/src/session/session_handler_stress_test.cc
+END
+session_client_main.cc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/56/trunk/src/session/session_client_main.cc
+END
+session_observer_handler_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/53/trunk/src/session/session_observer_handler_test.cc
+END
+session_base.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/77/trunk/src/session/session_base.gyp
+END
+ime_switch_util_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/61/trunk/src/session/ime_switch_util_test.cc
+END
+mock_session_handler_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/53/trunk/src/session/mock_session_handler_test.cc
+END
+ime_switch_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/77/trunk/src/session/ime_switch_util.cc
+END
+key_event_normalizer.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/53/trunk/src/session/key_event_normalizer.h
+END
+session_watch_dog.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/61/trunk/src/session/session_watch_dog.h
+END
+session_factory_manager.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/61/trunk/src/session/session_factory_manager.cc
+END
+session_interface.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/61/trunk/src/session/session_interface.h
+END
+key_parser.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/53/trunk/src/session/key_parser.h
+END
+session_converter_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/77/trunk/src/session/session_converter_test.cc
+END
+session_server.cc
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/57/trunk/src/session/session_server.cc
+END
+session_converter.cc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/77/trunk/src/session/session_converter.cc
+END
+session_server.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/53/trunk/src/session/session_server.h
+END
+candidates.proto
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/77/trunk/src/session/candidates.proto
+END
+session_server_main.cc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/53/trunk/src/session/session_server_main.cc
+END
+session_handler_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/77/trunk/src/session/session_handler_test.cc
+END
+session_handler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/61/trunk/src/session/session_handler.cc
+END
+session_usage_observer.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/77/trunk/src/session/session_usage_observer.h
+END
+japanese_session_factory.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/61/trunk/src/session/japanese_session_factory.h
+END
+session_regression_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/61/trunk/src/session/session_regression_test.cc
+END
+session.cc
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/77/trunk/src/session/session.cc
+END
+random_keyevents_generator.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/61/trunk/src/session/random_keyevents_generator.cc
+END
+random_keyevents_generator.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/61/trunk/src/session/random_keyevents_generator.h
+END
+session.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/77/trunk/src/session/session.h
+END
+session_handler_stress_test_main.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/61/trunk/src/session/session_handler_stress_test_main.cc
+END
+session_observer_handler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/53/trunk/src/session/session_observer_handler.cc
+END
+session_observer_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/53/trunk/src/session/session_observer_handler.h
+END
+mock_session_handler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/53/trunk/src/session/mock_session_handler.cc
+END
+common.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/53/trunk/src/session/common.h
+END
+ime_switch_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/53/trunk/src/session/ime_switch_util.h
+END

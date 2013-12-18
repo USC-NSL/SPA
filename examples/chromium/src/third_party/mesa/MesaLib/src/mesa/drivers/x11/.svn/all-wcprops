@@ -1,0 +1,155 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/x11
+END
+realglx.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/x11/realglx.c
+END
+xm_tri.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/x11/xm_tri.c
+END
+xmesaP.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/x11/xmesaP.h
+END
+realglx.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/x11/realglx.h
+END
+descrip.mms
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/x11/descrip.mms
+END
+xm_span.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/x11/xm_span.c
+END
+glxheader.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/x11/glxheader.h
+END
+xmesa_x.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/x11/xmesa_x.h
+END
+xm_buffer.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/x11/xm_buffer.c
+END
+xm_api.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/x11/xm_api.c
+END
+xfonts.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/x11/xfonts.c
+END
+fakeglx.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/x11/fakeglx.c
+END
+xmesa.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/x11/xmesa.h
+END
+glxapi.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/x11/glxapi.c
+END
+xfonts.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/x11/xfonts.h
+END
+xm_image.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/x11/xm_image.c
+END
+xm_glide.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/x11/xm_glide.c
+END
+fxmesa.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/x11/fxmesa.h
+END
+glxapi.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/x11/glxapi.h
+END
+xm_dd.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/x11/xm_dd.c
+END
+xm_image.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/x11/xm_image.h
+END
+xm_line.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/x11/xm_line.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/x11/Makefile
+END
+xm_glide.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/x11/xm_glide.h
+END
+xmesa_xf86.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/x11/xmesa_xf86.h
+END

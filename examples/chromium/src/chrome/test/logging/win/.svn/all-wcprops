@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/191562/trunk/src/chrome/test/logging/win
+END
+file_logger.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/184344/trunk/src/chrome/test/logging/win/file_logger.cc
+END
+file_logger.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/180245/trunk/src/chrome/test/logging/win/file_logger.h
+END
+log_file_reader.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/184344/trunk/src/chrome/test/logging/win/log_file_reader.cc
+END
+log_file_printer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/191562/trunk/src/chrome/test/logging/win/log_file_printer.cc
+END
+log_file_reader.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/191562/trunk/src/chrome/test/logging/win/log_file_reader.h
+END
+log_file_printer.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/180245/trunk/src/chrome/test/logging/win/log_file_printer.h
+END
+mof_data_parser_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/126240/trunk/src/chrome/test/logging/win/mof_data_parser_unittest.cc
+END
+mof_data_parser.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/126240/trunk/src/chrome/test/logging/win/mof_data_parser.cc
+END
+test_log_collector.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/184344/trunk/src/chrome/test/logging/win/test_log_collector.cc
+END
+mof_data_parser.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/191562/trunk/src/chrome/test/logging/win/mof_data_parser.h
+END
+test_log_collector.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/146163/trunk/src/chrome/test/logging/win/test_log_collector.h
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/126240/trunk/src/chrome/test/logging/win/OWNERS
+END

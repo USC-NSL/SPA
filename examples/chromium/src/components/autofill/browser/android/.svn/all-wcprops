@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/193982/trunk/src/components/autofill/browser/android
+END
+auxiliary_profiles_android.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/193982/trunk/src/components/autofill/browser/android/auxiliary_profiles_android.h
+END
+test_auxiliary_profile_loader_android.cc
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/193982/trunk/src/components/autofill/browser/android/test_auxiliary_profile_loader_android.cc
+END
+auxiliary_profile_loader_android.cc
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/193682/trunk/src/components/autofill/browser/android/auxiliary_profile_loader_android.cc
+END
+test_auxiliary_profile_loader_android.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/193982/trunk/src/components/autofill/browser/android/test_auxiliary_profile_loader_android.h
+END
+auxiliary_profile_loader_android.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/193682/trunk/src/components/autofill/browser/android/auxiliary_profile_loader_android.h
+END
+component_jni_registrar.cc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/193982/trunk/src/components/autofill/browser/android/component_jni_registrar.cc
+END
+auxiliary_profile_unittest_android.cc
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/193982/trunk/src/components/autofill/browser/android/auxiliary_profile_unittest_android.cc
+END
+component_jni_registrar.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/193982/trunk/src/components/autofill/browser/android/component_jni_registrar.h
+END
+personal_data_manager_android.cc
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/193982/trunk/src/components/autofill/browser/android/personal_data_manager_android.cc
+END
+auxiliary_profiles_android.cc
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/193682/trunk/src/components/autofill/browser/android/auxiliary_profiles_android.cc
+END

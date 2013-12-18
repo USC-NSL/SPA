@@ -1,0 +1,9 @@
+K 10
+svn:ignore
+V 66
+crypto.vcproj
+crypto.sln
+crypto_unittests.vcproj
+crypto.xcodeproj
+
+END

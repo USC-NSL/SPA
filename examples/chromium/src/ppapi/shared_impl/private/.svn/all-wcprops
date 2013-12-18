@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/184587/trunk/src/ppapi/shared_impl/private
+END
+ppb_tcp_server_socket_shared.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/166009/trunk/src/ppapi/shared_impl/private/ppb_tcp_server_socket_shared.cc
+END
+tcp_socket_private_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/184087/trunk/src/ppapi/shared_impl/private/tcp_socket_private_impl.h
+END
+ppb_tcp_server_socket_shared.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/143806/trunk/src/ppapi/shared_impl/private/ppb_tcp_server_socket_shared.h
+END
+ppb_char_set_shared.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/175399/trunk/src/ppapi/shared_impl/private/ppb_char_set_shared.cc
+END
+ppb_char_set_shared.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/121159/trunk/src/ppapi/shared_impl/private/ppb_char_set_shared.h
+END
+net_address_private_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/184587/trunk/src/ppapi/shared_impl/private/net_address_private_impl.cc
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/147096/trunk/src/ppapi/shared_impl/private/DEPS
+END
+net_address_private_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/165634/trunk/src/ppapi/shared_impl/private/net_address_private_impl.h
+END
+ppb_x509_certificate_private_shared.cc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/149819/trunk/src/ppapi/shared_impl/private/ppb_x509_certificate_private_shared.cc
+END
+tcp_socket_private_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/184087/trunk/src/ppapi/shared_impl/private/tcp_socket_private_impl.cc
+END
+ppb_x509_certificate_private_shared.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/131918/trunk/src/ppapi/shared_impl/private/ppb_x509_certificate_private_shared.h
+END

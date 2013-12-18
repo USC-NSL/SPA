@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/dri/common
+END
+dri_drawable.c
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/dri/common/dri_drawable.c
+END
+dri_context.c
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/dri/common/dri_context.c
+END
+dri_screen.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/dri/common/dri_screen.h
+END
+dri_wrapper.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/dri/common/dri_wrapper.h
+END
+dri_drawable.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/dri/common/dri_drawable.h
+END
+dri_context.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/dri/common/dri_context.h
+END
+dri_screen.c
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/dri/common/dri_screen.c
+END

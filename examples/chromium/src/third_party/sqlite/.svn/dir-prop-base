@@ -1,0 +1,17 @@
+K 10
+svn:ignore
+V 185
+sqlite.xcodeproj
+sqlite.vcproj
+sqlite.sln
+SConstruct
+sqlite.scons
+sqlite_main.scons
+sqlite_shell.scons
+sqlite.mk
+sqlite_shell.mk
+sqlite.target.mk
+sqlite_shell.target.mk
+sqlite.Makefile
+
+END

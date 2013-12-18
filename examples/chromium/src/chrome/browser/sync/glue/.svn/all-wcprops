@@ -1,0 +1,917 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/197441/trunk/src/chrome/browser/sync/glue
+END
+chrome_report_unrecoverable_error.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/191038/trunk/src/chrome/browser/sync/glue/chrome_report_unrecoverable_error.cc
+END
+theme_data_type_controller.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/159304/trunk/src/chrome/browser/sync/glue/theme_data_type_controller.cc
+END
+typed_url_data_type_controller.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/181707/trunk/src/chrome/browser/sync/glue/typed_url_data_type_controller.cc
+END
+tab_node_pool.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/174470/trunk/src/chrome/browser/sync/glue/tab_node_pool.h
+END
+favicon_cache.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/197441/trunk/src/chrome/browser/sync/glue/favicon_cache.cc
+END
+bookmark_change_processor.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/191767/trunk/src/chrome/browser/sync/glue/bookmark_change_processor.cc
+END
+ui_data_type_controller_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/169775/trunk/src/chrome/browser/sync/glue/ui_data_type_controller_unittest.cc
+END
+autofill_data_type_controller.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/197078/trunk/src/chrome/browser/sync/glue/autofill_data_type_controller.cc
+END
+frontend_data_type_controller.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/188314/trunk/src/chrome/browser/sync/glue/frontend_data_type_controller.cc
+END
+generic_change_processor.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/169775/trunk/src/chrome/browser/sync/glue/generic_change_processor.h
+END
+browser_thread_model_worker_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/153719/trunk/src/chrome/browser/sync/glue/browser_thread_model_worker_unittest.cc
+END
+frontend_data_type_controller_mock.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/80151/trunk/src/chrome/browser/sync/glue/frontend_data_type_controller_mock.cc
+END
+data_type_manager_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/179003/trunk/src/chrome/browser/sync/glue/data_type_manager_impl.h
+END
+non_frontend_data_type_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/171842/trunk/src/chrome/browser/sync/glue/non_frontend_data_type_controller.h
+END
+ui_model_worker.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/191566/trunk/src/chrome/browser/sync/glue/ui_model_worker.h
+END
+session_change_processor.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/164263/trunk/src/chrome/browser/sync/glue/session_change_processor.h
+END
+data_type_error_handler_mock.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/123874/trunk/src/chrome/browser/sync/glue/data_type_error_handler_mock.cc
+END
+session_model_associator.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/197441/trunk/src/chrome/browser/sync/glue/session_model_associator.cc
+END
+autofill_profile_data_type_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/197078/trunk/src/chrome/browser/sync/glue/autofill_profile_data_type_controller.h
+END
+bookmark_data_type_controller_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/196777/trunk/src/chrome/browser/sync/glue/bookmark_data_type_controller_unittest.cc
+END
+synced_session_tracker.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/164529/trunk/src/chrome/browser/sync/glue/synced_session_tracker.cc
+END
+tab_node_pool.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/193361/trunk/src/chrome/browser/sync/glue/tab_node_pool.cc
+END
+synced_session_tracker.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/157491/trunk/src/chrome/browser/sync/glue/synced_session_tracker.h
+END
+shared_change_processor_ref.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/144820/trunk/src/chrome/browser/sync/glue/shared_change_processor_ref.cc
+END
+password_change_processor.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/184838/trunk/src/chrome/browser/sync/glue/password_change_processor.cc
+END
+backend_data_type_configurer.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/179003/trunk/src/chrome/browser/sync/glue/backend_data_type_configurer.h
+END
+password_model_worker.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/163784/trunk/src/chrome/browser/sync/glue/password_model_worker.cc
+END
+password_model_worker.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/146068/trunk/src/chrome/browser/sync/glue/password_model_worker.h
+END
+synced_device_tracker.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/193942/trunk/src/chrome/browser/sync/glue/synced_device_tracker.cc
+END
+session_data_type_controller.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/145399/trunk/src/chrome/browser/sync/glue/session_data_type_controller.cc
+END
+chrome_encryptor.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/190292/trunk/src/chrome/browser/sync/glue/chrome_encryptor.cc
+END
+non_ui_data_type_controller_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/171842/trunk/src/chrome/browser/sync/glue/non_ui_data_type_controller_unittest.cc
+END
+data_type_manager_impl_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/179003/trunk/src/chrome/browser/sync/glue/data_type_manager_impl_unittest.cc
+END
+data_type_controller_mock.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/138646/trunk/src/chrome/browser/sync/glue/data_type_controller_mock.cc
+END
+search_engine_data_type_controller.cc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/145399/trunk/src/chrome/browser/sync/glue/search_engine_data_type_controller.cc
+END
+android_invalidator_bridge_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/197441/trunk/src/chrome/browser/sync/glue/android_invalidator_bridge_unittest.cc
+END
+model_association_manager.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/167528/trunk/src/chrome/browser/sync/glue/model_association_manager.h
+END
+session_model_associator.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/192020/trunk/src/chrome/browser/sync/glue/session_model_associator.h
+END
+autofill_profile_data_type_controller.cc
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/197078/trunk/src/chrome/browser/sync/glue/autofill_profile_data_type_controller.cc
+END
+password_data_type_controller.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/190317/trunk/src/chrome/browser/sync/glue/password_data_type_controller.cc
+END
+change_processor_mock.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/164263/trunk/src/chrome/browser/sync/glue/change_processor_mock.h
+END
+non_ui_data_type_controller_mock.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/171842/trunk/src/chrome/browser/sync/glue/non_ui_data_type_controller_mock.h
+END
+non_frontend_data_type_controller_mock.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/167528/trunk/src/chrome/browser/sync/glue/non_frontend_data_type_controller_mock.h
+END
+model_associator_mock.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/167587/trunk/src/chrome/browser/sync/glue/model_associator_mock.h
+END
+backend_data_type_configurer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/179003/trunk/src/chrome/browser/sync/glue/backend_data_type_configurer.cc
+END
+favicon_cache_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/192503/trunk/src/chrome/browser/sync/glue/favicon_cache_unittest.cc
+END
+extension_setting_data_type_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/171842/trunk/src/chrome/browser/sync/glue/extension_setting_data_type_controller.h
+END
+fake_generic_change_processor.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/169775/trunk/src/chrome/browser/sync/glue/fake_generic_change_processor.h
+END
+shared_change_processor_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/167528/trunk/src/chrome/browser/sync/glue/shared_change_processor_unittest.cc
+END
+extension_data_type_controller.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/148965/trunk/src/chrome/browser/sync/glue/extension_data_type_controller.cc
+END
+bookmark_change_processor.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/191511/trunk/src/chrome/browser/sync/glue/bookmark_change_processor.h
+END
+synced_device_tracker_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/188983/trunk/src/chrome/browser/sync/glue/synced_device_tracker_unittest.cc
+END
+data_type_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/167528/trunk/src/chrome/browser/sync/glue/data_type_controller.h
+END
+sync_backend_host.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/197441/trunk/src/chrome/browser/sync/glue/sync_backend_host.cc
+END
+chrome_encryptor.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/146068/trunk/src/chrome/browser/sync/glue/chrome_encryptor.h
+END
+data_type_manager_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/179003/trunk/src/chrome/browser/sync/glue/data_type_manager_impl.cc
+END
+search_engine_data_type_controller_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/189030/trunk/src/chrome/browser/sync/glue/search_engine_data_type_controller_unittest.cc
+END
+change_processor.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/164263/trunk/src/chrome/browser/sync/glue/change_processor.h
+END
+non_ui_data_type_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/171842/trunk/src/chrome/browser/sync/glue/non_ui_data_type_controller.h
+END
+synced_session.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/157491/trunk/src/chrome/browser/sync/glue/synced_session.cc
+END
+android_invalidator_bridge.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/191087/trunk/src/chrome/browser/sync/glue/android_invalidator_bridge.h
+END
+data_type_error_handler_mock.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/146068/trunk/src/chrome/browser/sync/glue/data_type_error_handler_mock.h
+END
+synced_tab_delegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/160258/trunk/src/chrome/browser/sync/glue/synced_tab_delegate.h
+END
+synced_window_delegate_android.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/148798/trunk/src/chrome/browser/sync/glue/synced_window_delegate_android.h
+END
+favicon_cache.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/192503/trunk/src/chrome/browser/sync/glue/favicon_cache.h
+END
+device_info.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/192442/trunk/src/chrome/browser/sync/glue/device_info.cc
+END
+typed_url_change_processor.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/184838/trunk/src/chrome/browser/sync/glue/typed_url_change_processor.cc
+END
+typed_url_change_processor.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/191566/trunk/src/chrome/browser/sync/glue/typed_url_change_processor.h
+END
+bookmark_model_associator.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/191162/trunk/src/chrome/browser/sync/glue/bookmark_model_associator.h
+END
+chrome_extensions_activity_monitor.cc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/176236/trunk/src/chrome/browser/sync/glue/chrome_extensions_activity_monitor.cc
+END
+data_type_manager_mock.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/154522/trunk/src/chrome/browser/sync/glue/data_type_manager_mock.h
+END
+proxy_data_type_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/181534/trunk/src/chrome/browser/sync/glue/proxy_data_type_controller.h
+END
+browser_thread_model_worker.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/163784/trunk/src/chrome/browser/sync/glue/browser_thread_model_worker.cc
+END
+change_processor.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/168972/trunk/src/chrome/browser/sync/glue/change_processor.cc
+END
+non_ui_data_type_controller.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/197441/trunk/src/chrome/browser/sync/glue/non_ui_data_type_controller.cc
+END
+non_frontend_data_type_controller_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/181164/trunk/src/chrome/browser/sync/glue/non_frontend_data_type_controller_unittest.cc
+END
+browser_thread_model_worker.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/146068/trunk/src/chrome/browser/sync/glue/browser_thread_model_worker.h
+END
+ui_model_worker_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/144820/trunk/src/chrome/browser/sync/glue/ui_model_worker_unittest.cc
+END
+non_frontend_data_type_controller.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/197441/trunk/src/chrome/browser/sync/glue/non_frontend_data_type_controller.cc
+END
+ui_model_worker.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/163784/trunk/src/chrome/browser/sync/glue/ui_model_worker.cc
+END
+model_associator.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/167587/trunk/src/chrome/browser/sync/glue/model_associator.h
+END
+change_processor_mock.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/97817/trunk/src/chrome/browser/sync/glue/change_processor_mock.cc
+END
+non_ui_data_type_controller_mock.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/171842/trunk/src/chrome/browser/sync/glue/non_ui_data_type_controller_mock.cc
+END
+theme_data_type_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/159304/trunk/src/chrome/browser/sync/glue/theme_data_type_controller.h
+END
+fake_data_type_controller.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/167528/trunk/src/chrome/browser/sync/glue/fake_data_type_controller.cc
+END
+fake_data_type_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/146068/trunk/src/chrome/browser/sync/glue/fake_data_type_controller.h
+END
+data_type_manager.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/154522/trunk/src/chrome/browser/sync/glue/data_type_manager.h
+END
+ui_data_type_controller.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/197441/trunk/src/chrome/browser/sync/glue/ui_data_type_controller.cc
+END
+extension_data_type_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/146068/trunk/src/chrome/browser/sync/glue/extension_data_type_controller.h
+END
+bookmark_model_associator.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/191162/trunk/src/chrome/browser/sync/glue/bookmark_model_associator.cc
+END
+device_info.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/168972/trunk/src/chrome/browser/sync/glue/device_info.h
+END
+data_type_controller.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/188314/trunk/src/chrome/browser/sync/glue/data_type_controller.cc
+END
+data_type_manager_observer.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/152170/trunk/src/chrome/browser/sync/glue/data_type_manager_observer.h
+END
+chrome_extensions_activity_monitor_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/184344/trunk/src/chrome/browser/sync/glue/chrome_extensions_activity_monitor_unittest.cc
+END
+sync_backend_host_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/197441/trunk/src/chrome/browser/sync/glue/sync_backend_host_unittest.cc
+END
+typed_url_model_associator.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/191566/trunk/src/chrome/browser/sync/glue/typed_url_model_associator.h
+END
+session_data_type_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/146068/trunk/src/chrome/browser/sync/glue/session_data_type_controller.h
+END
+shared_change_processor_mock.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/105431/trunk/src/chrome/browser/sync/glue/shared_change_processor_mock.cc
+END
+shared_change_processor_mock.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/169775/trunk/src/chrome/browser/sync/glue/shared_change_processor_mock.h
+END
+model_association_manager_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/167528/trunk/src/chrome/browser/sync/glue/model_association_manager_unittest.cc
+END
+model_association_manager.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/194582/trunk/src/chrome/browser/sync/glue/model_association_manager.cc
+END
+session_change_processor.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/174470/trunk/src/chrome/browser/sync/glue/session_change_processor.cc
+END
+android_invalidator_bridge_proxy.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/191087/trunk/src/chrome/browser/sync/glue/android_invalidator_bridge_proxy.cc
+END
+session_model_associator_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/197086/trunk/src/chrome/browser/sync/glue/session_model_associator_unittest.cc
+END
+bookmark_data_type_controller.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/195715/trunk/src/chrome/browser/sync/glue/bookmark_data_type_controller.cc
+END
+data_type_manager.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/152170/trunk/src/chrome/browser/sync/glue/data_type_manager.cc
+END
+extension_setting_data_type_controller.cc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/171842/trunk/src/chrome/browser/sync/glue/extension_setting_data_type_controller.cc
+END
+fake_generic_change_processor.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/169775/trunk/src/chrome/browser/sync/glue/fake_generic_change_processor.cc
+END
+sync_backend_registrar.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/191566/trunk/src/chrome/browser/sync/glue/sync_backend_registrar.h
+END
+password_model_associator.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/184838/trunk/src/chrome/browser/sync/glue/password_model_associator.cc
+END
+history_model_worker.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/197441/trunk/src/chrome/browser/sync/glue/history_model_worker.cc
+END
+ui_data_type_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/167528/trunk/src/chrome/browser/sync/glue/ui_data_type_controller.h
+END
+data_type_manager_mock.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/152170/trunk/src/chrome/browser/sync/glue/data_type_manager_mock.cc
+END
+generic_change_processor.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/197441/trunk/src/chrome/browser/sync/glue/generic_change_processor.cc
+END
+synced_device_tracker.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/193942/trunk/src/chrome/browser/sync/glue/synced_device_tracker.h
+END
+chrome_encryptor_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/190292/trunk/src/chrome/browser/sync/glue/chrome_encryptor_unittest.cc
+END
+sync_backend_host.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/191566/trunk/src/chrome/browser/sync/glue/sync_backend_host.h
+END
+search_engine_data_type_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/146068/trunk/src/chrome/browser/sync/glue/search_engine_data_type_controller.h
+END
+synced_session.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/193040/trunk/src/chrome/browser/sync/glue/synced_session.h
+END
+non_frontend_data_type_controller_mock.cc
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/82310/trunk/src/chrome/browser/sync/glue/non_frontend_data_type_controller_mock.cc
+END
+chrome_report_unrecoverable_error.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/146068/trunk/src/chrome/browser/sync/glue/chrome_report_unrecoverable_error.h
+END
+password_data_type_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/146068/trunk/src/chrome/browser/sync/glue/password_data_type_controller.h
+END
+synced_session_tracker_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/197086/trunk/src/chrome/browser/sync/glue/synced_session_tracker_unittest.cc
+END
+sync_backend_registrar_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/164263/trunk/src/chrome/browser/sync/glue/sync_backend_registrar_unittest.cc
+END
+bookmark_data_type_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/195715/trunk/src/chrome/browser/sync/glue/bookmark_data_type_controller.h
+END
+synced_window_delegate_android.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/168930/trunk/src/chrome/browser/sync/glue/synced_window_delegate_android.cc
+END
+shared_change_processor_ref.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/146068/trunk/src/chrome/browser/sync/glue/shared_change_processor_ref.h
+END
+password_change_processor.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/191566/trunk/src/chrome/browser/sync/glue/password_change_processor.h
+END
+shared_change_processor.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/197441/trunk/src/chrome/browser/sync/glue/shared_change_processor.cc
+END
+frontend_data_type_controller_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/181164/trunk/src/chrome/browser/sync/glue/frontend_data_type_controller_unittest.cc
+END
+autofill_data_type_controller_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/197078/trunk/src/chrome/browser/sync/glue/autofill_data_type_controller_unittest.cc
+END
+history_model_worker.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/178753/trunk/src/chrome/browser/sync/glue/history_model_worker.h
+END
+proxy_data_type_controller.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/181534/trunk/src/chrome/browser/sync/glue/proxy_data_type_controller.cc
+END
+frontend_data_type_controller_mock.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/146068/trunk/src/chrome/browser/sync/glue/frontend_data_type_controller_mock.h
+END
+data_type_controller_mock.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/167528/trunk/src/chrome/browser/sync/glue/data_type_controller_mock.h
+END
+android_invalidator_bridge_proxy.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/191087/trunk/src/chrome/browser/sync/glue/android_invalidator_bridge_proxy.h
+END
+model_associator_mock.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/74168/trunk/src/chrome/browser/sync/glue/model_associator_mock.cc
+END
+tab_node_pool_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/174470/trunk/src/chrome/browser/sync/glue/tab_node_pool_unittest.cc
+END
+sync_backend_registrar.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/197441/trunk/src/chrome/browser/sync/glue/sync_backend_registrar.cc
+END
+typed_url_data_type_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/189513/trunk/src/chrome/browser/sync/glue/typed_url_data_type_controller.h
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/168972/trunk/src/chrome/browser/sync/glue/DEPS
+END
+synced_window_delegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/172960/trunk/src/chrome/browser/sync/glue/synced_window_delegate.h
+END
+password_model_associator.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/191566/trunk/src/chrome/browser/sync/glue/password_model_associator.h
+END
+shared_change_processor.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/169775/trunk/src/chrome/browser/sync/glue/shared_change_processor.h
+END
+typed_url_model_associator_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/191562/trunk/src/chrome/browser/sync/glue/typed_url_model_associator_unittest.cc
+END
+autofill_data_type_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/197078/trunk/src/chrome/browser/sync/glue/autofill_data_type_controller.h
+END
+frontend_data_type_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/167528/trunk/src/chrome/browser/sync/glue/frontend_data_type_controller.h
+END
+typed_url_model_associator.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/184838/trunk/src/chrome/browser/sync/glue/typed_url_model_associator.cc
+END
+chrome_extensions_activity_monitor.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/146068/trunk/src/chrome/browser/sync/glue/chrome_extensions_activity_monitor.h
+END
+data_type_error_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/146068/trunk/src/chrome/browser/sync/glue/data_type_error_handler.h
+END
+android_invalidator_bridge.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/191087/trunk/src/chrome/browser/sync/glue/android_invalidator_bridge.cc
+END
+android_invalidator_bridge_proxy_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/179546/trunk/src/chrome/browser/sync/glue/android_invalidator_bridge_proxy_unittest.cc
+END

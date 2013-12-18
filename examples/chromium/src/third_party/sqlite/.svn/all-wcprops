@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/197299/trunk/src/third_party/sqlite
+END
+README.chromium
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/162593/trunk/src/third_party/sqlite/README.chromium
+END
+system-sqlite.patch
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/98252/trunk/src/third_party/sqlite/system-sqlite.patch
+END
+webdb.patch
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/webdb.patch
+END
+fts3_85522.patch
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/90163/trunk/src/third_party/sqlite/fts3_85522.patch
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/121510/trunk/src/third_party/sqlite/LICENSE
+END
+icu-shell.patch
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/150415/trunk/src/third_party/sqlite/icu-shell.patch
+END
+misalignment.patch
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/162593/trunk/src/third_party/sqlite/misalignment.patch
+END
+preload-cache.patch
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/81296/trunk/src/third_party/sqlite/preload-cache.patch
+END
+misc.patch
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/81471/trunk/src/third_party/sqlite/misc.patch
+END
+sqlite.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/176003/trunk/src/third_party/sqlite/sqlite.gyp
+END
+mac_time_machine.patch
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/95435/trunk/src/third_party/sqlite/mac_time_machine.patch
+END
+google_generate_amalgamation.sh
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/81471/trunk/src/third_party/sqlite/google_generate_amalgamation.sh
+END
+sqlite3.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/182368/trunk/src/third_party/sqlite/sqlite3.h
+END
+fts2.patch
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/81471/trunk/src/third_party/sqlite/fts2.patch
+END
+fts3.patch
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/fts3.patch
+END
+test.patch
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/test.patch
+END
+sqlite-3.7.6.3-fix-out-of-scope-memory-reference.patch
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/141687/trunk/src/third_party/sqlite/sqlite-3.7.6.3-fix-out-of-scope-memory-reference.patch
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/182995/trunk/src/third_party/sqlite/OWNERS
+END

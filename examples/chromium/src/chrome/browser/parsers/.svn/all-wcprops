@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/184355/trunk/src/chrome/browser/parsers
+END
+metadata_parser.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/40991/trunk/src/chrome/browser/parsers/metadata_parser.cc
+END
+metadata_parser.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/180245/trunk/src/chrome/browser/parsers/metadata_parser.h
+END
+metadata_parser_jpeg.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/181638/trunk/src/chrome/browser/parsers/metadata_parser_jpeg.cc
+END
+metadata_parser_jpeg.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/181638/trunk/src/chrome/browser/parsers/metadata_parser_jpeg.h
+END
+metadata_parser_factory.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/180245/trunk/src/chrome/browser/parsers/metadata_parser_factory.h
+END
+metadata_parser_filebase_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/184355/trunk/src/chrome/browser/parsers/metadata_parser_filebase_unittest.cc
+END
+metadata_parser_filebase.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/184355/trunk/src/chrome/browser/parsers/metadata_parser_filebase.cc
+END
+metadata_parser_manager.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/181638/trunk/src/chrome/browser/parsers/metadata_parser_manager.cc
+END
+metadata_parser_filebase.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/184344/trunk/src/chrome/browser/parsers/metadata_parser_filebase.h
+END
+metadata_parser_jpeg_factory.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/184355/trunk/src/chrome/browser/parsers/metadata_parser_jpeg_factory.cc
+END
+metadata_parser_manager.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/180245/trunk/src/chrome/browser/parsers/metadata_parser_manager.h
+END
+metadata_parser_jpeg_factory.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/180245/trunk/src/chrome/browser/parsers/metadata_parser_jpeg_factory.h
+END

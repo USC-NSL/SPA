@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/65867/trunk/src/chrome/test/data/json_schema_validator
+END
+array_tuple_schema.json
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/65867/trunk/src/chrome/test/data/json_schema_validator/array_tuple_schema.json
+END
+complex_schema.json
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/65867/trunk/src/chrome/test/data/json_schema_validator/complex_schema.json
+END
+complex_instance.json
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/65867/trunk/src/chrome/test/data/json_schema_validator/complex_instance.json
+END
+choices_schema.json
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/65867/trunk/src/chrome/test/data/json_schema_validator/choices_schema.json
+END
+reference_types.json
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/65867/trunk/src/chrome/test/data/json_schema_validator/reference_types.json
+END
+enum_schema.json
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/65867/trunk/src/chrome/test/data/json_schema_validator/enum_schema.json
+END

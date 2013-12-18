@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/162811/trunk/src/device/test/data/bluetooth
+END
+rfcomm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/162811/trunk/src/device/test/data/bluetooth/rfcomm.xml
+END
+short_uuid.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/162811/trunk/src/device/test/data/bluetooth/short_uuid.xml
+END
+medium_uuid.xml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/162811/trunk/src/device/test/data/bluetooth/medium_uuid.xml
+END
+invalid_uuid.xml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/162811/trunk/src/device/test/data/bluetooth/invalid_uuid.xml
+END
+uppercase_uuid.xml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/162811/trunk/src/device/test/data/bluetooth/uppercase_uuid.xml
+END

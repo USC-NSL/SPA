@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/195864/trunk/src/ppapi/api/trusted
+END
+ppb_audio_trusted.idl
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195864/trunk/src/ppapi/api/trusted/ppb_audio_trusted.idl
+END
+ppb_file_chooser_trusted.idl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/191411/trunk/src/ppapi/api/trusted/ppb_file_chooser_trusted.idl
+END
+ppb_broker_trusted.idl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/172104/trunk/src/ppapi/api/trusted/ppb_broker_trusted.idl
+END
+ppb_file_io_trusted.idl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/191616/trunk/src/ppapi/api/trusted/ppb_file_io_trusted.idl
+END
+ppb_graphics_3d_trusted.idl
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/169720/trunk/src/ppapi/api/trusted/ppb_graphics_3d_trusted.idl
+END
+ppb_char_set_trusted.idl
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/121159/trunk/src/ppapi/api/trusted/ppb_char_set_trusted.idl
+END
+ppb_url_loader_trusted.idl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/194915/trunk/src/ppapi/api/trusted/ppb_url_loader_trusted.idl
+END
+ppp_broker.idl
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/116490/trunk/src/ppapi/api/trusted/ppp_broker.idl
+END
+ppb_browser_font_trusted.idl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/191456/trunk/src/ppapi/api/trusted/ppb_browser_font_trusted.idl
+END
+ppb_buffer_trusted.idl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/177160/trunk/src/ppapi/api/trusted/ppb_buffer_trusted.idl
+END
+ppb_image_data_trusted.idl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/116490/trunk/src/ppapi/api/trusted/ppb_image_data_trusted.idl
+END

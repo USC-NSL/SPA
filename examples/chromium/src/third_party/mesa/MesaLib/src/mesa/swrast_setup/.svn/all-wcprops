@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/swrast_setup
+END
+ss_context.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/swrast_setup/ss_context.h
+END
+ss_triangle.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/swrast_setup/ss_triangle.h
+END
+ss_vb.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/swrast_setup/ss_vb.h
+END
+descrip.mms
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/swrast_setup/descrip.mms
+END
+swrast_setup.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/swrast_setup/swrast_setup.h
+END
+ss_context.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/swrast_setup/ss_context.c
+END
+ss_tritmp.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/swrast_setup/ss_tritmp.h
+END
+ss_triangle.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/swrast_setup/ss_triangle.c
+END

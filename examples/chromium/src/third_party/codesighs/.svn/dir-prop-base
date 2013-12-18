@@ -1,0 +1,23 @@
+K 10
+svn:ignore
+V 314
+codesighs.scons
+codesighs.sln
+codesighs.vcproj
+codesighs.xcodeproj
+codesighs_main.scons
+maptsvdifftool.scons
+maptsvdifftool.vcproj
+msdump2symdb.vcproj
+msmap2tsv.vcproj
+nm2tsv.scons
+SConstruct
+codesighs.mk
+maptsvdifftool.mk
+nm2tsv.mk
+codesighs.Makefile
+nm2tsv.target.mk
+maptsvdifftool.target.mk
+codesighs.target.mk
+
+END

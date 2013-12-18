@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/192755/trunk/src/remoting/tools
+END
+zip2msi.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/158914/trunk/src/remoting/tools/zip2msi.py
+END
+verify_resources.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/167224/trunk/src/remoting/tools/verify_resources.py
+END
+uuidgen.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/152120/trunk/src/remoting/tools/uuidgen.py
+END
+runclient.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/111427/trunk/src/remoting/tools/runclient.py
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/162614/trunk/src/remoting/tools/DEPS
+END
+json_to_grd.py
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/166127/trunk/src/remoting/tools/json_to_grd.py
+END
+build_me2me_tarball.sh
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/146829/trunk/src/remoting/tools/build_me2me_tarball.sh
+END
+me2me_virtual_host.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/192755/trunk/src/remoting/tools/me2me_virtual_host.py
+END
+breakpad_tester_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/162614/trunk/src/remoting/tools/breakpad_tester_win.cc
+END
+hostdir.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/116106/trunk/src/remoting/tools/hostdir.py
+END
+get_mac_crd_version.sh
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/156331/trunk/src/remoting/tools/get_mac_crd_version.sh
+END
+gettoken.py
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/111427/trunk/src/remoting/tools/gettoken.py
+END
+register_host.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/120440/trunk/src/remoting/tools/register_host.py
+END
+keygen.py
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/148701/trunk/src/remoting/tools/keygen.py
+END
+gaia_auth.py
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/56263/trunk/src/remoting/tools/gaia_auth.py
+END
+is-remoting-session
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/162925/trunk/src/remoting/tools/is-remoting-session
+END

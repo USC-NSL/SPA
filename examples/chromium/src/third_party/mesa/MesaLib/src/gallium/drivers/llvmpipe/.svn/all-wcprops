@@ -1,0 +1,527 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe
+END
+lp_state_sampler.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_state_sampler.c
+END
+lp_test_conv.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_test_conv.c
+END
+lp_bld_blend_soa.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_bld_blend_soa.c
+END
+lp_bld_blend_aos.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_bld_blend_aos.c
+END
+lp_state_fs.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_state_fs.c
+END
+lp_setup_context.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_setup_context.h
+END
+lp_state_fs.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_state_fs.h
+END
+lp_screen.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_screen.c
+END
+lp_setup_vbuf.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_setup_vbuf.c
+END
+lp_bld_interp.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_bld_interp.c
+END
+lp_state_blend.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_state_blend.c
+END
+lp_screen.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_screen.h
+END
+lp_context.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_context.c
+END
+lp_bld_depth.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_bld_depth.c
+END
+lp_jit.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_jit.c
+END
+lp_bld_interp.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_bld_interp.h
+END
+lp_state_vs.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_state_vs.c
+END
+lp_context.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_context.h
+END
+lp_bld_depth.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_bld_depth.h
+END
+lp_jit.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_jit.h
+END
+lp_setup_coef.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_setup_coef.c
+END
+lp_setup.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_setup.c
+END
+lp_setup_coef.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_setup_coef.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/Makefile
+END
+lp_tile_soa.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_tile_soa.h
+END
+lp_setup.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_setup.h
+END
+lp_bld_blend.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_bld_blend.h
+END
+lp_setup_tri.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_setup_tri.c
+END
+lp_draw_arrays.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_draw_arrays.c
+END
+lp_fence.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_fence.c
+END
+lp_public.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_public.h
+END
+lp_test_blend.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_test_blend.c
+END
+lp_test.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_test.h
+END
+lp_fence.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_fence.h
+END
+lp_test_round.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_test_round.c
+END
+lp_state_rasterizer.c
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_state_rasterizer.c
+END
+lp_perf.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_perf.c
+END
+lp_test_sincos.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_test_sincos.c
+END
+lp_tile_image.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_tile_image.c
+END
+lp_scene_queue.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_scene_queue.c
+END
+lp_perf.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_perf.h
+END
+lp_tex_sample.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_tex_sample.c
+END
+lp_tile_image.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_tile_image.h
+END
+lp_query.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_query.c
+END
+lp_tile_soa.py
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_tile_soa.py
+END
+lp_scene_queue.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_scene_queue.h
+END
+lp_limits.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_limits.h
+END
+lp_tex_sample.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_tex_sample.h
+END
+lp_query.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_query.h
+END
+lp_rast_priv.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_rast_priv.h
+END
+lp_setup_coef_intrin.c
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_setup_coef_intrin.c
+END
+lp_state_derived.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_state_derived.c
+END
+lp_test_main.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_test_main.c
+END
+lp_state.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_state.h
+END
+lp_clear.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_clear.c
+END
+lp_state_clip.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_state_clip.c
+END
+lp_test_format.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_test_format.c
+END
+lp_surface.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_surface.c
+END
+lp_tile_shuffle_mask.py
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_tile_shuffle_mask.py
+END
+lp_clear.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_clear.h
+END
+lp_scene.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_scene.c
+END
+lp_surface.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_surface.h
+END
+lp_texture.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_texture.c
+END
+lp_test_printf.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_test_printf.c
+END
+lp_scene.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_scene.h
+END
+lp_texture.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_texture.h
+END
+lp_bld_alpha.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_bld_alpha.c
+END
+lp_setup_line.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_setup_line.c
+END
+lp_memory.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_memory.c
+END
+lp_state_gs.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_state_gs.c
+END
+lp_setup_point.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_setup_point.c
+END
+lp_rast.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_rast.c
+END
+lp_bld_alpha.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_bld_alpha.h
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/SConscript
+END
+lp_rast_tri_tmp.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_rast_tri_tmp.h
+END
+lp_memory.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_memory.h
+END
+lp_state_vertex.c
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_state_vertex.c
+END
+lp_rast.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_rast.h
+END
+lp_rast_debug.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_rast_debug.c
+END
+lp_state_so.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_state_so.c
+END
+lp_bld_blend_logicop.c
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_bld_blend_logicop.c
+END
+lp_flush.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_flush.c
+END
+lp_flush.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_flush.h
+END
+sse_mathfun.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/sse_mathfun.h
+END
+lp_rast_tri.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_rast_tri.c
+END
+lp_state_surface.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_state_surface.c
+END
+lp_debug.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/llvmpipe/lp_debug.h
+END

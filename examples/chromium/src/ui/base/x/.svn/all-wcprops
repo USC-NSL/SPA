@@ -1,0 +1,161 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/197100/trunk/src/ui/base/x
+END
+events_x.cc
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/192429/trunk/src/ui/base/x/events_x.cc
+END
+selection_requestor.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/197100/trunk/src/ui/base/x/selection_requestor.cc
+END
+selection_owner.cc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/192717/trunk/src/ui/base/x/selection_owner.cc
+END
+selection_requestor.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/194677/trunk/src/ui/base/x/selection_requestor.h
+END
+selection_owner.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/192717/trunk/src/ui/base/x/selection_owner.h
+END
+x11_util_internal.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/146163/trunk/src/ui/base/x/x11_util_internal.h
+END
+device_list_cache_x.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/171928/trunk/src/ui/base/x/device_list_cache_x.cc
+END
+selection_utils.cc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/194677/trunk/src/ui/base/x/selection_utils.cc
+END
+x11_util_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/192497/trunk/src/ui/base/x/x11_util_unittest.cc
+END
+x11_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/197100/trunk/src/ui/base/x/x11_util.cc
+END
+active_window_watcher_x.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/147660/trunk/src/ui/base/x/active_window_watcher_x.cc
+END
+device_list_cache_x.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/171928/trunk/src/ui/base/x/device_list_cache_x.h
+END
+selection_utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/194677/trunk/src/ui/base/x/selection_utils.h
+END
+x11_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/197023/trunk/src/ui/base/x/x11_util.h
+END
+active_window_watcher_x.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/147660/trunk/src/ui/base/x/active_window_watcher_x.h
+END
+x11_atom_cache.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/177238/trunk/src/ui/base/x/x11_atom_cache.cc
+END
+x11_atom_cache.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/156433/trunk/src/ui/base/x/x11_atom_cache.h
+END
+work_area_watcher_x.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/147660/trunk/src/ui/base/x/work_area_watcher_x.cc
+END
+active_window_watcher_x_observer.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/146163/trunk/src/ui/base/x/active_window_watcher_x_observer.h
+END
+valuators.cc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/192429/trunk/src/ui/base/x/valuators.cc
+END
+work_area_watcher_x.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/147660/trunk/src/ui/base/x/work_area_watcher_x.h
+END
+valuators.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/161396/trunk/src/ui/base/x/valuators.h
+END
+root_window_property_watcher_x.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/147660/trunk/src/ui/base/x/root_window_property_watcher_x.cc
+END
+root_window_property_watcher_x.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/147660/trunk/src/ui/base/x/root_window_property_watcher_x.h
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/123699/trunk/src/ui/base/x/OWNERS
+END
+events_x_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/165951/trunk/src/ui/base/x/events_x_unittest.cc
+END

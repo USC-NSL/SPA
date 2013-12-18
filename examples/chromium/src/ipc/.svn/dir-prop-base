@@ -1,0 +1,20 @@
+K 10
+svn:ignore
+V 210
+SConstruct
+ipc.scons
+ipc_main.scons
+ipc_tests.scons
+ipc.sln
+ipc.vcproj
+ipc_tests.vcproj
+ipc_win64.vcproj
+ipc.xcodeproj
+ipc.mk
+ipc_tests.mk
+ipc.Makefile
+ipc.target.mk
+ipc_tests.target.mk
+test_support_ipc.vcproj
+
+END

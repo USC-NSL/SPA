@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/190844/trunk/src/build/ios
+END
+grit_whitelist.txt
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/190844/trunk/src/build/ios/grit_whitelist.txt
+END
+clean_env.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/150357/trunk/src/build/ios/clean_env.py
+END
+PRESUBMIT.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/159879/trunk/src/build/ios/PRESUBMIT.py
+END
+mac_build.gypi
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/189408/trunk/src/build/ios/mac_build.gypi
+END
+chrome_ios.croc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/160860/trunk/src/build/ios/chrome_ios.croc
+END

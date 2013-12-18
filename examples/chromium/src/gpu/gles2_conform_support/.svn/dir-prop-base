@@ -1,0 +1,10 @@
+K 10
+svn:ignore
+V 128
+egl_native.vcproj
+egl_main_native.vcproj
+gles2_conform_support.sln
+gles2_conform_support.vcproj
+gles2_conform_support.xcodeproj
+
+END

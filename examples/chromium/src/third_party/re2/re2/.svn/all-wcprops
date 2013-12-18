@@ -1,0 +1,221 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/195762/trunk/src/third_party/re2/re2
+END
+set.cc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/149180/trunk/src/third_party/re2/re2/set.cc
+END
+regexp.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/153185/trunk/src/third_party/re2/re2/regexp.h
+END
+set.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/149180/trunk/src/third_party/re2/re2/set.h
+END
+prefilter.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/149180/trunk/src/third_party/re2/re2/prefilter.h
+END
+filtered_re2.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/149180/trunk/src/third_party/re2/re2/filtered_re2.h
+END
+onepass.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/149180/trunk/src/third_party/re2/re2/onepass.cc
+END
+parse.cc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/178575/trunk/src/third_party/re2/re2/parse.cc
+END
+prefilter_tree.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/195762/trunk/src/third_party/re2/re2/prefilter_tree.cc
+END
+prefilter_tree.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/195762/trunk/src/third_party/re2/re2/prefilter_tree.h
+END
+make_perl_groups.pl
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/149180/trunk/src/third_party/re2/re2/make_perl_groups.pl
+END
+make_unicode_groups.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/149180/trunk/src/third_party/re2/re2/make_unicode_groups.py
+END
+make_unicode_casefold.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/149180/trunk/src/third_party/re2/re2/make_unicode_casefold.py
+END
+re2.cc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/178575/trunk/src/third_party/re2/re2/re2.cc
+END
+unicode_casefold.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/149180/trunk/src/third_party/re2/re2/unicode_casefold.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/149180/trunk/src/third_party/re2/re2/Makefile
+END
+variadic_function.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/153185/trunk/src/third_party/re2/re2/variadic_function.h
+END
+mimics_pcre.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/149180/trunk/src/third_party/re2/re2/mimics_pcre.cc
+END
+dfa.cc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/178575/trunk/src/third_party/re2/re2/dfa.cc
+END
+regexp.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/153185/trunk/src/third_party/re2/re2/regexp.cc
+END
+prefilter.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/153185/trunk/src/third_party/re2/re2/prefilter.cc
+END
+simplify.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/149180/trunk/src/third_party/re2/re2/simplify.cc
+END
+perl_groups.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/149180/trunk/src/third_party/re2/re2/perl_groups.cc
+END
+nfa.cc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/149180/trunk/src/third_party/re2/re2/nfa.cc
+END
+filtered_re2.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/178575/trunk/src/third_party/re2/re2/filtered_re2.cc
+END
+walker-inl.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/149180/trunk/src/third_party/re2/re2/walker-inl.h
+END
+prog.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/149180/trunk/src/third_party/re2/re2/prog.cc
+END
+prog.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/149180/trunk/src/third_party/re2/re2/prog.h
+END
+tostring.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/149180/trunk/src/third_party/re2/re2/tostring.cc
+END
+stringpiece.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/149180/trunk/src/third_party/re2/re2/stringpiece.h
+END
+bitstate.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/149180/trunk/src/third_party/re2/re2/bitstate.cc
+END
+unicode_groups.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/149180/trunk/src/third_party/re2/re2/unicode_groups.cc
+END
+unicode_casefold.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/149180/trunk/src/third_party/re2/re2/unicode_casefold.cc
+END
+unicode_groups.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/149180/trunk/src/third_party/re2/re2/unicode_groups.h
+END
+compile.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/153185/trunk/src/third_party/re2/re2/compile.cc
+END
+unicode.py
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/149185/trunk/src/third_party/re2/re2/unicode.py
+END
+re2.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/153185/trunk/src/third_party/re2/re2/re2.h
+END

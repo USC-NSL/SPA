@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/186924/trunk/src/chrome/browser/extensions/api/system_info_memory
+END
+memory_info_provider.cc
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/164518/trunk/src/chrome/browser/extensions/api/system_info_memory/memory_info_provider.cc
+END
+memory_info_provider.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/186924/trunk/src/chrome/browser/extensions/api/system_info_memory/memory_info_provider.h
+END
+system_info_memory_api.cc
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/164518/trunk/src/chrome/browser/extensions/api/system_info_memory/system_info_memory_api.cc
+END
+system_info_memory_apitest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/181160/trunk/src/chrome/browser/extensions/api/system_info_memory/system_info_memory_apitest.cc
+END
+system_info_memory_api.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/177787/trunk/src/chrome/browser/extensions/api/system_info_memory/system_info_memory_api.h
+END

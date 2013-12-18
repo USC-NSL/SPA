@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/177208/trunk/src/tools/android/findbugs_plugin/test
+END
+run_findbugs_plugin_tests.py
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/177208/trunk/src/tools/android/findbugs_plugin/test/run_findbugs_plugin_tests.py
+END
+expected_result.txt
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/165442/trunk/src/tools/android/findbugs_plugin/test/expected_result.txt
+END

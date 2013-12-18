@@ -1,0 +1,13 @@
+K 10
+svn:ignore
+V 119
+libwebp.Makefile
+libwebp.sln
+libwebp.target.mk
+libwebp.vcproj
+libwebp.xcodeproj
+libwebp_dec.vcproj
+libwebp_enc.vcproj
+
+
+END

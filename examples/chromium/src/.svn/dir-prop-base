@@ -1,0 +1,19 @@
+K 10
+svn:ignore
+V 118
+Makefile
+dart
+dartium_tools
+data
+googleurl
+hideout
+native_client
+out
+pdf
+sconsbuild
+support
+v8
+xcodebuild
+arm-sysroot
+
+END

@@ -1,0 +1,137 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/193728/trunk/src/chrome/browser/ui/libgtk2ui
+END
+chrome_gtk_frame.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/140922/trunk/src/chrome/browser/ui/libgtk2ui/chrome_gtk_frame.cc
+END
+chrome_gtk_frame.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/146163/trunk/src/chrome/browser/ui/libgtk2ui/chrome_gtk_frame.h
+END
+skia_utils_gtk2.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/188351/trunk/src/chrome/browser/ui/libgtk2ui/skia_utils_gtk2.cc
+END
+native_theme_gtk2.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/190048/trunk/src/chrome/browser/ui/libgtk2ui/native_theme_gtk2.cc
+END
+libgtk2ui_export.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/146163/trunk/src/chrome/browser/ui/libgtk2ui/libgtk2ui_export.h
+END
+skia_utils_gtk2.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/146163/trunk/src/chrome/browser/ui/libgtk2ui/skia_utils_gtk2.h
+END
+native_theme_gtk2.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/186244/trunk/src/chrome/browser/ui/libgtk2ui/native_theme_gtk2.h
+END
+select_file_dialog_impl_kde.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/181638/trunk/src/chrome/browser/ui/libgtk2ui/select_file_dialog_impl_kde.cc
+END
+gtk2_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/193728/trunk/src/chrome/browser/ui/libgtk2ui/gtk2_util.cc
+END
+gtk2_ui.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/192595/trunk/src/chrome/browser/ui/libgtk2ui/gtk2_ui.cc
+END
+select_file_dialog_impl_gtk2.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/191171/trunk/src/chrome/browser/ui/libgtk2ui/select_file_dialog_impl_gtk2.cc
+END
+libgtk2ui.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/186244/trunk/src/chrome/browser/ui/libgtk2ui/libgtk2ui.gyp
+END
+gtk2_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/146163/trunk/src/chrome/browser/ui/libgtk2ui/gtk2_util.h
+END
+gtk2_ui.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/192595/trunk/src/chrome/browser/ui/libgtk2ui/gtk2_ui.h
+END
+gtk2_signal.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/148813/trunk/src/chrome/browser/ui/libgtk2ui/gtk2_signal.h
+END
+owned_widget_gtk2.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/140922/trunk/src/chrome/browser/ui/libgtk2ui/owned_widget_gtk2.cc
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/140922/trunk/src/chrome/browser/ui/libgtk2ui/DEPS
+END
+owned_widget_gtk2.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/146163/trunk/src/chrome/browser/ui/libgtk2ui/owned_widget_gtk2.h
+END
+PRESUBMIT.py
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/142547/trunk/src/chrome/browser/ui/libgtk2ui/PRESUBMIT.py
+END
+select_file_dialog_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/181638/trunk/src/chrome/browser/ui/libgtk2ui/select_file_dialog_impl.cc
+END
+select_file_dialog_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/181638/trunk/src/chrome/browser/ui/libgtk2ui/select_file_dialog_impl.h
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/188414/trunk/src/chrome/browser/ui/libgtk2ui/OWNERS
+END

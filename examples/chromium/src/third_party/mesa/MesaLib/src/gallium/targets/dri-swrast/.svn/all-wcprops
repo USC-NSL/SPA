@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/targets/dri-swrast
+END
+swrast_drm_api.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/targets/dri-swrast/swrast_drm_api.c
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/targets/dri-swrast/SConscript
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/targets/dri-swrast/Makefile
+END

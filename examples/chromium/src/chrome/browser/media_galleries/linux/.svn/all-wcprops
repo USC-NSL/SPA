@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/196552/trunk/src/chrome/browser/media_galleries/linux
+END
+mtp_device_delegate_impl_linux.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/196265/trunk/src/chrome/browser/media_galleries/linux/mtp_device_delegate_impl_linux.h
+END
+mtp_device_task_helper_map_service.cc
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/187068/trunk/src/chrome/browser/media_galleries/linux/mtp_device_task_helper_map_service.cc
+END
+mtp_device_task_helper_map_service.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/196552/trunk/src/chrome/browser/media_galleries/linux/mtp_device_task_helper_map_service.h
+END
+mtp_device_task_helper.cc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/194994/trunk/src/chrome/browser/media_galleries/linux/mtp_device_task_helper.cc
+END
+mtp_device_task_helper.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/196552/trunk/src/chrome/browser/media_galleries/linux/mtp_device_task_helper.h
+END
+snapshot_file_details.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/196265/trunk/src/chrome/browser/media_galleries/linux/snapshot_file_details.cc
+END
+mtp_read_file_worker.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/194994/trunk/src/chrome/browser/media_galleries/linux/mtp_read_file_worker.cc
+END
+mtp_device_object_enumerator_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/185109/trunk/src/chrome/browser/media_galleries/linux/mtp_device_object_enumerator_unittest.cc
+END
+snapshot_file_details.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/196265/trunk/src/chrome/browser/media_galleries/linux/snapshot_file_details.h
+END
+mtp_read_file_worker.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/187068/trunk/src/chrome/browser/media_galleries/linux/mtp_read_file_worker.h
+END
+mtp_device_object_enumerator.cc
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/185109/trunk/src/chrome/browser/media_galleries/linux/mtp_device_object_enumerator.cc
+END
+mtp_device_object_enumerator.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/185109/trunk/src/chrome/browser/media_galleries/linux/mtp_device_object_enumerator.h
+END
+mtp_device_delegate_impl_linux.cc
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/194725/trunk/src/chrome/browser/media_galleries/linux/mtp_device_delegate_impl_linux.cc
+END

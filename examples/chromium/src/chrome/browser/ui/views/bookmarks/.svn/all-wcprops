@@ -1,0 +1,155 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/197470/trunk/src/chrome/browser/ui/views/bookmarks
+END
+bookmark_context_menu_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/190511/trunk/src/chrome/browser/ui/views/bookmarks/bookmark_context_menu_test.cc
+END
+bookmark_context_menu.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/197470/trunk/src/chrome/browser/ui/views/bookmarks/bookmark_context_menu.cc
+END
+bookmark_context_menu.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/189261/trunk/src/chrome/browser/ui/views/bookmarks/bookmark_context_menu.h
+END
+bookmark_prompt_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/191990/trunk/src/chrome/browser/ui/views/bookmarks/bookmark_prompt_view.cc
+END
+bookmark_prompt_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/182918/trunk/src/chrome/browser/ui/views/bookmarks/bookmark_prompt_view.h
+END
+bookmark_drag_drop_views.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/188824/trunk/src/chrome/browser/ui/views/bookmarks/bookmark_drag_drop_views.cc
+END
+bookmark_editor_view_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/192186/trunk/src/chrome/browser/ui/views/bookmarks/bookmark_editor_view_unittest.cc
+END
+bookmark_editor_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/194688/trunk/src/chrome/browser/ui/views/bookmarks/bookmark_editor_view.cc
+END
+bookmark_drag_drop_views.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/188824/trunk/src/chrome/browser/ui/views/bookmarks/bookmark_drag_drop_views.h
+END
+bookmark_bar_instructions_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/189581/trunk/src/chrome/browser/ui/views/bookmarks/bookmark_bar_instructions_view.cc
+END
+bookmark_editor_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/191511/trunk/src/chrome/browser/ui/views/bookmarks/bookmark_editor_view.h
+END
+bookmark_bar_instructions_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/189581/trunk/src/chrome/browser/ui/views/bookmarks/bookmark_bar_instructions_view.h
+END
+bookmark_menu_controller_views.cc
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/181707/trunk/src/chrome/browser/ui/views/bookmarks/bookmark_menu_controller_views.cc
+END
+bookmark_bubble_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/191990/trunk/src/chrome/browser/ui/views/bookmarks/bookmark_bubble_view.cc
+END
+bookmark_menu_controller_views.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/172517/trunk/src/chrome/browser/ui/views/bookmarks/bookmark_menu_controller_views.h
+END
+bookmark_bubble_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/187337/trunk/src/chrome/browser/ui/views/bookmarks/bookmark_bubble_view.h
+END
+bookmark_context_menu_controller_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/189261/trunk/src/chrome/browser/ui/views/bookmarks/bookmark_context_menu_controller_win.cc
+END
+bookmark_bar_view_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/197470/trunk/src/chrome/browser/ui/views/bookmarks/bookmark_bar_view_test.cc
+END
+bookmark_bar_view_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/196777/trunk/src/chrome/browser/ui/views/bookmarks/bookmark_bar_view_unittest.cc
+END
+bookmark_bar_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/197470/trunk/src/chrome/browser/ui/views/bookmarks/bookmark_bar_view.cc
+END
+bookmark_menu_delegate.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/188824/trunk/src/chrome/browser/ui/views/bookmarks/bookmark_menu_delegate.cc
+END
+bookmark_bubble_view_observer.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/172590/trunk/src/chrome/browser/ui/views/bookmarks/bookmark_bubble_view_observer.h
+END
+bookmark_bar_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/191511/trunk/src/chrome/browser/ui/views/bookmarks/bookmark_bar_view.h
+END
+bookmark_menu_delegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/172517/trunk/src/chrome/browser/ui/views/bookmarks/bookmark_menu_delegate.h
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/79027/trunk/src/chrome/browser/ui/views/bookmarks/OWNERS
+END

@@ -1,0 +1,22 @@
+K 10
+svn:ignore
+V 316
+pocdll.vcproj
+sbox_unittests.vcproj
+sandbox.vcproj
+sandbox_poc.vcproj
+sandbox_win64.vcproj
+sbox_integration_tests.vcproj
+sbox_validation_tests.vcproj
+sandbox.sln
+chrome_sandbox.scons
+sandbox_main.scons
+sandbox.scons
+SConstruct
+chrome_sandbox.mk
+sandbox.mk
+chrome_sandbox.target.mk
+sandbox.target.mk
+sandbox.Makefile
+
+END

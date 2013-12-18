@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/195711/trunk/src/ui/base/l10n
+END
+l10n_font_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/73890/trunk/src/ui/base/l10n/l10n_font_util.cc
+END
+l10n_font_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/146163/trunk/src/ui/base/l10n/l10n_font_util.h
+END
+l10n_util_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/193040/trunk/src/ui/base/l10n/l10n_util_unittest.cc
+END
+l10n_util_android.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/193503/trunk/src/ui/base/l10n/l10n_util_android.cc
+END
+l10n_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/195711/trunk/src/ui/base/l10n/l10n_util.cc
+END
+l10n_util_collator.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/195711/trunk/src/ui/base/l10n/l10n_util_collator.h
+END
+l10n_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/189472/trunk/src/ui/base/l10n/l10n_util.h
+END
+l10n_util_android.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/193503/trunk/src/ui/base/l10n/l10n_util_android.h
+END
+l10n_util_mac_unittest.mm
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/191172/trunk/src/ui/base/l10n/l10n_util_mac_unittest.mm
+END
+l10n_util_mac.mm
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/192001/trunk/src/ui/base/l10n/l10n_util_mac.mm
+END
+l10n_util_win_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/187403/trunk/src/ui/base/l10n/l10n_util_win_unittest.cc
+END
+l10n_util_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/189018/trunk/src/ui/base/l10n/l10n_util_win.cc
+END
+l10n_util_win.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/187403/trunk/src/ui/base/l10n/l10n_util_win.h
+END
+l10n_util_posix.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/105835/trunk/src/ui/base/l10n/l10n_util_posix.cc
+END
+l10n_util_mac.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/146163/trunk/src/ui/base/l10n/l10n_util_mac.h
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/135411/trunk/src/ui/base/l10n/OWNERS
+END

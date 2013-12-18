@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/189485/trunk/src/chrome/browser/extensions/api/dns
+END
+dns_api.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/146899/trunk/src/chrome/browser/extensions/api/dns/dns_api.cc
+END
+dns_apitest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/189485/trunk/src/chrome/browser/extensions/api/dns/dns_apitest.cc
+END
+host_resolver_wrapper.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/141101/trunk/src/chrome/browser/extensions/api/dns/host_resolver_wrapper.cc
+END
+dns_api.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/189485/trunk/src/chrome/browser/extensions/api/dns/dns_api.h
+END
+host_resolver_wrapper.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/189485/trunk/src/chrome/browser/extensions/api/dns/host_resolver_wrapper.h
+END
+mock_host_resolver_creator.cc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/189485/trunk/src/chrome/browser/extensions/api/dns/mock_host_resolver_creator.cc
+END
+mock_host_resolver_creator.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/146163/trunk/src/chrome/browser/extensions/api/dns/mock_host_resolver_creator.h
+END

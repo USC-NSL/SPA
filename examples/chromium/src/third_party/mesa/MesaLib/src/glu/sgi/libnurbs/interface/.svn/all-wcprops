@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/interface
+END
+glrenderer.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/interface/glrenderer.h
+END
+bezierPatch.cc
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/interface/bezierPatch.cc
+END
+bezierPatch.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/interface/bezierPatch.h
+END
+glsurfeval.cc
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/interface/glsurfeval.cc
+END
+glcurveval.cc
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/interface/glcurveval.cc
+END
+glsurfeval.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/interface/glsurfeval.h
+END
+glcurveval.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/interface/glcurveval.h
+END
+bezierPatchMesh.cc
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/interface/bezierPatchMesh.cc
+END
+insurfeval.cc
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/interface/insurfeval.cc
+END
+bezierPatchMesh.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/interface/bezierPatchMesh.h
+END
+glimports.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/interface/glimports.h
+END
+incurveeval.cc
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/interface/incurveeval.cc
+END
+glinterface.cc
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/interface/glinterface.cc
+END
+bezierEval.cc
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/interface/bezierEval.cc
+END
+glrenderer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/interface/glrenderer.cc
+END
+mystdlib.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/interface/mystdlib.h
+END
+bezierEval.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/interface/bezierEval.h
+END
+mystdio.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/interface/mystdio.h
+END

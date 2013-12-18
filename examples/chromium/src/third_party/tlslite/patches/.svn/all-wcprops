@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/185744/trunk/src/third_party/tlslite/patches
+END
+tls_intolerant.patch
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/138537/trunk/src/third_party/tlslite/patches/tls_intolerant.patch
+END
+channel_id.patch
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/185744/trunk/src/third_party/tlslite/patches/channel_id.patch
+END
+python26.patch
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/56977/trunk/src/third_party/tlslite/patches/python26.patch
+END
+ca_request.patch
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/56982/trunk/src/third_party/tlslite/patches/ca_request.patch
+END
+parse_chain.patch
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/124637/trunk/src/third_party/tlslite/patches/parse_chain.patch
+END
+close_notify.patch
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/56977/trunk/src/third_party/tlslite/patches/close_notify.patch
+END
+send_certificate_types.patch
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/56983/trunk/src/third_party/tlslite/patches/send_certificate_types.patch
+END

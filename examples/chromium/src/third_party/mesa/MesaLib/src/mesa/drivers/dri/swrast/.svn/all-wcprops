@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/swrast
+END
+swrast_spantemp.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/swrast/swrast_spantemp.h
+END
+swrast.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/swrast/swrast.c
+END
+swrast_span.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/swrast/swrast_span.c
+END
+swrast_priv.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/swrast/swrast_priv.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/swrast/Makefile
+END

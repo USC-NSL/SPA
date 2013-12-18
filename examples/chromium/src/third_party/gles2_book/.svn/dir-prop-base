@@ -1,0 +1,35 @@
+K 10
+svn:ignore
+V 640
+es_util.vcproj
+gles2_book.sln
+gles2_book.xcodeproj
+hello_triangle.vcproj
+mip_map_2d.vcproj
+simple_texture_2d.vcproj
+simple_texture_cubemap.vcproj
+simple_vertex_shader.vcproj
+stencil_test.vcproj
+texture_wrap.vcproj
+texture_wrap.target.mk
+stencil_test.scons
+es_util.scons
+simple_texture_2d.target.mk
+mip_map_2d.scons
+simple_texture_cubemap.target.mk
+simple_vertex_shader.target.mk
+SConstruct
+texture_wrap.scons
+gles2_book_main.scons
+simple_texture_2d.scons
+hello_triangle.target.mk
+simple_texture_cubemap.scons
+stencil_test.target.mk
+es_util.target.mk
+simple_vertex_shader.scons
+gles2_book.Makefile
+mip_map_2d.target.mk
+hello_triangle.scons
+
+
+END

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/185036/trunk/src/gpu/gles2_conform_support/egl
+END
+config.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86468/trunk/src/gpu/gles2_conform_support/egl/config.cc
+END
+display.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/185036/trunk/src/gpu/gles2_conform_support/egl/display.cc
+END
+config.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86468/trunk/src/gpu/gles2_conform_support/egl/config.h
+END
+display.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/155064/trunk/src/gpu/gles2_conform_support/egl/display.h
+END
+egl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/168705/trunk/src/gpu/gles2_conform_support/egl/egl.cc
+END
+surface.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86468/trunk/src/gpu/gles2_conform_support/egl/surface.cc
+END
+surface.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86468/trunk/src/gpu/gles2_conform_support/egl/surface.h
+END

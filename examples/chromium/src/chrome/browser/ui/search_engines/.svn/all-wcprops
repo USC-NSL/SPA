@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/182026/trunk/src/chrome/browser/ui/search_engines
+END
+search_engine_tab_helper_delegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/146163/trunk/src/chrome/browser/ui/search_engines/search_engine_tab_helper_delegate.h
+END
+template_url_fetcher_ui_callbacks.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/173207/trunk/src/chrome/browser/ui/search_engines/template_url_fetcher_ui_callbacks.h
+END
+keyword_editor_controller_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/182026/trunk/src/chrome/browser/ui/search_engines/keyword_editor_controller_unittest.cc
+END
+keyword_editor_controller.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/181707/trunk/src/chrome/browser/ui/search_engines/keyword_editor_controller.cc
+END
+keyword_editor_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/180873/trunk/src/chrome/browser/ui/search_engines/keyword_editor_controller.h
+END
+search_engine_tab_helper.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/181093/trunk/src/chrome/browser/ui/search_engines/search_engine_tab_helper.cc
+END
+search_engine_tab_helper.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/160883/trunk/src/chrome/browser/ui/search_engines/search_engine_tab_helper.h
+END
+edit_search_engine_controller.cc
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/143827/trunk/src/chrome/browser/ui/search_engines/edit_search_engine_controller.cc
+END
+edit_search_engine_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/146163/trunk/src/chrome/browser/ui/search_engines/edit_search_engine_controller.h
+END
+template_url_table_model.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/172503/trunk/src/chrome/browser/ui/search_engines/template_url_table_model.cc
+END
+template_url_table_model.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/146163/trunk/src/chrome/browser/ui/search_engines/template_url_table_model.h
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/124195/trunk/src/chrome/browser/ui/search_engines/OWNERS
+END
+search_engine_tab_helper_delegate.cc
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/75004/trunk/src/chrome/browser/ui/search_engines/search_engine_tab_helper_delegate.cc
+END
+template_url_fetcher_ui_callbacks.cc
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/122274/trunk/src/chrome/browser/ui/search_engines/template_url_fetcher_ui_callbacks.cc
+END

@@ -1,0 +1,49 @@
+10
+
+dir
+197479
+http://src.chromium.org/svn/trunk/src/chrome/test/data/extensions/api_test/tts
+http://src.chromium.org/svn
+
+
+
+2012-03-24T07:01:36.114611Z
+128709
+dmazzoni@chromium.org
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4ff67af0-8c30-449e-8e8b-ad334ec8d88c
+
+queue_interrupt
+dir
+
+optional_args
+dir
+
+enqueue
+dir
+
+speak_once
+dir
+
+word_callbacks
+dir
+
+interrupt
+dir
+
+speak_error
+dir
+

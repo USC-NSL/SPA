@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/112882/trunk/src/chrome/test/data/extensions/effective_host_permissions
+END
+one_host_wildcard.json
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/112882/trunk/src/chrome/test/data/extensions/effective_host_permissions/one_host_wildcard.json
+END
+all_hosts.json
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/112882/trunk/src/chrome/test/data/extensions/effective_host_permissions/all_hosts.json
+END
+two_hosts.json
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/112882/trunk/src/chrome/test/data/extensions/effective_host_permissions/two_hosts.json
+END
+all_hosts2.json
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/112882/trunk/src/chrome/test/data/extensions/effective_host_permissions/all_hosts2.json
+END
+two_content_scripts.json
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/112882/trunk/src/chrome/test/data/extensions/effective_host_permissions/two_content_scripts.json
+END
+all_hosts3.json
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/112882/trunk/src/chrome/test/data/extensions/effective_host_permissions/all_hosts3.json
+END
+empty.json
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/112882/trunk/src/chrome/test/data/extensions/effective_host_permissions/empty.json
+END
+one_host.json
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/112882/trunk/src/chrome/test/data/extensions/effective_host_permissions/one_host.json
+END
+https_not_considered.json
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/112882/trunk/src/chrome/test/data/extensions/effective_host_permissions/https_not_considered.json
+END

@@ -1,0 +1,365 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/182368/trunk/src/third_party/libjpeg
+END
+jddctmgr.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jddctmgr.c
+END
+jdatadst.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jdatadst.c
+END
+jerror.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jerror.c
+END
+jchuff.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jchuff.c
+END
+jdhuff.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jdhuff.c
+END
+jfdctfst.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jfdctfst.c
+END
+jcmaster.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jcmaster.c
+END
+jerror.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jerror.h
+END
+jdmaster.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jdmaster.c
+END
+jchuff.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jchuff.h
+END
+jidctfst.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jidctfst.c
+END
+jmemnobs.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jmemnobs.c
+END
+jdhuff.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jdhuff.h
+END
+jcparam.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jcparam.c
+END
+jcinit.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jcinit.c
+END
+jquant1.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jquant1.c
+END
+jquant2.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jquant2.c
+END
+jcphuff.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jcphuff.c
+END
+jpeglibmangler.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/182368/trunk/src/third_party/libjpeg/jpeglibmangler.h
+END
+jdct.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jdct.h
+END
+jdatasrc.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jdatasrc.c
+END
+jccolor.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jccolor.c
+END
+jcsample.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jcsample.c
+END
+README.chromium
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/153947/trunk/src/third_party/libjpeg/README.chromium
+END
+jcmarker.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jcmarker.c
+END
+jmemmgr.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jmemmgr.c
+END
+jdmarker.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jdmarker.c
+END
+jdsample.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jdsample.c
+END
+jfdctflt.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jfdctflt.c
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/42288/trunk/src/third_party/libjpeg/LICENSE
+END
+jcapistd.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jcapistd.c
+END
+jmorecfg.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jmorecfg.h
+END
+jdapistd.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jdapistd.c
+END
+jinclude.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jinclude.h
+END
+jidctflt.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jidctflt.c
+END
+jversion.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jversion.h
+END
+jfdctint.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jfdctint.c
+END
+jpegint.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jpegint.h
+END
+jidctint.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jidctint.c
+END
+jcprepct.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jcprepct.c
+END
+jutils.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jutils.c
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/369/trunk/src/third_party/libjpeg/README
+END
+jdinput.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jdinput.c
+END
+jdmerge.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jdmerge.c
+END
+jccoefct.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jccoefct.c
+END
+jdcoefct.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jdcoefct.c
+END
+jpeglib.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/19873/trunk/src/third_party/libjpeg/jpeglib.h
+END
+jcomapi.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jcomapi.c
+END
+jconfig.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jconfig.h
+END
+jdphuff.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jdphuff.c
+END
+jcmainct.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jcmainct.c
+END
+jidctred.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jidctred.c
+END
+jdmainct.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jdmainct.c
+END
+libjpeg.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/147850/trunk/src/third_party/libjpeg/libjpeg.gyp
+END
+jcapimin.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jcapimin.c
+END
+jdpostct.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jdpostct.c
+END
+jdapimin.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jdapimin.c
+END
+jdcolor.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jdcolor.c
+END
+jmemsys.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jmemsys.h
+END
+jcdctmgr.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/19/trunk/src/third_party/libjpeg/jcdctmgr.c
+END

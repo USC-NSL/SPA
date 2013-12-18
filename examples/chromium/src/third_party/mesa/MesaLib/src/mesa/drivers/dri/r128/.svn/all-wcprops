@@ -1,0 +1,137 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/r128
+END
+r128_screen.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/r128/r128_screen.h
+END
+r128_context.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/r128/r128_context.c
+END
+r128_state.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/r128/r128_state.h
+END
+r128_tris.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/r128/r128_tris.h
+END
+r128_dd.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/r128/r128_dd.c
+END
+r128_lock.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/r128/r128_lock.c
+END
+r128_context.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/r128/r128_context.h
+END
+r128_dd.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/r128/r128_dd.h
+END
+r128_lock.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/r128/r128_lock.h
+END
+r128_texmem.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/r128/r128_texmem.c
+END
+r128_tex.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/r128/r128_tex.c
+END
+r128_texobj.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/r128/r128_texobj.h
+END
+r128_span.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/r128/r128_span.c
+END
+r128_texstate.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/r128/r128_texstate.c
+END
+r128_tex.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/r128/r128_tex.h
+END
+r128_span.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/r128/r128_span.h
+END
+r128_ioctl.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/r128/r128_ioctl.c
+END
+r128_screen.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/r128/r128_screen.c
+END
+r128_ioctl.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/r128/r128_ioctl.h
+END
+r128_state.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/r128/r128_state.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/r128/Makefile
+END
+r128_tris.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/r128/r128_tris.c
+END

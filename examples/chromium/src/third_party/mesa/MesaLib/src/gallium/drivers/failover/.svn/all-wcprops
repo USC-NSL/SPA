@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/failover
+END
+fo_state_emit.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/failover/fo_state_emit.c
+END
+fo_state.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/failover/fo_state.c
+END
+fo_winsys.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/failover/fo_winsys.h
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/failover/SConscript
+END
+fo_context.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/failover/fo_context.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/failover/Makefile
+END
+fo_context.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/drivers/failover/fo_context.h
+END

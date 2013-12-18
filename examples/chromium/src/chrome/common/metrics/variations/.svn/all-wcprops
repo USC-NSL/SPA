@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/196301/trunk/src/chrome/common/metrics/variations
+END
+variations_util_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/189139/trunk/src/chrome/common/metrics/variations/variations_util_unittest.cc
+END
+variations_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/189139/trunk/src/chrome/common/metrics/variations/variations_util.cc
+END
+variation_ids.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/196301/trunk/src/chrome/common/metrics/variations/variation_ids.h
+END
+variations_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/189139/trunk/src/chrome/common/metrics/variations/variations_util.h
+END
+uniformity_field_trials.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/195271/trunk/src/chrome/common/metrics/variations/uniformity_field_trials.cc
+END
+uniformity_field_trials.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/186253/trunk/src/chrome/common/metrics/variations/uniformity_field_trials.h
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/151619/trunk/src/chrome/common/metrics/variations/OWNERS
+END

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/196184/trunk/src/ui/webui
+END
+jstemplate_builder.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/178035/trunk/src/ui/webui/jstemplate_builder.cc
+END
+jstemplate_builder.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/194693/trunk/src/ui/webui/jstemplate_builder.h
+END
+web_ui_util_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/179907/trunk/src/ui/webui/web_ui_util_unittest.cc
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/177729/trunk/src/ui/webui/DEPS
+END
+web_ui_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/179907/trunk/src/ui/webui/web_ui_util.cc
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/177569/trunk/src/ui/webui/OWNERS
+END
+web_ui_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/194693/trunk/src/ui/webui/web_ui_util.h
+END

@@ -1,0 +1,149 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/193040/trunk/src/sync/api
+END
+sync_merge_result.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/172458/trunk/src/sync/api/sync_merge_result.h
+END
+time.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/157499/trunk/src/sync/api/time.h
+END
+sync_data.cc
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/193040/trunk/src/sync/api/sync_data.cc
+END
+fake_syncable_service.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/168446/trunk/src/sync/api/fake_syncable_service.cc
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/172458/trunk/src/sync/api/DEPS
+END
+sync_data.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/186523/trunk/src/sync/api/sync_data.h
+END
+fake_syncable_service.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/168446/trunk/src/sync/api/fake_syncable_service.h
+END
+sync_error_factory.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/144820/trunk/src/sync/api/sync_error_factory.cc
+END
+sync_error_factory.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/172458/trunk/src/sync/api/sync_error_factory.h
+END
+syncable_service.cc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/144820/trunk/src/sync/api/syncable_service.cc
+END
+sync_change_processor.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/144820/trunk/src/sync/api/sync_change_processor.cc
+END
+sync_change_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/147675/trunk/src/sync/api/sync_change_unittest.cc
+END
+string_ordinal.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/155368/trunk/src/sync/api/string_ordinal.h
+END
+sync_change.cc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/147754/trunk/src/sync/api/sync_change.cc
+END
+syncable_service.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/186523/trunk/src/sync/api/syncable_service.h
+END
+sync_change_processor.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/172458/trunk/src/sync/api/sync_change_processor.h
+END
+sync_change.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/184838/trunk/src/sync/api/sync_change.h
+END
+sync_error_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/147675/trunk/src/sync/api/sync_error_unittest.cc
+END
+sync_error_factory_mock.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/144820/trunk/src/sync/api/sync_error_factory_mock.cc
+END
+sync_error.cc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/147675/trunk/src/sync/api/sync_error.cc
+END
+sync_error_factory_mock.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/146074/trunk/src/sync/api/sync_error_factory_mock.h
+END
+sync_error.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/174801/trunk/src/sync/api/sync_error.h
+END
+sync_merge_result_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/167528/trunk/src/sync/api/sync_merge_result_unittest.cc
+END
+sync_merge_result.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/168446/trunk/src/sync/api/sync_merge_result.cc
+END

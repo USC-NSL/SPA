@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/191458/trunk/src/sync/internal_api/public/sessions
+END
+model_neutral_state.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/172458/trunk/src/sync/internal_api/public/sessions/model_neutral_state.h
+END
+sync_session_snapshot_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/191458/trunk/src/sync/internal_api/public/sessions/sync_session_snapshot_unittest.cc
+END
+sync_session_snapshot.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/191458/trunk/src/sync/internal_api/public/sessions/sync_session_snapshot.cc
+END
+sync_session_snapshot.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/191458/trunk/src/sync/internal_api/public/sessions/sync_session_snapshot.h
+END
+sync_source_info_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/165474/trunk/src/sync/internal_api/public/sessions/sync_source_info_unittest.cc
+END
+sync_source_info.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/160073/trunk/src/sync/internal_api/public/sessions/sync_source_info.cc
+END
+sync_source_info.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/172458/trunk/src/sync/internal_api/public/sessions/sync_source_info.h
+END
+model_neutral_state.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/165474/trunk/src/sync/internal_api/public/sessions/model_neutral_state.cc
+END

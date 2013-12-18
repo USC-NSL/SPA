@@ -1,0 +1,15 @@
+K 10
+svn:ignore
+V 136
+libjpeg.xcodeproj
+libjpeg.sln
+libjpeg.vcproj
+SConstruct
+libjpeg.scons
+libjpeg_main.scons
+libjpeg.mk
+libjpeg.Makefile
+libjpeg.target.mk
+
+
+END

@@ -1,0 +1,155 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/193816/trunk/src/chrome/browser/ui/cocoa/constrained_window
+END
+constrained_window_sheet_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/173273/trunk/src/chrome/browser/ui/cocoa/constrained_window/constrained_window_sheet_controller.h
+END
+constrained_window_button.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/187441/trunk/src/chrome/browser/ui/cocoa/constrained_window/constrained_window_button.h
+END
+constrained_window_animation.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/182368/trunk/src/chrome/browser/ui/cocoa/constrained_window/constrained_window_animation.h
+END
+constrained_window_mac.mm
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/191233/trunk/src/chrome/browser/ui/cocoa/constrained_window/constrained_window_mac.mm
+END
+constrained_window_custom_window_unittest.mm
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/162006/trunk/src/chrome/browser/ui/cocoa/constrained_window/constrained_window_custom_window_unittest.mm
+END
+constrained_window_control_utils.mm
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/184589/trunk/src/chrome/browser/ui/cocoa/constrained_window/constrained_window_control_utils.mm
+END
+constrained_window_sheet_info.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/174359/trunk/src/chrome/browser/ui/cocoa/constrained_window/constrained_window_sheet_info.h
+END
+constrained_window_custom_window.mm
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/184589/trunk/src/chrome/browser/ui/cocoa/constrained_window/constrained_window_custom_window.mm
+END
+constrained_window_custom_sheet.mm
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/173273/trunk/src/chrome/browser/ui/cocoa/constrained_window/constrained_window_custom_sheet.mm
+END
+constrained_window_mac_browsertest.mm
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/184598/trunk/src/chrome/browser/ui/cocoa/constrained_window/constrained_window_mac_browsertest.mm
+END
+constrained_window_alert_unittest.mm
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/154644/trunk/src/chrome/browser/ui/cocoa/constrained_window/constrained_window_alert_unittest.mm
+END
+constrained_window_alert.mm
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/184589/trunk/src/chrome/browser/ui/cocoa/constrained_window/constrained_window_alert.mm
+END
+constrained_window_sheet_controller_unittest.mm
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/!svn/ver/183469/trunk/src/chrome/browser/ui/cocoa/constrained_window/constrained_window_sheet_controller_unittest.mm
+END
+constrained_window_button_unittest.mm
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/154644/trunk/src/chrome/browser/ui/cocoa/constrained_window/constrained_window_button_unittest.mm
+END
+constrained_window_button.mm
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/170773/trunk/src/chrome/browser/ui/cocoa/constrained_window/constrained_window_button.mm
+END
+constrained_window_sheet_controller.mm
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/193816/trunk/src/chrome/browser/ui/cocoa/constrained_window/constrained_window_sheet_controller.mm
+END
+constrained_window_animation_unittest.mm
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/154646/trunk/src/chrome/browser/ui/cocoa/constrained_window/constrained_window_animation_unittest.mm
+END
+constrained_window_control_utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/160604/trunk/src/chrome/browser/ui/cocoa/constrained_window/constrained_window_control_utils.h
+END
+constrained_window_mac.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/191233/trunk/src/chrome/browser/ui/cocoa/constrained_window/constrained_window_mac.h
+END
+constrained_window_animation.mm
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/184344/trunk/src/chrome/browser/ui/cocoa/constrained_window/constrained_window_animation.mm
+END
+constrained_window_custom_window.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/184589/trunk/src/chrome/browser/ui/cocoa/constrained_window/constrained_window_custom_window.h
+END
+constrained_window_custom_sheet.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/182368/trunk/src/chrome/browser/ui/cocoa/constrained_window/constrained_window_custom_sheet.h
+END
+constrained_window_sheet_info.mm
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/173273/trunk/src/chrome/browser/ui/cocoa/constrained_window/constrained_window_sheet_info.mm
+END
+constrained_window_alert.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/184589/trunk/src/chrome/browser/ui/cocoa/constrained_window/constrained_window_alert.h
+END
+constrained_window_sheet.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/182368/trunk/src/chrome/browser/ui/cocoa/constrained_window/constrained_window_sheet.h
+END

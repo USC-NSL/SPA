@@ -1,0 +1,137 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/unichrome
+END
+via_tex.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/unichrome/via_tex.c
+END
+via_span.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/unichrome/via_span.c
+END
+via_tex.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/unichrome/via_tex.h
+END
+via_span.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/unichrome/via_span.h
+END
+via_3d_reg.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/unichrome/via_3d_reg.h
+END
+via_ioctl.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/unichrome/via_ioctl.c
+END
+via_screen.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/unichrome/via_screen.c
+END
+via_render.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/unichrome/via_render.c
+END
+via_ioctl.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/unichrome/via_ioctl.h
+END
+via_state.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/unichrome/via_state.c
+END
+via_tris.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/unichrome/via_tris.c
+END
+via_screen.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/unichrome/via_screen.h
+END
+via_context.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/unichrome/via_context.c
+END
+via_state.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/unichrome/via_state.h
+END
+via_tris.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/unichrome/via_tris.h
+END
+via_drmclient.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/unichrome/via_drmclient.h
+END
+via_fb.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/unichrome/via_fb.c
+END
+via_context.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/unichrome/via_context.h
+END
+via_memcpy.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/unichrome/via_memcpy.c
+END
+via_fb.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/unichrome/via_fb.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/unichrome/Makefile
+END
+via_texcombine.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/unichrome/via_texcombine.c
+END

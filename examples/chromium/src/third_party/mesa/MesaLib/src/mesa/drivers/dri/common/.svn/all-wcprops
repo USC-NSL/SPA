@@ -1,0 +1,161 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/common
+END
+spantmp_common.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/common/spantmp_common.h
+END
+texmem.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/common/texmem.c
+END
+xmlpool.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/common/xmlpool.h
+END
+utils.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/common/utils.c
+END
+texmem.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/common/texmem.h
+END
+memops.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/common/memops.h
+END
+utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/common/utils.h
+END
+mmx.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/common/mmx.h
+END
+mmio.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/common/mmio.h
+END
+dri_metaops.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/common/dri_metaops.c
+END
+drirenderbuffer.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/common/drirenderbuffer.c
+END
+spantmp2.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/common/spantmp2.h
+END
+dri_util.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/common/dri_util.c
+END
+dri_metaops.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/common/dri_metaops.h
+END
+dri_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/common/dri_test.c
+END
+drirenderbuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/common/drirenderbuffer.h
+END
+vblank.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/common/vblank.c
+END
+dri_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/common/dri_util.h
+END
+vblank.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/common/vblank.h
+END
+drisw_util.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/common/drisw_util.c
+END
+xmlconfig.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/common/xmlconfig.c
+END
+spantmp.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/common/spantmp.h
+END
+stenciltmp.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/common/stenciltmp.h
+END
+drisw_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/common/drisw_util.h
+END
+depthtmp.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/common/depthtmp.h
+END
+xmlconfig.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/common/xmlconfig.h
+END

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/195742/trunk/src/chrome/browser/chromeos/display
+END
+overscan_calibrator.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/189910/trunk/src/chrome/browser/chromeos/display/overscan_calibrator.cc
+END
+display_configuration_observer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/189040/trunk/src/chrome/browser/chromeos/display/display_configuration_observer.cc
+END
+overscan_calibrator.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/189910/trunk/src/chrome/browser/chromeos/display/overscan_calibrator.h
+END
+display_preferences_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/195742/trunk/src/chrome/browser/chromeos/display/display_preferences_unittest.cc
+END
+display_configuration_observer.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/189040/trunk/src/chrome/browser/chromeos/display/display_configuration_observer.h
+END
+display_preferences.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/193224/trunk/src/chrome/browser/chromeos/display/display_preferences.cc
+END
+display_preferences.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/191509/trunk/src/chrome/browser/chromeos/display/display_preferences.h
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/154671/trunk/src/chrome/browser/chromeos/display/OWNERS
+END

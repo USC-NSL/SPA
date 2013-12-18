@@ -1,0 +1,263 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/196777/trunk/src/chrome/browser/bookmarks
+END
+bookmark_index_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/190511/trunk/src/chrome/browser/bookmarks/bookmark_index_unittest.cc
+END
+bookmark_storage.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/177885/trunk/src/chrome/browser/bookmarks/bookmark_storage.h
+END
+bookmark_index.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/187214/trunk/src/chrome/browser/bookmarks/bookmark_index.cc
+END
+bookmark_codec_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/184344/trunk/src/chrome/browser/bookmarks/bookmark_codec_unittest.cc
+END
+bookmark_codec.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/181564/trunk/src/chrome/browser/bookmarks/bookmark_codec.cc
+END
+bookmark_node_data.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/186398/trunk/src/chrome/browser/bookmarks/bookmark_node_data.cc
+END
+bookmark_model_test_utils.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/112558/trunk/src/chrome/browser/bookmarks/bookmark_model_test_utils.cc
+END
+bookmark_node_data.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/184344/trunk/src/chrome/browser/bookmarks/bookmark_node_data.h
+END
+bookmark_pasteboard_helper_mac.mm
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/196644/trunk/src/chrome/browser/bookmarks/bookmark_pasteboard_helper_mac.mm
+END
+bookmark_model_factory.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/196777/trunk/src/chrome/browser/bookmarks/bookmark_model_factory.h
+END
+recently_used_folders_combo_model_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/190511/trunk/src/chrome/browser/bookmarks/recently_used_folders_combo_model_unittest.cc
+END
+recently_used_folders_combo_model.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/184532/trunk/src/chrome/browser/bookmarks/recently_used_folders_combo_model.cc
+END
+bookmark_html_writer_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/190511/trunk/src/chrome/browser/bookmarks/bookmark_html_writer_unittest.cc
+END
+bookmark_model_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/191511/trunk/src/chrome/browser/bookmarks/bookmark_model_unittest.cc
+END
+bookmark_utils.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/188824/trunk/src/chrome/browser/bookmarks/bookmark_utils.cc
+END
+bookmark_service.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/189273/trunk/src/chrome/browser/bookmarks/bookmark_service.cc
+END
+bookmark_utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/188824/trunk/src/chrome/browser/bookmarks/bookmark_utils.h
+END
+bookmark_service.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/189273/trunk/src/chrome/browser/bookmarks/bookmark_service.h
+END
+base_bookmark_model_observer.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/191511/trunk/src/chrome/browser/bookmarks/base_bookmark_model_observer.h
+END
+bookmark_expanded_state_tracker.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/191511/trunk/src/chrome/browser/bookmarks/bookmark_expanded_state_tracker.h
+END
+bookmark_pasteboard_helper_mac.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/196644/trunk/src/chrome/browser/bookmarks/bookmark_pasteboard_helper_mac.h
+END
+bookmark_index.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/169974/trunk/src/chrome/browser/bookmarks/bookmark_index.h
+END
+bookmark_model_observer.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/191511/trunk/src/chrome/browser/bookmarks/bookmark_model_observer.h
+END
+bookmark_node_data_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/190511/trunk/src/chrome/browser/bookmarks/bookmark_node_data_unittest.cc
+END
+bookmark_codec.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/164263/trunk/src/chrome/browser/bookmarks/bookmark_codec.h
+END
+bookmark_prompt_prefs.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/186301/trunk/src/chrome/browser/bookmarks/bookmark_prompt_prefs.cc
+END
+bookmark_model_test_utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/146163/trunk/src/chrome/browser/bookmarks/bookmark_model_test_utils.h
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/194956/trunk/src/chrome/browser/bookmarks/DEPS
+END
+bookmark_prompt_prefs.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/182918/trunk/src/chrome/browser/bookmarks/bookmark_prompt_prefs.h
+END
+bookmark_editor.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/160002/trunk/src/chrome/browser/bookmarks/bookmark_editor.cc
+END
+bookmark_model_factory.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/196777/trunk/src/chrome/browser/bookmarks/bookmark_model_factory.cc
+END
+bookmark_editor.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/160002/trunk/src/chrome/browser/bookmarks/bookmark_editor.h
+END
+bookmark_utils_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/193040/trunk/src/chrome/browser/bookmarks/bookmark_utils_unittest.cc
+END
+recently_used_folders_combo_model.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/184532/trunk/src/chrome/browser/bookmarks/recently_used_folders_combo_model.h
+END
+bookmark_html_writer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/190077/trunk/src/chrome/browser/bookmarks/bookmark_html_writer.cc
+END
+bookmark_model.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/195711/trunk/src/chrome/browser/bookmarks/bookmark_model.cc
+END
+base_bookmark_model_observer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/191511/trunk/src/chrome/browser/bookmarks/base_bookmark_model_observer.cc
+END
+bookmark_html_writer.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/184344/trunk/src/chrome/browser/bookmarks/bookmark_html_writer.h
+END
+bookmark_expanded_state_tracker_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/191511/trunk/src/chrome/browser/bookmarks/bookmark_expanded_state_tracker_unittest.cc
+END
+bookmark_model.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/194956/trunk/src/chrome/browser/bookmarks/bookmark_model.h
+END
+bookmark_expanded_state_tracker.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/191511/trunk/src/chrome/browser/bookmarks/bookmark_expanded_state_tracker.cc
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/153970/trunk/src/chrome/browser/bookmarks/OWNERS
+END
+bookmark_storage.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/184344/trunk/src/chrome/browser/bookmarks/bookmark_storage.cc
+END

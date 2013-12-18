@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/196618/trunk/src/chrome/test/data/nacl
+END
+nacl_test_data.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/196618/trunk/src/chrome/test/data/nacl/nacl_test_data.gyp
+END
+nacl_browser_test.gypi
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/196618/trunk/src/chrome/test/data/nacl/nacl_browser_test.gypi
+END
+load_util.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/180783/trunk/src/chrome/test/data/nacl/load_util.js
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/158714/trunk/src/chrome/test/data/nacl/DEPS
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/151963/trunk/src/chrome/test/data/nacl/OWNERS
+END
+simple.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/151963/trunk/src/chrome/test/data/nacl/simple.cc
+END
+nacl_load_test.html
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/151963/trunk/src/chrome/test/data/nacl/nacl_load_test.html
+END

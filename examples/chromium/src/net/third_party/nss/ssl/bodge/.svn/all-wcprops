@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/197217/trunk/src/net/third_party/nss/ssl/bodge
+END
+secure_memcmp.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/40991/trunk/src/net/third_party/nss/ssl/bodge/secure_memcmp.c
+END
+secitem_array.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/197217/trunk/src/net/third_party/nss/ssl/bodge/secitem_array.c
+END
+nssrenam.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/40991/trunk/src/net/third_party/nss/ssl/bodge/nssrenam.h
+END

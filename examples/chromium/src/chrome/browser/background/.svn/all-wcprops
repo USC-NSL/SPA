@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/196898/trunk/src/chrome/browser/background
+END
+background_contents_service_factory.cc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/196777/trunk/src/chrome/browser/background/background_contents_service_factory.cc
+END
+background_contents_service_factory.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/196777/trunk/src/chrome/browser/background/background_contents_service_factory.h
+END
+background_contents_service_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/181707/trunk/src/chrome/browser/background/background_contents_service_unittest.cc
+END
+background_mode_manager_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/181164/trunk/src/chrome/browser/background/background_mode_manager_unittest.cc
+END
+background_mode_manager_chromeos.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/138074/trunk/src/chrome/browser/background/background_mode_manager_chromeos.cc
+END
+background_contents_service.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/196898/trunk/src/chrome/browser/background/background_contents_service.cc
+END
+background_application_list_model_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/190514/trunk/src/chrome/browser/background/background_application_list_model_unittest.cc
+END
+background_mode_manager.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/193922/trunk/src/chrome/browser/background/background_mode_manager.cc
+END
+background_application_list_model.cc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/193838/trunk/src/chrome/browser/background/background_application_list_model.cc
+END
+background_contents_service.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/178082/trunk/src/chrome/browser/background/background_contents_service.h
+END
+background_mode_manager.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/196320/trunk/src/chrome/browser/background/background_mode_manager.h
+END
+background_application_list_model.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/146163/trunk/src/chrome/browser/background/background_application_list_model.h
+END
+background_mode_manager_mac.mm
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/193922/trunk/src/chrome/browser/background/background_mode_manager_mac.mm
+END
+background_mode_manager_gtk.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/184344/trunk/src/chrome/browser/background/background_mode_manager_gtk.cc
+END
+background_mode_manager_aura.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/138074/trunk/src/chrome/browser/background/background_mode_manager_aura.cc
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/90428/trunk/src/chrome/browser/background/OWNERS
+END
+background_mode_manager_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/184344/trunk/src/chrome/browser/background/background_mode_manager_win.cc
+END

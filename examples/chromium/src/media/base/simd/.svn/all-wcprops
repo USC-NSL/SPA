@@ -1,0 +1,203 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/195339/trunk/src/media/base/simd
+END
+convert_yuv_to_rgb_mmx.asm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/182407/trunk/src/media/base/simd/convert_yuv_to_rgb_mmx.asm
+END
+scale_yuv_to_rgb_mmx.inc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/101067/trunk/src/media/base/simd/scale_yuv_to_rgb_mmx.inc
+END
+linear_scale_yuv_to_rgb_mmx.asm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/182407/trunk/src/media/base/simd/linear_scale_yuv_to_rgb_mmx.asm
+END
+convert_yuva_to_argb_mmx.asm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/195339/trunk/src/media/base/simd/convert_yuva_to_argb_mmx.asm
+END
+convert_rgb_to_yuv_sse2.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/141286/trunk/src/media/base/simd/convert_rgb_to_yuv_sse2.cc
+END
+convert_rgb_to_yuv_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/192779/trunk/src/media/base/simd/convert_rgb_to_yuv_unittest.cc
+END
+scale_yuv_to_rgb_sse2_x64.asm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/182407/trunk/src/media/base/simd/scale_yuv_to_rgb_sse2_x64.asm
+END
+sinc_resampler_sse.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/186285/trunk/src/media/base/simd/sinc_resampler_sse.cc
+END
+convert_rgb_to_yuv_c.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/101507/trunk/src/media/base/simd/convert_rgb_to_yuv_c.cc
+END
+convert_yuv_to_rgb.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/195339/trunk/src/media/base/simd/convert_yuv_to_rgb.h
+END
+filter_yuv_sse2.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/105798/trunk/src/media/base/simd/filter_yuv_sse2.cc
+END
+convert_yuv_to_rgb_mmx.inc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/101067/trunk/src/media/base/simd/convert_yuv_to_rgb_mmx.inc
+END
+convert_yuv_to_rgb_x86.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/195339/trunk/src/media/base/simd/convert_yuv_to_rgb_x86.cc
+END
+vector_math_sse.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/192905/trunk/src/media/base/simd/vector_math_sse.cc
+END
+linear_scale_yuv_to_rgb_mmx.inc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/101067/trunk/src/media/base/simd/linear_scale_yuv_to_rgb_mmx.inc
+END
+convert_yuva_to_argb_mmx.inc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/195339/trunk/src/media/base/simd/convert_yuva_to_argb_mmx.inc
+END
+yuv_to_rgb_table.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/195339/trunk/src/media/base/simd/yuv_to_rgb_table.h
+END
+convert_rgb_to_yuv_ssse3.asm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/182407/trunk/src/media/base/simd/convert_rgb_to_yuv_ssse3.asm
+END
+scale_yuv_to_rgb_sse.asm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/182407/trunk/src/media/base/simd/scale_yuv_to_rgb_sse.asm
+END
+linear_scale_yuv_to_rgb_mmx_x64.asm
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/182407/trunk/src/media/base/simd/linear_scale_yuv_to_rgb_mmx_x64.asm
+END
+convert_rgb_to_yuv_ssse3.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/150129/trunk/src/media/base/simd/convert_rgb_to_yuv_ssse3.cc
+END
+convert_rgb_to_yuv_ssse3.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/182407/trunk/src/media/base/simd/convert_rgb_to_yuv_ssse3.h
+END
+scale_yuv_to_rgb_mmx.asm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/182407/trunk/src/media/base/simd/scale_yuv_to_rgb_mmx.asm
+END
+filter_yuv_mmx.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/105798/trunk/src/media/base/simd/filter_yuv_mmx.cc
+END
+empty_register_state_mmx.asm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/181546/trunk/src/media/base/simd/empty_register_state_mmx.asm
+END
+convert_rgb_to_yuv.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/101507/trunk/src/media/base/simd/convert_rgb_to_yuv.h
+END
+convert_yuv_to_rgb_c.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195339/trunk/src/media/base/simd/convert_yuv_to_rgb_c.cc
+END
+convert_rgb_to_yuv_ssse3.inc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/100352/trunk/src/media/base/simd/convert_rgb_to_yuv_ssse3.inc
+END
+convert_yuv_to_rgb_sse.asm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/182407/trunk/src/media/base/simd/convert_yuv_to_rgb_sse.asm
+END
+linear_scale_yuv_to_rgb_sse.asm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/182407/trunk/src/media/base/simd/linear_scale_yuv_to_rgb_sse.asm
+END
+yuv_to_rgb_table.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/195339/trunk/src/media/base/simd/yuv_to_rgb_table.cc
+END
+filter_yuv.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/101067/trunk/src/media/base/simd/filter_yuv.h
+END
+filter_yuv_c.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/105798/trunk/src/media/base/simd/filter_yuv_c.cc
+END

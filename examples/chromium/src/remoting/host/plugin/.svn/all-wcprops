@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/197458/trunk/src/remoting/host/plugin
+END
+host_plugin.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/187051/trunk/src/remoting/host/plugin/host_plugin.cc
+END
+host_log_handler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/119173/trunk/src/remoting/host/plugin/host_log_handler.cc
+END
+host_plugin_utils.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/131489/trunk/src/remoting/host/plugin/host_plugin_utils.cc
+END
+host_log_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/99850/trunk/src/remoting/host/plugin/host_log_handler.h
+END
+host_plugin_utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/131489/trunk/src/remoting/host/plugin/host_plugin_utils.h
+END
+constants.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/152182/trunk/src/remoting/host/plugin/constants.h
+END
+host_plugin.def
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/89901/trunk/src/remoting/host/plugin/host_plugin.def
+END
+remoting_host_plugin.ver
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/156395/trunk/src/remoting/host/plugin/remoting_host_plugin.ver
+END
+host_script_object.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/197458/trunk/src/remoting/host/plugin/host_script_object.cc
+END
+host_script_object.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/196226/trunk/src/remoting/host/plugin/host_script_object.h
+END
+host_plugin-Info.plist
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/107986/trunk/src/remoting/host/plugin/host_plugin-Info.plist
+END

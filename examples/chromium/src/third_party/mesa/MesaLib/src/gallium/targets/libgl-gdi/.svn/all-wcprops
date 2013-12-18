@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/targets/libgl-gdi
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/targets/libgl-gdi/SConscript
+END
+gdi_llvmpipe_winsys.c
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/targets/libgl-gdi/gdi_llvmpipe_winsys.c
+END
+gdi_softpipe_winsys.c
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/targets/libgl-gdi/gdi_softpipe_winsys.c
+END

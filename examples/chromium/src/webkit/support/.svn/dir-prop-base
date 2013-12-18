@@ -1,0 +1,32 @@
+K 10
+svn:ignore
+V 559
+appcache.target.mk
+appcache.vcproj
+blob.target.mk
+blob.vcproj
+copy_npapi_layout_test_plugin.target.mk
+database.target.mk
+database.vcproj
+fileapi.target.mk
+fileapi.vcproj
+glue.target.mk
+glue.vcproj
+npapi_layout_test_plugin.target.mk
+webkit_resources.target.mk
+webkit_resources.vcproj
+webkit_strings.target.mk
+webkit_strings.vcproj
+webkit_support.Makefile
+webkit_support.sln
+webkit_support.target.mk
+webkit_support.vcproj
+webkit_support.xcodeproj
+webkit_user_agent.target.mk
+webkit_user_agent.vcproj
+webkit_gpu.vcproj
+quota.vcproj
+webkit_support_common.vcproj
+
+
+END

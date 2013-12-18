@@ -1,0 +1,11 @@
+K 10
+svn:ignore
+V 147
+libphonenumber.sln
+phonenumber_proto.vcproj
+libphonenumber.vcproj
+libphonenumber_unittests.vcproj
+phonenumber_proto.rules
+libphonenumber.xcodeproj
+
+END

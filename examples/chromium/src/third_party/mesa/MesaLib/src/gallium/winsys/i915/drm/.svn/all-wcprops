@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/i915/drm
+END
+i915_drm_buffer.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/i915/drm/i915_drm_buffer.c
+END
+i915_drm_batchbuffer.c
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/i915/drm/i915_drm_batchbuffer.c
+END
+i915_drm_winsys.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/i915/drm/i915_drm_winsys.c
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/i915/drm/SConscript
+END
+i915_drm_fence.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/i915/drm/i915_drm_fence.c
+END
+i915_drm_winsys.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/i915/drm/i915_drm_winsys.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/i915/drm/Makefile
+END
+i915_drm_public.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/winsys/i915/drm/i915_drm_public.h
+END

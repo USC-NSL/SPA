@@ -1,0 +1,863 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/197470/trunk/src/chrome/browser/ui
+END
+browser_tabstrip.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/193493/trunk/src/chrome/browser/ui/browser_tabstrip.cc
+END
+browser_tabstrip.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/179466/trunk/src/chrome/browser/ui/browser_tabstrip.h
+END
+native_web_contents_modal_dialog.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/182974/trunk/src/chrome/browser/ui/native_web_contents_modal_dialog.h
+END
+sad_tab_helper.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/177884/trunk/src/chrome/browser/ui/sad_tab_helper.h
+END
+browser_commands.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/195030/trunk/src/chrome/browser/ui/browser_commands.cc
+END
+host_desktop.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/185724/trunk/src/chrome/browser/ui/host_desktop.h
+END
+tab_modal_confirm_dialog_delegate.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/183995/trunk/src/chrome/browser/ui/tab_modal_confirm_dialog_delegate.cc
+END
+singleton_tabs.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/195973/trunk/src/chrome/browser/ui/singleton_tabs.cc
+END
+protocol_dialog_delegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/179558/trunk/src/chrome/browser/ui/protocol_dialog_delegate.h
+END
+browser_finder.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/185092/trunk/src/chrome/browser/ui/browser_finder.h
+END
+browser_window.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/195030/trunk/src/chrome/browser/ui/browser_window.h
+END
+browser_tabrestore.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/197086/trunk/src/chrome/browser/ui/browser_tabrestore.cc
+END
+singleton_tabs.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/146163/trunk/src/chrome/browser/ui/singleton_tabs.h
+END
+browser_ui_prefs.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/181648/trunk/src/chrome/browser/ui/browser_ui_prefs.h
+END
+browser_toolbar_model_delegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/146163/trunk/src/chrome/browser/ui/browser_toolbar_model_delegate.h
+END
+browser_commands_mac.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/181783/trunk/src/chrome/browser/ui/browser_commands_mac.cc
+END
+unload_controller.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/197470/trunk/src/chrome/browser/ui/unload_controller.cc
+END
+browser_instant_controller.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/197470/trunk/src/chrome/browser/ui/browser_instant_controller.cc
+END
+alternate_error_tab_observer.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/189513/trunk/src/chrome/browser/ui/alternate_error_tab_observer.h
+END
+auto_login_prompter.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/195410/trunk/src/chrome/browser/ui/auto_login_prompter.cc
+END
+crypto_module_password_dialog_openssl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/158225/trunk/src/chrome/browser/ui/crypto_module_password_dialog_openssl.cc
+END
+sad_tab_helper.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/189153/trunk/src/chrome/browser/ui/sad_tab_helper.cc
+END
+browser_navigator.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/197323/trunk/src/chrome/browser/ui/browser_navigator.cc
+END
+chrome_pages.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/189438/trunk/src/chrome/browser/ui/chrome_pages.h
+END
+metro_pin_tab_helper_win.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/176028/trunk/src/chrome/browser/ui/metro_pin_tab_helper_win.h
+END
+screen_capture_notification_ui_stub.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/189251/trunk/src/chrome/browser/ui/screen_capture_notification_ui_stub.cc
+END
+browser_mac.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/185147/trunk/src/chrome/browser/ui/browser_mac.cc
+END
+browser_mac.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/159598/trunk/src/chrome/browser/ui/browser_mac.h
+END
+crypto_module_password_dialog_nss.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/191450/trunk/src/chrome/browser/ui/crypto_module_password_dialog_nss.cc
+END
+browser_close_browsertest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/184455/trunk/src/chrome/browser/ui/browser_close_browsertest.cc
+END
+view_ids.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/185787/trunk/src/chrome/browser/ui/view_ids.h
+END
+browser_view_prefs.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/180873/trunk/src/chrome/browser/ui/browser_view_prefs.h
+END
+uma_browsing_activity_observer.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/146476/trunk/src/chrome/browser/ui/uma_browsing_activity_observer.h
+END
+web_contents_modal_dialog_manager.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/191233/trunk/src/chrome/browser/ui/web_contents_modal_dialog_manager.h
+END
+screen_capture_notification_ui_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/193728/trunk/src/chrome/browser/ui/screen_capture_notification_ui_win.cc
+END
+tab_modal_confirm_dialog_browsertest.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/168688/trunk/src/chrome/browser/ui/tab_modal_confirm_dialog_browsertest.h
+END
+profile_error_dialog.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/168188/trunk/src/chrome/browser/ui/profile_error_dialog.cc
+END
+browser_tab_contents.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/173349/trunk/src/chrome/browser/ui/browser_tab_contents.h
+END
+chrome_select_file_policy.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/189138/trunk/src/chrome/browser/ui/chrome_select_file_policy.cc
+END
+browser_iterator_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/183853/trunk/src/chrome/browser/ui/browser_iterator_unittest.cc
+END
+chrome_pages.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/195410/trunk/src/chrome/browser/ui/chrome_pages.cc
+END
+sad_tab.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/189153/trunk/src/chrome/browser/ui/sad_tab.h
+END
+browser_content_setting_bubble_model_delegate.cc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/163080/trunk/src/chrome/browser/ui/browser_content_setting_bubble_model_delegate.cc
+END
+browser_navigator_browsertest_chromeos.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/192594/trunk/src/chrome/browser/ui/browser_navigator_browsertest_chromeos.cc
+END
+hung_plugin_tab_helper.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/197198/trunk/src/chrome/browser/ui/hung_plugin_tab_helper.h
+END
+browser_otr_state.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/149364/trunk/src/chrome/browser/ui/browser_otr_state.cc
+END
+validation_message_bubble.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/197226/trunk/src/chrome/browser/ui/validation_message_bubble.h
+END
+browser_view_prefs.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/181707/trunk/src/chrome/browser/ui/browser_view_prefs.cc
+END
+alternate_error_tab_observer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/186301/trunk/src/chrome/browser/ui/alternate_error_tab_observer.cc
+END
+network_profile_bubble.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/181648/trunk/src/chrome/browser/ui/network_profile_bubble.h
+END
+crypto_module_password_dialog.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/158225/trunk/src/chrome/browser/ui/crypto_module_password_dialog.cc
+END
+browser_tab_restore_service_delegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/197086/trunk/src/chrome/browser/ui/browser_tab_restore_service_delegate.h
+END
+auto_login_infobar_delegate.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/197259/trunk/src/chrome/browser/ui/auto_login_infobar_delegate.cc
+END
+chrome_select_file_policy.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/177533/trunk/src/chrome/browser/ui/chrome_select_file_policy.h
+END
+browser_iterator.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/183853/trunk/src/chrome/browser/ui/browser_iterator.h
+END
+browser_navigator_browsertest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/197323/trunk/src/chrome/browser/ui/browser_navigator_browsertest.cc
+END
+metro_chrome_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/186113/trunk/src/chrome/browser/ui/metro_chrome_win.cc
+END
+hung_plugin_tab_helper.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/197291/trunk/src/chrome/browser/ui/hung_plugin_tab_helper.cc
+END
+host_desktop.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/185724/trunk/src/chrome/browser/ui/host_desktop.cc
+END
+collected_cookies_infobar_delegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/189138/trunk/src/chrome/browser/ui/collected_cookies_infobar_delegate.h
+END
+tab_modal_confirm_dialog_delegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/183995/trunk/src/chrome/browser/ui/tab_modal_confirm_dialog_delegate.h
+END
+external_protocol_dialog_delegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/179558/trunk/src/chrome/browser/ui/external_protocol_dialog_delegate.h
+END
+uninstall_browser_prompt.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/171173/trunk/src/chrome/browser/ui/uninstall_browser_prompt.h
+END
+network_profile_bubble.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/186301/trunk/src/chrome/browser/ui/network_profile_bubble.cc
+END
+certificate_dialogs.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/191450/trunk/src/chrome/browser/ui/certificate_dialogs.h
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/188880/trunk/src/chrome/browser/ui/OWNERS
+END
+auto_login_prompter.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/194709/trunk/src/chrome/browser/ui/auto_login_prompter.h
+END
+auto_login_infobar_delegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/197259/trunk/src/chrome/browser/ui/auto_login_infobar_delegate.h
+END
+browser_iterator.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/183853/trunk/src/chrome/browser/ui/browser_iterator.cc
+END
+sad_tab.cc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/189153/trunk/src/chrome/browser/ui/sad_tab.cc
+END
+metro_pin_tab_helper_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/191304/trunk/src/chrome/browser/ui/metro_pin_tab_helper_win.cc
+END
+top_level_widget.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/154950/trunk/src/chrome/browser/ui/top_level_widget.h
+END
+send_feedback_experiment.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/190049/trunk/src/chrome/browser/ui/send_feedback_experiment.h
+END
+ntp_background_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/165592/trunk/src/chrome/browser/ui/ntp_background_util.h
+END
+chrome_style.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/188542/trunk/src/chrome/browser/ui/chrome_style.h
+END
+collected_cookies_infobar_delegate.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/195982/trunk/src/chrome/browser/ui/collected_cookies_infobar_delegate.cc
+END
+external_protocol_dialog_delegate.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/179558/trunk/src/chrome/browser/ui/external_protocol_dialog_delegate.cc
+END
+browser_toolbar_model_delegate.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/179407/trunk/src/chrome/browser/ui/browser_toolbar_model_delegate.cc
+END
+browser_ui_prefs.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/194333/trunk/src/chrome/browser/ui/browser_ui_prefs.cc
+END
+browser_focus_uitest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/193998/trunk/src/chrome/browser/ui/browser_focus_uitest.cc
+END
+browser_list.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/183853/trunk/src/chrome/browser/ui/browser_list.h
+END
+browser.cc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/197470/trunk/src/chrome/browser/ui/browser.cc
+END
+certificate_dialogs.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/193040/trunk/src/chrome/browser/ui/certificate_dialogs.cc
+END
+browser.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/197086/trunk/src/chrome/browser/ui/browser.h
+END
+user_data_dir_dialog.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/180245/trunk/src/chrome/browser/ui/user_data_dir_dialog.h
+END
+browser_tab_contents.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/195992/trunk/src/chrome/browser/ui/browser_tab_contents.cc
+END
+confirm_bubble_model.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/117621/trunk/src/chrome/browser/ui/confirm_bubble_model.cc
+END
+profile_error_dialog.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/146163/trunk/src/chrome/browser/ui/profile_error_dialog.h
+END
+status_bubble.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/146163/trunk/src/chrome/browser/ui/status_bubble.h
+END
+browser_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/183424/trunk/src/chrome/browser/ui/browser_win.cc
+END
+native_focus_tracker.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/187054/trunk/src/chrome/browser/ui/native_focus_tracker.h
+END
+base_window.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/180971/trunk/src/chrome/browser/ui/base_window.h
+END
+browser_tab_strip_model_delegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/183402/trunk/src/chrome/browser/ui/browser_tab_strip_model_delegate.h
+END
+web_contents_modal_dialog_manager_delegate.cc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/191735/trunk/src/chrome/browser/ui/web_contents_modal_dialog_manager_delegate.cc
+END
+confirm_bubble.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/146163/trunk/src/chrome/browser/ui/confirm_bubble.h
+END
+active_tab_tracker.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/192446/trunk/src/chrome/browser/ui/active_tab_tracker.h
+END
+web_contents_modal_dialog_manager.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/197470/trunk/src/chrome/browser/ui/web_contents_modal_dialog_manager.cc
+END
+uma_browsing_activity_observer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/192264/trunk/src/chrome/browser/ui/uma_browsing_activity_observer.cc
+END
+sad_tab_types.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/146163/trunk/src/chrome/browser/ui/sad_tab_types.h
+END
+browser_command_controller_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/192264/trunk/src/chrome/browser/ui/browser_command_controller_unittest.cc
+END
+browser_tab_restore_service_delegate.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/197086/trunk/src/chrome/browser/ui/browser_tab_restore_service_delegate.cc
+END
+browser_dialogs.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/189579/trunk/src/chrome/browser/ui/browser_dialogs.h
+END
+browser_command_controller_browsertest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/180904/trunk/src/chrome/browser/ui/browser_command_controller_browsertest.cc
+END
+browser_instant_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/195962/trunk/src/chrome/browser/ui/browser_instant_controller.h
+END
+chrome_select_file_policy_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/193040/trunk/src/chrome/browser/ui/chrome_select_file_policy_unittest.cc
+END
+send_feedback_experiment.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/190049/trunk/src/chrome/browser/ui/send_feedback_experiment.cc
+END
+ntp_background_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/183134/trunk/src/chrome/browser/ui/ntp_background_util.cc
+END
+chrome_style.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/188542/trunk/src/chrome/browser/ui/chrome_style.cc
+END
+browser_content_setting_bubble_model_delegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/163080/trunk/src/chrome/browser/ui/browser_content_setting_bubble_model_delegate.h
+END
+browser_navigator_browsertest.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/195973/trunk/src/chrome/browser/ui/browser_navigator_browsertest.h
+END
+metro_chrome_win.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/186113/trunk/src/chrome/browser/ui/metro_chrome_win.h
+END
+browser_tab_strip_model_delegate.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/197470/trunk/src/chrome/browser/ui/browser_tab_strip_model_delegate.cc
+END
+browser_otr_state_android.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/149364/trunk/src/chrome/browser/ui/browser_otr_state_android.cc
+END
+simple_message_box.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/192240/trunk/src/chrome/browser/ui/simple_message_box.h
+END
+browser_otr_state.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/149364/trunk/src/chrome/browser/ui/browser_otr_state.h
+END
+browser_window_state.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/192264/trunk/src/chrome/browser/ui/browser_window_state.cc
+END
+active_tab_tracker.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/197470/trunk/src/chrome/browser/ui/active_tab_tracker.cc
+END
+web_contents_modal_dialog_manager_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/191233/trunk/src/chrome/browser/ui/web_contents_modal_dialog_manager_unittest.cc
+END
+browser_tabrestore.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/197086/trunk/src/chrome/browser/ui/browser_tabrestore.h
+END
+tab_modal_confirm_dialog.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/183995/trunk/src/chrome/browser/ui/tab_modal_confirm_dialog.h
+END
+web_contents_modal_dialog_host.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/191735/trunk/src/chrome/browser/ui/web_contents_modal_dialog_host.cc
+END
+browser_command_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/189513/trunk/src/chrome/browser/ui/browser_command_controller.h
+END
+browser_browsertest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/197282/trunk/src/chrome/browser/ui/browser_browsertest.cc
+END
+browser_list_observer.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/148396/trunk/src/chrome/browser/ui/browser_list_observer.h
+END
+unload_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/195134/trunk/src/chrome/browser/ui/unload_controller.h
+END
+browser_navigator.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/186488/trunk/src/chrome/browser/ui/browser_navigator.h
+END
+accelerator_utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/194962/trunk/src/chrome/browser/ui/accelerator_utils.h
+END
+browser_commands.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/195030/trunk/src/chrome/browser/ui/browser_commands.h
+END
+screen_capture_notification_ui.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/189251/trunk/src/chrome/browser/ui/screen_capture_notification_ui.h
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/179019/trunk/src/chrome/browser/ui/DEPS
+END
+browser_finder.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/186003/trunk/src/chrome/browser/ui/browser_finder.cc
+END
+web_contents_modal_dialog_manager_delegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/191735/trunk/src/chrome/browser/ui/web_contents_modal_dialog_manager_delegate.h
+END
+browser_window_state.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/160775/trunk/src/chrome/browser/ui/browser_window_state.h
+END
+browser_list.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/187518/trunk/src/chrome/browser/ui/browser_list.cc
+END
+tab_modal_confirm_dialog_browsertest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/183049/trunk/src/chrome/browser/ui/tab_modal_confirm_dialog_browsertest.cc
+END
+gesture_prefs_observer_factory_aura.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/196777/trunk/src/chrome/browser/ui/gesture_prefs_observer_factory_aura.cc
+END
+browser_command_controller.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/197470/trunk/src/chrome/browser/ui/browser_command_controller.cc
+END
+web_contents_modal_dialog_host.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/191735/trunk/src/chrome/browser/ui/web_contents_modal_dialog_host.h
+END
+gesture_prefs_observer_factory_aura.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/196777/trunk/src/chrome/browser/ui/gesture_prefs_observer_factory_aura.h
+END
+browser_commands_mac.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/181783/trunk/src/chrome/browser/ui/browser_commands_mac.h
+END
+native_web_contents_modal_dialog_manager.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/191233/trunk/src/chrome/browser/ui/native_web_contents_modal_dialog_manager.h
+END
+crypto_module_password_dialog.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/158225/trunk/src/chrome/browser/ui/crypto_module_password_dialog.h
+END
+confirm_bubble_model.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/146163/trunk/src/chrome/browser/ui/confirm_bubble_model.h
+END

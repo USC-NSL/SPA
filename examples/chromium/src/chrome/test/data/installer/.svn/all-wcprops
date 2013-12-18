@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/22535/trunk/src/chrome/test/data/installer
+END
+archive1.7z
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/22535/trunk/src/chrome/test/data/installer/archive1.7z
+END
+archive2.7z
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/22535/trunk/src/chrome/test/data/installer/archive2.7z
+END
+archive3.7z
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/22535/trunk/src/chrome/test/data/installer/archive3.7z
+END
+invalid_archive.7z
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/22535/trunk/src/chrome/test/data/installer/invalid_archive.7z
+END
+archive.diff
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/22535/trunk/src/chrome/test/data/installer/archive.diff
+END

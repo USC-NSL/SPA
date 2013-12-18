@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/116289/trunk/src/chrome/test/data/extensions/install
+END
+install.crx
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/36531/trunk/src/chrome/test/data/extensions/install/install.crx
+END
+install.pem
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/36531/trunk/src/chrome/test/data/extensions/install/install.pem
+END
+install_v2.crx
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/36531/trunk/src/chrome/test/data/extensions/install/install_v2.crx
+END
+install_older_version.crx
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/36531/trunk/src/chrome/test/data/extensions/install/install_older_version.crx
+END
+install_same_version.crx
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/36531/trunk/src/chrome/test/data/extensions/install/install_same_version.crx
+END

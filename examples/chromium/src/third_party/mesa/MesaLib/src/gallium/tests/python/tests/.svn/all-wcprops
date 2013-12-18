@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/tests/python/tests
+END
+base.py
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/tests/python/tests/base.py
+END
+texture_blit.py
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/tests/python/tests/texture_blit.py
+END
+texture_render.py
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/tests/python/tests/texture_render.py
+END
+tree.py
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/tests/python/tests/tree.py
+END
+surface_copy.py
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/tests/python/tests/surface_copy.py
+END
+texture_transfer.py
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/tests/python/tests/texture_transfer.py
+END

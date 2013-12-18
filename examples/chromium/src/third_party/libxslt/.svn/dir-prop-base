@@ -1,0 +1,15 @@
+K 10
+svn:ignore
+V 144
+config.h
+libxslt.xcodeproj
+libxslt.vcproj
+libxslt.sln
+SConstruct
+libxslt.scons
+libxslt_main.scons
+libxslt.mk
+libxslt.Makefile
+libxslt.target.mk
+
+END

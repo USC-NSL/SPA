@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/194582/trunk/src/sync/tools/testserver
+END
+xmppserver_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/177864/trunk/src/sync/tools/testserver/xmppserver_test.py
+END
+xmppserver.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/177864/trunk/src/sync/tools/testserver/xmppserver.py
+END
+chromiumsync_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/191730/trunk/src/sync/tools/testserver/chromiumsync_test.py
+END
+chromiumsync.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/194582/trunk/src/sync/tools/testserver/chromiumsync.py
+END
+sync_testserver.py
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/177864/trunk/src/sync/tools/testserver/sync_testserver.py
+END
+run_sync_testserver.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/184344/trunk/src/sync/tools/testserver/run_sync_testserver.cc
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/177864/trunk/src/sync/tools/testserver/DEPS
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/177864/trunk/src/sync/tools/testserver/OWNERS
+END

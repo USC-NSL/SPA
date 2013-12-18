@@ -1,0 +1,14 @@
+K 10
+svn:ignore
+V 127
+libpng.xcodeproj
+libpng.sln
+libpng.vcproj
+SConstruct
+libpng.scons
+libpng_main.scons
+libpng.mk
+libpng.Makefile
+libpng.target.mk
+
+END

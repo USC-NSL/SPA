@@ -1,0 +1,239 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/196777/trunk/src/chrome/browser/extensions/api/storage
+END
+settings_sync_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/176236/trunk/src/chrome/browser/extensions/api/storage/settings_sync_util.h
+END
+settings_sync_processor.cc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/193104/trunk/src/chrome/browser/extensions/api/storage/settings_sync_processor.cc
+END
+settings_test_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/196777/trunk/src/chrome/browser/extensions/api/storage/settings_test_util.cc
+END
+settings_sync_processor.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/176236/trunk/src/chrome/browser/extensions/api/storage/settings_sync_processor.h
+END
+settings_frontend_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/192685/trunk/src/chrome/browser/extensions/api/storage/settings_frontend_unittest.cc
+END
+setting_sync_data.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/176236/trunk/src/chrome/browser/extensions/api/storage/setting_sync_data.cc
+END
+syncable_settings_storage.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/176236/trunk/src/chrome/browser/extensions/api/storage/syncable_settings_storage.h
+END
+policy_value_store.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/193104/trunk/src/chrome/browser/extensions/api/storage/policy_value_store.cc
+END
+settings_quota_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/176236/trunk/src/chrome/browser/extensions/api/storage/settings_quota_unittest.cc
+END
+policy_value_store.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/176236/trunk/src/chrome/browser/extensions/api/storage/policy_value_store.h
+END
+leveldb_settings_storage_factory.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/181638/trunk/src/chrome/browser/extensions/api/storage/leveldb_settings_storage_factory.h
+END
+settings_namespace.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/176236/trunk/src/chrome/browser/extensions/api/storage/settings_namespace.cc
+END
+settings_storage_factory.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/184344/trunk/src/chrome/browser/extensions/api/storage/settings_storage_factory.h
+END
+settings_storage_quota_enforcer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/193104/trunk/src/chrome/browser/extensions/api/storage/settings_storage_quota_enforcer.cc
+END
+sync_or_local_value_store_cache.cc
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/184344/trunk/src/chrome/browser/extensions/api/storage/sync_or_local_value_store_cache.cc
+END
+sync_or_local_value_store_cache.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/180245/trunk/src/chrome/browser/extensions/api/storage/sync_or_local_value_store_cache.h
+END
+managed_value_store_cache.cc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/184431/trunk/src/chrome/browser/extensions/api/storage/managed_value_store_cache.cc
+END
+managed_value_store_cache.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/184431/trunk/src/chrome/browser/extensions/api/storage/managed_value_store_cache.h
+END
+settings_sync_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/193040/trunk/src/chrome/browser/extensions/api/storage/settings_sync_unittest.cc
+END
+storage_api.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/186409/trunk/src/chrome/browser/extensions/api/storage/storage_api.cc
+END
+settings_test_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/181638/trunk/src/chrome/browser/extensions/api/storage/settings_test_util.h
+END
+settings_frontend.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/184431/trunk/src/chrome/browser/extensions/api/storage/settings_frontend.cc
+END
+storage_api.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/184813/trunk/src/chrome/browser/extensions/api/storage/storage_api.h
+END
+settings_frontend.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/176236/trunk/src/chrome/browser/extensions/api/storage/settings_frontend.h
+END
+syncable_settings_storage.cc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/193104/trunk/src/chrome/browser/extensions/api/storage/syncable_settings_storage.cc
+END
+setting_sync_data.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/176236/trunk/src/chrome/browser/extensions/api/storage/setting_sync_data.h
+END
+weak_unlimited_settings_storage.cc
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/176236/trunk/src/chrome/browser/extensions/api/storage/weak_unlimited_settings_storage.cc
+END
+policy_value_store_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/184344/trunk/src/chrome/browser/extensions/api/storage/policy_value_store_unittest.cc
+END
+weak_unlimited_settings_storage.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/176236/trunk/src/chrome/browser/extensions/api/storage/weak_unlimited_settings_storage.h
+END
+settings_backend.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/193104/trunk/src/chrome/browser/extensions/api/storage/settings_backend.cc
+END
+leveldb_settings_storage_factory.cc
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/181638/trunk/src/chrome/browser/extensions/api/storage/leveldb_settings_storage_factory.cc
+END
+settings_observer.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/176236/trunk/src/chrome/browser/extensions/api/storage/settings_observer.h
+END
+settings_backend.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/184344/trunk/src/chrome/browser/extensions/api/storage/settings_backend.h
+END
+value_store_cache.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/176236/trunk/src/chrome/browser/extensions/api/storage/value_store_cache.cc
+END
+value_store_cache.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/176236/trunk/src/chrome/browser/extensions/api/storage/value_store_cache.h
+END
+settings_namespace.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/176236/trunk/src/chrome/browser/extensions/api/storage/settings_namespace.h
+END
+settings_storage_quota_enforcer.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/176236/trunk/src/chrome/browser/extensions/api/storage/settings_storage_quota_enforcer.h
+END
+settings_sync_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/176236/trunk/src/chrome/browser/extensions/api/storage/settings_sync_util.cc
+END
+settings_apitest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/182924/trunk/src/chrome/browser/extensions/api/storage/settings_apitest.cc
+END

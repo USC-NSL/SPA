@@ -1,0 +1,281 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm
+END
+lp_bld_sample_soa.c
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_sample_soa.c
+END
+lp_bld_struct.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_struct.c
+END
+lp_bld_const.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_const.c
+END
+lp_bld_struct.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_struct.h
+END
+lp_bld_quad.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_quad.c
+END
+lp_bld_format_yuv.c
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_format_yuv.c
+END
+lp_bld_const.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_const.h
+END
+lp_bld_format.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_format.h
+END
+lp_bld_arit.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_arit.c
+END
+lp_bld_quad.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_quad.h
+END
+lp_bld_printf.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_printf.c
+END
+lp_bld_init.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_init.c
+END
+lp_bld_arit.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_arit.h
+END
+lp_bld_limits.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_limits.h
+END
+lp_bld_printf.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_printf.h
+END
+lp_bld_swizzle.c
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_swizzle.c
+END
+lp_bld_init.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_init.h
+END
+lp_bld_tgsi_aos.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_tgsi_aos.c
+END
+lp_bld_tgsi_soa.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_tgsi_soa.c
+END
+f.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/f.cpp
+END
+lp_bld_gather.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_gather.c
+END
+lp_bld_swizzle.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_swizzle.h
+END
+lp_bld_pack.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_pack.c
+END
+lp_bld_gather.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_gather.h
+END
+lp_bld_sample.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_sample.c
+END
+lp_bld_type.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_type.c
+END
+lp_bld_pack.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_pack.h
+END
+lp_bld.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld.h
+END
+lp_bld_debug.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_debug.c
+END
+lp_bld_sample.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_sample.h
+END
+lp_bld_type.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_type.h
+END
+lp_bld_format_soa.c
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_format_soa.c
+END
+lp_bld_format_aos.c
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_format_aos.c
+END
+lp_bld_misc.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_misc.cpp
+END
+lp_bld_debug.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_debug.h
+END
+lp_bld_logic.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_logic.c
+END
+lp_bld_assert.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_assert.c
+END
+lp_bld_logic.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_logic.h
+END
+lp_bld_conv.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_conv.c
+END
+lp_bld_assert.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_assert.h
+END
+lp_bld_flow.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_flow.c
+END
+lp_bld_conv.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_conv.h
+END
+lp_bld_tgsi.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_tgsi.h
+END
+lp_bld_intr.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_intr.c
+END
+lp_bld_flow.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_flow.h
+END
+lp_bld_intr.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/gallivm/lp_bld_intr.h
+END

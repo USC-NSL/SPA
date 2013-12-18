@@ -1,0 +1,221 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/197467/trunk/src/chrome/service/cloud_print
+END
+cloud_print_connector.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/194754/trunk/src/chrome/service/cloud_print/cloud_print_connector.cc
+END
+cloud_print_proxy_backend.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/170715/trunk/src/chrome/service/cloud_print/cloud_print_proxy_backend.h
+END
+cloud_print_wipeout.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/181997/trunk/src/chrome/service/cloud_print/cloud_print_wipeout.cc
+END
+cloud_print_token_store.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/170715/trunk/src/chrome/service/cloud_print/cloud_print_token_store.h
+END
+print_system.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/180245/trunk/src/chrome/service/cloud_print/print_system.h
+END
+cloud_print_auth.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/181997/trunk/src/chrome/service/cloud_print/cloud_print_auth.cc
+END
+cloud_print_auth.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/170715/trunk/src/chrome/service/cloud_print/cloud_print_auth.h
+END
+cloud_print_url_fetcher.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/182332/trunk/src/chrome/service/cloud_print/cloud_print_url_fetcher.h
+END
+cloud_print_helpers.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/170715/trunk/src/chrome/service/cloud_print/cloud_print_helpers.h
+END
+printer_job_handler_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/193040/trunk/src/chrome/service/cloud_print/printer_job_handler_unittest.cc
+END
+printer_job_handler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/185027/trunk/src/chrome/service/cloud_print/printer_job_handler.cc
+END
+connector_settings.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/194754/trunk/src/chrome/service/cloud_print/connector_settings.h
+END
+printer_job_queue_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/185027/trunk/src/chrome/service/cloud_print/printer_job_queue_handler.h
+END
+cloud_print_proxy_backend.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/170715/trunk/src/chrome/service/cloud_print/cloud_print_proxy_backend.cc
+END
+cloud_print_token_store_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/170715/trunk/src/chrome/service/cloud_print/cloud_print_token_store_unittest.cc
+END
+cloud_print_connector.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/194754/trunk/src/chrome/service/cloud_print/cloud_print_connector.h
+END
+cloud_print_token_store.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/170715/trunk/src/chrome/service/cloud_print/cloud_print_token_store.cc
+END
+print_system.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/158629/trunk/src/chrome/service/cloud_print/print_system.cc
+END
+cloud_print_wipeout.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/170715/trunk/src/chrome/service/cloud_print/cloud_print_wipeout.h
+END
+job_status_updater.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/181997/trunk/src/chrome/service/cloud_print/job_status_updater.cc
+END
+job_status_updater.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/170715/trunk/src/chrome/service/cloud_print/job_status_updater.h
+END
+cloud_print_url_fetcher_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/193040/trunk/src/chrome/service/cloud_print/cloud_print_url_fetcher_unittest.cc
+END
+cloud_print_helpers_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/188857/trunk/src/chrome/service/cloud_print/cloud_print_helpers_unittest.cc
+END
+cloud_print_url_fetcher.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/183745/trunk/src/chrome/service/cloud_print/cloud_print_url_fetcher.cc
+END
+cloud_print_helpers.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/188857/trunk/src/chrome/service/cloud_print/cloud_print_helpers.cc
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/51216/trunk/src/chrome/service/cloud_print/DEPS
+END
+connector_settings_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/196276/trunk/src/chrome/service/cloud_print/connector_settings_unittest.cc
+END
+connector_settings.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/197467/trunk/src/chrome/service/cloud_print/connector_settings.cc
+END
+print_system_dummy.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/158629/trunk/src/chrome/service/cloud_print/print_system_dummy.cc
+END
+printer_job_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/185027/trunk/src/chrome/service/cloud_print/printer_job_handler.h
+END
+print_system_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/194255/trunk/src/chrome/service/cloud_print/print_system_win.cc
+END
+printer_job_queue_handler_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/193040/trunk/src/chrome/service/cloud_print/printer_job_queue_handler_unittest.cc
+END
+printer_job_queue_handler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/188311/trunk/src/chrome/service/cloud_print/printer_job_queue_handler.cc
+END
+cloud_print_proxy.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/194754/trunk/src/chrome/service/cloud_print/cloud_print_proxy.cc
+END
+cloud_print_proxy.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/194754/trunk/src/chrome/service/cloud_print/cloud_print_proxy.h
+END
+print_system_cups.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/184344/trunk/src/chrome/service/cloud_print/print_system_cups.cc
+END

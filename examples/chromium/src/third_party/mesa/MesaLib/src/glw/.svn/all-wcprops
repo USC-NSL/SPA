@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glw
+END
+depend
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glw/depend
+END
+glw.pc.in
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glw/glw.pc.in
+END
+GLwMDrawA.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glw/GLwMDrawA.c
+END
+GLwDrawA.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glw/GLwDrawA.c
+END
+GLwMDrawA.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glw/GLwMDrawA.h
+END
+GLwMDrawAP.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glw/GLwMDrawAP.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glw/Makefile
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glw/README
+END
+GLwDrawA.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glw/GLwDrawA.h
+END
+GLwDrawAP.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glw/GLwDrawAP.h
+END

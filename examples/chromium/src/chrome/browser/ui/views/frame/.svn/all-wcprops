@@ -1,0 +1,419 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/197470/trunk/src/chrome/browser/ui/views/frame
+END
+browser_desktop_root_window_host_x11.cc
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/190793/trunk/src/chrome/browser/ui/views/frame/browser_desktop_root_window_host_x11.cc
+END
+browser_non_client_frame_view_ash_browsertest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/193543/trunk/src/chrome/browser/ui/views/frame/browser_non_client_frame_view_ash_browsertest.cc
+END
+browser_frame.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/180633/trunk/src/chrome/browser/ui/views/frame/browser_frame.h
+END
+top_container_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/194599/trunk/src/chrome/browser/ui/views/frame/top_container_view.h
+END
+immersive_mode_controller_ash.cc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/197470/trunk/src/chrome/browser/ui/views/frame/immersive_mode_controller_ash.cc
+END
+instant_overlay_controller_views.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/188656/trunk/src/chrome/browser/ui/views/frame/instant_overlay_controller_views.h
+END
+browser_non_client_frame_view_factory_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/159577/trunk/src/chrome/browser/ui/views/frame/browser_non_client_frame_view_factory_win.cc
+END
+browser_view_interactive_uitest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/197280/trunk/src/chrome/browser/ui/views/frame/browser_view_interactive_uitest.cc
+END
+immersive_mode_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/196439/trunk/src/chrome/browser/ui/views/frame/immersive_mode_controller.h
+END
+system_menu_insertion_delegate_win.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/196857/trunk/src/chrome/browser/ui/views/frame/system_menu_insertion_delegate_win.h
+END
+browser_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/197470/trunk/src/chrome/browser/ui/views/frame/browser_view.cc
+END
+browser_root_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/188738/trunk/src/chrome/browser/ui/views/frame/browser_root_view.cc
+END
+browser_frame_common_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/192264/trunk/src/chrome/browser/ui/views/frame/browser_frame_common_win.cc
+END
+browser_desktop_root_window_host_win.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/182347/trunk/src/chrome/browser/ui/views/frame/browser_desktop_root_window_host_win.h
+END
+system_menu_model_delegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/187769/trunk/src/chrome/browser/ui/views/frame/system_menu_model_delegate.h
+END
+app_non_client_frame_view_ash.cc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/194069/trunk/src/chrome/browser/ui/views/frame/app_non_client_frame_view_ash.cc
+END
+taskbar_decorator.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/182145/trunk/src/chrome/browser/ui/views/frame/taskbar_decorator.cc
+END
+app_non_client_frame_view_ash.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/163466/trunk/src/chrome/browser/ui/views/frame/app_non_client_frame_view_ash.h
+END
+opaque_browser_frame_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/183134/trunk/src/chrome/browser/ui/views/frame/opaque_browser_frame_view.cc
+END
+immersive_mode_controller_ash.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/197400/trunk/src/chrome/browser/ui/views/frame/immersive_mode_controller_ash.h
+END
+browser_desktop_root_window_host.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/175849/trunk/src/chrome/browser/ui/views/frame/browser_desktop_root_window_host.h
+END
+taskbar_decorator_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/185590/trunk/src/chrome/browser/ui/views/frame/taskbar_decorator_win.cc
+END
+immersive_mode_controller_stub.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/196439/trunk/src/chrome/browser/ui/views/frame/immersive_mode_controller_stub.h
+END
+browser_frame_aura.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/197199/trunk/src/chrome/browser/ui/views/frame/browser_frame_aura.h
+END
+browser_view_layout_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/195936/trunk/src/chrome/browser/ui/views/frame/browser_view_layout_unittest.cc
+END
+browser_view_layout.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/197470/trunk/src/chrome/browser/ui/views/frame/browser_view_layout.cc
+END
+browser_desktop_root_window_host_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/192264/trunk/src/chrome/browser/ui/views/frame/browser_desktop_root_window_host_win.cc
+END
+browser_frame_common_win.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/182347/trunk/src/chrome/browser/ui/views/frame/browser_frame_common_win.h
+END
+browser_non_client_frame_view_ash.cc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/194069/trunk/src/chrome/browser/ui/views/frame/browser_non_client_frame_view_ash.cc
+END
+browser_frame.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/192264/trunk/src/chrome/browser/ui/views/frame/browser_frame.cc
+END
+system_menu_model_builder.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/181478/trunk/src/chrome/browser/ui/views/frame/system_menu_model_builder.cc
+END
+desktop_browser_frame_aura.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/175849/trunk/src/chrome/browser/ui/views/frame/desktop_browser_frame_aura.cc
+END
+immersive_mode_controller_factory.cc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/195358/trunk/src/chrome/browser/ui/views/frame/immersive_mode_controller_factory.cc
+END
+browser_non_client_frame_view_factory_aura.cc
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/185724/trunk/src/chrome/browser/ui/views/frame/browser_non_client_frame_view_factory_aura.cc
+END
+browser_non_client_frame_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/182145/trunk/src/chrome/browser/ui/views/frame/browser_non_client_frame_view.cc
+END
+instant_overlay_controller_views.cc
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/193153/trunk/src/chrome/browser/ui/views/frame/instant_overlay_controller_views.cc
+END
+browser_non_client_frame_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/150354/trunk/src/chrome/browser/ui/views/frame/browser_non_client_frame_view.h
+END
+immersive_mode_controller_stub.cc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/196439/trunk/src/chrome/browser/ui/views/frame/immersive_mode_controller_stub.cc
+END
+immersive_mode_controller_ash_browsertest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/197400/trunk/src/chrome/browser/ui/views/frame/immersive_mode_controller_ash_browsertest.cc
+END
+native_browser_frame.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/175849/trunk/src/chrome/browser/ui/views/frame/native_browser_frame.h
+END
+app_panel_browser_frame_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/197470/trunk/src/chrome/browser/ui/views/frame/app_panel_browser_frame_view.cc
+END
+system_menu_insertion_delegate_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/196857/trunk/src/chrome/browser/ui/views/frame/system_menu_insertion_delegate_win.cc
+END
+browser_frame_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/188432/trunk/src/chrome/browser/ui/views/frame/browser_frame_win.cc
+END
+browser_view_layout.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/197257/trunk/src/chrome/browser/ui/views/frame/browser_view_layout.h
+END
+browser_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/197199/trunk/src/chrome/browser/ui/views/frame/browser_view.h
+END
+browser_non_client_frame_view_factory_x11.cc
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/192264/trunk/src/chrome/browser/ui/views/frame/browser_non_client_frame_view_factory_x11.cc
+END
+glass_browser_frame_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/159494/trunk/src/chrome/browser/ui/views/frame/glass_browser_frame_view.h
+END
+app_non_client_frame_view_ash_browsertest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/191229/trunk/src/chrome/browser/ui/views/frame/app_non_client_frame_view_ash_browsertest.cc
+END
+taskbar_decorator.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/182145/trunk/src/chrome/browser/ui/views/frame/taskbar_decorator.h
+END
+browser_non_client_frame_view_ash.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/184908/trunk/src/chrome/browser/ui/views/frame/browser_non_client_frame_view_ash.h
+END
+browser_desktop_root_window_host_x11.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/190793/trunk/src/chrome/browser/ui/views/frame/browser_desktop_root_window_host_x11.h
+END
+top_container_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/196899/trunk/src/chrome/browser/ui/views/frame/top_container_view.cc
+END
+contents_container.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/194761/trunk/src/chrome/browser/ui/views/frame/contents_container.cc
+END
+system_menu_model_builder.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/181478/trunk/src/chrome/browser/ui/views/frame/system_menu_model_builder.h
+END
+desktop_browser_frame_aura.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/175849/trunk/src/chrome/browser/ui/views/frame/desktop_browser_frame_aura.h
+END
+contents_container.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/194761/trunk/src/chrome/browser/ui/views/frame/contents_container.h
+END
+opaque_browser_frame_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/159494/trunk/src/chrome/browser/ui/views/frame/opaque_browser_frame_view.h
+END
+browser_frame_aura.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/197199/trunk/src/chrome/browser/ui/views/frame/browser_frame_aura.cc
+END
+app_panel_browser_frame_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/151105/trunk/src/chrome/browser/ui/views/frame/app_panel_browser_frame_view.h
+END
+browser_view_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/195936/trunk/src/chrome/browser/ui/views/frame/browser_view_unittest.cc
+END
+browser_frame_win.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/186382/trunk/src/chrome/browser/ui/views/frame/browser_frame_win.h
+END
+minimize_button_metrics_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/159792/trunk/src/chrome/browser/ui/views/frame/minimize_button_metrics_win.cc
+END
+popup_non_client_frame_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/159494/trunk/src/chrome/browser/ui/views/frame/popup_non_client_frame_view.cc
+END
+glass_browser_frame_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/188432/trunk/src/chrome/browser/ui/views/frame/glass_browser_frame_view.cc
+END
+popup_non_client_frame_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/159494/trunk/src/chrome/browser/ui/views/frame/popup_non_client_frame_view.h
+END
+minimize_button_metrics_win.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/159792/trunk/src/chrome/browser/ui/views/frame/minimize_button_metrics_win.h
+END
+browser_root_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/186382/trunk/src/chrome/browser/ui/views/frame/browser_root_view.h
+END
+system_menu_model_delegate.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/187769/trunk/src/chrome/browser/ui/views/frame/system_menu_model_delegate.cc
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/176693/trunk/src/chrome/browser/ui/views/frame/OWNERS
+END

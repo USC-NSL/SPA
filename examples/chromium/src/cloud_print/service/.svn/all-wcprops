@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/197467/trunk/src/cloud_print/service
+END
+service_switches.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/195765/trunk/src/cloud_print/service/service_switches.h
+END
+service_constants.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/195765/trunk/src/cloud_print/service/service_constants.cc
+END
+service_constants.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195765/trunk/src/cloud_print/service/service_constants.h
+END
+service_state_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/140737/trunk/src/cloud_print/service/service_state_unittest.cc
+END
+service_state.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/181292/trunk/src/cloud_print/service/service_state.cc
+END
+service_state.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/180245/trunk/src/cloud_print/service/service_state.h
+END
+service_switches.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195765/trunk/src/cloud_print/service/service_switches.cc
+END
+service.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/196326/trunk/src/cloud_print/service/service.gyp
+END

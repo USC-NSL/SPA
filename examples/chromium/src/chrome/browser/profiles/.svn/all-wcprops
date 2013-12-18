@@ -1,0 +1,491 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/197386/trunk/src/chrome/browser/profiles
+END
+profile_info_interface.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/196569/trunk/src/chrome/browser/profiles/profile_info_interface.h
+END
+gaia_info_update_service_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/193040/trunk/src/chrome/browser/profiles/gaia_info_update_service_unittest.cc
+END
+gaia_info_update_service.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/181707/trunk/src/chrome/browser/profiles/gaia_info_update_service.cc
+END
+profile_info_cache_unittest.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/180245/trunk/src/chrome/browser/profiles/profile_info_cache_unittest.h
+END
+startup_task_runner_service.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/194956/trunk/src/chrome/browser/profiles/startup_task_runner_service.h
+END
+profile_shortcut_manager_unittest_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/183348/trunk/src/chrome/browser/profiles/profile_shortcut_manager_unittest_win.cc
+END
+chrome_version_service.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/186301/trunk/src/chrome/browser/profiles/chrome_version_service.cc
+END
+profile_keyed_service.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/127104/trunk/src/chrome/browser/profiles/profile_keyed_service.h
+END
+profile_impl_io_data.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/188927/trunk/src/chrome/browser/profiles/profile_impl_io_data.h
+END
+bookmark_model_loaded_observer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/181523/trunk/src/chrome/browser/profiles/bookmark_model_loaded_observer.cc
+END
+profile_info_util_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/146224/trunk/src/chrome/browser/profiles/profile_info_util_unittest.cc
+END
+refcounted_profile_keyed_service_factory.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/196777/trunk/src/chrome/browser/profiles/refcounted_profile_keyed_service_factory.h
+END
+off_the_record_profile_impl_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/187331/trunk/src/chrome/browser/profiles/off_the_record_profile_impl_unittest.cc
+END
+off_the_record_profile_io_data.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/188927/trunk/src/chrome/browser/profiles/off_the_record_profile_io_data.h
+END
+incognito_selection_clipboard_uitest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/184114/trunk/src/chrome/browser/profiles/incognito_selection_clipboard_uitest.cc
+END
+profile_io_data.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/192866/trunk/src/chrome/browser/profiles/profile_io_data.cc
+END
+profile_downloader.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/155312/trunk/src/chrome/browser/profiles/profile_downloader.h
+END
+profile_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/197386/trunk/src/chrome/browser/profiles/profile_impl.cc
+END
+profile_shortcut_manager_stub.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/169474/trunk/src/chrome/browser/profiles/profile_shortcut_manager_stub.cc
+END
+profile_shortcut_manager.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/151974/trunk/src/chrome/browser/profiles/profile_shortcut_manager.cc
+END
+dependency_node.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/194449/trunk/src/chrome/browser/profiles/dependency_node.h
+END
+profile_manager_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/195951/trunk/src/chrome/browser/profiles/profile_manager_unittest.cc
+END
+profile_manager.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/196482/trunk/src/chrome/browser/profiles/profile_manager.cc
+END
+profile_dependency_manager.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/194449/trunk/src/chrome/browser/profiles/profile_dependency_manager.h
+END
+avatar_menu_model_observer.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/96311/trunk/src/chrome/browser/profiles/avatar_menu_model_observer.h
+END
+profile_destroyer_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/168416/trunk/src/chrome/browser/profiles/profile_destroyer_unittest.cc
+END
+gaia_info_update_service.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/189513/trunk/src/chrome/browser/profiles/gaia_info_update_service.h
+END
+profile_shortcut_manager_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/197263/trunk/src/chrome/browser/profiles/profile_shortcut_manager_win.cc
+END
+profile_keyed_base_factory.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/196777/trunk/src/chrome/browser/profiles/profile_keyed_base_factory.cc
+END
+profile_browsertest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/189234/trunk/src/chrome/browser/profiles/profile_browsertest.cc
+END
+chrome_version_service.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/181648/trunk/src/chrome/browser/profiles/chrome_version_service.h
+END
+profile_info_cache_observer.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/180245/trunk/src/chrome/browser/profiles/profile_info_cache_observer.h
+END
+off_the_record_profile_io_data.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/188927/trunk/src/chrome/browser/profiles/off_the_record_profile_io_data.cc
+END
+off_the_record_profile_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/192540/trunk/src/chrome/browser/profiles/off_the_record_profile_impl.cc
+END
+profile_info_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/182368/trunk/src/chrome/browser/profiles/profile_info_util.h
+END
+profile_downloader_delegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/173522/trunk/src/chrome/browser/profiles/profile_downloader_delegate.h
+END
+refcounted_profile_keyed_service.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/125544/trunk/src/chrome/browser/profiles/refcounted_profile_keyed_service.cc
+END
+refcounted_profile_keyed_service.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/133870/trunk/src/chrome/browser/profiles/refcounted_profile_keyed_service.h
+END
+avatar_menu_model_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/188172/trunk/src/chrome/browser/profiles/avatar_menu_model_unittest.cc
+END
+avatar_menu_model.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/196569/trunk/src/chrome/browser/profiles/avatar_menu_model.cc
+END
+gaia_info_update_service_factory.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/196777/trunk/src/chrome/browser/profiles/gaia_info_update_service_factory.cc
+END
+profile_dependency_manager.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/197386/trunk/src/chrome/browser/profiles/profile_dependency_manager.cc
+END
+profile_manager.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/196569/trunk/src/chrome/browser/profiles/profile_manager.h
+END
+profile_info_cache_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/188857/trunk/src/chrome/browser/profiles/profile_info_cache_unittest.cc
+END
+startup_task_runner_service.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/194956/trunk/src/chrome/browser/profiles/startup_task_runner_service.cc
+END
+profile_info_cache.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/196569/trunk/src/chrome/browser/profiles/profile_info_cache.cc
+END
+dependency_graph.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/194449/trunk/src/chrome/browser/profiles/dependency_graph.cc
+END
+profile_impl_io_data.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/193454/trunk/src/chrome/browser/profiles/profile_impl_io_data.cc
+END
+dependency_graph.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/194449/trunk/src/chrome/browser/profiles/dependency_graph.h
+END
+profile_android.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/189764/trunk/src/chrome/browser/profiles/profile_android.h
+END
+profile.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/193069/trunk/src/chrome/browser/profiles/profile.h
+END
+profile_destroyer.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/146163/trunk/src/chrome/browser/profiles/profile_destroyer.h
+END
+profile_keyed_base_factory.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/196777/trunk/src/chrome/browser/profiles/profile_keyed_base_factory.h
+END
+profile_shortcut_manager_win.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/181638/trunk/src/chrome/browser/profiles/profile_shortcut_manager_win.h
+END
+profile_info_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/178408/trunk/src/chrome/browser/profiles/profile_info_util.cc
+END
+profile_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/197386/trunk/src/chrome/browser/profiles/profile_impl.h
+END
+avatar_menu_model.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/196569/trunk/src/chrome/browser/profiles/avatar_menu_model.h
+END
+profile_metrics.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/193658/trunk/src/chrome/browser/profiles/profile_metrics.cc
+END
+startup_task_runner_service_factory.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/196777/trunk/src/chrome/browser/profiles/startup_task_runner_service_factory.h
+END
+profile_shortcut_manager.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/184344/trunk/src/chrome/browser/profiles/profile_shortcut_manager.h
+END
+profile_keyed_service_factory.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/196777/trunk/src/chrome/browser/profiles/profile_keyed_service_factory.h
+END
+storage_partition_descriptor.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/184344/trunk/src/chrome/browser/profiles/storage_partition_descriptor.h
+END
+profile_manager_browsertest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/187546/trunk/src/chrome/browser/profiles/profile_manager_browsertest.cc
+END
+dependency_graph_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/194449/trunk/src/chrome/browser/profiles/dependency_graph_unittest.cc
+END
+profile_android.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/189764/trunk/src/chrome/browser/profiles/profile_android.cc
+END
+profile_info_cache.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/196569/trunk/src/chrome/browser/profiles/profile_info_cache.h
+END
+profile.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/193069/trunk/src/chrome/browser/profiles/profile.cc
+END
+profile_destroyer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/173543/trunk/src/chrome/browser/profiles/profile_destroyer.cc
+END
+refcounted_profile_keyed_service_factory.cc
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/196777/trunk/src/chrome/browser/profiles/refcounted_profile_keyed_service_factory.cc
+END
+bookmark_model_loaded_observer.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/181523/trunk/src/chrome/browser/profiles/bookmark_model_loaded_observer.h
+END
+off_the_record_profile_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/192349/trunk/src/chrome/browser/profiles/off_the_record_profile_impl.h
+END
+profile_downloader_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/193040/trunk/src/chrome/browser/profiles/profile_downloader_unittest.cc
+END
+profile_downloader.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/185315/trunk/src/chrome/browser/profiles/profile_downloader.cc
+END
+profile_io_data.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/192324/trunk/src/chrome/browser/profiles/profile_io_data.h
+END
+startup_task_runner_service_factory.cc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/196777/trunk/src/chrome/browser/profiles/startup_task_runner_service_factory.cc
+END
+avatar_menu_model_browsertest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/196569/trunk/src/chrome/browser/profiles/avatar_menu_model_browsertest.cc
+END
+profile_dependency_manager_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/196777/trunk/src/chrome/browser/profiles/profile_dependency_manager_unittest.cc
+END
+gaia_info_update_service_factory.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/196777/trunk/src/chrome/browser/profiles/gaia_info_update_service_factory.h
+END
+profile_metrics.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/193658/trunk/src/chrome/browser/profiles/profile_metrics.h
+END
+profile_keyed_service_factory.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/196777/trunk/src/chrome/browser/profiles/profile_keyed_service_factory.cc
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/180785/trunk/src/chrome/browser/profiles/OWNERS
+END

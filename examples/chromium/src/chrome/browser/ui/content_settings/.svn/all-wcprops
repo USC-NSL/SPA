@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/197470/trunk/src/chrome/browser/ui/content_settings
+END
+content_setting_image_model.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/146163/trunk/src/chrome/browser/ui/content_settings/content_setting_image_model.h
+END
+content_setting_changed_infobar_delegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/189138/trunk/src/chrome/browser/ui/content_settings/content_setting_changed_infobar_delegate.h
+END
+content_setting_media_menu_model.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/187769/trunk/src/chrome/browser/ui/content_settings/content_setting_media_menu_model.h
+END
+content_setting_bubble_model_delegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/163080/trunk/src/chrome/browser/ui/content_settings/content_setting_bubble_model_delegate.h
+END
+content_setting_bubble_model_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/195922/trunk/src/chrome/browser/ui/content_settings/content_setting_bubble_model_unittest.cc
+END
+content_setting_bubble_model.cc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/194918/trunk/src/chrome/browser/ui/content_settings/content_setting_bubble_model.cc
+END
+content_setting_bubble_model.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/183597/trunk/src/chrome/browser/ui/content_settings/content_setting_bubble_model.h
+END
+content_setting_image_model_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/168881/trunk/src/chrome/browser/ui/content_settings/content_setting_image_model_unittest.cc
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/130877/trunk/src/chrome/browser/ui/content_settings/OWNERS
+END
+content_setting_image_model.cc
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/183966/trunk/src/chrome/browser/ui/content_settings/content_setting_image_model.cc
+END
+content_setting_changed_infobar_delegate_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/189138/trunk/src/chrome/browser/ui/content_settings/content_setting_changed_infobar_delegate_unittest.cc
+END
+content_setting_changed_infobar_delegate.cc
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/195982/trunk/src/chrome/browser/ui/content_settings/content_setting_changed_infobar_delegate.cc
+END
+content_setting_media_menu_model.cc
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/197470/trunk/src/chrome/browser/ui/content_settings/content_setting_media_menu_model.cc
+END

@@ -1,0 +1,233 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/196835/trunk/src/win8/metro_driver
+END
+stdafx.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/179921/trunk/src/win8/metro_driver/stdafx.h
+END
+settings_handler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/182368/trunk/src/win8/metro_driver/settings_handler.cc
+END
+settings_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/182368/trunk/src/win8/metro_driver/settings_handler.h
+END
+direct3d_helper.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/175998/trunk/src/win8/metro_driver/direct3d_helper.cc
+END
+chrome_app_view_ash.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/196835/trunk/src/win8/metro_driver/chrome_app_view_ash.cc
+END
+secondary_tile.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/190073/trunk/src/win8/metro_driver/secondary_tile.cc
+END
+chrome_app_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/193719/trunk/src/win8/metro_driver/chrome_app_view.cc
+END
+chrome_app_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/193719/trunk/src/win8/metro_driver/chrome_app_view.h
+END
+print_document_source.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/182368/trunk/src/win8/metro_driver/print_document_source.h
+END
+file_picker.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/182368/trunk/src/win8/metro_driver/file_picker.h
+END
+winrt_utils.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/193719/trunk/src/win8/metro_driver/winrt_utils.cc
+END
+winrt_utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/193719/trunk/src/win8/metro_driver/winrt_utils.h
+END
+chrome_url_launch_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/182368/trunk/src/win8/metro_driver/chrome_url_launch_handler.h
+END
+print_handler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/177790/trunk/src/win8/metro_driver/print_handler.cc
+END
+print_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/182368/trunk/src/win8/metro_driver/print_handler.h
+END
+toast_notification_handler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/184344/trunk/src/win8/metro_driver/toast_notification_handler.cc
+END
+toast_notification_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/160988/trunk/src/win8/metro_driver/toast_notification_handler.h
+END
+metro_driver.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/179327/trunk/src/win8/metro_driver/metro_driver.cc
+END
+direct3d_helper.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/182368/trunk/src/win8/metro_driver/direct3d_helper.h
+END
+metro_driver_dll.ver
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/167383/trunk/src/win8/metro_driver/metro_driver_dll.ver
+END
+metro_driver.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/163860/trunk/src/win8/metro_driver/metro_driver.h
+END
+chrome_app_view_ash.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/196835/trunk/src/win8/metro_driver/chrome_app_view_ash.h
+END
+metro_driver_win7.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/182368/trunk/src/win8/metro_driver/metro_driver_win7.cc
+END
+secondary_tile.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/184344/trunk/src/win8/metro_driver/secondary_tile.h
+END
+file_picker_ash.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/195224/trunk/src/win8/metro_driver/file_picker_ash.cc
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/155194/trunk/src/win8/metro_driver/DEPS
+END
+file_picker_ash.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/195224/trunk/src/win8/metro_driver/file_picker_ash.h
+END
+print_document_source.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/177790/trunk/src/win8/metro_driver/print_document_source.cc
+END
+metro_driver.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/194151/trunk/src/win8/metro_driver/metro_driver.gyp
+END
+file_picker.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/190073/trunk/src/win8/metro_driver/file_picker.cc
+END
+metro_dialog_box.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/182368/trunk/src/win8/metro_driver/metro_dialog_box.cc
+END
+run_all_unittests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/182368/trunk/src/win8/metro_driver/run_all_unittests.cc
+END
+devices_handler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/163860/trunk/src/win8/metro_driver/devices_handler.cc
+END
+metro_dialog_box.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/182368/trunk/src/win8/metro_driver/metro_dialog_box.h
+END
+devices_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/163860/trunk/src/win8/metro_driver/devices_handler.h
+END
+winrt_utils_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/182368/trunk/src/win8/metro_driver/winrt_utils_unittest.cc
+END
+chrome_url_launch_handler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/162269/trunk/src/win8/metro_driver/chrome_url_launch_handler.cc
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/155474/trunk/src/win8/metro_driver/OWNERS
+END

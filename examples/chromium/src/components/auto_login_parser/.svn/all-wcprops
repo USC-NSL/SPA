@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/186462/trunk/src/components/auto_login_parser
+END
+auto_login_parser_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/178418/trunk/src/components/auto_login_parser/auto_login_parser_unittest.cc
+END
+auto_login_parser.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/186462/trunk/src/components/auto_login_parser/auto_login_parser.cc
+END
+auto_login_parser.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/178418/trunk/src/components/auto_login_parser/auto_login_parser.h
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/177767/trunk/src/components/auto_login_parser/DEPS
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/177767/trunk/src/components/auto_login_parser/OWNERS
+END

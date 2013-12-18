@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/197467/trunk/src/chrome/service
+END
+service_process_prefs_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/193040/trunk/src/chrome/service/service_process_prefs_unittest.cc
+END
+service_process_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/84819/trunk/src/chrome/service/service_process_unittest.cc
+END
+service_process_prefs.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/182672/trunk/src/chrome/service/service_process_prefs.cc
+END
+service_process.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/193040/trunk/src/chrome/service/service_process.cc
+END
+service_process_prefs.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/181564/trunk/src/chrome/service/service_process_prefs.h
+END
+service_process.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/170715/trunk/src/chrome/service/service_process.h
+END
+chrome_service_application_mac.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/196545/trunk/src/chrome/service/chrome_service_application_mac.h
+END
+service_main.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/196545/trunk/src/chrome/service/service_main.cc
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/155312/trunk/src/chrome/service/DEPS
+END
+service_utility_process_host.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/189175/trunk/src/chrome/service/service_utility_process_host.cc
+END
+service_utility_process_host.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/184344/trunk/src/chrome/service/service_utility_process_host.h
+END
+service_ipc_server.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/194754/trunk/src/chrome/service/service_ipc_server.cc
+END
+service_ipc_server.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/194754/trunk/src/chrome/service/service_ipc_server.h
+END
+chrome_service_application_mac.mm
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/196545/trunk/src/chrome/service/chrome_service_application_mac.mm
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/157865/trunk/src/chrome/service/OWNERS
+END

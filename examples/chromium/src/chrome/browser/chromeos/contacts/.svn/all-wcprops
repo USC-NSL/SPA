@@ -1,0 +1,185 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/196188/trunk/src/chrome/browser/chromeos/contacts
+END
+gdata_contacts_service_stub.cc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/167872/trunk/src/chrome/browser/chromeos/contacts/gdata_contacts_service_stub.cc
+END
+fake_contact_store.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/152285/trunk/src/chrome/browser/chromeos/contacts/fake_contact_store.cc
+END
+gdata_contacts_service_stub.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/162960/trunk/src/chrome/browser/chromeos/contacts/gdata_contacts_service_stub.h
+END
+gdata_contacts_service_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/196188/trunk/src/chrome/browser/chromeos/contacts/gdata_contacts_service_unittest.cc
+END
+contact_manager_observer.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/149980/trunk/src/chrome/browser/chromeos/contacts/contact_manager_observer.h
+END
+gdata_contacts_service.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/172254/trunk/src/chrome/browser/chromeos/contacts/gdata_contacts_service.cc
+END
+fake_contact_store.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/152285/trunk/src/chrome/browser/chromeos/contacts/fake_contact_store.h
+END
+gdata_contacts_service.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/171226/trunk/src/chrome/browser/chromeos/contacts/gdata_contacts_service.h
+END
+google_contact_store_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/180952/trunk/src/chrome/browser/chromeos/contacts/google_contact_store_unittest.cc
+END
+google_contact_store.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/184344/trunk/src/chrome/browser/chromeos/contacts/google_contact_store.cc
+END
+google_contact_store.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/171226/trunk/src/chrome/browser/chromeos/contacts/google_contact_store.h
+END
+fake_contact_database.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/181638/trunk/src/chrome/browser/chromeos/contacts/fake_contact_database.cc
+END
+fake_contact_database.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/181638/trunk/src/chrome/browser/chromeos/contacts/fake_contact_database.h
+END
+contact.proto
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/167242/trunk/src/chrome/browser/chromeos/contacts/contact.proto
+END
+contact_store.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/152285/trunk/src/chrome/browser/chromeos/contacts/contact_store.h
+END
+contact_database_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/184344/trunk/src/chrome/browser/chromeos/contacts/contact_database_unittest.cc
+END
+contact_database.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/193050/trunk/src/chrome/browser/chromeos/contacts/contact_database.cc
+END
+contact_store_observer.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/149805/trunk/src/chrome/browser/chromeos/contacts/contact_store_observer.h
+END
+contact_database.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/184344/trunk/src/chrome/browser/chromeos/contacts/contact_database.h
+END
+contact_manager_stub.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/154327/trunk/src/chrome/browser/chromeos/contacts/contact_manager_stub.cc
+END
+contact_manager_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/180952/trunk/src/chrome/browser/chromeos/contacts/contact_manager_unittest.cc
+END
+contact_manager_stub.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/154327/trunk/src/chrome/browser/chromeos/contacts/contact_manager_stub.h
+END
+contact_manager.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/154327/trunk/src/chrome/browser/chromeos/contacts/contact_manager.cc
+END
+contact_test_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/181564/trunk/src/chrome/browser/chromeos/contacts/contact_test_util.cc
+END
+contact_manager.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/154327/trunk/src/chrome/browser/chromeos/contacts/contact_manager.h
+END
+contact_map_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/161159/trunk/src/chrome/browser/chromeos/contacts/contact_map_unittest.cc
+END
+contact_map.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/161159/trunk/src/chrome/browser/chromeos/contacts/contact_map.cc
+END
+contact_test_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/155634/trunk/src/chrome/browser/chromeos/contacts/contact_test_util.h
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/149301/trunk/src/chrome/browser/chromeos/contacts/OWNERS
+END
+contact_map.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/161159/trunk/src/chrome/browser/chromeos/contacts/contact_map.h
+END

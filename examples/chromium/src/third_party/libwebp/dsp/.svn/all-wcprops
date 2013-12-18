@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/196676/trunk/src/third_party/libwebp/dsp
+END
+upsampling_neon.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/190302/trunk/src/third_party/libwebp/dsp/upsampling_neon.c
+END
+enc_sse2.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/196676/trunk/src/third_party/libwebp/dsp/enc_sse2.c
+END
+enc.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/196676/trunk/src/third_party/libwebp/dsp/enc.c
+END
+lossless.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/190302/trunk/src/third_party/libwebp/dsp/lossless.c
+END
+dec_neon.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/196676/trunk/src/third_party/libwebp/dsp/dec_neon.c
+END
+upsampling_sse2.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/190302/trunk/src/third_party/libwebp/dsp/upsampling_sse2.c
+END
+lossless.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/190302/trunk/src/third_party/libwebp/dsp/lossless.h
+END
+upsampling.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/196676/trunk/src/third_party/libwebp/dsp/upsampling.c
+END
+yuv.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/190302/trunk/src/third_party/libwebp/dsp/yuv.c
+END
+enc_neon.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/196676/trunk/src/third_party/libwebp/dsp/enc_neon.c
+END
+cpu.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/150264/trunk/src/third_party/libwebp/dsp/cpu.c
+END
+dec_sse2.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/190302/trunk/src/third_party/libwebp/dsp/dec_sse2.c
+END
+yuv.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/190302/trunk/src/third_party/libwebp/dsp/yuv.h
+END
+dec.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/190302/trunk/src/third_party/libwebp/dsp/dec.c
+END
+dsp.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/190302/trunk/src/third_party/libwebp/dsp/dsp.h
+END

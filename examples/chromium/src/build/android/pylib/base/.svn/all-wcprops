@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/194078/trunk/src/build/android/pylib/base
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/177252/trunk/src/build/android/pylib/base/__init__.py
+END
+sharded_tests_queue.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/190525/trunk/src/build/android/pylib/base/sharded_tests_queue.py
+END
+shard_unittest.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/192343/trunk/src/build/android/pylib/base/shard_unittest.py
+END
+shard.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/194078/trunk/src/build/android/pylib/base/shard.py
+END
+base_test_runner.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/193967/trunk/src/build/android/pylib/base/base_test_runner.py
+END
+base_test_result_unittest.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/190705/trunk/src/build/android/pylib/base/base_test_result_unittest.py
+END
+base_test_result.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/190705/trunk/src/build/android/pylib/base/base_test_result.py
+END

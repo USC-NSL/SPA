@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/192114/trunk/src/base/power_monitor
+END
+power_monitor_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/192114/trunk/src/base/power_monitor/power_monitor_win.cc
+END
+power_monitor_ios.mm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/192114/trunk/src/base/power_monitor/power_monitor_ios.mm
+END
+power_monitor_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/192114/trunk/src/base/power_monitor/power_monitor_unittest.cc
+END
+power_monitor.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/192114/trunk/src/base/power_monitor/power_monitor.cc
+END
+power_monitor_android.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/192114/trunk/src/base/power_monitor/power_monitor_android.cc
+END
+power_monitor.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/192114/trunk/src/base/power_monitor/power_monitor.h
+END
+power_monitor_android.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/192114/trunk/src/base/power_monitor/power_monitor_android.h
+END
+power_monitor_posix.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/192114/trunk/src/base/power_monitor/power_monitor_posix.cc
+END
+power_observer.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/192114/trunk/src/base/power_monitor/power_observer.h
+END
+power_monitor_mac.mm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/192114/trunk/src/base/power_monitor/power_monitor_mac.mm
+END

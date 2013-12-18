@@ -1,0 +1,143 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/183743/trunk/src/net/data/proxy_resolver_v8_unittest
+END
+return_object.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/10199/trunk/src/net/data/proxy_resolver_v8_unittest/return_object.js
+END
+ends_with_comment.js
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/27036/trunk/src/net/data/proxy_resolver_v8_unittest/ends_with_comment.js
+END
+no_entrypoint.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/10199/trunk/src/net/data/proxy_resolver_v8_unittest/no_entrypoint.js
+END
+passthrough.js
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/10199/trunk/src/net/data/proxy_resolver_v8_unittest/passthrough.js
+END
+return_null.js
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/10199/trunk/src/net/data/proxy_resolver_v8_unittest/return_null.js
+END
+direct.js
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/10199/trunk/src/net/data/proxy_resolver_v8_unittest/direct.js
+END
+ends_with_statement_no_semicolon.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/27171/trunk/src/net/data/proxy_resolver_v8_unittest/ends_with_statement_no_semicolon.js
+END
+resolve_host.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/121574/trunk/src/net/data/proxy_resolver_v8_unittest/resolve_host.js
+END
+binding_from_global.js
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/43268/trunk/src/net/data/proxy_resolver_v8_unittest/binding_from_global.js
+END
+dns_fail.js
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/30127/trunk/src/net/data/proxy_resolver_v8_unittest/dns_fail.js
+END
+unhandled_exception.js
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/10199/trunk/src/net/data/proxy_resolver_v8_unittest/unhandled_exception.js
+END
+international_domain_names.js
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/50887/trunk/src/net/data/proxy_resolver_v8_unittest/international_domain_names.js
+END
+side_effects.js
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/10199/trunk/src/net/data/proxy_resolver_v8_unittest/side_effects.js
+END
+return_empty_string.js
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/10199/trunk/src/net/data/proxy_resolver_v8_unittest/return_empty_string.js
+END
+return_function.js
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/10199/trunk/src/net/data/proxy_resolver_v8_unittest/return_function.js
+END
+return_unicode.js
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/10199/trunk/src/net/data/proxy_resolver_v8_unittest/return_unicode.js
+END
+pac_library_unittest.js
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/57606/trunk/src/net/data/proxy_resolver_v8_unittest/pac_library_unittest.js
+END
+terminate.js
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/183743/trunk/src/net/data/proxy_resolver_v8_unittest/terminate.js
+END
+simple.js
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/25926/trunk/src/net/data/proxy_resolver_v8_unittest/simple.js
+END
+missing_close_brace.js
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/10199/trunk/src/net/data/proxy_resolver_v8_unittest/missing_close_brace.js
+END
+return_integer.js
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/10199/trunk/src/net/data/proxy_resolver_v8_unittest/return_integer.js
+END
+bindings.js
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/46487/trunk/src/net/data/proxy_resolver_v8_unittest/bindings.js
+END
+return_undefined.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/10199/trunk/src/net/data/proxy_resolver_v8_unittest/return_undefined.js
+END

@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/192780/trunk/src/base/test/data/file_util
+END
+original.txt
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/192780/trunk/src/base/test/data/file_util/original.txt
+END
+blank_line_crlf.txt
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/192780/trunk/src/base/test/data/file_util/blank_line_crlf.txt
+END
+binary_file_diff.bin
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/191556/trunk/src/base/test/data/file_util/binary_file_diff.bin
+END
+different.txt
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/192780/trunk/src/base/test/data/file_util/different.txt
+END
+first1.txt
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/192780/trunk/src/base/test/data/file_util/first1.txt
+END
+first2.txt
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/192780/trunk/src/base/test/data/file_util/first2.txt
+END
+binary_file.bin
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/191556/trunk/src/base/test/data/file_util/binary_file.bin
+END
+different_first.txt
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/192780/trunk/src/base/test/data/file_util/different_first.txt
+END
+empty1.txt
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/192780/trunk/src/base/test/data/file_util/empty1.txt
+END
+empty2.txt
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/192780/trunk/src/base/test/data/file_util/empty2.txt
+END
+binary_file_same.bin
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/191556/trunk/src/base/test/data/file_util/binary_file_same.bin
+END
+same.txt
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/192780/trunk/src/base/test/data/file_util/same.txt
+END
+crlf.txt
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/192780/trunk/src/base/test/data/file_util/crlf.txt
+END
+same_length.txt
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/192780/trunk/src/base/test/data/file_util/same_length.txt
+END
+different_last.txt
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/192780/trunk/src/base/test/data/file_util/different_last.txt
+END
+shortened.txt
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/192780/trunk/src/base/test/data/file_util/shortened.txt
+END
+blank_line.txt
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/192780/trunk/src/base/test/data/file_util/blank_line.txt
+END

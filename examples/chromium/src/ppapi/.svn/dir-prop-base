@@ -1,0 +1,31 @@
+K 10
+svn:ignore
+V 510
+ppapi.Makefile
+ppapi.sln
+ppapi.xcodeproj
+ppapi_c.target.mk
+ppapi_c.vcproj
+ppapi_cpp.target.mk
+ppapi_cpp.vcproj
+ppapi_cpp_objects.target.mk
+ppapi_cpp_objects.vcproj
+ppapi_egl.target.mk
+ppapi_egl.vcproj
+ppapi_example.target.mk
+ppapi_example.vcproj
+ppapi_gles2.target.mk
+ppapi_gles2.vcproj
+ppapi_proxy.target.mk
+ppapi_proxy.vcproj
+ppapi_shared_impl.target.mk
+ppapi_shared_impl.vcproj
+ppapi_tests.target.mk
+ppapi_tests.vcproj
+ppapi_unittests.vcproj
+ppapi_internal.sln
+ppapi_internal.xcodeproj
+ppapi_shared.vcproj
+
+
+END

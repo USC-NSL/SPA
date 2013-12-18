@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/193040/trunk/src/chrome/browser/extensions/api/proxy
+END
+proxy_api_helpers_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/193040/trunk/src/chrome/browser/extensions/api/proxy/proxy_api_helpers_unittest.cc
+END
+proxy_api.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/157600/trunk/src/chrome/browser/extensions/api/proxy/proxy_api.h
+END
+proxy_api_helpers.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/188604/trunk/src/chrome/browser/extensions/api/proxy/proxy_api_helpers.cc
+END
+proxy_api_helpers.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/148833/trunk/src/chrome/browser/extensions/api/proxy/proxy_api_helpers.h
+END
+proxy_api_constants.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/169284/trunk/src/chrome/browser/extensions/api/proxy/proxy_api_constants.cc
+END
+proxy_api_constants.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/169284/trunk/src/chrome/browser/extensions/api/proxy/proxy_api_constants.h
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/135670/trunk/src/chrome/browser/extensions/api/proxy/OWNERS
+END
+proxy_api.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/193040/trunk/src/chrome/browser/extensions/api/proxy/proxy_api.cc
+END
+proxy_apitest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/181707/trunk/src/chrome/browser/extensions/api/proxy/proxy_apitest.cc
+END

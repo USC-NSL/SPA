@@ -1,0 +1,305 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/196410/trunk/src/dbus
+END
+bus.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/190440/trunk/src/dbus/bus.h
+END
+values_util_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/181989/trunk/src/dbus/values_util_unittest.cc
+END
+values_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/193040/trunk/src/dbus/values_util.cc
+END
+dbus_export.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/165893/trunk/src/dbus/dbus_export.h
+END
+mock_bus.cc
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/183362/trunk/src/dbus/mock_bus.cc
+END
+object_manager.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/190440/trunk/src/dbus/object_manager.h
+END
+string_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/140489/trunk/src/dbus/string_util.cc
+END
+string_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/165893/trunk/src/dbus/string_util.h
+END
+object_proxy.cc
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/195953/trunk/src/dbus/object_proxy.cc
+END
+dbus_statistics.cc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/188857/trunk/src/dbus/dbus_statistics.cc
+END
+object_proxy.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/195953/trunk/src/dbus/object_proxy.h
+END
+dbus_statistics.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/175706/trunk/src/dbus/dbus_statistics.h
+END
+mock_object_manager.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/190440/trunk/src/dbus/mock_object_manager.cc
+END
+mock_object_manager.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/190440/trunk/src/dbus/mock_object_manager.h
+END
+file_descriptor.cc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/136331/trunk/src/dbus/file_descriptor.cc
+END
+signal_sender_verification_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/185451/trunk/src/dbus/signal_sender_verification_unittest.cc
+END
+file_descriptor.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/165893/trunk/src/dbus/file_descriptor.h
+END
+exported_object.cc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/181266/trunk/src/dbus/exported_object.cc
+END
+mock_object_proxy.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/181266/trunk/src/dbus/mock_object_proxy.h
+END
+object_path.cc
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/193920/trunk/src/dbus/object_path.cc
+END
+message.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/181266/trunk/src/dbus/message.h
+END
+property.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/195977/trunk/src/dbus/property.h
+END
+bus_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/183362/trunk/src/dbus/bus_unittest.cc
+END
+mock_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/181266/trunk/src/dbus/mock_unittest.cc
+END
+end_to_end_sync_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/138441/trunk/src/dbus/end_to_end_sync_unittest.cc
+END
+mock_exported_object.cc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/125970/trunk/src/dbus/mock_exported_object.cc
+END
+mock_exported_object.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/146163/trunk/src/dbus/mock_exported_object.h
+END
+values_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/165893/trunk/src/dbus/values_util.h
+END
+object_manager_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/190440/trunk/src/dbus/object_manager_unittest.cc
+END
+test_service.cc
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/190440/trunk/src/dbus/test_service.cc
+END
+object_manager.cc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/190440/trunk/src/dbus/object_manager.cc
+END
+test_service.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/190440/trunk/src/dbus/test_service.h
+END
+string_util_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/193040/trunk/src/dbus/string_util_unittest.cc
+END
+mock_bus.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/190440/trunk/src/dbus/mock_bus.h
+END
+scoped_dbus_error.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/164651/trunk/src/dbus/scoped_dbus_error.h
+END
+test_server.cc
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/183362/trunk/src/dbus/test_server.cc
+END
+dbus_statistics_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/167742/trunk/src/dbus/dbus_statistics_unittest.cc
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/165178/trunk/src/dbus/DEPS
+END
+dbus.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/196410/trunk/src/dbus/dbus.gyp
+END
+mock_object_proxy.cc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/121941/trunk/src/dbus/mock_object_proxy.cc
+END
+test_proto.proto
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/167242/trunk/src/dbus/test_proto.proto
+END
+exported_object.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/181266/trunk/src/dbus/exported_object.h
+END
+property_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/190440/trunk/src/dbus/property_unittest.cc
+END
+message_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/193040/trunk/src/dbus/message_unittest.cc
+END
+property.cc
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/151621/trunk/src/dbus/property.cc
+END
+object_path.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/193920/trunk/src/dbus/object_path.h
+END
+message.cc
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/193040/trunk/src/dbus/message.cc
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/163069/trunk/src/dbus/OWNERS
+END
+bus.cc
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/190440/trunk/src/dbus/bus.cc
+END
+end_to_end_async_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/195953/trunk/src/dbus/end_to_end_async_unittest.cc
+END

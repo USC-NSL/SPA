@@ -1,0 +1,14 @@
+K 10
+svn:ignore
+V 188
+layout_test_helper.vcproj
+npapi_layout_test_plugin.vcproj
+npapi_test_plugin.vcproj
+test_shell.sln
+test_shell.vcproj
+test_shell_common.vcproj
+test_shell_pak.vcproj
+test_shell_tests.vcproj
+
+
+END

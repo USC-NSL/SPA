@@ -1,0 +1,21 @@
+K 10
+svn:ignore
+V 346
+chromotocol.Makefile
+chromotocol.sln
+chromotocol.xcodeproj
+chromotocol_proto.rules
+chromotocol_proto.target.mk
+chromotocol_proto.vcproj
+chromotocol_proto_lib.target.mk
+chromotocol_proto_lib.vcproj
+trace.Makefile
+trace.sln
+trace.xcodeproj
+trace_proto.rules
+trace_proto.target.mk
+trace_proto.vcproj
+trace_proto_lib.target.mk
+trace_proto_lib.vcproj
+
+END

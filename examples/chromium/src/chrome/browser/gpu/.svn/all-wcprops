@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/196964/trunk/src/chrome/browser/gpu
+END
+gpu_mode_manager.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/189949/trunk/src/chrome/browser/gpu/gpu_mode_manager.h
+END
+gpu_feature_checker.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/184965/trunk/src/chrome/browser/gpu/gpu_feature_checker.h
+END
+gl_string_manager.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/183798/trunk/src/chrome/browser/gpu/gl_string_manager.cc
+END
+gl_string_manager.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/184965/trunk/src/chrome/browser/gpu/gl_string_manager.h
+END
+chrome_gpu_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/196964/trunk/src/chrome/browser/gpu/chrome_gpu_util.cc
+END
+chrome_gpu_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/187678/trunk/src/chrome/browser/gpu/chrome_gpu_util.h
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/171834/trunk/src/chrome/browser/gpu/OWNERS
+END
+gpu_mode_manager.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/193715/trunk/src/chrome/browser/gpu/gpu_mode_manager.cc
+END
+gpu_feature_checker.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/191858/trunk/src/chrome/browser/gpu/gpu_feature_checker.cc
+END

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/195758/trunk/src/cloud_print/virtual_driver/win/install
+END
+setup.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/195734/trunk/src/cloud_print/virtual_driver/win/install/setup.cc
+END
+virtual_driver_install.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/195734/trunk/src/cloud_print/virtual_driver/win/install/virtual_driver_install.gyp
+END
+virtual_driver_setup_resources.grd
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/195758/trunk/src/cloud_print/virtual_driver/win/install/virtual_driver_setup_resources.grd
+END
+virtual_driver_setup_exe.ver
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/187687/trunk/src/cloud_print/virtual_driver/win/install/virtual_driver_setup_exe.ver
+END

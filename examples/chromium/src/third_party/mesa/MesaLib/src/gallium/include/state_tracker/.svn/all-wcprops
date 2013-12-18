@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/include/state_tracker
+END
+drm_driver.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/include/state_tracker/drm_driver.h
+END
+st_api.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/include/state_tracker/st_api.h
+END
+graw.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/include/state_tracker/graw.h
+END
+drisw_api.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/include/state_tracker/drisw_api.h
+END
+xlib_sw_winsys.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/include/state_tracker/xlib_sw_winsys.h
+END
+sw_winsys.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/include/state_tracker/sw_winsys.h
+END
+swrast_screen_create.h
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/include/state_tracker/swrast_screen_create.h
+END

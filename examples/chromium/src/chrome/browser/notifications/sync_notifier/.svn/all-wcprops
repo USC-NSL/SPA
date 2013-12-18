@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/196777/trunk/src/chrome/browser/notifications/sync_notifier
+END
+chrome_notifier_service_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/196320/trunk/src/chrome/browser/notifications/sync_notifier/chrome_notifier_service_unittest.cc
+END
+synced_notification.cc
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/196320/trunk/src/chrome/browser/notifications/sync_notifier/synced_notification.cc
+END
+chrome_notifier_service.cc
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/196320/trunk/src/chrome/browser/notifications/sync_notifier/chrome_notifier_service.cc
+END
+synced_notification.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/196320/trunk/src/chrome/browser/notifications/sync_notifier/synced_notification.h
+END
+chrome_notifier_service.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/191443/trunk/src/chrome/browser/notifications/sync_notifier/chrome_notifier_service.h
+END
+chrome_notifier_service_factory.cc
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/196777/trunk/src/chrome/browser/notifications/sync_notifier/chrome_notifier_service_factory.cc
+END
+chrome_notifier_service_factory.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/196777/trunk/src/chrome/browser/notifications/sync_notifier/chrome_notifier_service_factory.h
+END
+chrome_notifier_delegate.cc
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/191443/trunk/src/chrome/browser/notifications/sync_notifier/chrome_notifier_delegate.cc
+END
+chrome_notifier_delegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/190076/trunk/src/chrome/browser/notifications/sync_notifier/chrome_notifier_delegate.h
+END
+synced_notification_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/196320/trunk/src/chrome/browser/notifications/sync_notifier/synced_notification_unittest.cc
+END

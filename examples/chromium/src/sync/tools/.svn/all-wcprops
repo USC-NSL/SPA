@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/197441/trunk/src/sync/tools
+END
+sync_listen_notifications.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/197441/trunk/src/sync/tools/sync_listen_notifications.cc
+END
+null_invalidation_state_tracker.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/191087/trunk/src/sync/tools/null_invalidation_state_tracker.cc
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/145254/trunk/src/sync/tools/DEPS
+END
+null_invalidation_state_tracker.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/191087/trunk/src/sync/tools/null_invalidation_state_tracker.h
+END
+sync_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/197441/trunk/src/sync/tools/sync_client.cc
+END

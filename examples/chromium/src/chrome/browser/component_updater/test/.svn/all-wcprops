@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/196036/trunk/src/chrome/browser/component_updater/test
+END
+component_installers_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/192106/trunk/src/chrome/browser/component_updater/test/component_installers_unittest.cc
+END
+component_updater_service_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/196036/trunk/src/chrome/browser/component_updater/test/component_updater_service_unittest.cc
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/146690/trunk/src/chrome/browser/component_updater/test/DEPS
+END

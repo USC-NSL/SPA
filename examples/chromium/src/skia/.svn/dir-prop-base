@@ -1,0 +1,21 @@
+K 10
+svn:ignore
+V 232
+skia.xcodeproj
+skia.sln
+skia.vcproj
+skia_opts.vcproj
+skia_sse2.vcproj
+SConstruct
+skia.scons
+skia_main.scons
+skia.mk
+skia_opts.scons
+skia.target.mk
+skia.Makefile
+skia_opts.target.mk
+image_operations_bench.vcproj
+skia_libtess.vcproj
+
+
+END

@@ -1,0 +1,46 @@
+10
+
+dir
+197479
+http://src.chromium.org/svn/trunk/src/chrome/test/data/perf/rendering/throughput
+http://src.chromium.org/svn
+
+
+
+2012-02-28T18:15:15.448701Z
+123999
+junov@chromium.org
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+4ff67af0-8c30-449e-8e8b-ad334ec8d88c
+
+canvas2d_balls_fill_path
+dir
+
+canvas2d_balls_text
+dir
+
+compositing_huge_div
+dir
+
+canvas2d_balls_common
+dir
+
+canvas2d_balls_draw_from_canvas
+dir
+
+canvas2d_balls_with_shadow
+dir
+

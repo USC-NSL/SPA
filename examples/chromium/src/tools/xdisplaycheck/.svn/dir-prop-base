@@ -1,0 +1,11 @@
+K 10
+svn:ignore
+V 120
+SConstruct
+xdisplaycheck.scons
+xdisplaycheck_main.scons
+xdisplaycheck.mk
+xdisplaycheck.target.mk
+xdisplaycheck.Makefile
+
+END

@@ -1,0 +1,10 @@
+K 10
+svn:ignore
+V 80
+iccjpeg.Makefile
+iccjpeg.sln
+iccjpeg.target.mk
+iccjpeg.vcproj
+iccjpeg.xcodeproj
+
+END

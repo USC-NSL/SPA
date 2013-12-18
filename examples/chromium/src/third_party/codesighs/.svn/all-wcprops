@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/176594/trunk/src/third_party/codesighs
+END
+README.chromium
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/149423/trunk/src/third_party/codesighs/README.chromium
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/14522/trunk/src/third_party/codesighs/LICENSE
+END
+Makefile.in
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/14522/trunk/src/third_party/codesighs/Makefile.in
+END
+maptsvdifftool.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/14522/trunk/src/third_party/codesighs/maptsvdifftool.c
+END
+autosummary.unix.bash
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/14522/trunk/src/third_party/codesighs/autosummary.unix.bash
+END
+basesummary.unix.bash
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/14522/trunk/src/third_party/codesighs/basesummary.unix.bash
+END
+codesighs.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/14522/trunk/src/third_party/codesighs/codesighs.c
+END
+autosummary.win.bash
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/14522/trunk/src/third_party/codesighs/autosummary.win.bash
+END
+basesummary.win.bash
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/14522/trunk/src/third_party/codesighs/basesummary.win.bash
+END
+msmap.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/14522/trunk/src/third_party/codesighs/msmap.h
+END
+readelf_wrap.pl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/14522/trunk/src/third_party/codesighs/readelf_wrap.pl
+END
+codesighs.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/176594/trunk/src/third_party/codesighs/codesighs.gyp
+END
+nm_wrap_osx.pl
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/14522/trunk/src/third_party/codesighs/nm_wrap_osx.pl
+END
+msdump2symdb.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/14522/trunk/src/third_party/codesighs/msdump2symdb.c
+END
+nm2tsv.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/14522/trunk/src/third_party/codesighs/nm2tsv.c
+END
+msmap2tsv.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/14522/trunk/src/third_party/codesighs/msmap2tsv.c
+END

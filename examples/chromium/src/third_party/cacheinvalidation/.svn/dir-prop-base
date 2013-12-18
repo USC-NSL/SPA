@@ -1,0 +1,18 @@
+K 10
+svn:ignore
+V 343
+cacheinvalidation.Makefile
+cacheinvalidation.sln
+cacheinvalidation.target.mk
+cacheinvalidation.vcproj
+cacheinvalidation.xcodeproj
+cacheinvalidation_proto.rules
+cacheinvalidation_proto.target.mk
+cacheinvalidation_proto.vcproj
+cacheinvalidation_proto_cpp.vcproj
+cacheinvalidation_unittests.target.mk
+cacheinvalidation_unittests.vcproj
+files
+src
+
+END

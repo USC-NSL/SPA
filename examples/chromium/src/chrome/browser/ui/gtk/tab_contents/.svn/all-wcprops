@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/188325/trunk/src/chrome/browser/ui/gtk/tab_contents
+END
+chrome_web_contents_view_delegate_gtk.cc
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/188325/trunk/src/chrome/browser/ui/gtk/tab_contents/chrome_web_contents_view_delegate_gtk.cc
+END
+web_drag_bookmark_handler_gtk.cc
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/177516/trunk/src/chrome/browser/ui/gtk/tab_contents/web_drag_bookmark_handler_gtk.cc
+END
+chrome_web_contents_view_delegate_gtk.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/188325/trunk/src/chrome/browser/ui/gtk/tab_contents/chrome_web_contents_view_delegate_gtk.h
+END
+web_drag_bookmark_handler_gtk.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/177516/trunk/src/chrome/browser/ui/gtk/tab_contents/web_drag_bookmark_handler_gtk.h
+END
+render_view_context_menu_gtk.cc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/143511/trunk/src/chrome/browser/ui/gtk/tab_contents/render_view_context_menu_gtk.cc
+END
+render_view_context_menu_gtk.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/146163/trunk/src/chrome/browser/ui/gtk/tab_contents/render_view_context_menu_gtk.h
+END

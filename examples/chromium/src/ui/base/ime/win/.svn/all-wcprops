@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/197100/trunk/src/ui/base/ime/win
+END
+tsf_text_store_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/165700/trunk/src/ui/base/ime/win/tsf_text_store_unittest.cc
+END
+tsf_text_store.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/177671/trunk/src/ui/base/ime/win/tsf_text_store.cc
+END
+tsf_event_router.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/165700/trunk/src/ui/base/ime/win/tsf_event_router.cc
+END
+tsf_text_store.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/165700/trunk/src/ui/base/ime/win/tsf_text_store.h
+END
+tsf_event_router.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/165700/trunk/src/ui/base/ime/win/tsf_event_router.h
+END
+mock_tsf_bridge.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/194205/trunk/src/ui/base/ime/win/mock_tsf_bridge.cc
+END
+mock_tsf_bridge.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/194205/trunk/src/ui/base/ime/win/mock_tsf_bridge.h
+END
+tsf_input_scope.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/177671/trunk/src/ui/base/ime/win/tsf_input_scope.cc
+END
+tsf_input_scope.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/177671/trunk/src/ui/base/ime/win/tsf_input_scope.h
+END
+tsf_bridge.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/197100/trunk/src/ui/base/ime/win/tsf_bridge.cc
+END
+tsf_bridge.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/194205/trunk/src/ui/base/ime/win/tsf_bridge.h
+END

@@ -1,0 +1,13 @@
+K 10
+svn:ignore
+V 243
+policy.vcproj
+cloud_policy_codegen.sln
+policy_win64.vcproj
+cloud_policy_backend_header_compile.vcproj
+cloud_policy_proto_compile.vcproj
+cloud_policy_code_generate.vcproj
+cloud_policy_backend_header_compile.rules
+cloud_policy_codegen.xcodeproj
+
+END

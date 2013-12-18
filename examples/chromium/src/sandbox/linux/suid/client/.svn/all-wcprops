@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/167739/trunk/src/sandbox/linux/suid/client
+END
+setuid_sandbox_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/152123/trunk/src/sandbox/linux/suid/client/setuid_sandbox_client.h
+END
+setuid_sandbox_client_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/152123/trunk/src/sandbox/linux/suid/client/setuid_sandbox_client_unittest.cc
+END
+setuid_sandbox_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/167739/trunk/src/sandbox/linux/suid/client/setuid_sandbox_client.cc
+END

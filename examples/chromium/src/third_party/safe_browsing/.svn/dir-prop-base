@@ -1,0 +1,12 @@
+K 10
+svn:ignore
+V 119
+safe_browsing.Makefile
+safe_browsing.sln
+safe_browsing.target.mk
+safe_browsing.vcproj
+safe_browsing.xcodeproj
+testing
+
+
+END

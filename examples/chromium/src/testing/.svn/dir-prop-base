@@ -1,0 +1,21 @@
+K 10
+svn:ignore
+V 230
+gmock
+gmock.Makefile
+gmock.sln
+gmock.target.mk
+gmock.vcproj
+gmock.xcodeproj
+gmock_main.target.mk
+gmock_main.vcproj
+gtest
+gtest.Makefile
+gtest.sln
+gtest.target.mk
+gtest.vcproj
+gtest.xcodeproj
+gtest_main.target.mk
+gtest_main.vcproj
+
+END

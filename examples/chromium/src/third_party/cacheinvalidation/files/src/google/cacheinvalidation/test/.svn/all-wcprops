@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/219/trunk/src/google/cacheinvalidation/test
+END
+test-logger.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/195/trunk/src/google/cacheinvalidation/test/test-logger.cc
+END
+test-utils.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/195/trunk/src/google/cacheinvalidation/test/test-utils.cc
+END
+test-logger.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/195/trunk/src/google/cacheinvalidation/test/test-logger.h
+END
+test-utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/219/trunk/src/google/cacheinvalidation/test/test-utils.h
+END
+deterministic-scheduler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/195/trunk/src/google/cacheinvalidation/test/deterministic-scheduler.cc
+END
+deterministic-scheduler.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/195/trunk/src/google/cacheinvalidation/test/deterministic-scheduler.h
+END

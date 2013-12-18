@@ -1,0 +1,13 @@
+K 10
+svn:ignore
+V 109
+openmax.xcodeproj
+openmax.sln
+SConstruct
+il.vcproj
+il.scons
+il.target.mk
+openmax_main.scons
+openmax.Makefile
+
+END

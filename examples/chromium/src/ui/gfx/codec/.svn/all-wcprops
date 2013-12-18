@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/186472/trunk/src/ui/gfx/codec
+END
+png_codec_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/186472/trunk/src/ui/gfx/codec/png_codec_unittest.cc
+END
+jpeg_codec_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/86261/trunk/src/ui/gfx/codec/jpeg_codec_unittest.cc
+END
+png_codec.cc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/186472/trunk/src/ui/gfx/codec/png_codec.cc
+END
+jpeg_codec.cc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/177698/trunk/src/ui/gfx/codec/jpeg_codec.cc
+END
+png_codec.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/146163/trunk/src/ui/gfx/codec/png_codec.h
+END
+jpeg_codec.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/154330/trunk/src/ui/gfx/codec/jpeg_codec.h
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/154189/trunk/src/ui/gfx/codec/DEPS
+END

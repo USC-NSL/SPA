@@ -1,0 +1,21 @@
+K 10
+svn:ignore
+V 225
+config.h
+libxml.xcodeproj
+libxml.vcproj
+libxml.sln
+xmlcatalog.vcproj
+xmllint.vcproj
+SConstruct
+libxml.scons
+libxml_main.scons
+xmlcatalog.scons
+xmllint.scons
+libxml.mk
+xmlcatalog.mk
+xmllint.mk
+libxml.target.mk
+libxml.Makefile
+
+END

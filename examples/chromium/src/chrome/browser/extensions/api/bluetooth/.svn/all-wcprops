@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/197048/trunk/src/chrome/browser/extensions/api/bluetooth
+END
+bluetooth_api.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/197048/trunk/src/chrome/browser/extensions/api/bluetooth/bluetooth_api.cc
+END
+bluetooth_api_utils.cc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/192474/trunk/src/chrome/browser/extensions/api/bluetooth/bluetooth_api_utils.cc
+END
+bluetooth_apitest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/196756/trunk/src/chrome/browser/extensions/api/bluetooth/bluetooth_apitest.cc
+END
+bluetooth_api.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/196680/trunk/src/chrome/browser/extensions/api/bluetooth/bluetooth_api.h
+END
+bluetooth_api_utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/173299/trunk/src/chrome/browser/extensions/api/bluetooth/bluetooth_api_utils.h
+END
+bluetooth_api_factory.cc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/196777/trunk/src/chrome/browser/extensions/api/bluetooth/bluetooth_api_factory.cc
+END
+bluetooth_event_router_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/191941/trunk/src/chrome/browser/extensions/api/bluetooth/bluetooth_event_router_unittest.cc
+END
+bluetooth_event_router.cc
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/192474/trunk/src/chrome/browser/extensions/api/bluetooth/bluetooth_event_router.cc
+END
+bluetooth_extension_function.cc
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/184642/trunk/src/chrome/browser/extensions/api/bluetooth/bluetooth_extension_function.cc
+END
+bluetooth_api_factory.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/196777/trunk/src/chrome/browser/extensions/api/bluetooth/bluetooth_api_factory.h
+END
+bluetooth_event_router.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/184642/trunk/src/chrome/browser/extensions/api/bluetooth/bluetooth_event_router.h
+END
+bluetooth_extension_function.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/178798/trunk/src/chrome/browser/extensions/api/bluetooth/bluetooth_extension_function.h
+END

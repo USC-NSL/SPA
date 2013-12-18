@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/186006/trunk/src/gpu/ipc
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/73472/trunk/src/gpu/ipc/DEPS
+END
+command_buffer_proxy.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/130252/trunk/src/gpu/ipc/command_buffer_proxy.cc
+END
+gpu_command_buffer_traits.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/186006/trunk/src/gpu/ipc/gpu_command_buffer_traits.cc
+END
+command_buffer_proxy.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/164564/trunk/src/gpu/ipc/command_buffer_proxy.h
+END
+gpu_command_buffer_traits.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/186006/trunk/src/gpu/ipc/gpu_command_buffer_traits.h
+END

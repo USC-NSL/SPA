@@ -1,0 +1,143 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/wgl
+END
+stw_winsys.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/wgl/stw_winsys.h
+END
+stw_tls.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/wgl/stw_tls.c
+END
+stw_icd.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/wgl/stw_icd.h
+END
+stw_device.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/wgl/stw_device.h
+END
+stw_ext_extensionsstring.c
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/wgl/stw_ext_extensionsstring.c
+END
+stw_tls.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/wgl/stw_tls.h
+END
+stw_getprocaddress.c
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/wgl/stw_getprocaddress.c
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/wgl/SConscript
+END
+stw_ext_pixelformat.c
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/wgl/stw_ext_pixelformat.c
+END
+stw_ext_gallium.c
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/wgl/stw_ext_gallium.c
+END
+stw_ext_gallium.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/wgl/stw_ext_gallium.h
+END
+stw_framebuffer.c
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/wgl/stw_framebuffer.c
+END
+stw_context.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/wgl/stw_context.c
+END
+stw_st.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/wgl/stw_st.c
+END
+stw_framebuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/wgl/stw_framebuffer.h
+END
+stw_context.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/wgl/stw_context.h
+END
+stw_wgl.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/wgl/stw_wgl.c
+END
+stw_pixelformat.c
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/wgl/stw_pixelformat.c
+END
+stw_st.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/wgl/stw_st.h
+END
+stw_wgl.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/wgl/stw_wgl.h
+END
+stw_pixelformat.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/wgl/stw_pixelformat.h
+END
+stw_ext_swapinterval.c
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/wgl/stw_ext_swapinterval.c
+END
+stw_device.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/state_trackers/wgl/stw_device.c
+END

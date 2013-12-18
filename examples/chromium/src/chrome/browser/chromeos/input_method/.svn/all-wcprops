@@ -1,0 +1,371 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/196750/trunk/src/chrome/browser/chromeos/input_method
+END
+input_method_util_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/196662/trunk/src/chrome/browser/chromeos/input_method/input_method_util_unittest.cc
+END
+input_method_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/196667/trunk/src/chrome/browser/chromeos/input_method/input_method_util.cc
+END
+candidate_window_view_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/196321/trunk/src/chrome/browser/chromeos/input_method/candidate_window_view_unittest.cc
+END
+ibus_controller_base_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/190403/trunk/src/chrome/browser/chromeos/input_method/ibus_controller_base_unittest.cc
+END
+textinput_test_helper.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/194580/trunk/src/chrome/browser/chromeos/input_method/textinput_test_helper.cc
+END
+input_method_persistence.cc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/182918/trunk/src/chrome/browser/chromeos/input_method/input_method_persistence.cc
+END
+mock_input_method_manager.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/196662/trunk/src/chrome/browser/chromeos/input_method/mock_input_method_manager.h
+END
+ibus_controller.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/186661/trunk/src/chrome/browser/chromeos/input_method/ibus_controller.cc
+END
+input_method_persistence.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/196662/trunk/src/chrome/browser/chromeos/input_method/input_method_persistence.h
+END
+ibus_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/185842/trunk/src/chrome/browser/chromeos/input_method/ibus_controller.h
+END
+candidate_window_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/171229/trunk/src/chrome/browser/chromeos/input_method/candidate_window_controller.h
+END
+input_method_engine_ibus.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/196645/trunk/src/chrome/browser/chromeos/input_method/input_method_engine_ibus.h
+END
+input_method_manager_impl_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/195931/trunk/src/chrome/browser/chromeos/input_method/input_method_manager_impl_unittest.cc
+END
+infolist_window_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/169406/trunk/src/chrome/browser/chromeos/input_method/infolist_window_view.h
+END
+input_method_manager_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/196690/trunk/src/chrome/browser/chromeos/input_method/input_method_manager_impl.cc
+END
+input_method_delegate_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/194927/trunk/src/chrome/browser/chromeos/input_method/input_method_delegate_impl.cc
+END
+mock_ibus_controller.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/190403/trunk/src/chrome/browser/chromeos/input_method/mock_ibus_controller.cc
+END
+hidable_area.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/166903/trunk/src/chrome/browser/chromeos/input_method/hidable_area.cc
+END
+delayable_widget.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/169229/trunk/src/chrome/browser/chromeos/input_method/delayable_widget.cc
+END
+ibus_controller_impl_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/190403/trunk/src/chrome/browser/chromeos/input_method/ibus_controller_impl_unittest.cc
+END
+input_method_engine.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/196645/trunk/src/chrome/browser/chromeos/input_method/input_method_engine.h
+END
+ibus_controller_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/192293/trunk/src/chrome/browser/chromeos/input_method/ibus_controller_impl.cc
+END
+candidate_window_controller_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/185842/trunk/src/chrome/browser/chromeos/input_method/candidate_window_controller_impl.cc
+END
+delayable_widget.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/169229/trunk/src/chrome/browser/chromeos/input_method/delayable_widget.h
+END
+input_method_configuration.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/185842/trunk/src/chrome/browser/chromeos/input_method/input_method_configuration.h
+END
+candidate_window_controller_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/185842/trunk/src/chrome/browser/chromeos/input_method/candidate_window_controller_impl.h
+END
+browser_state_monitor.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/196662/trunk/src/chrome/browser/chromeos/input_method/browser_state_monitor.h
+END
+candidate_window_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/196321/trunk/src/chrome/browser/chromeos/input_method/candidate_window_view.cc
+END
+input_method_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/195121/trunk/src/chrome/browser/chromeos/input_method/input_method_util.h
+END
+ibus_controller_base.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/132751/trunk/src/chrome/browser/chromeos/input_method/ibus_controller_base.cc
+END
+candidate_window_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/196321/trunk/src/chrome/browser/chromeos/input_method/candidate_window_view.h
+END
+candidate_window_constants.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/167148/trunk/src/chrome/browser/chromeos/input_method/candidate_window_constants.h
+END
+ibus_controller_base.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/190403/trunk/src/chrome/browser/chromeos/input_method/ibus_controller_base.h
+END
+input_method_persistence_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/192594/trunk/src/chrome/browser/chromeos/input_method/input_method_persistence_unittest.cc
+END
+mock_input_method_manager.cc
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/195931/trunk/src/chrome/browser/chromeos/input_method/mock_input_method_manager.cc
+END
+component_extension_ime_manager_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/196690/trunk/src/chrome/browser/chromeos/input_method/component_extension_ime_manager_impl.cc
+END
+ibus_controller_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/188354/trunk/src/chrome/browser/chromeos/input_method/ibus_controller_unittest.cc
+END
+textinput_test_helper.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/194580/trunk/src/chrome/browser/chromeos/input_method/textinput_test_helper.h
+END
+component_extension_ime_manager_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/196690/trunk/src/chrome/browser/chromeos/input_method/component_extension_ime_manager_impl.h
+END
+candidate_window_controller.cc
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/171229/trunk/src/chrome/browser/chromeos/input_method/candidate_window_controller.cc
+END
+input_method_engine_ibus.cc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/196750/trunk/src/chrome/browser/chromeos/input_method/input_method_engine_ibus.cc
+END
+textinput_browsertest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/184065/trunk/src/chrome/browser/chromeos/input_method/textinput_browsertest.cc
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/186423/trunk/src/chrome/browser/chromeos/input_method/DEPS
+END
+candidate_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/184129/trunk/src/chrome/browser/chromeos/input_method/candidate_view.h
+END
+infolist_window_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/179841/trunk/src/chrome/browser/chromeos/input_method/infolist_window_view.cc
+END
+textinput_surroundingtext_browsertest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/183512/trunk/src/chrome/browser/chromeos/input_method/textinput_surroundingtext_browsertest.cc
+END
+input_method_manager_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/196690/trunk/src/chrome/browser/chromeos/input_method/input_method_manager_impl.h
+END
+input_method_delegate_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/194927/trunk/src/chrome/browser/chromeos/input_method/input_method_delegate_impl.h
+END
+mock_candidate_window_controller.cc
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/171229/trunk/src/chrome/browser/chromeos/input_method/mock_candidate_window_controller.cc
+END
+mock_ibus_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/185842/trunk/src/chrome/browser/chromeos/input_method/mock_ibus_controller.h
+END
+input_method_engine_ibus_browserttests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/196662/trunk/src/chrome/browser/chromeos/input_method/input_method_engine_ibus_browserttests.cc
+END
+mock_candidate_window_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/171229/trunk/src/chrome/browser/chromeos/input_method/mock_candidate_window_controller.h
+END
+hidable_area.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/166903/trunk/src/chrome/browser/chromeos/input_method/hidable_area.h
+END
+input_method_engine.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/150497/trunk/src/chrome/browser/chromeos/input_method/input_method_engine.cc
+END
+input_method_configuration_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/188311/trunk/src/chrome/browser/chromeos/input_method/input_method_configuration_unittest.cc
+END
+candidate_window_controller_impl_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/179889/trunk/src/chrome/browser/chromeos/input_method/candidate_window_controller_impl_unittest.cc
+END
+input_method_configuration.cc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/196690/trunk/src/chrome/browser/chromeos/input_method/input_method_configuration.cc
+END
+ibus_controller_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/191325/trunk/src/chrome/browser/chromeos/input_method/ibus_controller_impl.h
+END
+browser_state_monitor_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/173015/trunk/src/chrome/browser/chromeos/input_method/browser_state_monitor_unittest.cc
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/148931/trunk/src/chrome/browser/chromeos/input_method/OWNERS
+END
+browser_state_monitor.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/190373/trunk/src/chrome/browser/chromeos/input_method/browser_state_monitor.cc
+END

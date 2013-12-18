@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/196944/trunk/src/android_webview/browser/net
+END
+input_stream_reader_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/170505/trunk/src/android_webview/browser/net/input_stream_reader_unittest.cc
+END
+aw_network_delegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/180245/trunk/src/android_webview/browser/net/aw_network_delegate.h
+END
+input_stream_reader.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/169274/trunk/src/android_webview/browser/net/input_stream_reader.cc
+END
+input_stream_reader.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/170505/trunk/src/android_webview/browser/net/input_stream_reader.h
+END
+aw_url_request_context_getter.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/192649/trunk/src/android_webview/browser/net/aw_url_request_context_getter.cc
+END
+android_stream_reader_url_request_job_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/196944/trunk/src/android_webview/browser/net/android_stream_reader_url_request_job_unittest.cc
+END
+aw_url_request_context_getter.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/186680/trunk/src/android_webview/browser/net/aw_url_request_context_getter.h
+END
+android_stream_reader_url_request_job.cc
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/196944/trunk/src/android_webview/browser/net/android_stream_reader_url_request_job.cc
+END
+aw_url_request_job_factory.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/191944/trunk/src/android_webview/browser/net/aw_url_request_job_factory.cc
+END
+android_stream_reader_url_request_job.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/187270/trunk/src/android_webview/browser/net/android_stream_reader_url_request_job.h
+END
+aw_url_request_job_factory.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/188927/trunk/src/android_webview/browser/net/aw_url_request_job_factory.h
+END
+init_native_callback.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/186723/trunk/src/android_webview/browser/net/init_native_callback.h
+END
+aw_network_delegate.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/180245/trunk/src/android_webview/browser/net/aw_network_delegate.cc
+END

@@ -1,0 +1,323 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/196551/trunk/src/third_party/libevent
+END
+evrpc-internal.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/182368/trunk/src/third_party/libevent/evrpc-internal.h
+END
+evdns.3
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2345/trunk/src/third_party/libevent/evdns.3
+END
+kqueue.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/32656/trunk/src/third_party/libevent/kqueue.c
+END
+event-internal.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/182368/trunk/src/third_party/libevent/event-internal.h
+END
+chromium.patch
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/109251/trunk/src/third_party/libevent/chromium.patch
+END
+configure
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/32656/trunk/src/third_party/libevent/configure
+END
+event.3
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2345/trunk/src/third_party/libevent/event.3
+END
+Makefile.in
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/32656/trunk/src/third_party/libevent/Makefile.in
+END
+poll.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/32656/trunk/src/third_party/libevent/poll.c
+END
+evutil.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/32656/trunk/src/third_party/libevent/evutil.c
+END
+config.guess
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/32656/trunk/src/third_party/libevent/config.guess
+END
+config.sub
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/32656/trunk/src/third_party/libevent/config.sub
+END
+ltmain.sh
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/32656/trunk/src/third_party/libevent/ltmain.sh
+END
+evutil.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/182368/trunk/src/third_party/libevent/evutil.h
+END
+evhttp.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/109251/trunk/src/third_party/libevent/evhttp.h
+END
+evport.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/32656/trunk/src/third_party/libevent/evport.c
+END
+http.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/32656/trunk/src/third_party/libevent/http.c
+END
+strlcpy-internal.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/182368/trunk/src/third_party/libevent/strlcpy-internal.h
+END
+select.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/32656/trunk/src/third_party/libevent/select.c
+END
+event_tagging.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/2345/trunk/src/third_party/libevent/event_tagging.c
+END
+epoll_sub.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/2345/trunk/src/third_party/libevent/epoll_sub.c
+END
+event_rpcgen.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/32656/trunk/src/third_party/libevent/event_rpcgen.py
+END
+min_heap.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/182368/trunk/src/third_party/libevent/min_heap.h
+END
+event-config.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/100742/trunk/src/third_party/libevent/event-config.h
+END
+autogen.sh
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/2345/trunk/src/third_party/libevent/autogen.sh
+END
+README.chromium
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/100742/trunk/src/third_party/libevent/README.chromium
+END
+http-internal.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/182368/trunk/src/third_party/libevent/http-internal.h
+END
+mkinstalldirs
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/2345/trunk/src/third_party/libevent/mkinstalldirs
+END
+strlcpy.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2345/trunk/src/third_party/libevent/strlcpy.c
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/42045/trunk/src/third_party/libevent/LICENSE
+END
+evbuffer.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/2345/trunk/src/third_party/libevent/evbuffer.c
+END
+devpoll.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/32656/trunk/src/third_party/libevent/devpoll.c
+END
+configure.in
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/32656/trunk/src/third_party/libevent/configure.in
+END
+ChangeLog
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/32656/trunk/src/third_party/libevent/ChangeLog
+END
+buffer.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/32656/trunk/src/third_party/libevent/buffer.c
+END
+epoll.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/32656/trunk/src/third_party/libevent/epoll.c
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/2345/trunk/src/third_party/libevent/README
+END
+evsignal.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/182368/trunk/src/third_party/libevent/evsignal.h
+END
+signal.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/32656/trunk/src/third_party/libevent/signal.c
+END
+evdns.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/109251/trunk/src/third_party/libevent/evdns.c
+END
+config.h.in
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/32656/trunk/src/third_party/libevent/config.h.in
+END
+evrpc.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/32656/trunk/src/third_party/libevent/evrpc.c
+END
+event.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/87338/trunk/src/third_party/libevent/event.c
+END
+log.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/32656/trunk/src/third_party/libevent/log.c
+END
+evdns.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/182368/trunk/src/third_party/libevent/evdns.h
+END
+evrpc.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/182368/trunk/src/third_party/libevent/evrpc.h
+END
+libevent.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/196551/trunk/src/third_party/libevent/libevent.gyp
+END
+event.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/182368/trunk/src/third_party/libevent/event.h
+END
+log.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/182368/trunk/src/third_party/libevent/log.h
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/32656/trunk/src/third_party/libevent/Makefile.am
+END
+missing
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2345/trunk/src/third_party/libevent/missing
+END
+aclocal.m4
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/32656/trunk/src/third_party/libevent/aclocal.m4
+END
+install-sh
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/2345/trunk/src/third_party/libevent/install-sh
+END

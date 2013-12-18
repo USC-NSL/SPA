@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/195807/trunk/src/breakpad
+END
+README.chromium
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/150800/trunk/src/breakpad/README.chromium
+END
+breakpad_sender.gypi
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/177959/trunk/src/breakpad/breakpad_sender.gypi
+END
+breakpad_tools.gypi
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/169148/trunk/src/breakpad/breakpad_tools.gypi
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/128950/trunk/src/breakpad/LICENSE
+END
+breakpad.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/195807/trunk/src/breakpad/breakpad.gyp
+END
+using_breakpad.vsprops
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/6/trunk/src/breakpad/using_breakpad.vsprops
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/91433/trunk/src/breakpad/OWNERS
+END
+breakpad_handler.gypi
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/188207/trunk/src/breakpad/breakpad_handler.gypi
+END
+symupload.exe
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/134316/trunk/src/breakpad/symupload.exe
+END

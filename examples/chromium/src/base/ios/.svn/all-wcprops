@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/181345/trunk/src/base/ios
+END
+ios_util.mm
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/174398/trunk/src/base/ios/ios_util.mm
+END
+device_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/150324/trunk/src/base/ios/device_util.h
+END
+device_util_unittest.mm
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/181345/trunk/src/base/ios/device_util_unittest.mm
+END
+device_util.mm
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/181345/trunk/src/base/ios/device_util.mm
+END
+scoped_critical_action.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/149422/trunk/src/base/ios/scoped_critical_action.h
+END
+scoped_critical_action.mm
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/149422/trunk/src/base/ios/scoped_critical_action.mm
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/160414/trunk/src/base/ios/OWNERS
+END
+ios_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/174398/trunk/src/base/ios/ios_util.h
+END

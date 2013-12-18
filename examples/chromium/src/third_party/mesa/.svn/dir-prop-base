@@ -1,0 +1,12 @@
+K 10
+svn:ignore
+V 96
+mesa.sln
+mesa.target.mk
+mesa.vcproj
+mesa.xcodeproj
+osmesa.target.mk
+osmesa.vcproj
+mesa.Makefile
+
+END

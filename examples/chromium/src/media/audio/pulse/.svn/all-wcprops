@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/192905/trunk/src/media/audio/pulse
+END
+pulse_stub_header.fragment
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/184122/trunk/src/media/audio/pulse/pulse_stub_header.fragment
+END
+pulse_unified.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/192905/trunk/src/media/audio/pulse/pulse_unified.cc
+END
+pulse_unified.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/192779/trunk/src/media/audio/pulse/pulse_unified.h
+END
+audio_manager_pulse.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/191247/trunk/src/media/audio/pulse/audio_manager_pulse.cc
+END
+audio_manager_pulse.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/186698/trunk/src/media/audio/pulse/audio_manager_pulse.h
+END
+pulse_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/191247/trunk/src/media/audio/pulse/pulse_util.cc
+END
+pulse_input.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/191247/trunk/src/media/audio/pulse/pulse_input.cc
+END
+pulse_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/191247/trunk/src/media/audio/pulse/pulse_util.h
+END
+pulse_output.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/192905/trunk/src/media/audio/pulse/pulse_output.cc
+END
+pulse.sigs
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/184629/trunk/src/media/audio/pulse/pulse.sigs
+END
+pulse_input.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/192779/trunk/src/media/audio/pulse/pulse_input.h
+END
+pulse_output.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/191247/trunk/src/media/audio/pulse/pulse_output.h
+END

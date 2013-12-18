@@ -1,0 +1,137 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/196751/trunk/src/cc/debug
+END
+rendering_stats.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/196751/trunk/src/cc/debug/rendering_stats.cc
+END
+rendering_stats.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/196751/trunk/src/cc/debug/rendering_stats.h
+END
+layer_tree_debug_state.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/192305/trunk/src/cc/debug/layer_tree_debug_state.cc
+END
+layer_tree_debug_state.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/192305/trunk/src/cc/debug/layer_tree_debug_state.h
+END
+frame_rate_counter.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/190715/trunk/src/cc/debug/frame_rate_counter.cc
+END
+frame_rate_counter.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/188685/trunk/src/cc/debug/frame_rate_counter.h
+END
+debug_colors.cc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/192305/trunk/src/cc/debug/debug_colors.cc
+END
+debug_colors.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/192305/trunk/src/cc/debug/debug_colors.h
+END
+latency_info.cc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/194696/trunk/src/cc/debug/latency_info.cc
+END
+latency_info.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/194687/trunk/src/cc/debug/latency_info.h
+END
+fake_web_graphics_context_3d.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/191692/trunk/src/cc/debug/fake_web_graphics_context_3d.cc
+END
+rendering_stats_instrumentation.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/196751/trunk/src/cc/debug/rendering_stats_instrumentation.cc
+END
+fake_web_graphics_context_3d.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/191692/trunk/src/cc/debug/fake_web_graphics_context_3d.h
+END
+overdraw_metrics.cc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/191329/trunk/src/cc/debug/overdraw_metrics.cc
+END
+rendering_stats_instrumentation.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/196751/trunk/src/cc/debug/rendering_stats_instrumentation.h
+END
+overdraw_metrics.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/190715/trunk/src/cc/debug/overdraw_metrics.h
+END
+debug_rect_history.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/191442/trunk/src/cc/debug/debug_rect_history.cc
+END
+devtools_instrumentation.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/190715/trunk/src/cc/debug/devtools_instrumentation.h
+END
+debug_rect_history.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/191442/trunk/src/cc/debug/debug_rect_history.h
+END
+paint_time_counter.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/190606/trunk/src/cc/debug/paint_time_counter.cc
+END
+paint_time_counter.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/190606/trunk/src/cc/debug/paint_time_counter.h
+END
+ring_buffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/190989/trunk/src/cc/debug/ring_buffer.h
+END

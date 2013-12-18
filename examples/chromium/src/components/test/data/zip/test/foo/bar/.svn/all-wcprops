@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/192843/trunk/src/components/test/data/zip/test/foo/bar
+END
+quux.txt
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/192843/trunk/src/components/test/data/zip/test/foo/bar/quux.txt
+END
+.hidden
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/192843/trunk/src/components/test/data/zip/test/foo/bar/.hidden
+END
+baz.txt
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/192843/trunk/src/components/test/data/zip/test/foo/bar/baz.txt
+END

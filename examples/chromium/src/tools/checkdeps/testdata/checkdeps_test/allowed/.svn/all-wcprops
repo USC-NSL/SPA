@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/167010/trunk/src/tools/checkdeps/testdata/checkdeps_test/allowed
+END
+not_a_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/167010/trunk/src/tools/checkdeps/testdata/checkdeps_test/allowed/not_a_test.cc
+END
+test.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/167010/trunk/src/tools/checkdeps/testdata/checkdeps_test/allowed/test.h
+END
+foo_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/167010/trunk/src/tools/checkdeps/testdata/checkdeps_test/allowed/foo_unittest.cc
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/167010/trunk/src/tools/checkdeps/testdata/checkdeps_test/allowed/DEPS
+END

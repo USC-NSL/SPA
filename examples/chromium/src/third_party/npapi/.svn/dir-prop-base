@@ -1,0 +1,14 @@
+K 10
+svn:ignore
+V 119
+npapi.xcodeproj
+npapi.vcproj
+npapi.sln
+SConstruct
+npapi.scons
+npapi_main.scons
+npapi.mk
+npapi.target.mk
+npapi.Makefile
+
+END

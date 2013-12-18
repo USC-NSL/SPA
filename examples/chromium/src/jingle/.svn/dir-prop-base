@@ -1,0 +1,18 @@
+K 10
+svn:ignore
+V 264
+jingle.Makefile
+jingle.sln
+jingle.xcodeproj
+notifier.target.mk
+notifier.vcproj
+notifier_test_util.target.mk
+notifier_test_util.vcproj
+notifier_unit_tests.target.mk
+notifier_unit_tests.vcproj
+jingle_glue_test_util.vcproj
+jingle_glue.vcproj
+jingle_unittests.vcproj
+
+
+END

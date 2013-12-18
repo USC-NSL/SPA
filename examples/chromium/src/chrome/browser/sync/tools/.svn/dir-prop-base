@@ -1,0 +1,14 @@
+K 10
+svn:ignore
+V 191
+sync_tools.xcodeproj
+sync_tools.sln
+sync_listen_notifications.vcproj
+
+sync_tools_main.scons
+SConstruct
+sync_listen_notifications.scons
+sync_tools.Makefile
+sync_listen_notifications.target.mk
+
+END

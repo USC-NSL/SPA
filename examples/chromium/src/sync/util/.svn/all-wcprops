@@ -1,0 +1,191 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/194582/trunk/src/sync/util
+END
+time.cc
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/144820/trunk/src/sync/util/time.cc
+END
+get_session_name_ios.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/167485/trunk/src/sync/util/get_session_name_ios.h
+END
+protobuf_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/126872/trunk/src/sync/util/protobuf_unittest.cc
+END
+get_session_name_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/144820/trunk/src/sync/util/get_session_name_win.cc
+END
+test_unrecoverable_error_handler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/144820/trunk/src/sync/util/test_unrecoverable_error_handler.cc
+END
+get_session_name_win.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/146074/trunk/src/sync/util/get_session_name_win.h
+END
+data_encryption_win.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/174801/trunk/src/sync/util/data_encryption_win.h
+END
+test_unrecoverable_error_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/146074/trunk/src/sync/util/test_unrecoverable_error_handler.h
+END
+extensions_activity_monitor.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/144820/trunk/src/sync/util/extensions_activity_monitor.cc
+END
+get_session_name.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/174801/trunk/src/sync/util/get_session_name.h
+END
+nigori_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/144820/trunk/src/sync/util/nigori_unittest.cc
+END
+logging.cc
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/144820/trunk/src/sync/util/logging.cc
+END
+data_type_histogram_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/147675/trunk/src/sync/util/data_type_histogram_unittest.cc
+END
+get_session_name_mac.mm
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/191479/trunk/src/sync/util/get_session_name_mac.mm
+END
+encryptor.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/146074/trunk/src/sync/util/encryptor.h
+END
+cryptographer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/193040/trunk/src/sync/util/cryptographer.cc
+END
+cryptographer.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/174801/trunk/src/sync/util/cryptographer.h
+END
+data_encryption_win_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/169392/trunk/src/sync/util/data_encryption_win_unittest.cc
+END
+data_encryption_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/190292/trunk/src/sync/util/data_encryption_win.cc
+END
+time.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/174801/trunk/src/sync/util/time.h
+END
+get_session_name_mac.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/146074/trunk/src/sync/util/get_session_name_mac.h
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/172458/trunk/src/sync/util/DEPS
+END
+get_session_name_ios.mm
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/191479/trunk/src/sync/util/get_session_name_ios.mm
+END
+get_session_name_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/171683/trunk/src/sync/util/get_session_name_unittest.cc
+END
+get_session_name.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/171683/trunk/src/sync/util/get_session_name.cc
+END
+extensions_activity_monitor.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/172458/trunk/src/sync/util/extensions_activity_monitor.h
+END
+nigori.cc
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/149689/trunk/src/sync/util/nigori.cc
+END
+cryptographer_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/162323/trunk/src/sync/util/cryptographer_unittest.cc
+END
+logging.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/147675/trunk/src/sync/util/logging.h
+END
+data_type_histogram.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/194582/trunk/src/sync/util/data_type_histogram.h
+END
+nigori.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/172458/trunk/src/sync/util/nigori.h
+END

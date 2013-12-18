@@ -1,0 +1,587 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals
+END
+patchlist.cc
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/patchlist.cc
+END
+patchlist.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/patchlist.h
+END
+knotvector.cc
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/knotvector.cc
+END
+subdivider.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/subdivider.h
+END
+cachingeval.cc
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/cachingeval.cc
+END
+hull.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/hull.h
+END
+basiccrveval.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/basiccrveval.h
+END
+arc.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/arc.h
+END
+bin.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/bin.cc
+END
+bezierarc.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/bezierarc.h
+END
+maplist.cc
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/maplist.cc
+END
+mapdesc.cc
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/mapdesc.cc
+END
+displaymode.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/displaymode.h
+END
+ccw.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/ccw.cc
+END
+flist.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/flist.h
+END
+nurbsconsts.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/nurbsconsts.h
+END
+pwlarc.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/pwlarc.h
+END
+basicsurfeval.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/basicsurfeval.h
+END
+patch.cc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/patch.cc
+END
+knotvector.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/knotvector.h
+END
+intersect.cc
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/intersect.cc
+END
+subdivider.cc
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/subdivider.cc
+END
+mymath.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/mymath.h
+END
+displaylist.cc
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/displaylist.cc
+END
+patch.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/patch.h
+END
+reader.cc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/reader.cc
+END
+hull.cc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/hull.cc
+END
+basiccrveval.cc
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/basiccrveval.cc
+END
+bufpool.cc
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/bufpool.cc
+END
+arctess.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/arctess.h
+END
+arcsorter.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/arcsorter.h
+END
+trimvertpool.cc
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/trimvertpool.cc
+END
+dataTransform.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/dataTransform.h
+END
+myassert.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/myassert.h
+END
+mysetjmp.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/mysetjmp.h
+END
+trimregion.cc
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/trimregion.cc
+END
+mycode.cc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/mycode.cc
+END
+slicer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/slicer.cc
+END
+trimregion.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/trimregion.h
+END
+flistsorter.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/flistsorter.h
+END
+curvelist.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/curvelist.h
+END
+monotonizer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/monotonizer.cc
+END
+mesher.cc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/mesher.cc
+END
+monotonizer.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/monotonizer.h
+END
+mesher.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/mesher.h
+END
+renderhints.cc
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/renderhints.cc
+END
+nurbstess.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/nurbstess.h
+END
+curvesub.cc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/curvesub.cc
+END
+quilt.cc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/quilt.cc
+END
+arctess.cc
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/arctess.cc
+END
+arcsorter.cc
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/arcsorter.cc
+END
+reader.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/reader.h
+END
+arc.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/arc.cc
+END
+types.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/types.h
+END
+varray.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/varray.h
+END
+bufpool.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/bufpool.h
+END
+trimvertpool.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/trimvertpool.h
+END
+maplist.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/maplist.h
+END
+mystring.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/mystring.h
+END
+sorter.cc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/sorter.cc
+END
+jarcloc.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/jarcloc.h
+END
+coveandtiler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/coveandtiler.cc
+END
+defines.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/defines.h
+END
+flistsorter.cc
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/flistsorter.cc
+END
+curvelist.cc
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/curvelist.cc
+END
+gridtrimvertex.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/gridtrimvertex.h
+END
+flist.cc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/flist.cc
+END
+coveandtiler.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/coveandtiler.h
+END
+tobezier.cc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/tobezier.cc
+END
+trimline.cc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/trimline.cc
+END
+trimline.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/trimline.h
+END
+curve.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/curve.h
+END
+backend.cc
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/backend.cc
+END
+nurbstess.cc
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/nurbstess.cc
+END
+basicsurfeval.cc
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/basicsurfeval.cc
+END
+backend.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/backend.h
+END
+gridline.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/gridline.h
+END
+quilt.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/quilt.h
+END
+mapdescv.cc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/mapdescv.cc
+END
+displaylist.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/displaylist.h
+END
+uarray.cc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/uarray.cc
+END
+splitarcs.cc
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/splitarcs.cc
+END
+varray.cc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/varray.cc
+END
+nurbsinterfac.cc
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/nurbsinterfac.cc
+END
+dataTransform.cc
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/dataTransform.cc
+END
+simplemath.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/simplemath.h
+END
+uarray.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/uarray.h
+END
+cachingeval.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/cachingeval.h
+END
+bin.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/bin.h
+END
+trimvertex.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/trimvertex.h
+END
+mapdesc.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/mapdesc.h
+END
+sorter.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/sorter.h
+END
+monoTriangulationBackend.cc
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/monoTriangulationBackend.cc
+END
+slicer.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/slicer.h
+END
+curve.cc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/curve.cc
+END
+gridvertex.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/gridvertex.h
+END
+renderhints.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/glu/sgi/libnurbs/internals/renderhints.h
+END

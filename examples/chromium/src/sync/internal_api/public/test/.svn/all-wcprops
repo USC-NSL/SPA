@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/191087/trunk/src/sync/internal_api/public/test
+END
+fake_sync_manager.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/191087/trunk/src/sync/internal_api/public/test/fake_sync_manager.h
+END
+test_user_share.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/178157/trunk/src/sync/internal_api/public/test/test_user_share.h
+END
+test_entry_factory.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/176575/trunk/src/sync/internal_api/public/test/test_entry_factory.h
+END
+test_internal_components_factory.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/185721/trunk/src/sync/internal_api/public/test/test_internal_components_factory.h
+END

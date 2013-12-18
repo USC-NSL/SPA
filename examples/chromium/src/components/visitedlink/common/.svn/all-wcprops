@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/188870/trunk/src/components/visitedlink/common
+END
+visitedlink_common.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/178176/trunk/src/components/visitedlink/common/visitedlink_common.cc
+END
+visitedlink_messages.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/178176/trunk/src/components/visitedlink/common/visitedlink_messages.h
+END
+visitedlink_common.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/178176/trunk/src/components/visitedlink/common/visitedlink_common.h
+END
+visitedlink_message_generator.cc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/178176/trunk/src/components/visitedlink/common/visitedlink_message_generator.cc
+END
+visitedlink_message_generator.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/178176/trunk/src/components/visitedlink/common/visitedlink_message_generator.h
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/178176/trunk/src/components/visitedlink/common/DEPS
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/188870/trunk/src/components/visitedlink/common/OWNERS
+END

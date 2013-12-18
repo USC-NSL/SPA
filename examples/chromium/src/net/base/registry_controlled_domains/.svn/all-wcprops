@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/193040/trunk/src/net/base/registry_controlled_domains
+END
+registry_controlled_domain_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/193040/trunk/src/net/base/registry_controlled_domains/registry_controlled_domain_unittest.cc
+END
+effective_tld_names.gperf
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/147641/trunk/src/net/base/registry_controlled_domains/effective_tld_names.gperf
+END
+effective_tld_names_unittest1.gperf
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/147641/trunk/src/net/base/registry_controlled_domains/effective_tld_names_unittest1.gperf
+END
+registry_controlled_domain.cc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/147641/trunk/src/net/base/registry_controlled_domains/registry_controlled_domain.cc
+END
+effective_tld_names_unittest2.gperf
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/147641/trunk/src/net/base/registry_controlled_domains/effective_tld_names_unittest2.gperf
+END
+effective_tld_names.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/147641/trunk/src/net/base/registry_controlled_domains/effective_tld_names.cc
+END
+effective_tld_names_unittest1.cc
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/147641/trunk/src/net/base/registry_controlled_domains/effective_tld_names_unittest1.cc
+END
+registry_controlled_domain.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/147641/trunk/src/net/base/registry_controlled_domains/registry_controlled_domain.h
+END
+effective_tld_names_unittest2.cc
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/147641/trunk/src/net/base/registry_controlled_domains/effective_tld_names_unittest2.cc
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/147641/trunk/src/net/base/registry_controlled_domains/OWNERS
+END
+effective_tld_names.dat
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/147641/trunk/src/net/base/registry_controlled_domains/effective_tld_names.dat
+END

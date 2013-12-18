@@ -1,0 +1,557 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/165007/trunk/src/third_party/mesa/MesaLib/src/glsl
+END
+builtin_types.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/builtin_types.h
+END
+ir_div_to_mul_rcp.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_div_to_mul_rcp.cpp
+END
+glsl_lexer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/165007/trunk/src/third_party/mesa/MesaLib/src/glsl/glsl_lexer.cpp
+END
+ir_reader.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_reader.h
+END
+glsl_symbol_table.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/glsl_symbol_table.h
+END
+ir_algebraic.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_algebraic.cpp
+END
+Makefile.template
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/Makefile.template
+END
+ir_mat_op_to_vec.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_mat_op_to_vec.cpp
+END
+ir_expression_flattening.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_expression_flattening.h
+END
+loop_analysis.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/loop_analysis.cpp
+END
+ir_variable.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_variable.cpp
+END
+ir.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/152502/trunk/src/third_party/mesa/MesaLib/src/glsl/ir.h
+END
+glsl_parser.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/165007/trunk/src/third_party/mesa/MesaLib/src/glsl/glsl_parser.h
+END
+opt_redundant_jumps.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/opt_redundant_jumps.cpp
+END
+linker.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/linker.cpp
+END
+ir_optimization.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_optimization.h
+END
+glsl_types.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/glsl_types.cpp
+END
+ir_basic_block.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_basic_block.cpp
+END
+ir_hv_accept.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_hv_accept.cpp
+END
+ir_vec_index_to_swizzle.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_vec_index_to_swizzle.cpp
+END
+hir_field_selection.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/hir_field_selection.cpp
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/Makefile
+END
+glsl_symbol_table.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/glsl_symbol_table.cpp
+END
+ir_function_can_inline.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_function_can_inline.cpp
+END
+ir_constant_expression.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_constant_expression.cpp
+END
+safe_strcmp.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/safe_strcmp.c
+END
+ir_print_visitor.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_print_visitor.h
+END
+ir_tree_grafting.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_tree_grafting.cpp
+END
+builtin_function.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/builtin_function.cpp
+END
+safe_strcmp.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/safe_strcmp.h
+END
+ir_set_program_inouts.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_set_program_inouts.cpp
+END
+glsl_parser.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/165007/trunk/src/third_party/mesa/MesaLib/src/glsl/glsl_parser.cpp
+END
+list.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/list.h
+END
+loop_analysis.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/loop_analysis.h
+END
+ir_if_simplification.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_if_simplification.cpp
+END
+ir_validate.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_validate.cpp
+END
+ir_variable_refcount.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_variable_refcount.cpp
+END
+ast_type.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ast_type.cpp
+END
+linker.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/linker.h
+END
+ir_explog_to_explog2.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_explog_to_explog2.cpp
+END
+ir_mod_to_fract.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_mod_to_fract.cpp
+END
+ast_to_hir.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ast_to_hir.cpp
+END
+ir_dead_code_local.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_dead_code_local.cpp
+END
+ast.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ast.h
+END
+ir_hierarchical_visitor.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_hierarchical_visitor.h
+END
+ir_noop_swizzle.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_noop_swizzle.cpp
+END
+ir_visitor.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_visitor.h
+END
+ir_if_to_cond_assign.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_if_to_cond_assign.cpp
+END
+glsl_parser.ypp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/glsl_parser.ypp
+END
+ir_print_visitor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_print_visitor.cpp
+END
+ir_function_inlining.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_function_inlining.cpp
+END
+glsl_parser_extras.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/152502/trunk/src/third_party/mesa/MesaLib/src/glsl/glsl_parser_extras.h
+END
+glsl_lexer.lpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/glsl_lexer.lpp
+END
+program.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/program.h
+END
+ir_import_prototypes.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_import_prototypes.cpp
+END
+ir_rvalue_visitor.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_rvalue_visitor.h
+END
+ir_dead_functions.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_dead_functions.cpp
+END
+main.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/main.cpp
+END
+link_functions.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/link_functions.cpp
+END
+ast_expr.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ast_expr.cpp
+END
+s_expression.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/s_expression.h
+END
+ir_sub_to_add_neg.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_sub_to_add_neg.cpp
+END
+ir_constant_propagation.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_constant_propagation.cpp
+END
+ir_hierarchical_visitor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_hierarchical_visitor.cpp
+END
+ir_swizzle_swizzle.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_swizzle_swizzle.cpp
+END
+ir_variable_refcount.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_variable_refcount.h
+END
+ir_reader.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_reader.cpp
+END
+lower_variable_index_to_cond_assign.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/lower_variable_index_to_cond_assign.cpp
+END
+ir_lower_jumps.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_lower_jumps.cpp
+END
+builtin_variables.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/builtin_variables.h
+END
+glsl_parser_extras.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/glsl_parser_extras.cpp
+END
+ir_expression_flattening.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_expression_flattening.cpp
+END
+loop_unroll.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/loop_unroll.cpp
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/SConscript
+END
+ir_rvalue_visitor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_rvalue_visitor.cpp
+END
+ir_copy_propagation.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_copy_propagation.cpp
+END
+ir_vec_index_to_cond_assign.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_vec_index_to_cond_assign.cpp
+END
+ir.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir.cpp
+END
+ir_function_inlining.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_function_inlining.h
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/README
+END
+ir_function.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_function.cpp
+END
+ir_dead_code.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_dead_code.cpp
+END
+s_expression.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/s_expression.cpp
+END
+ir_constant_folding.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_constant_folding.cpp
+END
+lower_noise.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/lower_noise.cpp
+END
+ir_structure_splitting.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_structure_splitting.cpp
+END
+ir_constant_variable.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_constant_variable.cpp
+END
+glsl_types.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/glsl_types.h
+END
+ir_basic_block.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_basic_block.h
+END
+ir_clone.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ir_clone.cpp
+END
+ast_function.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/ast_function.cpp
+END
+loop_controls.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/glsl/loop_controls.cpp
+END

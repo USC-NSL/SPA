@@ -1,0 +1,185 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/tdfx
+END
+tdfx_pixels.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/tdfx/tdfx_pixels.h
+END
+tdfx_vb.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/tdfx/tdfx_vb.h
+END
+tdfx_render.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/tdfx/tdfx_render.c
+END
+tdfx_screen.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/tdfx/tdfx_screen.c
+END
+tdfx_state.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/tdfx/tdfx_state.c
+END
+tdfx_tris.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/tdfx/tdfx_tris.c
+END
+tdfx_render.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/tdfx/tdfx_render.h
+END
+tdfx_context.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/tdfx/tdfx_context.c
+END
+tdfx_screen.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/tdfx/tdfx_screen.h
+END
+tdfx_state.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/tdfx/tdfx_state.h
+END
+tdfx_tris.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/tdfx/tdfx_tris.h
+END
+tdfx_dd.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/tdfx/tdfx_dd.c
+END
+tdfx_lock.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/tdfx/tdfx_lock.c
+END
+tdfx_glide.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/tdfx/tdfx_glide.h
+END
+tdfx_context.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/tdfx/tdfx_context.h
+END
+tdfx_texman.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/tdfx/tdfx_texman.c
+END
+tdfx_dd.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/tdfx/tdfx_dd.h
+END
+tdfx_vbtmp.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/tdfx/tdfx_vbtmp.h
+END
+tdfx_lock.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/tdfx/tdfx_lock.h
+END
+tdfx_tex.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/tdfx/tdfx_tex.c
+END
+tdfx_span.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/tdfx/tdfx_span.c
+END
+tdfx_texman.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/tdfx/tdfx_texman.h
+END
+tdfx_texstate.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/tdfx/tdfx_texstate.c
+END
+dri_glide.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/tdfx/dri_glide.h
+END
+tdfx_pixels.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/tdfx/tdfx_pixels.c
+END
+tdfx_tex.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/tdfx/tdfx_tex.h
+END
+tdfx_texstate.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/tdfx/tdfx_texstate.h
+END
+tdfx_span.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/tdfx/tdfx_span.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/tdfx/Makefile
+END
+tdfx_vb.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/drivers/dri/tdfx/tdfx_vb.c
+END

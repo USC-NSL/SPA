@@ -1,0 +1,149 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/196888/trunk/src/remoting/client
+END
+rectangle_update_decoder.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/162635/trunk/src/remoting/client/rectangle_update_decoder.cc
+END
+key_event_mapper_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/155905/trunk/src/remoting/client/key_event_mapper_unittest.cc
+END
+key_event_mapper.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/131321/trunk/src/remoting/client/key_event_mapper.cc
+END
+rectangle_update_decoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/154272/trunk/src/remoting/client/rectangle_update_decoder.h
+END
+client_user_interface.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195192/trunk/src/remoting/client/client_user_interface.h
+END
+frame_producer.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/144086/trunk/src/remoting/client/frame_producer.h
+END
+key_event_mapper.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/131321/trunk/src/remoting/client/key_event_mapper.h
+END
+audio_decode_scheduler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/178102/trunk/src/remoting/client/audio_decode_scheduler.cc
+END
+client_config.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/139815/trunk/src/remoting/client/client_config.cc
+END
+audio_decode_scheduler.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/156436/trunk/src/remoting/client/audio_decode_scheduler.h
+END
+client_config.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/195192/trunk/src/remoting/client/client_config.h
+END
+frame_consumer_proxy.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/147605/trunk/src/remoting/client/frame_consumer_proxy.cc
+END
+frame_consumer.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/147605/trunk/src/remoting/client/frame_consumer.h
+END
+chromoting_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/196888/trunk/src/remoting/client/chromoting_client.cc
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/149990/trunk/src/remoting/client/DEPS
+END
+frame_consumer_proxy.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/147605/trunk/src/remoting/client/frame_consumer_proxy.h
+END
+chromoting_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/196665/trunk/src/remoting/client/chromoting_client.h
+END
+audio_player_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/192873/trunk/src/remoting/client/audio_player_unittest.cc
+END
+audio_player.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/174753/trunk/src/remoting/client/audio_player.cc
+END
+audio_player.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/174753/trunk/src/remoting/client/audio_player.h
+END
+client_context.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/149990/trunk/src/remoting/client/client_context.cc
+END
+client_context.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/149990/trunk/src/remoting/client/client_context.h
+END
+chromoting_stats.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/119535/trunk/src/remoting/client/chromoting_stats.cc
+END
+chromoting_stats.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/107121/trunk/src/remoting/client/chromoting_stats.h
+END

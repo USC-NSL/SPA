@@ -1,0 +1,37 @@
+10
+
+dir
+197479
+http://src.chromium.org/svn/trunk/src/chrome/test/data/requirements_checker
+http://src.chromium.org/svn
+
+
+
+2012-09-11T20:51:24.711151Z
+156119
+eaugusti@chromium.org
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4ff67af0-8c30-449e-8e8b-ad334ec8d88c
+
+no_requirements
+dir
+
+require_3d
+dir
+
+require_npapi
+dir
+

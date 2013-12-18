@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/196777/trunk/src/chrome/browser/usb
+END
+usb_service.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/182320/trunk/src/chrome/browser/usb/usb_service.h
+END
+usb_service_factory.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/196777/trunk/src/chrome/browser/usb/usb_service_factory.cc
+END
+usb_service_factory.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/196777/trunk/src/chrome/browser/usb/usb_service_factory.h
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/134278/trunk/src/chrome/browser/usb/DEPS
+END
+usb_device.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/195918/trunk/src/chrome/browser/usb/usb_device.cc
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/149240/trunk/src/chrome/browser/usb/OWNERS
+END
+usb_service.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/182320/trunk/src/chrome/browser/usb/usb_service.cc
+END
+usb_device.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/195918/trunk/src/chrome/browser/usb/usb_device.h
+END

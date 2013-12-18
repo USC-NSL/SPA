@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/targets/xorg-vmwgfx
+END
+vmw_hook.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/targets/xorg-vmwgfx/vmw_hook.h
+END
+vmw_target.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/targets/xorg-vmwgfx/vmw_target.c
+END
+vmw_video.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/targets/xorg-vmwgfx/vmw_video.c
+END
+vmwarectrlproto.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/targets/xorg-vmwgfx/vmwarectrlproto.h
+END
+vmw_ctrl.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/targets/xorg-vmwgfx/vmw_ctrl.h
+END
+vmw_ioctl.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/targets/xorg-vmwgfx/vmw_ioctl.c
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/targets/xorg-vmwgfx/SConscript
+END
+vmw_screen.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/targets/xorg-vmwgfx/vmw_screen.c
+END
+vmw_xorg.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/targets/xorg-vmwgfx/vmw_xorg.c
+END
+vmw_driver.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/targets/xorg-vmwgfx/vmw_driver.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/targets/xorg-vmwgfx/Makefile
+END
+vmw_ctrl.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/targets/xorg-vmwgfx/vmw_ctrl.c
+END

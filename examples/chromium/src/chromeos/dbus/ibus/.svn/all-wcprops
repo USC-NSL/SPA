@@ -1,0 +1,287 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/196666/trunk/src/chromeos/dbus/ibus
+END
+mock_ibus_input_context_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/179644/trunk/src/chromeos/dbus/ibus/mock_ibus_input_context_client.h
+END
+mock_ibus_config_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/170432/trunk/src/chromeos/dbus/ibus/mock_ibus_config_client.cc
+END
+ibus_constants.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/178543/trunk/src/chromeos/dbus/ibus/ibus_constants.h
+END
+ibus_engine_factory_service.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/169610/trunk/src/chromeos/dbus/ibus/ibus_engine_factory_service.h
+END
+ibus_panel_service.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/187250/trunk/src/chromeos/dbus/ibus/ibus_panel_service.cc
+END
+ibus_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/179889/trunk/src/chromeos/dbus/ibus/ibus_client.h
+END
+ibus_panel_service.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/179889/trunk/src/chromeos/dbus/ibus/ibus_panel_service.h
+END
+ibus_lookup_table.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/179889/trunk/src/chromeos/dbus/ibus/ibus_lookup_table.h
+END
+ibus_engine_service_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/195880/trunk/src/chromeos/dbus/ibus/ibus_engine_service_unittest.cc
+END
+ibus_text.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/179889/trunk/src/chromeos/dbus/ibus/ibus_text.h
+END
+ibus_property.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/179889/trunk/src/chromeos/dbus/ibus/ibus_property.h
+END
+mock_ibus_panel_service.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/179889/trunk/src/chromeos/dbus/ibus/mock_ibus_panel_service.h
+END
+mock_ibus_engine_service.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/196666/trunk/src/chromeos/dbus/ibus/mock_ibus_engine_service.h
+END
+ibus_component_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/196090/trunk/src/chromeos/dbus/ibus/ibus_component_unittest.cc
+END
+ibus_input_context_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/186691/trunk/src/chromeos/dbus/ibus/ibus_input_context_client.cc
+END
+ibus_component.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/196090/trunk/src/chromeos/dbus/ibus/ibus_component.cc
+END
+ibus_input_context_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/179889/trunk/src/chromeos/dbus/ibus/ibus_input_context_client.h
+END
+ibus_config_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/178001/trunk/src/chromeos/dbus/ibus/ibus_config_client.cc
+END
+ibus_object_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/190580/trunk/src/chromeos/dbus/ibus/ibus_object_unittest.cc
+END
+ibus_config_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/179889/trunk/src/chromeos/dbus/ibus/ibus_config_client.h
+END
+ibus_object.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/179889/trunk/src/chromeos/dbus/ibus/ibus_object.cc
+END
+mock_ibus_input_context_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/179644/trunk/src/chromeos/dbus/ibus/mock_ibus_input_context_client.cc
+END
+ibus_engine_factory_service_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/181266/trunk/src/chromeos/dbus/ibus/ibus_engine_factory_service_unittest.cc
+END
+ibus_engine_factory_service.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/187250/trunk/src/chromeos/dbus/ibus/ibus_engine_factory_service.cc
+END
+ibus_client_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/169610/trunk/src/chromeos/dbus/ibus/ibus_client_unittest.cc
+END
+ibus_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/187250/trunk/src/chromeos/dbus/ibus/ibus_client.cc
+END
+mock_ibus_config_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/170432/trunk/src/chromeos/dbus/ibus/mock_ibus_config_client.h
+END
+ibus_panel_service_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/181266/trunk/src/chromeos/dbus/ibus/ibus_panel_service_unittest.cc
+END
+ibus_lookup_table_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/190580/trunk/src/chromeos/dbus/ibus/ibus_lookup_table_unittest.cc
+END
+ibus_lookup_table.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/188674/trunk/src/chromeos/dbus/ibus/ibus_lookup_table.cc
+END
+ibus_text_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/179889/trunk/src/chromeos/dbus/ibus/ibus_text_unittest.cc
+END
+ibus_property_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/179889/trunk/src/chromeos/dbus/ibus/ibus_property_unittest.cc
+END
+ibus_text.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/179889/trunk/src/chromeos/dbus/ibus/ibus_text.cc
+END
+ibus_property.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/179889/trunk/src/chromeos/dbus/ibus/ibus_property.cc
+END
+mock_ibus_engine_factory_service.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/196666/trunk/src/chromeos/dbus/ibus/mock_ibus_engine_factory_service.cc
+END
+ibus_engine_service.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/195880/trunk/src/chromeos/dbus/ibus/ibus_engine_service.cc
+END
+mock_ibus_engine_factory_service.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/196666/trunk/src/chromeos/dbus/ibus/mock_ibus_engine_factory_service.h
+END
+mock_ibus_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/193664/trunk/src/chromeos/dbus/ibus/mock_ibus_client.cc
+END
+ibus_engine_service.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/195880/trunk/src/chromeos/dbus/ibus/ibus_engine_service.h
+END
+mock_ibus_panel_service.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/179889/trunk/src/chromeos/dbus/ibus/mock_ibus_panel_service.cc
+END
+mock_ibus_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/179889/trunk/src/chromeos/dbus/ibus/mock_ibus_client.h
+END
+mock_ibus_engine_service.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/196666/trunk/src/chromeos/dbus/ibus/mock_ibus_engine_service.cc
+END
+ibus_input_context_client_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/179889/trunk/src/chromeos/dbus/ibus/ibus_input_context_client_unittest.cc
+END
+ibus_config_client_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/173959/trunk/src/chromeos/dbus/ibus/ibus_config_client_unittest.cc
+END
+ibus_component.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/196090/trunk/src/chromeos/dbus/ibus/ibus_component.h
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/158325/trunk/src/chromeos/dbus/ibus/OWNERS
+END
+ibus_object.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/179889/trunk/src/chromeos/dbus/ibus/ibus_object.h
+END

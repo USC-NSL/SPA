@@ -1,0 +1,12 @@
+K 10
+svn:ignore
+V 114
+libevent.xcodeproj
+SConstruct
+libevent.scons
+libevent_main.scons
+libevent.mk
+libevent.Makefile
+libevent.target.mk
+
+END

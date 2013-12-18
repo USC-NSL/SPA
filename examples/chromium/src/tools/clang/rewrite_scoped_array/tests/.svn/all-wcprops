@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/192700/trunk/src/tools/clang/rewrite_scoped_array/tests
+END
+test-expected.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/192700/trunk/src/tools/clang/rewrite_scoped_array/tests/test-expected.cc
+END
+test-original.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/192700/trunk/src/tools/clang/rewrite_scoped_array/tests/test-original.cc
+END

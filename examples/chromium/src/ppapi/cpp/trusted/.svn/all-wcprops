@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/171646/trunk/src/ppapi/cpp/trusted
+END
+file_chooser_trusted.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/139434/trunk/src/ppapi/cpp/trusted/file_chooser_trusted.cc
+END
+file_chooser_trusted.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/139434/trunk/src/ppapi/cpp/trusted/file_chooser_trusted.h
+END
+file_io_trusted.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/114720/trunk/src/ppapi/cpp/trusted/file_io_trusted.cc
+END
+file_io_trusted.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/114720/trunk/src/ppapi/cpp/trusted/file_io_trusted.h
+END
+browser_font_trusted.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/171646/trunk/src/ppapi/cpp/trusted/browser_font_trusted.cc
+END
+browser_font_trusted.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/171646/trunk/src/ppapi/cpp/trusted/browser_font_trusted.h
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/147096/trunk/src/ppapi/cpp/trusted/DEPS
+END

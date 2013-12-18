@@ -1,0 +1,209 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/tool
+END
+opcodeDoc.awk
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/68506/trunk/src/third_party/sqlite/src/tool/opcodeDoc.awk
+END
+rollback-test.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/tool/rollback-test.c
+END
+speedtest8inst1.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/tool/speedtest8inst1.c
+END
+mkspeedsql.tcl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/tool/mkspeedsql.tcl
+END
+restore_jrnl.tcl
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/tool/restore_jrnl.tcl
+END
+vdbe-compress.tcl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/tool/vdbe-compress.tcl
+END
+space_used.tcl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/68506/trunk/src/third_party/sqlite/src/tool/space_used.tcl
+END
+lempar.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/tool/lempar.c
+END
+mkkeywordhash.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/tool/mkkeywordhash.c
+END
+showwal.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/tool/showwal.c
+END
+genfkey.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/tool/genfkey.test
+END
+showdb.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/tool/showdb.c
+END
+shell2.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/tool/shell2.test
+END
+spaceanal.tcl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/tool/spaceanal.tcl
+END
+shell4.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/tool/shell4.test
+END
+speedtest.tcl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/68506/trunk/src/third_party/sqlite/src/tool/speedtest.tcl
+END
+genfkey.README
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/tool/genfkey.README
+END
+speedtest16.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/tool/speedtest16.c
+END
+omittest.tcl
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/tool/omittest.tcl
+END
+lemon.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/tool/lemon.c
+END
+showjournal.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/tool/showjournal.c
+END
+mkopts.tcl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/68506/trunk/src/third_party/sqlite/src/tool/mkopts.tcl
+END
+soak1.tcl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/68506/trunk/src/third_party/sqlite/src/tool/soak1.tcl
+END
+diffdb.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/tool/diffdb.c
+END
+mksqlite3c.tcl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/tool/mksqlite3c.tcl
+END
+split-sqlite3c.tcl
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/tool/split-sqlite3c.tcl
+END
+mksqlite3internalh.tcl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68506/trunk/src/third_party/sqlite/src/tool/mksqlite3internalh.tcl
+END
+speedtest2.tcl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/68506/trunk/src/third_party/sqlite/src/tool/speedtest2.tcl
+END
+mksqlite3h.tcl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/tool/mksqlite3h.tcl
+END
+shell1.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/tool/shell1.test
+END
+shell3.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/tool/shell3.test
+END
+speedtest8.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/tool/speedtest8.c
+END
+shell5.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/tool/shell5.test
+END
+fragck.tcl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/68506/trunk/src/third_party/sqlite/src/tool/fragck.tcl
+END

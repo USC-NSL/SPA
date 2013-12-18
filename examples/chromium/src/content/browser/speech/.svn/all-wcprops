@@ -1,0 +1,167 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/197242/trunk/src/content/browser/speech
+END
+chunked_byte_buffer_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/164625/trunk/src/content/browser/speech/chunked_byte_buffer_unittest.cc
+END
+audio_buffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/164625/trunk/src/content/browser/speech/audio_buffer.h
+END
+speech_recognition_engine.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/164625/trunk/src/content/browser/speech/speech_recognition_engine.cc
+END
+chunked_byte_buffer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/164625/trunk/src/content/browser/speech/chunked_byte_buffer.cc
+END
+speech_recognizer_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/193040/trunk/src/content/browser/speech/speech_recognizer_unittest.cc
+END
+speech_recognition_engine.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/170920/trunk/src/content/browser/speech/speech_recognition_engine.h
+END
+speech_recognizer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/194608/trunk/src/content/browser/speech/speech_recognizer.cc
+END
+chunked_byte_buffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/164625/trunk/src/content/browser/speech/chunked_byte_buffer.h
+END
+audio_encoder.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/192769/trunk/src/content/browser/speech/audio_encoder.cc
+END
+speech_recognizer.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/190087/trunk/src/content/browser/speech/speech_recognizer.h
+END
+audio_encoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/164625/trunk/src/content/browser/speech/audio_encoder.h
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/173538/trunk/src/content/browser/speech/DEPS
+END
+google_one_shot_remote_engine_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/193040/trunk/src/content/browser/speech/google_one_shot_remote_engine_unittest.cc
+END
+google_one_shot_remote_engine.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/170920/trunk/src/content/browser/speech/google_one_shot_remote_engine.cc
+END
+speech_recognition_browsertest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/185784/trunk/src/content/browser/speech/speech_recognition_browsertest.cc
+END
+speech_recognition_dispatcher_host.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/170920/trunk/src/content/browser/speech/speech_recognition_dispatcher_host.cc
+END
+google_one_shot_remote_engine.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/164625/trunk/src/content/browser/speech/google_one_shot_remote_engine.h
+END
+speech_recognition_dispatcher_host.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/170920/trunk/src/content/browser/speech/speech_recognition_dispatcher_host.h
+END
+speech_recognition_manager_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/197242/trunk/src/content/browser/speech/speech_recognition_manager_impl.cc
+END
+google_streaming_remote_engine_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/170920/trunk/src/content/browser/speech/google_streaming_remote_engine_unittest.cc
+END
+input_tag_speech_dispatcher_host.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/179406/trunk/src/content/browser/speech/input_tag_speech_dispatcher_host.cc
+END
+speech_recognition_manager_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/197242/trunk/src/content/browser/speech/speech_recognition_manager_impl.h
+END
+google_streaming_remote_engine.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/174922/trunk/src/content/browser/speech/google_streaming_remote_engine.cc
+END
+input_tag_speech_dispatcher_host.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/179406/trunk/src/content/browser/speech/input_tag_speech_dispatcher_host.h
+END
+google_streaming_remote_engine.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/164625/trunk/src/content/browser/speech/google_streaming_remote_engine.h
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/169035/trunk/src/content/browser/speech/OWNERS
+END
+audio_buffer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/164625/trunk/src/content/browser/speech/audio_buffer.cc
+END

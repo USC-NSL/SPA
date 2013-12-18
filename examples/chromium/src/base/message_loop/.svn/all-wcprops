@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/191422/trunk/src/base/message_loop
+END
+message_loop_proxy_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/191422/trunk/src/base/message_loop/message_loop_proxy_unittest.cc
+END
+message_loop_proxy.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/191422/trunk/src/base/message_loop/message_loop_proxy.cc
+END
+message_loop_proxy_impl_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/191422/trunk/src/base/message_loop/message_loop_proxy_impl_unittest.cc
+END
+message_loop_proxy_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/191422/trunk/src/base/message_loop/message_loop_proxy_impl.cc
+END
+message_loop_proxy.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/191422/trunk/src/base/message_loop/message_loop_proxy.h
+END
+message_loop_proxy_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/191422/trunk/src/base/message_loop/message_loop_proxy_impl.h
+END

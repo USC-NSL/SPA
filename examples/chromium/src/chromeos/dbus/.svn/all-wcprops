@@ -1,0 +1,1091 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/197468/trunk/src/chromeos/dbus
+END
+mock_bluetooth_input_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/152234/trunk/src/chromeos/dbus/mock_bluetooth_input_client.cc
+END
+fake_bluetooth_adapter_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/195814/trunk/src/chromeos/dbus/fake_bluetooth_adapter_client.h
+END
+fake_shill_manager_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/196366/trunk/src/chromeos/dbus/fake_shill_manager_client.h
+END
+experimental_bluetooth_agent_service_provider.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/195909/trunk/src/chromeos/dbus/experimental_bluetooth_agent_service_provider.h
+END
+mock_power_manager_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/181168/trunk/src/chromeos/dbus/mock_power_manager_client.cc
+END
+mock_bluetooth_input_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/152234/trunk/src/chromeos/dbus/mock_bluetooth_input_client.h
+END
+bluetooth_manager_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/187064/trunk/src/chromeos/dbus/bluetooth_manager_client.cc
+END
+modem_messaging_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/146067/trunk/src/chromeos/dbus/modem_messaging_client.h
+END
+mock_shill_device_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/155477/trunk/src/chromeos/dbus/mock_shill_device_client.cc
+END
+fake_session_manager_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/189225/trunk/src/chromeos/dbus/fake_session_manager_client.cc
+END
+mock_cryptohome_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/196926/trunk/src/chromeos/dbus/mock_cryptohome_client.h
+END
+bluetooth_out_of_band_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/162811/trunk/src/chromeos/dbus/bluetooth_out_of_band_client.cc
+END
+dbus_client_implementation_type.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/131065/trunk/src/chromeos/dbus/dbus_client_implementation_type.h
+END
+fake_bluetooth_input_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/195350/trunk/src/chromeos/dbus/fake_bluetooth_input_client.cc
+END
+mock_image_burner_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/146067/trunk/src/chromeos/dbus/mock_image_burner_client.h
+END
+bluetooth_node_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/187064/trunk/src/chromeos/dbus/bluetooth_node_client.cc
+END
+bluetooth_property.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/144756/trunk/src/chromeos/dbus/bluetooth_property.cc
+END
+mock_cros_disks_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/167799/trunk/src/chromeos/dbus/mock_cros_disks_client.cc
+END
+power_supply_status.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/196253/trunk/src/chromeos/dbus/power_supply_status.cc
+END
+power_supply_status.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/196253/trunk/src/chromeos/dbus/power_supply_status.h
+END
+fake_system_clock_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/196674/trunk/src/chromeos/dbus/fake_system_clock_client.cc
+END
+bluetooth_device_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/151621/trunk/src/chromeos/dbus/bluetooth_device_client.h
+END
+fake_system_clock_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/196674/trunk/src/chromeos/dbus/fake_system_clock_client.h
+END
+dbus_thread_manager_observer.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/161239/trunk/src/chromeos/dbus/dbus_thread_manager_observer.h
+END
+shill_profile_client_stub.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/195267/trunk/src/chromeos/dbus/shill_profile_client_stub.h
+END
+experimental_bluetooth_agent_manager_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/195183/trunk/src/chromeos/dbus/experimental_bluetooth_agent_manager_client.cc
+END
+shill_ipconfig_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/167354/trunk/src/chromeos/dbus/shill_ipconfig_client.h
+END
+permission_broker_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/155432/trunk/src/chromeos/dbus/permission_broker_client.cc
+END
+modem_messaging_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/163227/trunk/src/chromeos/dbus/modem_messaging_client.cc
+END
+dbus_method_call_status.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/183358/trunk/src/chromeos/dbus/dbus_method_call_status.h
+END
+image_burner_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/146067/trunk/src/chromeos/dbus/image_burner_client.h
+END
+mock_shill_profile_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/155477/trunk/src/chromeos/dbus/mock_shill_profile_client.cc
+END
+fake_bluetooth_profile_manager_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/194760/trunk/src/chromeos/dbus/fake_bluetooth_profile_manager_client.cc
+END
+bluetooth_out_of_band_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/162811/trunk/src/chromeos/dbus/bluetooth_out_of_band_client.h
+END
+fake_bluetooth_profile_manager_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/195814/trunk/src/chromeos/dbus/fake_bluetooth_profile_manager_client.h
+END
+debug_daemon_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/180484/trunk/src/chromeos/dbus/debug_daemon_client.cc
+END
+fake_bluetooth_device_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/197215/trunk/src/chromeos/dbus/fake_bluetooth_device_client.cc
+END
+volume_state.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/191115/trunk/src/chromeos/dbus/volume_state.h
+END
+mock_bluetooth_out_of_band_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/142337/trunk/src/chromeos/dbus/mock_bluetooth_out_of_band_client.cc
+END
+mock_cros_disks_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/167799/trunk/src/chromeos/dbus/mock_cros_disks_client.h
+END
+mock_bluetooth_out_of_band_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/162811/trunk/src/chromeos/dbus/mock_bluetooth_out_of_band_client.h
+END
+power_policy_controller_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/197410/trunk/src/chromeos/dbus/power_policy_controller_unittest.cc
+END
+dbus_thread_manager.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/195350/trunk/src/chromeos/dbus/dbus_thread_manager.cc
+END
+power_policy_controller.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/197410/trunk/src/chromeos/dbus/power_policy_controller.cc
+END
+bluetooth_agent_service_provider.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/146067/trunk/src/chromeos/dbus/bluetooth_agent_service_provider.h
+END
+experimental_bluetooth_adapter_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/194760/trunk/src/chromeos/dbus/experimental_bluetooth_adapter_client.cc
+END
+mock_gsm_sms_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/146067/trunk/src/chromeos/dbus/mock_gsm_sms_client.h
+END
+mock_dbus_thread_manager.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/196159/trunk/src/chromeos/dbus/mock_dbus_thread_manager.cc
+END
+shill_device_client_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/178823/trunk/src/chromeos/dbus/shill_device_client_unittest.cc
+END
+shill_profile_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/195267/trunk/src/chromeos/dbus/shill_profile_client.h
+END
+permission_broker_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/155313/trunk/src/chromeos/dbus/permission_broker_client.h
+END
+cros_disks_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/196673/trunk/src/chromeos/dbus/cros_disks_client.cc
+END
+shill_property_changed_observer.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/158972/trunk/src/chromeos/dbus/shill_property_changed_observer.h
+END
+experimental_bluetooth_device_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/190578/trunk/src/chromeos/dbus/experimental_bluetooth_device_client.h
+END
+experimental_bluetooth_input_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/195350/trunk/src/chromeos/dbus/experimental_bluetooth_input_client.h
+END
+sms_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/146067/trunk/src/chromeos/dbus/sms_client.h
+END
+mock_shill_ipconfig_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/158972/trunk/src/chromeos/dbus/mock_shill_ipconfig_client.h
+END
+mock_shill_device_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/178823/trunk/src/chromeos/dbus/mock_shill_device_client.h
+END
+fake_session_manager_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/189225/trunk/src/chromeos/dbus/fake_session_manager_client.h
+END
+mock_shill_profile_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/195267/trunk/src/chromeos/dbus/mock_shill_profile_client.h
+END
+gsm_sms_client_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/166930/trunk/src/chromeos/dbus/gsm_sms_client_unittest.cc
+END
+gsm_sms_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/163227/trunk/src/chromeos/dbus/gsm_sms_client.cc
+END
+audio_node.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/197462/trunk/src/chromeos/dbus/audio_node.cc
+END
+mock_bluetooth_manager_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/152234/trunk/src/chromeos/dbus/mock_bluetooth_manager_client.h
+END
+shill_client_helper.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/187324/trunk/src/chromeos/dbus/shill_client_helper.h
+END
+bluetooth_property.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/146067/trunk/src/chromeos/dbus/bluetooth_property.h
+END
+introspectable_client_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/139520/trunk/src/chromeos/dbus/introspectable_client_unittest.cc
+END
+mock_bluetooth_adapter_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/152234/trunk/src/chromeos/dbus/mock_bluetooth_adapter_client.h
+END
+fake_cryptohome_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/196926/trunk/src/chromeos/dbus/fake_cryptohome_client.h
+END
+mock_bluetooth_node_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/152234/trunk/src/chromeos/dbus/mock_bluetooth_node_client.cc
+END
+shill_profile_client_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/166930/trunk/src/chromeos/dbus/shill_profile_client_unittest.cc
+END
+cryptohome_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/196926/trunk/src/chromeos/dbus/cryptohome_client.h
+END
+shill_device_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/195267/trunk/src/chromeos/dbus/shill_device_client.h
+END
+image_burner_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/196674/trunk/src/chromeos/dbus/image_burner_client.cc
+END
+fake_bluetooth_agent_manager_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/194760/trunk/src/chromeos/dbus/fake_bluetooth_agent_manager_client.cc
+END
+shill_client_unittest_base.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/183358/trunk/src/chromeos/dbus/shill_client_unittest_base.cc
+END
+shill_manager_client_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/185775/trunk/src/chromeos/dbus/shill_manager_client_unittest.cc
+END
+fake_bluetooth_agent_service_provider.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/194760/trunk/src/chromeos/dbus/fake_bluetooth_agent_service_provider.cc
+END
+fake_bluetooth_agent_service_provider.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/195814/trunk/src/chromeos/dbus/fake_bluetooth_agent_service_provider.h
+END
+mock_image_burner_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/131065/trunk/src/chromeos/dbus/mock_image_burner_client.cc
+END
+cras_audio_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/197462/trunk/src/chromeos/dbus/cras_audio_client.cc
+END
+fake_bluetooth_profile_service_provider.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/195814/trunk/src/chromeos/dbus/fake_bluetooth_profile_service_provider.h
+END
+bluetooth_node_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/151621/trunk/src/chromeos/dbus/bluetooth_node_client.h
+END
+blocking_method_caller.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/183362/trunk/src/chromeos/dbus/blocking_method_caller.cc
+END
+fake_bluetooth_input_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/195350/trunk/src/chromeos/dbus/fake_bluetooth_input_client.h
+END
+mock_bluetooth_adapter_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/152234/trunk/src/chromeos/dbus/mock_bluetooth_adapter_client.cc
+END
+bluetooth_agent_service_provider.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/187064/trunk/src/chromeos/dbus/bluetooth_agent_service_provider.cc
+END
+introspectable_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/146067/trunk/src/chromeos/dbus/introspectable_client.h
+END
+shill_profile_client_stub.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/195461/trunk/src/chromeos/dbus/shill_profile_client_stub.cc
+END
+shill_service_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/182956/trunk/src/chromeos/dbus/shill_service_client.cc
+END
+fake_cros_disks_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/195828/trunk/src/chromeos/dbus/fake_cros_disks_client.h
+END
+experimental_bluetooth_agent_manager_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/190578/trunk/src/chromeos/dbus/experimental_bluetooth_agent_manager_client.h
+END
+mock_bluetooth_device_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/152234/trunk/src/chromeos/dbus/mock_bluetooth_device_client.cc
+END
+mock_bluetooth_device_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/152234/trunk/src/chromeos/dbus/mock_bluetooth_device_client.h
+END
+shill_manager_client_stub.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/195267/trunk/src/chromeos/dbus/shill_manager_client_stub.cc
+END
+cros_disks_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/185898/trunk/src/chromeos/dbus/cros_disks_client.h
+END
+shill_client_unittest_base.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/183358/trunk/src/chromeos/dbus/shill_client_unittest_base.h
+END
+update_engine_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/131697/trunk/src/chromeos/dbus/update_engine_client.h
+END
+mock_system_clock_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/188070/trunk/src/chromeos/dbus/mock_system_clock_client.h
+END
+fake_bluetooth_device_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/197215/trunk/src/chromeos/dbus/fake_bluetooth_device_client.h
+END
+session_manager_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/181043/trunk/src/chromeos/dbus/session_manager_client.cc
+END
+blocking_method_caller.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/181266/trunk/src/chromeos/dbus/blocking_method_caller.h
+END
+introspectable_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/187064/trunk/src/chromeos/dbus/introspectable_client.cc
+END
+session_manager_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/179350/trunk/src/chromeos/dbus/session_manager_client.h
+END
+fake_cryptohome_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/196926/trunk/src/chromeos/dbus/fake_cryptohome_client.cc
+END
+mock_update_engine_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/131697/trunk/src/chromeos/dbus/mock_update_engine_client.h
+END
+bluetooth_input_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/187064/trunk/src/chromeos/dbus/bluetooth_input_client.cc
+END
+experimental_bluetooth_adapter_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/190578/trunk/src/chromeos/dbus/experimental_bluetooth_adapter_client.h
+END
+fake_image_burner_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/196674/trunk/src/chromeos/dbus/fake_image_burner_client.cc
+END
+mock_bluetooth_node_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/152234/trunk/src/chromeos/dbus/mock_bluetooth_node_client.h
+END
+fake_image_burner_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/196674/trunk/src/chromeos/dbus/fake_image_burner_client.h
+END
+shill_device_client_stub.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/193478/trunk/src/chromeos/dbus/shill_device_client_stub.h
+END
+shill_ipconfig_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/182579/trunk/src/chromeos/dbus/shill_ipconfig_client.cc
+END
+shill_service_client_stub.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/195267/trunk/src/chromeos/dbus/shill_service_client_stub.h
+END
+experimental_bluetooth_profile_manager_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/195584/trunk/src/chromeos/dbus/experimental_bluetooth_profile_manager_client.cc
+END
+system_clock_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/188070/trunk/src/chromeos/dbus/system_clock_client.h
+END
+mock_cryptohome_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/192092/trunk/src/chromeos/dbus/mock_cryptohome_client.cc
+END
+mock_shill_service_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/155477/trunk/src/chromeos/dbus/mock_shill_service_client.cc
+END
+fake_bluetooth_agent_manager_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/195814/trunk/src/chromeos/dbus/fake_bluetooth_agent_manager_client.h
+END
+fake_bluetooth_profile_service_provider.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/194760/trunk/src/chromeos/dbus/fake_bluetooth_profile_service_provider.cc
+END
+mock_bluetooth_manager_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/152234/trunk/src/chromeos/dbus/mock_bluetooth_manager_client.cc
+END
+volume_state.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/191115/trunk/src/chromeos/dbus/volume_state.cc
+END
+debug_daemon_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/180484/trunk/src/chromeos/dbus/debug_daemon_client.h
+END
+mock_gsm_sms_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/132966/trunk/src/chromeos/dbus/mock_gsm_sms_client.cc
+END
+bluetooth_input_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/151621/trunk/src/chromeos/dbus/bluetooth_input_client.h
+END
+shill_ipconfig_client_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/167354/trunk/src/chromeos/dbus/shill_ipconfig_client_unittest.cc
+END
+power_manager_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/191570/trunk/src/chromeos/dbus/power_manager_client.h
+END
+shill_ipconfig_client_stub.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/191929/trunk/src/chromeos/dbus/shill_ipconfig_client_stub.h
+END
+fake_shill_manager_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/196366/trunk/src/chromeos/dbus/fake_shill_manager_client.cc
+END
+fake_bluetooth_adapter_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/195977/trunk/src/chromeos/dbus/fake_bluetooth_adapter_client.cc
+END
+mock_dbus_thread_manager.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/195761/trunk/src/chromeos/dbus/mock_dbus_thread_manager.h
+END
+mock_dbus_thread_manager_without_gmock.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/196674/trunk/src/chromeos/dbus/mock_dbus_thread_manager_without_gmock.cc
+END
+shill_service_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/195267/trunk/src/chromeos/dbus/shill_service_client.h
+END
+fake_update_engine_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/195748/trunk/src/chromeos/dbus/fake_update_engine_client.cc
+END
+experimental_bluetooth_profile_manager_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/190578/trunk/src/chromeos/dbus/experimental_bluetooth_profile_manager_client.h
+END
+fake_update_engine_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/195748/trunk/src/chromeos/dbus/fake_update_engine_client.h
+END
+experimental_bluetooth_profile_service_provider.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/190578/trunk/src/chromeos/dbus/experimental_bluetooth_profile_service_provider.h
+END
+mock_power_manager_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/189809/trunk/src/chromeos/dbus/mock_power_manager_client.h
+END
+bluetooth_manager_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/151621/trunk/src/chromeos/dbus/bluetooth_manager_client.h
+END
+experimental_bluetooth_device_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/194760/trunk/src/chromeos/dbus/experimental_bluetooth_device_client.cc
+END
+experimental_bluetooth_input_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/195350/trunk/src/chromeos/dbus/experimental_bluetooth_input_client.cc
+END
+bluetooth_adapter_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/195977/trunk/src/chromeos/dbus/bluetooth_adapter_client.cc
+END
+shill_manager_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/197468/trunk/src/chromeos/dbus/shill_manager_client.cc
+END
+mock_shill_service_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/182956/trunk/src/chromeos/dbus/mock_shill_service_client.h
+END
+shill_manager_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/195267/trunk/src/chromeos/dbus/shill_manager_client.h
+END
+bluetooth_adapter_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/151621/trunk/src/chromeos/dbus/bluetooth_adapter_client.h
+END
+update_engine_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/170377/trunk/src/chromeos/dbus/update_engine_client.cc
+END
+fake_power_manager_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/196097/trunk/src/chromeos/dbus/fake_power_manager_client.cc
+END
+mock_shill_manager_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/195267/trunk/src/chromeos/dbus/mock_shill_manager_client.h
+END
+dbus_thread_manager.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/195350/trunk/src/chromeos/dbus/dbus_thread_manager.h
+END
+power_policy_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/197410/trunk/src/chromeos/dbus/power_policy_controller.h
+END
+shill_ipconfig_client_stub.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/191929/trunk/src/chromeos/dbus/shill_ipconfig_client_stub.cc
+END
+power_manager_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/196253/trunk/src/chromeos/dbus/power_manager_client.cc
+END
+shill_device_client_stub.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/193478/trunk/src/chromeos/dbus/shill_device_client_stub.cc
+END
+mock_session_manager_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/179350/trunk/src/chromeos/dbus/mock_session_manager_client.h
+END
+cryptohome_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/196926/trunk/src/chromeos/dbus/cryptohome_client.cc
+END
+shill_service_client_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/166427/trunk/src/chromeos/dbus/shill_service_client_unittest.cc
+END
+experimental_bluetooth_agent_service_provider.cc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/195909/trunk/src/chromeos/dbus/experimental_bluetooth_agent_service_provider.cc
+END
+modem_messaging_client_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/166930/trunk/src/chromeos/dbus/modem_messaging_client_unittest.cc
+END
+mock_dbus_thread_manager_without_gmock.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/196674/trunk/src/chromeos/dbus/mock_dbus_thread_manager_without_gmock.h
+END
+experimental_bluetooth_profile_service_provider.cc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/194760/trunk/src/chromeos/dbus/experimental_bluetooth_profile_service_provider.cc
+END
+system_clock_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/196674/trunk/src/chromeos/dbus/system_clock_client.cc
+END
+sms_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/172156/trunk/src/chromeos/dbus/sms_client.cc
+END
+mock_shill_ipconfig_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/155477/trunk/src/chromeos/dbus/mock_shill_ipconfig_client.cc
+END
+shill_manager_client_stub.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/195267/trunk/src/chromeos/dbus/shill_manager_client_stub.h
+END
+mock_system_clock_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/188070/trunk/src/chromeos/dbus/mock_system_clock_client.cc
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/162811/trunk/src/chromeos/dbus/DEPS
+END
+gsm_sms_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/155477/trunk/src/chromeos/dbus/gsm_sms_client.h
+END
+shill_client_helper.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/192294/trunk/src/chromeos/dbus/shill_client_helper.cc
+END
+audio_node.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/197462/trunk/src/chromeos/dbus/audio_node.h
+END
+blocking_method_caller_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/181266/trunk/src/chromeos/dbus/blocking_method_caller_unittest.cc
+END
+cras_audio_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/197462/trunk/src/chromeos/dbus/cras_audio_client.h
+END
+mock_shill_manager_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/195267/trunk/src/chromeos/dbus/mock_shill_manager_client.cc
+END
+fake_power_manager_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/196097/trunk/src/chromeos/dbus/fake_power_manager_client.h
+END
+mock_update_engine_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/131065/trunk/src/chromeos/dbus/mock_update_engine_client.cc
+END
+bluetooth_device_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/187064/trunk/src/chromeos/dbus/bluetooth_device_client.cc
+END
+mock_session_manager_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/131065/trunk/src/chromeos/dbus/mock_session_manager_client.cc
+END
+shill_service_client_stub.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/195267/trunk/src/chromeos/dbus/shill_service_client_stub.cc
+END
+fake_cros_disks_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195828/trunk/src/chromeos/dbus/fake_cros_disks_client.cc
+END
+shill_device_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/182579/trunk/src/chromeos/dbus/shill_device_client.cc
+END
+shill_profile_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/195267/trunk/src/chromeos/dbus/shill_profile_client.cc
+END

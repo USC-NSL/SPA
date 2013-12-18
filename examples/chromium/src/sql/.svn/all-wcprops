@@ -1,0 +1,131 @@
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/197385/trunk/src/sql
+END
+meta_table.cc
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/125557/trunk/src/sql/meta_table.cc
+END
+connection_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/181152/trunk/src/sql/connection_unittest.cc
+END
+sqlite_features_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/181004/trunk/src/sql/sqlite_features_unittest.cc
+END
+connection.cc
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/197385/trunk/src/sql/connection.cc
+END
+meta_table.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/146163/trunk/src/sql/meta_table.h
+END
+connection.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/181152/trunk/src/sql/connection.h
+END
+sql_export.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/146163/trunk/src/sql/sql_export.h
+END
+statement_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/181004/trunk/src/sql/statement_unittest.cc
+END
+statement.cc
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/193040/trunk/src/sql/statement.cc
+END
+statement.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/146163/trunk/src/sql/statement.h
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/93069/trunk/src/sql/DEPS
+END
+init_status.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/146163/trunk/src/sql/init_status.h
+END
+sql.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/176397/trunk/src/sql/sql.gyp
+END
+run_all_unittests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/188376/trunk/src/sql/run_all_unittests.cc
+END
+error_delegate_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/162647/trunk/src/sql/error_delegate_util.cc
+END
+error_delegate_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/162647/trunk/src/sql/error_delegate_util.h
+END
+transaction_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/181004/trunk/src/sql/transaction_unittest.cc
+END
+transaction.cc
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/93069/trunk/src/sql/transaction.cc
+END
+transaction.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/146163/trunk/src/sql/transaction.h
+END
+diagnostic_error_delegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/162647/trunk/src/sql/diagnostic_error_delegate.h
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/126285/trunk/src/sql/OWNERS
+END

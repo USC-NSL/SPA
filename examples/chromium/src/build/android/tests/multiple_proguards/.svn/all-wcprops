@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/191806/trunk/src/build/android/tests/multiple_proguards
+END
+multiple_proguards.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/191806/trunk/src/build/android/tests/multiple_proguards/multiple_proguards.gyp
+END
+proguard1.flags
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/191806/trunk/src/build/android/tests/multiple_proguards/proguard1.flags
+END
+proguard2.flags
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/191806/trunk/src/build/android/tests/multiple_proguards/proguard2.flags
+END
+AndroidManifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/191806/trunk/src/build/android/tests/multiple_proguards/AndroidManifest.xml
+END

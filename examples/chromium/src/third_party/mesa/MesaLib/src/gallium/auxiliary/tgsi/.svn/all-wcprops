@@ -1,0 +1,179 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/tgsi
+END
+tgsi_parse.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/tgsi/tgsi_parse.c
+END
+tgsi_dump.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/tgsi/tgsi_dump.h
+END
+tgsi_transform.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/tgsi/tgsi_transform.c
+END
+tgsi_sanity.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/tgsi/tgsi_sanity.h
+END
+tgsi_sse2.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/tgsi/tgsi_sse2.c
+END
+tgsi_util.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/tgsi/tgsi_util.c
+END
+tgsi_parse.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/tgsi/tgsi_parse.h
+END
+tgsi_transform.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/tgsi/tgsi_transform.h
+END
+tgsi_sse2.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/tgsi/tgsi_sse2.h
+END
+tgsi_ppc.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/tgsi/tgsi_ppc.c
+END
+tgsi_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/tgsi/tgsi_util.h
+END
+tgsi_exec.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/tgsi/tgsi_exec.c
+END
+tgsi_scan.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/tgsi/tgsi_scan.c
+END
+tgsi_text.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/tgsi/tgsi_text.c
+END
+tgsi_ppc.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/tgsi/tgsi_ppc.h
+END
+tgsi_exec.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/tgsi/tgsi_exec.h
+END
+tgsi_scan.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/tgsi/tgsi_scan.h
+END
+tgsi_text.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/tgsi/tgsi_text.h
+END
+tgsi_info.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/tgsi/tgsi_info.c
+END
+tgsi_iterate.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/tgsi/tgsi_iterate.c
+END
+tgsi_opcode_tmp.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/tgsi/tgsi_opcode_tmp.h
+END
+tgsi_build.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/tgsi/tgsi_build.c
+END
+tgsi_info.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/tgsi/tgsi_info.h
+END
+tgsi_iterate.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/tgsi/tgsi_iterate.h
+END
+tgsi_ureg.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/tgsi/tgsi_ureg.c
+END
+tgsi_build.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/tgsi/tgsi_build.h
+END
+tgsi_dump.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/tgsi/tgsi_dump.c
+END
+tgsi_sanity.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/tgsi/tgsi_sanity.c
+END
+tgsi_ureg.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/auxiliary/tgsi/tgsi_ureg.h
+END

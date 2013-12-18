@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/186560/trunk/src/chrome/browser/status_icons
+END
+status_icon.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/138473/trunk/src/chrome/browser/status_icons/status_icon.cc
+END
+status_icon.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/159902/trunk/src/chrome/browser/status_icons/status_icon.h
+END
+status_tray_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/159902/trunk/src/chrome/browser/status_icons/status_tray_unittest.cc
+END
+status_tray.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/138037/trunk/src/chrome/browser/status_icons/status_tray.cc
+END
+status_icon_observer.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/146163/trunk/src/chrome/browser/status_icons/status_icon_observer.h
+END
+status_tray.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/146163/trunk/src/chrome/browser/status_icons/status_tray.h
+END
+desktop_notification_balloon.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/186560/trunk/src/chrome/browser/status_icons/desktop_notification_balloon.cc
+END
+desktop_notification_balloon.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/159902/trunk/src/chrome/browser/status_icons/desktop_notification_balloon.h
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/71890/trunk/src/chrome/browser/status_icons/OWNERS
+END
+status_icon_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/159902/trunk/src/chrome/browser/status_icons/status_icon_unittest.cc
+END

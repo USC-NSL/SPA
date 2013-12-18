@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/195743/trunk/src/chrome/browser/extensions/api/audio
+END
+audio_api.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/195743/trunk/src/chrome/browser/extensions/api/audio/audio_api.h
+END
+audio_service_chromeos.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/195743/trunk/src/chrome/browser/extensions/api/audio/audio_service_chromeos.cc
+END
+audio_service.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/195743/trunk/src/chrome/browser/extensions/api/audio/audio_service.cc
+END
+audio_service.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/195743/trunk/src/chrome/browser/extensions/api/audio/audio_service.h
+END
+audio_api.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/195743/trunk/src/chrome/browser/extensions/api/audio/audio_api.cc
+END
+audio_apitest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/195743/trunk/src/chrome/browser/extensions/api/audio/audio_apitest.cc
+END

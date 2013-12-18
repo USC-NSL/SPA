@@ -1,0 +1,155 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/191513/trunk/src/third_party/cld/encodings/compact_lang_det
+END
+subsetsequence.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/38146/trunk/src/third_party/cld/encodings/compact_lang_det/subsetsequence.cc
+END
+cldutil.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/108586/trunk/src/third_party/cld/encodings/compact_lang_det/cldutil.cc
+END
+subsetsequence.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/38146/trunk/src/third_party/cld/encodings/compact_lang_det/subsetsequence.h
+END
+cldutil.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/38146/trunk/src/third_party/cld/encodings/compact_lang_det/cldutil.h
+END
+compact_lang_det_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/191513/trunk/src/third_party/cld/encodings/compact_lang_det/compact_lang_det_impl.cc
+END
+utf8scannotjustletterspecial.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/38146/trunk/src/third_party/cld/encodings/compact_lang_det/utf8scannotjustletterspecial.h
+END
+compact_lang_det_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/38146/trunk/src/third_party/cld/encodings/compact_lang_det/compact_lang_det_impl.h
+END
+letterscript_enum.cc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/38146/trunk/src/third_party/cld/encodings/compact_lang_det/letterscript_enum.cc
+END
+letterscript_enum.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/38146/trunk/src/third_party/cld/encodings/compact_lang_det/letterscript_enum.h
+END
+compact_lang_det_unittest_small.cc
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/191513/trunk/src/third_party/cld/encodings/compact_lang_det/compact_lang_det_unittest_small.cc
+END
+unittest_data.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/38146/trunk/src/third_party/cld/encodings/compact_lang_det/unittest_data.h
+END
+tote.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/129050/trunk/src/third_party/cld/encodings/compact_lang_det/tote.cc
+END
+tote.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/38146/trunk/src/third_party/cld/encodings/compact_lang_det/tote.h
+END
+string_byte_sink.cc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/136411/trunk/src/third_party/cld/encodings/compact_lang_det/string_byte_sink.cc
+END
+cldutil_dbg.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/38146/trunk/src/third_party/cld/encodings/compact_lang_det/cldutil_dbg.h
+END
+utf8propletterscriptnum.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/38146/trunk/src/third_party/cld/encodings/compact_lang_det/utf8propletterscriptnum.h
+END
+string_byte_sink.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/136411/trunk/src/third_party/cld/encodings/compact_lang_det/string_byte_sink.h
+END
+utf8propjustletter.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/38146/trunk/src/third_party/cld/encodings/compact_lang_det/utf8propjustletter.h
+END
+compact_lang_det.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/44095/trunk/src/third_party/cld/encodings/compact_lang_det/compact_lang_det.cc
+END
+compact_lang_det.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/38146/trunk/src/third_party/cld/encodings/compact_lang_det/compact_lang_det.h
+END
+ext_lang_enc.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/38146/trunk/src/third_party/cld/encodings/compact_lang_det/ext_lang_enc.cc
+END
+getonescriptspan.cc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/182368/trunk/src/third_party/cld/encodings/compact_lang_det/getonescriptspan.cc
+END
+ext_lang_enc.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/38146/trunk/src/third_party/cld/encodings/compact_lang_det/ext_lang_enc.h
+END
+getonescriptspan.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/38146/trunk/src/third_party/cld/encodings/compact_lang_det/getonescriptspan.h
+END
+cldutil_dbg_empty.cc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/38146/trunk/src/third_party/cld/encodings/compact_lang_det/cldutil_dbg_empty.cc
+END

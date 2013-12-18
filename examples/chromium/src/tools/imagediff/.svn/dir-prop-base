@@ -1,0 +1,14 @@
+K 10
+svn:ignore
+V 159
+image_diff.sln
+image_diff.vcproj
+image_diff.xcodeproj
+SConstruct
+image_diff.scons
+image_diff_main.scons
+image_diff.mk
+image_diff.target.mk
+image_diff.Makefile
+
+END

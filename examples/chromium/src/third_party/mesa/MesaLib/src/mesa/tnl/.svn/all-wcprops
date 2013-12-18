@@ -1,0 +1,167 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/tnl
+END
+t_vertex.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/tnl/t_vertex.c
+END
+tnl.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/tnl/tnl.h
+END
+descrip.mms
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/tnl/descrip.mms
+END
+t_vb_texgen.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/tnl/t_vb_texgen.c
+END
+t_rasterpos.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/tnl/t_rasterpos.c
+END
+t_vertex.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/tnl/t_vertex.h
+END
+t_vb_lighttmp.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/tnl/t_vb_lighttmp.h
+END
+t_context.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/tnl/t_context.c
+END
+t_vb_cull.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/tnl/t_vb_cull.c
+END
+t_vertex_sse.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/tnl/t_vertex_sse.c
+END
+t_context.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/tnl/t_context.h
+END
+t_vb_texmat.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/tnl/t_vb_texmat.c
+END
+t_vb_rendertmp.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/tnl/t_vb_rendertmp.h
+END
+t_draw.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/tnl/t_draw.c
+END
+t_vb_program.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/tnl/t_vb_program.c
+END
+t_vb_light.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/tnl/t_vb_light.c
+END
+t_vb_normals.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/tnl/t_vb_normals.c
+END
+t_vb_fog.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/tnl/t_vb_fog.c
+END
+t_vb_points.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/tnl/t_vb_points.c
+END
+t_vb_cliptmp.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/tnl/t_vb_cliptmp.h
+END
+t_vb_vertex.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/tnl/t_vb_vertex.c
+END
+t_vp_build.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/tnl/t_vp_build.c
+END
+t_pipeline.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/tnl/t_pipeline.c
+END
+t_vb_render.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/tnl/t_vb_render.c
+END
+t_vertex_generic.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/tnl/t_vertex_generic.c
+END
+t_vp_build.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/tnl/t_vp_build.h
+END
+t_pipeline.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/tnl/t_pipeline.h
+END

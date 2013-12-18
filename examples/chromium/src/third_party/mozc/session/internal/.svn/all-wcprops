@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/77/trunk/src/session/internal
+END
+session_output_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/77/trunk/src/session/internal/session_output_test.cc
+END
+session_output.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/77/trunk/src/session/internal/session_output.cc
+END
+session_output.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/53/trunk/src/session/internal/session_output.h
+END
+candidate_list_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/77/trunk/src/session/internal/candidate_list_test.cc
+END
+candidate_list.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/77/trunk/src/session/internal/candidate_list.cc
+END
+keymap-inl.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/77/trunk/src/session/internal/keymap-inl.h
+END
+keymap_interface.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/77/trunk/src/session/internal/keymap_interface.h
+END
+candidate_list.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/77/trunk/src/session/internal/candidate_list.h
+END
+keymap_factory_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/61/trunk/src/session/internal/keymap_factory_test.cc
+END
+ime_context_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/77/trunk/src/session/internal/ime_context_test.cc
+END
+keymap_factory.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/61/trunk/src/session/internal/keymap_factory.cc
+END
+ime_context.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/77/trunk/src/session/internal/ime_context.cc
+END
+keymap_factory.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/61/trunk/src/session/internal/keymap_factory.h
+END
+ime_context.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/77/trunk/src/session/internal/ime_context.h
+END
+keymap_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/77/trunk/src/session/internal/keymap_test.cc
+END
+keymap.cc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/77/trunk/src/session/internal/keymap.cc
+END
+keymap.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/77/trunk/src/session/internal/keymap.h
+END

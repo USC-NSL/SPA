@@ -1,0 +1,257 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/195608/trunk/src/sync/protocol
+END
+test.proto
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/167242/trunk/src/sync/protocol/test.proto
+END
+nigori_specifics.proto
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/183443/trunk/src/sync/protocol/nigori_specifics.proto
+END
+search_engine_specifics.proto
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/175014/trunk/src/sync/protocol/search_engine_specifics.proto
+END
+sync_enums.proto
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/167242/trunk/src/sync/protocol/sync_enums.proto
+END
+synced_notification_specifics.proto
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/181825/trunk/src/sync/protocol/synced_notification_specifics.proto
+END
+synced_notification_data.proto
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/191443/trunk/src/sync/protocol/synced_notification_data.proto
+END
+theme_specifics.proto
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/167242/trunk/src/sync/protocol/theme_specifics.proto
+END
+sync_protocol_error.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/172458/trunk/src/sync/protocol/sync_protocol_error.h
+END
+password_specifics.proto
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/167242/trunk/src/sync/protocol/password_specifics.proto
+END
+unique_position.proto
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/195608/trunk/src/sync/protocol/unique_position.proto
+END
+synced_notification_render.proto
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/191443/trunk/src/sync/protocol/synced_notification_render.proto
+END
+dictionary_specifics.proto
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/178178/trunk/src/sync/protocol/dictionary_specifics.proto
+END
+typed_url_specifics.proto
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/167242/trunk/src/sync/protocol/typed_url_specifics.proto
+END
+client_commands.proto
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/167242/trunk/src/sync/protocol/client_commands.proto
+END
+favicon_tracking_specifics.proto
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/182869/trunk/src/sync/protocol/favicon_tracking_specifics.proto
+END
+proto_enum_conversions.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/169103/trunk/src/sync/protocol/proto_enum_conversions.cc
+END
+device_info_specifics.proto
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/167242/trunk/src/sync/protocol/device_info_specifics.proto
+END
+proto_enum_conversions.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/174801/trunk/src/sync/protocol/proto_enum_conversions.h
+END
+extension_specifics.proto
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/167242/trunk/src/sync/protocol/extension_specifics.proto
+END
+autofill_specifics.proto
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/167242/trunk/src/sync/protocol/autofill_specifics.proto
+END
+app_specifics.proto
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/167242/trunk/src/sync/protocol/app_specifics.proto
+END
+proto_value_conversions.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/195074/trunk/src/sync/protocol/proto_value_conversions.cc
+END
+history_delete_directive_specifics.proto
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/180471/trunk/src/sync/protocol/history_delete_directive_specifics.proto
+END
+proto_value_conversions.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/194582/trunk/src/sync/protocol/proto_value_conversions.h
+END
+app_notification_specifics.proto
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/167242/trunk/src/sync/protocol/app_notification_specifics.proto
+END
+favicon_image_specifics.proto
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/182869/trunk/src/sync/protocol/favicon_image_specifics.proto
+END
+managed_user_setting_specifics.proto
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/194582/trunk/src/sync/protocol/managed_user_setting_specifics.proto
+END
+sync_protocol_error.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/144820/trunk/src/sync/protocol/sync_protocol_error.cc
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/172458/trunk/src/sync/protocol/DEPS
+END
+encryption.proto
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/167242/trunk/src/sync/protocol/encryption.proto
+END
+experiments_specifics.proto
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/195074/trunk/src/sync/protocol/experiments_specifics.proto
+END
+bookmark_specifics.proto
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/170326/trunk/src/sync/protocol/bookmark_specifics.proto
+END
+client_debug_info.proto
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/170549/trunk/src/sync/protocol/client_debug_info.proto
+END
+proto_enum_conversions_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/165474/trunk/src/sync/protocol/proto_enum_conversions_unittest.cc
+END
+get_updates_caller_info.proto
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/167242/trunk/src/sync/protocol/get_updates_caller_info.proto
+END
+extension_setting_specifics.proto
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/167242/trunk/src/sync/protocol/extension_setting_specifics.proto
+END
+app_setting_specifics.proto
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/167242/trunk/src/sync/protocol/app_setting_specifics.proto
+END
+preference_specifics.proto
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/167242/trunk/src/sync/protocol/preference_specifics.proto
+END
+priority_preference_specifics.proto
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/191047/trunk/src/sync/protocol/priority_preference_specifics.proto
+END
+proto_value_conversions_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/194582/trunk/src/sync/protocol/proto_value_conversions_unittest.cc
+END
+session_specifics.proto
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/187970/trunk/src/sync/protocol/session_specifics.proto
+END
+sync.proto
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/194582/trunk/src/sync/protocol/sync.proto
+END

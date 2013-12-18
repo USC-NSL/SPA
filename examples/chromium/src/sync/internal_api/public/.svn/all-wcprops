@@ -1,0 +1,155 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/197258/trunk/src/sync/internal_api/public
+END
+internal_components_factory_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/185721/trunk/src/sync/internal_api/public/internal_components_factory_impl.h
+END
+http_bridge.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/197258/trunk/src/sync/internal_api/public/http_bridge.h
+END
+delete_journal.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/180034/trunk/src/sync/internal_api/public/delete_journal.h
+END
+sync_manager_factory.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/172458/trunk/src/sync/internal_api/public/sync_manager_factory.h
+END
+write_transaction.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/172458/trunk/src/sync/internal_api/public/write_transaction.h
+END
+write_node.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/194582/trunk/src/sync/internal_api/public/write_node.h
+END
+user_share.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/183343/trunk/src/sync/internal_api/public/user_share.h
+END
+data_type_debug_info_listener.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/166616/trunk/src/sync/internal_api/public/data_type_debug_info_listener.h
+END
+sync_manager.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/147076/trunk/src/sync/internal_api/public/sync_manager.cc
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/149747/trunk/src/sync/internal_api/public/DEPS
+END
+sync_manager.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/191087/trunk/src/sync/internal_api/public/sync_manager.h
+END
+internal_components_factory.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/185721/trunk/src/sync/internal_api/public/internal_components_factory.h
+END
+http_post_provider_interface.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/174801/trunk/src/sync/internal_api/public/http_post_provider_interface.h
+END
+base_node.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/194582/trunk/src/sync/internal_api/public/base_node.h
+END
+base_transaction.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/172458/trunk/src/sync/internal_api/public/base_transaction.h
+END
+read_node.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/172458/trunk/src/sync/internal_api/public/read_node.h
+END
+change_record_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/148833/trunk/src/sync/internal_api/public/change_record_unittest.cc
+END
+read_transaction.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/172458/trunk/src/sync/internal_api/public/read_transaction.h
+END
+sync_encryption_handler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/154522/trunk/src/sync/internal_api/public/sync_encryption_handler.cc
+END
+data_type_association_stats.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/166616/trunk/src/sync/internal_api/public/data_type_association_stats.cc
+END
+change_record.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/174801/trunk/src/sync/internal_api/public/change_record.h
+END
+sync_encryption_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/172458/trunk/src/sync/internal_api/public/sync_encryption_handler.h
+END
+data_type_association_stats.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/172458/trunk/src/sync/internal_api/public/data_type_association_stats.h
+END
+http_post_provider_factory.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/172458/trunk/src/sync/internal_api/public/http_post_provider_factory.h
+END
+configure_reason.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/146074/trunk/src/sync/internal_api/public/configure_reason.h
+END

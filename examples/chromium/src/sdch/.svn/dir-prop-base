@@ -1,0 +1,15 @@
+K 10
+svn:ignore
+V 123
+open-vcdiff
+sdch.xcodeproj
+sdch.sln
+sdch.vcproj
+SConstruct
+sdch.scons
+sdch_main.scons
+sdch.mk
+sdch.target.mk
+sdch.Makefile
+
+END

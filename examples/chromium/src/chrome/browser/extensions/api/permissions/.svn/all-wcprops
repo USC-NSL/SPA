@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/192252/trunk/src/chrome/browser/extensions/api/permissions
+END
+permissions_api.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/182287/trunk/src/chrome/browser/extensions/api/permissions/permissions_api.cc
+END
+permissions_apitest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/189485/trunk/src/chrome/browser/extensions/api/permissions/permissions_apitest.cc
+END
+permissions_api_helpers_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/192252/trunk/src/chrome/browser/extensions/api/permissions/permissions_api_helpers_unittest.cc
+END
+permissions_api.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/177787/trunk/src/chrome/browser/extensions/api/permissions/permissions_api.h
+END
+permissions_api_helpers.cc
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/176853/trunk/src/chrome/browser/extensions/api/permissions/permissions_api_helpers.cc
+END
+permissions_api_helpers.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/176853/trunk/src/chrome/browser/extensions/api/permissions/permissions_api_helpers.h
+END

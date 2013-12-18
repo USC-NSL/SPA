@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/tests/graw
+END
+tri.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/tests/graw/tri.c
+END
+shader-leak.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/tests/graw/shader-leak.c
+END
+tri-instanced.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/tests/graw/tri-instanced.c
+END
+fs-test.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/tests/graw/fs-test.c
+END
+tri-gs.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/tests/graw/tri-gs.c
+END
+vs-test.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/tests/graw/vs-test.c
+END
+SConscript
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/tests/graw/SConscript
+END
+clear.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/tests/graw/clear.c
+END
+gs-test.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/tests/graw/gs-test.c
+END
+quad-tex.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/tests/graw/quad-tex.c
+END

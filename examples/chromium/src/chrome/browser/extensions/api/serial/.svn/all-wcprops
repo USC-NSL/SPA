@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/184355/trunk/src/chrome/browser/extensions/api/serial
+END
+serial_connection_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/179673/trunk/src/chrome/browser/extensions/api/serial/serial_connection_win.cc
+END
+serial_connection.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/184344/trunk/src/chrome/browser/extensions/api/serial/serial_connection.cc
+END
+serial_connection.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/176329/trunk/src/chrome/browser/extensions/api/serial/serial_connection.h
+END
+serial_connection_posix.cc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/183543/trunk/src/chrome/browser/extensions/api/serial/serial_connection_posix.cc
+END
+serial_port_enumerator_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/184355/trunk/src/chrome/browser/extensions/api/serial/serial_port_enumerator_win.cc
+END
+serial_port_enumerator_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/176329/trunk/src/chrome/browser/extensions/api/serial/serial_port_enumerator_unittest.cc
+END
+serial_port_enumerator.cc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/137780/trunk/src/chrome/browser/extensions/api/serial/serial_port_enumerator.cc
+END
+serial_port_enumerator.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/146163/trunk/src/chrome/browser/extensions/api/serial/serial_port_enumerator.h
+END
+serial_port_enumerator_posix.cc
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/184344/trunk/src/chrome/browser/extensions/api/serial/serial_port_enumerator_posix.cc
+END
+serial_api.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/179673/trunk/src/chrome/browser/extensions/api/serial/serial_api.cc
+END
+serial_apitest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/181160/trunk/src/chrome/browser/extensions/api/serial/serial_apitest.cc
+END
+serial_api.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/177787/trunk/src/chrome/browser/extensions/api/serial/serial_api.h
+END

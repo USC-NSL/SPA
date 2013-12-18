@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/targets/egl
+END
+pipe_nouveau.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/targets/egl/pipe_nouveau.c
+END
+pipe_swrast.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/targets/egl/pipe_swrast.c
+END
+pipe_r300.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/targets/egl/pipe_r300.c
+END
+pipe_i915.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/targets/egl/pipe_i915.c
+END
+pipe_r600.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/targets/egl/pipe_r600.c
+END
+st_OpenVG.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/targets/egl/st_OpenVG.c
+END
+st_GLESv1_CM.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/targets/egl/st_GLESv1_CM.c
+END
+egl.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/targets/egl/egl.c
+END
+st_GL.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/targets/egl/st_GL.c
+END
+st_GLESv2.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/targets/egl/st_GLESv2.c
+END
+pipe_i965.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/targets/egl/pipe_i965.c
+END
+pipe_vmwgfx.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/targets/egl/pipe_vmwgfx.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/targets/egl/Makefile
+END
+egl.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/gallium/targets/egl/egl.h
+END

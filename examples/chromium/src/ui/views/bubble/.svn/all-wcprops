@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/197108/trunk/src/ui/views/bubble
+END
+bubble_frame_view_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/193615/trunk/src/ui/views/bubble/bubble_frame_view_unittest.cc
+END
+bubble_frame_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/196935/trunk/src/ui/views/bubble/bubble_frame_view.cc
+END
+bubble_frame_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/196935/trunk/src/ui/views/bubble/bubble_frame_view.h
+END
+bubble_delegate_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/193615/trunk/src/ui/views/bubble/bubble_delegate_unittest.cc
+END
+tray_bubble_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/193615/trunk/src/ui/views/bubble/tray_bubble_view.cc
+END
+bubble_delegate.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/193615/trunk/src/ui/views/bubble/bubble_delegate.cc
+END
+tray_bubble_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/193615/trunk/src/ui/views/bubble/tray_bubble_view.h
+END
+bubble_delegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/193902/trunk/src/ui/views/bubble/bubble_delegate.h
+END
+bubble_border_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/158003/trunk/src/ui/views/bubble/bubble_border_unittest.cc
+END
+bubble_border.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/197108/trunk/src/ui/views/bubble/bubble_border.cc
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/157577/trunk/src/ui/views/bubble/OWNERS
+END
+bubble_border.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/196391/trunk/src/ui/views/bubble/bubble_border.h
+END

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/190116/trunk/src/third_party/mesa/MesaLib/src/mesa
+END
+depend
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/depend
+END
+descrip.mms
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/descrip.mms
+END
+Makefile.mgw
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/Makefile.mgw
+END
+gl.pc.in
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/gl.pc.in
+END
+sources.mak
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/sources.mak
+END
+osmesa.pc.in
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/45089/trunk/src/third_party/mesa/MesaLib/src/mesa/osmesa.pc.in
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/63795/trunk/src/third_party/mesa/MesaLib/src/mesa/Makefile
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/192780/trunk/src/base/test/data
+END
+serializer_test.json
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/191077/trunk/src/base/test/data/serializer_test.json
+END
+serializer_nested_test.json
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/191077/trunk/src/base/test/data/serializer_nested_test.json
+END
+serializer_test_nowhitespace.json
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/191077/trunk/src/base/test/data/serializer_test_nowhitespace.json
+END

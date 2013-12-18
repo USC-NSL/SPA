@@ -1,0 +1,10 @@
+K 10
+svn:ignore
+V 105
+gcp_portmon64.vcproj
+virtual_driver_unittests.vcproj
+virtual_driver_port_monitor.sln
+gcp_portmon.vcproj
+
+
+END

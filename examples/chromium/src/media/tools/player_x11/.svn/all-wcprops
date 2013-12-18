@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/196789/trunk/src/media/tools/player_x11
+END
+gl_video_renderer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/166988/trunk/src/media/tools/player_x11/gl_video_renderer.cc
+END
+gl_video_renderer.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/191566/trunk/src/media/tools/player_x11/gl_video_renderer.h
+END
+player_x11.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/196789/trunk/src/media/tools/player_x11/player_x11.cc
+END
+x11_video_renderer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/166988/trunk/src/media/tools/player_x11/x11_video_renderer.cc
+END
+x11_video_renderer.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/191566/trunk/src/media/tools/player_x11/x11_video_renderer.h
+END
+data_source_logger.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/196789/trunk/src/media/tools/player_x11/data_source_logger.cc
+END
+data_source_logger.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/196789/trunk/src/media/tools/player_x11/data_source_logger.h
+END

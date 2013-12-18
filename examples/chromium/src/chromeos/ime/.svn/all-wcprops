@@ -1,0 +1,239 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/196673/trunk/src/chromeos/ime
+END
+input_method_whitelist.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/195931/trunk/src/chromeos/ime/input_method_whitelist.cc
+END
+input_method_delegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/194927/trunk/src/chromeos/ime/input_method_delegate.h
+END
+input_method_manager.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/196662/trunk/src/chromeos/ime/input_method_manager.h
+END
+input_method_whitelist.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/191325/trunk/src/chromeos/ime/input_method_whitelist.h
+END
+input_method_property_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/190403/trunk/src/chromeos/ime/input_method_property_unittest.cc
+END
+extension_ime_util_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/190769/trunk/src/chromeos/ime/extension_ime_util_unittest.cc
+END
+ibus_keymap.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/194312/trunk/src/chromeos/ime/ibus_keymap.cc
+END
+input_method.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/191325/trunk/src/chromeos/ime/input_method.gyp
+END
+gen_input_methods.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/191325/trunk/src/chromeos/ime/gen_input_methods.py
+END
+ibus_bridge.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/186641/trunk/src/chromeos/ime/ibus_bridge.cc
+END
+component_extension_ime_manager.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/195931/trunk/src/chromeos/ime/component_extension_ime_manager.h
+END
+input_method_config.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/190403/trunk/src/chromeos/ime/input_method_config.h
+END
+xkeyboard_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/194927/trunk/src/chromeos/ime/xkeyboard_unittest.cc
+END
+xkeyboard.cc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/191535/trunk/src/chromeos/ime/xkeyboard.cc
+END
+ibus_daemon_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/188354/trunk/src/chromeos/ime/ibus_daemon_controller.h
+END
+input_method_whitelist_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/191325/trunk/src/chromeos/ime/input_method_whitelist_unittest.cc
+END
+input_method_descriptor.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195931/trunk/src/chromeos/ime/input_method_descriptor.cc
+END
+input_method_descriptor.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/195931/trunk/src/chromeos/ime/input_method_descriptor.h
+END
+mock_xkeyboard.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/191535/trunk/src/chromeos/ime/mock_xkeyboard.cc
+END
+mock_ibus_daemon_controller.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/185690/trunk/src/chromeos/ime/mock_ibus_daemon_controller.cc
+END
+mock_xkeyboard.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/191535/trunk/src/chromeos/ime/mock_xkeyboard.h
+END
+extension_ime_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/190769/trunk/src/chromeos/ime/extension_ime_util.cc
+END
+mock_ibus_daemon_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/185690/trunk/src/chromeos/ime/mock_ibus_daemon_controller.h
+END
+input_method_property.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/190403/trunk/src/chromeos/ime/input_method_property.cc
+END
+extension_ime_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/190769/trunk/src/chromeos/ime/extension_ime_util.h
+END
+input_method_property.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/190403/trunk/src/chromeos/ime/input_method_property.h
+END
+ibus_keymap.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/190403/trunk/src/chromeos/ime/ibus_keymap.h
+END
+input_methods.txt
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/192983/trunk/src/chromeos/ime/input_methods.txt
+END
+fake_input_method_delegate.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/194927/trunk/src/chromeos/ime/fake_input_method_delegate.cc
+END
+ibus_bridge.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/186641/trunk/src/chromeos/ime/ibus_bridge.h
+END
+component_extension_ime_manager_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/195931/trunk/src/chromeos/ime/component_extension_ime_manager_unittest.cc
+END
+fake_input_method_delegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/194927/trunk/src/chromeos/ime/fake_input_method_delegate.h
+END
+component_extension_ime_manager.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/195931/trunk/src/chromeos/ime/component_extension_ime_manager.cc
+END
+input_method_config.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/190403/trunk/src/chromeos/ime/input_method_config.cc
+END
+mock_component_extension_ime_manager_delegate.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/192033/trunk/src/chromeos/ime/mock_component_extension_ime_manager_delegate.cc
+END
+mock_component_extension_ime_manager_delegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/192033/trunk/src/chromeos/ime/mock_component_extension_ime_manager_delegate.h
+END
+ibus_daemon_controller.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/196673/trunk/src/chromeos/ime/ibus_daemon_controller.cc
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/190334/trunk/src/chromeos/ime/OWNERS
+END
+xkeyboard.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/191535/trunk/src/chromeos/ime/xkeyboard.h
+END

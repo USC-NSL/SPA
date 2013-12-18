@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/188791/trunk/src/net/tools/testserver
+END
+minica.py
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/144928/trunk/src/net/tools/testserver/minica.py
+END
+testserver_base.py
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/188791/trunk/src/net/tools/testserver/testserver_base.py
+END
+backoff_server.py
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/133558/trunk/src/net/tools/testserver/backoff_server.py
+END
+asn1.py
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/127680/trunk/src/net/tools/testserver/asn1.py
+END
+echo_message.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/111662/trunk/src/net/tools/testserver/echo_message.py
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/183159/trunk/src/net/tools/testserver/OWNERS
+END
+testserver.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/188791/trunk/src/net/tools/testserver/testserver.py
+END
+run_testserver.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/184344/trunk/src/net/tools/testserver/run_testserver.cc
+END

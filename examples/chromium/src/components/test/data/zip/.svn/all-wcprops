@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/192843/trunk/src/components/test/data/zip
+END
+evil.zip
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/192843/trunk/src/components/test/data/zip/evil.zip
+END
+test.zip
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/192843/trunk/src/components/test/data/zip/test.zip
+END
+test_nocompress.zip
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/192843/trunk/src/components/test/data/zip/test_nocompress.zip
+END
+evil_via_invalid_utf8.zip
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/192843/trunk/src/components/test/data/zip/evil_via_invalid_utf8.zip
+END
+evil_via_absolute_file_name.zip
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/192843/trunk/src/components/test/data/zip/evil_via_absolute_file_name.zip
+END
+create_test_zip.sh
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/192843/trunk/src/components/test/data/zip/create_test_zip.sh
+END

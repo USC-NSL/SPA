@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/147151/trunk/src/sandbox/win/sandbox_poc/pocdll
+END
+pocdll.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/147151/trunk/src/sandbox/win/sandbox_poc/pocdll/pocdll.vcproj
+END
+pocdll.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/147151/trunk/src/sandbox/win/sandbox_poc/pocdll/pocdll.cc
+END
+handles.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/147151/trunk/src/sandbox/win/sandbox_poc/pocdll/handles.cc
+END
+processes_and_threads.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/147151/trunk/src/sandbox/win/sandbox_poc/pocdll/processes_and_threads.cc
+END
+utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/147151/trunk/src/sandbox/win/sandbox_poc/pocdll/utils.h
+END
+invasive.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/147151/trunk/src/sandbox/win/sandbox_poc/pocdll/invasive.cc
+END
+exports.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/147151/trunk/src/sandbox/win/sandbox_poc/pocdll/exports.h
+END
+fs.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/147151/trunk/src/sandbox/win/sandbox_poc/pocdll/fs.cc
+END
+registry.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/147151/trunk/src/sandbox/win/sandbox_poc/pocdll/registry.cc
+END
+network.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/147151/trunk/src/sandbox/win/sandbox_poc/pocdll/network.cc
+END
+spyware.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/147151/trunk/src/sandbox/win/sandbox_poc/pocdll/spyware.cc
+END

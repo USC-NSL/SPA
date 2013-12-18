@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/197262/trunk/src/build/android/buildbot
+END
+bb_run_bot.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/197262/trunk/src/build/android/buildbot/bb_run_bot.py
+END
+buildbot_functions.sh
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/184886/trunk/src/build/android/buildbot/buildbot_functions.sh
+END
+bb_device_steps.py
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/195972/trunk/src/build/android/buildbot/bb_device_steps.py
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/158694/trunk/src/build/android/buildbot/OWNERS
+END

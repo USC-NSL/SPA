@@ -1,0 +1,1043 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/197470/trunk/src/chrome/browser/ui/views
+END
+web_contents_modal_dialog_manager_views.cc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/194477/trunk/src/chrome/browser/ui/views/web_contents_modal_dialog_manager_views.cc
+END
+theme_image_mapper_aura_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/180633/trunk/src/chrome/browser/ui/views/theme_image_mapper_aura_win.cc
+END
+toolbar_view_browsertest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/185787/trunk/src/chrome/browser/ui/views/toolbar_view_browsertest.cc
+END
+reload_button_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/167597/trunk/src/chrome/browser/ui/views/reload_button_unittest.cc
+END
+content_setting_bubble_contents.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/193615/trunk/src/chrome/browser/ui/views/content_setting_bubble_contents.h
+END
+ssl_client_certificate_selector.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/185731/trunk/src/chrome/browser/ui/views/ssl_client_certificate_selector.h
+END
+login_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/172752/trunk/src/chrome/browser/ui/views/login_view.h
+END
+ssl_client_certificate_selector_browsertest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/191450/trunk/src/chrome/browser/ui/views/ssl_client_certificate_selector_browsertest.cc
+END
+critical_notification_bubble_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/192722/trunk/src/chrome/browser/ui/views/critical_notification_bubble_view.h
+END
+open_pdf_in_reader_bubble_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/192722/trunk/src/chrome/browser/ui/views/open_pdf_in_reader_bubble_view.cc
+END
+find_bar_controller_browsertest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/184344/trunk/src/chrome/browser/ui/views/find_bar_controller_browsertest.cc
+END
+menu_item_view_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/176680/trunk/src/chrome/browser/ui/views/menu_item_view_test.cc
+END
+browser_action_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/170890/trunk/src/chrome/browser/ui/views/browser_action_view.h
+END
+color_chooser_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/144111/trunk/src/chrome/browser/ui/views/color_chooser_win.cc
+END
+network_profile_bubble_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/192722/trunk/src/chrome/browser/ui/views/network_profile_bubble_view.cc
+END
+cookie_info_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/166529/trunk/src/chrome/browser/ui/views/cookie_info_view.cc
+END
+app_menu_button_win.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/191969/trunk/src/chrome/browser/ui/views/app_menu_button_win.h
+END
+native_focus_tracker_views.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/187054/trunk/src/chrome/browser/ui/views/native_focus_tracker_views.h
+END
+constrained_window_views.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/191735/trunk/src/chrome/browser/ui/views/constrained_window_views.h
+END
+javascript_app_modal_dialog_views.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/146163/trunk/src/chrome/browser/ui/views/javascript_app_modal_dialog_views.h
+END
+accelerator_utils_views.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/194962/trunk/src/chrome/browser/ui/views/accelerator_utils_views.cc
+END
+simple_message_box_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/192240/trunk/src/chrome/browser/ui/views/simple_message_box_win.cc
+END
+select_file_dialog_extension_factory.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/177533/trunk/src/chrome/browser/ui/views/select_file_dialog_extension_factory.h
+END
+keyboard_access_browsertest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/197470/trunk/src/chrome/browser/ui/views/keyboard_access_browsertest.cc
+END
+password_generation_bubble_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/193982/trunk/src/chrome/browser/ui/views/password_generation_bubble_view.h
+END
+confirm_bubble_views.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/183286/trunk/src/chrome/browser/ui/views/confirm_bubble_views.h
+END
+collected_cookies_views.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/185731/trunk/src/chrome/browser/ui/views/collected_cookies_views.h
+END
+detachable_toolbar_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/185421/trunk/src/chrome/browser/ui/views/detachable_toolbar_view.h
+END
+accelerator_table.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/196096/trunk/src/chrome/browser/ui/views/accelerator_table.cc
+END
+accelerator_table.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/184663/trunk/src/chrome/browser/ui/views/accelerator_table.h
+END
+toolbar_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/194333/trunk/src/chrome/browser/ui/views/toolbar_view.h
+END
+find_bar_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195028/trunk/src/chrome/browser/ui/views/find_bar_view.h
+END
+update_recommended_message_box.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/146163/trunk/src/chrome/browser/ui/views/update_recommended_message_box.h
+END
+browser_actions_container.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/183799/trunk/src/chrome/browser/ui/views/browser_actions_container.h
+END
+script_bubble_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/193838/trunk/src/chrome/browser/ui/views/script_bubble_view.cc
+END
+app_menu_button_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/191969/trunk/src/chrome/browser/ui/views/app_menu_button_win.cc
+END
+crypto_module_password_dialog_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/173993/trunk/src/chrome/browser/ui/views/crypto_module_password_dialog_view.cc
+END
+hung_renderer_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/195659/trunk/src/chrome/browser/ui/views/hung_renderer_view.cc
+END
+external_protocol_dialog.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/184598/trunk/src/chrome/browser/ui/views/external_protocol_dialog.cc
+END
+confirm_bubble_views_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/181975/trunk/src/chrome/browser/ui/views/confirm_bubble_views_unittest.cc
+END
+sad_tab_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/194107/trunk/src/chrome/browser/ui/views/sad_tab_view.h
+END
+web_dialog_view_browsertest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/184344/trunk/src/chrome/browser/ui/views/web_dialog_view_browsertest.cc
+END
+tab_icon_view_model.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/146990/trunk/src/chrome/browser/ui/views/tab_icon_view_model.h
+END
+constrained_web_dialog_delegate_views.cc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/194113/trunk/src/chrome/browser/ui/views/constrained_web_dialog_delegate_views.cc
+END
+toolbar_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195727/trunk/src/chrome/browser/ui/views/toolbar_view.cc
+END
+hung_renderer_view_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/171366/trunk/src/chrome/browser/ui/views/hung_renderer_view_win.cc
+END
+avatar_menu_button.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/182145/trunk/src/chrome/browser/ui/views/avatar_menu_button.h
+END
+critical_notification_bubble_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/195727/trunk/src/chrome/browser/ui/views/critical_notification_bubble_view.cc
+END
+find_bar_host_aura.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/154817/trunk/src/chrome/browser/ui/views/find_bar_host_aura.cc
+END
+constrained_window_views.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/195315/trunk/src/chrome/browser/ui/views/constrained_window_views.cc
+END
+native_focus_tracker_views.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/187054/trunk/src/chrome/browser/ui/views/native_focus_tracker_views.cc
+END
+user_data_dir_dialog_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/197470/trunk/src/chrome/browser/ui/views/user_data_dir_dialog_view.cc
+END
+chrome_browser_main_extra_parts_views.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/190848/trunk/src/chrome/browser/ui/views/chrome_browser_main_extra_parts_views.h
+END
+color_chooser_dialog.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/144111/trunk/src/chrome/browser/ui/views/color_chooser_dialog.cc
+END
+action_box_context_menu.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/191518/trunk/src/chrome/browser/ui/views/action_box_context_menu.h
+END
+chrome_web_dialog_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/178083/trunk/src/chrome/browser/ui/views/chrome_web_dialog_view.cc
+END
+external_protocol_dialog.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/146163/trunk/src/chrome/browser/ui/views/external_protocol_dialog.h
+END
+first_run_bubble_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/175389/trunk/src/chrome/browser/ui/views/first_run_bubble_unittest.cc
+END
+confirm_bubble_views.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/194688/trunk/src/chrome/browser/ui/views/confirm_bubble_views.cc
+END
+first_run_bubble.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/191990/trunk/src/chrome/browser/ui/views/first_run_bubble.cc
+END
+outdated_upgrade_bubble_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/192722/trunk/src/chrome/browser/ui/views/outdated_upgrade_bubble_view.h
+END
+browser_action_test_util_views.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/161654/trunk/src/chrome/browser/ui/views/browser_action_test_util_views.cc
+END
+external_tab_container_win.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/194113/trunk/src/chrome/browser/ui/views/external_tab_container_win.h
+END
+native_focus_tracker_views_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/187054/trunk/src/chrome/browser/ui/views/native_focus_tracker_views_win.cc
+END
+browser_actions_container.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/197470/trunk/src/chrome/browser/ui/views/browser_actions_container.cc
+END
+theme_image_mapper.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/180633/trunk/src/chrome/browser/ui/views/theme_image_mapper.cc
+END
+missing_system_file_dialog_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/178192/trunk/src/chrome/browser/ui/views/missing_system_file_dialog_win.cc
+END
+avatar_menu_bubble_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/196569/trunk/src/chrome/browser/ui/views/avatar_menu_bubble_view.h
+END
+wrench_menu.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/190048/trunk/src/chrome/browser/ui/views/wrench_menu.cc
+END
+script_bubble_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/178595/trunk/src/chrome/browser/ui/views/script_bubble_view.h
+END
+chrome_to_mobile_bubble_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/197470/trunk/src/chrome/browser/ui/views/chrome_to_mobile_bubble_view.cc
+END
+PRESUBMIT.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/120259/trunk/src/chrome/browser/ui/views/PRESUBMIT.py
+END
+chrome_to_mobile_bubble_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/192722/trunk/src/chrome/browser/ui/views/chrome_to_mobile_bubble_view.h
+END
+javascript_app_modal_dialog_views.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/191815/trunk/src/chrome/browser/ui/views/javascript_app_modal_dialog_views.cc
+END
+load_complete_listener.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/176444/trunk/src/chrome/browser/ui/views/load_complete_listener.h
+END
+dropdown_bar_host.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/150895/trunk/src/chrome/browser/ui/views/dropdown_bar_host.h
+END
+crypto_module_password_dialog_view_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/181008/trunk/src/chrome/browser/ui/views/crypto_module_password_dialog_view_unittest.cc
+END
+edit_search_engine_dialog.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/173993/trunk/src/chrome/browser/ui/views/edit_search_engine_dialog.h
+END
+hung_renderer_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/185369/trunk/src/chrome/browser/ui/views/hung_renderer_view.h
+END
+native_focus_tracker_views_aura.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/187054/trunk/src/chrome/browser/ui/views/native_focus_tracker_views_aura.cc
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/154753/trunk/src/chrome/browser/ui/views/OWNERS
+END
+select_file_dialog_extension.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/196486/trunk/src/chrome/browser/ui/views/select_file_dialog_extension.cc
+END
+avatar_menu_button.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/182145/trunk/src/chrome/browser/ui/views/avatar_menu_button.cc
+END
+find_bar_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/196644/trunk/src/chrome/browser/ui/views/find_bar_view.cc
+END
+content_setting_bubble_contents.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/195236/trunk/src/chrome/browser/ui/views/content_setting_bubble_contents.cc
+END
+tab_icon_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/178408/trunk/src/chrome/browser/ui/views/tab_icon_view.cc
+END
+color_chooser_aura.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/184598/trunk/src/chrome/browser/ui/views/color_chooser_aura.cc
+END
+open_pdf_in_reader_bubble_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/192722/trunk/src/chrome/browser/ui/views/open_pdf_in_reader_bubble_view.h
+END
+dropdown_bar_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/168671/trunk/src/chrome/browser/ui/views/dropdown_bar_view.cc
+END
+status_bubble_views.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/197470/trunk/src/chrome/browser/ui/views/status_bubble_views.cc
+END
+wrench_menu.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/190048/trunk/src/chrome/browser/ui/views/wrench_menu.h
+END
+load_complete_listener.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/176444/trunk/src/chrome/browser/ui/views/load_complete_listener.cc
+END
+accelerator_utils_aura.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/194962/trunk/src/chrome/browser/ui/views/accelerator_utils_aura.cc
+END
+status_bubble_views.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/154890/trunk/src/chrome/browser/ui/views/status_bubble_views.h
+END
+chrome_browser_main_extra_parts_views.cc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/190848/trunk/src/chrome/browser/ui/views/chrome_browser_main_extra_parts_views.cc
+END
+action_box_context_menu.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/191518/trunk/src/chrome/browser/ui/views/action_box_context_menu.cc
+END
+constrained_window_views_browsertest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/195970/trunk/src/chrome/browser/ui/views/constrained_window_views_browsertest.cc
+END
+global_error_bubble_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/193615/trunk/src/chrome/browser/ui/views/global_error_bubble_view.h
+END
+crypto_module_password_dialog_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/173993/trunk/src/chrome/browser/ui/views/crypto_module_password_dialog_view.h
+END
+home_button.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/186301/trunk/src/chrome/browser/ui/views/home_button.cc
+END
+home_button.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/183677/trunk/src/chrome/browser/ui/views/home_button.h
+END
+outdated_upgrade_bubble_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/195727/trunk/src/chrome/browser/ui/views/outdated_upgrade_bubble_view.cc
+END
+task_manager_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/195659/trunk/src/chrome/browser/ui/views/task_manager_view.cc
+END
+chrome_views_delegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/176326/trunk/src/chrome/browser/ui/views/chrome_views_delegate.h
+END
+collected_cookies_views.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/191735/trunk/src/chrome/browser/ui/views/collected_cookies_views.cc
+END
+find_bar_host_interactive_uitest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/195201/trunk/src/chrome/browser/ui/views/find_bar_host_interactive_uitest.cc
+END
+event_utils.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/154817/trunk/src/chrome/browser/ui/views/event_utils.cc
+END
+find_bar_host.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/197257/trunk/src/chrome/browser/ui/views/find_bar_host.cc
+END
+reload_button.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/197470/trunk/src/chrome/browser/ui/views/reload_button.cc
+END
+wrench_toolbar_button.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/194714/trunk/src/chrome/browser/ui/views/wrench_toolbar_button.cc
+END
+uninstall_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/184851/trunk/src/chrome/browser/ui/views/uninstall_view.cc
+END
+wrench_toolbar_button.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/194714/trunk/src/chrome/browser/ui/views/wrench_toolbar_button.h
+END
+uninstall_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/173993/trunk/src/chrome/browser/ui/views/uninstall_view.h
+END
+browser_actions_container_browsertest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/189572/trunk/src/chrome/browser/ui/views/browser_actions_container_browsertest.cc
+END
+action_box_menu.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/193838/trunk/src/chrome/browser/ui/views/action_box_menu.cc
+END
+top_level_widget_views.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/154950/trunk/src/chrome/browser/ui/views/top_level_widget_views.cc
+END
+dropdown_bar_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/146163/trunk/src/chrome/browser/ui/views/dropdown_bar_view.h
+END
+dropdown_bar_host.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/171590/trunk/src/chrome/browser/ui/views/dropdown_bar_host.cc
+END
+find_bar_host_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/172467/trunk/src/chrome/browser/ui/views/find_bar_host_win.cc
+END
+select_file_dialog_extension_factory.cc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/147263/trunk/src/chrome/browser/ui/views/select_file_dialog_extension_factory.cc
+END
+cookie_info_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/147222/trunk/src/chrome/browser/ui/views/cookie_info_view.h
+END
+network_profile_bubble_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/152375/trunk/src/chrome/browser/ui/views/network_profile_bubble_view.h
+END
+chrome_views_delegate.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/193946/trunk/src/chrome/browser/ui/views/chrome_views_delegate.cc
+END
+button_dropdown_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/187769/trunk/src/chrome/browser/ui/views/button_dropdown_test.cc
+END
+sad_tab_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/196779/trunk/src/chrome/browser/ui/views/sad_tab_view.cc
+END
+browser_dialogs.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/189579/trunk/src/chrome/browser/ui/views/browser_dialogs.h
+END
+detachable_toolbar_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/185421/trunk/src/chrome/browser/ui/views/detachable_toolbar_view.cc
+END
+dropdown_bar_host_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/184598/trunk/src/chrome/browser/ui/views/dropdown_bar_host_win.cc
+END
+accelerator_table_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/184663/trunk/src/chrome/browser/ui/views/accelerator_table_unittest.cc
+END
+tab_modal_confirm_dialog_views.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/191815/trunk/src/chrome/browser/ui/views/tab_modal_confirm_dialog_views.cc
+END
+select_file_dialog_extension.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/181638/trunk/src/chrome/browser/ui/views/select_file_dialog_extension.h
+END
+select_file_dialog_extension_browsertest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/181638/trunk/src/chrome/browser/ui/views/select_file_dialog_extension_browsertest.cc
+END
+tab_modal_confirm_dialog_views.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/185731/trunk/src/chrome/browser/ui/views/tab_modal_confirm_dialog_views.h
+END
+chrome_views_export.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/182369/trunk/src/chrome/browser/ui/views/chrome_views_export.h
+END
+update_recommended_message_box.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/183049/trunk/src/chrome/browser/ui/views/update_recommended_message_box.cc
+END
+avatar_menu_button_browsertest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/194956/trunk/src/chrome/browser/ui/views/avatar_menu_button_browsertest.cc
+END
+ssl_client_certificate_selector.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/195659/trunk/src/chrome/browser/ui/views/ssl_client_certificate_selector.cc
+END
+validation_message_bubble_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/197226/trunk/src/chrome/browser/ui/views/validation_message_bubble_view.cc
+END
+missing_system_file_dialog_win.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/176796/trunk/src/chrome/browser/ui/views/missing_system_file_dialog_win.h
+END
+theme_image_mapper.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/180633/trunk/src/chrome/browser/ui/views/theme_image_mapper.h
+END
+edit_search_engine_dialog.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/173993/trunk/src/chrome/browser/ui/views/edit_search_engine_dialog.cc
+END
+color_chooser_dialog.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/177533/trunk/src/chrome/browser/ui/views/color_chooser_dialog.h
+END
+simple_message_box_views.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/192240/trunk/src/chrome/browser/ui/views/simple_message_box_views.cc
+END
+menu_model_adapter_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/181008/trunk/src/chrome/browser/ui/views/menu_model_adapter_test.cc
+END
+dropdown_bar_host_aura.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/154817/trunk/src/chrome/browser/ui/views/dropdown_bar_host_aura.cc
+END
+about_ipc_dialog.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/185369/trunk/src/chrome/browser/ui/views/about_ipc_dialog.h
+END
+external_tab_container_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/197470/trunk/src/chrome/browser/ui/views/external_tab_container_win.cc
+END
+select_file_dialog_extension_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/184344/trunk/src/chrome/browser/ui/views/select_file_dialog_extension_unittest.cc
+END
+speech_recognition_bubble_views.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/192722/trunk/src/chrome/browser/ui/views/speech_recognition_bubble_views.cc
+END
+hung_renderer_view_win.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/172467/trunk/src/chrome/browser/ui/views/hung_renderer_view_win.h
+END
+login_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/173061/trunk/src/chrome/browser/ui/views/login_view.cc
+END
+reload_button.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/187769/trunk/src/chrome/browser/ui/views/reload_button.h
+END
+find_bar_host.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/184824/trunk/src/chrome/browser/ui/views/find_bar_host.h
+END
+event_utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/182797/trunk/src/chrome/browser/ui/views/event_utils.h
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/137704/trunk/src/chrome/browser/ui/views/DEPS
+END
+avatar_menu_bubble_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/196569/trunk/src/chrome/browser/ui/views/avatar_menu_bubble_view.cc
+END
+stubs_aura.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/196072/trunk/src/chrome/browser/ui/views/stubs_aura.cc
+END
+dropdown_bar_host_delegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/84971/trunk/src/chrome/browser/ui/views/dropdown_bar_host_delegate.h
+END
+browser_action_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/197470/trunk/src/chrome/browser/ui/views/browser_action_view.cc
+END
+tab_icon_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/151942/trunk/src/chrome/browser/ui/views/tab_icon_view.h
+END
+find_bar_host_unittest_util_views.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/160215/trunk/src/chrome/browser/ui/views/find_bar_host_unittest_util_views.cc
+END
+action_box_menu.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/191518/trunk/src/chrome/browser/ui/views/action_box_menu.h
+END
+create_application_shortcut_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/197470/trunk/src/chrome/browser/ui/views/create_application_shortcut_view.cc
+END
+create_application_shortcut_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/197304/trunk/src/chrome/browser/ui/views/create_application_shortcut_view.h
+END
+global_error_bubble_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/197044/trunk/src/chrome/browser/ui/views/global_error_bubble_view.cc
+END
+certificate_viewer_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/191450/trunk/src/chrome/browser/ui/views/certificate_viewer_win.cc
+END
+user_data_dir_dialog_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/184344/trunk/src/chrome/browser/ui/views/user_data_dir_dialog_view.h
+END
+password_generation_bubble_view.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/193982/trunk/src/chrome/browser/ui/views/password_generation_bubble_view.cc
+END
+fullscreen_exit_bubble_views.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/195281/trunk/src/chrome/browser/ui/views/fullscreen_exit_bubble_views.cc
+END
+about_ipc_dialog.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/188857/trunk/src/chrome/browser/ui/views/about_ipc_dialog.cc
+END
+fullscreen_exit_bubble_views.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/195281/trunk/src/chrome/browser/ui/views/fullscreen_exit_bubble_views.h
+END
+login_prompt_views.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/191735/trunk/src/chrome/browser/ui/views/login_prompt_views.cc
+END
+first_run_bubble.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/152375/trunk/src/chrome/browser/ui/views/first_run_bubble.h
+END

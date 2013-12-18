@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/197206/trunk/src/content/browser/streams
+END
+stream.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/197206/trunk/src/content/browser/streams/stream.cc
+END
+stream.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/189665/trunk/src/content/browser/streams/stream.h
+END
+stream_read_observer.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/188075/trunk/src/content/browser/streams/stream_read_observer.h
+END
+stream_context.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/187777/trunk/src/content/browser/streams/stream_context.cc
+END
+stream_context.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/187777/trunk/src/content/browser/streams/stream_context.h
+END
+stream_url_request_job_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/193040/trunk/src/content/browser/streams/stream_url_request_job_unittest.cc
+END
+stream_write_observer.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/189172/trunk/src/content/browser/streams/stream_write_observer.h
+END
+stream_url_request_job.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/197206/trunk/src/content/browser/streams/stream_url_request_job.cc
+END
+stream_url_request_job.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/188075/trunk/src/content/browser/streams/stream_url_request_job.h
+END
+stream_registry.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/187777/trunk/src/content/browser/streams/stream_registry.cc
+END
+stream_registry.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/187777/trunk/src/content/browser/streams/stream_registry.h
+END
+stream_handle_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/189172/trunk/src/content/browser/streams/stream_handle_impl.cc
+END
+stream_handle_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/189172/trunk/src/content/browser/streams/stream_handle_impl.h
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/189328/trunk/src/content/browser/streams/OWNERS
+END
+stream_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/189172/trunk/src/content/browser/streams/stream_unittest.cc
+END

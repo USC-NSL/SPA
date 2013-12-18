@@ -1,0 +1,16 @@
+K 10
+svn:ignore
+V 125
+ssl.sln
+ssl.vcproj
+ssl.xcodeproj
+nss.Makefile
+ssl.scons
+SConstruct
+ssl_main.scons
+nss_main.scons
+ssl.target.mk
+ssl.Makefile
+
+
+END

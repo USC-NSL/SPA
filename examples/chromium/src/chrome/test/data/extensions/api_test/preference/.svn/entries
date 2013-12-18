@@ -1,0 +1,46 @@
+10
+
+dir
+197479
+http://src.chromium.org/svn/trunk/src/chrome/test/data/extensions/api_test/preference
+http://src.chromium.org/svn
+
+
+
+2012-06-26T22:23:32.842707Z
+144299
+mitchellwrosen@chromium.org
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4ff67af0-8c30-449e-8e8b-ad334ec8d88c
+
+standard
+dir
+
+onchange
+dir
+
+clear
+dir
+
+persistent_incognito
+dir
+
+onchange_split
+dir
+
+session_only_incognito
+dir
+

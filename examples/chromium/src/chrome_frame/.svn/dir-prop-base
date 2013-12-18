@@ -1,0 +1,31 @@
+K 10
+svn:ignore
+V 699
+base_noicu.vcproj
+chrome_frame.sln
+chrome_frame_common.vcproj
+chrome_frame_crash_tests.vcproj
+chrome_frame_helper.vcproj
+chrome_frame_helper_dll.vcproj
+chrome_frame_helper_lib.vcproj
+chrome_frame_ie.rules
+chrome_frame_ie.vcproj
+chrome_frame_launcher.sln
+chrome_frame_net_tests.vcproj
+chrome_frame_npapi.vcproj
+chrome_frame_npapi_core.vcproj
+chrome_frame_perftests.vcproj
+chrome_frame_privileged_mock.vcproj
+chrome_frame_qa_tests.vcproj
+chrome_frame_reliability_tests.vcproj
+chrome_frame_strings.rules
+chrome_frame_strings.vcproj
+chrome_frame_tests.vcproj
+chrome_frame_unittests.vcproj
+chrome_frame_utils.vcproj
+chrome_launcher.vcproj
+chrome_tab_idl.vcproj
+npchrome_frame.vcproj
+xulrunner_sdk.vcproj
+
+END

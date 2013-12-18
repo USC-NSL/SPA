@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/196535/trunk/src/net/data/ssl/scripts
+END
+client-certs.cnf
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/196535/trunk/src/net/data/ssl/scripts/client-certs.cnf
+END
+generate-client-certificates.sh
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/196535/trunk/src/net/data/ssl/scripts/generate-client-certificates.sh
+END
+generate-redundant-test-chains.sh
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/124804/trunk/src/net/data/ssl/scripts/generate-redundant-test-chains.sh
+END
+eku-test.cnf
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/191962/trunk/src/net/data/ssl/scripts/eku-test.cnf
+END
+generate-android-test-keys.sh
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/181741/trunk/src/net/data/ssl/scripts/generate-android-test-keys.sh
+END
+generate-bad-eku-certs.sh
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/191962/trunk/src/net/data/ssl/scripts/generate-bad-eku-certs.sh
+END
+ca.cnf
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/114709/trunk/src/net/data/ssl/scripts/ca.cnf
+END
+generate-weak-test-chains.sh
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/114709/trunk/src/net/data/ssl/scripts/generate-weak-test-chains.sh
+END
+redundant-ca.cnf
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/124804/trunk/src/net/data/ssl/scripts/redundant-ca.cnf
+END
+ee.cnf
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/156461/trunk/src/net/data/ssl/scripts/ee.cnf
+END

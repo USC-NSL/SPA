@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/193682/trunk/src/components/zip
+END
+zip_internal.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/193682/trunk/src/components/zip/zip_internal.cc
+END
+zip_internal.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/192843/trunk/src/components/zip/zip_internal.h
+END
+zip_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/192843/trunk/src/components/zip/zip_unittest.cc
+END
+zip.cc
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/192843/trunk/src/components/zip/zip.cc
+END
+zip_reader_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/192843/trunk/src/components/zip/zip_reader_unittest.cc
+END
+zip.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/192843/trunk/src/components/zip/zip.h
+END
+zip_reader.cc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/192843/trunk/src/components/zip/zip_reader.cc
+END
+zip_reader.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/192843/trunk/src/components/zip/zip_reader.h
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/192843/trunk/src/components/zip/DEPS
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/192843/trunk/src/components/zip/OWNERS
+END

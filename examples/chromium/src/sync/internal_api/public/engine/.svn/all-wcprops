@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/191566/trunk/src/sync/internal_api/public/engine
+END
+sync_status.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/172707/trunk/src/sync/internal_api/public/engine/sync_status.cc
+END
+polling_constants.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/165312/trunk/src/sync/internal_api/public/engine/polling_constants.cc
+END
+sync_status.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/185721/trunk/src/sync/internal_api/public/engine/sync_status.h
+END
+polling_constants.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/174801/trunk/src/sync/internal_api/public/engine/polling_constants.h
+END
+passive_model_worker.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/144820/trunk/src/sync/internal_api/public/engine/passive_model_worker.cc
+END
+passive_model_worker.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/191566/trunk/src/sync/internal_api/public/engine/passive_model_worker.h
+END
+model_safe_worker_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/160073/trunk/src/sync/internal_api/public/engine/model_safe_worker_unittest.cc
+END
+model_safe_worker.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/160073/trunk/src/sync/internal_api/public/engine/model_safe_worker.cc
+END
+model_safe_worker.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/174801/trunk/src/sync/internal_api/public/engine/model_safe_worker.h
+END

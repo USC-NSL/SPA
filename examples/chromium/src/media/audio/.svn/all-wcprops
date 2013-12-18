@@ -1,0 +1,533 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/196379/trunk/src/media/audio
+END
+audio_silence_detector_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/191121/trunk/src/media/audio/audio_silence_detector_unittest.cc
+END
+shared_memory_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/154033/trunk/src/media/audio/shared_memory_util.cc
+END
+simple_sources_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/190087/trunk/src/media/audio/simple_sources_unittest.cc
+END
+cross_process_notification.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/155728/trunk/src/media/audio/cross_process_notification.cc
+END
+shared_memory_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/154033/trunk/src/media/audio/shared_memory_util.h
+END
+audio_input_device.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/195626/trunk/src/media/audio/audio_input_device.cc
+END
+audio_low_latency_input_output_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/195626/trunk/src/media/audio/audio_low_latency_input_output_unittest.cc
+END
+audio_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/192905/trunk/src/media/audio/audio_util.h
+END
+audio_output_device.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/195626/trunk/src/media/audio/audio_output_device.cc
+END
+audio_input_device.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/195626/trunk/src/media/audio/audio_input_device.h
+END
+virtual_audio_output_stream_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/190888/trunk/src/media/audio/virtual_audio_output_stream_unittest.cc
+END
+virtual_audio_output_stream.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/180043/trunk/src/media/audio/virtual_audio_output_stream.cc
+END
+virtual_audio_input_stream.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/191073/trunk/src/media/audio/virtual_audio_input_stream.h
+END
+audio_input_volume_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/195875/trunk/src/media/audio/audio_input_volume_unittest.cc
+END
+mock_audio_manager.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/186698/trunk/src/media/audio/mock_audio_manager.h
+END
+audio_output_dispatcher_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/196227/trunk/src/media/audio/audio_output_dispatcher_impl.cc
+END
+cross_process_notification_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/194225/trunk/src/media/audio/cross_process_notification_win.cc
+END
+test_audio_input_controller_factory.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/150302/trunk/src/media/audio/test_audio_input_controller_factory.h
+END
+audio_buffers_state.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/130288/trunk/src/media/audio/audio_buffers_state.cc
+END
+audio_output_proxy_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/195626/trunk/src/media/audio/audio_output_proxy_unittest.cc
+END
+audio_output_proxy.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/190087/trunk/src/media/audio/audio_output_proxy.cc
+END
+audio_input_controller_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/195626/trunk/src/media/audio/audio_input_controller_unittest.cc
+END
+audio_device_name.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/107842/trunk/src/media/audio/audio_device_name.h
+END
+fake_audio_output_stream.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/188506/trunk/src/media/audio/fake_audio_output_stream.h
+END
+async_socket_io_handler_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/195626/trunk/src/media/audio/async_socket_io_handler_win.cc
+END
+audio_input_device_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/193256/trunk/src/media/audio/audio_input_device_unittest.cc
+END
+simple_sources.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/190087/trunk/src/media/audio/simple_sources.h
+END
+audio_silence_detector.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/191121/trunk/src/media/audio/audio_silence_detector.h
+END
+virtual_audio_input_stream_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/190087/trunk/src/media/audio/virtual_audio_input_stream_unittest.cc
+END
+fake_audio_consumer_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/195626/trunk/src/media/audio/fake_audio_consumer_unittest.cc
+END
+fake_audio_consumer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/188506/trunk/src/media/audio/fake_audio_consumer.cc
+END
+mock_audio_manager.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/186698/trunk/src/media/audio/mock_audio_manager.cc
+END
+virtual_audio_output_stream.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/184882/trunk/src/media/audio/virtual_audio_output_stream.h
+END
+audio_device_thread.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/195626/trunk/src/media/audio/audio_device_thread.cc
+END
+audio_device_thread.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/191566/trunk/src/media/audio/audio_device_thread.h
+END
+audio_input_ipc.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/155728/trunk/src/media/audio/audio_input_ipc.cc
+END
+scoped_loop_observer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/195626/trunk/src/media/audio/scoped_loop_observer.cc
+END
+audio_input_ipc.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/194711/trunk/src/media/audio/audio_input_ipc.h
+END
+audio_input_stream_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/130288/trunk/src/media/audio/audio_input_stream_impl.h
+END
+audio_output_ipc.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/194711/trunk/src/media/audio/audio_output_ipc.h
+END
+cross_process_notification_posix.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/192779/trunk/src/media/audio/cross_process_notification_posix.cc
+END
+audio_device_name.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/107842/trunk/src/media/audio/audio_device_name.cc
+END
+fake_audio_input_stream.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/165619/trunk/src/media/audio/fake_audio_input_stream.cc
+END
+audio_parameters_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/164236/trunk/src/media/audio/audio_parameters_unittest.cc
+END
+audio_output_controller_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/195626/trunk/src/media/audio/audio_output_controller_unittest.cc
+END
+audio_output_proxy.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/157940/trunk/src/media/audio/audio_output_proxy.h
+END
+audio_manager_base.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/194461/trunk/src/media/audio/audio_manager_base.h
+END
+async_socket_io_handler_posix.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/195626/trunk/src/media/audio/async_socket_io_handler_posix.cc
+END
+audio_silence_detector.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/191121/trunk/src/media/audio/audio_silence_detector.cc
+END
+simple_sources.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/190087/trunk/src/media/audio/simple_sources.cc
+END
+cross_process_notification.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/155728/trunk/src/media/audio/cross_process_notification.h
+END
+audio_output_device_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/195626/trunk/src/media/audio/audio_output_device_unittest.cc
+END
+virtual_audio_input_stream.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/191073/trunk/src/media/audio/virtual_audio_input_stream.cc
+END
+fake_audio_consumer.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/188506/trunk/src/media/audio/fake_audio_consumer.h
+END
+test_audio_input_controller_factory.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/146316/trunk/src/media/audio/test_audio_input_controller_factory.cc
+END
+async_socket_io_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/195626/trunk/src/media/audio/async_socket_io_handler.h
+END
+audio_output_ipc.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/155728/trunk/src/media/audio/audio_output_ipc.cc
+END
+audio_input_stream_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/130288/trunk/src/media/audio/audio_input_stream_impl.cc
+END
+audio_buffers_state.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/130288/trunk/src/media/audio/audio_buffers_state.h
+END
+audio_input_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/195626/trunk/src/media/audio/audio_input_unittest.cc
+END
+null_audio_sink.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/194401/trunk/src/media/audio/null_audio_sink.cc
+END
+null_audio_sink.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/194401/trunk/src/media/audio/null_audio_sink.h
+END
+audio_parameters.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/187936/trunk/src/media/audio/audio_parameters.h
+END
+audio_output_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/194401/trunk/src/media/audio/audio_output_controller.h
+END
+audio_source_diverter.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/176295/trunk/src/media/audio/audio_source_diverter.h
+END
+audio_output_resampler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/195626/trunk/src/media/audio/audio_output_resampler.cc
+END
+audio_manager.cc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/189249/trunk/src/media/audio/audio_manager.cc
+END
+cross_process_notification_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/169662/trunk/src/media/audio/cross_process_notification_unittest.cc
+END
+audio_output_resampler.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/168976/trunk/src/media/audio/audio_output_resampler.h
+END
+audio_manager.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/191566/trunk/src/media/audio/audio_manager.h
+END
+audio_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/192905/trunk/src/media/audio/audio_util.cc
+END
+audio_output_device.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/195626/trunk/src/media/audio/audio_output_device.h
+END
+async_socket_io_handler_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/195626/trunk/src/media/audio/async_socket_io_handler_unittest.cc
+END
+audio_output_dispatcher_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/191566/trunk/src/media/audio/audio_output_dispatcher_impl.h
+END
+scoped_loop_observer.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/195626/trunk/src/media/audio/scoped_loop_observer.h
+END
+sample_rates.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/156296/trunk/src/media/audio/sample_rates.cc
+END
+sample_rates.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/156296/trunk/src/media/audio/sample_rates.h
+END
+fake_audio_output_stream.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/188506/trunk/src/media/audio/fake_audio_output_stream.cc
+END
+fake_audio_input_stream.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/192779/trunk/src/media/audio/fake_audio_input_stream.h
+END
+audio_input_controller.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/196379/trunk/src/media/audio/audio_input_controller.cc
+END
+audio_parameters.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/187936/trunk/src/media/audio/audio_parameters.cc
+END
+audio_output_controller.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/196227/trunk/src/media/audio/audio_output_controller.cc
+END
+audio_input_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/196379/trunk/src/media/audio/audio_input_controller.h
+END
+audio_manager_base.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/195875/trunk/src/media/audio/audio_manager_base.cc
+END
+audio_output_dispatcher.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/195626/trunk/src/media/audio/audio_output_dispatcher.cc
+END
+audio_output_dispatcher.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/191566/trunk/src/media/audio/audio_output_dispatcher.h
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/185102/trunk/src/media/audio/OWNERS
+END
+audio_io.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/190087/trunk/src/media/audio/audio_io.h
+END

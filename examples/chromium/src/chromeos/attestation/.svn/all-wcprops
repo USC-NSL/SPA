@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/196926/trunk/src/chromeos/attestation
+END
+attestation_constants.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/196926/trunk/src/chromeos/attestation/attestation_constants.cc
+END
+attestation_constants.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/196926/trunk/src/chromeos/attestation/attestation_constants.h
+END
+mock_attestation_flow.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/195266/trunk/src/chromeos/attestation/mock_attestation_flow.cc
+END
+mock_attestation_flow.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/196926/trunk/src/chromeos/attestation/mock_attestation_flow.h
+END
+attestation_flow_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/196926/trunk/src/chromeos/attestation/attestation_flow_unittest.cc
+END
+attestation_flow.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/196926/trunk/src/chromeos/attestation/attestation_flow.cc
+END
+attestation_flow.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/196926/trunk/src/chromeos/attestation/attestation_flow.h
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/195266/trunk/src/chromeos/attestation/OWNERS
+END

@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/196629/trunk/src/ui/message_center/cocoa
+END
+notification_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/196337/trunk/src/ui/message_center/cocoa/notification_controller.h
+END
+notification_controller_unittest.mm
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/195181/trunk/src/ui/message_center/cocoa/notification_controller_unittest.mm
+END
+notification_controller.mm
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/196337/trunk/src/ui/message_center/cocoa/notification_controller.mm
+END
+popup_collection.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/196629/trunk/src/ui/message_center/cocoa/popup_collection.h
+END
+popup_collection_unittest.mm
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/196337/trunk/src/ui/message_center/cocoa/popup_collection_unittest.mm
+END
+popup_collection.mm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/196337/trunk/src/ui/message_center/cocoa/popup_collection.mm
+END
+popup_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/196337/trunk/src/ui/message_center/cocoa/popup_controller.h
+END
+popup_controller_unittest.mm
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/194014/trunk/src/ui/message_center/cocoa/popup_controller_unittest.mm
+END
+popup_controller.mm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/196337/trunk/src/ui/message_center/cocoa/popup_controller.mm
+END

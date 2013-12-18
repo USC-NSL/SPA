@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/162593/trunk/src/third_party/sqlite/src/ext/fts2
+END
+fts2.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/ext/fts2/fts2.c
+END
+fts2_icu.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/162593/trunk/src/third_party/sqlite/src/ext/fts2/fts2_icu.c
+END
+fts2_hash.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/ext/fts2/fts2_hash.c
+END
+mkfts2amal.tcl
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/68506/trunk/src/third_party/sqlite/src/ext/fts2/mkfts2amal.tcl
+END
+fts2.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/ext/fts2/fts2.h
+END
+fts2_hash.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/ext/fts2/fts2_hash.h
+END
+README.tokenizers
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/68506/trunk/src/third_party/sqlite/src/ext/fts2/README.tokenizers
+END
+fts2_tokenizer.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/81471/trunk/src/third_party/sqlite/src/ext/fts2/fts2_tokenizer.c
+END
+fts2_porter.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/ext/fts2/fts2_porter.c
+END
+fts2_tokenizer1.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/ext/fts2/fts2_tokenizer1.c
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/ext/fts2/README.txt
+END
+fts2_tokenizer.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/ext/fts2/fts2_tokenizer.h
+END

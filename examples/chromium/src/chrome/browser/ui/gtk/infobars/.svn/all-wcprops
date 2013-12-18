@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/197470/trunk/src/chrome/browser/ui/gtk/infobars
+END
+translate_infobar_base_gtk.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/197291/trunk/src/chrome/browser/ui/gtk/infobars/translate_infobar_base_gtk.cc
+END
+translate_infobar_base_gtk.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/197291/trunk/src/chrome/browser/ui/gtk/infobars/translate_infobar_base_gtk.h
+END
+confirm_infobar_gtk.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/194707/trunk/src/chrome/browser/ui/gtk/infobars/confirm_infobar_gtk.cc
+END
+confirm_infobar_gtk.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/194707/trunk/src/chrome/browser/ui/gtk/infobars/confirm_infobar_gtk.h
+END
+translate_message_infobar_gtk.cc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/194707/trunk/src/chrome/browser/ui/gtk/infobars/translate_message_infobar_gtk.cc
+END
+translate_message_infobar_gtk.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/197198/trunk/src/chrome/browser/ui/gtk/infobars/translate_message_infobar_gtk.h
+END
+extension_infobar_gtk.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/197470/trunk/src/chrome/browser/ui/gtk/infobars/extension_infobar_gtk.cc
+END
+after_translate_infobar_gtk.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/197470/trunk/src/chrome/browser/ui/gtk/infobars/after_translate_infobar_gtk.cc
+END
+extension_infobar_gtk.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/197198/trunk/src/chrome/browser/ui/gtk/infobars/extension_infobar_gtk.h
+END
+before_translate_infobar_gtk.cc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/196435/trunk/src/chrome/browser/ui/gtk/infobars/before_translate_infobar_gtk.cc
+END
+infobar_gtk.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/197198/trunk/src/chrome/browser/ui/gtk/infobars/infobar_gtk.cc
+END
+after_translate_infobar_gtk.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/197198/trunk/src/chrome/browser/ui/gtk/infobars/after_translate_infobar_gtk.h
+END
+before_translate_infobar_gtk.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/197198/trunk/src/chrome/browser/ui/gtk/infobars/before_translate_infobar_gtk.h
+END
+infobar_gtk.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/197198/trunk/src/chrome/browser/ui/gtk/infobars/infobar_gtk.h
+END
+infobar_container_gtk.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/194707/trunk/src/chrome/browser/ui/gtk/infobars/infobar_container_gtk.cc
+END
+alternate_nav_infobar_gtk.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/197198/trunk/src/chrome/browser/ui/gtk/infobars/alternate_nav_infobar_gtk.cc
+END
+infobar_container_gtk.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/190829/trunk/src/chrome/browser/ui/gtk/infobars/infobar_container_gtk.h
+END
+alternate_nav_infobar_gtk.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/197198/trunk/src/chrome/browser/ui/gtk/infobars/alternate_nav_infobar_gtk.h
+END

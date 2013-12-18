@@ -1,0 +1,623 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/196535/trunk/src/crypto
+END
+hmac_nss.cc
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/170852/trunk/src/crypto/hmac_nss.cc
+END
+signature_verifier_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/97156/trunk/src/crypto/signature_verifier_unittest.cc
+END
+nss_util_internal.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/146077/trunk/src/crypto/nss_util_internal.h
+END
+scoped_capi_types.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/146077/trunk/src/crypto/scoped_capi_types.h
+END
+sha2.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/194693/trunk/src/crypto/sha2.h
+END
+signature_verifier_openssl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/93110/trunk/src/crypto/signature_verifier_openssl.cc
+END
+nss_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/193134/trunk/src/crypto/nss_util.cc
+END
+rsa_private_key_ios.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/152300/trunk/src/crypto/rsa_private_key_ios.cc
+END
+mac_security_services_lock.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/196535/trunk/src/crypto/mac_security_services_lock.h
+END
+mock_apple_keychain_mac.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/154123/trunk/src/crypto/mock_apple_keychain_mac.cc
+END
+apple_keychain_ios.mm
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/154123/trunk/src/crypto/apple_keychain_ios.mm
+END
+hmac.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/194693/trunk/src/crypto/hmac.h
+END
+capi_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/146077/trunk/src/crypto/capi_util.h
+END
+hkdf.cc
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/191569/trunk/src/crypto/hkdf.cc
+END
+signature_verifier_nss.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/89732/trunk/src/crypto/signature_verifier_nss.cc
+END
+random.cc
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/149689/trunk/src/crypto/random.cc
+END
+encryptor.cc
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/129476/trunk/src/crypto/encryptor.cc
+END
+scoped_nss_types.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/146077/trunk/src/crypto/scoped_nss_types.h
+END
+p224.cc
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/148815/trunk/src/crypto/p224.cc
+END
+p224.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/194693/trunk/src/crypto/p224.h
+END
+ghash_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/182368/trunk/src/crypto/ghash_unittest.cc
+END
+curve25519_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/187074/trunk/src/crypto/curve25519_unittest.cc
+END
+rsa_private_key_openssl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/112837/trunk/src/crypto/rsa_private_key_openssl.cc
+END
+ec_signature_creator_openssl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/157551/trunk/src/crypto/ec_signature_creator_openssl.cc
+END
+ghash.cc
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/182368/trunk/src/crypto/ghash.cc
+END
+curve25519.cc
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/187074/trunk/src/crypto/curve25519.cc
+END
+ec_private_key.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/146077/trunk/src/crypto/ec_private_key.h
+END
+ec_private_key_openssl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/145777/trunk/src/crypto/ec_private_key_openssl.cc
+END
+sha2_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/102369/trunk/src/crypto/sha2_unittest.cc
+END
+signature_creator_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/120872/trunk/src/crypto/signature_creator_win.cc
+END
+signature_verifier.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/146077/trunk/src/crypto/signature_verifier.h
+END
+mock_apple_keychain_ios.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/154123/trunk/src/crypto/mock_apple_keychain_ios.cc
+END
+signature_creator_mac.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/120872/trunk/src/crypto/signature_creator_mac.cc
+END
+symmetric_key_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/193667/trunk/src/crypto/symmetric_key_win.cc
+END
+hmac.cc
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/193134/trunk/src/crypto/hmac.cc
+END
+p224_spake_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/165816/trunk/src/crypto/p224_spake_unittest.cc
+END
+rsa_private_key_nss_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/81763/trunk/src/crypto/rsa_private_key_nss_unittest.cc
+END
+rsa_private_key_nss.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/112837/trunk/src/crypto/rsa_private_key_nss.cc
+END
+p224_spake.cc
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/149689/trunk/src/crypto/p224_spake.cc
+END
+ec_signature_creator_nss.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/157551/trunk/src/crypto/ec_signature_creator_nss.cc
+END
+ec_private_key_nss.cc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/145777/trunk/src/crypto/ec_private_key_nss.cc
+END
+hmac_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/170852/trunk/src/crypto/hmac_win.cc
+END
+p224_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/165816/trunk/src/crypto/p224_unittest.cc
+END
+mock_apple_keychain.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/154123/trunk/src/crypto/mock_apple_keychain.h
+END
+ec_private_key_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/193040/trunk/src/crypto/ec_private_key_unittest.cc
+END
+curve25519.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/187074/trunk/src/crypto/curve25519.h
+END
+ghash.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/182368/trunk/src/crypto/ghash.h
+END
+secure_hash_default.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/170308/trunk/src/crypto/secure_hash_default.cc
+END
+sha2.cc
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/117069/trunk/src/crypto/sha2.cc
+END
+nss_util_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/114693/trunk/src/crypto/nss_util_unittest.cc
+END
+capi_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/122053/trunk/src/crypto/capi_util.cc
+END
+ec_signature_creator_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/157551/trunk/src/crypto/ec_signature_creator_impl.h
+END
+crypto_module_blocking_password_delegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/146077/trunk/src/crypto/crypto_module_blocking_password_delegate.h
+END
+hkdf_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/184306/trunk/src/crypto/hkdf_unittest.cc
+END
+p224_spake.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/194693/trunk/src/crypto/p224_spake.h
+END
+openpgp_symmetric_encryption_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/91699/trunk/src/crypto/openpgp_symmetric_encryption_unittest.cc
+END
+openpgp_symmetric_encryption.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/162309/trunk/src/crypto/openpgp_symmetric_encryption.cc
+END
+random_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/149689/trunk/src/crypto/random_unittest.cc
+END
+signature_creator_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/120872/trunk/src/crypto/signature_creator_unittest.cc
+END
+openssl_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/181741/trunk/src/crypto/openssl_util.h
+END
+secure_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/104502/trunk/src/crypto/secure_util.cc
+END
+signature_creator_openssl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/120872/trunk/src/crypto/signature_creator_openssl.cc
+END
+symmetric_key_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/151545/trunk/src/crypto/symmetric_key_unittest.cc
+END
+secure_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/146077/trunk/src/crypto/secure_util.h
+END
+ec_signature_creator.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/149506/trunk/src/crypto/ec_signature_creator.cc
+END
+rsa_private_key.cc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/110902/trunk/src/crypto/rsa_private_key.cc
+END
+encryptor.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/194693/trunk/src/crypto/encryptor.h
+END
+symmetric_key_openssl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/112005/trunk/src/crypto/symmetric_key_openssl.cc
+END
+encryptor_openssl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/112005/trunk/src/crypto/encryptor_openssl.cc
+END
+rsa_private_key.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/150775/trunk/src/crypto/rsa_private_key.h
+END
+ec_signature_creator.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/157551/trunk/src/crypto/ec_signature_creator.h
+END
+cssm_init.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/146077/trunk/src/crypto/cssm_init.h
+END
+secure_hash.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/146077/trunk/src/crypto/secure_hash.h
+END
+secure_hash_openssl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/170308/trunk/src/crypto/secure_hash_openssl.cc
+END
+nss_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/180245/trunk/src/crypto/nss_util.h
+END
+mac_security_services_lock.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/81611/trunk/src/crypto/mac_security_services_lock.cc
+END
+signature_creator_nss.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/129953/trunk/src/crypto/signature_creator_nss.cc
+END
+rsa_private_key_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/193667/trunk/src/crypto/rsa_private_key_win.cc
+END
+rsa_private_key_mac.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/129337/trunk/src/crypto/rsa_private_key_mac.cc
+END
+hmac_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/170852/trunk/src/crypto/hmac_unittest.cc
+END
+symmetric_key_nss.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/162309/trunk/src/crypto/symmetric_key_nss.cc
+END
+encryptor_nss.cc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/162309/trunk/src/crypto/encryptor_nss.cc
+END
+hmac_openssl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/170852/trunk/src/crypto/hmac_openssl.cc
+END
+PRESUBMIT.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/119094/trunk/src/crypto/PRESUBMIT.py
+END
+run_all_unittests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/188376/trunk/src/crypto/run_all_unittests.cc
+END
+apple_keychain.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/154123/trunk/src/crypto/apple_keychain.h
+END
+hkdf.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/194693/trunk/src/crypto/hkdf.h
+END
+openssl_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/194693/trunk/src/crypto/openssl_util.cc
+END
+openpgp_symmetric_encryption.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/194693/trunk/src/crypto/openpgp_symmetric_encryption.h
+END
+apple_keychain_mac.mm
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/159839/trunk/src/crypto/apple_keychain_mac.mm
+END
+random.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/171931/trunk/src/crypto/random.h
+END
+signature_creator.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/154937/trunk/src/crypto/signature_creator.h
+END
+crypto_export.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/162659/trunk/src/crypto/crypto_export.h
+END
+encryptor_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/142356/trunk/src/crypto/encryptor_unittest.cc
+END
+curve25519-donna.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/187074/trunk/src/crypto/curve25519-donna.c
+END
+mock_apple_keychain.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/154123/trunk/src/crypto/mock_apple_keychain.cc
+END
+rsa_private_key_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/112837/trunk/src/crypto/rsa_private_key_unittest.cc
+END
+ec_signature_creator_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/193040/trunk/src/crypto/ec_signature_creator_unittest.cc
+END
+symmetric_key.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/146077/trunk/src/crypto/symmetric_key.h
+END
+cssm_init.cc
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/191479/trunk/src/crypto/cssm_init.cc
+END
+secure_hash_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/125447/trunk/src/crypto/secure_hash_unittest.cc
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/163069/trunk/src/crypto/OWNERS
+END
+crypto.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/187074/trunk/src/crypto/crypto.gyp
+END

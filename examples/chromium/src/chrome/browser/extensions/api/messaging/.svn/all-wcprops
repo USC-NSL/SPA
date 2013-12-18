@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/196316/trunk/src/chrome/browser/extensions/api/messaging
+END
+native_message_port.cc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/179856/trunk/src/chrome/browser/extensions/api/messaging/native_message_port.cc
+END
+native_message_port.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/162790/trunk/src/chrome/browser/extensions/api/messaging/native_message_port.h
+END
+message_service.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/196316/trunk/src/chrome/browser/extensions/api/messaging/message_service.cc
+END
+native_process_launcher.cc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/187056/trunk/src/chrome/browser/extensions/api/messaging/native_process_launcher.cc
+END
+native_messaging_host_manifest_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/185382/trunk/src/chrome/browser/extensions/api/messaging/native_messaging_host_manifest_unittest.cc
+END
+message_service.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/196316/trunk/src/chrome/browser/extensions/api/messaging/message_service.h
+END
+native_messaging_host_manifest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/185382/trunk/src/chrome/browser/extensions/api/messaging/native_messaging_host_manifest.cc
+END
+native_process_launcher.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/187056/trunk/src/chrome/browser/extensions/api/messaging/native_process_launcher.h
+END
+native_messaging_host_manifest.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/185382/trunk/src/chrome/browser/extensions/api/messaging/native_messaging_host_manifest.h
+END
+native_messaging_apitest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/187527/trunk/src/chrome/browser/extensions/api/messaging/native_messaging_apitest.cc
+END
+native_messaging_test_util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/190069/trunk/src/chrome/browser/extensions/api/messaging/native_messaging_test_util.cc
+END
+native_messaging_test_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/185663/trunk/src/chrome/browser/extensions/api/messaging/native_messaging_test_util.h
+END
+native_process_launcher_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/186297/trunk/src/chrome/browser/extensions/api/messaging/native_process_launcher_win.cc
+END
+extension_message_port.cc
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/196316/trunk/src/chrome/browser/extensions/api/messaging/extension_message_port.cc
+END
+native_message_process_host_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/187527/trunk/src/chrome/browser/extensions/api/messaging/native_message_process_host_unittest.cc
+END
+native_message_process_host.cc
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/190656/trunk/src/chrome/browser/extensions/api/messaging/native_message_process_host.cc
+END
+extension_message_port.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/196316/trunk/src/chrome/browser/extensions/api/messaging/extension_message_port.h
+END
+native_message_process_host.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/187056/trunk/src/chrome/browser/extensions/api/messaging/native_message_process_host.h
+END
+native_process_launcher_posix.cc
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/190494/trunk/src/chrome/browser/extensions/api/messaging/native_process_launcher_posix.cc
+END

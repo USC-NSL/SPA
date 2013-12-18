@@ -1,0 +1,233 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/195887/trunk/src/media/video/capture/screen
+END
+screen_capture_data.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/179218/trunk/src/media/video/capture/screen/screen_capture_data.cc
+END
+screen_capture_data.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/179218/trunk/src/media/video/capture/screen/screen_capture_data.h
+END
+differ_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/192779/trunk/src/media/video/capture/screen/differ_unittest.cc
+END
+shared_buffer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/179218/trunk/src/media/video/capture/screen/shared_buffer.cc
+END
+shared_buffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/179218/trunk/src/media/video/capture/screen/shared_buffer.h
+END
+screen_capturer_mock_objects.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/179218/trunk/src/media/video/capture/screen/screen_capturer_mock_objects.cc
+END
+differ_block.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/183715/trunk/src/media/video/capture/screen/differ_block.cc
+END
+screen_capturer_fake.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/195887/trunk/src/media/video/capture/screen/screen_capturer_fake.cc
+END
+differ_block.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/179218/trunk/src/media/video/capture/screen/differ_block.h
+END
+screen_capture_frame.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/179218/trunk/src/media/video/capture/screen/screen_capture_frame.h
+END
+screen_capturer_null.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/186743/trunk/src/media/video/capture/screen/screen_capturer_null.cc
+END
+screen_capture_frame_queue.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/179218/trunk/src/media/video/capture/screen/screen_capture_frame_queue.cc
+END
+screen_capture_device_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/195887/trunk/src/media/video/capture/screen/screen_capture_device_unittest.cc
+END
+screen_capturer_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/195887/trunk/src/media/video/capture/screen/screen_capturer_unittest.cc
+END
+screen_capturer_helper.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/192779/trunk/src/media/video/capture/screen/screen_capturer_helper.cc
+END
+screen_capturer_helper.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/179218/trunk/src/media/video/capture/screen/screen_capturer_helper.h
+END
+shared_buffer_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/179218/trunk/src/media/video/capture/screen/shared_buffer_unittest.cc
+END
+differ.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/179218/trunk/src/media/video/capture/screen/differ.cc
+END
+screen_capturer_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/195887/trunk/src/media/video/capture/screen/screen_capturer_win.cc
+END
+differ.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/192779/trunk/src/media/video/capture/screen/differ.h
+END
+screen_capturer_mac_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/195887/trunk/src/media/video/capture/screen/screen_capturer_mac_unittest.cc
+END
+mouse_cursor_shape.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/179218/trunk/src/media/video/capture/screen/mouse_cursor_shape.cc
+END
+differ_block_sse2.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/179218/trunk/src/media/video/capture/screen/differ_block_sse2.cc
+END
+mouse_cursor_shape.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/179218/trunk/src/media/video/capture/screen/mouse_cursor_shape.h
+END
+differ_block_sse2.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/179218/trunk/src/media/video/capture/screen/differ_block_sse2.h
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/179218/trunk/src/media/video/capture/screen/DEPS
+END
+differ_block_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/179218/trunk/src/media/video/capture/screen/differ_block_unittest.cc
+END
+screen_capturer_mock_objects.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/195887/trunk/src/media/video/capture/screen/screen_capturer_mock_objects.h
+END
+screen_capturer_fake.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/195887/trunk/src/media/video/capture/screen/screen_capturer_fake.h
+END
+screen_capture_frame.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/179218/trunk/src/media/video/capture/screen/screen_capture_frame.cc
+END
+screen_capturer_x11.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/195887/trunk/src/media/video/capture/screen/screen_capturer_x11.cc
+END
+screen_capture_device.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/195887/trunk/src/media/video/capture/screen/screen_capture_device.cc
+END
+screen_capturer_helper_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/179218/trunk/src/media/video/capture/screen/screen_capturer_helper_unittest.cc
+END
+screen_capture_frame_queue.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/179218/trunk/src/media/video/capture/screen/screen_capture_frame_queue.h
+END
+screen_capture_device.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/180165/trunk/src/media/video/capture/screen/screen_capture_device.h
+END
+screen_capturer.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/195887/trunk/src/media/video/capture/screen/screen_capturer.h
+END
+screen_capturer_mac.mm
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/195887/trunk/src/media/video/capture/screen/screen_capturer_mac.mm
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/179218/trunk/src/media/video/capture/screen/OWNERS
+END

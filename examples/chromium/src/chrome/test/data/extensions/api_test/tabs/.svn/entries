@@ -1,0 +1,64 @@
+10
+
+dir
+197479
+http://src.chromium.org/svn/trunk/src/chrome/test/data/extensions/api_test/tabs
+http://src.chromium.org/svn
+
+
+
+2013-04-06T10:33:22.950774Z
+192738
+fangjue23303@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4ff67af0-8c30-449e-8e8b-ad334ec8d88c
+
+incognito_disabled
+dir
+
+get_current
+dir
+
+on_updated
+dir
+
+javascript_url_permissions
+dir
+
+basics
+dir
+
+capture_visible_tab
+dir
+
+reload
+dir
+
+no_permissions
+dir
+
+connect
+dir
+
+current_window
+dir
+
+on_replaced
+dir
+
+on_removed
+dir
+

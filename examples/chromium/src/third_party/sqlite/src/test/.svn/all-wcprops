@@ -1,0 +1,3911 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/195999/trunk/src/third_party/sqlite/src/test
+END
+ioerr2.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/ioerr2.test
+END
+speed4p.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/speed4p.test
+END
+mallocB.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/mallocB.test
+END
+manydb.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/manydb.test
+END
+bitvec.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/bitvec.test
+END
+func3.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/func3.test
+END
+tkt3522.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt3522.test
+END
+fts2b.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts2b.test
+END
+busy.test
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/busy.test
+END
+tkt2942.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt2942.test
+END
+tkt2817.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt2817.test
+END
+vtab8.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/vtab8.test
+END
+fts3cov.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fts3cov.test
+END
+tkt-f3e5abed55.test
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tkt-f3e5abed55.test
+END
+varint.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/varint.test
+END
+keyword1.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/keyword1.test
+END
+collate5.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/collate5.test
+END
+wal6.test
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/wal6.test
+END
+openv2.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/openv2.test
+END
+tkt2640.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt2640.test
+END
+pager3.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/pager3.test
+END
+tkt3761.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt3761.test
+END
+tkt1567.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt1567.test
+END
+corrupt8.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/corrupt8.test
+END
+recover1.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/195999/trunk/src/third_party/sqlite/src/test/recover1.test
+END
+enc2.test
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/enc2.test
+END
+notify3.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/notify3.test
+END
+fts3al.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fts3al.test
+END
+fts2o.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts2o.test
+END
+threadtest3.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/threadtest3.c
+END
+unixexcl.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/unixexcl.test
+END
+vtabE.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/vtabE.test
+END
+lock_common.tcl
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/lock_common.tcl
+END
+where9.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/where9.test
+END
+descidx1.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/descidx1.test
+END
+pragma.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/pragma.test
+END
+boundary4.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/boundary4.test
+END
+boundary2.tcl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/boundary2.tcl
+END
+tkt2213.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt2213.test
+END
+misc3.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/misc3.test
+END
+vtab2.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/vtab2.test
+END
+tkt3334.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt3334.test
+END
+veryquick.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/veryquick.test
+END
+speed3.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/speed3.test
+END
+colmeta.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/colmeta.test
+END
+join6.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/join6.test
+END
+fkey_malloc.test
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fkey_malloc.test
+END
+crash7.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/crash7.test
+END
+fts1j.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts1j.test
+END
+thread001.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/thread001.test
+END
+temptrigger.test
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/temptrigger.test
+END
+cast.test
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/cast.test
+END
+trigger7.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/trigger7.test
+END
+tkt-38cb5df375.test
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tkt-38cb5df375.test
+END
+reindex.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/reindex.test
+END
+join.test
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/join.test
+END
+schema.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/schema.test
+END
+async3.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/async3.test
+END
+autoinc.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/autoinc.test
+END
+incrblob_err.test
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/incrblob_err.test
+END
+corruptE.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/corruptE.test
+END
+select5.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/select5.test
+END
+capi3e.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/capi3e.test
+END
+in.test
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/in.test
+END
+tkt2141.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt2141.test
+END
+autovacuum_ioerr2.test
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/autovacuum_ioerr2.test
+END
+tempdb.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tempdb.test
+END
+tkt3630.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt3630.test
+END
+tkt2820.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt2820.test
+END
+tkt3424.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt3424.test
+END
+exists.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/exists.test
+END
+corrupt2.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/corrupt2.test
+END
+ioerr.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/ioerr.test
+END
+mallocI.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/mallocI.test
+END
+speed1p.explain
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/68506/trunk/src/third_party/sqlite/src/test/speed1p.explain
+END
+intpkey.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/intpkey.test
+END
+eqp.test
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/eqp.test
+END
+fts3af.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts3af.test
+END
+filefmt.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/filefmt.test
+END
+attach2.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/attach2.test
+END
+fts2i.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts2i.test
+END
+intarray.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/intarray.test
+END
+notnull.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/notnull.test
+END
+journal2.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/journal2.test
+END
+savepoint4.test
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/savepoint4.test
+END
+where3.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/where3.test
+END
+malloc6.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/malloc6.test
+END
+vacuum.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/vacuum.test
+END
+distinctagg.test
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/distinctagg.test
+END
+tkt-4a03edc4c8.test
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tkt-4a03edc4c8.test
+END
+backup_ioerr.test
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/backup_ioerr.test
+END
+backup.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/backup.test
+END
+triggerD.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/triggerD.test
+END
+index.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/index.test
+END
+lock2.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/lock2.test
+END
+rowhash.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/rowhash.test
+END
+securedel.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/securedel.test
+END
+bind.test
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/bind.test
+END
+async.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/async.test
+END
+icu.test
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/icu.test
+END
+fts1d.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts1d.test
+END
+selectB.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/selectB.test
+END
+trigger1.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/trigger1.test
+END
+tkt3457.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt3457.test
+END
+stmt.test
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/stmt.test
+END
+walslow.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/walslow.test
+END
+shared2.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/shared2.test
+END
+dbstatus.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/dbstatus.test
+END
+thread2.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/thread2.test
+END
+analyze7.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/analyze7.test
+END
+ioerr3.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/ioerr3.test
+END
+walhook.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/walhook.test
+END
+pagesize.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/pagesize.test
+END
+savepoint.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/savepoint.test
+END
+mallocC.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/mallocC.test
+END
+date.test
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/date.test
+END
+tkt3810.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tkt3810.test
+END
+fts3aux1.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fts3aux1.test
+END
+tkt3442.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tkt3442.test
+END
+fts2c.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts2c.test
+END
+vtab9.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/vtab9.test
+END
+e_update.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/e_update.test
+END
+autovacuum.test
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/autovacuum.test
+END
+tkt-5d863f876e.test
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tkt-5d863f876e.test
+END
+fts3_common.tcl
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fts3_common.tcl
+END
+sqllimits1.test
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/sqllimits1.test
+END
+collate6.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/collate6.test
+END
+boundary3.tcl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/boundary3.tcl
+END
+tkt-752e1646fc.test
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tkt-752e1646fc.test
+END
+tkt2192.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt2192.test
+END
+fts3b.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fts3b.test
+END
+tkt-f7b4edec.test
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tkt-f7b4edec.test
+END
+tkt3762.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt3762.test
+END
+tkt3718.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt3718.test
+END
+corrupt9.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/corrupt9.test
+END
+recover2.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/193818/trunk/src/third_party/sqlite/src/test/recover2.test
+END
+enc3.test
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/enc3.test
+END
+tkt3992.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tkt3992.test
+END
+tkt35xx.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt35xx.test
+END
+fts3am.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts3am.test
+END
+fts2p.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts2p.test
+END
+trace.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/trace.test
+END
+descidx2.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/descidx2.test
+END
+fts3matchinfo.test
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fts3matchinfo.test
+END
+fts3fault.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fts3fault.test
+END
+misc4.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/misc4.test
+END
+tkt3541.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt3541.test
+END
+vtab3.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/vtab3.test
+END
+tkt-94c04eaadb.test
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tkt-94c04eaadb.test
+END
+e_expr.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/e_expr.test
+END
+speed4.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/speed4.test
+END
+like.test
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/like.test
+END
+crash8.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/crash8.test
+END
+fts1k.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts1k.test
+END
+tkt-8454a207b9.test
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tkt-8454a207b9.test
+END
+thread002.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/thread002.test
+END
+trigger8.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/trigger8.test
+END
+incrvacuum2.test
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/incrvacuum2.test
+END
+hook.test
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/hook.test
+END
+async4.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/async4.test
+END
+bindxfer.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/bindxfer.test
+END
+select6.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/select6.test
+END
+like2.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/like2.test
+END
+superlock.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/superlock.test
+END
+io.test
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/io.test
+END
+where.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/where.test
+END
+subquery.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/subquery.test
+END
+tkt2409.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt2409.test
+END
+rtree.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/rtree.test
+END
+mallocJ.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/mallocJ.test
+END
+corrupt3.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/corrupt3.test
+END
+e_fts3.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/e_fts3.test
+END
+tkt1873.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt1873.test
+END
+tkt3493.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt3493.test
+END
+tkt1667.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tkt1667.test
+END
+insert2.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/insert2.test
+END
+attach3.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/attach3.test
+END
+fts3ag.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fts3ag.test
+END
+fts2j.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts2j.test
+END
+incrblob.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/incrblob.test
+END
+savepoint5.test
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/savepoint5.test
+END
+journal3.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/journal3.test
+END
+malloc7.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/malloc7.test
+END
+where4.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/where4.test
+END
+auth.test
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/auth.test
+END
+fuzzer1.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fuzzer1.test
+END
+aggerror.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/aggerror.test
+END
+wherelimit.test
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/wherelimit.test
+END
+lock3.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/lock3.test
+END
+selectC.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/selectC.test
+END
+crash2.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/crash2.test
+END
+fts1e.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts1e.test
+END
+fts3rnd.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fts3rnd.test
+END
+tkt-5ee23731f.test
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tkt-5ee23731f.test
+END
+tkt2854.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt2854.test
+END
+trigger2.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/trigger2.test
+END
+walcksum.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/walcksum.test
+END
+shared3.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/shared3.test
+END
+jrnlmode2.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/jrnlmode2.test
+END
+altermalloc.test
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/altermalloc.test
+END
+ioerr4.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/ioerr4.test
+END
+walbig.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/walbig.test
+END
+exclusive.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/exclusive.test
+END
+cse.test
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/cse.test
+END
+boundary4.tcl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/boundary4.tcl
+END
+tkt1512.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt1512.test
+END
+mallocD.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/mallocD.test
+END
+whereA.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/whereA.test
+END
+tkt2920.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt2920.test
+END
+tkt1536.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt1536.test
+END
+fts3aa.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fts3aa.test
+END
+fts2d.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts2d.test
+END
+memdb.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/memdb.test
+END
+exec.test
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/exec.test
+END
+pagerfault.test
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/pagerfault.test
+END
+fallocate.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fallocate.test
+END
+oserror.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/oserror.test
+END
+fts3shared.test
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fts3shared.test
+END
+collate7.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/collate7.test
+END
+tkt-80ba201079.test
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tkt-80ba201079.test
+END
+fkey1.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fkey1.test
+END
+fts3comp1.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fts3comp1.test
+END
+fts3c.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fts3c.test
+END
+multiplex.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/multiplex.test
+END
+delete2.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/delete2.test
+END
+analyze2.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/analyze2.test
+END
+types2.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/types2.test
+END
+badutf2.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/badutf2.test
+END
+subselect.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/subselect.test
+END
+enc4.test
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/enc4.test
+END
+soak.test
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/soak.test
+END
+fts3an.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fts3an.test
+END
+fts2q.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts2q.test
+END
+fts3expr2.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts3expr2.test
+END
+descidx3.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/descidx3.test
+END
+rdonly.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/rdonly.test
+END
+misc5.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/misc5.test
+END
+tkt3461.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt3461.test
+END
+vtab4.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/vtab4.test
+END
+tkt1473.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt1473.test
+END
+tkt3093.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt3093.test
+END
+fuzz_malloc.test
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fuzz_malloc.test
+END
+unordered.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/unordered.test
+END
+walmode.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/walmode.test
+END
+tkt-78e04e52ea.test
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tkt-78e04e52ea.test
+END
+fts1l.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts1l.test
+END
+thread003.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/thread003.test
+END
+attachmalloc.test
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/attachmalloc.test
+END
+trigger9.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/trigger9.test
+END
+quote.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/quote.test
+END
+async5.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/async5.test
+END
+collate1.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/collate1.test
+END
+wal2.test
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/wal2.test
+END
+select7.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/select7.test
+END
+memleak.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/memleak.test
+END
+zeroblob.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/zeroblob.test
+END
+sharedlock.test
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/sharedlock.test
+END
+tkt2822.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt2822.test
+END
+tkt1644.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt1644.test
+END
+corrupt4.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/corrupt4.test
+END
+mallocK.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/mallocK.test
+END
+thread_common.tcl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/thread_common.tcl
+END
+wal.test
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/wal.test
+END
+tkt2927.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt2927.test
+END
+incrblobfault.test
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/incrblobfault.test
+END
+insert3.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/insert3.test
+END
+fts3ah.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fts3ah.test
+END
+attach4.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/attach4.test
+END
+fts2k.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts2k.test
+END
+e_droptrigger.test
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/e_droptrigger.test
+END
+vtabA.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/vtabA.test
+END
+savepoint6.test
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/savepoint6.test
+END
+where5.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/where5.test
+END
+malloc8.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/malloc8.test
+END
+walbak.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/walbak.test
+END
+speed1p.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/speed1p.test
+END
+mem5.test
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/mem5.test
+END
+backcompat.test
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/backcompat.test
+END
+view.test
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/view.test
+END
+sysfault.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/sysfault.test
+END
+lock4.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/lock4.test
+END
+join2.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/join2.test
+END
+update.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/update.test
+END
+fts1f.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts1f.test
+END
+crash3.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/crash3.test
+END
+tkt3871.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt3871.test
+END
+tkt-3998683a16.test
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tkt-3998683a16.test
+END
+walcrash2.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/walcrash2.test
+END
+trigger3.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/trigger3.test
+END
+tkt-d11f09d36e.test
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tkt-d11f09d36e.test
+END
+shared4.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/shared4.test
+END
+jrnlmode3.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/jrnlmode3.test
+END
+corruptA.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/corruptA.test
+END
+select1.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/select1.test
+END
+tkt-02a8e81d44.test
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tkt-02a8e81d44.test
+END
+e_select2.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/e_select2.test
+END
+ioerr5.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/ioerr5.test
+END
+e_insert.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/e_insert.test
+END
+tester.tcl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tester.tcl
+END
+whereB.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/whereB.test
+END
+incrvacuum.test
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/incrvacuum.test
+END
+incrblob2.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/incrblob2.test
+END
+mallocE.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/mallocE.test
+END
+walfault.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/walfault.test
+END
+tkt3731.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt3731.test
+END
+tkt2391.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt2391.test
+END
+fts3ab.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fts3ab.test
+END
+schema2.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/schema2.test
+END
+tkt1537.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt1537.test
+END
+fts2e.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts2e.test
+END
+e_select.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/e_select.test
+END
+tkt-fc62af4523.test
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tkt-fc62af4523.test
+END
+trans.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/trans.test
+END
+server1.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/server1.test
+END
+tokenize.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tokenize.test
+END
+count.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/count.test
+END
+fuzz.test
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fuzz.test
+END
+enc.test
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/enc.test
+END
+sidedelete.test
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/sidedelete.test
+END
+collate8.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/collate8.test
+END
+tkt2251.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt2251.test
+END
+tkt2332.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt2332.test
+END
+fkey2.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fkey2.test
+END
+tkt2643.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt2643.test
+END
+vacuum2.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/vacuum2.test
+END
+fts3d.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fts3d.test
+END
+delete3.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/delete3.test
+END
+analyze3.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/analyze3.test
+END
+types3.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/types3.test
+END
+minmax.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/minmax.test
+END
+fts3ao.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fts3ao.test
+END
+fts2r.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts2r.test
+END
+cache.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/cache.test
+END
+syscall.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/98252/trunk/src/third_party/sqlite/src/test/syscall.test
+END
+pagerfault2.test
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/pagerfault2.test
+END
+fts3expr.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fts3expr.test
+END
+coalesce.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/coalesce.test
+END
+trace2.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/trace2.test
+END
+tkt3911.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt3911.test
+END
+vtab5.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/vtab5.test
+END
+misc6.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/misc6.test
+END
+tableapi.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tableapi.test
+END
+fts4aa.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fts4aa.test
+END
+fts3snippet.test
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fts3snippet.test
+END
+tkt3935.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt3935.test
+END
+tkt3773.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt3773.test
+END
+eval.test
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/eval.test
+END
+alter2.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/alter2.test
+END
+fts1m.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts1m.test
+END
+thread004.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/thread004.test
+END
+backup_malloc.test
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/backup_malloc.test
+END
+wal_common.tcl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/wal_common.tcl
+END
+fts3corrupt.test
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fts3corrupt.test
+END
+capi2.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/capi2.test
+END
+loadext.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/loadext.test
+END
+ctime.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/ctime.test
+END
+init.test
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/init.test
+END
+laststmtchanges.test
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/laststmtchanges.test
+END
+tclsqlite.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tclsqlite.test
+END
+collate2.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/collate2.test
+END
+wal3.test
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/wal3.test
+END
+shared.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/shared.test
+END
+select8.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/select8.test
+END
+lookaside.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/lookaside.test
+END
+shortread1.test
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/shortread1.test
+END
+tkt3508.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt3508.test
+END
+tkt3346.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt3346.test
+END
+corrupt5.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/corrupt5.test
+END
+tt3_checkpoint.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tt3_checkpoint.c
+END
+default.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/default.test
+END
+insert4.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/insert4.test
+END
+fts3ai.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts3ai.test
+END
+between.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/between.test
+END
+fts2l.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts2l.test
+END
+vtabB.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/vtabB.test
+END
+where6.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/where6.test
+END
+malloc9.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/malloc9.test
+END
+tkt-2d1a5c67d.test
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tkt-2d1a5c67d.test
+END
+boundary1.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/boundary1.test
+END
+attach.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/attach.test
+END
+randexpr1.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/randexpr1.test
+END
+trans2.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/trans2.test
+END
+fts1porter.test
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts1porter.test
+END
+jrnlmode.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/jrnlmode.test
+END
+lock5.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/lock5.test
+END
+tkt2832.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt2832.test
+END
+join3.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/join3.test
+END
+tkt2339.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt2339.test
+END
+crash4.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/crash4.test
+END
+tkt3791.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt3791.test
+END
+trigger4.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/trigger4.test
+END
+tkt3298.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt3298.test
+END
+permutations.test
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/permutations.test
+END
+func.test
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/func.test
+END
+interrupt.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/interrupt.test
+END
+corruptB.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/corruptB.test
+END
+capi3b.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/capi3b.test
+END
+select2.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/select2.test
+END
+tkt-26ff0c2d1e.test
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tkt-26ff0c2d1e.test
+END
+tkt-313723c356.test
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tkt-313723c356.test
+END
+pcache2.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/pcache2.test
+END
+e_delete.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/e_delete.test
+END
+tkt-d82e3f3721.test
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tkt-d82e3f3721.test
+END
+incrblob3.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/incrblob3.test
+END
+mallocF.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/mallocF.test
+END
+tkt1514.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt1514.test
+END
+fts2.test
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fts2.test
+END
+where8m.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/where8m.test
+END
+make-where7.tcl
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/make-where7.tcl
+END
+fts3atoken.test
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts3atoken.test
+END
+autoindex1.test
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/autoindex1.test
+END
+fts3ac.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fts3ac.test
+END
+pcache.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/pcache.test
+END
+schema3.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/schema3.test
+END
+fts2f.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts2f.test
+END
+tkt3918.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt3918.test
+END
+malloc3.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/malloc3.test
+END
+tkt-b351d95f9.test
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tkt-b351d95f9.test
+END
+e_fkey.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/e_fkey.test
+END
+triggerA.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/triggerA.test
+END
+recover.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/195847/trunk/src/third_party/sqlite/src/test/recover.test
+END
+fts3malloc.test
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fts3malloc.test
+END
+all.test
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/all.test
+END
+null.test
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/null.test
+END
+collate9.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/collate9.test
+END
+fts1a.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts1a.test
+END
+blob.test
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/blob.test
+END
+fkey3.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fkey3.test
+END
+tkt3292.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt3292.test
+END
+vacuum3.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/vacuum3.test
+END
+fts3e.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts3e.test
+END
+backup2.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/backup2.test
+END
+analyze4.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/analyze4.test
+END
+in2.test
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/in2.test
+END
+pragma2.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/pragma2.test
+END
+createtab.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/createtab.test
+END
+bigfile.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/bigfile.test
+END
+fuzz_common.tcl
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/68506/trunk/src/third_party/sqlite/src/test/fuzz_common.tcl
+END
+walthread.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/walthread.test
+END
+minmax2.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/minmax2.test
+END
+diskfull.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/diskfull.test
+END
+pagerfault3.test
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/pagerfault3.test
+END
+pageropt.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/pageropt.test
+END
+vtab6.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/vtab6.test
+END
+misc7.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/misc7.test
+END
+tkt3419.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt3419.test
+END
+auth2.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/auth2.test
+END
+tkt2285.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt2285.test
+END
+rowid.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/rowid.test
+END
+alter3.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/alter3.test
+END
+fts1n.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts1n.test
+END
+thread005.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/thread005.test
+END
+tkt3879.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt3879.test
+END
+capi3.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/capi3.test
+END
+printf.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/printf.test
+END
+e_dropview.test
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/e_dropview.test
+END
+filectrl.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/filectrl.test
+END
+collate3.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/collate3.test
+END
+wal4.test
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/wal4.test
+END
+memsubsys1.test
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/memsubsys1.test
+END
+select9.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/select9.test
+END
+walshared.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/walshared.test
+END
+tkt3080.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt3080.test
+END
+check.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/check.test
+END
+pager1.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/pager1.test
+END
+substr.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/substr.test
+END
+corrupt6.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/corrupt6.test
+END
+fts3defer.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fts3defer.test
+END
+tkt2686.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt2686.test
+END
+tkt2767.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt2767.test
+END
+index2.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/index2.test
+END
+insert5.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/insert5.test
+END
+notify1.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/notify1.test
+END
+fts3aj.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts3aj.test
+END
+tkt-f973c7ac31.test
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tkt-f973c7ac31.test
+END
+fts2m.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts2m.test
+END
+vtabC.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/vtabC.test
+END
+mallocAll.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/mallocAll.test
+END
+where7.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/where7.test
+END
+insert.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/insert.test
+END
+fts3query.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fts3query.test
+END
+boundary2.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/boundary2.test
+END
+trans3.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/trans3.test
+END
+misc1.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/misc1.test
+END
+nan.test
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/nan.test
+END
+sync.test
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/sync.test
+END
+temptable.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/temptable.test
+END
+expr.test
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/expr.test
+END
+colname.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/colname.test
+END
+lock6.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/lock6.test
+END
+speed1.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/speed1.test
+END
+malloc_common.tcl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/malloc_common.tcl
+END
+join4.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/join4.test
+END
+main.test
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/main.test
+END
+tkt1449.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt1449.test
+END
+crash5.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/crash5.test
+END
+trigger5.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/trigger5.test
+END
+quota.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/quota.test
+END
+shared6.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/shared6.test
+END
+corrupt.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/corrupt.test
+END
+corruptC.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/corruptC.test
+END
+capi3c.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/capi3c.test
+END
+select3.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/select3.test
+END
+ptrchng.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/ptrchng.test
+END
+fts3defer2.test
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fts3defer2.test
+END
+incrvacuum_ioerr.test
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/incrvacuum_ioerr.test
+END
+tkt2450.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt2450.test
+END
+mallocG.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/mallocG.test
+END
+fts3.test
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fts3.test
+END
+tkt3527.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt3527.test
+END
+schema4.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/schema4.test
+END
+fts3ad.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fts3ad.test
+END
+fts2g.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts2g.test
+END
+fts3near.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fts3near.test
+END
+tkt3757.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tkt3757.test
+END
+tkt3838.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tkt3838.test
+END
+savepoint2.test
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/savepoint2.test
+END
+malloc4.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/malloc4.test
+END
+tkt-2ea2425d34.test
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt-2ea2425d34.test
+END
+badutf.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/badutf.test
+END
+triggerB.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/triggerB.test
+END
+tkt3201.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tkt3201.test
+END
+quick.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/quick.test
+END
+tkt1443.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt1443.test
+END
+limit.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/limit.test
+END
+fts1b.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts1b.test
+END
+tkt-cbd054fa6b.test
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tkt-cbd054fa6b.test
+END
+fuzz2.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fuzz2.test
+END
+tkt-f777251dc7a.test
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tkt-f777251dc7a.test
+END
+fkey4.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fkey4.test
+END
+mutex1.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/mutex1.test
+END
+vacuum4.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/vacuum4.test
+END
+tkt-31338dca7e.test
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tkt-31338dca7e.test
+END
+lastinsert.test
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/lastinsert.test
+END
+analyze5.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/analyze5.test
+END
+in3.test
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/in3.test
+END
+tkt-5e10420e8d.test
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tkt-5e10420e8d.test
+END
+conflict.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/conflict.test
+END
+progress.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/progress.test
+END
+e_vacuum.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/e_vacuum.test
+END
+types.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/types.test
+END
+unique.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/unique.test
+END
+mallocA.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/mallocA.test
+END
+minmax3.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/minmax3.test
+END
+format4.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/format4.test
+END
+func2.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/func2.test
+END
+fts2a.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts2a.test
+END
+tkt3832.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tkt3832.test
+END
+vtab7.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/vtab7.test
+END
+crashtest1.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/crashtest1.c
+END
+auth3.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/auth3.test
+END
+table.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/table.test
+END
+rollback.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/rollback.test
+END
+alter4.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/alter4.test
+END
+fts1o.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts1o.test
+END
+analyze.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/analyze.test
+END
+vtab_err.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/vtab_err.test
+END
+malloc.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/malloc.test
+END
+collate4.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/collate4.test
+END
+wal5.test
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/wal5.test
+END
+memsubsys2.test
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/memsubsys2.test
+END
+stat.test
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/stat.test
+END
+shared_err.test
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/shared_err.test
+END
+pager2.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/pager2.test
+END
+fts3corrupt2.test
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fts3corrupt2.test
+END
+tkt3841.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt3841.test
+END
+tkt3922.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt3922.test
+END
+tkt-b72787b1.test
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tkt-b72787b1.test
+END
+tkt3554.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt3554.test
+END
+tkt-3fe897352e.test
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tkt-3fe897352e.test
+END
+recover0.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/117359/trunk/src/third_party/sqlite/src/test/recover0.test
+END
+corrupt7.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/corrupt7.test
+END
+bigrow.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/bigrow.test
+END
+notify2.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/notify2.test
+END
+index3.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/index3.test
+END
+fts3ak.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts3ak.test
+END
+fts2n.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts2n.test
+END
+crash.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/crash.test
+END
+vtabD.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/vtabD.test
+END
+delete.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/delete.test
+END
+where8.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/where8.test
+END
+boundary3.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/boundary3.test
+END
+misc2.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/misc2.test
+END
+vtab1.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/vtab1.test
+END
+avtrans.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/avtrans.test
+END
+lock7.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/lock7.test
+END
+fts2token.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts2token.test
+END
+tkt4018.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt4018.test
+END
+speed2.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/speed2.test
+END
+join5.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/join5.test
+END
+collateA.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/collateA.test
+END
+tkt3357.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt3357.test
+END
+crash6.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/crash6.test
+END
+fts1i.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts1i.test
+END
+tkt3793.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt3793.test
+END
+alias.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/alias.test
+END
+exclusive2.test
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/exclusive2.test
+END
+trigger6.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/trigger6.test
+END
+softheap1.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/softheap1.test
+END
+threadtest1.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/threadtest1.c
+END
+shared7.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/shared7.test
+END
+async2.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/async2.test
+END
+tkt-9d68c883.test
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tkt-9d68c883.test
+END
+e_reindex.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/e_reindex.test
+END
+corruptD.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/corruptD.test
+END
+select4.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/select4.test
+END
+capi3d.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/capi3d.test
+END
+walcrash.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/walcrash.test
+END
+misuse.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/misuse.test
+END
+randexpr1.tcl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/randexpr1.tcl
+END
+alter.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/alter.test
+END
+boundary1.tcl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/boundary1.tcl
+END
+indexedby.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/indexedby.test
+END
+tkt1435.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt1435.test
+END
+mallocH.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/mallocH.test
+END
+e_createtable.test
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/e_createtable.test
+END
+loadext2.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/loadext2.test
+END
+vtab_shared.test
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/vtab_shared.test
+END
+vtab_alter.test
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/vtab_alter.test
+END
+speed4p.explain
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/68506/trunk/src/third_party/sqlite/src/test/speed4p.explain
+END
+fts3ae.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fts3ae.test
+END
+fts2h.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts2h.test
+END
+walnoshm.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/walnoshm.test
+END
+savepoint3.test
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/savepoint3.test
+END
+journal1.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/journal1.test
+END
+malloc5.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/malloc5.test
+END
+where2.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/where2.test
+END
+fts3fault2.test
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/fts3fault2.test
+END
+triggerC.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/triggerC.test
+END
+tkt1501.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt1501.test
+END
+tkt3121.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt3121.test
+END
+tkt1444.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt1444.test
+END
+selectA.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/selectA.test
+END
+fts1c.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fts1c.test
+END
+utf16align.test
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/utf16align.test
+END
+fuzz3.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/fuzz3.test
+END
+releasetest.tcl
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/releasetest.tcl
+END
+e_resolve.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/e_resolve.test
+END
+tkt3581.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt3581.test
+END
+tkt3824.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tkt3824.test
+END
+tkt2565.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt2565.test
+END
+mutex2.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/mutex2.test
+END
+tkt-80e031a00f.test
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tkt-80e031a00f.test
+END
+sort.test
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/sort.test
+END
+thread1.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/thread1.test
+END
+lock.test
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/lock.test
+END
+analyze6.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/analyze6.test
+END
+tkt3929.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/86616/trunk/src/third_party/sqlite/src/test/tkt3929.test
+END
+in4.test
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/in4.test
+END
+threadtest2.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/threadtest2.c
+END
+tkt3997.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56619/trunk/src/third_party/sqlite/src/test/tkt3997.test
+END

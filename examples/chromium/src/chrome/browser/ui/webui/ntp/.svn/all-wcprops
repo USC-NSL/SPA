@@ -1,0 +1,251 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/197470/trunk/src/chrome/browser/ui/webui/ntp
+END
+suggestions_source.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/152947/trunk/src/chrome/browser/ui/webui/ntp/suggestions_source.h
+END
+app_launcher_handler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/197339/trunk/src/chrome/browser/ui/webui/ntp/app_launcher_handler.cc
+END
+app_resource_cache_factory.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/196777/trunk/src/chrome/browser/ui/webui/ntp/app_resource_cache_factory.cc
+END
+app_resource_cache_factory.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/196777/trunk/src/chrome/browser/ui/webui/ntp/app_resource_cache_factory.h
+END
+new_tab_page_sync_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/189513/trunk/src/chrome/browser/ui/webui/ntp/new_tab_page_sync_handler.h
+END
+most_visited_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/181648/trunk/src/chrome/browser/ui/webui/ntp/most_visited_handler.h
+END
+new_tab_page_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/194768/trunk/src/chrome/browser/ui/webui/ntp/new_tab_page_handler.h
+END
+new_tab_ui.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/195932/trunk/src/chrome/browser/ui/webui/ntp/new_tab_ui.cc
+END
+favicon_webui_handler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/190078/trunk/src/chrome/browser/ui/webui/ntp/favicon_webui_handler.cc
+END
+new_tab_ui_browsertest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/185784/trunk/src/chrome/browser/ui/webui/ntp/new_tab_ui_browsertest.cc
+END
+favicon_webui_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/171675/trunk/src/chrome/browser/ui/webui/ntp/favicon_webui_handler.h
+END
+ntp_stats.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/146163/trunk/src/chrome/browser/ui/webui/ntp/ntp_stats.h
+END
+suggestions_source_discovery.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/152947/trunk/src/chrome/browser/ui/webui/ntp/suggestions_source_discovery.cc
+END
+ntp_resource_cache_factory.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/196777/trunk/src/chrome/browser/ui/webui/ntp/ntp_resource_cache_factory.cc
+END
+suggestions_source_top_sites.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/181564/trunk/src/chrome/browser/ui/webui/ntp/suggestions_source_top_sites.cc
+END
+suggestions_source_discovery.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/146163/trunk/src/chrome/browser/ui/webui/ntp/suggestions_source_discovery.h
+END
+suggestions_source_top_sites.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/158151/trunk/src/chrome/browser/ui/webui/ntp/suggestions_source_top_sites.h
+END
+recently_closed_tabs_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/160894/trunk/src/chrome/browser/ui/webui/ntp/recently_closed_tabs_handler.h
+END
+ntp_login_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/189513/trunk/src/chrome/browser/ui/webui/ntp/ntp_login_handler.h
+END
+foreign_session_handler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/197086/trunk/src/chrome/browser/ui/webui/ntp/foreign_session_handler.cc
+END
+suggestions_combiner.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/152947/trunk/src/chrome/browser/ui/webui/ntp/suggestions_combiner.h
+END
+ntp_resource_cache.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/194768/trunk/src/chrome/browser/ui/webui/ntp/ntp_resource_cache.cc
+END
+foreign_session_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/183638/trunk/src/chrome/browser/ui/webui/ntp/foreign_session_handler.h
+END
+ntp_resource_cache.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/194768/trunk/src/chrome/browser/ui/webui/ntp/ntp_resource_cache.h
+END
+app_launcher_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/197339/trunk/src/chrome/browser/ui/webui/ntp/app_launcher_handler.h
+END
+suggestions_page_handler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/186301/trunk/src/chrome/browser/ui/webui/ntp/suggestions_page_handler.cc
+END
+thumbnail_source.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/195932/trunk/src/chrome/browser/ui/webui/ntp/thumbnail_source.cc
+END
+new_tab_page_sync_handler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/195410/trunk/src/chrome/browser/ui/webui/ntp/new_tab_page_sync_handler.cc
+END
+suggestions_page_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/181648/trunk/src/chrome/browser/ui/webui/ntp/suggestions_page_handler.h
+END
+thumbnail_source.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/195932/trunk/src/chrome/browser/ui/webui/ntp/thumbnail_source.h
+END
+most_visited_handler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/197470/trunk/src/chrome/browser/ui/webui/ntp/most_visited_handler.cc
+END
+new_tab_page_sync_handler_browsertest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/185359/trunk/src/chrome/browser/ui/webui/ntp/new_tab_page_sync_handler_browsertest.cc
+END
+new_tab_page_handler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/194768/trunk/src/chrome/browser/ui/webui/ntp/new_tab_page_handler.cc
+END
+most_visited_browsertest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/184344/trunk/src/chrome/browser/ui/webui/ntp/most_visited_browsertest.cc
+END
+new_tab_ui.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/195932/trunk/src/chrome/browser/ui/webui/ntp/new_tab_ui.h
+END
+recently_closed_tabs_handler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/197086/trunk/src/chrome/browser/ui/webui/ntp/recently_closed_tabs_handler.cc
+END
+ntp_resource_cache_factory.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/196777/trunk/src/chrome/browser/ui/webui/ntp/ntp_resource_cache_factory.h
+END
+ntp_login_handler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/185359/trunk/src/chrome/browser/ui/webui/ntp/ntp_login_handler.cc
+END
+suggestions_combiner_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/192712/trunk/src/chrome/browser/ui/webui/ntp/suggestions_combiner_unittest.cc
+END
+suggestions_combiner.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/180095/trunk/src/chrome/browser/ui/webui/ntp/suggestions_combiner.cc
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/129493/trunk/src/chrome/browser/ui/webui/ntp/OWNERS
+END

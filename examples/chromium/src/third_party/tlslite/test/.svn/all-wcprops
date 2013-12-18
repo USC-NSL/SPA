@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/19/trunk/src/third_party/tlslite/test
+END
+httpsserver.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/19/trunk/src/third_party/tlslite/test/httpsserver.py
+END
+twistedserver.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/19/trunk/src/third_party/tlslite/test/twistedserver.py
+END
+verifierDB
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/19/trunk/src/third_party/tlslite/test/verifierDB
+END
+clientX509Cert.pem
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/19/trunk/src/third_party/tlslite/test/clientX509Cert.pem
+END
+clientCryptoIDKey.xml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/19/trunk/src/third_party/tlslite/test/clientCryptoIDKey.xml
+END
+serverX509Key.pem
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/19/trunk/src/third_party/tlslite/test/serverX509Key.pem
+END
+serverCryptoIDChain.xml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/19/trunk/src/third_party/tlslite/test/serverCryptoIDChain.xml
+END
+twistedclient.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/19/trunk/src/third_party/tlslite/test/twistedclient.py
+END
+index.html
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/19/trunk/src/third_party/tlslite/test/index.html
+END
+serverX509Cert.pem
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/19/trunk/src/third_party/tlslite/test/serverX509Cert.pem
+END
+serverCryptoIDKey.xml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/19/trunk/src/third_party/tlslite/test/serverCryptoIDKey.xml
+END
+clientX509Key.pem
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/19/trunk/src/third_party/tlslite/test/clientX509Key.pem
+END
+test.txt
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/19/trunk/src/third_party/tlslite/test/test.txt
+END
+clientCryptoIDChain.xml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/19/trunk/src/third_party/tlslite/test/clientCryptoIDChain.xml
+END

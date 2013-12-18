@@ -1,0 +1,16 @@
+K 10
+svn:ignore
+V 229
+linux
+mini_installer.rules
+mini_installer.sln
+mini_installer.vcproj
+upgrade_test.sln
+upgrade_test.vcproj
+alternate_version_generator_lib.vcproj
+alternate_version_generator.vcproj
+installer_tools.sln
+validate_installation.vcproj
+
+
+END

@@ -1,0 +1,17 @@
+K 10
+svn:ignore
+V 195
+ui.Makefile
+ui.sln
+ui.xcodeproj
+ui_base.target.mk
+ui_base.vcproj
+ui_base_unittests.target.mk
+ui_base_unittests.vcproj
+gfx_resources.vcproj
+ui_gfx.vcproj
+ui_unittests.vcproj
+gfx_unittests.vcproj
+
+
+END

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/149163/trunk/src/tools/checkdeps/testdata/disallowed/allowed
+END
+test.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/149163/trunk/src/tools/checkdeps/testdata/disallowed/allowed/test.h
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/149163/trunk/src/tools/checkdeps/testdata/disallowed/allowed/DEPS
+END

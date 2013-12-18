@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/188926/trunk/src/apps/app_shim
+END
+app_shim_host_manager_mac.mm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/188675/trunk/src/apps/app_shim/app_shim_host_manager_mac.mm
+END
+app_shim_host_mac_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/188675/trunk/src/apps/app_shim/app_shim_host_mac_unittest.cc
+END
+app_shim_host_mac.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/188926/trunk/src/apps/app_shim/app_shim_host_mac.cc
+END
+app_shim_host_mac.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/188926/trunk/src/apps/app_shim/app_shim_host_mac.h
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/188675/trunk/src/apps/app_shim/OWNERS
+END
+app_shim_host_manager_mac.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/188675/trunk/src/apps/app_shim/app_shim_host_manager_mac.h
+END
+app_shim_messages.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/188926/trunk/src/apps/app_shim/app_shim_messages.h
+END

@@ -1,0 +1,143 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/196790/trunk/src/cc/scheduler
+END
+texture_uploader.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/191417/trunk/src/cc/scheduler/texture_uploader.cc
+END
+delay_based_time_source.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/189275/trunk/src/cc/scheduler/delay_based_time_source.h
+END
+texture_uploader.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/192716/trunk/src/cc/scheduler/texture_uploader.h
+END
+scheduler_settings.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/193006/trunk/src/cc/scheduler/scheduler_settings.cc
+END
+vsync_time_source_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/190780/trunk/src/cc/scheduler/vsync_time_source_unittest.cc
+END
+scheduler_settings.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/193006/trunk/src/cc/scheduler/scheduler_settings.h
+END
+vsync_time_source.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/191417/trunk/src/cc/scheduler/vsync_time_source.cc
+END
+scheduler_state_machine_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/196790/trunk/src/cc/scheduler/scheduler_state_machine_unittest.cc
+END
+scheduler_state_machine.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/196790/trunk/src/cc/scheduler/scheduler_state_machine.cc
+END
+vsync_time_source.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/190780/trunk/src/cc/scheduler/vsync_time_source.h
+END
+scheduler_state_machine.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/196790/trunk/src/cc/scheduler/scheduler_state_machine.h
+END
+frame_rate_controller_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/190326/trunk/src/cc/scheduler/frame_rate_controller_unittest.cc
+END
+frame_rate_controller.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/196664/trunk/src/cc/scheduler/frame_rate_controller.cc
+END
+frame_rate_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/189181/trunk/src/cc/scheduler/frame_rate_controller.h
+END
+scheduler_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/196790/trunk/src/cc/scheduler/scheduler_unittest.cc
+END
+scheduler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/196790/trunk/src/cc/scheduler/scheduler.cc
+END
+scheduler.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/196790/trunk/src/cc/scheduler/scheduler.h
+END
+rate_limiter.cc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/191417/trunk/src/cc/scheduler/rate_limiter.cc
+END
+time_source.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/189275/trunk/src/cc/scheduler/time_source.h
+END
+rate_limiter.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/190767/trunk/src/cc/scheduler/rate_limiter.h
+END
+delay_based_time_source_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/190767/trunk/src/cc/scheduler/delay_based_time_source_unittest.cc
+END
+delay_based_time_source.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/196664/trunk/src/cc/scheduler/delay_based_time_source.cc
+END
+texture_uploader_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/191417/trunk/src/cc/scheduler/texture_uploader_unittest.cc
+END
