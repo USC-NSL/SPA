@@ -1,0 +1,143 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/blink/!svn/ver/149184/trunk/Source/modules/quota
+END
+NavigatorStorageQuota.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/blink/!svn/ver/148943/trunk/Source/modules/quota/NavigatorStorageQuota.h
+END
+StorageErrorCallback.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/blink/!svn/ver/148943/trunk/Source/modules/quota/StorageErrorCallback.h
+END
+StorageQuotaCallback.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/blink/!svn/ver/148943/trunk/Source/modules/quota/StorageQuotaCallback.h
+END
+StorageQuota.idl
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/blink/!svn/ver/148405/trunk/Source/modules/quota/StorageQuota.idl
+END
+StorageInfo.idl
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/blink/!svn/ver/148405/trunk/Source/modules/quota/StorageInfo.idl
+END
+DOMWindowQuota.idl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/blink/!svn/ver/149184/trunk/Source/modules/quota/DOMWindowQuota.idl
+END
+WorkerNavigatorStorageQuota.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/blink/!svn/ver/149182/trunk/Source/modules/quota/WorkerNavigatorStorageQuota.idl
+END
+StorageUsageCallback.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/blink/!svn/ver/148943/trunk/Source/modules/quota/StorageUsageCallback.h
+END
+StorageQuota.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/blink/!svn/ver/148943/trunk/Source/modules/quota/StorageQuota.cpp
+END
+NavigatorStorageQuota.idl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/blink/!svn/ver/149182/trunk/Source/modules/quota/NavigatorStorageQuota.idl
+END
+StorageInfo.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/blink/!svn/ver/148943/trunk/Source/modules/quota/StorageInfo.cpp
+END
+StorageQuotaCallback.idl
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/blink/!svn/ver/149160/trunk/Source/modules/quota/StorageQuotaCallback.idl
+END
+DOMWindowQuota.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/blink/!svn/ver/149184/trunk/Source/modules/quota/DOMWindowQuota.cpp
+END
+StorageErrorCallback.idl
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/blink/!svn/ver/149160/trunk/Source/modules/quota/StorageErrorCallback.idl
+END
+WorkerNavigatorStorageQuota.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/blink/!svn/ver/148943/trunk/Source/modules/quota/WorkerNavigatorStorageQuota.cpp
+END
+StorageQuota.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/blink/!svn/ver/148943/trunk/Source/modules/quota/StorageQuota.h
+END
+StorageInfo.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/blink/!svn/ver/148943/trunk/Source/modules/quota/StorageInfo.h
+END
+DOMWindowQuota.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/blink/!svn/ver/148943/trunk/Source/modules/quota/DOMWindowQuota.h
+END
+WorkerNavigatorStorageQuota.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/blink/!svn/ver/148943/trunk/Source/modules/quota/WorkerNavigatorStorageQuota.h
+END
+NavigatorStorageQuota.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/blink/!svn/ver/148943/trunk/Source/modules/quota/NavigatorStorageQuota.cpp
+END
+StorageErrorCallback.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/blink/!svn/ver/148943/trunk/Source/modules/quota/StorageErrorCallback.cpp
+END
+StorageUsageCallback.idl
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/blink/!svn/ver/149160/trunk/Source/modules/quota/StorageUsageCallback.idl
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/blink/!svn/ver/148664/trunk/Source/modules/quota/OWNERS
+END

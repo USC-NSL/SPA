@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/native_client/!svn/ver/11234/trunk/src/native_client/tests/hello_world
+END
+nacl.scons
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/native_client/!svn/ver/11186/trunk/src/native_client/tests/hello_world/nacl.scons
+END
+printf.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/native_client/!svn/ver/3112/trunk/src/native_client/tests/hello_world/printf.c
+END
+printf.stdout
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/native_client/!svn/ver/3112/trunk/src/native_client/tests/hello_world/printf.stdout
+END
+misc_math.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/native_client/!svn/ver/2381/trunk/src/native_client/tests/hello_world/misc_math.c
+END
+float.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/native_client/!svn/ver/3112/trunk/src/native_client/tests/hello_world/float.c
+END
+float.stdout
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/native_client/!svn/ver/3112/trunk/src/native_client/tests/hello_world/float.stdout
+END
+exit.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/native_client/!svn/ver/10209/trunk/src/native_client/tests/hello_world/exit.c
+END
+hello_world.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/native_client/!svn/ver/10209/trunk/src/native_client/tests/hello_world/hello_world.c
+END
+hello_world.stdout
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/native_client/!svn/ver/541/trunk/src/native_client/tests/hello_world/hello_world.stdout
+END
+abi.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/native_client/!svn/ver/11234/trunk/src/native_client/tests/hello_world/abi.c
+END
+at_exit.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/native_client/!svn/ver/10209/trunk/src/native_client/tests/hello_world/at_exit.c
+END
+at_exit.stdout
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/native_client/!svn/ver/3112/trunk/src/native_client/tests/hello_world/at_exit.stdout
+END
+dump_env.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/native_client/!svn/ver/2252/trunk/src/native_client/tests/hello_world/dump_env.c
+END

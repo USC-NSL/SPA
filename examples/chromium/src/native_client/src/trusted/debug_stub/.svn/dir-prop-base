@@ -1,0 +1,20 @@
+K 10
+svn:ignore
+V 324
+debug_stub.Makefile
+debug_stub.rules
+debug_stub.sln
+debug_stub.target.mk
+debug_stub.vcproj
+debug_stub.xcodeproj
+debug_stub64.rules
+debug_stub64.vcproj
+debug_stub_test.rules
+debug_stub_test.target.mk
+debug_stub_test.vcproj
+debug_stub_test64.rules
+debug_stub_test64.vcproj
+run_debug_stub_test.rules
+run_debug_stub_test.vcproj
+
+END

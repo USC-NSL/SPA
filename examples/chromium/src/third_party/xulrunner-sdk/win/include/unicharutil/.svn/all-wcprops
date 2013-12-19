@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/unicharutil
+END
+nsBidiUtils.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/unicharutil/nsBidiUtils.h
+END
+nsITextTransform.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/unicharutil/nsITextTransform.h
+END
+nsICaseConversion.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/unicharutil/nsICaseConversion.h
+END
+nsUnicharUtils.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/unicharutil/nsUnicharUtils.h
+END
+nsIEntityConverter.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/unicharutil/nsIEntityConverter.h
+END
+nsHankakuToZenkakuCID.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/unicharutil/nsHankakuToZenkakuCID.h
+END
+nsCompressedCharMap.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/unicharutil/nsCompressedCharMap.h
+END
+nsUnicharUtilCIID.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/unicharutil/nsUnicharUtilCIID.h
+END
+nsIUnicodeNormalizer.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/unicharutil/nsIUnicodeNormalizer.h
+END
+nsISaveAsCharset.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/unicharutil/nsISaveAsCharset.h
+END
+nsIUGenCategory.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/unicharutil/nsIUGenCategory.h
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/native_client/!svn/ver/10196/trunk/src/native_client/src/trusted/platform_qualify/arch/arm
+END
+nacl_qualify_fpu.c
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/native_client/!svn/ver/9473/trunk/src/native_client/src/trusted/platform_qualify/arch/arm/nacl_qualify_fpu.c
+END
+nacl_arm_qualify.h
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/native_client/!svn/ver/9473/trunk/src/native_client/src/trusted/platform_qualify/arch/arm/nacl_arm_qualify.h
+END
+nacl_dep_qualify_arch.c
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/native_client/!svn/ver/10196/trunk/src/native_client/src/trusted/platform_qualify/arch/arm/nacl_dep_qualify_arch.c
+END

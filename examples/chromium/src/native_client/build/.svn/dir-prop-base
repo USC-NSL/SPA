@@ -1,0 +1,15 @@
+K 10
+svn:ignore
+V 121
+all_main.scons
+all.sln
+all.xcodeproj
+all.mk
+all.scons
+SConstruct
+pull_in_all.vcproj
+pull_in_all.scons
+pull_in_all.rules
+
+
+END

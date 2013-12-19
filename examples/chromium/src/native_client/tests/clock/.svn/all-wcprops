@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/native_client/!svn/ver/8370/trunk/src/native_client/tests/clock
+END
+nacl.scons
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/native_client/!svn/ver/8370/trunk/src/native_client/tests/clock/nacl.scons
+END
+clock_irt_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/native_client/!svn/ver/8000/trunk/src/native_client/tests/clock/clock_irt_test.c
+END
+clock_get_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/native_client/!svn/ver/7837/trunk/src/native_client/tests/clock/clock_get_test.c
+END

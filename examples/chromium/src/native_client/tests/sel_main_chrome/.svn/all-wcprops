@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/native_client/!svn/ver/10585/trunk/src/native_client/tests/sel_main_chrome
+END
+nacl.scons
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/native_client/!svn/ver/10487/trunk/src/native_client/tests/sel_main_chrome/nacl.scons
+END
+sel_main_chrome.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/native_client/!svn/ver/10585/trunk/src/native_client/tests/sel_main_chrome/sel_main_chrome.gyp
+END
+sel_main_chrome_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/native_client/!svn/ver/9599/trunk/src/native_client/tests/sel_main_chrome/sel_main_chrome_test.cc
+END

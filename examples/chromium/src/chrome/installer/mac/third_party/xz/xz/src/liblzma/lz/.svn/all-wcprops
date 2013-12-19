@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/189101/trunk/deps/third_party/xz/src/liblzma/lz
+END
+lz_decoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/lz/lz_decoder.h
+END
+lz_encoder_hash_table.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/lz/lz_encoder_hash_table.h
+END
+Makefile.inc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/lz/Makefile.inc
+END
+lz_encoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/87706/trunk/deps/third_party/xz/src/liblzma/lz/lz_encoder.c
+END
+lz_encoder_mf.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/lz/lz_encoder_mf.c
+END
+lz_encoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/lz/lz_encoder.h
+END
+lz_decoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/87706/trunk/deps/third_party/xz/src/liblzma/lz/lz_decoder.c
+END
+lz_encoder_hash.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/189101/trunk/deps/third_party/xz/src/liblzma/lz/lz_encoder_hash.h
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/native_client/!svn/ver/11052/trunk/src/native_client/src/trusted/seccomp_bpf
+END
+seccomp_bpf.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/native_client/!svn/ver/11052/trunk/src/native_client/src/trusted/seccomp_bpf/seccomp_bpf.c
+END
+build.scons
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/native_client/!svn/ver/10791/trunk/src/native_client/src/trusted/seccomp_bpf/build.scons
+END
+seccomp_bpf.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/native_client/!svn/ver/10791/trunk/src/native_client/src/trusted/seccomp_bpf/seccomp_bpf.h
+END

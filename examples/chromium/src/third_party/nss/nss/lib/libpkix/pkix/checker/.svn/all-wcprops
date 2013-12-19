@@ -1,0 +1,161 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix/checker
+END
+pkix_basicconstraintschecker.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix/checker/pkix_basicconstraintschecker.h
+END
+pkix_revocationchecker.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix/checker/pkix_revocationchecker.h
+END
+pkix_crlchecker.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix/checker/pkix_crlchecker.c
+END
+pkix_namechainingchecker.c
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix/checker/pkix_namechainingchecker.c
+END
+pkix_expirationchecker.c
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix/checker/pkix_expirationchecker.c
+END
+pkix_ekuchecker.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix/checker/pkix_ekuchecker.c
+END
+pkix_crlchecker.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix/checker/pkix_crlchecker.h
+END
+pkix_revocationmethod.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix/checker/pkix_revocationmethod.c
+END
+pkix_namechainingchecker.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix/checker/pkix_namechainingchecker.h
+END
+pkix_expirationchecker.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix/checker/pkix_expirationchecker.h
+END
+pkix_ekuchecker.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix/checker/pkix_ekuchecker.h
+END
+pkix_revocationmethod.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix/checker/pkix_revocationmethod.h
+END
+pkix_policychecker.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix/checker/pkix_policychecker.c
+END
+pkix_certchainchecker.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix/checker/pkix_certchainchecker.c
+END
+pkix_signaturechecker.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix/checker/pkix_signaturechecker.c
+END
+pkix_ocspchecker.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix/checker/pkix_ocspchecker.c
+END
+pkix_policychecker.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix/checker/pkix_policychecker.h
+END
+pkix_targetcertchecker.c
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix/checker/pkix_targetcertchecker.c
+END
+pkix_certchainchecker.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix/checker/pkix_certchainchecker.h
+END
+pkix_signaturechecker.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix/checker/pkix_signaturechecker.h
+END
+pkix_nameconstraintschecker.c
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix/checker/pkix_nameconstraintschecker.c
+END
+pkix_ocspchecker.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix/checker/pkix_ocspchecker.h
+END
+pkix_basicconstraintschecker.c
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix/checker/pkix_basicconstraintschecker.c
+END
+pkix_revocationchecker.c
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix/checker/pkix_revocationchecker.c
+END
+pkix_targetcertchecker.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix/checker/pkix_targetcertchecker.h
+END
+pkix_nameconstraintschecker.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix/checker/pkix_nameconstraintschecker.h
+END

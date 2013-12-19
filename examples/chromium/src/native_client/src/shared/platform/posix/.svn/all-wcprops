@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/native_client/!svn/ver/11199/trunk/src/native_client/src/shared/platform/posix
+END
+nacl_timestamp.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/native_client/!svn/ver/10196/trunk/src/native_client/src/shared/platform/posix/nacl_timestamp.c
+END
+nacl_host_desc_types.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/native_client/!svn/ver/11121/trunk/src/native_client/src/shared/platform/posix/nacl_host_desc_types.h
+END
+nacl_exit.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/native_client/!svn/ver/10196/trunk/src/native_client/src/shared/platform/posix/nacl_exit.c
+END
+nacl_host_desc.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/native_client/!svn/ver/11199/trunk/src/native_client/src/shared/platform/posix/nacl_host_desc.c
+END
+nacl_find_addrsp.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/native_client/!svn/ver/10397/trunk/src/native_client/src/shared/platform/posix/nacl_find_addrsp.c
+END
+nacl_fast_mutex.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/native_client/!svn/ver/8668/trunk/src/native_client/src/shared/platform/posix/nacl_fast_mutex.c
+END
+nacl_secure_random_types.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/native_client/!svn/ver/9041/trunk/src/native_client/src/shared/platform/posix/nacl_secure_random_types.h
+END
+nacl_thread_id.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/native_client/!svn/ver/8167/trunk/src/native_client/src/shared/platform/posix/nacl_thread_id.c
+END
+nacl_threads_types.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/native_client/!svn/ver/10196/trunk/src/native_client/src/shared/platform/posix/nacl_threads_types.h
+END
+nacl_fast_mutex.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/native_client/!svn/ver/8403/trunk/src/native_client/src/shared/platform/posix/nacl_fast_mutex.h
+END
+nacl_secure_random.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/native_client/!svn/ver/9041/trunk/src/native_client/src/shared/platform/posix/nacl_secure_random.c
+END
+nacl_time_types.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/native_client/!svn/ver/8167/trunk/src/native_client/src/shared/platform/posix/nacl_time_types.h
+END
+nacl_threads.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/native_client/!svn/ver/10458/trunk/src/native_client/src/shared/platform/posix/nacl_threads.c
+END
+lock.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/native_client/!svn/ver/8668/trunk/src/native_client/src/shared/platform/posix/lock.c
+END
+aligned_malloc.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/native_client/!svn/ver/10198/trunk/src/native_client/src/shared/platform/posix/aligned_malloc.c
+END
+nacl_time.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/native_client/!svn/ver/10199/trunk/src/native_client/src/shared/platform/posix/nacl_time.c
+END
+condition_variable.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/native_client/!svn/ver/8167/trunk/src/native_client/src/shared/platform/posix/condition_variable.c
+END

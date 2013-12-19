@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/crypto/dsa
+END
+fips186a.txt
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/65201/trunk/deps/third_party/openssl/openssl/crypto/dsa/fips186a.txt
+END
+dsa_gen.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/dsa/dsa_gen.c
+END
+dsagen.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/65201/trunk/deps/third_party/openssl/openssl/crypto/dsa/dsagen.c
+END
+dsa_pmeth.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/dsa/dsa_pmeth.c
+END
+dsa_ossl.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/dsa/dsa_ossl.c
+END
+dsatest.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/118977/trunk/deps/third_party/openssl/openssl/crypto/dsa/dsatest.c
+END
+dsa.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/dsa/dsa.h
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/65201/trunk/deps/third_party/openssl/openssl/crypto/dsa/README
+END
+dsa_key.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/dsa/dsa_key.c
+END
+dsa_err.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/dsa/dsa_err.c
+END
+dsa_depr.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/65201/trunk/deps/third_party/openssl/openssl/crypto/dsa/dsa_depr.c
+END
+dsa_vrf.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/dsa/dsa_vrf.c
+END
+dsa_locl.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/dsa/dsa_locl.h
+END
+dsa_ameth.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/dsa/dsa_ameth.c
+END
+dsa_prn.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/118977/trunk/deps/third_party/openssl/openssl/crypto/dsa/dsa_prn.c
+END
+dsa_sign.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/dsa/dsa_sign.c
+END
+dsa_asn1.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/dsa/dsa_asn1.c
+END
+dsa_lib.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/dsa/dsa_lib.c
+END

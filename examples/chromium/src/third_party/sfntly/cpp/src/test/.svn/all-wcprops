@@ -1,0 +1,227 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/118/trunk/cpp/src/test
+END
+memory_io_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/70/trunk/cpp/src/test/memory_io_test.cc
+END
+font_data_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/58/trunk/cpp/src/test/font_data_test.cc
+END
+test_utils_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/40/trunk/cpp/src/test/test_utils_test.cc
+END
+hdmx_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/105/trunk/cpp/src/test/hdmx_test.cc
+END
+verify_loca.cc
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/71/trunk/cpp/src/test/verify_loca.cc
+END
+verify_hmtx.cc
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/71/trunk/cpp/src/test/verify_hmtx.cc
+END
+verify_name.cc
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/71/trunk/cpp/src/test/verify_name.cc
+END
+test_data.cc
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/107/trunk/cpp/src/test/test_data.cc
+END
+serialization_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/107/trunk/cpp/src/test/serialization_test.cc
+END
+chrome_subsetter.cc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/118/trunk/cpp/src/test/chrome_subsetter.cc
+END
+test_xml_utils.cc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/93/trunk/cpp/src/test/test_xml_utils.cc
+END
+cmap_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/88/trunk/cpp/src/test/cmap_test.cc
+END
+test_xml_utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/93/trunk/cpp/src/test/test_xml_utils.h
+END
+name_editing_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/70/trunk/cpp/src/test/name_editing_test.cc
+END
+verify_glyf.cc
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/71/trunk/cpp/src/test/verify_glyf.cc
+END
+verify_os2.cc
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/71/trunk/cpp/src/test/verify_os2.cc
+END
+font_parsing_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/100/trunk/cpp/src/test/font_parsing_test.cc
+END
+verify_hhea.cc
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/117/trunk/cpp/src/test/verify_hhea.cc
+END
+open_type_data_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/40/trunk/cpp/src/test/open_type_data_test.cc
+END
+otf_basic_editing_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/71/trunk/cpp/src/test/otf_basic_editing_test.cc
+END
+endian_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/40/trunk/cpp/src/test/endian_test.cc
+END
+test_utils.cc
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/30/trunk/cpp/src/test/test_utils.cc
+END
+byte_array_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/55/trunk/cpp/src/test/byte_array_test.cc
+END
+test_utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/58/trunk/cpp/src/test/test_utils.h
+END
+file_io_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/71/trunk/cpp/src/test/file_io_test.cc
+END
+test_data.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/107/trunk/cpp/src/test/test_data.h
+END
+platform_thread.cc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/72/trunk/cpp/src/test/platform_thread.cc
+END
+platform_thread.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/72/trunk/cpp/src/test/platform_thread.h
+END
+serialization_test.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/58/trunk/cpp/src/test/serialization_test.h
+END
+bitmap_table_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/107/trunk/cpp/src/test/bitmap_table_test.cc
+END
+cmap_editing_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/85/trunk/cpp/src/test/cmap_editing_test.cc
+END
+test_font_utils.cc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/70/trunk/cpp/src/test/test_font_utils.cc
+END
+smart_pointer_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/40/trunk/cpp/src/test/smart_pointer_test.cc
+END
+test_font_utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/70/trunk/cpp/src/test/test_font_utils.h
+END
+lock_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/72/trunk/cpp/src/test/lock_test.cc
+END
+cmap_iterator_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/85/trunk/cpp/src/test/cmap_iterator_test.cc
+END
+verify_maxp.cc
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/117/trunk/cpp/src/test/verify_maxp.cc
+END

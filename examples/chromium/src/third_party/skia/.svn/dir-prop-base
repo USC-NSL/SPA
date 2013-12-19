@@ -1,0 +1,10 @@
+K 10
+svn:ignore
+V 32
+gpu
+gyp
+include
+src
+third_party
+
+END

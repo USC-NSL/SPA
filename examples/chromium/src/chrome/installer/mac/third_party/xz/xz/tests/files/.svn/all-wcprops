@@ -1,0 +1,389 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/189101/trunk/deps/third_party/xz/tests/files
+END
+good-1-sparc-lzma2.xz
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/good-1-sparc-lzma2.xz
+END
+good-1-check-crc64.xz
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/good-1-check-crc64.xz
+END
+bad-1-block_header-2.xz
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/bad-1-block_header-2.xz
+END
+unsupported-filter_flags-1.xz
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/unsupported-filter_flags-1.xz
+END
+good-1-block_header-3.xz
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/good-1-block_header-3.xz
+END
+good-1-delta-lzma2.tiff.xz
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/good-1-delta-lzma2.tiff.xz
+END
+bad-1-block_header-6.xz
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/189101/trunk/deps/third_party/xz/tests/files/bad-1-block_header-6.xz
+END
+bad-2-index-1.xz
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/bad-2-index-1.xz
+END
+bad-0-backward_size.xz
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/bad-0-backward_size.xz
+END
+bad-0catpad-empty.xz
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/bad-0catpad-empty.xz
+END
+bad-2-index-5.xz
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/bad-2-index-5.xz
+END
+good-0pad-empty.xz
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/good-0pad-empty.xz
+END
+bad-0cat-alone.xz
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/bad-0cat-alone.xz
+END
+bad-1-lzma2-4.xz
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/bad-1-lzma2-4.xz
+END
+good-1-lzma2-3.xz
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/good-1-lzma2-3.xz
+END
+bad-1-lzma2-8.xz
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/bad-1-lzma2-8.xz
+END
+bad-1-check-crc64.xz
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/bad-1-check-crc64.xz
+END
+bad-0-footer_magic.xz
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/bad-0-footer_magic.xz
+END
+bad-0-nonempty_index.xz
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/bad-0-nonempty_index.xz
+END
+bad-1-block_header-1.xz
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/bad-1-block_header-1.xz
+END
+good-1-block_header-2.xz
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/good-1-block_header-2.xz
+END
+bad-1-block_header-5.xz
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/bad-1-block_header-5.xz
+END
+unsupported-block_header.xz
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/unsupported-block_header.xz
+END
+bad-1-stream_flags-3.xz
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/bad-1-stream_flags-3.xz
+END
+bad-2-index-4.xz
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/bad-2-index-4.xz
+END
+bad-1-check-sha256.xz
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/bad-1-check-sha256.xz
+END
+bad-1-lzma2-3.xz
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/bad-1-lzma2-3.xz
+END
+good-1-lzma2-2.xz
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/good-1-lzma2-2.xz
+END
+good-0cat-empty.xz
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/good-0cat-empty.xz
+END
+bad-0-header_magic.xz
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/bad-0-header_magic.xz
+END
+good-2-lzma2.xz
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/good-2-lzma2.xz
+END
+bad-1-vli-2.xz
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/bad-1-vli-2.xz
+END
+bad-1-lzma2-7.xz
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/bad-1-lzma2-7.xz
+END
+good-1-check-crc32.xz
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/good-1-check-crc32.xz
+END
+good-1-block_header-1.xz
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/good-1-block_header-1.xz
+END
+bad-1-block_header-4.xz
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/bad-1-block_header-4.xz
+END
+unsupported-filter_flags-3.xz
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/unsupported-filter_flags-3.xz
+END
+bad-1-stream_flags-2.xz
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/bad-1-stream_flags-2.xz
+END
+bad-2-index-3.xz
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/bad-2-index-3.xz
+END
+bad-0cat-header_magic.xz
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/bad-0cat-header_magic.xz
+END
+unsupported-check.xz
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/unsupported-check.xz
+END
+bad-2-compressed_data_padding.xz
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/bad-2-compressed_data_padding.xz
+END
+bad-1-lzma2-2.xz
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/bad-1-lzma2-2.xz
+END
+good-1-check-sha256.xz
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/good-1-check-sha256.xz
+END
+good-1-lzma2-1.xz
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/good-1-lzma2-1.xz
+END
+bad-1-check-crc32.xz
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/bad-1-check-crc32.xz
+END
+bad-1-vli-1.xz
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/bad-1-vli-1.xz
+END
+bad-1-lzma2-6.xz
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/bad-1-lzma2-6.xz
+END
+good-1-lzma2-5.xz
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/87706/trunk/deps/third_party/xz/tests/files/good-1-lzma2-5.xz
+END
+good-0-empty.xz
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/good-0-empty.xz
+END
+good-1-3delta-lzma2.xz
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/good-1-3delta-lzma2.xz
+END
+bad-1-block_header-3.xz
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/bad-1-block_header-3.xz
+END
+unsupported-filter_flags-2.xz
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/unsupported-filter_flags-2.xz
+END
+bad-1-stream_flags-1.xz
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/bad-1-stream_flags-1.xz
+END
+bad-2-index-2.xz
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/bad-2-index-2.xz
+END
+good-1-x86-lzma2.xz
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/good-1-x86-lzma2.xz
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/189101/trunk/deps/third_party/xz/tests/files/README
+END
+good-0catpad-empty.xz
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/good-0catpad-empty.xz
+END
+good-1-check-none.xz
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/good-1-check-none.xz
+END
+bad-0pad-empty.xz
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/bad-0pad-empty.xz
+END
+bad-1-lzma2-1.xz
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/bad-1-lzma2-1.xz
+END
+bad-0-empty-truncated.xz
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/bad-0-empty-truncated.xz
+END
+bad-1-lzma2-5.xz
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/bad-1-lzma2-5.xz
+END
+good-1-lzma2-4.xz
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/tests/files/good-1-lzma2-4.xz
+END

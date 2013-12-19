@@ -1,0 +1,167 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/silk/fixed
+END
+residual_energy16_FIX.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/fixed/residual_energy16_FIX.c
+END
+main_FIX.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/silk/fixed/main_FIX.h
+END
+LTP_scale_ctrl_FIX.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/fixed/LTP_scale_ctrl_FIX.c
+END
+apply_sine_window_FIX.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/fixed/apply_sine_window_FIX.c
+END
+corrMatrix_FIX.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/fixed/corrMatrix_FIX.c
+END
+prefilter_FIX.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/fixed/prefilter_FIX.c
+END
+regularize_correlations_FIX.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/fixed/regularize_correlations_FIX.c
+END
+schur64_FIX.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/fixed/schur64_FIX.c
+END
+autocorr_FIX.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/fixed/autocorr_FIX.c
+END
+process_gains_FIX.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/fixed/process_gains_FIX.c
+END
+burg_modified_FIX.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/silk/fixed/burg_modified_FIX.c
+END
+find_LTP_FIX.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/fixed/find_LTP_FIX.c
+END
+noise_shape_analysis_FIX.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/silk/fixed/noise_shape_analysis_FIX.c
+END
+k2a_Q16_FIX.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/fixed/k2a_Q16_FIX.c
+END
+encode_frame_FIX.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/fixed/encode_frame_FIX.c
+END
+LTP_analysis_filter_FIX.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/silk/fixed/LTP_analysis_filter_FIX.c
+END
+find_pred_coefs_FIX.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/fixed/find_pred_coefs_FIX.c
+END
+structs_FIX.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/fixed/structs_FIX.h
+END
+warped_autocorrelation_FIX.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/fixed/warped_autocorrelation_FIX.c
+END
+k2a_FIX.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/fixed/k2a_FIX.c
+END
+find_pitch_lags_FIX.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/silk/fixed/find_pitch_lags_FIX.c
+END
+find_LPC_FIX.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/fixed/find_LPC_FIX.c
+END
+residual_energy_FIX.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/silk/fixed/residual_energy_FIX.c
+END
+pitch_analysis_core_FIX.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/silk/fixed/pitch_analysis_core_FIX.c
+END
+vector_ops_FIX.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/fixed/vector_ops_FIX.c
+END
+schur_FIX.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/fixed/schur_FIX.c
+END
+solve_LS_FIX.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/fixed/solve_LS_FIX.c
+END

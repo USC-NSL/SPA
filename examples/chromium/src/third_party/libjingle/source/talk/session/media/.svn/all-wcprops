@@ -1,0 +1,269 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/309/trunk/talk/session/media
+END
+srtpfilter_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/306/trunk/talk/session/media/srtpfilter_unittest.cc
+END
+srtpfilter.cc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/308/trunk/talk/session/media/srtpfilter.cc
+END
+channelmanager_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/304/trunk/talk/session/media/channelmanager_unittest.cc
+END
+soundclip.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/162/trunk/talk/session/media/soundclip.h
+END
+currentspeakermonitor_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/162/trunk/talk/session/media/currentspeakermonitor_unittest.cc
+END
+mediarecorder_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/162/trunk/talk/session/media/mediarecorder_unittest.cc
+END
+mediamessages_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/286/trunk/talk/session/media/mediamessages_unittest.cc
+END
+rtcpmuxfilter_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/162/trunk/talk/session/media/rtcpmuxfilter_unittest.cc
+END
+rtcpmuxfilter.cc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/162/trunk/talk/session/media/rtcpmuxfilter.cc
+END
+audiomonitor.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/162/trunk/talk/session/media/audiomonitor.cc
+END
+ssrcmuxfilter_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/162/trunk/talk/session/media/ssrcmuxfilter_unittest.cc
+END
+ssrcmuxfilter.cc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/286/trunk/talk/session/media/ssrcmuxfilter.cc
+END
+channel.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/273/trunk/talk/session/media/channel.h
+END
+typewrapping.h.pump
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/181/trunk/talk/session/media/typewrapping.h.pump
+END
+call.cc
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/304/trunk/talk/session/media/call.cc
+END
+audiomonitor.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/162/trunk/talk/session/media/audiomonitor.h
+END
+call.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/224/trunk/talk/session/media/call.h
+END
+mediasessionclient_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/286/trunk/talk/session/media/mediasessionclient_unittest.cc
+END
+typingmonitor_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/251/trunk/talk/session/media/typingmonitor_unittest.cc
+END
+typingmonitor.cc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/306/trunk/talk/session/media/typingmonitor.cc
+END
+mediasessionclient.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/296/trunk/talk/session/media/mediasessionclient.cc
+END
+mediasession_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/309/trunk/talk/session/media/mediasession_unittest.cc
+END
+srtpfilter.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/306/trunk/talk/session/media/srtpfilter.h
+END
+soundclip.cc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/162/trunk/talk/session/media/soundclip.cc
+END
+voicechannel.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/162/trunk/talk/session/media/voicechannel.h
+END
+channelmanager.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/306/trunk/talk/session/media/channelmanager.cc
+END
+currentspeakermonitor.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/162/trunk/talk/session/media/currentspeakermonitor.cc
+END
+mediarecorder.cc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/235/trunk/talk/session/media/mediarecorder.cc
+END
+channelmanager.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/306/trunk/talk/session/media/channelmanager.h
+END
+mediasink.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/162/trunk/talk/session/media/mediasink.h
+END
+currentspeakermonitor.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/162/trunk/talk/session/media/currentspeakermonitor.h
+END
+mediamessages.cc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/286/trunk/talk/session/media/mediamessages.cc
+END
+mediarecorder.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/162/trunk/talk/session/media/mediarecorder.h
+END
+channel_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/308/trunk/talk/session/media/channel_unittest.cc
+END
+channel.cc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/302/trunk/talk/session/media/channel.cc
+END
+mediamessages.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/286/trunk/talk/session/media/mediamessages.h
+END
+rtcpmuxfilter.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/162/trunk/talk/session/media/rtcpmuxfilter.h
+END
+ssrcmuxfilter.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/162/trunk/talk/session/media/ssrcmuxfilter.h
+END
+mediasession.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/309/trunk/talk/session/media/mediasession.cc
+END
+mediasessionclient.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/296/trunk/talk/session/media/mediasessionclient.h
+END
+typingmonitor.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/305/trunk/talk/session/media/typingmonitor.h
+END
+mediasession.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/296/trunk/talk/session/media/mediasession.h
+END
+mediamonitor.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/162/trunk/talk/session/media/mediamonitor.cc
+END
+mediamonitor.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/162/trunk/talk/session/media/mediamonitor.h
+END

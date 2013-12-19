@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/3913/stable/webrtc/modules/remote_bitrate_estimator
+END
+remote_bitrate_estimator_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/3468/stable/webrtc/modules/remote_bitrate_estimator/remote_bitrate_estimator_unittest.cc
+END
+remote_bitrate_estimator_unittest_helper.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/3468/stable/webrtc/modules/remote_bitrate_estimator/remote_bitrate_estimator_unittest_helper.h
+END
+remote_rate_control.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/3840/stable/webrtc/modules/remote_bitrate_estimator/remote_rate_control.cc
+END
+remote_rate_control.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/3840/stable/webrtc/modules/remote_bitrate_estimator/remote_rate_control.h
+END
+remote_bitrate_estimator_single_stream.cc
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/3468/stable/webrtc/modules/remote_bitrate_estimator/remote_bitrate_estimator_single_stream.cc
+END
+remote_bitrate_estimator_single_stream.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/3468/stable/webrtc/modules/remote_bitrate_estimator/remote_bitrate_estimator_single_stream.h
+END
+remote_bitrate_estimator.gypi
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/3913/stable/webrtc/modules/remote_bitrate_estimator/remote_bitrate_estimator.gypi
+END
+bitrate_estimator_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/3913/stable/webrtc/modules/remote_bitrate_estimator/bitrate_estimator_unittest.cc
+END
+overuse_detector.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/3468/stable/webrtc/modules/remote_bitrate_estimator/overuse_detector.cc
+END
+remote_bitrate_estimator_multi_stream.cc
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/3468/stable/webrtc/modules/remote_bitrate_estimator/remote_bitrate_estimator_multi_stream.cc
+END
+bitrate_estimator.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/3913/stable/webrtc/modules/remote_bitrate_estimator/bitrate_estimator.cc
+END
+overuse_detector.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/3468/stable/webrtc/modules/remote_bitrate_estimator/overuse_detector.h
+END
+bitrate_estimator.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/3913/stable/webrtc/modules/remote_bitrate_estimator/bitrate_estimator.h
+END
+remote_bitrate_estimator_multi_stream.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/3468/stable/webrtc/modules/remote_bitrate_estimator/remote_bitrate_estimator_multi_stream.h
+END
+rtp_to_ntp_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/2974/stable/webrtc/modules/remote_bitrate_estimator/rtp_to_ntp_unittest.cc
+END
+rtp_to_ntp.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/3853/stable/webrtc/modules/remote_bitrate_estimator/rtp_to_ntp.cc
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/2974/stable/webrtc/modules/remote_bitrate_estimator/OWNERS
+END
+remote_bitrate_estimator_unittest_helper.cc
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/3468/stable/webrtc/modules/remote_bitrate_estimator/remote_bitrate_estimator_unittest_helper.cc
+END

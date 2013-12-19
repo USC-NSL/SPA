@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/native_client/!svn/ver/8452/trunk/src/native_client/tests/glibc_socket_wrappers
+END
+test_sock.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/native_client/!svn/ver/8430/trunk/src/native_client/tests/glibc_socket_wrappers/test_sock.c
+END
+nacl.scons
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/native_client/!svn/ver/8452/trunk/src/native_client/tests/glibc_socket_wrappers/nacl.scons
+END
+test_sock_data
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/native_client/!svn/ver/8430/trunk/src/native_client/tests/glibc_socket_wrappers/test_sock_data
+END

@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/native_client/!svn/ver/11240/trunk/src/native_client/src/shared/srpc
+END
+nacl_srpc_ppapi_plugin_init.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/native_client/!svn/ver/6375/trunk/src/native_client/src/shared/srpc/nacl_srpc_ppapi_plugin_init.c
+END
+accept_threaded.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/native_client/!svn/ver/11231/trunk/src/native_client/src/shared/srpc/accept_threaded.c
+END
+accept.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/native_client/!svn/ver/11231/trunk/src/native_client/src/shared/srpc/accept.c
+END
+build.scons
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/native_client/!svn/ver/6796/trunk/src/native_client/src/shared/srpc/build.scons
+END
+rpc_server_loop.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/native_client/!svn/ver/5147/trunk/src/native_client/src/shared/srpc/rpc_server_loop.c
+END
+nacl_srpc.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/native_client/!svn/ver/10199/trunk/src/native_client/src/shared/srpc/nacl_srpc.c
+END
+rpc_service.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/native_client/!svn/ver/7838/trunk/src/native_client/src/shared/srpc/rpc_service.c
+END
+nacl_srpc_internal.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/native_client/!svn/ver/11234/trunk/src/native_client/src/shared/srpc/nacl_srpc_internal.h
+END
+nacl_srpc_ppapi_plugin_internal.c
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/native_client/!svn/ver/11236/trunk/src/native_client/src/shared/srpc/nacl_srpc_ppapi_plugin_internal.c
+END
+nacl_srpc_message.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/native_client/!svn/ver/11240/trunk/src/native_client/src/shared/srpc/nacl_srpc_message.c
+END
+nacl_srpc.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/native_client/!svn/ver/11240/trunk/src/native_client/src/shared/srpc/nacl_srpc.h
+END
+nacl_srpc_ppapi_plugin_internal.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/native_client/!svn/ver/6375/trunk/src/native_client/src/shared/srpc/nacl_srpc_ppapi_plugin_internal.h
+END
+nacl_srpc_message.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/native_client/!svn/ver/11234/trunk/src/native_client/src/shared/srpc/nacl_srpc_message.h
+END
+module_init_fini.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/native_client/!svn/ver/10199/trunk/src/native_client/src/shared/srpc/module_init_fini.c
+END
+nacl.scons
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/native_client/!svn/ver/7973/trunk/src/native_client/src/shared/srpc/nacl.scons
+END
+srpc.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/native_client/!svn/ver/10585/trunk/src/native_client/src/shared/srpc/srpc.gyp
+END
+rpc_log.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/native_client/!svn/ver/10199/trunk/src/native_client/src/shared/srpc/rpc_log.c
+END
+rpc_serialize.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/native_client/!svn/ver/11234/trunk/src/native_client/src/shared/srpc/rpc_serialize.c
+END
+invoke.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/native_client/!svn/ver/7401/trunk/src/native_client/src/shared/srpc/invoke.c
+END

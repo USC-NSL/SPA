@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/90/trunk/grit/format/policy_templates
+END
+PRESUBMIT.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/17/trunk/grit/format/policy_templates/PRESUBMIT.py
+END
+template_formatter.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/79/trunk/grit/format/policy_templates/template_formatter.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/17/trunk/grit/format/policy_templates/__init__.py
+END
+policy_template_generator_unittest.py
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/89/trunk/grit/format/policy_templates/policy_template_generator_unittest.py
+END
+policy_template_generator.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/17/trunk/grit/format/policy_templates/policy_template_generator.py
+END
+writer_configuration.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/17/trunk/grit/format/policy_templates/writer_configuration.py
+END

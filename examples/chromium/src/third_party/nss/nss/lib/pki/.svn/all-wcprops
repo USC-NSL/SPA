@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/pki
+END
+symmkey.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/pki/symmkey.c
+END
+asymmkey.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/pki/asymmkey.c
+END
+nsspkit.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/pki/nsspkit.h
+END
+pkistore.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/pki/pkistore.c
+END
+certdecode.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/pki/certdecode.c
+END
+pki3hack.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/pki/pki3hack.h
+END
+pkim.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/pki/pkim.h
+END
+pkistore.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/pki/pkistore.h
+END
+trustdomain.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/pki/trustdomain.c
+END
+nsspki.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/pki/nsspki.h
+END
+pkit.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/pki/pkit.h
+END
+pkibase.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/pki/pkibase.c
+END
+certificate.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/pki/certificate.c
+END
+cryptocontext.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/pki/cryptocontext.c
+END
+pki.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/pki/pki.h
+END
+pkitm.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/pki/pkitm.h
+END
+tdcache.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/pki/tdcache.c
+END
+pki3hack.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/pki/pki3hack.c
+END

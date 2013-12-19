@@ -1,0 +1,143 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/native_client/!svn/ver/11168/trunk/src/native_client/src/trusted/validator/x86
+END
+error_reporter_verbose.c
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/native_client/!svn/ver/6388/trunk/src/native_client/src/trusted/validator/x86/error_reporter_verbose.c
+END
+nacl_regs.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/native_client/!svn/ver/6482/trunk/src/native_client/src/trusted/validator/x86/nacl_regs.h
+END
+build.scons
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/native_client/!svn/ver/10590/trunk/src/native_client/src/trusted/validator/x86/build.scons
+END
+x86_insts.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/native_client/!svn/ver/6743/trunk/src/native_client/src/trusted/validator/x86/x86_insts.c
+END
+nc_remaining_memory_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/native_client/!svn/ver/5789/trunk/src/native_client/src/trusted/validator/x86/nc_remaining_memory_tests.cc
+END
+nacl_regs32.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/native_client/!svn/ver/6482/trunk/src/native_client/src/trusted/validator/x86/nacl_regs32.h
+END
+x86_insts_inl.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/native_client/!svn/ver/6743/trunk/src/native_client/src/trusted/validator/x86/x86_insts_inl.c
+END
+halt_trim_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/native_client/!svn/ver/7543/trunk/src/native_client/src/trusted/validator/x86/halt_trim_tests.cc
+END
+x86_insts.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/native_client/!svn/ver/11168/trunk/src/native_client/src/trusted/validator/x86/x86_insts.h
+END
+error_reporter.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/native_client/!svn/ver/6709/trunk/src/native_client/src/trusted/validator/x86/error_reporter.c
+END
+validate_x86.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/native_client/!svn/ver/11112/trunk/src/native_client/src/trusted/validator/x86/validate_x86.gyp
+END
+nacl_regs64.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/native_client/!svn/ver/6482/trunk/src/native_client/src/trusted/validator/x86/nacl_regs64.h
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/native_client/!svn/ver/5916/trunk/src/native_client/src/trusted/validator/x86/README
+END
+error_reporter.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/native_client/!svn/ver/5789/trunk/src/native_client/src/trusted/validator/x86/error_reporter.h
+END
+nc_segment.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/native_client/!svn/ver/7605/trunk/src/native_client/src/trusted/validator/x86/nc_segment.c
+END
+halt_trim.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/native_client/!svn/ver/7543/trunk/src/native_client/src/trusted/validator/x86/halt_trim.c
+END
+nc_segment.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/native_client/!svn/ver/7605/trunk/src/native_client/src/trusted/validator/x86/nc_segment.h
+END
+halt_trim.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/native_client/!svn/ver/7543/trunk/src/native_client/src/trusted/validator/x86/halt_trim.h
+END
+nc_inst_bytes_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/native_client/!svn/ver/5789/trunk/src/native_client/src/trusted/validator/x86/nc_inst_bytes_tests.cc
+END
+ncinstbuffer.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/native_client/!svn/ver/7949/trunk/src/native_client/src/trusted/validator/x86/ncinstbuffer.c
+END
+x86_insts_verbose.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/native_client/!svn/ver/11168/trunk/src/native_client/src/trusted/validator/x86/x86_insts_verbose.c
+END
+ncinstbuffer_inl.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/native_client/!svn/ver/6756/trunk/src/native_client/src/trusted/validator/x86/ncinstbuffer_inl.c
+END
+ncinstbuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/native_client/!svn/ver/7775/trunk/src/native_client/src/trusted/validator/x86/ncinstbuffer.h
+END

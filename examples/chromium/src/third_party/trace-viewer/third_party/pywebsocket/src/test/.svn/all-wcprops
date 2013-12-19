@@ -1,0 +1,143 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/153/trunk/third_party/pywebsocket/src/test
+END
+test_mock.py
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/128/trunk/third_party/pywebsocket/src/test/test_mock.py
+END
+mock.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/128/trunk/third_party/pywebsocket/src/test/mock.py
+END
+test_stream.py
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/128/trunk/third_party/pywebsocket/src/test/test_stream.py
+END
+test_stream_hixie75.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/128/trunk/third_party/pywebsocket/src/test/test_stream_hixie75.py
+END
+run_all.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/128/trunk/third_party/pywebsocket/src/test/run_all.py
+END
+test_extensions.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/128/trunk/third_party/pywebsocket/src/test/test_extensions.py
+END
+test_dispatch.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/128/trunk/third_party/pywebsocket/src/test/test_dispatch.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/128/trunk/third_party/pywebsocket/src/test/__init__.py
+END
+test_endtoend.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/128/trunk/third_party/pywebsocket/src/test/test_endtoend.py
+END
+test_handshake_hybi00.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/128/trunk/third_party/pywebsocket/src/test/test_handshake_hybi00.py
+END
+test_handshake_hybi.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/128/trunk/third_party/pywebsocket/src/test/test_handshake_hybi.py
+END
+set_sys_path.py
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/128/trunk/third_party/pywebsocket/src/test/set_sys_path.py
+END
+test_mux.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/153/trunk/third_party/pywebsocket/src/test/test_mux.py
+END
+test_handshake_hybi08.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/128/trunk/third_party/pywebsocket/src/test/test_handshake_hybi08.py
+END
+mux_client_for_testing.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/153/trunk/third_party/pywebsocket/src/test/mux_client_for_testing.py
+END
+test_util.py
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/128/trunk/third_party/pywebsocket/src/test/test_util.py
+END
+test_memorizingfile.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/128/trunk/third_party/pywebsocket/src/test/test_memorizingfile.py
+END
+test_handshake_draft75.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/128/trunk/third_party/pywebsocket/src/test/test_handshake_draft75.py
+END
+client_for_testing.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/153/trunk/third_party/pywebsocket/src/test/client_for_testing.py
+END
+endtoend_with_external_server.py
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/128/trunk/third_party/pywebsocket/src/test/endtoend_with_external_server.py
+END
+test_http_header_util.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/128/trunk/third_party/pywebsocket/src/test/test_http_header_util.py
+END
+test_msgutil.py
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/128/trunk/third_party/pywebsocket/src/test/test_msgutil.py
+END
+test_handshake.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/128/trunk/third_party/pywebsocket/src/test/test_handshake.py
+END

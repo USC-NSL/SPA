@@ -1,0 +1,251 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/167604/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests
+END
+long.hex
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/long.hex
+END
+Makefile.inc
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/167604/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/Makefile.inc
+END
+orphannowarn.asm
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/orphannowarn.asm
+END
+locallabel2.asm
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/locallabel2.asm
+END
+alignnop32.asm
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/alignnop32.asm
+END
+syntax-err.asm
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/syntax-err.asm
+END
+syntax-err.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/syntax-err.errwarn
+END
+alignnop16.asm
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/alignnop16.asm
+END
+orphannowarn.hex
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/orphannowarn.hex
+END
+locallabel2.hex
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/locallabel2.hex
+END
+alignnop32.hex
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/alignnop32.hex
+END
+alignnop16.hex
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/alignnop16.hex
+END
+nasm_test.sh
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/167604/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/nasm_test.sh
+END
+charconstmath.asm
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/charconstmath.asm
+END
+uscore.asm
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/uscore.asm
+END
+struczero.asm
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/struczero.asm
+END
+charconstmath.hex
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/charconstmath.hex
+END
+uscore.hex
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/uscore.hex
+END
+struczero.hex
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/struczero.hex
+END
+equlocal.asm
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/equlocal.asm
+END
+newsect.asm
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/newsect.asm
+END
+equlocal.hex
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/equlocal.hex
+END
+strucalign.asm
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/strucalign.asm
+END
+dy.asm
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/dy.asm
+END
+newsect.hex
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/newsect.hex
+END
+strucalign.hex
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/strucalign.hex
+END
+prevlocalwarn.asm
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/prevlocalwarn.asm
+END
+prevlocalwarn.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/prevlocalwarn.errwarn
+END
+dy.hex
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/dy.hex
+END
+prevlocalwarn.hex
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/prevlocalwarn.hex
+END
+endcomma.asm
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/endcomma.asm
+END
+equcolon.asm
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/equcolon.asm
+END
+endcomma.hex
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/endcomma.hex
+END
+nasm-prefix.asm
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/nasm-prefix.asm
+END
+equcolon.hex
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/equcolon.hex
+END
+locallabel.asm
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/locallabel.asm
+END
+hexconst.asm
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/hexconst.asm
+END
+nasm-prefix.hex
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/nasm-prefix.hex
+END
+locallabel.hex
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/locallabel.hex
+END
+long.asm
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/long.asm
+END
+hexconst.hex
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/hexconst.hex
+END

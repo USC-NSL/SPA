@@ -1,0 +1,209 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/196262/trunk/deps/third_party/nss/nss/lib/softoken
+END
+pkcs11ni.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/softoken/pkcs11ni.h
+END
+sdb.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/softoken/sdb.c
+END
+tlsprf.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/196262/trunk/deps/third_party/nss/nss/lib/softoken/tlsprf.c
+END
+lowkeyti.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/softoken/lowkeyti.h
+END
+softoknt.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/softoken/softoknt.h
+END
+sdb.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/softoken/sdb.h
+END
+lgglue.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/softoken/lgglue.c
+END
+sftkdbti.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/softoken/sftkdbti.h
+END
+fipsaudt.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/softoken/fipsaudt.c
+END
+sftkpwd.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/softoken/sftkpwd.c
+END
+jpakesftk.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/softoken/jpakesftk.c
+END
+lgglue.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/softoken/lgglue.h
+END
+softoken.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/softoken/softoken.h
+END
+sftkpars.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/softoken/sftkpars.c
+END
+fipstokn.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/softoken/fipstokn.c
+END
+sftkhmac.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/softoken/sftkhmac.c
+END
+padbuf.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/softoken/padbuf.c
+END
+fipstest.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/softoken/fipstest.c
+END
+rsawrapr.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/softoken/rsawrapr.c
+END
+pkcs11.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/196262/trunk/deps/third_party/nss/nss/lib/softoken/pkcs11.c
+END
+sftkpars.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/softoken/sftkpars.h
+END
+softkver.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/softoken/softkver.c
+END
+pkcs11c.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/196262/trunk/deps/third_party/nss/nss/lib/softoken/pkcs11c.c
+END
+sftkdbt.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/softoken/sftkdbt.h
+END
+softkver.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/196262/trunk/deps/third_party/nss/nss/lib/softoken/softkver.h
+END
+lowkey.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/softoken/lowkey.c
+END
+sftkdb.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/softoken/sftkdb.c
+END
+pkcs11i.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/196262/trunk/deps/third_party/nss/nss/lib/softoken/pkcs11i.h
+END
+sftkdb.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/softoken/sftkdb.h
+END
+pkcs11u.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/softoken/pkcs11u.c
+END
+lowpbe.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/softoken/lowpbe.c
+END
+lowkeyi.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/softoken/lowkeyi.h
+END
+ecdecode.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/softoken/ecdecode.c
+END
+lowpbe.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/softoken/lowpbe.h
+END

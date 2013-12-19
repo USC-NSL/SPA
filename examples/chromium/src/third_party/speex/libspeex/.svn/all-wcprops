@@ -1,0 +1,293 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex
+END
+lsp.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/lsp.c
+END
+modes_wb.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/modes_wb.c
+END
+bits.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/bits.c
+END
+stereo.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/stereo.c
+END
+nb_celp.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/nb_celp.c
+END
+lsp.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/lsp.h
+END
+quant_lsp.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/quant_lsp.c
+END
+nb_celp.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/nb_celp.h
+END
+exc_8_128_table.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/exc_8_128_table.c
+END
+sb_celp.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/sb_celp.c
+END
+cb_search.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/cb_search.c
+END
+quant_lsp.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/quant_lsp.h
+END
+sb_celp.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/sb_celp.h
+END
+lpc.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/lpc.c
+END
+cb_search.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/cb_search.h
+END
+os_support.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/os_support.h
+END
+lpc.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/lpc.h
+END
+speex_callbacks.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/speex_callbacks.c
+END
+gain_table_lbr.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/gain_table_lbr.c
+END
+speex.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/speex.c
+END
+gain_table.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/gain_table.c
+END
+math_approx.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/math_approx.h
+END
+vbr.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/vbr.c
+END
+hexc_table.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/hexc_table.c
+END
+vbr.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/vbr.h
+END
+ltp.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/ltp.c
+END
+hexc_10_32_table.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/hexc_10_32_table.c
+END
+ltp.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/ltp.h
+END
+exc_5_256_table.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/exc_5_256_table.c
+END
+modes.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/modes.c
+END
+lsp_tables_nb.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/lsp_tables_nb.c
+END
+window.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/window.c
+END
+filters.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/filters.c
+END
+resample.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/resample.c
+END
+buffer.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/buffer.c
+END
+modes.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/modes.h
+END
+filters.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/filters.h
+END
+arch.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/arch.h
+END
+exc_5_64_table.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/exc_5_64_table.c
+END
+stack_alloc.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/stack_alloc.h
+END
+vq.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/vq.c
+END
+high_lsp_tables.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/high_lsp_tables.c
+END
+exc_10_32_table.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/exc_10_32_table.c
+END
+pseudofloat.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/pseudofloat.h
+END
+exc_20_32_table.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/exc_20_32_table.c
+END
+vq.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/vq.h
+END
+exc_10_16_table.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/exc_10_16_table.c
+END
+speex_header.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/56388/trunk/deps/third_party/speex/libspeex/speex_header.c
+END

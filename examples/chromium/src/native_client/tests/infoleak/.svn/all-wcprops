@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/native_client/!svn/ver/10869/trunk/src/native_client/tests/infoleak
+END
+nacl.scons
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/native_client/!svn/ver/10541/trunk/src/native_client/tests/infoleak/nacl.scons
+END
+test_fpu_control_word_arm.S
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/native_client/!svn/ver/10178/trunk/src/native_client/tests/infoleak/test_fpu_control_word_arm.S
+END
+test_fpu_control_word.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/native_client/!svn/ver/10541/trunk/src/native_client/tests/infoleak/test_fpu_control_word.c
+END
+test_infoleak_arm.S
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/native_client/!svn/ver/10178/trunk/src/native_client/tests/infoleak/test_infoleak_arm.S
+END
+test_infoleak.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/native_client/!svn/ver/10869/trunk/src/native_client/tests/infoleak/test_infoleak.c
+END

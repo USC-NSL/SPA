@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/115467/trunk/deps/third_party/libsrtp/srtp/crypto/rng
+END
+ctr_prng.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/115467/trunk/deps/third_party/libsrtp/srtp/crypto/rng/ctr_prng.c
+END
+rand_linux_kernel.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/115467/trunk/deps/third_party/libsrtp/srtp/crypto/rng/rand_linux_kernel.c
+END
+rand_source.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/115467/trunk/deps/third_party/libsrtp/srtp/crypto/rng/rand_source.c
+END
+prng.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/115467/trunk/deps/third_party/libsrtp/srtp/crypto/rng/prng.c
+END

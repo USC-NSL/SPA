@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/test/auto_test
+END
+voe_stress_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/3838/stable/webrtc/voice_engine/test/auto_test/voe_stress_test.cc
+END
+voe_stress_test.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/2974/stable/webrtc/voice_engine/test/auto_test/voe_stress_test.h
+END
+voe_cpu_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/3838/stable/webrtc/voice_engine/test/auto_test/voe_cpu_test.cc
+END
+voe_cpu_test.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/2974/stable/webrtc/voice_engine/test/auto_test/voe_cpu_test.h
+END
+Android.mk
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/2974/stable/webrtc/voice_engine/test/auto_test/Android.mk
+END
+voe_standard_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/2974/stable/webrtc/voice_engine/test/auto_test/voe_standard_test.cc
+END
+voe_extended_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/test/auto_test/voe_extended_test.cc
+END
+voe_test_interface.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/2974/stable/webrtc/voice_engine/test/auto_test/voe_test_interface.h
+END
+voe_standard_test.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/test/auto_test/voe_standard_test.h
+END
+voe_extended_test.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/3838/stable/webrtc/voice_engine/test/auto_test/voe_extended_test.h
+END
+resource_manager.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/2974/stable/webrtc/voice_engine/test/auto_test/resource_manager.cc
+END
+resource_manager.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/2974/stable/webrtc/voice_engine/test/auto_test/resource_manager.h
+END
+voe_test_defines.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/test/auto_test/voe_test_defines.h
+END
+voe_unit_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/3838/stable/webrtc/voice_engine/test/auto_test/voe_unit_test.cc
+END
+automated_mode.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/3205/stable/webrtc/voice_engine/test/auto_test/automated_mode.cc
+END
+automated_mode.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/2974/stable/webrtc/voice_engine/test/auto_test/automated_mode.h
+END
+voe_unit_test.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/3838/stable/webrtc/voice_engine/test/auto_test/voe_unit_test.h
+END

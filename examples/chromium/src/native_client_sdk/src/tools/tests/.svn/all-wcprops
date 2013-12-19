@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/190994/trunk/src/native_client_sdk/src/tools/tests
+END
+getos_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/190994/trunk/src/native_client_sdk/src/tools/tests/getos_test.py
+END
+httpd_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/173306/trunk/src/native_client_sdk/src/tools/tests/httpd_test.py
+END
+create_nmf_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/190994/trunk/src/native_client_sdk/src/tools/tests/create_nmf_test.py
+END
+oshelpers_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/181725/trunk/src/native_client_sdk/src/tools/tests/oshelpers_test.py
+END
+chrome_mock.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/167561/trunk/src/native_client_sdk/src/tools/tests/chrome_mock.py
+END

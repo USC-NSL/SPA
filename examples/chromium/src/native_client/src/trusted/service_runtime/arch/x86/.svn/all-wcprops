@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/native_client/!svn/ver/11155/trunk/src/native_client/src/trusted/service_runtime/arch/x86
+END
+sel_ldr_x86.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/native_client/!svn/ver/11155/trunk/src/native_client/src/trusted/service_runtime/arch/x86/sel_ldr_x86.h
+END
+nacl_ldt_x86.c
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/native_client/!svn/ver/10920/trunk/src/native_client/src/trusted/service_runtime/arch/x86/nacl_ldt_x86.c
+END
+service_runtime_x86.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/native_client/!svn/ver/10585/trunk/src/native_client/src/trusted/service_runtime/arch/x86/service_runtime_x86.gyp
+END
+nacl_ldt_x86.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/native_client/!svn/ver/10196/trunk/src/native_client/src/trusted/service_runtime/arch/x86/nacl_ldt_x86.h
+END
+sel_rt.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/native_client/!svn/ver/10541/trunk/src/native_client/src/trusted/service_runtime/arch/x86/sel_rt.h
+END

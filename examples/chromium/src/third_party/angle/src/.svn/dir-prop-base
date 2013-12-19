@@ -1,0 +1,17 @@
+K 10
+svn:ignore
+V 251
+ANGLE.sln
+build_angle.Makefile
+build_angle.sln
+build_angle.xcodeproj
+libEGL.vcproj
+libGLESv2.vcproj
+translator_common.target.mk
+translator_common.vcproj
+translator_glsl.target.mk
+translator_glsl.vcproj
+translator_hlsl.target.mk
+translator_hlsl.vcproj
+
+END

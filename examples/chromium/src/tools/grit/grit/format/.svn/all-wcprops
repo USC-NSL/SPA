@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/116/trunk/grit/format
+END
+c_format_unittest.py
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/89/trunk/grit/format/c_format_unittest.py
+END
+c_format.py
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/79/trunk/grit/format/c_format.py
+END
+chrome_messages_json_unittest.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/89/trunk/grit/format/chrome_messages_json_unittest.py
+END
+chrome_messages_json.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/92/trunk/grit/format/chrome_messages_json.py
+END
+android_xml_unittest.py
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/115/trunk/grit/format/android_xml_unittest.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/17/trunk/grit/format/__init__.py
+END
+android_xml.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/115/trunk/grit/format/android_xml.py
+END
+html_inline_unittest.py
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/116/trunk/grit/format/html_inline_unittest.py
+END
+html_inline.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/116/trunk/grit/format/html_inline.py
+END
+rc_unittest.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/89/trunk/grit/format/rc_unittest.py
+END
+rc.py
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/79/trunk/grit/format/rc.py
+END
+repack.py
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/89/trunk/grit/format/repack.py
+END
+data_pack_unittest.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/89/trunk/grit/format/data_pack_unittest.py
+END
+data_pack.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/89/trunk/grit/format/data_pack.py
+END
+rc_header_unittest.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/89/trunk/grit/format/rc_header_unittest.py
+END
+rc_header.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/94/trunk/grit/format/rc_header.py
+END
+js_map_format_unittest.py
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/89/trunk/grit/format/js_map_format_unittest.py
+END
+js_map_format.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/79/trunk/grit/format/js_map_format.py
+END
+resource_map_unittest.py
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/89/trunk/grit/format/resource_map_unittest.py
+END
+resource_map.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/79/trunk/grit/format/resource_map.py
+END

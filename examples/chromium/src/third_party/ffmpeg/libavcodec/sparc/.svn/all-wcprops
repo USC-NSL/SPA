@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/sparc
+END
+dsputil_vis.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/sparc/dsputil_vis.c
+END
+vis.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/122313/trunk/deps/third_party/ffmpeg/libavcodec/sparc/vis.h
+END
+dsputil_vis.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/sparc/dsputil_vis.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/133551/trunk/deps/third_party/ffmpeg/libavcodec/sparc/Makefile
+END
+simple_idct_vis.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/sparc/simple_idct_vis.c
+END

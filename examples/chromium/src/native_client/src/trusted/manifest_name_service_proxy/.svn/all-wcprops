@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/native_client/!svn/ver/10585/trunk/src/native_client/src/trusted/manifest_name_service_proxy
+END
+build.scons
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/native_client/!svn/ver/5671/trunk/src/native_client/src/trusted/manifest_name_service_proxy/build.scons
+END
+manifest_name_service_proxy.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/native_client/!svn/ver/10585/trunk/src/native_client/src/trusted/manifest_name_service_proxy/manifest_name_service_proxy.gyp
+END
+manifest_proxy.c
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/native_client/!svn/ver/9853/trunk/src/native_client/src/trusted/manifest_name_service_proxy/manifest_proxy.c
+END
+manifest_proxy.h
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/native_client/!svn/ver/6602/trunk/src/native_client/src/trusted/manifest_name_service_proxy/manifest_proxy.h
+END

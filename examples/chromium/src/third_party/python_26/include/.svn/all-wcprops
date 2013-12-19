@@ -1,0 +1,533 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include
+END
+bytearrayobject.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/bytearrayobject.h
+END
+ucnhash.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/ucnhash.h
+END
+iterobject.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/iterobject.h
+END
+enumobject.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/enumobject.h
+END
+classobject.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/classobject.h
+END
+datetime.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/datetime.h
+END
+pyport.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/pyport.h
+END
+stringobject.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/stringobject.h
+END
+complexobject.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/complexobject.h
+END
+codecs.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/codecs.h
+END
+longintrepr.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/longintrepr.h
+END
+opcode.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/opcode.h
+END
+bytes_methods.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/bytes_methods.h
+END
+code.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/code.h
+END
+dictobject.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/dictobject.h
+END
+py_curses.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/py_curses.h
+END
+unicodeobject.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/unicodeobject.h
+END
+intobject.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/intobject.h
+END
+pystrcmp.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/pystrcmp.h
+END
+asdl.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/asdl.h
+END
+errcode.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/errcode.h
+END
+rangeobject.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/rangeobject.h
+END
+pgenheaders.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/pgenheaders.h
+END
+ceval.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/ceval.h
+END
+objimpl.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/objimpl.h
+END
+timefuncs.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/timefuncs.h
+END
+pyarena.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/pyarena.h
+END
+listobject.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/listobject.h
+END
+cobject.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/cobject.h
+END
+graminit.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/graminit.h
+END
+pygetopt.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/pygetopt.h
+END
+moduleobject.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/moduleobject.h
+END
+traceback.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/traceback.h
+END
+token.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/token.h
+END
+Python.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/Python.h
+END
+funcobject.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/funcobject.h
+END
+osdefs.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/osdefs.h
+END
+grammar.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/grammar.h
+END
+patchlevel.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/patchlevel.h
+END
+ast.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/ast.h
+END
+pymem.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/pymem.h
+END
+parsetok.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/parsetok.h
+END
+pystate.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/pystate.h
+END
+bitset.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/bitset.h
+END
+floatobject.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/floatobject.h
+END
+structseq.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/structseq.h
+END
+cStringIO.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/cStringIO.h
+END
+pymath.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/pymath.h
+END
+abstract.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/abstract.h
+END
+object.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/object.h
+END
+cellobject.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/cellobject.h
+END
+pythonrun.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/pythonrun.h
+END
+methodobject.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/methodobject.h
+END
+import.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/import.h
+END
+weakrefobject.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/weakrefobject.h
+END
+structmember.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/structmember.h
+END
+pythread.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/pythread.h
+END
+symtable.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/symtable.h
+END
+tupleobject.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/tupleobject.h
+END
+boolobject.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/boolobject.h
+END
+pyfpe.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/pyfpe.h
+END
+marshal.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/marshal.h
+END
+descrobject.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/descrobject.h
+END
+compile.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/compile.h
+END
+pystrtod.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/pystrtod.h
+END
+warnings.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/warnings.h
+END
+pgen.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/pgen.h
+END
+pyexpat.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/pyexpat.h
+END
+metagrammar.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/metagrammar.h
+END
+pymacconfig.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/pymacconfig.h
+END
+pydebug.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/pydebug.h
+END
+bufferobject.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/bufferobject.h
+END
+genobject.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/genobject.h
+END
+Python-ast.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/Python-ast.h
+END
+fileobject.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/fileobject.h
+END
+intrcheck.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/intrcheck.h
+END
+modsupport.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/modsupport.h
+END
+bytesobject.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/bytesobject.h
+END
+pyconfig.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/pyconfig.h
+END
+pymactoolbox.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/pymactoolbox.h
+END
+frameobject.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/frameobject.h
+END
+setobject.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/setobject.h
+END
+sysmodule.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/sysmodule.h
+END
+pyerrors.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/pyerrors.h
+END
+node.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/node.h
+END
+longobject.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/longobject.h
+END
+sliceobject.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/sliceobject.h
+END
+eval.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/include/eval.h
+END

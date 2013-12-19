@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/DBD/Gofer/Transport
+END
+Base.pm
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/DBD/Gofer/Transport/Base.pm
+END
+null.pm
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/DBD/Gofer/Transport/null.pm
+END
+stream.pm
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/DBD/Gofer/Transport/stream.pm
+END
+corostream.pm
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/DBD/Gofer/Transport/corostream.pm
+END
+pipeone.pm
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/DBD/Gofer/Transport/pipeone.pm
+END

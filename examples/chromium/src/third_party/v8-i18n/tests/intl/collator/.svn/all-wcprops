@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/152/trunk/tests/intl/collator
+END
+protected-icu-internals.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/105/trunk/tests/intl/collator/protected-icu-internals.js
+END
+normalization.js
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/152/trunk/tests/intl/collator/normalization.js
+END
+en-sort.js
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/105/trunk/tests/intl/collator/en-sort.js
+END
+sr-sort.js
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/105/trunk/tests/intl/collator/sr-sort.js
+END
+de-sort.js
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/105/trunk/tests/intl/collator/de-sort.js
+END
+default-locale.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/124/trunk/tests/intl/collator/default-locale.js
+END
+property-override.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/152/trunk/tests/intl/collator/property-override.js
+END
+resolved-options-is-method.js
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/97/trunk/tests/intl/collator/resolved-options-is-method.js
+END
+wellformed-unsupported-locale.js
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/98/trunk/tests/intl/collator/wellformed-unsupported-locale.js
+END

@@ -1,0 +1,149 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/blink/!svn/ver/148893/trunk/LayoutTests/http/tests/websocket/tests/hybi/workers/resources
+END
+send-blob.js
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/blink/!svn/ver/119791/trunk/LayoutTests/http/tests/websocket/tests/hybi/workers/resources/send-blob.js
+END
+close.js
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/blink/!svn/ver/135052/trunk/LayoutTests/http/tests/websocket/tests/hybi/workers/resources/close.js
+END
+worker-reload-iframe.html
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/blink/!svn/ver/113292/trunk/LayoutTests/http/tests/websocket/tests/hybi/workers/resources/worker-reload-iframe.html
+END
+echo_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/blink/!svn/ver/90726/trunk/LayoutTests/http/tests/websocket/tests/hybi/workers/resources/echo_wsh.py
+END
+protocol-test_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/blink/!svn/ver/92757/trunk/LayoutTests/http/tests/websocket/tests/hybi/workers/resources/protocol-test_wsh.py
+END
+worker-reload.js
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/blink/!svn/ver/113292/trunk/LayoutTests/http/tests/websocket/tests/hybi/workers/resources/worker-reload.js
+END
+close-in-worker.js
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/blink/!svn/ver/90726/trunk/LayoutTests/http/tests/websocket/tests/hybi/workers/resources/close-in-worker.js
+END
+no-onmessage-in-sync-op_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/blink/!svn/ver/107788/trunk/LayoutTests/http/tests/websocket/tests/hybi/workers/resources/no-onmessage-in-sync-op_wsh.py
+END
+worker-handshake-challenge-randomness.js
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/blink/!svn/ver/90726/trunk/LayoutTests/http/tests/websocket/tests/hybi/workers/resources/worker-handshake-challenge-randomness.js
+END
+no-onmessage-in-sync-op.js
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/blink/!svn/ver/107788/trunk/LayoutTests/http/tests/websocket/tests/hybi/workers/resources/no-onmessage-in-sync-op.js
+END
+no-subprotocol.js
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/blink/!svn/ver/92946/trunk/LayoutTests/http/tests/websocket/tests/hybi/workers/resources/no-subprotocol.js
+END
+close-in-onmessage-crash.js
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/blink/!svn/ver/90726/trunk/LayoutTests/http/tests/websocket/tests/hybi/workers/resources/close-in-onmessage-crash.js
+END
+simple_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/blink/!svn/ver/90726/trunk/LayoutTests/http/tests/websocket/tests/hybi/workers/resources/simple_wsh.py
+END
+multiple-subprotocols.js
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/blink/!svn/ver/92946/trunk/LayoutTests/http/tests/websocket/tests/hybi/workers/resources/multiple-subprotocols.js
+END
+receive-arraybuffer.js
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/blink/!svn/ver/94161/trunk/LayoutTests/http/tests/websocket/tests/hybi/workers/resources/receive-arraybuffer.js
+END
+send-arraybufferview.js
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/blink/!svn/ver/124846/trunk/LayoutTests/http/tests/websocket/tests/hybi/workers/resources/send-arraybufferview.js
+END
+connect-error-by-no-websocket-server.js
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/blink/!svn/ver/148893/trunk/LayoutTests/http/tests/websocket/tests/hybi/workers/resources/connect-error-by-no-websocket-server.js
+END
+echo-challenge_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/blink/!svn/ver/90979/trunk/LayoutTests/http/tests/websocket/tests/hybi/workers/resources/echo-challenge_wsh.py
+END
+binary-frames_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/blink/!svn/ver/94041/trunk/LayoutTests/http/tests/websocket/tests/hybi/workers/resources/binary-frames_wsh.py
+END
+receive-blob.js
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/blink/!svn/ver/94161/trunk/LayoutTests/http/tests/websocket/tests/hybi/workers/resources/receive-blob.js
+END
+send-arraybuffer.js
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/blink/!svn/ver/94482/trunk/LayoutTests/http/tests/websocket/tests/hybi/workers/resources/send-arraybuffer.js
+END
+worker-simple.js
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/blink/!svn/ver/91826/trunk/LayoutTests/http/tests/websocket/tests/hybi/workers/resources/worker-simple.js
+END
+check-binary-messages_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/blink/!svn/ver/94482/trunk/LayoutTests/http/tests/websocket/tests/hybi/workers/resources/check-binary-messages_wsh.py
+END
+close-code-and-reason.js
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/blink/!svn/ver/118723/trunk/LayoutTests/http/tests/websocket/tests/hybi/workers/resources/close-code-and-reason.js
+END

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/x86
+END
+vf_hqdn3d_init.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/x86/vf_hqdn3d_init.c
+END
+af_volume_init.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/x86/af_volume_init.c
+END
+vf_gradfun.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/x86/vf_gradfun.c
+END
+vf_yadif.asm
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/x86/vf_yadif.asm
+END
+vf_hqdn3d.asm
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/x86/vf_hqdn3d.asm
+END
+vf_yadif_init.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/x86/vf_yadif_init.c
+END
+af_volume.asm
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/x86/af_volume.asm
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/x86/Makefile
+END

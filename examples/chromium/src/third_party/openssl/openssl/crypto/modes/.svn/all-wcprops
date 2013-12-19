@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/crypto/modes
+END
+ofb128.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/modes/ofb128.c
+END
+gcm128.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/crypto/modes/gcm128.c
+END
+cbc128.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/modes/cbc128.c
+END
+ctr128.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/modes/ctr128.c
+END
+cfb128.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/modes/cfb128.c
+END
+modes_lcl.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/modes/modes_lcl.h
+END
+xts128.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/modes/xts128.c
+END
+ccm128.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/modes/ccm128.c
+END

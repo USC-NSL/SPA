@@ -1,0 +1,80 @@
+10
+
+dir
+174
+http://v8-i18n.googlecode.com/svn/trunk/tests/intl
+http://v8-i18n.googlecode.com/svn
+
+
+
+2013-04-18T03:29:26.448931Z
+174
+cira@chromium.org
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+24c52dca-d3ef-abce-e343-6dbe4d066545
+
+collator
+dir
+
+overrides
+dir
+
+date-format
+dir
+
+break-iterator
+dir
+
+run-tests.py
+file
+
+
+
+
+2012-10-03T08:01:00.000000Z
+f457f18d2ac1c6f2a16857dd9041c2a3
+2012-10-01T20:17:25.147483Z
+146
+cira@google.com
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2047
+
+general
+dir
+
+number-format
+dir
+

@@ -1,0 +1,167 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/docshell
+END
+nsIDocShellHistory.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/docshell/nsIDocShellHistory.h
+END
+nsIMarkupDocumentViewer.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/docshell/nsIMarkupDocumentViewer.h
+END
+nsIGlobalHistory.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/docshell/nsIGlobalHistory.h
+END
+nsIScrollable.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/docshell/nsIScrollable.h
+END
+nsIDocShellTreeNode.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/docshell/nsIDocShellTreeNode.h
+END
+nsCDocShell.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/docshell/nsCDocShell.h
+END
+nsIDocShellTreeOwner.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/docshell/nsIDocShellTreeOwner.h
+END
+nsIDownloadHistory.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/docshell/nsIDownloadHistory.h
+END
+nsIDocShellTreeItem.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/docshell/nsIDocShellTreeItem.h
+END
+nsIContentViewerFile.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/docshell/nsIContentViewerFile.h
+END
+nsIContentViewer.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/docshell/nsIContentViewer.h
+END
+nsIDocShell.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/docshell/nsIDocShell.h
+END
+nsIWebNavigation.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/docshell/nsIWebNavigation.h
+END
+nsIContentViewerEdit.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/docshell/nsIContentViewerEdit.h
+END
+nsITextScroll.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/docshell/nsITextScroll.h
+END
+nsIEditorDocShell.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/docshell/nsIEditorDocShell.h
+END
+nsDocShellCID.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/docshell/nsDocShellCID.h
+END
+nsIGlobalHistory2.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/docshell/nsIGlobalHistory2.h
+END
+nsIURIClassifier.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/docshell/nsIURIClassifier.h
+END
+nsIGlobalHistory3.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/docshell/nsIGlobalHistory3.h
+END
+nsIDocShellLoadInfo.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/docshell/nsIDocShellLoadInfo.h
+END
+nsDocShellLoadTypes.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/docshell/nsDocShellLoadTypes.h
+END
+nsIWebNavigationInfo.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/docshell/nsIWebNavigationInfo.h
+END
+nsIWebPageDescriptor.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/docshell/nsIWebPageDescriptor.h
+END
+nsCDefaultURIFixup.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/docshell/nsCDefaultURIFixup.h
+END
+nsIURIFixup.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/docshell/nsIURIFixup.h
+END
+nsIChannelClassifier.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/docshell/nsIChannelClassifier.h
+END

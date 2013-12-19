@@ -1,0 +1,162 @@
+10
+
+dir
+192960
+http://src.chromium.org/svn/trunk/deps/third_party/icu46/source/tools
+http://src.chromium.org/svn
+
+
+
+2011-02-02T02:39:23.790255Z
+73411
+jshin@chromium.org
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4ff67af0-8c30-449e-8e8b-ad334ec8d88c
+
+ctestfw
+dir
+
+Makefile.in
+file
+
+
+
+
+2012-08-28T21:13:27.000000Z
+272443022a350df8228778e761c12cfc
+2010-12-06T23:14:47.787316Z
+68397
+jshin@chromium.org
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1965
+
+icupkg
+dir
+
+gensprep
+dir
+
+gennorm2
+dir
+
+tzcode
+dir
+
+gendraft
+dir
+
+icuinfo
+dir
+
+gencnval
+dir
+
+genrb
+dir
+
+makeconv
+dir
+
+genctd
+dir
+
+genccode
+dir
+
+gencfu
+dir
+
+gencmn
+dir
+
+genbrk
+dir
+
+gentest
+dir
+
+icu-svnprops-check.py
+file
+
+
+
+
+2012-08-28T21:13:27.000000Z
+285d21d44535ad7ea1c0775555c90b19
+2010-12-06T23:14:47.787316Z
+68397
+jshin@chromium.org
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9320
+
+icuswap
+dir
+
+pkgdata
+dir
+
+toolutil
+dir
+
+memcheck
+dir
+
+dumpce
+dir
+
+genren
+dir
+

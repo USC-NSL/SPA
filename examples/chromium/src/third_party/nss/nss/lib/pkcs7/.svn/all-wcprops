@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/196262/trunk/deps/third_party/nss/nss/lib/pkcs7
+END
+p7common.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/pkcs7/p7common.c
+END
+pkcs7t.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/pkcs7/pkcs7t.h
+END
+p7local.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/pkcs7/p7local.c
+END
+secmime.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/pkcs7/secmime.c
+END
+p7encode.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/pkcs7/p7encode.c
+END
+p7local.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/pkcs7/p7local.h
+END
+secmime.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/pkcs7/secmime.h
+END
+secpkcs7.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/196262/trunk/deps/third_party/nss/nss/lib/pkcs7/secpkcs7.h
+END
+certread.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/196262/trunk/deps/third_party/nss/nss/lib/pkcs7/certread.c
+END
+p7create.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/pkcs7/p7create.c
+END
+p7decode.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/196262/trunk/deps/third_party/nss/nss/lib/pkcs7/p7decode.c
+END

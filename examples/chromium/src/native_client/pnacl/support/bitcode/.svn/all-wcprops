@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/native_client/!svn/ver/10315/trunk/src/native_client/pnacl/support/bitcode
+END
+crti.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/native_client/!svn/ver/7498/trunk/src/native_client/pnacl/support/bitcode/crti.c
+END
+pnacl_abi.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/native_client/!svn/ver/9087/trunk/src/native_client/pnacl/support/bitcode/pnacl_abi.c
+END
+crtbegin.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/native_client/!svn/ver/7445/trunk/src/native_client/pnacl/support/bitcode/crtbegin.c
+END

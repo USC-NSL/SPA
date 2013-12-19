@@ -1,0 +1,174 @@
+10
+
+dir
+11250
+http://src.chromium.org/native_client/trunk/src/native_client/src/trusted
+http://src.chromium.org/native_client
+
+
+
+2013-04-26T23:49:38.956959Z
+11244
+petarj@mips.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+fcba33aa-ac0c-11dd-b9e7-8d5594d729c2
+
+seccomp_bpf
+dir
+
+weak_ref
+dir
+
+debug_stub
+dir
+
+validator_arm
+dir
+
+validator
+dir
+
+nonnacl_util
+dir
+
+cpu_features
+dir
+
+manifest_name_service_proxy
+dir
+
+validator_x86
+dir
+
+DEPS
+file
+
+
+
+
+2012-08-28T21:12:46.000000Z
+b44583eee330ca93d9cdc22693d4fbcb
+2012-07-24T00:02:32.002816Z
+9224
+bradnelson@google.com
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+105
+
+perf_counter
+dir
+
+reverse_service
+dir
+
+python_bindings
+dir
+
+sandbox
+dir
+
+validator_ragel
+dir
+
+service_runtime
+dir
+
+threading
+dir
+
+nacl_base
+dir
+
+simple_service
+dir
+
+interval_multiset
+dir
+
+sel_universal
+dir
+
+fault_injection
+dir
+
+validator_mips
+dir
+
+OWNERS
+file
+
+
+
+
+2012-08-28T21:12:46.000000Z
+16c62c7ad305c8564665599afb305ae8
+2012-05-18T20:47:45.457671Z
+8651
+mcgrathr@chromium.org
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+211
+
+platform_qualify
+dir
+
+gio
+dir
+
+desc
+dir
+
+generic_container
+dir
+

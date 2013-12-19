@@ -1,0 +1,209 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/128/trunk/cpp/src/sfntly/table/bitmap
+END
+big_glyph_metrics.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/108/trunk/cpp/src/sfntly/table/bitmap/big_glyph_metrics.h
+END
+bitmap_glyph_info.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/100/trunk/cpp/src/sfntly/table/bitmap/bitmap_glyph_info.h
+END
+eblc_table.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/107/trunk/cpp/src/sfntly/table/bitmap/eblc_table.cc
+END
+bitmap_glyph.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/100/trunk/cpp/src/sfntly/table/bitmap/bitmap_glyph.cc
+END
+index_sub_table_format2.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/128/trunk/cpp/src/sfntly/table/bitmap/index_sub_table_format2.cc
+END
+bitmap_glyph.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/100/trunk/cpp/src/sfntly/table/bitmap/bitmap_glyph.h
+END
+index_sub_table_format1.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/107/trunk/cpp/src/sfntly/table/bitmap/index_sub_table_format1.h
+END
+index_sub_table_format2.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/107/trunk/cpp/src/sfntly/table/bitmap/index_sub_table_format2.h
+END
+ebsc_table.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/100/trunk/cpp/src/sfntly/table/bitmap/ebsc_table.cc
+END
+index_sub_table_format4.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/128/trunk/cpp/src/sfntly/table/bitmap/index_sub_table_format4.cc
+END
+index_sub_table_format3.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/107/trunk/cpp/src/sfntly/table/bitmap/index_sub_table_format3.h
+END
+ebsc_table.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/101/trunk/cpp/src/sfntly/table/bitmap/ebsc_table.h
+END
+index_sub_table_format4.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/107/trunk/cpp/src/sfntly/table/bitmap/index_sub_table_format4.h
+END
+index_sub_table_format5.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/107/trunk/cpp/src/sfntly/table/bitmap/index_sub_table_format5.h
+END
+index_sub_table.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/119/trunk/cpp/src/sfntly/table/bitmap/index_sub_table.cc
+END
+simple_bitmap_glyph.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/100/trunk/cpp/src/sfntly/table/bitmap/simple_bitmap_glyph.cc
+END
+index_sub_table.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/107/trunk/cpp/src/sfntly/table/bitmap/index_sub_table.h
+END
+big_glyph_metrics.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/108/trunk/cpp/src/sfntly/table/bitmap/big_glyph_metrics.cc
+END
+bitmap_glyph_info.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/100/trunk/cpp/src/sfntly/table/bitmap/bitmap_glyph_info.cc
+END
+small_glyph_metrics.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/100/trunk/cpp/src/sfntly/table/bitmap/small_glyph_metrics.cc
+END
+composite_bitmap_glyph.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/100/trunk/cpp/src/sfntly/table/bitmap/composite_bitmap_glyph.cc
+END
+small_glyph_metrics.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/100/trunk/cpp/src/sfntly/table/bitmap/small_glyph_metrics.h
+END
+composite_bitmap_glyph.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/100/trunk/cpp/src/sfntly/table/bitmap/composite_bitmap_glyph.h
+END
+glyph_metrics.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/100/trunk/cpp/src/sfntly/table/bitmap/glyph_metrics.cc
+END
+glyph_metrics.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/100/trunk/cpp/src/sfntly/table/bitmap/glyph_metrics.h
+END
+bitmap_size_table.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/107/trunk/cpp/src/sfntly/table/bitmap/bitmap_size_table.cc
+END
+eblc_table.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/107/trunk/cpp/src/sfntly/table/bitmap/eblc_table.h
+END
+bitmap_size_table.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/107/trunk/cpp/src/sfntly/table/bitmap/bitmap_size_table.h
+END
+index_sub_table_format1.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/128/trunk/cpp/src/sfntly/table/bitmap/index_sub_table_format1.cc
+END
+index_sub_table_format3.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/128/trunk/cpp/src/sfntly/table/bitmap/index_sub_table_format3.cc
+END
+index_sub_table_format5.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/128/trunk/cpp/src/sfntly/table/bitmap/index_sub_table_format5.cc
+END
+ebdt_table.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/103/trunk/cpp/src/sfntly/table/bitmap/ebdt_table.cc
+END
+ebdt_table.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/107/trunk/cpp/src/sfntly/table/bitmap/ebdt_table.h
+END
+simple_bitmap_glyph.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/100/trunk/cpp/src/sfntly/table/bitmap/simple_bitmap_glyph.h
+END

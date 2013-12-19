@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/blink/!svn/ver/149218/trunk/Source/modules/device_orientation
+END
+DeviceAcceleration.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/blink/!svn/ver/149218/trunk/Source/modules/device_orientation/DeviceAcceleration.h
+END
+DeviceMotionController.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/blink/!svn/ver/149213/trunk/Source/modules/device_orientation/DeviceMotionController.h
+END
+DeviceAcceleration.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/blink/!svn/ver/149213/trunk/Source/modules/device_orientation/DeviceAcceleration.idl
+END
+DeviceMotionData.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/blink/!svn/ver/149218/trunk/Source/modules/device_orientation/DeviceMotionData.cpp
+END
+DeviceRotationRate.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/blink/!svn/ver/149218/trunk/Source/modules/device_orientation/DeviceRotationRate.h
+END
+DeviceRotationRate.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/blink/!svn/ver/149213/trunk/Source/modules/device_orientation/DeviceRotationRate.idl
+END
+DeviceMotionData.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/blink/!svn/ver/149213/trunk/Source/modules/device_orientation/DeviceMotionData.h
+END
+DeviceMotionEvent.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/blink/!svn/ver/149218/trunk/Source/modules/device_orientation/DeviceMotionEvent.cpp
+END
+DeviceAcceleration.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/blink/!svn/ver/149218/trunk/Source/modules/device_orientation/DeviceAcceleration.cpp
+END
+DeviceMotionClient.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/blink/!svn/ver/149213/trunk/Source/modules/device_orientation/DeviceMotionClient.h
+END
+DeviceMotionController.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/blink/!svn/ver/149218/trunk/Source/modules/device_orientation/DeviceMotionController.cpp
+END
+DeviceRotationRate.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/blink/!svn/ver/149218/trunk/Source/modules/device_orientation/DeviceRotationRate.cpp
+END
+DeviceMotionEvent.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/blink/!svn/ver/149218/trunk/Source/modules/device_orientation/DeviceMotionEvent.h
+END
+DeviceMotionEvent.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/blink/!svn/ver/149213/trunk/Source/modules/device_orientation/DeviceMotionEvent.idl
+END

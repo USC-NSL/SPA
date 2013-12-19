@@ -1,0 +1,26 @@
+K 10
+svn:ignore
+V 143
+expat
+gold
+gtest
+icu
+jsoncpp
+junit
+libjpeg
+libjpeg_turbo
+libsrtp
+libvpx
+libyuv
+llvm
+llvm-build
+opus
+protobuf
+sqlite
+valgrind
+webrtc
+yasm
+zlib
+
+
+END

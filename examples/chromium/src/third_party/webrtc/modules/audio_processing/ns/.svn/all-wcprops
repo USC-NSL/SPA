@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_processing/ns
+END
+noise_suppression_x.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_processing/ns/noise_suppression_x.c
+END
+nsx_core_neon.S
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/3584/stable/webrtc/modules/audio_processing/ns/nsx_core_neon.S
+END
+nsx_core_neon.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_processing/ns/nsx_core_neon.c
+END
+nsx_core.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_processing/ns/nsx_core.c
+END
+defines.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/2974/stable/webrtc/modules/audio_processing/ns/defines.h
+END
+Android.mk
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/3138/stable/webrtc/modules/audio_processing/ns/Android.mk
+END
+nsx_core.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_processing/ns/nsx_core.h
+END
+noise_suppression.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_processing/ns/noise_suppression.c
+END
+ns_core.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_processing/ns/ns_core.c
+END
+nsx_core_neon_offsets.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/2974/stable/webrtc/modules/audio_processing/ns/nsx_core_neon_offsets.c
+END
+windows_private.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/2974/stable/webrtc/modules/audio_processing/ns/windows_private.h
+END
+nsx_defines.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/2974/stable/webrtc/modules/audio_processing/ns/nsx_defines.h
+END
+ns_core.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_processing/ns/ns_core.h
+END

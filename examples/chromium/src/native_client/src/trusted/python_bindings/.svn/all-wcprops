@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/native_client/!svn/ver/11121/trunk/src/native_client/src/trusted/python_bindings
+END
+test_python_imc.py
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/native_client/!svn/ver/5514/trunk/src/native_client/src/trusted/python_bindings/test_python_imc.py
+END
+build.scons
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/native_client/!svn/ver/9811/trunk/src/native_client/src/trusted/python_bindings/build.scons
+END
+python_imc.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/native_client/!svn/ver/11121/trunk/src/native_client/src/trusted/python_bindings/python_imc.c
+END
+test_prog.py
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/native_client/!svn/ver/4099/trunk/src/native_client/src/trusted/python_bindings/test_prog.py
+END

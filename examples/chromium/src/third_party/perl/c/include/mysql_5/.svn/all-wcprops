@@ -1,0 +1,203 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/c/include/mysql_5
+END
+my_net.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/c/include/mysql_5/my_net.h
+END
+sslopt-case.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/c/include/mysql_5/sslopt-case.h
+END
+decimal.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/c/include/mysql_5/decimal.h
+END
+my_alloc.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/c/include/mysql_5/my_alloc.h
+END
+mysqld_ername.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/c/include/mysql_5/mysqld_ername.h
+END
+config-win.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/c/include/mysql_5/config-win.h
+END
+mysql_embed.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/c/include/mysql_5/mysql_embed.h
+END
+mysql.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/c/include/mysql_5/mysql.h
+END
+my_xml.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/c/include/mysql_5/my_xml.h
+END
+my_global.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/c/include/mysql_5/my_global.h
+END
+sql_common.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/c/include/mysql_5/sql_common.h
+END
+my_list.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/c/include/mysql_5/my_list.h
+END
+my_sys.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/c/include/mysql_5/my_sys.h
+END
+my_no_pthread.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/c/include/mysql_5/my_no_pthread.h
+END
+my_pthread.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/c/include/mysql_5/my_pthread.h
+END
+sslopt-vars.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/c/include/mysql_5/sslopt-vars.h
+END
+sql_state.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/c/include/mysql_5/sql_state.h
+END
+errmsg.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/c/include/mysql_5/errmsg.h
+END
+m_ctype.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/c/include/mysql_5/m_ctype.h
+END
+mysql_com.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/c/include/mysql_5/mysql_com.h
+END
+libmysql.def
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/c/include/mysql_5/libmysql.def
+END
+libmysqld.def
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/c/include/mysql_5/libmysqld.def
+END
+my_getopt.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/c/include/mysql_5/my_getopt.h
+END
+my_attribute.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/c/include/mysql_5/my_attribute.h
+END
+typelib.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/c/include/mysql_5/typelib.h
+END
+mysql_version.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/c/include/mysql_5/mysql_version.h
+END
+keycache.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/c/include/mysql_5/keycache.h
+END
+mysqld_error.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/c/include/mysql_5/mysqld_error.h
+END
+m_string.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/c/include/mysql_5/m_string.h
+END
+mysql_time.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/c/include/mysql_5/mysql_time.h
+END
+my_dir.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/c/include/mysql_5/my_dir.h
+END
+my_dbug.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/c/include/mysql_5/my_dbug.h
+END
+sslopt-longopts.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/c/include/mysql_5/sslopt-longopts.h
+END

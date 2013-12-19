@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/include/mock
+END
+mock_voe_observer.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/2974/stable/webrtc/voice_engine/include/mock/mock_voe_observer.h
+END
+mock_voe_volume_control.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/3838/stable/webrtc/voice_engine/include/mock/mock_voe_volume_control.h
+END
+fake_voe_external_media.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/include/mock/fake_voe_external_media.h
+END
+mock_voe_connection_observer.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/2974/stable/webrtc/voice_engine/include/mock/mock_voe_connection_observer.h
+END

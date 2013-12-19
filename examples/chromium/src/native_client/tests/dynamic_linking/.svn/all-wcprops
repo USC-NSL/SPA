@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/native_client/!svn/ver/10209/trunk/src/native_client/tests/dynamic_linking
+END
+dlopen_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/native_client/!svn/ver/10209/trunk/src/native_client/tests/dynamic_linking/dlopen_test.c
+END
+nacl.scons
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/native_client/!svn/ver/5795/trunk/src/native_client/tests/dynamic_linking/nacl.scons
+END

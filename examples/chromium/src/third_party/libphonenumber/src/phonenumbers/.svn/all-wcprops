@@ -1,0 +1,227 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/456/trunk/cpp/src/phonenumbers
+END
+regexp_adapter.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/338/trunk/cpp/src/phonenumbers/regexp_adapter.h
+END
+lite_metadata.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/455/trunk/cpp/src/phonenumbers/lite_metadata.cc
+END
+callback.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/446/trunk/cpp/src/phonenumbers/callback.h
+END
+regexp_adapter_re2.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/338/trunk/cpp/src/phonenumbers/regexp_adapter_re2.cc
+END
+stringutil.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/430/trunk/cpp/src/phonenumbers/stringutil.h
+END
+normalize_utf8.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/338/trunk/cpp/src/phonenumbers/normalize_utf8.h
+END
+encoding_utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/356/trunk/cpp/src/phonenumbers/encoding_utils.h
+END
+unicodestring.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/352/trunk/cpp/src/phonenumbers/unicodestring.cc
+END
+regexp_cache.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/368/trunk/cpp/src/phonenumbers/regexp_cache.cc
+END
+regexp_cache.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/341/trunk/cpp/src/phonenumbers/regexp_cache.h
+END
+logger.cc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/338/trunk/cpp/src/phonenumbers/logger.cc
+END
+unicodestring.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/352/trunk/cpp/src/phonenumbers/unicodestring.h
+END
+metadata.cc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/455/trunk/cpp/src/phonenumbers/metadata.cc
+END
+phonenumberutil.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/446/trunk/cpp/src/phonenumbers/phonenumberutil.cc
+END
+logger.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/430/trunk/cpp/src/phonenumbers/logger.h
+END
+phonenumber.cc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/338/trunk/cpp/src/phonenumbers/phonenumber.cc
+END
+regexp_factory.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/338/trunk/cpp/src/phonenumbers/regexp_factory.h
+END
+asyoutypeformatter.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/354/trunk/cpp/src/phonenumbers/asyoutypeformatter.h
+END
+phonenumbermatcher.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/446/trunk/cpp/src/phonenumbers/phonenumbermatcher.h
+END
+regexp_adapter_icu.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/368/trunk/cpp/src/phonenumbers/regexp_adapter_icu.h
+END
+phonenumbermatch.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/356/trunk/cpp/src/phonenumbers/phonenumbermatch.cc
+END
+stl_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/338/trunk/cpp/src/phonenumbers/stl_util.h
+END
+phonenumbermatch.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/356/trunk/cpp/src/phonenumbers/phonenumbermatch.h
+END
+stringutil.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/430/trunk/cpp/src/phonenumbers/stringutil.cc
+END
+regexp_adapter_re2.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/368/trunk/cpp/src/phonenumbers/regexp_adapter_re2.h
+END
+string_byte_sink.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/452/trunk/cpp/src/phonenumbers/string_byte_sink.cc
+END
+region_code.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/430/trunk/cpp/src/phonenumbers/region_code.h
+END
+string_byte_sink.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/452/trunk/cpp/src/phonenumbers/string_byte_sink.h
+END
+test_metadata.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/423/trunk/cpp/src/phonenumbers/test_metadata.cc
+END
+metadata.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/338/trunk/cpp/src/phonenumbers/metadata.h
+END
+phonenumberutil.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/430/trunk/cpp/src/phonenumbers/phonenumberutil.h
+END
+default_logger.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/338/trunk/cpp/src/phonenumbers/default_logger.cc
+END
+phonenumber.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/338/trunk/cpp/src/phonenumbers/phonenumber.h
+END
+default_logger.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/456/trunk/cpp/src/phonenumbers/default_logger.h
+END
+phonenumbermatcher.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/446/trunk/cpp/src/phonenumbers/phonenumbermatcher.cc
+END
+asyoutypeformatter.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/423/trunk/cpp/src/phonenumbers/asyoutypeformatter.cc
+END
+regexp_adapter_icu.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/452/trunk/cpp/src/phonenumbers/regexp_adapter_icu.cc
+END

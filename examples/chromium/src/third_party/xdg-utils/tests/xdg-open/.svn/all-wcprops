@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-open
+END
+t.00-apply_generic
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-open/t.00-apply_generic
+END
+t.02-open_dir
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-open/t.02-open_dir
+END
+t.01-open_basic
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-open/t.01-open_basic
+END
+t.03-open_url
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-open/t.03-open_url
+END
+t.04-open_html
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-open/t.04-open_html
+END
+t.05-open_abs_path_html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-open/t.05-open_abs_path_html
+END

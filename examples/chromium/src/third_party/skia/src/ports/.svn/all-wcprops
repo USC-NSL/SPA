@@ -1,0 +1,257 @@
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/8869/trunk/src/ports
+END
+SkOSFile_brew.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/5265/trunk/src/ports/SkOSFile_brew.cpp
+END
+SkFontHost_sandbox_none.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/8301/trunk/src/ports/SkFontHost_sandbox_none.cpp
+END
+FontHostConfiguration_android.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/6787/trunk/src/ports/FontHostConfiguration_android.h
+END
+SkDebug_brew.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/1981/trunk/src/ports/SkDebug_brew.cpp
+END
+SkPurgeableMemoryBlock_android.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/8177/trunk/src/ports/SkPurgeableMemoryBlock_android.cpp
+END
+SkFontHost_win_dw.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/8415/trunk/src/ports/SkFontHost_win_dw.cpp
+END
+SkXMLPullParser_expat.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/8287/trunk/src/ports/SkXMLPullParser_expat.cpp
+END
+SkGlobalInitialization_chromium.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/5265/trunk/src/ports/SkGlobalInitialization_chromium.cpp
+END
+SkThread_pthread.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/7406/trunk/src/ports/SkThread_pthread.cpp
+END
+SkFontHost_fontconfig.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/8809/trunk/src/ports/SkFontHost_fontconfig.cpp
+END
+SkImageDecoder_CG.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/8862/trunk/src/ports/SkImageDecoder_CG.cpp
+END
+SkFontHost_win.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/8869/trunk/src/ports/SkFontHost_win.cpp
+END
+SkHarfBuzzFont.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/8324/trunk/src/ports/SkHarfBuzzFont.cpp
+END
+SkFontHost_none.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/8415/trunk/src/ports/SkFontHost_none.cpp
+END
+SkFontHost_linux.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/8415/trunk/src/ports/SkFontHost_linux.cpp
+END
+SkOSFile_stdio.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/8848/trunk/src/ports/SkOSFile_stdio.cpp
+END
+SkFontHost_FreeType_common.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/8372/trunk/src/ports/SkFontHost_FreeType_common.h
+END
+SkThread_none.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/5265/trunk/src/ports/SkThread_none.cpp
+END
+SkMemory_brew.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/2926/trunk/src/ports/SkMemory_brew.cpp
+END
+SkPurgeableMemoryBlock_mac.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/8177/trunk/src/ports/SkPurgeableMemoryBlock_mac.cpp
+END
+FontHostConfiguration_android.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/7645/trunk/src/ports/FontHostConfiguration_android.cpp
+END
+SkXMLParser_tinyxml.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/8287/trunk/src/ports/SkXMLParser_tinyxml.cpp
+END
+SkTime_Unix.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/5265/trunk/src/ports/SkTime_Unix.cpp
+END
+SkDebug_win.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/8023/trunk/src/ports/SkDebug_win.cpp
+END
+SkFontHost_android.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/8415/trunk/src/ports/SkFontHost_android.cpp
+END
+SkFontHost_FreeType.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/8372/trunk/src/ports/SkFontHost_FreeType.cpp
+END
+SkFontConfigInterface_direct.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/8830/trunk/src/ports/SkFontConfigInterface_direct.cpp
+END
+SkMemory_mozalloc.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/7406/trunk/src/ports/SkMemory_mozalloc.cpp
+END
+SkImageDecoder_WIC.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/8862/trunk/src/ports/SkImageDecoder_WIC.cpp
+END
+SkTime_win.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/5265/trunk/src/ports/SkTime_win.cpp
+END
+SkGlobalInitialization_default.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/8541/trunk/src/ports/SkGlobalInitialization_default.cpp
+END
+SkXMLParser_expat.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/8287/trunk/src/ports/SkXMLParser_expat.cpp
+END
+SkFontHost_FreeType_common.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/7996/trunk/src/ports/SkFontHost_FreeType_common.cpp
+END
+SkDebug_nacl.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/7406/trunk/src/ports/SkDebug_nacl.cpp
+END
+SkThread_win.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/6129/trunk/src/ports/SkThread_win.cpp
+END
+SkFontHost_mac.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/8452/trunk/src/ports/SkFontHost_mac.cpp
+END
+SkImageDecoder_empty.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/5818/trunk/src/ports/SkImageDecoder_empty.cpp
+END
+SkDebug_android.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/6059/trunk/src/ports/SkDebug_android.cpp
+END
+SkDebug_stdio.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/8018/trunk/src/ports/SkDebug_stdio.cpp
+END
+SkPurgeableMemoryBlock_none.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/8177/trunk/src/ports/SkPurgeableMemoryBlock_none.cpp
+END
+SkXMLParser_empty.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/5265/trunk/src/ports/SkXMLParser_empty.cpp
+END
+SkMemory_malloc.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/7406/trunk/src/ports/SkMemory_malloc.cpp
+END

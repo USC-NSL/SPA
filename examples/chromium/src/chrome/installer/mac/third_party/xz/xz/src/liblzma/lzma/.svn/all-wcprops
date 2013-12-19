@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/87706/trunk/deps/third_party/xz/src/liblzma/lzma
+END
+lzma_encoder_private.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/lzma/lzma_encoder_private.h
+END
+lzma_encoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/87706/trunk/deps/third_party/xz/src/liblzma/lzma/lzma_encoder.c
+END
+Makefile.inc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/lzma/Makefile.inc
+END
+lzma_encoder_presets.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/87706/trunk/deps/third_party/xz/src/liblzma/lzma/lzma_encoder_presets.c
+END
+lzma_encoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/lzma/lzma_encoder.h
+END
+lzma2_decoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/87706/trunk/deps/third_party/xz/src/liblzma/lzma/lzma2_decoder.c
+END
+lzma2_decoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/lzma/lzma2_decoder.h
+END
+lzma_common.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/lzma/lzma_common.h
+END
+fastpos_tablegen.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/lzma/fastpos_tablegen.c
+END
+lzma_encoder_optimum_normal.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/lzma/lzma_encoder_optimum_normal.c
+END
+lzma2_encoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/87706/trunk/deps/third_party/xz/src/liblzma/lzma/lzma2_encoder.c
+END
+fastpos.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/lzma/fastpos.h
+END
+fastpos_table.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/lzma/fastpos_table.c
+END
+lzma_decoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/87706/trunk/deps/third_party/xz/src/liblzma/lzma/lzma_decoder.c
+END
+lzma_encoder_optimum_fast.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/lzma/lzma_encoder_optimum_fast.c
+END
+lzma2_encoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/lzma/lzma2_encoder.h
+END
+lzma_decoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/lzma/lzma_decoder.h
+END

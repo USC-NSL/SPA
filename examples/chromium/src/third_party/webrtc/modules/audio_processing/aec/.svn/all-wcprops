@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_processing/aec
+END
+aec_core.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_processing/aec/aec_core.c
+END
+aec_core_internal.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_processing/aec/aec_core_internal.h
+END
+aec_resampler.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/2974/stable/webrtc/modules/audio_processing/aec/aec_resampler.c
+END
+aec_rdft_sse2.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/2974/stable/webrtc/modules/audio_processing/aec/aec_rdft_sse2.c
+END
+system_delay_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/3561/stable/webrtc/modules/audio_processing/aec/system_delay_unittest.cc
+END
+aec_core.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/3561/stable/webrtc/modules/audio_processing/aec/aec_core.h
+END
+Android.mk
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/3138/stable/webrtc/modules/audio_processing/aec/Android.mk
+END
+aec_resampler.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/2974/stable/webrtc/modules/audio_processing/aec/aec_resampler.h
+END
+aec_rdft.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/2974/stable/webrtc/modules/audio_processing/aec/aec_rdft.c
+END
+echo_cancellation.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_processing/aec/echo_cancellation.c
+END
+echo_cancellation_internal.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/3584/stable/webrtc/modules/audio_processing/aec/echo_cancellation_internal.h
+END
+aec_rdft.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/2974/stable/webrtc/modules/audio_processing/aec/aec_rdft.h
+END
+aec_core_sse2.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/3561/stable/webrtc/modules/audio_processing/aec/aec_core_sse2.c
+END
+echo_cancellation_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/3584/stable/webrtc/modules/audio_processing/aec/echo_cancellation_unittest.cc
+END

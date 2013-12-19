@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/100/trunk/cpp/src/sfntly/port
+END
+java_iterator.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/100/trunk/cpp/src/sfntly/port/java_iterator.h
+END
+endian.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/58/trunk/cpp/src/sfntly/port/endian.h
+END
+exception_type.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/58/trunk/cpp/src/sfntly/port/exception_type.h
+END
+memory_input_stream.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/70/trunk/cpp/src/sfntly/port/memory_input_stream.cc
+END
+memory_output_stream.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/55/trunk/cpp/src/sfntly/port/memory_output_stream.cc
+END
+memory_input_stream.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/70/trunk/cpp/src/sfntly/port/memory_input_stream.h
+END
+memory_output_stream.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/58/trunk/cpp/src/sfntly/port/memory_output_stream.h
+END
+config.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/70/trunk/cpp/src/sfntly/port/config.h
+END
+file_input_stream.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/70/trunk/cpp/src/sfntly/port/file_input_stream.cc
+END
+file_input_stream.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/58/trunk/cpp/src/sfntly/port/file_input_stream.h
+END
+input_stream.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/58/trunk/cpp/src/sfntly/port/input_stream.h
+END
+output_stream.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/58/trunk/cpp/src/sfntly/port/output_stream.h
+END
+atomic.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/58/trunk/cpp/src/sfntly/port/atomic.h
+END
+type.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/72/trunk/cpp/src/sfntly/port/type.h
+END
+refcount.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/58/trunk/cpp/src/sfntly/port/refcount.h
+END
+lock.cc
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/72/trunk/cpp/src/sfntly/port/lock.cc
+END
+lock.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/72/trunk/cpp/src/sfntly/port/lock.h
+END

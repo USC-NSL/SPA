@@ -1,0 +1,713 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings
+END
+ascii.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/ascii.py
+END
+bz2_codec.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/bz2_codec.py
+END
+hp_roman8.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/hp_roman8.py
+END
+iso8859_13.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/iso8859_13.py
+END
+koi8_r.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/koi8_r.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/__init__.py
+END
+gb2312.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/gb2312.py
+END
+cp932.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/cp932.py
+END
+cp861.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/cp861.py
+END
+cp855.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/cp855.py
+END
+euc_jp.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/euc_jp.py
+END
+cp865.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/cp865.py
+END
+cp875.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/cp875.py
+END
+iso8859_1.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/iso8859_1.py
+END
+cp1140.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/cp1140.py
+END
+iso2022_jp_1.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/iso2022_jp_1.py
+END
+cp869.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/cp869.py
+END
+utf_16_be.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/utf_16_be.py
+END
+cp1251.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/cp1251.py
+END
+iso8859_5.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/iso8859_5.py
+END
+quopri_codec.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/quopri_codec.py
+END
+mac_greek.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/mac_greek.py
+END
+cp1255.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/cp1255.py
+END
+mac_iceland.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/mac_iceland.py
+END
+iso8859_9.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/iso8859_9.py
+END
+gb18030.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/gb18030.py
+END
+mac_romanian.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/mac_romanian.py
+END
+utf_16_le.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/utf_16_le.py
+END
+utf_8.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/utf_8.py
+END
+string_escape.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/string_escape.py
+END
+latin_1.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/latin_1.py
+END
+iso2022_jp.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/iso2022_jp.py
+END
+cp424.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/cp424.py
+END
+mac_roman.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/mac_roman.py
+END
+zlib_codec.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/zlib_codec.py
+END
+iso2022_jp_2004.py
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/iso2022_jp_2004.py
+END
+iso8859_16.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/iso8859_16.py
+END
+koi8_u.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/koi8_u.py
+END
+cp850.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/cp850.py
+END
+cp860.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/cp860.py
+END
+ptcp154.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/ptcp154.py
+END
+cp737.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/cp737.py
+END
+cp864.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/cp864.py
+END
+cp874.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/cp874.py
+END
+unicode_escape.py
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/unicode_escape.py
+END
+cp949.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/cp949.py
+END
+iso2022_jp_ext.py
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/iso2022_jp_ext.py
+END
+cp1006.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/cp1006.py
+END
+mac_latin2.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/mac_latin2.py
+END
+cp1250.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/cp1250.py
+END
+cp1026.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/cp1026.py
+END
+iso8859_4.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/iso8859_4.py
+END
+cp1254.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/cp1254.py
+END
+euc_jisx0213.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/euc_jisx0213.py
+END
+iso8859_8.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/iso8859_8.py
+END
+mac_croatian.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/mac_croatian.py
+END
+shift_jisx0213.py
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/shift_jisx0213.py
+END
+hz.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/hz.py
+END
+aliases.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/aliases.py
+END
+big5hkscs.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/big5hkscs.py
+END
+cp1258.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/cp1258.py
+END
+shift_jis.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/shift_jis.py
+END
+utf_7.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/utf_7.py
+END
+uu_codec.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/uu_codec.py
+END
+cp500.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/cp500.py
+END
+iso8859_11.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/iso8859_11.py
+END
+palmos.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/palmos.py
+END
+cp037.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/cp037.py
+END
+iso8859_15.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/iso8859_15.py
+END
+cp950.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/cp950.py
+END
+cp437.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/cp437.py
+END
+utf_32.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/utf_32.py
+END
+gbk.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/gbk.py
+END
+cp863.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/cp863.py
+END
+utf_16.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/utf_16.py
+END
+cp857.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/cp857.py
+END
+rot_13.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/rot_13.py
+END
+euc_kr.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/euc_kr.py
+END
+utf_32_be.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/utf_32_be.py
+END
+mac_turkish.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/mac_turkish.py
+END
+iso8859_3.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/iso8859_3.py
+END
+iso2022_jp_3.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/iso2022_jp_3.py
+END
+idna.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/idna.py
+END
+charmap.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/charmap.py
+END
+cp1253.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/cp1253.py
+END
+iso8859_7.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/iso8859_7.py
+END
+raw_unicode_escape.py
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/raw_unicode_escape.py
+END
+cp1257.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/cp1257.py
+END
+unicode_internal.py
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/unicode_internal.py
+END
+utf_32_le.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/utf_32_le.py
+END
+johab.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/johab.py
+END
+mac_farsi.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/mac_farsi.py
+END
+mbcs.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/mbcs.py
+END
+euc_jis_2004.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/euc_jis_2004.py
+END
+shift_jis_2004.py
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/shift_jis_2004.py
+END
+iso8859_10.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/iso8859_10.py
+END
+mac_cyrillic.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/mac_cyrillic.py
+END
+iso2022_kr.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/iso2022_kr.py
+END
+iso8859_14.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/iso8859_14.py
+END
+cp852.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/cp852.py
+END
+mac_arabic.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/mac_arabic.py
+END
+undefined.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/undefined.py
+END
+cp862.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/cp862.py
+END
+mac_centeuro.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/mac_centeuro.py
+END
+cp775.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/cp775.py
+END
+cp856.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/cp856.py
+END
+cp866.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/cp866.py
+END
+iso8859_2.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/iso8859_2.py
+END
+iso2022_jp_2.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/iso2022_jp_2.py
+END
+cp1252.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/cp1252.py
+END
+iso8859_6.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/iso8859_6.py
+END
+cp1256.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/cp1256.py
+END
+hex_codec.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/hex_codec.py
+END
+base64_codec.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/base64_codec.py
+END
+big5.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/big5.py
+END
+punycode.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/punycode.py
+END
+tis_620.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/tis_620.py
+END
+utf_8_sig.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/encodings/utf_8_sig.py
+END

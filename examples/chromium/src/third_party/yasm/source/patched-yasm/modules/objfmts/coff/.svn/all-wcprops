@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/167605/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/coff
+END
+coff-objfmt.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/167603/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/coff/coff-objfmt.h
+END
+win64-nasm.mac
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/coff/win64-nasm.mac
+END
+Makefile.inc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/167605/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/coff/Makefile.inc
+END
+coff-objfmt.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/167603/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/coff/coff-objfmt.c
+END
+win64-except.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/167603/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/coff/win64-except.c
+END
+win64-gas.mac
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/coff/win64-gas.mac
+END

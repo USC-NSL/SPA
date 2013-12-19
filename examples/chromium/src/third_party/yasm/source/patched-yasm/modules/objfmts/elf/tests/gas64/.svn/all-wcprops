@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/167604/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/gas64
+END
+elf_gas64_reloc.hex
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/gas64/elf_gas64_reloc.hex
+END
+elf_gas64_test.sh
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/167604/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/gas64/elf_gas64_test.sh
+END
+elf_gas64_curpos.asm
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/gas64/elf_gas64_curpos.asm
+END
+elf_gas64_ssym.asm
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/gas64/elf_gas64_ssym.asm
+END
+Makefile.inc
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/167604/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/gas64/Makefile.inc
+END
+crosssect.asm
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/gas64/crosssect.asm
+END
+elf_gas64_curpos.hex
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/gas64/elf_gas64_curpos.hex
+END
+elf_gas64_ssym.hex
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/gas64/elf_gas64_ssym.hex
+END
+crosssect.hex
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/gas64/crosssect.hex
+END
+elf_gas64_reloc.asm
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/gas64/elf_gas64_reloc.asm
+END

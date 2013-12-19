@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/email
+END
+header.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/email/header.py
+END
+charset.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/email/charset.py
+END
+base64mime.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/email/base64mime.py
+END
+parser.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/email/parser.py
+END
+errors.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/email/errors.py
+END
+iterators.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/email/iterators.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/email/__init__.py
+END
+utils.py
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/email/utils.py
+END
+feedparser.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/email/feedparser.py
+END
+encoders.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/email/encoders.py
+END
+_parseaddr.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/email/_parseaddr.py
+END
+message.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/email/message.py
+END
+generator.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/email/generator.py
+END
+quoprimime.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/email/quoprimime.py
+END

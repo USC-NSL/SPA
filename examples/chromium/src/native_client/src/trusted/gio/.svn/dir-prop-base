@@ -1,0 +1,13 @@
+K 10
+svn:ignore
+V 199
+gio_wrapped_desc.Makefile
+gio_wrapped_desc.rules
+gio_wrapped_desc.sln
+gio_wrapped_desc.target.mk
+gio_wrapped_desc.vcproj
+gio_wrapped_desc.xcodeproj
+gio_wrapped_desc64.rules
+gio_wrapped_desc64.vcproj
+
+END

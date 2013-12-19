@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/3913/stable/webrtc/common_audio/vad
+END
+vad.gypi
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/3913/stable/webrtc/common_audio/vad/vad.gypi
+END
+Android.mk
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/3138/stable/webrtc/common_audio/vad/Android.mk
+END
+vad_gmm.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2974/stable/webrtc/common_audio/vad/vad_gmm.c
+END
+vad_filterbank.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/2974/stable/webrtc/common_audio/vad/vad_filterbank.c
+END
+vad_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/2974/stable/webrtc/common_audio/vad/vad_unittest.cc
+END
+vad_sp.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/2974/stable/webrtc/common_audio/vad/vad_sp.c
+END
+vad_gmm_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/2974/stable/webrtc/common_audio/vad/vad_gmm_unittest.cc
+END
+vad_filterbank_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/2974/stable/webrtc/common_audio/vad/vad_filterbank_unittest.cc
+END
+vad_sp_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/2974/stable/webrtc/common_audio/vad/vad_sp_unittest.cc
+END
+vad_unittest.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/2974/stable/webrtc/common_audio/vad/vad_unittest.h
+END
+vad_gmm.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2974/stable/webrtc/common_audio/vad/vad_gmm.h
+END
+webrtc_vad.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/2974/stable/webrtc/common_audio/vad/webrtc_vad.c
+END
+vad_filterbank.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/2974/stable/webrtc/common_audio/vad/vad_filterbank.h
+END
+vad_sp.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/2974/stable/webrtc/common_audio/vad/vad_sp.h
+END
+vad_core.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/2974/stable/webrtc/common_audio/vad/vad_core.c
+END
+vad_core_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/2974/stable/webrtc/common_audio/vad/vad_core_unittest.cc
+END
+vad_core.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/2974/stable/webrtc/common_audio/vad/vad_core.h
+END

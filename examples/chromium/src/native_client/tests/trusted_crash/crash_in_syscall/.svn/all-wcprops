@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/native_client/!svn/ver/11103/trunk/src/native_client/tests/trusted_crash/crash_in_syscall
+END
+nacl.scons
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/native_client/!svn/ver/11103/trunk/src/native_client/tests/trusted_crash/crash_in_syscall/nacl.scons
+END
+test_guest.c
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/native_client/!svn/ver/11103/trunk/src/native_client/tests/trusted_crash/crash_in_syscall/test_guest.c
+END
+test_host.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/native_client/!svn/ver/11103/trunk/src/native_client/tests/trusted_crash/crash_in_syscall/test_host.c
+END

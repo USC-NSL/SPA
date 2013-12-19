@@ -1,0 +1,155 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/3913/stable/webrtc/video_engine/test/auto_test/source
+END
+vie_file_based_comparison_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/3353/stable/webrtc/video_engine/test/auto_test/source/vie_file_based_comparison_tests.cc
+END
+vie_autotest_capture.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/3138/stable/webrtc/video_engine/test/auto_test/source/vie_autotest_capture.cc
+END
+vie_autotest_simulcast.cc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/3838/stable/webrtc/video_engine/test/auto_test/source/vie_autotest_simulcast.cc
+END
+vie_window_manager_factory_mac.mm
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/2974/stable/webrtc/video_engine/test/auto_test/source/vie_window_manager_factory_mac.mm
+END
+vie_autotest_custom_call.cc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/3913/stable/webrtc/video_engine/test/auto_test/source/vie_autotest_custom_call.cc
+END
+Android.mk
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/2974/stable/webrtc/video_engine/test/auto_test/source/Android.mk
+END
+vie_autotest_base.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/3838/stable/webrtc/video_engine/test/auto_test/source/vie_autotest_base.cc
+END
+vie_window_manager_factory_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/2974/stable/webrtc/video_engine/test/auto_test/source/vie_window_manager_factory_win.cc
+END
+vie_autotest_codec.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/3840/stable/webrtc/video_engine/test/auto_test/source/vie_autotest_codec.cc
+END
+vie_autotest_record.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/3838/stable/webrtc/video_engine/test/auto_test/source/vie_autotest_record.cc
+END
+vie_autotest_render.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/3304/stable/webrtc/video_engine/test/auto_test/source/vie_autotest_render.cc
+END
+vie_autotest_file.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/3840/stable/webrtc/video_engine/test/auto_test/source/vie_autotest_file.cc
+END
+vie_window_manager_factory_linux.cc
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/2974/stable/webrtc/video_engine/test/auto_test/source/vie_window_manager_factory_linux.cc
+END
+vie_autotest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/3838/stable/webrtc/video_engine/test/auto_test/source/vie_autotest.cc
+END
+vie_autotest_android.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/3838/stable/webrtc/video_engine/test/auto_test/source/vie_autotest_android.cc
+END
+vie_autotest_image_process.cc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/3304/stable/webrtc/video_engine/test/auto_test/source/vie_autotest_image_process.cc
+END
+vie_autotest_main.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/3205/stable/webrtc/video_engine/test/auto_test/source/vie_autotest_main.cc
+END
+vie_autotest_cocoa_mac.mm
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/2974/stable/webrtc/video_engine/test/auto_test/source/vie_autotest_cocoa_mac.mm
+END
+vie_autotest_network.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/3353/stable/webrtc/video_engine/test/auto_test/source/vie_autotest_network.cc
+END
+vie_autotest_loopback.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/3840/stable/webrtc/video_engine/test/auto_test/source/vie_autotest_loopback.cc
+END
+vie_autotest_encryption.cc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/3838/stable/webrtc/video_engine/test/auto_test/source/vie_autotest_encryption.cc
+END
+vie_autotest_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/2974/stable/webrtc/video_engine/test/auto_test/source/vie_autotest_win.cc
+END
+vie_autotest_rtp_rtcp.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/3838/stable/webrtc/video_engine/test/auto_test/source/vie_autotest_rtp_rtcp.cc
+END
+vie_window_creator.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/2974/stable/webrtc/video_engine/test/auto_test/source/vie_window_creator.cc
+END
+vie_autotest_linux.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/2974/stable/webrtc/video_engine/test/auto_test/source/vie_autotest_linux.cc
+END

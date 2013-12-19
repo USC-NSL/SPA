@@ -1,0 +1,18 @@
+K 10
+svn:ignore
+V 250
+platform.Makefile
+platform.rules
+platform.sln
+platform.target.mk
+platform.vcproj
+platform.xcodeproj
+platform64.rules
+platform64.vcproj
+platform_tests.rules
+platform_tests.target.mk
+platform_tests.vcproj
+platform_tests64.rules
+platform_tests64.vcproj
+
+END

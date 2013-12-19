@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/167604/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas
+END
+gas-parse.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/167603/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/gas-parse.c
+END
+Makefile.inc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/167604/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/Makefile.inc
+END
+gas-parser.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/167603/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/gas-parser.c
+END
+gas-parser.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/167603/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/gas-parser.h
+END
+gas-parse-intel.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/167603/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/gas-parse-intel.c
+END
+gas-token.re
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/167603/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/gas-token.re
+END

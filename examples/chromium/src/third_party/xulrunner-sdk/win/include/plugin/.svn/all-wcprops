@@ -1,0 +1,239 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin
+END
+nsIPluginInstanceInternal.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin/nsIPluginInstanceInternal.h
+END
+nsIPluginInstance.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin/nsIPluginInstance.h
+END
+nsIJRILiveConnectPIPeer.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin/nsIJRILiveConnectPIPeer.h
+END
+nsPluginNativeWindow.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin/nsPluginNativeWindow.h
+END
+nsplugin.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin/nsplugin.h
+END
+npupp.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin/npupp.h
+END
+nsIPluginManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin/nsIPluginManager.h
+END
+nsDefaultPlugin.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin/nsDefaultPlugin.h
+END
+nsIPluginInputStream.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin/nsIPluginInputStream.h
+END
+nsIPluginHost.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin/nsIPluginHost.h
+END
+nsIPluginDocument.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin/nsIPluginDocument.h
+END
+nsIPluginInstanceOwner.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin/nsIPluginInstanceOwner.h
+END
+nsICookieStorage.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin/nsICookieStorage.h
+END
+nsIHTTPHeaderListener.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin/nsIHTTPHeaderListener.h
+END
+nsIPlugin.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin/nsIPlugin.h
+END
+nsPluginError.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin/nsPluginError.h
+END
+nsIPluginTagInfo.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin/nsIPluginTagInfo.h
+END
+nsIScriptablePlugin.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin/nsIScriptablePlugin.h
+END
+nsPIPluginInstancePeer.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin/nsPIPluginInstancePeer.h
+END
+nsIEventHandler.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin/nsIEventHandler.h
+END
+nsIPluginStreamListener.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin/nsIPluginStreamListener.h
+END
+nsIPluginInstancePeer2.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin/nsIPluginInstancePeer2.h
+END
+nsIPluginStreamInfo.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin/nsIPluginStreamInfo.h
+END
+nsplugindefs.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin/nsplugindefs.h
+END
+nsIPluginTagInfo2.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin/nsIPluginTagInfo2.h
+END
+nptypes.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin/nptypes.h
+END
+nsIClassicPluginFactory.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin/nsIClassicPluginFactory.h
+END
+nsPluginsCID.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin/nsPluginsCID.h
+END
+nspluginroot.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin/nspluginroot.h
+END
+nsIPluginTag.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin/nsIPluginTag.h
+END
+nsPluginLogging.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin/nsPluginLogging.h
+END
+npapi.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin/npapi.h
+END
+nsIJRILiveConnectPlugin.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin/nsIJRILiveConnectPlugin.h
+END
+nsIPluginInstancePeer.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin/nsIPluginInstancePeer.h
+END
+nsIWindowlessPlugInstPeer.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin/nsIWindowlessPlugInstPeer.h
+END
+npruntime.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin/npruntime.h
+END
+nsIPluginManager2.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin/nsIPluginManager2.h
+END
+nsIFileUtilities.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin/nsIFileUtilities.h
+END
+nsPIPluginHost.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/plugin/nsPIPluginHost.h
+END

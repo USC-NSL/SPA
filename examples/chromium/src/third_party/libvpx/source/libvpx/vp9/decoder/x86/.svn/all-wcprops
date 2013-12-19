@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/196669/trunk/deps/third_party/libvpx/source/libvpx/vp9/decoder/x86
+END
+vp9_dequantize_sse2.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/196669/trunk/deps/third_party/libvpx/source/libvpx/vp9/decoder/x86/vp9_dequantize_sse2.c
+END
+vp9_idct_blk_sse2.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/177026/trunk/deps/third_party/libvpx/source/libvpx/vp9/decoder/x86/vp9_idct_blk_sse2.c
+END

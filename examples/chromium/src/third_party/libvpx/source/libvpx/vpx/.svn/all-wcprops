@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/195048/trunk/deps/third_party/libvpx/source/libvpx/vpx
+END
+exports_dec
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/106910/trunk/deps/third_party/libvpx/source/libvpx/vpx/exports_dec
+END
+vp8dx.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/195047/trunk/deps/third_party/libvpx/source/libvpx/vpx/vp8dx.h
+END
+vpx_codec.mk
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/177026/trunk/deps/third_party/libvpx/source/libvpx/vpx/vpx_codec.mk
+END
+vpx_integer.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/195047/trunk/deps/third_party/libvpx/source/libvpx/vpx/vpx_integer.h
+END
+vpx_codec.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/177026/trunk/deps/third_party/libvpx/source/libvpx/vpx/vpx_codec.h
+END
+exports_com
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/106910/trunk/deps/third_party/libvpx/source/libvpx/vpx/exports_com
+END
+vpx_encoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vpx/vpx_encoder.h
+END
+vp8.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/195048/trunk/deps/third_party/libvpx/source/libvpx/vpx/vp8.h
+END
+vpx_codec_impl_top.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/106910/trunk/deps/third_party/libvpx/source/libvpx/vpx/vpx_codec_impl_top.h
+END
+vpx_codec_impl_bottom.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/106910/trunk/deps/third_party/libvpx/source/libvpx/vpx/vpx_codec_impl_bottom.h
+END
+vpx_image.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vpx/vpx_image.h
+END
+vpx_decoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/180104/trunk/deps/third_party/libvpx/source/libvpx/vpx/vpx_decoder.h
+END
+exports_enc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/106910/trunk/deps/third_party/libvpx/source/libvpx/vpx/exports_enc
+END
+vp8cx.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/195047/trunk/deps/third_party/libvpx/source/libvpx/vpx/vp8cx.h
+END

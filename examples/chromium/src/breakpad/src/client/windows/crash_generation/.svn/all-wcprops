@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/1121/trunk/src/client/windows/crash_generation
+END
+crash_generation_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/1103/trunk/src/client/windows/crash_generation/crash_generation_client.h
+END
+client_info.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/1103/trunk/src/client/windows/crash_generation/client_info.h
+END
+crash_generation_server.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/1103/trunk/src/client/windows/crash_generation/crash_generation_server.cc
+END
+crash_generation_server.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/1104/trunk/src/client/windows/crash_generation/crash_generation_server.h
+END
+crash_generation.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/1101/trunk/src/client/windows/crash_generation/crash_generation.gyp
+END
+ReadMe.txt
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/872/trunk/src/client/windows/crash_generation/ReadMe.txt
+END
+minidump_generator.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/1014/trunk/src/client/windows/crash_generation/minidump_generator.cc
+END
+client_info.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/1013/trunk/src/client/windows/crash_generation/client_info.cc
+END
+crash_generation_client.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/997/trunk/src/client/windows/crash_generation/crash_generation_client.cc
+END
+minidump_generator.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/1121/trunk/src/client/windows/crash_generation/minidump_generator.h
+END

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/loginmgr
+END
+nsILoginManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/loginmgr/nsILoginManager.h
+END
+nsILoginInfo.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/loginmgr/nsILoginInfo.h
+END
+nsILoginManagerStorage.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/loginmgr/nsILoginManagerStorage.h
+END
+nsILoginManagerIEMigrationHelper.h
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/loginmgr/nsILoginManagerIEMigrationHelper.h
+END
+nsILoginManagerPrompter.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/loginmgr/nsILoginManagerPrompter.h
+END

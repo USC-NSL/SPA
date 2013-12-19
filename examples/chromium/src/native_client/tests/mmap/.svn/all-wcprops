@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/native_client/!svn/ver/11226/trunk/src/native_client/tests/mmap
+END
+nacl.scons
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/native_client/!svn/ver/11226/trunk/src/native_client/tests/mmap/nacl.scons
+END
+mmap_test.stdout
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/native_client/!svn/ver/9855/trunk/src/native_client/tests/mmap/mmap_test.stdout
+END
+test-file
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/native_client/!svn/ver/3122/trunk/src/native_client/tests/mmap/test-file
+END
+mmap_stdin.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/native_client/!svn/ver/11226/trunk/src/native_client/tests/mmap/mmap_stdin.c
+END
+mmap_atomicity.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/native_client/!svn/ver/10209/trunk/src/native_client/tests/mmap/mmap_atomicity.c
+END
+mmap_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/native_client/!svn/ver/11191/trunk/src/native_client/tests/mmap/mmap_test.cc
+END

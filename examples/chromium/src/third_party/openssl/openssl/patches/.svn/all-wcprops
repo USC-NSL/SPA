@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/190582/trunk/deps/third_party/openssl/openssl/patches
+END
+handshake_cutthrough.patch
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/188714/trunk/deps/third_party/openssl/openssl/patches/handshake_cutthrough.patch
+END
+x509_hash_name_algorithm_change.patch
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/190582/trunk/deps/third_party/openssl/openssl/patches/x509_hash_name_algorithm_change.patch
+END
+eng_dyn_dirs.patch
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/188714/trunk/deps/third_party/openssl/openssl/patches/eng_dyn_dirs.patch
+END
+jsse.patch
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/188714/trunk/deps/third_party/openssl/openssl/patches/jsse.patch
+END
+channelid.patch
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/188714/trunk/deps/third_party/openssl/openssl/patches/channelid.patch
+END
+fix_clang_build.patch
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/188714/trunk/deps/third_party/openssl/openssl/patches/fix_clang_build.patch
+END
+progs.patch
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/188714/trunk/deps/third_party/openssl/openssl/patches/progs.patch
+END
+testssl.sh
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/188714/trunk/deps/third_party/openssl/openssl/patches/testssl.sh
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/188714/trunk/deps/third_party/openssl/openssl/patches/README
+END

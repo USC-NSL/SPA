@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/native_client/!svn/ver/8409/trunk/src/native_client/tests/pnacl_shared_lib_test
+END
+lib_data1.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/native_client/!svn/ver/8230/trunk/src/native_client/tests/pnacl_shared_lib_test/lib_data1.c
+END
+nacl.scons
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/native_client/!svn/ver/8409/trunk/src/native_client/tests/pnacl_shared_lib_test/nacl.scons
+END
+lib_data2.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/native_client/!svn/ver/8230/trunk/src/native_client/tests/pnacl_shared_lib_test/lib_data2.c
+END
+lib_data3.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/native_client/!svn/ver/8230/trunk/src/native_client/tests/pnacl_shared_lib_test/lib_data3.c
+END
+useful_constants.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/native_client/!svn/ver/8230/trunk/src/native_client/tests/pnacl_shared_lib_test/useful_constants.h
+END
+lib_data1.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/native_client/!svn/ver/8409/trunk/src/native_client/tests/pnacl_shared_lib_test/lib_data1.h
+END
+utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/native_client/!svn/ver/8409/trunk/src/native_client/tests/pnacl_shared_lib_test/utils.h
+END
+lib_data2.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/native_client/!svn/ver/8409/trunk/src/native_client/tests/pnacl_shared_lib_test/lib_data2.h
+END
+lib_data3.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/native_client/!svn/ver/8409/trunk/src/native_client/tests/pnacl_shared_lib_test/lib_data3.h
+END
+main_data.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/native_client/!svn/ver/8230/trunk/src/native_client/tests/pnacl_shared_lib_test/main_data.c
+END

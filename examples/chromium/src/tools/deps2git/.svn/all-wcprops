@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/194189/trunk/tools/deps2git
+END
+svn_to_git_public.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/194189/trunk/tools/deps2git/svn_to_git_public.py
+END
+PRESUBMIT.py
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/165980/trunk/tools/deps2git/PRESUBMIT.py
+END
+deps_utils.py
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/192210/trunk/tools/deps2git/deps_utils.py
+END
+WATCHLISTS
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/183603/trunk/tools/deps2git/WATCHLISTS
+END
+deps2submodules_unittest.py
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/165980/trunk/tools/deps2git/deps2submodules_unittest.py
+END
+deps2submodules.py
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/165980/trunk/tools/deps2git/deps2submodules.py
+END
+deps2git.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/194189/trunk/tools/deps2git/deps2git.py
+END
+git_tools.py
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/179157/trunk/tools/deps2git/git_tools.py
+END
+codereview.settings
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/165975/trunk/tools/deps2git/codereview.settings
+END

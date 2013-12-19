@@ -1,0 +1,13 @@
+K 10
+svn:ignore
+V 41
+LayoutTests
+Source
+Tools
+WebKitLibraries
+
+K 13
+svn:mergeinfo
+V 90
+/branches/chrome_webkit_merge_branch/deps/third_party/WebKit:3734-4214,4606-5108,5177-5263
+END

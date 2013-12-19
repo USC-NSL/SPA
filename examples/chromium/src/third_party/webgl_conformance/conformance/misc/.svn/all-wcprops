@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/misc
+END
+is-object.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/misc/is-object.html
+END
+delayed-drawing.html
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/misc/delayed-drawing.html
+END
+error-reporting.html
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/misc/error-reporting.html
+END
+null-object-behaviour.html
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/misc/null-object-behaviour.html
+END
+type-conversion-test.html
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/misc/type-conversion-test.html
+END
+webgl-specific.html
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/misc/webgl-specific.html
+END
+00_test_list.txt
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/misc/00_test_list.txt
+END
+invalid-passed-params.html
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/misc/invalid-passed-params.html
+END
+shader-precision-format.html
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/misc/shader-precision-format.html
+END
+uninitialized-test.html
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/misc/uninitialized-test.html
+END
+bad-arguments-test.html
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/misc/bad-arguments-test.html
+END
+instanceof-test.html
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/misc/instanceof-test.html
+END
+object-deletion-behaviour.html
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/misc/object-deletion-behaviour.html
+END
+functions-returning-strings.html
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/misc/functions-returning-strings.html
+END

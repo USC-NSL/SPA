@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/native_client/!svn/ver/10769/trunk/src/native_client/src/trusted/platform_qualify
+END
+build.scons
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/native_client/!svn/ver/10590/trunk/src/native_client/src/trusted/platform_qualify/build.scons
+END
+nacl_dep_qualify.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/native_client/!svn/ver/10192/trunk/src/native_client/src/trusted/platform_qualify/nacl_dep_qualify.h
+END
+nacl_cpuwhitelist.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/native_client/!svn/ver/10192/trunk/src/native_client/src/trusted/platform_qualify/nacl_cpuwhitelist.h
+END
+kernel_version.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/native_client/!svn/ver/6226/trunk/src/native_client/src/trusted/platform_qualify/kernel_version.h
+END
+platform_qualify.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/native_client/!svn/ver/10590/trunk/src/native_client/src/trusted/platform_qualify/platform_qualify.gyp
+END
+nacl_os_qualify.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/native_client/!svn/ver/10192/trunk/src/native_client/src/trusted/platform_qualify/nacl_os_qualify.h
+END

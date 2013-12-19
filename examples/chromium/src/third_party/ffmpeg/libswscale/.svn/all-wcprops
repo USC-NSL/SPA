@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libswscale
+END
+input.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libswscale/input.c
+END
+yuv2rgb.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libswscale/yuv2rgb.c
+END
+utils.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libswscale/utils.c
+END
+output.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libswscale/output.c
+END
+swscale.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libswscale/swscale.c
+END
+swscale_internal.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libswscale/swscale_internal.h
+END
+swscale.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libswscale/swscale.h
+END
+colorspace-test.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/162873/trunk/deps/third_party/ffmpeg/libswscale/colorspace-test.c
+END
+libswscale.v
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libswscale/libswscale.v
+END
+swscale-test.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libswscale/swscale-test.c
+END
+swscale_unscaled.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libswscale/swscale_unscaled.c
+END
+rgb2rgb_template.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libswscale/rgb2rgb_template.c
+END
+rgb2rgb.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libswscale/rgb2rgb.c
+END
+version.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libswscale/version.h
+END
+options.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libswscale/options.c
+END
+rgb2rgb.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/148611/trunk/deps/third_party/ffmpeg/libswscale/rgb2rgb.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/148611/trunk/deps/third_party/ffmpeg/libswscale/Makefile
+END

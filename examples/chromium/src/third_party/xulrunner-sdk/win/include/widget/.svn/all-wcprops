@@ -1,0 +1,251 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget
+END
+nsIScreen.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsIScreen.h
+END
+nsIFormatConverter.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsIFormatConverter.h
+END
+nsIDragSession.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsIDragSession.h
+END
+widgetCore.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/widgetCore.h
+END
+nsIWidget.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsIWidget.h
+END
+nsIToolkit.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsIToolkit.h
+END
+nsIClipboardDragDropHooks.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsIClipboardDragDropHooks.h
+END
+nsIEventListener.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsIEventListener.h
+END
+nsISound.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsISound.h
+END
+nsIMouseListener.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsIMouseListener.h
+END
+nsIKBStateControl.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsIKBStateControl.h
+END
+nsIIdleService.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsIIdleService.h
+END
+nsIDragService.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsIDragService.h
+END
+nsIClipboard.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsIClipboard.h
+END
+nsIClipboardDragDropHookList.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsIClipboardDragDropHookList.h
+END
+nsIClipboardHelper.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsIClipboardHelper.h
+END
+nsIPrintSession.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsIPrintSession.h
+END
+nsIFullScreen.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsIFullScreen.h
+END
+nsWidgetSupport.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsWidgetSupport.h
+END
+nsIPrintOptions.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsIPrintOptions.h
+END
+nsEvent.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsEvent.h
+END
+nsIAppShell.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsIAppShell.h
+END
+nsdefs.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsdefs.h
+END
+nsIScreenManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsIScreenManager.h
+END
+nsIClipboardOwner.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsIClipboardOwner.h
+END
+nsIPrintSettings.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsIPrintSettings.h
+END
+nsINativeKeyBindings.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsINativeKeyBindings.h
+END
+nsGUIEvent.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsGUIEvent.h
+END
+nsWidgetsCID.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsWidgetsCID.h
+END
+nsIDeviceContextSpec.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsIDeviceContextSpec.h
+END
+nsIRollupListener.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsIRollupListener.h
+END
+nsILookAndFeel.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsILookAndFeel.h
+END
+nsIBidiKeyboard.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsIBidiKeyboard.h
+END
+nsIPrintSettingsWin.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsIPrintSettingsWin.h
+END
+nsStringUtil.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsStringUtil.h
+END
+nsIPrintSettingsService.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsIPrintSettingsService.h
+END
+nsIPluginWidget.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsIPluginWidget.h
+END
+nsIMenuRollup.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsIMenuRollup.h
+END
+nsIBaseWindow.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsIBaseWindow.h
+END
+nsITransferable.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsITransferable.h
+END
+nsIFilePicker.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/widget/nsIFilePicker.h
+END

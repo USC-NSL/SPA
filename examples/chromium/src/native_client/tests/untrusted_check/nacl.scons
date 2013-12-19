@@ -1,0 +1,35 @@
+# -*- python -*-
+# Copyright 2011 The Native Client Authors.  All rights reserved.
+# Use of this source code is governed by a BSD-style license that can
+# be found in the LICENSE file.
+
+import os
+
+Import('env')
+
+nexe = env.ComponentProgram('untrusted_check_test',
+                            ['untrusted_check_test.c'],
+                            EXTRA_LIBS=['platform',
+                                        'gio',
+                                        '${PTHREAD_LIBS}',
+                                        '${NONIRT_LIBS}'])
+
+# nacl-newlib and nacl-glibc's abort() implementations produce
+# different exit codes.
+if env.Bit('nacl_glibc'):
+  expected_exit_status = 'untrusted_sigill'
+else:
+  expected_exit_status = '1'
+
+node = env.CommandSelLdrTestNacl(
+    'untrusted_check_test.out',
+    nexe,
+    # On Windows, PNaCl gives an absolute cygwin-style path
+    filter_regex = ('"(Fatal error in file ).*(untrusted_check_test.c)'
+                    '|(LOG_FATAL.*)'
+                    '|(Log output.*)"'),
+    filter_group_only = 'true',
+    stderr_golden = env.File('untrusted_check_test.stderr'),
+    exit_status=expected_exit_status)
+
+env.AddNodeToTestSuite(node, ['small_tests'], 'run_untrusted_check_test')

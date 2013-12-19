@@ -1,0 +1,155 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/194183/trunk/tools/swarm_client/tests/isolate
+END
+simple.py
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/194183/trunk/tools/swarm_client/tests/isolate/simple.py
+END
+split.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/172880/trunk/tools/swarm_client/tests/isolate/split.py
+END
+touch_only.isolate
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/159961/trunk/tools/swarm_client/tests/isolate/touch_only.isolate
+END
+files2
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/159961/trunk/tools/swarm_client/tests/isolate/files2
+END
+touch_root.isolate
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/181317/trunk/tools/swarm_client/tests/isolate/touch_root.isolate
+END
+empty.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/167204/trunk/tools/swarm_client/tests/isolate/empty.py
+END
+simple.isolate
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/194183/trunk/tools/swarm_client/tests/isolate/simple.isolate
+END
+symlink_partial.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/159961/trunk/tools/swarm_client/tests/isolate/symlink_partial.py
+END
+split.isolate
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/172880/trunk/tools/swarm_client/tests/isolate/split.isolate
+END
+with_flag.py
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/159961/trunk/tools/swarm_client/tests/isolate/with_flag.py
+END
+missing_trailing_slash.isolate
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/159961/trunk/tools/swarm_client/tests/isolate/missing_trailing_slash.isolate
+END
+symlink_outside_build_root.py
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/181665/trunk/tools/swarm_client/tests/isolate/symlink_outside_build_root.py
+END
+no_run.isolate
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/159961/trunk/tools/swarm_client/tests/isolate/no_run.isolate
+END
+symlink_full.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/159961/trunk/tools/swarm_client/tests/isolate/symlink_full.py
+END
+symlink_partial.isolate
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/181317/trunk/tools/swarm_client/tests/isolate/symlink_partial.isolate
+END
+fail.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/159961/trunk/tools/swarm_client/tests/isolate/fail.py
+END
+with_flag.isolate
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/181317/trunk/tools/swarm_client/tests/isolate/with_flag.isolate
+END
+symlink_outside_build_root.isolate
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/181665/trunk/tools/swarm_client/tests/isolate/symlink_outside_build_root.isolate
+END
+symlink_full.isolate
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/181317/trunk/tools/swarm_client/tests/isolate/symlink_full.isolate
+END
+touch_only.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/159961/trunk/tools/swarm_client/tests/isolate/touch_only.py
+END
+fail.isolate
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/181317/trunk/tools/swarm_client/tests/isolate/fail.isolate
+END
+link_outside_build_root
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/181579/trunk/tools/swarm_client/tests/isolate/link_outside_build_root
+END
+non_existent.isolate
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/159961/trunk/tools/swarm_client/tests/isolate/non_existent.isolate
+END
+touch_root.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/159961/trunk/tools/swarm_client/tests/isolate/touch_root.py
+END
+all_items_invalid.isolate
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/189623/trunk/tools/swarm_client/tests/isolate/all_items_invalid.isolate
+END

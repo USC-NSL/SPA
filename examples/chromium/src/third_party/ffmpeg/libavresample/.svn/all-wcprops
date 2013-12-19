@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavresample
+END
+audio_data.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavresample/audio_data.h
+END
+utils.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavresample/utils.c
+END
+audio_convert.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavresample/audio_convert.c
+END
+audio_mix_matrix.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavresample/audio_mix_matrix.c
+END
+resample_template.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/148611/trunk/deps/third_party/ffmpeg/libavresample/resample_template.c
+END
+avresample.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavresample/avresample.h
+END
+audio_convert.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavresample/audio_convert.h
+END
+resample.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavresample/resample.c
+END
+libavresample.v
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/140400/trunk/deps/third_party/ffmpeg/libavresample/libavresample.v
+END
+avresample-test.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavresample/avresample-test.c
+END
+resample.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavresample/resample.h
+END
+audio_mix.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavresample/audio_mix.c
+END
+dither.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavresample/dither.c
+END
+internal.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavresample/internal.h
+END
+audio_mix.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavresample/audio_mix.h
+END
+dither.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavresample/dither.h
+END
+version.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavresample/version.h
+END
+audio_data.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavresample/audio_data.c
+END
+options.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavresample/options.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavresample/Makefile
+END

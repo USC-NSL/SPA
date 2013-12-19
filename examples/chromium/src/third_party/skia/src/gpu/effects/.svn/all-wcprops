@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/8755/trunk/src/gpu/effects
+END
+GrTextureDomainEffect.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/8690/trunk/src/gpu/effects/GrTextureDomainEffect.cpp
+END
+GrTextureStripAtlas.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/8401/trunk/src/gpu/effects/GrTextureStripAtlas.cpp
+END
+GrSimpleTextureEffect.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/8755/trunk/src/gpu/effects/GrSimpleTextureEffect.cpp
+END
+Gr1DKernelEffect.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/6286/trunk/src/gpu/effects/Gr1DKernelEffect.h
+END
+GrConfigConversionEffect.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/8369/trunk/src/gpu/effects/GrConfigConversionEffect.cpp
+END
+GrTextureDomainEffect.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/8272/trunk/src/gpu/effects/GrTextureDomainEffect.h
+END
+GrTextureStripAtlas.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/7406/trunk/src/gpu/effects/GrTextureStripAtlas.h
+END
+GrSimpleTextureEffect.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/8272/trunk/src/gpu/effects/GrSimpleTextureEffect.h
+END
+GrConvolutionEffect.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/8369/trunk/src/gpu/effects/GrConvolutionEffect.cpp
+END
+GrConfigConversionEffect.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/7411/trunk/src/gpu/effects/GrConfigConversionEffect.h
+END
+GrSingleTextureEffect.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/8272/trunk/src/gpu/effects/GrSingleTextureEffect.cpp
+END
+GrConvolutionEffect.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/8068/trunk/src/gpu/effects/GrConvolutionEffect.h
+END
+GrSingleTextureEffect.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/8428/trunk/src/gpu/effects/GrSingleTextureEffect.h
+END

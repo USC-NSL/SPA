@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/blink/!svn/ver/149182/trunk/Source/modules/battery
+END
+BatteryClient.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/blink/!svn/ver/148125/trunk/Source/modules/battery/BatteryClient.h
+END
+BatteryController.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/blink/!svn/ver/148690/trunk/Source/modules/battery/BatteryController.cpp
+END
+BatteryStatus.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/blink/!svn/ver/148690/trunk/Source/modules/battery/BatteryStatus.cpp
+END
+BatteryController.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/blink/!svn/ver/148690/trunk/Source/modules/battery/BatteryController.h
+END
+BatteryStatus.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/blink/!svn/ver/148943/trunk/Source/modules/battery/BatteryStatus.h
+END
+BatteryManager.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/blink/!svn/ver/148690/trunk/Source/modules/battery/BatteryManager.cpp
+END
+NavigatorBattery.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/blink/!svn/ver/148690/trunk/Source/modules/battery/NavigatorBattery.cpp
+END
+BatteryManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/blink/!svn/ver/148943/trunk/Source/modules/battery/BatteryManager.h
+END
+NavigatorBattery.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/blink/!svn/ver/148943/trunk/Source/modules/battery/NavigatorBattery.h
+END
+BatteryManager.idl
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/blink/!svn/ver/148405/trunk/Source/modules/battery/BatteryManager.idl
+END
+NavigatorBattery.idl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/blink/!svn/ver/149182/trunk/Source/modules/battery/NavigatorBattery.idl
+END

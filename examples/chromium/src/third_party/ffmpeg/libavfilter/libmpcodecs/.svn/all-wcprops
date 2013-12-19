@@ -1,0 +1,257 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs
+END
+vf_ilpack.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/vf_ilpack.c
+END
+mpc_info.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/122313/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/mpc_info.h
+END
+vf_eq.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/vf_eq.c
+END
+vf_sab.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/vf_sab.c
+END
+vf_pp7.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/vf_pp7.c
+END
+vf_fspp.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/vf_fspp.c
+END
+vfcap.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/122313/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/vfcap.h
+END
+vf_fil.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/vf_fil.c
+END
+vf_noise.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/vf_noise.c
+END
+vf_qp.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/vf_qp.c
+END
+vf_pullup.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/vf_pullup.c
+END
+mp_image.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/mp_image.c
+END
+mpbswap.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/122313/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/mpbswap.h
+END
+vf_mcdeint.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/vf_mcdeint.c
+END
+vf_ow.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/vf_ow.c
+END
+pullup.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/pullup.c
+END
+vf_harddup.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/vf_harddup.c
+END
+vf_eq2.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/vf_eq2.c
+END
+mp_image.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/mp_image.h
+END
+img_format.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/img_format.c
+END
+pullup.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/pullup.h
+END
+vf_scale.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/vf_scale.h
+END
+vf_down3dright.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/vf_down3dright.c
+END
+img_format.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/img_format.h
+END
+vf_phase.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/vf_phase.c
+END
+av_helpers.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/av_helpers.h
+END
+vf_ivtc.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/vf_ivtc.c
+END
+vf_filmdint.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/vf_filmdint.c
+END
+vf_divtc.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/vf_divtc.c
+END
+vf_detc.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/vf_detc.c
+END
+vf.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/vf.h
+END
+vf_uspp.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/vf_uspp.c
+END
+vf_stereo3d.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/vf_stereo3d.c
+END
+vf_telecine.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/vf_telecine.c
+END
+vf_perspective.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/vf_perspective.c
+END
+vf_tinterlace.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/vf_tinterlace.c
+END
+cpudetect.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/cpudetect.h
+END
+mp_msg.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/mp_msg.h
+END
+vf_dint.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/vf_dint.c
+END
+help_mp.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/help_mp.h
+END
+vf_softpulldown.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/vf_softpulldown.c
+END
+vf_spp.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavfilter/libmpcodecs/vf_spp.c
+END

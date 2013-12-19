@@ -1,0 +1,82 @@
+10
+
+dir
+197479
+http://src.chromium.org/svn/trunk/src/native_client_sdk/src/libraries
+http://src.chromium.org/svn
+
+
+
+2013-04-29T22:38:45.152495Z
+197169
+binji@chromium.org
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4ff67af0-8c30-449e-8e8b-ad334ec8d88c
+
+gtest_ppapi
+dir
+
+gtest
+dir
+
+pthread
+dir
+
+third_party
+dir
+
+win
+dir
+
+zlib
+dir
+
+gmock
+dir
+
+utils
+dir
+
+nacl_io_test
+dir
+
+nacl_io
+dir
+
+ppapi_gles2
+dir
+
+c_salt
+dir
+
+ppapi
+dir
+
+ppapi_cpp
+dir
+
+gles2
+dir
+
+libjpeg
+dir
+
+jsoncpp
+dir
+
+ppapi_main
+dir
+

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/native_client/!svn/ver/11245/trunk/src/native_client/pnacl
+END
+prune_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/native_client/!svn/ver/10940/trunk/src/native_client/pnacl/prune_test.py
+END
+gclient_template
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/native_client/!svn/ver/9137/trunk/src/native_client/pnacl/gclient_template
+END
+llvm_change_try_helper.sh
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/native_client/!svn/ver/11182/trunk/src/native_client/pnacl/llvm_change_try_helper.sh
+END
+build.sh
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/native_client/!svn/ver/11235/trunk/src/native_client/pnacl/build.sh
+END
+test.sh
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/native_client/!svn/ver/10223/trunk/src/native_client/pnacl/test.sh
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/native_client/!svn/ver/11245/trunk/src/native_client/pnacl/DEPS
+END
+tc_component_packager.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/native_client/!svn/ver/7660/trunk/src/native_client/pnacl/tc_component_packager.py
+END

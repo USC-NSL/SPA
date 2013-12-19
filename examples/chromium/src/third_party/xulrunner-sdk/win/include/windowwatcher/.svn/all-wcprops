@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/windowwatcher
+END
+nsIPromptService.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/windowwatcher/nsIPromptService.h
+END
+nsPIPromptService.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/windowwatcher/nsPIPromptService.h
+END
+nsIAuthPromptWrapper.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/windowwatcher/nsIAuthPromptWrapper.h
+END
+nsIPromptService2.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/windowwatcher/nsIPromptService2.h
+END
+nsIWindowWatcher.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/windowwatcher/nsIWindowWatcher.h
+END
+nsPIWindowWatcher.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/windowwatcher/nsPIWindowWatcher.h
+END
+nsIPromptFactory.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/windowwatcher/nsIPromptFactory.h
+END
+nsPromptUtils.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/windowwatcher/nsPromptUtils.h
+END
+nsIDialogParamBlock.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/windowwatcher/nsIDialogParamBlock.h
+END
+nsINonBlockingAlertService.h
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/windowwatcher/nsINonBlockingAlertService.h
+END

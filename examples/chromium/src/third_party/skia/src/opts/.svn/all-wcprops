@@ -1,0 +1,173 @@
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/8579/trunk/src/opts
+END
+memset32_neon.S
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/1981/trunk/src/opts/memset32_neon.S
+END
+SkUtils_opts_SSE2.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/5262/trunk/src/opts/SkUtils_opts_SSE2.cpp
+END
+memset16_neon.S
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/1981/trunk/src/opts/memset16_neon.S
+END
+SkBitmapProcState_opts_SSE2.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/7855/trunk/src/opts/SkBitmapProcState_opts_SSE2.cpp
+END
+SkBitmapProcState_opts_arm.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/7406/trunk/src/opts/SkBitmapProcState_opts_arm.cpp
+END
+SkBlitRow_opts_arm_neon.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/8579/trunk/src/opts/SkBlitRow_opts_arm_neon.cpp
+END
+SkBlitRow_opts_none.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/7406/trunk/src/opts/SkBlitRow_opts_none.cpp
+END
+SkUtils_opts_SSE2.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/5262/trunk/src/opts/SkUtils_opts_SSE2.h
+END
+SkBitmapProcState_opts_SSE2.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/5265/trunk/src/opts/SkBitmapProcState_opts_SSE2.h
+END
+SkBitmapProcState_matrix_repeat_neon.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/7694/trunk/src/opts/SkBitmapProcState_matrix_repeat_neon.h
+END
+SkBlitRect_opts_SSE2.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/8307/trunk/src/opts/SkBlitRect_opts_SSE2.cpp
+END
+SkBitmapProcState_matrixProcs_neon.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/7645/trunk/src/opts/SkBitmapProcState_matrixProcs_neon.cpp
+END
+SkBlitRect_opts_SSE2.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/7406/trunk/src/opts/SkBlitRect_opts_SSE2.h
+END
+SkCachePreload_arm.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/4779/trunk/src/opts/SkCachePreload_arm.h
+END
+SkBitmapProcState_arm_neon.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/5265/trunk/src/opts/SkBitmapProcState_arm_neon.cpp
+END
+opts_check_SSE2.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/7406/trunk/src/opts/opts_check_SSE2.cpp
+END
+SkBlitRow_opts_SSE2.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/5262/trunk/src/opts/SkBlitRow_opts_SSE2.cpp
+END
+opts_check_arm.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/7406/trunk/src/opts/opts_check_arm.cpp
+END
+SkUtils_opts_none.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/7406/trunk/src/opts/SkUtils_opts_none.cpp
+END
+SkBitmapProcState_matrix_clamp_neon.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/7645/trunk/src/opts/SkBitmapProcState_matrix_clamp_neon.h
+END
+SkBitmapProcState_opts_none.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/7406/trunk/src/opts/SkBitmapProcState_opts_none.cpp
+END
+SkBlitRow_opts_arm.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/5378/trunk/src/opts/SkBlitRow_opts_arm.cpp
+END
+SkBitmapProcState_opts_SSSE3.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/7855/trunk/src/opts/SkBitmapProcState_opts_SSSE3.cpp
+END
+SkBlitRow_opts_SSE2.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/5265/trunk/src/opts/SkBlitRow_opts_SSE2.h
+END
+memset.arm.S
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/3816/trunk/src/opts/memset.arm.S
+END
+SkBitmapProcState_filter_neon.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/5262/trunk/src/opts/SkBitmapProcState_filter_neon.h
+END
+SkBlitRow_opts_arm.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/5265/trunk/src/opts/SkBlitRow_opts_arm.h
+END
+SkBitmapProcState_opts_SSSE3.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/5265/trunk/src/opts/SkBitmapProcState_opts_SSSE3.h
+END

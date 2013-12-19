@@ -1,0 +1,167 @@
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/170865/trunk/deps/third_party/jarjar/src-distribution/src/main/com/tonicsystems/jarjar
+END
+EmptyClassVisitor.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/!svn/ver/170865/trunk/deps/third_party/jarjar/src-distribution/src/main/com/tonicsystems/jarjar/EmptyClassVisitor.java
+END
+ManifestProcessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/!svn/ver/170865/trunk/deps/third_party/jarjar/src-distribution/src/main/com/tonicsystems/jarjar/ManifestProcessor.java
+END
+DepHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/170865/trunk/deps/third_party/jarjar/src-distribution/src/main/com/tonicsystems/jarjar/DepHandler.java
+END
+Rule.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/170865/trunk/deps/third_party/jarjar/src-distribution/src/main/com/tonicsystems/jarjar/Rule.java
+END
+RulesFileParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/!svn/ver/170865/trunk/deps/third_party/jarjar/src-distribution/src/main/com/tonicsystems/jarjar/RulesFileParser.java
+END
+DepFind.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/170865/trunk/deps/third_party/jarjar/src-distribution/src/main/com/tonicsystems/jarjar/DepFind.java
+END
+TextDepHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/170865/trunk/deps/third_party/jarjar/src-distribution/src/main/com/tonicsystems/jarjar/TextDepHandler.java
+END
+PathClass.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/170865/trunk/deps/third_party/jarjar/src-distribution/src/main/com/tonicsystems/jarjar/PathClass.java
+END
+MainUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/170865/trunk/deps/third_party/jarjar/src-distribution/src/main/com/tonicsystems/jarjar/MainUtil.java
+END
+StringDumper.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/170865/trunk/deps/third_party/jarjar/src-distribution/src/main/com/tonicsystems/jarjar/StringDumper.java
+END
+MainProcessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/!svn/ver/170865/trunk/deps/third_party/jarjar/src-distribution/src/main/com/tonicsystems/jarjar/MainProcessor.java
+END
+Main.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/170865/trunk/deps/third_party/jarjar/src-distribution/src/main/com/tonicsystems/jarjar/Main.java
+END
+KeepProcessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/!svn/ver/170865/trunk/deps/third_party/jarjar/src-distribution/src/main/com/tonicsystems/jarjar/KeepProcessor.java
+END
+Keep.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/170865/trunk/deps/third_party/jarjar/src-distribution/src/main/com/tonicsystems/jarjar/Keep.java
+END
+help.txt
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/170865/trunk/deps/third_party/jarjar/src-distribution/src/main/com/tonicsystems/jarjar/help.txt
+END
+PackageRemapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/!svn/ver/170865/trunk/deps/third_party/jarjar/src-distribution/src/main/com/tonicsystems/jarjar/PackageRemapper.java
+END
+PatternElement.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/170865/trunk/deps/third_party/jarjar/src-distribution/src/main/com/tonicsystems/jarjar/PatternElement.java
+END
+ResourceProcessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/!svn/ver/170865/trunk/deps/third_party/jarjar/src-distribution/src/main/com/tonicsystems/jarjar/ResourceProcessor.java
+END
+ExcludeProcessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/!svn/ver/170865/trunk/deps/third_party/jarjar/src-distribution/src/main/com/tonicsystems/jarjar/ExcludeProcessor.java
+END
+DepFindVisitor.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/170865/trunk/deps/third_party/jarjar/src-distribution/src/main/com/tonicsystems/jarjar/DepFindVisitor.java
+END
+StringReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/170865/trunk/deps/third_party/jarjar/src-distribution/src/main/com/tonicsystems/jarjar/StringReader.java
+END
+Wildcard.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/170865/trunk/deps/third_party/jarjar/src-distribution/src/main/com/tonicsystems/jarjar/Wildcard.java
+END
+AbstractDepHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/!svn/ver/170865/trunk/deps/third_party/jarjar/src-distribution/src/main/com/tonicsystems/jarjar/AbstractDepHandler.java
+END
+Zap.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/170865/trunk/deps/third_party/jarjar/src-distribution/src/main/com/tonicsystems/jarjar/Zap.java
+END
+ZapProcessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/170865/trunk/deps/third_party/jarjar/src-distribution/src/main/com/tonicsystems/jarjar/ZapProcessor.java
+END
+JarJarTask.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/170865/trunk/deps/third_party/jarjar/src-distribution/src/main/com/tonicsystems/jarjar/JarJarTask.java
+END
+JarJarMojo.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/170865/trunk/deps/third_party/jarjar/src-distribution/src/main/com/tonicsystems/jarjar/JarJarMojo.java
+END

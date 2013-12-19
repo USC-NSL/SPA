@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/167605/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/macho/tests/nasm64
+END
+machotest64.asm
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/macho/tests/nasm64/machotest64.asm
+END
+machotest64.c
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/macho/tests/nasm64/machotest64.c
+END
+machotest64.hex
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/macho/tests/nasm64/machotest64.hex
+END
+Makefile.inc
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/167605/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/macho/tests/nasm64/Makefile.inc
+END
+nasm-macho64-pic.asm
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/macho/tests/nasm64/nasm-macho64-pic.asm
+END
+macho-reloc64-err.asm
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/macho/tests/nasm64/macho-reloc64-err.asm
+END
+macho-reloc64-err.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/macho/tests/nasm64/macho-reloc64-err.errwarn
+END
+macho64_test.sh
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/167605/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/macho/tests/nasm64/macho64_test.sh
+END
+nasm-macho64-pic.hex
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/macho/tests/nasm64/nasm-macho64-pic.hex
+END

@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/167604/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/xdf/tests
+END
+xdfsect.asm
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/xdf/tests/xdfsect.asm
+END
+xdflong.asm
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/xdf/tests/xdflong.asm
+END
+xdflong.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/xdf/tests/xdflong.errwarn
+END
+xdfsect.hex
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/xdf/tests/xdfsect.hex
+END
+xdflong.hex
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/xdf/tests/xdflong.hex
+END
+Makefile.inc
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/167604/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/xdf/tests/Makefile.inc
+END
+xdf-overdef.asm
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/xdf/tests/xdf-overdef.asm
+END
+xdf_test.sh
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/167604/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/xdf/tests/xdf_test.sh
+END
+xdf-overdef.hex
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/xdf/tests/xdf-overdef.hex
+END
+xdfprotect.asm
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/xdf/tests/xdfprotect.asm
+END
+xdfother.asm
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/xdf/tests/xdfother.asm
+END
+xdfprotect.hex
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/xdf/tests/xdfprotect.hex
+END
+xdfsect-err.asm
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/xdf/tests/xdfsect-err.asm
+END
+xdfsect-err.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/xdf/tests/xdfsect-err.errwarn
+END
+xdfother.hex
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/xdf/tests/xdfother.hex
+END
+xdfvirtual.asm
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/xdf/tests/xdfvirtual.asm
+END
+xdfvirtual.hex
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/xdf/tests/xdfvirtual.hex
+END

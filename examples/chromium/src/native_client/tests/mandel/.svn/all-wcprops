@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/native_client/!svn/ver/10737/trunk/src/native_client/tests/mandel
+END
+test.stdin
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/native_client/!svn/ver/4416/trunk/src/native_client/tests/mandel/test.stdin
+END
+mandel_tiled.nmf
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/native_client/!svn/ver/5812/trunk/src/native_client/tests/mandel/mandel_tiled.nmf
+END
+test.stdout
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/native_client/!svn/ver/10737/trunk/src/native_client/tests/mandel/test.stdout
+END
+mandel.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/native_client/!svn/ver/10209/trunk/src/native_client/tests/mandel/mandel.c
+END
+nacl.scons
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/native_client/!svn/ver/9886/trunk/src/native_client/tests/mandel/nacl.scons
+END
+mandel_tiled.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/native_client/!svn/ver/10209/trunk/src/native_client/tests/mandel/mandel_tiled.c
+END
+mandel_tiled.html
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/native_client/!svn/ver/5117/trunk/src/native_client/tests/mandel/mandel_tiled.html
+END

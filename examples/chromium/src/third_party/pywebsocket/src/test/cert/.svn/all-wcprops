@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/638/trunk/src/test/cert
+END
+cacert.pem
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/638/trunk/src/test/cert/cacert.pem
+END
+key.pem
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/638/trunk/src/test/cert/key.pem
+END
+client_cert.p12
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/638/trunk/src/test/cert/client_cert.p12
+END
+cert.pem
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/638/trunk/src/test/cert/cert.pem
+END

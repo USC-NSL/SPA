@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/crypto/ripemd
+END
+rmdconst.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/65201/trunk/deps/third_party/openssl/openssl/crypto/ripemd/rmdconst.h
+END
+rmd_locl.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/crypto/ripemd/rmd_locl.h
+END
+rmdtest.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/65201/trunk/deps/third_party/openssl/openssl/crypto/ripemd/rmdtest.c
+END
+rmd_dgst.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/crypto/ripemd/rmd_dgst.c
+END
+rmd_one.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/65201/trunk/deps/third_party/openssl/openssl/crypto/ripemd/rmd_one.c
+END
+ripemd.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/ripemd/ripemd.h
+END
+rmd160.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/65201/trunk/deps/third_party/openssl/openssl/crypto/ripemd/rmd160.c
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/65201/trunk/deps/third_party/openssl/openssl/crypto/ripemd/README
+END

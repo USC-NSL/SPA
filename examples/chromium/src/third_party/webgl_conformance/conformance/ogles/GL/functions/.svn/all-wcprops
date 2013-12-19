@@ -1,0 +1,863 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions
+END
+float_empty_empty_float_empty_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/float_empty_empty_float_empty_frag.frag
+END
+mat4_empty_inout_mat4_empty_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/mat4_empty_inout_mat4_empty_vert.vert
+END
+functions_113_to_120.html
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/functions_113_to_120.html
+END
+vec4_empty_in_vec4_empty_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/vec4_empty_in_vec4_empty_vert.vert
+END
+functions_025_to_032.html
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/functions_025_to_032.html
+END
+vec4_empty_empty_vec4_array_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/vec4_empty_empty_vec4_array_frag.frag
+END
+ivec4_empty_inout_ivec4_empty_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/ivec4_empty_inout_ivec4_empty_frag.frag
+END
+int_empty_empty_int_empty_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/int_empty_empty_int_empty_vert.vert
+END
+bool_empty_inout_bool_empty_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/bool_empty_inout_bool_empty_frag.frag
+END
+mat4_empty_empty_mat4_array_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/mat4_empty_empty_mat4_array_frag.frag
+END
+bvec4_empty_out_bvec4_array_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/bvec4_empty_out_bvec4_array_frag.frag
+END
+bvec4_empty_in_bvec4_array_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/bvec4_empty_in_bvec4_array_vert.vert
+END
+vec4_empty_empty_vec4_empty_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/vec4_empty_empty_vec4_empty_frag.frag
+END
+void_empty_empty_void_empty_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/void_empty_empty_void_empty_frag.frag
+END
+vec4_empty_inout_vec4_bigarray_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/vec4_empty_inout_vec4_bigarray_frag.frag
+END
+mat4_empty_empty_mat4_empty_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/mat4_empty_empty_mat4_empty_frag.frag
+END
+bvec4_empty_inout_bvec4_bigarray_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/bvec4_empty_inout_bvec4_bigarray_vert.vert
+END
+ivec4_empty_out_ivec4_array_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/ivec4_empty_out_ivec4_array_frag.frag
+END
+functions_033_to_040.html
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/functions_033_to_040.html
+END
+int_empty_out_int_array_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/int_empty_out_int_array_vert.vert
+END
+bvec4_empty_out_bvec4_empty_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/bvec4_empty_out_bvec4_empty_frag.frag
+END
+bvec4_empty_in_bvec4_empty_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/bvec4_empty_in_bvec4_empty_vert.vert
+END
+bvec4_empty_inout_bvec4_array_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/bvec4_empty_inout_bvec4_array_frag.frag
+END
+ivec4_empty_inout_ivec4_bigarray_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/ivec4_empty_inout_ivec4_bigarray_vert.vert
+END
+float_empty_inout_float_array_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/float_empty_inout_float_array_frag.frag
+END
+ivec4_empty_out_ivec4_empty_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/ivec4_empty_out_ivec4_empty_frag.frag
+END
+vec4_empty_out_vec4_array_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/vec4_empty_out_vec4_array_vert.vert
+END
+int_empty_out_int_empty_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/int_empty_out_int_empty_vert.vert
+END
+qualifiers_float_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/qualifiers_float_vert.vert
+END
+mat4_empty_out_mat4_array_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/mat4_empty_out_mat4_array_vert.vert
+END
+float_empty_out_float_array_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/float_empty_out_float_array_vert.vert
+END
+int_empty_inout_int_array_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/int_empty_inout_int_array_vert.vert
+END
+bvec4_empty_inout_bvec4_empty_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/bvec4_empty_inout_bvec4_empty_frag.frag
+END
+float_empty_inout_float_empty_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/float_empty_inout_float_empty_frag.frag
+END
+int_empty_in_int_array_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/int_empty_in_int_array_frag.frag
+END
+functions_001_to_008.html
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/functions_001_to_008.html
+END
+vec4_empty_out_vec4_empty_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/vec4_empty_out_vec4_empty_vert.vert
+END
+qualifiers_struct_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/qualifiers_struct_frag.frag
+END
+ivec4_empty_in_ivec4_array_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/ivec4_empty_in_ivec4_array_vert.vert
+END
+bool_empty_in_bool_array_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/bool_empty_in_bool_array_frag.frag
+END
+vec4_empty_inout_vec4_array_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/vec4_empty_inout_vec4_array_frag.frag
+END
+mat4_empty_out_mat4_empty_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/mat4_empty_out_mat4_empty_vert.vert
+END
+float_empty_out_float_empty_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/float_empty_out_float_empty_vert.vert
+END
+int_empty_inout_int_empty_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/int_empty_inout_int_empty_vert.vert
+END
+functions_097_to_104.html
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/functions_097_to_104.html
+END
+vec4_empty_in_vec4_array_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/vec4_empty_in_vec4_array_frag.frag
+END
+mat4_empty_inout_mat4_array_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/mat4_empty_inout_mat4_array_frag.frag
+END
+int_empty_in_int_empty_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/int_empty_in_int_empty_frag.frag
+END
+functions_049_to_056.html
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/functions_049_to_056.html
+END
+functions_081_to_088.html
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/functions_081_to_088.html
+END
+ivec4_empty_in_ivec4_empty_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/ivec4_empty_in_ivec4_empty_vert.vert
+END
+bool_empty_in_bool_empty_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/bool_empty_in_bool_empty_frag.frag
+END
+vec4_empty_inout_vec4_empty_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/vec4_empty_inout_vec4_empty_frag.frag
+END
+int_empty_empty_int_array_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/int_empty_empty_int_array_frag.frag
+END
+float_empty_in_float_array_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/float_empty_in_float_array_vert.vert
+END
+ivec4_empty_empty_ivec4_array_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/ivec4_empty_empty_ivec4_array_vert.vert
+END
+bool_empty_empty_bool_array_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/bool_empty_empty_bool_array_vert.vert
+END
+mat4_empty_inout_mat4_empty_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/mat4_empty_inout_mat4_empty_frag.frag
+END
+vec4_empty_in_vec4_empty_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/vec4_empty_in_vec4_empty_frag.frag
+END
+functions_121_to_126.html
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/functions_121_to_126.html
+END
+bool_empty_out_bool_array_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/bool_empty_out_bool_array_vert.vert
+END
+int_empty_empty_int_empty_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/int_empty_empty_int_empty_frag.frag
+END
+float_empty_in_float_empty_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/float_empty_in_float_empty_vert.vert
+END
+ivec4_empty_empty_ivec4_empty_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/ivec4_empty_empty_ivec4_empty_vert.vert
+END
+bool_empty_empty_bool_empty_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/bool_empty_empty_bool_empty_vert.vert
+END
+functions_057_to_064.html
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/functions_057_to_064.html
+END
+bvec4_empty_in_bvec4_array_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/bvec4_empty_in_bvec4_array_frag.frag
+END
+bool_empty_out_bool_empty_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/bool_empty_out_bool_empty_vert.vert
+END
+mat4_empty_in_mat4_array_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/mat4_empty_in_mat4_array_vert.vert
+END
+bvec4_empty_inout_bvec4_bigarray_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/bvec4_empty_inout_bvec4_bigarray_frag.frag
+END
+array_float_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/array_float_vert.vert
+END
+int_empty_out_int_array_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/int_empty_out_int_array_frag.frag
+END
+bvec4_empty_in_bvec4_empty_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/bvec4_empty_in_bvec4_empty_frag.frag
+END
+mat4_empty_in_mat4_empty_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/mat4_empty_in_mat4_empty_vert.vert
+END
+ivec4_empty_inout_ivec4_bigarray_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/ivec4_empty_inout_ivec4_bigarray_frag.frag
+END
+bvec4_empty_empty_bvec4_array_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/bvec4_empty_empty_bvec4_array_vert.vert
+END
+functions_065_to_072.html
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/functions_065_to_072.html
+END
+vec4_empty_out_vec4_array_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/vec4_empty_out_vec4_array_frag.frag
+END
+float_empty_empty_float_array_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/float_empty_empty_float_array_vert.vert
+END
+int_empty_out_int_empty_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/int_empty_out_int_empty_frag.frag
+END
+qualifiers_float_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/qualifiers_float_frag.frag
+END
+mat4_empty_out_mat4_array_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/mat4_empty_out_mat4_array_frag.frag
+END
+float_empty_out_float_array_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/float_empty_out_float_array_frag.frag
+END
+int_empty_inout_int_array_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/int_empty_inout_int_array_frag.frag
+END
+ivec4_empty_inout_ivec4_array_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/ivec4_empty_inout_ivec4_array_vert.vert
+END
+bvec4_empty_empty_bvec4_empty_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/bvec4_empty_empty_bvec4_empty_vert.vert
+END
+bool_empty_inout_bool_array_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/bool_empty_inout_bool_array_vert.vert
+END
+vec4_empty_out_vec4_empty_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/vec4_empty_out_vec4_empty_frag.frag
+END
+ivec4_empty_in_ivec4_array_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/ivec4_empty_in_ivec4_array_frag.frag
+END
+float_empty_empty_float_empty_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/float_empty_empty_float_empty_vert.vert
+END
+mat4_empty_out_mat4_empty_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/mat4_empty_out_mat4_empty_frag.frag
+END
+float_empty_out_float_empty_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/float_empty_out_float_empty_frag.frag
+END
+vec4_empty_empty_vec4_array_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/vec4_empty_empty_vec4_array_vert.vert
+END
+int_empty_inout_int_empty_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/int_empty_inout_int_empty_frag.frag
+END
+ivec4_empty_inout_ivec4_empty_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/ivec4_empty_inout_ivec4_empty_vert.vert
+END
+functions_073_to_080.html
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/functions_073_to_080.html
+END
+bool_empty_inout_bool_empty_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/bool_empty_inout_bool_empty_vert.vert
+END
+mat4_empty_empty_mat4_array_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/mat4_empty_empty_mat4_array_vert.vert
+END
+ivec4_empty_in_ivec4_empty_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/ivec4_empty_in_ivec4_empty_frag.frag
+END
+bvec4_empty_out_bvec4_array_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/bvec4_empty_out_bvec4_array_vert.vert
+END
+float_empty_in_float_array_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/float_empty_in_float_array_frag.frag
+END
+vec4_empty_empty_vec4_empty_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/vec4_empty_empty_vec4_empty_vert.vert
+END
+ivec4_empty_empty_ivec4_array_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/ivec4_empty_empty_ivec4_array_frag.frag
+END
+void_empty_empty_void_empty_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/void_empty_empty_void_empty_vert.vert
+END
+bool_empty_empty_bool_array_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/bool_empty_empty_bool_array_frag.frag
+END
+vec4_empty_inout_vec4_bigarray_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/vec4_empty_inout_vec4_bigarray_vert.vert
+END
+input.run.txt
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/input.run.txt
+END
+mat4_empty_empty_mat4_empty_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/mat4_empty_empty_mat4_empty_vert.vert
+END
+ivec4_empty_out_ivec4_array_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/ivec4_empty_out_ivec4_array_vert.vert
+END
+bool_empty_out_bool_array_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/bool_empty_out_bool_array_frag.frag
+END
+bvec4_empty_out_bvec4_empty_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/bvec4_empty_out_bvec4_empty_vert.vert
+END
+float_empty_in_float_empty_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/float_empty_in_float_empty_frag.frag
+END
+ivec4_empty_empty_ivec4_empty_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/ivec4_empty_empty_ivec4_empty_frag.frag
+END
+functions_009_to_016.html
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/functions_009_to_016.html
+END
+functions_041_to_048.html
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/functions_041_to_048.html
+END
+bool_empty_empty_bool_empty_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/bool_empty_empty_bool_empty_frag.frag
+END
+bvec4_empty_inout_bvec4_array_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/bvec4_empty_inout_bvec4_array_vert.vert
+END
+float_empty_inout_float_array_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/float_empty_inout_float_array_vert.vert
+END
+ivec4_empty_out_ivec4_empty_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/ivec4_empty_out_ivec4_empty_vert.vert
+END
+bool_empty_out_bool_empty_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/bool_empty_out_bool_empty_frag.frag
+END
+mat4_empty_in_mat4_array_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/mat4_empty_in_mat4_array_frag.frag
+END
+functions_089_to_096.html
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/functions_089_to_096.html
+END
+bvec4_empty_inout_bvec4_empty_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/bvec4_empty_inout_bvec4_empty_vert.vert
+END
+array_float_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/array_float_frag.frag
+END
+float_empty_inout_float_empty_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/float_empty_inout_float_empty_vert.vert
+END
+int_empty_in_int_array_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/int_empty_in_int_array_vert.vert
+END
+functions_105_to_112.html
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/functions_105_to_112.html
+END
+qualifiers_struct_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/qualifiers_struct_vert.vert
+END
+bool_empty_in_bool_array_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/bool_empty_in_bool_array_vert.vert
+END
+mat4_empty_in_mat4_empty_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/mat4_empty_in_mat4_empty_frag.frag
+END
+functions_017_to_024.html
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/functions_017_to_024.html
+END
+vec4_empty_inout_vec4_array_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/vec4_empty_inout_vec4_array_vert.vert
+END
+bvec4_empty_empty_bvec4_array_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/bvec4_empty_empty_bvec4_array_frag.frag
+END
+float_empty_empty_float_array_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/float_empty_empty_float_array_frag.frag
+END
+mat4_empty_inout_mat4_array_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/mat4_empty_inout_mat4_array_vert.vert
+END
+vec4_empty_in_vec4_array_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/vec4_empty_in_vec4_array_vert.vert
+END
+int_empty_in_int_empty_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/int_empty_in_int_empty_vert.vert
+END
+bool_empty_in_bool_empty_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/bool_empty_in_bool_empty_vert.vert
+END
+ivec4_empty_inout_ivec4_array_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/ivec4_empty_inout_ivec4_array_frag.frag
+END
+vec4_empty_inout_vec4_empty_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/vec4_empty_inout_vec4_empty_vert.vert
+END
+int_empty_empty_int_array_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/int_empty_empty_int_array_vert.vert
+END
+bvec4_empty_empty_bvec4_empty_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/bvec4_empty_empty_bvec4_empty_frag.frag
+END
+bool_empty_inout_bool_array_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/functions/bool_empty_inout_bool_array_frag.frag
+END

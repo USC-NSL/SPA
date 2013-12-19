@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/celt/tests
+END
+test_unit_entropy.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/celt/tests/test_unit_entropy.c
+END
+test_unit_laplace.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/celt/tests/test_unit_laplace.c
+END
+test_unit_cwrs32.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/celt/tests/test_unit_cwrs32.c
+END
+test_unit_types.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/celt/tests/test_unit_types.c
+END
+test_unit_mdct.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/celt/tests/test_unit_mdct.c
+END
+test_unit_mathops.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/celt/tests/test_unit_mathops.c
+END
+test_unit_dft.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/celt/tests/test_unit_dft.c
+END
+test_unit_rotation.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/celt/tests/test_unit_rotation.c
+END

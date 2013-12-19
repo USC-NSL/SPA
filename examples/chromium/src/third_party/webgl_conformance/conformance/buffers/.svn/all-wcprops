@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/buffers
+END
+index-validation.html
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/buffers/index-validation.html
+END
+buffer-bind-test.html
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/buffers/buffer-bind-test.html
+END
+index-validation-with-resized-buffer.html
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/buffers/index-validation-with-resized-buffer.html
+END
+buffer-data-array-buffer.html
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/buffers/buffer-data-array-buffer.html
+END
+00_test_list.txt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/buffers/00_test_list.txt
+END
+index-validation-verifies-too-many-indices.html
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/buffers/index-validation-verifies-too-many-indices.html
+END
+index-validation-copies-indices.html
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/buffers/index-validation-copies-indices.html
+END
+index-validation-crash-with-buffer-sub-data.html
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/buffers/index-validation-crash-with-buffer-sub-data.html
+END

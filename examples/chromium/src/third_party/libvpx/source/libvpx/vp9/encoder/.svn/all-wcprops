@@ -1,0 +1,299 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/196669/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder
+END
+vp9_encodeintra.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/195050/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_encodeintra.h
+END
+vp9_treewriter.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/195050/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_treewriter.h
+END
+vp9_segmentation.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/195050/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_segmentation.h
+END
+vp9_encodeframe.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/195050/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_encodeframe.c
+END
+vp9_dct.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/195050/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_dct.c
+END
+vp9_onyx_if.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/195050/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_onyx_if.c
+END
+vp9_mcomp.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/195050/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_mcomp.c
+END
+vp9_onyx_int.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/195051/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_onyx_int.h
+END
+vp9_encodemb.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/195051/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_encodemb.c
+END
+vp9_encodeframe.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/195050/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_encodeframe.h
+END
+vp9_mcomp.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/195050/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_mcomp.h
+END
+vp9_mbgraph.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/195050/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_mbgraph.c
+END
+vp9_encodemb.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/195051/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_encodemb.h
+END
+vp9_mbgraph.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/195050/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_mbgraph.h
+END
+vp9_rdopt.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/195050/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_rdopt.c
+END
+vp9_picklpf.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/195050/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_picklpf.c
+END
+vp9_bitstream.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/195050/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_bitstream.c
+END
+vp9_variance_c.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/195051/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_variance_c.c
+END
+vp9_picklpf.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/195050/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_picklpf.h
+END
+vp9_rdopt.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/195050/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_rdopt.h
+END
+vp9_asm_enc_offsets.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/195050/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_asm_enc_offsets.c
+END
+vp9_bitstream.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/177026/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_bitstream.h
+END
+vp9_block.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/195050/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_block.h
+END
+vp9_modecosts.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_modecosts.c
+END
+vp9_encodemv.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_encodemv.c
+END
+vp9_quantize.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/195050/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_quantize.c
+END
+vp9_boolhuff.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/195050/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_boolhuff.c
+END
+vp9_modecosts.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/177026/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_modecosts.h
+END
+vp9_encodemv.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/177026/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_encodemv.h
+END
+vp9_quantize.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/195050/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_quantize.h
+END
+vp9_boolhuff.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/177026/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_boolhuff.h
+END
+vp9_sad_c.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/195051/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_sad_c.c
+END
+vp9_ssim.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/177026/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_ssim.c
+END
+vp9_firstpass.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/195051/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_firstpass.c
+END
+vp9_ratectrl.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/195050/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_ratectrl.c
+END
+vp9_psnr.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/195050/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_psnr.c
+END
+vp9_firstpass.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/195051/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_firstpass.h
+END
+vp9_ratectrl.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/195050/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_ratectrl.h
+END
+vp9_psnr.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/195050/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_psnr.h
+END
+vp9_lookahead.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/195051/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_lookahead.c
+END
+vp9_temporal_filter.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/195051/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_temporal_filter.c
+END
+vp9_tokenize.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/195050/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_tokenize.c
+END
+vp9_encodeintra.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/195050/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_encodeintra.c
+END
+vp9_lookahead.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/195050/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_lookahead.h
+END
+vp9_treewriter.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/195050/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_treewriter.c
+END
+vp9_segmentation.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/195050/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_segmentation.c
+END
+vp9_temporal_filter.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/195050/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_temporal_filter.h
+END
+vp9_tokenize.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/195050/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_tokenize.h
+END
+vp9_variance.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/195050/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/vp9_variance.h
+END

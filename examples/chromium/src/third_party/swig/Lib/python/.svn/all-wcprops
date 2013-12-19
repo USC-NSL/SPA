@@ -1,0 +1,491 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/69281/trunk/deps/third_party/swig/Lib/python
+END
+Makefile.in
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/Makefile.in
+END
+std_container.i
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/std_container.i
+END
+pyname_compat.i
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/pyname_compat.i
+END
+pyerrors.swg
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/pyerrors.swg
+END
+pyabc.i
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/pyabc.i
+END
+pybackward.swg
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/pybackward.swg
+END
+defarg.swg
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/defarg.swg
+END
+cwstring.i
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/cwstring.i
+END
+std_streambuf.i
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/std_streambuf.i
+END
+std_ios.i
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/std_ios.i
+END
+std_alloc.i
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/std_alloc.i
+END
+carrays.i
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/carrays.i
+END
+std_set.i
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/std_set.i
+END
+complex.i
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/complex.i
+END
+pyopers.swg
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/pyopers.swg
+END
+cni.i
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/cni.i
+END
+pydocs.swg
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/pydocs.swg
+END
+embed.i
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/embed.i
+END
+std_string.i
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/std_string.i
+END
+std_complex.i
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/std_complex.i
+END
+pytypemaps.swg
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/pytypemaps.swg
+END
+cpointer.i
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/cpointer.i
+END
+pystdcommon.swg
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/pystdcommon.swg
+END
+std_wiostream.i
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/std_wiostream.i
+END
+pyrun.swg
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/pyrun.swg
+END
+pyapi.swg
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/pyapi.swg
+END
+pythonkw.swg
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/pythonkw.swg
+END
+std_wios.i
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/std_wios.i
+END
+std_iostream.i
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/std_iostream.i
+END
+pyuserdir.swg
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/pyuserdir.swg
+END
+boost_shared_ptr.i
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/boost_shared_ptr.i
+END
+std_multimap.i
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/std_multimap.i
+END
+stl.i
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/stl.i
+END
+pyruntime.swg
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/69281/trunk/deps/third_party/swig/Lib/python/pyruntime.swg
+END
+pymacros.swg
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/pymacros.swg
+END
+std_pair.i
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/std_pair.i
+END
+cstring.i
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/cstring.i
+END
+pystrings.swg
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/pystrings.swg
+END
+cmalloc.i
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/cmalloc.i
+END
+pythreads.swg
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/pythreads.swg
+END
+std_vector.i
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/std_vector.i
+END
+std_deque.i
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/std_deque.i
+END
+jstring.i
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/jstring.i
+END
+std_multiset.i
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/std_multiset.i
+END
+pyhead.swg
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/pyhead.swg
+END
+director.swg
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/director.swg
+END
+pyiterators.swg
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/pyiterators.swg
+END
+std_common.i
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/std_common.i
+END
+pycontainer.swg
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/pycontainer.swg
+END
+std_wstring.i
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/std_wstring.i
+END
+ccomplex.i
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/ccomplex.i
+END
+implicit.i
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/implicit.i
+END
+cdata.i
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/cdata.i
+END
+std_char_traits.i
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/std_char_traits.i
+END
+pytuplehlp.swg
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/pytuplehlp.swg
+END
+pyclasses.swg
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/pyclasses.swg
+END
+embed15.i
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/embed15.i
+END
+pybuffer.i
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/pybuffer.i
+END
+pycomplex.swg
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/pycomplex.swg
+END
+std_sstream.i
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/std_sstream.i
+END
+python.swg
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/python.swg
+END
+std_wstreambuf.i
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/std_wstreambuf.i
+END
+std_carray.i
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/std_carray.i
+END
+argcargv.i
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/argcargv.i
+END
+exception.i
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/exception.i
+END
+pywstrings.swg
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/pywstrings.swg
+END
+std_except.i
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/std_except.i
+END
+typemaps.i
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/typemaps.i
+END
+attribute.i
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/attribute.i
+END
+wchar.i
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/wchar.i
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/README
+END
+pyfragments.swg
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/pyfragments.swg
+END
+factory.i
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/factory.i
+END
+pyprimtypes.swg
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/pyprimtypes.swg
+END
+std_vectora.i
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/std_vectora.i
+END
+file.i
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/file.i
+END
+std_wsstream.i
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/std_wsstream.i
+END
+std_basic_string.i
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/std_basic_string.i
+END
+pyinit.swg
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/pyinit.swg
+END
+std_list.i
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/std_list.i
+END
+std_map.i
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/37274/trunk/deps/third_party/swig/Lib/python/std_map.i
+END

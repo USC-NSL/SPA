@@ -1,0 +1,161 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/rdf
+END
+nsIRDFNode.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/rdf/nsIRDFNode.h
+END
+nsIRDFXMLSink.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/rdf/nsIRDFXMLSink.h
+END
+nsRDFCID.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/rdf/nsRDFCID.h
+END
+nsIRDFResource.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/rdf/nsIRDFResource.h
+END
+nsIRDFObserver.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/rdf/nsIRDFObserver.h
+END
+rdfIDataSource.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/rdf/rdfIDataSource.h
+END
+nsIRDFDataSource.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/rdf/nsIRDFDataSource.h
+END
+nsIRDFXMLSerializer.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/rdf/nsIRDFXMLSerializer.h
+END
+nsIRDFLiteral.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/rdf/nsIRDFLiteral.h
+END
+nsIRDFContentSink.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/rdf/nsIRDFContentSink.h
+END
+nsIRDFService.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/rdf/nsIRDFService.h
+END
+nsIRDFDelegateFactory.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/rdf/nsIRDFDelegateFactory.h
+END
+nsIRDFContainerUtils.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/rdf/nsIRDFContainerUtils.h
+END
+rdf.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/rdf/rdf.h
+END
+nsIRDFRemoteDataSource.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/rdf/nsIRDFRemoteDataSource.h
+END
+rdfISerializer.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/rdf/rdfISerializer.h
+END
+nsIRDFInMemoryDataSource.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/rdf/nsIRDFInMemoryDataSource.h
+END
+nsILocalStore.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/rdf/nsILocalStore.h
+END
+nsIRDFPropagatableDataSource.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/rdf/nsIRDFPropagatableDataSource.h
+END
+nsIRDFCompositeDataSource.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/rdf/nsIRDFCompositeDataSource.h
+END
+nsIRDFXMLParser.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/rdf/nsIRDFXMLParser.h
+END
+nsIRDFInferDataSource.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/rdf/nsIRDFInferDataSource.h
+END
+rdfITripleVisitor.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/rdf/rdfITripleVisitor.h
+END
+nsIRDFPurgeableDataSource.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/rdf/nsIRDFPurgeableDataSource.h
+END
+nsIRDFXMLSource.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/rdf/nsIRDFXMLSource.h
+END
+nsIRDFContainer.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/rdf/nsIRDFContainer.h
+END

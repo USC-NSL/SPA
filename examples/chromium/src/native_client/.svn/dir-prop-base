@@ -1,0 +1,11 @@
+K 10
+svn:ignore
+V 65
+cygwin
+irt_binaries
+mingw
+private_tools
+supplement
+private_tests
+
+END

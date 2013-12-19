@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 27
+/svn/!svn/ver/90/trunk/test
+END
+layout_common_table_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/59/trunk/test/layout_common_table_test.cc
+END
+table_dependencies_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/61/trunk/test/table_dependencies_test.cc
+END
+perf.cc
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/90/trunk/test/perf.cc
+END
+side-by-side.cc
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/3/trunk/test/side-by-side.cc
+END
+ot-sanitise.cc
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/90/trunk/test/ot-sanitise.cc
+END
+test_malicious_fonts.sh
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/24/trunk/test/test_malicious_fonts.sh
+END
+BLACKLIST.txt
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/71/trunk/test/BLACKLIST.txt
+END
+SConstruct
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/61/trunk/test/SConstruct
+END
+cff_type2_charstring_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/35/trunk/test/cff_type2_charstring_test.cc
+END
+test_unmalicious_fonts.sh
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/24/trunk/test/test_unmalicious_fonts.sh
+END
+validator-checker.cc
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/90/trunk/test/validator-checker.cc
+END
+idempotent.cc
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/90/trunk/test/idempotent.cc
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/2/trunk/test/README
+END
+file-stream.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/90/trunk/test/file-stream.h
+END

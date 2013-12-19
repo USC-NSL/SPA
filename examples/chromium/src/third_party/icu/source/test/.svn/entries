@@ -1,0 +1,95 @@
+10
+
+dir
+192960
+http://src.chromium.org/svn/trunk/deps/third_party/icu46/source/test
+http://src.chromium.org/svn
+
+
+
+2012-09-21T23:19:30.172040Z
+158118
+jshin@chromium.org
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4ff67af0-8c30-449e-8e8b-ad334ec8d88c
+
+letest
+dir
+
+Makefile.in
+file
+
+
+
+
+2012-08-28T21:13:16.000000Z
+3f1b03b80632306ee59363f3a2a3982c
+2010-12-06T23:14:47.787316Z
+68397
+jshin@chromium.org
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2926
+
+compat
+dir
+
+cintltst
+dir
+
+thaitest
+dir
+
+intltest
+dir
+
+iotest
+dir
+
+threadtest
+dir
+
+hdrtst
+dir
+
+testdata
+dir
+
+perf
+dir
+
+testmap
+dir
+

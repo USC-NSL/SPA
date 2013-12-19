@@ -1,0 +1,6 @@
+K 13
+svn:externals
+V 56
+protobuf -r407 http://protobuf.googlecode.com/svn/trunk
+
+END

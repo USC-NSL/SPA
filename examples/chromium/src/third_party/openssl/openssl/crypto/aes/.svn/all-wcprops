@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/crypto/aes
+END
+aes_ofb.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/118977/trunk/deps/third_party/openssl/openssl/crypto/aes/aes_ofb.c
+END
+aes_cbc.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/118977/trunk/deps/third_party/openssl/openssl/crypto/aes/aes_cbc.c
+END
+aes_core.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/aes/aes_core.c
+END
+aes_ctr.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/118977/trunk/deps/third_party/openssl/openssl/crypto/aes/aes_ctr.c
+END
+aes_ecb.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/65201/trunk/deps/third_party/openssl/openssl/crypto/aes/aes_ecb.c
+END
+aes_wrap.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/118977/trunk/deps/third_party/openssl/openssl/crypto/aes/aes_wrap.c
+END
+aes_cfb.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/118977/trunk/deps/third_party/openssl/openssl/crypto/aes/aes_cfb.c
+END
+aes_misc.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/aes/aes_misc.c
+END
+aes_locl.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/65201/trunk/deps/third_party/openssl/openssl/crypto/aes/aes_locl.h
+END
+aes_x86core.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/118977/trunk/deps/third_party/openssl/openssl/crypto/aes/aes_x86core.c
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/65201/trunk/deps/third_party/openssl/openssl/crypto/aes/README
+END
+aes_ige.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/118977/trunk/deps/third_party/openssl/openssl/crypto/aes/aes_ige.c
+END
+aes.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/aes/aes.h
+END

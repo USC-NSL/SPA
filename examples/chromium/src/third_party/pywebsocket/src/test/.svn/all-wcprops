@@ -1,0 +1,143 @@
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/!svn/ver/658/trunk/src/test
+END
+test_mock.py
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/576/trunk/src/test/test_mock.py
+END
+mock.py
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/576/trunk/src/test/mock.py
+END
+test_stream.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/475/trunk/src/test/test_stream.py
+END
+run_all.py
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/413/trunk/src/test/run_all.py
+END
+test_stream_hixie75.py
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/475/trunk/src/test/test_stream_hixie75.py
+END
+test_dispatch.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/589/trunk/src/test/test_dispatch.py
+END
+test_extensions.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/633/trunk/src/test/test_extensions.py
+END
+test_endtoend.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/656/trunk/src/test/test_endtoend.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/417/trunk/src/test/__init__.py
+END
+test_handshake_hybi.py
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/652/trunk/src/test/test_handshake_hybi.py
+END
+test_handshake_hybi00.py
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/576/trunk/src/test/test_handshake_hybi00.py
+END
+set_sys_path.py
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/417/trunk/src/test/set_sys_path.py
+END
+test_handshake_hybi08.py
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/576/trunk/src/test/test_handshake_hybi08.py
+END
+test_mux.py
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/656/trunk/src/test/test_mux.py
+END
+mux_client_for_testing.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/656/trunk/src/test/mux_client_for_testing.py
+END
+test_util.py
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/475/trunk/src/test/test_util.py
+END
+test_memorizingfile.py
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/565/trunk/src/test/test_memorizingfile.py
+END
+test_handshake_draft75.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/576/trunk/src/test/test_handshake_draft75.py
+END
+client_for_testing.py
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/653/trunk/src/test/client_for_testing.py
+END
+endtoend_with_external_server.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/549/trunk/src/test/endtoend_with_external_server.py
+END
+test_http_header_util.py
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/565/trunk/src/test/test_http_header_util.py
+END
+test_msgutil.py
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/655/trunk/src/test/test_msgutil.py
+END
+test_handshake.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/633/trunk/src/test/test_handshake.py
+END

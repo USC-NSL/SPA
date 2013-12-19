@@ -1,0 +1,179 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/Crypt/OpenPGP
+END
+Compressed.pm
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/Crypt/OpenPGP/Compressed.pm
+END
+Config.pm
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/Crypt/OpenPGP/Config.pm
+END
+Armour.pm
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/Crypt/OpenPGP/Armour.pm
+END
+KeyRing.pm
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/Crypt/OpenPGP/KeyRing.pm
+END
+Plaintext.pm
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/Crypt/OpenPGP/Plaintext.pm
+END
+Buffer.pm
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/Crypt/OpenPGP/Buffer.pm
+END
+Cipher.pm
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/Crypt/OpenPGP/Cipher.pm
+END
+OnePassSig.pm
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/Crypt/OpenPGP/OnePassSig.pm
+END
+Constants.pm
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/Crypt/OpenPGP/Constants.pm
+END
+Util.pm
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/Crypt/OpenPGP/Util.pm
+END
+KeyServer.pm
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/Crypt/OpenPGP/KeyServer.pm
+END
+Digest.pm
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/Crypt/OpenPGP/Digest.pm
+END
+Ciphertext.pm
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/Crypt/OpenPGP/Ciphertext.pm
+END
+Marker.pm
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/Crypt/OpenPGP/Marker.pm
+END
+Trust.pm
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/Crypt/OpenPGP/Trust.pm
+END
+Certificate.pm
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/Crypt/OpenPGP/Certificate.pm
+END
+Message.pm
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/Crypt/OpenPGP/Message.pm
+END
+ErrorHandler.pm
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/Crypt/OpenPGP/ErrorHandler.pm
+END
+Key.pm
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/Crypt/OpenPGP/Key.pm
+END
+CFB.pm
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/Crypt/OpenPGP/CFB.pm
+END
+SKSessionKey.pm
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/Crypt/OpenPGP/SKSessionKey.pm
+END
+UserID.pm
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/Crypt/OpenPGP/UserID.pm
+END
+SessionKey.pm
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/Crypt/OpenPGP/SessionKey.pm
+END
+Words.pm
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/Crypt/OpenPGP/Words.pm
+END
+PacketFactory.pm
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/Crypt/OpenPGP/PacketFactory.pm
+END
+S2k.pm
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/Crypt/OpenPGP/S2k.pm
+END
+Signature.pm
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/Crypt/OpenPGP/Signature.pm
+END
+KeyBlock.pm
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/Crypt/OpenPGP/KeyBlock.pm
+END
+MDC.pm
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/Crypt/OpenPGP/MDC.pm
+END

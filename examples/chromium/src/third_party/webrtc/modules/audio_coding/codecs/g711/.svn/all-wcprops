@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/3913/stable/webrtc/modules/audio_coding/codecs/g711
+END
+g711_interface.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/3836/stable/webrtc/modules/audio_coding/codecs/g711/g711_interface.c
+END
+g711.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/3836/stable/webrtc/modules/audio_coding/codecs/g711/g711.c
+END
+g711.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/3836/stable/webrtc/modules/audio_coding/codecs/g711/g711.h
+END
+Android.mk
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/2974/stable/webrtc/modules/audio_coding/codecs/g711/Android.mk
+END
+g711.gypi
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/3913/stable/webrtc/modules/audio_coding/codecs/g711/g711.gypi
+END

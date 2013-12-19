@@ -1,0 +1,251 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavdevice
+END
+libdc1394.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavdevice/libdc1394.c
+END
+dv1394.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/148611/trunk/deps/third_party/ffmpeg/libavdevice/dv1394.h
+END
+libavdevice.v
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/122313/trunk/deps/third_party/ffmpeg/libavdevice/libavdevice.v
+END
+lavfi.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavdevice/lavfi.c
+END
+sndio_enc.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/162873/trunk/deps/third_party/ffmpeg/libavdevice/sndio_enc.c
+END
+bktr.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavdevice/bktr.c
+END
+timefilter.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavdevice/timefilter.c
+END
+libcdio.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavdevice/libcdio.c
+END
+openal-dec.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/162873/trunk/deps/third_party/ffmpeg/libavdevice/openal-dec.c
+END
+timefilter.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/133551/trunk/deps/third_party/ffmpeg/libavdevice/timefilter.h
+END
+dshow_capture.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavdevice/dshow_capture.h
+END
+sdl.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavdevice/sdl.c
+END
+alsa-audio-enc.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/162873/trunk/deps/third_party/ffmpeg/libavdevice/alsa-audio-enc.c
+END
+alsa-audio.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavdevice/alsa-audio.h
+END
+oss_audio.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavdevice/oss_audio.c
+END
+vfwcap.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavdevice/vfwcap.c
+END
+avdevice.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/162873/trunk/deps/third_party/ffmpeg/libavdevice/avdevice.c
+END
+v4l2.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavdevice/v4l2.c
+END
+sndio_dec.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/162873/trunk/deps/third_party/ffmpeg/libavdevice/sndio_dec.c
+END
+caca.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavdevice/caca.c
+END
+dshow_filter.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavdevice/dshow_filter.c
+END
+jack_audio.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/162873/trunk/deps/third_party/ffmpeg/libavdevice/jack_audio.c
+END
+dshow_pin.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavdevice/dshow_pin.c
+END
+avdevice.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/162873/trunk/deps/third_party/ffmpeg/libavdevice/avdevice.h
+END
+dshow_common.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/140400/trunk/deps/third_party/ffmpeg/libavdevice/dshow_common.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/162873/trunk/deps/third_party/ffmpeg/libavdevice/Makefile
+END
+dshow_enummediatypes.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/140400/trunk/deps/third_party/ffmpeg/libavdevice/dshow_enummediatypes.c
+END
+dshow_enumpins.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/140400/trunk/deps/third_party/ffmpeg/libavdevice/dshow_enumpins.c
+END
+x11grab.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavdevice/x11grab.c
+END
+v4l.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavdevice/v4l.c
+END
+alsa-audio-common.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavdevice/alsa-audio-common.c
+END
+alsa-audio-dec.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/162873/trunk/deps/third_party/ffmpeg/libavdevice/alsa-audio-dec.c
+END
+iec61883.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavdevice/iec61883.c
+END
+alldevices.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavdevice/alldevices.c
+END
+sndio_common.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/162873/trunk/deps/third_party/ffmpeg/libavdevice/sndio_common.c
+END
+dshow.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavdevice/dshow.c
+END
+fbdev.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavdevice/fbdev.c
+END
+pulse.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/162873/trunk/deps/third_party/ffmpeg/libavdevice/pulse.c
+END
+sndio_common.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavdevice/sndio_common.h
+END
+dv1394.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavdevice/dv1394.c
+END
+version.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavdevice/version.h
+END

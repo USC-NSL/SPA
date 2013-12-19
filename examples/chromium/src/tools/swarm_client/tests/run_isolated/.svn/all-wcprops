@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/190725/trunk/tools/swarm_client/tests/run_isolated
+END
+file2.txt
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/160421/trunk/tools/swarm_client/tests/run_isolated/file2.txt
+END
+gtest_fake.isolated
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/169078/trunk/tools/swarm_client/tests/run_isolated/gtest_fake.isolated
+END
+regen_test_data.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/169056/trunk/tools/swarm_client/tests/run_isolated/regen_test_data.py
+END
+file3.txt
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/160421/trunk/tools/swarm_client/tests/run_isolated/file3.txt
+END
+check_files.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/160421/trunk/tools/swarm_client/tests/run_isolated/check_files.py
+END
+manifest1.isolated
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/169078/trunk/tools/swarm_client/tests/run_isolated/manifest1.isolated
+END
+manifest2.isolated
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/169078/trunk/tools/swarm_client/tests/run_isolated/manifest2.isolated
+END
+check_files.isolated
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/169078/trunk/tools/swarm_client/tests/run_isolated/check_files.isolated
+END
+repeated_files.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/160421/trunk/tools/swarm_client/tests/run_isolated/repeated_files.py
+END
+gtest_fake.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/160421/trunk/tools/swarm_client/tests/run_isolated/gtest_fake.py
+END
+file_with_size.isolated
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/169078/trunk/tools/swarm_client/tests/run_isolated/file_with_size.isolated
+END
+file1_copy.txt
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/160421/trunk/tools/swarm_client/tests/run_isolated/file1_copy.txt
+END
+download.isolated
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/190725/trunk/tools/swarm_client/tests/run_isolated/download.isolated
+END
+file1.txt
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/160421/trunk/tools/swarm_client/tests/run_isolated/file1.txt
+END
+repeated_files.isolated
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/169078/trunk/tools/swarm_client/tests/run_isolated/repeated_files.isolated
+END

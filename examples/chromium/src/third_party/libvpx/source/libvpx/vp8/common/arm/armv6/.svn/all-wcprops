@@ -1,0 +1,131 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/arm/armv6
+END
+filter_v6.asm
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/149032/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/filter_v6.asm
+END
+vp8_variance_halfpixvar16x16_h_armv6.asm
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/!svn/ver/149032/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/vp8_variance_halfpixvar16x16_h_armv6.asm
+END
+sixtappredict8x4_v6.asm
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/149032/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/sixtappredict8x4_v6.asm
+END
+iwalsh_v6.asm
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/149032/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/iwalsh_v6.asm
+END
+intra4x4_predict_v6.asm
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/168769/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/intra4x4_predict_v6.asm
+END
+simpleloopfilter_v6.asm
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/149032/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/simpleloopfilter_v6.asm
+END
+bilinearfilter_v6.asm
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/149032/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/bilinearfilter_v6.asm
+END
+vp8_variance16x16_armv6.asm
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/149032/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/vp8_variance16x16_armv6.asm
+END
+vp8_variance8x8_armv6.asm
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/149032/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/vp8_variance8x8_armv6.asm
+END
+dc_only_idct_add_v6.asm
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/149032/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/dc_only_idct_add_v6.asm
+END
+dequant_idct_v6.asm
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/149032/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/dequant_idct_v6.asm
+END
+vp8_variance_halfpixvar16x16_v_armv6.asm
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/!svn/ver/149032/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/vp8_variance_halfpixvar16x16_v_armv6.asm
+END
+dequantize_v6.asm
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/149032/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/dequantize_v6.asm
+END
+vp8_sad16x16_armv6.asm
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/149032/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/vp8_sad16x16_armv6.asm
+END
+vp8_variance_halfpixvar16x16_hv_armv6.asm
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/!svn/ver/149032/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/vp8_variance_halfpixvar16x16_hv_armv6.asm
+END
+idct_blk_v6.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/idct_blk_v6.c
+END
+copymem8x4_v6.asm
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/149032/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/copymem8x4_v6.asm
+END
+loopfilter_v6.asm
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/149032/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/loopfilter_v6.asm
+END
+copymem16x16_v6.asm
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/149032/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/copymem16x16_v6.asm
+END
+copymem8x8_v6.asm
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/149032/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/copymem8x8_v6.asm
+END
+idct_v6.asm
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/149032/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/arm/armv6/idct_v6.asm
+END

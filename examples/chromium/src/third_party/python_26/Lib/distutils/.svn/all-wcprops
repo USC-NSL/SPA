@@ -1,0 +1,185 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/89111/trunk/tools/third_party/python_26/Lib/distutils
+END
+core.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/distutils/core.py
+END
+spawn.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/distutils/spawn.py
+END
+msvc9compiler.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/distutils/msvc9compiler.py
+END
+cygwinccompiler.py
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/distutils/cygwinccompiler.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/distutils/__init__.py
+END
+cmd.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/distutils/cmd.py
+END
+mwerkscompiler.py
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/distutils/mwerkscompiler.py
+END
+dist.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/distutils/dist.py
+END
+msvccompiler.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/distutils/msvccompiler.py
+END
+sysconfig.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/distutils/sysconfig.py
+END
+config.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/distutils/config.py
+END
+dep_util.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/distutils/dep_util.py
+END
+versionpredicate.py
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/distutils/versionpredicate.py
+END
+filelist.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/distutils/filelist.py
+END
+dir_util.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/distutils/dir_util.py
+END
+errors.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/distutils/errors.py
+END
+extension.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/distutils/extension.py
+END
+file_util.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/distutils/file_util.py
+END
+ccompiler.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/distutils/ccompiler.py
+END
+util.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/distutils/util.py
+END
+archive_util.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/distutils/archive_util.py
+END
+bcppcompiler.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/distutils/bcppcompiler.py
+END
+unixccompiler.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/distutils/unixccompiler.py
+END
+log.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/distutils/log.py
+END
+fancy_getopt.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/distutils/fancy_getopt.py
+END
+text_file.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/distutils/text_file.py
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/Lib/distutils/README.txt
+END
+version.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/distutils/version.py
+END
+debug.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/distutils/debug.py
+END
+emxccompiler.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/distutils/emxccompiler.py
+END

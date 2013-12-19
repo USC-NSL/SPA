@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-su
+END
+t.01-su_basic_asroot
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-su/t.01-su_basic_asroot
+END
+t.00-apply_generic
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-su/t.00-apply_generic
+END
+t.04-su_no_carg
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-su/t.04-su_no_carg
+END
+t.05-su_no_cflag
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-su/t.05-su_no_cflag
+END
+t.03-su_badpass
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-su/t.03-su_badpass
+END
+t.02-su_basic
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-su/t.02-su_basic
+END

@@ -1,0 +1,239 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/195968/trunk/deps/third_party/hunspell/src/hunspell
+END
+hunspell.dsp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/src/hunspell/hunspell.dsp
+END
+affentry.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/132738/trunk/deps/third_party/hunspell/src/hunspell/affentry.cxx
+END
+hunspell.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/src/hunspell/hunspell.h
+END
+Makefile.in
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/132738/trunk/deps/third_party/hunspell/src/hunspell/Makefile.in
+END
+hunzip.hxx
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/src/hunspell/hunzip.hxx
+END
+replist.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/132738/trunk/deps/third_party/hunspell/src/hunspell/replist.cxx
+END
+affentry.hxx
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/src/hunspell/affentry.hxx
+END
+filemgr.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/132738/trunk/deps/third_party/hunspell/src/hunspell/filemgr.cxx
+END
+replist.hxx
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/50438/trunk/deps/third_party/hunspell/src/hunspell/replist.hxx
+END
+suggestmgr.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/184822/trunk/deps/third_party/hunspell/src/hunspell/suggestmgr.cxx
+END
+filemgr.hxx
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/50438/trunk/deps/third_party/hunspell/src/hunspell/filemgr.hxx
+END
+suggestmgr.hxx
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/170918/trunk/deps/third_party/hunspell/src/hunspell/suggestmgr.hxx
+END
+phonet.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/src/hunspell/phonet.cxx
+END
+baseaffix.hxx
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/src/hunspell/baseaffix.hxx
+END
+phonet.hxx
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/src/hunspell/phonet.hxx
+END
+affixmgr.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/132738/trunk/deps/third_party/hunspell/src/hunspell/affixmgr.cxx
+END
+license.myspell
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/src/hunspell/license.myspell
+END
+langnum.hxx
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/src/hunspell/langnum.hxx
+END
+w_char.hxx
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/132738/trunk/deps/third_party/hunspell/src/hunspell/w_char.hxx
+END
+affixmgr.hxx
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/132738/trunk/deps/third_party/hunspell/src/hunspell/affixmgr.hxx
+END
+utf_info.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/56484/trunk/deps/third_party/hunspell/src/hunspell/utf_info.cxx
+END
+utf_info.hxx
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/src/hunspell/utf_info.hxx
+END
+htypes.hxx
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/132738/trunk/deps/third_party/hunspell/src/hunspell/htypes.hxx
+END
+makefile.mk
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/56484/trunk/deps/third_party/hunspell/src/hunspell/makefile.mk
+END
+hashmgr.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/168059/trunk/deps/third_party/hunspell/src/hunspell/hashmgr.cxx
+END
+dictmgr.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/56484/trunk/deps/third_party/hunspell/src/hunspell/dictmgr.cxx
+END
+hunspell.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/175968/trunk/deps/third_party/hunspell/src/hunspell/hunspell.cxx
+END
+hunvisapi.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/51338/trunk/deps/third_party/hunspell/src/hunspell/hunvisapi.h
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/src/hunspell/README
+END
+dictmgr.hxx
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/src/hunspell/dictmgr.hxx
+END
+hashmgr.hxx
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/195968/trunk/deps/third_party/hunspell/src/hunspell/hashmgr.hxx
+END
+hunspell.hxx
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/132738/trunk/deps/third_party/hunspell/src/hunspell/hunspell.hxx
+END
+hunvisapi.h.in
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/51338/trunk/deps/third_party/hunspell/src/hunspell/hunvisapi.h.in
+END
+csutil.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/132738/trunk/deps/third_party/hunspell/src/hunspell/csutil.cxx
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/132738/trunk/deps/third_party/hunspell/src/hunspell/Makefile.am
+END
+csutil.hxx
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/132738/trunk/deps/third_party/hunspell/src/hunspell/csutil.hxx
+END
+license.hunspell
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/50438/trunk/deps/third_party/hunspell/src/hunspell/license.hunspell
+END
+atypes.hxx
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/132738/trunk/deps/third_party/hunspell/src/hunspell/atypes.hxx
+END
+hunzip.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/src/hunspell/hunzip.cxx
+END

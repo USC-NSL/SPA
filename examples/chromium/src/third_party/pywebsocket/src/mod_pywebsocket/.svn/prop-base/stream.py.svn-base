@@ -1,0 +1,20 @@
+K 13
+svn:eol-style
+V 2
+LF
+K 13
+svn:mergeinfo
+V 757
+/branches/binary_key_test/src/mod_pywebsocket/stream.py:317-322
+/branches/client-log-level/src/mod_pywebsocket/stream.py:335-339
+/branches/configure-logging/src/mod_pywebsocket/stream.py:319-325
+/branches/empty-value/src/mod_pywebsocket/stream.py:296-302
+/branches/exception/src/mod_pywebsocket/stream.py:329-358
+/branches/html-example/src/mod_pywebsocket/stream.py:366-367
+/branches/hybi-03-tyoshino/src/mod_pywebsocket/stream.py:286-313
+/branches/md5-deprecation/src/mod_pywebsocket/stream.py:333-336
+/branches/refactor_test_endtoend/src/mod_pywebsocket/stream.py:360-380
+/branches/style-fix/src/mod_pywebsocket/stream.py:346-347
+/branches/trivial-fixes/src/mod_pywebsocket/stream.py:300-301
+/branches/wait_for_server/src/mod_pywebsocket/stream.py:294-307
+END

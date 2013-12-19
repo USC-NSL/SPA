@@ -1,0 +1,131 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/blink/!svn/ver/148774/trunk/Source/wtf/dtoa
+END
+double-conversion.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/blink/!svn/ver/148483/trunk/Source/wtf/dtoa/double-conversion.cc
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/blink/!svn/ver/148483/trunk/Source/wtf/dtoa/LICENSE
+END
+double-conversion.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/blink/!svn/ver/148483/trunk/Source/wtf/dtoa/double-conversion.h
+END
+utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/blink/!svn/ver/148774/trunk/Source/wtf/dtoa/utils.h
+END
+bignum-dtoa.cc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/blink/!svn/ver/148483/trunk/Source/wtf/dtoa/bignum-dtoa.cc
+END
+bignum-dtoa.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/blink/!svn/ver/148483/trunk/Source/wtf/dtoa/bignum-dtoa.h
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/blink/!svn/ver/148483/trunk/Source/wtf/dtoa/README
+END
+double.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/blink/!svn/ver/148483/trunk/Source/wtf/dtoa/double.h
+END
+strtod.cc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/blink/!svn/ver/148483/trunk/Source/wtf/dtoa/strtod.cc
+END
+bignum.cc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/blink/!svn/ver/148483/trunk/Source/wtf/dtoa/bignum.cc
+END
+strtod.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/blink/!svn/ver/148483/trunk/Source/wtf/dtoa/strtod.h
+END
+fast-dtoa.cc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/blink/!svn/ver/148483/trunk/Source/wtf/dtoa/fast-dtoa.cc
+END
+bignum.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/blink/!svn/ver/148483/trunk/Source/wtf/dtoa/bignum.h
+END
+fixed-dtoa.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/blink/!svn/ver/148588/trunk/Source/wtf/dtoa/fixed-dtoa.cc
+END
+COPYING
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/blink/!svn/ver/148483/trunk/Source/wtf/dtoa/COPYING
+END
+cached-powers.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/blink/!svn/ver/148588/trunk/Source/wtf/dtoa/cached-powers.cc
+END
+fast-dtoa.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/blink/!svn/ver/148483/trunk/Source/wtf/dtoa/fast-dtoa.h
+END
+cached-powers.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/blink/!svn/ver/148483/trunk/Source/wtf/dtoa/cached-powers.h
+END
+fixed-dtoa.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/blink/!svn/ver/148483/trunk/Source/wtf/dtoa/fixed-dtoa.h
+END
+diy-fp.cc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/blink/!svn/ver/148483/trunk/Source/wtf/dtoa/diy-fp.cc
+END
+diy-fp.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/blink/!svn/ver/148483/trunk/Source/wtf/dtoa/diy-fp.h
+END

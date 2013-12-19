@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavutil/arm
+END
+float_dsp_arm.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/148611/trunk/deps/third_party/ffmpeg/libavutil/arm/float_dsp_arm.h
+END
+asm.S
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavutil/arm/asm.S
+END
+bswap.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavutil/arm/bswap.h
+END
+timer.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/122313/trunk/deps/third_party/ffmpeg/libavutil/arm/timer.h
+END
+float_dsp_vfp.S
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavutil/arm/float_dsp_vfp.S
+END
+intreadwrite.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/162873/trunk/deps/third_party/ffmpeg/libavutil/arm/intreadwrite.h
+END
+cpu.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavutil/arm/cpu.c
+END
+float_dsp_init_vfp.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavutil/arm/float_dsp_init_vfp.c
+END
+intmath.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavutil/arm/intmath.h
+END
+float_dsp_neon.S
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavutil/arm/float_dsp_neon.S
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavutil/arm/Makefile
+END
+cpu.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavutil/arm/cpu.h
+END
+float_dsp_init_arm.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/148611/trunk/deps/third_party/ffmpeg/libavutil/arm/float_dsp_init_arm.c
+END
+float_dsp_init_neon.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavutil/arm/float_dsp_init_neon.c
+END

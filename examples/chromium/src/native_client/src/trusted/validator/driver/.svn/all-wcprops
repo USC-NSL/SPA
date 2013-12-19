@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/native_client/!svn/ver/11063/trunk/src/native_client/src/trusted/validator/driver
+END
+ncval.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/native_client/!svn/ver/11062/trunk/src/native_client/src/trusted/validator/driver/ncval.gyp
+END
+build.scons
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/native_client/!svn/ver/10588/trunk/src/native_client/src/trusted/validator/driver/build.scons
+END
+ncval_annotate.py
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/native_client/!svn/ver/10473/trunk/src/native_client/src/trusted/validator/driver/ncval_annotate.py
+END
+ncval.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/native_client/!svn/ver/11063/trunk/src/native_client/src/trusted/validator/driver/ncval.cc
+END
+elf_load.cc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/native_client/!svn/ver/10588/trunk/src/native_client/src/trusted/validator/driver/elf_load.cc
+END
+elf_load.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/native_client/!svn/ver/10588/trunk/src/native_client/src/trusted/validator/driver/elf_load.h
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/native_client/!svn/ver/10473/trunk/src/native_client/src/trusted/validator/driver/OWNERS
+END

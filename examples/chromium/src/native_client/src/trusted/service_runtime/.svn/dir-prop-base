@@ -1,0 +1,34 @@
+K 10
+svn:ignore
+V 516
+container.rules
+container.target.mk
+container.vcproj
+container64.rules
+container64.vcproj
+env_cleanser.rules
+env_cleanser.vcproj
+env_cleanser64.rules
+env_cleanser64.vcproj
+expiration.target.mk
+gio_wrapped_desc.target.mk
+nacl_xdr.rules
+nacl_xdr.target.mk
+nacl_xdr.vcproj
+nacl_xdr64.rules
+nacl_xdr64.vcproj
+sel.rules
+sel.target.mk
+sel.vcproj
+sel64.rules
+sel64.vcproj
+sel_ldr.rules
+sel_ldr.target.mk
+sel_ldr.vcproj
+sel_ldr64.rules
+sel_ldr64.vcproj
+service_runtime.Makefile
+service_runtime.sln
+service_runtime.xcodeproj
+
+END

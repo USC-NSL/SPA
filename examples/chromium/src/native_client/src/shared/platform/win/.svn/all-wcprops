@@ -1,0 +1,221 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/native_client/!svn/ver/11242/trunk/src/native_client/src/shared/platform/win
+END
+condition_variable.cc
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/native_client/!svn/ver/6216/trunk/src/native_client/src/shared/platform/win/condition_variable.cc
+END
+port_win_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/native_client/!svn/ver/10199/trunk/src/native_client/src/shared/platform/win/port_win_test.c
+END
+nacl_timestamp.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/native_client/!svn/ver/10196/trunk/src/native_client/src/shared/platform/win/nacl_timestamp.c
+END
+condition_variable.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/native_client/!svn/ver/5269/trunk/src/native_client/src/shared/platform/win/condition_variable.h
+END
+time.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/native_client/!svn/ver/5269/trunk/src/native_client/src/shared/platform/win/time.cc
+END
+port_win.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/native_client/!svn/ver/10196/trunk/src/native_client/src/shared/platform/win/port_win.c
+END
+nacl_host_desc_types.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/native_client/!svn/ver/11121/trunk/src/native_client/src/shared/platform/win/nacl_host_desc_types.h
+END
+nacl_host_desc.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/native_client/!svn/ver/11242/trunk/src/native_client/src/shared/platform/win/nacl_host_desc.c
+END
+time_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/native_client/!svn/ver/5403/trunk/src/native_client/src/shared/platform/win/time_win.cc
+END
+nacl_threads_types.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/native_client/!svn/ver/10196/trunk/src/native_client/src/shared/platform/win/nacl_threads_types.h
+END
+nacl_semaphore.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/native_client/!svn/ver/10196/trunk/src/native_client/src/shared/platform/win/nacl_semaphore.c
+END
+nacl_semaphore.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/native_client/!svn/ver/10196/trunk/src/native_client/src/shared/platform/win/nacl_semaphore.h
+END
+nacl_threads.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/native_client/!svn/ver/10458/trunk/src/native_client/src/shared/platform/win/nacl_threads.c
+END
+nacl_sync_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/native_client/!svn/ver/8668/trunk/src/native_client/src/shared/platform/win/nacl_sync_win.cc
+END
+xlate_system_error.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/native_client/!svn/ver/10196/trunk/src/native_client/src/shared/platform/win/xlate_system_error.c
+END
+lock.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/native_client/!svn/ver/10196/trunk/src/native_client/src/shared/platform/win/lock.h
+END
+nacl_host_desc_mmap_win_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/native_client/!svn/ver/11242/trunk/src/native_client/src/shared/platform/win/nacl_host_desc_mmap_win_test.c
+END
+xlate_system_error.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/native_client/!svn/ver/10196/trunk/src/native_client/src/shared/platform/win/xlate_system_error.h
+END
+nacl_host_dir_types.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/native_client/!svn/ver/10196/trunk/src/native_client/src/shared/platform/win/nacl_host_dir_types.h
+END
+time.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/native_client/!svn/ver/9467/trunk/src/native_client/src/shared/platform/win/time.h
+END
+nacl_exit.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/native_client/!svn/ver/10447/trunk/src/native_client/src/shared/platform/win/nacl_exit.c
+END
+nacl_host_dir.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/native_client/!svn/ver/9892/trunk/src/native_client/src/shared/platform/win/nacl_host_dir.c
+END
+nacl_find_addrsp.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/native_client/!svn/ver/10397/trunk/src/native_client/src/shared/platform/win/nacl_find_addrsp.c
+END
+nacl_fast_mutex.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/native_client/!svn/ver/8668/trunk/src/native_client/src/shared/platform/win/nacl_fast_mutex.c
+END
+nacl_secure_random_types.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/native_client/!svn/ver/9041/trunk/src/native_client/src/shared/platform/win/nacl_secure_random_types.h
+END
+lock_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/native_client/!svn/ver/8668/trunk/src/native_client/src/shared/platform/win/lock_impl.h
+END
+nacl_fast_mutex.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/native_client/!svn/ver/8424/trunk/src/native_client/src/shared/platform/win/nacl_fast_mutex.h
+END
+test_tls.S
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/native_client/!svn/ver/6458/trunk/src/native_client/src/shared/platform/win/test_tls.S
+END
+nacl_secure_random.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/native_client/!svn/ver/10196/trunk/src/native_client/src/shared/platform/win/nacl_secure_random.c
+END
+condition_variable_events.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/native_client/!svn/ver/5269/trunk/src/native_client/src/shared/platform/win/condition_variable_events.h
+END
+nacl_time_types.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/native_client/!svn/ver/7788/trunk/src/native_client/src/shared/platform/win/nacl_time_types.h
+END
+nacl_clock.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/native_client/!svn/ver/8352/trunk/src/native_client/src/shared/platform/win/nacl_clock.c
+END
+lock_impl_win.cc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/native_client/!svn/ver/8668/trunk/src/native_client/src/shared/platform/win/lock_impl_win.cc
+END
+aligned_malloc.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/native_client/!svn/ver/10140/trunk/src/native_client/src/shared/platform/win/aligned_malloc.c
+END
+nacl_time.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/native_client/!svn/ver/10199/trunk/src/native_client/src/shared/platform/win/nacl_time.c
+END
+lock.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/native_client/!svn/ver/10196/trunk/src/native_client/src/shared/platform/win/lock.cc
+END

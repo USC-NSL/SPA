@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libswscale/bfin
+END
+yuv2rgb_bfin.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libswscale/bfin/yuv2rgb_bfin.c
+END
+swscale_bfin.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libswscale/bfin/swscale_bfin.c
+END
+internal_bfin.S
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/122313/trunk/deps/third_party/ffmpeg/libswscale/bfin/internal_bfin.S
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/133551/trunk/deps/third_party/ffmpeg/libswscale/bfin/Makefile
+END

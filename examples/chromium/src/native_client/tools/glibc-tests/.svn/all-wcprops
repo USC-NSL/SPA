@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/native_client/!svn/ver/11130/trunk/src/native_client/tools/glibc-tests
+END
+run_tests.sh
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/native_client/!svn/ver/8251/trunk/src/native_client/tools/glibc-tests/run_tests.sh
+END
+exclude_list.txt
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/native_client/!svn/ver/5886/trunk/src/native_client/tools/glibc-tests/exclude_list.txt
+END
+xfail_list.txt
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/native_client/!svn/ver/11130/trunk/src/native_client/tools/glibc-tests/xfail_list.txt
+END

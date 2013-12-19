@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/native_client/!svn/ver/11226/trunk/src/native_client/src/trusted/service_runtime/include/bits
+END
+nacl_syscalls.h
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/native_client/!svn/ver/11183/trunk/src/native_client/src/trusted/service_runtime/include/bits/nacl_syscalls.h
+END
+stat.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/native_client/!svn/ver/11226/trunk/src/native_client/src/trusted/service_runtime/include/bits/stat.h
+END
+nacl_imc_api.h
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/native_client/!svn/ver/10196/trunk/src/native_client/src/trusted/service_runtime/include/bits/nacl_imc_api.h
+END
+limits.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/native_client/!svn/ver/10196/trunk/src/native_client/src/trusted/service_runtime/include/bits/limits.h
+END
+wordsize.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/native_client/!svn/ver/10196/trunk/src/native_client/src/trusted/service_runtime/include/bits/wordsize.h
+END
+mman.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/native_client/!svn/ver/6463/trunk/src/native_client/src/trusted/service_runtime/include/bits/mman.h
+END

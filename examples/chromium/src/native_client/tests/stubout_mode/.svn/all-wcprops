@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/native_client/!svn/ver/11133/trunk/src/native_client/tests/stubout_mode
+END
+nacl.scons
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/native_client/!svn/ver/11133/trunk/src/native_client/tests/stubout_mode/nacl.scons
+END
+with_stubout.stdout
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/native_client/!svn/ver/3112/trunk/src/native_client/tests/stubout_mode/with_stubout.stdout
+END
+partly_invalid.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/native_client/!svn/ver/11001/trunk/src/native_client/tests/stubout_mode/partly_invalid.c
+END
+without_stubout.stdout
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/native_client/!svn/ver/3112/trunk/src/native_client/tests/stubout_mode/without_stubout.stdout
+END

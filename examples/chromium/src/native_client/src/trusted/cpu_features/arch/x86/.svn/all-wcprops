@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/native_client/!svn/ver/10630/trunk/src/native_client/src/trusted/cpu_features/arch/x86
+END
+cpu_x86_features.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/native_client/!svn/ver/10630/trunk/src/native_client/src/trusted/cpu_features/arch/x86/cpu_x86_features.h
+END
+cpu_x86.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/native_client/!svn/ver/10630/trunk/src/native_client/src/trusted/cpu_features/arch/x86/cpu_x86.h
+END
+cpu_xgetbv.S
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/native_client/!svn/ver/10590/trunk/src/native_client/src/trusted/cpu_features/arch/x86/cpu_xgetbv.S
+END
+cpu_x86_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/native_client/!svn/ver/10590/trunk/src/native_client/src/trusted/cpu_features/arch/x86/cpu_x86_test.c
+END
+cpu_x86.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/native_client/!svn/ver/10630/trunk/src/native_client/src/trusted/cpu_features/arch/x86/cpu_x86.c
+END

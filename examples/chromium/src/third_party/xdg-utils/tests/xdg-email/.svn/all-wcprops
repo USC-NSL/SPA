@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-email
+END
+t.00-apply_generic
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-email/t.00-apply_generic
+END
+t.22-email_mix_args_uri
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-email/t.22-email_mix_args_uri
+END
+t.21-email_uri_multi_address
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-email/t.21-email_uri_multi_address
+END
+t.10-email_basic
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-email/t.10-email_basic
+END
+t.32-email_missing_attach
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-email/t.32-email_missing_attach
+END
+t.13-email_multi_address
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-email/t.13-email_multi_address
+END
+t.12-email_cc_args
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-email/t.12-email_cc_args
+END
+t.31-email_attach_full_path
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-email/t.31-email_attach_full_path
+END
+t.30-email_attach
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-email/t.30-email_attach
+END

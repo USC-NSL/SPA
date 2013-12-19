@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/167604/trunk/deps/third_party/yasm/patched-yasm/tools/python-yasm
+END
+errwarn.pxi
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/tools/python-yasm/errwarn.pxi
+END
+symrec.pxi
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/71296/trunk/deps/third_party/yasm/patched-yasm/tools/python-yasm/symrec.pxi
+END
+floatnum.pxi
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/71296/trunk/deps/third_party/yasm/patched-yasm/tools/python-yasm/floatnum.pxi
+END
+Makefile.inc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/167604/trunk/deps/third_party/yasm/patched-yasm/tools/python-yasm/Makefile.inc
+END
+setup.py
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/71296/trunk/deps/third_party/yasm/patched-yasm/tools/python-yasm/setup.py
+END
+yasm.pyx
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/167604/trunk/deps/third_party/yasm/patched-yasm/tools/python-yasm/yasm.pyx
+END
+intnum.pxi
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/71296/trunk/deps/third_party/yasm/patched-yasm/tools/python-yasm/intnum.pxi
+END
+value.pxi
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/71296/trunk/deps/third_party/yasm/patched-yasm/tools/python-yasm/value.pxi
+END
+bytecode.pxi
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/71296/trunk/deps/third_party/yasm/patched-yasm/tools/python-yasm/bytecode.pxi
+END
+expr.pxi
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/71296/trunk/deps/third_party/yasm/patched-yasm/tools/python-yasm/expr.pxi
+END

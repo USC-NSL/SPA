@@ -1,0 +1,12 @@
+K 10
+svn:ignore
+V 89
+gtest.rules
+gtest.sln
+gtest.vcproj
+gtest.scons
+gtest.mk
+gtest_main.scons
+gtest.xcodeproj
+
+END

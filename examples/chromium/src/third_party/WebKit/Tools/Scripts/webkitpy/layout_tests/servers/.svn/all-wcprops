@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/blink/!svn/ver/145122/trunk/Tools/Scripts/webkitpy/layout_tests/servers
+END
+http_server_integrationtest.py
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/blink/!svn/ver/140510/trunk/Tools/Scripts/webkitpy/layout_tests/servers/http_server_integrationtest.py
+END
+lighttpd.conf
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/blink/!svn/ver/99377/trunk/Tools/Scripts/webkitpy/layout_tests/servers/lighttpd.conf
+END
+websocket_server.py
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/blink/!svn/ver/136545/trunk/Tools/Scripts/webkitpy/layout_tests/servers/websocket_server.py
+END
+http_server_base_unittest.py
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/blink/!svn/ver/145122/trunk/Tools/Scripts/webkitpy/layout_tests/servers/http_server_base_unittest.py
+END
+httpd2.pem
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/blink/!svn/ver/89801/trunk/Tools/Scripts/webkitpy/layout_tests/servers/httpd2.pem
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/blink/!svn/ver/89795/trunk/Tools/Scripts/webkitpy/layout_tests/servers/__init__.py
+END
+http_server_base.py
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/blink/!svn/ver/145122/trunk/Tools/Scripts/webkitpy/layout_tests/servers/http_server_base.py
+END
+http_server_unittest.py
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/blink/!svn/ver/140510/trunk/Tools/Scripts/webkitpy/layout_tests/servers/http_server_unittest.py
+END
+apache_http_server_unittest.py
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/blink/!svn/ver/140510/trunk/Tools/Scripts/webkitpy/layout_tests/servers/apache_http_server_unittest.py
+END
+http_server.py
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/blink/!svn/ver/139764/trunk/Tools/Scripts/webkitpy/layout_tests/servers/http_server.py
+END
+apache_http_server.py
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/blink/!svn/ver/136545/trunk/Tools/Scripts/webkitpy/layout_tests/servers/apache_http_server.py
+END

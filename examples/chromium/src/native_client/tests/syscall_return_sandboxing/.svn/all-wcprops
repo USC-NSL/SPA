@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/native_client/!svn/ver/10972/trunk/src/native_client/tests/syscall_return_sandboxing
+END
+sandboxed_mips.S
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/native_client/!svn/ver/10972/trunk/src/native_client/tests/syscall_return_sandboxing/sandboxed_mips.S
+END
+nacl.scons
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/native_client/!svn/ver/10972/trunk/src/native_client/tests/syscall_return_sandboxing/nacl.scons
+END
+sandboxed_x86_32.S
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/native_client/!svn/ver/9084/trunk/src/native_client/tests/syscall_return_sandboxing/sandboxed_x86_32.S
+END
+sandboxed_x86_64.S
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/native_client/!svn/ver/10154/trunk/src/native_client/tests/syscall_return_sandboxing/sandboxed_x86_64.S
+END
+syscall_return_sandboxing.c
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/native_client/!svn/ver/6853/trunk/src/native_client/tests/syscall_return_sandboxing/syscall_return_sandboxing.c
+END
+thread_create_bad_address.c
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/native_client/!svn/ver/10209/trunk/src/native_client/tests/syscall_return_sandboxing/thread_create_bad_address.c
+END
+sandboxed_arm.S
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/native_client/!svn/ver/10689/trunk/src/native_client/tests/syscall_return_sandboxing/sandboxed_arm.S
+END

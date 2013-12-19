@@ -1,0 +1,365 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/196262/trunk/deps/third_party/nss/nss/lib/util
+END
+templates.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/util/templates.c
+END
+secoidt.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/196262/trunk/deps/third_party/nss/nss/lib/util/secoidt.h
+END
+nssilckt.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/util/nssilckt.h
+END
+derenc.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/util/derenc.c
+END
+secasn1.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/util/secasn1.h
+END
+utilpars.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/util/utilpars.c
+END
+nssrwlk.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/util/nssrwlk.c
+END
+errstrs.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/util/errstrs.c
+END
+nssutil.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/196262/trunk/deps/third_party/nss/nss/lib/util/nssutil.h
+END
+dersubr.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/196262/trunk/deps/third_party/nss/nss/lib/util/dersubr.c
+END
+utilpars.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/util/utilpars.h
+END
+nssrwlk.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/util/nssrwlk.h
+END
+nssb64t.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/util/nssb64t.h
+END
+hasht.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/196262/trunk/deps/third_party/nss/nss/lib/util/hasht.h
+END
+ciferfam.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/util/ciferfam.h
+END
+portreg.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/util/portreg.c
+END
+nssb64.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/util/nssb64.h
+END
+derdec.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/util/derdec.c
+END
+portreg.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/util/portreg.h
+END
+secerr.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/util/secerr.h
+END
+secitem.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/196262/trunk/deps/third_party/nss/nss/lib/util/secitem.c
+END
+secdig.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/util/secdig.c
+END
+secitem.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/196262/trunk/deps/third_party/nss/nss/lib/util/secitem.h
+END
+secdert.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/util/secdert.h
+END
+secasn1d.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/util/secasn1d.c
+END
+secasn1e.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/util/secasn1e.c
+END
+oidstring.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/util/oidstring.c
+END
+secdig.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/util/secdig.h
+END
+nsslocks.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/util/nsslocks.h
+END
+utilmodt.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/util/utilmodt.h
+END
+secoid.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/196262/trunk/deps/third_party/nss/nss/lib/util/secoid.c
+END
+quickder.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/util/quickder.c
+END
+pkcs11.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/util/pkcs11.h
+END
+secder.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/196262/trunk/deps/third_party/nss/nss/lib/util/secder.h
+END
+utilrename.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/util/utilrename.h
+END
+SECerrs.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/util/SECerrs.h
+END
+secalgid.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/util/secalgid.c
+END
+seccomon.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/196262/trunk/deps/third_party/nss/nss/lib/util/seccomon.h
+END
+secoid.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/util/secoid.h
+END
+utilmod.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/util/utilmod.c
+END
+pkcs11f.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/util/pkcs11f.h
+END
+secport.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/util/secport.c
+END
+secasn1u.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/util/secasn1u.c
+END
+nssb64d.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/util/nssb64d.c
+END
+secport.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/util/secport.h
+END
+nssb64e.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/util/nssb64e.c
+END
+pkcs11n.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/196262/trunk/deps/third_party/nss/nss/lib/util/pkcs11n.h
+END
+nssilock.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/util/nssilock.c
+END
+utf8.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/util/utf8.c
+END
+secasn1t.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/util/secasn1t.h
+END
+pkcs11p.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/util/pkcs11p.h
+END
+secdigt.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/util/secdigt.h
+END
+sectime.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/util/sectime.c
+END
+base64.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/util/base64.h
+END
+dertime.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/util/dertime.c
+END
+nssilock.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/util/nssilock.h
+END
+pkcs11t.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/util/pkcs11t.h
+END
+utilparst.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/util/utilparst.h
+END
+pkcs11u.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/util/pkcs11u.h
+END
+nssrwlkt.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/util/nssrwlkt.h
+END

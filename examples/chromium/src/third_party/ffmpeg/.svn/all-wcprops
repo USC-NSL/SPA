@@ -1,0 +1,215 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/195920/trunk/deps/third_party/ffmpeg
+END
+configure
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/configure
+END
+ffmpeg.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/ffmpeg.c
+END
+Changelog
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/Changelog
+END
+ffmpeg_generated.gypi
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/ffmpeg_generated.gypi
+END
+ffmpeg.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/ffmpeg.h
+END
+codereview.settings
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/123524/trunk/deps/third_party/ffmpeg/codereview.settings
+END
+CREDITS
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/CREDITS
+END
+version.sh
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/122313/trunk/deps/third_party/ffmpeg/version.sh
+END
+COPYING.GPLv2
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/122313/trunk/deps/third_party/ffmpeg/COPYING.GPLv2
+END
+ffmpeg.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/195920/trunk/deps/third_party/ffmpeg/ffmpeg.gyp
+END
+COPYING.GPLv3
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/122313/trunk/deps/third_party/ffmpeg/COPYING.GPLv3
+END
+cmdutils.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/cmdutils.c
+END
+INSTALL
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/122313/trunk/deps/third_party/ffmpeg/INSTALL
+END
+ffmpeg_opt.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/ffmpeg_opt.c
+END
+cmdutils.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/cmdutils.h
+END
+library.mak
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/library.mak
+END
+COPYING.LGPLv2.1
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/133551/trunk/deps/third_party/ffmpeg/COPYING.LGPLv2.1
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/Makefile
+END
+README.chromium
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/195920/trunk/deps/third_party/ffmpeg/README.chromium
+END
+RELEASE
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/RELEASE
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/LICENSE
+END
+arch.mak
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/arch.mak
+END
+cmdutils_common_opts.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/cmdutils_common_opts.h
+END
+ffmpeg_filter.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/ffmpeg_filter.c
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/133551/trunk/deps/third_party/ffmpeg/README
+END
+common.mak
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/common.mak
+END
+PRESUBMIT.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/178482/trunk/deps/third_party/ffmpeg/PRESUBMIT.py
+END
+ffplay.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/ffplay.c
+END
+ffserver.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/ffserver.c
+END
+ffprobe.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/ffprobe.c
+END
+.gitignore
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/.gitignore
+END
+xcode_hack.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/163218/trunk/deps/third_party/ffmpeg/xcode_hack.c
+END
+MAINTAINERS
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/MAINTAINERS
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/OWNERS
+END
+COPYING.LGPLv3
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/122313/trunk/deps/third_party/ffmpeg/COPYING.LGPLv3
+END

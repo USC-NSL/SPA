@@ -1,0 +1,137 @@
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/!svn/ver/170865/trunk/deps/third_party/httpcomponents-core/binary-distribution/javadoc/org/apache/http/impl/nio/codecs
+END
+IdentityDecoder.html
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/!svn/ver/170865/trunk/deps/third_party/httpcomponents-core/binary-distribution/javadoc/org/apache/http/impl/nio/codecs/IdentityDecoder.html
+END
+DefaultHttpResponseParser.html
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/!svn/ver/170865/trunk/deps/third_party/httpcomponents-core/binary-distribution/javadoc/org/apache/http/impl/nio/codecs/DefaultHttpResponseParser.html
+END
+package-frame.html
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/!svn/ver/170865/trunk/deps/third_party/httpcomponents-core/binary-distribution/javadoc/org/apache/http/impl/nio/codecs/package-frame.html
+END
+AbstractContentDecoder.html
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/!svn/ver/170865/trunk/deps/third_party/httpcomponents-core/binary-distribution/javadoc/org/apache/http/impl/nio/codecs/AbstractContentDecoder.html
+END
+HttpRequestWriter.html
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/!svn/ver/170865/trunk/deps/third_party/httpcomponents-core/binary-distribution/javadoc/org/apache/http/impl/nio/codecs/HttpRequestWriter.html
+END
+AbstractMessageParser.html
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/!svn/ver/170865/trunk/deps/third_party/httpcomponents-core/binary-distribution/javadoc/org/apache/http/impl/nio/codecs/AbstractMessageParser.html
+END
+package-use.html
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/!svn/ver/170865/trunk/deps/third_party/httpcomponents-core/binary-distribution/javadoc/org/apache/http/impl/nio/codecs/package-use.html
+END
+package-summary.html
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/!svn/ver/170865/trunk/deps/third_party/httpcomponents-core/binary-distribution/javadoc/org/apache/http/impl/nio/codecs/package-summary.html
+END
+LengthDelimitedDecoder.html
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/!svn/ver/170865/trunk/deps/third_party/httpcomponents-core/binary-distribution/javadoc/org/apache/http/impl/nio/codecs/LengthDelimitedDecoder.html
+END
+package-tree.html
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/!svn/ver/170865/trunk/deps/third_party/httpcomponents-core/binary-distribution/javadoc/org/apache/http/impl/nio/codecs/package-tree.html
+END
+IdentityEncoder.html
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/!svn/ver/170865/trunk/deps/third_party/httpcomponents-core/binary-distribution/javadoc/org/apache/http/impl/nio/codecs/IdentityEncoder.html
+END
+DefaultHttpRequestWriter.html
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/!svn/ver/170865/trunk/deps/third_party/httpcomponents-core/binary-distribution/javadoc/org/apache/http/impl/nio/codecs/DefaultHttpRequestWriter.html
+END
+HttpResponseWriter.html
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/!svn/ver/170865/trunk/deps/third_party/httpcomponents-core/binary-distribution/javadoc/org/apache/http/impl/nio/codecs/HttpResponseWriter.html
+END
+ChunkDecoder.html
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/!svn/ver/170865/trunk/deps/third_party/httpcomponents-core/binary-distribution/javadoc/org/apache/http/impl/nio/codecs/ChunkDecoder.html
+END
+AbstractContentEncoder.html
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/!svn/ver/170865/trunk/deps/third_party/httpcomponents-core/binary-distribution/javadoc/org/apache/http/impl/nio/codecs/AbstractContentEncoder.html
+END
+DefaultHttpResponseWriter.html
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/!svn/ver/170865/trunk/deps/third_party/httpcomponents-core/binary-distribution/javadoc/org/apache/http/impl/nio/codecs/DefaultHttpResponseWriter.html
+END
+LengthDelimitedEncoder.html
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/!svn/ver/170865/trunk/deps/third_party/httpcomponents-core/binary-distribution/javadoc/org/apache/http/impl/nio/codecs/LengthDelimitedEncoder.html
+END
+HttpRequestParser.html
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/!svn/ver/170865/trunk/deps/third_party/httpcomponents-core/binary-distribution/javadoc/org/apache/http/impl/nio/codecs/HttpRequestParser.html
+END
+AbstractMessageWriter.html
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/!svn/ver/170865/trunk/deps/third_party/httpcomponents-core/binary-distribution/javadoc/org/apache/http/impl/nio/codecs/AbstractMessageWriter.html
+END
+ChunkEncoder.html
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/!svn/ver/170865/trunk/deps/third_party/httpcomponents-core/binary-distribution/javadoc/org/apache/http/impl/nio/codecs/ChunkEncoder.html
+END
+DefaultHttpRequestParser.html
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/!svn/ver/170865/trunk/deps/third_party/httpcomponents-core/binary-distribution/javadoc/org/apache/http/impl/nio/codecs/DefaultHttpRequestParser.html
+END
+HttpResponseParser.html
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/!svn/ver/170865/trunk/deps/third_party/httpcomponents-core/binary-distribution/javadoc/org/apache/http/impl/nio/codecs/HttpResponseParser.html
+END

@@ -1,0 +1,103 @@
+10
+
+dir
+170088
+http://src.chromium.org/svn/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL2Tests
+http://src.chromium.org/svn
+
+
+
+2012-05-21T23:53:48.319661Z
+138171
+zmo@chromium.org
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4ff67af0-8c30-449e-8e8b-ad334ec8d88c
+
+validate_program
+dir
+
+use_program
+dir
+
+link_program
+dir
+
+shader_source
+dir
+
+glGetShaderInfoLog_2.0
+dir
+
+bind_attribute_location
+dir
+
+glGetProgramInfoLog_2.0
+dir
+
+delete_object
+dir
+
+three_uniforms
+dir
+
+attach_shader
+dir
+
+get_attribute_location
+dir
+
+get_handle
+dir
+
+framebuffer_objects
+dir
+
+get_active_attribute
+dir
+
+glUniform
+dir
+
+glGetUniform
+dir
+
+glGetVertexAttrib
+dir
+
+get_uniform_location
+dir
+
+precision_specifiers
+dir
+
+vertex_program_point_size
+dir
+
+glGetProgramiv_2.0
+dir
+
+get_active_uniform
+dir
+
+relink_program
+dir
+
+detach_shader
+dir
+
+compile_shader
+dir
+

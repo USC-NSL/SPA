@@ -1,0 +1,353 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/ssl
+END
+s2_srvr.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/ssl/s2_srvr.c
+END
+t1_meth.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/ssl/t1_meth.c
+END
+s3_meth.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/118977/trunk/deps/third_party/openssl/openssl/ssl/s3_meth.c
+END
+s2_pkt.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/ssl/s2_pkt.c
+END
+s3_pkt.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/ssl/s3_pkt.c
+END
+t1_clnt.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/ssl/t1_clnt.c
+END
+t1_reneg.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/65201/trunk/deps/third_party/openssl/openssl/ssl/t1_reneg.c
+END
+s3_clnt.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/ssl/s3_clnt.c
+END
+ssl.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/ssl/ssl.h
+END
+ssl_algs.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/ssl/ssl_algs.c
+END
+s2_enc.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/118977/trunk/deps/third_party/openssl/openssl/ssl/s2_enc.c
+END
+ssl_err.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/ssl/ssl_err.c
+END
+s3_enc.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/ssl/s3_enc.c
+END
+t1_lib.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/ssl/t1_lib.c
+END
+d1_srtp.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/ssl/d1_srtp.c
+END
+kssl.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/ssl/kssl.c
+END
+d1_both.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/ssl/d1_both.c
+END
+d1_srvr.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/ssl/d1_srvr.c
+END
+kssl.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/ssl/kssl.h
+END
+d1_pkt.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/ssl/d1_pkt.c
+END
+s23_meth.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/ssl/s23_meth.c
+END
+s23_pkt.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/65201/trunk/deps/third_party/openssl/openssl/ssl/s23_pkt.c
+END
+s23_clnt.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/ssl/s23_clnt.c
+END
+ssl_lib.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/ssl/ssl_lib.c
+END
+d1_enc.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/ssl/d1_enc.c
+END
+bio_ssl.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/ssl/bio_ssl.c
+END
+dtls1.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/ssl/dtls1.h
+END
+ssl_stat.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/118977/trunk/deps/third_party/openssl/openssl/ssl/ssl_stat.c
+END
+ssl_sess.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/ssl/ssl_sess.c
+END
+ssl_txt.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/ssl/ssl_txt.c
+END
+t1_srvr.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/ssl/t1_srvr.c
+END
+s3_srvr.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/ssl/s3_srvr.c
+END
+s3_both.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/ssl/s3_both.c
+END
+s2_meth.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/118977/trunk/deps/third_party/openssl/openssl/ssl/s2_meth.c
+END
+ssltest.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/ssl/ssltest.c
+END
+s2_clnt.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/ssl/s2_clnt.c
+END
+ssl_ciph.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/ssl/ssl_ciph.c
+END
+ssl_rsa.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/ssl/ssl_rsa.c
+END
+t1_enc.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/ssl/t1_enc.c
+END
+s2_lib.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/118977/trunk/deps/third_party/openssl/openssl/ssl/s2_lib.c
+END
+s3_lib.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/ssl/s3_lib.c
+END
+kssl_lcl.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/118977/trunk/deps/third_party/openssl/openssl/ssl/kssl_lcl.h
+END
+ssl23.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/65201/trunk/deps/third_party/openssl/openssl/ssl/ssl23.h
+END
+ssl_cert.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/ssl/ssl_cert.c
+END
+ssl_locl.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/ssl/ssl_locl.h
+END
+d1_meth.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/118977/trunk/deps/third_party/openssl/openssl/ssl/d1_meth.c
+END
+s23_srvr.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/178558/trunk/deps/third_party/openssl/openssl/ssl/s23_srvr.c
+END
+ssl_asn1.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/ssl/ssl_asn1.c
+END
+d1_clnt.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/ssl/d1_clnt.c
+END
+tls_srp.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/ssl/tls_srp.c
+END
+ssl2.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/ssl/ssl2.h
+END
+tls1.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/178558/trunk/deps/third_party/openssl/openssl/ssl/tls1.h
+END
+ssl3.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/ssl/ssl3.h
+END
+d1_lib.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/ssl/d1_lib.c
+END
+ssl_err2.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/65201/trunk/deps/third_party/openssl/openssl/ssl/ssl_err2.c
+END
+s3_cbc.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/ssl/s3_cbc.c
+END
+s23_lib.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/118977/trunk/deps/third_party/openssl/openssl/ssl/s23_lib.c
+END
+srtp.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/ssl/srtp.h
+END

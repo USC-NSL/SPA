@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/142991/trunk/deps/third_party/libsrtp/srtp/test
+END
+roc_driver.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/142991/trunk/deps/third_party/libsrtp/srtp/test/roc_driver.c
+END
+rtpw_test.sh
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/119409/trunk/deps/third_party/libsrtp/srtp/test/rtpw_test.sh
+END
+srtp_driver.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/115467/trunk/deps/third_party/libsrtp/srtp/test/srtp_driver.c
+END
+getopt_s.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/115467/trunk/deps/third_party/libsrtp/srtp/test/getopt_s.c
+END
+rtp.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/119409/trunk/deps/third_party/libsrtp/srtp/test/rtp.c
+END
+lfsr.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/119409/trunk/deps/third_party/libsrtp/srtp/test/lfsr.c
+END
+replay_driver.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/115467/trunk/deps/third_party/libsrtp/srtp/test/replay_driver.c
+END
+dtls_srtp_driver.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/115467/trunk/deps/third_party/libsrtp/srtp/test/dtls_srtp_driver.c
+END
+rdbx_driver.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/115467/trunk/deps/third_party/libsrtp/srtp/test/rdbx_driver.c
+END
+.cvsignore
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/115467/trunk/deps/third_party/libsrtp/srtp/test/.cvsignore
+END
+rtpw.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/115467/trunk/deps/third_party/libsrtp/srtp/test/rtpw.c
+END

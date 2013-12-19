@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/native_client/!svn/ver/11231/trunk/src/native_client/tests/syscalls
+END
+timefuncs_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/native_client/!svn/ver/7506/trunk/src/native_client/tests/syscalls/timefuncs_test.cc
+END
+syscalls.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/native_client/!svn/ver/11231/trunk/src/native_client/tests/syscalls/syscalls.cc
+END
+getpid_disabled_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/native_client/!svn/ver/10209/trunk/src/native_client/tests/syscalls/getpid_disabled_test.c
+END
+file_ok.txt
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/native_client/!svn/ver/541/trunk/src/native_client/tests/syscalls/file_ok.txt
+END
+semaphore_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/native_client/!svn/ver/3859/trunk/src/native_client/tests/syscalls/semaphore_tests.cc
+END
+sysconf_pagesize.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/native_client/!svn/ver/8184/trunk/src/native_client/tests/syscalls/sysconf_pagesize.c
+END
+exit_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/native_client/!svn/ver/3065/trunk/src/native_client/tests/syscalls/exit_test.cc
+END
+getpid_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/native_client/!svn/ver/3111/trunk/src/native_client/tests/syscalls/getpid_test.cc
+END
+sysbrk_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/native_client/!svn/ver/11231/trunk/src/native_client/tests/syscalls/sysbrk_test.cc
+END
+nacl.scons
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/native_client/!svn/ver/11190/trunk/src/native_client/tests/syscalls/nacl.scons
+END
+mem_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/native_client/!svn/ver/3103/trunk/src/native_client/tests/syscalls/mem_test.cc
+END
+test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/native_client/!svn/ver/3075/trunk/src/native_client/tests/syscalls/test.cc
+END
+sysconf_nprocessors.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/native_client/!svn/ver/11153/trunk/src/native_client/tests/syscalls/sysconf_nprocessors.c
+END
+test.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/native_client/!svn/ver/3075/trunk/src/native_client/tests/syscalls/test.h
+END
+syscalls.stdout
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/native_client/!svn/ver/541/trunk/src/native_client/tests/syscalls/syscalls.stdout
+END

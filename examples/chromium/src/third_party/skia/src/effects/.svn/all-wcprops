@@ -1,0 +1,263 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/8748/trunk/src/effects
+END
+SkStippleMaskFilter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/8194/trunk/src/effects/SkStippleMaskFilter.cpp
+END
+SkColorMatrix.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/7406/trunk/src/effects/SkColorMatrix.cpp
+END
+SkEmbossMask.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/7406/trunk/src/effects/SkEmbossMask.cpp
+END
+SkKernel33MaskFilter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/8194/trunk/src/effects/SkKernel33MaskFilter.cpp
+END
+SkDashPathEffect.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/7829/trunk/src/effects/SkDashPathEffect.cpp
+END
+SkColorMatrixFilter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/8428/trunk/src/effects/SkColorMatrixFilter.cpp
+END
+SkEmbossMaskFilter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/8211/trunk/src/effects/SkEmbossMaskFilter.cpp
+END
+SkMagnifierImageFilter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/8563/trunk/src/effects/SkMagnifierImageFilter.cpp
+END
+SkTestImageFilters.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/8068/trunk/src/effects/SkTestImageFilters.cpp
+END
+SkBlurImageFilter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/7563/trunk/src/effects/SkBlurImageFilter.cpp
+END
+SkMatrixConvolutionImageFilter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/8563/trunk/src/effects/SkMatrixConvolutionImageFilter.cpp
+END
+SkLightingImageFilter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/8563/trunk/src/effects/SkLightingImageFilter.cpp
+END
+SkPerlinNoiseShader.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/8738/trunk/src/effects/SkPerlinNoiseShader.cpp
+END
+SkBlurMask.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/8090/trunk/src/effects/SkBlurMask.cpp
+END
+SkCornerPathEffect.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/7378/trunk/src/effects/SkCornerPathEffect.cpp
+END
+SkBlurMaskFilter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/8211/trunk/src/effects/SkBlurMaskFilter.cpp
+END
+SkTransparentShader.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/7215/trunk/src/effects/SkTransparentShader.cpp
+END
+SkTableColorFilter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/8428/trunk/src/effects/SkTableColorFilter.cpp
+END
+SkAvoidXfermode.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/7308/trunk/src/effects/SkAvoidXfermode.cpp
+END
+SkColorFilterImageFilter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/7808/trunk/src/effects/SkColorFilterImageFilter.cpp
+END
+SkBitmapSource.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/5891/trunk/src/effects/SkBitmapSource.cpp
+END
+Sk2DPathEffect.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/7378/trunk/src/effects/Sk2DPathEffect.cpp
+END
+SkBlurDrawLooper.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/8068/trunk/src/effects/SkBlurDrawLooper.cpp
+END
+SkPixelXorXfermode.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/7308/trunk/src/effects/SkPixelXorXfermode.cpp
+END
+SkColorFilters.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/7406/trunk/src/effects/SkColorFilters.cpp
+END
+SkMorphologyImageFilter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/8369/trunk/src/effects/SkMorphologyImageFilter.cpp
+END
+SkMergeImageFilter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/6662/trunk/src/effects/SkMergeImageFilter.cpp
+END
+SkTableMaskFilter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/8194/trunk/src/effects/SkTableMaskFilter.cpp
+END
+SkEmbossMask.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/7406/trunk/src/effects/SkEmbossMask.h
+END
+SkBicubicImageFilter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/8369/trunk/src/effects/SkBicubicImageFilter.cpp
+END
+SkLayerDrawLooper.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/7732/trunk/src/effects/SkLayerDrawLooper.cpp
+END
+SkPaintFlagsDrawFilter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/7406/trunk/src/effects/SkPaintFlagsDrawFilter.cpp
+END
+SkEmbossMask_Table.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/5262/trunk/src/effects/SkEmbossMask_Table.h
+END
+SkPorterDuff.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/7476/trunk/src/effects/SkPorterDuff.cpp
+END
+SkDisplacementMapEffect.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/8403/trunk/src/effects/SkDisplacementMapEffect.cpp
+END
+SkBlurMask.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/8090/trunk/src/effects/SkBlurMask.h
+END
+SkLayerRasterizer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/6878/trunk/src/effects/SkLayerRasterizer.cpp
+END
+SkDiscretePathEffect.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/7378/trunk/src/effects/SkDiscretePathEffect.cpp
+END
+SkBlendImageFilter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/8428/trunk/src/effects/SkBlendImageFilter.cpp
+END
+SkRectShaderImageFilter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/8748/trunk/src/effects/SkRectShaderImageFilter.cpp
+END
+SkArithmeticMode.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/7406/trunk/src/effects/SkArithmeticMode.cpp
+END
+Sk1DPathEffect.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/7378/trunk/src/effects/Sk1DPathEffect.cpp
+END
+SkOffsetImageFilter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/7563/trunk/src/effects/SkOffsetImageFilter.cpp
+END

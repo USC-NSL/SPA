@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/167604/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf
+END
+elf-x86-amd64.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/167603/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/elf-x86-amd64.c
+END
+Makefile.inc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/167604/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/Makefile.inc
+END
+elf-objfmt.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/167603/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/elf-objfmt.c
+END
+elf.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/167603/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/elf.c
+END
+elf.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/167603/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/elf.h
+END
+elf-x86-x86.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/167603/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/elf-x86-x86.c
+END
+elf-machine.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/167603/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/elf-machine.h
+END

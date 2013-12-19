@@ -1,0 +1,83 @@
+10
+
+dir
+3913
+http://webrtc.googlecode.com/svn/stable/webrtc/modules/audio_coding/codecs
+http://webrtc.googlecode.com/svn
+
+
+
+2013-04-29T13:18:23.798305Z
+3913
+mflodman@webrtc.org
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4adac7df-926f-26a2-2b94-8c16560cd09d
+
+isac
+dir
+
+g711
+dir
+
+g722
+dir
+
+opus
+dir
+
+cng
+dir
+
+pcm16b
+dir
+
+ilbc
+dir
+
+OWNERS
+file
+
+
+
+
+2012-10-27T08:02:32.000000Z
+a8abc576878de41ee2bcf813160e4229
+2012-10-23T14:25:30.445092Z
+2974
+niklas.enbom@webrtc.org
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+65
+

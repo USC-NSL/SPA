@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/native_client/!svn/ver/9857/trunk/src/native_client/src/trusted/service_runtime/testdata/x86_32
+END
+fib_scalar.nexe
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/native_client/!svn/ver/5906/trunk/src/native_client/src/trusted/service_runtime/testdata/x86_32/fib_scalar.nexe
+END
+text_too_big.nexe
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/native_client/!svn/ver/1707/trunk/src/native_client/src/trusted/service_runtime/testdata/x86_32/text_too_big.nexe
+END
+text_overlaps_data.nexe
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/native_client/!svn/ver/1707/trunk/src/native_client/src/trusted/service_runtime/testdata/x86_32/text_overlaps_data.nexe
+END
+old_abi.nexe
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/native_client/!svn/ver/1707/trunk/src/native_client/src/trusted/service_runtime/testdata/x86_32/old_abi.nexe
+END
+text_overlaps_rodata.nexe
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/native_client/!svn/ver/1707/trunk/src/native_client/src/trusted/service_runtime/testdata/x86_32/text_overlaps_rodata.nexe
+END
+rodata_data_overlap.nexe
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/native_client/!svn/ver/1707/trunk/src/native_client/src/trusted/service_runtime/testdata/x86_32/rodata_data_overlap.nexe
+END
+fib_scalar_v2.nexe
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/native_client/!svn/ver/4706/trunk/src/native_client/src/trusted/service_runtime/testdata/x86_32/fib_scalar_v2.nexe
+END
+fib_array.nexe
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/native_client/!svn/ver/5906/trunk/src/native_client/src/trusted/service_runtime/testdata/x86_32/fib_array.nexe
+END
+unaligned_data.nexe
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/native_client/!svn/ver/8762/trunk/src/native_client/src/trusted/service_runtime/testdata/x86_32/unaligned_data.nexe
+END
+mandel.nexe
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/native_client/!svn/ver/5906/trunk/src/native_client/src/trusted/service_runtime/testdata/x86_32/mandel.nexe
+END
+nullptr.nexe
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/native_client/!svn/ver/4116/trunk/src/native_client/src/trusted/service_runtime/testdata/x86_32/nullptr.nexe
+END
+fib_array_v2.nexe
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/native_client/!svn/ver/4706/trunk/src/native_client/src/trusted/service_runtime/testdata/x86_32/fib_array_v2.nexe
+END
+mandel_v2.nexe
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/native_client/!svn/ver/4706/trunk/src/native_client/src/trusted/service_runtime/testdata/x86_32/mandel_v2.nexe
+END
+integer_overflow_while_madvising.nexe
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/native_client/!svn/ver/1707/trunk/src/native_client/src/trusted/service_runtime/testdata/x86_32/integer_overflow_while_madvising.nexe
+END
+negative_hole.nexe
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/native_client/!svn/ver/1707/trunk/src/native_client/src/trusted/service_runtime/testdata/x86_32/negative_hole.nexe
+END
+hello_world.nexe
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/native_client/!svn/ver/4116/trunk/src/native_client/src/trusted/service_runtime/testdata/x86_32/hello_world.nexe
+END
+data_not_last.nexe
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/native_client/!svn/ver/1707/trunk/src/native_client/src/trusted/service_runtime/testdata/x86_32/data_not_last.nexe
+END
+unaligned_data_irt.nexe
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/native_client/!svn/ver/9857/trunk/src/native_client/src/trusted/service_runtime/testdata/x86_32/unaligned_data_irt.nexe
+END

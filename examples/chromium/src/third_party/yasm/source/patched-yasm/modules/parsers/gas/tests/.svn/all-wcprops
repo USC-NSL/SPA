@@ -1,0 +1,269 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/167604/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests
+END
+gassectalign.asm
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/gassectalign.asm
+END
+Makefile.inc
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/167604/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/Makefile.inc
+END
+localcomm.asm
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/localcomm.asm
+END
+gassectalign.hex
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/gassectalign.hex
+END
+localcomm.hex
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/localcomm.hex
+END
+datavis2.asm
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/datavis2.asm
+END
+reggroup-err.asm
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/reggroup-err.asm
+END
+reggroup-err.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/reggroup-err.errwarn
+END
+datavis2.hex
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/datavis2.hex
+END
+gas-push.asm
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/gas-push.asm
+END
+gas-push.hex
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/gas-push.hex
+END
+datavis.asm
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/datavis.asm
+END
+datavis.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/datavis.errwarn
+END
+leb128.asm
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/leb128.asm
+END
+gas-fill.asm
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/gas-fill.asm
+END
+datavis.hex
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/datavis.hex
+END
+leb128.hex
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/leb128.hex
+END
+gas-fill.hex
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/gas-fill.hex
+END
+execsect.asm
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/execsect.asm
+END
+gas_test.sh
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/167604/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/gas_test.sh
+END
+gas-segprefix.asm
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/gas-segprefix.asm
+END
+gas-semi.asm
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/gas-semi.asm
+END
+execsect.hex
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/execsect.hex
+END
+gas-line2-err.asm
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/gas-line2-err.asm
+END
+gas-line2-err.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/gas-line2-err.errwarn
+END
+strzero.asm
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/strzero.asm
+END
+gas-segprefix.hex
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/gas-segprefix.hex
+END
+gas-semi.hex
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/gas-semi.hex
+END
+strzero.hex
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/strzero.hex
+END
+gas-float.asm
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/gas-float.asm
+END
+varinsn.asm
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/varinsn.asm
+END
+gas-float.hex
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/gas-float.hex
+END
+jmpcall.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/jmpcall.errwarn
+END
+jmpcall.asm
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/jmpcall.asm
+END
+varinsn.hex
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/varinsn.hex
+END
+gas-line-err.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/gas-line-err.errwarn
+END
+gas-line-err.asm
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/gas-line-err.asm
+END
+gas-instlabel.asm
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/gas-instlabel.asm
+END
+dataref-imm.asm
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/dataref-imm.asm
+END
+jmpcall.hex
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/jmpcall.hex
+END
+gas-instlabel.hex
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/gas-instlabel.hex
+END
+dataref-imm.hex
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/dataref-imm.hex
+END
+reggroup.asm
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/reggroup.asm
+END
+reggroup.hex
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/gas/tests/reggroup.hex
+END

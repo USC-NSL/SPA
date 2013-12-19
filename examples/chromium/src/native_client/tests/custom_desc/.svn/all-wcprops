@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/native_client/!svn/ver/11234/trunk/src/native_client/tests/custom_desc
+END
+nacl.scons
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/native_client/!svn/ver/11090/trunk/src/native_client/tests/custom_desc/nacl.scons
+END
+desc_test_guest.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/native_client/!svn/ver/11234/trunk/src/native_client/tests/custom_desc/desc_test_guest.c
+END
+desc_test_host.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/native_client/!svn/ver/10772/trunk/src/native_client/tests/custom_desc/desc_test_host.c
+END

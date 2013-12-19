@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/14404/trunk/src/extensions
+END
+gc-extension.cc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/14404/trunk/src/extensions/gc-extension.cc
+END
+statistics-extension.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/12295/trunk/src/extensions/statistics-extension.cc
+END
+gc-extension.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/14404/trunk/src/extensions/gc-extension.h
+END
+statistics-extension.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/12180/trunk/src/extensions/statistics-extension.h
+END
+externalize-string-extension.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/13808/trunk/src/extensions/externalize-string-extension.cc
+END
+externalize-string-extension.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/5853/trunk/src/extensions/externalize-string-extension.h
+END

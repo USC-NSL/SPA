@@ -1,0 +1,581 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/silk
+END
+bwexpander.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/bwexpander.c
+END
+NSQ_del_dec.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/NSQ_del_dec.c
+END
+control_SNR.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/control_SNR.c
+END
+resampler_down2.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/resampler_down2.c
+END
+lin2log.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/lin2log.c
+END
+log2lin.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/log2lin.c
+END
+NLSF_VQ.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/NLSF_VQ.c
+END
+decoder_set_fs.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/decoder_set_fs.c
+END
+NLSF_del_dec_quant.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/NLSF_del_dec_quant.c
+END
+VAD.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/VAD.c
+END
+resampler_private_down_FIR.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/resampler_private_down_FIR.c
+END
+stereo_find_predictor.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/stereo_find_predictor.c
+END
+MacroDebug.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/MacroDebug.h
+END
+control_codec.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/silk/control_codec.c
+END
+SigProc_FIX.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/silk/SigProc_FIX.h
+END
+errors.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/errors.h
+END
+pitch_est_defines.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/pitch_est_defines.h
+END
+tables_pitch_lag.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/tables_pitch_lag.c
+END
+control_audio_bandwidth.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/silk/control_audio_bandwidth.c
+END
+NLSF2A.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/NLSF2A.c
+END
+control.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/control.h
+END
+debug.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/debug.c
+END
+LPC_analysis_filter.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/LPC_analysis_filter.c
+END
+NLSF_VQ_weights_laroia.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/NLSF_VQ_weights_laroia.c
+END
+tables_LTP.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/silk/tables_LTP.c
+END
+debug.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/debug.h
+END
+stereo_LR_to_MS.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/stereo_LR_to_MS.c
+END
+stereo_MS_to_LR.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/stereo_MS_to_LR.c
+END
+NSQ.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/NSQ.c
+END
+resampler_private_up2_HQ.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/resampler_private_up2_HQ.c
+END
+NLSF_unpack.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/NLSF_unpack.c
+END
+typedef.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/typedef.h
+END
+NLSF_decode.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/NLSF_decode.c
+END
+Inlines.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/Inlines.h
+END
+resampler_rom.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/silk/resampler_rom.c
+END
+CNG.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/CNG.c
+END
+NLSF_stabilize.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/silk/NLSF_stabilize.c
+END
+resampler_rom.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/silk/resampler_rom.h
+END
+decode_indices.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/decode_indices.c
+END
+shell_coder.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/shell_coder.c
+END
+tables_pulses_per_block.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/tables_pulses_per_block.c
+END
+A2NLSF.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/A2NLSF.c
+END
+gain_quant.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/gain_quant.c
+END
+sort.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/sort.c
+END
+resampler_private_AR2.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/resampler_private_AR2.c
+END
+quant_LTP_gains.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/quant_LTP_gains.c
+END
+macros.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/macros.h
+END
+resampler.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/resampler.c
+END
+decode_core.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/silk/decode_core.c
+END
+tables_NLSF_CB_NB_MB.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/silk/tables_NLSF_CB_NB_MB.c
+END
+define.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/define.h
+END
+biquad_alt.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/biquad_alt.c
+END
+decode_parameters.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/decode_parameters.c
+END
+tables_gain.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/tables_gain.c
+END
+structs.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/structs.h
+END
+code_signs.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/code_signs.c
+END
+MacroCount.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/MacroCount.h
+END
+NLSF_encode.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/NLSF_encode.c
+END
+HP_variable_cutoff.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/HP_variable_cutoff.c
+END
+inner_prod_aligned.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/inner_prod_aligned.c
+END
+sigm_Q15.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/sigm_Q15.c
+END
+VQ_WMat_EC.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/VQ_WMat_EC.c
+END
+LP_variable_cutoff.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/LP_variable_cutoff.c
+END
+interpolate.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/interpolate.c
+END
+sum_sqr_shift.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/sum_sqr_shift.c
+END
+encode_pulses.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/encode_pulses.c
+END
+stereo_encode_pred.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/stereo_encode_pred.c
+END
+tables_NLSF_CB_WB.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/silk/tables_NLSF_CB_WB.c
+END
+encode_indices.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/encode_indices.c
+END
+enc_API.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/silk/enc_API.c
+END
+table_LSF_cos.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/table_LSF_cos.c
+END
+init_encoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/init_encoder.c
+END
+LPC_inv_pred_gain.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/LPC_inv_pred_gain.c
+END
+bwexpander_32.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/bwexpander_32.c
+END
+decode_pitch.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/decode_pitch.c
+END
+tables_other.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/silk/tables_other.c
+END
+pitch_est_tables.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/pitch_est_tables.c
+END
+decode_pulses.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/decode_pulses.c
+END
+API.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/silk/API.h
+END
+PLC.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/silk/PLC.c
+END
+stereo_decode_pred.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/stereo_decode_pred.c
+END
+tables.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/tables.h
+END
+process_NLSFs.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/process_NLSFs.c
+END
+PLC.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/PLC.h
+END
+stereo_quant_pred.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/stereo_quant_pred.c
+END
+dec_API.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/silk/dec_API.c
+END
+resampler_down2_3.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/resampler_down2_3.c
+END
+resampler_structs.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/resampler_structs.h
+END
+resampler_private_IIR_FIR.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/resampler_private_IIR_FIR.c
+END
+init_decoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/init_decoder.c
+END
+ana_filt_bank_1.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/ana_filt_bank_1.c
+END
+main.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/main.h
+END
+resampler_private.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/resampler_private.h
+END
+check_control_input.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/check_control_input.c
+END
+tuning_parameters.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/silk/tuning_parameters.h
+END
+decode_frame.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/silk/decode_frame.c
+END

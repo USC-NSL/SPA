@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/sh4
+END
+dsputil_align.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/sh4/dsputil_align.c
+END
+h264chroma_init.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/sh4/h264chroma_init.c
+END
+idct_sh4.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/sh4/idct_sh4.c
+END
+qpel.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/sh4/qpel.c
+END
+dsputil_sh4.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/sh4/dsputil_sh4.c
+END
+sh4.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/122313/trunk/deps/third_party/ffmpeg/libavcodec/sh4/sh4.h
+END
+dsputil_sh4.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/sh4/dsputil_sh4.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/sh4/Makefile
+END

@@ -1,0 +1,533 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest
+END
+repaint-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/repaint-ref.html
+END
+align_end_wrapped-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/align_end_wrapped-ref.html
+END
+size_50.html
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/size_50.html
+END
+too_many_cues-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/too_many_cues-ref.html
+END
+align_end.html
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/align_end.html
+END
+dom_override_cue_text_while_paused-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/dom_override_cue_text_while_paused-ref.html
+END
+basic.html
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/basic.html
+END
+align_start-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/align_start-ref.html
+END
+media_height400_with_controls-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/media_height400_with_controls-ref.html
+END
+line_0_is_top.html
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/line_0_is_top.html
+END
+enable_controls_reposition.html
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/enable_controls_reposition.html
+END
+align_middle_position_lt_50_size_gt_maximum_size-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/align_middle_position_lt_50_size_gt_maximum_size-ref.html
+END
+build-manifest.py
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/build-manifest.py
+END
+line_percent_and_integer_mixed_overlap_move_up-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/line_percent_and_integer_mixed_overlap_move_up-ref.html
+END
+line_integer_and_percent_mixed_overlap_move_up-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/line_integer_and_percent_mixed_overlap_move_up-ref.html
+END
+navigate_cue_position-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/navigate_cue_position-ref.html
+END
+dom_override_cue_text-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/dom_override_cue_text-ref.html
+END
+align_middle_position_gt_50.html
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/align_middle_position_gt_50.html
+END
+dom_override_cue_line-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/dom_override_cue_line-ref.html
+END
+media_with_controls.html
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/media_with_controls.html
+END
+disable_controls_reposition.html
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/disable_controls_reposition.html
+END
+dom_override_cue_align_position_line_size_while_paused.html
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/dom_override_cue_align_position_line_size_while_paused.html
+END
+align_middle_wrapped-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/align_middle_wrapped-ref.html
+END
+line_-2_wrapped_cue_grow_upwards.html
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/line_-2_wrapped_cue_grow_upwards.html
+END
+align_middle.html
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/align_middle.html
+END
+2_cues_overlapping_completely_move_up.html
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/2_cues_overlapping_completely_move_up.html
+END
+one_line_cue_plus_wrapped_cue-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/one_line_cue_plus_wrapped_cue-ref.html
+END
+2_cues_overlapping_partially_move_down.html
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/2_cues_overlapping_partially_move_down.html
+END
+line_50_percent-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/line_50_percent-ref.html
+END
+too_many_cues_wrapped.html
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/too_many_cues_wrapped.html
+END
+size_50-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/size_50-ref.html
+END
+align_start_wrapped.html
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/align_start_wrapped.html
+END
+align_end-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/align_end-ref.html
+END
+basic-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/basic-ref.html
+END
+line_0_is_top-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/line_0_is_top-ref.html
+END
+enable_controls_reposition-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/enable_controls_reposition-ref.html
+END
+align_middle_position_lt_50.html
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/align_middle_position_lt_50.html
+END
+2_cues_overlapping_partially_move_up.html
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/2_cues_overlapping_partially_move_up.html
+END
+align_middle_position_gt_50-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/align_middle_position_gt_50-ref.html
+END
+media_with_controls-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/media_with_controls-ref.html
+END
+2_tracks.html
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/2_tracks.html
+END
+dom_override_cue_align_position_line_size.html
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/dom_override_cue_align_position_line_size.html
+END
+3_tracks.html
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/3_tracks.html
+END
+line_1_wrapped_cue_grow_downwards.html
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/line_1_wrapped_cue_grow_downwards.html
+END
+decode_escaped_entities.html
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/decode_escaped_entities.html
+END
+disable_controls_reposition-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/disable_controls_reposition-ref.html
+END
+cue_too_long.html
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/cue_too_long.html
+END
+dom_override_cue_align_position_line_size_while_paused-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/dom_override_cue_align_position_line_size_while_paused-ref.html
+END
+dom_override_remove_cue_while_paused.html
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/dom_override_remove_cue_while_paused.html
+END
+line_-2_wrapped_cue_grow_upwards-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/line_-2_wrapped_cue_grow_upwards-ref.html
+END
+align_middle-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/align_middle-ref.html
+END
+line_percent_and_integer_mixed_overlap.html
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/line_percent_and_integer_mixed_overlap.html
+END
+line_integer_and_percent_mixed_overlap.html
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/line_integer_and_percent_mixed_overlap.html
+END
+audio_has_no_subtitles.html
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/audio_has_no_subtitles.html
+END
+2_cues_overlapping_completely_move_up-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/2_cues_overlapping_completely_move_up-ref.html
+END
+2_cues_overlapping_partially_move_down-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/2_cues_overlapping_partially_move_down-ref.html
+END
+align_middle_position_50.html
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/align_middle_position_50.html
+END
+too_many_cues_wrapped-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/too_many_cues_wrapped-ref.html
+END
+repaint.html
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/repaint.html
+END
+align_end_wrapped.html
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/align_end_wrapped.html
+END
+align_start_wrapped-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/align_start_wrapped-ref.html
+END
+too_many_cues.html
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/too_many_cues.html
+END
+dom_override_cue_text_while_paused.html
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/dom_override_cue_text_while_paused.html
+END
+align_start.html
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/align_start.html
+END
+media_height400_with_controls.html
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/media_height400_with_controls.html
+END
+align_middle_position_lt_50-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/align_middle_position_lt_50-ref.html
+END
+align_middle_position_lt_50_size_gt_maximum_size.html
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/align_middle_position_lt_50_size_gt_maximum_size.html
+END
+2_cues_overlapping_partially_move_up-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/2_cues_overlapping_partially_move_up-ref.html
+END
+line_percent_and_integer_mixed_overlap_move_up.html
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/line_percent_and_integer_mixed_overlap_move_up.html
+END
+line_integer_and_percent_mixed_overlap_move_up.html
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/line_integer_and_percent_mixed_overlap_move_up.html
+END
+dom_override_cue_text.html
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/dom_override_cue_text.html
+END
+navigate_cue_position.html
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/navigate_cue_position.html
+END
+dom_override_cue_line.html
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/dom_override_cue_line.html
+END
+2_tracks-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/2_tracks-ref.html
+END
+3_tracks-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/3_tracks-ref.html
+END
+dom_override_cue_align_position_line_size-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/dom_override_cue_align_position_line_size-ref.html
+END
+reftest.list
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/reftest.list
+END
+line_1_wrapped_cue_grow_downwards-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/line_1_wrapped_cue_grow_downwards-ref.html
+END
+decode_escaped_entities-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/decode_escaped_entities-ref.html
+END
+cue_too_long-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/cue_too_long-ref.html
+END
+align_middle_wrapped.html
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/align_middle_wrapped.html
+END
+dom_override_remove_cue_while_paused-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/dom_override_remove_cue_while_paused-ref.html
+END
+line_integer_and_percent_mixed_overlap-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/line_integer_and_percent_mixed_overlap-ref.html
+END
+line_percent_and_integer_mixed_overlap-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/line_percent_and_integer_mixed_overlap-ref.html
+END
+audio_has_no_subtitles-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/audio_has_no_subtitles-ref.html
+END
+one_line_cue_plus_wrapped_cue.html
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/one_line_cue_plus_wrapped_cue.html
+END
+align_middle_position_50-ref.html
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/align_middle_position_50-ref.html
+END
+line_50_percent.html
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/blink/!svn/ver/136459/trunk/LayoutTests/media/track/opera/track/webvtt/rendering/reftest/line_50_percent.html
+END

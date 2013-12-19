@@ -1,0 +1,2903 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/132738/trunk/deps/third_party/hunspell/tests
+END
+allcaps2.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/51492/trunk/deps/third_party/hunspell/tests/allcaps2.test
+END
+ngram_utf_fix.good
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/ngram_utf_fix.good
+END
+breakdefault.good
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/breakdefault.good
+END
+i68568utf.aff
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/i68568utf.aff
+END
+rep.sug
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/132738/trunk/deps/third_party/hunspell/tests/rep.sug
+END
+checkcompoundrep.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/132738/trunk/deps/third_party/hunspell/tests/checkcompoundrep.wrong
+END
+alias.aff
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/alias.aff
+END
+needaffix.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/needaffix.wrong
+END
+compoundrule2.good
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundrule2.good
+END
+checkcompounddup.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/checkcompounddup.wrong
+END
+i53643.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/i53643.wrong
+END
+checksharps.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/checksharps.wrong
+END
+i54633.sug
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/i54633.sug
+END
+i35725.sug
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/132738/trunk/deps/third_party/hunspell/tests/i35725.sug
+END
+checkcompoundpattern.test
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/checkcompoundpattern.test
+END
+colons_in_words.dic
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/colons_in_words.dic
+END
+conditionalprefix.test
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/conditionalprefix.test
+END
+alias3.good
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/alias3.good
+END
+1695964.dic
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/1695964.dic
+END
+base.aff
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/base.aff
+END
+base.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/base.wrong
+END
+checkcompoundcase.aff
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/checkcompoundcase.aff
+END
+allcaps.aff
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/allcaps.aff
+END
+alias3.dic
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/alias3.dic
+END
+sug.test
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/sug.test
+END
+keepcase.sug
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/132738/trunk/deps/third_party/hunspell/tests/keepcase.sug
+END
+condition.aff
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/condition.aff
+END
+compoundrule7.test
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/51492/trunk/deps/third_party/hunspell/tests/compoundrule7.test
+END
+affixes.dic
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/affixes.dic
+END
+forbiddenword.aff
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/forbiddenword.aff
+END
+base_utf.sug
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/132738/trunk/deps/third_party/hunspell/tests/base_utf.sug
+END
+i58202.sug
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/i58202.sug
+END
+utf8_nonbmp.good
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/utf8_nonbmp.good
+END
+complexprefixesutf.aff
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/complexprefixesutf.aff
+END
+1975530.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/1975530.wrong
+END
+allcaps_utf.aff
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/allcaps_utf.aff
+END
+maputf.dic
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/maputf.dic
+END
+sugutf.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/51492/trunk/deps/third_party/hunspell/tests/sugutf.test
+END
+zeroaffix.dic
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/zeroaffix.dic
+END
+compoundrule5.aff
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundrule5.aff
+END
+checksharps.dic
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/checksharps.dic
+END
+keepcase.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/keepcase.test
+END
+condition_utf.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/condition_utf.wrong
+END
+compoundrule8.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/compoundrule8.wrong
+END
+1695964.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/1695964.wrong
+END
+affixes.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/affixes.test
+END
+simplifiedtriple.dic
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/simplifiedtriple.dic
+END
+needaffix5.aff
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/needaffix5.aff
+END
+nosuggest.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/nosuggest.wrong
+END
+complexprefixesutf.test
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/complexprefixesutf.test
+END
+compoundrule4.test
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundrule4.test
+END
+1592880.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/1592880.test
+END
+1706659.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/51492/trunk/deps/third_party/hunspell/tests/1706659.test
+END
+base_utf.good
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/base_utf.good
+END
+i54980.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/i54980.test
+END
+checkcompoundpattern3.test
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/51492/trunk/deps/third_party/hunspell/tests/checkcompoundpattern3.test
+END
+utf8.aff
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/utf8.aff
+END
+simplifiedtriple.test
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/51492/trunk/deps/third_party/hunspell/tests/simplifiedtriple.test
+END
+checkcompoundrep.aff
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/checkcompoundrep.aff
+END
+flaglong.aff
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/flaglong.aff
+END
+needaffix.aff
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/needaffix.aff
+END
+zeroaffix.good
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/zeroaffix.good
+END
+checkcompoundcaseutf.aff
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/checkcompoundcaseutf.aff
+END
+i54633.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/i54633.wrong
+END
+checkcompoundtriple.good
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/checkcompoundtriple.good
+END
+sug.sug
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/sug.sug
+END
+compoundrule3.dic
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundrule3.dic
+END
+checkcompoundcase2.dic
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/checkcompoundcase2.dic
+END
+checkcompoundpattern4.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/checkcompoundpattern4.wrong
+END
+alias3.morph
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/alias3.morph
+END
+flag.good
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/flag.good
+END
+compoundrule7.dic
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/compoundrule7.dic
+END
+compoundaffix2.test
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundaffix2.test
+END
+break.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/break.test
+END
+germancompoundingold.good
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/germancompoundingold.good
+END
+needaffix3.good
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/needaffix3.good
+END
+compoundrule.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundrule.wrong
+END
+circumfix.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/circumfix.test
+END
+phone.dic
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/phone.dic
+END
+complexprefixes.aff
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/complexprefixes.aff
+END
+iconv.aff
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/iconv.aff
+END
+needaffix3.dic
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/needaffix3.dic
+END
+checksharpsutf.dic
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/checksharpsutf.dic
+END
+allcaps_utf.test
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/51492/trunk/deps/third_party/hunspell/tests/allcaps_utf.test
+END
+fogemorpheme.dic
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/fogemorpheme.dic
+END
+map.dic
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/map.dic
+END
+nosuggest.dic
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/nosuggest.dic
+END
+flagutf8.dic
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/flagutf8.dic
+END
+oconv.aff
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/oconv.aff
+END
+i58202.good
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/i58202.good
+END
+compoundaffix2.dic
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundaffix2.dic
+END
+break.dic
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/break.dic
+END
+circumfix.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/circumfix.wrong
+END
+checksharps.good
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/checksharps.good
+END
+1695964.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/51492/trunk/deps/third_party/hunspell/tests/1695964.test
+END
+breakdefault.dic
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/breakdefault.dic
+END
+alias2.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/alias2.test
+END
+ignoreutf.good
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/ignoreutf.good
+END
+compoundrule3.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundrule3.wrong
+END
+i53643.dic
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/i53643.dic
+END
+checkcompoundcase.test
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/checkcompoundcase.test
+END
+complexprefixes2.dic
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/complexprefixes2.dic
+END
+checkcompoundtriple.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/checkcompoundtriple.wrong
+END
+checkcompoundtriple.aff
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/checkcompoundtriple.aff
+END
+allcaps2.dic
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/allcaps2.dic
+END
+checkcompoundpattern3.dic
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/checkcompoundpattern3.dic
+END
+checksharpsutf.good
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/checksharpsutf.good
+END
+fogemorpheme.good
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/fogemorpheme.good
+END
+alias2.aff
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/alias2.aff
+END
+flagnum.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/flagnum.test
+END
+germancompounding.aff
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/germancompounding.aff
+END
+onlyincompound.aff
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/onlyincompound.aff
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/132738/trunk/deps/third_party/hunspell/tests/Makefile.am
+END
+germancompoundingold.dic
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/germancompoundingold.dic
+END
+ignore.good
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/ignore.good
+END
+sugutf.sug
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/sugutf.sug
+END
+checkcompoundcaseutf.test
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/checkcompoundcaseutf.test
+END
+oconv.good
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/oconv.good
+END
+1463589_utf.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/1463589_utf.wrong
+END
+condition.good
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/condition.good
+END
+ignore.aff
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/ignore.aff
+END
+conditionalprefix.dic
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/conditionalprefix.dic
+END
+compoundaffix3.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundaffix3.wrong
+END
+compoundaffix.test
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundaffix.test
+END
+rep.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/132738/trunk/deps/third_party/hunspell/tests/rep.wrong
+END
+morph.dic
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/morph.dic
+END
+i53643.good
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/i53643.good
+END
+ngram_utf_fix.dic
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/ngram_utf_fix.dic
+END
+compoundrule6.good
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundrule6.good
+END
+i35725.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/i35725.wrong
+END
+germancompounding.test
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/germancompounding.test
+END
+complexprefixes.test
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/complexprefixes.test
+END
+1975530.dic
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/1975530.dic
+END
+needaffix5.test
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/needaffix5.test
+END
+allcaps.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/51492/trunk/deps/third_party/hunspell/tests/allcaps.test
+END
+ignoreutf.aff
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/ignoreutf.aff
+END
+i54980.dic
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/i54980.dic
+END
+fullstrip.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/51492/trunk/deps/third_party/hunspell/tests/fullstrip.test
+END
+morph.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/51492/trunk/deps/third_party/hunspell/tests/morph.test
+END
+nosuggest.good
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/nosuggest.good
+END
+base.sug
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/132738/trunk/deps/third_party/hunspell/tests/base.sug
+END
+compoundflag.aff
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundflag.aff
+END
+allcaps.sug
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/allcaps.sug
+END
+utf8.good
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/utf8.good
+END
+checkcompoundpattern.dic
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/checkcompoundpattern.dic
+END
+allcaps3.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/51492/trunk/deps/third_party/hunspell/tests/allcaps3.test
+END
+utfcompound.test
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/utfcompound.test
+END
+zeroaffix.morph
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/zeroaffix.morph
+END
+fullstrip.dic
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/fullstrip.dic
+END
+circumfix.aff
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/circumfix.aff
+END
+1975530.good
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/1975530.good
+END
+rep.dic
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/132738/trunk/deps/third_party/hunspell/tests/rep.dic
+END
+compoundrule3.good
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundrule3.good
+END
+complexprefixesutf.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/complexprefixesutf.wrong
+END
+compoundrule2.aff
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundrule2.aff
+END
+IJ.good
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/IJ.good
+END
+checkcompoundpattern2.good
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/checkcompoundpattern2.good
+END
+needaffix2.test
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/needaffix2.test
+END
+allcaps_utf.sug
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/allcaps_utf.sug
+END
+utf8_nonbmp.aff
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/utf8_nonbmp.aff
+END
+checkcompoundcase2.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/checkcompoundcase2.wrong
+END
+i54633.dic
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/i54633.dic
+END
+onlyincompound.test
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/onlyincompound.test
+END
+i35725.dic
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/i35725.dic
+END
+iconv.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/51492/trunk/deps/third_party/hunspell/tests/iconv.test
+END
+compoundrule6.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundrule6.wrong
+END
+compoundrule6.aff
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundrule6.aff
+END
+1463589.aff
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/1463589.aff
+END
+1706659.dic
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/1706659.dic
+END
+reputf.aff
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/reputf.aff
+END
+slash.good
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/slash.good
+END
+utf8_bom2.dic
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/utf8_bom2.dic
+END
+needaffix2.aff
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/needaffix2.aff
+END
+flag.dic
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/flag.dic
+END
+sugutf.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/sugutf.wrong
+END
+1463589_utf.aff
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/1463589_utf.aff
+END
+keepcase.dic
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/keepcase.dic
+END
+forbiddenword.good
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/forbiddenword.good
+END
+alias.good
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/alias.good
+END
+condition_utf.test
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/51492/trunk/deps/third_party/hunspell/tests/condition_utf.test
+END
+compoundrule8.test
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/51492/trunk/deps/third_party/hunspell/tests/compoundrule8.test
+END
+checkcompounddup.good
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/checkcompounddup.good
+END
+utf8_bom2.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/utf8_bom2.test
+END
+flagnum.aff
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/flagnum.aff
+END
+i54633.good
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/i54633.good
+END
+compoundrule5.morph
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/compoundrule5.morph
+END
+digits_in_words.dic
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/digits_in_words.dic
+END
+complexprefixes2.good
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/complexprefixes2.good
+END
+base_utf.dic
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/base_utf.dic
+END
+checkcompoundcase2.good
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/checkcompoundcase2.good
+END
+i58202.dic
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/i58202.dic
+END
+sug.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/sug.wrong
+END
+checkcompoundpattern2.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/checkcompoundpattern2.wrong
+END
+IJ.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/IJ.wrong
+END
+IJ.aff
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/IJ.aff
+END
+checkcompoundpattern2.aff
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/checkcompoundpattern2.aff
+END
+compoundrule4.dic
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundrule4.dic
+END
+1592880.dic
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/1592880.dic
+END
+compoundaffix.dic
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundaffix.dic
+END
+utf8_bom.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/utf8_bom.test
+END
+utfcompound.dic
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/utfcompound.dic
+END
+condition_utf.dic
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/condition_utf.dic
+END
+compoundrule8.dic
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/compoundrule8.dic
+END
+rep.test
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/132738/trunk/deps/third_party/hunspell/tests/rep.test
+END
+flagutf8.good
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/flagutf8.good
+END
+i68568.dic
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/i68568.dic
+END
+needaffix4.dic
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/needaffix4.dic
+END
+compoundrule5.test
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/compoundrule5.test
+END
+oconv.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/oconv.wrong
+END
+oconv.sug
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/oconv.sug
+END
+checkcompoundpattern4.test
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/51492/trunk/deps/third_party/hunspell/tests/checkcompoundpattern4.test
+END
+digits_in_words.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/digits_in_words.wrong
+END
+compoundaffix3.dic
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundaffix3.dic
+END
+ngram_utf_fix.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/ngram_utf_fix.wrong
+END
+i35725.good
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/i35725.good
+END
+phone.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/51492/trunk/deps/third_party/hunspell/tests/phone.test
+END
+allcaps_utf.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/allcaps_utf.wrong
+END
+checkcompounddup.dic
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/checkcompounddup.dic
+END
+compoundflag.test
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundflag.test
+END
+colons_in_words.aff
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/colons_in_words.aff
+END
+sug.dic
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/sug.dic
+END
+1463589.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/1463589.wrong
+END
+allcaps3.dic
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/allcaps3.dic
+END
+base.good
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/base.good
+END
+checkcompoundpattern4.dic
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/checkcompoundpattern4.dic
+END
+1695964.aff
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/1695964.aff
+END
+compoundrule.good
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundrule.good
+END
+compoundaffix3.test
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundaffix3.test
+END
+needaffix4.good
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/needaffix4.good
+END
+phone.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/phone.wrong
+END
+ngram_utf_fix.test
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/51492/trunk/deps/third_party/hunspell/tests/ngram_utf_fix.test
+END
+alias3.aff
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/alias3.aff
+END
+breakdefault.test
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/51492/trunk/deps/third_party/hunspell/tests/breakdefault.test
+END
+germancompounding.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/germancompounding.wrong
+END
+slash.dic
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/slash.dic
+END
+morph.morph
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/morph.morph
+END
+compoundrule.dic
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundrule.dic
+END
+onlyincompound.sug
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/onlyincompound.sug
+END
+checkcompoundpattern.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/checkcompoundpattern.wrong
+END
+compoundrule2.test
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundrule2.test
+END
+checkcompoundrep.good
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/132738/trunk/deps/third_party/hunspell/tests/checkcompoundrep.good
+END
+affixes.aff
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/affixes.aff
+END
+flaglong.good
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/flaglong.good
+END
+needaffix.good
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/needaffix.good
+END
+utf8_bom.dic
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/utf8_bom.dic
+END
+breakdefault.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/breakdefault.wrong
+END
+maputf.aff
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/maputf.aff
+END
+allcaps2.good
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/allcaps2.good
+END
+checkcompoundcaseutf.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/checkcompoundcaseutf.wrong
+END
+zeroaffix.aff
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/zeroaffix.aff
+END
+checksharps.aff
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/checksharps.aff
+END
+alias3.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/alias3.test
+END
+allcaps2.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/allcaps2.wrong
+END
+simplifiedtriple.aff
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/simplifiedtriple.aff
+END
+digits_in_words.test
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/51492/trunk/deps/third_party/hunspell/tests/digits_in_words.test
+END
+checkcompoundpattern.good
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/checkcompoundpattern.good
+END
+complexprefixes.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/complexprefixes.wrong
+END
+conditionalprefix.good
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/conditionalprefix.good
+END
+checkcompoundcase.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/checkcompoundcase.wrong
+END
+maputf.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/maputf.test
+END
+keepcase.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/keepcase.wrong
+END
+sugutf.dic
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/sugutf.dic
+END
+conditionalprefix.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/conditionalprefix.wrong
+END
+utf8_nonbmp.test
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/utf8_nonbmp.test
+END
+condition.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/condition.wrong
+END
+base_utf.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/base_utf.wrong
+END
+i68568utf.dic
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/i68568utf.dic
+END
+alias.dic
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/alias.dic
+END
+compoundrule7.good
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/compoundrule7.good
+END
+compoundrule3.aff
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundrule3.aff
+END
+compoundrule4.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundrule4.wrong
+END
+checkcompoundcase2.aff
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/checkcompoundcase2.aff
+END
+compoundrule7.aff
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/compoundrule7.aff
+END
+1463589.sug
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/1463589.sug
+END
+reputf.sug
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/reputf.sug
+END
+phone.aff
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/phone.aff
+END
+base_utf.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/51492/trunk/deps/third_party/hunspell/tests/base_utf.test
+END
+keepcase.good
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/keepcase.good
+END
+needaffix3.aff
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/needaffix3.aff
+END
+checksharpsutf.aff
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/checksharpsutf.aff
+END
+base.dic
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/base.dic
+END
+fogemorpheme.aff
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/fogemorpheme.aff
+END
+map.aff
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/map.aff
+END
+onlyincompound.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/onlyincompound.wrong
+END
+needaffix5.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/needaffix5.wrong
+END
+nosuggest.aff
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/nosuggest.aff
+END
+flagutf8.aff
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/flagutf8.aff
+END
+zeroaffix.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/zeroaffix.test
+END
+affixes.good
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/affixes.good
+END
+checkcompoundcase.dic
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/checkcompoundcase.dic
+END
+circumfix.morph
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/circumfix.morph
+END
+allcaps.dic
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/allcaps.dic
+END
+1463589_utf.sug
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/1463589_utf.sug
+END
+compoundaffix2.aff
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundaffix2.aff
+END
+break.aff
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/break.aff
+END
+checkcompoundtriple.test
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/checkcompoundtriple.test
+END
+complexprefixesutf.good
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/complexprefixesutf.good
+END
+condition.dic
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/condition.dic
+END
+breakdefault.aff
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/breakdefault.aff
+END
+forbiddenword.dic
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/forbiddenword.dic
+END
+compoundrule4.good
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundrule4.good
+END
+1592880.good
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/1592880.good
+END
+flag.test
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/flag.test
+END
+i53643.aff
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/i53643.aff
+END
+germancompoundingold.test
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/germancompoundingold.test
+END
+i54980.good
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/i54980.good
+END
+complexprefixesutf.dic
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/complexprefixesutf.dic
+END
+complexprefixes2.aff
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/complexprefixes2.aff
+END
+checkcompoundpattern3.good
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/checkcompoundpattern3.good
+END
+needaffix3.test
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/needaffix3.test
+END
+allcaps_utf.dic
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/allcaps_utf.dic
+END
+allcaps2.aff
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/allcaps2.aff
+END
+1706659.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/1706659.wrong
+END
+simplifiedtriple.good
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/simplifiedtriple.good
+END
+checkcompoundpattern3.aff
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/checkcompoundpattern3.aff
+END
+compoundrule5.dic
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/compoundrule5.dic
+END
+IJ.sug
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/IJ.sug
+END
+germancompoundingold.aff
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/germancompoundingold.aff
+END
+i58202.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/i58202.test
+END
+allcaps.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/allcaps.wrong
+END
+compoundaffix2.good
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundaffix2.good
+END
+break.good
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/break.good
+END
+conditionalprefix.aff
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/conditionalprefix.aff
+END
+checksharps.test
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/checksharps.test
+END
+needaffix5.dic
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/needaffix5.dic
+END
+circumfix.good
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/circumfix.good
+END
+ignoreutf.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/ignoreutf.test
+END
+morph.aff
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/morph.aff
+END
+ngram_utf_fix.aff
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/ngram_utf_fix.aff
+END
+allcaps_utf.good
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/allcaps_utf.good
+END
+i58202.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/i58202.wrong
+END
+utf8.dic
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/utf8.dic
+END
+checkcompoundrep.dic
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/132738/trunk/deps/third_party/hunspell/tests/checkcompoundrep.dic
+END
+flaglong.dic
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/flaglong.dic
+END
+i68568.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/51492/trunk/deps/third_party/hunspell/tests/i68568.test
+END
+needaffix.dic
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/needaffix.dic
+END
+1975530.aff
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/1975530.aff
+END
+checksharpsutf.test
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/checksharpsutf.test
+END
+checkcompoundcaseutf.dic
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/checkcompoundcaseutf.dic
+END
+fogemorpheme.test
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/fogemorpheme.test
+END
+map.test
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/map.test
+END
+i54980.aff
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/i54980.aff
+END
+compoundrule7.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/compoundrule7.wrong
+END
+1463589_utf.test
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/51492/trunk/deps/third_party/hunspell/tests/1463589_utf.test
+END
+reputf.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/reputf.wrong
+END
+ignore.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/ignore.test
+END
+alias2.good
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/alias2.good
+END
+oconv.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/51492/trunk/deps/third_party/hunspell/tests/oconv.test
+END
+condition.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/51492/trunk/deps/third_party/hunspell/tests/condition.test
+END
+1695964.sug
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/1695964.sug
+END
+i68568.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/i68568.wrong
+END
+checkcompoundcase.good
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/checkcompoundcase.good
+END
+complexprefixes.dic
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/complexprefixes.dic
+END
+checkcompoundpattern.aff
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/checkcompoundpattern.aff
+END
+i53643.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/i53643.test
+END
+iconv.dic
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/iconv.dic
+END
+fullstrip.aff
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/fullstrip.aff
+END
+compoundrule6.test
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundrule6.test
+END
+flagnum.good
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/flagnum.good
+END
+rep.aff
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/132738/trunk/deps/third_party/hunspell/tests/rep.aff
+END
+Makefile.in
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/132738/trunk/deps/third_party/hunspell/tests/Makefile.in
+END
+oconv.dic
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/oconv.dic
+END
+i68568utf.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/i68568utf.wrong
+END
+checkcompoundcaseutf.good
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/checkcompoundcaseutf.good
+END
+maputf.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/maputf.wrong
+END
+i54633.aff
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/i54633.aff
+END
+compoundaffix.good
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundaffix.good
+END
+i35725.aff
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/i35725.aff
+END
+maputf.sug
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/maputf.sug
+END
+checksharps.sug
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/132738/trunk/deps/third_party/hunspell/tests/checksharps.sug
+END
+1706659.aff
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/1706659.aff
+END
+nosuggest.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/nosuggest.test
+END
+checkcompoundpattern3.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/checkcompoundpattern3.wrong
+END
+alias2.morph
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/alias2.morph
+END
+checkcompoundtriple.dic
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/checkcompoundtriple.dic
+END
+utf8_bom2.aff
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/utf8_bom2.aff
+END
+germancompounding.good
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/germancompounding.good
+END
+complexprefixes.good
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/complexprefixes.good
+END
+flag.aff
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/flag.aff
+END
+utf8.test
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/utf8.test
+END
+needaffix5.good
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/needaffix5.good
+END
+allcaps.good
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/allcaps.good
+END
+germancompoundingold.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/germancompoundingold.wrong
+END
+i68568utf.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/51492/trunk/deps/third_party/hunspell/tests/i68568utf.test
+END
+compoundflag.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundflag.wrong
+END
+alias2.dic
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/alias2.dic
+END
+germancompounding.dic
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/germancompounding.dic
+END
+1975530.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/51492/trunk/deps/third_party/hunspell/tests/1975530.test
+END
+fullstrip.good
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/fullstrip.good
+END
+keepcase.aff
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/keepcase.aff
+END
+onlyincompound.dic
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/onlyincompound.dic
+END
+morph.good
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/morph.good
+END
+compoundrule3.test
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundrule3.test
+END
+colons_in_words.test
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/51492/trunk/deps/third_party/hunspell/tests/colons_in_words.test
+END
+checkcompoundpattern2.test
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/51492/trunk/deps/third_party/hunspell/tests/checkcompoundpattern2.test
+END
+IJ.test
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/51492/trunk/deps/third_party/hunspell/tests/IJ.test
+END
+1463589.test
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/51492/trunk/deps/third_party/hunspell/tests/1463589.test
+END
+ignore.dic
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/ignore.dic
+END
+digits_in_words.aff
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/digits_in_words.aff
+END
+base_utf.aff
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/base_utf.aff
+END
+forbiddenword.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/forbiddenword.wrong
+END
+i58202.aff
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/i58202.aff
+END
+slash.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/slash.test
+END
+compoundrule2.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundrule2.wrong
+END
+allcaps3.good
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/allcaps3.good
+END
+utfcompound.good
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/utfcompound.good
+END
+compoundrule4.aff
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundrule4.aff
+END
+1592880.aff
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/1592880.aff
+END
+compoundaffix.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundaffix.wrong
+END
+compoundaffix.aff
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundaffix.aff
+END
+utfcompound.aff
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/utfcompound.aff
+END
+condition_utf.aff
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/condition_utf.aff
+END
+compoundrule8.aff
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/compoundrule8.aff
+END
+ignoreutf.dic
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/ignoreutf.dic
+END
+needaffix2.good
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/needaffix2.good
+END
+i68568.aff
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/i68568.aff
+END
+onlyincompound.good
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/onlyincompound.good
+END
+iconv.good
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/iconv.good
+END
+forbiddenword.test
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/forbiddenword.test
+END
+phone.sug
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/132738/trunk/deps/third_party/hunspell/tests/phone.sug
+END
+alias.test
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/alias.test
+END
+needaffix3.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/needaffix3.wrong
+END
+needaffix4.aff
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/needaffix4.aff
+END
+checkcompounddup.test
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/checkcompounddup.test
+END
+checksharpsutf.sug
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/132738/trunk/deps/third_party/hunspell/tests/checksharpsutf.sug
+END
+map.sug
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/map.sug
+END
+i54633.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/i54633.test
+END
+nosuggest.sug
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/nosuggest.sug
+END
+compoundflag.dic
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundflag.dic
+END
+complexprefixes2.test
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/complexprefixes2.test
+END
+checkcompoundcase2.test
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/checkcompoundcase2.test
+END
+break.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/break.wrong
+END
+compoundaffix3.aff
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundaffix3.aff
+END
+breakdefault.sug
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/breakdefault.sug
+END
+checkcompounddup.aff
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/checkcompounddup.aff
+END
+circumfix.dic
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/circumfix.dic
+END
+test.sh
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/56484/trunk/deps/third_party/hunspell/tests/test.sh
+END
+sug.aff
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/sug.aff
+END
+condition_utf.good
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/condition_utf.good
+END
+compoundrule8.good
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/compoundrule8.good
+END
+compoundrule2.dic
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundrule2.dic
+END
+utf8_bom2.good
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/utf8_bom2.good
+END
+allcaps3.aff
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/allcaps3.aff
+END
+allcaps3.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/allcaps3.wrong
+END
+utf8_nonbmp.dic
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/utf8_nonbmp.dic
+END
+allcaps2.sug
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/allcaps2.sug
+END
+flagutf8.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/flagutf8.test
+END
+checkcompoundpattern4.aff
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/checkcompoundpattern4.aff
+END
+needaffix2.morph
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/needaffix2.morph
+END
+compoundrule6.dic
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundrule6.dic
+END
+simplifiedtriple.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/simplifiedtriple.wrong
+END
+1463589.dic
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/1463589.dic
+END
+reputf.dic
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/reputf.dic
+END
+slash.aff
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/slash.aff
+END
+compoundrule.aff
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundrule.aff
+END
+needaffix2.dic
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/needaffix2.dic
+END
+utf8_bom.good
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/utf8_bom.good
+END
+i35725.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/i35725.test
+END
+utf8_bom.aff
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/utf8_bom.aff
+END
+1463589_utf.dic
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/1463589_utf.dic
+END
+reputf.test
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/reputf.test
+END
+ngram_utf_fix.sug
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/ngram_utf_fix.sug
+END
+flagnum.dic
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/flagnum.dic
+END
+compoundrule5.good
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundrule5.good
+END
+base.test
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/base.test
+END
+compoundrule.test
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundrule.test
+END
+utf8_nonbmp.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/utf8_nonbmp.wrong
+END
+checkcompoundpattern4.good
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/checkcompoundpattern4.good
+END
+needaffix4.test
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/needaffix4.test
+END
+compoundrule5.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundrule5.wrong
+END
+utfcompound.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/utfcompound.wrong
+END
+IJ.dic
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/IJ.dic
+END
+checkcompoundpattern2.dic
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/checkcompoundpattern2.dic
+END
+compoundflag.good
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundflag.good
+END
+conditionalprefix.morph
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/conditionalprefix.morph
+END
+checkcompoundrep.test
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/checkcompoundrep.test
+END
+flaglong.test
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/flaglong.test
+END
+needaffix.test
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/needaffix.test
+END
+checksharpsutf.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/checksharpsutf.wrong
+END
+fogemorpheme.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/fogemorpheme.wrong
+END
+map.wrong
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/map.wrong
+END
+sugutf.aff
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/47026/trunk/deps/third_party/hunspell/tests/sugutf.aff
+END
+compoundaffix3.good
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/23796/trunk/deps/third_party/hunspell/tests/compoundaffix3.good
+END

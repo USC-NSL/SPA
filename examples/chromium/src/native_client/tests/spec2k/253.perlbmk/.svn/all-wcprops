@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/native_client/!svn/ver/8252/trunk/src/native_client/tests/spec2k/253.perlbmk
+END
+diff.README
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/native_client/!svn/ver/3112/trunk/src/native_client/tests/spec2k/253.perlbmk/diff.README
+END
+diff
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/native_client/!svn/ver/3919/trunk/src/native_client/tests/spec2k/253.perlbmk/diff
+END
+run.ref.sh
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/native_client/!svn/ver/8252/trunk/src/native_client/tests/spec2k/253.perlbmk/run.ref.sh
+END
+run.train.sh
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/native_client/!svn/ver/8252/trunk/src/native_client/tests/spec2k/253.perlbmk/run.train.sh
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/native_client/!svn/ver/3683/trunk/src/native_client/tests/spec2k/253.perlbmk/Makefile
+END

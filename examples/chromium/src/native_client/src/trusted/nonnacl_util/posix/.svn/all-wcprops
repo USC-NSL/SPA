@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/native_client/!svn/ver/10969/trunk/src/native_client/src/trusted/nonnacl_util/posix
+END
+get_plugin_dirname.cc
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/native_client/!svn/ver/9845/trunk/src/native_client/src/trusted/nonnacl_util/posix/get_plugin_dirname.cc
+END
+sel_ldr_launcher_posix.cc
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/native_client/!svn/ver/10777/trunk/src/native_client/src/trusted/nonnacl_util/posix/sel_ldr_launcher_posix.cc
+END
+sel_ldr_launcher_zygote_posix.cc
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/native_client/!svn/ver/10969/trunk/src/native_client/src/trusted/nonnacl_util/posix/sel_ldr_launcher_zygote_posix.cc
+END
+sel_ldr_launcher_zygote_posix.h
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/native_client/!svn/ver/10969/trunk/src/native_client/src/trusted/nonnacl_util/posix/sel_ldr_launcher_zygote_posix.h
+END

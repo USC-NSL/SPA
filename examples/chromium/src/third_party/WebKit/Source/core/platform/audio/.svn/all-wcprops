@@ -1,0 +1,467 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/blink/!svn/ver/149361/trunk/Source/core/platform/audio
+END
+ReverbInputBuffer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/ReverbInputBuffer.cpp
+END
+AudioSourceProvider.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/blink/!svn/ver/148532/trunk/Source/core/platform/audio/AudioSourceProvider.h
+END
+MultiChannelResampler.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/MultiChannelResampler.h
+END
+ZeroPole.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/blink/!svn/ver/148532/trunk/Source/core/platform/audio/ZeroPole.h
+END
+AudioSession.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/blink/!svn/ver/148532/trunk/Source/core/platform/audio/AudioSession.h
+END
+AudioIOCallback.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/blink/!svn/ver/148532/trunk/Source/core/platform/audio/AudioIOCallback.h
+END
+AudioResamplerKernel.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/AudioResamplerKernel.cpp
+END
+HRTFElevation.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/HRTFElevation.h
+END
+Cone.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/Cone.cpp
+END
+DynamicsCompressor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/DynamicsCompressor.cpp
+END
+Panner.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/blink/!svn/ver/148532/trunk/Source/core/platform/audio/Panner.h
+END
+AudioFileReader.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/blink/!svn/ver/149041/trunk/Source/core/platform/audio/AudioFileReader.h
+END
+FFTFrame.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/blink/!svn/ver/149061/trunk/Source/core/platform/audio/FFTFrame.cpp
+END
+ZeroPole.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/ZeroPole.cpp
+END
+AudioChannel.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/AudioChannel.h
+END
+Distance.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/blink/!svn/ver/148532/trunk/Source/core/platform/audio/Distance.h
+END
+AudioPullFIFO.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/AudioPullFIFO.cpp
+END
+AudioArray.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/blink/!svn/ver/148532/trunk/Source/core/platform/audio/AudioArray.h
+END
+AudioFIFO.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/AudioFIFO.h
+END
+Biquad.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/Biquad.h
+END
+AudioResampler.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/AudioResampler.cpp
+END
+SincResampler.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/SincResampler.h
+END
+AudioDSPKernel.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/AudioDSPKernel.h
+END
+FFTConvolver.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/FFTConvolver.h
+END
+Panner.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/Panner.cpp
+END
+ReverbAccumulationBuffer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/ReverbAccumulationBuffer.cpp
+END
+EqualPowerPanner.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/EqualPowerPanner.cpp
+END
+ReverbConvolver.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/ReverbConvolver.h
+END
+DynamicsCompressor.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/DynamicsCompressor.h
+END
+Cone.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/blink/!svn/ver/149037/trunk/Source/core/platform/audio/Cone.h
+END
+Reverb.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/Reverb.h
+END
+FFTFrame.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/blink/!svn/ver/149310/trunk/Source/core/platform/audio/FFTFrame.h
+END
+HRTFKernel.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/blink/!svn/ver/149061/trunk/Source/core/platform/audio/HRTFKernel.cpp
+END
+AudioFIFO.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/AudioFIFO.cpp
+END
+Biquad.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/Biquad.cpp
+END
+SincResampler.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/SincResampler.cpp
+END
+AudioPullFIFO.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/AudioPullFIFO.h
+END
+DirectConvolver.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/DirectConvolver.cpp
+END
+AudioDestination.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/blink/!svn/ver/148532/trunk/Source/core/platform/audio/AudioDestination.h
+END
+VectorMath.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/VectorMath.cpp
+END
+ReverbConvolverStage.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/ReverbConvolverStage.h
+END
+DenormalDisabler.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/blink/!svn/ver/148532/trunk/Source/core/platform/audio/DenormalDisabler.h
+END
+HRTFPanner.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/blink/!svn/ver/149244/trunk/Source/core/platform/audio/HRTFPanner.h
+END
+FFTConvolver.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/FFTConvolver.cpp
+END
+AudioDSPKernelProcessor.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/AudioDSPKernelProcessor.h
+END
+AudioBus.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/AudioBus.h
+END
+AudioResampler.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/AudioResampler.h
+END
+ReverbConvolver.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/ReverbConvolver.cpp
+END
+HRTFDatabaseLoader.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/HRTFDatabaseLoader.h
+END
+Reverb.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/Reverb.cpp
+END
+HRTFDatabase.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/blink/!svn/ver/149061/trunk/Source/core/platform/audio/HRTFDatabase.cpp
+END
+ReverbAccumulationBuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/ReverbAccumulationBuffer.h
+END
+DynamicsCompressorKernel.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/DynamicsCompressorKernel.h
+END
+EqualPowerPanner.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/EqualPowerPanner.h
+END
+MultiChannelResampler.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/MultiChannelResampler.cpp
+END
+AudioSourceProviderClient.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/blink/!svn/ver/148532/trunk/Source/core/platform/audio/AudioSourceProviderClient.h
+END
+AudioUtilities.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/blink/!svn/ver/148532/trunk/Source/core/platform/audio/AudioUtilities.h
+END
+ReverbInputBuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/ReverbInputBuffer.h
+END
+AudioProcessor.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/blink/!svn/ver/148532/trunk/Source/core/platform/audio/AudioProcessor.h
+END
+HRTFPanner.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/HRTFPanner.cpp
+END
+ReverbConvolverStage.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/ReverbConvolverStage.cpp
+END
+HRTFKernel.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/HRTFKernel.h
+END
+AudioDSPKernelProcessor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/AudioDSPKernelProcessor.cpp
+END
+HRTFElevation.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/blink/!svn/ver/149361/trunk/Source/core/platform/audio/HRTFElevation.cpp
+END
+AudioBus.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/AudioBus.cpp
+END
+DirectConvolver.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/DirectConvolver.h
+END
+HRTFDatabaseLoader.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/blink/!svn/ver/149061/trunk/Source/core/platform/audio/HRTFDatabaseLoader.cpp
+END
+AudioSessionListener.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/blink/!svn/ver/148532/trunk/Source/core/platform/audio/AudioSessionListener.h
+END
+VectorMath.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/blink/!svn/ver/148532/trunk/Source/core/platform/audio/VectorMath.h
+END
+AudioResamplerKernel.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/AudioResamplerKernel.h
+END
+AudioDestinationConsumer.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/blink/!svn/ver/148532/trunk/Source/core/platform/audio/AudioDestinationConsumer.h
+END
+DynamicsCompressorKernel.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/DynamicsCompressorKernel.cpp
+END
+FFTFrameStub.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/FFTFrameStub.cpp
+END
+AudioChannel.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/AudioChannel.cpp
+END
+Distance.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/Distance.cpp
+END
+HRTFDatabase.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/HRTFDatabase.h
+END
+AudioUtilities.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/blink/!svn/ver/149043/trunk/Source/core/platform/audio/AudioUtilities.cpp
+END

@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/1139/trunk/src/client/linux/minidump_writer
+END
+minidump_writer_unittest_utils.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/978/trunk/src/client/linux/minidump_writer/minidump_writer_unittest_utils.cc
+END
+minidump_writer_unittest_utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/978/trunk/src/client/linux/minidump_writer/minidump_writer_unittest_utils.h
+END
+linux_ptrace_dumper_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1083/trunk/src/client/linux/minidump_writer/linux_ptrace_dumper_unittest.cc
+END
+line_reader_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/1083/trunk/src/client/linux/minidump_writer/line_reader_unittest.cc
+END
+linux_dumper_unittest_helper.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1096/trunk/src/client/linux/minidump_writer/linux_dumper_unittest_helper.cc
+END
+linux_ptrace_dumper.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/1065/trunk/src/client/linux/minidump_writer/linux_ptrace_dumper.cc
+END
+linux_dumper.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/1134/trunk/src/client/linux/minidump_writer/linux_dumper.cc
+END
+line_reader.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/1002/trunk/src/client/linux/minidump_writer/line_reader.h
+END
+linux_ptrace_dumper.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/905/trunk/src/client/linux/minidump_writer/linux_ptrace_dumper.h
+END
+linux_dumper.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/1065/trunk/src/client/linux/minidump_writer/linux_dumper.h
+END
+minidump_writer_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1139/trunk/src/client/linux/minidump_writer/minidump_writer_unittest.cc
+END
+minidump_writer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/1131/trunk/src/client/linux/minidump_writer/minidump_writer.cc
+END
+minidump_writer.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/1121/trunk/src/client/linux/minidump_writer/minidump_writer.h
+END
+linux_core_dumper_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/1083/trunk/src/client/linux/minidump_writer/linux_core_dumper_unittest.cc
+END
+linux_core_dumper.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/1065/trunk/src/client/linux/minidump_writer/linux_core_dumper.cc
+END
+linux_core_dumper.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/905/trunk/src/client/linux/minidump_writer/linux_core_dumper.h
+END
+directory_reader_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/974/trunk/src/client/linux/minidump_writer/directory_reader_unittest.cc
+END
+directory_reader.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/1002/trunk/src/client/linux/minidump_writer/directory_reader.h
+END

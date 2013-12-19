@@ -1,0 +1,224 @@
+10
+
+dir
+149431
+http://src.chromium.org/blink/trunk/Source/modules
+http://src.chromium.org/blink
+
+
+
+2013-04-30T09:24:40.291590Z
+149430
+li.yin@intel.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+bbb929c8-8fbe-4397-9dbb-9b2b20218538
+
+modules.gypi
+file
+
+
+
+
+2013-04-30T08:03:34.000000Z
+d87558a25284d699cff47d11509faffa
+2013-04-27T04:03:21.601428Z
+149244
+thakis@chromium.org
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+26695
+
+webmidi
+dir
+
+filesystem
+dir
+
+indexeddb
+dir
+
+quota
+dir
+
+mediastream
+dir
+
+encryptedmedia
+dir
+
+vibration
+dir
+
+gamepad
+dir
+
+webaudio
+dir
+
+inputmethod
+dir
+
+mediasource
+dir
+
+webdatabase
+dir
+
+geolocation
+dir
+
+.gitignore
+file
+
+
+
+
+2013-04-20T08:02:51.000000Z
+18b1eabb135be08ad6bc39dec8b16c36
+2013-04-18T20:18:20.493865Z
+148681
+abarth@chromium.org
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+70
+
+modules.gyp
+file
+
+
+
+
+2013-04-20T08:02:51.000000Z
+fd0c5bf18e696827d08993f9785660d9
+2013-04-19T10:47:35.961403Z
+148716
+caseq@google.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2022
+
+navigatorcontentutils
+dir
+
+speech
+dir
+
+donottrack
+dir
+
+websockets
+dir
+
+notifications
+dir
+
+battery
+dir
+
+device_orientation
+dir
+
+OWNERS
+file
+
+
+
+
+2013-04-25T08:04:34.000000Z
+e7f915b704cff55d2a6742e98d1a97ab
+2013-04-24T04:37:26.009160Z
+148961
+toyoshim@chromium.org
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+164
+

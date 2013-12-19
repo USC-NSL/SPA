@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/13439/trunk/tools/testrunner/server
+END
+constants.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/12693/trunk/tools/testrunner/server/constants.py
+END
+work_handler.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/12693/trunk/tools/testrunner/server/work_handler.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/12693/trunk/tools/testrunner/server/__init__.py
+END
+status_handler.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/12693/trunk/tools/testrunner/server/status_handler.py
+END
+presence_handler.py
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/12693/trunk/tools/testrunner/server/presence_handler.py
+END
+compression.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/13439/trunk/tools/testrunner/server/compression.py
+END
+daemon.py
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/12693/trunk/tools/testrunner/server/daemon.py
+END
+signatures.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/12693/trunk/tools/testrunner/server/signatures.py
+END
+main.py
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/12693/trunk/tools/testrunner/server/main.py
+END
+local_handler.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/12693/trunk/tools/testrunner/server/local_handler.py
+END

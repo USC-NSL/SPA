@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/arm
+END
+loopfilter_arm.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/arm/loopfilter_arm.c
+END
+bilinearfilter_arm.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/106910/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/arm/bilinearfilter_arm.h
+END
+reconintra_arm.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/arm/reconintra_arm.c
+END
+filter_arm.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/arm/filter_arm.c
+END
+variance_arm.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/arm/variance_arm.c
+END
+dequantize_arm.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/140393/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/arm/dequantize_arm.c
+END
+bilinearfilter_arm.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/arm/bilinearfilter_arm.c
+END

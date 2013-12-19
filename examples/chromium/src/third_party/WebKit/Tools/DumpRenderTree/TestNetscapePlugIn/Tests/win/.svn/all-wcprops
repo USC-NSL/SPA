@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/blink/!svn/ver/142303/trunk/Tools/DumpRenderTree/TestNetscapePlugIn/Tests/win
+END
+DrawsGradient.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/blink/!svn/ver/74301/trunk/Tools/DumpRenderTree/TestNetscapePlugIn/Tests/win/DrawsGradient.cpp
+END
+WindowGeometryInitializedBeforeSetWindow.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/blink/!svn/ver/86157/trunk/Tools/DumpRenderTree/TestNetscapePlugIn/Tests/win/WindowGeometryInitializedBeforeSetWindow.cpp
+END
+WindowlessPaintRectCoordinates.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/blink/!svn/ver/79863/trunk/Tools/DumpRenderTree/TestNetscapePlugIn/Tests/win/WindowlessPaintRectCoordinates.cpp
+END
+CallJSThatDestroysPlugin.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/blink/!svn/ver/142303/trunk/Tools/DumpRenderTree/TestNetscapePlugIn/Tests/win/CallJSThatDestroysPlugin.cpp
+END
+NPNInvalidateRectInvalidatesWindow.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/blink/!svn/ver/86157/trunk/Tools/DumpRenderTree/TestNetscapePlugIn/Tests/win/NPNInvalidateRectInvalidatesWindow.cpp
+END
+GetValueNetscapeWindow.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/blink/!svn/ver/74301/trunk/Tools/DumpRenderTree/TestNetscapePlugIn/Tests/win/GetValueNetscapeWindow.cpp
+END
+DumpWindowRect.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/blink/!svn/ver/86442/trunk/Tools/DumpRenderTree/TestNetscapePlugIn/Tests/win/DumpWindowRect.cpp
+END
+WindowRegionIsSetToClipRect.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/blink/!svn/ver/86441/trunk/Tools/DumpRenderTree/TestNetscapePlugIn/Tests/win/WindowRegionIsSetToClipRect.cpp
+END

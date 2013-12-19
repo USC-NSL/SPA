@@ -1,0 +1,143 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/blink/!svn/ver/149194/trunk/Source/core/platform/mediastream
+END
+MediaStreamDescriptor.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/blink/!svn/ver/149107/trunk/Source/core/platform/mediastream/MediaStreamDescriptor.h
+END
+RTCSessionDescriptionDescriptor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/blink/!svn/ver/149045/trunk/Source/core/platform/mediastream/RTCSessionDescriptionDescriptor.cpp
+END
+MediaStreamCenter.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/blink/!svn/ver/148532/trunk/Source/core/platform/mediastream/MediaStreamCenter.h
+END
+RTCSessionDescriptionDescriptor.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/blink/!svn/ver/148532/trunk/Source/core/platform/mediastream/RTCSessionDescriptionDescriptor.h
+END
+RTCIceCandidateDescriptor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/blink/!svn/ver/149045/trunk/Source/core/platform/mediastream/RTCIceCandidateDescriptor.cpp
+END
+RTCDTMFSenderHandlerClient.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/blink/!svn/ver/148532/trunk/Source/core/platform/mediastream/RTCDTMFSenderHandlerClient.h
+END
+RTCDTMFSenderHandler.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/blink/!svn/ver/148532/trunk/Source/core/platform/mediastream/RTCDTMFSenderHandler.h
+END
+RTCIceCandidateDescriptor.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/blink/!svn/ver/148532/trunk/Source/core/platform/mediastream/RTCIceCandidateDescriptor.h
+END
+MediaConstraints.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/blink/!svn/ver/148532/trunk/Source/core/platform/mediastream/MediaConstraints.h
+END
+MediaStreamSource.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/blink/!svn/ver/149045/trunk/Source/core/platform/mediastream/MediaStreamSource.cpp
+END
+RTCDataChannelHandlerClient.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/blink/!svn/ver/148532/trunk/Source/core/platform/mediastream/RTCDataChannelHandlerClient.h
+END
+RTCSessionDescriptionRequest.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/blink/!svn/ver/148532/trunk/Source/core/platform/mediastream/RTCSessionDescriptionRequest.h
+END
+RTCDataChannelHandler.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/blink/!svn/ver/148532/trunk/Source/core/platform/mediastream/RTCDataChannelHandler.h
+END
+MediaStreamSource.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/blink/!svn/ver/149194/trunk/Source/core/platform/mediastream/MediaStreamSource.h
+END
+MediaStreamComponent.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/blink/!svn/ver/149061/trunk/Source/core/platform/mediastream/MediaStreamComponent.h
+END
+RTCStatsRequest.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/blink/!svn/ver/148532/trunk/Source/core/platform/mediastream/RTCStatsRequest.h
+END
+RTCConfiguration.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/blink/!svn/ver/149061/trunk/Source/core/platform/mediastream/RTCConfiguration.h
+END
+RTCStatsResponseBase.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/blink/!svn/ver/148532/trunk/Source/core/platform/mediastream/RTCStatsResponseBase.h
+END
+RTCPeerConnectionHandlerClient.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/blink/!svn/ver/148532/trunk/Source/core/platform/mediastream/RTCPeerConnectionHandlerClient.h
+END
+RTCPeerConnectionHandler.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/blink/!svn/ver/149045/trunk/Source/core/platform/mediastream/RTCPeerConnectionHandler.h
+END
+RTCVoidRequest.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/blink/!svn/ver/148532/trunk/Source/core/platform/mediastream/RTCVoidRequest.h
+END
+MediaStreamSourcesQueryClient.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/blink/!svn/ver/149045/trunk/Source/core/platform/mediastream/MediaStreamSourcesQueryClient.h
+END
+MediaStreamCenter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/blink/!svn/ver/149045/trunk/Source/core/platform/mediastream/MediaStreamCenter.cpp
+END

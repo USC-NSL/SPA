@@ -1,0 +1,275 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/native_client/!svn/ver/11242/trunk/src/native_client/src/shared/platform
+END
+aligned_malloc.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/native_client/!svn/ver/10140/trunk/src/native_client/src/shared/platform/aligned_malloc.h
+END
+nacl_time.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/native_client/!svn/ver/10684/trunk/src/native_client/src/shared/platform/nacl_time.h
+END
+nacl_interruptible_condvar.c
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/native_client/!svn/ver/5183/trunk/src/native_client/src/shared/platform/nacl_interruptible_condvar.c
+END
+nacl_time_common.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/native_client/!svn/ver/10199/trunk/src/native_client/src/shared/platform/nacl_time_common.c
+END
+nacl_timestamp.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/native_client/!svn/ver/10196/trunk/src/native_client/src/shared/platform/nacl_timestamp.h
+END
+nacl_interruptible_condvar.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/native_client/!svn/ver/10196/trunk/src/native_client/src/shared/platform/nacl_interruptible_condvar.h
+END
+nacl_interruptible_mutex.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/native_client/!svn/ver/5183/trunk/src/native_client/src/shared/platform/nacl_interruptible_mutex.c
+END
+nacl_host_dir_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/native_client/!svn/ver/10196/trunk/src/native_client/src/shared/platform/nacl_host_dir_test.c
+END
+platform_init.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/native_client/!svn/ver/7640/trunk/src/native_client/src/shared/platform/platform_init.c
+END
+nacl_sync_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/native_client/!svn/ver/8655/trunk/src/native_client/src/shared/platform/nacl_sync_test.c
+END
+platform_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/native_client/!svn/ver/10196/trunk/src/native_client/src/shared/platform/platform_tests.cc
+END
+nacl_interruptible_mutex.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/native_client/!svn/ver/10196/trunk/src/native_client/src/shared/platform/nacl_interruptible_mutex.h
+END
+platform_init.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/native_client/!svn/ver/10196/trunk/src/native_client/src/shared/platform/platform_init.h
+END
+scoped_ptr_refcount.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/native_client/!svn/ver/5056/trunk/src/native_client/src/shared/platform/scoped_ptr_refcount.h
+END
+nacl_host_desc.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/native_client/!svn/ver/11242/trunk/src/native_client/src/shared/platform/nacl_host_desc.h
+END
+nacl_sync.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/native_client/!svn/ver/8668/trunk/src/native_client/src/shared/platform/nacl_sync.h
+END
+nacl_sync_checked.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/native_client/!svn/ver/5269/trunk/src/native_client/src/shared/platform/nacl_sync_checked.c
+END
+nacl_host_desc_mmap_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/native_client/!svn/ver/11242/trunk/src/native_client/src/shared/platform/nacl_host_desc_mmap_test.c
+END
+nacl_secure_random_base.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/native_client/!svn/ver/10196/trunk/src/native_client/src/shared/platform/nacl_secure_random_base.h
+END
+nacl_sync_checked.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/native_client/!svn/ver/6216/trunk/src/native_client/src/shared/platform/nacl_sync_checked.h
+END
+nacl_semaphore.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/native_client/!svn/ver/10196/trunk/src/native_client/src/shared/platform/nacl_semaphore.h
+END
+nacl_clock_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/native_client/!svn/ver/7640/trunk/src/native_client/src/shared/platform/nacl_clock_test.c
+END
+nacl_threads.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/native_client/!svn/ver/10458/trunk/src/native_client/src/shared/platform/nacl_threads.h
+END
+platform.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/native_client/!svn/ver/10585/trunk/src/native_client/src/shared/platform/platform.gyp
+END
+build.scons
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/native_client/!svn/ver/11242/trunk/src/native_client/src/shared/platform/build.scons
+END
+nacl_log_intern.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/native_client/!svn/ver/10196/trunk/src/native_client/src/shared/platform/nacl_log_intern.h
+END
+nacl_global_secure_random.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/native_client/!svn/ver/6210/trunk/src/native_client/src/shared/platform/nacl_global_secure_random.c
+END
+nacl_global_secure_random.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/native_client/!svn/ver/6210/trunk/src/native_client/src/shared/platform/nacl_global_secure_random.h
+END
+nacl_check.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/native_client/!svn/ver/8838/trunk/src/native_client/src/shared/platform/nacl_check.c
+END
+DEPS
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/native_client/!svn/ver/9193/trunk/src/native_client/src/shared/platform/DEPS
+END
+nacl_exit.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/native_client/!svn/ver/10447/trunk/src/native_client/src/shared/platform/nacl_exit.h
+END
+nacl_host_dir.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/native_client/!svn/ver/10196/trunk/src/native_client/src/shared/platform/nacl_host_dir.h
+END
+nacl_log.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/native_client/!svn/ver/10712/trunk/src/native_client/src/shared/platform/nacl_log.c
+END
+nacl_semaphore_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/native_client/!svn/ver/5183/trunk/src/native_client/src/shared/platform/nacl_semaphore_test.c
+END
+nacl_check.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/native_client/!svn/ver/9187/trunk/src/native_client/src/shared/platform/nacl_check.h
+END
+nacl_find_addrsp.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/native_client/!svn/ver/10397/trunk/src/native_client/src/shared/platform/nacl_find_addrsp.h
+END
+nacl.scons
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/native_client/!svn/ver/9269/trunk/src/native_client/src/shared/platform/nacl.scons
+END
+nacl_host_desc_common.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/native_client/!svn/ver/9979/trunk/src/native_client/src/shared/platform/nacl_host_desc_common.c
+END
+nacl_sync_raii.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/native_client/!svn/ver/6236/trunk/src/native_client/src/shared/platform/nacl_sync_raii.h
+END
+refcount_base.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/native_client/!svn/ver/6236/trunk/src/native_client/src/shared/platform/refcount_base.cc
+END
+nacl_log.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/native_client/!svn/ver/10199/trunk/src/native_client/src/shared/platform/nacl_log.h
+END
+refcount_base.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/native_client/!svn/ver/5450/trunk/src/native_client/src/shared/platform/refcount_base.h
+END
+nacl_secure_random.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/native_client/!svn/ver/8656/trunk/src/native_client/src/shared/platform/nacl_secure_random.h
+END
+nacl_secure_random_common.c
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/native_client/!svn/ver/10196/trunk/src/native_client/src/shared/platform/nacl_secure_random_common.c
+END
+nacl_clock.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/native_client/!svn/ver/10919/trunk/src/native_client/src/shared/platform/nacl_clock.h
+END

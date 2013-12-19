@@ -1,0 +1,708 @@
+diff -r 3f0105dfc733 lib/certhigh/certvfy.c
+--- a/lib/certhigh/certvfy.c	Mon Apr 22 14:22:48 2013 +0200
++++ b/lib/certhigh/certvfy.c	Mon Apr 22 14:33:38 2013 -0700
+@@ -8,27 +8,70 @@
+ #include "secoid.h"
+ #include "sslerr.h"
+ #include "genname.h"
+ #include "keyhi.h"
+ #include "cert.h"
+ #include "certdb.h"
+ #include "certi.h"
+ #include "cryptohi.h"
++#ifndef NSS_DISABLE_LIBPKIX
+ #include "pkix.h"
+ /*#include "pkix_sample_modules.h" */
+ #include "pkix_pl_cert.h"
++#endif  /* NSS_DISABLE_LIBPKIX */
+ 
+ 
+ #include "nsspki.h"
+ #include "pkitm.h"
+ #include "pkim.h"
+ #include "pki3hack.h"
+ #include "base.h"
+ 
++#ifdef NSS_DISABLE_LIBPKIX
++SECStatus
++cert_VerifyCertChainPkix(
++    CERTCertificate *cert,
++    PRBool           checkSig,
++    SECCertUsage     requiredUsage,
++    PRTime           time,
++    void            *wincx,
++    CERTVerifyLog   *log,
++    PRBool          *pSigerror,
++    PRBool          *pRevoked)
++{
++    PORT_SetError(PR_NOT_IMPLEMENTED_ERROR);
++    return SECFailure;
++}
++
++SECStatus
++CERT_SetUsePKIXForValidation(PRBool enable)
++{
++    PORT_SetError(PR_NOT_IMPLEMENTED_ERROR);
++    return SECFailure;
++}
++
++PRBool
++CERT_GetUsePKIXForValidation()
++{
++    return PR_FALSE;
++}
++
++SECStatus CERT_PKIXVerifyCert(
++    CERTCertificate *cert,
++    SECCertificateUsage usages,
++    CERTValInParam *paramsIn,
++    CERTValOutParam *paramsOut,
++    void *wincx)
++{
++    PORT_SetError(PR_NOT_IMPLEMENTED_ERROR);
++    return SECFailure;
++}
++#endif  /* NSS_DISABLE_LIBPKIX */
++
+ /*
+  * Check the validity times of a certificate
+  */
+ SECStatus
+ CERT_CertTimesValid(CERTCertificate *c)
+ {
+     SECCertTimeValidity valid = CERT_CheckCertValidTimes(c, PR_Now(), PR_TRUE);
+     return (valid == secCertTimeValid) ? SECSuccess : SECFailure;
+diff -r 3f0105dfc733 lib/ckfw/nssck.api
+--- a/lib/ckfw/nssck.api	Mon Apr 22 14:22:48 2013 +0200
++++ b/lib/ckfw/nssck.api	Mon Apr 22 14:33:38 2013 -0700
+@@ -1751,17 +1751,17 @@
+   CK_SLOT_ID_PTR pSlot,
+   CK_VOID_PTR pRserved
+ )
+ {
+   return __ADJOIN(MODULE_NAME,C_WaitForSlotEvent)(flags, pSlot, pRserved);
+ }
+ #endif /* DECLARE_STRICT_CRYPTOKI_NAMES */
+ 
+-static CK_RV CK_ENTRY
++CK_RV CK_ENTRY
+ __ADJOIN(MODULE_NAME,C_GetFunctionList)
+ (
+   CK_FUNCTION_LIST_PTR_PTR ppFunctionList
+ );
+ 
+ static CK_FUNCTION_LIST FunctionList = {
+   { 2, 1 },
+ __ADJOIN(MODULE_NAME,C_Initialize),
+@@ -1829,30 +1829,32 @@
+ __ADJOIN(MODULE_NAME,C_DeriveKey),
+ __ADJOIN(MODULE_NAME,C_SeedRandom),
+ __ADJOIN(MODULE_NAME,C_GenerateRandom),
+ __ADJOIN(MODULE_NAME,C_GetFunctionStatus),
+ __ADJOIN(MODULE_NAME,C_CancelFunction),
+ __ADJOIN(MODULE_NAME,C_WaitForSlotEvent)
+ };
+ 
+-static CK_RV CK_ENTRY
++CK_RV CK_ENTRY
+ __ADJOIN(MODULE_NAME,C_GetFunctionList)
+ (
+   CK_FUNCTION_LIST_PTR_PTR ppFunctionList
+ )
+ {
+   *ppFunctionList = &FunctionList;
+   return CKR_OK;
+ }
+ 
++#ifndef NSS_STATIC
+ /* This one is always present */
+ CK_RV CK_ENTRY
+ C_GetFunctionList
+ (
+   CK_FUNCTION_LIST_PTR_PTR ppFunctionList
+ )
+ {
+   return __ADJOIN(MODULE_NAME,C_GetFunctionList)(ppFunctionList);
+ }
++#endif
+ 
+ #undef __ADJOIN
+ 
+diff -r 3f0105dfc733 lib/freebl/rsa.c
+--- a/lib/freebl/rsa.c	Mon Apr 22 14:22:48 2013 +0200
++++ b/lib/freebl/rsa.c	Mon Apr 22 14:33:38 2013 -0700
+@@ -1556,16 +1556,23 @@
+  * free_bl may have allocated along the way. Currently only RSA does this,
+  * so I've put it here for now.
+  */
+ void BL_Cleanup(void)
+ {
+     RSA_Cleanup();
+ }
+ 
++#ifdef NSS_STATIC
++void
++BL_Unload(void)
++{
++}
++#endif
++
+ PRBool bl_parentForkedAfterC_Initialize;
+ 
+ /*
+  * Set fork flag so it can be tested in SKIP_AFTER_FORK on relevant platforms.
+  */
+ void BL_SetForkState(PRBool forked)
+ {
+     bl_parentForkedAfterC_Initialize = forked;
+diff -r 3f0105dfc733 lib/freebl/shvfy.c
+--- a/lib/freebl/shvfy.c	Mon Apr 22 14:22:48 2013 +0200
++++ b/lib/freebl/shvfy.c	Mon Apr 22 14:33:38 2013 -0700
+@@ -269,39 +269,55 @@
+ 	PORT_Free(item->data);
+ 	item->data = NULL;
+ 	item->len = 0;
+ 	return SECFailure;
+     }
+     return SECSuccess;
+ }
+ 
++/*
++ * Define PSEUDO_FIPS if you can't do FIPS software integrity test (e.g.,
++ * if you're using NSS as static libraries), but want to conform to the
++ * rest of the FIPS requirements.
++ */
++#ifdef NSS_STATIC
++#define PSEUDO_FIPS
++#endif
++
+ PRBool
+ BLAPI_SHVerify(const char *name, PRFuncPtr addr)
+ {
++#ifdef PSEUDO_FIPS
++    return PR_TRUE;  /* a lie, hence *pseudo* FIPS */
++#else
+     PRBool result = PR_FALSE; /* if anything goes wrong,
+ 			       * the signature does not verify */
+     /* find our shared library name */
+     char *shName = PR_GetLibraryFilePathname(name, addr);
+     if (!shName) {
+ 	goto loser;
+     }
+     result = BLAPI_SHVerifyFile(shName);
+ 
+ loser:
+     if (shName != NULL) {
+ 	PR_Free(shName);
+     }
+ 
+     return result;
++#endif  /* PSEUDO_FIPS */
+ }
+ 
+ PRBool
+ BLAPI_SHVerifyFile(const char *shName)
+ {
++#ifdef PSEUDO_FIPS
++    return PR_TRUE;  /* a lie, hence *pseudo* FIPS */
++#else
+     char *checkName = NULL;
+     PRFileDesc *checkFD = NULL;
+     PRFileDesc *shFD = NULL;
+     void  *hashcx = NULL;
+     const SECHashObject *hashObj = NULL;
+     SECItem signature = { 0, NULL, 0 };
+     SECItem hash;
+     int bytesRead, offset;
+@@ -488,16 +504,17 @@
+     if (key.params.base.data != NULL) {
+ 	PORT_Free(key.params.base.data);
+     }
+     if (key.publicValue.data != NULL) {
+ 	PORT_Free(key.publicValue.data);
+     }
+ 
+     return result;
++#endif  /* PSEUDO_FIPS */
+ }
+ 
+ PRBool
+ BLAPI_VerifySelf(const char *name)
+ {
+     if (name == NULL) {
+ 	/*
+ 	 * If name is NULL, freebl is statically linked into softoken.
+diff -r 3f0105dfc733 lib/nss/nssinit.c
+--- a/lib/nss/nssinit.c	Mon Apr 22 14:22:48 2013 +0200
++++ b/lib/nss/nssinit.c	Mon Apr 22 14:33:38 2013 -0700
+@@ -16,19 +16,21 @@
+ #include "key.h"
+ #include "secmod.h"
+ #include "secoid.h"
+ #include "nss.h"
+ #include "pk11func.h"
+ #include "secerr.h"
+ #include "nssbase.h"
+ #include "nssutil.h"
++#ifndef NSS_DISABLE_LIBPKIX
+ #include "pkixt.h"
+ #include "pkix.h"
+ #include "pkix_tools.h"
++#endif  /* NSS_DISABLE_LIBPKIX */
+ 
+ #include "pki3hack.h"
+ #include "certi.h"
+ #include "secmodi.h"
+ #include "ocspti.h"
+ #include "ocspi.h"
+ #include "utilpars.h"
+ 
+@@ -526,18 +528,20 @@
+ 		 NSSInitParameters *initParams,
+ 		 PRBool readOnly, PRBool noCertDB, 
+ 		 PRBool noModDB, PRBool forceOpen, PRBool noRootInit,
+ 		 PRBool optimizeSpace, PRBool noSingleThreadedModules,
+ 		 PRBool allowAlreadyInitializedModules,
+ 		 PRBool dontFinalizeModules)
+ {
+     SECStatus rv = SECFailure;
++#ifndef NSS_DISABLE_LIBPKIX
+     PKIX_UInt32 actualMinorVersion = 0;
+     PKIX_Error *pkixError = NULL;
++#endif
+     PRBool isReallyInitted;
+     char *configStrings = NULL;
+     char *configName = NULL;
+     PRBool passwordRequired = PR_FALSE;
+ 
+     /* if we are trying to init with a traditional NSS_Init call, maintain
+      * the traditional idempotent behavior. */
+     if (!initContextPtr && nssIsInitted) {
+@@ -681,28 +685,30 @@
+ 		    nss_FindExternalRoot(dbpath, secmodName);
+ 		}
+ 	    }
+ 	}
+ 
+ 	pk11sdr_Init();
+ 	cert_CreateSubjectKeyIDHashTable();
+ 
++#ifndef NSS_DISABLE_LIBPKIX
+ 	pkixError = PKIX_Initialize
+ 	    (PKIX_FALSE, PKIX_MAJOR_VERSION, PKIX_MINOR_VERSION,
+ 	    PKIX_MINOR_VERSION, &actualMinorVersion, &plContext);
+ 
+ 	if (pkixError != NULL) {
+ 	    goto loser;
+ 	} else {
+             char *ev = getenv("NSS_ENABLE_PKIX_VERIFY");
+             if (ev && ev[0]) {
+                 CERT_SetUsePKIXForValidation(PR_TRUE);
+             }
+         }
++#endif  /* NSS_DISABLE_LIBPKIX */
+ 
+ 
+     }
+ 
+     /*
+      * Now mark the appropriate init state. If initContextPtr was passed
+      * in, then return the new context pointer and add it to the
+      * nssInitContextList. Otherwise set the global nss_isInitted flag
+@@ -1077,17 +1083,19 @@
+ 
+     rv = nss_ShutdownShutdownList();
+     if (rv != SECSuccess) {
+ 	shutdownRV = SECFailure;
+     }
+     cert_DestroyLocks();
+     ShutdownCRLCache();
+     OCSP_ShutdownGlobal();
++#ifndef NSS_DISABLE_LIBPKIX
+     PKIX_Shutdown(plContext);
++#endif
+     SECOID_Shutdown();
+     status = STAN_Shutdown();
+     cert_DestroySubjectKeyIDHashTable();
+     pk11_SetInternalKeySlot(NULL);
+     rv = SECMOD_Shutdown();
+     if (rv != SECSuccess) {
+ 	shutdownRV = SECFailure;
+     }
+diff -r 3f0105dfc733 lib/pk11wrap/pk11load.c
+--- a/lib/pk11wrap/pk11load.c	Mon Apr 22 14:22:48 2013 +0200
++++ b/lib/pk11wrap/pk11load.c	Mon Apr 22 14:33:38 2013 -0700
+@@ -313,46 +313,55 @@
+ 	   mod->slotInfo = psi_list;
+ 	   mod->slotInfoCount++;
+ 	   
+ 	}
+ 	psi->hasRootCerts = 1;
+     }
+ }
+ 
++#ifdef NSS_STATIC
++extern CK_RV NSC_GetFunctionList(CK_FUNCTION_LIST_PTR *pFunctionList);
++extern CK_RV FC_GetFunctionList(CK_FUNCTION_LIST_PTR *pFunctionList);
++extern char **NSC_ModuleDBFunc(unsigned long function,char *parameters, void *args);
++extern CK_RV builtinsC_GetFunctionList(CK_FUNCTION_LIST_PTR *pFunctionList);
++#else
+ static const char* my_shlib_name =
+     SHLIB_PREFIX"nss"SHLIB_VERSION"."SHLIB_SUFFIX;
+ static const char* softoken_shlib_name =
+     SHLIB_PREFIX"softokn"SOFTOKEN_SHLIB_VERSION"."SHLIB_SUFFIX;
+ static const PRCallOnceType pristineCallOnce;
+ static PRCallOnceType loadSoftokenOnce;
+ static PRLibrary* softokenLib;
+ static PRInt32 softokenLoadCount;
++#endif  /* NSS_STATIC */
+ 
+ #include "prio.h"
+ #include "prprf.h"
+ #include <stdio.h>
+ #include "prsystem.h"
+ 
++#ifndef NSS_STATIC
+ /* This function must be run only once. */
+ /*  determine if hybrid platform, then actually load the DSO. */
+ static PRStatus
+ softoken_LoadDSO( void ) 
+ {
+   PRLibrary *  handle;
+ 
+   handle = PORT_LoadLibraryFromOrigin(my_shlib_name,
+                                       (PRFuncPtr) &softoken_LoadDSO,
+                                       softoken_shlib_name);
+   if (handle) {
+     softokenLib = handle;
+     return PR_SUCCESS;
+   }
+   return PR_FAILURE;
+ }
++#endif  /* !NSS_STATIC */
+ 
+ /*
+  * load a new module into our address space and initialize it.
+  */
+ SECStatus
+ secmod_LoadPKCS11Module(SECMODModule *mod, SECMODModule **oldModule) {
+     PRLibrary *library = NULL;
+     CK_C_GetFunctionList entry = NULL;
+@@ -361,16 +370,26 @@
+     SECStatus rv;
+     PRBool alreadyLoaded = PR_FALSE;
+     char *disableUnload = NULL;
+ 
+     if (mod->loaded) return SECSuccess;
+ 
+     /* intenal modules get loaded from their internal list */
+     if (mod->internal && (mod->dllName == NULL)) {
++#ifdef NSS_STATIC
++    if (mod->isFIPS) {
++        entry = FC_GetFunctionList;
++    } else {
++        entry = NSC_GetFunctionList;
++    }
++    if (mod->isModuleDB) {
++        mod->moduleDBFunc = NSC_ModuleDBFunc;
++    }
++#else
+     /*
+      * Loads softoken as a dynamic library,
+      * even though the rest of NSS assumes this as the "internal" module.
+      */
+     if (!softokenLib && 
+         PR_SUCCESS != PR_CallOnce(&loadSoftokenOnce, &softoken_LoadDSO))
+         return SECFailure;
+ 
+@@ -386,26 +405,36 @@
+ 
+     if (!entry)
+         return SECFailure;
+ 
+     if (mod->isModuleDB) {
+         mod->moduleDBFunc = (CK_C_GetFunctionList) 
+                     PR_FindSymbol(softokenLib, "NSC_ModuleDBFunc");
+     }
++#endif
+ 
+     if (mod->moduleDBOnly) {
+         mod->loaded = PR_TRUE;
+         return SECSuccess;
+     }
+     } else {
+ 	/* Not internal, load the DLL and look up C_GetFunctionList */
+ 	if (mod->dllName == NULL) {
+ 	    return SECFailure;
+ 	}
++#if defined(NSS_STATIC) && !defined(NSS_DISABLE_ROOT_CERTS)
++	if (strstr(mod->dllName, "nssckbi") != NULL) {
++	    mod->library = NULL;
++	    PORT_Assert(!mod->moduleDBOnly);
++	    entry = builtinsC_GetFunctionList;
++	    PORT_Assert(!mod->isModuleDB);
++	    goto library_loaded;
++	}
++#endif
+ 
+ 	/* load the library. If this succeeds, then we have to remember to
+ 	 * unload the library if anything goes wrong from here on out...
+ 	 */
+ 	library = PR_LoadLibrary(mod->dllName);
+ 	mod->library = (void *)library;
+ 
+ 	if (library == NULL) {
+@@ -418,16 +447,19 @@
+ 	if (!mod->moduleDBOnly) {
+ 	    entry = (CK_C_GetFunctionList)
+ 			PR_FindSymbol(library, "C_GetFunctionList");
+ 	}
+ 	if (mod->isModuleDB) {
+ 	    mod->moduleDBFunc = (void *)
+ 			PR_FindSymbol(library, "NSS_ReturnModuleSpecData");
+ 	}
++#if defined(NSS_STATIC) && !defined(NSS_DISABLE_ROOT_CERTS)
++library_loaded:
++#endif
+ 	if (mod->moduleDBFunc == NULL) mod->isModuleDB = PR_FALSE;
+ 	if (entry == NULL) {
+ 	    if (mod->isModuleDB) {
+ 		mod->loaded = PR_TRUE;
+ 		mod->moduleDBOnly = PR_TRUE;
+ 		return SECSuccess;
+ 	    }
+ 	    PR_UnloadLibrary(library);
+@@ -557,33 +589,40 @@
+     }
+     mod->moduleID = 0;
+     mod->loaded = PR_FALSE;
+     
+     /* do we want the semantics to allow unloading the internal library?
+      * if not, we should change this to SECFailure and move it above the
+      * mod->loaded = PR_FALSE; */
+     if (mod->internal && (mod->dllName == NULL)) {
++#ifndef NSS_STATIC
+         if (0 == PR_ATOMIC_DECREMENT(&softokenLoadCount)) {
+           if (softokenLib) {
+               disableUnload = PR_GetEnv("NSS_DISABLE_UNLOAD");
+               if (!disableUnload) {
+                   PRStatus status = PR_UnloadLibrary(softokenLib);
+                   PORT_Assert(PR_SUCCESS == status);
+               }
+               softokenLib = NULL;
+           }
+           loadSoftokenOnce = pristineCallOnce;
+         }
++#endif
+ 	return SECSuccess;
+     }
+ 
+     library = (PRLibrary *)mod->library;
+     /* paranoia */
+     if (library == NULL) {
++#if defined(NSS_STATIC) && !defined(NSS_DISABLE_ROOT_CERTS)
++	if (strstr(mod->dllName, "nssckbi") != NULL) {
++	    return SECSuccess;
++	}
++#endif
+ 	return SECFailure;
+     }
+ 
+     disableUnload = PR_GetEnv("NSS_DISABLE_UNLOAD");
+     if (!disableUnload) {
+         PR_UnloadLibrary(library);
+     }
+     return SECSuccess;
+diff -r 3f0105dfc733 lib/softoken/lgglue.c
+--- a/lib/softoken/lgglue.c	Mon Apr 22 14:22:48 2013 +0200
++++ b/lib/softoken/lgglue.c	Mon Apr 22 14:33:38 2013 -0700
+@@ -18,16 +18,17 @@
+ 
+ static LGOpenFunc legacy_glue_open = NULL;
+ static LGReadSecmodFunc legacy_glue_readSecmod = NULL;
+ static LGReleaseSecmodFunc legacy_glue_releaseSecmod = NULL;
+ static LGDeleteSecmodFunc legacy_glue_deleteSecmod = NULL;
+ static LGAddSecmodFunc legacy_glue_addSecmod = NULL;
+ static LGShutdownFunc legacy_glue_shutdown = NULL;
+ 
++#ifndef NSS_STATIC
+ /*
+  * The following 3 functions duplicate the work done by bl_LoadLibrary.
+  * We should make bl_LoadLibrary a global and replace the call to
+  * sftkdb_LoadLibrary(const char *libname) with it.
+  */
+ #ifdef XP_UNIX
+ #include <unistd.h>
+ #define LG_MAX_LINKS 20
+@@ -155,16 +156,17 @@
+ 	PRLibSpec libSpec;
+ 	libSpec.type = PR_LibSpec_Pathname;
+ 	libSpec.value.pathname = libname;
+ 	lib = PR_LoadLibraryWithFlags(libSpec, PR_LD_NOW | PR_LD_LOCAL);
+     }
+ 
+     return lib;
+ }
++#endif  /* STATIC LIBRARIES */
+ 
+ /*
+  * stub files for legacy db's to be able to encrypt and decrypt
+  * various keys and attributes.
+  */
+ static SECStatus
+ sftkdb_encrypt_stub(PRArenaPool *arena, SDB *sdb, SECItem *plainText,
+ 		    SECItem **cipherText)
+@@ -267,16 +269,31 @@
+ 		 * get cleared in shutdown */
+ 		return SECFailure;
+ 	    }
+     	    legacy_glue_libCheckSucceeded = PR_TRUE;
+ 	} 
+ 	return SECSuccess;
+     }
+ 
++#ifdef NSS_STATIC
++#ifdef NSS_DISABLE_DBM
++    return SECFailure;
++#else
++    lib = (PRLibrary *) 0x8;
++
++    legacy_glue_open = legacy_Open;
++    legacy_glue_readSecmod = legacy_ReadSecmodDB;
++    legacy_glue_releaseSecmod = legacy_ReleaseSecmodDBData;
++    legacy_glue_deleteSecmod = legacy_DeleteSecmodDB;
++    legacy_glue_addSecmod = legacy_AddSecmodDB;
++    legacy_glue_shutdown = legacy_Shutdown;
++    setCryptFunction = legacy_SetCryptFunctions;
++#endif
++#else
+     lib = sftkdb_LoadLibrary(LEGACY_LIB_NAME);
+     if (lib == NULL) {
+ 	return SECFailure;
+     }
+     
+     legacy_glue_open = (LGOpenFunc)PR_FindFunctionSymbol(lib, "legacy_Open");
+     legacy_glue_readSecmod = (LGReadSecmodFunc) PR_FindFunctionSymbol(lib,
+ 						 "legacy_ReadSecmodDB");
+@@ -292,21 +309,24 @@
+ 						"legacy_SetCryptFunctions");
+ 
+     if (!legacy_glue_open || !legacy_glue_readSecmod || 
+ 	    !legacy_glue_releaseSecmod || !legacy_glue_deleteSecmod || 
+ 	    !legacy_glue_addSecmod || !setCryptFunction) {
+ 	PR_UnloadLibrary(lib);
+ 	return SECFailure;
+     }
++#endif  /* NSS_STATIC */
+ 
+     /* verify the loaded library if we are in FIPS mode */
+     if (isFIPS) {
+ 	if (!BLAPI_SHVerify(LEGACY_LIB_NAME,(PRFuncPtr)legacy_glue_open)) {
++#ifndef NSS_STATIC
+ 	    PR_UnloadLibrary(lib);
++#endif
+ 	    return SECFailure;
+ 	}
+     	legacy_glue_libCheckSucceeded = PR_TRUE;
+     } 
+ 
+     setCryptFunction(sftkdb_encrypt_stub,sftkdb_decrypt_stub);
+     legacy_glue_lib = lib;
+     return SECSuccess;
+@@ -413,20 +433,22 @@
+ 	return CKR_OK;
+     }
+     if (legacy_glue_shutdown) {
+ #ifdef NO_FORK_CHECK
+ 	PRBool parentForkedAfterC_Initialize = PR_FALSE;
+ #endif
+ 	crv = (*legacy_glue_shutdown)(parentForkedAfterC_Initialize);
+     }
++#ifndef NSS_STATIC
+     disableUnload = PR_GetEnv("NSS_DISABLE_UNLOAD");
+     if (!disableUnload) {
+         PR_UnloadLibrary(legacy_glue_lib);
+     }
++#endif
+     legacy_glue_lib = NULL;
+     legacy_glue_open = NULL;
+     legacy_glue_readSecmod = NULL;
+     legacy_glue_releaseSecmod = NULL;
+     legacy_glue_deleteSecmod = NULL;
+     legacy_glue_addSecmod = NULL;
+     legacy_glue_libCheckFailed    = PR_FALSE;
+     legacy_glue_libCheckSucceeded = PR_FALSE;
+diff -r 3f0105dfc733 lib/softoken/lgglue.h
+--- a/lib/softoken/lgglue.h	Mon Apr 22 14:22:48 2013 +0200
++++ b/lib/softoken/lgglue.h	Mon Apr 22 14:33:38 2013 -0700
+@@ -33,16 +33,35 @@
+ 			const char *dbname, char *params, PRBool rw);
+ typedef SECStatus (*LGAddSecmodFunc)(const char *appName, 
+ 			const char *filename, 
+ 			const char *dbname, char *params, PRBool rw);
+ typedef SECStatus (*LGShutdownFunc)(PRBool forked);
+ typedef void (*LGSetForkStateFunc)(PRBool);
+ typedef void (*LGSetCryptFunc)(LGEncryptFunc, LGDecryptFunc);
+ 
++extern CK_RV legacy_Open(const char *dir, const char *certPrefix, 
++		const char *keyPrefix, 
++		int certVersion, int keyVersion, int flags, 
++		SDB **certDB, SDB **keyDB);
++extern char ** legacy_ReadSecmodDB(const char *appName, 
++			const char *filename, 
++			const char *dbname, char *params, PRBool rw);
++extern SECStatus legacy_ReleaseSecmodDBData(const char *appName,
++			const char *filename, 
++			const char *dbname, char **params, PRBool rw);
++extern SECStatus legacy_DeleteSecmodDB(const char *appName,
++			const char *filename, 
++			const char *dbname, char *params, PRBool rw);
++extern SECStatus legacy_AddSecmodDB(const char *appName, 
++			const char *filename, 
++			const char *dbname, char *params, PRBool rw);
++extern SECStatus legacy_Shutdown(PRBool forked);
++extern void legacy_SetCryptFunctions(LGEncryptFunc, LGDecryptFunc);
++
+ /*
+  * Softoken Glue Functions
+  */
+ CK_RV sftkdbCall_open(const char *dir, const char *certPrefix, 
+ 		const char *keyPrefix, 
+ 		int certVersion, int keyVersion, int flags, PRBool isFIPS,
+ 		SDB **certDB, SDB **keyDB);
+ char ** sftkdbCall_ReadSecmodDB(const char *appName, const char *filename, 
+diff -r 3f0105dfc733 lib/util/secport.h
+--- a/lib/util/secport.h	Mon Apr 22 14:22:48 2013 +0200
++++ b/lib/util/secport.h	Mon Apr 22 14:33:38 2013 -0700
+@@ -207,16 +207,17 @@
+   unsigned int maxOutBufLen,
+   unsigned int *outBufLen
+ );
+ 
+ extern int NSS_PutEnv(const char * envVarName, const char * envValue);
+ 
+ extern int NSS_SecureMemcmp(const void *a, const void *b, size_t n);
+ 
++#ifndef NSS_STATIC
+ /*
+  * Load a shared library called "newShLibName" in the same directory as
+  * a shared library that is already loaded, called existingShLibName.
+  * A pointer to a static function in that shared library,
+  * staticShLibFunc, is required.
+  *
+  * existingShLibName:
+  *   The file name of the shared library that shall be used as the 
+@@ -241,12 +242,13 @@
+  *
+  * If the new shared library is not found in the same location as the reference
+  * library, it will then be loaded from the normal system library path.
+  */
+ PRLibrary *
+ PORT_LoadLibraryFromOrigin(const char* existingShLibName,
+                  PRFuncPtr staticShLibFunc,
+                  const char *newShLibName);
++#endif  /* NSS_STATIC */
+ 
+ SEC_END_PROTOS
+ 
+ #endif /* _SECPORT_H_ */

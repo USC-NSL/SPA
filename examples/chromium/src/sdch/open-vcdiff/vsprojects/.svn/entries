@@ -1,0 +1,239 @@
+10
+
+dir
+42
+http://open-vcdiff.googlecode.com/svn/trunk/vsprojects
+http://open-vcdiff.googlecode.com/svn
+
+
+
+2012-04-03T18:11:15.538024Z
+41
+openvcdiff@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+132ac840-3546-0410-a738-d3f8764196be
+
+vcdecoder2_test
+dir
+
+vcdecoder3_test
+dir
+
+vcdecoder4_test
+dir
+
+codetable_test
+dir
+
+vcdecoder5_test
+dir
+
+output_string_test
+dir
+
+gtest
+dir
+
+vcdiffengine_test
+dir
+
+vcddec
+dir
+
+decodetable_test
+dir
+
+open-vcdiff.sln
+file
+
+
+
+
+2012-08-28T21:12:30.000000Z
+137733850a05b657274478a19e6b0f37
+2010-08-04T18:00:00.473645Z
+35
+openvcdiff@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+19185
+
+config.h
+file
+
+
+
+
+2012-08-28T21:12:30.000000Z
+07f368d428963d5d89b9939492fa2d99
+2012-04-03T18:11:15.538024Z
+41
+openvcdiff@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2757
+
+stdint.h
+file
+
+
+
+
+2012-08-28T21:12:30.000000Z
+b9b5d241e0546c886282f16ca5c99b68
+2008-08-26T19:29:25.279314Z
+7
+openvcdiff
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1010
+
+blockhash_test
+dir
+
+addrcache_test
+dir
+
+vcdiff_test
+dir
+
+vcdiff
+dir
+
+vcdenc
+dir
+
+varint_bigendian_test
+dir
+
+encodetable_test
+dir
+
+headerparser_test
+dir
+
+jsonwriter_test
+dir
+
+vcdecoder_test_common
+dir
+
+vcdiff_test.bat
+file
+
+
+
+
+2012-08-28T21:12:30.000000Z
+9199c0c6384ce2a05baff46be79e2659
+2008-10-23T23:43:46.632218Z
+21
+openvcdiff
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+15608
+
+vcencoder_test
+dir
+
+rolling_hash_test
+dir
+
+vcdcom
+dir
+
+instruction_map_test
+dir
+
+vcdecoder1_test
+dir
+

@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/196669/trunk/deps/third_party/libvpx
+END
+libvpx_srcs_x86_intrinsics.gypi
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/196669/trunk/deps/third_party/libvpx/libvpx_srcs_x86_intrinsics.gypi
+END
+README.chromium
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/196669/trunk/deps/third_party/libvpx/README.chromium
+END
+update_libvpx.sh
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/174165/trunk/deps/third_party/libvpx/update_libvpx.sh
+END
+libvpx_srcs_arm_neon_cpu_detect.gypi
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/195047/trunk/deps/third_party/libvpx/libvpx_srcs_arm_neon_cpu_detect.gypi
+END
+libvpx_srcs_arm_neon.gypi
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/195047/trunk/deps/third_party/libvpx/libvpx_srcs_arm_neon.gypi
+END
+libvpx_srcs_x86_64.gypi
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/196669/trunk/deps/third_party/libvpx/libvpx_srcs_x86_64.gypi
+END
+obj_int_extract.sh
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/139713/trunk/deps/third_party/libvpx/obj_int_extract.sh
+END
+libvpx_srcs_x86_64_intrinsics.gypi
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/196669/trunk/deps/third_party/libvpx/libvpx_srcs_x86_64_intrinsics.gypi
+END
+generate_gypi.sh
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/195313/trunk/deps/third_party/libvpx/generate_gypi.sh
+END
+libvpx_srcs_mips.gypi
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/195045/trunk/deps/third_party/libvpx/libvpx_srcs_mips.gypi
+END
+libvpx.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/195692/trunk/deps/third_party/libvpx/libvpx.gyp
+END
+unpack_lib_posix.sh
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/139622/trunk/deps/third_party/libvpx/unpack_lib_posix.sh
+END
+libvpx_srcs_arm.gypi
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/195047/trunk/deps/third_party/libvpx/libvpx_srcs_arm.gypi
+END
+lint_config.sh
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/139713/trunk/deps/third_party/libvpx/lint_config.sh
+END
+libvpx_srcs_x86.gypi
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/196669/trunk/deps/third_party/libvpx/libvpx_srcs_x86.gypi
+END
+copy_obj.sh
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/139713/trunk/deps/third_party/libvpx/copy_obj.sh
+END

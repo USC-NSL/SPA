@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vpx_mem/memory_manager
+END
+hmm_grow.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vpx_mem/memory_manager/hmm_grow.c
+END
+hmm_shrink.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vpx_mem/memory_manager/hmm_shrink.c
+END
+hmm_true.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vpx_mem/memory_manager/hmm_true.c
+END
+hmm_dflt_abort.c
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vpx_mem/memory_manager/hmm_dflt_abort.c
+END
+hmm_largest.c
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vpx_mem/memory_manager/hmm_largest.c
+END
+hmm_resize.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vpx_mem/memory_manager/hmm_resize.c
+END
+hmm_alloc.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vpx_mem/memory_manager/hmm_alloc.c
+END
+hmm_base.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vpx_mem/memory_manager/hmm_base.c
+END

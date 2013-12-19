@@ -1,0 +1,58 @@
+# -*- python -*-
+# Copyright (c) 2012 The Native Client Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+Import('env')
+
+# A simple test of the sincos function
+
+sincos_test_nexe = env.ComponentProgram('sincos_test', 'sincos_test.c',
+                                  EXTRA_LIBS=['${NONIRT_LIBS}', 'm'])
+node = env.CommandSelLdrTestNacl(
+    'sincos_test.out',
+    sincos_test_nexe,
+    stdout_golden=env.File('sincos_test.stdout'),
+    )
+
+env.AddNodeToTestSuite(node,
+                       ['small_tests'], 'run_sincos_test')
+
+#--- Version that tests errno conditions
+
+# Note: -fno-math-errno is the default on Clang, and some versions of gcc.
+errno_env = env.Clone()
+errno_env.Append(CCFLAGS=['-fmath-errno'])
+float_math_obj = errno_env.ComponentObject('float_math', 'float_math.c')
+float_math_nexe = errno_env.ComponentProgram('float_math',
+                                       float_math_obj,
+                                       EXTRA_LIBS=['m', '${NONIRT_LIBS}'])
+node = errno_env.CommandSelLdrTestNacl(
+  'float_math.out',
+  float_math_nexe,
+  exit_status='55',
+  )
+errno_env.AddNodeToTestSuite(node,
+                       ['small_tests'],
+                       'run_float_math_test')
+
+#--- Version that uses -fno-math-errno and doesn't test errno conditions
+
+noerrno_env = env.Clone()
+noerrno_env.Append(CCFLAGS=['-fno-math-errno'])
+noerrno_env.Append(CPPDEFINES=['NO_ERRNO_CHECK'])
+
+float_math_noerrno_obj = noerrno_env.ComponentObject('float_math_noerrno',
+                                                     'float_math.c')
+float_math_noerrno_nexe = noerrno_env.ComponentProgram(
+                              'float_math_noerrno',
+                              float_math_noerrno_obj,
+                              EXTRA_LIBS=['m', '${NONIRT_LIBS}'])
+node = noerrno_env.CommandSelLdrTestNacl(
+  'float_math_noerrno.out',
+  float_math_noerrno_nexe,
+  exit_status='55',
+  )
+noerrno_env.AddNodeToTestSuite(node,
+                               ['small_tests'],
+                               'run_float_math_noerrno_test')

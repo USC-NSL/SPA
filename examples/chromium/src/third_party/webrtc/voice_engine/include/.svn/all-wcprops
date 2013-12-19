@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/include
+END
+voe_external_media.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/include/voe_external_media.h
+END
+voe_network.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/include/voe_network.h
+END
+voe_encryption.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/3838/stable/webrtc/voice_engine/include/voe_encryption.h
+END
+voe_neteq_stats.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/2974/stable/webrtc/voice_engine/include/voe_neteq_stats.h
+END
+voe_dtmf.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/3676/stable/webrtc/voice_engine/include/voe_dtmf.h
+END
+voe_rtp_rtcp.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/3304/stable/webrtc/voice_engine/include/voe_rtp_rtcp.h
+END
+voe_audio_processing.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/2974/stable/webrtc/voice_engine/include/voe_audio_processing.h
+END
+voe_hardware.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/3838/stable/webrtc/voice_engine/include/voe_hardware.h
+END
+voe_video_sync.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/include/voe_video_sync.h
+END
+voe_call_report.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/2974/stable/webrtc/voice_engine/include/voe_call_report.h
+END
+voe_volume_control.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/2974/stable/webrtc/voice_engine/include/voe_volume_control.h
+END
+voe_base.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/include/voe_base.h
+END
+voe_errors.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/3304/stable/webrtc/voice_engine/include/voe_errors.h
+END
+voe_codec.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/3304/stable/webrtc/voice_engine/include/voe_codec.h
+END
+voe_file.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/2974/stable/webrtc/voice_engine/include/voe_file.h
+END

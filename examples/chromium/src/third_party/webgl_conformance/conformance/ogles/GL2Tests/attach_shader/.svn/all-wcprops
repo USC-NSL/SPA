@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL2Tests/attach_shader
+END
+successfulcompile_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL2Tests/attach_shader/successfulcompile_frag.frag
+END
+successfulcompile_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL2Tests/attach_shader/successfulcompile_vert.vert
+END
+unsuccessfulcompile_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL2Tests/attach_shader/unsuccessfulcompile_frag.frag
+END
+unsuccessfulcompile_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL2Tests/attach_shader/unsuccessfulcompile_vert.vert
+END

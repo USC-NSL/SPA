@@ -1,0 +1,419 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/147403/trunk/deps/third_party/libjpeg_turbo/simd
+END
+jcgrass2-64.asm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/111873/trunk/deps/third_party/libjpeg_turbo/simd/jcgrass2-64.asm
+END
+jsimd_arm_neon.S
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/136524/trunk/deps/third_party/libjpeg_turbo/simd/jsimd_arm_neon.S
+END
+jiss2fst.asm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/73971/trunk/deps/third_party/libjpeg_turbo/simd/jiss2fst.asm
+END
+jiss2red-64.asm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/73971/trunk/deps/third_party/libjpeg_turbo/simd/jiss2red-64.asm
+END
+jcclrss2-64.asm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/simd/jcclrss2-64.asm
+END
+ji3dnflt.asm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/73971/trunk/deps/third_party/libjpeg_turbo/simd/ji3dnflt.asm
+END
+jsimdcpu.asm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/73971/trunk/deps/third_party/libjpeg_turbo/simd/jsimdcpu.asm
+END
+jdsammmx.asm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/73971/trunk/deps/third_party/libjpeg_turbo/simd/jdsammmx.asm
+END
+jdmerss2-64.asm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/111873/trunk/deps/third_party/libjpeg_turbo/simd/jdmerss2-64.asm
+END
+jdmrgmmx.asm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/simd/jdmrgmmx.asm
+END
+jdsamss2.asm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/73971/trunk/deps/third_party/libjpeg_turbo/simd/jdsamss2.asm
+END
+jiss2flt-64.asm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/73971/trunk/deps/third_party/libjpeg_turbo/simd/jiss2flt-64.asm
+END
+jfss2int-64.asm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/73971/trunk/deps/third_party/libjpeg_turbo/simd/jfss2int-64.asm
+END
+jcqnts2f.asm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/73971/trunk/deps/third_party/libjpeg_turbo/simd/jcqnts2f.asm
+END
+jdmrgss2.asm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/147403/trunk/deps/third_party/libjpeg_turbo/simd/jdmrgss2.asm
+END
+jfmmxint.asm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/73971/trunk/deps/third_party/libjpeg_turbo/simd/jfmmxint.asm
+END
+jcgryss2-64.asm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/simd/jcgryss2-64.asm
+END
+jcqnts2i.asm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/73971/trunk/deps/third_party/libjpeg_turbo/simd/jcqnts2i.asm
+END
+jiss2fst-64.asm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/73971/trunk/deps/third_party/libjpeg_turbo/simd/jiss2fst-64.asm
+END
+jiss2flt.asm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/73971/trunk/deps/third_party/libjpeg_turbo/simd/jiss2flt.asm
+END
+jiss2int.asm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/73971/trunk/deps/third_party/libjpeg_turbo/simd/jiss2int.asm
+END
+jsimdcfg.inc.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/147403/trunk/deps/third_party/libjpeg_turbo/simd/jsimdcfg.inc.h
+END
+jsimd_arm.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/136524/trunk/deps/third_party/libjpeg_turbo/simd/jsimd_arm.c
+END
+jfsseflt-64.asm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/73971/trunk/deps/third_party/libjpeg_turbo/simd/jfsseflt-64.asm
+END
+jccolss2-64.asm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/111873/trunk/deps/third_party/libjpeg_turbo/simd/jccolss2-64.asm
+END
+jcsamss2-64.asm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/73971/trunk/deps/third_party/libjpeg_turbo/simd/jcsamss2-64.asm
+END
+jsimd.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/136524/trunk/deps/third_party/libjpeg_turbo/simd/jsimd.h
+END
+jdclrss2-64.asm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/147403/trunk/deps/third_party/libjpeg_turbo/simd/jdclrss2-64.asm
+END
+jdcolmmx.asm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/111873/trunk/deps/third_party/libjpeg_turbo/simd/jdcolmmx.asm
+END
+jcclrmmx.asm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/simd/jcclrmmx.asm
+END
+jfsseflt.asm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/73971/trunk/deps/third_party/libjpeg_turbo/simd/jfsseflt.asm
+END
+jdmrgss2-64.asm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/147403/trunk/deps/third_party/libjpeg_turbo/simd/jdmrgss2-64.asm
+END
+jdcolss2.asm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/111873/trunk/deps/third_party/libjpeg_turbo/simd/jdcolss2.asm
+END
+jdmermmx.asm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/111873/trunk/deps/third_party/libjpeg_turbo/simd/jdmermmx.asm
+END
+jiss2red.asm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/73971/trunk/deps/third_party/libjpeg_turbo/simd/jiss2red.asm
+END
+jcclrss2.asm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/simd/jcclrss2.asm
+END
+jdmerss2.asm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/111873/trunk/deps/third_party/libjpeg_turbo/simd/jdmerss2.asm
+END
+jfss2fst-64.asm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/73971/trunk/deps/third_party/libjpeg_turbo/simd/jfss2fst-64.asm
+END
+jimmxfst.asm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/73971/trunk/deps/third_party/libjpeg_turbo/simd/jimmxfst.asm
+END
+jcqntmmx.asm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/73971/trunk/deps/third_party/libjpeg_turbo/simd/jcqntmmx.asm
+END
+jfss2fst.asm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/73971/trunk/deps/third_party/libjpeg_turbo/simd/jfss2fst.asm
+END
+jcgrammx.asm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/111873/trunk/deps/third_party/libjpeg_turbo/simd/jcgrammx.asm
+END
+jf3dnflt.asm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/73971/trunk/deps/third_party/libjpeg_turbo/simd/jf3dnflt.asm
+END
+jdcolss2-64.asm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/111873/trunk/deps/third_party/libjpeg_turbo/simd/jdcolss2-64.asm
+END
+jdsamss2-64.asm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/73971/trunk/deps/third_party/libjpeg_turbo/simd/jdsamss2-64.asm
+END
+jcgrass2.asm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/111873/trunk/deps/third_party/libjpeg_turbo/simd/jcgrass2.asm
+END
+jcsammmx.asm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/73971/trunk/deps/third_party/libjpeg_turbo/simd/jcsammmx.asm
+END
+jcqnts2f-64.asm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/73971/trunk/deps/third_party/libjpeg_turbo/simd/jcqnts2f-64.asm
+END
+jsimd_i386.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/136524/trunk/deps/third_party/libjpeg_turbo/simd/jsimd_i386.c
+END
+jcqnt3dn.asm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/73971/trunk/deps/third_party/libjpeg_turbo/simd/jcqnt3dn.asm
+END
+jcsamss2.asm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/73971/trunk/deps/third_party/libjpeg_turbo/simd/jcsamss2.asm
+END
+jsimd_x86_64.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/136524/trunk/deps/third_party/libjpeg_turbo/simd/jsimd_x86_64.c
+END
+jimmxint.asm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/73971/trunk/deps/third_party/libjpeg_turbo/simd/jimmxint.asm
+END
+jcgrymmx.asm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/simd/jcgrymmx.asm
+END
+jcolsamp.inc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/simd/jcolsamp.inc
+END
+jfss2int.asm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/73971/trunk/deps/third_party/libjpeg_turbo/simd/jfss2int.asm
+END
+jcgryss2.asm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/simd/jcgryss2.asm
+END
+jccolmmx.asm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/111873/trunk/deps/third_party/libjpeg_turbo/simd/jccolmmx.asm
+END
+jdct.inc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/simd/jdct.inc
+END
+jimmxred.asm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/73971/trunk/deps/third_party/libjpeg_turbo/simd/jimmxred.asm
+END
+jdclrmmx.asm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/simd/jdclrmmx.asm
+END
+jsimdext.inc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/147403/trunk/deps/third_party/libjpeg_turbo/simd/jsimdext.inc
+END
+jccolss2.asm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/111873/trunk/deps/third_party/libjpeg_turbo/simd/jccolss2.asm
+END
+jisseflt.asm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/73971/trunk/deps/third_party/libjpeg_turbo/simd/jisseflt.asm
+END
+jcqnts2i-64.asm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/73971/trunk/deps/third_party/libjpeg_turbo/simd/jcqnts2i-64.asm
+END
+jdclrss2.asm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/147403/trunk/deps/third_party/libjpeg_turbo/simd/jdclrss2.asm
+END
+jcqntsse.asm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/73971/trunk/deps/third_party/libjpeg_turbo/simd/jcqntsse.asm
+END
+jiss2int-64.asm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/73971/trunk/deps/third_party/libjpeg_turbo/simd/jiss2int-64.asm
+END
+jfmmxfst.asm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/73971/trunk/deps/third_party/libjpeg_turbo/simd/jfmmxfst.asm
+END

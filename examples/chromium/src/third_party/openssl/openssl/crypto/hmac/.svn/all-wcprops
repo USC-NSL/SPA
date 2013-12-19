@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/crypto/hmac
+END
+hm_pmeth.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/hmac/hm_pmeth.c
+END
+hm_ameth.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/hmac/hm_ameth.c
+END
+hmac.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/hmac/hmac.c
+END
+hmactest.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/65201/trunk/deps/third_party/openssl/openssl/crypto/hmac/hmactest.c
+END
+hmac.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/118977/trunk/deps/third_party/openssl/openssl/crypto/hmac/hmac.h
+END

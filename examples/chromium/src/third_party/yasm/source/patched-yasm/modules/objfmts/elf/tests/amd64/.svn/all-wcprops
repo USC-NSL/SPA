@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/167604/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/amd64
+END
+elf-rip.hex
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/amd64/elf-rip.hex
+END
+elfso64.asm
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/amd64/elfso64.asm
+END
+gotpcrel.hex
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/amd64/gotpcrel.hex
+END
+Makefile.inc
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/167604/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/amd64/Makefile.inc
+END
+elfso64.hex
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/amd64/elfso64.hex
+END
+elf_amd64_test.sh
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/167604/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/amd64/elf_amd64_test.sh
+END
+elf-rip.asm
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/amd64/elf-rip.asm
+END
+gotpcrel.asm
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/amd64/gotpcrel.asm
+END

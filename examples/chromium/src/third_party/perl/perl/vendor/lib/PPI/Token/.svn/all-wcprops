@@ -1,0 +1,155 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/PPI/Token
+END
+Prototype.pm
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/PPI/Token/Prototype.pm
+END
+Symbol.pm
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/PPI/Token/Symbol.pm
+END
+End.pm
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/PPI/Token/End.pm
+END
+ArrayIndex.pm
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/PPI/Token/ArrayIndex.pm
+END
+HereDoc.pm
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/PPI/Token/HereDoc.pm
+END
+Data.pm
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/PPI/Token/Data.pm
+END
+Word.pm
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/PPI/Token/Word.pm
+END
+BOM.pm
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/PPI/Token/BOM.pm
+END
+Label.pm
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/PPI/Token/Label.pm
+END
+Magic.pm
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/PPI/Token/Magic.pm
+END
+Pod.pm
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/PPI/Token/Pod.pm
+END
+_QuoteEngine.pm
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/PPI/Token/_QuoteEngine.pm
+END
+DashedWord.pm
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/PPI/Token/DashedWord.pm
+END
+Number.pm
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/PPI/Token/Number.pm
+END
+Regexp.pm
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/PPI/Token/Regexp.pm
+END
+Cast.pm
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/PPI/Token/Cast.pm
+END
+Operator.pm
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/PPI/Token/Operator.pm
+END
+Whitespace.pm
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/PPI/Token/Whitespace.pm
+END
+Quote.pm
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/PPI/Token/Quote.pm
+END
+Unknown.pm
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/PPI/Token/Unknown.pm
+END
+Separator.pm
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/PPI/Token/Separator.pm
+END
+Structure.pm
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/PPI/Token/Structure.pm
+END
+Comment.pm
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/PPI/Token/Comment.pm
+END
+QuoteLike.pm
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/PPI/Token/QuoteLike.pm
+END
+Attribute.pm
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/PPI/Token/Attribute.pm
+END

@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/native_client/!svn/ver/10209/trunk/src/native_client/tests/glibc_syscall_wrappers
+END
+test_rewind_data
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/native_client/!svn/ver/3822/trunk/src/native_client/tests/glibc_syscall_wrappers/test_rewind_data
+END
+nacl.scons
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/native_client/!svn/ver/5795/trunk/src/native_client/tests/glibc_syscall_wrappers/nacl.scons
+END
+test_fstat.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/native_client/!svn/ver/4164/trunk/src/native_client/tests/glibc_syscall_wrappers/test_fstat.c
+END
+test_fstat.stdout
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/native_client/!svn/ver/4164/trunk/src/native_client/tests/glibc_syscall_wrappers/test_fstat.stdout
+END
+test_stat_data
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/native_client/!svn/ver/3615/trunk/src/native_client/tests/glibc_syscall_wrappers/test_stat_data
+END
+test_rewind.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/native_client/!svn/ver/3822/trunk/src/native_client/tests/glibc_syscall_wrappers/test_rewind.c
+END
+test_stat.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/native_client/!svn/ver/4152/trunk/src/native_client/tests/glibc_syscall_wrappers/test_stat.c
+END
+test_dir.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/native_client/!svn/ver/3719/trunk/src/native_client/tests/glibc_syscall_wrappers/test_dir.c
+END
+test_time.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/native_client/!svn/ver/10209/trunk/src/native_client/tests/glibc_syscall_wrappers/test_time.c
+END

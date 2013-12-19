@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vp8/encoder/arm
+END
+quantize_arm.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vp8/encoder/arm/quantize_arm.c
+END
+boolhuff_arm.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/121961/trunk/deps/third_party/libvpx/source/libvpx/vp8/encoder/arm/boolhuff_arm.c
+END
+dct_arm.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vp8/encoder/arm/dct_arm.c
+END

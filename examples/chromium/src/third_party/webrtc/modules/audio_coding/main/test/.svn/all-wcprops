@@ -1,0 +1,221 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_coding/main/test
+END
+TestAllCodecs.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/2974/stable/webrtc/modules/audio_coding/main/test/TestAllCodecs.h
+END
+TestFEC.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_coding/main/test/TestFEC.cc
+END
+delay_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_coding/main/test/delay_test.cc
+END
+TestFEC.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_coding/main/test/TestFEC.h
+END
+EncodeDecodeTest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_coding/main/test/EncodeDecodeTest.cc
+END
+ACMTest.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/2974/stable/webrtc/modules/audio_coding/main/test/ACMTest.h
+END
+EncodeDecodeTest.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_coding/main/test/EncodeDecodeTest.h
+END
+RTPFile.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_coding/main/test/RTPFile.cc
+END
+initial_delay_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/3561/stable/webrtc/modules/audio_coding/main/test/initial_delay_unittest.cc
+END
+RTPFile.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_coding/main/test/RTPFile.h
+END
+Channel.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_coding/main/test/Channel.cc
+END
+iSACTest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_coding/main/test/iSACTest.cc
+END
+PCMFile.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_coding/main/test/PCMFile.cc
+END
+TwoWayCommunication.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_coding/main/test/TwoWayCommunication.cc
+END
+iSACTest.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_coding/main/test/iSACTest.h
+END
+PCMFile.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_coding/main/test/PCMFile.h
+END
+TestVADDTX.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_coding/main/test/TestVADDTX.h
+END
+dual_stream_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_coding/main/test/dual_stream_unittest.cc
+END
+ACMTest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/2974/stable/webrtc/modules/audio_coding/main/test/ACMTest.cc
+END
+TestStereo.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_coding/main/test/TestStereo.cc
+END
+utility.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_coding/main/test/utility.cc
+END
+TestStereo.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_coding/main/test/TestStereo.h
+END
+utility.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_coding/main/test/utility.h
+END
+Tester.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/3676/stable/webrtc/modules/audio_coding/main/test/Tester.cc
+END
+APITest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_coding/main/test/APITest.cc
+END
+Channel.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_coding/main/test/Channel.h
+END
+APITest.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_coding/main/test/APITest.h
+END
+SpatialAudio.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_coding/main/test/SpatialAudio.cc
+END
+TimedTrace.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_coding/main/test/TimedTrace.cc
+END
+SpatialAudio.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_coding/main/test/SpatialAudio.h
+END
+TwoWayCommunication.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_coding/main/test/TwoWayCommunication.h
+END
+TimedTrace.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_coding/main/test/TimedTrace.h
+END
+opus_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/3676/stable/webrtc/modules/audio_coding/main/test/opus_test.cc
+END
+opus_test.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/3676/stable/webrtc/modules/audio_coding/main/test/opus_test.h
+END
+TestAllCodecs.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/3561/stable/webrtc/modules/audio_coding/main/test/TestAllCodecs.cc
+END
+TestVADDTX.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_coding/main/test/TestVADDTX.cc
+END

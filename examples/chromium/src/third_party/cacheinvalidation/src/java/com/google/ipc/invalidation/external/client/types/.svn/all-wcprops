@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/262/trunk/src/java/com/google/ipc/invalidation/external/client/types
+END
+ApplicationClientId.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/187/trunk/src/java/com/google/ipc/invalidation/external/client/types/ApplicationClientId.java
+END
+Invalidation.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/262/trunk/src/java/com/google/ipc/invalidation/external/client/types/Invalidation.java
+END
+ObjectId.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/171/trunk/src/java/com/google/ipc/invalidation/external/client/types/ObjectId.java
+END
+Status.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/171/trunk/src/java/com/google/ipc/invalidation/external/client/types/Status.java
+END
+SimplePair.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/85/trunk/src/java/com/google/ipc/invalidation/external/client/types/SimplePair.java
+END
+ErrorInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/171/trunk/src/java/com/google/ipc/invalidation/external/client/types/ErrorInfo.java
+END
+AckHandle.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/171/trunk/src/java/com/google/ipc/invalidation/external/client/types/AckHandle.java
+END
+BytesFormatter.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/171/trunk/src/java/com/google/ipc/invalidation/external/client/types/BytesFormatter.java
+END
+Callback.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/85/trunk/src/java/com/google/ipc/invalidation/external/client/types/Callback.java
+END
+ErrorContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/145/trunk/src/java/com/google/ipc/invalidation/external/client/types/ErrorContext.java
+END

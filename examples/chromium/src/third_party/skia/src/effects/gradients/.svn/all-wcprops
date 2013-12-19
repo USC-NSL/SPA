@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/8428/trunk/src/effects/gradients
+END
+SkBitmapCache.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/7406/trunk/src/effects/gradients/SkBitmapCache.cpp
+END
+SkSweepGradient.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/8369/trunk/src/effects/gradients/SkSweepGradient.cpp
+END
+SkBitmapCache.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/7406/trunk/src/effects/gradients/SkBitmapCache.h
+END
+SkSweepGradient.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/7406/trunk/src/effects/gradients/SkSweepGradient.h
+END
+SkClampRange.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/7406/trunk/src/effects/gradients/SkClampRange.cpp
+END
+SkRadialGradient.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/8369/trunk/src/effects/gradients/SkRadialGradient.cpp
+END
+SkClampRange.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/7406/trunk/src/effects/gradients/SkClampRange.h
+END
+SkTwoPointRadialGradient.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/8369/trunk/src/effects/gradients/SkTwoPointRadialGradient.cpp
+END
+SkRadialGradient.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/7406/trunk/src/effects/gradients/SkRadialGradient.h
+END
+SkTwoPointRadialGradient.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/7406/trunk/src/effects/gradients/SkTwoPointRadialGradient.h
+END
+SkGradientShader.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/8428/trunk/src/effects/gradients/SkGradientShader.cpp
+END
+SkRadialGradient_Table.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/5262/trunk/src/effects/gradients/SkRadialGradient_Table.h
+END
+SkLinearGradient.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/8369/trunk/src/effects/gradients/SkLinearGradient.cpp
+END
+SkGradientShaderPriv.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/8272/trunk/src/effects/gradients/SkGradientShaderPriv.h
+END
+SkTwoPointConicalGradient.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/8369/trunk/src/effects/gradients/SkTwoPointConicalGradient.cpp
+END
+SkLinearGradient.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/7406/trunk/src/effects/gradients/SkLinearGradient.h
+END
+SkTwoPointConicalGradient.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/8247/trunk/src/effects/gradients/SkTwoPointConicalGradient.h
+END

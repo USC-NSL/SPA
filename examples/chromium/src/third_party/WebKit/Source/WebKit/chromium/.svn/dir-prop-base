@@ -1,0 +1,30 @@
+K 10
+svn:ignore
+V 186
+.gclient
+.gclient_entries
+WebKit.xcodeproj
+base
+build
+chromium_deps
+crypto
+gfx
+googleurl
+gpu
+ipc
+media
+net
+ppapi
+printing
+sdch
+skia
+sql
+testing
+third_party
+tools
+ui
+v8
+webkit
+xcodebuild
+
+END

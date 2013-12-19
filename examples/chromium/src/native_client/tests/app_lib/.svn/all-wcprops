@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/native_client/!svn/ver/6335/trunk/src/native_client/tests/app_lib
+END
+nacl.scons
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/native_client/!svn/ver/6335/trunk/src/native_client/tests/app_lib/nacl.scons
+END
+app_lib_test.stdin
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/native_client/!svn/ver/541/trunk/src/native_client/tests/app_lib/app_lib_test.stdin
+END
+app_lib_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/native_client/!svn/ver/1427/trunk/src/native_client/tests/app_lib/app_lib_test.c
+END
+app_lib_test.stdout
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/native_client/!svn/ver/541/trunk/src/native_client/tests/app_lib/app_lib_test.stdout
+END

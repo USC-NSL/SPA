@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/14304/trunk/src/third_party/vtune
+END
+v8-vtune.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/14304/trunk/src/third_party/vtune/v8-vtune.h
+END
+ittnotify_types.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/14304/trunk/src/third_party/vtune/ittnotify_types.h
+END
+ittnotify_config.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/14304/trunk/src/third_party/vtune/ittnotify_config.h
+END
+jitprofiling.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/14304/trunk/src/third_party/vtune/jitprofiling.cc
+END
+jitprofiling.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/14304/trunk/src/third_party/vtune/jitprofiling.h
+END
+vtune-jit.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/14304/trunk/src/third_party/vtune/vtune-jit.cc
+END
+vtune-jit.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/14304/trunk/src/third_party/vtune/vtune-jit.h
+END
+v8vtune.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/14304/trunk/src/third_party/vtune/v8vtune.gyp
+END

@@ -1,0 +1,13 @@
+K 10
+svn:ignore
+V 123
+desc.Makefile
+desc.sln
+desc.xcodeproj
+nrd_xfer.rules
+nrd_xfer.target.mk
+nrd_xfer.vcproj
+nrd_xfer64.rules
+nrd_xfer64.vcproj
+
+END

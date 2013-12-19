@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/1153/trunk/src/client/linux/handler
+END
+exception_handler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/1153/trunk/src/client/linux/handler/exception_handler.cc
+END
+exception_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/1121/trunk/src/client/linux/handler/exception_handler.h
+END
+minidump_descriptor.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/1114/trunk/src/client/linux/handler/minidump_descriptor.cc
+END
+minidump_descriptor.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/1114/trunk/src/client/linux/handler/minidump_descriptor.h
+END
+exception_handler_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/1132/trunk/src/client/linux/handler/exception_handler_unittest.cc
+END

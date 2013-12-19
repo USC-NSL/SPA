@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/locale
+END
+nsILocale.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/locale/nsILocale.h
+END
+nsIScriptableDateFormat.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/locale/nsIScriptableDateFormat.h
+END
+nsILocaleService.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/locale/nsILocaleService.h
+END
+nsIMacLocale.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/locale/nsIMacLocale.h
+END
+nsIPosixLocale.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/locale/nsIPosixLocale.h
+END
+nsIWin32Locale.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/locale/nsIWin32Locale.h
+END
+nsIOS2Locale.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/locale/nsIOS2Locale.h
+END
+nsICollation.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/locale/nsICollation.h
+END
+nsIDateTimeFormat.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/locale/nsIDateTimeFormat.h
+END
+nsILanguageAtomService.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/locale/nsILanguageAtomService.h
+END
+nsLocaleCID.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/locale/nsLocaleCID.h
+END
+nsCollation.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/locale/nsCollation.h
+END
+nsCollationCID.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/locale/nsCollationCID.h
+END
+nsDateTimeFormatCID.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/locale/nsDateTimeFormatCID.h
+END

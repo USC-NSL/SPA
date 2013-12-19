@@ -1,0 +1,149 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/native_client/!svn/ver/11142/trunk/src/native_client/src/trusted/service_runtime/testdata
+END
+fib_scalar.nexe
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/native_client/!svn/ver/1519/trunk/src/native_client/src/trusted/service_runtime/testdata/fib_scalar.nexe
+END
+text_too_big.nexe
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/native_client/!svn/ver/1519/trunk/src/native_client/src/trusted/service_runtime/testdata/text_too_big.nexe
+END
+text_overlaps_data.nexe
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/native_client/!svn/ver/1519/trunk/src/native_client/src/trusted/service_runtime/testdata/text_overlaps_data.nexe
+END
+text_overlaps_rodata.nexe
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/native_client/!svn/ver/1519/trunk/src/native_client/src/trusted/service_runtime/testdata/text_overlaps_rodata.nexe
+END
+old_abi.nexe
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/native_client/!svn/ver/1519/trunk/src/native_client/src/trusted/service_runtime/testdata/old_abi.nexe
+END
+text_too_big.stderr
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/native_client/!svn/ver/519/trunk/src/native_client/src/trusted/service_runtime/testdata/text_too_big.stderr
+END
+rodata_data_overlap.nexe
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/native_client/!svn/ver/1519/trunk/src/native_client/src/trusted/service_runtime/testdata/rodata_data_overlap.nexe
+END
+text_overlaps_data.stderr
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/native_client/!svn/ver/1075/trunk/src/native_client/src/trusted/service_runtime/testdata/text_overlaps_data.stderr
+END
+hello_world.log
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/native_client/!svn/ver/4491/trunk/src/native_client/src/trusted/service_runtime/testdata/hello_world.log
+END
+text_overlaps_rodata.stderr
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/native_client/!svn/ver/1075/trunk/src/native_client/src/trusted/service_runtime/testdata/text_overlaps_rodata.stderr
+END
+old_abi.stderr
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/native_client/!svn/ver/6280/trunk/src/native_client/src/trusted/service_runtime/testdata/old_abi.stderr
+END
+hello_world.stdout
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/native_client/!svn/ver/4491/trunk/src/native_client/src/trusted/service_runtime/testdata/hello_world.stdout
+END
+fib_array.nexe
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/native_client/!svn/ver/1519/trunk/src/native_client/src/trusted/service_runtime/testdata/fib_array.nexe
+END
+rodata_data_overlap.stderr
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/native_client/!svn/ver/1075/trunk/src/native_client/src/trusted/service_runtime/testdata/rodata_data_overlap.stderr
+END
+nullptr.nexe
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/native_client/!svn/ver/1519/trunk/src/native_client/src/trusted/service_runtime/testdata/nullptr.nexe
+END
+mandel.nexe
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/native_client/!svn/ver/1519/trunk/src/native_client/src/trusted/service_runtime/testdata/mandel.nexe
+END
+non_dfa_validator_hello.stderr
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/native_client/!svn/ver/11142/trunk/src/native_client/src/trusted/service_runtime/testdata/non_dfa_validator_hello.stderr
+END
+negative_hole.nexe
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/native_client/!svn/ver/1519/trunk/src/native_client/src/trusted/service_runtime/testdata/negative_hole.nexe
+END
+integer_overflow_while_madvising.nexe
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/native_client/!svn/ver/1519/trunk/src/native_client/src/trusted/service_runtime/testdata/integer_overflow_while_madvising.nexe
+END
+hello_world.nexe
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/native_client/!svn/ver/1519/trunk/src/native_client/src/trusted/service_runtime/testdata/hello_world.nexe
+END
+data_not_last.nexe
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/native_client/!svn/ver/1519/trunk/src/native_client/src/trusted/service_runtime/testdata/data_not_last.nexe
+END
+negative_hole.stderr
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/native_client/!svn/ver/519/trunk/src/native_client/src/trusted/service_runtime/testdata/negative_hole.stderr
+END
+integer_overflow_while_madvising.stderr
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/native_client/!svn/ver/519/trunk/src/native_client/src/trusted/service_runtime/testdata/integer_overflow_while_madvising.stderr
+END
+data_not_last.stderr
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/native_client/!svn/ver/1075/trunk/src/native_client/src/trusted/service_runtime/testdata/data_not_last.stderr
+END

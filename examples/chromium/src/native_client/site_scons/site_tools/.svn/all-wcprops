@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/native_client/!svn/ver/11213/trunk/src/native_client/site_scons/site_tools
+END
+component_targets.py
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/native_client/!svn/ver/542/trunk/src/native_client/site_scons/site_tools/component_targets.py
+END
+component_builders.py
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/native_client/!svn/ver/9159/trunk/src/native_client/site_scons/site_tools/component_builders.py
+END
+target_debug.py
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/native_client/!svn/ver/542/trunk/src/native_client/site_scons/site_tools/target_debug.py
+END
+command_output.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/native_client/!svn/ver/542/trunk/src/native_client/site_scons/site_tools/command_output.py
+END
+target_platform_windows.py
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/native_client/!svn/ver/9445/trunk/src/native_client/site_scons/site_tools/target_platform_windows.py
+END
+windows_hard_link.py
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/native_client/!svn/ver/542/trunk/src/native_client/site_scons/site_tools/windows_hard_link.py
+END
+publish.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/native_client/!svn/ver/542/trunk/src/native_client/site_scons/site_tools/publish.py
+END
+replicate.py
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/native_client/!svn/ver/542/trunk/src/native_client/site_scons/site_tools/replicate.py
+END
+target_platform_linux.py
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/native_client/!svn/ver/10958/trunk/src/native_client/site_scons/site_tools/target_platform_linux.py
+END
+target_platform_mac.py
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/native_client/!svn/ver/11158/trunk/src/native_client/site_scons/site_tools/target_platform_mac.py
+END
+target_optimized.py
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/native_client/!svn/ver/542/trunk/src/native_client/site_scons/site_tools/target_optimized.py
+END
+naclsdk.py
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/native_client/!svn/ver/11090/trunk/src/native_client/site_scons/site_tools/naclsdk.py
+END
+library_deps.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/native_client/!svn/ver/11213/trunk/src/native_client/site_scons/site_tools/library_deps.py
+END
+component_setup.py
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/native_client/!svn/ver/11090/trunk/src/native_client/site_scons/site_tools/component_setup.py
+END
+component_bits.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/native_client/!svn/ver/542/trunk/src/native_client/site_scons/site_tools/component_bits.py
+END
+environment_tools.py
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/native_client/!svn/ver/4413/trunk/src/native_client/site_scons/site_tools/environment_tools.py
+END
+defer.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/native_client/!svn/ver/542/trunk/src/native_client/site_scons/site_tools/defer.py
+END
+code_coverage.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/native_client/!svn/ver/3810/trunk/src/native_client/site_scons/site_tools/code_coverage.py
+END

@@ -1,0 +1,293 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/1999/trunk/src/libGLESv2
+END
+Blit.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/1229/trunk/src/libGLESv2/Blit.h
+END
+Texture.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/1393/trunk/src/libGLESv2/Texture.cpp
+END
+D3DConstantTable.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/1394/trunk/src/libGLESv2/D3DConstantTable.h
+END
+IndexDataManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/973/trunk/src/libGLESv2/IndexDataManager.h
+END
+VertexDataManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/970/trunk/src/libGLESv2/VertexDataManager.h
+END
+Program.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/1242/trunk/src/libGLESv2/Program.cpp
+END
+Renderbuffer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/1115/trunk/src/libGLESv2/Renderbuffer.cpp
+END
+Query.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/956/trunk/src/libGLESv2/Query.h
+END
+Shader.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/1271/trunk/src/libGLESv2/Shader.h
+END
+Buffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/964/trunk/src/libGLESv2/Buffer.h
+END
+Fence.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/1008/trunk/src/libGLESv2/Fence.cpp
+END
+utilities.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/1393/trunk/src/libGLESv2/utilities.h
+END
+ProgramBinary.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/1277/trunk/src/libGLESv2/ProgramBinary.h
+END
+Framebuffer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/1303/trunk/src/libGLESv2/Framebuffer.cpp
+END
+main.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/1306/trunk/src/libGLESv2/main.cpp
+END
+ResourceManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/1260/trunk/src/libGLESv2/ResourceManager.h
+END
+vertexconversion.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/564/trunk/src/libGLESv2/vertexconversion.h
+END
+libGLESv2.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/1304/trunk/src/libGLESv2/libGLESv2.cpp
+END
+Context.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/1646/trunk/src/libGLESv2/Context.h
+END
+Blit.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/1393/trunk/src/libGLESv2/Blit.cpp
+END
+resource.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/539/trunk/src/libGLESv2/resource.h
+END
+D3DConstantTable.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/1725/trunk/src/libGLESv2/D3DConstantTable.cpp
+END
+IndexDataManager.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/998/trunk/src/libGLESv2/IndexDataManager.cpp
+END
+mathutil.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/1725/trunk/src/libGLESv2/mathutil.h
+END
+TextureSSE2.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/1262/trunk/src/libGLESv2/TextureSSE2.cpp
+END
+HandleAllocator.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/623/trunk/src/libGLESv2/HandleAllocator.h
+END
+libGLESv2.vcxproj
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/1385/trunk/src/libGLESv2/libGLESv2.vcxproj
+END
+VertexDataManager.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/1261/trunk/src/libGLESv2/VertexDataManager.cpp
+END
+Texture.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/1323/trunk/src/libGLESv2/Texture.h
+END
+BinaryStream.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/1271/trunk/src/libGLESv2/BinaryStream.h
+END
+Query.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/951/trunk/src/libGLESv2/Query.cpp
+END
+libGLESv2.def
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/1199/trunk/src/libGLESv2/libGLESv2.def
+END
+Shader.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/1985/trunk/src/libGLESv2/Shader.cpp
+END
+Buffer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/769/trunk/src/libGLESv2/Buffer.cpp
+END
+libGLESv2.vcxproj.filters
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/1300/trunk/src/libGLESv2/libGLESv2.vcxproj.filters
+END
+Float16ToFloat32.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/1270/trunk/src/libGLESv2/Float16ToFloat32.cpp
+END
+utilities.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/1725/trunk/src/libGLESv2/utilities.cpp
+END
+libGLESv2.rc
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/749/trunk/src/libGLESv2/libGLESv2.rc
+END
+ProgramBinary.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/1825/trunk/src/libGLESv2/ProgramBinary.cpp
+END
+Program.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/1271/trunk/src/libGLESv2/Program.h
+END
+Renderbuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/1078/trunk/src/libGLESv2/Renderbuffer.h
+END
+Float16ToFloat32.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/1320/trunk/src/libGLESv2/Float16ToFloat32.py
+END
+ResourceManager.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/1261/trunk/src/libGLESv2/ResourceManager.cpp
+END
+Context.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/1999/trunk/src/libGLESv2/Context.cpp
+END
+Fence.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/1008/trunk/src/libGLESv2/Fence.h
+END
+Framebuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/1115/trunk/src/libGLESv2/Framebuffer.h
+END
+main.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/846/trunk/src/libGLESv2/main.h
+END
+HandleAllocator.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/633/trunk/src/libGLESv2/HandleAllocator.cpp
+END

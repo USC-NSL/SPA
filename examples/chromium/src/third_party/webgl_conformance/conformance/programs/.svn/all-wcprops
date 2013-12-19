@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/programs
+END
+gl-bind-attrib-location-long-names-test.html
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/programs/gl-bind-attrib-location-long-names-test.html
+END
+gl-bind-attrib-location-test.html
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/programs/gl-bind-attrib-location-test.html
+END
+gl-shader-test.html
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/programs/gl-shader-test.html
+END
+00_test_list.txt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/programs/00_test_list.txt
+END
+program-test.html
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/programs/program-test.html
+END
+get-active-test.html
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/programs/get-active-test.html
+END
+gl-get-active-uniform.html
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/programs/gl-get-active-uniform.html
+END
+invalid-UTF-16.html
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/programs/invalid-UTF-16.html
+END
+gl-getshadersource.html
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/programs/gl-getshadersource.html
+END
+use-program-crash-with-discard-in-fragment-shader.html
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/programs/use-program-crash-with-discard-in-fragment-shader.html
+END
+gl-get-active-attribute.html
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/programs/gl-get-active-attribute.html
+END

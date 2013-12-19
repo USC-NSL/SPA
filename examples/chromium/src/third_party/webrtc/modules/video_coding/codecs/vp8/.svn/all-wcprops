@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/3913/stable/webrtc/modules/video_coding/codecs/vp8
+END
+reference_picture_selection_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/2974/stable/webrtc/modules/video_coding/codecs/vp8/reference_picture_selection_unittest.cc
+END
+reference_picture_selection.cc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/2974/stable/webrtc/modules/video_coding/codecs/vp8/reference_picture_selection.cc
+END
+vp8_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/3913/stable/webrtc/modules/video_coding/codecs/vp8/vp8_impl.cc
+END
+vp8_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/3913/stable/webrtc/modules/video_coding/codecs/vp8/vp8_impl.h
+END
+reference_picture_selection.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/2974/stable/webrtc/modules/video_coding/codecs/vp8/reference_picture_selection.h
+END
+vp8_sequence_coder.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/3424/stable/webrtc/modules/video_coding/codecs/vp8/vp8_sequence_coder.cc
+END
+Android.mk
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/2974/stable/webrtc/modules/video_coding/codecs/vp8/Android.mk
+END
+temporal_layers.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/3637/stable/webrtc/modules/video_coding/codecs/vp8/temporal_layers.h
+END
+default_temporal_layers_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/3637/stable/webrtc/modules/video_coding/codecs/vp8/default_temporal_layers_unittest.cc
+END
+default_temporal_layers.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/3637/stable/webrtc/modules/video_coding/codecs/vp8/default_temporal_layers.cc
+END
+vp8.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/3913/stable/webrtc/modules/video_coding/codecs/vp8/vp8.gyp
+END
+default_temporal_layers.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/3637/stable/webrtc/modules/video_coding/codecs/vp8/default_temporal_layers.h
+END

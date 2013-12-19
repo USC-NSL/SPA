@@ -1,0 +1,167 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/notEqual
+END
+input.run.txt
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/notEqual/input.run.txt
+END
+notEqual_vec2_frag_ref.frag
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/notEqual/notEqual_vec2_frag_ref.frag
+END
+notEqual_vec3_frag_ref.frag
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/notEqual/notEqual_vec3_frag_ref.frag
+END
+notEqual_bvec2_frag_ref.frag
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/notEqual/notEqual_bvec2_frag_ref.frag
+END
+notEqual_vec2_vert_ref.vert
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/notEqual/notEqual_vec2_vert_ref.vert
+END
+notEqual_bvec3_frag_ref.frag
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/notEqual/notEqual_bvec3_frag_ref.frag
+END
+notEqual_vec3_vert_ref.vert
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/notEqual/notEqual_vec3_vert_ref.vert
+END
+notEqual_bvec2_vert_ref.vert
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/notEqual/notEqual_bvec2_vert_ref.vert
+END
+notEqual_vec2_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/notEqual/notEqual_vec2_frag.frag
+END
+notEqual_bvec3_vert_ref.vert
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/notEqual/notEqual_bvec3_vert_ref.vert
+END
+notEqual_vec3_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/notEqual/notEqual_vec3_frag.frag
+END
+notEqual_bvec2_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/notEqual/notEqual_bvec2_frag.frag
+END
+notEqual_vec2_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/notEqual/notEqual_vec2_vert.vert
+END
+notEqual_bvec3_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/notEqual/notEqual_bvec3_frag.frag
+END
+notEqual_vec3_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/notEqual/notEqual_vec3_vert.vert
+END
+notEqual_bvec2_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/notEqual/notEqual_bvec2_vert.vert
+END
+notEqual_ivec2_frag_ref.frag
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/notEqual/notEqual_ivec2_frag_ref.frag
+END
+notEqual_bvec3_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/notEqual/notEqual_bvec3_vert.vert
+END
+notEqual_ivec3_frag_ref.frag
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/notEqual/notEqual_ivec3_frag_ref.frag
+END
+notEqual_ivec2_vert_ref.vert
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/notEqual/notEqual_ivec2_vert_ref.vert
+END
+notEqual_ivec3_vert_ref.vert
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/notEqual/notEqual_ivec3_vert_ref.vert
+END
+notEqual_ivec2_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/notEqual/notEqual_ivec2_frag.frag
+END
+notEqual_ivec3_frag.frag
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/notEqual/notEqual_ivec3_frag.frag
+END
+notEqual_ivec2_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/notEqual/notEqual_ivec2_vert.vert
+END
+notEqual_ivec3_vert.vert
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/notEqual/notEqual_ivec3_vert.vert
+END
+notEqual_001_to_008.html
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/notEqual/notEqual_001_to_008.html
+END
+notEqual_009_to_012.html
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/138171/trunk/deps/third_party/webgl/sdk/tests/conformance/ogles/GL/notEqual/notEqual_009_to_012.html
+END

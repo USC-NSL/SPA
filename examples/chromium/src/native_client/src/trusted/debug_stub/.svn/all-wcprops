@@ -1,0 +1,173 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/native_client/!svn/ver/11244/trunk/src/native_client/src/trusted/debug_stub
+END
+abi.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/native_client/!svn/ver/11244/trunk/src/native_client/src/trusted/debug_stub/abi.cc
+END
+abi.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/native_client/!svn/ver/9996/trunk/src/native_client/src/trusted/debug_stub/abi.h
+END
+debug_stub.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/native_client/!svn/ver/10585/trunk/src/native_client/src/trusted/debug_stub/debug_stub.gyp
+END
+transport.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/native_client/!svn/ver/10571/trunk/src/native_client/src/trusted/debug_stub/transport.h
+END
+build.scons
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/native_client/!svn/ver/10196/trunk/src/native_client/src/trusted/debug_stub/build.scons
+END
+mutex.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/native_client/!svn/ver/10196/trunk/src/native_client/src/trusted/debug_stub/mutex.h
+END
+transport_common.cc
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/native_client/!svn/ver/10571/trunk/src/native_client/src/trusted/debug_stub/transport_common.cc
+END
+packet_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/native_client/!svn/ver/10196/trunk/src/native_client/src/trusted/debug_stub/packet_test.cc
+END
+packet.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/native_client/!svn/ver/9901/trunk/src/native_client/src/trusted/debug_stub/packet.cc
+END
+packet.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/native_client/!svn/ver/9901/trunk/src/native_client/src/trusted/debug_stub/packet.h
+END
+thread.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/native_client/!svn/ver/10196/trunk/src/native_client/src/trusted/debug_stub/thread.h
+END
+util_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/native_client/!svn/ver/10196/trunk/src/native_client/src/trusted/debug_stub/util_test.cc
+END
+util.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/native_client/!svn/ver/10196/trunk/src/native_client/src/trusted/debug_stub/util.cc
+END
+util.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/native_client/!svn/ver/10196/trunk/src/native_client/src/trusted/debug_stub/util.h
+END
+test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/native_client/!svn/ver/10572/trunk/src/native_client/src/trusted/debug_stub/test.cc
+END
+thread_common.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/native_client/!svn/ver/9650/trunk/src/native_client/src/trusted/debug_stub/thread_common.cc
+END
+test.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/native_client/!svn/ver/10196/trunk/src/native_client/src/trusted/debug_stub/test.h
+END
+session_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/native_client/!svn/ver/10571/trunk/src/native_client/src/trusted/debug_stub/session_test.cc
+END
+nacl_debug.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/native_client/!svn/ver/10443/trunk/src/native_client/src/trusted/debug_stub/nacl_debug.cc
+END
+debug_stub.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/native_client/!svn/ver/10196/trunk/src/native_client/src/trusted/debug_stub/debug_stub.cc
+END
+session.cc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/native_client/!svn/ver/10609/trunk/src/native_client/src/trusted/debug_stub/session.cc
+END
+debug_stub.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/native_client/!svn/ver/10196/trunk/src/native_client/src/trusted/debug_stub/debug_stub.h
+END
+session.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/native_client/!svn/ver/10571/trunk/src/native_client/src/trusted/debug_stub/session.h
+END
+platform.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/native_client/!svn/ver/10572/trunk/src/native_client/src/trusted/debug_stub/platform.h
+END
+target.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/native_client/!svn/ver/11244/trunk/src/native_client/src/trusted/debug_stub/target.cc
+END
+target.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/native_client/!svn/ver/10111/trunk/src/native_client/src/trusted/debug_stub/target.h
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/native_client/!svn/ver/9122/trunk/src/native_client/src/trusted/debug_stub/OWNERS
+END
+abi_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/native_client/!svn/ver/11244/trunk/src/native_client/src/trusted/debug_stub/abi_test.cc
+END

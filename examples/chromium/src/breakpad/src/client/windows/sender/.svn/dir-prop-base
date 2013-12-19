@@ -1,0 +1,13 @@
+K 10
+svn:ignore
+V 56
+*.sln
+*.vcproj
+*.user
+*.suo
+*.ncb
+Debug
+Default
+Release
+
+END

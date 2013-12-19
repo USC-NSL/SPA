@@ -1,0 +1,12 @@
+K 10
+svn:ignore
+V 130
+libvpx.Makefile
+libvpx.sln
+libvpx.xcodeproj
+libvpx_include.target.mk
+libvpx_include.vcproj
+libvpx_lib.target.mk
+libvpx_lib.vcproj
+
+END

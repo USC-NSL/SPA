@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/native_client/!svn/ver/6854/trunk/src/native_client/tests/spec2k/186.crafty
+END
+diff.README
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/native_client/!svn/ver/3112/trunk/src/native_client/tests/spec2k/186.crafty/diff.README
+END
+diff
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/native_client/!svn/ver/3112/trunk/src/native_client/tests/spec2k/186.crafty/diff
+END
+run.ref.sh
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/native_client/!svn/ver/6854/trunk/src/native_client/tests/spec2k/186.crafty/run.ref.sh
+END
+run.train.sh
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/native_client/!svn/ver/6854/trunk/src/native_client/tests/spec2k/186.crafty/run.train.sh
+END
+run.test.sh
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/native_client/!svn/ver/6854/trunk/src/native_client/tests/spec2k/186.crafty/run.test.sh
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/native_client/!svn/ver/4818/trunk/src/native_client/tests/spec2k/186.crafty/Makefile
+END

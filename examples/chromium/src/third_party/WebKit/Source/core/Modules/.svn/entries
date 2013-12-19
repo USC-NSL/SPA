@@ -1,0 +1,88 @@
+10
+
+dir
+149431
+http://src.chromium.org/blink/trunk/Source/core/Modules
+http://src.chromium.org/blink
+
+
+
+2013-04-10T23:58:33.483397Z
+148125
+abarth@chromium.org
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+bbb929c8-8fbe-4397-9dbb-9b2b20218538
+
+intents
+dir
+
+filesystem
+dir
+
+indexeddb
+dir
+
+quota
+dir
+
+mediastream
+dir
+
+vibration
+dir
+
+encryptedmedia
+dir
+
+gamepad
+dir
+
+webaudio
+dir
+
+protocolhandler
+dir
+
+mediasource
+dir
+
+webdatabase
+dir
+
+geolocation
+dir
+
+proximity
+dir
+
+networkinfo
+dir
+
+navigatorcontentutils
+dir
+
+speech
+dir
+
+notifications
+dir
+
+websockets
+dir
+
+battery
+dir
+

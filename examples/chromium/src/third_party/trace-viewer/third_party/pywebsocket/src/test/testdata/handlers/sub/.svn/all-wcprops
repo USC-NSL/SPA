@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/128/trunk/third_party/pywebsocket/src/test/testdata/handlers/sub
+END
+exception_in_transfer_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/128/trunk/third_party/pywebsocket/src/test/testdata/handlers/sub/exception_in_transfer_wsh.py
+END
+non_callable_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/128/trunk/third_party/pywebsocket/src/test/testdata/handlers/sub/non_callable_wsh.py
+END
+wrong_transfer_sig_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/128/trunk/third_party/pywebsocket/src/test/testdata/handlers/sub/wrong_transfer_sig_wsh.py
+END
+plain_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/128/trunk/third_party/pywebsocket/src/test/testdata/handlers/sub/plain_wsh.py
+END
+wrong_handshake_sig_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/128/trunk/third_party/pywebsocket/src/test/testdata/handlers/sub/wrong_handshake_sig_wsh.py
+END
+no_wsh_at_the_end.py
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/128/trunk/third_party/pywebsocket/src/test/testdata/handlers/sub/no_wsh_at_the_end.py
+END

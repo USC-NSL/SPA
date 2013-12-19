@@ -1,0 +1,13 @@
+K 10
+svn:ignore
+V 258
+service_runtime_x86.Makefile
+service_runtime_x86.sln
+service_runtime_x86.xcodeproj
+service_runtime_x86_common.rules
+service_runtime_x86_common.target.mk
+service_runtime_x86_common.vcproj
+service_runtime_x86_common64.rules
+service_runtime_x86_common64.vcproj
+
+END

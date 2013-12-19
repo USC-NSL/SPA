@@ -1,0 +1,707 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/177737/trunk/deps/third_party/libjpeg_turbo
+END
+jdatadst.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/jdatadst.c
+END
+jchuff.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/jchuff.c
+END
+jdtrans.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/jdtrans.c
+END
+wrtarga.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/wrtarga.c
+END
+jchuff.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/jchuff.h
+END
+config.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/136524/trunk/deps/third_party/libjpeg_turbo/config.h
+END
+transupp.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/transupp.c
+END
+jcparam.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/118072/trunk/deps/third_party/libjpeg_turbo/jcparam.c
+END
+transupp.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/transupp.h
+END
+jquant1.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/jquant1.c
+END
+jaricom.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/jaricom.c
+END
+change.log
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/change.log
+END
+jsimd_none.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/jsimd_none.c
+END
+jcphuff.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/jcphuff.c
+END
+rdswitch.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/rdswitch.c
+END
+jpeglibmangler.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/66929/trunk/deps/third_party/libjpeg_turbo/jpeglibmangler.h
+END
+wrjpgcom.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/wrjpgcom.c
+END
+rrtimer.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/rrtimer.h
+END
+jccolor.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/136524/trunk/deps/third_party/libjpeg_turbo/jccolor.c
+END
+jcsample.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/jcsample.c
+END
+jcmarker.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/jcmarker.c
+END
+jmemmgr.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/jmemmgr.c
+END
+jpegut.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/jpegut.c
+END
+jdsample.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/jdsample.c
+END
+jdmarker.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/139642/trunk/deps/third_party/libjpeg_turbo/jdmarker.c
+END
+jfdctflt.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/jfdctflt.c
+END
+jpgtest.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/jpgtest.cxx
+END
+jmorecfg.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/118072/trunk/deps/third_party/libjpeg_turbo/jmorecfg.h
+END
+rdcolmap.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/rdcolmap.c
+END
+turbojpeg.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/147403/trunk/deps/third_party/libjpeg_turbo/turbojpeg.c
+END
+jinclude.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/jinclude.h
+END
+jidctflt.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/jidctflt.c
+END
+jctrans.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/jctrans.c
+END
+jpegint.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/jpegint.h
+END
+turbojpeg.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/147403/trunk/deps/third_party/libjpeg_turbo/turbojpeg.h
+END
+jsimddct.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/jsimddct.h
+END
+rdrle.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/rdrle.c
+END
+jdatadst-tj.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/jdatadst-tj.c
+END
+jutils.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/jutils.c
+END
+jcprepct.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/jcprepct.c
+END
+jsimd.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/jsimd.h
+END
+tjbench.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/147403/trunk/deps/third_party/libjpeg_turbo/tjbench.c
+END
+jdinput.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/136524/trunk/deps/third_party/libjpeg_turbo/jdinput.c
+END
+turbojpeg-jni.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/147403/trunk/deps/third_party/libjpeg_turbo/turbojpeg-jni.c
+END
+LICENSE.txt
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/95800/trunk/deps/third_party/libjpeg_turbo/LICENSE.txt
+END
+jpeglib.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/118072/trunk/deps/third_party/libjpeg_turbo/jpeglib.h
+END
+rdppm.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/rdppm.c
+END
+rdtarga.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/rdtarga.c
+END
+jdmrgext.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/136524/trunk/deps/third_party/libjpeg_turbo/jdmrgext.c
+END
+jdarith.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/96750/trunk/deps/third_party/libjpeg_turbo/jdarith.c
+END
+rrutil.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/rrutil.h
+END
+jcmainct.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/111873/trunk/deps/third_party/libjpeg_turbo/jcmainct.c
+END
+google.patch
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/136524/trunk/deps/third_party/libjpeg_turbo/google.patch
+END
+djpeg.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/136524/trunk/deps/third_party/libjpeg_turbo/djpeg.c
+END
+jdmainct.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/111873/trunk/deps/third_party/libjpeg_turbo/jdmainct.c
+END
+jcapimin.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/jcapimin.c
+END
+jdpostct.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/jdpostct.c
+END
+rdgif.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/rdgif.c
+END
+LGPL.txt
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/LGPL.txt
+END
+jdapimin.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/jdapimin.c
+END
+wrrle.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/wrrle.c
+END
+cdjpeg.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/cdjpeg.c
+END
+jmemsys.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/jmemsys.h
+END
+jcdctmgr.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/136524/trunk/deps/third_party/libjpeg_turbo/jcdctmgr.c
+END
+jddctmgr.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/136524/trunk/deps/third_party/libjpeg_turbo/jddctmgr.c
+END
+cdjpeg.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/cdjpeg.h
+END
+jerror.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/jerror.c
+END
+rdbmp.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/rdbmp.c
+END
+wrppm.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/wrppm.c
+END
+jdhuff.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/136524/trunk/deps/third_party/libjpeg_turbo/jdhuff.c
+END
+jfdctfst.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/jfdctfst.c
+END
+jerror.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/jerror.h
+END
+jcmaster.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/jcmaster.c
+END
+jdmaster.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/136524/trunk/deps/third_party/libjpeg_turbo/jdmaster.c
+END
+jpegcomp.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/136524/trunk/deps/third_party/libjpeg_turbo/jpegcomp.h
+END
+jidctfst.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/jidctfst.c
+END
+jmemnobs.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/jmemnobs.c
+END
+jdhuff.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/jdhuff.h
+END
+jccolext.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/136524/trunk/deps/third_party/libjpeg_turbo/jccolext.c
+END
+jdcolext.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/136524/trunk/deps/third_party/libjpeg_turbo/jdcolext.c
+END
+tjunittest.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/136524/trunk/deps/third_party/libjpeg_turbo/tjunittest.c
+END
+turbojpegl.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/turbojpegl.c
+END
+wrgif.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/wrgif.c
+END
+jcinit.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/jcinit.c
+END
+README-turbo.txt
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/136524/trunk/deps/third_party/libjpeg_turbo/README-turbo.txt
+END
+jcarith.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/jcarith.c
+END
+jquant2.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/jquant2.c
+END
+wrbmp.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/wrbmp.c
+END
+jdct.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/136524/trunk/deps/third_party/libjpeg_turbo/jdct.h
+END
+jdatasrc.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/jdatasrc.c
+END
+example.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/example.c
+END
+README.chromium
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/149334/trunk/deps/third_party/libjpeg_turbo/README.chromium
+END
+jcapistd.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/jcapistd.c
+END
+jdapistd.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/jdapistd.c
+END
+jversion.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/136524/trunk/deps/third_party/libjpeg_turbo/jversion.h
+END
+cderror.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/cderror.h
+END
+jfdctint.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/jfdctint.c
+END
+rdjpgcom.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/rdjpgcom.c
+END
+jdatasrc-tj.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/jdatasrc-tj.c
+END
+jidctint.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/136524/trunk/deps/third_party/libjpeg_turbo/jidctint.c
+END
+jpegtran.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/136524/trunk/deps/third_party/libjpeg_turbo/jpegtran.c
+END
+tjutil.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/tjutil.c
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/136524/trunk/deps/third_party/libjpeg_turbo/README
+END
+jdmerge.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/136524/trunk/deps/third_party/libjpeg_turbo/jdmerge.c
+END
+bmp.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/111873/trunk/deps/third_party/libjpeg_turbo/bmp.c
+END
+jccoefct.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/jccoefct.c
+END
+tjutil.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/tjutil.h
+END
+jdcoefct.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/jdcoefct.c
+END
+jcomapi.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/jcomapi.c
+END
+bmp.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/95196/trunk/deps/third_party/libjpeg_turbo/bmp.h
+END
+jconfig.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/136524/trunk/deps/third_party/libjpeg_turbo/jconfig.h
+END
+ChangeLog.txt
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/147403/trunk/deps/third_party/libjpeg_turbo/ChangeLog.txt
+END
+jdphuff.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/jdphuff.c
+END
+cjpeg.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/136524/trunk/deps/third_party/libjpeg_turbo/cjpeg.c
+END
+jidctred.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/64575/trunk/deps/third_party/libjpeg_turbo/jidctred.c
+END
+libjpeg.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/177737/trunk/deps/third_party/libjpeg_turbo/libjpeg.gyp
+END
+jdcolor.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/136524/trunk/deps/third_party/libjpeg_turbo/jdcolor.c
+END

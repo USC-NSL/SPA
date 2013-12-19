@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/native_client/!svn/ver/10587/trunk/src/native_client/src/trusted/validator_x86/testscripts
+END
+run_old_validator_tests.py
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/native_client/!svn/ver/10586/trunk/src/native_client/src/trusted/validator_x86/testscripts/run_old_validator_tests.py
+END
+compare_validators.py
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/native_client/!svn/ver/9993/trunk/src/native_client/src/trusted/validator_x86/testscripts/compare_validators.py
+END
+run_rdfa_validator_tests.py
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/native_client/!svn/ver/10587/trunk/src/native_client/src/trusted/validator_x86/testscripts/run_rdfa_validator_tests.py
+END
+test_format.py
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/native_client/!svn/ver/9982/trunk/src/native_client/src/trusted/validator_x86/testscripts/test_format.py
+END

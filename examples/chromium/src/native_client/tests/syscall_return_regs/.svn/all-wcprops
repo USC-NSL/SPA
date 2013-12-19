@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/native_client/!svn/ver/10767/trunk/src/native_client/tests/syscall_return_regs
+END
+nacl.scons
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/native_client/!svn/ver/10061/trunk/src/native_client/tests/syscall_return_regs/nacl.scons
+END
+syscall_return_regs_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/native_client/!svn/ver/10767/trunk/src/native_client/tests/syscall_return_regs/syscall_return_regs_test.c
+END

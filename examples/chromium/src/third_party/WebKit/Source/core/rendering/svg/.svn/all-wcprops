@@ -1,0 +1,647 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/blink/!svn/ver/149393/trunk/Source/core/rendering/svg
+END
+SVGTextQuery.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/blink/!svn/ver/149064/trunk/Source/core/rendering/svg/SVGTextQuery.h
+END
+SVGTextLayoutEngineBaseline.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/blink/!svn/ver/149063/trunk/Source/core/rendering/svg/SVGTextLayoutEngineBaseline.h
+END
+RenderSVGResourceRadialGradient.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/RenderSVGResourceRadialGradient.cpp
+END
+SVGTextLayoutEngineSpacing.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/blink/!svn/ver/149064/trunk/Source/core/rendering/svg/SVGTextLayoutEngineSpacing.h
+END
+RenderSVGInline.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/blink/!svn/ver/149065/trunk/Source/core/rendering/svg/RenderSVGInline.h
+END
+RenderSVGTSpan.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/blink/!svn/ver/149064/trunk/Source/core/rendering/svg/RenderSVGTSpan.cpp
+END
+RenderSVGResourceContainer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/RenderSVGResourceContainer.cpp
+END
+SVGPathData.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/blink/!svn/ver/148532/trunk/Source/core/rendering/svg/SVGPathData.h
+END
+SVGRootInlineBox.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/SVGRootInlineBox.cpp
+END
+RenderSVGResourceFilter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/blink/!svn/ver/149293/trunk/Source/core/rendering/svg/RenderSVGResourceFilter.cpp
+END
+RenderSVGHiddenContainer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/RenderSVGHiddenContainer.cpp
+END
+SVGResourcesCache.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/SVGResourcesCache.cpp
+END
+RenderSVGBlock.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/blink/!svn/ver/149065/trunk/Source/core/rendering/svg/RenderSVGBlock.h
+END
+RenderSVGShape.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/blink/!svn/ver/149353/trunk/Source/core/rendering/svg/RenderSVGShape.cpp
+END
+RenderSVGResourceLinearGradient.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/RenderSVGResourceLinearGradient.cpp
+END
+RenderSVGTextPath.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/RenderSVGTextPath.cpp
+END
+RenderSVGEllipse.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/RenderSVGEllipse.h
+END
+RenderSVGResourceGradient.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/RenderSVGResourceGradient.cpp
+END
+SVGTextLayoutEngine.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/SVGTextLayoutEngine.cpp
+END
+SVGTextLayoutEngineBaseline.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/SVGTextLayoutEngineBaseline.cpp
+END
+RenderSVGResourceClipper.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/RenderSVGResourceClipper.h
+END
+SVGTextLayoutEngineSpacing.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/SVGTextLayoutEngineSpacing.cpp
+END
+SVGMarkerData.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/blink/!svn/ver/149061/trunk/Source/core/rendering/svg/SVGMarkerData.h
+END
+RenderSVGForeignObject.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/RenderSVGForeignObject.cpp
+END
+SVGTextMetrics.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/blink/!svn/ver/148532/trunk/Source/core/rendering/svg/SVGTextMetrics.h
+END
+SVGRenderingContext.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/blink/!svn/ver/149080/trunk/Source/core/rendering/svg/SVGRenderingContext.cpp
+END
+RenderSVGContainer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/RenderSVGContainer.cpp
+END
+RenderSVGViewportContainer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/RenderSVGViewportContainer.cpp
+END
+SVGTextChunkBuilder.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/SVGTextChunkBuilder.cpp
+END
+SVGInlineFlowBox.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/blink/!svn/ver/149065/trunk/Source/core/rendering/svg/SVGInlineFlowBox.h
+END
+RenderSVGResourceFilterPrimitive.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/blink/!svn/ver/149250/trunk/Source/core/rendering/svg/RenderSVGResourceFilterPrimitive.cpp
+END
+RenderSVGResourceRadialGradient.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/RenderSVGResourceRadialGradient.h
+END
+RenderSVGInlineText.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/blink/!svn/ver/149065/trunk/Source/core/rendering/svg/RenderSVGInlineText.h
+END
+RenderSVGResourcePattern.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/RenderSVGResourcePattern.h
+END
+RenderSVGPath.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/RenderSVGPath.cpp
+END
+RenderSVGResource.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/RenderSVGResource.h
+END
+RenderSVGEllipse.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/RenderSVGEllipse.cpp
+END
+RenderSVGResourceContainer.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/blink/!svn/ver/149064/trunk/Source/core/rendering/svg/RenderSVGResourceContainer.h
+END
+SVGTextLayoutAttributesBuilder.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/SVGTextLayoutAttributesBuilder.cpp
+END
+RenderSVGRect.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/RenderSVGRect.h
+END
+RenderSVGHiddenContainer.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/blink/!svn/ver/149064/trunk/Source/core/rendering/svg/RenderSVGHiddenContainer.h
+END
+SVGResourcesCache.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/blink/!svn/ver/149063/trunk/Source/core/rendering/svg/SVGResourcesCache.h
+END
+SVGSubpathData.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/blink/!svn/ver/149037/trunk/Source/core/rendering/svg/SVGSubpathData.h
+END
+RenderSVGShape.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/blink/!svn/ver/149064/trunk/Source/core/rendering/svg/RenderSVGShape.h
+END
+RenderSVGResourceLinearGradient.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/RenderSVGResourceLinearGradient.h
+END
+RenderSVGGradientStop.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/blink/!svn/ver/149065/trunk/Source/core/rendering/svg/RenderSVGGradientStop.h
+END
+SVGResources.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/SVGResources.cpp
+END
+SVGTextMetrics.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/blink/!svn/ver/149064/trunk/Source/core/rendering/svg/SVGTextMetrics.cpp
+END
+SVGTextRunRenderingContext.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/SVGTextRunRenderingContext.cpp
+END
+SVGRenderSupport.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/SVGRenderSupport.cpp
+END
+SVGTextLayoutEngine.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/blink/!svn/ver/149064/trunk/Source/core/rendering/svg/SVGTextLayoutEngine.h
+END
+SVGInlineFlowBox.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/blink/!svn/ver/149218/trunk/Source/core/rendering/svg/SVGInlineFlowBox.cpp
+END
+RenderSVGImage.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/blink/!svn/ver/149393/trunk/Source/core/rendering/svg/RenderSVGImage.cpp
+END
+SVGTextChunk.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/SVGTextChunk.h
+END
+SVGTextMetricsBuilder.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/blink/!svn/ver/149064/trunk/Source/core/rendering/svg/SVGTextMetricsBuilder.cpp
+END
+RenderSVGInlineText.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/blink/!svn/ver/149210/trunk/Source/core/rendering/svg/RenderSVGInlineText.cpp
+END
+RenderSVGText.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/RenderSVGText.cpp
+END
+RenderSVGForeignObject.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/blink/!svn/ver/149064/trunk/Source/core/rendering/svg/RenderSVGForeignObject.h
+END
+RenderSVGResourcePattern.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/RenderSVGResourcePattern.cpp
+END
+RenderSVGResourceSolidColor.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/blink/!svn/ver/149064/trunk/Source/core/rendering/svg/RenderSVGResourceSolidColor.h
+END
+RenderSVGViewportContainer.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/blink/!svn/ver/149064/trunk/Source/core/rendering/svg/RenderSVGViewportContainer.h
+END
+SVGRenderingContext.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/blink/!svn/ver/149065/trunk/Source/core/rendering/svg/SVGRenderingContext.h
+END
+RenderSVGResource.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/RenderSVGResource.cpp
+END
+RenderSVGContainer.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/blink/!svn/ver/149064/trunk/Source/core/rendering/svg/RenderSVGContainer.h
+END
+SVGRenderTreeAsText.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/SVGRenderTreeAsText.cpp
+END
+RenderSVGRoot.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/blink/!svn/ver/149065/trunk/Source/core/rendering/svg/RenderSVGRoot.h
+END
+SVGTextChunkBuilder.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/blink/!svn/ver/149064/trunk/Source/core/rendering/svg/SVGTextChunkBuilder.h
+END
+RenderSVGResourceMasker.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/RenderSVGResourceMasker.cpp
+END
+SVGResourcesCycleSolver.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/blink/!svn/ver/148532/trunk/Source/core/rendering/svg/SVGResourcesCycleSolver.h
+END
+RenderSVGResourceFilterPrimitive.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/blink/!svn/ver/149064/trunk/Source/core/rendering/svg/RenderSVGResourceFilterPrimitive.h
+END
+RenderSVGModelObject.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/blink/!svn/ver/149065/trunk/Source/core/rendering/svg/RenderSVGModelObject.h
+END
+SVGInlineTextBox.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/blink/!svn/ver/149080/trunk/Source/core/rendering/svg/SVGInlineTextBox.cpp
+END
+RenderSVGRect.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/RenderSVGRect.cpp
+END
+SVGTextLayoutAttributes.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/blink/!svn/ver/149064/trunk/Source/core/rendering/svg/SVGTextLayoutAttributes.h
+END
+RenderSVGResourceMarker.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/RenderSVGResourceMarker.h
+END
+RenderSVGPath.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/blink/!svn/ver/149064/trunk/Source/core/rendering/svg/RenderSVGPath.h
+END
+RenderSVGTransformableContainer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/RenderSVGTransformableContainer.cpp
+END
+RenderSVGGradientStop.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/RenderSVGGradientStop.cpp
+END
+SVGTextLayoutAttributesBuilder.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/blink/!svn/ver/149064/trunk/Source/core/rendering/svg/SVGTextLayoutAttributesBuilder.h
+END
+SVGTextQuery.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/blink/!svn/ver/149074/trunk/Source/core/rendering/svg/SVGTextQuery.cpp
+END
+SVGTextChunk.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/blink/!svn/ver/149064/trunk/Source/core/rendering/svg/SVGTextChunk.cpp
+END
+SVGTextFragment.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/blink/!svn/ver/149040/trunk/Source/core/rendering/svg/SVGTextFragment.h
+END
+RenderSVGInline.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/blink/!svn/ver/149064/trunk/Source/core/rendering/svg/RenderSVGInline.cpp
+END
+SVGResources.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/blink/!svn/ver/148532/trunk/Source/core/rendering/svg/SVGResources.h
+END
+SVGTextRunRenderingContext.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/blink/!svn/ver/149037/trunk/Source/core/rendering/svg/SVGTextRunRenderingContext.h
+END
+SVGRenderSupport.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/blink/!svn/ver/149065/trunk/Source/core/rendering/svg/SVGRenderSupport.h
+END
+RenderSVGResourceSolidColor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/blink/!svn/ver/149302/trunk/Source/core/rendering/svg/RenderSVGResourceSolidColor.cpp
+END
+RenderSVGRoot.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/RenderSVGRoot.cpp
+END
+SVGResourcesCycleSolver.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/SVGResourcesCycleSolver.cpp
+END
+SVGPathData.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/SVGPathData.cpp
+END
+RenderSVGImage.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/RenderSVGImage.h
+END
+RenderSVGModelObject.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/RenderSVGModelObject.cpp
+END
+SVGTextMetricsBuilder.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/blink/!svn/ver/149064/trunk/Source/core/rendering/svg/SVGTextMetricsBuilder.h
+END
+RenderSVGText.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/blink/!svn/ver/149064/trunk/Source/core/rendering/svg/RenderSVGText.h
+END
+RenderSVGResourceMarker.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/RenderSVGResourceMarker.cpp
+END
+SVGTextLayoutAttributes.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/blink/!svn/ver/149064/trunk/Source/core/rendering/svg/SVGTextLayoutAttributes.cpp
+END
+RenderSVGBlock.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/RenderSVGBlock.cpp
+END
+RenderSVGTSpan.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/blink/!svn/ver/149064/trunk/Source/core/rendering/svg/RenderSVGTSpan.h
+END
+SVGRenderTreeAsText.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/blink/!svn/ver/149052/trunk/Source/core/rendering/svg/SVGRenderTreeAsText.h
+END
+RenderSVGResourceMasker.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/RenderSVGResourceMasker.h
+END
+SVGRootInlineBox.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/blink/!svn/ver/149065/trunk/Source/core/rendering/svg/SVGRootInlineBox.h
+END
+SVGInlineTextBox.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/blink/!svn/ver/149065/trunk/Source/core/rendering/svg/SVGInlineTextBox.h
+END
+RenderSVGResourceFilter.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/RenderSVGResourceFilter.h
+END
+RenderSVGResourceClipper.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/RenderSVGResourceClipper.cpp
+END
+RenderSVGTextPath.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/blink/!svn/ver/149064/trunk/Source/core/rendering/svg/RenderSVGTextPath.h
+END
+RenderSVGTransformableContainer.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/blink/!svn/ver/149064/trunk/Source/core/rendering/svg/RenderSVGTransformableContainer.h
+END
+RenderSVGResourceGradient.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/blink/!svn/ver/149280/trunk/Source/core/rendering/svg/RenderSVGResourceGradient.h
+END

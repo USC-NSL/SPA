@@ -1,0 +1,299 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss
+END
+nsIX509CertList.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsIX509CertList.h
+END
+nsISSLErrorListener.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsISSLErrorListener.h
+END
+nsIASN1PrintableItem.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsIASN1PrintableItem.h
+END
+nsICMSEncoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsICMSEncoder.h
+END
+nsIDOMCryptoDialogs.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsIDOMCryptoDialogs.h
+END
+nsITokenDialogs.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsITokenDialogs.h
+END
+nsIX509Cert.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsIX509Cert.h
+END
+nsICMSMessageErrors.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsICMSMessageErrors.h
+END
+nsIDataSignatureVerifier.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsIDataSignatureVerifier.h
+END
+nsIX509CertDB.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsIX509CertDB.h
+END
+nsIX509CertValidity.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsIX509CertValidity.h
+END
+nsIUserCertPicker.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsIUserCertPicker.h
+END
+nsIASN1Sequence.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsIASN1Sequence.h
+END
+nsIGenKeypairInfoDlg.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsIGenKeypairInfoDlg.h
+END
+nsIAssociatedContentSecurity.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsIAssociatedContentSecurity.h
+END
+nsIClientAuthDialogs.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsIClientAuthDialogs.h
+END
+nsIPKCS11Slot.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsIPKCS11Slot.h
+END
+nsINSSCertCache.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsINSSCertCache.h
+END
+nsIIdentityInfo.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsIIdentityInfo.h
+END
+nsISSLStatus.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsISSLStatus.h
+END
+nsICertPickDialogs.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsICertPickDialogs.h
+END
+nsICMSDecoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsICMSDecoder.h
+END
+nsICMSMessage2.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsICMSMessage2.h
+END
+nsIKeygenThread.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsIKeygenThread.h
+END
+nsIPK11Token.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsIPK11Token.h
+END
+nsICertOverrideService.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsICertOverrideService.h
+END
+nsIPK11TokenDB.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsIPK11TokenDB.h
+END
+nsICertificateDialogs.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsICertificateDialogs.h
+END
+nsIOCSPResponder.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsIOCSPResponder.h
+END
+nsICipherInfo.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsICipherInfo.h
+END
+nsIStreamCipher.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsIStreamCipher.h
+END
+nsICMSMessage.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsICMSMessage.h
+END
+nsISMimeCert.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsISMimeCert.h
+END
+nsIASN1Object.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsIASN1Object.h
+END
+nsIBadCertListener2.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsIBadCertListener2.h
+END
+nsICRLInfo.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsICRLInfo.h
+END
+nsIKeyModule.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsIKeyModule.h
+END
+nsICMSSecureMessage.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsICMSSecureMessage.h
+END
+nsIFormSigningDialog.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsIFormSigningDialog.h
+END
+nsIProtectedAuthThread.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsIProtectedAuthThread.h
+END
+nsIX509Cert2.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsIX509Cert2.h
+END
+nsITokenPasswordDialogs.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsITokenPasswordDialogs.h
+END
+nsIX509Cert3.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsIX509Cert3.h
+END
+nsIPKCS11Module.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsIPKCS11Module.h
+END
+nsIRecentBadCertsService.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsIRecentBadCertsService.h
+END
+nsICRLManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsICRLManager.h
+END
+nsIX509CertDB2.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsIX509CertDB2.h
+END
+nsICertTree.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsICertTree.h
+END
+nsIPKCS11ModuleDB.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/pipnss/nsIPKCS11ModuleDB.h
+END

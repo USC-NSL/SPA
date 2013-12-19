@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/3913/stable/webrtc/modules/audio_conference_mixer/source
+END
+time_scheduler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_conference_mixer/source/time_scheduler.cc
+END
+audio_conference_mixer_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_conference_mixer/source/audio_conference_mixer_impl.cc
+END
+time_scheduler.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_conference_mixer/source/time_scheduler.h
+END
+audio_conference_mixer_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_conference_mixer/source/audio_conference_mixer_impl.h
+END
+audio_conference_mixer.gypi
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/3913/stable/webrtc/modules/audio_conference_mixer/source/audio_conference_mixer.gypi
+END
+memory_pool_win.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_conference_mixer/source/memory_pool_win.h
+END
+Android.mk
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/2974/stable/webrtc/modules/audio_conference_mixer/source/Android.mk
+END
+level_indicator.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_conference_mixer/source/level_indicator.cc
+END
+memory_pool.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_conference_mixer/source/memory_pool.h
+END
+memory_pool_posix.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_conference_mixer/source/memory_pool_posix.h
+END
+level_indicator.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_conference_mixer/source/level_indicator.h
+END
+audio_frame_manipulator.cc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/3840/stable/webrtc/modules/audio_conference_mixer/source/audio_frame_manipulator.cc
+END
+audio_frame_manipulator.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/2974/stable/webrtc/modules/audio_conference_mixer/source/audio_frame_manipulator.h
+END

@@ -1,0 +1,185 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/9/trunk/third_party/dns/rdtypes/ANY
+END
+NSEC.py
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/9/trunk/third_party/dns/rdtypes/ANY/NSEC.py
+END
+SPF.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/9/trunk/third_party/dns/rdtypes/ANY/SPF.py
+END
+KEY.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/9/trunk/third_party/dns/rdtypes/ANY/KEY.py
+END
+NSEC3PARAM.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/9/trunk/third_party/dns/rdtypes/ANY/NSEC3PARAM.py
+END
+ISDN.py
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/9/trunk/third_party/dns/rdtypes/ANY/ISDN.py
+END
+CERT.py
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/9/trunk/third_party/dns/rdtypes/ANY/CERT.py
+END
+DNSKEY.py
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/9/trunk/third_party/dns/rdtypes/ANY/DNSKEY.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/9/trunk/third_party/dns/rdtypes/ANY/__init__.py
+END
+HINFO.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/9/trunk/third_party/dns/rdtypes/ANY/HINFO.py
+END
+PTR.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/9/trunk/third_party/dns/rdtypes/ANY/PTR.py
+END
+DS.py
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/9/trunk/third_party/dns/rdtypes/ANY/DS.py
+END
+GPOS.py
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/9/trunk/third_party/dns/rdtypes/ANY/GPOS.py
+END
+NXT.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/9/trunk/third_party/dns/rdtypes/ANY/NXT.py
+END
+NSEC3.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/9/trunk/third_party/dns/rdtypes/ANY/NSEC3.py
+END
+LOC.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/9/trunk/third_party/dns/rdtypes/ANY/LOC.py
+END
+X25.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/9/trunk/third_party/dns/rdtypes/ANY/X25.py
+END
+TXT.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/9/trunk/third_party/dns/rdtypes/ANY/TXT.py
+END
+AFSDB.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/9/trunk/third_party/dns/rdtypes/ANY/AFSDB.py
+END
+NS.py
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/9/trunk/third_party/dns/rdtypes/ANY/NS.py
+END
+HIP.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/9/trunk/third_party/dns/rdtypes/ANY/HIP.py
+END
+RP.py
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/9/trunk/third_party/dns/rdtypes/ANY/RP.py
+END
+SIG.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/9/trunk/third_party/dns/rdtypes/ANY/SIG.py
+END
+SOA.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/9/trunk/third_party/dns/rdtypes/ANY/SOA.py
+END
+CNAME.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/9/trunk/third_party/dns/rdtypes/ANY/CNAME.py
+END
+SSHFP.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/9/trunk/third_party/dns/rdtypes/ANY/SSHFP.py
+END
+MX.py
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/9/trunk/third_party/dns/rdtypes/ANY/MX.py
+END
+DNAME.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/9/trunk/third_party/dns/rdtypes/ANY/DNAME.py
+END
+RT.py
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/9/trunk/third_party/dns/rdtypes/ANY/RT.py
+END
+DLV.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/9/trunk/third_party/dns/rdtypes/ANY/DLV.py
+END
+RRSIG.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/9/trunk/third_party/dns/rdtypes/ANY/RRSIG.py
+END

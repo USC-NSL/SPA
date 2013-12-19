@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/native_client/!svn/ver/6335/trunk/src/native_client/tests/environment_variables
+END
+env_var_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/native_client/!svn/ver/4008/trunk/src/native_client/tests/environment_variables/env_var_test.c
+END
+nacl.scons
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/native_client/!svn/ver/6335/trunk/src/native_client/tests/environment_variables/nacl.scons
+END
+nonempty_env.stdout
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/native_client/!svn/ver/4008/trunk/src/native_client/tests/environment_variables/nonempty_env.stdout
+END
+empty_env.stdout
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/native_client/!svn/ver/4008/trunk/src/native_client/tests/environment_variables/empty_env.stdout
+END

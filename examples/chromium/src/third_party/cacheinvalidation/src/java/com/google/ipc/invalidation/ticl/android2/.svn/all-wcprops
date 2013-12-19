@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/297/trunk/src/java/com/google/ipc/invalidation/ticl/android2
+END
+ResourcesFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/244/trunk/src/java/com/google/ipc/invalidation/ticl/android2/ResourcesFactory.java
+END
+AndroidInvalidationClientImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/246/trunk/src/java/com/google/ipc/invalidation/ticl/android2/AndroidInvalidationClientImpl.java
+END
+AndroidStorage.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/273/trunk/src/java/com/google/ipc/invalidation/ticl/android2/AndroidStorage.java
+END
+ProtocolIntents.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/246/trunk/src/java/com/google/ipc/invalidation/ticl/android2/ProtocolIntents.java
+END
+TiclService.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/274/trunk/src/java/com/google/ipc/invalidation/ticl/android2/TiclService.java
+END
+AndroidInternalScheduler.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/297/trunk/src/java/com/google/ipc/invalidation/ticl/android2/AndroidInternalScheduler.java
+END
+AndroidInvalidationClientStub.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/221/trunk/src/java/com/google/ipc/invalidation/ticl/android2/AndroidInvalidationClientStub.java
+END
+AndroidInvalidationListenerIntentMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/!svn/ver/246/trunk/src/java/com/google/ipc/invalidation/ticl/android2/AndroidInvalidationListenerIntentMapper.java
+END
+AndroidTiclManifest.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/246/trunk/src/java/com/google/ipc/invalidation/ticl/android2/AndroidTiclManifest.java
+END
+AndroidServiceAccessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/244/trunk/src/java/com/google/ipc/invalidation/ticl/android2/AndroidServiceAccessor.java
+END
+AndroidManifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/232/trunk/src/java/com/google/ipc/invalidation/ticl/android2/AndroidManifest.xml
+END
+AndroidInvalidationListenerStub.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/246/trunk/src/java/com/google/ipc/invalidation/ticl/android2/AndroidInvalidationListenerStub.java
+END
+TiclStateManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/244/trunk/src/java/com/google/ipc/invalidation/ticl/android2/TiclStateManager.java
+END
+AndroidStrings.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/246/trunk/src/java/com/google/ipc/invalidation/ticl/android2/AndroidStrings.java
+END
+AndroidIntentProtocolValidator.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/246/trunk/src/java/com/google/ipc/invalidation/ticl/android2/AndroidIntentProtocolValidator.java
+END
+AndroidClock.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/221/trunk/src/java/com/google/ipc/invalidation/ticl/android2/AndroidClock.java
+END

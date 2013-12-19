@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/ppc
+END
+vp9_encodemb_altivec.asm
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/ppc/vp9_encodemb_altivec.asm
+END
+vp9_fdct_altivec.asm
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/ppc/vp9_fdct_altivec.asm
+END
+vp9_variance_subpixel_altivec.asm
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/ppc/vp9_variance_subpixel_altivec.asm
+END
+vp9_sad_altivec.asm
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/ppc/vp9_sad_altivec.asm
+END
+vp9_rdopt_altivec.asm
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/ppc/vp9_rdopt_altivec.asm
+END
+vp9_variance_altivec.asm
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/ppc/vp9_variance_altivec.asm
+END
+vp9_csystemdependent.c
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vp9/encoder/ppc/vp9_csystemdependent.c
+END

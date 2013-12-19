@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/crypto/sha
+END
+sha512.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/sha/sha512.c
+END
+sha256.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/crypto/sha/sha256.c
+END
+shatest.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/118977/trunk/deps/third_party/openssl/openssl/crypto/sha/shatest.c
+END
+sha.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/65201/trunk/deps/third_party/openssl/openssl/crypto/sha/sha.c
+END
+sha1dgst.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/crypto/sha/sha1dgst.c
+END
+sha.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/sha/sha.h
+END
+sha512t.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/65201/trunk/deps/third_party/openssl/openssl/crypto/sha/sha512t.c
+END
+sha_locl.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/crypto/sha/sha_locl.h
+END
+sha_dgst.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/crypto/sha/sha_dgst.c
+END
+sha256t.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/65201/trunk/deps/third_party/openssl/openssl/crypto/sha/sha256t.c
+END
+sha1test.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/65201/trunk/deps/third_party/openssl/openssl/crypto/sha/sha1test.c
+END
+sha1.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/65201/trunk/deps/third_party/openssl/openssl/crypto/sha/sha1.c
+END
+sha1_one.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/crypto/sha/sha1_one.c
+END

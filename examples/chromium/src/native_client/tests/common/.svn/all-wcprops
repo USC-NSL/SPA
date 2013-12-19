@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/native_client/!svn/ver/10973/trunk/src/native_client/tests/common
+END
+register_set_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/native_client/!svn/ver/10752/trunk/src/native_client/tests/common/register_set_test.c
+END
+register_set.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/native_client/!svn/ver/10973/trunk/src/native_client/tests/common/register_set.c
+END
+nacl.scons
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/native_client/!svn/ver/9932/trunk/src/native_client/tests/common/nacl.scons
+END
+build.scons
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/native_client/!svn/ver/9383/trunk/src/native_client/tests/common/build.scons
+END
+register_set.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/native_client/!svn/ver/10973/trunk/src/native_client/tests/common/register_set.h
+END

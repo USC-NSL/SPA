@@ -1,0 +1,533 @@
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/!svn/ver/8912/trunk/src/gpu
+END
+GrTextStrike.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/7406/trunk/src/gpu/GrTextStrike.h
+END
+GrResourceCache.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/7652/trunk/src/gpu/GrResourceCache.cpp
+END
+GrAAConvexPathRenderer.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/6861/trunk/src/gpu/GrAAConvexPathRenderer.h
+END
+GrInOrderDrawBuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/8675/trunk/src/gpu/GrInOrderDrawBuffer.h
+END
+GrDrawTargetCaps.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/8383/trunk/src/gpu/GrDrawTargetCaps.h
+END
+GrCacheID.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/7596/trunk/src/gpu/GrCacheID.cpp
+END
+GrClipData.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/7406/trunk/src/gpu/GrClipData.cpp
+END
+GrPathUtils.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/6247/trunk/src/gpu/GrPathUtils.h
+END
+GrBufferAllocPool.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/7501/trunk/src/gpu/GrBufferAllocPool.h
+END
+GrRenderTarget.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/6476/trunk/src/gpu/GrRenderTarget.cpp
+END
+GrStencilAndCoverPathRenderer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/8369/trunk/src/gpu/GrStencilAndCoverPathRenderer.cpp
+END
+GrAllocPool.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/7406/trunk/src/gpu/GrAllocPool.h
+END
+GrGeometryBuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/7807/trunk/src/gpu/GrGeometryBuffer.h
+END
+GrClipMaskCache.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/6694/trunk/src/gpu/GrClipMaskCache.h
+END
+GrEffect.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/8092/trunk/src/gpu/GrEffect.cpp
+END
+GrDefaultPathRenderer.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/6861/trunk/src/gpu/GrDefaultPathRenderer.h
+END
+GrClipMaskManager.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/8369/trunk/src/gpu/GrClipMaskManager.cpp
+END
+GrAddPathRenderers_none.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/5262/trunk/src/gpu/GrAddPathRenderers_none.cpp
+END
+GrAAHairLinePathRenderer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/8828/trunk/src/gpu/GrAAHairLinePathRenderer.cpp
+END
+GrStencil.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/5262/trunk/src/gpu/GrStencil.cpp
+END
+GrSWMaskHelper.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/8272/trunk/src/gpu/GrSWMaskHelper.cpp
+END
+GrTextStrike.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/7406/trunk/src/gpu/GrTextStrike.cpp
+END
+FlingState.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/7406/trunk/src/gpu/FlingState.cpp
+END
+GrAAConvexPathRenderer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/8828/trunk/src/gpu/GrAAConvexPathRenderer.cpp
+END
+GrRectanizer_fifo.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/7406/trunk/src/gpu/GrRectanizer_fifo.cpp
+END
+GrAtlas.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/7406/trunk/src/gpu/GrAtlas.h
+END
+GrInOrderDrawBuffer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/8795/trunk/src/gpu/GrInOrderDrawBuffer.cpp
+END
+SkGrPixelRef.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/7640/trunk/src/gpu/SkGrPixelRef.cpp
+END
+SkGr.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/7843/trunk/src/gpu/SkGr.cpp
+END
+GrBufferAllocPool.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/8369/trunk/src/gpu/GrBufferAllocPool.cpp
+END
+GrResourceCache.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/7853/trunk/src/gpu/GrResourceCache.h
+END
+GrTextureAccess.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/8428/trunk/src/gpu/GrTextureAccess.cpp
+END
+GrGpuFactory.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/7905/trunk/src/gpu/GrGpuFactory.cpp
+END
+GrAllocPool.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/7406/trunk/src/gpu/GrAllocPool.cpp
+END
+GrContext.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/8912/trunk/src/gpu/GrContext.cpp
+END
+GrPathRendererChain.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/8369/trunk/src/gpu/GrPathRendererChain.cpp
+END
+GrDefaultPathRenderer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/7929/trunk/src/gpu/GrDefaultPathRenderer.cpp
+END
+GrPlotMgr.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/7406/trunk/src/gpu/GrPlotMgr.h
+END
+GrBinHashKey.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/6916/trunk/src/gpu/GrBinHashKey.h
+END
+GrStencilAndCoverPathRenderer.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/6861/trunk/src/gpu/GrStencilAndCoverPathRenderer.h
+END
+SkGrFontScaler.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/7406/trunk/src/gpu/SkGrFontScaler.cpp
+END
+GrTBSearch.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/7406/trunk/src/gpu/GrTBSearch.h
+END
+gr_unittests.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/8468/trunk/src/gpu/gr_unittests.cpp
+END
+GrPath.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/7348/trunk/src/gpu/GrPath.h
+END
+GrSoftwarePathRenderer.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/6861/trunk/src/gpu/GrSoftwarePathRenderer.h
+END
+GrDrawState.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/8787/trunk/src/gpu/GrDrawState.h
+END
+GrAtlas.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/7640/trunk/src/gpu/GrAtlas.cpp
+END
+GrAAHairLinePathRenderer.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/7406/trunk/src/gpu/GrAAHairLinePathRenderer.h
+END
+GrStencil.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/5263/trunk/src/gpu/GrStencil.h
+END
+GrMemory.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/7406/trunk/src/gpu/GrMemory.cpp
+END
+GrSWMaskHelper.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/6861/trunk/src/gpu/GrSWMaskHelper.h
+END
+GrRectanizer.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/7406/trunk/src/gpu/GrRectanizer.h
+END
+GrVertexBuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/7807/trunk/src/gpu/GrVertexBuffer.h
+END
+GrPathRenderer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/7406/trunk/src/gpu/GrPathRenderer.cpp
+END
+GrAddPathRenderers_default.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/7110/trunk/src/gpu/GrAddPathRenderers_default.cpp
+END
+GrReducedClip.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/6741/trunk/src/gpu/GrReducedClip.cpp
+END
+GrAllocator.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/5263/trunk/src/gpu/GrAllocator.h
+END
+GrAARectRenderer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/8828/trunk/src/gpu/GrAARectRenderer.cpp
+END
+GrOvalRenderer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/8873/trunk/src/gpu/GrOvalRenderer.cpp
+END
+GrGpu.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/8786/trunk/src/gpu/GrGpu.cpp
+END
+GrStencilBuffer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/6971/trunk/src/gpu/GrStencilBuffer.cpp
+END
+GrPath.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/6409/trunk/src/gpu/GrPath.cpp
+END
+SkGrTexturePixelRef.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/5265/trunk/src/gpu/SkGrTexturePixelRef.cpp
+END
+GrSoftwarePathRenderer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/6861/trunk/src/gpu/GrSoftwarePathRenderer.cpp
+END
+GrDrawState.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/8787/trunk/src/gpu/GrDrawState.cpp
+END
+GrTHashCache.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/8068/trunk/src/gpu/GrTHashCache.h
+END
+GrTemplates.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/5263/trunk/src/gpu/GrTemplates.h
+END
+GrIndexBuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/7807/trunk/src/gpu/GrIndexBuffer.h
+END
+GrRectanizer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/7406/trunk/src/gpu/GrRectanizer.cpp
+END
+GrMemoryPool.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/4744/trunk/src/gpu/GrMemoryPool.h
+END
+GrDrawTarget.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/8675/trunk/src/gpu/GrDrawTarget.h
+END
+GrPathUtils.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/7061/trunk/src/gpu/GrPathUtils.cpp
+END
+SkGpuDevice.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/8859/trunk/src/gpu/SkGpuDevice.cpp
+END
+GrGeometryBuffer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/6409/trunk/src/gpu/GrGeometryBuffer.cpp
+END
+GrResource.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/7355/trunk/src/gpu/GrResource.cpp
+END
+GrClipMaskCache.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/7406/trunk/src/gpu/GrClipMaskCache.cpp
+END
+GrPathRenderer.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/7406/trunk/src/gpu/GrPathRenderer.h
+END
+GrSurface.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/7406/trunk/src/gpu/GrSurface.cpp
+END
+GrReducedClip.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/6688/trunk/src/gpu/GrReducedClip.h
+END
+GrTextContext.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/8787/trunk/src/gpu/GrTextContext.cpp
+END
+GrTextStrike_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/7406/trunk/src/gpu/GrTextStrike_impl.h
+END
+GrRedBlackTree.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/7952/trunk/src/gpu/GrRedBlackTree.h
+END
+GrStencilBuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/7348/trunk/src/gpu/GrStencilBuffer.h
+END
+GrGpu.h
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/8786/trunk/src/gpu/GrGpu.h
+END
+GrTexture.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/8573/trunk/src/gpu/GrTexture.cpp
+END
+GrMemoryPool.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/7406/trunk/src/gpu/GrMemoryPool.cpp
+END
+GrClipMaskManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/7850/trunk/src/gpu/GrClipMaskManager.h
+END
+GrDrawTarget.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/8787/trunk/src/gpu/GrDrawTarget.cpp
+END

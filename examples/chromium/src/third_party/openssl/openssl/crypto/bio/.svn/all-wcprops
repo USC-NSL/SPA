@@ -1,0 +1,137 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/crypto/bio
+END
+bf_nbio.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/118977/trunk/deps/third_party/openssl/openssl/crypto/bio/bf_nbio.c
+END
+bss_acpt.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/118977/trunk/deps/third_party/openssl/openssl/crypto/bio/bss_acpt.c
+END
+bf_lbuf.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/65201/trunk/deps/third_party/openssl/openssl/crypto/bio/bf_lbuf.c
+END
+bio_lib.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/bio/bio_lib.c
+END
+bss_fd.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/118977/trunk/deps/third_party/openssl/openssl/crypto/bio/bss_fd.c
+END
+b_sock.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/crypto/bio/b_sock.c
+END
+bss_dgram.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/crypto/bio/bss_dgram.c
+END
+bss_conn.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/65201/trunk/deps/third_party/openssl/openssl/crypto/bio/bss_conn.c
+END
+bss_sock.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/65201/trunk/deps/third_party/openssl/openssl/crypto/bio/bss_sock.c
+END
+b_dump.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/65201/trunk/deps/third_party/openssl/openssl/crypto/bio/b_dump.c
+END
+bio_lcl.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/118977/trunk/deps/third_party/openssl/openssl/crypto/bio/bio_lcl.h
+END
+bio_cb.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/118977/trunk/deps/third_party/openssl/openssl/crypto/bio/bio_cb.c
+END
+bio.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/bio/bio.h
+END
+bss_bio.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/bio/bss_bio.c
+END
+bio_err.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/bio/bio_err.c
+END
+bf_null.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/65201/trunk/deps/third_party/openssl/openssl/crypto/bio/bf_null.c
+END
+bss_null.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/65201/trunk/deps/third_party/openssl/openssl/crypto/bio/bss_null.c
+END
+bss_mem.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/118977/trunk/deps/third_party/openssl/openssl/crypto/bio/bss_mem.c
+END
+bss_file.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/118977/trunk/deps/third_party/openssl/openssl/crypto/bio/bss_file.c
+END
+bss_log.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/118977/trunk/deps/third_party/openssl/openssl/crypto/bio/bss_log.c
+END
+bf_buff.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/118977/trunk/deps/third_party/openssl/openssl/crypto/bio/bf_buff.c
+END
+b_print.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/118977/trunk/deps/third_party/openssl/openssl/crypto/bio/b_print.c
+END

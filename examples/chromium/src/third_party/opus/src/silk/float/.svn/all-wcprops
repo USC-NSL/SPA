@@ -1,0 +1,209 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/silk/float
+END
+regularize_correlations_FLP.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/float/regularize_correlations_FLP.c
+END
+burg_modified_FLP.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/silk/float/burg_modified_FLP.c
+END
+find_LTP_FLP.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/float/find_LTP_FLP.c
+END
+LPC_inv_pred_gain_FLP.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/float/LPC_inv_pred_gain_FLP.c
+END
+scale_copy_vector_FLP.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/float/scale_copy_vector_FLP.c
+END
+LTP_analysis_filter_FLP.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/silk/float/LTP_analysis_filter_FLP.c
+END
+encode_frame_FLP.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/float/encode_frame_FLP.c
+END
+scale_vector_FLP.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/float/scale_vector_FLP.c
+END
+find_pred_coefs_FLP.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/float/find_pred_coefs_FLP.c
+END
+autocorrelation_FLP.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/float/autocorrelation_FLP.c
+END
+inner_product_FLP.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/float/inner_product_FLP.c
+END
+warped_autocorrelation_FLP.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/float/warped_autocorrelation_FLP.c
+END
+find_pitch_lags_FLP.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/silk/float/find_pitch_lags_FLP.c
+END
+pitch_analysis_core_FLP.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/silk/float/pitch_analysis_core_FLP.c
+END
+schur_FLP.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/float/schur_FLP.c
+END
+solve_LS_FLP.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/float/solve_LS_FLP.c
+END
+sort_FLP.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/float/sort_FLP.c
+END
+energy_FLP.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/float/energy_FLP.c
+END
+main_FLP.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/silk/float/main_FLP.h
+END
+LTP_scale_ctrl_FLP.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/float/LTP_scale_ctrl_FLP.c
+END
+prefilter_FLP.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/silk/float/prefilter_FLP.c
+END
+bwexpander_FLP.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/float/bwexpander_FLP.c
+END
+process_gains_FLP.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/float/process_gains_FLP.c
+END
+noise_shape_analysis_FLP.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/silk/float/noise_shape_analysis_FLP.c
+END
+levinsondurbin_FLP.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/float/levinsondurbin_FLP.c
+END
+wrappers_FLP.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/silk/float/wrappers_FLP.c
+END
+SigProc_FLP.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/silk/float/SigProc_FLP.h
+END
+structs_FLP.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/float/structs_FLP.h
+END
+k2a_FLP.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/float/k2a_FLP.c
+END
+find_LPC_FLP.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/float/find_LPC_FLP.c
+END
+residual_energy_FLP.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/silk/float/residual_energy_FLP.c
+END
+LPC_analysis_filter_FLP.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/float/LPC_analysis_filter_FLP.c
+END
+apply_sine_window_FLP.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/float/apply_sine_window_FLP.c
+END
+corrMatrix_FLP.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/silk/float/corrMatrix_FLP.c
+END

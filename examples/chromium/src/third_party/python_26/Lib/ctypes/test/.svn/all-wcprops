@@ -1,0 +1,323 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test
+END
+test_cast.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_cast.py
+END
+test_buffers.py
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_buffers.py
+END
+test_sizes.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_sizes.py
+END
+test_byteswap.py
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_byteswap.py
+END
+test_internals.py
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_internals.py
+END
+test_incomplete.py
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_incomplete.py
+END
+test_delattr.py
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_delattr.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/__init__.py
+END
+test_pickling.py
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_pickling.py
+END
+test_arrays.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_arrays.py
+END
+test_pep3118.py
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_pep3118.py
+END
+test_parameters.py
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_parameters.py
+END
+test_pointers.py
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_pointers.py
+END
+test_array_in_pointer.py
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_array_in_pointer.py
+END
+test_bitfields.py
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_bitfields.py
+END
+test_repr.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_repr.py
+END
+test_libc.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_libc.py
+END
+test_unaligned_structures.py
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_unaligned_structures.py
+END
+test_python_api.py
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_python_api.py
+END
+test_loading.py
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_loading.py
+END
+test_macholib.py
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_macholib.py
+END
+test_callbacks.py
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_callbacks.py
+END
+test_funcptr.py
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_funcptr.py
+END
+test_cfuncs.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_cfuncs.py
+END
+test_simplesubclasses.py
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_simplesubclasses.py
+END
+test_structures.py
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_structures.py
+END
+test_errcheck.py
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_errcheck.py
+END
+test_objects.py
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_objects.py
+END
+test_strings.py
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_strings.py
+END
+test_anon.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_anon.py
+END
+test_checkretval.py
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_checkretval.py
+END
+test_random_things.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_random_things.py
+END
+test_stringptr.py
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_stringptr.py
+END
+test_frombuffer.py
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_frombuffer.py
+END
+test_values.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_values.py
+END
+test_win32.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_win32.py
+END
+test_init.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_init.py
+END
+test_as_parameter.py
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_as_parameter.py
+END
+test_keeprefs.py
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_keeprefs.py
+END
+test_returnfuncptrs.py
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_returnfuncptrs.py
+END
+test_memfunctions.py
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_memfunctions.py
+END
+test_functions.py
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_functions.py
+END
+test_refcounts.py
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_refcounts.py
+END
+test_struct_fields.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_struct_fields.py
+END
+test_numbers.py
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_numbers.py
+END
+test_integers.py
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_integers.py
+END
+test_find.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_find.py
+END
+test_errno.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_errno.py
+END
+test_unicode.py
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_unicode.py
+END
+test_varsize_struct.py
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_varsize_struct.py
+END
+runtests.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/runtests.py
+END
+test_prototypes.py
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_prototypes.py
+END
+test_slicing.py
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/ctypes/test/test_slicing.py
+END

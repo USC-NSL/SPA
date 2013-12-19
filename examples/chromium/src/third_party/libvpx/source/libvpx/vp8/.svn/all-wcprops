@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/196477/trunk/deps/third_party/libvpx/source/libvpx/vp8
+END
+exports_dec
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/106910/trunk/deps/third_party/libvpx/source/libvpx/vp8/exports_dec
+END
+vp8_cx_iface.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/195047/trunk/deps/third_party/libvpx/source/libvpx/vp8/vp8_cx_iface.c
+END
+vp8dx.mk
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/191026/trunk/deps/third_party/libvpx/source/libvpx/vp8/vp8dx.mk
+END
+vp8_dx_iface.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/195047/trunk/deps/third_party/libvpx/source/libvpx/vp8/vp8_dx_iface.c
+END
+exports_enc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/106910/trunk/deps/third_party/libvpx/source/libvpx/vp8/exports_enc
+END
+vp8_common.mk
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/191026/trunk/deps/third_party/libvpx/source/libvpx/vp8/vp8_common.mk
+END
+vp8cx_arm.mk
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/177026/trunk/deps/third_party/libvpx/source/libvpx/vp8/vp8cx_arm.mk
+END
+vp8cx.mk
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/196161/trunk/deps/third_party/libvpx/source/libvpx/vp8/vp8cx.mk
+END

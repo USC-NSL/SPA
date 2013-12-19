@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/base
+END
+item.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/base/item.c
+END
+base.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/base/base.h
+END
+baset.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/base/baset.h
+END
+hash.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/base/hash.c
+END
+nssbase.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/base/nssbase.h
+END
+hashops.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/base/hashops.c
+END
+arena.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/base/arena.c
+END
+nssbaset.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/base/nssbaset.h
+END
+error.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/base/error.c
+END
+libc.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/base/libc.c
+END
+nssutf8.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/base/nssutf8.c
+END
+list.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/base/list.c
+END
+tracker.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/base/tracker.c
+END
+errorval.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/195639/trunk/deps/third_party/nss/nss/lib/base/errorval.c
+END

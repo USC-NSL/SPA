@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/src
+END
+opus_encoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/src/opus_encoder.c
+END
+opus_private.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/src/opus_private.h
+END
+opus.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/src/opus.c
+END
+repacketizer.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/src/repacketizer.c
+END
+opus_demo.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/src/opus_demo.c
+END
+opus_decoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/src/opus_decoder.c
+END
+opus_compare.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/src/opus_compare.c
+END
+opus_multistream.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/src/opus_multistream.c
+END
+repacketizer_demo.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/src/repacketizer_demo.c
+END

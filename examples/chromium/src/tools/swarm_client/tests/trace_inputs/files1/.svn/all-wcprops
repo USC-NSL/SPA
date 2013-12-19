@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/159961/trunk/tools/swarm_client/tests/trace_inputs/files1
+END
+foo
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/159961/trunk/tools/swarm_client/tests/trace_inputs/files1/foo
+END
+bar
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/159961/trunk/tools/swarm_client/tests/trace_inputs/files1/bar
+END
+do_not_care.txt
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/159961/trunk/tools/swarm_client/tests/trace_inputs/files1/do_not_care.txt
+END

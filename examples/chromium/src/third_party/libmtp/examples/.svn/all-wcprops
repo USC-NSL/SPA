@@ -1,0 +1,185 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/167447/trunk/deps/third_party/libmtp/examples
+END
+connect.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/148515/trunk/deps/third_party/libmtp/examples/connect.h
+END
+folders.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/148515/trunk/deps/third_party/libmtp/examples/folders.c
+END
+sendtr.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/148515/trunk/deps/third_party/libmtp/examples/sendtr.c
+END
+filetree.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/167447/trunk/deps/third_party/libmtp/examples/filetree.c
+END
+getplaylist.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/148515/trunk/deps/third_party/libmtp/examples/getplaylist.c
+END
+Makefile.in
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/148593/trunk/deps/third_party/libmtp/examples/Makefile.in
+END
+trexist.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/148515/trunk/deps/third_party/libmtp/examples/trexist.c
+END
+files.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/148515/trunk/deps/third_party/libmtp/examples/files.c
+END
+delfile.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/148515/trunk/deps/third_party/libmtp/examples/delfile.c
+END
+albumart.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/167447/trunk/deps/third_party/libmtp/examples/albumart.c
+END
+detect.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/167447/trunk/deps/third_party/libmtp/examples/detect.c
+END
+newplaylist.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/148515/trunk/deps/third_party/libmtp/examples/newplaylist.c
+END
+util.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/148515/trunk/deps/third_party/libmtp/examples/util.c
+END
+pathutils.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/148515/trunk/deps/third_party/libmtp/examples/pathutils.c
+END
+emptyfolders.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/148515/trunk/deps/third_party/libmtp/examples/emptyfolders.c
+END
+getfile.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/148515/trunk/deps/third_party/libmtp/examples/getfile.c
+END
+thumb.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/148515/trunk/deps/third_party/libmtp/examples/thumb.c
+END
+pathutils.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/148515/trunk/deps/third_party/libmtp/examples/pathutils.h
+END
+reset.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/148515/trunk/deps/third_party/libmtp/examples/reset.c
+END
+util.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/148515/trunk/deps/third_party/libmtp/examples/util.h
+END
+albums.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/167447/trunk/deps/third_party/libmtp/examples/albums.c
+END
+playlists.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/148515/trunk/deps/third_party/libmtp/examples/playlists.c
+END
+newfolder.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/148515/trunk/deps/third_party/libmtp/examples/newfolder.c
+END
+evolution-sync.sh
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/149471/trunk/deps/third_party/libmtp/examples/evolution-sync.sh
+END
+tracks.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/148515/trunk/deps/third_party/libmtp/examples/tracks.c
+END
+format.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/148515/trunk/deps/third_party/libmtp/examples/format.c
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/148593/trunk/deps/third_party/libmtp/examples/Makefile.am
+END
+connect.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/148515/trunk/deps/third_party/libmtp/examples/connect.c
+END
+sendfile.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/148515/trunk/deps/third_party/libmtp/examples/sendfile.c
+END
+common.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/148515/trunk/deps/third_party/libmtp/examples/common.h
+END

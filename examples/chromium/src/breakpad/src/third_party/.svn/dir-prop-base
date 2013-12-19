@@ -1,0 +1,7 @@
+K 13
+svn:externals
+V 121
+lss -r12 http://linux-syscall-support.googlecode.com/svn/trunk/lss
+glog -r97 http://google-glog.googlecode.com/svn/trunk
+
+END

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/native_client/!svn/ver/11236/trunk/src/native_client/tests/manifest_file
+END
+nacl.scons
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/native_client/!svn/ver/9554/trunk/src/native_client/tests/manifest_file/nacl.scons
+END
+srpc_manifest_file_test.stdin
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/native_client/!svn/ver/7443/trunk/src/native_client/tests/manifest_file/srpc_manifest_file_test.stdin
+END
+srpc_manifest_file_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/native_client/!svn/ver/11236/trunk/src/native_client/tests/manifest_file/srpc_manifest_file_test.c
+END
+srpc_manifest_file_test.stdout
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/native_client/!svn/ver/10737/trunk/src/native_client/tests/manifest_file/srpc_manifest_file_test.stdout
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/native_client/!svn/ver/10630/trunk/src/native_client/src/trusted/cpu_features
+END
+build.scons
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/native_client/!svn/ver/10590/trunk/src/native_client/src/trusted/cpu_features/build.scons
+END
+cpu_features.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/native_client/!svn/ver/10590/trunk/src/native_client/src/trusted/cpu_features/cpu_features.gyp
+END
+cpu_features.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/native_client/!svn/ver/10590/trunk/src/native_client/src/trusted/cpu_features/cpu_features.h
+END

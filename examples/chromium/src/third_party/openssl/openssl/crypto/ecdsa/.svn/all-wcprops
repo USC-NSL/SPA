@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/crypto/ecdsa
+END
+ecdsatest.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/ecdsa/ecdsatest.c
+END
+ecs_lib.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/crypto/ecdsa/ecs_lib.c
+END
+ecs_err.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/ecdsa/ecs_err.c
+END
+ecdsa.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/ecdsa/ecdsa.h
+END
+ecs_vrf.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/65201/trunk/deps/third_party/openssl/openssl/crypto/ecdsa/ecs_vrf.c
+END
+ecs_locl.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/ecdsa/ecs_locl.h
+END
+ecs_ossl.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/ecdsa/ecs_ossl.c
+END
+ecs_sign.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/65201/trunk/deps/third_party/openssl/openssl/crypto/ecdsa/ecs_sign.c
+END
+ecs_asn1.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/65201/trunk/deps/third_party/openssl/openssl/crypto/ecdsa/ecs_asn1.c
+END

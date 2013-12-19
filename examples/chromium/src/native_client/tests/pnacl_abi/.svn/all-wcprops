@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/native_client/!svn/ver/8144/trunk/src/native_client/tests/pnacl_abi
+END
+data_type.llvmgcc.stdout
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/native_client/!svn/ver/6729/trunk/src/native_client/tests/pnacl_abi/data_type.llvmgcc.stdout
+END
+nacl.scons
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/native_client/!svn/ver/8144/trunk/src/native_client/tests/pnacl_abi/nacl.scons
+END
+vaarg.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/native_client/!svn/ver/6853/trunk/src/native_client/tests/pnacl_abi/vaarg.c
+END
+small_structs_by_value.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/native_client/!svn/ver/6853/trunk/src/native_client/tests/pnacl_abi/small_structs_by_value.c
+END
+vaarg.llvmgcc.stdout
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/native_client/!svn/ver/6729/trunk/src/native_client/tests/pnacl_abi/vaarg.llvmgcc.stdout
+END
+data_type.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/native_client/!svn/ver/6853/trunk/src/native_client/tests/pnacl_abi/data_type.c
+END
+small_structs_by_value.llvmgcc.stdout
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/native_client/!svn/ver/6832/trunk/src/native_client/tests/pnacl_abi/small_structs_by_value.llvmgcc.stdout
+END

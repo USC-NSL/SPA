@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/194724/trunk/src/native_client_sdk/src/tools
+END
+compiler-wrapper.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/156216/trunk/src/native_client_sdk/src/tools/compiler-wrapper.py
+END
+quote_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/173927/trunk/src/native_client_sdk/src/tools/quote_test.py
+END
+quote.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/173927/trunk/src/native_client_sdk/src/tools/quote.py
+END
+genhttpfs.py
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/180180/trunk/src/native_client_sdk/src/tools/genhttpfs.py
+END
+create_nmf.py
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/177818/trunk/src/native_client_sdk/src/tools/create_nmf.py
+END
+oshelpers.py
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/190994/trunk/src/native_client_sdk/src/tools/oshelpers.py
+END
+run.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/178422/trunk/src/native_client_sdk/src/tools/run.py
+END
+common.mk
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/194724/trunk/src/native_client_sdk/src/tools/common.mk
+END
+decode_dump.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/190994/trunk/src/native_client_sdk/src/tools/decode_dump.py
+END
+host_gcc.mk
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/193671/trunk/src/native_client_sdk/src/tools/host_gcc.mk
+END
+nacl_gcc.mk
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/193671/trunk/src/native_client_sdk/src/tools/nacl_gcc.mk
+END
+getos.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/190994/trunk/src/native_client_sdk/src/tools/getos.py
+END
+httpd.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/182813/trunk/src/native_client_sdk/src/tools/httpd.py
+END
+host_vc.mk
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/193671/trunk/src/native_client_sdk/src/tools/host_vc.mk
+END
+nacl_llvm.mk
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/193671/trunk/src/native_client_sdk/src/tools/nacl_llvm.mk
+END

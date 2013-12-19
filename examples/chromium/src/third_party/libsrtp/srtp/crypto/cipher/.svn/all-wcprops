@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/162022/trunk/deps/third_party/libsrtp/srtp/crypto/cipher
+END
+aes_cbc.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/115467/trunk/deps/third_party/libsrtp/srtp/crypto/cipher/aes_cbc.c
+END
+aes_icm.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/162022/trunk/deps/third_party/libsrtp/srtp/crypto/cipher/aes_icm.c
+END
+null_cipher.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/115467/trunk/deps/third_party/libsrtp/srtp/crypto/cipher/null_cipher.c
+END
+aes.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/162022/trunk/deps/third_party/libsrtp/srtp/crypto/cipher/aes.c
+END
+cipher.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/115467/trunk/deps/third_party/libsrtp/srtp/crypto/cipher/cipher.c
+END

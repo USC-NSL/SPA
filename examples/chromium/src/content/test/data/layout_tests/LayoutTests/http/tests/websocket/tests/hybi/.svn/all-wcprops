@@ -1,0 +1,1517 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/blink/!svn/ver/149413/trunk/LayoutTests/http/tests/websocket/tests/hybi
+END
+url-parsing-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/blink/!svn/ver/148246/trunk/LayoutTests/http/tests/websocket/tests/hybi/url-parsing-expected.txt
+END
+echo-path_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/blink/!svn/ver/149413/trunk/LayoutTests/http/tests/websocket/tests/hybi/echo-path_wsh.py
+END
+bufferedAmount-after-close-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/blink/!svn/ver/94482/trunk/LayoutTests/http/tests/websocket/tests/hybi/bufferedAmount-after-close-expected.txt
+END
+send-file-blob.html
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/send-file-blob.html
+END
+send-blob-onmessage-origin-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/blink/!svn/ver/135587/trunk/LayoutTests/http/tests/websocket/tests/hybi/send-blob-onmessage-origin-expected.txt
+END
+fragmented-binary-frames-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/blink/!svn/ver/94041/trunk/LayoutTests/http/tests/websocket/tests/hybi/fragmented-binary-frames-expected.txt
+END
+deflate-frame-parameter-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/blink/!svn/ver/109538/trunk/LayoutTests/http/tests/websocket/tests/hybi/deflate-frame-parameter-expected.txt
+END
+too-long-payload.html
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/too-long-payload.html
+END
+handshake-challenge-randomness-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/blink/!svn/ver/90726/trunk/LayoutTests/http/tests/websocket/tests/hybi/handshake-challenge-randomness-expected.txt
+END
+send-object-tostring-check-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/blink/!svn/ver/96030/trunk/LayoutTests/http/tests/websocket/tests/hybi/send-object-tostring-check-expected.txt
+END
+simple.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/simple.html
+END
+handshake-fail-by-wrong-accept-header_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/blink/!svn/ver/94164/trunk/LayoutTests/http/tests/websocket/tests/hybi/handshake-fail-by-wrong-accept-header_wsh.py
+END
+interleaved-fragments_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/blink/!svn/ver/91243/trunk/LayoutTests/http/tests/websocket/tests/hybi/interleaved-fragments_wsh.py
+END
+handshake-fail-by-more-protocol-header.html
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/handshake-fail-by-more-protocol-header.html
+END
+handshake-fail-by-maxlength.html
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/handshake-fail-by-maxlength.html
+END
+unmasked-frames-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/blink/!svn/ver/111829/trunk/LayoutTests/http/tests/websocket/tests/hybi/unmasked-frames-expected.txt
+END
+fragmented-control-frame-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/blink/!svn/ver/149148/trunk/LayoutTests/http/tests/websocket/tests/hybi/fragmented-control-frame-expected.txt
+END
+deflate-frame-invalid-parameter.html
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/deflate-frame-invalid-parameter.html
+END
+close-on-unload.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/close-on-unload.html
+END
+unicode-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/blink/!svn/ver/90726/trunk/LayoutTests/http/tests/websocket/tests/hybi/unicode-expected.txt
+END
+accept-first-subprotocol_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/blink/!svn/ver/92757/trunk/LayoutTests/http/tests/websocket/tests/hybi/accept-first-subprotocol_wsh.py
+END
+unpaired-surrogates-in-message-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/blink/!svn/ver/134515/trunk/LayoutTests/http/tests/websocket/tests/hybi/unpaired-surrogates-in-message-expected.txt
+END
+url-parsing.html
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/url-parsing.html
+END
+handshake-fail-by-more-accept-header-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/blink/!svn/ver/149148/trunk/LayoutTests/http/tests/websocket/tests/hybi/handshake-fail-by-more-accept-header-expected.txt
+END
+pong_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/blink/!svn/ver/91243/trunk/LayoutTests/http/tests/websocket/tests/hybi/pong_wsh.py
+END
+invalid-continuation-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/blink/!svn/ver/149148/trunk/LayoutTests/http/tests/websocket/tests/hybi/invalid-continuation-expected.txt
+END
+bufferedAmount-after-close.html
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/bufferedAmount-after-close.html
+END
+send-arraybuffer-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/blink/!svn/ver/94482/trunk/LayoutTests/http/tests/websocket/tests/hybi/send-arraybuffer-expected.txt
+END
+fragmented-binary-frames.html
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/fragmented-binary-frames.html
+END
+send-blob-onmessage-origin.html
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/send-blob-onmessage-origin.html
+END
+unpaired-surrogates-in-close-reason-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/blink/!svn/ver/134515/trunk/LayoutTests/http/tests/websocket/tests/hybi/unpaired-surrogates-in-close-reason-expected.txt
+END
+deflate-frame-parameter.html
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/deflate-frame-parameter.html
+END
+pong-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/blink/!svn/ver/91243/trunk/LayoutTests/http/tests/websocket/tests/hybi/pong-expected.txt
+END
+handshake-challenge-randomness.html
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/handshake-challenge-randomness.html
+END
+send-object-tostring-check.html
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/send-object-tostring-check.html
+END
+send-blob-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/blink/!svn/ver/94405/trunk/LayoutTests/http/tests/websocket/tests/hybi/send-blob-expected.txt
+END
+send2_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/blink/!svn/ver/91243/trunk/LayoutTests/http/tests/websocket/tests/hybi/send2_wsh.py
+END
+unmasked-frames.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/unmasked-frames.html
+END
+fragmented-control-frame.html
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/fragmented-control-frame.html
+END
+nocache-test_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/blink/!svn/ver/131155/trunk/LayoutTests/http/tests/websocket/tests/hybi/nocache-test_wsh.py
+END
+long-invalid-header-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/blink/!svn/ver/149148/trunk/LayoutTests/http/tests/websocket/tests/hybi/long-invalid-header-expected.txt
+END
+no-query_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/blink/!svn/ver/90726/trunk/LayoutTests/http/tests/websocket/tests/hybi/no-query_wsh.py
+END
+simple-stress-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/blink/!svn/ver/90726/trunk/LayoutTests/http/tests/websocket/tests/hybi/simple-stress-expected.txt
+END
+unicode.html
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/unicode.html
+END
+handshake-error-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/blink/!svn/ver/149148/trunk/LayoutTests/http/tests/websocket/tests/hybi/handshake-error-expected.txt
+END
+cross-origin-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/blink/!svn/ver/90726/trunk/LayoutTests/http/tests/websocket/tests/hybi/cross-origin-expected.txt
+END
+unpaired-surrogates-in-message.html
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/unpaired-surrogates-in-message.html
+END
+handshake-fail-by-more-accept-header.html
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/handshake-fail-by-more-accept-header.html
+END
+client-close-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/blink/!svn/ver/148019/trunk/LayoutTests/http/tests/websocket/tests/hybi/client-close-expected.txt
+END
+url-with-credential-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/blink/!svn/ver/148891/trunk/LayoutTests/http/tests/websocket/tests/hybi/url-with-credential-expected.txt
+END
+invalid-continuation.html
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/invalid-continuation.html
+END
+send-arraybuffer.html
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/send-arraybuffer.html
+END
+unpaired-surrogates-in-close-reason.html
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/unpaired-surrogates-in-close-reason.html
+END
+close-on-unload-reference-in-parent-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/blink/!svn/ver/90726/trunk/LayoutTests/http/tests/websocket/tests/hybi/close-on-unload-reference-in-parent-expected.txt
+END
+handshake-fail-by-more-protocol-header_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/blink/!svn/ver/112377/trunk/LayoutTests/http/tests/websocket/tests/hybi/handshake-fail-by-more-protocol-header_wsh.py
+END
+handshake-fail-by-maxlength_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/blink/!svn/ver/94164/trunk/LayoutTests/http/tests/websocket/tests/hybi/handshake-fail-by-maxlength_wsh.py
+END
+bad-sub-protocol-control-chars-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/blink/!svn/ver/148246/trunk/LayoutTests/http/tests/websocket/tests/hybi/bad-sub-protocol-control-chars-expected.txt
+END
+pong.html
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/pong.html
+END
+binary-frames_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/blink/!svn/ver/94041/trunk/LayoutTests/http/tests/websocket/tests/hybi/binary-frames_wsh.py
+END
+set-protocol-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/blink/!svn/ver/92946/trunk/LayoutTests/http/tests/websocket/tests/hybi/set-protocol-expected.txt
+END
+send-blob.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/send-blob.html
+END
+bufferedAmount-after-close-in-busy-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/blink/!svn/ver/101730/trunk/LayoutTests/http/tests/websocket/tests/hybi/bufferedAmount-after-close-in-busy-expected.txt
+END
+handshake-fail-by-no-upgrade-header-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/blink/!svn/ver/149148/trunk/LayoutTests/http/tests/websocket/tests/hybi/handshake-fail-by-no-upgrade-header-expected.txt
+END
+long-invalid-header.html
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/long-invalid-header.html
+END
+simple-stress.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/blink/!svn/ver/122256/trunk/LayoutTests/http/tests/websocket/tests/hybi/simple-stress.html
+END
+binary-type-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/blink/!svn/ver/130019/trunk/LayoutTests/http/tests/websocket/tests/hybi/binary-type-expected.txt
+END
+handshake-error.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/handshake-error.html
+END
+cross-origin.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/cross-origin.html
+END
+client-close.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/client-close.html
+END
+server-close-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/blink/!svn/ver/90726/trunk/LayoutTests/http/tests/websocket/tests/hybi/server-close-expected.txt
+END
+url-with-credential.html
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/url-with-credential.html
+END
+reserved-opcodes-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/blink/!svn/ver/149148/trunk/LayoutTests/http/tests/websocket/tests/hybi/reserved-opcodes-expected.txt
+END
+close-on-unload-reference-in-parent.html
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/close-on-unload-reference-in-parent.html
+END
+bad-sub-protocol-control-chars.html
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/bad-sub-protocol-control-chars.html
+END
+echo-cookie_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/blink/!svn/ver/90726/trunk/LayoutTests/http/tests/websocket/tests/hybi/echo-cookie_wsh.py
+END
+set-protocol.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/set-protocol.html
+END
+handshake-fail-by-no-upgrade-header.html
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/handshake-fail-by-no-upgrade-header.html
+END
+bufferedAmount-after-close-in-busy.html
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/bufferedAmount-after-close-in-busy.html
+END
+echo-host_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/blink/!svn/ver/148891/trunk/LayoutTests/http/tests/websocket/tests/hybi/echo-host_wsh.py
+END
+send-after-close-on-unload-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/blink/!svn/ver/90726/trunk/LayoutTests/http/tests/websocket/tests/hybi/send-after-close-on-unload-expected.txt
+END
+interleaved-fragments-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/blink/!svn/ver/149148/trunk/LayoutTests/http/tests/websocket/tests/hybi/interleaved-fragments-expected.txt
+END
+receive-arraybuffer-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/blink/!svn/ver/94161/trunk/LayoutTests/http/tests/websocket/tests/hybi/receive-arraybuffer-expected.txt
+END
+binary-type.html
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/binary-type.html
+END
+handshake-fail-by-mismatch-protocol-header_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/blink/!svn/ver/112499/trunk/LayoutTests/http/tests/websocket/tests/hybi/handshake-fail-by-mismatch-protocol-header_wsh.py
+END
+send-file-blob-fail-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/blink/!svn/ver/149148/trunk/LayoutTests/http/tests/websocket/tests/hybi/send-file-blob-fail-expected.txt
+END
+close-code-and-reason_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/blink/!svn/ver/93393/trunk/LayoutTests/http/tests/websocket/tests/hybi/close-code-and-reason_wsh.py
+END
+server-close.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/server-close.html
+END
+handshake-fail-by-mismatch-protocol-header-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/blink/!svn/ver/149148/trunk/LayoutTests/http/tests/websocket/tests/hybi/handshake-fail-by-mismatch-protocol-header-expected.txt
+END
+reserved-opcodes.html
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/reserved-opcodes.html
+END
+nocache-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/blink/!svn/ver/131155/trunk/LayoutTests/http/tests/websocket/tests/hybi/nocache-expected.txt
+END
+long-control-frame-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/blink/!svn/ver/149148/trunk/LayoutTests/http/tests/websocket/tests/hybi/long-control-frame-expected.txt
+END
+close-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/blink/!svn/ver/135981/trunk/LayoutTests/http/tests/websocket/tests/hybi/close-expected.txt
+END
+useragent-in-openinghandshake-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/blink/!svn/ver/144037/trunk/LayoutTests/http/tests/websocket/tests/hybi/useragent-in-openinghandshake-expected.txt
+END
+deflate-frame-comp-bit-onoff-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/blink/!svn/ver/109538/trunk/LayoutTests/http/tests/websocket/tests/hybi/deflate-frame-comp-bit-onoff-expected.txt
+END
+send-after-close-on-unload.html
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/send-after-close-on-unload.html
+END
+interleaved-fragments.html
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/interleaved-fragments.html
+END
+receive-arraybuffer.html
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/receive-arraybuffer.html
+END
+too-long-payload_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/blink/!svn/ver/91243/trunk/LayoutTests/http/tests/websocket/tests/hybi/too-long-payload_wsh.py
+END
+send-file-blob-fail.html
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/send-file-blob-fail.html
+END
+invalid-subprotocols-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/blink/!svn/ver/134859/trunk/LayoutTests/http/tests/websocket/tests/hybi/invalid-subprotocols-expected.txt
+END
+close-event-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/blink/!svn/ver/90726/trunk/LayoutTests/http/tests/websocket/tests/hybi/close-event-expected.txt
+END
+simple_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/blink/!svn/ver/90726/trunk/LayoutTests/http/tests/websocket/tests/hybi/simple_wsh.py
+END
+handshake-fail-by-mismatch-protocol-header.html
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/handshake-fail-by-mismatch-protocol-header.html
+END
+handshake-fail-by-extensions-header_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/blink/!svn/ver/94164/trunk/LayoutTests/http/tests/websocket/tests/hybi/handshake-fail-by-extensions-header_wsh.py
+END
+nocache.html
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/nocache.html
+END
+handshake-fail-by-no-upgrade-header_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/blink/!svn/ver/94164/trunk/LayoutTests/http/tests/websocket/tests/hybi/handshake-fail-by-no-upgrade-header_wsh.py
+END
+send-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/blink/!svn/ver/90726/trunk/LayoutTests/http/tests/websocket/tests/hybi/send-expected.txt
+END
+websocket-event-target-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/blink/!svn/ver/135981/trunk/LayoutTests/http/tests/websocket/tests/hybi/websocket-event-target-expected.txt
+END
+echo-challenge_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/blink/!svn/ver/90979/trunk/LayoutTests/http/tests/websocket/tests/hybi/echo-challenge_wsh.py
+END
+send-throw-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/blink/!svn/ver/90726/trunk/LayoutTests/http/tests/websocket/tests/hybi/send-throw-expected.txt
+END
+long-control-frame.html
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/long-control-frame.html
+END
+close.html
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/close.html
+END
+useragent-in-openinghandshake.html
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/blink/!svn/ver/144037/trunk/LayoutTests/http/tests/websocket/tests/hybi/useragent-in-openinghandshake.html
+END
+frame-lengths-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/blink/!svn/ver/90726/trunk/LayoutTests/http/tests/websocket/tests/hybi/frame-lengths-expected.txt
+END
+receive-blob-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/blink/!svn/ver/94041/trunk/LayoutTests/http/tests/websocket/tests/hybi/receive-blob-expected.txt
+END
+origin-test_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/blink/!svn/ver/90726/trunk/LayoutTests/http/tests/websocket/tests/hybi/origin-test_wsh.py
+END
+deflate-frame-comp-bit-onoff.html
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/deflate-frame-comp-bit-onoff.html
+END
+fragmented-binary-frames_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/blink/!svn/ver/94041/trunk/LayoutTests/http/tests/websocket/tests/hybi/fragmented-binary-frames_wsh.py
+END
+compressed-control-frame_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/blink/!svn/ver/109538/trunk/LayoutTests/http/tests/websocket/tests/hybi/compressed-control-frame_wsh.py
+END
+alert-in-event-handler-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/blink/!svn/ver/90726/trunk/LayoutTests/http/tests/websocket/tests/hybi/alert-in-event-handler-expected.txt
+END
+bad-handshake-crash-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/blink/!svn/ver/149148/trunk/LayoutTests/http/tests/websocket/tests/hybi/bad-handshake-crash-expected.txt
+END
+invalid-masked-frames-from-server-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/blink/!svn/ver/149148/trunk/LayoutTests/http/tests/websocket/tests/hybi/invalid-masked-frames-from-server-expected.txt
+END
+invalid-subprotocols.html
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/invalid-subprotocols.html
+END
+reserved-bits_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/blink/!svn/ver/112826/trunk/LayoutTests/http/tests/websocket/tests/hybi/reserved-bits_wsh.py
+END
+close-event.html
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/close-event.html
+END
+url-with-empty-query-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/blink/!svn/ver/149413/trunk/LayoutTests/http/tests/websocket/tests/hybi/url-with-empty-query-expected.txt
+END
+send.html
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/send.html
+END
+websocket-event-target.html
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/websocket-event-target.html
+END
+zero-length-text-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/blink/!svn/ver/92262/trunk/LayoutTests/http/tests/websocket/tests/hybi/zero-length-text-expected.txt
+END
+send-throw.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/send-throw.html
+END
+frame-lengths.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/blink/!svn/ver/122256/trunk/LayoutTests/http/tests/websocket/tests/hybi/frame-lengths.html
+END
+close-on-unload-and-force-gc-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/blink/!svn/ver/90726/trunk/LayoutTests/http/tests/websocket/tests/hybi/close-on-unload-and-force-gc-expected.txt
+END
+receive-blob.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/receive-blob.html
+END
+no-subprotocol-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/blink/!svn/ver/92946/trunk/LayoutTests/http/tests/websocket/tests/hybi/no-subprotocol-expected.txt
+END
+httponly-cookie.pl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/httponly-cookie.pl
+END
+bad-sub-protocol-non-ascii-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/blink/!svn/ver/134859/trunk/LayoutTests/http/tests/websocket/tests/hybi/bad-sub-protocol-non-ascii-expected.txt
+END
+connect-error-by-no-websocket-server-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/blink/!svn/ver/148893/trunk/LayoutTests/http/tests/websocket/tests/hybi/connect-error-by-no-websocket-server-expected.txt
+END
+alert-in-event-handler.html
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/alert-in-event-handler.html
+END
+bad-handshake-crash.html
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/bad-handshake-crash.html
+END
+invalid-masked-frames-from-server.html
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/invalid-masked-frames-from-server.html
+END
+invalid-encode-length-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/blink/!svn/ver/149148/trunk/LayoutTests/http/tests/websocket/tests/hybi/invalid-encode-length-expected.txt
+END
+url-with-empty-query.html
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/blink/!svn/ver/149413/trunk/LayoutTests/http/tests/websocket/tests/hybi/url-with-empty-query.html
+END
+close-code-and-reason-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/blink/!svn/ver/149148/trunk/LayoutTests/http/tests/websocket/tests/hybi/close-code-and-reason-expected.txt
+END
+long-invalid-header_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/blink/!svn/ver/94164/trunk/LayoutTests/http/tests/websocket/tests/hybi/long-invalid-header_wsh.py
+END
+reload-crash-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/blink/!svn/ver/90726/trunk/LayoutTests/http/tests/websocket/tests/hybi/reload-crash-expected.txt
+END
+handshake-fail-by-no-accept-header-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/blink/!svn/ver/149148/trunk/LayoutTests/http/tests/websocket/tests/hybi/handshake-fail-by-no-accept-header-expected.txt
+END
+zero-length-text.html
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/zero-length-text.html
+END
+bad-sub-protocol-empty-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/blink/!svn/ver/134859/trunk/LayoutTests/http/tests/websocket/tests/hybi/bad-sub-protocol-empty-expected.txt
+END
+close-on-unload-and-force-gc.html
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/close-on-unload-and-force-gc.html
+END
+handshake-error_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/blink/!svn/ver/90726/trunk/LayoutTests/http/tests/websocket/tests/hybi/handshake-error_wsh.py
+END
+no-subprotocol.html
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/no-subprotocol.html
+END
+invalid-subprotocol-characters-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/blink/!svn/ver/134859/trunk/LayoutTests/http/tests/websocket/tests/hybi/invalid-subprotocol-characters-expected.txt
+END
+client-close_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/blink/!svn/ver/148019/trunk/LayoutTests/http/tests/websocket/tests/hybi/client-close_wsh.py
+END
+send-file-blob_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/blink/!svn/ver/109538/trunk/LayoutTests/http/tests/websocket/tests/hybi/send-file-blob_wsh.py
+END
+handshake-fail-by-prepended-null_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/blink/!svn/ver/91052/trunk/LayoutTests/http/tests/websocket/tests/hybi/handshake-fail-by-prepended-null_wsh.py
+END
+url-with-query-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/blink/!svn/ver/149413/trunk/LayoutTests/http/tests/websocket/tests/hybi/url-with-query-expected.txt
+END
+bad-sub-protocol-non-ascii.html
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/bad-sub-protocol-non-ascii.html
+END
+connect-error-by-no-websocket-server.html
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/blink/!svn/ver/148893/trunk/LayoutTests/http/tests/websocket/tests/hybi/connect-error-by-no-websocket-server.html
+END
+fragmented-frames_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/blink/!svn/ver/91243/trunk/LayoutTests/http/tests/websocket/tests/hybi/fragmented-frames_wsh.py
+END
+handshake-fail-by-prepended-null-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/blink/!svn/ver/149148/trunk/LayoutTests/http/tests/websocket/tests/hybi/handshake-fail-by-prepended-null-expected.txt
+END
+invalid-encode-length.html
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/invalid-encode-length.html
+END
+multiple-subprotocols-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/blink/!svn/ver/92946/trunk/LayoutTests/http/tests/websocket/tests/hybi/multiple-subprotocols-expected.txt
+END
+deflate-frame_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/blink/!svn/ver/131395/trunk/LayoutTests/http/tests/websocket/tests/hybi/deflate-frame_wsh.py
+END
+fragmented-frames-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/blink/!svn/ver/91243/trunk/LayoutTests/http/tests/websocket/tests/hybi/fragmented-frames-expected.txt
+END
+close-code-and-reason.html
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/close-code-and-reason.html
+END
+sub-protocol-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/blink/!svn/ver/90726/trunk/LayoutTests/http/tests/websocket/tests/hybi/sub-protocol-expected.txt
+END
+httponly-cookie-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/blink/!svn/ver/90726/trunk/LayoutTests/http/tests/websocket/tests/hybi/httponly-cookie-expected.txt
+END
+deflate-frame-invalid-parameter_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/blink/!svn/ver/109538/trunk/LayoutTests/http/tests/websocket/tests/hybi/deflate-frame-invalid-parameter_wsh.py
+END
+reload-crash.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/reload-crash.html
+END
+handshake-fail-by-no-accept-header.html
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/handshake-fail-by-no-accept-header.html
+END
+handshake-fail-by-extensions-header-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/blink/!svn/ver/149148/trunk/LayoutTests/http/tests/websocket/tests/hybi/handshake-fail-by-extensions-header-expected.txt
+END
+url-no-trailing-slash-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/blink/!svn/ver/148891/trunk/LayoutTests/http/tests/websocket/tests/hybi/url-no-trailing-slash-expected.txt
+END
+bad-sub-protocol-empty.html
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/bad-sub-protocol-empty.html
+END
+extensions-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/blink/!svn/ver/110274/trunk/LayoutTests/http/tests/websocket/tests/hybi/extensions-expected.txt
+END
+websocket-pending-activity-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/blink/!svn/ver/90726/trunk/LayoutTests/http/tests/websocket/tests/hybi/websocket-pending-activity-expected.txt
+END
+invalid-subprotocol-characters.html
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/invalid-subprotocol-characters.html
+END
+bad-handshake-crash_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/blink/!svn/ver/94164/trunk/LayoutTests/http/tests/websocket/tests/hybi/bad-handshake-crash_wsh.py
+END
+invalid-masked-frames-from-server_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/blink/!svn/ver/111829/trunk/LayoutTests/http/tests/websocket/tests/hybi/invalid-masked-frames-from-server_wsh.py
+END
+reserved-opcodes_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/blink/!svn/ver/91243/trunk/LayoutTests/http/tests/websocket/tests/hybi/reserved-opcodes_wsh.py
+END
+broken-utf8-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/blink/!svn/ver/149148/trunk/LayoutTests/http/tests/websocket/tests/hybi/broken-utf8-expected.txt
+END
+handshake-fail-by-no-connection-header-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/blink/!svn/ver/149148/trunk/LayoutTests/http/tests/websocket/tests/hybi/handshake-fail-by-no-connection-header-expected.txt
+END
+null-character-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/blink/!svn/ver/90726/trunk/LayoutTests/http/tests/websocket/tests/hybi/null-character-expected.txt
+END
+server-close_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/blink/!svn/ver/90726/trunk/LayoutTests/http/tests/websocket/tests/hybi/server-close_wsh.py
+END
+close-before-open-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/blink/!svn/ver/135981/trunk/LayoutTests/http/tests/websocket/tests/hybi/close-before-open-expected.txt
+END
+url-with-query.html
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/blink/!svn/ver/149413/trunk/LayoutTests/http/tests/websocket/tests/hybi/url-with-query.html
+END
+echo_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/blink/!svn/ver/101974/trunk/LayoutTests/http/tests/websocket/tests/hybi/echo_wsh.py
+END
+handshake-fail-by-prepended-null.html
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/handshake-fail-by-prepended-null.html
+END
+compressed-control-frame-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/blink/!svn/ver/149148/trunk/LayoutTests/http/tests/websocket/tests/hybi/compressed-control-frame-expected.txt
+END
+zero-length-text_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/blink/!svn/ver/92262/trunk/LayoutTests/http/tests/websocket/tests/hybi/zero-length-text_wsh.py
+END
+multiple-subprotocols.html
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/multiple-subprotocols.html
+END
+fragmented-control-frame_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/blink/!svn/ver/91243/trunk/LayoutTests/http/tests/websocket/tests/hybi/fragmented-control-frame_wsh.py
+END
+fragmented-frames.html
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/fragmented-frames.html
+END
+unmasked-frames_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/blink/!svn/ver/111829/trunk/LayoutTests/http/tests/websocket/tests/hybi/unmasked-frames_wsh.py
+END
+reserved-bits-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/blink/!svn/ver/149148/trunk/LayoutTests/http/tests/websocket/tests/hybi/reserved-bits-expected.txt
+END
+sub-protocol.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/sub-protocol.html
+END
+deflate-frame-set-bfinal-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/blink/!svn/ver/131395/trunk/LayoutTests/http/tests/websocket/tests/hybi/deflate-frame-set-bfinal-expected.txt
+END
+handshake-fail-by-no-cr_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/blink/!svn/ver/94164/trunk/LayoutTests/http/tests/websocket/tests/hybi/handshake-fail-by-no-cr_wsh.py
+END
+handshake-fail-by-extensions-header.html
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/handshake-fail-by-extensions-header.html
+END
+url-no-trailing-slash.html
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/url-no-trailing-slash.html
+END
+unicode_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/blink/!svn/ver/90726/trunk/LayoutTests/http/tests/websocket/tests/hybi/unicode_wsh.py
+END
+handshake-fail-by-no-cr-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/blink/!svn/ver/149148/trunk/LayoutTests/http/tests/websocket/tests/hybi/handshake-fail-by-no-cr-expected.txt
+END
+handshake-fail-by-wrong-accept-header-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/blink/!svn/ver/149148/trunk/LayoutTests/http/tests/websocket/tests/hybi/handshake-fail-by-wrong-accept-header-expected.txt
+END
+extensions.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/extensions.html
+END
+send-empty-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/blink/!svn/ver/115533/trunk/LayoutTests/http/tests/websocket/tests/hybi/send-empty-expected.txt
+END
+handshake-fail-by-more-accept-header_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/blink/!svn/ver/111554/trunk/LayoutTests/http/tests/websocket/tests/hybi/handshake-fail-by-more-accept-header_wsh.py
+END
+close-reason-too-long-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/blink/!svn/ver/134859/trunk/LayoutTests/http/tests/websocket/tests/hybi/close-reason-too-long-expected.txt
+END
+websocket-pending-activity.html
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/blink/!svn/ver/145090/trunk/LayoutTests/http/tests/websocket/tests/hybi/websocket-pending-activity.html
+END
+invalid-continuation_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/blink/!svn/ver/92260/trunk/LayoutTests/http/tests/websocket/tests/hybi/invalid-continuation_wsh.py
+END
+sendback_ua_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/blink/!svn/ver/144037/trunk/LayoutTests/http/tests/websocket/tests/hybi/sendback_ua_wsh.py
+END
+send-arraybufferview-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/blink/!svn/ver/124846/trunk/LayoutTests/http/tests/websocket/tests/hybi/send-arraybufferview-expected.txt
+END
+broken-utf8.html
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/broken-utf8.html
+END
+close-before-open.html
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/close-before-open.html
+END
+null-character.html
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/null-character.html
+END
+handshake-fail-by-no-connection-header.html
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/handshake-fail-by-no-connection-header.html
+END
+invalid-encode-length_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/blink/!svn/ver/111828/trunk/LayoutTests/http/tests/websocket/tests/hybi/invalid-encode-length_wsh.py
+END
+send-onmessage-origin-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/blink/!svn/ver/135587/trunk/LayoutTests/http/tests/websocket/tests/hybi/send-onmessage-origin-expected.txt
+END
+handshake-fail-by-no-accept-header_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/blink/!svn/ver/94164/trunk/LayoutTests/http/tests/websocket/tests/hybi/handshake-fail-by-no-accept-header_wsh.py
+END
+check-binary-messages_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/blink/!svn/ver/94482/trunk/LayoutTests/http/tests/websocket/tests/hybi/check-binary-messages_wsh.py
+END
+long-control-frame_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/blink/!svn/ver/91243/trunk/LayoutTests/http/tests/websocket/tests/hybi/long-control-frame_wsh.py
+END
+close_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/blink/!svn/ver/94387/trunk/LayoutTests/http/tests/websocket/tests/hybi/close_wsh.py
+END
+compressed-control-frame.html
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/compressed-control-frame.html
+END
+url-attribute-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/blink/!svn/ver/105580/trunk/LayoutTests/http/tests/websocket/tests/hybi/url-attribute-expected.txt
+END
+reserved-bits.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/reserved-bits.html
+END
+deflate-frame-set-bfinal.html
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/deflate-frame-set-bfinal.html
+END
+close-unref-websocket-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/blink/!svn/ver/94052/trunk/LayoutTests/http/tests/websocket/tests/hybi/close-unref-websocket-expected.txt
+END
+echo-with-no-extension_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/blink/!svn/ver/110274/trunk/LayoutTests/http/tests/websocket/tests/hybi/echo-with-no-extension_wsh.py
+END
+close-on-navigate-new-location-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/blink/!svn/ver/90726/trunk/LayoutTests/http/tests/websocket/tests/hybi/close-on-navigate-new-location-expected.txt
+END
+handshake-fail-by-no-cr.html
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/handshake-fail-by-no-cr.html
+END
+protocol-test_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/blink/!svn/ver/90726/trunk/LayoutTests/http/tests/websocket/tests/hybi/protocol-test_wsh.py
+END
+handshake-fail-by-wrong-accept-header.html
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/handshake-fail-by-wrong-accept-header.html
+END
+multiple-connections-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/blink/!svn/ver/90726/trunk/LayoutTests/http/tests/websocket/tests/hybi/multiple-connections-expected.txt
+END
+send-empty.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/send-empty.html
+END
+echo-with-no-extension-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/blink/!svn/ver/110274/trunk/LayoutTests/http/tests/websocket/tests/hybi/echo-with-no-extension-expected.txt
+END
+close-reason-too-long.html
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/close-reason-too-long.html
+END
+send-arraybufferview.html
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/send-arraybufferview.html
+END
+send-file-blob-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/blink/!svn/ver/94405/trunk/LayoutTests/http/tests/websocket/tests/hybi/send-file-blob-expected.txt
+END
+send-onmessage-origin.html
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/send-onmessage-origin.html
+END
+send_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/blink/!svn/ver/90726/trunk/LayoutTests/http/tests/websocket/tests/hybi/send_wsh.py
+END
+too-long-payload-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/blink/!svn/ver/149148/trunk/LayoutTests/http/tests/websocket/tests/hybi/too-long-payload-expected.txt
+END
+url-attribute.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/url-attribute.html
+END
+simple-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/blink/!svn/ver/90726/trunk/LayoutTests/http/tests/websocket/tests/hybi/simple-expected.txt
+END
+close-on-unload_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/blink/!svn/ver/90726/trunk/LayoutTests/http/tests/websocket/tests/hybi/close-on-unload_wsh.py
+END
+handshake-fail-by-maxlength-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/blink/!svn/ver/149148/trunk/LayoutTests/http/tests/websocket/tests/hybi/handshake-fail-by-maxlength-expected.txt
+END
+close-unref-websocket.html
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/close-unref-websocket.html
+END
+handshake-fail-by-more-protocol-header-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/blink/!svn/ver/149148/trunk/LayoutTests/http/tests/websocket/tests/hybi/handshake-fail-by-more-protocol-header-expected.txt
+END
+close-on-navigate-new-location.html
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/close-on-navigate-new-location.html
+END
+deflate-frame-invalid-parameter-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/blink/!svn/ver/149148/trunk/LayoutTests/http/tests/websocket/tests/hybi/deflate-frame-invalid-parameter-expected.txt
+END
+handshake-fail-by-no-connection-header_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/blink/!svn/ver/94164/trunk/LayoutTests/http/tests/websocket/tests/hybi/handshake-fail-by-no-connection-header_wsh.py
+END
+broken-utf8_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/blink/!svn/ver/91243/trunk/LayoutTests/http/tests/websocket/tests/hybi/broken-utf8_wsh.py
+END
+close-on-unload-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/blink/!svn/ver/90726/trunk/LayoutTests/http/tests/websocket/tests/hybi/close-on-unload-expected.txt
+END
+multiple-connections.html
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/blink/!svn/ver/122256/trunk/LayoutTests/http/tests/websocket/tests/hybi/multiple-connections.html
+END
+echo-with-no-extension.html
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/blink/!svn/ver/148906/trunk/LayoutTests/http/tests/websocket/tests/hybi/echo-with-no-extension.html
+END

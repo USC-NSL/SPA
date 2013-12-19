@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-mime
+END
+t.11-user_mime_uninstall
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-mime/t.11-user_mime_uninstall
+END
+t.00-apply_generic
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-mime/t.00-apply_generic
+END
+t.13-notexist_mime_uninstall
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-mime/t.13-notexist_mime_uninstall
+END
+t.20-system_mime_install
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-mime/t.20-system_mime_install
+END
+t.22-system_install_missing_file
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-mime/t.22-system_install_missing_file
+END
+t.21-system_mime_uninstall
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-mime/t.21-system_mime_uninstall
+END
+t.03-system_as_nonroot
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-mime/t.03-system_as_nonroot
+END
+t.14-user_mime_install2in1
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-mime/t.14-user_mime_install2in1
+END
+t.10-user_mime_install
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-mime/t.10-user_mime_install
+END
+t.23-double_mime_install
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-mime/t.23-double_mime_install
+END
+t.01-query_text_plain
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-mime/t.01-query_text_plain
+END
+t.15-user_mime_uninstall2in1
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-mime/t.15-user_mime_uninstall2in1
+END
+t.02-query_missing_file
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-mime/t.02-query_missing_file
+END
+t.12-user_install_missing_file
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-mime/t.12-user_install_missing_file
+END

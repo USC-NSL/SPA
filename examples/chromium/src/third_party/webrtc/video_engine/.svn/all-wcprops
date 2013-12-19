@@ -1,0 +1,455 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/3913/stable/webrtc/video_engine
+END
+call_stats.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/3561/stable/webrtc/video_engine/call_stats.h
+END
+vie_file_player.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/3840/stable/webrtc/video_engine/vie_file_player.h
+END
+vie_codec_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/3304/stable/webrtc/video_engine/vie_codec_impl.h
+END
+vie_render_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/3840/stable/webrtc/video_engine/vie_render_impl.cc
+END
+vie_image_process_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/3840/stable/webrtc/video_engine/vie_image_process_impl.cc
+END
+vie_render_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/3037/stable/webrtc/video_engine/vie_render_impl.h
+END
+vie_file_recorder.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/3840/stable/webrtc/video_engine/vie_file_recorder.cc
+END
+vie_file_recorder.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/3036/stable/webrtc/video_engine/vie_file_recorder.h
+END
+stream_synchronization_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/3913/stable/webrtc/video_engine/stream_synchronization_unittest.cc
+END
+vie_network_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/3840/stable/webrtc/video_engine/vie_network_impl.cc
+END
+vie_sender.cc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/3840/stable/webrtc/video_engine/vie_sender.cc
+END
+encoder_state_feedback.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/2974/stable/webrtc/video_engine/encoder_state_feedback.cc
+END
+vie_encoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/3840/stable/webrtc/video_engine/vie_encoder.h
+END
+vie_file_image.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/3840/stable/webrtc/video_engine/vie_file_image.cc
+END
+encoder_state_feedback.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/2974/stable/webrtc/video_engine/encoder_state_feedback.h
+END
+vie_sender.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/3840/stable/webrtc/video_engine/vie_sender.h
+END
+vie_capture_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/3840/stable/webrtc/video_engine/vie_capture_impl.cc
+END
+vie_ref_count.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/2974/stable/webrtc/video_engine/vie_ref_count.cc
+END
+call_stats_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/3561/stable/webrtc/video_engine/call_stats_unittest.cc
+END
+vie_capture_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/2974/stable/webrtc/video_engine/vie_capture_impl.h
+END
+vie_ref_count.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/2974/stable/webrtc/video_engine/vie_ref_count.h
+END
+vie_capturer.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/3840/stable/webrtc/video_engine/vie_capturer.h
+END
+vie_remb.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/3468/stable/webrtc/video_engine/vie_remb.h
+END
+vie_base_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/3840/stable/webrtc/video_engine/vie_base_impl.cc
+END
+vie_frame_provider_base.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/3840/stable/webrtc/video_engine/vie_frame_provider_base.cc
+END
+video_engine.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/3840/stable/webrtc/video_engine/video_engine.gyp
+END
+vie_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/3840/stable/webrtc/video_engine/vie_impl.h
+END
+vie_channel_manager.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/3205/stable/webrtc/video_engine/vie_channel_manager.h
+END
+vie_channel.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/3853/stable/webrtc/video_engine/vie_channel.cc
+END
+vie_renderer.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/3840/stable/webrtc/video_engine/vie_renderer.h
+END
+vie_channel.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/3853/stable/webrtc/video_engine/vie_channel.h
+END
+vie_encryption_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/3840/stable/webrtc/video_engine/vie_encryption_impl.cc
+END
+stream_synchronization.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/3913/stable/webrtc/video_engine/stream_synchronization.h
+END
+vie_render_manager.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/3840/stable/webrtc/video_engine/vie_render_manager.h
+END
+encoder_state_feedback_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/3840/stable/webrtc/video_engine/encoder_state_feedback_unittest.cc
+END
+vie_rtp_rtcp_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/3853/stable/webrtc/video_engine/vie_rtp_rtcp_impl.h
+END
+vie_sync_module.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/3840/stable/webrtc/video_engine/vie_sync_module.h
+END
+vie_channel_group.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/3913/stable/webrtc/video_engine/vie_channel_group.cc
+END
+vie_capturer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/3840/stable/webrtc/video_engine/vie_capturer.cc
+END
+vie_remb.cc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/3468/stable/webrtc/video_engine/vie_remb.cc
+END
+call_stats.cc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/3561/stable/webrtc/video_engine/call_stats.cc
+END
+vie_channel_group.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/3913/stable/webrtc/video_engine/vie_channel_group.h
+END
+vie_input_manager.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/3840/stable/webrtc/video_engine/vie_input_manager.h
+END
+vie_base_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/3840/stable/webrtc/video_engine/vie_base_impl.h
+END
+vie_codec_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/3913/stable/webrtc/video_engine/vie_codec_impl.cc
+END
+vie_shared_data.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/3083/stable/webrtc/video_engine/vie_shared_data.cc
+END
+vie_external_codec_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/3840/stable/webrtc/video_engine/vie_external_codec_impl.cc
+END
+vie_file_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/3840/stable/webrtc/video_engine/vie_file_impl.cc
+END
+vie_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/3840/stable/webrtc/video_engine/vie_impl.cc
+END
+vie_external_codec_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/3353/stable/webrtc/video_engine/vie_external_codec_impl.h
+END
+vie_file_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/3840/stable/webrtc/video_engine/vie_file_impl.h
+END
+vie_receiver.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/3840/stable/webrtc/video_engine/vie_receiver.cc
+END
+vie_manager_base.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/2974/stable/webrtc/video_engine/vie_manager_base.cc
+END
+vie_receiver.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/3840/stable/webrtc/video_engine/vie_receiver.h
+END
+vie_manager_base.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/2974/stable/webrtc/video_engine/vie_manager_base.h
+END
+stream_synchronization.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/3913/stable/webrtc/video_engine/stream_synchronization.cc
+END
+vie_render_manager.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/3840/stable/webrtc/video_engine/vie_render_manager.cc
+END
+vie_network_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/3840/stable/webrtc/video_engine/vie_network_impl.h
+END
+vie_encryption_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/2974/stable/webrtc/video_engine/vie_encryption_impl.h
+END
+vie_sync_module.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/3840/stable/webrtc/video_engine/vie_sync_module.cc
+END
+vie_input_manager.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/3840/stable/webrtc/video_engine/vie_input_manager.cc
+END
+vie_file_player.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/3840/stable/webrtc/video_engine/vie_file_player.cc
+END
+Android.mk
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/2974/stable/webrtc/video_engine/Android.mk
+END
+vie_frame_provider_base.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/3840/stable/webrtc/video_engine/vie_frame_provider_base.h
+END
+vie_shared_data.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/3083/stable/webrtc/video_engine/vie_shared_data.h
+END
+vie_channel_manager.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/3913/stable/webrtc/video_engine/vie_channel_manager.cc
+END
+vie_image_process_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/2974/stable/webrtc/video_engine/vie_image_process_impl.h
+END
+vie_renderer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/3840/stable/webrtc/video_engine/vie_renderer.cc
+END
+vie_rtp_rtcp_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/3853/stable/webrtc/video_engine/vie_rtp_rtcp_impl.cc
+END
+vie_encoder.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/3913/stable/webrtc/video_engine/vie_encoder.cc
+END
+vie_defines.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/3561/stable/webrtc/video_engine/vie_defines.h
+END
+vie_file_image.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/3036/stable/webrtc/video_engine/vie_file_image.h
+END
+video_engine_core.gypi
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/3913/stable/webrtc/video_engine/video_engine_core.gypi
+END
+vie_remb_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/3840/stable/webrtc/video_engine/vie_remb_unittest.cc
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/2974/stable/webrtc/video_engine/OWNERS
+END

@@ -1,0 +1,551 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86
+END
+idct_mmx_xvid.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/idct_mmx_xvid.c
+END
+rv40dsp.asm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavcodec/x86/rv40dsp.asm
+END
+rv34dsp.asm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/rv34dsp.asm
+END
+proresdsp_init.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/proresdsp_init.c
+END
+vp56dsp.asm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavcodec/x86/vp56dsp.asm
+END
+vp8dsp_init.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/vp8dsp_init.c
+END
+vorbisdsp.asm
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/vorbisdsp.asm
+END
+fmtconvert_init.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/fmtconvert_init.c
+END
+diracdsp_mmx.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/diracdsp_mmx.c
+END
+h264_intrapred_init.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/h264_intrapred_init.c
+END
+diracdsp_mmx.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavcodec/x86/diracdsp_mmx.h
+END
+h263_loopfilter.asm
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/h263_loopfilter.asm
+END
+h264_idct_10bit.asm
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/h264_idct_10bit.asm
+END
+rv34dsp_init.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/rv34dsp_init.c
+END
+h264_chromamc_10bit.asm
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavcodec/x86/h264_chromamc_10bit.asm
+END
+dnxhdenc.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/dnxhdenc.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/Makefile
+END
+vp56_arith.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/162873/trunk/deps/third_party/ffmpeg/libavcodec/x86/vp56_arith.h
+END
+hpeldsp.asm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/hpeldsp.asm
+END
+vc1dsp.asm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavcodec/x86/vc1dsp.asm
+END
+h264chroma_init.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/h264chroma_init.c
+END
+w64xmmtest.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/122313/trunk/deps/third_party/ffmpeg/libavcodec/x86/w64xmmtest.c
+END
+fft_init.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/fft_init.c
+END
+cavsdsp.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/cavsdsp.c
+END
+idct_mmx.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/162873/trunk/deps/third_party/ffmpeg/libavcodec/x86/idct_mmx.c
+END
+h264_deblock.asm
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/h264_deblock.asm
+END
+imdct36.asm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavcodec/x86/imdct36.asm
+END
+ac3dsp.asm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/ac3dsp.asm
+END
+videodsp.asm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/videodsp.asm
+END
+h264dsp_init.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/h264dsp_init.c
+END
+pngdsp_init.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/pngdsp_init.c
+END
+mpegvideo.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/mpegvideo.c
+END
+dsputil.asm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/dsputil.asm
+END
+fmtconvert.asm
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavcodec/x86/fmtconvert.asm
+END
+v210.asm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavcodec/x86/v210.asm
+END
+h264_qpel_8bit.asm
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavcodec/x86/h264_qpel_8bit.asm
+END
+h264_intrapred_10bit.asm
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavcodec/x86/h264_intrapred_10bit.asm
+END
+h264_weight.asm
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavcodec/x86/h264_weight.asm
+END
+v210-init.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/162873/trunk/deps/third_party/ffmpeg/libavcodec/x86/v210-init.c
+END
+h264_intrapred.asm
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavcodec/x86/h264_intrapred.asm
+END
+cabac.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/cabac.h
+END
+mpegvideoenc_template.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/mpegvideoenc_template.c
+END
+ac3dsp_init.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/ac3dsp_init.c
+END
+videodsp_init.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/videodsp_init.c
+END
+dirac_dwt.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/dirac_dwt.c
+END
+vp3dsp_init.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/vp3dsp_init.c
+END
+dirac_dwt.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/dirac_dwt.h
+END
+dsputilenc.asm
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/dsputilenc.asm
+END
+idct_sse2_xvid.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/idct_sse2_xvid.c
+END
+dsputil_avg_template.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/dsputil_avg_template.c
+END
+fft.asm
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavcodec/x86/fft.asm
+END
+lpc.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/lpc.c
+END
+motion_est.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/motion_est.c
+END
+fdct.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/fdct.c
+END
+vc1dsp_mmx.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/vc1dsp_mmx.c
+END
+dsputil_rnd_template.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/dsputil_rnd_template.c
+END
+vp8dsp.asm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/vp8dsp.asm
+END
+vc1dsp_init.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/vc1dsp_init.c
+END
+h264_idct.asm
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/h264_idct.asm
+END
+fft.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/162873/trunk/deps/third_party/ffmpeg/libavcodec/x86/fft.h
+END
+mpegaudiodec.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/mpegaudiodec.c
+END
+pngdsp.asm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavcodec/x86/pngdsp.asm
+END
+h264_chromamc.asm
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/h264_chromamc.asm
+END
+vp56dsp_init.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/vp56dsp_init.c
+END
+sbrdsp.asm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/sbrdsp.asm
+END
+simple_idct.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/simple_idct.c
+END
+snowdsp.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/snowdsp.c
+END
+vorbisdsp_init.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/vorbisdsp_init.c
+END
+mlpdsp.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/mlpdsp.c
+END
+dsputil_qns_template.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/162873/trunk/deps/third_party/ffmpeg/libavcodec/x86/dsputil_qns_template.c
+END
+h264_i386.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/162873/trunk/deps/third_party/ffmpeg/libavcodec/x86/h264_i386.h
+END
+h264_qpel_10bit.asm
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavcodec/x86/h264_qpel_10bit.asm
+END
+h264_deblock_10bit.asm
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavcodec/x86/h264_deblock_10bit.asm
+END
+h264_qpel.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/h264_qpel.c
+END
+dsputil_mmx.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/dsputil_mmx.c
+END
+mpegvideoenc.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/mpegvideoenc.c
+END
+vc1dsp.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavcodec/x86/vc1dsp.h
+END
+dsputil_mmx.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/dsputil_mmx.h
+END
+deinterlace.asm
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavcodec/x86/deinterlace.asm
+END
+vp3dsp.asm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/vp3dsp.asm
+END
+dct32.asm
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavcodec/x86/dct32.asm
+END
+proresdsp.asm
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/proresdsp.asm
+END
+mathops.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/162873/trunk/deps/third_party/ffmpeg/libavcodec/x86/mathops.h
+END
+diracdsp_yasm.asm
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/diracdsp_yasm.asm
+END
+sbrdsp_init.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/sbrdsp_init.c
+END
+idct_xvid.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/idct_xvid.h
+END
+dwt_yasm.asm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/dwt_yasm.asm
+END
+rv40dsp_init.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/rv40dsp_init.c
+END
+h264_weight_10bit.asm
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavcodec/x86/h264_weight_10bit.asm
+END
+dsputilenc_mmx.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/dsputilenc_mmx.c
+END
+mpeg4qpel.asm
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/x86/mpeg4qpel.asm
+END

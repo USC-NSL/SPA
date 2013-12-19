@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/178673/trunk/deps/third_party/libmtp/patches
+END
+00_disable_playlist.patch
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/167447/trunk/deps/third_party/libmtp/patches/00_disable_playlist.patch
+END
+08_add_licenses.patch
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/167447/trunk/deps/third_party/libmtp/patches/08_add_licenses.patch
+END
+15_read_chunks.patch
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/178446/trunk/deps/third_party/libmtp/patches/15_read_chunks.patch
+END
+01_build_fixes.patch
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/148597/trunk/deps/third_party/libmtp/patches/01_build_fixes.patch
+END
+04_parse_extension_descriptor_null_check.patch
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/148645/trunk/deps/third_party/libmtp/patches/04_parse_extension_descriptor_null_check.patch
+END
+10_remove_nexus_s_from_device_list.patch
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/149713/trunk/deps/third_party/libmtp/patches/10_remove_nexus_s_from_device_list.patch
+END
+11_add_gyp_file_and_generated_headers.patch
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/167447/trunk/deps/third_party/libmtp/patches/11_add_gyp_file_and_generated_headers.patch
+END
+12_check_for_libusb_init_failures.patch
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/160216/trunk/deps/third_party/libmtp/patches/12_check_for_libusb_init_failures.patch
+END
+05_improve_warning_formatting.patch
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/148648/trunk/deps/third_party/libmtp/patches/05_improve_warning_formatting.patch
+END
+17_fix_leak_in_libmtp_release_device.patch
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/178673/trunk/deps/third_party/libmtp/patches/17_fix_leak_in_libmtp_release_device.patch
+END
+03_enable_ptp_support.patch
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/149281/trunk/deps/third_party/libmtp/patches/03_enable_ptp_support.patch
+END
+06_disable_ptp_canon_eos_setdevicepropvalue.patch
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/149144/trunk/deps/third_party/libmtp/patches/06_disable_ptp_canon_eos_setdevicepropvalue.patch
+END
+16_fix_leaks.patch
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/178447/trunk/deps/third_party/libmtp/patches/16_fix_leaks.patch
+END
+07_fix_strcpy_in_ptp_unpack_ptptime.patch
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/149246/trunk/deps/third_party/libmtp/patches/07_fix_strcpy_in_ptp_unpack_ptptime.patch
+END
+09_do_not_build_udev_and_examples.patch
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/149328/trunk/deps/third_party/libmtp/patches/09_do_not_build_udev_and_examples.patch
+END
+14_libusb1_header.patch
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/163169/trunk/deps/third_party/libmtp/patches/14_libusb1_header.patch
+END
+02_check_ptp_operation_support.patch
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/148607/trunk/deps/third_party/libmtp/patches/02_check_ptp_operation_support.patch
+END

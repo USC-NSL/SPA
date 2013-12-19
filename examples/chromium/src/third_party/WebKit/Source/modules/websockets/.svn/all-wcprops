@@ -1,0 +1,209 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/blink/!svn/ver/149430/trunk/Source/modules/websockets
+END
+WebSocketExtensionParser.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/blink/!svn/ver/148943/trunk/Source/modules/websockets/WebSocketExtensionParser.cpp
+END
+ThreadableWebSocketChannelClientWrapper.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/blink/!svn/ver/148943/trunk/Source/modules/websockets/ThreadableWebSocketChannelClientWrapper.h
+END
+WebSocketHandshake.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/blink/!svn/ver/148943/trunk/Source/modules/websockets/WebSocketHandshake.h
+END
+WebSocketDeflater.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/blink/!svn/ver/148943/trunk/Source/modules/websockets/WebSocketDeflater.h
+END
+WebSocketFrame.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/blink/!svn/ver/148943/trunk/Source/modules/websockets/WebSocketFrame.h
+END
+WebSocketDeflateFramer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/blink/!svn/ver/148943/trunk/Source/modules/websockets/WebSocketDeflateFramer.cpp
+END
+WorkerContextWebSocket.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/blink/!svn/ver/149182/trunk/Source/modules/websockets/WorkerContextWebSocket.idl
+END
+WebSocketHandshakeRequest.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/blink/!svn/ver/148943/trunk/Source/modules/websockets/WebSocketHandshakeRequest.h
+END
+WebSocketHandshakeResponse.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/blink/!svn/ver/148943/trunk/Source/modules/websockets/WebSocketHandshakeResponse.cpp
+END
+MainThreadWebSocketChannel.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/blink/!svn/ver/149148/trunk/Source/modules/websockets/MainThreadWebSocketChannel.h
+END
+WebSocketChannel.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/blink/!svn/ver/148943/trunk/Source/modules/websockets/WebSocketChannel.h
+END
+WorkerThreadableWebSocketChannel.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/blink/!svn/ver/149386/trunk/Source/modules/websockets/WorkerThreadableWebSocketChannel.cpp
+END
+ThreadableWebSocketChannelClientWrapper.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/blink/!svn/ver/148943/trunk/Source/modules/websockets/ThreadableWebSocketChannelClientWrapper.cpp
+END
+WebSocket.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/blink/!svn/ver/148943/trunk/Source/modules/websockets/WebSocket.h
+END
+WebSocketHandshake.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/blink/!svn/ver/149272/trunk/Source/modules/websockets/WebSocketHandshake.cpp
+END
+WebSocketDeflater.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/blink/!svn/ver/148943/trunk/Source/modules/websockets/WebSocketDeflater.cpp
+END
+WebSocketExtensionDispatcher.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/blink/!svn/ver/148943/trunk/Source/modules/websockets/WebSocketExtensionDispatcher.h
+END
+WebSocketFrame.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/blink/!svn/ver/148943/trunk/Source/modules/websockets/WebSocketFrame.cpp
+END
+DOMWindowWebSocket.idl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/blink/!svn/ver/149182/trunk/Source/modules/websockets/DOMWindowWebSocket.idl
+END
+WebSocketExtensionParser.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/blink/!svn/ver/148943/trunk/Source/modules/websockets/WebSocketExtensionParser.h
+END
+WebSocketHandshakeRequest.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/blink/!svn/ver/148943/trunk/Source/modules/websockets/WebSocketHandshakeRequest.cpp
+END
+CloseEvent.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/blink/!svn/ver/148943/trunk/Source/modules/websockets/CloseEvent.h
+END
+WebSocket.idl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/blink/!svn/ver/148405/trunk/Source/modules/websockets/WebSocket.idl
+END
+MainThreadWebSocketChannel.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/blink/!svn/ver/149430/trunk/Source/modules/websockets/MainThreadWebSocketChannel.cpp
+END
+WebSocketDeflateFramer.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/blink/!svn/ver/148943/trunk/Source/modules/websockets/WebSocketDeflateFramer.h
+END
+WebSocketChannel.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/blink/!svn/ver/149386/trunk/Source/modules/websockets/WebSocketChannel.cpp
+END
+WebSocketHandshakeResponse.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/blink/!svn/ver/148943/trunk/Source/modules/websockets/WebSocketHandshakeResponse.h
+END
+WebSocketChannelClient.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/blink/!svn/ver/148943/trunk/Source/modules/websockets/WebSocketChannelClient.h
+END
+WebSocket.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/blink/!svn/ver/149272/trunk/Source/modules/websockets/WebSocket.cpp
+END
+WebSocketExtensionProcessor.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/blink/!svn/ver/148943/trunk/Source/modules/websockets/WebSocketExtensionProcessor.h
+END
+WebSocketExtensionDispatcher.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/blink/!svn/ver/148943/trunk/Source/modules/websockets/WebSocketExtensionDispatcher.cpp
+END
+WorkerThreadableWebSocketChannel.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/blink/!svn/ver/148943/trunk/Source/modules/websockets/WorkerThreadableWebSocketChannel.h
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/blink/!svn/ver/148664/trunk/Source/modules/websockets/OWNERS
+END
+CloseEvent.idl
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/blink/!svn/ver/148125/trunk/Source/modules/websockets/CloseEvent.idl
+END

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/native_client/!svn/ver/10178/trunk/src/native_client/src/untrusted/stubs
+END
+crt1.x
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/native_client/!svn/ver/6348/trunk/src/native_client/src/untrusted/stubs/crt1.x
+END
+crti_x86_64.S
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/native_client/!svn/ver/7134/trunk/src/native_client/src/untrusted/stubs/crti_x86_64.S
+END
+crtn_x86_32.S
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/native_client/!svn/ver/9084/trunk/src/native_client/src/untrusted/stubs/crtn_x86_32.S
+END
+crti_arm.S
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/native_client/!svn/ver/10178/trunk/src/native_client/src/untrusted/stubs/crti_arm.S
+END
+nacl.scons
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/native_client/!svn/ver/8771/trunk/src/native_client/src/untrusted/stubs/nacl.scons
+END
+crtn_x86_64.S
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/native_client/!svn/ver/9084/trunk/src/native_client/src/untrusted/stubs/crtn_x86_64.S
+END
+crtn_arm.S
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/native_client/!svn/ver/10178/trunk/src/native_client/src/untrusted/stubs/crtn_arm.S
+END
+crti_x86_32.S
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/native_client/!svn/ver/7134/trunk/src/native_client/src/untrusted/stubs/crti_x86_32.S
+END

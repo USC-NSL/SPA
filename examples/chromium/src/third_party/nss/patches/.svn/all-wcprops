@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/196262/trunk/deps/third_party/nss/patches
+END
+prcpucfg.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/165464/trunk/deps/third_party/nss/patches/prcpucfg.h
+END
+nspr-remove-io.patch
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/179335/trunk/deps/third_party/nss/patches/nspr-remove-io.patch
+END
+nspr-static.patch
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/179335/trunk/deps/third_party/nss/patches/nspr-static.patch
+END
+nss-static.patch
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/196262/trunk/deps/third_party/nss/patches/nss-static.patch
+END
+nspr-attach-as-system-thread.patch
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/179335/trunk/deps/third_party/nss/patches/nspr-attach-as-system-thread.patch
+END
+nss-remove-fortezza.patch
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/196262/trunk/deps/third_party/nss/patches/nss-remove-fortezza.patch
+END

@@ -1,0 +1,76 @@
+10
+
+dir
+197158
+http://src.chromium.org/svn/trunk/deps/third_party/nss/nss/lib
+http://src.chromium.org/svn
+
+
+
+2013-04-24T23:29:36.474577Z
+196262
+wtc@chromium.org
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4ff67af0-8c30-449e-8e8b-ad334ec8d88c
+
+pki
+dir
+
+pkcs7
+dir
+
+softoken
+dir
+
+ckfw
+dir
+
+certhigh
+dir
+
+freebl
+dir
+
+cryptohi
+dir
+
+ssl
+dir
+
+libpkix
+dir
+
+certdb
+dir
+
+nss
+dir
+
+pk11wrap
+dir
+
+base
+dir
+
+smime
+dir
+
+util
+dir
+
+dev
+dir
+

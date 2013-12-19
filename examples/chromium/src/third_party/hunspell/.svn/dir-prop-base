@@ -1,0 +1,12 @@
+K 10
+svn:ignore
+V 106
+hunspell.xcodeproj
+SConstruct
+hunspell.scons
+hunspell_main.scons
+hunspell.sln
+hunspell.vcproj
+hunspell.mk
+
+END

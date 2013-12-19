@@ -1,0 +1,545 @@
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/296/trunk/talk/xmpp
+END
+iqtask.cc
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/81/trunk/talk/xmpp/iqtask.cc
+END
+xmppengineimpl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/208/trunk/talk/xmpp/xmppengineimpl.cc
+END
+mucroomdiscoverytask.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/166/trunk/talk/xmpp/mucroomdiscoverytask.h
+END
+xmppsocket.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/276/trunk/talk/xmpp/xmppsocket.h
+END
+xmpplogintask_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/97/trunk/talk/xmpp/xmpplogintask_unittest.cc
+END
+pubsubclient.cc
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/84/trunk/talk/xmpp/pubsubclient.cc
+END
+pubsubclient.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/84/trunk/talk/xmpp/pubsubclient.h
+END
+rostermoduleimpl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/296/trunk/talk/xmpp/rostermoduleimpl.cc
+END
+moduleimpl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/103/trunk/talk/xmpp/moduleimpl.cc
+END
+receivetask.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/84/trunk/talk/xmpp/receivetask.h
+END
+pubsubtasks.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/84/trunk/talk/xmpp/pubsubtasks.h
+END
+moduleimpl.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/103/trunk/talk/xmpp/moduleimpl.h
+END
+presencestatus.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/262/trunk/talk/xmpp/presencestatus.h
+END
+xmppthread.cc
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/276/trunk/talk/xmpp/xmppthread.cc
+END
+xmppengine.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/97/trunk/talk/xmpp/xmppengine.h
+END
+util_unittest.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/93/trunk/talk/xmpp/util_unittest.h
+END
+chatroommodule_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/296/trunk/talk/xmpp/chatroommodule_unittest.cc
+END
+pingtask.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/141/trunk/talk/xmpp/pingtask.h
+END
+xmppstanzaparser.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/30/trunk/talk/xmpp/xmppstanzaparser.h
+END
+pubsub_task.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/103/trunk/talk/xmpp/pubsub_task.h
+END
+xmpppump.cc
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/276/trunk/talk/xmpp/xmpppump.cc
+END
+hangoutpubsubclient.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/138/trunk/talk/xmpp/hangoutpubsubclient.h
+END
+mucroomdiscoverytask.cc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/166/trunk/talk/xmpp/mucroomdiscoverytask.cc
+END
+mucroomlookuptask_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/166/trunk/talk/xmpp/mucroomlookuptask_unittest.cc
+END
+mucroomuniquehangoutidtask_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/131/trunk/talk/xmpp/mucroomuniquehangoutidtask_unittest.cc
+END
+pubsubclient_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/93/trunk/talk/xmpp/pubsubclient_unittest.cc
+END
+mucroomuniquehangoutidtask.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/131/trunk/talk/xmpp/mucroomuniquehangoutidtask.cc
+END
+mucroomlookuptask.cc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/166/trunk/talk/xmpp/mucroomlookuptask.cc
+END
+xmpplogintask.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/93/trunk/talk/xmpp/xmpplogintask.h
+END
+chatroommoduleimpl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/296/trunk/talk/xmpp/chatroommoduleimpl.cc
+END
+xmppclientsettings.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/137/trunk/talk/xmpp/xmppclientsettings.h
+END
+xmpptask.cc
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/102/trunk/talk/xmpp/xmpptask.cc
+END
+jingleinfotask.cc
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/260/trunk/talk/xmpp/jingleinfotask.cc
+END
+rostermoduleimpl.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/166/trunk/talk/xmpp/rostermoduleimpl.h
+END
+presencestatus.cc
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/262/trunk/talk/xmpp/presencestatus.cc
+END
+xmpptask.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/84/trunk/talk/xmpp/xmpptask.h
+END
+jingleinfotask.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/260/trunk/talk/xmpp/jingleinfotask.h
+END
+util_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/179/trunk/talk/xmpp/util_unittest.cc
+END
+saslplainmechanism.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/137/trunk/talk/xmpp/saslplainmechanism.h
+END
+prexmppauth.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/137/trunk/talk/xmpp/prexmppauth.h
+END
+pingtask.cc
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/141/trunk/talk/xmpp/pingtask.cc
+END
+rostermodule_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/133/trunk/talk/xmpp/rostermodule_unittest.cc
+END
+saslcookiemechanism.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/137/trunk/talk/xmpp/saslcookiemechanism.h
+END
+chatroommodule.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/296/trunk/talk/xmpp/chatroommodule.h
+END
+hangoutpubsubclient_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/138/trunk/talk/xmpp/hangoutpubsubclient_unittest.cc
+END
+plainsaslhandler.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/30/trunk/talk/xmpp/plainsaslhandler.h
+END
+module.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/103/trunk/talk/xmpp/module.h
+END
+xmpppump.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/276/trunk/talk/xmpp/xmpppump.h
+END
+asyncsocket.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/93/trunk/talk/xmpp/asyncsocket.h
+END
+mucroomconfigtask_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/93/trunk/talk/xmpp/mucroomconfigtask_unittest.cc
+END
+mucroomconfigtask.cc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/81/trunk/talk/xmpp/mucroomconfigtask.cc
+END
+presencereceivetask.cc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/262/trunk/talk/xmpp/presencereceivetask.cc
+END
+xmppsocket.cc
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/276/trunk/talk/xmpp/xmppsocket.cc
+END
+mucroomlookuptask.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/166/trunk/talk/xmpp/mucroomlookuptask.h
+END
+xmpplogintask.cc
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/208/trunk/talk/xmpp/xmpplogintask.cc
+END
+mucroomuniquehangoutidtask.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/131/trunk/talk/xmpp/mucroomuniquehangoutidtask.h
+END
+saslhandler.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/30/trunk/talk/xmpp/saslhandler.h
+END
+receivetask.cc
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/84/trunk/talk/xmpp/receivetask.cc
+END
+jid_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/93/trunk/talk/xmpp/jid_unittest.cc
+END
+xmppauth.cc
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/255/trunk/talk/xmpp/xmppauth.cc
+END
+jid.cc
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/166/trunk/talk/xmpp/jid.cc
+END
+fakexmppclient.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/93/trunk/talk/xmpp/fakexmppclient.h
+END
+constants.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/296/trunk/talk/xmpp/constants.h
+END
+discoitemsquerytask.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/141/trunk/talk/xmpp/discoitemsquerytask.h
+END
+xmppclient.cc
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/208/trunk/talk/xmpp/xmppclient.cc
+END
+xmppengineimpl_iq.cc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/30/trunk/talk/xmpp/xmppengineimpl_iq.cc
+END
+xmppclient.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/137/trunk/talk/xmpp/xmppclient.h
+END
+hangoutpubsubclient.cc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/138/trunk/talk/xmpp/hangoutpubsubclient.cc
+END
+rostermodule.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/137/trunk/talk/xmpp/rostermodule.h
+END
+saslmechanism.cc
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/30/trunk/talk/xmpp/saslmechanism.cc
+END
+saslmechanism.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/30/trunk/talk/xmpp/saslmechanism.h
+END
+mucroomdiscoverytask_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/166/trunk/talk/xmpp/mucroomdiscoverytask_unittest.cc
+END
+mucroomconfigtask.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/81/trunk/talk/xmpp/mucroomconfigtask.h
+END
+presencereceivetask.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/262/trunk/talk/xmpp/presencereceivetask.h
+END
+xmppengineimpl.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/102/trunk/talk/xmpp/xmppengineimpl.h
+END
+iqtask.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/84/trunk/talk/xmpp/iqtask.h
+END
+pubsubtasks_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/93/trunk/talk/xmpp/pubsubtasks_unittest.cc
+END
+pubsubtasks.cc
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/84/trunk/talk/xmpp/pubsubtasks.cc
+END
+jid.h
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/166/trunk/talk/xmpp/jid.h
+END
+xmppauth.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/255/trunk/talk/xmpp/xmppauth.h
+END
+xmppengine_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/93/trunk/talk/xmpp/xmppengine_unittest.cc
+END
+discoitemsquerytask.cc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/141/trunk/talk/xmpp/discoitemsquerytask.cc
+END
+constants.cc
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/296/trunk/talk/xmpp/constants.cc
+END
+xmppthread.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/276/trunk/talk/xmpp/xmppthread.h
+END
+pingtask_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/141/trunk/talk/xmpp/pingtask_unittest.cc
+END
+presenceouttask.cc
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/262/trunk/talk/xmpp/presenceouttask.cc
+END
+xmppstanzaparser_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/93/trunk/talk/xmpp/xmppstanzaparser_unittest.cc
+END
+presenceouttask.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/262/trunk/talk/xmpp/presenceouttask.h
+END
+xmppstanzaparser.cc
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/65/trunk/talk/xmpp/xmppstanzaparser.cc
+END
+pubsub_task.cc
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/208/trunk/talk/xmpp/pubsub_task.cc
+END

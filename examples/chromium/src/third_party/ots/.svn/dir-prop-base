@@ -1,0 +1,10 @@
+K 10
+svn:ignore
+V 60
+ots.Makefile
+ots.sln
+ots.target.mk
+ots.vcproj
+ots.xcodeproj
+
+END

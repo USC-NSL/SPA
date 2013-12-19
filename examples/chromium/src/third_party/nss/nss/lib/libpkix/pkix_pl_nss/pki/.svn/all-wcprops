@@ -1,0 +1,209 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix_pl_nss/pki
+END
+pkix_pl_crldp.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix_pl_nss/pki/pkix_pl_crldp.h
+END
+pkix_pl_basicconstraints.c
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix_pl_nss/pki/pkix_pl_basicconstraints.c
+END
+pkix_pl_certpolicymap.c
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix_pl_nss/pki/pkix_pl_certpolicymap.c
+END
+pkix_pl_infoaccess.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix_pl_nss/pki/pkix_pl_infoaccess.c
+END
+pkix_pl_date.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix_pl_nss/pki/pkix_pl_date.c
+END
+pkix_pl_basicconstraints.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix_pl_nss/pki/pkix_pl_basicconstraints.h
+END
+pkix_pl_certpolicymap.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix_pl_nss/pki/pkix_pl_certpolicymap.h
+END
+pkix_pl_date.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix_pl_nss/pki/pkix_pl_date.h
+END
+pkix_pl_infoaccess.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix_pl_nss/pki/pkix_pl_infoaccess.h
+END
+pkix_pl_publickey.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix_pl_nss/pki/pkix_pl_publickey.c
+END
+pkix_pl_publickey.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix_pl_nss/pki/pkix_pl_publickey.h
+END
+pkix_pl_ocspcertid.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix_pl_nss/pki/pkix_pl_ocspcertid.c
+END
+pkix_pl_ocspcertid.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix_pl_nss/pki/pkix_pl_ocspcertid.h
+END
+pkix_pl_nameconstraints.c
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix_pl_nss/pki/pkix_pl_nameconstraints.c
+END
+pkix_pl_nameconstraints.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix_pl_nss/pki/pkix_pl_nameconstraints.h
+END
+pkix_pl_ocsprequest.c
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix_pl_nss/pki/pkix_pl_ocsprequest.c
+END
+pkix_pl_generalname.c
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix_pl_nss/pki/pkix_pl_generalname.c
+END
+pkix_pl_certpolicyqualifier.c
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix_pl_nss/pki/pkix_pl_certpolicyqualifier.c
+END
+pkix_pl_crl.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix_pl_nss/pki/pkix_pl_crl.c
+END
+pkix_pl_ocsprequest.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix_pl_nss/pki/pkix_pl_ocsprequest.h
+END
+pkix_pl_ocspresponse.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix_pl_nss/pki/pkix_pl_ocspresponse.c
+END
+pkix_pl_generalname.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix_pl_nss/pki/pkix_pl_generalname.h
+END
+pkix_pl_certpolicyqualifier.h
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix_pl_nss/pki/pkix_pl_certpolicyqualifier.h
+END
+pkix_pl_crl.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix_pl_nss/pki/pkix_pl_crl.h
+END
+pkix_pl_ocspresponse.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix_pl_nss/pki/pkix_pl_ocspresponse.h
+END
+pkix_pl_certpolicyinfo.c
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix_pl_nss/pki/pkix_pl_certpolicyinfo.c
+END
+pkix_pl_x500name.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix_pl_nss/pki/pkix_pl_x500name.c
+END
+pkix_pl_cert.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix_pl_nss/pki/pkix_pl_cert.c
+END
+pkix_pl_certpolicyinfo.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix_pl_nss/pki/pkix_pl_certpolicyinfo.h
+END
+pkix_pl_x500name.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix_pl_nss/pki/pkix_pl_x500name.h
+END
+pkix_pl_crlentry.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix_pl_nss/pki/pkix_pl_crlentry.c
+END
+pkix_pl_cert.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix_pl_nss/pki/pkix_pl_cert.h
+END
+pkix_pl_crldp.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix_pl_nss/pki/pkix_pl_crldp.c
+END
+pkix_pl_crlentry.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/195338/trunk/deps/third_party/nss/nss/lib/libpkix/pkix_pl_nss/pki/pkix_pl_crlentry.h
+END

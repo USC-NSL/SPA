@@ -1,0 +1,13 @@
+K 10
+svn:ignore
+V 95
+gio.Makefile
+gio.rules
+gio.sln
+gio.target.mk
+gio.vcproj
+gio.xcodeproj
+gio64.rules
+gio64.vcproj
+
+END

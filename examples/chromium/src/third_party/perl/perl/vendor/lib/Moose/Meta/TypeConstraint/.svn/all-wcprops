@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/Moose/Meta/TypeConstraint
+END
+Enum.pm
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/Moose/Meta/TypeConstraint/Enum.pm
+END
+Class.pm
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/Moose/Meta/TypeConstraint/Class.pm
+END
+Parameterizable.pm
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/Moose/Meta/TypeConstraint/Parameterizable.pm
+END
+DuckType.pm
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/Moose/Meta/TypeConstraint/DuckType.pm
+END
+Registry.pm
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/Moose/Meta/TypeConstraint/Registry.pm
+END
+Union.pm
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/Moose/Meta/TypeConstraint/Union.pm
+END
+Parameterized.pm
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/Moose/Meta/TypeConstraint/Parameterized.pm
+END
+Role.pm
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/vendor/lib/Moose/Meta/TypeConstraint/Role.pm
+END

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-desktop-icon
+END
+t.00-apply_generic
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-desktop-icon/t.00-apply_generic
+END
+t.01-notexist_file_uninstall
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-desktop-icon/t.01-notexist_file_uninstall
+END
+t.02-plain_file_install
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-desktop-icon/t.02-plain_file_install
+END
+t.04-desktop_icon_install
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-desktop-icon/t.04-desktop_icon_install
+END
+t.03-plain_file_uninstall
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-desktop-icon/t.03-plain_file_uninstall
+END
+t.05-desktop_icon_uninstall
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-desktop-icon/t.05-desktop_icon_uninstall
+END

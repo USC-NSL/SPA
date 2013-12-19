@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/167605/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/coff/tests
+END
+cofftest.hex
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/coff/tests/cofftest.hex
+END
+x86id.asm
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/167605/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/coff/tests/x86id.asm
+END
+x86id.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/coff/tests/x86id.errwarn
+END
+cofftimes.hex
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/coff/tests/cofftimes.hex
+END
+Makefile.inc
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/167605/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/coff/tests/Makefile.inc
+END
+coff_test.sh
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/167605/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/coff/tests/coff_test.sh
+END
+x86id.hex
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/coff/tests/x86id.hex
+END
+cofftest.asm
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/coff/tests/cofftest.asm
+END
+cofftest.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/coff/tests/cofftest.c
+END
+cofftimes.asm
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/coff/tests/cofftimes.asm
+END

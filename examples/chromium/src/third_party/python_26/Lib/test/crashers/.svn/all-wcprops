@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/crashers
+END
+nasty_eq_vs_dict.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/crashers/nasty_eq_vs_dict.py
+END
+borrowed_ref_1.py
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/crashers/borrowed_ref_1.py
+END
+borrowed_ref_2.py
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/crashers/borrowed_ref_2.py
+END
+multithreaded_close.py
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/crashers/multithreaded_close.py
+END
+recursive_call.py
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/crashers/recursive_call.py
+END
+bogus_code_obj.py
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/crashers/bogus_code_obj.py
+END
+iter.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/crashers/iter.py
+END
+loosing_mro_ref.py
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/crashers/loosing_mro_ref.py
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/Lib/test/crashers/README.txt
+END
+gc_inspection.py
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/crashers/gc_inspection.py
+END
+infinite_loop_re.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/crashers/infinite_loop_re.py
+END
+mutation_inside_cyclegc.py
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/crashers/mutation_inside_cyclegc.py
+END
+bogus_sre_bytecode.py
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/crashers/bogus_sre_bytecode.py
+END
+recursion_limit_too_high.py
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/crashers/recursion_limit_too_high.py
+END

@@ -1,0 +1,110 @@
+var captionsButtonElement;
+var captionsButtonCoordinates;
+
+function mediaControlsElement(first, id)
+{
+    for (var element = first; element; element = element.nextSibling) {
+        // Not every element in the media controls has a shadow pseudo ID, eg. the
+        // text nodes for the time values, so guard against exceptions.
+        try {
+            if (internals.shadowPseudoId(element) == id)
+                return element;
+        } catch (exception) { }
+
+        if (element.firstChild) {
+            var childElement = mediaControlsElement(element.firstChild, id);
+            if (childElement)
+                return childElement;
+        }
+    }
+
+    return null;
+}
+
+function mediaControlsButtonCoordinates(element, id)
+{
+    var controlID = "-webkit-media-controls-" + id;
+    var button = mediaControlsElement(internals.shadowRoot(element).firstChild, controlID);
+    if (!button)
+        throw "Failed to find media control element ID '" + id + "'";
+
+    var buttonBoundingRect = button.getBoundingClientRect();
+    var x = buttonBoundingRect.left + buttonBoundingRect.width / 2;
+    var y = buttonBoundingRect.top + buttonBoundingRect.height / 2;
+    return new Array(x, y);
+}
+
+function mediaControlsButtonDimensions(element, id)
+{
+    var controlID = "-webkit-media-controls-" + id;
+    var button = mediaControlsElement(internals.shadowRoot(element).firstChild, controlID);
+    if (!button)
+        throw "Failed to find media control element ID '" + id + "'";
+
+    var buttonBoundingRect = button.getBoundingClientRect();
+    return new Array(buttonBoundingRect.width, buttonBoundingRect.height);
+}
+
+function textTrackDisplayElement(parentElement, id, cueNumber)
+{
+    var textTrackContainerID = "-webkit-media-text-track-container";
+    var containerElement = mediaControlsElement(internals.shadowRoot(parentElement).firstChild, "-webkit-media-text-track-container");
+
+    if (!containerElement)
+        throw "Failed to find text track container element";
+
+    if (!id)
+        return containerElement;
+
+    if (arguments[1] != 'cue')
+        var controlID = "-webkit-media-text-track-" + arguments[1];
+    else
+        var controlID = arguments[1];
+
+    var displayElement = mediaControlsElement(containerElement.firstChild, controlID);
+    if (!displayElement)
+        throw "No text track cue with display id '" + controlID + "' is currently visible";
+
+    if (cueNumber) {
+        for (i = 0; i < cueNumber; i++)
+            displayElement = displayElement.nextSibling;
+
+        if (!displayElement)
+            throw "There are not " + cueNumber + " text track cues visible";
+    }
+
+    return displayElement;
+}
+
+function testClosedCaptionsButtonVisibility(expected)
+{
+    try {
+        captionsButtonElement = mediaControlsElement(internals.shadowRoot(video).firstChild, "-webkit-media-controls-toggle-closed-captions-button");
+        captionsButtonCoordinates = mediaControlsButtonCoordinates(video, "toggle-closed-captions-button");
+    } catch (exception) {
+        consoleWrite("Failed to find a closed captions button or its coordinates: " + exception);
+        if (expected)
+            failTest();
+        return;
+    }
+
+    consoleWrite("");
+    if (expected == true) {
+        consoleWrite("** Caption button should be visible and enabled because we have a captions track.");
+        testExpected("captionsButtonCoordinates[0]", 0, ">");
+        testExpected("captionsButtonCoordinates[1]", 0, ">");
+        testExpected("captionsButtonElement.disabled", false);
+    } else {
+        consoleWrite("** Caption button should not be visible as there are no caption tracks.");
+        testExpected("captionsButtonCoordinates[0]", 0, "<=");
+        testExpected("captionsButtonCoordinates[1]", 0, "<=");
+    }
+}
+
+function clickCCButton()
+{
+    consoleWrite("*** Click the CC button.");
+    eventSender.mouseMoveTo(captionsButtonCoordinates[0], captionsButtonCoordinates[1]);
+    eventSender.mouseDown();
+    eventSender.mouseUp();
+}

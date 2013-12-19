@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/115467/trunk/deps/third_party/libsrtp/srtp/crypto/hash
+END
+auth.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/115467/trunk/deps/third_party/libsrtp/srtp/crypto/hash/auth.c
+END
+hmac.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/115467/trunk/deps/third_party/libsrtp/srtp/crypto/hash/hmac.c
+END
+null_auth.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/115467/trunk/deps/third_party/libsrtp/srtp/crypto/hash/null_auth.c
+END
+sha1.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/115467/trunk/deps/third_party/libsrtp/srtp/crypto/hash/sha1.c
+END

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/native_client/!svn/ver/10752/trunk/src/native_client/tests/debug_stub
+END
+nacl.scons
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/native_client/!svn/ver/10609/trunk/src/native_client/tests/debug_stub/nacl.scons
+END
+debugger_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/native_client/!svn/ver/10752/trunk/src/native_client/tests/debug_stub/debugger_test.c
+END
+gdb_rsp.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/native_client/!svn/ver/10563/trunk/src/native_client/tests/debug_stub/gdb_rsp.py
+END
+debug_stub_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/native_client/!svn/ver/10521/trunk/src/native_client/tests/debug_stub/debug_stub_test.py
+END

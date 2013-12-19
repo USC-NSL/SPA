@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/native_client/!svn/ver/10969/trunk/src/native_client/src/trusted/sel_universal
+END
+replay_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/native_client/!svn/ver/4445/trunk/src/native_client/src/trusted/sel_universal/replay_handler.h
+END
+build.scons
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/native_client/!svn/ver/10196/trunk/src/native_client/src/trusted/sel_universal/build.scons
+END
+pnacl_emu_handler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/native_client/!svn/ver/7709/trunk/src/native_client/src/trusted/sel_universal/pnacl_emu_handler.cc
+END
+pnacl_emu_handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/native_client/!svn/ver/10196/trunk/src/native_client/src/trusted/sel_universal/pnacl_emu_handler.h
+END
+parsing.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/native_client/!svn/ver/6368/trunk/src/native_client/src/trusted/sel_universal/parsing.cc
+END
+pnacl_emu.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/native_client/!svn/ver/7709/trunk/src/native_client/src/trusted/sel_universal/pnacl_emu.h
+END
+parsing.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/native_client/!svn/ver/7709/trunk/src/native_client/src/trusted/sel_universal/parsing.h
+END
+pnacl_emu_coordinator.cc
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/native_client/!svn/ver/8302/trunk/src/native_client/src/trusted/sel_universal/pnacl_emu_coordinator.cc
+END
+srpc_helper.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/native_client/!svn/ver/5404/trunk/src/native_client/src/trusted/sel_universal/srpc_helper.h
+END
+sel_universal.cc
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/native_client/!svn/ver/10969/trunk/src/native_client/src/trusted/sel_universal/sel_universal.cc
+END
+rpc_universal.cc
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/native_client/!svn/ver/10737/trunk/src/native_client/src/trusted/sel_universal/rpc_universal.cc
+END
+rpc_universal.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/native_client/!svn/ver/9882/trunk/src/native_client/src/trusted/sel_universal/rpc_universal.h
+END
+pnacl_emu_stream.cc
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/native_client/!svn/ver/10600/trunk/src/native_client/src/trusted/sel_universal/pnacl_emu_stream.cc
+END
+rpc_universal_system.cc
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/native_client/!svn/ver/10777/trunk/src/native_client/src/trusted/sel_universal/rpc_universal_system.cc
+END
+sel_universal.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/native_client/!svn/ver/10585/trunk/src/native_client/src/trusted/sel_universal/sel_universal.gyp
+END
+reverse_emulate.cc
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/native_client/!svn/ver/10969/trunk/src/native_client/src/trusted/sel_universal/reverse_emulate.cc
+END
+reverse_emulate.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/native_client/!svn/ver/9882/trunk/src/native_client/src/trusted/sel_universal/reverse_emulate.h
+END
+replay_handler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/native_client/!svn/ver/4445/trunk/src/native_client/src/trusted/sel_universal/replay_handler.cc
+END
+workqueue.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/native_client/!svn/ver/6557/trunk/src/native_client/src/trusted/sel_universal/workqueue.h
+END

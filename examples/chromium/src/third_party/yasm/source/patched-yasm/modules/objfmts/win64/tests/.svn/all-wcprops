@@ -1,0 +1,173 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/167605/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/win64/tests
+END
+win64_test.sh
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/167605/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/win64/tests/win64_test.sh
+END
+sce2.hex
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/win64/tests/sce2.hex
+END
+win64-dataref2.hex
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/win64/tests/win64-dataref2.hex
+END
+sce3.hex
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/win64/tests/sce3.hex
+END
+sce4.hex
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/win64/tests/sce4.hex
+END
+Makefile.inc
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/167605/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/win64/tests/Makefile.inc
+END
+win64-dataref2.masm
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/win64/tests/win64-dataref2.masm
+END
+win64-abs.asm
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/win64/tests/win64-abs.asm
+END
+sce3.masm
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/win64/tests/sce3.masm
+END
+win64-dataref.asm
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/win64/tests/win64-dataref.asm
+END
+sce4.masm
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/win64/tests/sce4.masm
+END
+win64-abs.hex
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/win64/tests/win64-abs.hex
+END
+win64-dataref.hex
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/win64/tests/win64-dataref.hex
+END
+win64-curpos.asm
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/win64/tests/win64-curpos.asm
+END
+sce1-err.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/win64/tests/sce1-err.errwarn
+END
+sce1-err.asm
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/win64/tests/sce1-err.asm
+END
+sce2-err.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/win64/tests/sce2-err.errwarn
+END
+sce2-err.asm
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/win64/tests/sce2-err.asm
+END
+sce4-err.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/win64/tests/sce4-err.errwarn
+END
+sce4-err.asm
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/win64/tests/sce4-err.asm
+END
+win64-curpos.hex
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/win64/tests/win64-curpos.hex
+END
+win64-dataref.masm
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/win64/tests/win64-dataref.masm
+END
+sce1.asm
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/win64/tests/sce1.asm
+END
+sce2.asm
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/win64/tests/sce2.asm
+END
+sce3.asm
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/win64/tests/sce3.asm
+END
+win64-dataref2.asm
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/win64/tests/win64-dataref2.asm
+END
+sce4.asm
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/win64/tests/sce4.asm
+END
+sce1.hex
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/win64/tests/sce1.hex
+END

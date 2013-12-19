@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/195047/trunk/deps/third_party/libvpx/source/libvpx/vpx_ports
+END
+emms.asm
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/180104/trunk/deps/third_party/libvpx/source/libvpx/vpx_ports/emms.asm
+END
+mem_ops.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vpx_ports/mem_ops.h
+END
+x86_cpuid.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vpx_ports/x86_cpuid.c
+END
+config.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vpx_ports/config.h
+END
+emmintrin_compat.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/177026/trunk/deps/third_party/libvpx/source/libvpx/vpx_ports/emmintrin_compat.h
+END
+asm_offsets.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vpx_ports/asm_offsets.h
+END
+arm_cpudetect.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/177026/trunk/deps/third_party/libvpx/source/libvpx/vpx_ports/arm_cpudetect.c
+END
+vpx_timer.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vpx_ports/vpx_timer.h
+END
+mem.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/195047/trunk/deps/third_party/libvpx/source/libvpx/vpx_ports/mem.h
+END
+arm.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/121961/trunk/deps/third_party/libvpx/source/libvpx/vpx_ports/arm.h
+END
+vpx_once.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vpx_ports/vpx_once.h
+END
+mem_ops_aligned.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vpx_ports/mem_ops_aligned.h
+END
+vpx_ports.mk
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/177026/trunk/deps/third_party/libvpx/source/libvpx/vpx_ports/vpx_ports.mk
+END
+x86.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vpx_ports/x86.h
+END
+x86_abi_support.asm
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/180104/trunk/deps/third_party/libvpx/source/libvpx/vpx_ports/x86_abi_support.asm
+END

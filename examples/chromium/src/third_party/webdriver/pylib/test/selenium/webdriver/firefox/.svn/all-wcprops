@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/15652/trunk/py/test/selenium/webdriver/firefox
+END
+ff_select_support_class_tests.py
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/15111/trunk/py/test/selenium/webdriver/firefox/ff_select_support_class_tests.py
+END
+ff_profile_tests.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/15652/trunk/py/test/selenium/webdriver/firefox/ff_profile_tests.py
+END
+ff_launcher_tests.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/15111/trunk/py/test/selenium/webdriver/firefox/ff_launcher_tests.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/10480/trunk/py/test/selenium/webdriver/firefox/__init__.py
+END
+ff_explicit_wait_tests.py
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/15111/trunk/py/test/selenium/webdriver/firefox/ff_explicit_wait_tests.py
+END

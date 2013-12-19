@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/298/trunk/src/java/com/google/ipc/invalidation/ticl
+END
+ProtocolHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/297/trunk/src/java/com/google/ipc/invalidation/ticl/ProtocolHandler.java
+END
+SimpleRegistrationStore.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/188/trunk/src/java/com/google/ipc/invalidation/ticl/SimpleRegistrationStore.java
+END
+InvalidationClientImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/221/trunk/src/java/com/google/ipc/invalidation/ticl/InvalidationClientImpl.java
+END
+SafeStorage.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/221/trunk/src/java/com/google/ipc/invalidation/ticl/SafeStorage.java
+END
+TiclExponentialBackoffDelayGenerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/246/trunk/src/java/com/google/ipc/invalidation/ticl/TiclExponentialBackoffDelayGenerator.java
+END
+ProtoWrapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/207/trunk/src/java/com/google/ipc/invalidation/ticl/ProtoWrapper.java
+END
+TestableInvalidationClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/187/trunk/src/java/com/google/ipc/invalidation/ticl/TestableInvalidationClient.java
+END
+RegistrationManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/246/trunk/src/java/com/google/ipc/invalidation/ticl/RegistrationManager.java
+END
+PersistenceUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/210/trunk/src/java/com/google/ipc/invalidation/ticl/PersistenceUtils.java
+END
+RunState.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/221/trunk/src/java/com/google/ipc/invalidation/ticl/RunState.java
+END
+TestableNetworkChannel.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/221/trunk/src/java/com/google/ipc/invalidation/ticl/TestableNetworkChannel.java
+END
+MemoryStorageImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/221/trunk/src/java/com/google/ipc/invalidation/ticl/MemoryStorageImpl.java
+END
+BasicSystemResources.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/210/trunk/src/java/com/google/ipc/invalidation/ticl/BasicSystemResources.java
+END
+CheckingInvalidationListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/221/trunk/src/java/com/google/ipc/invalidation/ticl/CheckingInvalidationListener.java
+END
+RecurringTask.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/238/trunk/src/java/com/google/ipc/invalidation/ticl/RecurringTask.java
+END
+InvalidationClientCore.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/298/trunk/src/java/com/google/ipc/invalidation/ticl/InvalidationClientCore.java
+END
+Statistics.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/238/trunk/src/java/com/google/ipc/invalidation/ticl/Statistics.java
+END
+ProtoConverter.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/286/trunk/src/java/com/google/ipc/invalidation/ticl/ProtoConverter.java
+END
+DigestStore.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/188/trunk/src/java/com/google/ipc/invalidation/ticl/DigestStore.java
+END

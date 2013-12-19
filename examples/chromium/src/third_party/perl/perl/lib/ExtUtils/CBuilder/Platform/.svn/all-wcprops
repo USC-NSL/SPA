@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/lib/ExtUtils/CBuilder/Platform
+END
+darwin.pm
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/lib/ExtUtils/CBuilder/Platform/darwin.pm
+END
+VMS.pm
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/lib/ExtUtils/CBuilder/Platform/VMS.pm
+END
+Windows.pm
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/lib/ExtUtils/CBuilder/Platform/Windows.pm
+END
+cygwin.pm
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/lib/ExtUtils/CBuilder/Platform/cygwin.pm
+END
+aix.pm
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/lib/ExtUtils/CBuilder/Platform/aix.pm
+END
+dec_osf.pm
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/lib/ExtUtils/CBuilder/Platform/dec_osf.pm
+END
+Unix.pm
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/lib/ExtUtils/CBuilder/Platform/Unix.pm
+END
+os2.pm
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/147306/trunk/deps/third_party/perl/perl/lib/ExtUtils/CBuilder/Platform/os2.pm
+END

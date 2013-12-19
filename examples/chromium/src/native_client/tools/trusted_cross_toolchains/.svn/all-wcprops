@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/native_client/!svn/ver/11216/trunk/src/native_client/tools/trusted_cross_toolchains
+END
+packagelist.precise.armel.extra
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/native_client/!svn/ver/10991/trunk/src/native_client/tools/trusted_cross_toolchains/packagelist.precise.armel.extra
+END
+packagelist.squeeze.mipsel.extra
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/native_client/!svn/ver/11216/trunk/src/native_client/tools/trusted_cross_toolchains/packagelist.squeeze.mipsel.extra
+END
+packagelist.natty.armel.extra
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/native_client/!svn/ver/9148/trunk/src/native_client/tools/trusted_cross_toolchains/packagelist.natty.armel.extra
+END
+trusted-toolchain-creator.armel.precise.sh
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/native_client/!svn/ver/10991/trunk/src/native_client/tools/trusted_cross_toolchains/trusted-toolchain-creator.armel.precise.sh
+END
+trusted-toolchain-creator.mipsel.squeeze.sh
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/native_client/!svn/ver/10978/trunk/src/native_client/tools/trusted_cross_toolchains/trusted-toolchain-creator.mipsel.squeeze.sh
+END
+packagelist.amd64.crosstool
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/native_client/!svn/ver/9148/trunk/src/native_client/tools/trusted_cross_toolchains/packagelist.amd64.crosstool
+END
+packagelist.precise.armel.base
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/native_client/!svn/ver/9977/trunk/src/native_client/tools/trusted_cross_toolchains/packagelist.precise.armel.base
+END
+packagelist.squeeze.mipsel.base
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/native_client/!svn/ver/10978/trunk/src/native_client/tools/trusted_cross_toolchains/packagelist.squeeze.mipsel.base
+END
+qemu_tool_mips32.sh
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/native_client/!svn/ver/10314/trunk/src/native_client/tools/trusted_cross_toolchains/qemu_tool_mips32.sh
+END
+qemu_tool_arm.sh
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/native_client/!svn/ver/11027/trunk/src/native_client/tools/trusted_cross_toolchains/qemu_tool_arm.sh
+END
+trusted-toolchain-creator.armel.lucid.sh
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/native_client/!svn/ver/9148/trunk/src/native_client/tools/trusted_cross_toolchains/trusted-toolchain-creator.armel.lucid.sh
+END
+packagelist.natty.armel.base
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/native_client/!svn/ver/9148/trunk/src/native_client/tools/trusted_cross_toolchains/packagelist.natty.armel.base
+END

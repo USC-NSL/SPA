@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/native_client/!svn/ver/10585/trunk/src/native_client/src/trusted/weak_ref
+END
+nacl.scons
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/native_client/!svn/ver/9670/trunk/src/native_client/src/trusted/weak_ref/nacl.scons
+END
+weak_ref.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/native_client/!svn/ver/10585/trunk/src/native_client/src/trusted/weak_ref/weak_ref.gyp
+END
+build.scons
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/native_client/!svn/ver/5450/trunk/src/native_client/src/trusted/weak_ref/build.scons
+END
+weak_ref.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/native_client/!svn/ver/6236/trunk/src/native_client/src/trusted/weak_ref/weak_ref.cc
+END
+weak_ref.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/native_client/!svn/ver/6236/trunk/src/native_client/src/trusted/weak_ref/weak_ref.h
+END

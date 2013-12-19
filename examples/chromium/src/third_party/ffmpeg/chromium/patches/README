@@ -1,0 +1,34 @@
+Current Status as of Apr 22, 2013 (before M28 roll)
+
+Upstream cherry-picks:
+
+Current patches:
+
+to_upstream/
+
+ugly/
+01_enable_checked_bitstream.patch
+  dalecurtis: Removes "#define UNCHECKED_BITSTREAM_READER 1" from all codecs
+  defining it. In Chromium, all codecs should use the safe bitstream reader.
+
+02_compile_with_disabled_features.patch
+  dalecurtis: Add CONFIG_* checks to compile out code which we don't use which
+  might be a security risk.  Discuss with cevans before removing.  Upstream does
+  not want this patch.
+  wolenetz: In M27 merge, added call to matroska_read_close(s) in to this patch
+  in matroska_read_header() to mitigate memory leak caught by valgrind.
+  Confirmed with rbultje that this conforms to API (on error in
+  matroska_read_header(), resulting state should be same as prior to call; and
+  no double-free is expected to result from this either.)
+
+07_remove_av_gettime_symlink.patch
+  dalecurtis: In order to preserve ABI compatibility after av_gettime() was
+  moved inside the FFmpeg code base, they added a "symbolic link" version which
+  our build chain doesn't like.  Remove it until the next major version bump.
+  (If FF_SYMVER is no longer present, this ugly patch can be removed.)
+
+compile_with_no_iconv.patch
+  wolenetz: When CONFIG_ICONV is 0, the original code path did not return a
+  value, causing compile failure on Windows.  It also aborted via an assert.
+  This patch enables compiling by returning an appropriate error code and also
+  removes the assert and abort.

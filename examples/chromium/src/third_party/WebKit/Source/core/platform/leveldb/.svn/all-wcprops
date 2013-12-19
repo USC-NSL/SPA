@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/blink/!svn/ver/149225/trunk/Source/core/platform/leveldb
+END
+LevelDBWriteBatch.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/blink/!svn/ver/148532/trunk/Source/core/platform/leveldb/LevelDBWriteBatch.h
+END
+LevelDBDatabase.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/blink/!svn/ver/149225/trunk/Source/core/platform/leveldb/LevelDBDatabase.cpp
+END
+LevelDBSlice.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/blink/!svn/ver/148532/trunk/Source/core/platform/leveldb/LevelDBSlice.h
+END
+LevelDBTransaction.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/blink/!svn/ver/149017/trunk/Source/core/platform/leveldb/LevelDBTransaction.cpp
+END
+LevelDBDatabase.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/blink/!svn/ver/148532/trunk/Source/core/platform/leveldb/LevelDBDatabase.h
+END
+LevelDBTransaction.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/blink/!svn/ver/149017/trunk/Source/core/platform/leveldb/LevelDBTransaction.h
+END
+LevelDBComparator.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/blink/!svn/ver/148532/trunk/Source/core/platform/leveldb/LevelDBComparator.h
+END
+LevelDBWriteBatch.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/blink/!svn/ver/149017/trunk/Source/core/platform/leveldb/LevelDBWriteBatch.cpp
+END
+LevelDBIterator.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/blink/!svn/ver/149017/trunk/Source/core/platform/leveldb/LevelDBIterator.h
+END

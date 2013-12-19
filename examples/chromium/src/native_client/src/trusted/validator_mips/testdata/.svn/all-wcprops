@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/native_client/!svn/ver/10178/trunk/src/native_client/src/trusted/validator_mips/testdata
+END
+test_stores.S
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/native_client/!svn/ver/10178/trunk/src/native_client/src/trusted/validator_mips/testdata/test_stores.S
+END
+test_forbidden_instructions.S
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/native_client/!svn/ver/10178/trunk/src/native_client/src/trusted/validator_mips/testdata/test_forbidden_instructions.S
+END
+test_read_only_regs.err
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/native_client/!svn/ver/8780/trunk/src/native_client/src/trusted/validator_mips/testdata/test_read_only_regs.err
+END
+compile_tests.sh
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/native_client/!svn/ver/9752/trunk/src/native_client/src/trusted/validator_mips/testdata/compile_tests.sh
+END
+test_jmp_reg.S
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/native_client/!svn/ver/10178/trunk/src/native_client/src/trusted/validator_mips/testdata/test_jmp_reg.S
+END
+test_jmp_imm.S
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/native_client/!svn/ver/10178/trunk/src/native_client/src/trusted/validator_mips/testdata/test_jmp_imm.S
+END
+test_loads.err
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/native_client/!svn/ver/8780/trunk/src/native_client/src/trusted/validator_mips/testdata/test_loads.err
+END
+test_invalid_dest.err
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/native_client/!svn/ver/8780/trunk/src/native_client/src/trusted/validator_mips/testdata/test_invalid_dest.err
+END
+test_unpredicted.err
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/native_client/!svn/ver/10007/trunk/src/native_client/src/trusted/validator_mips/testdata/test_unpredicted.err
+END
+test_read_only_regs.S
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/native_client/!svn/ver/10178/trunk/src/native_client/src/trusted/validator_mips/testdata/test_read_only_regs.S
+END
+test_sp_updates.err
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/native_client/!svn/ver/8780/trunk/src/native_client/src/trusted/validator_mips/testdata/test_sp_updates.err
+END
+test_loads.S
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/native_client/!svn/ver/10178/trunk/src/native_client/src/trusted/validator_mips/testdata/test_loads.S
+END
+test_stores.err
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/native_client/!svn/ver/8780/trunk/src/native_client/src/trusted/validator_mips/testdata/test_stores.err
+END
+test_invalid_dest.S
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/native_client/!svn/ver/10178/trunk/src/native_client/src/trusted/validator_mips/testdata/test_invalid_dest.S
+END
+test_forbidden_instructions.err
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/native_client/!svn/ver/8780/trunk/src/native_client/src/trusted/validator_mips/testdata/test_forbidden_instructions.err
+END
+test_unpredicted.S
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/native_client/!svn/ver/10178/trunk/src/native_client/src/trusted/validator_mips/testdata/test_unpredicted.S
+END
+test_sp_updates.S
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/native_client/!svn/ver/10178/trunk/src/native_client/src/trusted/validator_mips/testdata/test_sp_updates.S
+END
+test_jmp_reg.err
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/native_client/!svn/ver/8780/trunk/src/native_client/src/trusted/validator_mips/testdata/test_jmp_reg.err
+END
+test_jmp_imm.err
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/native_client/!svn/ver/8780/trunk/src/native_client/src/trusted/validator_mips/testdata/test_jmp_imm.err
+END

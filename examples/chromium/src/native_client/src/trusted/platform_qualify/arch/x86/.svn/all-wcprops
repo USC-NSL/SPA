@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/native_client/!svn/ver/10769/trunk/src/native_client/src/trusted/platform_qualify/arch/x86
+END
+vcpuid.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/native_client/!svn/ver/10196/trunk/src/native_client/src/trusted/platform_qualify/arch/x86/vcpuid.h
+END
+nacl_cpuwhitelist_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/native_client/!svn/ver/10590/trunk/src/native_client/src/trusted/platform_qualify/arch/x86/nacl_cpuwhitelist_test.c
+END
+nacl_cpuwhitelist.c
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/native_client/!svn/ver/10684/trunk/src/native_client/src/trusted/platform_qualify/arch/x86/nacl_cpuwhitelist.c
+END
+platform_qual_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/native_client/!svn/ver/10769/trunk/src/native_client/src/trusted/platform_qualify/arch/x86/platform_qual_test.c
+END
+vcpuid.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/native_client/!svn/ver/10590/trunk/src/native_client/src/trusted/platform_qualify/arch/x86/vcpuid.c
+END

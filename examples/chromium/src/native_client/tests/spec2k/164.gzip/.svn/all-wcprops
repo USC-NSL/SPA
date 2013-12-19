@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/native_client/!svn/ver/6854/trunk/src/native_client/tests/spec2k/164.gzip
+END
+run.ref.sh
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/native_client/!svn/ver/6854/trunk/src/native_client/tests/spec2k/164.gzip/run.ref.sh
+END
+run.train.sh
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/native_client/!svn/ver/6854/trunk/src/native_client/tests/spec2k/164.gzip/run.train.sh
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/native_client/!svn/ver/3112/trunk/src/native_client/tests/spec2k/164.gzip/Makefile
+END

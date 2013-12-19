@@ -1,0 +1,131 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/tests
+END
+lavf-regression.sh
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/tests/lavf-regression.sh
+END
+test.ffmeta
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/tests/test.ffmeta
+END
+videogen.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/148611/trunk/deps/third_party/ffmpeg/tests/videogen.c
+END
+utils.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/140400/trunk/deps/third_party/ffmpeg/tests/utils.c
+END
+copycooker.sh
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/122313/trunk/deps/third_party/ffmpeg/tests/copycooker.sh
+END
+fate.sh
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/162873/trunk/deps/third_party/ffmpeg/tests/fate.sh
+END
+lavfi-regression.sh
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/tests/lavfi-regression.sh
+END
+fate-run.sh
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/tests/fate-run.sh
+END
+md5.sh
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/tests/md5.sh
+END
+regression-funcs.sh
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/140400/trunk/deps/third_party/ffmpeg/tests/regression-funcs.sh
+END
+base64.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/122313/trunk/deps/third_party/ffmpeg/tests/base64.c
+END
+tiny_psnr.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/tests/tiny_psnr.c
+END
+ffserver.conf
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/122313/trunk/deps/third_party/ffmpeg/tests/ffserver.conf
+END
+fate-update.sh
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/122313/trunk/deps/third_party/ffmpeg/tests/fate-update.sh
+END
+lena.pnm
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/122313/trunk/deps/third_party/ffmpeg/tests/lena.pnm
+END
+ffserver-regression.sh
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/122313/trunk/deps/third_party/ffmpeg/tests/ffserver-regression.sh
+END
+fate-valgrind.supp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/122313/trunk/deps/third_party/ffmpeg/tests/fate-valgrind.supp
+END
+rotozoom.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/148611/trunk/deps/third_party/ffmpeg/tests/rotozoom.c
+END
+ffserver.regression.ref
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/122313/trunk/deps/third_party/ffmpeg/tests/ffserver.regression.ref
+END
+audiogen.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/tests/audiogen.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/tests/Makefile
+END

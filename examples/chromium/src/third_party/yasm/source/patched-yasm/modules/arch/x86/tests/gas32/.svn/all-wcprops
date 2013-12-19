@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/167605/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas32
+END
+gas-fpmem.hex
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas32/gas-fpmem.hex
+END
+gas-movsd.asm
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas32/gas-movsd.asm
+END
+align32.hex
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas32/align32.hex
+END
+gas-movdq32.asm
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas32/gas-movdq32.asm
+END
+gas32-jmpcall.hex
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas32/gas32-jmpcall.hex
+END
+gas-movsd.hex
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas32/gas-movsd.hex
+END
+Makefile.inc
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/167605/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas32/Makefile.inc
+END
+gas-farithr.asm
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas32/gas-farithr.asm
+END
+gas-movdq32.hex
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas32/gas-movdq32.hex
+END
+gas-farithr.hex
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas32/gas-farithr.hex
+END
+gas-fpmem.asm
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas32/gas-fpmem.asm
+END
+x86_gas32_test.sh
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/167605/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas32/x86_gas32_test.sh
+END
+align32.asm
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas32/align32.asm
+END
+gas32-jmpcall.asm
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas32/gas32-jmpcall.asm
+END

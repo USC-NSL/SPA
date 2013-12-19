@@ -1,0 +1,215 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/crypto/sha/asm
+END
+sha512-mips.pl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/sha/asm/sha512-mips.pl
+END
+sha1-thumb.pl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/118977/trunk/deps/third_party/openssl/openssl/crypto/sha/asm/sha1-thumb.pl
+END
+sha1-armv4-large.pl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/crypto/sha/asm/sha1-armv4-large.pl
+END
+sha1-586.pl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/sha/asm/sha1-586.pl
+END
+sha1-alpha.pl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/sha/asm/sha1-alpha.pl
+END
+sha1-s390x.pl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/sha/asm/sha1-s390x.pl
+END
+sha1-sparcv9.pl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/118977/trunk/deps/third_party/openssl/openssl/crypto/sha/asm/sha1-sparcv9.pl
+END
+sha1-sparcv9a.pl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/crypto/sha/asm/sha1-sparcv9a.pl
+END
+sha512-ppc.pl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/sha/asm/sha512-ppc.pl
+END
+sha512-x86_64.S
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/178558/trunk/deps/third_party/openssl/openssl/crypto/sha/asm/sha512-x86_64.S
+END
+sha256-586.pl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/sha/asm/sha256-586.pl
+END
+sha1-x86_64.pl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/crypto/sha/asm/sha1-x86_64.pl
+END
+sha1-mips.S
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/sha/asm/sha1-mips.S
+END
+sha512-armv4.pl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/sha/asm/sha512-armv4.pl
+END
+sha1-ia64.pl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/crypto/sha/asm/sha1-ia64.pl
+END
+sha512-x86_64.pl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/crypto/sha/asm/sha512-x86_64.pl
+END
+sha1-586.S
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/sha/asm/sha1-586.S
+END
+sha512-ia64.pl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/65201/trunk/deps/third_party/openssl/openssl/crypto/sha/asm/sha512-ia64.pl
+END
+sha256-mips.S
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/sha/asm/sha256-mips.S
+END
+sha512-586.S
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/sha/asm/sha512-586.S
+END
+sha1-parisc.pl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/sha/asm/sha1-parisc.pl
+END
+sha1-ppc.pl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/sha/asm/sha1-ppc.pl
+END
+sha256-586.S
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/sha/asm/sha256-586.S
+END
+sha1-x86_64.S
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/178558/trunk/deps/third_party/openssl/openssl/crypto/sha/asm/sha1-x86_64.S
+END
+sha512-armv4.S
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/sha/asm/sha512-armv4.S
+END
+sha512-parisc.pl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/sha/asm/sha512-parisc.pl
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/65201/trunk/deps/third_party/openssl/openssl/crypto/sha/asm/README
+END
+sha512-586.pl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/crypto/sha/asm/sha512-586.pl
+END
+sha256-armv4.S
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/sha/asm/sha256-armv4.S
+END
+sha512-s390x.pl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/sha/asm/sha512-s390x.pl
+END
+sha512-sparcv9.pl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/sha/asm/sha512-sparcv9.pl
+END
+sha256-x86_64.S
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/178558/trunk/deps/third_party/openssl/openssl/crypto/sha/asm/sha256-x86_64.S
+END
+sha256-armv4.pl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/sha/asm/sha256-armv4.pl
+END
+sha1-mips.pl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/sha/asm/sha1-mips.pl
+END
+sha1-armv4-large.S
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/crypto/sha/asm/sha1-armv4-large.S
+END

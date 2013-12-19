@@ -1,0 +1,269 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/celt
+END
+quant_bands.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/celt/quant_bands.c
+END
+rate.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/celt/rate.h
+END
+entdec.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/celt/entdec.c
+END
+mfrngcod.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/celt/mfrngcod.h
+END
+quant_bands.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/celt/quant_bands.h
+END
+entdec.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/celt/entdec.h
+END
+kiss_fft.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/celt/kiss_fft.c
+END
+static_modes_float.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/celt/static_modes_float.h
+END
+kiss_fft.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/celt/kiss_fft.h
+END
+ecintrin.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/celt/ecintrin.h
+END
+entcode.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/celt/entcode.c
+END
+os_support.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/celt/os_support.h
+END
+opus_custom_demo.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/celt/opus_custom_demo.c
+END
+float_cast.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/celt/float_cast.h
+END
+celt_lpc.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/celt/celt_lpc.c
+END
+entcode.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/celt/entcode.h
+END
+celt.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/celt/celt.c
+END
+celt_lpc.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/celt/celt_lpc.h
+END
+celt.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/celt/celt.h
+END
+fixed_generic.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/celt/fixed_generic.h
+END
+laplace.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/celt/laplace.c
+END
+static_modes_fixed.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/celt/static_modes_fixed.h
+END
+laplace.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/celt/laplace.h
+END
+pitch.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/celt/pitch.c
+END
+modes.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/celt/modes.c
+END
+fixed_debug.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/celt/fixed_debug.h
+END
+mathops.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/celt/mathops.c
+END
+pitch.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/celt/pitch.h
+END
+entenc.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/celt/entenc.c
+END
+modes.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/celt/modes.h
+END
+cwrs.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/celt/cwrs.c
+END
+_kiss_fft_guts.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/celt/_kiss_fft_guts.h
+END
+mathops.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/celt/mathops.h
+END
+entenc.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/celt/entenc.h
+END
+arch.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/celt/arch.h
+END
+cwrs.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/celt/cwrs.h
+END
+stack_alloc.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/celt/stack_alloc.h
+END
+vq.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/celt/vq.c
+END
+mdct.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/celt/mdct.c
+END
+bands.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/celt/bands.c
+END
+rate.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/celt/rate.c
+END
+vq.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/celt/vq.h
+END
+mdct.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/celt/mdct.h
+END
+bands.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/celt/bands.h
+END

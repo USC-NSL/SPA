@@ -1,0 +1,6569 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl
+END
+nsIDOMHTMLParagraphElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLParagraphElement.idl
+END
+nsIFeedContainer.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIFeedContainer.idl
+END
+nsIFeedElementBase.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIFeedElementBase.idl
+END
+nsIDOMCSSRuleList.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMCSSRuleList.idl
+END
+nsIProcess.idl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIProcess.idl
+END
+nsIWebBrowserFind.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIWebBrowserFind.idl
+END
+nsIExternalProtocolService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIExternalProtocolService.idl
+END
+nsIWebBrowserPersist.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIWebBrowserPersist.idl
+END
+nsIDOMSVGSwitchElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGSwitchElement.idl
+END
+nsISyncLoadDOMService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISyncLoadDOMService.idl
+END
+nsIDownloadProgressListener.idl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDownloadProgressListener.idl
+END
+nsIScriptableUConv.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIScriptableUConv.idl
+END
+nsIDOMXULLabeledControlEl.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMXULLabeledControlEl.idl
+END
+nsIHttpChannelInternal.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIHttpChannelInternal.idl
+END
+nsIBrowserHistory.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIBrowserHistory.idl
+END
+nsIXPInstallManager.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIXPInstallManager.idl
+END
+nsIDOMSVGMetadataElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGMetadataElement.idl
+END
+nsIDOMXULButtonElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMXULButtonElement.idl
+END
+nsIDOMHTMLDListElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLDListElement.idl
+END
+nsIRDFXMLSerializer.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIRDFXMLSerializer.idl
+END
+nsIProperties.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIProperties.idl
+END
+nsIAutoCompleteResult.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAutoCompleteResult.idl
+END
+nsIWebProgress.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIWebProgress.idl
+END
+nsIObjectOutputStream.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIObjectOutputStream.idl
+END
+nsIDOMXPathExpression.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMXPathExpression.idl
+END
+nsIDOMHTMLFontElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLFontElement.idl
+END
+nsIControllers.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIControllers.idl
+END
+nsIJSContextStack.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIJSContextStack.idl
+END
+nsIScriptError.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIScriptError.idl
+END
+nsIRefreshURI.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIRefreshURI.idl
+END
+nsIDOMHTMLOptGroupElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLOptGroupElement.idl
+END
+nsIHistoryEntry.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIHistoryEntry.idl
+END
+nsIDOMClientInformation.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMClientInformation.idl
+END
+nsCWebBrowserPersist.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsCWebBrowserPersist.idl
+END
+nsISound.idl
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISound.idl
+END
+nsISimpleEnumerator.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISimpleEnumerator.idl
+END
+nsIContentViewerFile.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIContentViewerFile.idl
+END
+nsIPluginDocument.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPluginDocument.idl
+END
+nsIIdleService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIIdleService.idl
+END
+nsIEditorObserver.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIEditorObserver.idl
+END
+nsIFileProtocolHandler.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIFileProtocolHandler.idl
+END
+nsIXULAppInstall.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIXULAppInstall.idl
+END
+nsISAXAttributes.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISAXAttributes.idl
+END
+nsIDOMNSHTMLOptionElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMNSHTMLOptionElement.idl
+END
+imgIDecoderObserver.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/imgIDecoderObserver.idl
+END
+nsIPrintSettings.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPrintSettings.idl
+END
+nsILocaleService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsILocaleService.idl
+END
+nsIUnicharOutputStream.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIUnicharOutputStream.idl
+END
+nsIDOMHTMLTableElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLTableElement.idl
+END
+nsIRandomGenerator.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIRandomGenerator.idl
+END
+nsIDOMSVGPresAspectRatio.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGPresAspectRatio.idl
+END
+nsIWebContentHandlerRegistrar.idl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIWebContentHandlerRegistrar.idl
+END
+nsIUserInfo.idl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIUserInfo.idl
+END
+nsIDOMSVGScriptElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGScriptElement.idl
+END
+nsIMIMEInfo.idl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIMIMEInfo.idl
+END
+nsILocalFileWin.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsILocalFileWin.idl
+END
+nsIContentHandler.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIContentHandler.idl
+END
+nsICacheListener.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICacheListener.idl
+END
+nsIAsyncOutputStream.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAsyncOutputStream.idl
+END
+nsIEmbeddingSiteWindow2.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIEmbeddingSiteWindow2.idl
+END
+nsIRecyclingAllocator.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIRecyclingAllocator.idl
+END
+mozITXTToHTMLConv.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/mozITXTToHTMLConv.idl
+END
+nsIController.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIController.idl
+END
+nsICMSMessageErrors.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICMSMessageErrors.idl
+END
+nsIObserver.idl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIObserver.idl
+END
+nsIExtendedExpatSink.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIExtendedExpatSink.idl
+END
+nsIDOMDocumentCSS.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMDocumentCSS.idl
+END
+nsIControllerContext.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIControllerContext.idl
+END
+nsIEmbeddingSiteWindow.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIEmbeddingSiteWindow.idl
+END
+nsIDOMHTMLLinkElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLLinkElement.idl
+END
+nsIDownloader.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDownloader.idl
+END
+mozISpellI18NManager.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/mozISpellI18NManager.idl
+END
+nsIDOMStorageManager.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMStorageManager.idl
+END
+nsIXPConnect.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIXPConnect.idl
+END
+nsIDOMHTMLFormElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLFormElement.idl
+END
+nsIFeedProcessor.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIFeedProcessor.idl
+END
+nsIPKCS11Slot.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPKCS11Slot.idl
+END
+nsIDOMXPathEvaluator.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMXPathEvaluator.idl
+END
+nsIMIMEService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIMIMEService.idl
+END
+nsICMSMessage2.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICMSMessage2.idl
+END
+nsIHttpAuthenticator.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIHttpAuthenticator.idl
+END
+nsITraceableChannel.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsITraceableChannel.idl
+END
+nsIDOMSVGMarkerElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGMarkerElement.idl
+END
+nsIInterfaceInfo.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIInterfaceInfo.idl
+END
+nsIRDFXMLSource.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIRDFXMLSource.idl
+END
+nsIAccessibleRole.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAccessibleRole.idl
+END
+mozIStorageStatementWrapper.idl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/mozIStorageStatementWrapper.idl
+END
+nsIDOMNodeList.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMNodeList.idl
+END
+nsIPK11TokenDB.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPK11TokenDB.idl
+END
+nsIPasswordManager.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPasswordManager.idl
+END
+nsITableEditor.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsITableEditor.idl
+END
+nsIScrollBoxObject.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIScrollBoxObject.idl
+END
+nsIObjectInputStream.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIObjectInputStream.idl
+END
+imgILoader.idl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/imgILoader.idl
+END
+nsIDOMHTMLObjectElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLObjectElement.idl
+END
+nsIFontEnumerator.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIFontEnumerator.idl
+END
+nsIUploadChannel.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIUploadChannel.idl
+END
+nsIContextMenuListener.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIContextMenuListener.idl
+END
+nsIDOMScreen.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMScreen.idl
+END
+nsIBinaryInputStream.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIBinaryInputStream.idl
+END
+nsIPluginInstance.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPluginInstance.idl
+END
+nsIZipReader.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIZipReader.idl
+END
+nsIDOMHTMLOListElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLOListElement.idl
+END
+nsICookie2.idl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICookie2.idl
+END
+nsIDOMLSOutput.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMLSOutput.idl
+END
+nsITextScroll.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsITextScroll.idl
+END
+nsIObserverService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIObserverService.idl
+END
+nsIDOMAttr.idl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMAttr.idl
+END
+nsIDOMCSSPageRule.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMCSSPageRule.idl
+END
+nsISHistoryInternal.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISHistoryInternal.idl
+END
+nsIAccessibleSelectable.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAccessibleSelectable.idl
+END
+nsIFTPChannel.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIFTPChannel.idl
+END
+nsIWritablePropertyBag.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIWritablePropertyBag.idl
+END
+nsIDOMEventTarget.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMEventTarget.idl
+END
+nsIXSLTProcessor.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIXSLTProcessor.idl
+END
+nsIXULTemplateQueryProcessor.idl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIXULTemplateQueryProcessor.idl
+END
+nsIPrintingPrompt.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPrintingPrompt.idl
+END
+nsIDOMSVGAnimTransformList.idl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGAnimTransformList.idl
+END
+nsIWebNavigation.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIWebNavigation.idl
+END
+nsIDOMAbstractView.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMAbstractView.idl
+END
+nsIStreamListenerTee.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIStreamListenerTee.idl
+END
+nsIDNSService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDNSService.idl
+END
+nsIStringEnumerator.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIStringEnumerator.idl
+END
+nsIDOMRGBColor.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMRGBColor.idl
+END
+nsINavBookmarksService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsINavBookmarksService.idl
+END
+nsIArray.idl
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIArray.idl
+END
+nsIBoxObject.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIBoxObject.idl
+END
+nsISAXContentHandler.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISAXContentHandler.idl
+END
+nsIDOMSVGUnitTypes.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGUnitTypes.idl
+END
+nsIDOMNavigator.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMNavigator.idl
+END
+nsIDOMPlugin.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMPlugin.idl
+END
+nsILocale.idl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsILocale.idl
+END
+nsIJVMAuthTools.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIJVMAuthTools.idl
+END
+nsIInlineSpellChecker.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIInlineSpellChecker.idl
+END
+nsIDOMStorage.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMStorage.idl
+END
+nsINSSCertCache.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsINSSCertCache.idl
+END
+nsPISocketTransportService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsPISocketTransportService.idl
+END
+nsIFactory.idl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIFactory.idl
+END
+nsIAppShell.idl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAppShell.idl
+END
+nsICancelable.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICancelable.idl
+END
+nsIDOMNSXBLFormControl.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMNSXBLFormControl.idl
+END
+nsIDOMHTMLMapElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLMapElement.idl
+END
+nsIFormFillController.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIFormFillController.idl
+END
+nsIDOMXPathResult.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMXPathResult.idl
+END
+nsIDOMXULImageElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMXULImageElement.idl
+END
+nsIContentSniffer.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIContentSniffer.idl
+END
+nsITreeColumns.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsITreeColumns.idl
+END
+nsIDOMHTMLBaseElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLBaseElement.idl
+END
+nsIXmlRpcClientListener.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIXmlRpcClientListener.idl
+END
+nsIDOMMediaList.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMMediaList.idl
+END
+nsIDOMNameList.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMNameList.idl
+END
+nsIDOMLinkStyle.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMLinkStyle.idl
+END
+nsIScreen.idl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIScreen.idl
+END
+nsIExceptionService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIExceptionService.idl
+END
+nsIAuthPromptCallback.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAuthPromptCallback.idl
+END
+nsIFrameLoader.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIFrameLoader.idl
+END
+nsIASN1PrintableItem.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIASN1PrintableItem.idl
+END
+nsILoginInfo.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsILoginInfo.idl
+END
+nsIDOMHTMLTableCellElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLTableCellElement.idl
+END
+nsIDOMSVGZoomAndPan.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGZoomAndPan.idl
+END
+nsIScriptSecurityManager.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIScriptSecurityManager.idl
+END
+nsIDOMCSS2Properties.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMCSS2Properties.idl
+END
+nsIRelativeFilePref.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIRelativeFilePref.idl
+END
+nsIDOMNSElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMNSElement.idl
+END
+nsICookiePromptService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICookiePromptService.idl
+END
+nsIDOMStorageList.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMStorageList.idl
+END
+nsITaggingService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsITaggingService.idl
+END
+nsIPromptService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPromptService.idl
+END
+nsIContentViewerEdit.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIContentViewerEdit.idl
+END
+nsIGlobalHistory2.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIGlobalHistory2.idl
+END
+nsIDocumentCharsetInfo.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDocumentCharsetInfo.idl
+END
+nsIDOMHTMLTableSectionElem.idl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLTableSectionElem.idl
+END
+nsIDirectoryEnumerator.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDirectoryEnumerator.idl
+END
+nsIMemory.idl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIMemory.idl
+END
+nsIDOMRangeException.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMRangeException.idl
+END
+nsIFIXptr.idl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIFIXptr.idl
+END
+nsIDOMCRMFObject.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMCRMFObject.idl
+END
+nsIDOMLSSerializerFilter.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMLSSerializerFilter.idl
+END
+nsIDOMFile.idl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMFile.idl
+END
+nsIDOMLoadStatusList.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMLoadStatusList.idl
+END
+nsIDOMModalContentWindow.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMModalContentWindow.idl
+END
+nsIDOMNSHTMLSelectElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMNSHTMLSelectElement.idl
+END
+rdfIDataSource.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/rdfIDataSource.idl
+END
+nsIPermission.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPermission.idl
+END
+nsIEventTarget.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIEventTarget.idl
+END
+nsIClassicPluginFactory.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIClassicPluginFactory.idl
+END
+nsIDOMSVGSVGElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGSVGElement.idl
+END
+nsIAutoConfig.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAutoConfig.idl
+END
+nsITooltipListener.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsITooltipListener.idl
+END
+nsIDOMNSRGBAColor.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMNSRGBAColor.idl
+END
+nsIMultiplexInputStream.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIMultiplexInputStream.idl
+END
+nsIDOMCounter.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMCounter.idl
+END
+nsIDOMCSSStyleDeclaration.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMCSSStyleDeclaration.idl
+END
+nsIDOMNSHTMLFormControlList.idl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMNSHTMLFormControlList.idl
+END
+nsPIAccessNode.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsPIAccessNode.idl
+END
+nsIDOMSVGAnimatedString.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGAnimatedString.idl
+END
+nsILocalFile.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsILocalFile.idl
+END
+nsIPref.idl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPref.idl
+END
+nsIDocShellTreeItem.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDocShellTreeItem.idl
+END
+nsIUnicharLineInputStream.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIUnicharLineInputStream.idl
+END
+nsIPlugin.idl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPlugin.idl
+END
+nsIDOMDocumentStyle.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMDocumentStyle.idl
+END
+nsIMenuBoxObject.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIMenuBoxObject.idl
+END
+nsISSLStatus.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISSLStatus.idl
+END
+nsIDOMSVGViewSpec.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGViewSpec.idl
+END
+nsIContentPrefService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIContentPrefService.idl
+END
+nsIWindowCreator2.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIWindowCreator2.idl
+END
+nsIWebPageDescriptor.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIWebPageDescriptor.idl
+END
+nsIResProtocolHandler.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIResProtocolHandler.idl
+END
+nsICommandManager.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICommandManager.idl
+END
+nsISearchContext.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISearchContext.idl
+END
+rdfITripleVisitor.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/rdfITripleVisitor.idl
+END
+nsIServerSocket.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIServerSocket.idl
+END
+nsIDOMNSUIEvent.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMNSUIEvent.idl
+END
+nsIAccessibleTypes.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAccessibleTypes.idl
+END
+nsIDOMLoadStatus.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMLoadStatus.idl
+END
+nsIAutoCompleteResultTypes.idl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAutoCompleteResultTypes.idl
+END
+nsIEditorBoxObject.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIEditorBoxObject.idl
+END
+nsIDOMSVGUseElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGUseElement.idl
+END
+nsINetworkLinkService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsINetworkLinkService.idl
+END
+nsIDocumentLoaderFactory.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDocumentLoaderFactory.idl
+END
+nsIXTFElementFactory.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIXTFElementFactory.idl
+END
+nsIBufEntropyCollector.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIBufEntropyCollector.idl
+END
+nsIDOMSVGLocatable.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGLocatable.idl
+END
+nsIDOMSVGZoomEvent.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGZoomEvent.idl
+END
+nsIDOMSVGPatternElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGPatternElement.idl
+END
+nsIDOMSVGAnimatedAngle.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGAnimatedAngle.idl
+END
+nsIXTFElementWrapper.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIXTFElementWrapper.idl
+END
+nsICertTree.idl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICertTree.idl
+END
+nsIDOMCSSRule.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMCSSRule.idl
+END
+nsIDOMLSLoadEvent.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMLSLoadEvent.idl
+END
+nsIWebBrowser.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIWebBrowser.idl
+END
+nsPIPromptService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsPIPromptService.idl
+END
+nsIDOMText.idl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMText.idl
+END
+nsIRDFDataSource.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIRDFDataSource.idl
+END
+nsIDataSignatureVerifier.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDataSignatureVerifier.idl
+END
+nsISimpleTest.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISimpleTest.idl
+END
+nsISAXLexicalHandler.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISAXLexicalHandler.idl
+END
+nsISupports.idl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISupports.idl
+END
+nsIDOMHTMLHeadElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLHeadElement.idl
+END
+nsIWindowMediatorListener.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIWindowMediatorListener.idl
+END
+nsIProxiedChannel.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIProxiedChannel.idl
+END
+nsIModifyableXPointer.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIModifyableXPointer.idl
+END
+nsIDOMSVGAnimatedLength.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGAnimatedLength.idl
+END
+nsIGlobalHistory3.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIGlobalHistory3.idl
+END
+nsIXPCScriptNotify.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIXPCScriptNotify.idl
+END
+nsIFile.idl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIFile.idl
+END
+nsIDOMNSEvent.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMNSEvent.idl
+END
+nsIRDFResource.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIRDFResource.idl
+END
+nsPICertNotification.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsPICertNotification.idl
+END
+nsISelectElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISelectElement.idl
+END
+xpcjsid.idl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/xpcjsid.idl
+END
+nsILivemarkService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsILivemarkService.idl
+END
+nsIDOMClientRect.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMClientRect.idl
+END
+nsIRDFContainerUtils.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIRDFContainerUtils.idl
+END
+nsIAccessibleText.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAccessibleText.idl
+END
+nsIFeed.idl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIFeed.idl
+END
+nsIWeakReference.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIWeakReference.idl
+END
+nsIIconURI.idl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIIconURI.idl
+END
+nsIDOMSVGPoint.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGPoint.idl
+END
+inIFlasher.idl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/inIFlasher.idl
+END
+nsIDOMSVGDefsElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGDefsElement.idl
+END
+nsIDOMSVGImageElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGImageElement.idl
+END
+nsIPKIParamBlock.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPKIParamBlock.idl
+END
+nsITextToSubURI.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsITextToSubURI.idl
+END
+nsIBinaryOutputStream.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIBinaryOutputStream.idl
+END
+nsIDOMXULLabelElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMXULLabelElement.idl
+END
+nsILineInputStream.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsILineInputStream.idl
+END
+nsIJRILiveConnectPIPeer.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIJRILiveConnectPIPeer.idl
+END
+nsIDirectoryService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDirectoryService.idl
+END
+nsIByteRangeRequest.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIByteRangeRequest.idl
+END
+nsIDOMPluginArray.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMPluginArray.idl
+END
+nsIFastLoadFileControl.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIFastLoadFileControl.idl
+END
+nsIObjectLoadingContent.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIObjectLoadingContent.idl
+END
+mozIStorageFunction.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/mozIStorageFunction.idl
+END
+nsIDOMSVGAnimatedLengthList.idl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGAnimatedLengthList.idl
+END
+nsIXMLContentBuilder.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIXMLContentBuilder.idl
+END
+nsIUpdateService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIUpdateService.idl
+END
+nsIPopupBoxObject.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPopupBoxObject.idl
+END
+nsIDOMSVGForeignObjectElem.idl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGForeignObjectElem.idl
+END
+nsIDOMHTMLButtonElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLButtonElement.idl
+END
+nsIDOMSVGAElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGAElement.idl
+END
+nsIImageLoadingContent.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIImageLoadingContent.idl
+END
+nsIDOMSVGTitleElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGTitleElement.idl
+END
+nsIEditorIMESupport.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIEditorIMESupport.idl
+END
+nsIWebBrowserChrome.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIWebBrowserChrome.idl
+END
+nsCURILoader.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsCURILoader.idl
+END
+nsIDOMSVGAnimatedInteger.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGAnimatedInteger.idl
+END
+nsIHelperAppLauncherDialog.idl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIHelperAppLauncherDialog.idl
+END
+nsIDOMXULControlElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMXULControlElement.idl
+END
+nsIPromptService2.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPromptService2.idl
+END
+nsIComponentRegistrar.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIComponentRegistrar.idl
+END
+inIDeepTreeWalker.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/inIDeepTreeWalker.idl
+END
+nsIProxiedProtocolHandler.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIProxiedProtocolHandler.idl
+END
+nsIDOMSVGLengthList.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGLengthList.idl
+END
+nsISecurityEventSink.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISecurityEventSink.idl
+END
+nsIHandlerService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIHandlerService.idl
+END
+nsISecurityWarningDialogs.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISecurityWarningDialogs.idl
+END
+nsIProtectedAuthThread.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIProtectedAuthThread.idl
+END
+nsIExternalHelperAppService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIExternalHelperAppService.idl
+END
+jsdIDebuggerService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/jsdIDebuggerService.idl
+END
+nsISidebar.idl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISidebar.idl
+END
+nsIXSLTException.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIXSLTException.idl
+END
+nsISSLSocketControl.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISSLSocketControl.idl
+END
+nsIListBoxObject.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIListBoxObject.idl
+END
+nsIBrowserDOMWindow.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIBrowserDOMWindow.idl
+END
+nsPIAccessibleDocument.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsPIAccessibleDocument.idl
+END
+nsISHContainer.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISHContainer.idl
+END
+nsIPrefService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPrefService.idl
+END
+nsIDOMSVGPolygonElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGPolygonElement.idl
+END
+nsIHTMLObjectResizeListener.idl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIHTMLObjectResizeListener.idl
+END
+nsIDOMCryptoDialogs.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMCryptoDialogs.idl
+END
+nsIDOMConstructor.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMConstructor.idl
+END
+nsIEditorMailSupport.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIEditorMailSupport.idl
+END
+nsIDOMSVGGradientElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGGradientElement.idl
+END
+nsIDOMSVGFilters.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGFilters.idl
+END
+nsIDOMKeyEvent.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMKeyEvent.idl
+END
+nsIDOMHTMLTableCaptionElem.idl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLTableCaptionElem.idl
+END
+nsIRequestObserver.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIRequestObserver.idl
+END
+nsIGenKeypairInfoDlg.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIGenKeypairInfoDlg.idl
+END
+nsIClientAuthDialogs.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIClientAuthDialogs.idl
+END
+nsIScreenManager.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIScreenManager.idl
+END
+nsIRDFInferDataSource.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIRDFInferDataSource.idl
+END
+nsIDOMSVGGElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGGElement.idl
+END
+nsIMIMEHeaderParam.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIMIMEHeaderParam.idl
+END
+nsIStandardURL.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIStandardURL.idl
+END
+nsIPermissionManager.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPermissionManager.idl
+END
+nsIDOMSVGPathElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGPathElement.idl
+END
+nsIPrintSettingsWin.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPrintSettingsWin.idl
+END
+nsIAuthPromptAdapterFactory.idl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAuthPromptAdapterFactory.idl
+END
+nsIDOMXMLDocument.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMXMLDocument.idl
+END
+nsIDOMNSHistory.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMNSHistory.idl
+END
+nsIDOMHTMLLIElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLLIElement.idl
+END
+nsIDOMJSWindow.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMJSWindow.idl
+END
+nsIFileUtilities.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIFileUtilities.idl
+END
+nsIDOMNSHTMLElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMNSHTMLElement.idl
+END
+nsIPrintProgress.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPrintProgress.idl
+END
+nsINSSErrorsService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsINSSErrorsService.idl
+END
+nsIGlobalHistory.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIGlobalHistory.idl
+END
+inIDOMUtils.idl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/inIDOMUtils.idl
+END
+nsISelectionController.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISelectionController.idl
+END
+nsIMemoryReporter.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIMemoryReporter.idl
+END
+nsIDOMSVGTextPositionElem.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGTextPositionElem.idl
+END
+nsIDOM3Document.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOM3Document.idl
+END
+nsIPrintStatusFeedback.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPrintStatusFeedback.idl
+END
+nsIDOMHTMLFrameSetElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLFrameSetElement.idl
+END
+nsIDOMXULCommandEvent.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMXULCommandEvent.idl
+END
+nsIPrefBranch.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPrefBranch.idl
+END
+nsIDOMNSHTMLAnchorElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMNSHTMLAnchorElement.idl
+END
+imgIEncoder.idl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/imgIEncoder.idl
+END
+nsIPK11Token.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPK11Token.idl
+END
+nsIDOMNSHTMLTextAreaElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMNSHTMLTextAreaElement.idl
+END
+nsIFind.idl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIFind.idl
+END
+nsIStreamLoader.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIStreamLoader.idl
+END
+nsIScrollable.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIScrollable.idl
+END
+nsIRollupListener.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIRollupListener.idl
+END
+nsIDOMStorageItem.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMStorageItem.idl
+END
+nsIEditorSpellCheck.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIEditorSpellCheck.idl
+END
+nsISocketTransportService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISocketTransportService.idl
+END
+nsIServiceManager.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIServiceManager.idl
+END
+nsIDownloadManagerUI.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDownloadManagerUI.idl
+END
+nsIDOMCDATASection.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMCDATASection.idl
+END
+nsIDocumentLoader.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDocumentLoader.idl
+END
+nsIHttpEventSink.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIHttpEventSink.idl
+END
+nsIConsoleMessage.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIConsoleMessage.idl
+END
+nsIAccessibleWin32Object.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAccessibleWin32Object.idl
+END
+nsIDOMSVGTextContentElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGTextContentElement.idl
+END
+nsIStyleSheetService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIStyleSheetService.idl
+END
+nsIXULTemplateBuilder.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIXULTemplateBuilder.idl
+END
+nsIGConfService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIGConfService.idl
+END
+nsIProtocolProxyCallback.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIProtocolProxyCallback.idl
+END
+nsIDOMSVGTransformList.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGTransformList.idl
+END
+nsISHistoryListener.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISHistoryListener.idl
+END
+nsIScriptableRegion.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIScriptableRegion.idl
+END
+nsIScriptableInterfaces.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIScriptableInterfaces.idl
+END
+nsIRDFService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIRDFService.idl
+END
+nsIDOMRect.idl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMRect.idl
+END
+nsIDOMFileException.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMFileException.idl
+END
+xpcexception.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/xpcexception.idl
+END
+nsIDOMNSHTMLDocument.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMNSHTMLDocument.idl
+END
+nsIXmlRpcClient.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIXmlRpcClient.idl
+END
+nsIDOMBarProp.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMBarProp.idl
+END
+nsIRDFInMemoryDataSource.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIRDFInMemoryDataSource.idl
+END
+nsIChromeRegistry.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIChromeRegistry.idl
+END
+nsICertPickDialogs.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICertPickDialogs.idl
+END
+nsIAutoCompleteSimpleResult.idl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAutoCompleteSimpleResult.idl
+END
+nsIParentalControlsService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIParentalControlsService.idl
+END
+nsIDOMHTMLTextAreaElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLTextAreaElement.idl
+END
+nsIURIRefObject.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIURIRefObject.idl
+END
+nsIDOMNSFeatureFactory.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMNSFeatureFactory.idl
+END
+mozIStorageValueArray.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/mozIStorageValueArray.idl
+END
+nsITimelineService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsITimelineService.idl
+END
+nsIAuthInformation.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAuthInformation.idl
+END
+nsIFileChannel.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIFileChannel.idl
+END
+nsIUnicharStreamListener.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIUnicharStreamListener.idl
+END
+nsISelectionDisplay.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISelectionDisplay.idl
+END
+nsIDOMSVGRect.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGRect.idl
+END
+nsIDOMNSDocument.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMNSDocument.idl
+END
+nsIRDFXMLSink.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIRDFXMLSink.idl
+END
+nsIDragSession.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDragSession.idl
+END
+nsIDOMNSHTMLImageElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMNSHTMLImageElement.idl
+END
+extIApplication.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/extIApplication.idl
+END
+nsIProperty.idl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIProperty.idl
+END
+nsIDOMHTMLMetaElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLMetaElement.idl
+END
+nsIDOMElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMElement.idl
+END
+nsIDOMCSSCharsetRule.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMCSSCharsetRule.idl
+END
+nsIHttpAuthManager.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIHttpAuthManager.idl
+END
+nsIDOMHTMLQuoteElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLQuoteElement.idl
+END
+nsISAXXMLReader.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISAXXMLReader.idl
+END
+nsITraceRefcnt.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsITraceRefcnt.idl
+END
+nsIThreadPool.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIThreadPool.idl
+END
+nsIDOMXPathNamespace.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMXPathNamespace.idl
+END
+nsICache.idl
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICache.idl
+END
+nsIGnomeVFSService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIGnomeVFSService.idl
+END
+nsISelection2.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISelection2.idl
+END
+nsIDOMBeforeUnloadEvent.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMBeforeUnloadEvent.idl
+END
+nsIAccessNode.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAccessNode.idl
+END
+nsIDOMSVGAnimatedNumber.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGAnimatedNumber.idl
+END
+nsIJAR.idl
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIJAR.idl
+END
+nsIAuthPromptProvider.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAuthPromptProvider.idl
+END
+nsISecurityPref.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISecurityPref.idl
+END
+nsIBidiKeyboard.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIBidiKeyboard.idl
+END
+nsIPluginTag.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPluginTag.idl
+END
+nsIDOMSVGCircleElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGCircleElement.idl
+END
+nsIUTF8ConverterService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIUTF8ConverterService.idl
+END
+nsIDOMHTMLBaseFontElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLBaseFontElement.idl
+END
+imgIDecoder.idl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/imgIDecoder.idl
+END
+nsIDOMChromeWindow.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMChromeWindow.idl
+END
+nsIDOMSVGPathSegList.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGPathSegList.idl
+END
+nsIDOMCommandEvent.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMCommandEvent.idl
+END
+nsICommandLineRunner.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICommandLineRunner.idl
+END
+nsIWebBrowserFocus.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIWebBrowserFocus.idl
+END
+nsISAXXMLFilter.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISAXXMLFilter.idl
+END
+nsIDOMSVGMatrix.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGMatrix.idl
+END
+nsIDOMEventListener.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMEventListener.idl
+END
+nsIDOMPageTransitionEvent.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMPageTransitionEvent.idl
+END
+nsIPropertyBag.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPropertyBag.idl
+END
+nsIDOMLSSerializer.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMLSSerializer.idl
+END
+mozIStorageConnection.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/mozIStorageConnection.idl
+END
+nsIDOMDocumentView.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMDocumentView.idl
+END
+nsIDOMXULSelectCntrlItemEl.idl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMXULSelectCntrlItemEl.idl
+END
+nsIEventHandler.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIEventHandler.idl
+END
+nsIDOMUIEvent.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMUIEvent.idl
+END
+nsIConsoleService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIConsoleService.idl
+END
+nsIDOMSVGRectElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGRectElement.idl
+END
+nsIDOMWindowUtils.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMWindowUtils.idl
+END
+nsIAccessibleRelation.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAccessibleRelation.idl
+END
+nsIDOMEntityReference.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMEntityReference.idl
+END
+nsIWindowMediator.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIWindowMediator.idl
+END
+nsISupportsArray.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISupportsArray.idl
+END
+nsIDOMSVGLength.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGLength.idl
+END
+nsIScriptLoaderObserver.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIScriptLoaderObserver.idl
+END
+nsIBlocklistService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIBlocklistService.idl
+END
+nsIPluginManager2.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPluginManager2.idl
+END
+nsIDOMDocumentType.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMDocumentType.idl
+END
+nsICollation.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICollation.idl
+END
+nsIDOMXULTextboxElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMXULTextboxElement.idl
+END
+inICSSValueSearch.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/inICSSValueSearch.idl
+END
+nsIFileURL.idl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIFileURL.idl
+END
+nsILoginManager.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsILoginManager.idl
+END
+nsIXPCScriptable.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIXPCScriptable.idl
+END
+nsIAccessibilityService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAccessibilityService.idl
+END
+nsIClipboardOwner.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIClipboardOwner.idl
+END
+xpcIJSWeakReference.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/xpcIJSWeakReference.idl
+END
+nsICertOverrideService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICertOverrideService.idl
+END
+nsIPropertyBag2.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPropertyBag2.idl
+END
+nsIPluginInstancePeer2.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPluginInstancePeer2.idl
+END
+nsIDOMHTMLImageElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLImageElement.idl
+END
+nsICookiePermission.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICookiePermission.idl
+END
+nsIDOMMessageEvent.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMMessageEvent.idl
+END
+nsIDOMNamedNodeMap.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMNamedNodeMap.idl
+END
+nsIDOMSVGStyleElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGStyleElement.idl
+END
+nsIAnnotationService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAnnotationService.idl
+END
+nsIDOMNodeFilter.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMNodeFilter.idl
+END
+nsILoadGroup.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsILoadGroup.idl
+END
+nsIJRILiveConnectPlugin.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIJRILiveConnectPlugin.idl
+END
+nsISyncStreamListener.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISyncStreamListener.idl
+END
+nsIWindowlessPlugInstPeer.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIWindowlessPlugInstPeer.idl
+END
+nsIAtom.idl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAtom.idl
+END
+nsIDOMCSSStyleSheet.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMCSSStyleSheet.idl
+END
+nsIXULTemplateRuleFilter.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIXULTemplateRuleFilter.idl
+END
+nsIScriptEventHandler.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIScriptEventHandler.idl
+END
+nsIRunnable.idl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIRunnable.idl
+END
+nsIDOMSVGAngle.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGAngle.idl
+END
+nsIExtensionManager.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIExtensionManager.idl
+END
+nsIHttpHeaderVisitor.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIHttpHeaderVisitor.idl
+END
+nsIAccessibleProvider.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAccessibleProvider.idl
+END
+nsIXULRuntime.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIXULRuntime.idl
+END
+nsIDOMHTMLElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLElement.idl
+END
+nsIDocCharset.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDocCharset.idl
+END
+nsIDOMHTMLTitleElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLTitleElement.idl
+END
+nsISSLErrorListener.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISSLErrorListener.idl
+END
+nsIDOMSmartCardEvent.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSmartCardEvent.idl
+END
+nsIURIChecker.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIURIChecker.idl
+END
+nsIEffectiveTLDService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIEffectiveTLDService.idl
+END
+nsIURLFormatter.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIURLFormatter.idl
+END
+nsIPluginManager.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPluginManager.idl
+END
+nsITreeView.idl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsITreeView.idl
+END
+nsIProgressEventSink.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIProgressEventSink.idl
+END
+nsIAccessibleDocument.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAccessibleDocument.idl
+END
+nsIDOMHTMLFieldSetElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLFieldSetElement.idl
+END
+nsIProtocolHandler.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIProtocolHandler.idl
+END
+nsIFormSubmitObserver.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIFormSubmitObserver.idl
+END
+nsIRequestObserverProxy.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIRequestObserverProxy.idl
+END
+nsIDOMHTMLBRElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLBRElement.idl
+END
+nsIDOMXULMenuListElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMXULMenuListElement.idl
+END
+nsIStreamConverterService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIStreamConverterService.idl
+END
+nsIDOMNSHTMLAreaElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMNSHTMLAreaElement.idl
+END
+nsISimpleStreamListener.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISimpleStreamListener.idl
+END
+nsIXPCSecurityManager.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIXPCSecurityManager.idl
+END
+nsIAtomService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAtomService.idl
+END
+nsIContainerBoxObject.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIContainerBoxObject.idl
+END
+nsIURILoader.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIURILoader.idl
+END
+nsIDOMXULDescriptionElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMXULDescriptionElement.idl
+END
+nsIDOMCSSFontFaceRule.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMCSSFontFaceRule.idl
+END
+nsICommandLine.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICommandLine.idl
+END
+nsIIOService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIIOService.idl
+END
+nsITextServicesFilter.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsITextServicesFilter.idl
+END
+nsIPrintSettingsService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPrintSettingsService.idl
+END
+nsIJVMPluginInstance.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIJVMPluginInstance.idl
+END
+nsIExternalProtocolHandler.idl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIExternalProtocolHandler.idl
+END
+nsIDOMComment.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMComment.idl
+END
+nsIDOMHTMLDocument.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLDocument.idl
+END
+nsIResumableChannel.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIResumableChannel.idl
+END
+nsICategoryManager.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICategoryManager.idl
+END
+nsIPhonetic.idl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPhonetic.idl
+END
+nsIInputStreamTee.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIInputStreamTee.idl
+END
+nsIInputStream.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIInputStream.idl
+END
+nsPIEditorTransaction.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsPIEditorTransaction.idl
+END
+nsIRDFContainer.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIRDFContainer.idl
+END
+nsIPlaintextEditor.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPlaintextEditor.idl
+END
+nsIDOMSVGTransformable.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGTransformable.idl
+END
+nsIControllerCommand.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIControllerCommand.idl
+END
+nsIDOMHTMLTableColElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLTableColElement.idl
+END
+nsIDebug.idl
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDebug.idl
+END
+nsICookieManager2.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICookieManager2.idl
+END
+nsIUserCertPicker.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIUserCertPicker.idl
+END
+nsIDOMGetSVGDocument.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMGetSVGDocument.idl
+END
+nsIClipboardDragDropHookList.idl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIClipboardDragDropHookList.idl
+END
+nsIDOMHTMLUListElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLUListElement.idl
+END
+nsISecurityCheckedComponent.idl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISecurityCheckedComponent.idl
+END
+nsIDOMMutationEvent.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMMutationEvent.idl
+END
+nsIPrintOptions.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPrintOptions.idl
+END
+nsIWebNavigationInfo.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIWebNavigationInfo.idl
+END
+nsICryptoHMAC.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICryptoHMAC.idl
+END
+nsIAsyncInputStream.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAsyncInputStream.idl
+END
+nsIPrefLocalizedString.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPrefLocalizedString.idl
+END
+nsIFeedGenerator.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIFeedGenerator.idl
+END
+nsIContentDispatchChooser.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIContentDispatchChooser.idl
+END
+nsISAXLocator.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISAXLocator.idl
+END
+nsIPrefetchService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPrefetchService.idl
+END
+nsIRDFObserver.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIRDFObserver.idl
+END
+nsIDOMStyleSheet.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMStyleSheet.idl
+END
+nsIBadCertListener2.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIBadCertListener2.idl
+END
+txIFunctionEvaluationContext.idl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/txIFunctionEvaluationContext.idl
+END
+nsIDOMHistory.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHistory.idl
+END
+nsITypeAheadFind.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsITypeAheadFind.idl
+END
+nsIRecentBadCertsService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIRecentBadCertsService.idl
+END
+nsIDOMSVGAnimatedPathData.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGAnimatedPathData.idl
+END
+nsIHTMLEditor.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIHTMLEditor.idl
+END
+nsIToolkitChromeRegistry.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIToolkitChromeRegistry.idl
+END
+txINodeSet.idl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/txINodeSet.idl
+END
+nsIImageDocument.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIImageDocument.idl
+END
+nsIToolkit.idl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIToolkit.idl
+END
+nsCDocShell.idl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsCDocShell.idl
+END
+nsIDocShellTreeOwner.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDocShellTreeOwner.idl
+END
+nsIStreamTransportService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIStreamTransportService.idl
+END
+nsIAppShellService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAppShellService.idl
+END
+nsIFeedPerson.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIFeedPerson.idl
+END
+nsIDOMNotation.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMNotation.idl
+END
+nsIHTTPHeaderListener.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIHTTPHeaderListener.idl
+END
+nsISupportsPriority.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISupportsPriority.idl
+END
+nsISocketProvider.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISocketProvider.idl
+END
+nsICacheSession.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICacheSession.idl
+END
+nsIDOM3Node.idl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOM3Node.idl
+END
+nsIOfflineCacheSession.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIOfflineCacheSession.idl
+END
+nsIErrorService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIErrorService.idl
+END
+nsIAccessibleRetrieval.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAccessibleRetrieval.idl
+END
+imgIContainer.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/imgIContainer.idl
+END
+nsIURLParser.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIURLParser.idl
+END
+nsIClassInfo.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIClassInfo.idl
+END
+nsIAccessibleStates.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAccessibleStates.idl
+END
+nsISHistory.idl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISHistory.idl
+END
+nsIAuthPrompt2.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAuthPrompt2.idl
+END
+nsIDOMHTMLPreElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLPreElement.idl
+END
+nsIPluginStreamInfo.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPluginStreamInfo.idl
+END
+nsIEditingSession.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIEditingSession.idl
+END
+nsIDOMDocumentRange.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMDocumentRange.idl
+END
+nsIPrefBranch2.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPrefBranch2.idl
+END
+nsILoginManagerPrompter.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsILoginManagerPrompter.idl
+END
+nsICommandLineValidator.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICommandLineValidator.idl
+END
+nsIAccessibleEditableText.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAccessibleEditableText.idl
+END
+nsIDOMNSHTMLAnchorElement2.idl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMNSHTMLAnchorElement2.idl
+END
+inIDOMView.idl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/inIDOMView.idl
+END
+nsIDOMXULTreeElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMXULTreeElement.idl
+END
+nsIIFrameBoxObject.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIIFrameBoxObject.idl
+END
+nsITokenPasswordDialogs.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsITokenPasswordDialogs.idl
+END
+nsISystemProxySettings.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISystemProxySettings.idl
+END
+nsIHashable.idl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIHashable.idl
+END
+nsICookieAcceptDialog.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICookieAcceptDialog.idl
+END
+nsIDOMSVGFitToViewBox.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGFitToViewBox.idl
+END
+nsIDOMSerializer.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSerializer.idl
+END
+nsIDOMToString.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMToString.idl
+END
+nsIWritablePropertyBag2.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIWritablePropertyBag2.idl
+END
+nsPIAccessible.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsPIAccessible.idl
+END
+nsIFileStreams.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIFileStreams.idl
+END
+nsIDOMHTMLLabelElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLLabelElement.idl
+END
+nsIDOMSVGException.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGException.idl
+END
+nsIMarkupDocumentViewer.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIMarkupDocumentViewer.idl
+END
+nsIBufferedStreams.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIBufferedStreams.idl
+END
+nsIASN1Tree.idl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIASN1Tree.idl
+END
+nsIDOMWindowCollection.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMWindowCollection.idl
+END
+nsICacheEntryDescriptor.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICacheEntryDescriptor.idl
+END
+nsIDOMNSEditableElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMNSEditableElement.idl
+END
+inISearchProcess.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/inISearchProcess.idl
+END
+nsITransactionListener.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsITransactionListener.idl
+END
+imgITools.idl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/imgITools.idl
+END
+nsIWebBrowserPrint.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIWebBrowserPrint.idl
+END
+nsIDragService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDragService.idl
+END
+nsIDOMEventGroup.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMEventGroup.idl
+END
+imgICache.idl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/imgICache.idl
+END
+nsIStringBundleOverride.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIStringBundleOverride.idl
+END
+nsIDOMNSDocumentStyle.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMNSDocumentStyle.idl
+END
+nsIWebBrowserChrome2.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIWebBrowserChrome2.idl
+END
+nsIFullScreen.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIFullScreen.idl
+END
+nsIURIClassifier.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIURIClassifier.idl
+END
+nsIFaviconService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIFaviconService.idl
+END
+nsIDOMHTMLAreaElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLAreaElement.idl
+END
+nsIWebProgressListener.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIWebProgressListener.idl
+END
+nsIOutputStream.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIOutputStream.idl
+END
+nsINonBlockingAlertService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsINonBlockingAlertService.idl
+END
+nsIDOMDocument.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMDocument.idl
+END
+gfxIFormats.idl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/gfxIFormats.idl
+END
+nsIDOMSVGAnimatedRect.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGAnimatedRect.idl
+END
+nsIDOMElementCSSInlineStyle.idl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMElementCSSInlineStyle.idl
+END
+nsIStreamListener.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIStreamListener.idl
+END
+nsIAccessibleTreeCache.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAccessibleTreeCache.idl
+END
+nsIAppStartup.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAppStartup.idl
+END
+nsIAuthPromptWrapper.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAuthPromptWrapper.idl
+END
+nsIDOMSVGPointList.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGPointList.idl
+END
+nsIXPIProgressDialog.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIXPIProgressDialog.idl
+END
+nsIDOMXPathNSResolver.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMXPathNSResolver.idl
+END
+nsIDOMSVGNumber.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGNumber.idl
+END
+nsIRDFCompositeDataSource.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIRDFCompositeDataSource.idl
+END
+nsIDOMNSLocation.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMNSLocation.idl
+END
+nsIChannelClassifier.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIChannelClassifier.idl
+END
+nsIHTMLInlineTableEditor.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIHTMLInlineTableEditor.idl
+END
+nsIDOMSVGPolylineElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGPolylineElement.idl
+END
+nsIPluginInputStream.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPluginInputStream.idl
+END
+nsISecretDecoderRing.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISecretDecoderRing.idl
+END
+nsISupportsIterators.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISupportsIterators.idl
+END
+nsIDOMSVGDocument.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGDocument.idl
+END
+nsIFindService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIFindService.idl
+END
+nsIDOMDocumentTraversal.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMDocumentTraversal.idl
+END
+nsIDOM3DocumentEvent.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOM3DocumentEvent.idl
+END
+nsIPluginTagInfo.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPluginTagInfo.idl
+END
+nsIDOMHTMLOptionElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLOptionElement.idl
+END
+nsIDOMHTMLHRElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLHRElement.idl
+END
+nsIXPointer.idl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIXPointer.idl
+END
+nsIURIFixup.idl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIURIFixup.idl
+END
+nsIDocShellHistory.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDocShellHistory.idl
+END
+nsIDOMSVGTSpanElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGTSpanElement.idl
+END
+nsISMimeCert.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISMimeCert.idl
+END
+nsIHttpProtocolHandler.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIHttpProtocolHandler.idl
+END
+nsIXULTemplateResult.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIXULTemplateResult.idl
+END
+nsIDictionary.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDictionary.idl
+END
+XPCIDispatch.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/XPCIDispatch.idl
+END
+nsIAccessibleHyperText.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAccessibleHyperText.idl
+END
+nsIModuleLoader.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIModuleLoader.idl
+END
+nsIDocumentEncoder.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDocumentEncoder.idl
+END
+nsISelectionPrivate.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISelectionPrivate.idl
+END
+nsIXTFAttributeHandler.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIXTFAttributeHandler.idl
+END
+nsITransfer.idl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsITransfer.idl
+END
+nsINetUtil.idl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsINetUtil.idl
+END
+nsIDOMXULContainerElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMXULContainerElement.idl
+END
+nsIDOMSVGEllipseElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGEllipseElement.idl
+END
+nsIINIParser.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIINIParser.idl
+END
+nsIDOMHTMLBodyElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLBodyElement.idl
+END
+nsIDOMLSInput.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMLSInput.idl
+END
+txIEXSLTRegExFunctions.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/txIEXSLTRegExFunctions.idl
+END
+nsIDOMSVGSymbolElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGSymbolElement.idl
+END
+nsIReadConfig.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIReadConfig.idl
+END
+nsIAssociatedContentSecurity.idl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAssociatedContentSecurity.idl
+END
+nsIEditorDocShell.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIEditorDocShell.idl
+END
+nsITreeSelection.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsITreeSelection.idl
+END
+nsIPrefBranchInternal.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPrefBranchInternal.idl
+END
+nsIRDFXMLParser.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIRDFXMLParser.idl
+END
+nsIDOMHTMLCanvasElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLCanvasElement.idl
+END
+nsITransaction.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsITransaction.idl
+END
+nsICMSMessage.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICMSMessage.idl
+END
+nsIMutable.idl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIMutable.idl
+END
+nsIWebBrowserStream.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIWebBrowserStream.idl
+END
+nsIPipe.idl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPipe.idl
+END
+mozIPersonalDictionary.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/mozIPersonalDictionary.idl
+END
+nsIDOMSVGClipPathElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGClipPathElement.idl
+END
+nsIDownloadManager.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDownloadManager.idl
+END
+nsISerializable.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISerializable.idl
+END
+nsIDOMStorageEvent.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMStorageEvent.idl
+END
+nsISimpleUnicharStreamFactory.idl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISimpleUnicharStreamFactory.idl
+END
+nsIEntropyCollector.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIEntropyCollector.idl
+END
+nsIDOMSVGElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGElement.idl
+END
+nsISafeOutputStream.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISafeOutputStream.idl
+END
+nsISHTransaction.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISHTransaction.idl
+END
+nsICMSEncoder.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICMSEncoder.idl
+END
+nsITokenDialogs.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsITokenDialogs.idl
+END
+nsIDNSRecord.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDNSRecord.idl
+END
+nsICryptoHash.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICryptoHash.idl
+END
+nsILoginManagerStorage.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsILoginManagerStorage.idl
+END
+nsIAsyncStreamCopier.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAsyncStreamCopier.idl
+END
+nsIContentViewer.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIContentViewer.idl
+END
+nsIDOMHTMLOptionsCollection.idl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLOptionsCollection.idl
+END
+nsIDOMRange.idl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMRange.idl
+END
+nsIDocShell.idl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDocShell.idl
+END
+nsIDOM3Attr.idl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOM3Attr.idl
+END
+nsIDOMLSException.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMLSException.idl
+END
+nsIPluginInstanceOwner.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPluginInstanceOwner.idl
+END
+nsIHTMLObjectResizer.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIHTMLObjectResizer.idl
+END
+nsIDOMHTMLStyleElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLStyleElement.idl
+END
+gfxIImageFrame.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/gfxIImageFrame.idl
+END
+nsIDOMWindowInternal.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMWindowInternal.idl
+END
+nsIDOMHTMLEmbedElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLEmbedElement.idl
+END
+nsIJVMConfigManager.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIJVMConfigManager.idl
+END
+nsIBrowserBoxObject.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIBrowserBoxObject.idl
+END
+nsIXULAppInfo.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIXULAppInfo.idl
+END
+nsICipherInfo.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICipherInfo.idl
+END
+nsIDOMMimeTypeArray.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMMimeTypeArray.idl
+END
+nsIDOMNSHTMLAreaElement2.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMNSHTMLAreaElement2.idl
+END
+nsITXTToHTMLConv.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsITXTToHTMLConv.idl
+END
+nsIProxyInfo.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIProxyInfo.idl
+END
+nsIDOMHTMLParamElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLParamElement.idl
+END
+nsIDOMCSSStyleRule.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMCSSStyleRule.idl
+END
+nsIStreamBufferAccess.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIStreamBufferAccess.idl
+END
+nsIBrowserInstance.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIBrowserInstance.idl
+END
+nsIProfileChangeStatus.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIProfileChangeStatus.idl
+END
+nsIXTFElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIXTFElement.idl
+END
+nsIRDFPurgeableDataSource.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIRDFPurgeableDataSource.idl
+END
+nsIFormatConverter.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIFormatConverter.idl
+END
+nsIPrincipal.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPrincipal.idl
+END
+nsIAutoCompleteInput.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAutoCompleteInput.idl
+END
+nsIDocShellTreeNode.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDocShellTreeNode.idl
+END
+nsIDOMDOMImplementationLS.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMDOMImplementationLS.idl
+END
+nsIWindowWatcher.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIWindowWatcher.idl
+END
+nsITreeContentView.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsITreeContentView.idl
+END
+nsINavHistoryService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsINavHistoryService.idl
+END
+nsISHEntry.idl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISHEntry.idl
+END
+nsIDOMHTMLLegendElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLLegendElement.idl
+END
+nsIDOMXULMultSelectCntrlEl.idl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMXULMultSelectCntrlEl.idl
+END
+nsIURI.idl
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIURI.idl
+END
+nsIScriptableUnescapeHTML.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIScriptableUnescapeHTML.idl
+END
+nsIDOMDocumentFragment.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMDocumentFragment.idl
+END
+nsIDOMSVGAnimatedBoolean.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGAnimatedBoolean.idl
+END
+nsIDOMHTMLMenuElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLMenuElement.idl
+END
+nsIInputStreamChannel.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIInputStreamChannel.idl
+END
+nsIJARChannel.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIJARChannel.idl
+END
+nsIDOMDOMConfiguration.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMDOMConfiguration.idl
+END
+nsIDOMCSSImportRule.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMCSSImportRule.idl
+END
+nsIDOMNSHTMLButtonElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMNSHTMLButtonElement.idl
+END
+nsIPrintingPromptService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPrintingPromptService.idl
+END
+nsIDOMHTMLModElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLModElement.idl
+END
+nsIDOMProcessingInstruction.idl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMProcessingInstruction.idl
+END
+nsPIPluginInstancePeer.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsPIPluginInstancePeer.idl
+END
+nsIDOMCharacterData.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMCharacterData.idl
+END
+nsIDNSListener.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDNSListener.idl
+END
+nsITransport.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsITransport.idl
+END
+nsISaveAsCharset.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISaveAsCharset.idl
+END
+nsIScriptChannel.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIScriptChannel.idl
+END
+nsIKeyModule.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIKeyModule.idl
+END
+nsIContentURIGrouper.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIContentURIGrouper.idl
+END
+nsIXULSortService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIXULSortService.idl
+END
+nsIProfileMigrator.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIProfileMigrator.idl
+END
+nsIHTTPIndex.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIHTTPIndex.idl
+END
+nsICommandHandler.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICommandHandler.idl
+END
+nsIFilePicker.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIFilePicker.idl
+END
+mozIStorageStatement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/mozIStorageStatement.idl
+END
+nsIDOMSVGFilterElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGFilterElement.idl
+END
+xpcIJSModuleLoader.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/xpcIJSModuleLoader.idl
+END
+nsIXULOverlayProvider.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIXULOverlayProvider.idl
+END
+mozISpellCheckingEngine.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/mozISpellCheckingEngine.idl
+END
+nsIDOMStorageWindow.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMStorageWindow.idl
+END
+nsIDOMDOMException.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMDOMException.idl
+END
+nsIAccessibleEvent.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAccessibleEvent.idl
+END
+nsIWindowsRegKey.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIWindowsRegKey.idl
+END
+nsISAXErrorHandler.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISAXErrorHandler.idl
+END
+nsIProxyObjectManager.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIProxyObjectManager.idl
+END
+nsIDOMWindow.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMWindow.idl
+END
+nsIConsoleListener.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIConsoleListener.idl
+END
+nsICMSDecoder.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICMSDecoder.idl
+END
+nsCDefaultURIFixup.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsCDefaultURIFixup.idl
+END
+mozIStorageProgressHandler.idl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/mozIStorageProgressHandler.idl
+END
+nsIDOMHTMLSelectElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLSelectElement.idl
+END
+nsITransactionList.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsITransactionList.idl
+END
+nsIMIMEInputStream.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIMIMEInputStream.idl
+END
+nsICacheService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICacheService.idl
+END
+nsIXSLTProcessorObsolete.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIXSLTProcessorObsolete.idl
+END
+nsICMSSecureMessage.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICMSSecureMessage.idl
+END
+nsIDOMSVGStylable.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGStylable.idl
+END
+nsIThreadManager.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIThreadManager.idl
+END
+nsIBaseWindow.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIBaseWindow.idl
+END
+nsIDOMHTMLIFrameElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLIFrameElement.idl
+END
+nsPIWindowWatcher.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsPIWindowWatcher.idl
+END
+nsIMultiPartChannel.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIMultiPartChannel.idl
+END
+nsIDOM3EventTarget.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOM3EventTarget.idl
+END
+nsIDOMCSSMediaRule.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMCSSMediaRule.idl
+END
+nsIRDFNode.idl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIRDFNode.idl
+END
+nsIWindowProvider.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIWindowProvider.idl
+END
+nsIAddonRepository.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAddonRepository.idl
+END
+nsIClipboardDragDropHooks.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIClipboardDragDropHooks.idl
+END
+nsIDOMMouseEvent.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMMouseEvent.idl
+END
+nsICollection.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICollection.idl
+END
+nsIDispatchSupport.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDispatchSupport.idl
+END
+nsIAccessible.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAccessible.idl
+END
+nsIRDFDelegateFactory.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIRDFDelegateFactory.idl
+END
+nsICookieStorage.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICookieStorage.idl
+END
+nsIClipboardHelper.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIClipboardHelper.idl
+END
+nsIPrintSession.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPrintSession.idl
+END
+nsIDOMSVGEvent.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGEvent.idl
+END
+nsINestedURI.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsINestedURI.idl
+END
+nsIFeedResult.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIFeedResult.idl
+END
+nsICurrentCharsetListener.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICurrentCharsetListener.idl
+END
+nsISocketTransport.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISocketTransport.idl
+END
+nsIIdentityInfo.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIIdentityInfo.idl
+END
+nsIDOMLSProgressEvent.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMLSProgressEvent.idl
+END
+mozIStorageAggregateFunction.idl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/mozIStorageAggregateFunction.idl
+END
+nsIActiveXSecurityPolicy.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIActiveXSecurityPolicy.idl
+END
+nsICharsetConverterManager.idl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICharsetConverterManager.idl
+END
+nsISemanticUnitScanner.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISemanticUnitScanner.idl
+END
+nsIDOMSVGStopElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGStopElement.idl
+END
+nsIDOMCrypto.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMCrypto.idl
+END
+nsIDOMHTMLCollection.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLCollection.idl
+END
+nsIEnumerator.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIEnumerator.idl
+END
+nsIWindowDataSource.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIWindowDataSource.idl
+END
+nsICrashReporter.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICrashReporter.idl
+END
+nsICacheVisitor.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICacheVisitor.idl
+END
+nsIAccessibleHyperLink.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAccessibleHyperLink.idl
+END
+nsIDOMDocumentXBL.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMDocumentXBL.idl
+END
+nsIModule.idl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIModule.idl
+END
+nsIEditor.idl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIEditor.idl
+END
+nsIWindowCreator.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIWindowCreator.idl
+END
+nsIRequest.idl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIRequest.idl
+END
+nsIPluginTagInfo2.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPluginTagInfo2.idl
+END
+nsIDOMClientRectList.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMClientRectList.idl
+END
+nspluginroot.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nspluginroot.idl
+END
+nsIWebProgressListener2.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIWebProgressListener2.idl
+END
+nsIPasswordManagerInternal.idl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPasswordManagerInternal.idl
+END
+nsIDOMSVGTextPathElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGTextPathElement.idl
+END
+nsIJARURI.idl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIJARURI.idl
+END
+nsICRLInfo.idl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICRLInfo.idl
+END
+nsITreeBoxObject.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsITreeBoxObject.idl
+END
+nsIURIContentListener.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIURIContentListener.idl
+END
+nsIProfile.idl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIProfile.idl
+END
+imgILoad.idl
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/imgILoad.idl
+END
+nsPIPluginHost.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsPIPluginHost.idl
+END
+nsIPrompt.idl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPrompt.idl
+END
+nsIJVMManager.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIJVMManager.idl
+END
+nsIDOMXULCheckboxElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMXULCheckboxElement.idl
+END
+nsIX509CertValidity.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIX509CertValidity.idl
+END
+nsIDOMSVGURIReference.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGURIReference.idl
+END
+nsIProfileUnlocker.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIProfileUnlocker.idl
+END
+nsIToolkitProfile.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIToolkitProfile.idl
+END
+nsIDOMLocation.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMLocation.idl
+END
+nsIDocShellLoadInfo.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDocShellLoadInfo.idl
+END
+nsIWebBrowserChromeFocus.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIWebBrowserChromeFocus.idl
+END
+nsIHTMLAbsPosEditor.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIHTMLAbsPosEditor.idl
+END
+nsIDocumentStateListener.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDocumentStateListener.idl
+END
+nsIXSLTProcessorPrivate.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIXSLTProcessorPrivate.idl
+END
+nsIControllerCommandTable.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIControllerCommandTable.idl
+END
+nsIContentPolicy.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIContentPolicy.idl
+END
+nsCExternalHandlerService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsCExternalHandlerService.idl
+END
+nsIUnicharStreamLoader.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIUnicharStreamLoader.idl
+END
+nsIDOMNodeIterator.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMNodeIterator.idl
+END
+nsIJSRuntimeService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIJSRuntimeService.idl
+END
+nsIDOMXULPopupElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMXULPopupElement.idl
+END
+nsITransferable.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsITransferable.idl
+END
+nsIPKCS11Module.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPKCS11Module.idl
+END
+nsIChannel.idl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIChannel.idl
+END
+nsIOfflineCacheUpdate.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIOfflineCacheUpdate.idl
+END
+nsIInputStreamPump.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIInputStreamPump.idl
+END
+nsIDOMDataContainerEvent.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMDataContainerEvent.idl
+END
+nsICryptoFIPSInfo.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICryptoFIPSInfo.idl
+END
+nsIDOMSVGTextElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGTextElement.idl
+END
+nsIDOMViewCSS.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMViewCSS.idl
+END
+nsIUnicharInputStream.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIUnicharInputStream.idl
+END
+nsIDOMCSSValue.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMCSSValue.idl
+END
+imgIContainerObserver.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/imgIContainerObserver.idl
+END
+nsIAccessibleValue.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAccessibleValue.idl
+END
+nsIDOMXULSelectCntrlEl.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMXULSelectCntrlEl.idl
+END
+nsIZipWriter.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIZipWriter.idl
+END
+nsIDOMSVGAnimPresAspRatio.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGAnimPresAspRatio.idl
+END
+nsIRDFRemoteDataSource.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIRDFRemoteDataSource.idl
+END
+inISearchObserver.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/inISearchObserver.idl
+END
+nsIDOMUserDataHandler.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMUserDataHandler.idl
+END
+nsIScriptablePlugin.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIScriptablePlugin.idl
+END
+nsISOCKSSocketInfo.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISOCKSSocketInfo.idl
+END
+nsIKeygenThread.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIKeygenThread.idl
+END
+nsIDOMCustomEvent.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMCustomEvent.idl
+END
+nsIVersionComparator.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIVersionComparator.idl
+END
+nsIClipboardCommands.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIClipboardCommands.idl
+END
+nsIStringStream.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIStringStream.idl
+END
+nsIScriptableInputStream.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIScriptableInputStream.idl
+END
+imgIRequest.idl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/imgIRequest.idl
+END
+nsICertificateDialogs.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICertificateDialogs.idl
+END
+nsIStreamCipher.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIStreamCipher.idl
+END
+nsIProgrammingLanguage.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIProgrammingLanguage.idl
+END
+domstubs.idl
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/domstubs.idl
+END
+nsIRDFLiteral.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIRDFLiteral.idl
+END
+nsIDOMHTMLHeadingElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLHeadingElement.idl
+END
+nsIDOMHTMLDirectoryElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLDirectoryElement.idl
+END
+nsIDOMHTMLScriptElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLScriptElement.idl
+END
+nsIX509Cert2.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIX509Cert2.idl
+END
+nsIDOMHTMLDivElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLDivElement.idl
+END
+nsIDOMXULElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMXULElement.idl
+END
+nsPICommandUpdater.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsPICommandUpdater.idl
+END
+nsIFeedEntry.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIFeedEntry.idl
+END
+nsIXULBuilderListener.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIXULBuilderListener.idl
+END
+nsISeekableStream.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISeekableStream.idl
+END
+nsIIncrementalDownload.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIIncrementalDownload.idl
+END
+nsISignatureVerifier.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISignatureVerifier.idl
+END
+nsIWinAppHelper.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIWinAppHelper.idl
+END
+nsIException.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIException.idl
+END
+nsIChannelEventSink.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIChannelEventSink.idl
+END
+nsIDOMSVGAnimatedPoints.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGAnimatedPoints.idl
+END
+nsIProxyAutoConfig.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIProxyAutoConfig.idl
+END
+nsIDragDropHandler.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDragDropHandler.idl
+END
+nsIWebBrowserSetup.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIWebBrowserSetup.idl
+END
+nsIConverterOutputStream.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIConverterOutputStream.idl
+END
+nsIProtocolProxyService2.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIProtocolProxyService2.idl
+END
+nsIDirIndex.idl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDirIndex.idl
+END
+nsIDOMSVGAnimatedNumberList.idl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGAnimatedNumberList.idl
+END
+nsIUUIDGenerator.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIUUIDGenerator.idl
+END
+nsIDOMStyleSheetList.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMStyleSheetList.idl
+END
+nsIDynamicContainer.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDynamicContainer.idl
+END
+nsILoginManagerIEMigrationHelper.idl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsILoginManagerIEMigrationHelper.idl
+END
+nsIWyciwygChannel.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIWyciwygChannel.idl
+END
+nsIScriptableDateFormat.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIScriptableDateFormat.idl
+END
+nsIDOMNSHTMLInputElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMNSHTMLInputElement.idl
+END
+nsITransportSecurityInfo.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsITransportSecurityInfo.idl
+END
+nsIAccessibleImage.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAccessibleImage.idl
+END
+nsIXULWindow.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIXULWindow.idl
+END
+nsIXPIInstallInfo.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIXPIInstallInfo.idl
+END
+nsIVariant.idl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIVariant.idl
+END
+nsICookieManager.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICookieManager.idl
+END
+nsIDOMSVGNumberList.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGNumberList.idl
+END
+nsIJSON.idl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIJSON.idl
+END
+mozIStorageService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/mozIStorageService.idl
+END
+nsIX509CertDB2.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIX509CertDB2.idl
+END
+nsIDOMDocumentEvent.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMDocumentEvent.idl
+END
+nsIStreamConverter.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIStreamConverter.idl
+END
+nsIViewSourceChannel.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIViewSourceChannel.idl
+END
+nsIPrintProgressParams.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPrintProgressParams.idl
+END
+nsIFormHistory.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIFormHistory.idl
+END
+nsIMutableArray.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIMutableArray.idl
+END
+nsIUnicodeNormalizer.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIUnicodeNormalizer.idl
+END
+nsIDialogParamBlock.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDialogParamBlock.idl
+END
+nsIDOMSVGTransform.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGTransform.idl
+END
+nsIStringBundle.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIStringBundle.idl
+END
+nsIURL.idl
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIURL.idl
+END
+nsIDOMHTMLIsIndexElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLIsIndexElement.idl
+END
+nsIEntityConverter.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIEntityConverter.idl
+END
+nsIInterfaceInfoManager.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIInterfaceInfoManager.idl
+END
+nsIDownload.idl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDownload.idl
+END
+nsICookie.idl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICookie.idl
+END
+nsIDOMHTMLAnchorElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLAnchorElement.idl
+END
+nsITooltipTextProvider.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsITooltipTextProvider.idl
+END
+nsIDOMFileList.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMFileList.idl
+END
+nsISAXMutableAttributes.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISAXMutableAttributes.idl
+END
+nsIDOMXULCommandDispatcher.idl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMXULCommandDispatcher.idl
+END
+nsIPluginStreamListener.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPluginStreamListener.idl
+END
+nsIContentFilter.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIContentFilter.idl
+END
+nsISocketProviderService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISocketProviderService.idl
+END
+nsICachingChannel.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICachingChannel.idl
+END
+nsIDOMLoadStatusEvent.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMLoadStatusEvent.idl
+END
+xpccomponents.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/xpccomponents.idl
+END
+nsIASN1Object.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIASN1Object.idl
+END
+nsICookieService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICookieService.idl
+END
+nsIComponentManagerObsolete.idl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIComponentManagerObsolete.idl
+END
+nsIDOMNSHTMLFrameElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMNSHTMLFrameElement.idl
+END
+nsIIDNService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIIDNService.idl
+END
+nsIXTFPrivate.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIXTFPrivate.idl
+END
+nsIComponentManager.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIComponentManager.idl
+END
+nsIPluginInstancePeer.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPluginInstancePeer.idl
+END
+nsIDOMCSSUnknownRule.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMCSSUnknownRule.idl
+END
+nsIContextMenuListener2.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIContextMenuListener2.idl
+END
+mozISpellI18NUtil.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/mozISpellI18NUtil.idl
+END
+nsIConverterInputStream.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIConverterInputStream.idl
+END
+nsIDOMCanvasRenderingContext2D.idl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMCanvasRenderingContext2D.idl
+END
+rdfISerializer.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/rdfISerializer.idl
+END
+nsIAutoCompleteController.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAutoCompleteController.idl
+END
+nsIX509Cert3.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIX509Cert3.idl
+END
+nsIProtocolProxyFilter.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIProtocolProxyFilter.idl
+END
+nsISupportsPrimitives.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISupportsPrimitives.idl
+END
+nsCWebBrowser.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsCWebBrowser.idl
+END
+nsIAlertsService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAlertsService.idl
+END
+nsIDirIndexListener.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDirIndexListener.idl
+END
+nsIPKCS11ModuleDB.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPKCS11ModuleDB.idl
+END
+nsIFastLoadService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIFastLoadService.idl
+END
+nsIStorageStream.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIStorageStream.idl
+END
+nsISSLStatusProvider.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISSLStatusProvider.idl
+END
+nsIDOMCSSValueList.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMCSSValueList.idl
+END
+nsIDOMSVGLineElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGLineElement.idl
+END
+nsICommandLineHandler.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICommandLineHandler.idl
+END
+nsISecureBrowserUI.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISecureBrowserUI.idl
+END
+nsIDOMWindow2.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMWindow2.idl
+END
+nsIX509CertDB.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIX509CertDB.idl
+END
+nsISelectionListener.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISelectionListener.idl
+END
+nsIDOMLSParser.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMLSParser.idl
+END
+nsIDOMNSRange.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMNSRange.idl
+END
+nsIDOMPkcs11.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMPkcs11.idl
+END
+nsIDOMHTMLHtmlElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLHtmlElement.idl
+END
+nsIDOMXPathException.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMXPathException.idl
+END
+nsIThreadInternal.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIThreadInternal.idl
+END
+nsIAccessibleTable.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAccessibleTable.idl
+END
+nsIAuthModule.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAuthModule.idl
+END
+nsIFeedListener.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIFeedListener.idl
+END
+nsIFeedTextConstruct.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIFeedTextConstruct.idl
+END
+nsIDOMCSSPrimitiveValue.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMCSSPrimitiveValue.idl
+END
+nsITimer.idl
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsITimer.idl
+END
+nsIDOM3TypeInfo.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOM3TypeInfo.idl
+END
+nsINativeAppSupport.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsINativeAppSupport.idl
+END
+nsIWinAccessNode.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIWinAccessNode.idl
+END
+nsIAutoCompletePopup.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAutoCompletePopup.idl
+END
+nsPIDNSService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsPIDNSService.idl
+END
+nsIOCSPResponder.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIOCSPResponder.idl
+END
+mozIJSSubScriptLoader.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/mozIJSSubScriptLoader.idl
+END
+nsIEditActionListener.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIEditActionListener.idl
+END
+nsIDownloadHistory.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDownloadHistory.idl
+END
+nsIDOMPopupBlockedEvent.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMPopupBlockedEvent.idl
+END
+nsIPersistentProperties2.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPersistentProperties2.idl
+END
+nsIContentViewerContainer.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIContentViewerContainer.idl
+END
+gfxtypes.idl
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/gfxtypes.idl
+END
+mozIStorageDataSet.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/mozIStorageDataSet.idl
+END
+nsIXPTLoader.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIXPTLoader.idl
+END
+nsIAuthPrompt.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAuthPrompt.idl
+END
+nsrootidl.idl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsrootidl.idl
+END
+nsIDOMCSSMozDocumentRule.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMCSSMozDocumentRule.idl
+END
+nsIDOMNSXPathExpression.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMNSXPathExpression.idl
+END
+nsIExpatSink.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIExpatSink.idl
+END
+nsIDOMXULDocument.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMXULDocument.idl
+END
+nsIDOMSVGDescElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGDescElement.idl
+END
+nsIXMLHttpRequest.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIXMLHttpRequest.idl
+END
+nsIIOService2.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIIOService2.idl
+END
+nsICRLManager.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICRLManager.idl
+END
+nsIDOMSVGPathSeg.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGPathSeg.idl
+END
+nsIX509CertList.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIX509CertList.idl
+END
+nsITransactionManager.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsITransactionManager.idl
+END
+nsIEditorStyleSheets.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIEditorStyleSheets.idl
+END
+nsIPopupWindowManager.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPopupWindowManager.idl
+END
+nsIDOMOfflineResourceList.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMOfflineResourceList.idl
+END
+nsIAutoCompleteSearch.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAutoCompleteSearch.idl
+END
+nsIDOMMimeType.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMMimeType.idl
+END
+nsIDOMHTMLInputElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLInputElement.idl
+END
+nsIClipboard.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIClipboard.idl
+END
+nsIScriptEventManager.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIScriptEventManager.idl
+END
+nsIDOMLSParserFilter.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMLSParserFilter.idl
+END
+nsIXPIDialogService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIXPIDialogService.idl
+END
+nsIHttpActivityObserver.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIHttpActivityObserver.idl
+END
+nsICiter.idl
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICiter.idl
+END
+nsIRDFPropagatableDataSource.idl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIRDFPropagatableDataSource.idl
+END
+nsIHttpChannel.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIHttpChannel.idl
+END
+nsICharsetResolver.idl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICharsetResolver.idl
+END
+nsIDOMHTMLTableRowElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLTableRowElement.idl
+END
+nsICommandParams.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsICommandParams.idl
+END
+nsIDOMNSEventTarget.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMNSEventTarget.idl
+END
+nsIFormSigningDialog.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIFormSigningDialog.idl
+END
+nsIDOMDOMStringList.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMDOMStringList.idl
+END
+nsIXULBrowserWindow.idl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIXULBrowserWindow.idl
+END
+nsIDOMTreeWalker.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMTreeWalker.idl
+END
+nsIDOMLSResourceResolver.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMLSResourceResolver.idl
+END
+nsIPromptFactory.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPromptFactory.idl
+END
+nsIDOMEntity.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMEntity.idl
+END
+nsIAboutModule.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIAboutModule.idl
+END
+nsIDOMNSHTMLOptionCollectn.idl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMNSHTMLOptionCollectn.idl
+END
+nsIX509Cert.idl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIX509Cert.idl
+END
+nsIProtocolProxyService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIProtocolProxyService.idl
+END
+nsISAXDTDHandler.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISAXDTDHandler.idl
+END
+nsIDOMSVGMaskElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGMaskElement.idl
+END
+nsIToolkitProfileService.idl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIToolkitProfileService.idl
+END
+nsIDOMSVGAnimatedEnum.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMSVGAnimatedEnum.idl
+END
+nsIDOMHTMLFrameElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLFrameElement.idl
+END
+nsIASN1Sequence.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIASN1Sequence.idl
+END
+nsIPluginHost.idl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIPluginHost.idl
+END
+nsIEditorLogging.idl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIEditorLogging.idl
+END
+nsIDOMNSHTMLFormElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMNSHTMLFormElement.idl
+END
+nsIEnvironment.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIEnvironment.idl
+END
+nsIThread.idl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIThread.idl
+END
+nsIDOMNSHTMLHRElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMNSHTMLHRElement.idl
+END
+nsIInterfaceRequestor.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIInterfaceRequestor.idl
+END
+nsIDOMEvent.idl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMEvent.idl
+END
+nsIDOMHTMLAppletElement.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMHTMLAppletElement.idl
+END
+nsISelection.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsISelection.idl
+END
+nsIDOMDOMImplementation.idl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMDOMImplementation.idl
+END
+nsIDOMNode.idl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMNode.idl
+END
+nsIEncodedChannel.idl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIEncodedChannel.idl
+END
+nsIJARProtocolHandler.idl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIJARProtocolHandler.idl
+END
+nsIDOMParser.idl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/idl/nsIDOMParser.idl
+END

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/mips/dspr2
+END
+filter_dspr2.c
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/mips/dspr2/filter_dspr2.c
+END
+loopfilter_filters_dspr2.c
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/mips/dspr2/loopfilter_filters_dspr2.c
+END
+idctllm_dspr2.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/mips/dspr2/idctllm_dspr2.c
+END
+reconinter_dspr2.c
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/mips/dspr2/reconinter_dspr2.c
+END
+dequantize_dspr2.c
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/mips/dspr2/dequantize_dspr2.c
+END
+idct_blk_dspr2.c
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/mips/dspr2/idct_blk_dspr2.c
+END

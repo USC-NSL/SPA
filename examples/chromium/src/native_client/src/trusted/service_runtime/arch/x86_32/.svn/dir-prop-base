@@ -1,0 +1,13 @@
+K 10
+svn:ignore
+V 219
+SConstruct
+service_runtime_x86_32_main.scons
+service_runtime_x86_32.rules
+service_runtime_x86_32.mk
+service_runtime_x86_32.scons
+service_runtime_x86_32.sln
+service_runtime_x86_32.vcproj
+service_runtime_x86_32.xcodeproj
+
+END

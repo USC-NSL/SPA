@@ -1,0 +1,161 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/178673/trunk/deps/third_party/libmtp/src
+END
+device-flags.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/148515/trunk/deps/third_party/libmtp/src/device-flags.h
+END
+mtpz.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/167447/trunk/deps/third_party/libmtp/src/mtpz.h
+END
+libmtp.h.in
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/167836/trunk/deps/third_party/libmtp/src/libmtp.h.in
+END
+Makefile.in
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/167447/trunk/deps/third_party/libmtp/src/Makefile.in
+END
+playlist-spl.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/148515/trunk/deps/third_party/libmtp/src/playlist-spl.h
+END
+music-players.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/167447/trunk/deps/third_party/libmtp/src/music-players.h
+END
+ptp.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/149144/trunk/deps/third_party/libmtp/src/ptp.c
+END
+ptp.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/149144/trunk/deps/third_party/libmtp/src/ptp.h
+END
+_stdint.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/160184/trunk/deps/third_party/libmtp/src/_stdint.h
+END
+libusb-glue.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/167447/trunk/deps/third_party/libmtp/src/libusb-glue.c
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/148515/trunk/deps/third_party/libmtp/src/README
+END
+libopenusb1-glue.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/167447/trunk/deps/third_party/libmtp/src/libopenusb1-glue.c
+END
+libmtp.sym
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/167836/trunk/deps/third_party/libmtp/src/libmtp.sym
+END
+util.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/148515/trunk/deps/third_party/libmtp/src/util.c
+END
+ptp-pack.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/149471/trunk/deps/third_party/libmtp/src/ptp-pack.c
+END
+libusb-glue.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/167505/trunk/deps/third_party/libmtp/src/libusb-glue.h
+END
+util.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/148515/trunk/deps/third_party/libmtp/src/util.h
+END
+gphoto2-endian.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/160184/trunk/deps/third_party/libmtp/src/gphoto2-endian.h
+END
+unicode.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/148597/trunk/deps/third_party/libmtp/src/unicode.c
+END
+libmtp.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/178673/trunk/deps/third_party/libmtp/src/libmtp.c
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/167447/trunk/deps/third_party/libmtp/src/Makefile.am
+END
+mtpz.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/167447/trunk/deps/third_party/libmtp/src/mtpz.c
+END
+libusb1-glue.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/178447/trunk/deps/third_party/libmtp/src/libusb1-glue.c
+END
+unicode.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/148515/trunk/deps/third_party/libmtp/src/unicode.h
+END
+libmtp.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/167836/trunk/deps/third_party/libmtp/src/libmtp.h
+END
+playlist-spl.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/148597/trunk/deps/third_party/libmtp/src/playlist-spl.c
+END

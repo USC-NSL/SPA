@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/3840/stable/webrtc/modules/rtp_rtcp/source/H264
+END
+bitstream_builder.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/3840/stable/webrtc/modules/rtp_rtcp/source/H264/bitstream_builder.cc
+END
+bitstream_builder.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/3840/stable/webrtc/modules/rtp_rtcp/source/H264/bitstream_builder.h
+END
+bitstream_parser.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/3840/stable/webrtc/modules/rtp_rtcp/source/H264/bitstream_parser.cc
+END
+h264_information.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/3840/stable/webrtc/modules/rtp_rtcp/source/H264/h264_information.cc
+END
+rtp_sender_h264.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/3840/stable/webrtc/modules/rtp_rtcp/source/H264/rtp_sender_h264.cc
+END
+bitstream_parser.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/3840/stable/webrtc/modules/rtp_rtcp/source/H264/bitstream_parser.h
+END
+h264_information.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/3840/stable/webrtc/modules/rtp_rtcp/source/H264/h264_information.h
+END
+rtp_sender_h264.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/3840/stable/webrtc/modules/rtp_rtcp/source/H264/rtp_sender_h264.h
+END

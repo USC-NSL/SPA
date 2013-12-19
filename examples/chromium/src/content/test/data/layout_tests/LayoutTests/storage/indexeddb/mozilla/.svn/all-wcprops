@@ -1,0 +1,437 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/blink/!svn/ver/136782/trunk/LayoutTests/storage/indexeddb/mozilla
+END
+index-prev-no-duplicate-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/blink/!svn/ver/134700/trunk/LayoutTests/storage/indexeddb/mozilla/index-prev-no-duplicate-expected.txt
+END
+key-requirements-put-null-key.html
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/blink/!svn/ver/112202/trunk/LayoutTests/storage/indexeddb/mozilla/key-requirements-put-null-key.html
+END
+objectstorenames-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/blink/!svn/ver/134252/trunk/LayoutTests/storage/indexeddb/mozilla/objectstorenames-expected.txt
+END
+create-index-unique-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/blink/!svn/ver/134252/trunk/LayoutTests/storage/indexeddb/mozilla/create-index-unique-expected.txt
+END
+object-store-inline-autoincrement-key-added-on-put.html
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/blink/!svn/ver/112202/trunk/LayoutTests/storage/indexeddb/mozilla/object-store-inline-autoincrement-key-added-on-put.html
+END
+create-index-with-integer-keys-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/blink/!svn/ver/134252/trunk/LayoutTests/storage/indexeddb/mozilla/create-index-with-integer-keys-expected.txt
+END
+object-store-remove-values-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/blink/!svn/ver/134854/trunk/LayoutTests/storage/indexeddb/mozilla/object-store-remove-values-expected.txt
+END
+bad-keypath-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/blink/!svn/ver/135424/trunk/LayoutTests/storage/indexeddb/mozilla/bad-keypath-expected.txt
+END
+index-prev-no-duplicate.html
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/blink/!svn/ver/134700/trunk/LayoutTests/storage/indexeddb/mozilla/index-prev-no-duplicate.html
+END
+objectstorenames.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/blink/!svn/ver/112202/trunk/LayoutTests/storage/indexeddb/mozilla/objectstorenames.html
+END
+object-identity-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/blink/!svn/ver/134700/trunk/LayoutTests/storage/indexeddb/mozilla/object-identity-expected.txt
+END
+cursors-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/blink/!svn/ver/134252/trunk/LayoutTests/storage/indexeddb/mozilla/cursors-expected.txt
+END
+versionchange-abort-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/blink/!svn/ver/136475/trunk/LayoutTests/storage/indexeddb/mozilla/versionchange-abort-expected.txt
+END
+key-requirements-inline-and-passed-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/blink/!svn/ver/135424/trunk/LayoutTests/storage/indexeddb/mozilla/key-requirements-inline-and-passed-expected.txt
+END
+create-index-unique.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/blink/!svn/ver/112202/trunk/LayoutTests/storage/indexeddb/mozilla/create-index-unique.html
+END
+global-data-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/blink/!svn/ver/134819/trunk/LayoutTests/storage/indexeddb/mozilla/global-data-expected.txt
+END
+autoincrement-indexes-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/blink/!svn/ver/134252/trunk/LayoutTests/storage/indexeddb/mozilla/autoincrement-indexes-expected.txt
+END
+create-objectstore-null-name-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/blink/!svn/ver/134252/trunk/LayoutTests/storage/indexeddb/mozilla/create-objectstore-null-name-expected.txt
+END
+create-index-with-integer-keys.html
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/blink/!svn/ver/112202/trunk/LayoutTests/storage/indexeddb/mozilla/create-index-with-integer-keys.html
+END
+object-store-remove-values.html
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/blink/!svn/ver/112202/trunk/LayoutTests/storage/indexeddb/mozilla/object-store-remove-values.html
+END
+bad-keypath.html
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/blink/!svn/ver/112202/trunk/LayoutTests/storage/indexeddb/mozilla/bad-keypath.html
+END
+event-source-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/blink/!svn/ver/134819/trunk/LayoutTests/storage/indexeddb/mozilla/event-source-expected.txt
+END
+object-identity.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/blink/!svn/ver/112202/trunk/LayoutTests/storage/indexeddb/mozilla/object-identity.html
+END
+cursors.html
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/blink/!svn/ver/112202/trunk/LayoutTests/storage/indexeddb/mozilla/cursors.html
+END
+versionchange-abort.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/blink/!svn/ver/112202/trunk/LayoutTests/storage/indexeddb/mozilla/versionchange-abort.html
+END
+clear-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/blink/!svn/ver/136782/trunk/LayoutTests/storage/indexeddb/mozilla/clear-expected.txt
+END
+add-twice-failure-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/blink/!svn/ver/135424/trunk/LayoutTests/storage/indexeddb/mozilla/add-twice-failure-expected.txt
+END
+key-requirements-inline-and-passed.html
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/blink/!svn/ver/112202/trunk/LayoutTests/storage/indexeddb/mozilla/key-requirements-inline-and-passed.html
+END
+open-database-null-name-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/blink/!svn/ver/112490/trunk/LayoutTests/storage/indexeddb/mozilla/open-database-null-name-expected.txt
+END
+odd-result-order-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/blink/!svn/ver/134819/trunk/LayoutTests/storage/indexeddb/mozilla/odd-result-order-expected.txt
+END
+global-data.html
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/blink/!svn/ver/112202/trunk/LayoutTests/storage/indexeddb/mozilla/global-data.html
+END
+autoincrement-indexes.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/blink/!svn/ver/112202/trunk/LayoutTests/storage/indexeddb/mozilla/autoincrement-indexes.html
+END
+create-objectstore-null-name.html
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/blink/!svn/ver/112202/trunk/LayoutTests/storage/indexeddb/mozilla/create-objectstore-null-name.html
+END
+remove-index-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/blink/!svn/ver/134252/trunk/LayoutTests/storage/indexeddb/mozilla/remove-index-expected.txt
+END
+readyState-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/blink/!svn/ver/134854/trunk/LayoutTests/storage/indexeddb/mozilla/readyState-expected.txt
+END
+event-source.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/blink/!svn/ver/112202/trunk/LayoutTests/storage/indexeddb/mozilla/event-source.html
+END
+key-requirements-delete-null-key-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/blink/!svn/ver/135424/trunk/LayoutTests/storage/indexeddb/mozilla/key-requirements-delete-null-key-expected.txt
+END
+key-requirements-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/blink/!svn/ver/134252/trunk/LayoutTests/storage/indexeddb/mozilla/key-requirements-expected.txt
+END
+add-twice-failure.html
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/blink/!svn/ver/112202/trunk/LayoutTests/storage/indexeddb/mozilla/add-twice-failure.html
+END
+clear.html
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/blink/!svn/ver/112202/trunk/LayoutTests/storage/indexeddb/mozilla/clear.html
+END
+remove-objectstore-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/blink/!svn/ver/134819/trunk/LayoutTests/storage/indexeddb/mozilla/remove-objectstore-expected.txt
+END
+delete-result-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/blink/!svn/ver/134252/trunk/LayoutTests/storage/indexeddb/mozilla/delete-result-expected.txt
+END
+key-requirements-put-no-key-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/blink/!svn/ver/135424/trunk/LayoutTests/storage/indexeddb/mozilla/key-requirements-put-no-key-expected.txt
+END
+open-database-null-name.html
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/blink/!svn/ver/112202/trunk/LayoutTests/storage/indexeddb/mozilla/open-database-null-name.html
+END
+odd-result-order.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/blink/!svn/ver/112202/trunk/LayoutTests/storage/indexeddb/mozilla/odd-result-order.html
+END
+put-get-values-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/blink/!svn/ver/134252/trunk/LayoutTests/storage/indexeddb/mozilla/put-get-values-expected.txt
+END
+readonly-transactions-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/blink/!svn/ver/135424/trunk/LayoutTests/storage/indexeddb/mozilla/readonly-transactions-expected.txt
+END
+create-objectstore-basics-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/blink/!svn/ver/134252/trunk/LayoutTests/storage/indexeddb/mozilla/create-objectstore-basics-expected.txt
+END
+remove-index.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/blink/!svn/ver/112202/trunk/LayoutTests/storage/indexeddb/mozilla/remove-index.html
+END
+readyState.html
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/blink/!svn/ver/112202/trunk/LayoutTests/storage/indexeddb/mozilla/readyState.html
+END
+readwrite-transactions-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/blink/!svn/ver/134252/trunk/LayoutTests/storage/indexeddb/mozilla/readwrite-transactions-expected.txt
+END
+cursor-update-updates-indexes-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/blink/!svn/ver/134819/trunk/LayoutTests/storage/indexeddb/mozilla/cursor-update-updates-indexes-expected.txt
+END
+key-requirements-delete-null-key.html
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/blink/!svn/ver/112202/trunk/LayoutTests/storage/indexeddb/mozilla/key-requirements-delete-null-key.html
+END
+key-requirements.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/blink/!svn/ver/112202/trunk/LayoutTests/storage/indexeddb/mozilla/key-requirements.html
+END
+indexes-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/blink/!svn/ver/134252/trunk/LayoutTests/storage/indexeddb/mozilla/indexes-expected.txt
+END
+remove-objectstore.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/blink/!svn/ver/112202/trunk/LayoutTests/storage/indexeddb/mozilla/remove-objectstore.html
+END
+object-cursors-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/blink/!svn/ver/134252/trunk/LayoutTests/storage/indexeddb/mozilla/object-cursors-expected.txt
+END
+delete-result.html
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/blink/!svn/ver/112202/trunk/LayoutTests/storage/indexeddb/mozilla/delete-result.html
+END
+key-requirements-put-no-key.html
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/blink/!svn/ver/112202/trunk/LayoutTests/storage/indexeddb/mozilla/key-requirements-put-no-key.html
+END
+put-get-values.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/blink/!svn/ver/112202/trunk/LayoutTests/storage/indexeddb/mozilla/put-get-values.html
+END
+readonly-transactions.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/blink/!svn/ver/112202/trunk/LayoutTests/storage/indexeddb/mozilla/readonly-transactions.html
+END
+cursor-mutation-objectstore-only-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/blink/!svn/ver/134252/trunk/LayoutTests/storage/indexeddb/mozilla/cursor-mutation-objectstore-only-expected.txt
+END
+cursor-mutation-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/blink/!svn/ver/134252/trunk/LayoutTests/storage/indexeddb/mozilla/cursor-mutation-expected.txt
+END
+create-objectstore-basics.html
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/blink/!svn/ver/112202/trunk/LayoutTests/storage/indexeddb/mozilla/create-objectstore-basics.html
+END
+key-requirements-put-null-key-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/blink/!svn/ver/135424/trunk/LayoutTests/storage/indexeddb/mozilla/key-requirements-put-null-key-expected.txt
+END
+readwrite-transactions.html
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/blink/!svn/ver/112202/trunk/LayoutTests/storage/indexeddb/mozilla/readwrite-transactions.html
+END
+cursor-update-updates-indexes.html
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/blink/!svn/ver/112202/trunk/LayoutTests/storage/indexeddb/mozilla/cursor-update-updates-indexes.html
+END
+indexes.html
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/blink/!svn/ver/112202/trunk/LayoutTests/storage/indexeddb/mozilla/indexes.html
+END
+object-cursors.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/blink/!svn/ver/112202/trunk/LayoutTests/storage/indexeddb/mozilla/object-cursors.html
+END
+object-store-inline-autoincrement-key-added-on-put-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/blink/!svn/ver/134252/trunk/LayoutTests/storage/indexeddb/mozilla/object-store-inline-autoincrement-key-added-on-put-expected.txt
+END
+cursor-mutation.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/blink/!svn/ver/112202/trunk/LayoutTests/storage/indexeddb/mozilla/cursor-mutation.html
+END
+cursor-mutation-objectstore-only.html
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/blink/!svn/ver/112202/trunk/LayoutTests/storage/indexeddb/mozilla/cursor-mutation-objectstore-only.html
+END

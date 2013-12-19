@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libswscale/ppc
+END
+yuv2yuv_altivec.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libswscale/ppc/yuv2yuv_altivec.c
+END
+yuv2rgb_altivec.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libswscale/ppc/yuv2rgb_altivec.c
+END
+swscale_altivec.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libswscale/ppc/swscale_altivec.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/133551/trunk/deps/third_party/ffmpeg/libswscale/ppc/Makefile
+END
+yuv2rgb_altivec.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/133551/trunk/deps/third_party/ffmpeg/libswscale/ppc/yuv2rgb_altivec.h
+END

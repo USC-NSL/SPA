@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/native_client/!svn/ver/10684/trunk/src/native_client/tests/abi_corpus
+END
+corpus_utils.py
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/native_client/!svn/ver/10291/trunk/src/native_client/tests/abi_corpus/corpus_utils.py
+END
+startup_regression_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/native_client/!svn/ver/8986/trunk/src/native_client/tests/abi_corpus/startup_regression_test.py
+END
+validator_regression_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/native_client/!svn/ver/10291/trunk/src/native_client/tests/abi_corpus/validator_regression_test.py
+END
+corpus_errors.py
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/native_client/!svn/ver/10684/trunk/src/native_client/tests/abi_corpus/corpus_errors.py
+END

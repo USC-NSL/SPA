@@ -1,0 +1,215 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/8906/trunk/include/gpu
+END
+GrFontScaler.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/7406/trunk/include/gpu/GrFontScaler.h
+END
+GrConfig.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/8786/trunk/include/gpu/GrConfig.h
+END
+SkGrPixelRef.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/7406/trunk/include/gpu/SkGrPixelRef.h
+END
+GrContextFactory.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/7905/trunk/include/gpu/GrContextFactory.h
+END
+SkGr.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/7362/trunk/include/gpu/SkGr.h
+END
+GrColor.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/8755/trunk/include/gpu/GrColor.h
+END
+SkGpuDevice.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/8859/trunk/include/gpu/SkGpuDevice.h
+END
+GrEffectStage.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/8873/trunk/include/gpu/GrEffectStage.h
+END
+GrTextureAccess.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/8428/trunk/include/gpu/GrTextureAccess.h
+END
+GrGlyph.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/7406/trunk/include/gpu/GrGlyph.h
+END
+GrContext.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/8859/trunk/include/gpu/GrContext.h
+END
+GrPathRendererChain.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/6861/trunk/include/gpu/GrPathRendererChain.h
+END
+GrResource.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/7355/trunk/include/gpu/GrResource.h
+END
+GrSurface.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/8573/trunk/include/gpu/GrSurface.h
+END
+GrKey.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/7406/trunk/include/gpu/GrKey.h
+END
+GrTextContext.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/7929/trunk/include/gpu/GrTextContext.h
+END
+GrEffectUnitTest.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/8369/trunk/include/gpu/GrEffectUnitTest.h
+END
+GrRect.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/7406/trunk/include/gpu/GrRect.h
+END
+GrTexture.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/8573/trunk/include/gpu/GrTexture.h
+END
+GrUserConfig.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/8786/trunk/include/gpu/GrUserConfig.h
+END
+GrTypes.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/8428/trunk/include/gpu/GrTypes.h
+END
+GrTypesPriv.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/8755/trunk/include/gpu/GrTypesPriv.h
+END
+GrNoncopyable.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/7406/trunk/include/gpu/GrNoncopyable.h
+END
+GrDrawEffect.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/8281/trunk/include/gpu/GrDrawEffect.h
+END
+GrPaint.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/8425/trunk/include/gpu/GrPaint.h
+END
+GrTBackendEffectFactory.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/8498/trunk/include/gpu/GrTBackendEffectFactory.h
+END
+GrRefCnt.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/7406/trunk/include/gpu/GrRefCnt.h
+END
+GrClipData.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/7406/trunk/include/gpu/GrClipData.h
+END
+GrRenderTarget.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/8573/trunk/include/gpu/GrRenderTarget.h
+END
+GrAARectRenderer.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/8571/trunk/include/gpu/GrAARectRenderer.h
+END
+GrOvalRenderer.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/8873/trunk/include/gpu/GrOvalRenderer.h
+END
+GrPoint.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/7406/trunk/include/gpu/GrPoint.h
+END
+GrEffect.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/8828/trunk/include/gpu/GrEffect.h
+END
+GrBackendEffectFactory.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/8400/trunk/include/gpu/GrBackendEffectFactory.h
+END
+SkGrTexturePixelRef.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/7406/trunk/include/gpu/SkGrTexturePixelRef.h
+END

@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/662/trunk/src/mod_pywebsocket
+END
+common.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/655/trunk/src/mod_pywebsocket/common.py
+END
+standalone.py
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/662/trunk/src/mod_pywebsocket/standalone.py
+END
+stream.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/646/trunk/src/mod_pywebsocket/stream.py
+END
+_stream_hixie75.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/617/trunk/src/mod_pywebsocket/_stream_hixie75.py
+END
+extensions.py
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/656/trunk/src/mod_pywebsocket/extensions.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/570/trunk/src/mod_pywebsocket/__init__.py
+END
+dispatch.py
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/653/trunk/src/mod_pywebsocket/dispatch.py
+END
+headerparserhandler.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/602/trunk/src/mod_pywebsocket/headerparserhandler.py
+END
+_stream_hybi.py
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/656/trunk/src/mod_pywebsocket/_stream_hybi.py
+END
+mux.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/656/trunk/src/mod_pywebsocket/mux.py
+END
+util.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/629/trunk/src/mod_pywebsocket/util.py
+END
+memorizingfile.py
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/552/trunk/src/mod_pywebsocket/memorizingfile.py
+END
+_stream_base.py
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/523/trunk/src/mod_pywebsocket/_stream_base.py
+END
+http_header_util.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/585/trunk/src/mod_pywebsocket/http_header_util.py
+END
+msgutil.py
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/607/trunk/src/mod_pywebsocket/msgutil.py
+END

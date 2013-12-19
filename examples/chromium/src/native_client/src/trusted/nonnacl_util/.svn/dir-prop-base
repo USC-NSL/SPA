@@ -1,0 +1,28 @@
+K 10
+svn:ignore
+V 547
+nonnacl_util.Makefile
+nonnacl_util.rules
+nonnacl_util.sln
+nonnacl_util.target.mk
+nonnacl_util.vcproj
+nonnacl_util.xcodeproj
+nonnacl_util64.rules
+nonnacl_util64.vcproj
+nonnacl_util_c.rules
+nonnacl_util_c.target.mk
+nonnacl_util_c.vcproj
+nonnacl_util_c64.rules
+nonnacl_util_c64.vcproj
+nonnacl_util_chrome.rules
+nonnacl_util_chrome.target.mk
+nonnacl_util_chrome.vcproj
+nonnacl_util_chrome64.rules
+nonnacl_util_chrome64.vcproj
+sel_ldr_launcher.rules
+sel_ldr_launcher.target.mk
+sel_ldr_launcher.vcproj
+sel_ldr_launcher64.rules
+sel_ldr_launcher64.vcproj
+
+END

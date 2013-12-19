@@ -1,0 +1,13 @@
+K 10
+svn:ignore
+V 90
+utils.rules
+utils.sln
+utils.vcproj
+utils.xcodeproj
+utils.scons
+utils.mk
+utils_main.scons
+
+
+END

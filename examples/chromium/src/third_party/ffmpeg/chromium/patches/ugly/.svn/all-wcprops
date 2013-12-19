@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/chromium/patches/ugly
+END
+01_enable_checked_bitstream.patch
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/133551/trunk/deps/third_party/ffmpeg/chromium/patches/ugly/01_enable_checked_bitstream.patch
+END
+02_compile_with_disabled_features.patch
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/chromium/patches/ugly/02_compile_with_disabled_features.patch
+END
+07_remove_av_gettime_symlink.patch
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/148611/trunk/deps/third_party/ffmpeg/chromium/patches/ugly/07_remove_av_gettime_symlink.patch
+END
+compile_with_no_iconv.patch
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/chromium/patches/ugly/compile_with_no_iconv.patch
+END

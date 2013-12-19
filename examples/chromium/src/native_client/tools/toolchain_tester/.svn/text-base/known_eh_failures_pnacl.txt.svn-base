@@ -1,0 +1,27 @@
+# Unknown runtime failures
+registers1.C arm,O3
+registers1.C x86-64,O3
+
+# compile failure, syntax error (this appears to tests a gcc  extension)
+# so not a biggy
+spec5.C
+# runtime failure: the problem here is that we are throwing an exception
+# during the contruction of an object on the stack, llvm does not seem
+# to call the destructor
+init-temp1.C
+# runtime failure: terminate called after throwing an instance of 'int*'
+# changing the signature from "throw (IntArray)" => "throw (int*)"
+# fixes the problem
+spec9.C
+
+# The following tests use vectors, which PNaCl's ABI checker rejects.
+simd-1.C
+simd-3.C
+
+# ======================================================================
+# NOTE: the tests below fail on a regular gcc as well
+# ======================================================================
+# terminate called after throwing an instance of 'A'
+cast1.C
+# terminate called after throwing an instance of 'int'
+init-temp2.C

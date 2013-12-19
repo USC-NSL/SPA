@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/191917/trunk/tools/swarm_client/tests/trace_inputs
+END
+files2
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/159961/trunk/tools/swarm_client/tests/trace_inputs/files2
+END
+ignored.txt
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/159961/trunk/tools/swarm_client/tests/trace_inputs/ignored.txt
+END
+touch_only.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/159961/trunk/tools/swarm_client/tests/trace_inputs/touch_only.py
+END
+child1.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/159961/trunk/tools/swarm_client/tests/trace_inputs/child1.py
+END
+child2.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/191917/trunk/tools/swarm_client/tests/trace_inputs/child2.py
+END
+test_file.txt
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/159961/trunk/tools/swarm_client/tests/trace_inputs/test_file.txt
+END
+tricky_filename.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/165711/trunk/tools/swarm_client/tests/trace_inputs/tricky_filename.py
+END
+symlink.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/159961/trunk/tools/swarm_client/tests/trace_inputs/symlink.py
+END

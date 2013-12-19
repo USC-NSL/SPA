@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/3623/deps/third_party/openmax/dl/sp/src/test
+END
+test_float_fft.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/3472/deps/third_party/openmax/dl/sp/src/test/test_float_fft.c
+END
+test_rfft32.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/3472/deps/third_party/openmax/dl/sp/src/test/test_rfft32.c
+END
+test_rfft16.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/3472/deps/third_party/openmax/dl/sp/src/test/test_rfft16.c
+END
+test_util.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/3504/deps/third_party/openmax/dl/sp/src/test/test_util.c
+END
+gensig.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/3472/deps/third_party/openmax/dl/sp/src/test/gensig.c
+END
+gensig.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/3467/deps/third_party/openmax/dl/sp/src/test/gensig.h
+END
+test_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/3504/deps/third_party/openmax/dl/sp/src/test/test_util.h
+END
+test_fft32.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/3472/deps/third_party/openmax/dl/sp/src/test/test_fft32.c
+END
+test_float_rfft.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/3472/deps/third_party/openmax/dl/sp/src/test/test_float_rfft.c
+END
+test_fft16.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/3504/deps/third_party/openmax/dl/sp/src/test/test_fft16.c
+END
+compare.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/3504/deps/third_party/openmax/dl/sp/src/test/compare.c
+END
+aligned_ptr.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/3472/deps/third_party/openmax/dl/sp/src/test/aligned_ptr.c
+END
+test_fft.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/3623/deps/third_party/openmax/dl/sp/src/test/test_fft.gyp
+END
+compare.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/3504/deps/third_party/openmax/dl/sp/src/test/compare.h
+END
+test_fft_time.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/3472/deps/third_party/openmax/dl/sp/src/test/test_fft_time.c
+END
+aligned_ptr.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/3467/deps/third_party/openmax/dl/sp/src/test/aligned_ptr.h
+END

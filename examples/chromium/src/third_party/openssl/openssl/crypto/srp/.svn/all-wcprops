@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/crypto/srp
+END
+srp_lcl.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/srp/srp_lcl.h
+END
+srp_grps.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/srp/srp_grps.h
+END
+srp_vfy.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/crypto/srp/srp_vfy.c
+END
+srp.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/srp/srp.h
+END
+srp_lib.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/srp/srp_lib.c
+END

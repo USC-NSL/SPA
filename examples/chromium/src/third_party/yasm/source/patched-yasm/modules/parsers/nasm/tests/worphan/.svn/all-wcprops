@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/167604/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/worphan
+END
+orphanwarn.hex
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/worphan/orphanwarn.hex
+END
+nasm_worphan_test.sh
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/167604/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/worphan/nasm_worphan_test.sh
+END
+Makefile.inc
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/167604/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/worphan/Makefile.inc
+END
+orphanwarn.asm
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/worphan/orphanwarn.asm
+END
+orphanwarn.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/parsers/nasm/tests/worphan/orphanwarn.errwarn
+END

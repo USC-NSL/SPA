@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/167605/trunk/deps/third_party/yasm/patched-yasm/modules/dbgfmts/dwarf2/tests/passwin64
+END
+Makefile.inc
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/167605/trunk/deps/third_party/yasm/patched-yasm/modules/dbgfmts/dwarf2/tests/passwin64/Makefile.inc
+END
+dwarfwin64_testhd.asm
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/dbgfmts/dwarf2/tests/passwin64/dwarfwin64_testhd.asm
+END
+dwarfwin64_testhd.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/!svn/ver/167605/trunk/deps/third_party/yasm/patched-yasm/modules/dbgfmts/dwarf2/tests/passwin64/dwarfwin64_testhd.errwarn
+END
+dwarfwin64_testhd.hex
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/!svn/ver/71296/trunk/deps/third_party/yasm/patched-yasm/modules/dbgfmts/dwarf2/tests/passwin64/dwarfwin64_testhd.hex
+END
+dwarf2_passwin64_test.sh
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/!svn/ver/167605/trunk/deps/third_party/yasm/patched-yasm/modules/dbgfmts/dwarf2/tests/passwin64/dwarf2_passwin64_test.sh
+END

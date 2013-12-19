@@ -1,0 +1,17 @@
+- improve performance by optimizing common sequences of system calls.
+  For example, gettimeofday() can probably safely be made to evaluate lazily.
+
+- for better efficiency, try to find instances of RDTSC in glibc and rewrite
+  them. That would avoid the signal handling, when it is not strictly
+  necessary.
+
+- try to find places where we call any of the unrestricted system calls and
+  avoid instrumenting the code.
+
+- audit error code handling in trusted_thread.cc.
+
+- get rid of preloader and of ELF helper process.
+
+- clean up sandbox_impl.h, maybe create extra helper classes?
+
+- address (or remove) remaining "TODO(markus):" statements.

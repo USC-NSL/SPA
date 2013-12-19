@@ -1,0 +1,311 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/blink/!svn/ver/149351/trunk/Source/core/platform/network
+END
+ResourceLoadTiming.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/blink/!svn/ver/149046/trunk/Source/core/platform/network/ResourceLoadTiming.cpp
+END
+NetworkingContext.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/blink/!svn/ver/148532/trunk/Source/core/platform/network/NetworkingContext.h
+END
+ResourceError.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/blink/!svn/ver/149351/trunk/Source/core/platform/network/ResourceError.cpp
+END
+ResourceHandleClient.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/blink/!svn/ver/149046/trunk/Source/core/platform/network/ResourceHandleClient.cpp
+END
+FormDataBuilder.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/blink/!svn/ver/149218/trunk/Source/core/platform/network/FormDataBuilder.cpp
+END
+MIMEHeader.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/blink/!svn/ver/148532/trunk/Source/core/platform/network/MIMEHeader.h
+END
+ResourceRequest.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/blink/!svn/ver/149061/trunk/Source/core/platform/network/ResourceRequest.h
+END
+ResourceHandleInternal.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/blink/!svn/ver/149046/trunk/Source/core/platform/network/ResourceHandleInternal.h
+END
+ResourceResponse.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/blink/!svn/ver/149061/trunk/Source/core/platform/network/ResourceResponse.cpp
+END
+ResourceLoadInfo.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/blink/!svn/ver/149046/trunk/Source/core/platform/network/ResourceLoadInfo.h
+END
+ResourceHandle.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/blink/!svn/ver/149046/trunk/Source/core/platform/network/ResourceHandle.h
+END
+BlobData.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/blink/!svn/ver/149220/trunk/Source/core/platform/network/BlobData.cpp
+END
+ProxyServer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/blink/!svn/ver/149046/trunk/Source/core/platform/network/ProxyServer.cpp
+END
+BlobRegistryProxy.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/blink/!svn/ver/149061/trunk/Source/core/platform/network/BlobRegistryProxy.cpp
+END
+BlobRegistry.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/blink/!svn/ver/148532/trunk/Source/core/platform/network/BlobRegistry.h
+END
+HTTPParsers.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/blink/!svn/ver/149080/trunk/Source/core/platform/network/HTTPParsers.cpp
+END
+ParsedContentType.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/blink/!svn/ver/148532/trunk/Source/core/platform/network/ParsedContentType.h
+END
+SocketStreamHandleInternal.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/blink/!svn/ver/149046/trunk/Source/core/platform/network/SocketStreamHandleInternal.h
+END
+SocketStreamError.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/blink/!svn/ver/148972/trunk/Source/core/platform/network/SocketStreamError.h
+END
+DNS.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/blink/!svn/ver/149046/trunk/Source/core/platform/network/DNS.cpp
+END
+SocketStreamHandle.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/blink/!svn/ver/149061/trunk/Source/core/platform/network/SocketStreamHandle.h
+END
+HTTPHeaderMap.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/blink/!svn/ver/149046/trunk/Source/core/platform/network/HTTPHeaderMap.cpp
+END
+HTTPRequest.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/blink/!svn/ver/149061/trunk/Source/core/platform/network/HTTPRequest.h
+END
+ResourceHandleTypes.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/blink/!svn/ver/148532/trunk/Source/core/platform/network/ResourceHandleTypes.h
+END
+ResourceLoadPriority.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/blink/!svn/ver/148532/trunk/Source/core/platform/network/ResourceLoadPriority.h
+END
+NetworkStateNotifier.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/blink/!svn/ver/148532/trunk/Source/core/platform/network/NetworkStateNotifier.h
+END
+ResourceRequest.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/blink/!svn/ver/149061/trunk/Source/core/platform/network/ResourceRequest.cpp
+END
+MIMEHeader.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/blink/!svn/ver/149061/trunk/Source/core/platform/network/MIMEHeader.cpp
+END
+FormData.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/blink/!svn/ver/149061/trunk/Source/core/platform/network/FormData.h
+END
+ResourceHandle.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/blink/!svn/ver/149061/trunk/Source/core/platform/network/ResourceHandle.cpp
+END
+ResourceLoadTiming.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/blink/!svn/ver/148532/trunk/Source/core/platform/network/ResourceLoadTiming.h
+END
+HTTPStatusCodes.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/blink/!svn/ver/148532/trunk/Source/core/platform/network/HTTPStatusCodes.h
+END
+ResourceError.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/blink/!svn/ver/149351/trunk/Source/core/platform/network/ResourceError.h
+END
+BlobRegistry.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/blink/!svn/ver/149046/trunk/Source/core/platform/network/BlobRegistry.cpp
+END
+ResourceHandleClient.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/blink/!svn/ver/148836/trunk/Source/core/platform/network/ResourceHandleClient.h
+END
+FormDataBuilder.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/blink/!svn/ver/149046/trunk/Source/core/platform/network/FormDataBuilder.h
+END
+ParsedContentType.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/blink/!svn/ver/149046/trunk/Source/core/platform/network/ParsedContentType.cpp
+END
+ResourceResponse.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/blink/!svn/ver/149220/trunk/Source/core/platform/network/ResourceResponse.h
+END
+ProxyServer.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/blink/!svn/ver/148532/trunk/Source/core/platform/network/ProxyServer.h
+END
+BlobData.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/blink/!svn/ver/149061/trunk/Source/core/platform/network/BlobData.h
+END
+BlobRegistryProxy.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/blink/!svn/ver/149046/trunk/Source/core/platform/network/BlobRegistryProxy.h
+END
+SocketStreamError.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/blink/!svn/ver/149046/trunk/Source/core/platform/network/SocketStreamError.cpp
+END
+MIMESniffing.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/blink/!svn/ver/148532/trunk/Source/core/platform/network/MIMESniffing.h
+END
+SocketStreamHandle.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/blink/!svn/ver/149061/trunk/Source/core/platform/network/SocketStreamHandle.cpp
+END
+HTTPParsers.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/blink/!svn/ver/149080/trunk/Source/core/platform/network/HTTPParsers.h
+END
+SocketStreamHandleClient.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/blink/!svn/ver/148858/trunk/Source/core/platform/network/SocketStreamHandleClient.h
+END
+HTTPRequest.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/blink/!svn/ver/149046/trunk/Source/core/platform/network/HTTPRequest.cpp
+END
+DNS.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/blink/!svn/ver/148972/trunk/Source/core/platform/network/DNS.h
+END
+NetworkStateNotifier.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/blink/!svn/ver/149046/trunk/Source/core/platform/network/NetworkStateNotifier.cpp
+END
+HTTPHeaderMap.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/blink/!svn/ver/148532/trunk/Source/core/platform/network/HTTPHeaderMap.h
+END
+FormData.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/blink/!svn/ver/149293/trunk/Source/core/platform/network/FormData.cpp
+END

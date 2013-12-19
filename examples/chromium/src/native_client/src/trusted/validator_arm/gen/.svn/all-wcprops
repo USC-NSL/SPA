@@ -1,0 +1,323 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/native_client/!svn/ver/11091/trunk/src/native_client/src/trusted/validator_arm/gen
+END
+arm32_decode_signed_multiply_signed_and_unsigned_divide_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/native_client/!svn/ver/10980/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_signed_multiply_signed_and_unsigned_divide_tests.cc
+END
+arm32_decode_multiply_and_multiply_accumulate_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/native_client/!svn/ver/10980/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_multiply_and_multiply_accumulate_tests.cc
+END
+arm32_decode_media_instructions_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/native_client/!svn/ver/10980/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_media_instructions_tests.cc
+END
+arm32_decode_coprocessor_instructions_and_supervisor_call_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/native_client/!svn/ver/11091/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_coprocessor_instructions_and_supervisor_call_tests.cc
+END
+arm32_decode_baselines_2.cc
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/native_client/!svn/ver/11091/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_baselines_2.cc
+END
+arm32_decode_baselines_1.h
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/native_client/!svn/ver/11091/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_baselines_1.h
+END
+arm32_decode_baselines_2.h
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/native_client/!svn/ver/11091/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_baselines_2.h
+END
+arm32_decode_transfer_between_arm_core_and_extension_register_8_16_and_32_bit_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 170
+/native_client/!svn/ver/10980/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_transfer_between_arm_core_and_extension_register_8_16_and_32_bit_tests.cc
+END
+arm32_decode_baselines_3.h
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/native_client/!svn/ver/11091/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_baselines_3.h
+END
+arm32_decode_packing_unpacking_saturation_and_reversal_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/native_client/!svn/ver/10980/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_packing_unpacking_saturation_and_reversal_tests.cc
+END
+arm32_decode_advanced_simd_element_or_structure_load_store_instructions_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 164
+/native_client/!svn/ver/11091/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_advanced_simd_element_or_structure_load_store_instructions_tests.cc
+END
+arm32_decode_branch_branch_with_link_and_block_data_transfer_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/native_client/!svn/ver/11091/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_branch_branch_with_link_and_block_data_transfer_tests.cc
+END
+arm32_decode_simd_dp_2misc_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/native_client/!svn/ver/10980/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_simd_dp_2misc_tests.cc
+END
+arm32_decode_actuals.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/native_client/!svn/ver/10675/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_actuals.h
+END
+arm32_decode_synchronization_primitives_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/native_client/!svn/ver/11091/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_synchronization_primitives_tests.cc
+END
+arm32_decode_transfer_between_arm_core_and_extension_registers_64_bit_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/native_client/!svn/ver/10980/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_transfer_between_arm_core_and_extension_registers_64_bit_tests.cc
+END
+arm32_decode_named_classes.h
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/native_client/!svn/ver/11031/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_named_classes.h
+END
+arm32_decode_extra_load_store_instructions_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/native_client/!svn/ver/11091/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_extra_load_store_instructions_tests.cc
+END
+arm32_decode_baselines.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/native_client/!svn/ver/10597/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_baselines.h
+END
+arm32_decode_other_floating_point_data_processing_instructions_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/native_client/!svn/ver/10980/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_other_floating_point_data_processing_instructions_tests.cc
+END
+arm32_decode_miscellaneous_instructions_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/native_client/!svn/ver/11091/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_miscellaneous_instructions_tests.cc
+END
+arm32_decode_halfword_multiply_and_multiply_accumulate_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/native_client/!svn/ver/10980/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_halfword_multiply_and_multiply_accumulate_tests.cc
+END
+arm32_decode_named_decoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/native_client/!svn/ver/11031/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_named_decoder.h
+END
+arm32_decode_advanced_simd_data_processing_instructions_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/native_client/!svn/ver/10980/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_advanced_simd_data_processing_instructions_tests.cc
+END
+arm32_decode_unconditional_instructions_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/native_client/!svn/ver/10980/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_unconditional_instructions_tests.cc
+END
+arm32_decode_saturating_addition_and_subtraction_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/native_client/!svn/ver/10980/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_saturating_addition_and_subtraction_tests.cc
+END
+arm32_decode_memory_hints_advanced_simd_instructions_and_miscellaneous_instructions_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 176
+/native_client/!svn/ver/11091/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_memory_hints_advanced_simd_instructions_and_miscellaneous_instructions_tests.cc
+END
+arm32_decode_actuals_2.cc
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/native_client/!svn/ver/11091/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_actuals_2.cc
+END
+arm32_decode_data_processing_and_miscellaneous_instructions_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/native_client/!svn/ver/10980/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_data_processing_and_miscellaneous_instructions_tests.cc
+END
+arm32_decode.cc
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/native_client/!svn/ver/11031/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode.cc
+END
+arm32_decode.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/native_client/!svn/ver/11031/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode.h
+END
+arm32_decode_named.cc
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/native_client/!svn/ver/10937/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_named.cc
+END
+arm32_decode_parallel_addition_and_subtraction_unsigned_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/native_client/!svn/ver/10980/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_parallel_addition_and_subtraction_unsigned_tests.cc
+END
+arm32_decode_simd_dp_1imm_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/native_client/!svn/ver/10980/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_simd_dp_1imm_tests.cc
+END
+arm32_decode_baselines_1.cc
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/native_client/!svn/ver/11091/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_baselines_1.cc
+END
+arm32_decode_baselines_3.cc
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/native_client/!svn/ver/11091/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_baselines_3.cc
+END
+arm32_decode_msr_immediate_and_hints_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/native_client/!svn/ver/10980/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_msr_immediate_and_hints_tests.cc
+END
+arm32_decode_simd_dp_3same_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/native_client/!svn/ver/10980/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_simd_dp_3same_tests.cc
+END
+arm32_decode_data_processing_register_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/native_client/!svn/ver/10980/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_data_processing_register_tests.cc
+END
+arm32_decode_extension_register_load_store_instructions_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/native_client/!svn/ver/11091/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_extension_register_load_store_instructions_tests.cc
+END
+arm32_decode_named_bases.h
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/native_client/!svn/ver/10901/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_named_bases.h
+END
+arm32_decode_data_processing_immediate_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/native_client/!svn/ver/10980/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_data_processing_immediate_tests.cc
+END
+arm32_decode_data_processing_register_shifted_register_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/native_client/!svn/ver/10980/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_data_processing_register_shifted_register_tests.cc
+END
+arm32_decode_floating_point_data_processing_instructions_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/native_client/!svn/ver/10980/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_floating_point_data_processing_instructions_tests.cc
+END
+arm32_decode_simd_dp_2scalar_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/native_client/!svn/ver/10980/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_simd_dp_2scalar_tests.cc
+END
+arm32_decode_load_store_word_and_unsigned_byte_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/native_client/!svn/ver/11091/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_load_store_word_and_unsigned_byte_tests.cc
+END
+arm32_decode_simd_dp_3diff_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/native_client/!svn/ver/10980/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_simd_dp_3diff_tests.cc
+END
+arm32_decode_actuals_1.cc
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/native_client/!svn/ver/11091/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_actuals_1.cc
+END
+arm32_decode_ARMv7_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/native_client/!svn/ver/10901/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_ARMv7_tests.cc
+END
+arm32_decode_actuals_1.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/native_client/!svn/ver/11091/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_actuals_1.h
+END
+arm32_decode_actuals_2.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/native_client/!svn/ver/11091/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_actuals_2.h
+END
+arm32_decode_simd_dp_2shift_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/native_client/!svn/ver/10980/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_simd_dp_2shift_tests.cc
+END
+arm32_decode_parallel_addition_and_subtraction_signed_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/native_client/!svn/ver/10980/trunk/src/native_client/src/trusted/validator_arm/gen/arm32_decode_parallel_addition_and_subtraction_signed_tests.cc
+END

@@ -1,0 +1,821 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/native_client/!svn/ver/11168/trunk/src/native_client/src/trusted/validator_x86/testdata/64
+END
+rex_not_last.test
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/rex_not_last.test
+END
+mov-lea-rsp.test
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/native_client/!svn/ver/10586/trunk/src/native_client/src/trusted/validator_x86/testdata/64/mov-lea-rsp.test
+END
+xchg_with_special_regs.test
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/native_client/!svn/ver/9947/trunk/src/native_client/src/trusted/validator_x86/testdata/64/xchg_with_special_regs.test
+END
+rex_invalid.test
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/rex_invalid.test
+END
+mov-lea-rbp-bad-3.test
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/native_client/!svn/ver/9968/trunk/src/native_client/src/trusted/validator_x86/testdata/64/mov-lea-rbp-bad-3.test
+END
+stosd67.test
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/stosd67.test
+END
+wrmsr.test
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/wrmsr.test
+END
+mv_ebp_add_rbp_r15.test
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/mv_ebp_add_rbp_r15.test
+END
+ncdis_examples.input
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/native_client/!svn/ver/9422/trunk/src/native_client/src/trusted/validator_x86/testdata/64/ncdis_examples.input
+END
+0f18.test
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/0f18.test
+END
+add_cs_gs_prefix.test
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/add_cs_gs_prefix.test
+END
+xchg_xadd_mem.test
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/native_client/!svn/ver/9945/trunk/src/native_client/src/trusted/validator_x86/testdata/64/xchg_xadd_mem.test
+END
+lea.test
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/lea.test
+END
+add_rsp_r15.test
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/add_rsp_r15.test
+END
+cpuid.test
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/cpuid.test
+END
+jump_outside.test
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/jump_outside.test
+END
+crc32.test
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/native_client/!svn/ver/11084/trunk/src/native_client/src/trusted/validator_x86/testdata/64/crc32.test
+END
+string_rep_data16.test
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/native_client/!svn/ver/10586/trunk/src/native_client/src/trusted/validator_x86/testdata/64/string_rep_data16.test
+END
+sse4data16.test
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/native_client/!svn/ver/9951/trunk/src/native_client/src/trusted/validator_x86/testdata/64/sse4data16.test
+END
+mov-lea-rbp.test
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/native_client/!svn/ver/10586/trunk/src/native_client/src/trusted/validator_x86/testdata/64/mov-lea-rbp.test
+END
+sub-add-rsp.test
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/native_client/!svn/ver/10586/trunk/src/native_client/src/trusted/validator_x86/testdata/64/sub-add-rsp.test
+END
+inc_dec.test
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/native_client/!svn/ver/10586/trunk/src/native_client/src/trusted/validator_x86/testdata/64/inc_dec.test
+END
+fs_use.test
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/fs_use.test
+END
+push-memoff.test
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/native_client/!svn/ver/10586/trunk/src/native_client/src/trusted/validator_x86/testdata/64/push-memoff.test
+END
+mv_ebp_alone.test
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/native_client/!svn/ver/9968/trunk/src/native_client/src/trusted/validator_x86/testdata/64/mv_ebp_alone.test
+END
+mv_ebp_add_crossing.test
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/mv_ebp_add_crossing.test
+END
+addrex2.test
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/addrex2.test
+END
+indirect_jmp_masked.test
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/indirect_jmp_masked.test
+END
+valid_lea_store.test
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/native_client/!svn/ver/10586/trunk/src/native_client/src/trusted/validator_x86/testdata/64/valid_lea_store.test
+END
+direct-jump-32.test
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/native_client/!svn/ver/10586/trunk/src/native_client/src/trusted/validator_x86/testdata/64/direct-jump-32.test
+END
+nacl_illegal.test
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/nacl_illegal.test
+END
+segment_assign.test
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/segment_assign.test
+END
+stosdno67.test
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/stosdno67.test
+END
+mov-lea-rbp-bad-5.test
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/mov-lea-rbp-bad-5.test
+END
+direct-jump-16.test
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/direct-jump-16.test
+END
+AhNotSubRsp.test
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/native_client/!svn/ver/10567/trunk/src/native_client/src/trusted/validator_x86/testdata/64/AhNotSubRsp.test
+END
+invalid_width_index.test
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/invalid_width_index.test
+END
+bswap.test
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/bswap.test
+END
+movsbw.test
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/movsbw.test
+END
+segment_store.test
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/segment_store.test
+END
+ambig-segment.test
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/ambig-segment.test
+END
+stosd-bad.test
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/stosd-bad.test
+END
+dup-prefix.test
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/dup-prefix.test
+END
+segment_aligned.test
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/segment_aligned.test
+END
+inc67.test
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/inc67.test
+END
+x87.test
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/x87.test
+END
+rdmsr.test
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/rdmsr.test
+END
+jump_not_atomic.test
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/native_client/!svn/ver/10230/trunk/src/native_client/src/trusted/validator_x86/testdata/64/jump_not_atomic.test
+END
+cmpxchg.test
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/cmpxchg.test
+END
+lea-add-rsp.test
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/native_client/!svn/ver/10586/trunk/src/native_client/src/trusted/validator_x86/testdata/64/lea-add-rsp.test
+END
+sse.test
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/native_client/!svn/ver/10586/trunk/src/native_client/src/trusted/validator_x86/testdata/64/sse.test
+END
+lzcnt.test
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/lzcnt.test
+END
+call1.test
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/call1.test
+END
+prefix-3.test
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/prefix-3.test
+END
+extensions.test
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/native_client/!svn/ver/10586/trunk/src/native_client/src/trusted/validator_x86/testdata/64/extensions.test
+END
+tzcnt.test
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/tzcnt.test
+END
+rip-relative.test
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/rip-relative.test
+END
+bsf-mask.test
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/bsf-mask.test
+END
+mov-lea-rbp-bad-2.test
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/native_client/!svn/ver/9968/trunk/src/native_client/src/trusted/validator_x86/testdata/64/mov-lea-rbp-bad-2.test
+END
+direct-call-32.test
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/native_client/!svn/ver/10586/trunk/src/native_client/src/trusted/validator_x86/testdata/64/direct-call-32.test
+END
+direct-call-16.test
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/native_client/!svn/ver/9968/trunk/src/native_client/src/trusted/validator_x86/testdata/64/direct-call-16.test
+END
+rep_tests.test
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/rep_tests.test
+END
+call_not_aligned.test
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/native_client/!svn/ver/10586/trunk/src/native_client/src/trusted/validator_x86/testdata/64/call_not_aligned.test
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/native_client/!svn/ver/9653/trunk/src/native_client/src/trusted/validator_x86/testdata/64/README
+END
+bsr-mask.test
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/bsr-mask.test
+END
+push.test
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/native_client/!svn/ver/9968/trunk/src/native_client/src/trusted/validator_x86/testdata/64/push.test
+END
+return.test
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/native_client/!svn/ver/10586/trunk/src/native_client/src/trusted/validator_x86/testdata/64/return.test
+END
+call_not_aligned_16.test
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/native_client/!svn/ver/10586/trunk/src/native_client/src/trusted/validator_x86/testdata/64/call_not_aligned_16.test
+END
+call_long.test
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/native_client/!svn/ver/10586/trunk/src/native_client/src/trusted/validator_x86/testdata/64/call_long.test
+END
+sub-rsp.test
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/sub-rsp.test
+END
+ncdis_examples.internal
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/native_client/!svn/ver/9492/trunk/src/native_client/src/trusted/validator_x86/testdata/64/ncdis_examples.internal
+END
+stosd.test
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/native_client/!svn/ver/10586/trunk/src/native_client/src/trusted/validator_x86/testdata/64/stosd.test
+END
+lea-rbp-rsp-order.test
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/native_client/!svn/ver/10586/trunk/src/native_client/src/trusted/validator_x86/testdata/64/lea-rbp-rsp-order.test
+END
+shl_alias.test
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/shl_alias.test
+END
+mmx.test
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/mmx.test
+END
+tests_from_pydfa.test
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/native_client/!svn/ver/10586/trunk/src/native_client/src/trusted/validator_x86/testdata/64/tests_from_pydfa.test
+END
+update-rsp-b32.test
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/native_client/!svn/ver/10586/trunk/src/native_client/src/trusted/validator_x86/testdata/64/update-rsp-b32.test
+END
+ncdis_examples.vinternal
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/native_client/!svn/ver/9492/trunk/src/native_client/src/trusted/validator_x86/testdata/64/ncdis_examples.vinternal
+END
+movs_test.test
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/native_client/!svn/ver/9968/trunk/src/native_client/src/trusted/validator_x86/testdata/64/movs_test.test
+END
+change-subregs.test
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/change-subregs.test
+END
+jump_reg_mismatch.test
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/native_client/!svn/ver/10409/trunk/src/native_client/src/trusted/validator_x86/testdata/64/jump_reg_mismatch.test
+END
+jump_underflow.test
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/jump_underflow.test
+END
+bad66.test
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/bad66.test
+END
+mov-esi-nop-use.test
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/native_client/!svn/ver/10586/trunk/src/native_client/src/trusted/validator_x86/testdata/64/mov-esi-nop-use.test
+END
+data66prefix.test
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/native_client/!svn/ver/9983/trunk/src/native_client/src/trusted/validator_x86/testdata/64/data66prefix.test
+END
+lea-rsp.test
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/lea-rsp.test
+END
+add_mult_prefix.test
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/native_client/!svn/ver/9899/trunk/src/native_client/src/trusted/validator_x86/testdata/64/add_mult_prefix.test
+END
+mov-lea-rbp-bad-4.test
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/native_client/!svn/ver/9968/trunk/src/native_client/src/trusted/validator_x86/testdata/64/mov-lea-rbp-bad-4.test
+END
+jump_atomic.test
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/native_client/!svn/ver/10586/trunk/src/native_client/src/trusted/validator_x86/testdata/64/jump_atomic.test
+END
+mov_rbp_2_rsp.test
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/mov_rbp_2_rsp.test
+END
+size_error.test
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/native_client/!svn/ver/9968/trunk/src/native_client/src/trusted/validator_x86/testdata/64/size_error.test
+END
+stack_regs.test
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/native_client/!svn/ver/11063/trunk/src/native_client/src/trusted/validator_x86/testdata/64/stack_regs.test
+END
+call-ex.test
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/native_client/!svn/ver/10586/trunk/src/native_client/src/trusted/validator_x86/testdata/64/call-ex.test
+END
+direct-cond-jump-32.test
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/native_client/!svn/ver/10586/trunk/src/native_client/src/trusted/validator_x86/testdata/64/direct-cond-jump-32.test
+END
+test_alias.test
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/test_alias.test
+END
+direct-cond-jump-16.test
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/direct-cond-jump-16.test
+END
+ud2.test
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/ud2.test
+END
+movlps-ex.test
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/movlps-ex.test
+END
+fpu.test
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/native_client/!svn/ver/10586/trunk/src/native_client/src/trusted/validator_x86/testdata/64/fpu.test
+END
+call0.test
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/native_client/!svn/ver/10586/trunk/src/native_client/src/trusted/validator_x86/testdata/64/call0.test
+END
+prefix-2.test
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/native_client/!svn/ver/10021/trunk/src/native_client/src/trusted/validator_x86/testdata/64/prefix-2.test
+END
+or_sp_sandboxing.test
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/native_client/!svn/ver/10586/trunk/src/native_client/src/trusted/validator_x86/testdata/64/or_sp_sandboxing.test
+END
+call_aligned.test
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/native_client/!svn/ver/10586/trunk/src/native_client/src/trusted/validator_x86/testdata/64/call_aligned.test
+END
+restricted_registers.test
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/native_client/!svn/ver/10000/trunk/src/native_client/src/trusted/validator_x86/testdata/64/restricted_registers.test
+END
+mov-lea-rbp-bad-1.test
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/native_client/!svn/ver/9968/trunk/src/native_client/src/trusted/validator_x86/testdata/64/mov-lea-rbp-bad-1.test
+END
+addrex.test
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/addrex.test
+END
+jump_not_atomic_1.test
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/native_client/!svn/ver/10230/trunk/src/native_client/src/trusted/validator_x86/testdata/64/jump_not_atomic_1.test
+END
+prefix-single.test
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/native_client/!svn/ver/10230/trunk/src/native_client/src/trusted/validator_x86/testdata/64/prefix-single.test
+END
+maskmov_test.test
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/native_client/!svn/ver/9958/trunk/src/native_client/src/trusted/validator_x86/testdata/64/maskmov_test.test
+END
+pop-rbp.test
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/pop-rbp.test
+END
+nops.test
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/native_client/!svn/ver/9968/trunk/src/native_client/src/trusted/validator_x86/testdata/64/nops.test
+END
+invalid_base.test
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/invalid_base.test
+END
+incno67.test
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/incno67.test
+END
+update-rsp.test
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/native_client/!svn/ver/10586/trunk/src/native_client/src/trusted/validator_x86/testdata/64/update-rsp.test
+END
+stubseq.test
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/stubseq.test
+END
+hlt.test
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/hlt.test
+END
+strings.test
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/strings.test
+END
+valid_base_only.test
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/valid_base_only.test
+END
+call_short.test
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/native_client/!svn/ver/10586/trunk/src/native_client/src/trusted/validator_x86/testdata/64/call_short.test
+END
+test_insts.test
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/test_insts.test
+END
+rbp67.test
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/rbp67.test
+END
+ncdis_examples.vinput
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/native_client/!svn/ver/9492/trunk/src/native_client/src/trusted/validator_x86/testdata/64/ncdis_examples.vinput
+END
+legacy.test
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/native_client/!svn/ver/11168/trunk/src/native_client/src/trusted/validator_x86/testdata/64/legacy.test
+END
+bt.test
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/native_client/!svn/ver/9917/trunk/src/native_client/src/trusted/validator_x86/testdata/64/bt.test
+END
+read_const_ptr.test
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/read_const_ptr.test
+END
+jmp0.test
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/native_client/!svn/ver/10586/trunk/src/native_client/src/trusted/validator_x86/testdata/64/jmp0.test
+END
+rip67.test
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/rip67.test
+END
+jmp-16.test
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/jmp-16.test
+END
+indirect_jmp_not_masked.test
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/indirect_jmp_not_masked.test
+END
+movsxd.test
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/native_client/!svn/ver/9971/trunk/src/native_client/src/trusted/validator_x86/testdata/64/movsxd.test
+END
+eax_zero_extend.test
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/native_client/!svn/ver/10942/trunk/src/native_client/src/trusted/validator_x86/testdata/64/eax_zero_extend.test
+END
+3DNow.test
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/native_client/!svn/ver/10586/trunk/src/native_client/src/trusted/validator_x86/testdata/64/3DNow.test
+END
+mov_esp_add_rsp_r15.test
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/native_client/!svn/ver/10586/trunk/src/native_client/src/trusted/validator_x86/testdata/64/mov_esp_add_rsp_r15.test
+END
+invalid_base_store.test
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/invalid_base_store.test
+END
+valid_and_store.test
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/native_client/!svn/ver/10586/trunk/src/native_client/src/trusted/validator_x86/testdata/64/valid_and_store.test
+END
+jump_overflow.test
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/native_client/!svn/ver/9919/trunk/src/native_client/src/trusted/validator_x86/testdata/64/jump_overflow.test
+END

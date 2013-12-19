@@ -1,0 +1,191 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/native_client/!svn/ver/11168/trunk/src/native_client/src/trusted/validator/x86/decoder
+END
+nc_inst_state_internal.h
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/native_client/!svn/ver/7712/trunk/src/native_client/src/trusted/validator/x86/decoder/nc_inst_state_internal.h
+END
+nc_inst_state.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/native_client/!svn/ver/7637/trunk/src/native_client/src/trusted/validator/x86/decoder/nc_inst_state.h
+END
+nc_inst_trans.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/native_client/!svn/ver/8009/trunk/src/native_client/src/trusted/validator/x86/decoder/nc_inst_trans.c
+END
+nc_inst_trans.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/native_client/!svn/ver/6412/trunk/src/native_client/src/trusted/validator/x86/decoder/nc_inst_trans.h
+END
+ncval_x86_decoder.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/native_client/!svn/ver/10585/trunk/src/native_client/src/trusted/validator/x86/decoder/ncval_x86_decoder.gyp
+END
+ncopcode_operand_flag.enum
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/native_client/!svn/ver/7952/trunk/src/native_client/src/trusted/validator/x86/decoder/ncopcode_operand_flag.enum
+END
+ncopcode_desc_verbose.c
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/native_client/!svn/ver/6743/trunk/src/native_client/src/trusted/validator/x86/decoder/ncopcode_desc_verbose.c
+END
+ncopcode_opcode_flags.enum
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/native_client/!svn/ver/9492/trunk/src/native_client/src/trusted/validator/x86/decoder/ncopcode_opcode_flags.enum
+END
+nc_inst_state_tests.cc
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/native_client/!svn/ver/6699/trunk/src/native_client/src/trusted/validator/x86/decoder/nc_inst_state_tests.cc
+END
+nc_decode_tables_types.h
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/native_client/!svn/ver/6412/trunk/src/native_client/src/trusted/validator/x86/decoder/nc_decode_tables_types.h
+END
+nc_inst_state_statics.c
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/native_client/!svn/ver/9477/trunk/src/native_client/src/trusted/validator/x86/decoder/nc_inst_state_statics.c
+END
+ncopcode_desc.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/native_client/!svn/ver/6743/trunk/src/native_client/src/trusted/validator/x86/decoder/ncopcode_desc.c
+END
+ncopcode_operand_kind.enum
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/native_client/!svn/ver/7954/trunk/src/native_client/src/trusted/validator/x86/decoder/ncopcode_operand_kind.enum
+END
+ncopcode_desc_inl.c
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/native_client/!svn/ver/6743/trunk/src/native_client/src/trusted/validator/x86/decoder/ncopcode_desc_inl.c
+END
+ncdis_decode_tables.c
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/native_client/!svn/ver/6679/trunk/src/native_client/src/trusted/validator/x86/decoder/ncdis_decode_tables.c
+END
+ncopcode_desc.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/native_client/!svn/ver/6412/trunk/src/native_client/src/trusted/validator/x86/decoder/ncopcode_desc.h
+END
+ncop_exps.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/native_client/!svn/ver/8010/trunk/src/native_client/src/trusted/validator/x86/decoder/ncop_exps.c
+END
+ncop_exps_inl.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/native_client/!svn/ver/7688/trunk/src/native_client/src/trusted/validator/x86/decoder/ncop_exps_inl.c
+END
+build.scons
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/native_client/!svn/ver/10119/trunk/src/native_client/src/trusted/validator/x86/decoder/build.scons
+END
+nc_decode_tables.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/native_client/!svn/ver/6412/trunk/src/native_client/src/trusted/validator/x86/decoder/nc_decode_tables.h
+END
+ncop_exps.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/native_client/!svn/ver/7688/trunk/src/native_client/src/trusted/validator/x86/decoder/ncop_exps.h
+END
+ncdis_decode_tables.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/native_client/!svn/ver/10585/trunk/src/native_client/src/trusted/validator/x86/decoder/ncdis_decode_tables.gyp
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/native_client/!svn/ver/7534/trunk/src/native_client/src/trusted/validator/x86/decoder/README
+END
+ncop_expr_node_flag.enum
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/native_client/!svn/ver/7954/trunk/src/native_client/src/trusted/validator/x86/decoder/ncop_expr_node_flag.enum
+END
+nc_inst_iter.c
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/native_client/!svn/ver/6743/trunk/src/native_client/src/trusted/validator/x86/decoder/nc_inst_iter.c
+END
+nc_inst_iter_inl.c
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/native_client/!svn/ver/6743/trunk/src/native_client/src/trusted/validator/x86/decoder/nc_inst_iter_inl.c
+END
+nc_inst_iter.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/native_client/!svn/ver/6412/trunk/src/native_client/src/trusted/validator/x86/decoder/nc_inst_iter.h
+END
+ncopcode_prefix.enum
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/native_client/!svn/ver/6412/trunk/src/native_client/src/trusted/validator/x86/decoder/ncopcode_prefix.enum
+END
+ncop_expr_node_kind.enum
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/native_client/!svn/ver/7733/trunk/src/native_client/src/trusted/validator/x86/decoder/ncop_expr_node_kind.enum
+END
+ncopcode_insts.enum
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/native_client/!svn/ver/9278/trunk/src/native_client/src/trusted/validator/x86/decoder/ncopcode_insts.enum
+END
+nc_inst_state.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/native_client/!svn/ver/7676/trunk/src/native_client/src/trusted/validator/x86/decoder/nc_inst_state.c
+END

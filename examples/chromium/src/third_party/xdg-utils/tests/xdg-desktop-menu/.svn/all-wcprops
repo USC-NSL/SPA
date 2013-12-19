@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-desktop-menu
+END
+t.10-simple_menu_item_user_install
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-desktop-menu/t.10-simple_menu_item_user_install
+END
+t.00-apply_generic
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-desktop-menu/t.00-apply_generic
+END
+t.22-menu_system_install
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-desktop-menu/t.22-menu_system_install
+END
+t.01-menu_user_forceupdate
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-desktop-menu/t.01-menu_user_forceupdate
+END
+t.15-menu_advanced_install
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-desktop-menu/t.15-menu_advanced_install
+END
+t.23-menu_system_uninstall
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-desktop-menu/t.23-menu_system_uninstall
+END
+t.20-simple_menu_item_system_install
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-desktop-menu/t.20-simple_menu_item_system_install
+END
+t.02-menu_system_as_nonroot
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-desktop-menu/t.02-menu_system_as_nonroot
+END
+t.12-menu_user_install
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-desktop-menu/t.12-menu_user_install
+END
+t.03-menu_system_forceupdate
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-desktop-menu/t.03-menu_system_forceupdate
+END
+t.14-menu_install_category
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-desktop-menu/t.14-menu_install_category
+END
+t.13-menu_user_uninstall
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-desktop-menu/t.13-menu_user_uninstall
+END

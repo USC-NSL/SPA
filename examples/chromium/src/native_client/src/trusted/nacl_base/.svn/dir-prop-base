@@ -1,0 +1,13 @@
+K 10
+svn:ignore
+V 143
+nacl_base.Makefile
+nacl_base.rules
+nacl_base.sln
+nacl_base.target.mk
+nacl_base.vcproj
+nacl_base.xcodeproj
+nacl_base64.rules
+nacl_base64.vcproj
+
+END

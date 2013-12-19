@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/41/trunk/packages/deb
+END
+libvcddec-dev.install
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/7/trunk/packages/deb/libvcddec-dev.install
+END
+control
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/35/trunk/packages/deb/control
+END
+compat
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/35/trunk/packages/deb/compat
+END
+libvcdcom-dev.install
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/7/trunk/packages/deb/libvcdcom-dev.install
+END
+libvcddec0.install
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/7/trunk/packages/deb/libvcddec0.install
+END
+open-vcdiff0.install
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/7/trunk/packages/deb/open-vcdiff0.install
+END
+changelog
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/41/trunk/packages/deb/changelog
+END
+libvcdcom0.install
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/7/trunk/packages/deb/libvcdcom0.install
+END
+docs
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/7/trunk/packages/deb/docs
+END
+copyright
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/35/trunk/packages/deb/copyright
+END
+rules
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/35/trunk/packages/deb/rules
+END
+libvcdenc-dev.install
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/39/trunk/packages/deb/libvcdenc-dev.install
+END
+libvcdenc0.install
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/7/trunk/packages/deb/libvcdenc0.install
+END

@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/native_client/!svn/ver/11149/trunk/src/native_client/src/trusted/service_runtime/arch/x86_64
+END
+service_runtime_x86_64.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/native_client/!svn/ver/10944/trunk/src/native_client/src/trusted/service_runtime/arch/x86_64/service_runtime_x86_64.gyp
+END
+nacl_syscall_64.S
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/native_client/!svn/ver/10872/trunk/src/native_client/src/trusted/service_runtime/arch/x86_64/nacl_syscall_64.S
+END
+tramp_64.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/native_client/!svn/ver/10872/trunk/src/native_client/src/trusted/service_runtime/arch/x86_64/tramp_64.h
+END
+sel_rt_64.c
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/native_client/!svn/ver/10726/trunk/src/native_client/src/trusted/service_runtime/arch/x86_64/sel_rt_64.c
+END
+sel_ldr_x86_64.c
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/native_client/!svn/ver/10862/trunk/src/native_client/src/trusted/service_runtime/arch/x86_64/sel_ldr_x86_64.c
+END
+fxsaverstor.S
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/native_client/!svn/ver/10532/trunk/src/native_client/src/trusted/service_runtime/arch/x86_64/fxsaverstor.S
+END
+sel_rt_64.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/native_client/!svn/ver/10726/trunk/src/native_client/src/trusted/service_runtime/arch/x86_64/sel_rt_64.h
+END
+nacl_tls_64.c
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/native_client/!svn/ver/11149/trunk/src/native_client/src/trusted/service_runtime/arch/x86_64/nacl_tls_64.c
+END
+nacl_switch_to_app_64.c
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/native_client/!svn/ver/10590/trunk/src/native_client/src/trusted/service_runtime/arch/x86_64/nacl_switch_to_app_64.c
+END
+tramp_64.S
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/native_client/!svn/ver/10862/trunk/src/native_client/src/trusted/service_runtime/arch/x86_64/tramp_64.S
+END
+nacl_text_pad_test.S
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/native_client/!svn/ver/10736/trunk/src/native_client/src/trusted/service_runtime/arch/x86_64/nacl_text_pad_test.S
+END
+sel_addrspace_win_x86_64.c
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/native_client/!svn/ver/10397/trunk/src/native_client/src/trusted/service_runtime/arch/x86_64/sel_addrspace_win_x86_64.c
+END
+fnstcw.S
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/native_client/!svn/ver/10532/trunk/src/native_client/src/trusted/service_runtime/arch/x86_64/fnstcw.S
+END
+nacl_app_64.c
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/native_client/!svn/ver/10196/trunk/src/native_client/src/trusted/service_runtime/arch/x86_64/nacl_app_64.c
+END
+nacl_switch_64.S
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/native_client/!svn/ver/10869/trunk/src/native_client/src/trusted/service_runtime/arch/x86_64/nacl_switch_64.S
+END
+nacl_signal_64.h
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/native_client/!svn/ver/9505/trunk/src/native_client/src/trusted/service_runtime/arch/x86_64/nacl_signal_64.h
+END
+sel_addrspace_posix_x86_64.c
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/native_client/!svn/ver/10769/trunk/src/native_client/src/trusted/service_runtime/arch/x86_64/sel_addrspace_posix_x86_64.c
+END
+nacl_switch_unwind_win.asm
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/native_client/!svn/ver/10178/trunk/src/native_client/src/trusted/service_runtime/arch/x86_64/nacl_switch_unwind_win.asm
+END

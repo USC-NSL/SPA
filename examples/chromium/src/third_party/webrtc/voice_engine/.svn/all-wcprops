@@ -1,0 +1,407 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/3913/stable/webrtc/voice_engine
+END
+voe_video_sync_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/voe_video_sync_impl.h
+END
+monitor_module.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/monitor_module.h
+END
+voe_call_report_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/voe_call_report_impl.cc
+END
+output_mixer_internal.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/2974/stable/webrtc/voice_engine/output_mixer_internal.h
+END
+level_indicator.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/level_indicator.cc
+END
+channel_manager.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/channel_manager.h
+END
+output_mixer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/output_mixer.cc
+END
+voice_engine.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/2974/stable/webrtc/voice_engine/voice_engine.gyp
+END
+transmit_mixer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/transmit_mixer.cc
+END
+voe_audio_processing_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/2974/stable/webrtc/voice_engine/voe_audio_processing_unittest.cc
+END
+level_indicator.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/level_indicator.h
+END
+voe_base_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/voe_base_impl.h
+END
+voe_codec_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/voe_codec_impl.cc
+END
+voe_codec_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/3304/stable/webrtc/voice_engine/voe_codec_impl.h
+END
+dtmf_inband_queue.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/dtmf_inband_queue.cc
+END
+channel.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/channel.h
+END
+voe_external_media_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/voe_external_media_impl.cc
+END
+voe_file_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/2974/stable/webrtc/voice_engine/voe_file_impl.h
+END
+voe_external_media_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/voe_external_media_impl.h
+END
+voe_neteq_stats_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/3838/stable/webrtc/voice_engine/voe_neteq_stats_impl.cc
+END
+voice_engine_core.gypi
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/voice_engine_core.gypi
+END
+voe_codec_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/3610/stable/webrtc/voice_engine/voe_codec_unittest.cc
+END
+voe_encryption_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/3838/stable/webrtc/voice_engine/voe_encryption_impl.h
+END
+voe_hardware_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/voe_hardware_impl.cc
+END
+voe_hardware_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/3838/stable/webrtc/voice_engine/voe_hardware_impl.h
+END
+voe_video_sync_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/voe_video_sync_impl.cc
+END
+monitor_module.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/monitor_module.cc
+END
+output_mixer_internal.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/3402/stable/webrtc/voice_engine/output_mixer_internal.cc
+END
+voe_volume_control_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/voe_volume_control_impl.cc
+END
+voe_base_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/voe_base_impl.cc
+END
+dtmf_inband.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/dtmf_inband.h
+END
+channel.cc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/3913/stable/webrtc/voice_engine/channel.cc
+END
+voe_base_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/3610/stable/webrtc/voice_engine/voe_base_unittest.cc
+END
+voe_encryption_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/3838/stable/webrtc/voice_engine/voe_encryption_impl.cc
+END
+voice_engine_defines.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/3838/stable/webrtc/voice_engine/voice_engine_defines.h
+END
+statistics.cc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/statistics.cc
+END
+channel_manager_base.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/channel_manager_base.h
+END
+shared_data.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/shared_data.cc
+END
+shared_data.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/shared_data.h
+END
+output_mixer_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/3402/stable/webrtc/voice_engine/output_mixer_unittest.cc
+END
+transmit_mixer.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/transmit_mixer.h
+END
+voe_file_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/voe_file_impl.cc
+END
+dtmf_inband_queue.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/dtmf_inband_queue.h
+END
+voice_engine_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/voice_engine_impl.cc
+END
+voice_engine_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/voice_engine_impl.h
+END
+voe_network_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/voe_network_impl.cc
+END
+voe_network_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/voe_network_impl.h
+END
+voe_dtmf_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/3676/stable/webrtc/voice_engine/voe_dtmf_impl.h
+END
+channel_manager_base.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/channel_manager_base.cc
+END
+statistics.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/statistics.h
+END
+channel_manager.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/channel_manager.cc
+END
+Android.mk
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/2974/stable/webrtc/voice_engine/Android.mk
+END
+voe_call_report_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/2974/stable/webrtc/voice_engine/voe_call_report_impl.h
+END
+utility.cc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/utility.cc
+END
+voe_volume_control_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/2974/stable/webrtc/voice_engine/voe_volume_control_impl.h
+END
+transmit_mixer_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/2974/stable/webrtc/voice_engine/transmit_mixer_unittest.cc
+END
+utility.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/utility.h
+END
+dtmf_inband.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/dtmf_inband.cc
+END
+output_mixer.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/3840/stable/webrtc/voice_engine/output_mixer.h
+END
+channel_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/2974/stable/webrtc/voice_engine/channel_unittest.cc
+END
+voe_dtmf_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/3676/stable/webrtc/voice_engine/voe_dtmf_impl.cc
+END
+voe_neteq_stats_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/2974/stable/webrtc/voice_engine/voe_neteq_stats_impl.h
+END
+voe_audio_processing_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/3838/stable/webrtc/voice_engine/voe_audio_processing_impl.cc
+END
+voe_rtp_rtcp_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/3561/stable/webrtc/voice_engine/voe_rtp_rtcp_impl.cc
+END
+voe_rtp_rtcp_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/3304/stable/webrtc/voice_engine/voe_rtp_rtcp_impl.h
+END
+voe_audio_processing_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/2974/stable/webrtc/voice_engine/voe_audio_processing_impl.h
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/2974/stable/webrtc/voice_engine/OWNERS
+END

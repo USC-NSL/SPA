@@ -1,0 +1,713 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/158118/trunk/deps/third_party/icu46/source/test/cintltst
+END
+nccbtst.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/nccbtst.c
+END
+Makefile.in
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/Makefile.in
+END
+cformtst.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cformtst.c
+END
+trietest.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/trietest.c
+END
+utexttst.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/158118/trunk/deps/third_party/icu46/source/test/cintltst/utexttst.c
+END
+cintltst.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cintltst.c
+END
+nccbtst.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/nccbtst.h
+END
+cformtst.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cformtst.h
+END
+cucdapi.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cucdapi.c
+END
+cturtst.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cturtst.c
+END
+cucdtst.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cucdtst.c
+END
+cintltst.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cintltst.h
+END
+cnormtst.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cnormtst.c
+END
+ucnvseltst.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/ucnvseltst.c
+END
+cloctst.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cloctst.c
+END
+currtest.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/currtest.c
+END
+cutiltst.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cutiltst.c
+END
+encoll.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/encoll.c
+END
+cturtst.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cturtst.h
+END
+cucdapi.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cucdapi.h
+END
+cnormtst.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cnormtst.h
+END
+sprpdata.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/sprpdata.c
+END
+ucnvseltst.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/ucnvseltst.h
+END
+usrchtst.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/93281/trunk/deps/third_party/icu46/source/test/cintltst/usrchtst.c
+END
+cloctst.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cloctst.h
+END
+encoll.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/encoll.h
+END
+nucnvtst.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/nucnvtst.c
+END
+cbiapts.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cbiapts.c
+END
+cbkittst.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cbkittst.c
+END
+sorttest.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/sorttest.c
+END
+tracetst.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/tracetst.c
+END
+nucnvtst.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/nucnvtst.h
+END
+cbiapts.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cbiapts.h
+END
+cnmdptst.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cnmdptst.c
+END
+cnumtst.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cnumtst.c
+END
+cdtrgtst.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cdtrgtst.c
+END
+cnmdptst.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cnmdptst.h
+END
+cnumtst.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cnumtst.h
+END
+cdtrgtst.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cdtrgtst.h
+END
+cconvtst.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cconvtst.c
+END
+cbiditst.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cbiditst.c
+END
+cdattst.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cdattst.c
+END
+reapits.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/reapits.c
+END
+ccapitst.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/ccapitst.c
+END
+calldata.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/calldata.h
+END
+cbiditst.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cbiditst.h
+END
+cfintst.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cfintst.c
+END
+cdattst.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cdattst.h
+END
+calltest.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/calltest.c
+END
+usrchdat.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/usrchdat.c
+END
+nfsprep.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/nfsprep.c
+END
+cintltst.vcxproj
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cintltst.vcxproj
+END
+ccapitst.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/ccapitst.h
+END
+cfintst.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cfintst.h
+END
+nfsprep.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/nfsprep.h
+END
+udatpg_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/udatpg_test.c
+END
+ncnvfbts.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/ncnvfbts.c
+END
+uenumtst.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/uenumtst.c
+END
+cintltst.vcxproj.filters
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cintltst.vcxproj.filters
+END
+cldrtest.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cldrtest.c
+END
+trie2test.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/trie2test.c
+END
+spooftest.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/spooftest.c
+END
+cdetst.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cdetst.c
+END
+cposxtst.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cposxtst.c
+END
+ncnvfbts.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/ncnvfbts.h
+END
+putiltst.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/putiltst.c
+END
+utmstest.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/utmstest.c
+END
+cdtdptst.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cdtdptst.c
+END
+cg7coll.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cg7coll.c
+END
+cdetst.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cdetst.h
+END
+custrtst.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/custrtst.c
+END
+ccaltst.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/ccaltst.c
+END
+hpmufn.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/hpmufn.c
+END
+cdtdptst.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cdtdptst.h
+END
+ucsdetst.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/ucsdetst.c
+END
+cmsccoll.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cmsccoll.c
+END
+cg7coll.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cg7coll.h
+END
+citertst.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/93281/trunk/deps/third_party/icu46/source/test/cintltst/citertst.c
+END
+ccaltst.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/ccaltst.h
+END
+cbididat.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cbididat.c
+END
+cestst.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cestst.c
+END
+creststn.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/72751/trunk/deps/third_party/icu46/source/test/cintltst/creststn.c
+END
+citertst.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/93281/trunk/deps/third_party/icu46/source/test/cintltst/citertst.h
+END
+cstrcase.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cstrcase.c
+END
+cestst.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cestst.h
+END
+creststn.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/creststn.h
+END
+cstrtest.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cstrtest.c
+END
+eurocreg.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/eurocreg.c
+END
+chashtst.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/chashtst.c
+END
+utf8tst.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/utf8tst.c
+END
+custrtrn.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/custrtrn.c
+END
+spreptst.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/spreptst.c
+END
+callcoll.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/callcoll.c
+END
+cctest.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cctest.c
+END
+ccolltst.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/ccolltst.c
+END
+crestst.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/crestst.c
+END
+callcoll.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/callcoll.h
+END
+ccolltst.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/ccolltst.h
+END
+crestst.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/crestst.h
+END
+ncnvtst.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/ncnvtst.c
+END
+utf16tst.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/utf16tst.c
+END
+bocu1tst.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/bocu1tst.c
+END
+cfrtst.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cfrtst.c
+END
+capitst.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/capitst.c
+END
+cjaptst.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cjaptst.c
+END
+ccurrtst.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/ccurrtst.c
+END
+cfrtst.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cfrtst.h
+END
+colutil.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/colutil.c
+END
+idnatest.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/idnatest.c
+END
+capitst.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/capitst.h
+END
+cjaptst.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cjaptst.h
+END
+ccurrtst.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/ccurrtst.h
+END
+stdnmtst.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/stdnmtst.c
+END
+usettest.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/usettest.c
+END
+utransts.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/utransts.c
+END
+cmsgtst.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cmsgtst.c
+END
+cmsgtst.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/cmsgtst.h
+END
+udatatst.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68397/trunk/deps/third_party/icu46/source/test/cintltst/udatatst.c
+END

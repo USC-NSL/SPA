@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/native_client/!svn/ver/10209/trunk/src/native_client/tests/math
+END
+float_math.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/native_client/!svn/ver/10209/trunk/src/native_client/tests/math/float_math.c
+END
+nacl.scons
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/native_client/!svn/ver/8262/trunk/src/native_client/tests/math/nacl.scons
+END
+sincos_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/native_client/!svn/ver/8262/trunk/src/native_client/tests/math/sincos_test.c
+END
+sincos_test.stdout
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/native_client/!svn/ver/8262/trunk/src/native_client/tests/math/sincos_test.stdout
+END

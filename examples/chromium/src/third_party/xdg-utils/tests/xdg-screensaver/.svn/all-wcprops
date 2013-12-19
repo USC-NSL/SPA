@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-screensaver
+END
+t.00-apply_generic
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-screensaver/t.00-apply_generic
+END
+t.01-screensave_status
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-screensaver/t.01-screensave_status
+END
+t.02-screensave_suspend_basic
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-screensaver/t.02-screensave_suspend_basic
+END
+t.03-screensave_resume_basic
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-screensaver/t.03-screensave_resume_basic
+END
+t.11-screensave_reset
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-screensaver/t.11-screensave_reset
+END
+t.12-screensave_lock
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-screensaver/t.12-screensave_lock
+END
+t.10-screensave_activate
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-screensaver/t.10-screensave_activate
+END

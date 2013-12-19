@@ -1,0 +1,155 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/ppc
+END
+fmtconvert_altivec.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/ppc/fmtconvert_altivec.c
+END
+h264_qpel_template.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/ppc/h264_qpel_template.c
+END
+asm.S
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/122313/trunk/deps/third_party/ffmpeg/libavcodec/ppc/asm.S
+END
+dsputil_altivec.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/ppc/dsputil_altivec.h
+END
+h264chroma_init.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/ppc/h264chroma_init.c
+END
+int_altivec.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/ppc/int_altivec.c
+END
+h264_qpel.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/ppc/h264_qpel.c
+END
+vc1dsp_altivec.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/ppc/vc1dsp_altivec.c
+END
+h264chroma_template.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/ppc/h264chroma_template.c
+END
+gmc_altivec.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/ppc/gmc_altivec.c
+END
+videodsp_ppc.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/ppc/videodsp_ppc.c
+END
+mathops.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/122313/trunk/deps/third_party/ffmpeg/libavcodec/ppc/mathops.h
+END
+vorbisdsp_altivec.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/ppc/vorbisdsp_altivec.c
+END
+vp3dsp_altivec.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/ppc/vp3dsp_altivec.c
+END
+mpegvideo_altivec.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/ppc/mpegvideo_altivec.c
+END
+dsputil_ppc.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/ppc/dsputil_ppc.c
+END
+fft_altivec.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/148611/trunk/deps/third_party/ffmpeg/libavcodec/ppc/fft_altivec.c
+END
+fdct_altivec.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/ppc/fdct_altivec.c
+END
+fft_altivec_s.S
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/122313/trunk/deps/third_party/ffmpeg/libavcodec/ppc/fft_altivec_s.S
+END
+idct_altivec.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/ppc/idct_altivec.c
+END
+h264_altivec.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/ppc/h264_altivec.c
+END
+dsputil_altivec.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/ppc/dsputil_altivec.c
+END
+vp8dsp_altivec.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/162873/trunk/deps/third_party/ffmpeg/libavcodec/ppc/vp8dsp_altivec.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/ppc/Makefile
+END
+mpegaudiodec_altivec.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/ppc/mpegaudiodec_altivec.c
+END

@@ -1,0 +1,149 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/mips
+END
+mpegaudiodsp_mips_float.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/148611/trunk/deps/third_party/ffmpeg/libavcodec/mips/mpegaudiodsp_mips_float.c
+END
+celp_filters_mips.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavcodec/mips/celp_filters_mips.c
+END
+acelp_filters_mips.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavcodec/mips/acelp_filters_mips.c
+END
+ac3dsp_mips.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/mips/ac3dsp_mips.c
+END
+fft_mips.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavcodec/mips/fft_mips.c
+END
+fft_init_table.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/162873/trunk/deps/third_party/ffmpeg/libavcodec/mips/fft_init_table.c
+END
+amrwbdec_mips.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavcodec/mips/amrwbdec_mips.c
+END
+fmtconvert_mips.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavcodec/mips/fmtconvert_mips.c
+END
+mathops.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavcodec/mips/mathops.h
+END
+acelp_vectors_mips.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavcodec/mips/acelp_vectors_mips.c
+END
+amrwbdec_mips.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/148611/trunk/deps/third_party/ffmpeg/libavcodec/mips/amrwbdec_mips.h
+END
+aacsbr_mips.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/mips/aacsbr_mips.c
+END
+celp_math_mips.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavcodec/mips/celp_math_mips.c
+END
+compute_antialias_fixed.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavcodec/mips/compute_antialias_fixed.h
+END
+sbrdsp_mips.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/mips/sbrdsp_mips.c
+END
+aacpsdsp_mips.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/mips/aacpsdsp_mips.c
+END
+mpegaudiodsp_mips_fixed.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/148611/trunk/deps/third_party/ffmpeg/libavcodec/mips/mpegaudiodsp_mips_fixed.c
+END
+aacsbr_mips.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/mips/aacsbr_mips.h
+END
+aacdec_mips.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/mips/aacdec_mips.c
+END
+lsp_mips.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/148611/trunk/deps/third_party/ffmpeg/libavcodec/mips/lsp_mips.h
+END
+compute_antialias_float.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavcodec/mips/compute_antialias_float.h
+END
+fft_table.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/162873/trunk/deps/third_party/ffmpeg/libavcodec/mips/fft_table.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/mips/Makefile
+END
+aacdec_mips.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/mips/aacdec_mips.h
+END

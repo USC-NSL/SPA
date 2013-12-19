@@ -1,0 +1,17 @@
+# -*- python -*-
+# Copyright 2012 The Native Client Authors.  All rights reserved.
+# Use of this source code is governed by a BSD-style license that can
+# be found in the LICENSE file.
+
+Import('env')
+
+valgrind = env.ComponentObject(
+    'valgrind_annotations.o',
+    '${MAIN_DIR}/src/untrusted/valgrind/dynamic_annotations.c')
+
+nexe = env.ComponentProgram(
+    'futex_test', ['futex_test.c'] + valgrind,
+    EXTRA_LIBS=['${NONIRT_LIBS}', '${PTHREAD_LIBS}'])
+
+node = env.CommandSelLdrTestNacl('futex_test.out', nexe)
+env.AddNodeToTestSuite(node, ['small_tests'], 'run_futex_test')

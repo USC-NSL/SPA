@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/native_client/!svn/ver/10969/trunk/src/native_client/src/trusted/nonnacl_util
+END
+sel_ldr_launcher_standalone.cc
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/native_client/!svn/ver/10777/trunk/src/native_client/src/trusted/nonnacl_util/sel_ldr_launcher_standalone.cc
+END
+build.scons
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/native_client/!svn/ver/10969/trunk/src/native_client/src/trusted/nonnacl_util/build.scons
+END
+nonnacl_util.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/native_client/!svn/ver/10969/trunk/src/native_client/src/trusted/nonnacl_util/nonnacl_util.gyp
+END
+sel_ldr_launcher_base.cc
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/native_client/!svn/ver/10777/trunk/src/native_client/src/trusted/nonnacl_util/sel_ldr_launcher_base.cc
+END
+sel_ldr_launcher_zygote_base.h
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/native_client/!svn/ver/10969/trunk/src/native_client/src/trusted/nonnacl_util/sel_ldr_launcher_zygote_base.h
+END
+sel_ldr_launcher.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/native_client/!svn/ver/10969/trunk/src/native_client/src/trusted/nonnacl_util/sel_ldr_launcher.h
+END
+nonnacl_util.gypi
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/native_client/!svn/ver/9496/trunk/src/native_client/src/trusted/nonnacl_util/nonnacl_util.gypi
+END
+launcher_factory.cc
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/native_client/!svn/ver/10969/trunk/src/native_client/src/trusted/nonnacl_util/launcher_factory.cc
+END
+sel_ldr_launcher_zygote.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/native_client/!svn/ver/10969/trunk/src/native_client/src/trusted/nonnacl_util/sel_ldr_launcher_zygote.h
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/native_client/!svn/ver/519/trunk/src/native_client/src/trusted/nonnacl_util/README
+END
+launcher_factory.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/native_client/!svn/ver/10969/trunk/src/native_client/src/trusted/nonnacl_util/launcher_factory.h
+END

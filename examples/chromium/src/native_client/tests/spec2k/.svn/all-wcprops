@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/native_client/!svn/ver/11157/trunk/src/native_client/tests/spec2k
+END
+emit_perf_log.sh
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/native_client/!svn/ver/10979/trunk/src/native_client/tests/spec2k/emit_perf_log.sh
+END
+Makefile.common
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/native_client/!svn/ver/11157/trunk/src/native_client/tests/spec2k/Makefile.common
+END
+run_all.sh
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/native_client/!svn/ver/10979/trunk/src/native_client/tests/spec2k/run_all.sh
+END
+compile_repeater.sh
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/native_client/!svn/ver/6627/trunk/src/native_client/tests/spec2k/compile_repeater.sh
+END
+extract_timings.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/native_client/!svn/ver/6706/trunk/src/native_client/tests/spec2k/extract_timings.py
+END
+specdiff.sh
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/native_client/!svn/ver/9086/trunk/src/native_client/tests/spec2k/specdiff.sh
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/native_client/!svn/ver/10476/trunk/src/native_client/tests/spec2k/README
+END

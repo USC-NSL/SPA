@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/native_client/!svn/ver/10196/trunk/src/native_client/src/shared/platform/linux
+END
+nacl_semaphore.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/native_client/!svn/ver/10196/trunk/src/native_client/src/shared/platform/linux/nacl_semaphore.c
+END
+nacl_host_dir_types.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/native_client/!svn/ver/10196/trunk/src/native_client/src/shared/platform/linux/nacl_host_dir_types.h
+END
+nacl_semaphore.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/native_client/!svn/ver/10196/trunk/src/native_client/src/shared/platform/linux/nacl_semaphore.h
+END
+nacl_clock.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/native_client/!svn/ver/7671/trunk/src/native_client/src/shared/platform/linux/nacl_clock.c
+END
+nacl_host_dir.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/native_client/!svn/ver/9892/trunk/src/native_client/src/shared/platform/linux/nacl_host_dir.c
+END
+lock.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/native_client/!svn/ver/5269/trunk/src/native_client/src/shared/platform/linux/lock.h
+END

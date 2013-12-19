@@ -1,0 +1,80 @@
+10
+
+dir
+3913
+http://webrtc.googlecode.com/svn/stable/webrtc/modules/video_coding/codecs
+http://webrtc.googlecode.com/svn
+
+
+
+2013-04-29T13:18:23.798305Z
+3913
+mflodman@webrtc.org
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+4adac7df-926f-26a2-2b94-8c16560cd09d
+
+test
+dir
+
+tools
+dir
+
+interface
+dir
+
+test_framework
+dir
+
+vp8
+dir
+
+OWNERS
+file
+
+
+
+
+2012-10-27T08:02:33.000000Z
+dc48c23ad81faeedcd879a7013047dbf
+2012-10-23T14:25:30.445092Z
+2974
+niklas.enbom@webrtc.org
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+79
+
+i420
+dir
+

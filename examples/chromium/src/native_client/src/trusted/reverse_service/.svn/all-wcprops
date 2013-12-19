@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/native_client/!svn/ver/10969/trunk/src/native_client/src/trusted/reverse_service
+END
+reverse_service.cc
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/native_client/!svn/ver/10969/trunk/src/native_client/src/trusted/reverse_service/reverse_service.cc
+END
+manifest_rpc.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/native_client/!svn/ver/5671/trunk/src/native_client/src/trusted/reverse_service/manifest_rpc.h
+END
+reverse_service.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/native_client/!svn/ver/10969/trunk/src/native_client/src/trusted/reverse_service/reverse_service.h
+END
+build.scons
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/native_client/!svn/ver/9766/trunk/src/native_client/src/trusted/reverse_service/build.scons
+END
+reverse_service_c.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/native_client/!svn/ver/10969/trunk/src/native_client/src/trusted/reverse_service/reverse_service_c.h
+END
+reverse_control_rpc.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/native_client/!svn/ver/10969/trunk/src/native_client/src/trusted/reverse_service/reverse_control_rpc.h
+END
+reverse_service.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/native_client/!svn/ver/10585/trunk/src/native_client/src/trusted/reverse_service/reverse_service.gyp
+END
+reverse_service_c.c
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/native_client/!svn/ver/10969/trunk/src/native_client/src/trusted/reverse_service/reverse_service_c.c
+END

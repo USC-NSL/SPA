@@ -1,0 +1,2693 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test
+END
+test_math.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_math.py
+END
+test_csv.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_csv.py
+END
+test_extcall.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_extcall.py
+END
+test_urllib2_localnet.py
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_urllib2_localnet.py
+END
+test_optparse.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_optparse.py
+END
+test_cl.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_cl.py
+END
+test_future5.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_future5.py
+END
+test_codecs.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_codecs.py
+END
+regrtest.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/regrtest.py
+END
+empty.vbs
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/Lib/test/empty.vbs
+END
+test_gl.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_gl.py
+END
+test_robotparser.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_robotparser.py
+END
+test_xmlrpc.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_xmlrpc.py
+END
+doctest_aliases.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/doctest_aliases.py
+END
+test_pickle.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_pickle.py
+END
+test_repr.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_repr.py
+END
+test_code.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_code.py
+END
+badsyntax_future3.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/badsyntax_future3.py
+END
+test_pkgimport.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_pkgimport.py
+END
+test_binhex.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_binhex.py
+END
+test_fpformat.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_fpformat.py
+END
+pydoc_mod.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/pydoc_mod.py
+END
+test_bsddb.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_bsddb.py
+END
+test_pep352.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_pep352.py
+END
+test_linuxaudiodev.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_linuxaudiodev.py
+END
+test_symtable.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_symtable.py
+END
+test_exceptions.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_exceptions.py
+END
+test_difflib_expect.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/Lib/test/test_difflib_expect.html
+END
+test_sundry.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_sundry.py
+END
+test_md5.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_md5.py
+END
+test_univnewlines.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_univnewlines.py
+END
+test_tokenize.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_tokenize.py
+END
+test_warnings.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_warnings.py
+END
+test_tuple.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_tuple.py
+END
+test_descrtut.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_descrtut.py
+END
+regex_tests.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/regex_tests.py
+END
+test__locale.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test__locale.py
+END
+test_global.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_global.py
+END
+test_mutex.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_mutex.py
+END
+pydocfodder.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/pydocfodder.py
+END
+test_cmd.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_cmd.py
+END
+testimgr.uue
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/Lib/test/testimgr.uue
+END
+test_io.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_io.py
+END
+test_ctypes.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_ctypes.py
+END
+test_mimetools.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_mimetools.py
+END
+test_gdbm.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_gdbm.py
+END
+test_dumbdbm.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_dumbdbm.py
+END
+test_smtplib.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_smtplib.py
+END
+test_imaplib.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_imaplib.py
+END
+test_importhooks.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_importhooks.py
+END
+test_traceback.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_traceback.py
+END
+threaded_import_hangers.py
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/threaded_import_hangers.py
+END
+test_dict.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_dict.py
+END
+test_asyncore.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_asyncore.py
+END
+test_macostools.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_macostools.py
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/Lib/test/README.txt
+END
+test_ucn.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_ucn.py
+END
+warning_tests.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/warning_tests.py
+END
+test_new.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_new.py
+END
+test_set.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_set.py
+END
+buffer_tests.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/buffer_tests.py
+END
+test_descr.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_descr.py
+END
+keycert.pem
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/Lib/test/keycert.pem
+END
+test_crypt.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_crypt.py
+END
+test_ssl.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_ssl.py
+END
+test_frozen.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_frozen.py
+END
+test_bufio.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_bufio.py
+END
+test_threadedtempfile.py
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_threadedtempfile.py
+END
+test_winsound.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_winsound.py
+END
+test_complex.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_complex.py
+END
+test_hmac.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_hmac.py
+END
+greyrgb.uue
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/Lib/test/greyrgb.uue
+END
+test_generators.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_generators.py
+END
+test_list.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_list.py
+END
+test_pep263.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_pep263.py
+END
+test_quopri.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_quopri.py
+END
+badsyntax_future9.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/badsyntax_future9.py
+END
+test_fork1.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_fork1.py
+END
+test_pep277.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_pep277.py
+END
+randv2_32.pck
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/Lib/test/randv2_32.pck
+END
+test_doctest2.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_doctest2.py
+END
+floating_points.txt
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/Lib/test/floating_points.txt
+END
+test_softspace.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_softspace.py
+END
+test_wait3.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_wait3.py
+END
+test_xmllib.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_xmllib.py
+END
+badkey.pem
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/Lib/test/badkey.pem
+END
+test_opcodes.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_opcodes.py
+END
+test_strftime.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_strftime.py
+END
+test_ntpath.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_ntpath.py
+END
+test_kqueue.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_kqueue.py
+END
+test_isinstance.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_isinstance.py
+END
+tokenize_tests.txt
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/Lib/test/tokenize_tests.txt
+END
+ssl_key.pem
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/Lib/test/ssl_key.pem
+END
+test_site.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_site.py
+END
+test_inspect.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_inspect.py
+END
+test_ioctl.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_ioctl.py
+END
+badsyntax_future4.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/badsyntax_future4.py
+END
+test_bsddb185.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_bsddb185.py
+END
+test_contains.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_contains.py
+END
+test_array.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_array.py
+END
+test_dis.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_dis.py
+END
+test_dummy_threading.py
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_dummy_threading.py
+END
+test_doctest4.txt
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/Lib/test/test_doctest4.txt
+END
+test_codecmaps_hk.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_codecmaps_hk.py
+END
+double_const.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/double_const.py
+END
+test_pkg.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_pkg.py
+END
+test_complex_args.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_complex_args.py
+END
+test_itertools.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_itertools.py
+END
+test_distutils.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_distutils.py
+END
+test_imp.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_imp.py
+END
+test_unicode.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_unicode.py
+END
+test_resource.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_resource.py
+END
+test_socket.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_socket.py
+END
+test_genericpath.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_genericpath.py
+END
+test_uu.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_uu.py
+END
+test_int.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_int.py
+END
+test_future1.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_future1.py
+END
+test_docxmlrpc.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_docxmlrpc.py
+END
+test_getargs.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_getargs.py
+END
+infinite_reload.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/infinite_reload.py
+END
+sgml_input.html
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/Lib/test/sgml_input.html
+END
+test_atexit.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_atexit.py
+END
+test_fileinput.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_fileinput.py
+END
+test_dl.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_dl.py
+END
+test_getopt.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_getopt.py
+END
+pystone.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/pystone.py
+END
+test_transformer.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_transformer.py
+END
+test_applesingle.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_applesingle.py
+END
+test_cProfile.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_cProfile.py
+END
+test_float.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_float.py
+END
+sortperf.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/sortperf.py
+END
+test_pow.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_pow.py
+END
+test_int_literal.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_int_literal.py
+END
+test_poll.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_poll.py
+END
+test_string.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_string.py
+END
+test_shutil.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_shutil.py
+END
+test_genexps.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_genexps.py
+END
+test_sha.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_sha.py
+END
+test_with.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_with.py
+END
+test_py3kwarn.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_py3kwarn.py
+END
+test_file.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_file.py
+END
+test_shlex.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_shlex.py
+END
+testtar.tar
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/Lib/test/testtar.tar
+END
+test_logging.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_logging.py
+END
+test_email.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_email.py
+END
+test_threadsignals.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_threadsignals.py
+END
+test_gc.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_gc.py
+END
+test_codecmaps_kr.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_codecmaps_kr.py
+END
+test_pyclbr.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_pyclbr.py
+END
+test_print.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_print.py
+END
+test_heapq.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_heapq.py
+END
+test_StringIO.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_StringIO.py
+END
+test_long.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_long.py
+END
+test_profile.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_profile.py
+END
+test_dbm.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_dbm.py
+END
+test_typechecks.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_typechecks.py
+END
+test___future__.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test___future__.py
+END
+ssl_cert.pem
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/Lib/test/ssl_cert.pem
+END
+test_gzip.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_gzip.py
+END
+test_charmapcodec.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_charmapcodec.py
+END
+test_future.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_future.py
+END
+test_cmd_line.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_cmd_line.py
+END
+test_imgfile.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_imgfile.py
+END
+test_functools.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_functools.py
+END
+test_longexp.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_longexp.py
+END
+test_colorsys.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_colorsys.py
+END
+test_runpy.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_runpy.py
+END
+test_pstats.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_pstats.py
+END
+test_os.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_os.py
+END
+test_unpack.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_unpack.py
+END
+test_plistlib.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_plistlib.py
+END
+test_future_builtins.py
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_future_builtins.py
+END
+test_aepack.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_aepack.py
+END
+test_errno.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_errno.py
+END
+test_compare.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_compare.py
+END
+test_syntax.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_syntax.py
+END
+test_tarfile.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_tarfile.py
+END
+test_fractions.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_fractions.py
+END
+test_compile.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_compile.py
+END
+test_wait4.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_wait4.py
+END
+test_nis.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_nis.py
+END
+test_parser.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_parser.py
+END
+test_exception_variations.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_exception_variations.py
+END
+list_tests.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/list_tests.py
+END
+test_openpty.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_openpty.py
+END
+test_bastion.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_bastion.py
+END
+test_audioop.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_audioop.py
+END
+test_iterlen.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_iterlen.py
+END
+test_doctest.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_doctest.py
+END
+test_httplib.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_httplib.py
+END
+test_rfc822.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_rfc822.py
+END
+test_thread.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_thread.py
+END
+test_json.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_json.py
+END
+test_hashlib.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_hashlib.py
+END
+test_capi.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_capi.py
+END
+test_mimetypes.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_mimetypes.py
+END
+zipdir.zip
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/Lib/test/zipdir.zip
+END
+badsyntax_future5.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/badsyntax_future5.py
+END
+test_pydoc.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_pydoc.py
+END
+outstanding_bugs.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/outstanding_bugs.py
+END
+test_pep247.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_pep247.py
+END
+test_tcl.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_tcl.py
+END
+test_xml_etree.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_xml_etree.py
+END
+test_sort.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_sort.py
+END
+test_defaultdict.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_defaultdict.py
+END
+test_codecencodings_hk.py
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_codecencodings_hk.py
+END
+test_operator.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_operator.py
+END
+test_future2.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_future2.py
+END
+test_cmath.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_cmath.py
+END
+test_abstract_numbers.py
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_abstract_numbers.py
+END
+test_unary.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_unary.py
+END
+pickletester.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/pickletester.py
+END
+test_zlib.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_zlib.py
+END
+test_types.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_types.py
+END
+test_re.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_re.py
+END
+test_bigaddrspace.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_bigaddrspace.py
+END
+test_codeop.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_codeop.py
+END
+test_compiler.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_compiler.py
+END
+test_asynchat.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_asynchat.py
+END
+test_pprint.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_pprint.py
+END
+test_codeccallbacks.py
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_codeccallbacks.py
+END
+test_getargs2.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_getargs2.py
+END
+test_socketserver.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_socketserver.py
+END
+test_SimpleHTTPServer.py
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_SimpleHTTPServer.py
+END
+test_peepholer.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_peepholer.py
+END
+test_xdrlib.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_xdrlib.py
+END
+xmltests.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/xmltests.py
+END
+test_abc.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_abc.py
+END
+test_ossaudiodev.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_ossaudiodev.py
+END
+test_cd.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_cd.py
+END
+test_long_future.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_long_future.py
+END
+test_sgmllib.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_sgmllib.py
+END
+test_zipimport_support.py
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_zipimport_support.py
+END
+test_mmap.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_mmap.py
+END
+test_pyexpat.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_pyexpat.py
+END
+test_mhlib.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_mhlib.py
+END
+test_winreg.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_winreg.py
+END
+test_al.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_al.py
+END
+test_minidom.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_minidom.py
+END
+test_stringprep.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_stringprep.py
+END
+test_structseq.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_structseq.py
+END
+test_locale.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_locale.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/__init__.py
+END
+test_cgi.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_cgi.py
+END
+test_codecencodings_kr.py
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_codecencodings_kr.py
+END
+test_popen2.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_popen2.py
+END
+test_profilehooks.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_profilehooks.py
+END
+profilee.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/profilee.py
+END
+test_codecmaps_tw.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_codecmaps_tw.py
+END
+test_str.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_str.py
+END
+test_buffer.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_buffer.py
+END
+test_scope.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_scope.py
+END
+test_cfgparser.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_cfgparser.py
+END
+test_signal.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_signal.py
+END
+test_textwrap.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_textwrap.py
+END
+test_codecmaps_cn.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_codecmaps_cn.py
+END
+test_unicodedata.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_unicodedata.py
+END
+randv3.pck
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/Lib/test/randv3.pck
+END
+testimg.uue
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/Lib/test/testimg.uue
+END
+test_queue.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_queue.py
+END
+test_poplib.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_poplib.py
+END
+curses_tests.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/curses_tests.py
+END
+test_marshal.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_marshal.py
+END
+test_bz2.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_bz2.py
+END
+test_cookielib.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_cookielib.py
+END
+test_memoryio.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_memoryio.py
+END
+test_urllibnet.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_urllibnet.py
+END
+test_bsddb3.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_bsddb3.py
+END
+cmath_testcases.txt
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/Lib/test/cmath_testcases.txt
+END
+test_iter.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_iter.py
+END
+test_deque.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_deque.py
+END
+svn_python_org_https_cert.pem
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/Lib/test/svn_python_org_https_cert.pem
+END
+test_strptime.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_strptime.py
+END
+test_whichdb.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_whichdb.py
+END
+test_eof.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_eof.py
+END
+autotest.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/autotest.py
+END
+test_calendar.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_calendar.py
+END
+bad_coding.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/bad_coding.py
+END
+test_epoll.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_epoll.py
+END
+seq_tests.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/seq_tests.py
+END
+test_zipfile64.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_zipfile64.py
+END
+relimport.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/relimport.py
+END
+mapping_tests.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/mapping_tests.py
+END
+badsyntax_future6.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/badsyntax_future6.py
+END
+test_sets.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_sets.py
+END
+test_htmlparser.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_htmlparser.py
+END
+test_binascii.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_binascii.py
+END
+test_dummy_thread.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_dummy_thread.py
+END
+test_MimeWriter.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_MimeWriter.py
+END
+cfgparser.1
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/Lib/test/cfgparser.1
+END
+test_xml_etree_c.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_xml_etree_c.py
+END
+test.xml
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/Lib/test/test.xml
+END
+test_httpservers.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_httpservers.py
+END
+inspect_fodder.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/inspect_fodder.py
+END
+randv2_64.pck
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/Lib/test/randv2_64.pck
+END
+test_datetime.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_datetime.py
+END
+test_future3.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_future3.py
+END
+https_svn_python_org_root.pem
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/Lib/test/https_svn_python_org_root.pem
+END
+test_scriptpackages.py
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_scriptpackages.py
+END
+test_decorators.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_decorators.py
+END
+test_wsgiref.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_wsgiref.py
+END
+test_index.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_index.py
+END
+test_fileio.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_fileio.py
+END
+test_email_codecs.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_email_codecs.py
+END
+test_contextlib.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_contextlib.py
+END
+inspect_fodder2.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/inspect_fodder2.py
+END
+test_macpath.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_macpath.py
+END
+test_fnmatch.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_fnmatch.py
+END
+test_pipes.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_pipes.py
+END
+test_imageop.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_imageop.py
+END
+nullcert.pem
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/Lib/test/nullcert.pem
+END
+check_soundcard.vbs
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/Lib/test/check_soundcard.vbs
+END
+test_module.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_module.py
+END
+test_unicode_file.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_unicode_file.py
+END
+test_grammar.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_grammar.py
+END
+test_normalization.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_normalization.py
+END
+test_shelve.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_shelve.py
+END
+test_codecmaps_jp.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_codecmaps_jp.py
+END
+test_hotshot.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_hotshot.py
+END
+re_tests.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/re_tests.py
+END
+test_largefile.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_largefile.py
+END
+test_pwd.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_pwd.py
+END
+test_mutants.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_mutants.py
+END
+bad_coding2.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/bad_coding2.py
+END
+test_decimal.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_decimal.py
+END
+badcert.pem
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/Lib/test/badcert.pem
+END
+test_difflib.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_difflib.py
+END
+test_undocumented_details.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_undocumented_details.py
+END
+test_xpickle.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_xpickle.py
+END
+test_commands.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_commands.py
+END
+test_wave.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_wave.py
+END
+test_tempfile.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_tempfile.py
+END
+test_strop.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_strop.py
+END
+test_bisect.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_bisect.py
+END
+test_threaded_import.py
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_threaded_import.py
+END
+pyclbr_input.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/pyclbr_input.py
+END
+test_multibytecodec.py
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_multibytecodec.py
+END
+test_doctest2.txt
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/Lib/test/test_doctest2.txt
+END
+testcodec.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/testcodec.py
+END
+test_ftplib.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_ftplib.py
+END
+test_random.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_random.py
+END
+test_codecencodings_tw.py
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_codecencodings_tw.py
+END
+test_pep292.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_pep292.py
+END
+test_telnetlib.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_telnetlib.py
+END
+test_base64.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_base64.py
+END
+test_struct.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_struct.py
+END
+test_weakref.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_weakref.py
+END
+test_enumerate.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_enumerate.py
+END
+test_codecencodings_cn.py
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_codecencodings_cn.py
+END
+test_subprocess.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_subprocess.py
+END
+string_tests.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/string_tests.py
+END
+test_old_mailbox.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_old_mailbox.py
+END
+test_bool.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_bool.py
+END
+test_zipimport.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_zipimport.py
+END
+test_cmd_line_script.py
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_cmd_line_script.py
+END
+test_slice.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_slice.py
+END
+cjkencodings_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/cjkencodings_test.py
+END
+test_macos.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_macos.py
+END
+test_coding.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_coding.py
+END
+wrongcert.pem
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/Lib/test/wrongcert.pem
+END
+test_uuid.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_uuid.py
+END
+test_import.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_import.py
+END
+test_anydbm.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_anydbm.py
+END
+test_netrc.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_netrc.py
+END
+badsyntax_future7.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/badsyntax_future7.py
+END
+test_unittest.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_unittest.py
+END
+testrgb.uue
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/Lib/test/testrgb.uue
+END
+test_glob.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_glob.py
+END
+test_gettext.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_gettext.py
+END
+test_platform.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_platform.py
+END
+test_property.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_property.py
+END
+fork_wait.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/fork_wait.py
+END
+test_bytes.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_bytes.py
+END
+test_sunaudiodev.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_sunaudiodev.py
+END
+test_timeout.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_timeout.py
+END
+tf_inherit_check.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/tf_inherit_check.py
+END
+time_hashlib.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/time_hashlib.py
+END
+test_multifile.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_multifile.py
+END
+test_htmllib.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_htmllib.py
+END
+test_doctest.txt
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/Lib/test/test_doctest.txt
+END
+test_future4.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_future4.py
+END
+test_time.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_time.py
+END
+ieee754.txt
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/Lib/test/ieee754.txt
+END
+test_structmembers.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_structmembers.py
+END
+test_sqlite.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_sqlite.py
+END
+test_posix.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_posix.py
+END
+test_curses.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_curses.py
+END
+test___all__.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test___all__.py
+END
+test_fcntl.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_fcntl.py
+END
+test_binop.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_binop.py
+END
+badsyntax_nocaret.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/badsyntax_nocaret.py
+END
+test_cpickle.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_cpickle.py
+END
+test_copy.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_copy.py
+END
+test_modulefinder.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_modulefinder.py
+END
+test_select.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_select.py
+END
+test_threading_local.py
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_threading_local.py
+END
+test_hash.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_hash.py
+END
+exception_hierarchy.txt
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/Lib/test/exception_hierarchy.txt
+END
+test_richcmp.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_richcmp.py
+END
+test_multiprocessing.py
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_multiprocessing.py
+END
+test_grp.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_grp.py
+END
+test_urllib.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_urllib.py
+END
+test_mailbox.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_mailbox.py
+END
+test_sax.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_sax.py
+END
+test_urlparse.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_urlparse.py
+END
+test_bigmem.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_bigmem.py
+END
+test_codecencodings_jp.py
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_codecencodings_jp.py
+END
+test_coercion.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_coercion.py
+END
+test_zipfile.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_zipfile.py
+END
+test_class.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_class.py
+END
+test_cookie.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_cookie.py
+END
+testall.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/testall.py
+END
+test_urllib2.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_urllib2.py
+END
+test_pty.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_pty.py
+END
+test_filecmp.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_filecmp.py
+END
+audiotest.au
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/Lib/test/audiotest.au
+END
+test_augassign.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_augassign.py
+END
+test_userdict.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_userdict.py
+END
+reperf.py
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/reperf.py
+END
+test_xrange.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_xrange.py
+END
+test_pickletools.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_pickletools.py
+END
+test_startfile.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_startfile.py
+END
+test.xml.out
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/Lib/test/test.xml.out
+END
+test_trace.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_trace.py
+END
+test_dircache.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_dircache.py
+END
+test_threading.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_threading.py
+END
+test_userstring.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_userstring.py
+END
+test_builtin.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_builtin.py
+END
+test_copy_reg.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_copy_reg.py
+END
+sample_doctest.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/sample_doctest.py
+END
+test_multibytecodec_support.py
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_multibytecodec_support.py
+END
+test_funcattrs.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_funcattrs.py
+END
+test_userlist.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_userlist.py
+END
+185test.db
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/Lib/test/185test.db
+END
+test_call.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_call.py
+END
+test_support.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_support.py
+END
+test_lib2to3.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_lib2to3.py
+END
+test_collections.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_collections.py
+END
+test_sys.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_sys.py
+END
+test_doctest3.txt
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/41280/trunk/tools/third_party/python_26/Lib/test/test_doctest3.txt
+END
+test_pkgutil.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_pkgutil.py
+END
+test_posixpath.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_posixpath.py
+END
+badsyntax_future8.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/badsyntax_future8.py
+END
+test_popen.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_popen.py
+END
+test_email_renamed.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_email_renamed.py
+END
+test_urllib2net.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_urllib2net.py
+END
+test_ast.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_ast.py
+END
+test_format.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/89104/trunk/tools/third_party/python_26/Lib/test/test_format.py
+END

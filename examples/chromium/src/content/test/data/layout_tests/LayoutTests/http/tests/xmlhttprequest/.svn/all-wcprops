@@ -1,0 +1,2393 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/blink/!svn/ver/149122/trunk/LayoutTests/http/tests/xmlhttprequest
+END
+access-control-basic-allow-access-control-origin-header-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/blink/!svn/ver/35031/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-basic-allow-access-control-origin-header-expected.txt
+END
+send-array-buffer.html
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/blink/!svn/ver/122074/trunk/LayoutTests/http/tests/xmlhttprequest/send-array-buffer.html
+END
+cross-site-denied-response.html
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/cross-site-denied-response.html
+END
+methods-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/blink/!svn/ver/148246/trunk/LayoutTests/http/tests/xmlhttprequest/methods-expected.txt
+END
+methods-async.html
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/methods-async.html
+END
+uri-resolution-opera-open-005-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/blink/!svn/ver/39453/trunk/LayoutTests/http/tests/xmlhttprequest/uri-resolution-opera-open-005-expected.txt
+END
+encode-request-url.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/encode-request-url.html
+END
+access-control-basic-allow-async.html
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-basic-allow-async.html
+END
+post-content-type-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/blink/!svn/ver/12923/trunk/LayoutTests/http/tests/xmlhttprequest/post-content-type-expected.txt
+END
+xhr-onunload-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/blink/!svn/ver/33503/trunk/LayoutTests/http/tests/xmlhttprequest/xhr-onunload-expected.txt
+END
+access-control-response-with-body-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/blink/!svn/ver/56955/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-response-with-body-expected.txt
+END
+access-control-basic-non-simple-allow.html
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-basic-non-simple-allow.html
+END
+origin-whitelisting-ip-addresses-with-subdomains.html
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/origin-whitelisting-ip-addresses-with-subdomains.html
+END
+origin-header-same-origin-post-async-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/blink/!svn/ver/37317/trunk/LayoutTests/http/tests/xmlhttprequest/origin-header-same-origin-post-async-expected.txt
+END
+access-control-basic-allow-preflight-cache.html
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-basic-allow-preflight-cache.html
+END
+access-control-and-redirects.html
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-and-redirects.html
+END
+access-control-preflight-sync-header-denied-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/blink/!svn/ver/104803/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-preflight-sync-header-denied-expected.txt
+END
+inject-header.html
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/inject-header.html
+END
+methods.html
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/methods.html
+END
+uri-resolution-opera-open-005.html
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/uri-resolution-opera-open-005.html
+END
+xmlhttprequest-LSProgressEvent-ProgressEvent-should-match.html
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-LSProgressEvent-ProgressEvent-should-match.html
+END
+origin-whitelisting-https-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/blink/!svn/ver/104803/trunk/LayoutTests/http/tests/xmlhttprequest/origin-whitelisting-https-expected.txt
+END
+binary-x-user-defined-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/blink/!svn/ver/27145/trunk/LayoutTests/http/tests/xmlhttprequest/binary-x-user-defined-expected.txt
+END
+methods-lower-case-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/blink/!svn/ver/21687/trunk/LayoutTests/http/tests/xmlhttprequest/methods-lower-case-expected.txt
+END
+post-blob-content-type-sync-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/blink/!svn/ver/136893/trunk/LayoutTests/http/tests/xmlhttprequest/post-blob-content-type-sync-expected.txt
+END
+access-control-response-with-body.html
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-response-with-body.html
+END
+range-test-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/blink/!svn/ver/108576/trunk/LayoutTests/http/tests/xmlhttprequest/range-test-expected.txt
+END
+xmlhttprequest-no-content-length-onProgress-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/blink/!svn/ver/34320/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-no-content-length-onProgress-expected.txt
+END
+origin-header-same-origin-post-async.html
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/origin-header-same-origin-post-async.html
+END
+onloadstart-event-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/blink/!svn/ver/34775/trunk/LayoutTests/http/tests/xmlhttprequest/onloadstart-event-expected.txt
+END
+access-control-basic-denied.html
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-basic-denied.html
+END
+readystatechange-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/blink/!svn/ver/26479/trunk/LayoutTests/http/tests/xmlhttprequest/readystatechange-expected.txt
+END
+origin-header-cross-origin-post-sync.html
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/origin-header-cross-origin-post-sync.html
+END
+upload-onload-event-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/blink/!svn/ver/35435/trunk/LayoutTests/http/tests/xmlhttprequest/upload-onload-event-expected.txt
+END
+access-control-preflight-sync-header-denied.html
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-preflight-sync-header-denied.html
+END
+xmlhttprequest-overridemimetype-mixed-case-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/blink/!svn/ver/103344/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-overridemimetype-mixed-case-expected.txt
+END
+detaching-frame-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/blink/!svn/ver/37874/trunk/LayoutTests/http/tests/xmlhttprequest/detaching-frame-expected.txt
+END
+xmlhttprequest-contenttype-empty-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/blink/!svn/ver/28993/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-contenttype-empty-expected.txt
+END
+simple-cross-origin-denied-events-post-sync.html
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/simple-cross-origin-denied-events-post-sync.html
+END
+origin-exact-matching-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/blink/!svn/ver/120107/trunk/LayoutTests/http/tests/xmlhttprequest/origin-exact-matching-expected.txt
+END
+failed-auth-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/blink/!svn/ver/63681/trunk/LayoutTests/http/tests/xmlhttprequest/failed-auth-expected.txt
+END
+access-control-response-with-expose-headers.html
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-response-with-expose-headers.html
+END
+origin-whitelisting-https.html
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/origin-whitelisting-https.html
+END
+binary-x-user-defined.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/binary-x-user-defined.html
+END
+access-control-preflight-async-header-denied-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/blink/!svn/ver/104803/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-preflight-async-header-denied-expected.txt
+END
+xmlhttprequest-image-not-loaded-svg.svg
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-image-not-loaded-svg.svg
+END
+onloadend-event-after-error.html
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/onloadend-event-after-error.html
+END
+xmlhttprequest-no-content-length-onProgress.html
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-no-content-length-onProgress.html
+END
+range-test.html
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/range-test.html
+END
+onloadstart-event.html
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/onloadstart-event.html
+END
+readystatechange.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/readystatechange.html
+END
+upload-onload-event.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/upload-onload-event.html
+END
+xmlhttprequest-overridemimetype-mixed-case.html
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/blink/!svn/ver/103344/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-overridemimetype-mixed-case.html
+END
+serialize-document-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/blink/!svn/ver/33577/trunk/LayoutTests/http/tests/xmlhttprequest/serialize-document-expected.txt
+END
+zero-length-response-sync-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/blink/!svn/ver/30328/trunk/LayoutTests/http/tests/xmlhttprequest/zero-length-response-sync-expected.txt
+END
+xmlhttprequest-contenttype-empty.html
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-contenttype-empty.html
+END
+onerror-event-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/blink/!svn/ver/104803/trunk/LayoutTests/http/tests/xmlhttprequest/onerror-event-expected.txt
+END
+getResponseHeader-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/blink/!svn/ver/104803/trunk/LayoutTests/http/tests/xmlhttprequest/getResponseHeader-expected.txt
+END
+origin-exact-matching.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/origin-exact-matching.html
+END
+access-control-repeated-failed-preflight-crash-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/blink/!svn/ver/115236/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-repeated-failed-preflight-crash-expected.txt
+END
+upload-onloadend-event-after-abort-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/blink/!svn/ver/103502/trunk/LayoutTests/http/tests/xmlhttprequest/upload-onloadend-event-after-abort-expected.txt
+END
+failed-auth.html
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/failed-auth.html
+END
+detaching-frame-2-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/blink/!svn/ver/42983/trunk/LayoutTests/http/tests/xmlhttprequest/detaching-frame-2-expected.txt
+END
+xmlhttprequest-check-head-readystate-for-404-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/blink/!svn/ver/114235/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-check-head-readystate-for-404-expected.txt
+END
+small-chunks-response-text-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/blink/!svn/ver/25274/trunk/LayoutTests/http/tests/xmlhttprequest/small-chunks-response-text-expected.txt
+END
+xmlhttprequest-open-empty-method-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/blink/!svn/ver/134859/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-open-empty-method-expected.txt
+END
+access-control-allow-lists-starting-with-comma-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/blink/!svn/ver/119945/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-allow-lists-starting-with-comma-expected.txt
+END
+access-control-preflight-headers-sync-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/blink/!svn/ver/47494/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-preflight-headers-sync-expected.txt
+END
+onloadend-event-after-load.html
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/onloadend-event-after-load.html
+END
+authorization-header-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/blink/!svn/ver/42314/trunk/LayoutTests/http/tests/xmlhttprequest/authorization-header-expected.txt
+END
+access-control-basic-post-fail-non-simple-content-type.html
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-basic-post-fail-non-simple-content-type.html
+END
+xmlhttprequest-forbidden-methods-exception.html
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-forbidden-methods-exception.html
+END
+access-control-basic-allow-preflight-cache-invalidation-by-method.html
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-basic-allow-preflight-cache-invalidation-by-method.html
+END
+set-dangerous-headers-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/blink/!svn/ver/104803/trunk/LayoutTests/http/tests/xmlhttprequest/set-dangerous-headers-expected.txt
+END
+serialize-document.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/serialize-document.html
+END
+xmlhttprequest-post-crash-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/blink/!svn/ver/31074/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-post-crash-expected.txt
+END
+onerror-event.html
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/onerror-event.html
+END
+getResponseHeader.html
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/getResponseHeader.html
+END
+redirect-cross-origin-post-sync.html
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/redirect-cross-origin-post-sync.html
+END
+close-window.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/close-window.html
+END
+origin-whitelisting-subdomains-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/blink/!svn/ver/47548/trunk/LayoutTests/http/tests/xmlhttprequest/origin-whitelisting-subdomains-expected.txt
+END
+detaching-frame-2.html
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/detaching-frame-2.html
+END
+uri-resolution-opera-open-004-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/blink/!svn/ver/39453/trunk/LayoutTests/http/tests/xmlhttprequest/uri-resolution-opera-open-004-expected.txt
+END
+event-target-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/blink/!svn/ver/48701/trunk/LayoutTests/http/tests/xmlhttprequest/event-target-expected.txt
+END
+xmlhttprequest-check-head-readystate-for-404.html
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-check-head-readystate-for-404.html
+END
+small-chunks-response-text.html
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/small-chunks-response-text.html
+END
+encode-request-url-2.html
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/encode-request-url-2.html
+END
+access-control-allow-lists-starting-with-comma.html
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/blink/!svn/ver/130845/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-allow-lists-starting-with-comma.html
+END
+xmlhttprequest-setrequestheader-no-name-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/blink/!svn/ver/134859/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-setrequestheader-no-name-expected.txt
+END
+set-dangerous-headers.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/set-dangerous-headers.html
+END
+post-with-boundary-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/blink/!svn/ver/66568/trunk/LayoutTests/http/tests/xmlhttprequest/post-with-boundary-expected.txt
+END
+origin-header-cross-origin-get-sync-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/blink/!svn/ver/37317/trunk/LayoutTests/http/tests/xmlhttprequest/origin-header-cross-origin-get-sync-expected.txt
+END
+access-control-basic-allow-preflight-cache-timeout-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/blink/!svn/ver/35540/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-basic-allow-preflight-cache-timeout-expected.txt
+END
+access-control-preflight-credential-async-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/blink/!svn/ver/113589/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-preflight-credential-async-expected.txt
+END
+cross-site-denied-response-sync-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/blink/!svn/ver/104803/trunk/LayoutTests/http/tests/xmlhttprequest/cross-site-denied-response-sync-expected.txt
+END
+origin-whitelisting-subdomains.html
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/origin-whitelisting-subdomains.html
+END
+access-control-basic-non-simple-allow-async.html
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-basic-non-simple-allow-async.html
+END
+upload-onloadstart-event-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/blink/!svn/ver/35435/trunk/LayoutTests/http/tests/xmlhttprequest/upload-onloadstart-event-expected.txt
+END
+event-target.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/event-target.html
+END
+xmlhttprequest-addEventListener-onProgress.html
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-addEventListener-onProgress.html
+END
+simple-cross-origin-denied-events-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/blink/!svn/ver/104803/trunk/LayoutTests/http/tests/xmlhttprequest/simple-cross-origin-denied-events-expected.txt
+END
+supported-xml-content-types-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/blink/!svn/ver/21687/trunk/LayoutTests/http/tests/xmlhttprequest/supported-xml-content-types-expected.txt
+END
+xmlhttprequest-sync-no-timers-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/blink/!svn/ver/113604/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-sync-no-timers-expected.txt
+END
+send-on-abort.html
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/send-on-abort.html
+END
+document-domain-set.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/document-domain-set.html
+END
+access-control-and-redirects-async.html
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-and-redirects-async.html
+END
+post-with-boundary.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/post-with-boundary.html
+END
+xmlhttprequest-responseText-exception-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/blink/!svn/ver/27898/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-responseText-exception-expected.txt
+END
+xmlhttprequest-test-custom-headers-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/blink/!svn/ver/136705/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-test-custom-headers-expected.txt
+END
+access-control-basic-allow-preflight-cache-timeout.html
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-basic-allow-preflight-cache-timeout.html
+END
+xmlhttprequest-responseXML-exception.html
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-responseXML-exception.html
+END
+uri-resolution-opera-open-009-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/blink/!svn/ver/39453/trunk/LayoutTests/http/tests/xmlhttprequest/uri-resolution-opera-open-009-expected.txt
+END
+redirect-cross-origin-2-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/blink/!svn/ver/41810/trunk/LayoutTests/http/tests/xmlhttprequest/redirect-cross-origin-2-expected.txt
+END
+onloadend-event-after-abort.html
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/onloadend-event-after-abort.html
+END
+frame-unload-abort-crash-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/blink/!svn/ver/43650/trunk/LayoutTests/http/tests/xmlhttprequest/frame-unload-abort-crash-expected.txt
+END
+cross-site-denied-response-sync.html
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/cross-site-denied-response-sync.html
+END
+xmlhttprequest-mimetype-mixed-case-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/blink/!svn/ver/103344/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-mimetype-mixed-case-expected.txt
+END
+access-control-basic-non-simple-deny-cached-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/blink/!svn/ver/104803/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-basic-non-simple-deny-cached-expected.txt
+END
+cache-headers-after-reload-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/blink/!svn/ver/63100/trunk/LayoutTests/http/tests/xmlhttprequest/cache-headers-after-reload-expected.txt
+END
+xmlhttprequest-abort-readyState-shouldNotDispatchEvent-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/blink/!svn/ver/30362/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-abort-readyState-shouldNotDispatchEvent-expected.txt
+END
+supported-xml-content-types.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/blink/!svn/ver/14096/trunk/LayoutTests/http/tests/xmlhttprequest/supported-xml-content-types.cgi
+END
+upload-onloadstart-event.html
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/upload-onloadstart-event.html
+END
+simple-cross-origin-denied-events.html
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/simple-cross-origin-denied-events.html
+END
+supported-xml-content-types.html
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/supported-xml-content-types.html
+END
+upload-onloadend-event-after-sync-requests-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/blink/!svn/ver/103502/trunk/LayoutTests/http/tests/xmlhttprequest/upload-onloadend-event-after-sync-requests-expected.txt
+END
+send-undefined-and-null.html
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/send-undefined-and-null.html
+END
+xmlhttprequest-unsafe-redirect-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/blink/!svn/ver/42164/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-unsafe-redirect-expected.txt
+END
+XMLHttpRequestException-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/blink/!svn/ver/149122/trunk/LayoutTests/http/tests/xmlhttprequest/XMLHttpRequestException-expected.txt
+END
+svg-created-by-xhr-allowed-in-dashboard-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/blink/!svn/ver/108832/trunk/LayoutTests/http/tests/xmlhttprequest/svg-created-by-xhr-allowed-in-dashboard-expected.txt
+END
+cookies-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/blink/!svn/ver/21687/trunk/LayoutTests/http/tests/xmlhttprequest/cookies-expected.txt
+END
+xmlhttprequest-test-custom-headers.html
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/blink/!svn/ver/136705/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-test-custom-headers.html
+END
+request-encoding2-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/blink/!svn/ver/57544/trunk/LayoutTests/http/tests/xmlhttprequest/request-encoding2-expected.txt
+END
+uri-resolution-opera-open-009.html
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/uri-resolution-opera-open-009.html
+END
+redirect-cross-origin-tripmine-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/blink/!svn/ver/42078/trunk/LayoutTests/http/tests/xmlhttprequest/redirect-cross-origin-tripmine-expected.txt
+END
+broken-xml-encoding-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/blink/!svn/ver/41476/trunk/LayoutTests/http/tests/xmlhttprequest/broken-xml-encoding-expected.txt
+END
+request-encoding.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/request-encoding.html
+END
+xmlhttprequest-mimetype-mixed-case.html
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/blink/!svn/ver/103344/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-mimetype-mixed-case.html
+END
+access-control-sandboxed-iframe-denied-without-wildcard-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/blink/!svn/ver/104803/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-sandboxed-iframe-denied-without-wildcard-expected.txt
+END
+frame-unload-abort-crash.html
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/frame-unload-abort-crash.html
+END
+xmlhttprequest-sync-vs-async-assertion-failure.html
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-sync-vs-async-assertion-failure.html
+END
+cache-headers-after-reload.html
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/cache-headers-after-reload.html
+END
+access-control-basic-non-simple-deny-cached.html
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-basic-non-simple-deny-cached.html
+END
+access-control-basic-allow-access-control-origin-header-data-url-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/blink/!svn/ver/35031/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-basic-allow-access-control-origin-header-data-url-expected.txt
+END
+origin-header-same-origin-get-sync-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/blink/!svn/ver/37317/trunk/LayoutTests/http/tests/xmlhttprequest/origin-header-same-origin-get-sync-expected.txt
+END
+xmlhttprequest-unsafe-redirect.html
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-unsafe-redirect.html
+END
+redirect-cross-origin-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/blink/!svn/ver/41810/trunk/LayoutTests/http/tests/xmlhttprequest/redirect-cross-origin-expected.txt
+END
+xmlhttprequest-overridemimetype-content-type-header-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/blink/!svn/ver/130158/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-overridemimetype-content-type-header-expected.txt
+END
+svg-created-by-xhr-allowed-in-dashboard.html
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/svg-created-by-xhr-allowed-in-dashboard.html
+END
+access-control-preflight-sync-method-denied-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/blink/!svn/ver/104803/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-preflight-sync-method-denied-expected.txt
+END
+simple-cross-origin-denied-events-post-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/blink/!svn/ver/104803/trunk/LayoutTests/http/tests/xmlhttprequest/simple-cross-origin-denied-events-post-expected.txt
+END
+zero-length-response.html
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/zero-length-response.html
+END
+access-control-basic-allow-star-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/blink/!svn/ver/34498/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-basic-allow-star-expected.txt
+END
+response-encoding-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/blink/!svn/ver/28934/trunk/LayoutTests/http/tests/xmlhttprequest/response-encoding-expected.txt
+END
+frame-load-cancelled-abort-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/blink/!svn/ver/42164/trunk/LayoutTests/http/tests/xmlhttprequest/frame-load-cancelled-abort-expected.txt
+END
+extra-parameters-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/blink/!svn/ver/21687/trunk/LayoutTests/http/tests/xmlhttprequest/extra-parameters-expected.txt
+END
+connection-error-sync.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/connection-error-sync.html
+END
+upload-progress-events-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/blink/!svn/ver/35435/trunk/LayoutTests/http/tests/xmlhttprequest/upload-progress-events-expected.txt
+END
+access-control-sandboxed-iframe-denied-without-wildcard.html
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-sandboxed-iframe-denied-without-wildcard.html
+END
+event-listener-gc-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/blink/!svn/ver/48891/trunk/LayoutTests/http/tests/xmlhttprequest/event-listener-gc-expected.txt
+END
+interactive-state-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/blink/!svn/ver/21687/trunk/LayoutTests/http/tests/xmlhttprequest/interactive-state-expected.txt
+END
+xmlhttprequest-crlf-getAllResponseHeader-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/blink/!svn/ver/26455/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-crlf-getAllResponseHeader-expected.txt
+END
+uri-resolution-opera-open-006.html
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/uri-resolution-opera-open-006.html
+END
+state-after-network-error-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/blink/!svn/ver/42164/trunk/LayoutTests/http/tests/xmlhttprequest/state-after-network-error-expected.txt
+END
+access-control-basic-allow-access-control-origin-header-data-url.html
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-basic-allow-access-control-origin-header-data-url.html
+END
+xmlhttprequest-no-content-type.html
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-no-content-type.html
+END
+access-control-basic-allow-preflight-cache-invalidation-by-header.html
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-basic-allow-preflight-cache-invalidation-by-header.html
+END
+redirect-cross-origin.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/redirect-cross-origin.html
+END
+xmlhttprequest-overridemimetype-content-type-header.html
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/blink/!svn/ver/130158/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-overridemimetype-content-type-header.html
+END
+access-control-preflight-sync-method-denied.html
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-preflight-sync-method-denied.html
+END
+abort-crash-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/blink/!svn/ver/18069/trunk/LayoutTests/http/tests/xmlhttprequest/abort-crash-expected.txt
+END
+access-control-basic-allow-star.html
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-basic-allow-star.html
+END
+xmlhttprequest-image-not-loaded-svg-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/blink/!svn/ver/39104/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-image-not-loaded-svg-expected.txt
+END
+get-dangerous-headers-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/blink/!svn/ver/104803/trunk/LayoutTests/http/tests/xmlhttprequest/get-dangerous-headers-expected.txt
+END
+xmlhttprequest-image-not-loaded-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/blink/!svn/ver/39104/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-image-not-loaded-expected.txt
+END
+access-control-preflight-async-method-denied-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/blink/!svn/ver/104803/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-preflight-async-method-denied-expected.txt
+END
+exceptions-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/blink/!svn/ver/134648/trunk/LayoutTests/http/tests/xmlhttprequest/exceptions-expected.txt
+END
+event-listener-gc.html
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/blink/!svn/ver/145090/trunk/LayoutTests/http/tests/xmlhttprequest/event-listener-gc.html
+END
+interactive-state.html
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/interactive-state.html
+END
+xmlhttprequest-crlf-getAllResponseHeader.html
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-crlf-getAllResponseHeader.html
+END
+response-blob-size-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/blink/!svn/ver/120042/trunk/LayoutTests/http/tests/xmlhttprequest/response-blob-size-expected.txt
+END
+origin-header-same-origin-post-sync-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/blink/!svn/ver/37317/trunk/LayoutTests/http/tests/xmlhttprequest/origin-header-same-origin-post-sync-expected.txt
+END
+state-after-network-error.html
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/state-after-network-error.html
+END
+xml-encoding-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/blink/!svn/ver/114059/trunk/LayoutTests/http/tests/xmlhttprequest/xml-encoding-expected.txt
+END
+cross-site-denied-response-sync-2-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/blink/!svn/ver/104803/trunk/LayoutTests/http/tests/xmlhttprequest/cross-site-denied-response-sync-2-expected.txt
+END
+origin-header-cross-origin-post-async-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/blink/!svn/ver/37317/trunk/LayoutTests/http/tests/xmlhttprequest/origin-header-cross-origin-post-async-expected.txt
+END
+cross-origin-cookie-storage-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/blink/!svn/ver/47792/trunk/LayoutTests/http/tests/xmlhttprequest/cross-origin-cookie-storage-expected.txt
+END
+newline-in-request-uri-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/blink/!svn/ver/48256/trunk/LayoutTests/http/tests/xmlhttprequest/newline-in-request-uri-expected.txt
+END
+upload-onprogress-event.html
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/upload-onprogress-event.html
+END
+xmlhttprequest-check-get-readystate-for-404-without-body-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/blink/!svn/ver/117246/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-check-get-readystate-for-404-without-body-expected.txt
+END
+request-from-popup-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/blink/!svn/ver/41382/trunk/LayoutTests/http/tests/xmlhttprequest/request-from-popup-expected.txt
+END
+onloadend-event-after-sync-requests.html
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/onloadend-event-after-sync-requests.html
+END
+abort-crash.html
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/abort-crash.html
+END
+access-control-preflight-sync-not-supported-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/blink/!svn/ver/104803/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-preflight-sync-not-supported-expected.txt
+END
+send-data-view.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/blink/!svn/ver/122074/trunk/LayoutTests/http/tests/xmlhttprequest/send-data-view.html
+END
+xmlhttprequest-setrequestheader-no-value.html
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/blink/!svn/ver/139071/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-setrequestheader-no-value.html
+END
+navigation-should-abort-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/blink/!svn/ver/144430/trunk/LayoutTests/http/tests/xmlhttprequest/navigation-should-abort-expected.txt
+END
+redirect-cross-origin-post-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/blink/!svn/ver/41810/trunk/LayoutTests/http/tests/xmlhttprequest/redirect-cross-origin-post-expected.txt
+END
+access-control-basic-allow.html
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-basic-allow.html
+END
+xmlhttprequest-sync-no-progress-events-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/blink/!svn/ver/104803/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-sync-no-progress-events-expected.txt
+END
+origin-whitelisting-removal-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/blink/!svn/ver/104803/trunk/LayoutTests/http/tests/xmlhttprequest/origin-whitelisting-removal-expected.txt
+END
+get-dangerous-headers.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/get-dangerous-headers.html
+END
+xmlhttprequest-image-not-loaded.html
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-image-not-loaded.html
+END
+origin-whitelisting-all-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/blink/!svn/ver/47548/trunk/LayoutTests/http/tests/xmlhttprequest/origin-whitelisting-all-expected.txt
+END
+upload-onloadend-event-after-load.html
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/upload-onloadend-event-after-load.html
+END
+exceptions.html
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/exceptions.html
+END
+uri-resolution-opera-open-008-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/blink/!svn/ver/39453/trunk/LayoutTests/http/tests/xmlhttprequest/uri-resolution-opera-open-008-expected.txt
+END
+remember-bad-password.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/remember-bad-password.html
+END
+xmlhttprequest-test-send-flag.html
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-test-send-flag.html
+END
+send-array-buffer-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/blink/!svn/ver/122074/trunk/LayoutTests/http/tests/xmlhttprequest/send-array-buffer-expected.txt
+END
+origin-header-cross-origin-post-async.html
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/origin-header-cross-origin-post-async.html
+END
+cross-origin-cookie-storage.html
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/cross-origin-cookie-storage.html
+END
+methods-async-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/blink/!svn/ver/148246/trunk/LayoutTests/http/tests/xmlhttprequest/methods-async-expected.txt
+END
+infoOnProgressEvent-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/blink/!svn/ver/63680/trunk/LayoutTests/http/tests/xmlhttprequest/infoOnProgressEvent-expected.txt
+END
+xmlhttprequest-check-get-readystate-for-404-without-body.html
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-check-get-readystate-for-404-without-body.html
+END
+referer.html
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/referer.html
+END
+getAllResponseHeaders-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/blink/!svn/ver/48433/trunk/LayoutTests/http/tests/xmlhttprequest/getAllResponseHeaders-expected.txt
+END
+open-async-overload-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/blink/!svn/ver/55569/trunk/LayoutTests/http/tests/xmlhttprequest/open-async-overload-expected.txt
+END
+xmlhttprequest-sync-no-progress-events.html
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-sync-no-progress-events.html
+END
+origin-whitelisting-all.html
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/origin-whitelisting-all.html
+END
+access-control-preflight-async-not-supported-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/blink/!svn/ver/104803/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-preflight-async-not-supported-expected.txt
+END
+inject-header-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/blink/!svn/ver/134859/trunk/LayoutTests/http/tests/xmlhttprequest/inject-header-expected.txt
+END
+infoOnProgressEvent.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/infoOnProgressEvent.html
+END
+xmlhttprequest-LSProgressEvent-ProgressEvent-should-match-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/blink/!svn/ver/34320/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-LSProgressEvent-ProgressEvent-should-match-expected.txt
+END
+origin-whitelisting-ip-addresses.html
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/origin-whitelisting-ip-addresses.html
+END
+cache-override.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/cache-override.html
+END
+docLoaderFrame-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/blink/!svn/ver/21687/trunk/LayoutTests/http/tests/xmlhttprequest/docLoaderFrame-expected.txt
+END
+simple-cross-origin-denied-events-sync-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/blink/!svn/ver/104803/trunk/LayoutTests/http/tests/xmlhttprequest/simple-cross-origin-denied-events-sync-expected.txt
+END
+getAllResponseHeaders.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/getAllResponseHeaders.html
+END
+open-async-overload.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/open-async-overload.html
+END
+access-control-basic-whitelist-response-headers-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/blink/!svn/ver/104803/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-basic-whitelist-response-headers-expected.txt
+END
+interactive-state.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/blink/!svn/ver/12931/trunk/LayoutTests/http/tests/xmlhttprequest/interactive-state.cgi
+END
+onabort-event-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/blink/!svn/ver/34775/trunk/LayoutTests/http/tests/xmlhttprequest/onabort-event-expected.txt
+END
+access-control-preflight-credential-sync-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/blink/!svn/ver/113589/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-preflight-credential-sync-expected.txt
+END
+access-control-preflight-async-not-supported.html
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-preflight-async-not-supported.html
+END
+access-control-basic-denied-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/blink/!svn/ver/104803/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-basic-denied-expected.txt
+END
+origin-header-cross-origin-post-sync-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/blink/!svn/ver/37317/trunk/LayoutTests/http/tests/xmlhttprequest/origin-header-cross-origin-post-sync-expected.txt
+END
+access-control-basic-allow-access-control-origin-header.html
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-basic-allow-access-control-origin-header.html
+END
+simple-cross-origin-denied-events-post-sync-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/blink/!svn/ver/104803/trunk/LayoutTests/http/tests/xmlhttprequest/simple-cross-origin-denied-events-post-sync-expected.txt
+END
+xmlhttprequest-50ms-download-dispatch-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/blink/!svn/ver/56394/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-50ms-download-dispatch-expected.txt
+END
+docLoaderFrame.html
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/docLoaderFrame.html
+END
+simple-cross-origin-denied-events-sync.html
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/simple-cross-origin-denied-events-sync.html
+END
+access-control-response-with-expose-headers-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/blink/!svn/ver/105076/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-response-with-expose-headers-expected.txt
+END
+access-control-preflight-request-header-lowercase-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/blink/!svn/ver/105242/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-preflight-request-header-lowercase-expected.txt
+END
+post-content-type.html
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/post-content-type.html
+END
+access-control-basic-whitelist-response-headers.html
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-basic-whitelist-response-headers.html
+END
+xhr-onunload.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/xhr-onunload.html
+END
+print-content-type.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/blink/!svn/ver/12923/trunk/LayoutTests/http/tests/xmlhttprequest/print-content-type.cgi
+END
+onloadend-event-after-error-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/blink/!svn/ver/103502/trunk/LayoutTests/http/tests/xmlhttprequest/onloadend-event-after-error-expected.txt
+END
+access-control-preflight-credential-sync.html
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-preflight-credential-sync.html
+END
+onabort-event.html
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/onabort-event.html
+END
+origin-header-same-origin-get-async-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/blink/!svn/ver/37317/trunk/LayoutTests/http/tests/xmlhttprequest/origin-header-same-origin-get-async-expected.txt
+END
+cross-origin-authorization-with-embedder.html
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/cross-origin-authorization-with-embedder.html
+END
+xmlhttprequest-50ms-download-dispatch.html
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-50ms-download-dispatch.html
+END
+access-control-preflight-request-header-lowercase.html
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-preflight-request-header-lowercase.html
+END
+post-blob-content-type-tests.js
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/blink/!svn/ver/136893/trunk/LayoutTests/http/tests/xmlhttprequest/post-blob-content-type-tests.js
+END
+redirect-cross-origin-sync-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/blink/!svn/ver/41810/trunk/LayoutTests/http/tests/xmlhttprequest/redirect-cross-origin-sync-expected.txt
+END
+post-blob-content-type-sync.html
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/blink/!svn/ver/136893/trunk/LayoutTests/http/tests/xmlhttprequest/post-blob-content-type-sync.html
+END
+methods-lower-case.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/methods-lower-case.html
+END
+origin-whitelisting-exact-match-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/blink/!svn/ver/47548/trunk/LayoutTests/http/tests/xmlhttprequest/origin-whitelisting-exact-match-expected.txt
+END
+onloadend-event-after-load-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/blink/!svn/ver/103502/trunk/LayoutTests/http/tests/xmlhttprequest/onloadend-event-after-load-expected.txt
+END
+access-control-basic-post-fail-non-simple-content-type-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/blink/!svn/ver/104803/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-basic-post-fail-non-simple-content-type-expected.txt
+END
+xmlhttprequest-forbidden-methods-exception-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/blink/!svn/ver/27970/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-forbidden-methods-exception-expected.txt
+END
+access-control-basic-allow-preflight-cache-invalidation-by-method-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/blink/!svn/ver/35540/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-basic-allow-preflight-cache-invalidation-by-method-expected.txt
+END
+origin-header-same-origin-get-async.html
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/origin-header-same-origin-get-async.html
+END
+access-control-basic-get-fail-non-simple-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/blink/!svn/ver/104803/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-basic-get-fail-non-simple-expected.txt
+END
+detaching-frame.html
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/detaching-frame.html
+END
+access-control-basic-denied-preflight-cache-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/blink/!svn/ver/104803/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-basic-denied-preflight-cache-expected.txt
+END
+uri-resolution-opera-open-007-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/blink/!svn/ver/39453/trunk/LayoutTests/http/tests/xmlhttprequest/uri-resolution-opera-open-007-expected.txt
+END
+logout-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/blink/!svn/ver/49406/trunk/LayoutTests/http/tests/xmlhttprequest/logout-expected.txt
+END
+redirect-cross-origin-post-sync-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/blink/!svn/ver/41810/trunk/LayoutTests/http/tests/xmlhttprequest/redirect-cross-origin-post-sync-expected.txt
+END
+close-window-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/blink/!svn/ver/64712/trunk/LayoutTests/http/tests/xmlhttprequest/close-window-expected.txt
+END
+redirect-cross-origin-sync.html
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/redirect-cross-origin-sync.html
+END
+access-control-preflight-async-header-denied.html
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-preflight-async-header-denied.html
+END
+origin-whitelisting-exact-match.html
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/origin-whitelisting-exact-match.html
+END
+encode-request-url-2-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/blink/!svn/ver/40213/trunk/LayoutTests/http/tests/xmlhttprequest/encode-request-url-2-expected.txt
+END
+methods.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/blink/!svn/ver/13071/trunk/LayoutTests/http/tests/xmlhttprequest/methods.cgi
+END
+access-control-basic-get-fail-non-simple.html
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-basic-get-fail-non-simple.html
+END
+zero-length-response-sync.html
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/zero-length-response-sync.html
+END
+access-control-basic-denied-preflight-cache.html
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-basic-denied-preflight-cache.html
+END
+uri-resolution-opera-open-007.html
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/uri-resolution-opera-open-007.html
+END
+access-control-repeated-failed-preflight-crash.html
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-repeated-failed-preflight-crash.html
+END
+upload-onloadend-event-after-abort.html
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/upload-onloadend-event-after-abort.html
+END
+logout.html
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/logout.html
+END
+post-blob-content-type-async-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/blink/!svn/ver/136893/trunk/LayoutTests/http/tests/xmlhttprequest/post-blob-content-type-async-expected.txt
+END
+access-control-basic-non-simple-allow-async-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/blink/!svn/ver/35456/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-basic-non-simple-allow-async-expected.txt
+END
+xmlhttprequest-addEventListener-onProgress-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/blink/!svn/ver/63680/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-addEventListener-onProgress-expected.txt
+END
+send-on-abort-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/blink/!svn/ver/39025/trunk/LayoutTests/http/tests/xmlhttprequest/send-on-abort-expected.txt
+END
+xmlhttprequest-open-empty-method.html
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-open-empty-method.html
+END
+access-control-preflight-headers-sync.html
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-preflight-headers-sync.html
+END
+document-domain-set-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/blink/!svn/ver/34531/trunk/LayoutTests/http/tests/xmlhttprequest/document-domain-set-expected.txt
+END
+access-control-and-redirects-async-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/blink/!svn/ver/112997/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-and-redirects-async-expected.txt
+END
+authorization-header.html
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/authorization-header.html
+END
+cross-origin-preflight-get-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/blink/!svn/ver/77680/trunk/LayoutTests/http/tests/xmlhttprequest/cross-origin-preflight-get-expected.txt
+END
+cross-origin-no-credential-prompt-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/blink/!svn/ver/104803/trunk/LayoutTests/http/tests/xmlhttprequest/cross-origin-no-credential-prompt-expected.txt
+END
+xmlhttprequest-post-crash.html
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-post-crash.html
+END
+origin-header-cross-origin-get-async-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/blink/!svn/ver/37317/trunk/LayoutTests/http/tests/xmlhttprequest/origin-header-cross-origin-get-async-expected.txt
+END
+xmlhttprequest-responseXML-exception-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/blink/!svn/ver/27898/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-responseXML-exception-expected.txt
+END
+onloadend-event-after-abort-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/blink/!svn/ver/103502/trunk/LayoutTests/http/tests/xmlhttprequest/onloadend-event-after-abort-expected.txt
+END
+xmlhttprequest-missing-file-exception-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/blink/!svn/ver/47790/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-missing-file-exception-expected.txt
+END
+post-blob-content-type-async.html
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/blink/!svn/ver/136893/trunk/LayoutTests/http/tests/xmlhttprequest/post-blob-content-type-async.html
+END
+uri-resolution-opera-open-004.html
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/uri-resolution-opera-open-004.html
+END
+xmlhttprequest-abort-readyState-shouldDispatchEvent-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/blink/!svn/ver/30362/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-abort-readyState-shouldDispatchEvent-expected.txt
+END
+redirect-cross-origin-sync-double-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/blink/!svn/ver/41810/trunk/LayoutTests/http/tests/xmlhttprequest/redirect-cross-origin-sync-double-expected.txt
+END
+send-undefined-and-null-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/blink/!svn/ver/106043/trunk/LayoutTests/http/tests/xmlhttprequest/send-undefined-and-null-expected.txt
+END
+access-control-sandboxed-iframe-allow-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/blink/!svn/ver/51577/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-sandboxed-iframe-allow-expected.txt
+END
+xmlhttprequest-setrequestheader-no-name.html
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-setrequestheader-no-name.html
+END
+cross-origin-preflight-get.html
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/cross-origin-preflight-get.html
+END
+cross-origin-no-credential-prompt.html
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/cross-origin-no-credential-prompt.html
+END
+origin-header-cross-origin-get-sync.html
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/origin-header-cross-origin-get-sync.html
+END
+origin-header-cross-origin-get-async.html
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/origin-header-cross-origin-get-async.html
+END
+access-control-preflight-credential-async.html
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-preflight-credential-async.html
+END
+request-encoding-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/blink/!svn/ver/21687/trunk/LayoutTests/http/tests/xmlhttprequest/request-encoding-expected.txt
+END
+xmlhttprequest-sync-vs-async-assertion-failure-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/blink/!svn/ver/63680/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-sync-vs-async-assertion-failure-expected.txt
+END
+xmlhttprequest-missing-file-exception.html
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-missing-file-exception.html
+END
+xmlhttprequest-sync-no-timers.html
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-sync-no-timers.html
+END
+redirect-cross-origin-sync-double.html
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/redirect-cross-origin-sync-double.html
+END
+xmlhttprequest-abort-readyState-shouldDispatchEvent.html
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-abort-readyState-shouldDispatchEvent.html
+END
+reentrant-cancel-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/blink/!svn/ver/120845/trunk/LayoutTests/http/tests/xmlhttprequest/reentrant-cancel-expected.txt
+END
+status-after-abort-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/blink/!svn/ver/30665/trunk/LayoutTests/http/tests/xmlhttprequest/status-after-abort-expected.txt
+END
+access-control-sandboxed-iframe-allow.html
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-sandboxed-iframe-allow.html
+END
+zero-length-response-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/blink/!svn/ver/134648/trunk/LayoutTests/http/tests/xmlhttprequest/zero-length-response-expected.txt
+END
+xmlhttprequest-responseText-exception.html
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-responseText-exception.html
+END
+xmlhttprequest-onProgress-open-should-zero-length-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/blink/!svn/ver/38709/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-onProgress-open-should-zero-length-expected.txt
+END
+connection-error-sync-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/blink/!svn/ver/29058/trunk/LayoutTests/http/tests/xmlhttprequest/connection-error-sync-expected.txt
+END
+uri-resolution-opera-open-010-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/blink/!svn/ver/39453/trunk/LayoutTests/http/tests/xmlhttprequest/uri-resolution-opera-open-010-expected.txt
+END
+redirect-cross-origin-2.html
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/redirect-cross-origin-2.html
+END
+xmlhttprequest-abort-readyState-shouldNotDispatchEvent.html
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-abort-readyState-shouldNotDispatchEvent.html
+END
+uri-resolution-opera-open-006-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/blink/!svn/ver/39453/trunk/LayoutTests/http/tests/xmlhttprequest/uri-resolution-opera-open-006-expected.txt
+END
+xmlhttprequest-no-content-type-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/blink/!svn/ver/81267/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-no-content-type-expected.txt
+END
+access-control-basic-allow-preflight-cache-invalidation-by-header-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/blink/!svn/ver/35540/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-basic-allow-preflight-cache-invalidation-by-header-expected.txt
+END
+access-control-sandboxed-iframe-denied-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/blink/!svn/ver/104803/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-sandboxed-iframe-denied-expected.txt
+END
+reentrant-cancel.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/blink/!svn/ver/124692/trunk/LayoutTests/http/tests/xmlhttprequest/reentrant-cancel.html
+END
+upload-onloadend-event-after-sync-requests.html
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/upload-onloadend-event-after-sync-requests.html
+END
+status-after-abort.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/status-after-abort.html
+END
+XMLHttpRequestException.html
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/XMLHttpRequestException.html
+END
+cookies.html
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/cookies.html
+END
+request-encoding2.html
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/request-encoding2.html
+END
+xmlhttprequest-onProgress-open-should-zero-length.html
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-onProgress-open-should-zero-length.html
+END
+uri-resolution-opera-open-010.html
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/uri-resolution-opera-open-010.html
+END
+redirect-cross-origin-tripmine.html
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/redirect-cross-origin-tripmine.html
+END
+broken-xml-encoding.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/broken-xml-encoding.html
+END
+access-control-sandboxed-iframe-denied.html
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-sandboxed-iframe-denied.html
+END
+xmlhttprequest-multiple-open-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/blink/!svn/ver/30626/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-multiple-open-expected.txt
+END
+origin-header-same-origin-get-sync.html
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/origin-header-same-origin-get-sync.html
+END
+upload-onprogress-event-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/blink/!svn/ver/35435/trunk/LayoutTests/http/tests/xmlhttprequest/upload-onprogress-event-expected.txt
+END
+onloadend-event-after-sync-requests-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/blink/!svn/ver/103502/trunk/LayoutTests/http/tests/xmlhttprequest/onloadend-event-after-sync-requests-expected.txt
+END
+simple-cross-origin-denied-events-post.html
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/simple-cross-origin-denied-events-post.html
+END
+send-data-view-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/blink/!svn/ver/122074/trunk/LayoutTests/http/tests/xmlhttprequest/send-data-view-expected.txt
+END
+response-encoding.html
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/response-encoding.html
+END
+xmlhttprequest-setrequestheader-no-value-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/blink/!svn/ver/50679/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-setrequestheader-no-value-expected.txt
+END
+null-auth-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/blink/!svn/ver/24227/trunk/LayoutTests/http/tests/xmlhttprequest/null-auth-expected.txt
+END
+frame-load-cancelled-abort.html
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/frame-load-cancelled-abort.html
+END
+access-control-basic-allow-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/blink/!svn/ver/33990/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-basic-allow-expected.txt
+END
+extra-parameters.html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/extra-parameters.html
+END
+hello-world.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/hello-world.cgi
+END
+upload-progress-events.html
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/upload-progress-events.html
+END
+upload-onloadend-event-after-load-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/blink/!svn/ver/103502/trunk/LayoutTests/http/tests/xmlhttprequest/upload-onloadend-event-after-load-expected.txt
+END
+remember-bad-password-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/blink/!svn/ver/63834/trunk/LayoutTests/http/tests/xmlhttprequest/remember-bad-password-expected.txt
+END
+null-auth.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/null-auth.php
+END
+xmlhttprequest-test-send-flag-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/blink/!svn/ver/30362/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-test-send-flag-expected.txt
+END
+access-control-preflight-headers-async-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/blink/!svn/ver/47494/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-preflight-headers-async-expected.txt
+END
+xmlhttprequest-multiple-open.html
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/xmlhttprequest-multiple-open.html
+END
+access-control-response-with-body-sync-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/blink/!svn/ver/56955/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-response-with-body-sync-expected.txt
+END
+referer-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/blink/!svn/ver/21687/trunk/LayoutTests/http/tests/xmlhttprequest/referer-expected.txt
+END
+abort-should-destroy-responseText-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/blink/!svn/ver/48658/trunk/LayoutTests/http/tests/xmlhttprequest/abort-should-destroy-responseText-expected.txt
+END
+abort-should-cancel-load-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/blink/!svn/ver/46455/trunk/LayoutTests/http/tests/xmlhttprequest/abort-should-cancel-load-expected.txt
+END
+chunked-progress-event-expectedLength-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/blink/!svn/ver/101612/trunk/LayoutTests/http/tests/xmlhttprequest/chunked-progress-event-expectedLength-expected.txt
+END
+access-control-preflight-async-method-denied.html
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-preflight-async-method-denied.html
+END
+access-control-basic-whitelist-request-headers-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/blink/!svn/ver/66568/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-basic-whitelist-request-headers-expected.txt
+END
+response-blob-size.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/response-blob-size.html
+END
+origin-header-same-origin-post-sync.html
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/origin-header-same-origin-post-sync.html
+END
+simple-cross-origin-progress-events-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/blink/!svn/ver/104803/trunk/LayoutTests/http/tests/xmlhttprequest/simple-cross-origin-progress-events-expected.txt
+END
+xml-encoding.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/xml-encoding.html
+END
+access-control-preflight-headers-async.html
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-preflight-headers-async.html
+END
+cross-site-denied-response-sync-2.html
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/cross-site-denied-response-sync-2.html
+END
+cross-site-denied-response-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/blink/!svn/ver/104803/trunk/LayoutTests/http/tests/xmlhttprequest/cross-site-denied-response-expected.txt
+END
+test-uri-resolution.txt
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/blink/!svn/ver/44224/trunk/LayoutTests/http/tests/xmlhttprequest/test-uri-resolution.txt
+END
+newline-in-request-uri.html
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/newline-in-request-uri.html
+END
+access-control-response-with-body-sync.html
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-response-with-body-sync.html
+END
+cache-override-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/blink/!svn/ver/21687/trunk/LayoutTests/http/tests/xmlhttprequest/cache-override-expected.txt
+END
+request-from-popup.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/request-from-popup.html
+END
+origin-whitelisting-ip-addresses-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/blink/!svn/ver/47548/trunk/LayoutTests/http/tests/xmlhttprequest/origin-whitelisting-ip-addresses-expected.txt
+END
+abort-should-destroy-responseText.html
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/abort-should-destroy-responseText.html
+END
+access-control-preflight-sync-not-supported.html
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-preflight-sync-not-supported.html
+END
+encode-request-url-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/blink/!svn/ver/33966/trunk/LayoutTests/http/tests/xmlhttprequest/encode-request-url-expected.txt
+END
+access-control-basic-allow-async-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/blink/!svn/ver/34041/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-basic-allow-async-expected.txt
+END
+redirect-cross-origin-post.html
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/redirect-cross-origin-post.html
+END
+navigation-should-abort.html
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/blink/!svn/ver/144430/trunk/LayoutTests/http/tests/xmlhttprequest/navigation-should-abort.html
+END
+origin-whitelisting-removal.html
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/origin-whitelisting-removal.html
+END
+access-control-basic-non-simple-allow-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/blink/!svn/ver/35456/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-basic-non-simple-allow-expected.txt
+END
+chunked-progress-event-expectedLength.html
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/chunked-progress-event-expectedLength.html
+END
+abort-should-cancel-load.html
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/abort-should-cancel-load.html
+END
+origin-whitelisting-ip-addresses-with-subdomains-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/blink/!svn/ver/104803/trunk/LayoutTests/http/tests/xmlhttprequest/origin-whitelisting-ip-addresses-with-subdomains-expected.txt
+END
+access-control-basic-whitelist-request-headers.html
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-basic-whitelist-request-headers.html
+END
+access-control-basic-allow-preflight-cache-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/blink/!svn/ver/35540/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-basic-allow-preflight-cache-expected.txt
+END
+uri-resolution-opera-open-008.html
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/uri-resolution-opera-open-008.html
+END
+simple-cross-origin-progress-events.html
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/simple-cross-origin-progress-events.html
+END
+access-control-and-redirects-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/blink/!svn/ver/47388/trunk/LayoutTests/http/tests/xmlhttprequest/access-control-and-redirects-expected.txt
+END

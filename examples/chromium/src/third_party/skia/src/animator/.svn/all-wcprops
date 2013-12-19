@@ -1,0 +1,965 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/8445/trunk/src/animator
+END
+SkDrawTo.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/7406/trunk/src/animator/SkDrawTo.cpp
+END
+SkAnimate3DSchema.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/27/trunk/src/animator/SkAnimate3DSchema.xsd
+END
+SkSnapshot.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/7406/trunk/src/animator/SkSnapshot.h
+END
+SkDrawClip.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/7406/trunk/src/animator/SkDrawClip.cpp
+END
+SkDrawSaveLayer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/7406/trunk/src/animator/SkDrawSaveLayer.cpp
+END
+SkDisplayMovie.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/7406/trunk/src/animator/SkDisplayMovie.h
+END
+SkDrawPath.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/7406/trunk/src/animator/SkDrawPath.cpp
+END
+SkAnimator.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/8210/trunk/src/animator/SkAnimator.cpp
+END
+SkDrawGradient.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/6642/trunk/src/animator/SkDrawGradient.cpp
+END
+SkExtraPathEffects.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/27/trunk/src/animator/SkExtraPathEffects.xsd
+END
+SkScriptRuntime.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/5263/trunk/src/animator/SkScriptRuntime.h
+END
+SkGetCondensedInfo.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/7406/trunk/src/animator/SkGetCondensedInfo.cpp
+END
+SkDisplayNumber.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/5265/trunk/src/animator/SkDisplayNumber.cpp
+END
+SkMatrixParts.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/7406/trunk/src/animator/SkMatrixParts.cpp
+END
+SkDrawOval.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/7406/trunk/src/animator/SkDrawOval.cpp
+END
+SkDisplayMath.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/5263/trunk/src/animator/SkDisplayMath.cpp
+END
+SkAnimateActive.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/5265/trunk/src/animator/SkAnimateActive.h
+END
+SkDrawDiscrete.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/7406/trunk/src/animator/SkDrawDiscrete.cpp
+END
+SkDisplayPost.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/6642/trunk/src/animator/SkDisplayPost.h
+END
+thingstodo.txt
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/27/trunk/src/animator/thingstodo.txt
+END
+SkAnimatorScript2.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/7406/trunk/src/animator/SkAnimatorScript2.cpp
+END
+SkAnimate3DSchema.xsx
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/27/trunk/src/animator/SkAnimate3DSchema.xsx
+END
+SkDrawable.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/5263/trunk/src/animator/SkDrawable.h
+END
+SkDrawShader.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/5265/trunk/src/animator/SkDrawShader.h
+END
+SkDrawPaint.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/8445/trunk/src/animator/SkDrawPaint.cpp
+END
+SkAnimateSet.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/5263/trunk/src/animator/SkAnimateSet.cpp
+END
+SkDisplayScreenplay.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/7406/trunk/src/animator/SkDisplayScreenplay.cpp
+END
+SkTextOnPath.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/5263/trunk/src/animator/SkTextOnPath.cpp
+END
+SkAnimatorScript.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/7406/trunk/src/animator/SkAnimatorScript.cpp
+END
+SkDrawText.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/7406/trunk/src/animator/SkDrawText.cpp
+END
+SkDisplayMovie.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/8103/trunk/src/animator/SkDisplayMovie.cpp
+END
+SkDrawTo.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/5265/trunk/src/animator/SkDrawTo.h
+END
+SkParseSVGPath.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/7406/trunk/src/animator/SkParseSVGPath.cpp
+END
+SkDisplayEvent.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/7061/trunk/src/animator/SkDisplayEvent.cpp
+END
+SkDisplayXMLParser.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/7406/trunk/src/animator/SkDisplayXMLParser.h
+END
+SkDrawLine.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/7406/trunk/src/animator/SkDrawLine.h
+END
+SkAnimateSchema.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/177/trunk/src/animator/SkAnimateSchema.xsd
+END
+SkDrawTransparentShader.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/7406/trunk/src/animator/SkDrawTransparentShader.h
+END
+SkDrawable.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/7406/trunk/src/animator/SkDrawable.cpp
+END
+SkMemberInfo.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/7406/trunk/src/animator/SkMemberInfo.cpp
+END
+SkTypedArray.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/5265/trunk/src/animator/SkTypedArray.cpp
+END
+SkDrawDiscrete.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/5265/trunk/src/animator/SkDrawDiscrete.h
+END
+SkXMLAnimatorWriter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/7406/trunk/src/animator/SkXMLAnimatorWriter.cpp
+END
+SkPaintParts.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/5265/trunk/src/animator/SkPaintParts.h
+END
+SkHitClear.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/8103/trunk/src/animator/SkHitClear.cpp
+END
+SkDrawColor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/8103/trunk/src/animator/SkDrawColor.cpp
+END
+SkPostParts.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/7406/trunk/src/animator/SkPostParts.cpp
+END
+SkAnimateSchema.xsx
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/27/trunk/src/animator/SkAnimateSchema.xsx
+END
+SkBoundable.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/7406/trunk/src/animator/SkBoundable.h
+END
+SkDrawLine.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/5263/trunk/src/animator/SkDrawLine.cpp
+END
+SkDisplayType.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/5263/trunk/src/animator/SkDisplayType.cpp
+END
+SkPathParts.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/7406/trunk/src/animator/SkPathParts.h
+END
+SkDrawEmboss.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/7406/trunk/src/animator/SkDrawEmboss.h
+END
+SkDisplayRandom.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/7406/trunk/src/animator/SkDisplayRandom.h
+END
+SkDisplayInclude.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/7406/trunk/src/animator/SkDisplayInclude.h
+END
+SkOperand2.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/5263/trunk/src/animator/SkOperand2.h
+END
+SkDrawFull.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/7406/trunk/src/animator/SkDrawFull.cpp
+END
+SkDisplayAdd.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/7406/trunk/src/animator/SkDisplayAdd.h
+END
+SkAnimate.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/7406/trunk/src/animator/SkAnimate.h
+END
+SkPaintParts.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/8103/trunk/src/animator/SkPaintParts.cpp
+END
+SkDrawBlur.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/7406/trunk/src/animator/SkDrawBlur.h
+END
+SkTypedArray.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/5263/trunk/src/animator/SkTypedArray.h
+END
+SkXMLAnimatorWriter.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/7406/trunk/src/animator/SkXMLAnimatorWriter.h
+END
+SkIntArray.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/7406/trunk/src/animator/SkIntArray.h
+END
+SkDrawBitmap.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/5263/trunk/src/animator/SkDrawBitmap.h
+END
+SkDrawColor.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/5265/trunk/src/animator/SkDrawColor.h
+END
+SkScript.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/7406/trunk/src/animator/SkScript.cpp
+END
+SkDrawPoint.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/7406/trunk/src/animator/SkDrawPoint.cpp
+END
+SkDisplayInclude.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/5265/trunk/src/animator/SkDisplayInclude.cpp
+END
+SkAnimateActive.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/7406/trunk/src/animator/SkAnimateActive.cpp
+END
+SkDump.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/7406/trunk/src/animator/SkDump.h
+END
+SkDisplayApply.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/7903/trunk/src/animator/SkDisplayApply.cpp
+END
+SkOperandIterpolator.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/7406/trunk/src/animator/SkOperandIterpolator.cpp
+END
+SkAnimateBase.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/5265/trunk/src/animator/SkAnimateBase.h
+END
+SkDisplayBounds.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/7406/trunk/src/animator/SkDisplayBounds.cpp
+END
+SkDrawGradient.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/7406/trunk/src/animator/SkDrawGradient.h
+END
+SkDrawOval.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/7406/trunk/src/animator/SkDrawOval.h
+END
+SkDisplayMath.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/7406/trunk/src/animator/SkDisplayMath.h
+END
+SkDrawFull.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/5265/trunk/src/animator/SkDrawFull.h
+END
+SkTDArray_Experimental.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/8203/trunk/src/animator/SkTDArray_Experimental.h
+END
+SkDisplayEvents.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/7406/trunk/src/animator/SkDisplayEvents.h
+END
+SkDisplayScreenplay.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/5265/trunk/src/animator/SkDisplayScreenplay.h
+END
+SkAnimatorScript.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/7406/trunk/src/animator/SkAnimatorScript.h
+END
+SkDump.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/8103/trunk/src/animator/SkDump.cpp
+END
+SkDrawTransparentShader.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/7406/trunk/src/animator/SkDrawTransparentShader.cpp
+END
+SkDisplayList.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/7406/trunk/src/animator/SkDisplayList.h
+END
+SkScript.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/5263/trunk/src/animator/SkScript.h
+END
+SkAnimateBase.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/7406/trunk/src/animator/SkAnimateBase.cpp
+END
+SkDrawTextBox.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/7406/trunk/src/animator/SkDrawTextBox.cpp
+END
+SkDisplayEvent.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/7406/trunk/src/animator/SkDisplayEvent.h
+END
+SkDrawGroup.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/6642/trunk/src/animator/SkDrawGroup.h
+END
+SkOpArray.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/5263/trunk/src/animator/SkOpArray.h
+END
+SkDraw3D.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/7406/trunk/src/animator/SkDraw3D.cpp
+END
+SkDisplayBounds.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/7406/trunk/src/animator/SkDisplayBounds.h
+END
+SkScriptDecompile.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/5263/trunk/src/animator/SkScriptDecompile.cpp
+END
+SkDrawMatrix.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/6642/trunk/src/animator/SkDrawMatrix.h
+END
+SkDrawRectangle.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/7406/trunk/src/animator/SkDrawRectangle.h
+END
+SkMemberInfo.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/7406/trunk/src/animator/SkMemberInfo.h
+END
+SkScript2.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/7406/trunk/src/animator/SkScript2.h
+END
+SkBuildCondensedInfo.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/7406/trunk/src/animator/SkBuildCondensedInfo.cpp
+END
+SkDisplayTypes.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/7406/trunk/src/animator/SkDisplayTypes.h
+END
+SkSnapshot.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/7406/trunk/src/animator/SkSnapshot.cpp
+END
+SkAnimateProperties.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/5265/trunk/src/animator/SkAnimateProperties.h
+END
+SkHitClear.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/5265/trunk/src/animator/SkHitClear.h
+END
+SkDisplayList.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/7406/trunk/src/animator/SkDisplayList.cpp
+END
+SkAnimateMaker.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/7406/trunk/src/animator/SkAnimateMaker.h
+END
+SkPostParts.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/5265/trunk/src/animator/SkPostParts.h
+END
+SkDrawEmboss.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/7406/trunk/src/animator/SkDrawEmboss.cpp
+END
+SkDisplayRandom.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/7406/trunk/src/animator/SkDisplayRandom.cpp
+END
+SkPathParts.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/7406/trunk/src/animator/SkPathParts.cpp
+END
+SkCondensedDebug.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/7406/trunk/src/animator/SkCondensedDebug.cpp
+END
+SkDisplayPost.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/7406/trunk/src/animator/SkDisplayPost.cpp
+END
+SkDisplayType.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/5263/trunk/src/animator/SkDisplayType.h
+END
+SkOpArray.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/5263/trunk/src/animator/SkOpArray.cpp
+END
+SkDisplayAdd.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/7406/trunk/src/animator/SkDisplayAdd.cpp
+END
+SkDrawPath.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/6642/trunk/src/animator/SkDrawPath.h
+END
+SkDrawBlur.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/7406/trunk/src/animator/SkDrawBlur.cpp
+END
+SkMatrixParts.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/5263/trunk/src/animator/SkMatrixParts.h
+END
+SkDisplayNumber.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/5263/trunk/src/animator/SkDisplayNumber.h
+END
+SkDraw3D.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/7406/trunk/src/animator/SkDraw3D.h
+END
+SkDisplayInput.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/7406/trunk/src/animator/SkDisplayInput.h
+END
+SkDrawBitmap.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/8418/trunk/src/animator/SkDrawBitmap.cpp
+END
+SkOperand.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/5265/trunk/src/animator/SkOperand.h
+END
+SkDisplayable.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/6642/trunk/src/animator/SkDisplayable.h
+END
+SkAnimateSet.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/7406/trunk/src/animator/SkAnimateSet.h
+END
+SkOperandInterpolator.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/7406/trunk/src/animator/SkOperandInterpolator.h
+END
+SkDrawDash.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/7406/trunk/src/animator/SkDrawDash.h
+END
+SkDisplayXMLParser.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/7406/trunk/src/animator/SkDisplayXMLParser.cpp
+END
+SkTextOnPath.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/5265/trunk/src/animator/SkTextOnPath.h
+END
+SkTextToPath.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/7406/trunk/src/animator/SkTextToPath.cpp
+END
+SkDrawText.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/5263/trunk/src/animator/SkDrawText.h
+END
+SkDrawPoint.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/5265/trunk/src/animator/SkDrawPoint.h
+END
+SkDisplayApply.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/7406/trunk/src/animator/SkDisplayApply.h
+END
+SkAnimateField.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/7406/trunk/src/animator/SkAnimateField.cpp
+END
+SkHitTest.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/8103/trunk/src/animator/SkHitTest.cpp
+END
+SkDisplayInput.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/5263/trunk/src/animator/SkDisplayInput.cpp
+END
+SkDisplayable.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/7406/trunk/src/animator/SkDisplayable.cpp
+END
+SkDisplayEvents.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/5263/trunk/src/animator/SkDisplayEvents.cpp
+END
+SkDrawExtraPathEffect.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/8103/trunk/src/animator/SkDrawExtraPathEffect.cpp
+END
+SkBoundable.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/7406/trunk/src/animator/SkBoundable.cpp
+END
+SkDrawDash.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/7406/trunk/src/animator/SkDrawDash.cpp
+END
+SkCondensedRelease.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/7406/trunk/src/animator/SkCondensedRelease.cpp
+END
+SkScriptRuntime.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/7406/trunk/src/animator/SkScriptRuntime.cpp
+END
+SkTextToPath.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/7406/trunk/src/animator/SkTextToPath.h
+END
+SkDrawClip.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/5265/trunk/src/animator/SkDrawClip.h
+END
+SkDrawGroup.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/8103/trunk/src/animator/SkDrawGroup.cpp
+END
+SkExtras.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/5265/trunk/src/animator/SkExtras.h
+END
+SkDrawSaveLayer.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/5265/trunk/src/animator/SkDrawSaveLayer.h
+END
+SkDrawTextBox.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/7406/trunk/src/animator/SkDrawTextBox.h
+END
+SkDrawRectangle.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/7406/trunk/src/animator/SkDrawRectangle.cpp
+END
+SkDrawMatrix.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/7406/trunk/src/animator/SkDrawMatrix.cpp
+END
+SkDrawShader.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/5263/trunk/src/animator/SkDrawShader.cpp
+END
+SkAnimatorScript2.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/5263/trunk/src/animator/SkAnimatorScript2.h
+END
+SkScriptCallBack.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/5263/trunk/src/animator/SkScriptCallBack.h
+END
+SkHitTest.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/5265/trunk/src/animator/SkHitTest.h
+END
+SkDisplayTypes.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/7406/trunk/src/animator/SkDisplayTypes.cpp
+END
+SkAnimateMaker.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/8210/trunk/src/animator/SkAnimateMaker.cpp
+END
+SkTime.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/7406/trunk/src/animator/SkTime.cpp
+END
+SkDrawPaint.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/7406/trunk/src/animator/SkDrawPaint.h
+END
+SkScriptTokenizer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/8033/trunk/src/animator/SkScriptTokenizer.cpp
+END

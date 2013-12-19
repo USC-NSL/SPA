@@ -1,0 +1,11 @@
+K 13
+svn:externals
+V 57
+testing -r408 http://googlemock.googlecode.com/svn/trunk
+
+K 10
+svn:ignore
+V 10
+.dirstamp
+
+END

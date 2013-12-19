@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/3838/stable/webrtc/video_engine/test/auto_test/automated
+END
+two_windows_fixture.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/2974/stable/webrtc/video_engine/test/auto_test/automated/two_windows_fixture.h
+END
+legacy_fixture.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/3353/stable/webrtc/video_engine/test/auto_test/automated/legacy_fixture.h
+END
+vie_api_integration_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/3838/stable/webrtc/video_engine/test/auto_test/automated/vie_api_integration_test.cc
+END
+vie_extended_integration_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/3838/stable/webrtc/video_engine/test/auto_test/automated/vie_extended_integration_test.cc
+END
+vie_standard_integration_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/3838/stable/webrtc/video_engine/test/auto_test/automated/vie_standard_integration_test.cc
+END
+vie_rtp_fuzz_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/3353/stable/webrtc/video_engine/test/auto_test/automated/vie_rtp_fuzz_test.cc
+END
+two_windows_fixture.cc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/3353/stable/webrtc/video_engine/test/auto_test/automated/two_windows_fixture.cc
+END
+vie_video_verification_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/3384/stable/webrtc/video_engine/test/auto_test/automated/vie_video_verification_test.cc
+END
+legacy_fixture.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/3353/stable/webrtc/video_engine/test/auto_test/automated/legacy_fixture.cc
+END

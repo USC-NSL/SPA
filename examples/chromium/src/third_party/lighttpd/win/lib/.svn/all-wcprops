@@ -1,0 +1,197 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/33727/trunk/deps/third_party/lighttpd/win/lib
+END
+mod_trigger_b4_dl.dll
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/33727/trunk/deps/third_party/lighttpd/win/lib/mod_trigger_b4_dl.dll
+END
+mod_dirlisting.dll
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/33727/trunk/deps/third_party/lighttpd/win/lib/mod_dirlisting.dll
+END
+mod_evhost.dll
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/33727/trunk/deps/third_party/lighttpd/win/lib/mod_evhost.dll
+END
+mod_magnet.dll
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/33727/trunk/deps/third_party/lighttpd/win/lib/mod_magnet.dll
+END
+mod_simple_vhost.dll
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/33727/trunk/deps/third_party/lighttpd/win/lib/mod_simple_vhost.dll
+END
+mod_userdir.dll
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/33727/trunk/deps/third_party/lighttpd/win/lib/mod_userdir.dll
+END
+mod_proxy.dll
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/33727/trunk/deps/third_party/lighttpd/win/lib/mod_proxy.dll
+END
+mod_scgi.dll
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/33727/trunk/deps/third_party/lighttpd/win/lib/mod_scgi.dll
+END
+mod_extforward.dll
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/33727/trunk/deps/third_party/lighttpd/win/lib/mod_extforward.dll
+END
+mod_mysql_vhost.dll
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/33727/trunk/deps/third_party/lighttpd/win/lib/mod_mysql_vhost.dll
+END
+mod_expire.dll
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/33727/trunk/deps/third_party/lighttpd/win/lib/mod_expire.dll
+END
+mod_flv_streaming.dll
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/33727/trunk/deps/third_party/lighttpd/win/lib/mod_flv_streaming.dll
+END
+mod_redirect.dll
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/33727/trunk/deps/third_party/lighttpd/win/lib/mod_redirect.dll
+END
+mod_cgi.dll
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/33727/trunk/deps/third_party/lighttpd/win/lib/mod_cgi.dll
+END
+mod_evasive.dll
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/33727/trunk/deps/third_party/lighttpd/win/lib/mod_evasive.dll
+END
+mod_usertrack.dll
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/33727/trunk/deps/third_party/lighttpd/win/lib/mod_usertrack.dll
+END
+mod_setenv.dll
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/33727/trunk/deps/third_party/lighttpd/win/lib/mod_setenv.dll
+END
+mod_indexfile.dll
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/33727/trunk/deps/third_party/lighttpd/win/lib/mod_indexfile.dll
+END
+mod_webdav.dll
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/33727/trunk/deps/third_party/lighttpd/win/lib/mod_webdav.dll
+END
+mod_cml.dll
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/33727/trunk/deps/third_party/lighttpd/win/lib/mod_cml.dll
+END
+mod_fastcgi.dll
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/33727/trunk/deps/third_party/lighttpd/win/lib/mod_fastcgi.dll
+END
+mod_rewrite.dll
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/33727/trunk/deps/third_party/lighttpd/win/lib/mod_rewrite.dll
+END
+mod_status.dll
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/33727/trunk/deps/third_party/lighttpd/win/lib/mod_status.dll
+END
+mod_rrdtool.dll
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/33727/trunk/deps/third_party/lighttpd/win/lib/mod_rrdtool.dll
+END
+mod_staticfile.dll
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/33727/trunk/deps/third_party/lighttpd/win/lib/mod_staticfile.dll
+END
+mod_alias.dll
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/33727/trunk/deps/third_party/lighttpd/win/lib/mod_alias.dll
+END
+mod_compress.dll
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/33727/trunk/deps/third_party/lighttpd/win/lib/mod_compress.dll
+END
+mod_ssi.dll
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/33727/trunk/deps/third_party/lighttpd/win/lib/mod_ssi.dll
+END
+mod_access.dll
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/33727/trunk/deps/third_party/lighttpd/win/lib/mod_access.dll
+END
+mod_auth.dll
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/33727/trunk/deps/third_party/lighttpd/win/lib/mod_auth.dll
+END
+mod_secdownload.dll
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/33727/trunk/deps/third_party/lighttpd/win/lib/mod_secdownload.dll
+END
+mod_accesslog.dll
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/33727/trunk/deps/third_party/lighttpd/win/lib/mod_accesslog.dll
+END

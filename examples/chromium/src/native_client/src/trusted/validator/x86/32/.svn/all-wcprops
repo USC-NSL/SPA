@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/native_client/!svn/ver/11112/trunk/src/native_client/src/trusted/validator/x86/32
+END
+ncvalidate_verbose.c
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/native_client/!svn/ver/10590/trunk/src/native_client/src/trusted/validator/x86/32/ncvalidate_verbose.c
+END
+build.scons
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/native_client/!svn/ver/10119/trunk/src/native_client/src/trusted/validator/x86/32/build.scons
+END
+ncvalidate.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/native_client/!svn/ver/11112/trunk/src/native_client/src/trusted/validator/x86/32/ncvalidate.c
+END
+validator_x86_32.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/native_client/!svn/ver/8260/trunk/src/native_client/src/trusted/validator/x86/32/validator_x86_32.gyp
+END

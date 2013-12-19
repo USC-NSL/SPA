@@ -1,0 +1,593 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/blink/!svn/ver/145142/trunk/LayoutTests/http/tests/xmlhttprequest/resources
+END
+access-control-sandboxed-iframe-denied-iframe.html
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/blink/!svn/ver/51577/trunk/LayoutTests/http/tests/xmlhttprequest/resources/access-control-sandboxed-iframe-denied-iframe.html
+END
+304.pl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/blink/!svn/ver/15150/trunk/LayoutTests/http/tests/xmlhttprequest/resources/304.pl
+END
+docLoaderFrame-data.html
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/blink/!svn/ver/16196/trunk/LayoutTests/http/tests/xmlhttprequest/resources/docLoaderFrame-data.html
+END
+256.bin
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/blink/!svn/ver/27145/trunk/LayoutTests/http/tests/xmlhttprequest/resources/256.bin
+END
+access-control-response-with-expose-headers.php
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/blink/!svn/ver/105076/trunk/LayoutTests/http/tests/xmlhttprequest/resources/access-control-response-with-expose-headers.php
+END
+navigation-target.html
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/blink/!svn/ver/144430/trunk/LayoutTests/http/tests/xmlhttprequest/resources/navigation-target.html
+END
+post-echo-as-ascii.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/blink/!svn/ver/72866/trunk/LayoutTests/http/tests/xmlhttprequest/resources/post-echo-as-ascii.cgi
+END
+reply2.txt
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/blink/!svn/ver/12923/trunk/LayoutTests/http/tests/xmlhttprequest/resources/reply2.txt
+END
+reply3.txt
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/blink/!svn/ver/12923/trunk/LayoutTests/http/tests/xmlhttprequest/resources/reply3.txt
+END
+reply4.txt
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/blink/!svn/ver/12923/trunk/LayoutTests/http/tests/xmlhttprequest/resources/reply4.txt
+END
+reply5.txt
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/blink/!svn/ver/12923/trunk/LayoutTests/http/tests/xmlhttprequest/resources/reply5.txt
+END
+load-icon.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/blink/!svn/ver/39104/trunk/LayoutTests/http/tests/xmlhttprequest/resources/load-icon.xhtml
+END
+access-control-sandboxed-iframe-allow.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/blink/!svn/ver/51577/trunk/LayoutTests/http/tests/xmlhttprequest/resources/access-control-sandboxed-iframe-allow.cgi
+END
+load-icon.svg
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/blink/!svn/ver/39104/trunk/LayoutTests/http/tests/xmlhttprequest/resources/load-icon.svg
+END
+xmlhttprequest-mimetype-mixed-case.php
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/resources/xmlhttprequest-mimetype-mixed-case.php
+END
+access-control-basic-get-fail-non-simple.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/blink/!svn/ver/41046/trunk/LayoutTests/http/tests/xmlhttprequest/resources/access-control-basic-get-fail-non-simple.cgi
+END
+close-window-frame.html
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/resources/close-window-frame.html
+END
+access-control-sandboxed-iframe-allow-iframe.html
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/blink/!svn/ver/51577/trunk/LayoutTests/http/tests/xmlhttprequest/resources/access-control-sandboxed-iframe-allow-iframe.html
+END
+origin-whitelisting-ip-address-test.html
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/blink/!svn/ver/47548/trunk/LayoutTests/http/tests/xmlhttprequest/resources/origin-whitelisting-ip-address-test.html
+END
+uri-resolution-opera-open-004-iframe.html
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/resources/uri-resolution-opera-open-004-iframe.html
+END
+access-control-basic-options-not-supported.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/blink/!svn/ver/41711/trunk/LayoutTests/http/tests/xmlhttprequest/resources/access-control-basic-options-not-supported.cgi
+END
+uri-resolution-opera-open-005-iframe.html
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/resources/uri-resolution-opera-open-005-iframe.html
+END
+uri-resolution-opera-open-006-iframe.html
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/resources/uri-resolution-opera-open-006-iframe.html
+END
+uri-resolution-opera-open-007-iframe.html
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/resources/uri-resolution-opera-open-007-iframe.html
+END
+reply2.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/blink/!svn/ver/12923/trunk/LayoutTests/http/tests/xmlhttprequest/resources/reply2.xml
+END
+cross-origin-no-authorization.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/blink/!svn/ver/48541/trunk/LayoutTests/http/tests/xmlhttprequest/resources/cross-origin-no-authorization.php
+END
+uri-resolution-opera-open-008-iframe.html
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/resources/uri-resolution-opera-open-008-iframe.html
+END
+reply3.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/blink/!svn/ver/12923/trunk/LayoutTests/http/tests/xmlhttprequest/resources/reply3.xml
+END
+uri-resolution-opera-open-009-iframe.html
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/resources/uri-resolution-opera-open-009-iframe.html
+END
+reply4.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/blink/!svn/ver/12923/trunk/LayoutTests/http/tests/xmlhttprequest/resources/reply4.xml
+END
+access-control-basic-whitelist-response-headers.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/blink/!svn/ver/41046/trunk/LayoutTests/http/tests/xmlhttprequest/resources/access-control-basic-whitelist-response-headers.cgi
+END
+xml-encoding.xml
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/blink/!svn/ver/17859/trunk/LayoutTests/http/tests/xmlhttprequest/resources/xml-encoding.xml
+END
+access-control-allow-with-body.php
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/blink/!svn/ver/56955/trunk/LayoutTests/http/tests/xmlhttprequest/resources/access-control-allow-with-body.php
+END
+chunked-transfer.php
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/blink/!svn/ver/101612/trunk/LayoutTests/http/tests/xmlhttprequest/resources/chunked-transfer.php
+END
+redirect-cors.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/blink/!svn/ver/112217/trunk/LayoutTests/http/tests/xmlhttprequest/resources/redirect-cors.php
+END
+access-control-preflight-denied-xsrf.php
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/blink/!svn/ver/62779/trunk/LayoutTests/http/tests/xmlhttprequest/resources/access-control-preflight-denied-xsrf.php
+END
+print-cache-control-header.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/blink/!svn/ver/63100/trunk/LayoutTests/http/tests/xmlhttprequest/resources/print-cache-control-header.cgi
+END
+uri-resolution-opera-open-010-iframe.html
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/resources/uri-resolution-opera-open-010-iframe.html
+END
+print-headers.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/blink/!svn/ver/18863/trunk/LayoutTests/http/tests/xmlhttprequest/resources/print-headers.cgi
+END
+noContentType.asis
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/blink/!svn/ver/81267/trunk/LayoutTests/http/tests/xmlhttprequest/resources/noContentType.asis
+END
+noContentLength.asis
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/blink/!svn/ver/34320/trunk/LayoutTests/http/tests/xmlhttprequest/resources/noContentLength.asis
+END
+access-control-basic-whitelist-request-headers.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/blink/!svn/ver/41711/trunk/LayoutTests/http/tests/xmlhttprequest/resources/access-control-basic-whitelist-request-headers.cgi
+END
+custom-headers.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/blink/!svn/ver/136705/trunk/LayoutTests/http/tests/xmlhttprequest/resources/custom-headers.php
+END
+access-control-basic-allow.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/blink/!svn/ver/41046/trunk/LayoutTests/http/tests/xmlhttprequest/resources/access-control-basic-allow.cgi
+END
+zero-length.txt
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/blink/!svn/ver/12923/trunk/LayoutTests/http/tests/xmlhttprequest/resources/zero-length.txt
+END
+frame-load-to-cancel.html
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/resources/frame-load-to-cancel.html
+END
+access-control-basic-allow-print-headers.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/blink/!svn/ver/41046/trunk/LayoutTests/http/tests/xmlhttprequest/resources/access-control-basic-allow-print-headers.cgi
+END
+get-set-cookie.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/blink/!svn/ver/57241/trunk/LayoutTests/http/tests/xmlhttprequest/resources/get-set-cookie.cgi
+END
+access-control-basic-allow-star.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/blink/!svn/ver/41046/trunk/LayoutTests/http/tests/xmlhttprequest/resources/access-control-basic-allow-star.cgi
+END
+big-response.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/blink/!svn/ver/38709/trunk/LayoutTests/http/tests/xmlhttprequest/resources/big-response.php
+END
+access-control-basic-denied.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/blink/!svn/ver/33990/trunk/LayoutTests/http/tests/xmlhttprequest/resources/access-control-basic-denied.cgi
+END
+print-referer.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/blink/!svn/ver/18577/trunk/LayoutTests/http/tests/xmlhttprequest/resources/print-referer.cgi
+END
+origin-exact-matching-iframe.html
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/blink/!svn/ver/120107/trunk/LayoutTests/http/tests/xmlhttprequest/resources/origin-exact-matching-iframe.html
+END
+zero-length.xml
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/blink/!svn/ver/16543/trunk/LayoutTests/http/tests/xmlhttprequest/resources/zero-length.xml
+END
+no-custom-header.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/blink/!svn/ver/47494/trunk/LayoutTests/http/tests/xmlhttprequest/resources/no-custom-header.php
+END
+print-query.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/blink/!svn/ver/33966/trunk/LayoutTests/http/tests/xmlhttprequest/resources/print-query.cgi
+END
+xmlhttprequest-in-unload.html
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/blink/!svn/ver/43650/trunk/LayoutTests/http/tests/xmlhttprequest/resources/xmlhttprequest-in-unload.html
+END
+post-echo.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/blink/!svn/ver/16543/trunk/LayoutTests/http/tests/xmlhttprequest/resources/post-echo.cgi
+END
+echo-auth.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/blink/!svn/ver/24227/trunk/LayoutTests/http/tests/xmlhttprequest/resources/echo-auth.php
+END
+post-echo-as-utf-8.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/blink/!svn/ver/17859/trunk/LayoutTests/http/tests/xmlhttprequest/resources/post-echo-as-utf-8.cgi
+END
+multipart-post-echo.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/blink/!svn/ver/66773/trunk/LayoutTests/http/tests/xmlhttprequest/resources/multipart-post-echo.php
+END
+utf-8-no-charset.html
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/blink/!svn/ver/28934/trunk/LayoutTests/http/tests/xmlhttprequest/resources/utf-8-no-charset.html
+END
+multipart-post-echo-filenames.php
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/blink/!svn/ver/145142/trunk/LayoutTests/http/tests/xmlhttprequest/resources/multipart-post-echo-filenames.php
+END
+reply.txt
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/resources/reply.txt
+END
+cross-origin-check-cookies.php
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/blink/!svn/ver/48541/trunk/LayoutTests/http/tests/xmlhttprequest/resources/cross-origin-check-cookies.php
+END
+access-control-basic-post-fail-non-simple.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/blink/!svn/ver/63680/trunk/LayoutTests/http/tests/xmlhttprequest/resources/access-control-basic-post-fail-non-simple.cgi
+END
+status-404-without-body.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/blink/!svn/ver/117246/trunk/LayoutTests/http/tests/xmlhttprequest/resources/status-404-without-body.php
+END
+.htaccess
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/blink/!svn/ver/81267/trunk/LayoutTests/http/tests/xmlhttprequest/resources/.htaccess
+END
+echo-host.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/blink/!svn/ver/42983/trunk/LayoutTests/http/tests/xmlhttprequest/resources/echo-host.php
+END
+access-control-basic-non-get-allow.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/blink/!svn/ver/41759/trunk/LayoutTests/http/tests/xmlhttprequest/resources/access-control-basic-non-get-allow.cgi
+END
+access-control-preflight-request-header-lowercase.php
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/blink/!svn/ver/105242/trunk/LayoutTests/http/tests/xmlhttprequest/resources/access-control-preflight-request-header-lowercase.php
+END
+access-control-basic-preflight-cache-invalidation.php
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/blink/!svn/ver/41046/trunk/LayoutTests/http/tests/xmlhttprequest/resources/access-control-basic-preflight-cache-invalidation.php
+END
+cross-origin-set-cookies.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/blink/!svn/ver/57241/trunk/LayoutTests/http/tests/xmlhttprequest/resources/cross-origin-set-cookies.php
+END
+redirect.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/blink/!svn/ver/35413/trunk/LayoutTests/http/tests/xmlhttprequest/resources/redirect.php
+END
+reply.xml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/blink/!svn/ver/12923/trunk/LayoutTests/http/tests/xmlhttprequest/resources/reply.xml
+END
+test-uri-resolution.txt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/blink/!svn/ver/44224/trunk/LayoutTests/http/tests/xmlhttprequest/resources/test-uri-resolution.txt
+END
+1251.html
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/blink/!svn/ver/23718/trunk/LayoutTests/http/tests/xmlhttprequest/resources/1251.html
+END
+access-control-basic-preflight-cache-timeout.php
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/blink/!svn/ver/41046/trunk/LayoutTests/http/tests/xmlhttprequest/resources/access-control-basic-preflight-cache-timeout.php
+END
+detached-frame.html
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/resources/detached-frame.html
+END
+svgtest.svg
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/blink/!svn/ver/21418/trunk/LayoutTests/http/tests/xmlhttprequest/resources/svgtest.svg
+END
+get.txt
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/blink/!svn/ver/34775/trunk/LayoutTests/http/tests/xmlhttprequest/resources/get.txt
+END
+cross-site-progress-events.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/blink/!svn/ver/41825/trunk/LayoutTests/http/tests/xmlhttprequest/resources/cross-site-progress-events.cgi
+END
+download-with-delay.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/blink/!svn/ver/57044/trunk/LayoutTests/http/tests/xmlhttprequest/resources/download-with-delay.php
+END
+infinite-loop.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/blink/!svn/ver/18863/trunk/LayoutTests/http/tests/xmlhttprequest/resources/infinite-loop.php
+END
+cross-origin-authorization.php
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/blink/!svn/ver/48541/trunk/LayoutTests/http/tests/xmlhttprequest/resources/cross-origin-authorization.php
+END
+small-chunks.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/blink/!svn/ver/25274/trunk/LayoutTests/http/tests/xmlhttprequest/resources/small-chunks.cgi
+END
+broken-encoding.xml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/blink/!svn/ver/41476/trunk/LayoutTests/http/tests/xmlhttprequest/resources/broken-encoding.xml
+END
+access-control-basic-allow-access-control-origin-header.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/blink/!svn/ver/41046/trunk/LayoutTests/http/tests/xmlhttprequest/resources/access-control-basic-allow-access-control-origin-header.cgi
+END
+cross-origin-preflight-get.php
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/blink/!svn/ver/77680/trunk/LayoutTests/http/tests/xmlhttprequest/resources/cross-origin-preflight-get.php
+END
+access-control-sandboxed-iframe-denied-without-wildcard.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/blink/!svn/ver/51577/trunk/LayoutTests/http/tests/xmlhttprequest/resources/access-control-sandboxed-iframe-denied-without-wildcard.cgi
+END
+endlessxml.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/blink/!svn/ver/120167/trunk/LayoutTests/http/tests/xmlhttprequest/resources/endlessxml.php
+END
+access-control-sandboxed-iframe-denied-without-wildcard-iframe.html
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/blink/!svn/ver/51577/trunk/LayoutTests/http/tests/xmlhttprequest/resources/access-control-sandboxed-iframe-denied-without-wildcard-iframe.html
+END
+cross-origin-preset-authorization-frame.html
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/blink/!svn/ver/44816/trunk/LayoutTests/http/tests/xmlhttprequest/resources/cross-origin-preset-authorization-frame.html
+END
+access-control-basic-preflight-cache.php
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/blink/!svn/ver/41046/trunk/LayoutTests/http/tests/xmlhttprequest/resources/access-control-basic-preflight-cache.php
+END
+forbidden.txt
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/blink/!svn/ver/35413/trunk/LayoutTests/http/tests/xmlhttprequest/resources/forbidden.txt
+END
+empty-content-type.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/blink/!svn/ver/28993/trunk/LayoutTests/http/tests/xmlhttprequest/resources/empty-content-type.php
+END
+access-control-sandboxed-iframe-denied.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/blink/!svn/ver/51577/trunk/LayoutTests/http/tests/xmlhttprequest/resources/access-control-sandboxed-iframe-denied.cgi
+END
+access-control-allow-lists.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/blink/!svn/ver/130845/trunk/LayoutTests/http/tests/xmlhttprequest/resources/access-control-allow-lists.php
+END

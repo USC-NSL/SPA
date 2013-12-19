@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/119409/trunk/deps/third_party/libsrtp/srtp/crypto/test
+END
+cipher_driver.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/115467/trunk/deps/third_party/libsrtp/srtp/crypto/test/cipher_driver.c
+END
+stat_driver.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/119409/trunk/deps/third_party/libsrtp/srtp/crypto/test/stat_driver.c
+END
+sha1_driver.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/115467/trunk/deps/third_party/libsrtp/srtp/crypto/test/sha1_driver.c
+END
+env.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/115467/trunk/deps/third_party/libsrtp/srtp/crypto/test/env.c
+END
+datatypes_driver.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/115467/trunk/deps/third_party/libsrtp/srtp/crypto/test/datatypes_driver.c
+END
+aes_calc.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/119409/trunk/deps/third_party/libsrtp/srtp/crypto/test/aes_calc.c
+END
+kernel_driver.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/115467/trunk/deps/third_party/libsrtp/srtp/crypto/test/kernel_driver.c
+END
+.cvsignore
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/115467/trunk/deps/third_party/libsrtp/srtp/crypto/test/.cvsignore
+END
+auth_driver.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/115467/trunk/deps/third_party/libsrtp/srtp/crypto/test/auth_driver.c
+END
+rand_gen.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/115467/trunk/deps/third_party/libsrtp/srtp/crypto/test/rand_gen.c
+END

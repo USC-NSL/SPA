@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/168/trunk/tests/intl/date-format
+END
+protected-icu-internals.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/105/trunk/tests/intl/date-format/protected-icu-internals.js
+END
+format-test.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/139/trunk/tests/intl/date-format/format-test.js
+END
+format-is-bound.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/96/trunk/tests/intl/date-format/format-is-bound.js
+END
+parse-mdyhms.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/141/trunk/tests/intl/date-format/parse-mdyhms.js
+END
+timezone.js
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/168/trunk/tests/intl/date-format/timezone.js
+END
+parse-invalid-input.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/141/trunk/tests/intl/date-format/parse-invalid-input.js
+END
+parse-MMMdy.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/141/trunk/tests/intl/date-format/parse-MMMdy.js
+END
+resolved-options.js
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/154/trunk/tests/intl/date-format/resolved-options.js
+END
+utils.js
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/112/trunk/tests/intl/date-format/utils.js
+END
+parse-mdy.js
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/141/trunk/tests/intl/date-format/parse-mdy.js
+END
+default-locale.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/98/trunk/tests/intl/date-format/default-locale.js
+END
+property-override.js
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/140/trunk/tests/intl/date-format/property-override.js
+END
+resolved-options-is-method.js
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/97/trunk/tests/intl/date-format/resolved-options-is-method.js
+END
+wellformed-unsupported-locale.js
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/98/trunk/tests/intl/date-format/wellformed-unsupported-locale.js
+END

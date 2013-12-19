@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libswresample/x86
+END
+resample_mmx.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/162873/trunk/deps/third_party/ffmpeg/libswresample/x86/resample_mmx.h
+END
+audio_convert.asm
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libswresample/x86/audio_convert.asm
+END
+swresample_x86.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/162873/trunk/deps/third_party/ffmpeg/libswresample/x86/swresample_x86.c
+END
+rematrix.asm
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libswresample/x86/rematrix.asm
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/148611/trunk/deps/third_party/ffmpeg/libswresample/x86/Makefile
+END

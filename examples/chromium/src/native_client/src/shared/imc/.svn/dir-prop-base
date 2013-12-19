@@ -1,0 +1,27 @@
+K 10
+svn:ignore
+V 484
+google_nacl_imc.rules
+google_nacl_imc.sln
+google_nacl_imc.target.mk
+google_nacl_imc.vcproj
+google_nacl_imc64.rules
+google_nacl_imc64.vcproj
+google_nacl_imc_c.rules
+google_nacl_imc_c.target.mk
+google_nacl_imc_c.vcproj
+google_nacl_imc_c64.rules
+google_nacl_imc_c64.vcproj
+imc.Makefile
+imc.sln
+imc.xcodeproj
+run_sigpipe_test.rules
+run_sigpipe_test.target.mk
+run_sigpipe_test.vcproj
+sigpipe_test.rules
+sigpipe_test.target.mk
+sigpipe_test.vcproj
+sigpipe_test64.rules
+sigpipe_test64.vcproj
+
+END

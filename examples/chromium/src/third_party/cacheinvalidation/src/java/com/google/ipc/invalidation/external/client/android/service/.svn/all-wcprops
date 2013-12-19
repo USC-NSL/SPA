@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/268/trunk/src/java/com/google/ipc/invalidation/external/client/android/service
+END
+AndroidLogger.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/268/trunk/src/java/com/google/ipc/invalidation/external/client/android/service/AndroidLogger.java
+END
+ParcelableErrorInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/236/trunk/src/java/com/google/ipc/invalidation/external/client/android/service/ParcelableErrorInfo.java
+END
+Event.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/188/trunk/src/java/com/google/ipc/invalidation/external/client/android/service/Event.java
+END
+ServiceBinder.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/221/trunk/src/java/com/google/ipc/invalidation/external/client/android/service/ServiceBinder.java
+END
+Message.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/207/trunk/src/java/com/google/ipc/invalidation/external/client/android/service/Message.java
+END
+InvalidationBinder.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/214/trunk/src/java/com/google/ipc/invalidation/external/client/android/service/InvalidationBinder.java
+END
+Request.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/188/trunk/src/java/com/google/ipc/invalidation/external/client/android/service/Request.java
+END
+ListenerBinder.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/214/trunk/src/java/com/google/ipc/invalidation/external/client/android/service/ListenerBinder.java
+END
+InvalidationService.aidl
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/85/trunk/src/java/com/google/ipc/invalidation/external/client/android/service/InvalidationService.aidl
+END
+ParcelableInvalidation.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/262/trunk/src/java/com/google/ipc/invalidation/external/client/android/service/ParcelableInvalidation.java
+END
+ListenerService.aidl
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/85/trunk/src/java/com/google/ipc/invalidation/external/client/android/service/ListenerService.aidl
+END
+Response.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/207/trunk/src/java/com/google/ipc/invalidation/external/client/android/service/Response.java
+END
+ParcelableObjectId.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/221/trunk/src/java/com/google/ipc/invalidation/external/client/android/service/ParcelableObjectId.java
+END
+AndroidClientException.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/120/trunk/src/java/com/google/ipc/invalidation/external/client/android/service/AndroidClientException.java
+END

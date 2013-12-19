@@ -1,0 +1,11 @@
+
+nacl_check.c
+nacl_log.c
+posix/condition_variable.c
+posix/lock.c
+posix/nacl_exit.c
+posix/nacl_thread_id.c
+posix/nacl_threads.c
+posix/nacl_timestamp.c
+nacl_sync_checked.c
+refcount_base.cc

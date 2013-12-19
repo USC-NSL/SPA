@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/413/trunk/src/test/testdata/handlers/sub
+END
+exception_in_transfer_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/413/trunk/src/test/testdata/handlers/sub/exception_in_transfer_wsh.py
+END
+non_callable_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/413/trunk/src/test/testdata/handlers/sub/non_callable_wsh.py
+END
+wrong_transfer_sig_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/413/trunk/src/test/testdata/handlers/sub/wrong_transfer_sig_wsh.py
+END
+plain_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/413/trunk/src/test/testdata/handlers/sub/plain_wsh.py
+END
+wrong_handshake_sig_wsh.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/413/trunk/src/test/testdata/handlers/sub/wrong_handshake_sig_wsh.py
+END
+no_wsh_at_the_end.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/413/trunk/src/test/testdata/handlers/sub/no_wsh_at_the_end.py
+END

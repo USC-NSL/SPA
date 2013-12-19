@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/167605/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86
+END
+x86cpu.gperf
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/167603/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/x86cpu.gperf
+END
+x86id.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/167603/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/x86id.c
+END
+x86arch.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/167603/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/x86arch.c
+END
+Makefile.inc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/167605/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/Makefile.inc
+END
+x86expr.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/167603/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/x86expr.c
+END
+x86arch.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/167603/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/x86arch.h
+END
+x86regtmod.gperf
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/167603/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/x86regtmod.gperf
+END
+x86bc.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/167603/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/x86bc.c
+END
+gen_x86_insn.py
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/167603/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/gen_x86_insn.py
+END

@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/crypto/ocsp
+END
+ocsp_srv.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/65201/trunk/deps/third_party/openssl/openssl/crypto/ocsp/ocsp_srv.c
+END
+ocsp_ht.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/118977/trunk/deps/third_party/openssl/openssl/crypto/ocsp/ocsp_ht.c
+END
+ocsp_cl.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/118977/trunk/deps/third_party/openssl/openssl/crypto/ocsp/ocsp_cl.c
+END
+ocsp_prn.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/118977/trunk/deps/third_party/openssl/openssl/crypto/ocsp/ocsp_prn.c
+END
+ocsp_ext.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/118977/trunk/deps/third_party/openssl/openssl/crypto/ocsp/ocsp_ext.c
+END
+ocsp_asn.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/65201/trunk/deps/third_party/openssl/openssl/crypto/ocsp/ocsp_asn.c
+END
+ocsp_vfy.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/crypto/ocsp/ocsp_vfy.c
+END
+ocsp.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/118977/trunk/deps/third_party/openssl/openssl/crypto/ocsp/ocsp.h
+END
+ocsp_lib.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/ocsp/ocsp_lib.c
+END
+ocsp_err.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/118977/trunk/deps/third_party/openssl/openssl/crypto/ocsp/ocsp_err.c
+END

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-icon-resource
+END
+t.icon_system_as_nonroot
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-icon-resource/t.icon_system_as_nonroot
+END
+t.icon_user_uninstall
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-icon-resource/t.icon_user_uninstall
+END
+t.apply_generic
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-icon-resource/t.apply_generic
+END
+t.icon_system_install
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-icon-resource/t.icon_system_install
+END
+t.icon_system_uninstall
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-icon-resource/t.icon_system_uninstall
+END
+t.icon_duplicate_install
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-icon-resource/t.icon_duplicate_install
+END
+t.icon_nonexist_uninstall
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-icon-resource/t.icon_nonexist_uninstall
+END
+t.icon_user_install
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/xdg-icon-resource/t.icon_user_install
+END

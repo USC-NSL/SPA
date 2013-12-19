@@ -1,0 +1,191 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/167605/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas64
+END
+gas-retenter.asm
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas64/gas-retenter.asm
+END
+riprel.hex
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas64/riprel.hex
+END
+gas-moreinsn.asm
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas64/gas-moreinsn.asm
+END
+gas64-jmpcall.asm
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas64/gas64-jmpcall.asm
+END
+gas-retenter.hex
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas64/gas-retenter.hex
+END
+gas-prefix.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas64/gas-prefix.errwarn
+END
+gas-prefix.asm
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas64/gas-prefix.asm
+END
+Makefile.inc
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/167605/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas64/Makefile.inc
+END
+gas-inout.asm
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas64/gas-inout.asm
+END
+gas-moreinsn.hex
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/167605/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas64/gas-moreinsn.hex
+END
+gas-movsxs.asm
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/167605/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas64/gas-movsxs.asm
+END
+gas64-jmpcall.hex
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas64/gas64-jmpcall.hex
+END
+gas-muldiv.asm
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas64/gas-muldiv.asm
+END
+gas-prefix.hex
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas64/gas-prefix.hex
+END
+gas-inout.hex
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas64/gas-inout.hex
+END
+gas-movsxs.hex
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/167605/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas64/gas-movsxs.hex
+END
+gas-muldiv.hex
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas64/gas-muldiv.hex
+END
+gas-fp.asm
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas64/gas-fp.asm
+END
+gas-fp.hex
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas64/gas-fp.hex
+END
+gas-shift.asm
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas64/gas-shift.asm
+END
+gas-shift.hex
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas64/gas-shift.hex
+END
+gas-movabs.asm
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas64/gas-movabs.asm
+END
+gas-movabs.hex
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas64/gas-movabs.hex
+END
+align64.asm
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas64/align64.asm
+END
+gas-movdq64.asm
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas64/gas-movdq64.asm
+END
+align64.hex
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas64/align64.hex
+END
+gas-movdq64.hex
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas64/gas-movdq64.hex
+END
+x86_gas64_test.sh
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/167605/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas64/x86_gas64_test.sh
+END
+gas-cbw.asm
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas64/gas-cbw.asm
+END
+gas-cbw.hex
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas64/gas-cbw.hex
+END
+riprel.asm
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gas64/riprel.asm
+END

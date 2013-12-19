@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/tests
+END
+test_opus_api.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/tests/test_opus_api.c
+END
+run_vectors.sh
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/tests/run_vectors.sh
+END
+test_opus_common.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/162558/trunk/deps/third_party/opus/tests/test_opus_common.h
+END
+test_opus_encode.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/tests/test_opus_encode.c
+END
+test_opus_decode.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/185324/trunk/deps/third_party/opus/tests/test_opus_decode.c
+END

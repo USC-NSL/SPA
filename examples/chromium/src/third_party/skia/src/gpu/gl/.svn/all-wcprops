@@ -1,0 +1,329 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/8907/trunk/src/gpu/gl
+END
+GrGpuGL_program.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/8449/trunk/src/gpu/gl/GrGpuGL_program.cpp
+END
+GrGLDefines.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/8241/trunk/src/gpu/gl/GrGLDefines.h
+END
+GrGLShaderBuilder.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/8479/trunk/src/gpu/gl/GrGLShaderBuilder.h
+END
+GrGLUtil.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/7872/trunk/src/gpu/gl/GrGLUtil.h
+END
+GrGLShaderVar.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/8815/trunk/src/gpu/gl/GrGLShaderVar.h
+END
+GrGLDefaultInterface_none.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/3887/trunk/src/gpu/gl/GrGLDefaultInterface_none.cpp
+END
+GrGLContext.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/8364/trunk/src/gpu/gl/GrGLContext.cpp
+END
+GrGLRenderTarget.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/7594/trunk/src/gpu/gl/GrGLRenderTarget.cpp
+END
+GrGpuGL.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/8906/trunk/src/gpu/gl/GrGpuGL.cpp
+END
+GrGLCaps.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/8906/trunk/src/gpu/gl/GrGLCaps.h
+END
+GrGLPath.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/7348/trunk/src/gpu/gl/GrGLPath.cpp
+END
+GrGLEffect.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/8272/trunk/src/gpu/gl/GrGLEffect.cpp
+END
+GrGLTexture.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/8573/trunk/src/gpu/gl/GrGLTexture.cpp
+END
+GrGLUniformHandle.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/4758/trunk/src/gpu/gl/GrGLUniformHandle.h
+END
+GrGLInterface.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/8907/trunk/src/gpu/gl/GrGLInterface.cpp
+END
+GrGLBufferImpl.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/7807/trunk/src/gpu/gl/GrGLBufferImpl.h
+END
+GrGLStencilBuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/7348/trunk/src/gpu/gl/GrGLStencilBuffer.h
+END
+GrGLNoOpInterface.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/8906/trunk/src/gpu/gl/GrGLNoOpInterface.h
+END
+GrGLIndexBuffer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/7807/trunk/src/gpu/gl/GrGLIndexBuffer.cpp
+END
+GrGLVertexBuffer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/7807/trunk/src/gpu/gl/GrGLVertexBuffer.cpp
+END
+GrGLProgram.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/8762/trunk/src/gpu/gl/GrGLProgram.cpp
+END
+GrGLProgramDesc.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/8762/trunk/src/gpu/gl/GrGLProgramDesc.h
+END
+GrGLDefaultInterface_native.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/4039/trunk/src/gpu/gl/GrGLDefaultInterface_native.cpp
+END
+GrGLIRect.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/8633/trunk/src/gpu/gl/GrGLIRect.h
+END
+GrGLUtil.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/7872/trunk/src/gpu/gl/GrGLUtil.cpp
+END
+GrGLShaderBuilder.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/8815/trunk/src/gpu/gl/GrGLShaderBuilder.cpp
+END
+GrGLCreateNullInterface.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/8906/trunk/src/gpu/gl/GrGLCreateNullInterface.cpp
+END
+GrGLUniformManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/7905/trunk/src/gpu/gl/GrGLUniformManager.h
+END
+GrGLVertexArray.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/8411/trunk/src/gpu/gl/GrGLVertexArray.h
+END
+GrGLSL.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/8814/trunk/src/gpu/gl/GrGLSL.h
+END
+SkNullGLContext.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/3185/trunk/src/gpu/gl/SkNullGLContext.cpp
+END
+GrGLEffectMatrix.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/8272/trunk/src/gpu/gl/GrGLEffectMatrix.h
+END
+GrGLCaps.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/8906/trunk/src/gpu/gl/GrGLCaps.cpp
+END
+SkGLContextHelper.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/7905/trunk/src/gpu/gl/SkGLContextHelper.cpp
+END
+GrGLContext.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/8364/trunk/src/gpu/gl/GrGLContext.h
+END
+GrGLRenderTarget.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/7594/trunk/src/gpu/gl/GrGLRenderTarget.h
+END
+GrGLStencilBuffer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/7348/trunk/src/gpu/gl/GrGLStencilBuffer.cpp
+END
+GrGLBufferImpl.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/8364/trunk/src/gpu/gl/GrGLBufferImpl.cpp
+END
+GrGLNoOpInterface.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/8906/trunk/src/gpu/gl/GrGLNoOpInterface.cpp
+END
+GrGLExtensions.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/8059/trunk/src/gpu/gl/GrGLExtensions.cpp
+END
+GrGpuGL.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/8675/trunk/src/gpu/gl/GrGpuGL.h
+END
+GrGLPath.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/5263/trunk/src/gpu/gl/GrGLPath.h
+END
+GrGLEffect.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/8272/trunk/src/gpu/gl/GrGLEffect.h
+END
+GrGLSL_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/8768/trunk/src/gpu/gl/GrGLSL_impl.h
+END
+GrGLTexture.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/7594/trunk/src/gpu/gl/GrGLTexture.h
+END
+GrGLIndexBuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/7798/trunk/src/gpu/gl/GrGLIndexBuffer.h
+END
+GrGLProgramDesc.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/8762/trunk/src/gpu/gl/GrGLProgramDesc.cpp
+END
+GrGLCreateNativeInterface_none.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/4039/trunk/src/gpu/gl/GrGLCreateNativeInterface_none.cpp
+END
+GrGLUniformManager.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/6257/trunk/src/gpu/gl/GrGLUniformManager.cpp
+END
+GrGLVertexBuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/7798/trunk/src/gpu/gl/GrGLVertexBuffer.h
+END
+GrGLProgram.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/8755/trunk/src/gpu/gl/GrGLProgram.h
+END
+GrGLVertexArray.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/8033/trunk/src/gpu/gl/GrGLVertexArray.cpp
+END
+GrGLSL.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/8759/trunk/src/gpu/gl/GrGLSL.cpp
+END
+GrGLEffectMatrix.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/8403/trunk/src/gpu/gl/GrGLEffectMatrix.cpp
+END

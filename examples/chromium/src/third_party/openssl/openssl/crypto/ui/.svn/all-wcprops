@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/crypto/ui
+END
+ui_compat.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/65201/trunk/deps/third_party/openssl/openssl/crypto/ui/ui_compat.c
+END
+ui_openssl.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/188770/trunk/deps/third_party/openssl/openssl/crypto/ui/ui_openssl.c
+END
+ui.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/164645/trunk/deps/third_party/openssl/openssl/crypto/ui/ui.h
+END
+ui_lib.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/118977/trunk/deps/third_party/openssl/openssl/crypto/ui/ui_lib.c
+END
+ui_compat.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/65201/trunk/deps/third_party/openssl/openssl/crypto/ui/ui_compat.h
+END
+ui_err.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/118977/trunk/deps/third_party/openssl/openssl/crypto/ui/ui_err.c
+END
+ui_util.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/65201/trunk/deps/third_party/openssl/openssl/crypto/ui/ui_util.c
+END
+ui_locl.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/65201/trunk/deps/third_party/openssl/openssl/crypto/ui/ui_locl.h
+END

@@ -1,0 +1,329 @@
+K 25
+svn:wc:ra_dav:version-url
+V 26
+/svn/!svn/ver/41/trunk/src
+END
+decodetable.cc
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/35/trunk/src/decodetable.cc
+END
+decodetable.h
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/35/trunk/src/decodetable.h
+END
+blockhash.h
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/23/trunk/src/blockhash.h
+END
+addrcache.h
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/21/trunk/src/addrcache.h
+END
+codetablewriter_interface.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/39/trunk/src/codetablewriter_interface.h
+END
+varint_bigendian_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/27/trunk/src/varint_bigendian_test.cc
+END
+vcdiff_defs.h
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/19/trunk/src/vcdiff_defs.h
+END
+headerparser_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/27/trunk/src/headerparser_test.cc
+END
+encodetable_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/35/trunk/src/encodetable_test.cc
+END
+vcdiff_main.cc
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/35/trunk/src/vcdiff_main.cc
+END
+jsonwriter_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/35/trunk/src/jsonwriter_test.cc
+END
+jsonwriter.cc
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/35/trunk/src/jsonwriter.cc
+END
+vcencoder_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/35/trunk/src/vcencoder_test.cc
+END
+vcencoder.cc
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/35/trunk/src/vcencoder.cc
+END
+rolling_hash_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/23/trunk/src/rolling_hash_test.cc
+END
+instruction_map_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/19/trunk/src/instruction_map_test.cc
+END
+instruction_map.cc
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/19/trunk/src/instruction_map.cc
+END
+output_string_crope.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/7/trunk/src/output_string_crope.h
+END
+codetable.h
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/7/trunk/src/codetable.h
+END
+output_string_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/27/trunk/src/output_string_test.cc
+END
+vcdiffengine_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/41/trunk/src/vcdiffengine_test.cc
+END
+logging.cc
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/35/trunk/src/logging.cc
+END
+decodetable_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/23/trunk/src/decodetable_test.cc
+END
+vcdecoder_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/25/trunk/src/vcdecoder_test.cc
+END
+addrcache_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/27/trunk/src/addrcache_test.cc
+END
+blockhash_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/35/trunk/src/blockhash_test.cc
+END
+addrcache.cc
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/35/trunk/src/addrcache.cc
+END
+blockhash.cc
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/35/trunk/src/blockhash.cc
+END
+vcdecoder.cc
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/35/trunk/src/vcdecoder.cc
+END
+vcdecoder_test.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/27/trunk/src/vcdecoder_test.h
+END
+varint_bigendian.cc
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/35/trunk/src/varint_bigendian.cc
+END
+checksum.h
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/7/trunk/src/checksum.h
+END
+varint_bigendian.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/27/trunk/src/varint_bigendian.h
+END
+encodetable.cc
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/35/trunk/src/encodetable.cc
+END
+headerparser.cc
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/35/trunk/src/headerparser.cc
+END
+encodetable.h
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/35/trunk/src/encodetable.h
+END
+headerparser.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/25/trunk/src/headerparser.h
+END
+jsonwriter.h
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/35/trunk/src/jsonwriter.h
+END
+rolling_hash.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/35/trunk/src/rolling_hash.h
+END
+compile_assert.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/35/trunk/src/compile_assert.h
+END
+config.h.in
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/35/trunk/src/config.h.in
+END
+vcdecoder1_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/35/trunk/src/vcdecoder1_test.cc
+END
+vcdecoder2_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/35/trunk/src/vcdecoder2_test.cc
+END
+testing.h
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/19/trunk/src/testing.h
+END
+vcdecoder3_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/35/trunk/src/vcdecoder3_test.cc
+END
+instruction_map.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/7/trunk/src/instruction_map.h
+END
+vcdecoder4_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/35/trunk/src/vcdecoder4_test.cc
+END
+codetable_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/7/trunk/src/codetable_test.cc
+END
+vcdecoder5_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/25/trunk/src/vcdecoder5_test.cc
+END
+codetable.cc
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/35/trunk/src/codetable.cc
+END
+vcdiff_test.sh
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/25/trunk/src/vcdiff_test.sh
+END
+vcdiffengine.cc
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/35/trunk/src/vcdiffengine.cc
+END
+logging.h
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/35/trunk/src/logging.h
+END
+vcdiffengine.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/23/trunk/src/vcdiffengine.h
+END

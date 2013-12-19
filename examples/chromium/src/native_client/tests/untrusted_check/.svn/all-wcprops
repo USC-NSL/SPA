@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/native_client/!svn/ver/6926/trunk/src/native_client/tests/untrusted_check
+END
+nacl.scons
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/native_client/!svn/ver/6335/trunk/src/native_client/tests/untrusted_check/nacl.scons
+END
+untrusted_check_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/native_client/!svn/ver/6926/trunk/src/native_client/tests/untrusted_check/untrusted_check_test.c
+END
+untrusted_check_test.stderr
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/native_client/!svn/ver/6300/trunk/src/native_client/tests/untrusted_check/untrusted_check_test.stderr
+END

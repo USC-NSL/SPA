@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/167605/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/macho/tests/gas64
+END
+gas-macho64-pic.asm
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/macho/tests/gas64/gas-macho64-pic.asm
+END
+gas_macho64_test.sh
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/167605/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/macho/tests/gas64/gas_macho64_test.sh
+END
+Makefile.inc
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/167605/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/macho/tests/gas64/Makefile.inc
+END
+gas-macho64-pic.hex
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/macho/tests/gas64/gas-macho64-pic.hex
+END
+gas-macho64.asm
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/macho/tests/gas64/gas-macho64.asm
+END
+gas-macho64.hex
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/macho/tests/gas64/gas-macho64.hex
+END

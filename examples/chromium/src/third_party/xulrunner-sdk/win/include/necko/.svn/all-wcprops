@@ -1,0 +1,791 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko
+END
+nsIProtocolProxyCallback.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIProtocolProxyCallback.h
+END
+nsIAboutModule.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIAboutModule.h
+END
+nsIURIChecker.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIURIChecker.h
+END
+nsIProtocolProxyService.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIProtocolProxyService.h
+END
+ftpCore.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/ftpCore.h
+END
+nsIByteRangeRequest.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIByteRangeRequest.h
+END
+nsIURI.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIURI.h
+END
+nsIProxyAutoConfig.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIProxyAutoConfig.h
+END
+nsIStreamConverterService.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIStreamConverterService.h
+END
+nsISocketTransport.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsISocketTransport.h
+END
+nsIHttpChannelInternal.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIHttpChannelInternal.h
+END
+nsISOCKSSocketInfo.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsISOCKSSocketInfo.h
+END
+nsICookie.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsICookie.h
+END
+nsICancelable.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsICancelable.h
+END
+nsICryptoHMAC.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsICryptoHMAC.h
+END
+nsITraceableChannel.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsITraceableChannel.h
+END
+nsIServerSocket.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIServerSocket.h
+END
+nsCPasswordManagerInternal.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsCPasswordManagerInternal.h
+END
+nsICachingChannel.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsICachingChannel.h
+END
+nsIIOService.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIIOService.h
+END
+nsITransportSecurityInfo.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsITransportSecurityInfo.h
+END
+nsICookieManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsICookieManager.h
+END
+nsIResumableChannel.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIResumableChannel.h
+END
+nsIFileChannel.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIFileChannel.h
+END
+nsIProtocolProxyFilter.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIProtocolProxyFilter.h
+END
+nsIIOService2.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIIOService2.h
+END
+nsICryptoFIPSInfo.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsICryptoFIPSInfo.h
+END
+nsIFileStreams.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIFileStreams.h
+END
+nsIPrompt.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIPrompt.h
+END
+mozITXTToHTMLConv.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/mozITXTToHTMLConv.h
+END
+nsIViewSourceChannel.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIViewSourceChannel.h
+END
+nsINetUtil.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsINetUtil.h
+END
+nsIStreamTransportService.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIStreamTransportService.h
+END
+nsISecretDecoderRing.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsISecretDecoderRing.h
+END
+nsIProgressEventSink.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIProgressEventSink.h
+END
+nsICookie2.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsICookie2.h
+END
+nsIHttpAuthManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIHttpAuthManager.h
+END
+nsNetCID.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsNetCID.h
+END
+nsIDownloader.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIDownloader.h
+END
+nsIProtocolHandler.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIProtocolHandler.h
+END
+nsIChannelEventSink.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIChannelEventSink.h
+END
+nsIFileURL.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIFileURL.h
+END
+nsIProxiedChannel.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIProxiedChannel.h
+END
+nsURIHashKey.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsURIHashKey.h
+END
+nsIHttpAuthenticator.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIHttpAuthenticator.h
+END
+nsISimpleStreamListener.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsISimpleStreamListener.h
+END
+nsIStreamLoader.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIStreamLoader.h
+END
+nsICookiePermission.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsICookiePermission.h
+END
+nsIMIMEInputStream.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIMIMEInputStream.h
+END
+nsISocketProviderService.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsISocketProviderService.h
+END
+nsPIDNSService.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsPIDNSService.h
+END
+nsIAuthPrompt2.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIAuthPrompt2.h
+END
+nsISocketTransportService.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsISocketTransportService.h
+END
+nsIRequest.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIRequest.h
+END
+nsIDNSListener.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIDNSListener.h
+END
+nsITXTToHTMLConv.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsITXTToHTMLConv.h
+END
+nsIProxyInfo.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIProxyInfo.h
+END
+nsISyncStreamListener.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsISyncStreamListener.h
+END
+nsIStreamListenerTee.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIStreamListenerTee.h
+END
+nsIHttpProtocolHandler.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIHttpProtocolHandler.h
+END
+nsIHttpEventSink.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIHttpEventSink.h
+END
+nsIAuthInformation.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIAuthInformation.h
+END
+nsIUnicharStreamListener.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIUnicharStreamListener.h
+END
+nsIDirIndexListener.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIDirIndexListener.h
+END
+nsIInputStreamPump.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIInputStreamPump.h
+END
+nsASocketHandler.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsASocketHandler.h
+END
+nsIAuthPromptCallback.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIAuthPromptCallback.h
+END
+nsINSSErrorsService.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsINSSErrorsService.h
+END
+nsIBufferedStreams.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIBufferedStreams.h
+END
+nsIStreamConverter.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIStreamConverter.h
+END
+nsICryptoHash.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsICryptoHash.h
+END
+nsNetStrings.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsNetStrings.h
+END
+nsISecureBrowserUI.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsISecureBrowserUI.h
+END
+nsIRequestObserver.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIRequestObserver.h
+END
+nsIRequestObserverProxy.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIRequestObserverProxy.h
+END
+nsIProtocolProxyService2.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIProtocolProxyService2.h
+END
+nsIDirIndex.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIDirIndex.h
+END
+nsIResProtocolHandler.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIResProtocolHandler.h
+END
+nsIFTPChannel.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIFTPChannel.h
+END
+nsIContentSniffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIContentSniffer.h
+END
+nsIPermission.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIPermission.h
+END
+nsIEncodedChannel.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIEncodedChannel.h
+END
+nsIIDNService.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIIDNService.h
+END
+nsIUnicharStreamLoader.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIUnicharStreamLoader.h
+END
+nsIAuthPromptAdapterFactory.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIAuthPromptAdapterFactory.h
+END
+nsIPasswordManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIPasswordManager.h
+END
+nsIStreamListener.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIStreamListener.h
+END
+nsIExternalProtocolHandler.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIExternalProtocolHandler.h
+END
+nsIChannel.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIChannel.h
+END
+nsIMultiPartChannel.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIMultiPartChannel.h
+END
+nsNetUtil.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsNetUtil.h
+END
+nsISafeOutputStream.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsISafeOutputStream.h
+END
+nsISSLSocketControl.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsISSLSocketControl.h
+END
+nsChannelProperties.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsChannelProperties.h
+END
+nsIUploadChannel.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIUploadChannel.h
+END
+nsIDNSRecord.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIDNSRecord.h
+END
+nsIEffectiveTLDService.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIEffectiveTLDService.h
+END
+nsICookieManager2.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsICookieManager2.h
+END
+nsNetError.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsNetError.h
+END
+necko-config.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/necko-config.h
+END
+nsIIncrementalDownload.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIIncrementalDownload.h
+END
+nsIAsyncStreamCopier.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIAsyncStreamCopier.h
+END
+nsIFileProtocolHandler.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIFileProtocolHandler.h
+END
+nsIURL.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIURL.h
+END
+nsINestedURI.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsINestedURI.h
+END
+nsISocketProvider.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsISocketProvider.h
+END
+nsIHttpActivityObserver.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIHttpActivityObserver.h
+END
+nsIInputStreamChannel.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIInputStreamChannel.h
+END
+nsPISocketTransportService.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsPISocketTransportService.h
+END
+nsIAuthModule.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIAuthModule.h
+END
+nsIHttpChannel.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIHttpChannel.h
+END
+nsReadLine.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsReadLine.h
+END
+nsIAuthPromptProvider.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIAuthPromptProvider.h
+END
+nsIURLParser.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIURLParser.h
+END
+nsIStandardURL.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIStandardURL.h
+END
+nsIPermissionManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIPermissionManager.h
+END
+netCore.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/netCore.h
+END
+nsIRandomGenerator.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIRandomGenerator.h
+END
+nsCPasswordManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsCPasswordManager.h
+END
+nsINetworkLinkService.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsINetworkLinkService.h
+END
+nsIProxiedProtocolHandler.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIProxiedProtocolHandler.h
+END
+nsIPasswordManagerInternal.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIPasswordManagerInternal.h
+END
+nsICookieService.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsICookieService.h
+END
+nsITransport.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsITransport.h
+END
+nsILoadGroup.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsILoadGroup.h
+END
+nsISecurityEventSink.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsISecurityEventSink.h
+END
+nsIAuthPrompt.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIAuthPrompt.h
+END
+nsAboutProtocolUtils.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsAboutProtocolUtils.h
+END
+nsIDNSService.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIDNSService.h
+END
+nsISystemProxySettings.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsISystemProxySettings.h
+END
+nsIHttpHeaderVisitor.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/necko/nsIHttpHeaderVisitor.h
+END

@@ -1,0 +1,11 @@
+K 10
+svn:ignore
+V 39
+DerivedSources
+GNUmakefile.features.am
+
+K 13
+svn:mergeinfo
+V 20
+/trunk/WebCore:53455
+END

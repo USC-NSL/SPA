@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/87706/trunk/deps/third_party/xz/src/liblzma/delta
+END
+delta_decoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/delta/delta_decoder.c
+END
+delta_common.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/delta/delta_common.c
+END
+delta_decoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/delta/delta_decoder.h
+END
+Makefile.inc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/delta/Makefile.inc
+END
+delta_common.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/delta/delta_common.h
+END
+delta_encoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/87706/trunk/deps/third_party/xz/src/liblzma/delta/delta_encoder.c
+END
+delta_private.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/delta/delta_private.h
+END
+delta_encoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/delta/delta_encoder.h
+END

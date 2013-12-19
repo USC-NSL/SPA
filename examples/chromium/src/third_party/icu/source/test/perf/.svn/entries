@@ -1,0 +1,178 @@
+10
+
+dir
+192960
+http://src.chromium.org/svn/trunk/deps/third_party/icu46/source/test/perf
+http://src.chromium.org/svn
+
+
+
+2010-12-06T23:14:47.787316Z
+68397
+jshin@chromium.org
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4ff67af0-8c30-449e-8e8b-ad334ec8d88c
+
+ubrkperf
+dir
+
+Makefile.in
+file
+
+
+
+
+2012-08-28T21:13:16.000000Z
+3602b01aebc0cca162573be0d0dd297f
+2010-12-06T23:14:47.787316Z
+68397
+jshin@chromium.org
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2379
+
+convperf
+dir
+
+unisetperf
+dir
+
+perf.sln
+file
+
+
+
+
+2012-08-28T21:13:16.000000Z
+3b00a6cac866ab426fc2ed43be1f561e
+2010-12-06T23:14:47.787316Z
+68397
+jshin@chromium.org
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9871
+
+utrie2perf
+dir
+
+normperf
+dir
+
+charperf
+dir
+
+README
+file
+
+
+
+
+2012-08-28T21:13:16.000000Z
+a555c5aead2703f70ff5ca7b273a24f7
+2010-12-06T23:14:47.787316Z
+68397
+jshin@chromium.org
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2859
+
+usetperf
+dir
+
+DateFmtPerf
+dir
+
+collationperf
+dir
+
+results
+dir
+
+strsrchperf
+dir
+
+ucnvavailperf
+dir
+
+collperf
+dir
+
+ustrperf
+dir
+
+utfperf
+dir
+
+perldriver
+dir
+

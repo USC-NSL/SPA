@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/native_client/!svn/ver/10396/trunk/src/native_client/src/trusted/service_runtime/testdata/arm
+END
+hello_world.nexe
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/native_client/!svn/ver/10396/trunk/src/native_client/src/trusted/service_runtime/testdata/arm/hello_world.nexe
+END
+unaligned_data_irt.nexe
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/native_client/!svn/ver/10104/trunk/src/native_client/src/trusted/service_runtime/testdata/arm/unaligned_data_irt.nexe
+END
+unaligned_data.nexe
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/native_client/!svn/ver/10104/trunk/src/native_client/src/trusted/service_runtime/testdata/arm/unaligned_data.nexe
+END
+nullptr.nexe
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/native_client/!svn/ver/10396/trunk/src/native_client/src/trusted/service_runtime/testdata/arm/nullptr.nexe
+END

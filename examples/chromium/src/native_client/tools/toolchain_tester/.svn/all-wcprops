@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/native_client/!svn/ver/11194/trunk/src/native_client/tools/toolchain_tester
+END
+known_failures_pnacl.txt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/native_client/!svn/ver/11119/trunk/src/native_client/tools/toolchain_tester/known_failures_pnacl.txt
+END
+known_eh_failures_localgcc.txt
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/native_client/!svn/ver/6638/trunk/src/native_client/tools/toolchain_tester/known_eh_failures_localgcc.txt
+END
+unsuitable_dejagnu_tests.txt
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/native_client/!svn/ver/6598/trunk/src/native_client/tools/toolchain_tester/unsuitable_dejagnu_tests.txt
+END
+known_eh_failures_naclgcc.txt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/native_client/!svn/ver/6638/trunk/src/native_client/tools/toolchain_tester/known_eh_failures_naclgcc.txt
+END
+torture_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/native_client/!svn/ver/11194/trunk/src/native_client/tools/toolchain_tester/torture_test.py
+END
+known_failures_localgcc.txt
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/native_client/!svn/ver/6638/trunk/src/native_client/tools/toolchain_tester/known_failures_localgcc.txt
+END
+toolchain_config.py
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/native_client/!svn/ver/11172/trunk/src/native_client/tools/toolchain_tester/toolchain_config.py
+END
+torture_test.sh
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/native_client/!svn/ver/11176/trunk/src/native_client/tools/toolchain_tester/torture_test.sh
+END
+known_eh_failures_pnacl.txt
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/native_client/!svn/ver/11119/trunk/src/native_client/tools/toolchain_tester/known_eh_failures_pnacl.txt
+END
+toolchain_tester.py
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/native_client/!svn/ver/8036/trunk/src/native_client/tools/toolchain_tester/toolchain_tester.py
+END
+known_failures_base.txt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/native_client/!svn/ver/7546/trunk/src/native_client/tools/toolchain_tester/known_failures_base.txt
+END
+known_failures_naclgcc.txt
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/native_client/!svn/ver/6638/trunk/src/native_client/tools/toolchain_tester/known_failures_naclgcc.txt
+END

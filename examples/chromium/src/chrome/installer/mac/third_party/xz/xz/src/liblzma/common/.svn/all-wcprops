@@ -1,0 +1,317 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/189101/trunk/deps/third_party/xz/src/liblzma/common
+END
+hardware_physmem.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/common/hardware_physmem.c
+END
+stream_encoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/common/stream_encoder.h
+END
+filter_flags_encoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/common/filter_flags_encoder.c
+END
+block_header_encoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/common/block_header_encoder.c
+END
+filter_common.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/common/filter_common.h
+END
+Makefile.inc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/common/Makefile.inc
+END
+index.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/189101/trunk/deps/third_party/xz/src/liblzma/common/index.c
+END
+block_buffer_decoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/common/block_buffer_decoder.c
+END
+easy_decoder_memusage.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/common/easy_decoder_memusage.c
+END
+stream_buffer_decoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/common/stream_buffer_decoder.c
+END
+index.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/common/index.h
+END
+filter_buffer_encoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/common/filter_buffer_encoder.c
+END
+stream_flags_common.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/common/stream_flags_common.c
+END
+vli_decoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/common/vli_decoder.c
+END
+stream_decoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/common/stream_decoder.c
+END
+alone_decoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/87706/trunk/deps/third_party/xz/src/liblzma/common/alone_decoder.c
+END
+stream_flags_common.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/common/stream_flags_common.h
+END
+filter_encoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/87706/trunk/deps/third_party/xz/src/liblzma/common/filter_encoder.c
+END
+stream_decoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/common/stream_decoder.h
+END
+filter_flags_decoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/common/filter_flags_decoder.c
+END
+block_header_decoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/common/block_header_decoder.c
+END
+alone_decoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/common/alone_decoder.h
+END
+block_encoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/87706/trunk/deps/third_party/xz/src/liblzma/common/block_encoder.c
+END
+easy_buffer_encoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/common/easy_buffer_encoder.c
+END
+filter_encoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/87706/trunk/deps/third_party/xz/src/liblzma/common/filter_encoder.h
+END
+auto_decoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/common/auto_decoder.c
+END
+block_encoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/common/block_encoder.h
+END
+easy_encoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/common/easy_encoder.c
+END
+filter_buffer_decoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/common/filter_buffer_decoder.c
+END
+stream_flags_encoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/common/stream_flags_encoder.c
+END
+index_encoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/87706/trunk/deps/third_party/xz/src/liblzma/common/index_encoder.c
+END
+filter_decoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/common/filter_decoder.c
+END
+index_hash.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/common/index_hash.c
+END
+index_encoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/common/index_encoder.h
+END
+filter_decoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/common/filter_decoder.h
+END
+block_decoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/common/block_decoder.c
+END
+block_buffer_encoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/87706/trunk/deps/third_party/xz/src/liblzma/common/block_buffer_encoder.c
+END
+easy_preset.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/common/easy_preset.c
+END
+easy_encoder_memusage.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/common/easy_encoder_memusage.c
+END
+stream_buffer_encoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/87706/trunk/deps/third_party/xz/src/liblzma/common/stream_buffer_encoder.c
+END
+block_decoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/common/block_decoder.h
+END
+vli_size.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/common/vli_size.c
+END
+block_util.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/common/block_util.c
+END
+easy_preset.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/common/easy_preset.h
+END
+common.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/87706/trunk/deps/third_party/xz/src/liblzma/common/common.c
+END
+vli_encoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/common/vli_encoder.c
+END
+stream_encoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/87706/trunk/deps/third_party/xz/src/liblzma/common/stream_encoder.c
+END
+index_decoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/87706/trunk/deps/third_party/xz/src/liblzma/common/index_decoder.c
+END
+stream_flags_decoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/50504/trunk/deps/third_party/xz/src/liblzma/common/stream_flags_decoder.c
+END
+filter_common.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/87706/trunk/deps/third_party/xz/src/liblzma/common/filter_common.c
+END
+alone_encoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/87706/trunk/deps/third_party/xz/src/liblzma/common/alone_encoder.c
+END
+common.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/87706/trunk/deps/third_party/xz/src/liblzma/common/common.h
+END

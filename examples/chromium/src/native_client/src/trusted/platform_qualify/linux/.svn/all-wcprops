@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/native_client/!svn/ver/10196/trunk/src/native_client/src/trusted/platform_qualify/linux
+END
+sysv_shm_and_mmap.c
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/native_client/!svn/ver/6725/trunk/src/native_client/src/trusted/platform_qualify/linux/sysv_shm_and_mmap.c
+END
+nacl_os_qualify.c
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/native_client/!svn/ver/10192/trunk/src/native_client/src/trusted/platform_qualify/linux/nacl_os_qualify.c
+END
+sysv_shm_and_mmap.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/native_client/!svn/ver/10196/trunk/src/native_client/src/trusted/platform_qualify/linux/sysv_shm_and_mmap.h
+END

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/generic
+END
+t.manual
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/generic/t.manual
+END
+t.no_arg
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/generic/t.no_arg
+END
+t.version
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/generic/t.version
+END
+t.bogus_arg
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/generic/t.bogus_arg
+END
+t.help
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/19629/trunk/deps/third_party/xdg-utils/tests/generic/t.help
+END

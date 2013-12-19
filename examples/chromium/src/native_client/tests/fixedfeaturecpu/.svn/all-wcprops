@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/native_client/!svn/ver/11166/trunk/src/native_client/tests/fixedfeaturecpu
+END
+nacl.scons
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/native_client/!svn/ver/11166/trunk/src/native_client/tests/fixedfeaturecpu/nacl.scons
+END
+ff_hello_world.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/native_client/!svn/ver/8153/trunk/src/native_client/tests/fixedfeaturecpu/ff_hello_world.c
+END
+ff_hello_world.stdout
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/native_client/!svn/ver/8153/trunk/src/native_client/tests/fixedfeaturecpu/ff_hello_world.stdout
+END
+ff_null.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/native_client/!svn/ver/8153/trunk/src/native_client/tests/fixedfeaturecpu/ff_null.c
+END

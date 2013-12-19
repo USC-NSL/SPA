@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/3913/stable/webrtc/build
+END
+common.gypi
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/3913/stable/webrtc/build/common.gypi
+END
+merge_libs.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/3584/stable/webrtc/build/merge_libs.py
+END
+arm_neon.gypi
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/2974/stable/webrtc/build/arm_neon.gypi
+END
+merge_libs.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/2974/stable/webrtc/build/merge_libs.gyp
+END
+adb_shell.sh
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/3086/stable/webrtc/build/adb_shell.sh
+END
+ios-webrtc.sh
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/3913/stable/webrtc/build/ios-webrtc.sh
+END
+generate_asm_header.py
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/3569/stable/webrtc/build/generate_asm_header.py
+END
+generate_asm_header.gypi
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/3569/stable/webrtc/build/generate_asm_header.gypi
+END
+merge_voice_libs.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2974/stable/webrtc/build/merge_voice_libs.gyp
+END
+version.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/2974/stable/webrtc/build/version.py
+END
+protoc.gypi
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/2974/stable/webrtc/build/protoc.gypi
+END
+no_op.cc
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/2974/stable/webrtc/build/no_op.cc
+END

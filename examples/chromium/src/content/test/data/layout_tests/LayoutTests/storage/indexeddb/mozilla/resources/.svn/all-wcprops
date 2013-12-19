@@ -1,0 +1,215 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/blink/!svn/ver/136782/trunk/LayoutTests/storage/indexeddb/mozilla/resources
+END
+object-cursors.js
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/blink/!svn/ver/134252/trunk/LayoutTests/storage/indexeddb/mozilla/resources/object-cursors.js
+END
+global-data.js
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/blink/!svn/ver/134819/trunk/LayoutTests/storage/indexeddb/mozilla/resources/global-data.js
+END
+autoincrement-indexes.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/blink/!svn/ver/134252/trunk/LayoutTests/storage/indexeddb/mozilla/resources/autoincrement-indexes.js
+END
+create-objectstore-null-name.js
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/blink/!svn/ver/134252/trunk/LayoutTests/storage/indexeddb/mozilla/resources/create-objectstore-null-name.js
+END
+cursor-mutation-objectstore-only.js
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/blink/!svn/ver/134252/trunk/LayoutTests/storage/indexeddb/mozilla/resources/cursor-mutation-objectstore-only.js
+END
+cursor-mutation.js
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/blink/!svn/ver/134252/trunk/LayoutTests/storage/indexeddb/mozilla/resources/cursor-mutation.js
+END
+key-requirements-put-null-key.js
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/blink/!svn/ver/135424/trunk/LayoutTests/storage/indexeddb/mozilla/resources/key-requirements-put-null-key.js
+END
+event-source.js
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/blink/!svn/ver/134819/trunk/LayoutTests/storage/indexeddb/mozilla/resources/event-source.js
+END
+clear.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/blink/!svn/ver/136782/trunk/LayoutTests/storage/indexeddb/mozilla/resources/clear.js
+END
+add-twice-failure.js
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/blink/!svn/ver/135424/trunk/LayoutTests/storage/indexeddb/mozilla/resources/add-twice-failure.js
+END
+open-database-null-name.js
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/blink/!svn/ver/120510/trunk/LayoutTests/storage/indexeddb/mozilla/resources/open-database-null-name.js
+END
+odd-result-order.js
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/blink/!svn/ver/134819/trunk/LayoutTests/storage/indexeddb/mozilla/resources/odd-result-order.js
+END
+object-store-inline-autoincrement-key-added-on-put.js
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/blink/!svn/ver/134252/trunk/LayoutTests/storage/indexeddb/mozilla/resources/object-store-inline-autoincrement-key-added-on-put.js
+END
+remove-index.js
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/blink/!svn/ver/134252/trunk/LayoutTests/storage/indexeddb/mozilla/resources/remove-index.js
+END
+readyState.js
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/blink/!svn/ver/134854/trunk/LayoutTests/storage/indexeddb/mozilla/resources/readyState.js
+END
+objectstorenames.js
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/blink/!svn/ver/134252/trunk/LayoutTests/storage/indexeddb/mozilla/resources/objectstorenames.js
+END
+key-requirements-delete-null-key.js
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/blink/!svn/ver/135424/trunk/LayoutTests/storage/indexeddb/mozilla/resources/key-requirements-delete-null-key.js
+END
+key-requirements.js
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/blink/!svn/ver/134252/trunk/LayoutTests/storage/indexeddb/mozilla/resources/key-requirements.js
+END
+create-index-unique.js
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/blink/!svn/ver/134252/trunk/LayoutTests/storage/indexeddb/mozilla/resources/create-index-unique.js
+END
+delete-result.js
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/blink/!svn/ver/134252/trunk/LayoutTests/storage/indexeddb/mozilla/resources/delete-result.js
+END
+remove-objectstore.js
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/blink/!svn/ver/134819/trunk/LayoutTests/storage/indexeddb/mozilla/resources/remove-objectstore.js
+END
+key-requirements-put-no-key.js
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/blink/!svn/ver/135424/trunk/LayoutTests/storage/indexeddb/mozilla/resources/key-requirements-put-no-key.js
+END
+put-get-values.js
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/blink/!svn/ver/134252/trunk/LayoutTests/storage/indexeddb/mozilla/resources/put-get-values.js
+END
+readonly-transactions.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/blink/!svn/ver/135424/trunk/LayoutTests/storage/indexeddb/mozilla/resources/readonly-transactions.js
+END
+create-index-with-integer-keys.js
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/blink/!svn/ver/134252/trunk/LayoutTests/storage/indexeddb/mozilla/resources/create-index-with-integer-keys.js
+END
+create-objectstore-basics.js
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/blink/!svn/ver/134252/trunk/LayoutTests/storage/indexeddb/mozilla/resources/create-objectstore-basics.js
+END
+object-store-remove-values.js
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/blink/!svn/ver/134854/trunk/LayoutTests/storage/indexeddb/mozilla/resources/object-store-remove-values.js
+END
+bad-keypath.js
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/blink/!svn/ver/135424/trunk/LayoutTests/storage/indexeddb/mozilla/resources/bad-keypath.js
+END
+readwrite-transactions.js
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/blink/!svn/ver/134252/trunk/LayoutTests/storage/indexeddb/mozilla/resources/readwrite-transactions.js
+END
+cursor-update-updates-indexes.js
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/blink/!svn/ver/134819/trunk/LayoutTests/storage/indexeddb/mozilla/resources/cursor-update-updates-indexes.js
+END
+object-identity.js
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/blink/!svn/ver/134700/trunk/LayoutTests/storage/indexeddb/mozilla/resources/object-identity.js
+END
+indexes.js
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/blink/!svn/ver/135424/trunk/LayoutTests/storage/indexeddb/mozilla/resources/indexes.js
+END
+versionchange-abort.js
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/blink/!svn/ver/136475/trunk/LayoutTests/storage/indexeddb/mozilla/resources/versionchange-abort.js
+END
+cursors.js
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/blink/!svn/ver/134252/trunk/LayoutTests/storage/indexeddb/mozilla/resources/cursors.js
+END
+key-requirements-inline-and-passed.js
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/blink/!svn/ver/135424/trunk/LayoutTests/storage/indexeddb/mozilla/resources/key-requirements-inline-and-passed.js
+END

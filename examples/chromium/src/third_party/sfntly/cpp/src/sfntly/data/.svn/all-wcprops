@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/107/trunk/cpp/src/sfntly/data
+END
+memory_byte_array.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/58/trunk/cpp/src/sfntly/data/memory_byte_array.h
+END
+font_data.cc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/100/trunk/cpp/src/sfntly/data/font_data.cc
+END
+font_input_stream.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/55/trunk/cpp/src/sfntly/data/font_input_stream.cc
+END
+font_data.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/100/trunk/cpp/src/sfntly/data/font_data.h
+END
+font_output_stream.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/55/trunk/cpp/src/sfntly/data/font_output_stream.cc
+END
+byte_array.cc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/100/trunk/cpp/src/sfntly/data/byte_array.cc
+END
+font_input_stream.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/58/trunk/cpp/src/sfntly/data/font_input_stream.h
+END
+byte_array.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/58/trunk/cpp/src/sfntly/data/byte_array.h
+END
+font_output_stream.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/58/trunk/cpp/src/sfntly/data/font_output_stream.h
+END
+growable_memory_byte_array.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/55/trunk/cpp/src/sfntly/data/growable_memory_byte_array.cc
+END
+growable_memory_byte_array.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/58/trunk/cpp/src/sfntly/data/growable_memory_byte_array.h
+END
+readable_font_data.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/103/trunk/cpp/src/sfntly/data/readable_font_data.cc
+END
+readable_font_data.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/100/trunk/cpp/src/sfntly/data/readable_font_data.h
+END
+writable_font_data.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/103/trunk/cpp/src/sfntly/data/writable_font_data.cc
+END
+memory_byte_array.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/55/trunk/cpp/src/sfntly/data/memory_byte_array.cc
+END
+writable_font_data.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/107/trunk/cpp/src/sfntly/data/writable_font_data.h
+END

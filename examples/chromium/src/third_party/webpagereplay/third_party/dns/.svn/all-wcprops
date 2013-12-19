@@ -1,0 +1,215 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/461/trunk/third_party/dns
+END
+set.py
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/9/trunk/third_party/dns/set.py
+END
+exception.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/9/trunk/third_party/dns/exception.py
+END
+inet.py
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/9/trunk/third_party/dns/inet.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/9/trunk/third_party/dns/__init__.py
+END
+entropy.py
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/9/trunk/third_party/dns/entropy.py
+END
+resolver.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/9/trunk/third_party/dns/resolver.py
+END
+renderer.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/9/trunk/third_party/dns/renderer.py
+END
+tsig.py
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/9/trunk/third_party/dns/tsig.py
+END
+rdataset.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/9/trunk/third_party/dns/rdataset.py
+END
+opcode.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/9/trunk/third_party/dns/opcode.py
+END
+tokenizer.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/9/trunk/third_party/dns/tokenizer.py
+END
+zone.py
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/9/trunk/third_party/dns/zone.py
+END
+reversename.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/9/trunk/third_party/dns/reversename.py
+END
+dnssec.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/9/trunk/third_party/dns/dnssec.py
+END
+rdataclass.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/9/trunk/third_party/dns/rdataclass.py
+END
+update.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/9/trunk/third_party/dns/update.py
+END
+ipv4.py
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/9/trunk/third_party/dns/ipv4.py
+END
+ipv6.py
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/9/trunk/third_party/dns/ipv6.py
+END
+edns.py
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/9/trunk/third_party/dns/edns.py
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/9/trunk/third_party/dns/LICENSE
+END
+rdata.py
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/9/trunk/third_party/dns/rdata.py
+END
+flags.py
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/9/trunk/third_party/dns/flags.py
+END
+rcode.py
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/9/trunk/third_party/dns/rcode.py
+END
+rdatatype.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/9/trunk/third_party/dns/rdatatype.py
+END
+rrset.py
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/9/trunk/third_party/dns/rrset.py
+END
+tsigkeyring.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/9/trunk/third_party/dns/tsigkeyring.py
+END
+ttl.py
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/9/trunk/third_party/dns/ttl.py
+END
+query.py
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/9/trunk/third_party/dns/query.py
+END
+e164.py
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/9/trunk/third_party/dns/e164.py
+END
+name.py
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/9/trunk/third_party/dns/name.py
+END
+namedict.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/9/trunk/third_party/dns/namedict.py
+END
+message.py
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/9/trunk/third_party/dns/message.py
+END
+node.py
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/9/trunk/third_party/dns/node.py
+END
+version.py
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/9/trunk/third_party/dns/version.py
+END
+README.web-page-replay
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/461/trunk/third_party/dns/README.web-page-replay
+END

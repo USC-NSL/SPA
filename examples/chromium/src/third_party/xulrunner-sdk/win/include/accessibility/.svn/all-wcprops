@@ -1,0 +1,521 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility
+END
+nsAccessibleEventData.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsAccessibleEventData.h
+END
+AccessibleValue.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/AccessibleValue.h
+END
+nsRootAccessibleWrap.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsRootAccessibleWrap.h
+END
+AccessibleRelation_i.c
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/AccessibleRelation_i.c
+END
+AccessibleEditableText_i.c
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/AccessibleEditableText_i.c
+END
+nsPIAccessNode.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsPIAccessNode.h
+END
+nsAccessNodeWrap.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsAccessNodeWrap.h
+END
+CAccessibleImage.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/CAccessibleImage.h
+END
+nsHyperTextAccessibleWrap.h
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsHyperTextAccessibleWrap.h
+END
+AccessibleTable.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/AccessibleTable.h
+END
+AccessibleText_i.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/AccessibleText_i.c
+END
+nsIAccessibleDocument.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsIAccessibleDocument.h
+END
+nsIAccessible.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsIAccessible.h
+END
+AccessibleHypertext.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/AccessibleHypertext.h
+END
+ISimpleDOMNode_i.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/ISimpleDOMNode_i.c
+END
+AccessibleEventId.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/AccessibleEventId.h
+END
+AccessibleRole.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/AccessibleRole.h
+END
+nsIAccessNode.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsIAccessNode.h
+END
+Accessible2_i.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/Accessible2_i.c
+END
+AccessibleHyperlink_i.c
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/AccessibleHyperlink_i.c
+END
+CAccessibleHyperlink.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/CAccessibleHyperlink.h
+END
+nsIAccessibleRole.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsIAccessibleRole.h
+END
+AccessibleAction.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/AccessibleAction.h
+END
+AccessibleEditableText.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/AccessibleEditableText.h
+END
+nsIAccessibleHyperLink.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsIAccessibleHyperLink.h
+END
+CAccessibleValue.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/CAccessibleValue.h
+END
+CAccessibleAction.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/CAccessibleAction.h
+END
+ISimpleDOMDocument.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/ISimpleDOMDocument.h
+END
+nsXULTreeAccessibleWrap.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsXULTreeAccessibleWrap.h
+END
+AccessibleText.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/AccessibleText.h
+END
+nsRootAccessible.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsRootAccessible.h
+END
+nsIAccessibleEditableText.h
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsIAccessibleEditableText.h
+END
+nsAccessNode.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsAccessNode.h
+END
+ISimpleDOMNode.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/ISimpleDOMNode.h
+END
+CAccessibleTable.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/CAccessibleTable.h
+END
+AccessibleTable_i.c
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/AccessibleTable_i.c
+END
+nsIAccessibleImage.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsIAccessibleImage.h
+END
+nsHyperTextAccessible.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsHyperTextAccessible.h
+END
+nsIAccessibleTreeCache.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsIAccessibleTreeCache.h
+END
+nsIAccessibleText.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsIAccessibleText.h
+END
+CAccessibleHypertext.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/CAccessibleHypertext.h
+END
+AccessibleApplication.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/AccessibleApplication.h
+END
+nsIAccessibleWin32Object.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsIAccessibleWin32Object.h
+END
+AccessibleComponent_i.c
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/AccessibleComponent_i.c
+END
+nsIAccessibleHyperText.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsIAccessibleHyperText.h
+END
+AccessibleAction_i.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/AccessibleAction_i.c
+END
+AccessibleImage_i.c
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/AccessibleImage_i.c
+END
+ISimpleDOMDocument_i.c
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/ISimpleDOMDocument_i.c
+END
+nsIAccessibleValue.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsIAccessibleValue.h
+END
+ISimpleDOMText.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/ISimpleDOMText.h
+END
+nsIAccessibleEvent.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsIAccessibleEvent.h
+END
+nsApplicationAccessibleWrap.h
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsApplicationAccessibleWrap.h
+END
+nsDocAccessibleWrap.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsDocAccessibleWrap.h
+END
+nsIAccessibleTable.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsIAccessibleTable.h
+END
+AccessibleComponent.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/AccessibleComponent.h
+END
+AccessibleStates.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/AccessibleStates.h
+END
+nsIAccessibilityService.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsIAccessibilityService.h
+END
+AccessibleApplication_i.c
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/AccessibleApplication_i.c
+END
+nsHTMLTableAccessibleWrap.h
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsHTMLTableAccessibleWrap.h
+END
+nsIAccessibleRetrieval.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsIAccessibleRetrieval.h
+END
+nsAccessibleRelationWrap.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsAccessibleRelationWrap.h
+END
+AccessibleRelation.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/AccessibleRelation.h
+END
+nsIAccessibleSelectable.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsIAccessibleSelectable.h
+END
+nsIAccessibleStates.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsIAccessibleStates.h
+END
+nsIAccessibleTypes.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsIAccessibleTypes.h
+END
+nsHTMLWin32ObjectAccessible.h
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsHTMLWin32ObjectAccessible.h
+END
+AccessibleValue_i.c
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/AccessibleValue_i.c
+END
+nsTextAccessibleWrap.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsTextAccessibleWrap.h
+END
+CAccessibleEditableText.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/CAccessibleEditableText.h
+END
+nsIWinAccessNode.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsIWinAccessNode.h
+END
+AccessibleImage.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/AccessibleImage.h
+END
+CAccessibleText.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/CAccessibleText.h
+END
+nsIAccessibleRelation.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsIAccessibleRelation.h
+END
+nsXULMenuAccessibleWrap.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsXULMenuAccessibleWrap.h
+END
+nsHTMLFormControlAccessible.h
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsHTMLFormControlAccessible.h
+END
+IA2CommonTypes.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/IA2CommonTypes.h
+END
+ISimpleDOMText_i.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/ISimpleDOMText_i.c
+END
+AccessibleHypertext_i.c
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/AccessibleHypertext_i.c
+END
+Accessible2.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/Accessible2.h
+END
+nsHTMLImageAccessibleWrap.h
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsHTMLImageAccessibleWrap.h
+END
+nsIAccessibleProvider.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsIAccessibleProvider.h
+END
+AccessibleHyperlink.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/AccessibleHyperlink.h
+END
+CAccessibleComponent.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/CAccessibleComponent.h
+END
+nsPIAccessibleDocument.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsPIAccessibleDocument.h
+END
+nsPIAccessible.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsPIAccessible.h
+END
+nsAccessibleWrap.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/7516/trunk/deps/third_party/xulrunner-sdk/win/include/accessibility/nsAccessibleWrap.h
+END

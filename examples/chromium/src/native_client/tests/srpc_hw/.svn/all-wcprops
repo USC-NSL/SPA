@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/native_client/!svn/ver/10737/trunk/src/native_client/tests/srpc_hw
+END
+nacl.scons
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/native_client/!svn/ver/9538/trunk/src/native_client/tests/srpc_hw/nacl.scons
+END
+srpc_hw_test.stdin
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/native_client/!svn/ver/4768/trunk/src/native_client/tests/srpc_hw/srpc_hw_test.stdin
+END
+srpc_hw_test.stdout
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/native_client/!svn/ver/10737/trunk/src/native_client/tests/srpc_hw/srpc_hw_test.stdout
+END
+srpc_hw.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/native_client/!svn/ver/10209/trunk/src/native_client/tests/srpc_hw/srpc_hw.c
+END

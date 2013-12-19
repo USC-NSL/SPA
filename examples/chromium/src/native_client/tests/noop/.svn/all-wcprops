@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/native_client/!svn/ver/10684/trunk/src/native_client/tests/noop
+END
+nacl.scons
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/native_client/!svn/ver/6335/trunk/src/native_client/tests/noop/nacl.scons
+END
+noop.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/native_client/!svn/ver/10684/trunk/src/native_client/tests/noop/noop.c
+END
+noop.stdout
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/native_client/!svn/ver/541/trunk/src/native_client/tests/noop/noop.stdout
+END
+noop2.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/native_client/!svn/ver/10684/trunk/src/native_client/tests/noop/noop2.c
+END

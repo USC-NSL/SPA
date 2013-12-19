@@ -1,0 +1,377 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/blink/!svn/ver/149296/trunk/Source/core/platform/text
+END
+TextCodecUTF8.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/blink/!svn/ver/149052/trunk/Source/core/platform/text/TextCodecUTF8.h
+END
+TextCodecUserDefined.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/blink/!svn/ver/149052/trunk/Source/core/platform/text/TextCodecUserDefined.cpp
+END
+TextStream.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/blink/!svn/ver/149052/trunk/Source/core/platform/text/TextStream.cpp
+END
+SegmentedString.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/blink/!svn/ver/149052/trunk/Source/core/platform/text/SegmentedString.cpp
+END
+QuotedPrintable.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/blink/!svn/ver/149052/trunk/Source/core/platform/text/QuotedPrintable.cpp
+END
+AtomicStringKeyedMRUCache.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/blink/!svn/ver/148532/trunk/Source/core/platform/text/AtomicStringKeyedMRUCache.h
+END
+TextBreakIterator.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/blink/!svn/ver/149211/trunk/Source/core/platform/text/TextBreakIterator.cpp
+END
+TextBreakIteratorICU.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/blink/!svn/ver/149052/trunk/Source/core/platform/text/TextBreakIteratorICU.cpp
+END
+PlatformLocale.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/blink/!svn/ver/149061/trunk/Source/core/platform/text/PlatformLocale.cpp
+END
+TextBoundaries.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/blink/!svn/ver/148532/trunk/Source/core/platform/text/TextBoundaries.h
+END
+LocaleICU.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/blink/!svn/ver/149061/trunk/Source/core/platform/text/LocaleICU.h
+END
+TextBreakIteratorInternalICU.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/blink/!svn/ver/148532/trunk/Source/core/platform/text/TextBreakIteratorInternalICU.h
+END
+LineBreakIteratorPoolICU.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/blink/!svn/ver/149052/trunk/Source/core/platform/text/LineBreakIteratorPoolICU.h
+END
+StringWithDirection.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/blink/!svn/ver/149052/trunk/Source/core/platform/text/StringWithDirection.h
+END
+UnicodeRange.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/blink/!svn/ver/148532/trunk/Source/core/platform/text/UnicodeRange.h
+END
+LocaleToScriptMapping.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/blink/!svn/ver/148532/trunk/Source/core/platform/text/LocaleToScriptMapping.h
+END
+DateTimeFormat.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/blink/!svn/ver/148532/trunk/Source/core/platform/text/DateTimeFormat.h
+END
+TextCodecUTF16.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/blink/!svn/ver/149052/trunk/Source/core/platform/text/TextCodecUTF16.h
+END
+RegularExpression.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/blink/!svn/ver/149248/trunk/Source/core/platform/text/RegularExpression.cpp
+END
+LineEnding.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/blink/!svn/ver/148532/trunk/Source/core/platform/text/LineEnding.h
+END
+BidiContext.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/blink/!svn/ver/148532/trunk/Source/core/platform/text/BidiContext.h
+END
+TextCodec.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/blink/!svn/ver/149052/trunk/Source/core/platform/text/TextCodec.cpp
+END
+TextEncodingRegistry.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/blink/!svn/ver/149211/trunk/Source/core/platform/text/TextEncodingRegistry.cpp
+END
+TextCodecICU.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/blink/!svn/ver/149052/trunk/Source/core/platform/text/TextCodecICU.h
+END
+TextCodecUTF8.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/blink/!svn/ver/149052/trunk/Source/core/platform/text/TextCodecUTF8.cpp
+END
+TextEncodingDetector.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/blink/!svn/ver/148532/trunk/Source/core/platform/text/TextEncodingDetector.h
+END
+TextDirection.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/blink/!svn/ver/148532/trunk/Source/core/platform/text/TextDirection.h
+END
+Hyphenation.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/blink/!svn/ver/148532/trunk/Source/core/platform/text/Hyphenation.h
+END
+WritingMode.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/blink/!svn/ver/148532/trunk/Source/core/platform/text/WritingMode.h
+END
+BidiRunList.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/blink/!svn/ver/148532/trunk/Source/core/platform/text/BidiRunList.h
+END
+ParserUtilities.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/blink/!svn/ver/148532/trunk/Source/core/platform/text/ParserUtilities.h
+END
+BidiResolver.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/blink/!svn/ver/149052/trunk/Source/core/platform/text/BidiResolver.h
+END
+TextBoundaries.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/blink/!svn/ver/149052/trunk/Source/core/platform/text/TextBoundaries.cpp
+END
+LocaleICU.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/blink/!svn/ver/149061/trunk/Source/core/platform/text/LocaleICU.cpp
+END
+TextCodecLatin1.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/blink/!svn/ver/149052/trunk/Source/core/platform/text/TextCodecLatin1.h
+END
+TextEncoding.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/blink/!svn/ver/149052/trunk/Source/core/platform/text/TextEncoding.h
+END
+UnicodeRange.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/blink/!svn/ver/149052/trunk/Source/core/platform/text/UnicodeRange.cpp
+END
+TextStream.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/blink/!svn/ver/148532/trunk/Source/core/platform/text/TextStream.h
+END
+DateTimeFormat.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/blink/!svn/ver/149052/trunk/Source/core/platform/text/DateTimeFormat.cpp
+END
+TextCodecUserDefined.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/blink/!svn/ver/149052/trunk/Source/core/platform/text/TextCodecUserDefined.h
+END
+NonCJKGlyphOrientation.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/blink/!svn/ver/148532/trunk/Source/core/platform/text/NonCJKGlyphOrientation.h
+END
+QuotedPrintable.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/blink/!svn/ver/148532/trunk/Source/core/platform/text/QuotedPrintable.h
+END
+SegmentedString.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/blink/!svn/ver/148532/trunk/Source/core/platform/text/SegmentedString.h
+END
+TextCodecUTF16.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/blink/!svn/ver/149052/trunk/Source/core/platform/text/TextCodecUTF16.cpp
+END
+LocaleToScriptMappingDefault.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/blink/!svn/ver/149052/trunk/Source/core/platform/text/LocaleToScriptMappingDefault.cpp
+END
+TextBreakIterator.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/blink/!svn/ver/148532/trunk/Source/core/platform/text/TextBreakIterator.h
+END
+PlatformLocale.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/blink/!svn/ver/149061/trunk/Source/core/platform/text/PlatformLocale.h
+END
+LineEnding.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/blink/!svn/ver/149052/trunk/Source/core/platform/text/LineEnding.cpp
+END
+BidiContext.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/blink/!svn/ver/149052/trunk/Source/core/platform/text/BidiContext.cpp
+END
+TextCheckerClient.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/blink/!svn/ver/149052/trunk/Source/core/platform/text/TextCheckerClient.h
+END
+TextCodecICU.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/blink/!svn/ver/149211/trunk/Source/core/platform/text/TextCodecICU.cpp
+END
+UnicodeBidi.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/blink/!svn/ver/148532/trunk/Source/core/platform/text/UnicodeBidi.h
+END
+TextChecking.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/blink/!svn/ver/148532/trunk/Source/core/platform/text/TextChecking.h
+END
+DecodeEscapeSequences.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/blink/!svn/ver/149052/trunk/Source/core/platform/text/DecodeEscapeSequences.h
+END
+TextEncodingDetectorICU.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/blink/!svn/ver/149052/trunk/Source/core/platform/text/TextEncodingDetectorICU.cpp
+END
+RegularExpression.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/blink/!svn/ver/149248/trunk/Source/core/platform/text/RegularExpression.h
+END
+TextCodec.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/blink/!svn/ver/148532/trunk/Source/core/platform/text/TextCodec.h
+END
+SuffixTree.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/blink/!svn/ver/148532/trunk/Source/core/platform/text/SuffixTree.h
+END
+TextEncodingRegistry.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/blink/!svn/ver/148532/trunk/Source/core/platform/text/TextEncodingRegistry.h
+END
+TextCodecLatin1.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/blink/!svn/ver/149052/trunk/Source/core/platform/text/TextCodecLatin1.cpp
+END
+TextEncoding.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/blink/!svn/ver/149211/trunk/Source/core/platform/text/TextEncoding.cpp
+END
+TextCodecASCIIFastPath.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/blink/!svn/ver/148532/trunk/Source/core/platform/text/TextCodecASCIIFastPath.h
+END

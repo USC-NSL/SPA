@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/native_client/!svn/ver/10772/trunk/src/native_client/src/shared/gio
+END
+premade_text_file
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/native_client/!svn/ver/3116/trunk/src/native_client/src/shared/gio/premade_text_file
+END
+premade_binary_file
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/native_client/!svn/ver/3116/trunk/src/native_client/src/shared/gio/premade_binary_file
+END
+build.scons
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/native_client/!svn/ver/9612/trunk/src/native_client/src/shared/gio/build.scons
+END
+gprintf.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/native_client/!svn/ver/10196/trunk/src/native_client/src/shared/gio/gprintf.c
+END
+gio_test_base.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/native_client/!svn/ver/10196/trunk/src/native_client/src/shared/gio/gio_test_base.cc
+END
+gio_mem.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/native_client/!svn/ver/8832/trunk/src/native_client/src/shared/gio/gio_mem.c
+END
+gio_test_base.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/native_client/!svn/ver/10196/trunk/src/native_client/src/shared/gio/gio_test_base.h
+END
+gio.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/native_client/!svn/ver/8832/trunk/src/native_client/src/shared/gio/gio.c
+END
+gio_mem_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/native_client/!svn/ver/10196/trunk/src/native_client/src/shared/gio/gio_mem_test.cc
+END
+gio_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/native_client/!svn/ver/6990/trunk/src/native_client/src/shared/gio/gio_test.cc
+END
+make_premade.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/native_client/!svn/ver/3116/trunk/src/native_client/src/shared/gio/make_premade.py
+END
+nacl.scons
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/native_client/!svn/ver/6406/trunk/src/native_client/src/shared/gio/nacl.scons
+END
+gio.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/native_client/!svn/ver/10772/trunk/src/native_client/src/shared/gio/gio.h
+END
+gio_pio.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/native_client/!svn/ver/8832/trunk/src/native_client/src/shared/gio/gio_pio.c
+END
+gio_pio_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/native_client/!svn/ver/7017/trunk/src/native_client/src/shared/gio/gio_pio_test.cc
+END
+gio_mem_snapshot.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/native_client/!svn/ver/10772/trunk/src/native_client/src/shared/gio/gio_mem_snapshot.c
+END
+gio.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/native_client/!svn/ver/10585/trunk/src/native_client/src/shared/gio/gio.gyp
+END

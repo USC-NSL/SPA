@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/1154/trunk/src/client/mac/tests
+END
+spawn_child_process.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/1121/trunk/src/client/mac/tests/spawn_child_process.h
+END
+crash_generation_server_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/1121/trunk/src/client/mac/tests/crash_generation_server_test.cc
+END
+minidump_generator_test_helper.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/747/trunk/src/client/mac/tests/minidump_generator_test_helper.cc
+END
+minidump_generator_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/1121/trunk/src/client/mac/tests/minidump_generator_test.cc
+END
+testlogging.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/699/trunk/src/client/mac/tests/testlogging.h
+END
+exception_handler_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/1121/trunk/src/client/mac/tests/exception_handler_test.cc
+END
+BreakpadFramework_Test.mm
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/360/trunk/src/client/mac/tests/BreakpadFramework_Test.mm
+END

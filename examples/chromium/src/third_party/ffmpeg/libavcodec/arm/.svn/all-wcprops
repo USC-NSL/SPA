@@ -1,0 +1,497 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm
+END
+mpegaudiodsp_init_arm.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/mpegaudiodsp_init_arm.c
+END
+vp8dsp_init_arm.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/vp8dsp_init_arm.c
+END
+vp8_armv6.S
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/162873/trunk/deps/third_party/ffmpeg/libavcodec/arm/vp8_armv6.S
+END
+fmtconvert_init_arm.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/fmtconvert_init_arm.c
+END
+ac3dsp_neon.S
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/148611/trunk/deps/third_party/ffmpeg/libavcodec/arm/ac3dsp_neon.S
+END
+vp3dsp_neon.S
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/vp3dsp_neon.S
+END
+fft_fixed_init_arm.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/fft_fixed_init_arm.c
+END
+aacpsdsp_init_arm.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/140400/trunk/deps/third_party/ffmpeg/libavcodec/arm/aacpsdsp_init_arm.c
+END
+jrevdct_arm.S
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/jrevdct_arm.S
+END
+dsputil_init_armv6.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/dsputil_init_armv6.c
+END
+mpegvideo_armv5te_s.S
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/162873/trunk/deps/third_party/ffmpeg/libavcodec/arm/mpegvideo_armv5te_s.S
+END
+dsputil_init_neon.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/dsputil_init_neon.c
+END
+h264idct_neon.S
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/h264idct_neon.S
+END
+rv34dsp_init_arm.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/rv34dsp_init_arm.c
+END
+aac.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/aac.h
+END
+vp8dsp.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/140400/trunk/deps/third_party/ffmpeg/libavcodec/arm/vp8dsp.h
+END
+simple_idct_neon.S
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/simple_idct_neon.S
+END
+vp56_arith.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/vp56_arith.h
+END
+asm-offsets.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/122313/trunk/deps/third_party/ffmpeg/libavcodec/arm/asm-offsets.h
+END
+ac3dsp_arm.S
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/148611/trunk/deps/third_party/ffmpeg/libavcodec/arm/ac3dsp_arm.S
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/Makefile
+END
+h264pred_neon.S
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/148611/trunk/deps/third_party/ffmpeg/libavcodec/arm/h264pred_neon.S
+END
+rdft_neon.S
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavcodec/arm/rdft_neon.S
+END
+h264chroma_init_arm.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/h264chroma_init_arm.c
+END
+videodsp_armv5te.S
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/videodsp_armv5te.S
+END
+fft_init_arm.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/fft_init_arm.c
+END
+h264qpel_neon.S
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/h264qpel_neon.S
+END
+vp56dsp_neon.S
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/148611/trunk/deps/third_party/ffmpeg/libavcodec/arm/vp56dsp_neon.S
+END
+vorbisdsp_neon.S
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/vorbisdsp_neon.S
+END
+h264dsp_init_arm.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/h264dsp_init_arm.c
+END
+mpegvideo_arm.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/mpegvideo_arm.c
+END
+videodsp_arm.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/videodsp_arm.h
+END
+mpegvideo_armv5te.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/mpegvideo_armv5te.c
+END
+vp8dsp_init_armv6.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/vp8dsp_init_armv6.c
+END
+dsputil_neon.S
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/dsputil_neon.S
+END
+mpegvideo_arm.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/133551/trunk/deps/third_party/ffmpeg/libavcodec/arm/mpegvideo_arm.h
+END
+vp8dsp_init_neon.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/vp8dsp_init_neon.c
+END
+simple_idct_armv6.S
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/simple_idct_armv6.S
+END
+sbrdsp_neon.S
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/148611/trunk/deps/third_party/ffmpeg/libavcodec/arm/sbrdsp_neon.S
+END
+dcadsp_neon.S
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/148611/trunk/deps/third_party/ffmpeg/libavcodec/arm/dcadsp_neon.S
+END
+ac3dsp_init_arm.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/133551/trunk/deps/third_party/ffmpeg/libavcodec/arm/ac3dsp_init_arm.c
+END
+videodsp_init_arm.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/videodsp_init_arm.c
+END
+rv40dsp_neon.S
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/148611/trunk/deps/third_party/ffmpeg/libavcodec/arm/rv40dsp_neon.S
+END
+vp3dsp_init_arm.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/vp3dsp_init_arm.c
+END
+videodsp_init_armv5te.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/videodsp_init_armv5te.c
+END
+mdct_fixed_neon.S
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavcodec/arm/mdct_fixed_neon.S
+END
+ac3dsp_armv6.S
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/162873/trunk/deps/third_party/ffmpeg/libavcodec/arm/ac3dsp_armv6.S
+END
+simple_idct_arm.S
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/162873/trunk/deps/third_party/ffmpeg/libavcodec/arm/simple_idct_arm.S
+END
+mpegvideo_neon.S
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/148611/trunk/deps/third_party/ffmpeg/libavcodec/arm/mpegvideo_neon.S
+END
+dsputil_armv6.S
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavcodec/arm/dsputil_armv6.S
+END
+neon.S
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/122313/trunk/deps/third_party/ffmpeg/libavcodec/arm/neon.S
+END
+simple_idct_armv5te.S
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/162873/trunk/deps/third_party/ffmpeg/libavcodec/arm/simple_idct_armv5te.S
+END
+h264pred_init_arm.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/h264pred_init_arm.c
+END
+vp8dsp_neon.S
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/148611/trunk/deps/third_party/ffmpeg/libavcodec/arm/vp8dsp_neon.S
+END
+fmtconvert_neon.S
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavcodec/arm/fmtconvert_neon.S
+END
+mdct_neon.S
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavcodec/arm/mdct_neon.S
+END
+h264qpel_init_arm.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/h264qpel_init_arm.c
+END
+int_neon.S
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavcodec/arm/int_neon.S
+END
+vp56dsp_init_arm.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/vp56dsp_init_arm.c
+END
+mpegaudiodsp_fixed_armv6.S
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/148611/trunk/deps/third_party/ffmpeg/libavcodec/arm/mpegaudiodsp_fixed_armv6.S
+END
+flacdsp_arm.S
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/162873/trunk/deps/third_party/ffmpeg/libavcodec/arm/flacdsp_arm.S
+END
+dca.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/dca.h
+END
+fft_fixed_neon.S
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/148611/trunk/deps/third_party/ffmpeg/libavcodec/arm/fft_fixed_neon.S
+END
+aacpsdsp_neon.S
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/148611/trunk/deps/third_party/ffmpeg/libavcodec/arm/aacpsdsp_neon.S
+END
+vorbisdsp_init_arm.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/vorbisdsp_init_arm.c
+END
+flacdsp_init_arm.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/162873/trunk/deps/third_party/ffmpeg/libavcodec/arm/flacdsp_init_arm.c
+END
+dsputil_arm.S
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/dsputil_arm.S
+END
+rv34dsp_neon.S
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/rv34dsp_neon.S
+END
+h264cmc_neon.S
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavcodec/arm/h264cmc_neon.S
+END
+dsputil_init_arm.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/dsputil_init_arm.c
+END
+synth_filter_neon.S
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/172476/trunk/deps/third_party/ffmpeg/libavcodec/arm/synth_filter_neon.S
+END
+dsputil_init_armv5te.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/dsputil_init_armv5te.c
+END
+fft_neon.S
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/148611/trunk/deps/third_party/ffmpeg/libavcodec/arm/fft_neon.S
+END
+sbrdsp_init_arm.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/133551/trunk/deps/third_party/ffmpeg/libavcodec/arm/sbrdsp_init_arm.c
+END
+vp8dsp_armv6.S
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/vp8dsp_armv6.S
+END
+mathops.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/mathops.h
+END
+dcadsp_init_arm.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/133551/trunk/deps/third_party/ffmpeg/libavcodec/arm/dcadsp_init_arm.c
+END
+fmtconvert_vfp.S
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/fmtconvert_vfp.S
+END
+vp8.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/vp8.h
+END
+rv40dsp_init_arm.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/rv40dsp_init_arm.c
+END
+dsputil_arm.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/133551/trunk/deps/third_party/ffmpeg/libavcodec/arm/dsputil_arm.h
+END
+h264dsp_neon.S
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/189952/trunk/deps/third_party/ffmpeg/libavcodec/arm/h264dsp_neon.S
+END

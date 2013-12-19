@@ -1,0 +1,161 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/native_client/!svn/ver/11168/trunk/src/native_client/src/trusted/validator_x86
+END
+ncdis.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/native_client/!svn/ver/10177/trunk/src/native_client/src/trusted/validator_x86/ncdis.c
+END
+ncval_annotate_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/native_client/!svn/ver/6096/trunk/src/native_client/src/trusted/validator_x86/ncval_annotate_test.py
+END
+ncval_annotate.py
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/native_client/!svn/ver/6096/trunk/src/native_client/src/trusted/validator_x86/ncval_annotate.py
+END
+build.scons
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/native_client/!svn/ver/10230/trunk/src/native_client/src/trusted/validator_x86/build.scons
+END
+ncdis_decode_tables.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/native_client/!svn/ver/6050/trunk/src/native_client/src/trusted/validator_x86/ncdis_decode_tables.h
+END
+ncval.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/native_client/!svn/ver/10590/trunk/src/native_client/src/trusted/validator_x86/ncval.c
+END
+enum_gen.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/native_client/!svn/ver/10119/trunk/src/native_client/src/trusted/validator_x86/enum_gen.py
+END
+force_cpp.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/native_client/!svn/ver/2981/trunk/src/native_client/src/trusted/validator_x86/force_cpp.cc
+END
+nccopycode_stores.S
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/native_client/!svn/ver/10196/trunk/src/native_client/src/trusted/validator_x86/nccopycode_stores.S
+END
+ncdis_segments.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/native_client/!svn/ver/7668/trunk/src/native_client/src/trusted/validator_x86/ncdis_segments.c
+END
+validator_x86.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/native_client/!svn/ver/10585/trunk/src/native_client/src/trusted/validator_x86/validator_x86.gyp
+END
+ncdis_segments.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/native_client/!svn/ver/6547/trunk/src/native_client/src/trusted/validator_x86/ncdis_segments.h
+END
+ncenuminsts.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/native_client/!svn/ver/8887/trunk/src/native_client/src/trusted/validator_x86/ncenuminsts.h
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/native_client/!svn/ver/8297/trunk/src/native_client/src/trusted/validator_x86/README
+END
+nc_read_segment.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/native_client/!svn/ver/10196/trunk/src/native_client/src/trusted/validator_x86/nc_read_segment.c
+END
+ncenuminsts_x86_32.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/native_client/!svn/ver/11112/trunk/src/native_client/src/trusted/validator_x86/ncenuminsts_x86_32.c
+END
+nacl.scons
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/native_client/!svn/ver/10196/trunk/src/native_client/src/trusted/validator_x86/nacl.scons
+END
+ncval.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/native_client/!svn/ver/10585/trunk/src/native_client/src/trusted/validator_x86/ncval.gyp
+END
+nc_read_segment.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/native_client/!svn/ver/5836/trunk/src/native_client/src/trusted/validator_x86/nc_read_segment.h
+END
+ncenuminsts_x86_64.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/native_client/!svn/ver/11112/trunk/src/native_client/src/trusted/validator_x86/ncenuminsts_x86_64.c
+END
+discmp.py
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/native_client/!svn/ver/519/trunk/src/native_client/src/trusted/validator_x86/discmp.py
+END
+ncval_tests.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/native_client/!svn/ver/10370/trunk/src/native_client/src/trusted/validator_x86/ncval_tests.c
+END
+ncdecode_tests.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/native_client/!svn/ver/10177/trunk/src/native_client/src/trusted/validator_x86/ncdecode_tests.c
+END
+nccopycode.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/native_client/!svn/ver/10769/trunk/src/native_client/src/trusted/validator_x86/nccopycode.c
+END
+OWNERS
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/native_client/!svn/ver/9921/trunk/src/native_client/src/trusted/validator_x86/OWNERS
+END
+ncdis_decode_tables.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/native_client/!svn/ver/6412/trunk/src/native_client/src/trusted/validator_x86/ncdis_decode_tables.c
+END

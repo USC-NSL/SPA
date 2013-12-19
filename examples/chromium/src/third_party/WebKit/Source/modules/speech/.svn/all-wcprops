@@ -1,0 +1,263 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/blink/!svn/ver/149182/trunk/Source/modules/speech
+END
+SpeechRecognition.idl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/blink/!svn/ver/148455/trunk/Source/modules/speech/SpeechRecognition.idl
+END
+DOMWindowSpeechSynthesis.idl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/blink/!svn/ver/149182/trunk/Source/modules/speech/DOMWindowSpeechSynthesis.idl
+END
+SpeechSynthesisUtterance.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/blink/!svn/ver/148943/trunk/Source/modules/speech/SpeechSynthesisUtterance.h
+END
+SpeechSynthesis.idl
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/blink/!svn/ver/148125/trunk/Source/modules/speech/SpeechSynthesis.idl
+END
+SpeechSynthesisVoice.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/blink/!svn/ver/148943/trunk/Source/modules/speech/SpeechSynthesisVoice.cpp
+END
+SpeechRecognitionAlternative.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/blink/!svn/ver/148943/trunk/Source/modules/speech/SpeechRecognitionAlternative.cpp
+END
+SpeechRecognition.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/blink/!svn/ver/148943/trunk/Source/modules/speech/SpeechRecognition.cpp
+END
+SpeechRecognitionResultList.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/blink/!svn/ver/148943/trunk/Source/modules/speech/SpeechRecognitionResultList.h
+END
+SpeechRecognitionError.idl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/blink/!svn/ver/148455/trunk/Source/modules/speech/SpeechRecognitionError.idl
+END
+SpeechSynthesisEvent.idl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/blink/!svn/ver/148125/trunk/Source/modules/speech/SpeechSynthesisEvent.idl
+END
+DOMWindowSpeechSynthesis.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/blink/!svn/ver/148943/trunk/Source/modules/speech/DOMWindowSpeechSynthesis.cpp
+END
+SpeechRecognitionClient.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/blink/!svn/ver/148943/trunk/Source/modules/speech/SpeechRecognitionClient.h
+END
+SpeechRecognitionResult.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/blink/!svn/ver/148943/trunk/Source/modules/speech/SpeechRecognitionResult.h
+END
+SpeechGrammarList.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/blink/!svn/ver/148943/trunk/Source/modules/speech/SpeechGrammarList.h
+END
+SpeechRecognitionEvent.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/blink/!svn/ver/148943/trunk/Source/modules/speech/SpeechRecognitionEvent.h
+END
+SpeechRecognitionController.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/blink/!svn/ver/148943/trunk/Source/modules/speech/SpeechRecognitionController.h
+END
+SpeechSynthesis.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/blink/!svn/ver/148943/trunk/Source/modules/speech/SpeechSynthesis.cpp
+END
+SpeechSynthesisUtterance.idl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/blink/!svn/ver/148405/trunk/Source/modules/speech/SpeechSynthesisUtterance.idl
+END
+SpeechRecognitionError.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/blink/!svn/ver/148943/trunk/Source/modules/speech/SpeechRecognitionError.cpp
+END
+SpeechGrammar.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/blink/!svn/ver/148943/trunk/Source/modules/speech/SpeechGrammar.h
+END
+SpeechSynthesisEvent.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/blink/!svn/ver/148943/trunk/Source/modules/speech/SpeechSynthesisEvent.cpp
+END
+DOMWindowSpeech.idl
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/blink/!svn/ver/149182/trunk/Source/modules/speech/DOMWindowSpeech.idl
+END
+SpeechRecognitionResultList.idl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/blink/!svn/ver/148455/trunk/Source/modules/speech/SpeechRecognitionResultList.idl
+END
+SpeechSynthesisUtterance.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/blink/!svn/ver/148943/trunk/Source/modules/speech/SpeechSynthesisUtterance.cpp
+END
+SpeechRecognitionResult.idl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/blink/!svn/ver/148455/trunk/Source/modules/speech/SpeechRecognitionResult.idl
+END
+SpeechGrammarList.idl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/blink/!svn/ver/148455/trunk/Source/modules/speech/SpeechGrammarList.idl
+END
+SpeechRecognitionEvent.idl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/blink/!svn/ver/148455/trunk/Source/modules/speech/SpeechRecognitionEvent.idl
+END
+SpeechRecognitionResultList.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/blink/!svn/ver/148943/trunk/Source/modules/speech/SpeechRecognitionResultList.cpp
+END
+SpeechGrammar.idl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/blink/!svn/ver/148455/trunk/Source/modules/speech/SpeechGrammar.idl
+END
+SpeechRecognitionResult.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/blink/!svn/ver/148943/trunk/Source/modules/speech/SpeechRecognitionResult.cpp
+END
+SpeechRecognitionEvent.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/blink/!svn/ver/148943/trunk/Source/modules/speech/SpeechRecognitionEvent.cpp
+END
+SpeechGrammarList.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/blink/!svn/ver/148943/trunk/Source/modules/speech/SpeechGrammarList.cpp
+END
+SpeechSynthesisVoice.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/blink/!svn/ver/148943/trunk/Source/modules/speech/SpeechSynthesisVoice.h
+END
+SpeechRecognitionAlternative.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/blink/!svn/ver/148943/trunk/Source/modules/speech/SpeechRecognitionAlternative.h
+END
+SpeechRecognitionController.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/blink/!svn/ver/148943/trunk/Source/modules/speech/SpeechRecognitionController.cpp
+END
+SpeechRecognition.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/blink/!svn/ver/148943/trunk/Source/modules/speech/SpeechRecognition.h
+END
+DOMWindowSpeechSynthesis.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/blink/!svn/ver/148943/trunk/Source/modules/speech/DOMWindowSpeechSynthesis.h
+END
+SpeechGrammar.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/blink/!svn/ver/148943/trunk/Source/modules/speech/SpeechGrammar.cpp
+END
+SpeechSynthesis.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/blink/!svn/ver/148943/trunk/Source/modules/speech/SpeechSynthesis.h
+END
+SpeechRecognitionError.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/blink/!svn/ver/148943/trunk/Source/modules/speech/SpeechRecognitionError.h
+END
+SpeechSynthesisEvent.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/blink/!svn/ver/148943/trunk/Source/modules/speech/SpeechSynthesisEvent.h
+END
+SpeechSynthesisVoice.idl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/blink/!svn/ver/148125/trunk/Source/modules/speech/SpeechSynthesisVoice.idl
+END
+SpeechRecognitionAlternative.idl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/blink/!svn/ver/148455/trunk/Source/modules/speech/SpeechRecognitionAlternative.idl
+END

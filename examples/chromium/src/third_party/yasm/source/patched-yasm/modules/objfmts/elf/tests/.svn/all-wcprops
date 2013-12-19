@@ -1,0 +1,281 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/167604/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests
+END
+curpos-err.asm
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/curpos-err.asm
+END
+curpos-err.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/curpos-err.errwarn
+END
+Makefile.inc
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/167604/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/Makefile.inc
+END
+elfequabs.asm
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/elfequabs.asm
+END
+elfso.asm
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/elfso.asm
+END
+elftimes.asm
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/elftimes.asm
+END
+elfcond.asm
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/elfcond.asm
+END
+elfequabs.hex
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/elfequabs.hex
+END
+elfabssect.asm
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/elfabssect.asm
+END
+elfso.hex
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/elfso.hex
+END
+elftimes.hex
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/elftimes.hex
+END
+elfglobext2.asm
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/elfglobext2.asm
+END
+elfcond.hex
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/elfcond.hex
+END
+elfabssect.hex
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/elfabssect.hex
+END
+elfglobext2.hex
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/elfglobext2.hex
+END
+elfmanysym.asm
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/50870/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/elfmanysym.asm
+END
+elfglobal.asm
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/elfglobal.asm
+END
+elfmanysym.hex
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/elfmanysym.hex
+END
+elfreloc-ext.asm
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/elfreloc-ext.asm
+END
+nasm-sectname.asm
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/nasm-sectname.asm
+END
+elfglobal.hex
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/elfglobal.hex
+END
+elfglobext.asm
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/elfglobext.asm
+END
+elfreloc-ext.hex
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/elfreloc-ext.hex
+END
+elf-overdef.asm
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/elf-overdef.asm
+END
+nasm-sectname.hex
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/nasm-sectname.hex
+END
+elfglobext.hex
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/elfglobext.hex
+END
+elfsectalign.asm
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/elfsectalign.asm
+END
+elf-overdef.hex
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/elf-overdef.hex
+END
+elftypesize.asm
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/elftypesize.asm
+END
+elfsectalign.hex
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/elfsectalign.hex
+END
+elftest.asm
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/elftest.asm
+END
+elf-x86id.asm
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/167604/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/elf-x86id.asm
+END
+elftypesize.hex
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/elftypesize.hex
+END
+elftest.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/elftest.c
+END
+elf-x86id.hex
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/elf-x86id.hex
+END
+elftest.hex
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/elftest.hex
+END
+curpos.asm
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/curpos.asm
+END
+elfvisibility.asm
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/elfvisibility.asm
+END
+elfvisibility.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/elfvisibility.errwarn
+END
+nasm-forceident.asm
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/nasm-forceident.asm
+END
+curpos.hex
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/curpos.hex
+END
+elfvisibility.hex
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/elfvisibility.hex
+END
+nasm-forceident.hex
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/nasm-forceident.hex
+END
+elfreloc.asm
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/elfreloc.asm
+END
+elfreloc.hex
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/elfreloc.hex
+END
+elf_test.sh
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/167604/trunk/deps/third_party/yasm/patched-yasm/modules/objfmts/elf/tests/elf_test.sh
+END

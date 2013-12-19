@@ -1,0 +1,70 @@
+K 13
+svn:eol-style
+V 2
+LF
+K 14
+svn:executable
+V 1
+*
+K 13
+svn:mergeinfo
+V 3444
+/branches/apache_fix/src/test/test_handshake_draft75.py:218-220
+/branches/binary_key_test/src/test/test_handshake_draft75.py:317-322
+/branches/bsd/src/test/test_handshake.py:26-30
+/branches/cgi-suffix/src/test/test_handshake.py:198-203
+/branches/cgi-support/src/test/test_handshake.py:172-177
+/branches/cgi_check/src/test/test_handshake.py:182-183
+/branches/cleaner-echo/src/test/test_handshake.py:104-105
+/branches/client-log-level/src/test/test_handshake_draft75.py:335-339
+/branches/client_fix/src/test/test_handshake.py:50-51
+/branches/commandlineflags/src/test/test_handshake.py:192-193
+/branches/configure-logging/src/test/test_handshake_draft75.py:319-325
+/branches/cookie2/src/test/test_handshake.py:152
+/branches/cwd/src/test/test_handshake.py:28
+/branches/draft-76-client/src/test/test_handshake_draft75.py:213-215
+/branches/draft-76-closing/src/test/test_handshake_draft75.py:229-232
+/branches/draft_76_comment/src/test/test_handshake_draft75.py:222-225
+/branches/empty-value/src/test/test_handshake_draft75.py:296-302
+/branches/end-to-end-test/src/test/test_handshake_draft75.py:244-254
+/branches/exception/src/test/test_handshake_draft75.py:329-358
+/branches/fix-for-python2.4/src/test/test_handshake_draft75.py:235-240
+/branches/fix-get-key-value/src/test/test_handshake_draft75.py:264-265
+/branches/fix-tests/src/test/test_handshake_draft75.py:237-242
+/branches/fix_strict/src/test/test_handshake.py:164-165
+/branches/framer/src/test/test_handshake_draft75.py:277-280
+/branches/friendly-log/src/test/test_handshake.py:127
+/branches/handle_query/src/test/test_handshake.py:113-116
+/branches/html-example/src/test/test_handshake_draft75.py:366-367
+/branches/hybi-03-tyoshino/src/test/test_handshake_draft75.py:286-313
+/branches/logfix/src/test/test_handshake.py:121-122
+/branches/md5-deprecation/src/test/test_handshake_draft75.py:333-336
+/branches/mock_fix/src/test/test_handshake.py:62-67
+/branches/moreconn/src/test/test_handshake.py:147-149
+/branches/msgutil_fix/src/test/test_handshake.py:58-72
+/branches/newdefport/src/test/test_handshake.py:3-5
+/branches/realpath/src/test/test_handshake.py:109
+/branches/refactor_test_endtoend/src/test/test_handshake_draft75.py:360-380
+/branches/rename_handshake/src/test/test_handshake.py:47-52
+/branches/rename_testhandlers/src/test/test_handshake.py:64-75
+/branches/resname/src/test/test_handshake.py:33
+/branches/resuseaddr/src/test/test_handshake_draft75.py:270
+/branches/reuseaddr/src/test/test_handshake_draft75.py:271-272
+/branches/root_index_handler/src/test/test_handshake.py:156-159
+/branches/sa_disp/src/test/test_handshake.py:89-90
+/branches/sas_comment/src/test/test_handshake.py:37
+/branches/sas_log/src/test/test_handshake.py:112-114
+/branches/scandir/src/test/test_handshake.py:81-83
+/branches/server_addr/src/test/test_handshake.py:186-187
+/branches/sharedport/src/test/test_handshake.py:14-16
+/branches/strict2/src/test/test_handshake.py:142
+/branches/stricter/src/test/test_handshake.py:136-137
+/branches/style-fix/src/test/test_handshake_draft75.py:346-347
+/branches/subprotocol/src/test/test_handshake.py:132-133
+/branches/timeout/src/test/test_handshake.py:93-94
+/branches/trivial-fixes/src/test/test_handshake_draft75.py:300-301
+/branches/update-key-gen/src/test/test_handshake_draft75.py:251-252
+/branches/utf8error/src/test/test_handshake.py:99-100
+/branches/wait_for_server/src/test/test_handshake_draft75.py:294-307
+/branches/wss/src/test/test_handshake.py:3-12
+END

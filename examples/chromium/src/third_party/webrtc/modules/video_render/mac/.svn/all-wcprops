@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/3840/stable/webrtc/modules/video_render/mac
+END
+video_render_mac_carbon_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/3840/stable/webrtc/modules/video_render/mac/video_render_mac_carbon_impl.h
+END
+video_render_mac_cocoa_impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/3840/stable/webrtc/modules/video_render/mac/video_render_mac_cocoa_impl.h
+END
+video_render_nsopengl.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/3840/stable/webrtc/modules/video_render/mac/video_render_nsopengl.h
+END
+video_render_nsopengl.mm
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/3840/stable/webrtc/modules/video_render/mac/video_render_nsopengl.mm
+END
+cocoa_full_screen_window.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/3037/stable/webrtc/modules/video_render/mac/cocoa_full_screen_window.h
+END
+video_render_mac_cocoa_impl.mm
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/3840/stable/webrtc/modules/video_render/mac/video_render_mac_cocoa_impl.mm
+END
+cocoa_render_view.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/3037/stable/webrtc/modules/video_render/mac/cocoa_render_view.h
+END
+cocoa_full_screen_window.mm
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/3037/stable/webrtc/modules/video_render/mac/cocoa_full_screen_window.mm
+END
+cocoa_render_view.mm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/3037/stable/webrtc/modules/video_render/mac/cocoa_render_view.mm
+END
+video_render_agl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/3840/stable/webrtc/modules/video_render/mac/video_render_agl.cc
+END
+video_render_mac_carbon_impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/3840/stable/webrtc/modules/video_render/mac/video_render_mac_carbon_impl.cc
+END
+video_render_agl.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/3840/stable/webrtc/modules/video_render/mac/video_render_agl.h
+END

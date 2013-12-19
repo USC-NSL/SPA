@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/native_client/!svn/ver/10869/trunk/src/native_client/src/trusted/service_runtime/arch/x86_32
+END
+sel_rt_32.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/native_client/!svn/ver/10726/trunk/src/native_client/src/trusted/service_runtime/arch/x86_32/sel_rt_32.h
+END
+sel_addrspace_x86_32.c
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/native_client/!svn/ver/10769/trunk/src/native_client/src/trusted/service_runtime/arch/x86_32/sel_addrspace_x86_32.c
+END
+nacl_tls_32.c
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/native_client/!svn/ver/10849/trunk/src/native_client/src/trusted/service_runtime/arch/x86_32/nacl_tls_32.c
+END
+nacl_switch_to_app_32.c
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/native_client/!svn/ver/10590/trunk/src/native_client/src/trusted/service_runtime/arch/x86_32/nacl_switch_to_app_32.c
+END
+tramp_32.S
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/native_client/!svn/ver/10854/trunk/src/native_client/src/trusted/service_runtime/arch/x86_32/tramp_32.S
+END
+nacl_switch_all_regs_32.c
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/native_client/!svn/ver/10534/trunk/src/native_client/src/trusted/service_runtime/arch/x86_32/nacl_switch_all_regs_32.c
+END
+nacl_switch_all_regs_32.h
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/native_client/!svn/ver/9963/trunk/src/native_client/src/trusted/service_runtime/arch/x86_32/nacl_switch_all_regs_32.h
+END
+nacl_app_32.c
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/native_client/!svn/ver/10196/trunk/src/native_client/src/trusted/service_runtime/arch/x86_32/nacl_app_32.c
+END
+nacl_switch_32.S
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/native_client/!svn/ver/10869/trunk/src/native_client/src/trusted/service_runtime/arch/x86_32/nacl_switch_32.S
+END
+nacl_signal_32.h
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/native_client/!svn/ver/10196/trunk/src/native_client/src/trusted/service_runtime/arch/x86_32/nacl_signal_32.h
+END
+nacl_text_pad_test.S
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/native_client/!svn/ver/10736/trunk/src/native_client/src/trusted/service_runtime/arch/x86_32/nacl_text_pad_test.S
+END
+service_runtime_x86_32.gyp
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/native_client/!svn/ver/9274/trunk/src/native_client/src/trusted/service_runtime/arch/x86_32/service_runtime_x86_32.gyp
+END
+springboard.S
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/native_client/!svn/ver/10554/trunk/src/native_client/src/trusted/service_runtime/arch/x86_32/springboard.S
+END
+nacl_switch_all_regs_asm_32.S
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/native_client/!svn/ver/10178/trunk/src/native_client/src/trusted/service_runtime/arch/x86_32/nacl_switch_all_regs_asm_32.S
+END
+nacl_syscall_32.S
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/native_client/!svn/ver/10748/trunk/src/native_client/src/trusted/service_runtime/arch/x86_32/nacl_syscall_32.S
+END
+sel_rt_32.c
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/native_client/!svn/ver/10726/trunk/src/native_client/src/trusted/service_runtime/arch/x86_32/sel_rt_32.c
+END
+tramp_32.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/native_client/!svn/ver/10854/trunk/src/native_client/src/trusted/service_runtime/arch/x86_32/tramp_32.h
+END
+sel_ldr_x86_32.c
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/native_client/!svn/ver/10769/trunk/src/native_client/src/trusted/service_runtime/arch/x86_32/sel_ldr_x86_32.c
+END

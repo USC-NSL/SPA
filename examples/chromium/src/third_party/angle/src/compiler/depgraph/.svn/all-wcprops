@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/1154/trunk/src/compiler/depgraph
+END
+DependencyGraph.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/1131/trunk/src/compiler/depgraph/DependencyGraph.cpp
+END
+DependencyGraphOutput.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/1101/trunk/src/compiler/depgraph/DependencyGraphOutput.cpp
+END
+DependencyGraph.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/1131/trunk/src/compiler/depgraph/DependencyGraph.h
+END
+DependencyGraphOutput.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/1101/trunk/src/compiler/depgraph/DependencyGraphOutput.h
+END
+DependencyGraphBuilder.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/1154/trunk/src/compiler/depgraph/DependencyGraphBuilder.cpp
+END
+DependencyGraphTraverse.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/1101/trunk/src/compiler/depgraph/DependencyGraphTraverse.cpp
+END
+DependencyGraphBuilder.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/1154/trunk/src/compiler/depgraph/DependencyGraphBuilder.h
+END

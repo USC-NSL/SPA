@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/native_client/!svn/ver/10196/trunk/src/native_client/src/trusted/service_runtime/name_service
+END
+name_service.c
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/native_client/!svn/ver/5671/trunk/src/native_client/src/trusted/service_runtime/name_service/name_service.c
+END
+default_name_service.c
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/native_client/!svn/ver/5671/trunk/src/native_client/src/trusted/service_runtime/name_service/default_name_service.c
+END
+name_service.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/native_client/!svn/ver/6236/trunk/src/native_client/src/trusted/service_runtime/name_service/name_service.h
+END
+default_name_service.h
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/native_client/!svn/ver/10196/trunk/src/native_client/src/trusted/service_runtime/name_service/default_name_service.h
+END

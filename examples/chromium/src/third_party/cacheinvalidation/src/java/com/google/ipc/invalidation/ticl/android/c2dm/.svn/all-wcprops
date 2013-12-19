@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/270/trunk/src/java/com/google/ipc/invalidation/ticl/android/c2dm
+END
+C2DMManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/263/trunk/src/java/com/google/ipc/invalidation/ticl/android/c2dm/C2DMManager.java
+END
+C2DMTestUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/138/trunk/src/java/com/google/ipc/invalidation/ticl/android/c2dm/C2DMTestUtil.java
+END
+BaseC2DMReceiver.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/207/trunk/src/java/com/google/ipc/invalidation/ticl/android/c2dm/BaseC2DMReceiver.java
+END
+C2DMSettings.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/221/trunk/src/java/com/google/ipc/invalidation/ticl/android/c2dm/C2DMSettings.java
+END
+C2DMessaging.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/207/trunk/src/java/com/google/ipc/invalidation/ticl/android/c2dm/C2DMessaging.java
+END
+WakeLockManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/270/trunk/src/java/com/google/ipc/invalidation/ticl/android/c2dm/WakeLockManager.java
+END
+C2DMObserver.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/221/trunk/src/java/com/google/ipc/invalidation/ticl/android/c2dm/C2DMObserver.java
+END
+C2DMBroadcastReceiver.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/138/trunk/src/java/com/google/ipc/invalidation/ticl/android/c2dm/C2DMBroadcastReceiver.java
+END

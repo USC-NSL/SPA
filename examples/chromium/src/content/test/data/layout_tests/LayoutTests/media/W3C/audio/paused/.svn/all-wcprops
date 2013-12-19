@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/blink/!svn/ver/103470/trunk/LayoutTests/media/W3C/audio/paused
+END
+paused_true_during_pause-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/blink/!svn/ver/103470/trunk/LayoutTests/media/W3C/audio/paused/paused_true_during_pause-expected.txt
+END
+paused_false_during_play-expected.txt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/blink/!svn/ver/103470/trunk/LayoutTests/media/W3C/audio/paused/paused_false_during_play-expected.txt
+END
+paused_true_during_pause.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/blink/!svn/ver/103470/trunk/LayoutTests/media/W3C/audio/paused/paused_true_during_pause.html
+END
+paused_false_during_play.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/blink/!svn/ver/103470/trunk/LayoutTests/media/W3C/audio/paused/paused_false_during_play.html
+END

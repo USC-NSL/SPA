@@ -1,0 +1,13 @@
+K 10
+svn:ignore
+V 204
+platform_qual_lib.rules
+platform_qual_lib.target.mk
+platform_qual_lib.vcproj
+platform_qual_lib64.rules
+platform_qual_lib64.vcproj
+platform_qualify.Makefile
+platform_qualify.sln
+platform_qualify.xcodeproj
+
+END

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/190582/trunk/deps/third_party/openssl/patches.chromium
+END
+x509_hash_name_algorithm_change.patch
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/190582/trunk/deps/third_party/openssl/patches.chromium/x509_hash_name_algorithm_change.patch
+END
+enable-dtls1.patch
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/188714/trunk/deps/third_party/openssl/patches.chromium/enable-dtls1.patch
+END

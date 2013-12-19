@@ -1,0 +1,455 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/196477/trunk/deps/third_party/libvpx/source/libvpx/vp9/common
+END
+vp9_alloccommon.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/195053/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_alloccommon.c
+END
+vp9_reconintra4x4.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/195053/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_reconintra4x4.c
+END
+vp9_reconintra.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/195048/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_reconintra.c
+END
+vp9_loopfilter_filters.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/195048/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_loopfilter_filters.c
+END
+vp9_asm_com_offsets.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_asm_com_offsets.c
+END
+vp9_modecont.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/195048/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_modecont.c
+END
+vp9_alloccommon.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/177026/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_alloccommon.h
+END
+vp9_reconintra.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/195048/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_reconintra.h
+END
+vp9_modecont.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/177026/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_modecont.h
+END
+vp9_systemdependent.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/177026/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_systemdependent.h
+END
+vp9_idct.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/195052/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_idct.c
+END
+vp9_context.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_context.c
+END
+vp9_filter.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/195052/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_filter.c
+END
+vp9_idct.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/195052/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_idct.h
+END
+vp9_findnearmv.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/196477/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_findnearmv.c
+END
+vp9_coefupdateprobs.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/195053/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_coefupdateprobs.h
+END
+vp9_filter.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/195052/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_filter.h
+END
+vp9_convolve.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/195052/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_convolve.c
+END
+vp9_maskingmv.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/195053/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_maskingmv.c
+END
+vp9_findnearmv.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/195052/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_findnearmv.h
+END
+vp9_sadmxn.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/195052/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_sadmxn.h
+END
+vp9_convolve.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/195052/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_convolve.h
+END
+vp9_pred_common.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/195048/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_pred_common.c
+END
+vp9_tapify.py
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_tapify.py
+END
+vp9_tile_common.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/195048/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_tile_common.c
+END
+vp9_pred_common.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/195048/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_pred_common.h
+END
+vp9_postproc.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/195053/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_postproc.c
+END
+vp9_tile_common.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/195048/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_tile_common.h
+END
+vp9_postproc.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/195053/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_postproc.h
+END
+vp9_debugmodes.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/195053/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_debugmodes.c
+END
+vp9_onyxc_int.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/195048/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_onyxc_int.h
+END
+vp9_seg_common.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/195053/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_seg_common.c
+END
+vp9_implicit_segmentation.c
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/177026/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_implicit_segmentation.c
+END
+vp9_mvref_common.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/195053/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_mvref_common.c
+END
+vp9_seg_common.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/195053/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_seg_common.h
+END
+vp9_rtcd.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/195051/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_rtcd.c
+END
+vp9_mvref_common.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/195051/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_mvref_common.h
+END
+vp9_textblit.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/195051/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_textblit.c
+END
+vp9_entropy.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/195048/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_entropy.c
+END
+vp9_ppflags.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/177026/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_ppflags.h
+END
+vp9_onyx.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/195051/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_onyx.h
+END
+vp9_entropymv.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/195048/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_entropymv.c
+END
+vp9_invtrans.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/195051/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_invtrans.c
+END
+vp9_textblit.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/195051/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_textblit.h
+END
+vp9_entropymode.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/195048/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_entropymode.c
+END
+vp9_entropy.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/195048/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_entropy.h
+END
+vp9_recon.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/195048/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_recon.c
+END
+vp9_entropymv.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/195048/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_entropymv.h
+END
+vp9_subpelvar.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/177026/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_subpelvar.h
+END
+vp9_invtrans.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/195051/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_invtrans.h
+END
+vp9_entropymode.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/195048/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_entropymode.h
+END
+vp9_treecoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/195048/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_treecoder.c
+END
+vp9_treecoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/195048/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_treecoder.h
+END
+vp9_setupintrarecon.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/177026/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_setupintrarecon.c
+END
+vp9_mbpitch.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/195052/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_mbpitch.c
+END
+vp9_swapyv12buffer.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/177026/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_swapyv12buffer.c
+END
+vp9_extend.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/195051/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_extend.c
+END
+vp9_default_coef_probs.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/195051/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_default_coef_probs.h
+END
+vp9_setupintrarecon.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/195052/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_setupintrarecon.h
+END
+vp9_swapyv12buffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/177026/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_swapyv12buffer.h
+END
+vp9_extend.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/195051/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_extend.h
+END
+vp9_header.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/177026/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_header.h
+END
+vp9_common.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/195051/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_common.h
+END
+vp9_blockd.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/195051/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_blockd.c
+END
+vp9_pragmas.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/195052/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_pragmas.h
+END
+vp9_quant_common.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/195051/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_quant_common.c
+END
+vp9_blockd.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/195048/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_blockd.h
+END
+vp9_quant_common.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/195048/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_quant_common.h
+END
+vp9_reconinter.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/195048/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_reconinter.c
+END
+vp9_reconinter.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/195048/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_reconinter.h
+END
+vp9_loopfilter.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/195048/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_loopfilter.c
+END
+vp9_loopfilter.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/195048/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_loopfilter.h
+END
+vp9_rtcd_defs.sh
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/196477/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_rtcd_defs.sh
+END
+vp9_mv.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/195048/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_mv.h
+END
+vp9_modecontext.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vp9/common/vp9_modecontext.c
+END

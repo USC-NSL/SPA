@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/ppc
+END
+copy_altivec.asm
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/149032/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/ppc/copy_altivec.asm
+END
+filter_bilinear_altivec.asm
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/149032/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/ppc/filter_bilinear_altivec.asm
+END
+loopfilter_altivec.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/106910/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/ppc/loopfilter_altivec.c
+END
+variance_subpixel_altivec.asm
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/149032/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/ppc/variance_subpixel_altivec.asm
+END
+platform_altivec.asm
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/149032/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/ppc/platform_altivec.asm
+END
+filter_altivec.asm
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/149032/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/ppc/filter_altivec.asm
+END
+recon_altivec.asm
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/149032/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/ppc/recon_altivec.asm
+END
+systemdependent.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/ppc/systemdependent.c
+END
+loopfilter_filters_altivec.asm
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/149032/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/ppc/loopfilter_filters_altivec.asm
+END
+sad_altivec.asm
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/149032/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/ppc/sad_altivec.asm
+END
+idctllm_altivec.asm
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/149032/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/ppc/idctllm_altivec.asm
+END
+variance_altivec.asm
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/149032/trunk/deps/third_party/libvpx/source/libvpx/vp8/common/ppc/variance_altivec.asm
+END

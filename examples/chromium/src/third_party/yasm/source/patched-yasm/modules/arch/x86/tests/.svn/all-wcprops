@@ -1,0 +1,1325 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/167605/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests
+END
+movdq64.asm
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/movdq64.asm
+END
+movdq64.hex
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/movdq64.hex
+END
+avxcc.asm
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/avxcc.asm
+END
+stringseg.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/stringseg.errwarn
+END
+avxcc.hex
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/avxcc.hex
+END
+enter.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/enter.errwarn
+END
+bittest.asm
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/bittest.asm
+END
+amd200707.asm
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/amd200707.asm
+END
+bittest.hex
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/bittest.hex
+END
+far64.asm
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/far64.asm
+END
+nomem64.asm
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/nomem64.asm
+END
+amd200707.hex
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/amd200707.hex
+END
+pushf.asm
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/pushf.asm
+END
+far64.hex
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/far64.hex
+END
+xsave.asm
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/71296/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/xsave.asm
+END
+pushf.hex
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/pushf.hex
+END
+push64.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/push64.errwarn
+END
+nomem64.hex
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/nomem64.hex
+END
+xsave.hex
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/71296/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/xsave.hex
+END
+movdq32.asm
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/movdq32.asm
+END
+ea-over.asm
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/ea-over.asm
+END
+avx.asm
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/avx.asm
+END
+segoff-err.asm
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/segoff-err.asm
+END
+addrop-err.asm
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/addrop-err.asm
+END
+movdq32.hex
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/movdq32.hex
+END
+arithsmall.asm
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/arithsmall.asm
+END
+opersize.asm
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/opersize.asm
+END
+ea-over.hex
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/ea-over.hex
+END
+avx.hex
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/167605/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/avx.hex
+END
+opersize.hex
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/opersize.hex
+END
+sse4-err.asm
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/sse4-err.asm
+END
+arithsmall.hex
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/arithsmall.hex
+END
+fwdequ64.asm
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/fwdequ64.asm
+END
+simd64-2.asm
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/simd64-2.asm
+END
+sse5-err.asm
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/sse5-err.asm
+END
+svm.asm
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/svm.asm
+END
+pushnosize.asm
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/pushnosize.asm
+END
+o64.asm
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/o64.asm
+END
+fwdequ64.hex
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/fwdequ64.hex
+END
+simd64-2.hex
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/simd64-2.hex
+END
+svm.hex
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/svm.hex
+END
+fcmov.asm
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/fcmov.asm
+END
+nomem64-err.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/nomem64-err.errwarn
+END
+pushf-err.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/pushf-err.errwarn
+END
+pushnosize.hex
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/pushnosize.hex
+END
+o64.hex
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/o64.hex
+END
+addbyte.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/addbyte.errwarn
+END
+mem64hi32.asm
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/mem64hi32.asm
+END
+mem64-err.asm
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/mem64-err.asm
+END
+fcmov.hex
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/fcmov.hex
+END
+riprel1.asm
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/riprel1.asm
+END
+x86_test.sh
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/167605/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/x86_test.sh
+END
+jmpfar.asm
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/jmpfar.asm
+END
+mem64hi32.hex
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/mem64hi32.hex
+END
+riprel1.hex
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/riprel1.hex
+END
+jmpfar.hex
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/jmpfar.hex
+END
+rep.asm
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/rep.asm
+END
+ripseg.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/ripseg.errwarn
+END
+ea-warn.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/ea-warn.errwarn
+END
+rep.hex
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/rep.hex
+END
+ret.asm
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/ret.asm
+END
+simd-2.asm
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/simd-2.asm
+END
+ret.hex
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/ret.hex
+END
+simd-2.hex
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/simd-2.hex
+END
+o64loop.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/o64loop.errwarn
+END
+Makefile.inc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/167605/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/Makefile.inc
+END
+div-err.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/div-err.errwarn
+END
+segoff.asm
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/segoff.asm
+END
+addrop.asm
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/addrop.asm
+END
+vmx.asm
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/vmx.asm
+END
+sse3.asm
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/sse3.asm
+END
+segoff.hex
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/segoff.hex
+END
+addrop.hex
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/addrop.hex
+END
+vmx.hex
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/vmx.hex
+END
+sse3.hex
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/sse3.hex
+END
+sse5-all.asm
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/sse5-all.asm
+END
+sse-prefix.asm
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/sse-prefix.asm
+END
+nomem64.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/nomem64.errwarn
+END
+bswap64.asm
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/bswap64.asm
+END
+sse5-all.hex
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/sse5-all.hex
+END
+sse-prefix.hex
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/sse-prefix.hex
+END
+cmpxchg.asm
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/cmpxchg.asm
+END
+mixcase.asm
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/71296/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/mixcase.asm
+END
+bswap64.hex
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/bswap64.hex
+END
+twobytemem.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/twobytemem.errwarn
+END
+pshift.asm
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/pshift.asm
+END
+cmpxchg.hex
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/cmpxchg.hex
+END
+mixcase.hex
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/mixcase.hex
+END
+sse5-basic.asm
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/sse5-basic.asm
+END
+ebpindex.asm
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/ebpindex.asm
+END
+jmp64-1.asm
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/jmp64-1.asm
+END
+segoff-err.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/segoff-err.errwarn
+END
+addrop-err.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/addrop-err.errwarn
+END
+vmx-err.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/vmx-err.errwarn
+END
+jmp64-3.asm
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/jmp64-3.asm
+END
+pshift.hex
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/pshift.hex
+END
+sse5-cc.asm
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/sse5-cc.asm
+END
+sse5-basic.hex
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/sse5-basic.hex
+END
+ebpindex.hex
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/ebpindex.hex
+END
+jmp64-1.hex
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/jmp64-1.hex
+END
+jmp64-5.asm
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/jmp64-5.asm
+END
+xchg64.asm
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/xchg64.asm
+END
+jmp64-3.hex
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/jmp64-3.hex
+END
+sse5-err.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/sse5-err.errwarn
+END
+sse5-cc.hex
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/sse5-cc.hex
+END
+jmp64-5.hex
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/jmp64-5.hex
+END
+xchg64.hex
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/xchg64.hex
+END
+pushnosize.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/pushnosize.errwarn
+END
+strict.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/strict.errwarn
+END
+str.asm
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/str.asm
+END
+str.hex
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/str.hex
+END
+addbyte.asm
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/addbyte.asm
+END
+padlock.asm
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/padlock.asm
+END
+ea-nonzero.asm
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/ea-nonzero.asm
+END
+cpubasic-err.asm
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/cpubasic-err.asm
+END
+addbyte.hex
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/addbyte.hex
+END
+padlock.hex
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/padlock.hex
+END
+ea-nonzero.hex
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/ea-nonzero.hex
+END
+x86label.asm
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/x86label.asm
+END
+x86label.hex
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/x86label.hex
+END
+ea-warn.asm
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/ea-warn.asm
+END
+effaddr.asm
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/effaddr.asm
+END
+ea-warn.hex
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/ea-warn.hex
+END
+cyrix.asm
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/cyrix.asm
+END
+effaddr.hex
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/effaddr.hex
+END
+segmov.asm
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/segmov.asm
+END
+cyrix.hex
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/cyrix.hex
+END
+o64loop.asm
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/o64loop.asm
+END
+ssse3.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/ssse3.c
+END
+iret.asm
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/iret.asm
+END
+segmov.hex
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/segmov.hex
+END
+o64loop.hex
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/o64loop.hex
+END
+iret.hex
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/iret.hex
+END
+div-err.asm
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/div-err.asm
+END
+addrop.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/addrop.errwarn
+END
+farbasic.asm
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/71296/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/farbasic.asm
+END
+farbasic.hex
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/farbasic.hex
+END
+lds.asm
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/lds.asm
+END
+negequ.asm
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/negequ.asm
+END
+lds.hex
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/lds.hex
+END
+negequ.hex
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/negequ.hex
+END
+mem64.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/mem64.errwarn
+END
+stos.asm
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/stos.asm
+END
+ssewidth.asm
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/ssewidth.asm
+END
+loopadsz.asm
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/loopadsz.asm
+END
+imm64.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/imm64.errwarn
+END
+stos.hex
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/stos.hex
+END
+twobytemem.asm
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/twobytemem.asm
+END
+nomem64-err2.asm
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/nomem64-err2.asm
+END
+ssewidth.hex
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/ssewidth.hex
+END
+loopadsz.hex
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/loopadsz.hex
+END
+twobytemem.hex
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/twobytemem.hex
+END
+vmx-err.asm
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/vmx-err.asm
+END
+overflow.asm
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/overflow.asm
+END
+mem64rip.asm
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/mem64rip.asm
+END
+genopcode.asm
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/genopcode.asm
+END
+fma.asm
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/fma.asm
+END
+simd64-1.asm
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/simd64-1.asm
+END
+mem64rip.hex
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/mem64rip.hex
+END
+genopcode.hex
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/genopcode.hex
+END
+fma.hex
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/fma.hex
+END
+overflow.hex
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/overflow.hex
+END
+simd64-1.hex
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/simd64-1.hex
+END
+strict.asm
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/strict.asm
+END
+strict.hex
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/strict.hex
+END
+cpubasic-err.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/cpubasic-err.errwarn
+END
+riprel2.asm
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/riprel2.asm
+END
+riprel2.hex
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/riprel2.hex
+END
+simd-1.asm
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/simd-1.asm
+END
+lsahf.asm
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/lsahf.asm
+END
+simd-1.hex
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/simd-1.hex
+END
+strict-err.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/strict-err.errwarn
+END
+opsize-err.asm
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/opsize-err.asm
+END
+farithr.asm
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/farithr.asm
+END
+ssse3.asm
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/ssse3.asm
+END
+lsahf.hex
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/lsahf.hex
+END
+farithr.hex
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/farithr.hex
+END
+ssse3.hex
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/ssse3.hex
+END
+stringseg.asm
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/stringseg.asm
+END
+movbe.asm
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/movbe.asm
+END
+stringseg.hex
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/stringseg.hex
+END
+movbe.hex
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/movbe.hex
+END
+clmul.asm
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/clmul.asm
+END
+enter.asm
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/enter.asm
+END
+sse4.asm
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/sse4.asm
+END
+clmul.hex
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/clmul.hex
+END
+enter.hex
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/enter.hex
+END
+sse4.hex
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/sse4.hex
+END
+mem64.asm
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/mem64.asm
+END
+push64.asm
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/push64.asm
+END
+mem64.hex
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/mem64.hex
+END
+imm64.asm
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/imm64.asm
+END
+nomem64-err2.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/nomem64-err2.errwarn
+END
+push64.hex
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/push64.hex
+END
+ea-over.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/ea-over.errwarn
+END
+jmp64-2.asm
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/jmp64-2.asm
+END
+imm64.hex
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/imm64.hex
+END
+arithsmall.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/arithsmall.errwarn
+END
+jmp64-4.asm
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/jmp64-4.asm
+END
+overflow.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/overflow.errwarn
+END
+jmp64-6.asm
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/jmp64-6.asm
+END
+jmp64-2.hex
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/jmp64-2.hex
+END
+sse4-err.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/sse4-err.errwarn
+END
+jmp64-4.hex
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/jmp64-4.hex
+END
+jmp64-6.hex
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/jmp64-6.hex
+END
+aes.asm
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/aes.asm
+END
+nomem64-err.asm
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/nomem64-err.asm
+END
+pushf-err.asm
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/pushf-err.asm
+END
+xmm64.asm
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/xmm64.asm
+END
+aes.hex
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/71296/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/aes.hex
+END
+shift.asm
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/shift.asm
+END
+mem64-err.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/mem64-err.errwarn
+END
+riprel2.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/riprel2.errwarn
+END
+xmm64.hex
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/xmm64.hex
+END
+shift.hex
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/shift.hex
+END
+ripseg.asm
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/ripseg.asm
+END
+ripseg.hex
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/ripseg.hex
+END
+strict-err.asm
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/strict-err.asm
+END
+opsize-err.errwarn
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/opsize-err.errwarn
+END
+gen-fma-test.py
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/29921/trunk/deps/third_party/yasm/patched-yasm/modules/arch/x86/tests/gen-fma-test.py
+END

@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/3840/stable/webrtc/video_engine/test/auto_test/primitives
+END
+framedrop_primitives.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/3304/stable/webrtc/video_engine/test/auto_test/primitives/framedrop_primitives.h
+END
+fake_stdin.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/2974/stable/webrtc/video_engine/test/auto_test/primitives/fake_stdin.cc
+END
+fake_stdin.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/2974/stable/webrtc/video_engine/test/auto_test/primitives/fake_stdin.h
+END
+choice_helpers_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/3083/stable/webrtc/video_engine/test/auto_test/primitives/choice_helpers_unittest.cc
+END
+choice_helpers.cc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/3288/stable/webrtc/video_engine/test/auto_test/primitives/choice_helpers.cc
+END
+choice_helpers.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/3083/stable/webrtc/video_engine/test/auto_test/primitives/choice_helpers.h
+END
+input_helpers_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/3083/stable/webrtc/video_engine/test/auto_test/primitives/input_helpers_unittest.cc
+END
+input_helpers.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/3083/stable/webrtc/video_engine/test/auto_test/primitives/input_helpers.cc
+END
+input_helpers.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/3083/stable/webrtc/video_engine/test/auto_test/primitives/input_helpers.h
+END
+base_primitives.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/3304/stable/webrtc/video_engine/test/auto_test/primitives/base_primitives.cc
+END
+base_primitives.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/2974/stable/webrtc/video_engine/test/auto_test/primitives/base_primitives.h
+END
+general_primitives.cc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/3353/stable/webrtc/video_engine/test/auto_test/primitives/general_primitives.cc
+END
+framedrop_primitives_unittest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/3840/stable/webrtc/video_engine/test/auto_test/primitives/framedrop_primitives_unittest.cc
+END
+general_primitives.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/3353/stable/webrtc/video_engine/test/auto_test/primitives/general_primitives.h
+END
+framedrop_primitives.cc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/3840/stable/webrtc/video_engine/test/auto_test/primitives/framedrop_primitives.cc
+END

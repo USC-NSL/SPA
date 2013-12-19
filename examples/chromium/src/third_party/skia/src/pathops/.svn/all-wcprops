@@ -1,0 +1,329 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/8882/trunk/src/pathops
+END
+SkPathOpsRect.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/8568/trunk/src/pathops/SkPathOpsRect.h
+END
+SkPathOpsTriangle.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/8568/trunk/src/pathops/SkPathOpsTriangle.cpp
+END
+SkOpSegment.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/8745/trunk/src/pathops/SkOpSegment.h
+END
+SkAddIntersections.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/8568/trunk/src/pathops/SkAddIntersections.h
+END
+SkPathOpsTypes.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/8823/trunk/src/pathops/SkPathOpsTypes.h
+END
+SkReduceOrder.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/8568/trunk/src/pathops/SkReduceOrder.h
+END
+SkIntersectionHelper.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/8568/trunk/src/pathops/SkIntersectionHelper.h
+END
+SkPathOpsOp.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/8882/trunk/src/pathops/SkPathOpsOp.cpp
+END
+SkOpEdgeBuilder.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/8882/trunk/src/pathops/SkOpEdgeBuilder.h
+END
+SkDCubicIntersection.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/8822/trunk/src/pathops/SkDCubicIntersection.cpp
+END
+SkQuarticRoot.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/8568/trunk/src/pathops/SkQuarticRoot.h
+END
+main.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/8568/trunk/src/pathops/main.cpp
+END
+SkDCubicLineIntersection.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/8568/trunk/src/pathops/SkDCubicLineIntersection.cpp
+END
+SkPathOpsCurve.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/8568/trunk/src/pathops/SkPathOpsCurve.h
+END
+SkPathOpsCubic.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/8726/trunk/src/pathops/SkPathOpsCubic.h
+END
+SkPathOpsDebug.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/8745/trunk/src/pathops/SkPathOpsDebug.h
+END
+SkOpAngle.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/8689/trunk/src/pathops/SkOpAngle.h
+END
+SkPathOpsLine.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/8568/trunk/src/pathops/SkPathOpsLine.h
+END
+SkPathOpsCommon.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/8568/trunk/src/pathops/SkPathOpsCommon.h
+END
+SkPathOpsRect.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/8568/trunk/src/pathops/SkPathOpsRect.cpp
+END
+SkPathOpsPoint.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/8822/trunk/src/pathops/SkPathOpsPoint.h
+END
+SkOpContour.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/8568/trunk/src/pathops/SkOpContour.h
+END
+SkPathOpsBounds.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/8822/trunk/src/pathops/SkPathOpsBounds.h
+END
+SkPathWriter.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/8568/trunk/src/pathops/SkPathWriter.h
+END
+SkPathOpsQuad.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/8568/trunk/src/pathops/SkPathOpsQuad.h
+END
+SkIntersections.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/8726/trunk/src/pathops/SkIntersections.h
+END
+SkDQuadImplicit.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/8568/trunk/src/pathops/SkDQuadImplicit.h
+END
+SkOpSegment.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/8798/trunk/src/pathops/SkOpSegment.cpp
+END
+SkAddIntersections.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/8568/trunk/src/pathops/SkAddIntersections.cpp
+END
+SkPathOpsTypes.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/8568/trunk/src/pathops/SkPathOpsTypes.cpp
+END
+SkReduceOrder.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/8727/trunk/src/pathops/SkReduceOrder.cpp
+END
+SkOpSpan.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/8568/trunk/src/pathops/SkOpSpan.h
+END
+SkPathOpsSpan.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/8568/trunk/src/pathops/SkPathOpsSpan.h
+END
+SkPathOpsTriangle.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/8568/trunk/src/pathops/SkPathOpsTriangle.h
+END
+SkOpEdgeBuilder.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/8882/trunk/src/pathops/SkOpEdgeBuilder.cpp
+END
+SkQuarticRoot.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/8568/trunk/src/pathops/SkQuarticRoot.cpp
+END
+SkLineParameters.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/8568/trunk/src/pathops/SkLineParameters.h
+END
+SkDLineIntersection.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/8823/trunk/src/pathops/SkDLineIntersection.cpp
+END
+SkPathOpsCubic.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/8568/trunk/src/pathops/SkPathOpsCubic.cpp
+END
+SkOpAngle.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/8810/trunk/src/pathops/SkOpAngle.cpp
+END
+SkPathOpsDebug.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/8745/trunk/src/pathops/SkPathOpsDebug.cpp
+END
+SkDQuadIntersection.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/8822/trunk/src/pathops/SkDQuadIntersection.cpp
+END
+SkPathOpsLine.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/8568/trunk/src/pathops/SkPathOpsLine.cpp
+END
+SkPathOpsCommon.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/8810/trunk/src/pathops/SkPathOpsCommon.cpp
+END
+SkPathOpsPoint.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/8568/trunk/src/pathops/SkPathOpsPoint.cpp
+END
+SkOpContour.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/8810/trunk/src/pathops/SkOpContour.cpp
+END
+SkPathOpsBounds.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/8568/trunk/src/pathops/SkPathOpsBounds.cpp
+END
+SkDQuadImplicit.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/8823/trunk/src/pathops/SkDQuadImplicit.cpp
+END
+SkPathWriter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/8568/trunk/src/pathops/SkPathWriter.cpp
+END
+SkIntersections.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/8726/trunk/src/pathops/SkIntersections.cpp
+END
+SkPathOpsQuad.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/8822/trunk/src/pathops/SkPathOpsQuad.cpp
+END
+SkDCubicToQuads.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/8810/trunk/src/pathops/SkDCubicToQuads.cpp
+END
+SkPathOpsSimplify.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/8882/trunk/src/pathops/SkPathOpsSimplify.cpp
+END
+SkDQuadLineIntersection.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/8568/trunk/src/pathops/SkDQuadLineIntersection.cpp
+END

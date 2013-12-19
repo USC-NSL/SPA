@@ -1,0 +1,10 @@
+K 10
+svn:ignore
+V 76
+libspeex.target.mk
+libspeex.vcproj
+speex.Makefile
+speex.sln
+speex.xcodeproj
+
+END

@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/tools
+END
+diff.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/tools/diff.py
+END
+intersect-diffs.py
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/tools/intersect-diffs.py
+END
+cpplint.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/tools/cpplint.py
+END
+ftfy.sh
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/tools/ftfy.sh
+END
+all_builds.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/tools/all_builds.py
+END
+author_first_release.sh
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/168769/trunk/deps/third_party/libvpx/source/libvpx/tools/author_first_release.sh
+END
+lint-hunks.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/tools/lint-hunks.py
+END
+vpx-astyle.sh
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/172738/trunk/deps/third_party/libvpx/source/libvpx/tools/vpx-astyle.sh
+END
+gen_authors.sh
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/168769/trunk/deps/third_party/libvpx/source/libvpx/tools/gen_authors.sh
+END
+wrap-commit-msg.py
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/140393/trunk/deps/third_party/libvpx/source/libvpx/tools/wrap-commit-msg.py
+END

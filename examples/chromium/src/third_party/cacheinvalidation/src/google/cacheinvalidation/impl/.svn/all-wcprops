@@ -1,0 +1,299 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/296/trunk/src/google/cacheinvalidation/impl
+END
+simple-registration-store.cc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/197/trunk/src/google/cacheinvalidation/impl/simple-registration-store.cc
+END
+client-protocol-namespace-fix.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/219/trunk/src/google/cacheinvalidation/impl/client-protocol-namespace-fix.h
+END
+simple-registration-store.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/197/trunk/src/google/cacheinvalidation/impl/simple-registration-store.h
+END
+build_constants.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/296/trunk/src/google/cacheinvalidation/impl/build_constants.h
+END
+invalidation-client-impl.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/253/trunk/src/google/cacheinvalidation/impl/invalidation-client-impl.h
+END
+invalidation-client-factory_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/283/trunk/src/google/cacheinvalidation/impl/invalidation-client-factory_test.cc
+END
+recurring-task.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/255/trunk/src/google/cacheinvalidation/impl/recurring-task.h
+END
+ticl-message-validator.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/195/trunk/src/google/cacheinvalidation/impl/ticl-message-validator.h
+END
+invalidation-client-factory.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/283/trunk/src/google/cacheinvalidation/impl/invalidation-client-factory.cc
+END
+throttle.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/195/trunk/src/google/cacheinvalidation/impl/throttle.cc
+END
+throttle.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/195/trunk/src/google/cacheinvalidation/impl/throttle.h
+END
+proto-converter.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/258/trunk/src/google/cacheinvalidation/impl/proto-converter.cc
+END
+digest-store.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/197/trunk/src/google/cacheinvalidation/impl/digest-store.h
+END
+object-id-digest-utils.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/195/trunk/src/google/cacheinvalidation/impl/object-id-digest-utils.cc
+END
+basic-system-resources.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/195/trunk/src/google/cacheinvalidation/impl/basic-system-resources.cc
+END
+basic-system-resources.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/195/trunk/src/google/cacheinvalidation/impl/basic-system-resources.h
+END
+object-id-digest-utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/195/trunk/src/google/cacheinvalidation/impl/object-id-digest-utils.h
+END
+protocol-handler.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/294/trunk/src/google/cacheinvalidation/impl/protocol-handler.h
+END
+constants.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/296/trunk/src/google/cacheinvalidation/impl/constants.h
+END
+safe-storage.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/218/trunk/src/google/cacheinvalidation/impl/safe-storage.cc
+END
+registration-manager.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/284/trunk/src/google/cacheinvalidation/impl/registration-manager.h
+END
+persistence-utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/195/trunk/src/google/cacheinvalidation/impl/persistence-utils.h
+END
+invalidation-client-impl_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/281/trunk/src/google/cacheinvalidation/impl/invalidation-client-impl_test.cc
+END
+invalidation-client-impl.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/253/trunk/src/google/cacheinvalidation/impl/invalidation-client-impl.cc
+END
+statistics.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/195/trunk/src/google/cacheinvalidation/impl/statistics.h
+END
+exponential-backoff-delay-generator.cc
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/199/trunk/src/google/cacheinvalidation/impl/exponential-backoff-delay-generator.cc
+END
+recurring-task_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/219/trunk/src/google/cacheinvalidation/impl/recurring-task_test.cc
+END
+ticl-message-validator.cc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/282/trunk/src/google/cacheinvalidation/impl/ticl-message-validator.cc
+END
+smearer.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/195/trunk/src/google/cacheinvalidation/impl/smearer.h
+END
+recurring-task.cc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/195/trunk/src/google/cacheinvalidation/impl/recurring-task.cc
+END
+exponential-backoff-delay-generator.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/199/trunk/src/google/cacheinvalidation/impl/exponential-backoff-delay-generator.h
+END
+proto-helpers.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/282/trunk/src/google/cacheinvalidation/impl/proto-helpers.cc
+END
+throttle_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/195/trunk/src/google/cacheinvalidation/impl/throttle_test.cc
+END
+proto-helpers.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/295/trunk/src/google/cacheinvalidation/impl/proto-helpers.h
+END
+invalidation-client-util.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/195/trunk/src/google/cacheinvalidation/impl/invalidation-client-util.h
+END
+proto-converter.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/195/trunk/src/google/cacheinvalidation/impl/proto-converter.h
+END
+protocol-handler_test.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/275/trunk/src/google/cacheinvalidation/impl/protocol-handler_test.cc
+END
+protocol-handler.cc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/275/trunk/src/google/cacheinvalidation/impl/protocol-handler.cc
+END
+constants.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/296/trunk/src/google/cacheinvalidation/impl/constants.cc
+END
+checking-invalidation-listener.cc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/195/trunk/src/google/cacheinvalidation/impl/checking-invalidation-listener.cc
+END
+checking-invalidation-listener.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/195/trunk/src/google/cacheinvalidation/impl/checking-invalidation-listener.h
+END
+persistence-utils.cc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/195/trunk/src/google/cacheinvalidation/impl/persistence-utils.cc
+END
+registration-manager.cc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/280/trunk/src/google/cacheinvalidation/impl/registration-manager.cc
+END
+safe-storage.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/195/trunk/src/google/cacheinvalidation/impl/safe-storage.h
+END
+log-macro.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/195/trunk/src/google/cacheinvalidation/impl/log-macro.h
+END
+invalidation-client-core.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/293/trunk/src/google/cacheinvalidation/impl/invalidation-client-core.cc
+END
+run-state.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/293/trunk/src/google/cacheinvalidation/impl/run-state.h
+END
+invalidation-client-core.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/281/trunk/src/google/cacheinvalidation/impl/invalidation-client-core.h
+END
+statistics.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/195/trunk/src/google/cacheinvalidation/impl/statistics.cc
+END

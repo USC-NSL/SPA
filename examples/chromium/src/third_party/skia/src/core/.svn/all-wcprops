@@ -1,0 +1,1283 @@
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/8910/trunk/src/core
+END
+SkBitmapSampler.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/8403/trunk/src/core/SkBitmapSampler.cpp
+END
+SkBitmapSamplerTemplate.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/5168/trunk/src/core/SkBitmapSamplerTemplate.h
+END
+SkDeque.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/5262/trunk/src/core/SkDeque.cpp
+END
+SkBlitter_ARGB32.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/7855/trunk/src/core/SkBlitter_ARGB32.cpp
+END
+SkUtilsArm.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/7051/trunk/src/core/SkUtilsArm.h
+END
+SkBlitter_RGB16.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/7975/trunk/src/core/SkBlitter_RGB16.cpp
+END
+SkSinTable.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/5168/trunk/src/core/SkSinTable.h
+END
+SkLineClipper.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/7406/trunk/src/core/SkLineClipper.cpp
+END
+SkTypefacePriv.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/8168/trunk/src/core/SkTypefacePriv.h
+END
+SkCordic.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/7406/trunk/src/core/SkCordic.h
+END
+SkCubicClipper.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/5168/trunk/src/core/SkCubicClipper.h
+END
+SkPictureRecord.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/8670/trunk/src/core/SkPictureRecord.cpp
+END
+SkPixelRef.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/8660/trunk/src/core/SkPixelRef.cpp
+END
+SkOrderedReadBuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/7837/trunk/src/core/SkOrderedReadBuffer.h
+END
+SkDeviceImageFilterProxy.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/6409/trunk/src/core/SkDeviceImageFilterProxy.h
+END
+SkBitmapProcState_shaderproc.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/7855/trunk/src/core/SkBitmapProcState_shaderproc.h
+END
+SkInstCnt.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/7206/trunk/src/core/SkInstCnt.cpp
+END
+SkEdgeClipper.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/7829/trunk/src/core/SkEdgeClipper.cpp
+END
+SkStringUtils.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/7439/trunk/src/core/SkStringUtils.cpp
+END
+SkUnPreMultiply.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/5262/trunk/src/core/SkUnPreMultiply.cpp
+END
+SkTSearch.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/7406/trunk/src/core/SkTSearch.cpp
+END
+SkBBoxRecord.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/7406/trunk/src/core/SkBBoxRecord.cpp
+END
+SkSpriteBlitter_ARGB32.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/7855/trunk/src/core/SkSpriteBlitter_ARGB32.cpp
+END
+SkPathRef.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/5798/trunk/src/core/SkPathRef.h
+END
+SkMathPriv.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/7406/trunk/src/core/SkMathPriv.h
+END
+SkGraphics.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/7952/trunk/src/core/SkGraphics.cpp
+END
+SkPictureStateTree.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/8177/trunk/src/core/SkPictureStateTree.h
+END
+SkTileGrid.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/8839/trunk/src/core/SkTileGrid.cpp
+END
+SkBitmapSampler.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/5168/trunk/src/core/SkBitmapSampler.h
+END
+SkPaintDefaults.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/5168/trunk/src/core/SkPaintDefaults.h
+END
+SkBlitter.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/6815/trunk/src/core/SkBlitter.h
+END
+SkFontDescriptor.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/7492/trunk/src/core/SkFontDescriptor.h
+END
+SkFlattenable.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/5642/trunk/src/core/SkFlattenable.cpp
+END
+SkPictureFlat.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/8060/trunk/src/core/SkPictureFlat.cpp
+END
+SkScalerContext.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/8363/trunk/src/core/SkScalerContext.h
+END
+SkAntiRun.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/7406/trunk/src/core/SkAntiRun.h
+END
+SkColorTable.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/7054/trunk/src/core/SkColorTable.cpp
+END
+SkFontStream.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/8073/trunk/src/core/SkFontStream.h
+END
+Sk64.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/5168/trunk/src/core/Sk64.cpp
+END
+SkStrokerPriv.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/7406/trunk/src/core/SkStrokerPriv.cpp
+END
+SkRasterizer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/7406/trunk/src/core/SkRasterizer.cpp
+END
+SkBlitter_Sprite.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/7406/trunk/src/core/SkBlitter_Sprite.cpp
+END
+SkSpriteBlitterTemplate.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/7855/trunk/src/core/SkSpriteBlitterTemplate.h
+END
+SkSpriteBlitter_RGB16.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/7855/trunk/src/core/SkSpriteBlitter_RGB16.cpp
+END
+SkDraw.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/8443/trunk/src/core/SkDraw.cpp
+END
+SkDevice.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/8859/trunk/src/core/SkDevice.cpp
+END
+SkEdge.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/7406/trunk/src/core/SkEdge.cpp
+END
+SkTemplatesPriv.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/5168/trunk/src/core/SkTemplatesPriv.h
+END
+SkTRefArray.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/5262/trunk/src/core/SkTRefArray.h
+END
+SkBlitter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/7406/trunk/src/core/SkBlitter.cpp
+END
+SkScalar.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/2341/trunk/src/core/SkScalar.cpp
+END
+SkFontDescriptor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/7492/trunk/src/core/SkFontDescriptor.cpp
+END
+SkStroke.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/8599/trunk/src/core/SkStroke.cpp
+END
+SkGlyphCache.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/8223/trunk/src/core/SkGlyphCache.cpp
+END
+SkDrawProcs.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/7842/trunk/src/core/SkDrawProcs.h
+END
+SkData.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/8849/trunk/src/core/SkData.cpp
+END
+SkFP.h
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/5168/trunk/src/core/SkFP.h
+END
+SkBitmapProcState_filter.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/7273/trunk/src/core/SkBitmapProcState_filter.h
+END
+SkQuadClipper.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/5262/trunk/src/core/SkQuadClipper.h
+END
+SkTLList.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/6712/trunk/src/core/SkTLList.h
+END
+SkDescriptor.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/7406/trunk/src/core/SkDescriptor.h
+END
+SkColorFilter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/7222/trunk/src/core/SkColorFilter.cpp
+END
+SkPath.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/8568/trunk/src/core/SkPath.cpp
+END
+SkBitmapProcShader.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/7222/trunk/src/core/SkBitmapProcShader.h
+END
+SkAAClip.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/5262/trunk/src/core/SkAAClip.h
+END
+SkPathHeap.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/7406/trunk/src/core/SkPathHeap.h
+END
+SkBlitBWMaskTemplate.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/8408/trunk/src/core/SkBlitBWMaskTemplate.h
+END
+SkPtrRecorder.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/8103/trunk/src/core/SkPtrRecorder.h
+END
+SkSpriteBlitter.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/7406/trunk/src/core/SkSpriteBlitter.h
+END
+SkTextFormatParams.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/3215/trunk/src/core/SkTextFormatParams.h
+END
+SkTLS.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/5262/trunk/src/core/SkTLS.h
+END
+SkQuadClipper.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/7406/trunk/src/core/SkQuadClipper.cpp
+END
+SkEdge.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/7819/trunk/src/core/SkEdge.h
+END
+SkPathEffect.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/7406/trunk/src/core/SkPathEffect.cpp
+END
+SkImageFilterUtils.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/8563/trunk/src/core/SkImageFilterUtils.cpp
+END
+SkOrderedReadBuffer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/8866/trunk/src/core/SkOrderedReadBuffer.cpp
+END
+SkConfig8888.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/7051/trunk/src/core/SkConfig8888.h
+END
+SkEdgeBuilder.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/7406/trunk/src/core/SkEdgeBuilder.cpp
+END
+SkPaintPriv.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/7385/trunk/src/core/SkPaintPriv.cpp
+END
+SkBuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/7406/trunk/src/core/SkBuffer.h
+END
+SkMetaData.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/7406/trunk/src/core/SkMetaData.cpp
+END
+SkWriter32.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/7406/trunk/src/core/SkWriter32.cpp
+END
+SkRegion_rects.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/5262/trunk/src/core/SkRegion_rects.cpp
+END
+SkEdgeClipper.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/5262/trunk/src/core/SkEdgeClipper.h
+END
+SkBBoxHierarchyRecord.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/8171/trunk/src/core/SkBBoxHierarchyRecord.cpp
+END
+SkAAClip.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/7591/trunk/src/core/SkAAClip.cpp
+END
+SkBitmapProcState_matrix.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/5262/trunk/src/core/SkBitmapProcState_matrix.h
+END
+SkFlate.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/7406/trunk/src/core/SkFlate.cpp
+END
+SkStream.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/8848/trunk/src/core/SkStream.cpp
+END
+SkBitmapProcState_matrixProcs.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/7406/trunk/src/core/SkBitmapProcState_matrixProcs.cpp
+END
+SkBlitter_A8.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/7855/trunk/src/core/SkBlitter_A8.cpp
+END
+SkRect.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/7406/trunk/src/core/SkRect.cpp
+END
+SkRegion_path.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/7406/trunk/src/core/SkRegion_path.cpp
+END
+SkConfig8888.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/4997/trunk/src/core/SkConfig8888.cpp
+END
+SkBlitRow_D4444.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/7406/trunk/src/core/SkBlitRow_D4444.cpp
+END
+SkBitmapProcState.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/6521/trunk/src/core/SkBitmapProcState.h
+END
+SkTileGrid.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/8543/trunk/src/core/SkTileGrid.h
+END
+SkXfermode.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/8910/trunk/src/core/SkXfermode.cpp
+END
+SkBuffer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/5168/trunk/src/core/SkBuffer.cpp
+END
+SkFloat.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/5262/trunk/src/core/SkFloat.h
+END
+SkScan_AntiPath.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/7406/trunk/src/core/SkScan_AntiPath.cpp
+END
+SkBitmap.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/7855/trunk/src/core/SkBitmap.cpp
+END
+SkBlitMask_D32.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/7406/trunk/src/core/SkBlitMask_D32.cpp
+END
+SkScalerContext.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/8386/trunk/src/core/SkScalerContext.cpp
+END
+SkBitmapHeap.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/6471/trunk/src/core/SkBitmapHeap.h
+END
+SkDither.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/7406/trunk/src/core/SkDither.cpp
+END
+SkRRect.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/8873/trunk/src/core/SkRRect.cpp
+END
+SkDeviceProfile.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/7406/trunk/src/core/SkDeviceProfile.cpp
+END
+SkDataTable.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/8795/trunk/src/core/SkDataTable.cpp
+END
+SkPaintPriv.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/7385/trunk/src/core/SkPaintPriv.h
+END
+SkFontStream.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/8081/trunk/src/core/SkFontStream.cpp
+END
+SkPerspIter.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/5262/trunk/src/core/SkPerspIter.h
+END
+SkScan.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/7406/trunk/src/core/SkScan.cpp
+END
+SkPicturePlayback.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/7897/trunk/src/core/SkPicturePlayback.h
+END
+SkMask.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/7406/trunk/src/core/SkMask.cpp
+END
+SkComposeShader.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/7732/trunk/src/core/SkComposeShader.cpp
+END
+SkAlphaRuns.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/7591/trunk/src/core/SkAlphaRuns.cpp
+END
+SkAutoKern.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/7406/trunk/src/core/SkAutoKern.h
+END
+SkBBoxHierarchyRecord.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/8171/trunk/src/core/SkBBoxHierarchyRecord.h
+END
+SkBBoxHierarchy.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/8177/trunk/src/core/SkBBoxHierarchy.h
+END
+SkScan_Path.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/7406/trunk/src/core/SkScan_Path.cpp
+END
+SkUtils.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/8403/trunk/src/core/SkUtils.cpp
+END
+SkBitmapProcState.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/8743/trunk/src/core/SkBitmapProcState.cpp
+END
+SkMaskGamma.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/7074/trunk/src/core/SkMaskGamma.h
+END
+SkCordic.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/5262/trunk/src/core/SkCordic.cpp
+END
+SkFontHost.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/8767/trunk/src/core/SkFontHost.cpp
+END
+SkFloat.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/7952/trunk/src/core/SkFloat.cpp
+END
+SkString.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/8815/trunk/src/core/SkString.cpp
+END
+SkBitmapProcState_sample.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/7855/trunk/src/core/SkBitmapProcState_sample.h
+END
+SkBlitMask.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/5262/trunk/src/core/SkBlitMask.h
+END
+SkPaint.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/8223/trunk/src/core/SkPaint.cpp
+END
+SkCanvas.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/8859/trunk/src/core/SkCanvas.cpp
+END
+SkGlyphCache.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/8223/trunk/src/core/SkGlyphCache.h
+END
+SkStroke.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/7406/trunk/src/core/SkStroke.h
+END
+SkAdvancedTypefaceMetrics.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/8678/trunk/src/core/SkAdvancedTypefaceMetrics.cpp
+END
+SkClipStack.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/6760/trunk/src/core/SkClipStack.cpp
+END
+SkFilterProc.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/7406/trunk/src/core/SkFilterProc.h
+END
+SkPictureRecord.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/8171/trunk/src/core/SkPictureRecord.h
+END
+SkProcSpriteBlitter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/5168/trunk/src/core/SkProcSpriteBlitter.cpp
+END
+SkRefDict.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/8297/trunk/src/core/SkRefDict.cpp
+END
+SkFilterShader.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/7201/trunk/src/core/SkFilterShader.h
+END
+SkTypefaceCache.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/8417/trunk/src/core/SkTypefaceCache.cpp
+END
+SkDeviceProfile.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/7406/trunk/src/core/SkDeviceProfile.h
+END
+SkDebug.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/7406/trunk/src/core/SkDebug.cpp
+END
+SkRTree.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/8171/trunk/src/core/SkRTree.h
+END
+SkFloatBits.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/7406/trunk/src/core/SkFloatBits.cpp
+END
+SkImageFilter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/8563/trunk/src/core/SkImageFilter.cpp
+END
+SkScan.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/5262/trunk/src/core/SkScan.h
+END
+SkMath.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/7406/trunk/src/core/SkMath.cpp
+END
+SkBBoxHierarchy.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/7406/trunk/src/core/SkBBoxHierarchy.cpp
+END
+SkScanPriv.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/7406/trunk/src/core/SkScanPriv.h
+END
+SkPathHeap.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/7902/trunk/src/core/SkPathHeap.cpp
+END
+SkBitmap_scroll.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/7855/trunk/src/core/SkBitmap_scroll.cpp
+END
+SkGeometry.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/8889/trunk/src/core/SkGeometry.cpp
+END
+SkBlitRow_D16.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/7406/trunk/src/core/SkBlitRow_D16.cpp
+END
+SkPackBits.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/5262/trunk/src/core/SkPackBits.cpp
+END
+SkStrokeRec.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/7406/trunk/src/core/SkStrokeRec.cpp
+END
+SkTLS.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/7406/trunk/src/core/SkTLS.cpp
+END
+SkScan_Antihair.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/7406/trunk/src/core/SkScan_Antihair.cpp
+END
+SkBitmapShaderTemplate.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/5262/trunk/src/core/SkBitmapShaderTemplate.h
+END
+SkMatrix.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/8584/trunk/src/core/SkMatrix.cpp
+END
+SkFDStream.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/7854/trunk/src/core/SkFDStream.cpp
+END
+SkShader.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/7222/trunk/src/core/SkShader.cpp
+END
+SkCoreBlitters.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/7406/trunk/src/core/SkCoreBlitters.h
+END
+SkRasterClip.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/7406/trunk/src/core/SkRasterClip.cpp
+END
+SkMemory_stdlib.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/7406/trunk/src/core/SkMemory_stdlib.cpp
+END
+SkFilterProc.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/5262/trunk/src/core/SkFilterProc.cpp
+END
+SkPicture.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/7844/trunk/src/core/SkPicture.cpp
+END
+SkBitmapProcState_procs.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/7406/trunk/src/core/SkBitmapProcState_procs.h
+END
+SkColor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/7406/trunk/src/core/SkColor.cpp
+END
+SkPathMeasure.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/7791/trunk/src/core/SkPathMeasure.cpp
+END
+SkEdgeBuilder.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/5262/trunk/src/core/SkEdgeBuilder.h
+END
+SkTSort.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/7889/trunk/src/core/SkTSort.h
+END
+SkRefCnt.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/7406/trunk/src/core/SkRefCnt.cpp
+END
+SkRTree.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/8171/trunk/src/core/SkRTree.cpp
+END
+SkRefDict.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/5262/trunk/src/core/SkRefDict.h
+END
+SkPictureFlat.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/8106/trunk/src/core/SkPictureFlat.h
+END
+SkFDot6.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/7406/trunk/src/core/SkFDot6.h
+END
+SkTypefaceCache.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/5168/trunk/src/core/SkTypefaceCache.h
+END
+SkRegionPriv.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/7366/trunk/src/core/SkRegionPriv.h
+END
+SkMatrixUtils.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/6994/trunk/src/core/SkMatrixUtils.h
+END
+ARGB32_Clamp_Bilinear_BitmapShader.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/7406/trunk/src/core/ARGB32_Clamp_Bilinear_BitmapShader.h
+END
+SkFlattenableBuffers.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/4994/trunk/src/core/SkFlattenableBuffers.cpp
+END
+SkOrderedWriteBuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/7837/trunk/src/core/SkOrderedWriteBuffer.h
+END
+SkStrokerPriv.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/7406/trunk/src/core/SkStrokerPriv.h
+END
+SkScan_Hairline.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/8103/trunk/src/core/SkScan_Hairline.cpp
+END
+SkTileGridPicture.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/7885/trunk/src/core/SkTileGridPicture.cpp
+END
+SkTypeface.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/8580/trunk/src/core/SkTypeface.cpp
+END
+SkUtilsArm.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/7149/trunk/src/core/SkUtilsArm.cpp
+END
+SkMaskFilter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/8860/trunk/src/core/SkMaskFilter.cpp
+END
+SkCubicClipper.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/7406/trunk/src/core/SkCubicClipper.cpp
+END
+SkMallocPixelRef.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/5642/trunk/src/core/SkMallocPixelRef.cpp
+END
+SkBitmapShader16BilerpTemplate.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/5262/trunk/src/core/SkBitmapShader16BilerpTemplate.h
+END
+SkBitmapHeap.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/6471/trunk/src/core/SkBitmapHeap.cpp
+END
+SkAnnotation.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/8034/trunk/src/core/SkAnnotation.cpp
+END
+SkRasterClip.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/8403/trunk/src/core/SkRasterClip.h
+END
+SkErrorInternals.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/8568/trunk/src/core/SkErrorInternals.h
+END
+SkPicturePlayback.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/8796/trunk/src/core/SkPicturePlayback.cpp
+END
+SkRegion.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/8071/trunk/src/core/SkRegion.cpp
+END
+SkChunkAlloc.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/7406/trunk/src/core/SkChunkAlloc.cpp
+END
+SkBlitter_4444.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/7855/trunk/src/core/SkBlitter_4444.cpp
+END
+SkBlitter_A1.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/7406/trunk/src/core/SkBlitter_A1.cpp
+END
+SkBitmapProcShader.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/7362/trunk/src/core/SkBitmapProcShader.cpp
+END
+SkGlyph.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/5168/trunk/src/core/SkGlyph.h
+END
+SkOrderedWriteBuffer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/7837/trunk/src/core/SkOrderedWriteBuffer.cpp
+END
+SkPoint.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/5262/trunk/src/core/SkPoint.cpp
+END
+SkError.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/8568/trunk/src/core/SkError.cpp
+END
+SkBlitRow_D32.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/7406/trunk/src/core/SkBlitRow_D32.cpp
+END
+SkPtrRecorder.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/7406/trunk/src/core/SkPtrRecorder.cpp
+END
+SkPictureStateTree.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/8171/trunk/src/core/SkPictureStateTree.cpp
+END
+SkTextToPathIter.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/8403/trunk/src/core/SkTextToPathIter.h
+END
+SkMaskGamma.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/5820/trunk/src/core/SkMaskGamma.cpp
+END
+SkBBoxRecord.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/7406/trunk/src/core/SkBBoxRecord.h
+END

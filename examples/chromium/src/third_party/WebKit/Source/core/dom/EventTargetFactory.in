@@ -1,0 +1,43 @@
+namespace="EventTarget"
+
+modules/webaudio/AudioContext conditional=WEB_AUDIO
+modules/battery/BatteryManager conditional=BATTERY_STATUS
+core/workers/DedicatedWorkerContext
+core/loader/appcache/DOMApplicationCache
+core/page/DOMWindow
+core/page/EventSource
+core/fileapi/FileReader
+modules/filesystem/FileWriter
+core/css/FontLoader
+modules/indexeddb/IDBDatabase
+modules/indexeddb/IDBOpenDBRequest
+modules/indexeddb/IDBRequest
+modules/indexeddb/IDBTransaction
+modules/webaudio/ScriptProcessorNode conditional=WEB_AUDIO
+modules/webmidi/MIDIPort
+modules/encryptedmedia/MediaKeySession conditional=ENCRYPTED_MEDIA_V2
+core/html/MediaController
+modules/mediasource/MediaSource
+modules/mediastream/MediaStream conditional=MEDIA_STREAM
+modules/mediastream/MediaStreamTrack conditional=MEDIA_STREAM
+core/dom/MessagePort
+core/dom/Node
+modules/notifications/Notification conditional=NOTIFICATIONS|LEGACY_NOTIFICATIONS
+core/page/Performance
+modules/mediastream/RTCDataChannel conditional=MEDIA_STREAM
+modules/mediastream/RTCDTMFSender conditional=MEDIA_STREAM
+modules/mediastream/RTCPeerConnection conditional=MEDIA_STREAM
+core/svg/SVGElementInstance conditional=SVG
+core/workers/SharedWorker
+core/workers/SharedWorkerContext
+modules/mediasource/SourceBufferList
+modules/speech/SpeechRecognition
+modules/speech/SpeechSynthesisUtterance conditional=SPEECH_SYNTHESIS
+core/html/track/TextTrack
+core/html/track/TextTrackCue
+core/html/track/TextTrackList
+WebKitNamedFlow interfaceName=NamedFlow
+modules/websockets/WebSocket
+core/workers/Worker
+core/xml/XMLHttpRequest
+core/xml/XMLHttpRequestUpload

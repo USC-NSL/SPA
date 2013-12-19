@@ -1,0 +1,46 @@
+10
+
+dir
+1155
+http://google-breakpad.googlecode.com/svn/trunk/src/client/linux
+http://google-breakpad.googlecode.com/svn
+
+
+
+2013-04-18T13:24:33.622081Z
+1153
+ted.mielczarek@gmail.com
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+4c0a9323-5329-0410-9bdc-e9ce6186880e
+
+sender
+dir
+
+log
+dir
+
+data
+dir
+
+crash_generation
+dir
+
+handler
+dir
+
+minidump_writer
+dir
+
