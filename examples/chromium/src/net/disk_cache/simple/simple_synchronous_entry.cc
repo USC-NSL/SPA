@@ -102,7 +102,7 @@ void SimpleSynchronousEntry::CreateEntry(
 // TODO(gavinp): Move this function to its correct location in this .cc file.
 // static
 bool SimpleSynchronousEntry::DeleteFilesForEntryHash(
-    const FilePath& path,
+    const FilePath path,
     const uint64 entry_hash) {
   bool result = true;
   for (int i = 0; i < kSimpleEntryFileCount; ++i) {
@@ -130,7 +130,7 @@ void SimpleSynchronousEntry::DoomEntry(
 // static
 void SimpleSynchronousEntry::DoomEntrySet(
     scoped_ptr<std::vector<uint64> > key_hashes,
-    const FilePath& path,
+    const FilePath path,
     int* out_result) {
   const size_t did_delete_count = std::count_if(
       key_hashes->begin(), key_hashes->end(), std::bind1st(
