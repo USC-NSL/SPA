@@ -1825,14 +1825,18 @@ size_t SpdyFramer::GetSerializedLength(const SpdyHeaderBlock& headers) {
 // The following compression setting are based on Brian Olson's analysis. See
 // https://groups.google.com/group/spdy-dev/browse_thread/thread/dfaf498542fac792
 // for more details.
-#if defined(USE_SYSTEM_ZLIB)
-// System zlib is not expected to have workaround for http://crbug.com/139744,
-// so disable compression in that case.
-// TODO(phajdan.jr): Remove the special case when it's no longer necessary.
+// #if defined(USE_SYSTEM_ZLIB)
+// // System zlib is not expected to have workaround for http://crbug.com/139744,
+// // so disable compression in that case.
+// // TODO(phajdan.jr): Remove the special case when it's no longer necessary.
+// static const int kCompressorLevel = 0;
+// #else  // !defined(USE_SYSTEM_ZLIB)
+// static const int kCompressorLevel = 9;
+// #endif  // !defined(USE_SYSTEM_ZLIB)
+
+// Disable compression for SPA.
 static const int kCompressorLevel = 0;
-#else  // !defined(USE_SYSTEM_ZLIB)
-static const int kCompressorLevel = 9;
-#endif  // !defined(USE_SYSTEM_ZLIB)
+
 static const int kCompressorWindowSizeInBits = 11;
 static const int kCompressorMemLevel = 1;
 
