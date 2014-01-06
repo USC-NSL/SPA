@@ -1,5 +1,5 @@
 #!/bin/sh
 
-GYP_GENERATORS=make build/gyp_chromium
+[ -f Makefile ] || GYP_GENERATORS=make build/gyp_chromium
 
-make -j8 fetch_client
+CXXFLAGS='-I/home/david/Projects/spa/include' make -kj48 fetch_client

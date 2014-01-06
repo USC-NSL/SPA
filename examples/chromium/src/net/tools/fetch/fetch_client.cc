@@ -29,6 +29,10 @@
 #include "net/proxy/proxy_service.h"
 #include "net/ssl/ssl_config_service_defaults.h"
 
+#include <spa/spaRuntime.h>
+
+#define SPA_REQUEST_MAXPATH 5
+
 void usage(const char* program_name) {
   printf("usage: %s --url=<url>  [--n=<clients>] [--stats] [--use_cache]\n",
          program_name);
@@ -129,7 +133,25 @@ int main(int argc, char** argv) {
 
   CommandLine::Init(argc, argv);
   const CommandLine& parsed_command_line = *CommandLine::ForCurrentProcess();
+#ifdef ENABLE_SPA
+	char url_prefix[] = "http://localhost:8000/";
+
+	char url_buffer[sizeof(url_prefix) + SPA_REQUEST_MAXPATH];
+	spa_api_input(url_buffer, sizeof(url_buffer), "url");
+	spa_assume(url_buffer[sizeof(url_buffer) - 1] == '\0');
+
+	size_t i;
+	for (i = 0; i < sizeof(url_prefix) - 1; i++) {
+		spa_assume(url_buffer[i] == url_prefix[i]);
+// 		url_buffer[i] = url_prefix[i];
+	}
+  
+	std::string url(url_buffer);
+  }
+#else
   std::string url = parsed_command_line.GetSwitchValueASCII("url");
+#endif
+
   if (!url.length())
     usage(argv[0]);
   int client_limit = 1;
@@ -162,6 +184,17 @@ int main(int argc, char** argv) {
   session_params.http_auth_handler_factory = http_auth_handler_factory.get();
   session_params.http_server_properties = &http_server_properties;
   session_params.ssl_config_service = ssl_config_service;
+
+	session_params.spdy_default_protocol = net::kProtoSPDY2;
+	session_params.enable_spdy_ping_based_connection_checking = false;
+// 	session_params.enable_spdy_compression = false;
+	session_params.force_spdy_single_domain = true;
+	session_params.spdy_initial_max_concurrent_streams = 1;
+	session_params.spdy_max_concurrent_streams_limit = 1;
+
+	net::HttpStreamFactory::set_force_spdy_over_ssl(false);
+	net::HttpStreamFactory::set_force_spdy_always(true);
+	net::HttpStreamFactory::set_use_alternate_protocols(false);
 
   scoped_refptr<net::HttpNetworkSession> network_session(
       new net::HttpNetworkSession(session_params));

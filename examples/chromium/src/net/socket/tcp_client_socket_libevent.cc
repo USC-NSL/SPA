@@ -28,6 +28,8 @@
 #include "net/base/network_change_notifier.h"
 #include "net/socket/socket_net_log_params.h"
 
+#include <spa/spaRuntime.h>
+
 // If we don't have a definition for TCPI_OPT_SYN_DATA, create one.
 #ifndef TCPI_OPT_SYN_DATA
 #define TCPI_OPT_SYN_DATA 32
@@ -514,6 +516,8 @@ int TCPClientSocketLibevent::Write(IOBuffer* buf,
   // Synchronous operation not supported
   DCHECK(!callback.is_null());
   DCHECK_GT(buf_len, 0);
+
+  spa_msg_output(buf, buf_len, 100, "message");
 
   int nwrite = InternalWrite(buf, buf_len);
   if (nwrite >= 0) {

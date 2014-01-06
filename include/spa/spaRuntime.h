@@ -38,18 +38,13 @@ extern "C" {
 #endif// #ifdef __cplusplus
 
 
-#ifdef ENABLE_KLEE
-
-#define spa_assume( x ) klee_assume( x )
-
-#else // #ifdef ENABLE_KLEE
-
-#define spa_assume( x ) assert( x )
-
-#endif // #ifdef ENABLE_KLEE #else
-
-
 #ifdef ENABLE_SPA
+
+#ifdef ENABLE_KLEE
+#define spa_assume( x ) klee_assume( x )
+#else // #ifdef ENABLE_KLEE
+#define spa_assume( x ) assert( x )
+#endif // #ifdef ENABLE_KLEE #else
 
 #define spa_tag( var, value ) do { __spa_tag( &var, "spa_tag_" #var, value ); spa_runtime_call( spa_tag_handler, "spa_tag_" #var, value ); } while ( 0 )
 void __attribute__((weak)) __spa_tag( SpaTag_t *var, const char *varName, SpaTag_t value ) {
@@ -205,6 +200,21 @@ void __attribute__((weak)) __spa_output( void *var, size_t size, size_t maxSize,
 	spa_waypoint( SPA_MAX_WAYPOINTS - 1 );
 }
 
+#ifdef __cplusplus
+extern "C" {
+#endif// #ifdef __cplusplus
+	void __attribute__((noinline,weak)) spa_api_entry() {
+		static SpaTag_t HandlerType;
+		spa_tag( HandlerType, "API" );
+	}
+	void __attribute__((noinline,weak)) spa_message_handler_entry() {
+		static SpaTag_t HandlerType;
+		spa_tag( HandlerType, "Message" );
+	}
+#ifdef __cplusplus
+}
+#endif// #ifdef __cplusplus
+
 #else // #ifdef ENABLE_SPA
 
 #define spa_default_invalid()
@@ -230,28 +240,15 @@ void __attribute__((weak)) __spa_output( void *var, size_t size, size_t maxSize,
 
 #define spa_assume( x )
 
+#define spa_api_entry()
+#define spa_message_handler_entry()
+
 #define spa_seed_var( id, var, value )
 #define spa_seed_file( id, var, fileName )
 #define spa_seed_file_size( id, var, fileName )
 #define spa_seed( id, var, size, value )
 
 #endif // #ifdef ENABLE_SPA #else
-
-
-#ifdef __cplusplus
-extern "C" {
-#endif// #ifdef __cplusplus
-	void __attribute__((noinline,weak)) spa_api_entry() {
-		static SpaTag_t HandlerType;
-		spa_tag( HandlerType, "API" );
-	}
-	void __attribute__((noinline,weak)) spa_message_handler_entry() {
-		static SpaTag_t HandlerType;
-		spa_tag( HandlerType, "Message" );
-	}
-#ifdef __cplusplus
-}
-#endif// #ifdef __cplusplus
 
 
 #endif // #ifndef __SPARUNTIME_H__
