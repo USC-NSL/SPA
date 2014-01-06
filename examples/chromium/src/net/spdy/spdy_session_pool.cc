@@ -56,7 +56,7 @@ SpdySessionPool::SpdySessionPool(
       ssl_config_service_(ssl_config_service),
       resolver_(resolver),
       verify_domain_authentication_(true),
-      enable_sending_initial_settings_(true),
+      enable_sending_initial_settings_(false), // Disabled for SPA.
       max_sessions_per_domain_(max_sessions_per_domain == 0 ?
                                kMaxSessionsPerDomain :
                                max_sessions_per_domain),
