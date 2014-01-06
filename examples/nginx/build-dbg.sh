@@ -1,5 +1,5 @@
 #!/bin/sh
 
-./configure-dbg
+[ -f Makefile ] || ./configure-dbg
 
-make -skj8
+make -skj48
