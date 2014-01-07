@@ -1,0 +1,7 @@
+--------------------
+./configure --help
+Tue Jan  7 01:11:05 PST 2014
+usage:
+  configure [--const] [--zprefix] [--prefix=PREFIX]  [--eprefix=EXPREFIX]
+    [--static] [--64] [--libdir=LIBDIR] [--sharedlibdir=LIBDIR]
+    [--includedir=INCLUDEDIR] [--archs="-arch i386 -arch x86_64"]
