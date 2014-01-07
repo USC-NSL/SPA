@@ -132,7 +132,6 @@ int main(int argc, char** argv) {
   table.set_current(&table);
 
   CommandLine::Init(argc, argv);
-  const CommandLine& parsed_command_line = *CommandLine::ForCurrentProcess();
 #ifdef ENABLE_SPA
 	char url_prefix[] = "http://localhost:8000/";
 
@@ -147,8 +146,8 @@ int main(int argc, char** argv) {
 	}
   
 	std::string url(url_buffer);
-  }
 #else
+  const CommandLine& parsed_command_line = *CommandLine::ForCurrentProcess();
   std::string url = parsed_command_line.GetSwitchValueASCII("url");
 #endif
 
