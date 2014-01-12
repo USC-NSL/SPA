@@ -12,6 +12,8 @@
 
 #include <zlib.h>
 
+#include <spa/spaRuntime.h>
+
 
 #if (NGX_HAVE_LITTLE_ENDIAN && NGX_HAVE_NONALIGNED)
 
@@ -2474,6 +2476,8 @@ ngx_http_spdy_run_request(ngx_http_request_t *r)
     if (ngx_http_process_request_header(r) != NGX_OK) {
         return;
     }
+
+    spa_valid_path();
 
     ngx_http_process_request(r);
 }
