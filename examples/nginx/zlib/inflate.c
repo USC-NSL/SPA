@@ -606,6 +606,25 @@ int ZEXPORT inflate(strm, flush)
 z_streamp strm;
 int flush;
 {
+#ifdef ENABLE_KLEE
+	if (strm->avail_in <= strm->avail_out) {
+		memcpy(strm->next_out, strm->next_in, strm->avail_in);
+		strm->next_in += strm->avail_in;
+		strm->next_out += strm->avail_in;
+		strm->avail_out -= strm->avail_in;
+		strm->avail_in = 0;
+		return flush == Z_NO_FLUSH ? Z_OK : Z_STREAM_END;
+	} else {
+		if (strm->avail_out == 0)
+			return Z_BUF_ERROR;
+		memcpy(strm->next_out, strm->next_in, strm->avail_out);
+		strm->next_in += strm->avail_out;
+		strm->avail_in -= strm->avail_out;
+		strm->next_out += strm->avail_out;
+		strm->avail_out = 0;
+		return flush == Z_FINISH ? Z_BUF_ERROR : Z_OK;
+	}
+#endif
     struct inflate_state FAR *state;
     z_const unsigned char FAR *next;    /* next input */
     unsigned char FAR *put;     /* next output */
