@@ -1,6 +1,6 @@
 #!/bin/sh
 
-CFLAGS='-O0 -g' CXXFLAGS='-O0 -g' \
+CFLAGS='-O0 -g -I/home/david/Projects/spa/include' CXXFLAGS='-O0 -g' \
 ./configure \
 	--with-http_spdy_module \
 	--without-http_charset_module \
@@ -32,4 +32,6 @@ CFLAGS='-O0 -g' CXXFLAGS='-O0 -g' \
 	--without-mail_imap_module \
 	--without-mail_smtp_module \
 	--with-cc-opt="-O0 -g" \
-	--without-pcre
+	--without-pcre \
+	--with-zlib=zlib \
+	--with-zlib-opt='-O0 -g'
