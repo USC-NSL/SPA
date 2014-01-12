@@ -254,3 +254,12 @@ int main(int argc, char** argv) {
   }
   return 0;
 }
+
+void __attribute__((used)) SpaEntry() {
+	spa_api_entry();
+
+	char arg0[] = "fetch_client";
+	char empty[] = "";
+	char *argv[2] = {arg0, empty};
+	main(0, argv);
+}
