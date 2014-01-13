@@ -589,6 +589,26 @@ int ZEXPORT deflate (strm, flush)
     z_streamp strm;
     int flush;
 {
+#ifdef ENABLE_KLEE
+	if (strm->avail_in <= strm->avail_out) {
+		memcpy(strm->next_out, strm->next_in, strm->avail_in);
+		strm->next_in += strm->avail_in;
+		strm->next_out += strm->avail_in;
+		strm->avail_out -= strm->avail_in;
+		strm->avail_in = 0;
+		return flush == Z_FULL_FLUSH ? Z_STREAM_END : Z_OK;
+	} else {
+		if (strm->avail_out == 0)
+			return Z_BUF_ERROR;
+		memcpy(strm->next_out, strm->next_in, strm->avail_out);
+		strm->next_in += strm->avail_out;
+		strm->avail_in -= strm->avail_out;
+		strm->next_out += strm->avail_out;
+		strm->avail_out = 0;
+		return Z_OK;
+	}
+#endif
+
     int old_flush; /* value of flush param for previous deflate call */
     deflate_state *s;
 
