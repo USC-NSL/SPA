@@ -53,7 +53,7 @@ void __attribute__((weak)) __spa_tag( SpaTag_t *var, const char *varName, SpaTag
 }
 
 
-SpaTag_t ValidPath;
+SpaTag_t __attribute__((weak)) ValidPath;
 #define spa_default_invalid() spa_tag( ValidPath, "0" )
 #define spa_default_valid() spa_tag( ValidPath, "1" )
 #define spa_invalid_path() do { spa_tag( ValidPath, "0" ); spa_runtime_call( spa_invalid_path_handler ); spa_waypoint( SPA_MAX_WAYPOINTS - 2 ); spa_checkpoint(); } while ( 0 )
@@ -76,7 +76,7 @@ SpaTag_t ValidPath;
 #define spa_api_output( var, size, maxSize, name ) do { __spa_output( (void *) var, size, maxSize, "spa_out_api_" name ); spa_runtime_call( spa_api_output_handler, var, size, maxSize, "spa_out_api_" name ); while ( 0 )
 #define spa_api_output_var( var ) spa_api_output( var, sizeof( var ), sizeof( var ), #var )
 
-SpaTag_t MsgReceived;
+SpaTag_t __attribute__((weak)) MsgReceived;
 #define spa_msg_input( var, size, name ) do { \
 	static uint8_t **initialValue = NULL; \
 	spa_input( var, size, "spa_in_msg_" name, &initialValue, "spa_init_in_msg_" name ); \
@@ -167,7 +167,7 @@ extern "C" {
 		waypoints[id>>3] |= 1<<(id & 0x7);
 	}
 
-	unsigned int spa_internal_SeedID;
+	unsigned int __attribute__((weak)) spa_internal_SeedID;
 	void __attribute__((noinline,weak)) spa_seed( const unsigned int id, void *var, size_t size, const void *value ) {
 		if ( spa_internal_SeedID == id )
 			memcpy( var, value, size );
