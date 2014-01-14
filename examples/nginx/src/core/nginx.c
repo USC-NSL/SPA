@@ -9,6 +9,8 @@
 #include <ngx_core.h>
 #include <nginx.h>
 
+#include <spa/spaRuntime.h>
+
 
 static ngx_int_t ngx_add_inherited_sockets(ngx_cycle_t *cycle);
 static ngx_int_t ngx_get_options(int argc, char *const *argv);
@@ -410,6 +412,16 @@ main(int argc, char *const *argv)
     return 0;
 }
 
+void __attribute__((used)) SpaEntry() {
+	spa_api_entry();
+
+	char arg0[] = "nginx";
+	char arg1[] = "-p";
+	char arg2[] = ".";
+	char empty[] = "";
+	char *argv[4] = {arg0, arg1, arg2, empty};
+	main(0, argv);
+}
 
 static ngx_int_t
 ngx_add_inherited_sockets(ngx_cycle_t *cycle)
