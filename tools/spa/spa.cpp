@@ -72,6 +72,7 @@ class SpaServerPathFilter : public SPA::PathFilter {
 public:
 	bool checkPath( SPA::Path &path ) {
 		return path.getTag( SPA_HANDLERTYPE_TAG ) == SPA_MESSAGEHANDLER_VALUE &&
+			path.getTag( SPA_MSGRECEIVED_TAG ) == SPA_MSGRECEIVED_VALUE &&
 			path.getTag( SPA_VALIDPATH_TAG ) != SPA_VALIDPATH_VALUE;
 	}
 };
