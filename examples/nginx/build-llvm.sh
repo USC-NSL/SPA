@@ -1,6 +1,7 @@
 #!/bin/sh
 
-./configure-llvm
+[ -f zlib/Makefile ] || (cd zlib; CFLAGS='-O0 -g' ./configure --static; cd ..)
+[ -f Makefile ] || ./configure-llvm
 
 make -skj8 || echo Ignore previous error.
 

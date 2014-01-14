@@ -1,0 +1,5 @@
+#!/bin/sh
+
+CFLAGS='-O0 -g' \
+CXXFLAGS='-O0 -g' \
+./configure -static
