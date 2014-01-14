@@ -413,7 +413,7 @@ main(int argc, char *const *argv)
 }
 
 void __attribute__((used)) SpaEntry() {
-	spa_api_entry();
+	spa_message_handler_entry();
 
 	char arg0[] = "nginx";
 	char arg1[] = "-p";
