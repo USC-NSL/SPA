@@ -290,16 +290,17 @@ int main(int argc, char **argv, char **envp) {
 	// Create instruction filter.
 	CLOUD9_DEBUG( "   Creating CFG filter." );
 	SPA::CFGBackwardFilter *filter = new SPA::CFGBackwardFilter( cfg, cg, checkpoints );
-	if ( Client )
-		spa.addStateUtilityBack( filter, false );
-	else if ( Server )
-		spa.addStateUtilityBack( filter, true );
-
 	for ( std::set<llvm::Instruction *>::iterator it = entryPoints.begin(), ie = entryPoints.end(); it != ie; it++ ) {
 		if ( ! filter->checkInstruction( *it ) ) {
-			CLOUD9_DEBUG( "Entry point at function " << (*it)->getParent()->getParent()->getName().str() << " is not included in filter." );
-			assert( false && "Entry point is filtered out." );
+			CLOUD9_DEBUG( "Entry point at function " << (*it)->getParent()->getParent()->getName().str() << " is not included in filter. Disabling filter." );
+			filter = NULL;
 		}
+	}
+	if ( filter ) {
+		if ( Client )
+			spa.addStateUtilityBack( filter, false );
+		else if ( Server )
+			spa.addStateUtilityBack( filter, true );
 	}
 
 	// Create waypoint utility.
