@@ -462,6 +462,54 @@ DEFINE_MODEL(int, open, const char *pathname, int flags, ...) {
   }
 }
 
+DEFINE_MODEL(int, open64, const char *pathname, int flags, ...) {
+  mode_t mode = 0;
+
+  if (flags & O_CREAT) {
+    /* get mode */
+    va_list ap;
+    va_start(ap, flags);
+    mode = va_arg(ap, mode_t);
+    va_end(ap);
+  }
+
+  if (INJECT_FAULT(open, EINTR, ELOOP, EMFILE, ENFILE, ENOMEM, EPERM)) {
+    return -1;
+  }
+
+  klee_debug("Attempting to open: %s\n", __concretize_string(pathname));
+
+  // Obtain a symbolic file
+  disk_file_t *dfile = __get_sym_file(pathname);
+
+  if (dfile) {
+    return _open_symbolic(dfile, flags, mode);
+  } else {
+    if ((flags & O_ACCMODE) != O_RDONLY && !__fs.unsafe) {
+      klee_warning("blocked non-r/o access to concrete file");
+      errno = EACCES;
+      return -1;
+    }
+
+    int concrete_fd = CALL_UNDERLYING(open, __concretize_string(pathname),
+        flags, mode);
+
+    if (concrete_fd == -1) {
+      errno = klee_get_errno();
+      return -1;
+    }
+
+    int fd = _open_concrete(concrete_fd, flags);
+
+    if (fd == -1) {
+      CALL_UNDERLYING(close, concrete_fd);
+      return -1;
+    }
+
+    return fd;
+  }
+}
+
 int _open_concrete(int concrete_fd, int flags) {
   int fd;
   STATIC_LIST_ALLOC(__fdt, fd);

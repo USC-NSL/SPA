@@ -59,6 +59,7 @@ DECLARE_MODEL(int, fcntl, int fd, int cmd, ...);
 DECLARE_MODEL(int, ioctl, int d, unsigned long request, ...);
 
 DECLARE_MODEL(int, open, const char *pathname, int flags, ...);
+DECLARE_MODEL(int, open64, const char *pathname, int flags, ...);
 DECLARE_MODEL(int, creat, const char *pathname, mode_t mode);
 
 DECLARE_MODEL(char *, getcwd, char *buf, size_t size);
