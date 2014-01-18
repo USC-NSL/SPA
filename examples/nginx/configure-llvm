@@ -5,6 +5,8 @@ CXX='llvm-g++' CXXFLAGS='-DENABLE_SPA -DENABLE_KLEE -emit-llvm -use-gold-plugin 
 LD='llvm-ld' LDFLAGS='-disable-opt' \
 CPP='llvm-cpp' \
 ./configure \
+	--prefix='/home/lpedrosa/spa/examples/nginx' \
+	--conf-path='/home/lpedrosa/spa/examples/nginx/conf/nginx.conf' \
 	--with-http_spdy_module \
 	--without-http_charset_module \
 	--without-http_gzip_module \
