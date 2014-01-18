@@ -526,7 +526,9 @@ void Executor::initializeGlobals(ExecutionState &state) {
         size = 0x2C;
       } else if (i->getName() == "_ZTVN10__cxxabiv121__vmi_class_type_infoE") {
         size = 0x2C;
-      }
+      } else if (i->getName() == "icudt46_dat" ) {
+		size = 0;
+	  }
 #endif
 
       if (size == 0) {

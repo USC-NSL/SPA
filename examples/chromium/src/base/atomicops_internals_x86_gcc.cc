@@ -45,6 +45,7 @@ struct AtomicOps_x86CPUFeatureStruct AtomicOps_Internalx86CPUFeatures = {
 
 // Initialize the AtomicOps_Internalx86CPUFeatures struct.
 static void AtomicOps_Internalx86CPUFeaturesInit() {
+#ifndef ENABLE_KLEE
   uint32 eax;
   uint32 ebx;
   uint32 ecx;
@@ -57,8 +58,12 @@ static void AtomicOps_Internalx86CPUFeaturesInit() {
   memcpy(vendor + 4, &edx, 4);
   memcpy(vendor + 8, &ecx, 4);
   vendor[12] = 0;
+#else
+  char vendor[13] = "AuthenticAMD";
+#endif
 
   // get feature flags in ecx/edx, and family/model in eax
+#ifndef ENABLE_KLEE
   cpuid(eax, ebx, ecx, edx, 1);
 
   int family = (eax >> 8) & 0xf;        // family and model fields
@@ -67,6 +72,10 @@ static void AtomicOps_Internalx86CPUFeaturesInit() {
     family += (eax >> 20) & 0xff;
     model += ((eax >> 16) & 0xf) << 4;
   }
+#else
+  int family = 6;        // family and model fields
+  int model = 2;
+#endif
 
   // Opteron Rev E has a bug in which on very rare occasions a locked
   // instruction doesn't act as a read-acquire barrier if followed by a
@@ -82,7 +91,11 @@ static void AtomicOps_Internalx86CPUFeaturesInit() {
   }
 
   // edx bit 26 is SSE2 which we use to tell use whether we can use mfence
+#ifndef ENABLE_KLEE
   AtomicOps_Internalx86CPUFeatures.has_sse2 = ((edx >> 26) & 1);
+#else
+  AtomicOps_Internalx86CPUFeatures.has_sse2 = 1;
+#endif
 }
 
 namespace {
