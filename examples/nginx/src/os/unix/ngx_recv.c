@@ -9,6 +9,8 @@
 #include <ngx_core.h>
 #include <ngx_event.h>
 
+#include <spa/spaRuntime.h>
+
 
 #if (NGX_HAVE_KQUEUE)
 
@@ -136,11 +138,11 @@ ngx_unix_recv(ngx_connection_t *c, u_char *buf, size_t size)
     rev = c->read;
 
     do {
-#ifdef SPA_ENABLED
+#ifndef ENABLE_KLEE
+        n = recv(c->fd, buf, size, 0);
+#else
 		spa_msg_input(buf, size, "message");
 		spa_msg_input_size(n, "message");
-#else
-        n = recv(c->fd, buf, size, 0);
 #endif
 
         ngx_log_debug3(NGX_LOG_DEBUG_EVENT, c->log, 0,
