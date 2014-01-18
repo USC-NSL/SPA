@@ -65,6 +65,7 @@ DECLARE_MODEL(int, creat, const char *pathname, mode_t mode);
 DECLARE_MODEL(char *, getcwd, char *buf, size_t size);
 
 DECLARE_MODEL(off_t, lseek, int fd, off_t offset, int whence);
+DECLARE_MODEL(off_t, lseek64, int fd, off_t offset, int whence);
 
 DECLARE_MODEL(int, chmod, const char *path, mode_t mode);
 DECLARE_MODEL(int, fchmod, int fd, mode_t mode);

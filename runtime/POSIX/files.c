@@ -711,6 +711,26 @@ DEFINE_MODEL(off_t, lseek, int fd, off_t offset, int whence) {
   return _lseek(file, offset, whence);
 }
 
+DEFINE_MODEL(off_t, lseek64, int fd, off_t offset, int whence) {
+  CHECK_IS_FILE(fd);
+
+  file_t *file = (file_t*)__fdt[fd].io_object;
+
+  if (_file_is_concrete(file)) {
+    int res = CALL_UNDERLYING(lseek, file->concrete_fd, offset, whence);
+    if (res == -1) {
+      errno = klee_get_errno();
+    } else {
+//       assert(file->offset >= 0);
+      file->offset = res;
+    }
+
+    return res;
+  }
+
+  return _lseek(file, offset, whence);
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 
 static int _chmod(disk_file_t *dfile, mode_t mode) {
