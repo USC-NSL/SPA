@@ -161,6 +161,9 @@ ngx_log_error_core(ngx_uint_t level, ngx_log_t *log, ngx_err_t err,
         || level > NGX_LOG_WARN
         || wrote_stderr)
     {
+#ifdef ENABLE_KLEE
+		klee_stack_trace();
+#endif
         return;
     }
 
@@ -169,6 +172,9 @@ ngx_log_error_core(ngx_uint_t level, ngx_log_t *log, ngx_err_t err,
     (void) ngx_sprintf(msg, "nginx: [%V] ", &err_levels[level]);
 
     (void) ngx_write_console(ngx_stderr, msg, p - msg);
+#ifdef ENABLE_KLEE
+	klee_stack_trace();
+#endif
 }
 
 
