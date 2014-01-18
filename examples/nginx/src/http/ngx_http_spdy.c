@@ -208,6 +208,8 @@ ngx_http_spdy_init(ngx_event_t *rev)
     ngx_http_spdy_main_conf_t   *smcf;
     ngx_http_spdy_connection_t  *sc;
 
+    spa_waypoint(0);
+
     c = rev->data;
     hc = c->data;
 
