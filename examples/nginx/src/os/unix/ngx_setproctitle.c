@@ -34,6 +34,7 @@ static char *ngx_os_argv_last;
 ngx_int_t
 ngx_init_setproctitle(ngx_log_t *log)
 {
+#ifndef ENABLE_KLEE
     u_char      *p;
     size_t       size;
     ngx_uint_t   i;
@@ -70,6 +71,7 @@ ngx_init_setproctitle(ngx_log_t *log)
     }
 
     ngx_os_argv_last--;
+#endif
 
     return NGX_OK;
 }
@@ -78,6 +80,7 @@ ngx_init_setproctitle(ngx_log_t *log)
 void
 ngx_setproctitle(char *title)
 {
+#ifndef ENABLE_KLEE
     u_char     *p;
 
 #if (NGX_SOLARIS)
@@ -130,6 +133,7 @@ ngx_setproctitle(char *title)
 
     ngx_log_debug1(NGX_LOG_DEBUG_CORE, ngx_cycle->log, 0,
                    "setproctitle: \"%s\"", ngx_os_argv[0]);
+#endif
 }
 
 #endif /* NGX_SETPROCTITLE_USES_ENV */

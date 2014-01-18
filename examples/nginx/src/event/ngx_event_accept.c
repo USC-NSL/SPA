@@ -59,6 +59,7 @@ ngx_event_accept(ngx_event_t *ev)
     do {
         socklen = NGX_SOCKADDRLEN;
 
+#ifndef ENABLE_KLEE
 #if (NGX_HAVE_ACCEPT4)
         if (use_accept4) {
             s = accept4(lc->fd, (struct sockaddr *) sa, &socklen,
@@ -68,6 +69,13 @@ ngx_event_accept(ngx_event_t *ev)
         }
 #else
         s = accept(lc->fd, (struct sockaddr *) sa, &socklen);
+#endif
+#else
+		((struct sockaddr_in *) sa)->sin_family = AF_INET;
+		((struct sockaddr_in *) sa)->sin_port = htons(12345);
+		inet_aton("127.0.0.1", &((struct sockaddr_in *) sa)->sin_addr.s_addr);
+		socklen = sizeof(struct sockaddr_in);
+		s = 0;
 #endif
 
         if (s == (ngx_socket_t) -1) {
@@ -483,10 +491,12 @@ ngx_close_accepted_connection(ngx_connection_t *c)
     fd = c->fd;
     c->fd = (ngx_socket_t) -1;
 
+#ifndef ENABLE_KLEE
     if (ngx_close_socket(fd) == -1) {
         ngx_log_error(NGX_LOG_ALERT, c->log, ngx_socket_errno,
                       ngx_close_socket_n " failed");
     }
+#endif
 
     if (c->pool) {
         ngx_destroy_pool(c->pool);

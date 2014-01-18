@@ -360,10 +360,14 @@ ngx_init_cycle(ngx_cycle_t *old_cycle)
             continue;
         }
 
+#ifndef ENABLE_KLEE
         file[i].fd = ngx_open_file(file[i].name.data,
                                    NGX_FILE_APPEND,
                                    NGX_FILE_CREATE_OR_OPEN,
                                    NGX_FILE_DEFAULT_ACCESS);
+#else
+		file[i].fd = 1;
+#endif
 
         ngx_log_debug3(NGX_LOG_DEBUG_CORE, log, 0,
                        "log: %p %d \"%s\"",
@@ -958,6 +962,7 @@ ngx_init_zone_pool(ngx_cycle_t *cycle, ngx_shm_zone_t *zn)
 ngx_int_t
 ngx_create_pidfile(ngx_str_t *name, ngx_log_t *log)
 {
+#ifndef ENABLE_KLEE
     size_t      len;
     ngx_uint_t  create;
     ngx_file_t  file;
@@ -995,6 +1000,7 @@ ngx_create_pidfile(ngx_str_t *name, ngx_log_t *log)
         ngx_log_error(NGX_LOG_ALERT, log, ngx_errno,
                       ngx_close_file_n " \"%s\" failed", file.name.data);
     }
+#endif
 
     return NGX_OK;
 }

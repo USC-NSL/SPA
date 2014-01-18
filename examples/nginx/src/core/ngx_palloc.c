@@ -44,6 +44,7 @@ ngx_create_pool(size_t size, ngx_log_t *log)
 void
 ngx_destroy_pool(ngx_pool_t *pool)
 {
+#ifndef ENABLE_KLEE
     ngx_pool_t          *p, *n;
     ngx_pool_large_t    *l;
     ngx_pool_cleanup_t  *c;
@@ -90,6 +91,7 @@ ngx_destroy_pool(ngx_pool_t *pool)
             break;
         }
     }
+#endif
 }
 
 

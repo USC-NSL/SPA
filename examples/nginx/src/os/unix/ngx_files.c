@@ -24,7 +24,7 @@ ngx_read_file(ngx_file_t *file, u_char *buf, size_t size, off_t offset)
     ngx_log_debug4(NGX_LOG_DEBUG_CORE, file->log, 0,
                    "read: %d, %p, %uz, %O", file->fd, buf, size, offset);
 
-#if (NGX_HAVE_PREAD)
+#if (NGX_HAVE_PREAD) && ! defined(ENABLE_KLEE)
 
     n = pread(file->fd, buf, size, offset);
 

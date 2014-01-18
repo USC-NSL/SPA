@@ -381,6 +381,10 @@ ngx_epoll_done(ngx_cycle_t *cycle)
     nevents = 0;
 }
 
+#ifdef ENABLE_KLEE
+struct epoll_event spa_epolled_event;
+int spa_has_epolled_event = 0;
+#endif
 
 static ngx_int_t
 ngx_epoll_add_event(ngx_event_t *ev, ngx_int_t event, ngx_uint_t flags)
@@ -425,11 +429,16 @@ ngx_epoll_add_event(ngx_event_t *ev, ngx_int_t event, ngx_uint_t flags)
                    "epoll add event: fd:%d op:%d ev:%08XD",
                    c->fd, op, ee.events);
 
+#ifndef ENABLE_KLEE
     if (epoll_ctl(ep, op, c->fd, &ee) == -1) {
         ngx_log_error(NGX_LOG_ALERT, ev->log, ngx_errno,
                       "epoll_ctl(%d, %d) failed", op, c->fd);
         return NGX_ERROR;
     }
+#else
+	memcpy(&spa_epolled_event, &ee, sizeof(ee));
+	spa_has_epolled_event = 1;
+#endif
 
     ev->active = 1;
 #if 0
@@ -509,11 +518,16 @@ ngx_epoll_add_connection(ngx_connection_t *c)
     ngx_log_debug2(NGX_LOG_DEBUG_EVENT, c->log, 0,
                    "epoll add connection: fd:%d ev:%08XD", c->fd, ee.events);
 
+#ifndef ENABLE_KLEE
     if (epoll_ctl(ep, EPOLL_CTL_ADD, c->fd, &ee) == -1) {
         ngx_log_error(NGX_LOG_ALERT, c->log, ngx_errno,
                       "epoll_ctl(EPOLL_CTL_ADD, %d) failed", c->fd);
         return NGX_ERROR;
     }
+#else
+	memcpy(&spa_epolled_event, &ee, sizeof(ee));
+	spa_has_epolled_event = 1;
+#endif
 
     c->read->active = 1;
     c->write->active = 1;
@@ -576,13 +590,25 @@ ngx_epoll_process_events(ngx_cycle_t *cycle, ngx_msec_t timer, ngx_uint_t flags)
     ngx_log_debug1(NGX_LOG_DEBUG_EVENT, cycle->log, 0,
                    "epoll timer: %M", timer);
 
+#ifndef ENABLE_KLEE
     events = epoll_wait(ep, event_list, (int) nevents, timer);
+#else
+	if ( spa_has_epolled_event ) {
+		events = 1;
+		memcpy(&event_list[0], &spa_epolled_event, sizeof(spa_epolled_event));
+		spa_has_epolled_event = 0;
+	} else {
+		exit(1);
+	}
+#endif
 
     err = (events == -1) ? ngx_errno : 0;
 
+#ifndef ENABLE_KLEE
     if (flags & NGX_UPDATE_TIME || ngx_event_timer_alarm) {
         ngx_time_update();
     }
+#endif
 
     if (err) {
         if (err == NGX_EINTR) {

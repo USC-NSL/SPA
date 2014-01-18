@@ -54,7 +54,13 @@ ngx_memalign(size_t alignment, size_t size, ngx_log_t *log)
     void  *p;
     int    err;
 
+#ifndef ENABLE_KLEE
     err = posix_memalign(&p, alignment, size);
+#else
+	char *temp = malloc(alignment + size + alignment);
+	p = temp + (alignment - (((unsigned long) temp) % alignment));
+	err = (p == NULL);
+#endif
 
     if (err) {
         ngx_log_error(NGX_LOG_EMERG, log, err,
@@ -75,7 +81,12 @@ ngx_memalign(size_t alignment, size_t size, ngx_log_t *log)
 {
     void  *p;
 
+#ifndef ENABLE_KLEE
     p = memalign(alignment, size);
+#else
+	char *temp = malloc(alignment + size + alignment);
+	p = temp + (alignment - (((unsigned long) temp) % alignment));
+#endif
     if (p == NULL) {
         ngx_log_error(NGX_LOG_EMERG, log, ngx_errno,
                       "memalign(%uz, %uz) failed", alignment, size);
