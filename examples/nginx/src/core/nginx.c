@@ -203,6 +203,12 @@ static char **ngx_os_environ;
 int ngx_cdecl
 main(int argc, char *const *argv)
 {
+	new_main(argc, argv);
+}
+
+int ngx_cdecl
+new_main(int argc, char *const *argv)
+{
     ngx_int_t         i;
     ngx_log_t        *log;
     ngx_cycle_t      *cycle, init_cycle;
@@ -417,10 +423,10 @@ void __attribute__((used)) SpaEntry() {
 
 	char arg0[] = "nginx";
 	char arg1[] = "-p";
-	char arg2[] = ".";
+	char arg2[] = "/home/lpedrosa/spa/examples/nginx";
 	char empty[] = "";
 	char *argv[4] = {arg0, arg1, arg2, empty};
-	main(0, argv);
+	new_main(0, argv);
 }
 
 static ngx_int_t
