@@ -11,7 +11,6 @@
 
 #include <spa/spaRuntime.h>
 
-
 #if (NGX_HAVE_KQUEUE)
 
 ssize_t
