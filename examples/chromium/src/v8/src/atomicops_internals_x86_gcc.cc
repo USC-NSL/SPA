@@ -77,6 +77,7 @@ namespace {
 void AtomicOps_Internalx86CPUFeaturesInit() {
   using v8::internal::AtomicOps_Internalx86CPUFeatures;
 
+#ifndef ENABLE_KLEE
   uint32_t eax;
   uint32_t ebx;
   uint32_t ecx;
@@ -115,6 +116,10 @@ void AtomicOps_Internalx86CPUFeaturesInit() {
 
   // edx bit 26 is SSE2 which we use to tell use whether we can use mfence
   AtomicOps_Internalx86CPUFeatures.has_sse2 = ((edx >> 26) & 1);
+#else
+  AtomicOps_Internalx86CPUFeatures.has_amd_lock_mb_bug = false;
+  AtomicOps_Internalx86CPUFeatures.has_sse2 = 0;
+#endif
 }
 
 class AtomicOpsx86Initializer {
