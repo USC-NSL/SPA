@@ -418,18 +418,26 @@ ExprHandle STPBuilder::getInitialRead(const Array *root, unsigned index) {
 
 ::VCExpr STPBuilder::getArrayForUpdate(const Array *root, 
                                        const UpdateNode *un) {
-  if (!un) {
-    return getInitialArray(root);
-  } else {
-    // FIXME: This really needs to be non-recursive.
-    if (!un->stpArray)
-      un->stpArray = vc_writeExpr(vc,
-                                  getArrayForUpdate(root, un->next),
-                                  construct(un->index, 0),
-                                  construct(un->value, 0));
-
-    return un->stpArray;
-  }
+	std::vector<const UpdateNode *> uns;
+	const UpdateNode *u;
+	for (u = un; u && !u->stpArray; u = u->next)
+		uns.push_back(u);
+	while (!uns.empty()) {
+		u = uns.back();
+		if (u->next) {
+			u->stpArray = vc_writeExpr(vc,
+					u->next->stpArray,
+					construct(u->index, 0),
+					construct(u->value, 0));
+		} else {
+			u->stpArray = getInitialArray(root);
+		}
+		uns.pop_back();
+	}
+	if (un)
+		return un->stpArray;
+	else
+		return getInitialArray(root);
 }
 
 /** if *width_out!=1 then result is a bitvector,
