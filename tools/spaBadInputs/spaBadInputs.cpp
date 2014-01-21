@@ -33,8 +33,9 @@
 #include "spa/PathLoader.h"
 
 
-#define DEFAULT_NUM_JOBS_PER_WORKER	1000
-#define DEFAULT_NUM_WORKERS			1
+#define DEFAULT_NUM_JOBS_PER_WORKER		1000
+#define DEFAULT_NUM_WORKERS				1
+#define DEFAULT_EXPANSION_FRONT_WIDTH	1
 #define CHECKPOINT_TIME				600 // seconds
 
 namespace {
@@ -58,6 +59,9 @@ namespace {
 
 	llvm::cl::opt<int> NumJobsPerWorker("j", llvm::cl::desc(
 		"Number of jobs to give to each worker."));
+
+	llvm::cl::opt<int> ExpansionFrontWidth("w", llvm::cl::desc(
+		"The width of the expansion front."));
 }
 
 typedef struct {
@@ -73,7 +77,7 @@ typedef struct {
 } job_t;
 
 std::ofstream output, debug;
-unsigned int numWorkers, numJobsPerWorker, runningWorkers = 0;
+unsigned int numWorkers, numJobsPerWorker, expansionFrontWidth, runningWorkers = 0;
 volatile bool shutdown = false;
 std::list<job_t *> queue;
 GlobalData_t *gd = NULL;
@@ -393,6 +397,7 @@ void processJob( SPA::Path *cp, SPA::Path *sp, bool deletecp, bool deletesp ) {
 void flushJobs() {
 	processJob( NULL, NULL, false, false );
 
+	std::cerr << "Flushing jobs." << std::endl;
 	while ( runningWorkers > 0 ) {
 		int status = 0;
 		assert( wait( &status ) > 0 );
@@ -409,6 +414,7 @@ bool saveCheckpoint( std::string cpFileName,
 	time_t now = time( NULL );
 
 	if ( shutdown || difftime( now, last ) > CHECKPOINT_TIME ) {
+		std::cerr << "Waiting to save checkpoint." << std::endl;
 		flushJobs();
 		last = time( NULL );
 		std::ofstream cpFile( cpFileName.c_str() );
@@ -416,6 +422,7 @@ bool saveCheckpoint( std::string cpFileName,
 		cpFile << clientPath << " " << serverPath << " " << totalClientPaths << " " << totalServerPaths << " " << solutions << " " << cpuTime << std::endl;
 		cpFile.flush();
 		cpFile.close();
+		std::cerr << "Checkpoint saved." << std::endl;
 		return true;
 	}
 
@@ -472,6 +479,9 @@ int main(int argc, char **argv, char **envp) {
 
 	assert( NumJobsPerWorker >= 0 && "Invalid number of jobs per workers." );
 	numJobsPerWorker = NumJobsPerWorker > 0 ? NumJobsPerWorker : DEFAULT_NUM_JOBS_PER_WORKER;
+
+	assert( ExpansionFrontWidth >= 0 && "Invalid expansion front width." );
+	expansionFrontWidth = ExpansionFrontWidth > 0 ? ExpansionFrontWidth : DEFAULT_EXPANSION_FRONT_WIDTH;
 
 	signal( SIGINT, handleSignal );
 
@@ -540,26 +550,46 @@ int main(int argc, char **argv, char **envp) {
 				// Save a checkpoint to recover from failure.
 				saveCheckpoint( cpFileName, clientPath, serverPath, gd->solutions, totalClientPaths, totalServerPaths, gd->cpuTime );
 
-				if ( (cp = clientPathLoader.getPath()) ) {
+				std::vector<SPA::Path *> expansionFrontPaths;
+				while ( expansionFrontPaths.size() < expansionFrontWidth && (cp = clientPathLoader.getPath()) ) {
+					expansionFrontPaths.push_back( cp );
 					clientPath++;
+					if ( clientPath > totalClientPaths )
+						totalClientPaths = clientPath;
+				}
+
+				if ( ! expansionFrontPaths.empty() ) {
 					serverPathLoader.restart();
 					for ( unsigned long i = 1; i <= serverPath; i++ ) {
 						assert( (sp = serverPathLoader.getPath()) );
-						std::cerr << "Processing client path " << clientPath << "/" << totalClientPaths << " with server path " << i << "/" << totalServerPaths << " (pair " << processed << "/" << (totalClientPaths * totalServerPaths) << " - " << (processed * 100 / totalClientPaths / totalServerPaths) << "%). Found " << gd->solutions << " solutions." << std::endl;
-						processJob( cp, sp, i == serverPath, true );
-						processed++;
+						for ( unsigned long j = 0; j < expansionFrontPaths.size(); j++ ) {
+							cp = expansionFrontPaths[j];
+							std::cerr << "Processing client path " << (clientPath - expansionFrontPaths.size() + j + 1) << "/" << totalClientPaths << " with server path " << i << "/" << totalServerPaths << " (pair " << processed << "/" << (totalClientPaths * totalServerPaths) << " - " << (processed * 100 / totalClientPaths / totalServerPaths) << "%). Found " << gd->solutions << " solutions." << std::endl;
+							processJob( cp, sp, i == serverPath, j == expansionFrontPaths.size() - 1 );
+							processed++;
+						}
 					}
 					processing = true;
 				}
 
-				if ( (sp = serverPathLoader.getPath()) ) {
+				expansionFrontPaths.clear();
+				while ( expansionFrontPaths.size() < expansionFrontWidth && (sp = serverPathLoader.getPath()) ) {
+					expansionFrontPaths.push_back( sp );
 					serverPath++;
+					if ( serverPath > totalServerPaths )
+						totalServerPaths = serverPath;
+				}
+
+				if ( ! expansionFrontPaths.empty() ) {
 					clientPathLoader.restart();
 					for ( unsigned long i = 1; i <= clientPath; i++ ) {
 						assert( (cp = clientPathLoader.getPath()) );
-						std::cerr << "Processing client path " << i << "/" << totalClientPaths << " with server path " << serverPath << "/" << totalServerPaths << " (pair " << processed << "/" << (totalClientPaths * totalServerPaths) << " - " << (processed * 100 / totalClientPaths / totalServerPaths) << "%). Found " << gd->solutions << " solutions." << std::endl;
-						processJob( cp, sp, true, i == clientPath );
-						processed++;
+						for ( unsigned long j = 0; j < expansionFrontPaths.size(); j++ ) {
+							sp = expansionFrontPaths[j];
+							std::cerr << "Processing client path " << i << "/" << totalClientPaths << " with server path " << (serverPath - expansionFrontPaths.size() + j + 1) << "/" << totalServerPaths << " (pair " << processed << "/" << (totalClientPaths * totalServerPaths) << " - " << (processed * 100 / totalClientPaths / totalServerPaths) << "%). Found " << gd->solutions << " solutions." << std::endl;
+							processJob( cp, sp, j == expansionFrontPaths.size(), i == clientPath );
+							processed++;
+						}
 					}
 					processing = true;
 				}
