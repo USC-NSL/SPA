@@ -50,6 +50,7 @@ namespace SPA {
 
 	void TargetDistanceUtility::processWorklist( llvm::Module *module, CFG &cfg, CG &cg, std::set<llvm::Instruction *> &worklist ) {
 		std::set<llvm::Function *> pathFunctions;
+		std::map<llvm::Function *, double> functionDepths;
 
 		CLOUD9_DEBUG( "      Processing direct paths." );
 		while ( ! worklist.empty() ) {
@@ -106,10 +107,50 @@ namespace SPA {
 		} else {
 			CLOUD9_DEBUG( "      Found no spa_returns." );
 		}
+
+		// Find the depths of all instructions in indirect path functions without spa_returns.
+		std::map<llvm::Instruction *, double> depths;
+		// Initialize to +INFINITY
+		for ( CFG::iterator it = cfg.begin(), ie = cfg.end(); it != ie; it++ )
+			if ( pathFunctions.count( (*it)->getParent()->getParent() ) == 0 && spaReturnFunctions.count( (*it)->getParent()->getParent() ) == 0 )
+				depths[*it] = +INFINITY;
+		// Iterate of indirect path functions without spa_returns.
+		for ( CG::iterator it = cg.begin(), ie = cg.end(); it != ie; it++ ) {
+			if ( pathFunctions.count( *it ) == 0 && spaReturnFunctions.count( *it ) == 0 ) {
+				std::set<llvm::Instruction *> depthWorklist;
+				llvm::Instruction *inst;
+				// Calculate all depths with a worklist.
+				inst = &(*it)->getEntryBlock().front();
+				depths[inst] = 0;
+				depthWorklist.insert( cfg.getSuccessors( inst ).begin(), cfg.getSuccessors( inst ).end() );
+				while ( ! depthWorklist.empty() ) {
+					inst = *depthWorklist.begin();
+					depthWorklist.erase( inst );
+
+					for ( CFG::iterator pit = cfg.getPredecessors( inst ).begin(), pie = cfg.getPredecessors( inst ).end(); pit != pie; pit++ ) {
+						double d = cfg.getPredecessors( inst ).size() > 1 ? depths[*pit] + 1 : depths[*pit];
+						if ( d < depths[inst] ) {
+							depths[inst] = d;
+							depthWorklist.insert( cfg.getSuccessors( inst ).begin(), cfg.getSuccessors( inst ).end() );
+						}
+					}
+				}
+			}
+		}
+		// Calculate each functions max depth.
+		for ( CFG::iterator it = cfg.begin(), ie = cfg.end(); it != ie; it++ )
+			if ( pathFunctions.count( (*it)->getParent()->getParent() ) == 0 && spaReturnFunctions.count( (*it)->getParent()->getParent() ) == 0 )
+				if ( depths[*it] > functionDepths[(*it)->getParent()->getParent()] )
+					functionDepths[(*it)->getParent()->getParent()] = depths[*it];
+
+		// Initialize costs of return instructions in functions without spa_returns.
+		// Initialize to the function's max depth - the depth of the particular return.
+		// This equalizes the cost of reaching all returns.
 		for ( CFG::iterator it = cfg.begin(), ie = cfg.end(); it != ie; it++ ) {
-			// Initialize costs of return instructions in functions without spa_returns.
-			if ( ! distances[*it].second && cfg.getSuccessors( *it ).empty() && ! spaReturnFunctions.count( (*it)->getParent()->getParent() ) ) {
-				distances[*it] = std::pair<double, bool>( 0, false );
+			if ( pathFunctions.count( (*it)->getParent()->getParent() ) == 0 && 
+					cfg.getSuccessors( *it ).empty() &&
+					spaReturnFunctions.count( (*it)->getParent()->getParent() ) == 0 ) {
+				distances[*it] = std::pair<double, bool>( functionDepths[(*it)->getParent()->getParent()] - depths[*it], false );
 				worklist.insert( cfg.getPredecessors( *it ).begin(), cfg.getPredecessors( *it ).end() );
 			}
 		}
