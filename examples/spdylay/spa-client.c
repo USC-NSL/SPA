@@ -9,18 +9,17 @@
 
 #include <spa/spaRuntime.h>
 
-#define SPDY_VERSION		SPDYLAY_PROTO_SPDY2
+// #define SPDY_VERSION		SPDYLAY_PROTO_SPDY2
 // #define SPDY_VERSION		SPDYLAY_PROTO_SPDY3
-#define REQUEST_METHOD		"GET"
-#define REQUEST_SCHEME		"http"
-#define REQUEST_PATH		"/"
-#define REQUEST_HOST		"127.0.0.1"
-#define REQUEST_PORT		6121
-#define REQUEST_VERSION		"HTTP/1.1"
-#define REQUEST_PRIORITY	3
-#define REQUEST_MAXPAIRS	3
-#define REQUEST_MAXNAME		2
-#define REQUEST_MAXVALUE	1
+// #define REQUEST_METHOD		"GET"
+// #define REQUEST_SCHEME		"http"
+// #define REQUEST_PATH		"/"
+// #define REQUEST_HOST		"127.0.0.1"
+// #define REQUEST_PORT		6121
+// #define REQUEST_VERSION		"HTTP/1.1"
+// #define REQUEST_PRIORITY	3
+#define REQUEST_MAXNAME		5
+#define REQUEST_MAXVALUE	5
 #define RECEIVE_BUFFER_SIZE	1500
 
 #define QUOTE( str ) #str
@@ -153,38 +152,80 @@ void __attribute__((noinline,used)) spa_SendRequest() {
 	callbacks.on_unknown_ctrl_recv_callback = NULL; // Callback function invoked when the received control frame type is unknown.
 
 	spdylay_session *session;
-	uint16_t clientVersion = SPDY_VERSION;
-#ifndef ANALYZE_RESPONSE
-// 	spa_api_input_var( clientVersion );
-#endif // #ifndef ANALYZE_RESPONSE
+	uint16_t clientVersion;
+#ifdef SPDY_VERSION
+	clientVersion = SPDY_VERSION;
+#else // #ifdef SPDY_VERSION
+	spa_api_input_var( clientVersion );
+#endif // #ifdef SPDY_VERSION #else
 	assert( spdylay_session_client_new( &session, clientVersion, &callbacks, "SPDY Client Session" ) == SPDYLAY_OK );
 
-	uint8_t priority = REQUEST_PRIORITY;
-#ifndef ANALYZE_RESPONSE
+	uint8_t priority;
+#ifdef REQUEST_PRIORITY
+	priority = REQUEST_PRIORITY;
+#else // #ifdef REQUEST_PRIORITY
 	spa_api_input_var( priority );
-#endif // #ifndef ANALYZE_RESPONSE
+#endif // #ifdef REQUEST_PRIORITY #else
 
 #ifdef ANALYZE_RESPONSE
 	const char *nv[] = {
 		NULL
 	};
 #elif defined( ENABLE_SPA ) // #ifdef ANALYZE_RESPONSE
+	char	name1[REQUEST_MAXNAME + 1], value1[REQUEST_MAXVALUE + 1],
+			name2[REQUEST_MAXNAME + 1], value2[REQUEST_MAXVALUE + 1],
+			name3[REQUEST_MAXNAME + 1], value3[REQUEST_MAXVALUE + 1];
+// 			name4[REQUEST_MAXNAME + 1], value4[REQUEST_MAXVALUE + 1],
+// 			name5[REQUEST_MAXNAME + 1], value5[REQUEST_MAXVALUE + 1];
+	const char *nv[2 * (3 + 1)];
 	uint8_t numPairs = 0;
-	char name[REQUEST_MAXNAME + 1], value[REQUEST_MAXVALUE + 1];
 	spa_api_input_var( numPairs );
-	spa_assume( numPairs <= REQUEST_MAXPAIRS );
-	spa_api_input_var( name );
-	spa_assume( name[sizeof( name ) - 1] == '\0' );
-	spa_api_input_var( value );
-	spa_assume( value[sizeof( value ) - 1] == '\0' );
-
-	const char *nv[2 * (REQUEST_MAXPAIRS + 1)];
-	uint8_t i;
-	for ( i = 0; i < numPairs; i++ ) {
-		nv[2*i] = name;
-		nv[2*i+1] = value;
+	spa_assume( numPairs <= 3 );
+	if ( numPairs >= 1 ) {
+		spa_api_input_var( name1 );
+		spa_assume( name1[sizeof( name1 ) - 1] == '\0' );
+		spa_api_input_var( value1 );
+		spa_assume( value1[sizeof( value1 ) - 1] == '\0' );
+		nv[0] = name1;
+		nv[1] = value1;
+		nv[2] = NULL;
 	}
-	nv[2*numPairs] = NULL;
+	if ( numPairs >= 2 ) {
+		spa_api_input_var( name2 );
+		spa_assume( name2[sizeof( name2 ) - 1] == '\0' );
+		spa_api_input_var( value2 );
+		spa_assume( value2[sizeof( value2 ) - 1] == '\0' );
+		nv[2] = name2;
+		nv[3] = value2;
+		nv[4] = NULL;
+	}
+	if ( numPairs >= 3 ) {
+		spa_api_input_var( name3 );
+		spa_assume( name3[sizeof( name3 ) - 1] == '\0' );
+		spa_api_input_var( value3 );
+		spa_assume( value3[sizeof( value3 ) - 1] == '\0' );
+		nv[4] = name3;
+		nv[5] = value3;
+		nv[6] = NULL;
+	}
+// 	if ( numPairs >= 4 ) {
+// 		spa_api_input_var( name4 );
+// 		spa_assume( name4[sizeof( name4 ) - 1] == '\0' );
+// 		spa_api_input_var( value4 );
+// 		spa_assume( value4[sizeof( value4 ) - 1] == '\0' );
+// 		nv[6] = name4;
+// 		nv[7] = value4;
+// 		nv[8] = NULL;
+// 	}
+// 	if ( numPairs >= 5 ) {
+// 		spa_api_input_var( name5 );
+// 		spa_assume( name5[sizeof( name5 ) - 1] == '\0' );
+// 		spa_api_input_var( value5 );
+// 		spa_assume( value5[sizeof( value5 ) - 1] == '\0' );
+// 		nv[8] = name5;
+// 		nv[9] = value5;
+// 		nv[10] = NULL;
+// 	}
 #else // #ifdef ANALYZE_RESPONSE #elif defined( ENABLE_SPA )
 	const char *nv[] = {
 		":method",	REQUEST_METHOD,
