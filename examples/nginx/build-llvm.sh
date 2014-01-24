@@ -2,7 +2,7 @@
 
 set -e
 
-NGX_OBJS="objs/src/core/nginx.o \
+OBJS="objs/src/core/nginx.o \
 	objs/src/core/ngx_log.o \
 	objs/src/core/ngx_palloc.o \
 	objs/src/core/ngx_array.o \
@@ -85,11 +85,26 @@ NGX_OBJS="objs/src/core/nginx.o \
 	objs/src/http/ngx_http_spdy.o \
 	objs/src/http/ngx_http_spdy_module.o \
 	objs/src/http/ngx_http_spdy_filter_module.o \
-	objs/ngx_modules.o"
+	objs/ngx_modules.o \
+	zlib/adler32.o \
+	zlib/compress.o \
+	zlib/crc32.o \
+	zlib/deflate.o \
+	zlib/gzclose.o \
+	zlib/gzlib.o \
+	zlib/gzread.o \
+	zlib/gzwrite.o \
+	zlib/infback.o \
+	zlib/inffast.o \
+	zlib/inflate.o \
+	zlib/inftrees.o \
+	zlib/trees.o \
+	zlib/uncompr.o \
+	zlib/zutil.o"
 
 [ -f zlib/Makefile ] || (cd zlib; ./configure-llvm; cd ..)
 [ -f Makefile ] || ./configure-llvm
 
-make -f objs/Makefile -kj48 $NGX_OBJS
+make -f objs/Makefile -kj48 $OBJS
 
-llvm-ld -o objs/nginx $NGX_OBJS zlib/*.o -disable-opt
+llvm-ld -o objs/nginx $OBJS -disable-opt
