@@ -116,7 +116,7 @@ namespace SPA {
 				depths[*it] = +INFINITY;
 		// Iterate of indirect path functions without spa_returns.
 		for ( CG::iterator it = cg.begin(), ie = cg.end(); it != ie; it++ ) {
-			if ( pathFunctions.count( *it ) == 0 && spaReturnFunctions.count( *it ) == 0 ) {
+			if ( (! (*it)->empty()) && pathFunctions.count( *it ) == 0 && spaReturnFunctions.count( *it ) == 0 ) {
 				std::set<llvm::Instruction *> depthWorklist;
 				llvm::Instruction *inst;
 				// Calculate all depths with a worklist.
