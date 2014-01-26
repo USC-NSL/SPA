@@ -232,7 +232,7 @@ extern "C" {
 #define spa_msg_input( var, size, name ) printf( "[SPA] Received message: %s[%d].\n", name, (int) size )
 #define spa_msg_input_size( var, name ) printf( "[SPA] Received message size: %s[%d].\n", name, (int) var )
 #define spa_msg_input_var( var ) printf( "[SPA] Received message: %s.\n", #var )
-#define spa_msg_output( var, size, maxSize, name ) printf( "[SPA] Sending message: %s[%d].\n", name, size )
+#define spa_msg_output( var, size, maxSize, name ) printf( "[SPA] Sending message: %s[%d].\n", name, (int) size )
 #define spa_msg_output_var( var ) printf( "[SPA] Sending message: %s[%d].\n", #var, sizeof( var ) )
 
 #define spa_waypoint( id )
