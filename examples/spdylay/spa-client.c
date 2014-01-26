@@ -11,12 +11,12 @@
 
 // #define SPDY_VERSION		SPDYLAY_PROTO_SPDY2
 // #define SPDY_VERSION		SPDYLAY_PROTO_SPDY3
-// #define REQUEST_METHOD		"GET"
-// #define REQUEST_SCHEME		"http"
-// #define REQUEST_PATH		"/"
-// #define REQUEST_HOST		"127.0.0.1"
-// #define REQUEST_PORT		6121
-// #define REQUEST_VERSION		"HTTP/1.1"
+#define REQUEST_METHOD		"GET"
+#define REQUEST_SCHEME		"http"
+#define REQUEST_PATH		"/"
+#define REQUEST_HOST		"127.0.0.1"
+#define REQUEST_PORT		6121
+#define REQUEST_VERSION		"HTTP/1.1"
 // #define REQUEST_PRIORITY	3
 #define REQUEST_MAXNAME		5
 #define REQUEST_MAXVALUE	5
@@ -152,7 +152,7 @@ void __attribute__((noinline,used)) spa_SendRequest() {
 	callbacks.on_unknown_ctrl_recv_callback = NULL; // Callback function invoked when the received control frame type is unknown.
 
 	spdylay_session *session;
-	uint16_t clientVersion;
+	uint16_t clientVersion = 0;
 #ifdef SPDY_VERSION
 	clientVersion = SPDY_VERSION;
 #else // #ifdef SPDY_VERSION
@@ -160,7 +160,7 @@ void __attribute__((noinline,used)) spa_SendRequest() {
 #endif // #ifdef SPDY_VERSION #else
 	assert( spdylay_session_client_new( &session, clientVersion, &callbacks, "SPDY Client Session" ) == SPDYLAY_OK );
 
-	uint8_t priority;
+	uint8_t priority = 0;
 #ifdef REQUEST_PRIORITY
 	priority = REQUEST_PRIORITY;
 #else // #ifdef REQUEST_PRIORITY
