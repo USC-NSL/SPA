@@ -10,7 +10,7 @@
 #include <spa/spaRuntime.h>
 
 #define SERVER_PORT			6121
-#define SPDY_VERSION		SPDYLAY_PROTO_SPDY2
+// #define SPDY_VERSION		SPDYLAY_PROTO_SPDY2
 // #define SPDY_VERSION		SPDYLAY_PROTO_SPDY3
 #define PUSH_METHOD			"GET"
 #define PUSH_SCHEME			"http"
@@ -222,11 +222,13 @@ void __attribute__((noinline,used)) spa_HandleRequest() {
 	callbacks.on_unknown_ctrl_recv_callback = NULL; // Callback function invoked when the received control frame type is unknown.
 
 	spdylay_session *session;
+#ifdef SPDY_VERSION
 	uint16_t serverVersion = SPDY_VERSION;
-#ifndef ANALYZE_RESPONSE
-// 	spa_api_input_var( serverVersion );
+#else
+	uint16_t serverVersion = 0;
+	spa_api_input_var( serverVersion );
 	spa_assume( serverVersion == SPDYLAY_PROTO_SPDY2 || serverVersion == SPDYLAY_PROTO_SPDY3 );
-#endif // #ifndef ANALYZE_RESPONSE
+#endif // #ifdef SPDY_VERSION
 	assert( spdylay_session_server_new( &session, serverVersion, &callbacks, "SPDY Server Session" ) == SPDYLAY_OK );
 
 	unsigned char buf[RECEIVE_BUFFER_SIZE];
