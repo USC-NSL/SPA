@@ -9,21 +9,26 @@
 
 #define LOG_FILE_VARIABLE	"SPA_LOG_FILE"
 
+#define LOG() \
+	std::cerr << "[" << difftime( time( NULL ), programStartTime ) << "] "
+
+time_t programStartTime;
+
 bool processTestCase( char *clientCmd, char *serverCmd ) {
 	std::string serverLog = tmpnam( NULL );
-	std::cerr << "Logging server results to: " << serverLog << std::endl;
+	LOG() << "Logging server results to: " << serverLog << std::endl;
 
 	pid_t serverPID = fork();
 	assert( serverPID >= 0 && "Error forking server process." );
 	if ( serverPID == 0 ) {
 		setpgid( 0, 0 );
 		setenv( LOG_FILE_VARIABLE, serverLog.c_str(), 1 );
-		std::cerr << "Launching server: " << serverCmd << std::endl;
+		LOG() << "Launching server: " << serverCmd << std::endl;
 		exit( system( serverCmd ) );
 	}
 	
 	std::string clientLog = tmpnam( NULL );
-	std::cerr << "Logging client results to: " << clientLog << std::endl;
+	LOG() << "Logging client results to: " << clientLog << std::endl;
 	
 	pid_t clientPID = fork();
 	assert( clientPID >= 0 && "Error forking client process." );
@@ -31,22 +36,22 @@ bool processTestCase( char *clientCmd, char *serverCmd ) {
 		setpgid( 0, 0 );
 		setenv( LOG_FILE_VARIABLE, clientLog.c_str(), 1 );
 		sleep( 1 );
-		std::cerr << "Launching client: " << clientCmd << std::endl;
+		LOG() << "Launching client: " << clientCmd << std::endl;
 		exit( system( clientCmd ) );
 	}
 	
 	sleep( 2 );
-	std::cerr << "Killing processes." << std::endl;
+	LOG() << "Killing processes." << std::endl;
 	kill( - serverPID, SIGTERM );
 	kill( - clientPID, SIGTERM );
 	
 	int clientStatus = 0, serverStatus = 0;
-	// 					std::cerr << "Waiting for server." << std::endl;
+	// 					LOG() << "Waiting for server." << std::endl;
 	assert( waitpid( serverPID, &serverStatus, 0 ) != -1 );
-	// 					std::cerr << "Waiting for client." << std::endl;
+	// 					LOG() << "Waiting for client." << std::endl;
 	assert( waitpid( clientPID, &clientStatus, 0 ) != -1 );
 	
-	std::cerr << "Processing outputs." << std::endl;
+	LOG() << "Processing outputs." << std::endl;
 	std::ifstream logFile( clientLog.c_str() );
 	// 					assert( logFile.is_open() && "Unable to open client log file." );
 	bool clientValid = false;
@@ -61,7 +66,7 @@ bool processTestCase( char *clientCmd, char *serverCmd ) {
 	}
 	logFile.close();
 	remove( clientLog.c_str() );
-	std::cerr << "Client validity: " << clientValid << std::endl;
+	LOG() << "Client validity: " << clientValid << std::endl;
 	
 	logFile.open( serverLog.c_str() );
 	assert( logFile.is_open() && "Unable to open server log file." );
@@ -77,7 +82,7 @@ bool processTestCase( char *clientCmd, char *serverCmd ) {
 	}
 	logFile.close();
 	remove( serverLog.c_str() );
-	std::cerr << "Server validity: " << serverValid << std::endl;
+	LOG() << "Server validity: " << serverValid << std::endl;
 	
 	return clientValid && (! serverValid);
 }
@@ -88,6 +93,8 @@ int main(int argc, char **argv, char **envp) {
 
 		return -1;
 	}
+
+	programStartTime = time( NULL );
 
 	bool follow = false;
 
@@ -108,7 +115,7 @@ int main(int argc, char **argv, char **envp) {
 	std::ifstream inputFile( outputFileName );
 	std::string bundle;
 	std::set<std::string> testedBundles;
-	std::cerr << "Loading previous results." << std::endl;
+	LOG() << "Loading previous results." << std::endl;
 	while ( inputFile.good() ) {
 		std::string line;
 		std::getline( inputFile, line );
@@ -132,7 +139,7 @@ int main(int argc, char **argv, char **envp) {
 
 	while ( inputFile.good() || follow ) {
 		if ( follow && ! inputFile.good() ) {
-			std::cerr << "Reached end of input. Sleeping." << std::endl;
+			LOG() << "Reached end of input. Sleeping." << std::endl;
 			sleep( 1 );
 			inputFile.clear();
 			continue;
@@ -154,28 +161,28 @@ int main(int argc, char **argv, char **envp) {
 			if ( ! bundle.empty() ) {
 				numTestCases++;
 				if ( testedBundles.count( bundle ) ) {
-					std::cerr << "Redundant test case. Ignoring." << std::endl;
+					LOG() << "Redundant test case. Ignoring." << std::endl;
 				} else {
-					std::cerr << "Processing test case." << std::endl;
+					LOG() << "Processing test case." << std::endl;
 					testedBundles.insert( bundle );
 
-					std::cerr << "Testing cross-interoperability." << std::endl;
+					LOG() << "Testing cross-interoperability." << std::endl;
 					bool crossInterop = processTestCase( clientCmd, serverCmd );
-					std::cerr << "Testing reference-interoperability." << std::endl;
+					LOG() << "Testing reference-interoperability." << std::endl;
 					bool refInterop = refServerCmd != NULL ? processTestCase( clientCmd, refServerCmd ) : false;
 					// Only consider interoperability bugs where the client and reference server assert valid but test server doesn't.
 					if ( crossInterop && (! refInterop) ) {
-						std::cerr << "Found true positive. Outputting" << std::endl;
+						LOG() << "Found true positive. Outputting" << std::endl;
 						truePositives++;
 						outputFile << bundle << std::endl;
 					} else {
-						std::cerr << "Found false positive. Filtering." << std::endl;
+						LOG() << "Found false positive. Filtering." << std::endl;
 						falsePositives++;
 					}
-					std::cerr << "--------------------------------------------------" << std::endl;
+					LOG() << "--------------------------------------------------" << std::endl;
 				}
 				bundle.clear();
-				std::cerr << "Processed " << numTestCases << " test cases: " << truePositives << " true positives, " << falsePositives << " false positives." << std::endl;
+				LOG() << "Processed " << numTestCases << " test cases: " << truePositives << " true positives, " << falsePositives << " false positives." << std::endl;
 			}
 		}
 	}

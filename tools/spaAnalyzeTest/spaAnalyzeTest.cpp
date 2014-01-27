@@ -7,6 +7,11 @@
 #include <map>
 #include <vector>
 
+#define LOG() \
+	std::cerr << "[" << difftime( time( NULL ), programStartTime ) << "] "
+
+time_t programStartTime;
+
 typedef bool (*TestClassifier)( std::map<std::string, std::vector<uint8_t> > );
 
 bool spdylayDiffVersion( std::map<std::string, std::vector<uint8_t> > testCase ) {
@@ -97,13 +102,13 @@ bool sipEventBadChar( std::map<std::string, std::vector<uint8_t> > testCase ) {
 
 TestClassifier classifiers[] = {
 // 	spdylayDiffVersion,
-	spdylayBadName,
-	spdylayBadValue,
+// 	spdylayBadName,
+// 	spdylayBadValue,
 // 	spdylayNoDataLength,
-// 	sipFromBadChar,
-// 	sipFromNoScheme,
-// 	sipToConfusedScheme,
-// 	sipEventBadChar,
+	sipFromBadChar,
+	sipFromNoScheme,
+	sipToConfusedScheme,
+	sipEventBadChar,
 	NULL
 };
 
@@ -122,10 +127,10 @@ std::string testToStr( std::map<std::string, std::vector<uint8_t> > testCase ) {
 }
 
 void displayStats() {
-	std::cerr << "Breakdown:";
+	LOG() << "Breakdown:";
 	for( std::vector<unsigned long>::iterator it = resultCounts.begin(), ie = resultCounts.end(); it != ie; it++ )
-		std::cerr << " " << *it;
-	std::cerr << std::endl;
+		LOG() << " " << *it;
+	LOG() << std::endl;
 }
 
 int main(int argc, char **argv, char **envp) {
@@ -134,6 +139,8 @@ int main(int argc, char **argv, char **envp) {
 
 		return -1;
 	}
+
+	programStartTime = time( NULL );
 
 	bool follow = false;
 
@@ -152,9 +159,9 @@ int main(int argc, char **argv, char **envp) {
 	do {
 		assert( arg < argc && "Insufficient output files specified." );
 		if ( classifiers[i] )
-			std::cerr << "Class "<< i << " outputted to: " << argv[arg] << std::endl;
+			LOG() << "Class "<< i << " outputted to: " << argv[arg] << std::endl;
 		else
-			std::cerr << "Default class outputted to: " << argv[arg] << std::endl;
+			LOG() << "Default class outputted to: " << argv[arg] << std::endl;
 		outputFiles.push_back( new std::ofstream( argv[arg++] ) );
 		assert( outputFiles[i]->is_open() );
 		resultCounts.push_back( 0 );
@@ -164,7 +171,7 @@ int main(int argc, char **argv, char **envp) {
 	std::map<std::string, std::vector<uint8_t> > testCase;
 	while ( inputFile.good() || follow ) {
 		if ( follow && ! inputFile.good() ) {
-			std::cerr << "Reached end of input. Sleeping." << std::endl;
+			LOG() << "Reached end of input. Sleeping." << std::endl;
 			sleep( 1 );
 			inputFile.clear();
 			continue;
@@ -194,7 +201,7 @@ int main(int argc, char **argv, char **envp) {
 			if ( ! testCase.empty() ) {
 				for ( i = 0; classifiers[i]; i++ ) {
 					if ( classifiers[i]( testCase ) ) {
-						std::cerr << "Test-case just before line " << lineNo << " classified as " << i << std::endl;
+						LOG() << "Test-case just before line " << lineNo << " classified as " << i << std::endl;
 						*outputFiles[i] << testToStr( testCase );
 						outputFiles[i]->flush();
 						resultCounts[i]++;
@@ -203,7 +210,7 @@ int main(int argc, char **argv, char **envp) {
 					}
 				}
 				if ( ! classifiers[i] ) {
-					std::cerr << "Test-case just before line " << lineNo << " classified as default." << std::endl;
+					LOG() << "Test-case just before line " << lineNo << " classified as default." << std::endl;
 					*outputFiles[i] << testToStr( testCase );
 					outputFiles[i]->flush();
 					resultCounts[i]++;
