@@ -21,19 +21,28 @@ bool spdylayDiffVersion( std::map<std::string, std::vector<uint8_t> > testCase )
 }
 
 bool spdylayBadName( std::map<std::string, std::vector<uint8_t> > testCase ) {
-	assert( testCase.count( "spa_in_api_name" ) );
-	for ( std::vector<uint8_t>::iterator it = testCase["spa_in_api_name"].begin(), ie = testCase["spa_in_api_name"].end(); it != ie; it++ ) {
-		if ( *it == '\0' )
-			break;
-		if ( *it < 0x20 )
-			return true;
+// 	assert( testCase.count( "spa_in_api_name" ) );
+	const char *names[] = { "spa_in_api_name", "spa_in_api_name1", "spa_in_api_name2", "spa_in_api_name3", "spa_in_api_name4", "spa_in_api_name5", NULL };
+	for ( int i = 0; names[i]; i++ ) {
+		if ( testCase.count( names[i] ) > 0 ) {
+			for ( std::vector<uint8_t>::iterator it = testCase[names[i]].begin(), ie = testCase[names[i]].end(); it != ie; it++ ) {
+				if ( *it == '\0' )
+					break;
+				if ( *it < 0x20 )
+					return true;
+			}
+		}
 	}
 	return false;
 }
 
 bool spdylayBadValue( std::map<std::string, std::vector<uint8_t> > testCase ) {
-	assert( testCase.count( "spa_in_api_value" ) );
-	return testCase["spa_in_api_value"][0] == '\0';
+// 	assert( testCase.count( "spa_in_api_value" ) );
+	const char *values[] = { "spa_in_api_value", "spa_in_api_value1", "spa_in_api_value2", "spa_in_api_value3", "spa_in_api_value4", "spa_in_api_value5", NULL };
+	for ( int i = 0; values[i]; i++ )
+		if ( testCase.count( values[i] ) > 0 && testCase[values[i]][0] == '\0' )
+			return true;
+	return false;
 }
 
 bool spdylayNoDataLength( std::map<std::string, std::vector<uint8_t> > testCase ) {
@@ -100,16 +109,19 @@ bool sipEventBadChar( std::map<std::string, std::vector<uint8_t> > testCase ) {
 	return false;
 }
 
-TestClassifier classifiers[] = {
-// 	spdylayDiffVersion,
-// 	spdylayBadName,
-// 	spdylayBadValue,
-// 	spdylayNoDataLength,
-	sipFromBadChar,
-	sipFromNoScheme,
-	sipToConfusedScheme,
-	sipEventBadChar,
-	NULL
+static struct {
+	TestClassifier classifier;
+	const char *outFileName;
+} classifiers[] = {
+// 	{ spdylayDiffVersion, "BadInputs.spdylayDiffVersion" },
+// 	{ spdylayBadName, "BadInputs.spdylayBadName" },
+// 	{ spdylayBadValue, "BadInputs.spdylayBadValue" },
+// 	{ spdylayNoDataLength, "BadInputs.spdylayNoDataLength" },
+	{ sipFromBadChar, "BadInputs.sipFromBadChar" },
+	{ sipFromNoScheme, "BadInputs.sipFromNoScheme" },
+// 	{ sipToConfusedScheme, "BadInputs.sipToConfusedScheme" },
+// 	{ sipEventBadChar, "BadInputs.sipEventBadChar" },
+	{ NULL, "BadInputs.default" },
 };
 
 std::vector<unsigned long> resultCounts;
@@ -134,8 +146,8 @@ void displayStats() {
 }
 
 int main(int argc, char **argv, char **envp) {
-	if ( argc < 2 ) {
-		std::cerr << "Usage: " << argv[0] << " [-f] <input-file> <output-files>..." << std::endl;
+	if ( argc < 1 || argc > 2 ) {
+		std::cerr << "Usage: " << argv[0] << " [-f] <input-file>" << std::endl;
 
 		return -1;
 	}
@@ -143,30 +155,29 @@ int main(int argc, char **argv, char **envp) {
 	programStartTime = time( NULL );
 
 	bool follow = false;
+	char *inputFileName;
 
-	int arg = 1;
-	if ( std::string( "-f" ) == argv[arg] ) {
+	if ( std::string( "-f" ) == argv[1] ) {
 		follow = true;
-		arg++;
+		inputFileName = argv[2];
+	} else {
+		inputFileName = argv[1];
 	}
 
-	char *inputFileName = argv[arg++];
 	std::ifstream inputFile( inputFileName );
 	unsigned long lineNo = 0;
 
-	std::vector<std::ofstream *> outputFiles;
 	int i = 0;
+	std::vector<std::ofstream *> outputFiles;
 	do {
-		assert( arg < argc && "Insufficient output files specified." );
-		if ( classifiers[i] )
-			LOG() << "Class "<< i << " outputted to: " << argv[arg] << std::endl;
+		if ( classifiers[i].classifier )
+			LOG() << "Class "<< i << " outputted to: " << classifiers[i].outFileName << std::endl;
 		else
-			LOG() << "Default class outputted to: " << argv[arg] << std::endl;
-		outputFiles.push_back( new std::ofstream( argv[arg++] ) );
+			LOG() << "Default class outputted to: " << classifiers[i].outFileName << std::endl;
+		outputFiles.push_back( new std::ofstream( classifiers[i].outFileName ) );
 		assert( outputFiles[i]->is_open() );
 		resultCounts.push_back( 0 );
-	} while ( classifiers[i++] );
-	assert( arg == argc && "Too many output files specified." );
+	} while ( classifiers[i++].classifier );
 
 	std::map<std::string, std::vector<uint8_t> > testCase;
 	while ( inputFile.good() || follow ) {
@@ -199,8 +210,8 @@ int main(int argc, char **argv, char **envp) {
 			testCase[name] = value;
 		} else {
 			if ( ! testCase.empty() ) {
-				for ( i = 0; classifiers[i]; i++ ) {
-					if ( classifiers[i]( testCase ) ) {
+				for ( i = 0; classifiers[i].classifier; i++ ) {
+					if ( classifiers[i].classifier( testCase ) ) {
 						LOG() << "Test-case just before line " << lineNo << " classified as " << i << std::endl;
 						*outputFiles[i] << testToStr( testCase );
 						outputFiles[i]->flush();
@@ -209,7 +220,7 @@ int main(int argc, char **argv, char **envp) {
 						break;
 					}
 				}
-				if ( ! classifiers[i] ) {
+				if ( ! classifiers[i].classifier ) {
 					LOG() << "Test-case just before line " << lineNo << " classified as default." << std::endl;
 					*outputFiles[i] << testToStr( testCase );
 					outputFiles[i]->flush();
