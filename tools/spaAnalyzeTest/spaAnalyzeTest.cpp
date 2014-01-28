@@ -15,9 +15,11 @@ time_t programStartTime;
 typedef bool (*TestClassifier)( std::map<std::string, std::vector<uint8_t> > );
 
 bool spdylayDiffVersion( std::map<std::string, std::vector<uint8_t> > testCase ) {
-	assert( testCase.count( "spa_in_api_clientVersion" ) );
-	assert( testCase.count( "spa_in_api_serverVersion" ) );
-	return testCase["spa_in_api_clientVersion"] != testCase["spa_in_api_serverVersion"];
+// 	assert( testCase.count( "spa_in_api_clientVersion" ) );
+// 	assert( testCase.count( "spa_in_api_serverVersion" ) );
+	if ( testCase.count( "spa_in_api_clientVersion" ) && testCase.count( "spa_in_api_serverVersion" ) )
+		return testCase["spa_in_api_clientVersion"] != testCase["spa_in_api_serverVersion"];
+	return false;
 }
 
 bool spdylayBadName( std::map<std::string, std::vector<uint8_t> > testCase ) {
@@ -50,25 +52,30 @@ bool spdylayNoDataLength( std::map<std::string, std::vector<uint8_t> > testCase 
 }
 
 bool sipFromBadChar( std::map<std::string, std::vector<uint8_t> > testCase ) {
-	assert( testCase.count( "spa_in_api_from" ) );
-	for ( std::vector<uint8_t>::iterator it = testCase["spa_in_api_from"].begin(), ie = testCase["spa_in_api_from"].end(); it != ie; it++ ) {
-		if ( *it == '\0' )
-			break;
-		if ( ! isprint( *it ) )
-			return true;
+// 	assert( testCase.count( "spa_in_api_from" ) );
+	if ( testCase.count( "spa_in_api_from" ) ) {
+		for ( std::vector<uint8_t>::iterator it = testCase["spa_in_api_from"].begin(), ie = testCase["spa_in_api_from"].end(); it != ie; it++ ) {
+			if ( *it == '\0' )
+				break;
+			if ( ! isprint( *it ) )
+				return true;
+		}
 	}
 	return false;
 }
 
 bool sipFromNoScheme( std::map<std::string, std::vector<uint8_t> > testCase ) {
-	assert( testCase.count( "spa_in_api_from" ) );
-	std::string from;
-	for ( std::vector<uint8_t>::iterator it = testCase["spa_in_api_from"].begin(), ie = testCase["spa_in_api_from"].end(); it != ie; it++ ) {
-		if ( *it == '\0' )
-			break;
-		from += (char) *it;
+// 	assert( testCase.count( "spa_in_api_from" ) );
+	if ( testCase.count( "spa_in_api_from" )) {
+		std::string from;
+		for ( std::vector<uint8_t>::iterator it = testCase["spa_in_api_from"].begin(), ie = testCase["spa_in_api_from"].end(); it != ie; it++ ) {
+			if ( *it == '\0' )
+				break;
+			from += (char) *it;
+		}
+		return from.find( "sip:" ) == std::string::npos;
 	}
-	return from.find( "sip:" ) == std::string::npos;
+	return false;
 }
 
 // bool sipFromBadQuote( std::map<std::string, std::vector<uint8_t> > testCase ) {
@@ -84,27 +91,31 @@ bool sipFromNoScheme( std::map<std::string, std::vector<uint8_t> > testCase ) {
 // }
 
 bool sipToConfusedScheme( std::map<std::string, std::vector<uint8_t> > testCase ) {
-	assert( testCase.count( "spa_in_api_to" ) );
-	std::string to;
-	for ( std::vector<uint8_t>::iterator it = testCase["spa_in_api_to"].begin(), ie = testCase["spa_in_api_to"].end(); it != ie; it++ ) {
-		if ( *it == '\0' )
-			break;
-		to += (char) tolower( *it );
+// 	assert( testCase.count( "spa_in_api_to" ) );
+	if ( testCase.count( "spa_in_api_to" ) ) {
+		std::string to;
+		for ( std::vector<uint8_t>::iterator it = testCase["spa_in_api_to"].begin(), ie = testCase["spa_in_api_to"].end(); it != ie; it++ ) {
+			if ( *it == '\0' )
+				break;
+			to += (char) tolower( *it );
+		}
+		if ( to.compare( 0, 3, "sip" ) == 0 && to[4] == ':' )
+			return true;
+		if ( to.compare( 0, 4, "<sip" ) == 0 && to[5] == ':' )
+			return true;
 	}
-	if ( to.compare( 0, 3, "sip" ) == 0 && to[4] == ':' )
-		return true;
-	if ( to.compare( 0, 4, "<sip" ) == 0 && to[5] == ':' )
-		return true;
 	return false;
 }
 
 bool sipEventBadChar( std::map<std::string, std::vector<uint8_t> > testCase ) {
-	assert( testCase.count( "spa_in_api_event" ) );
-	for ( std::vector<uint8_t>::iterator it = testCase["spa_in_api_event"].begin(), ie = testCase["spa_in_api_event"].end(); it != ie; it++ ) {
-		if ( *it == '\0' )
-			break;
-		if ( ! isprint( *it ) )
-			return true;
+// 	assert( testCase.count( "spa_in_api_event" ) );
+	if ( testCase.count( "spa_in_api_event" ) ) {
+		for ( std::vector<uint8_t>::iterator it = testCase["spa_in_api_event"].begin(), ie = testCase["spa_in_api_event"].end(); it != ie; it++ ) {
+			if ( *it == '\0' )
+				break;
+			if ( ! isprint( *it ) )
+				return true;
+		}
 	}
 	return false;
 }
@@ -119,8 +130,8 @@ static struct {
 // 	{ spdylayNoDataLength, "BadInputs.spdylayNoDataLength" },
 	{ sipFromBadChar, "BadInputs.sipFromBadChar" },
 	{ sipFromNoScheme, "BadInputs.sipFromNoScheme" },
-// 	{ sipToConfusedScheme, "BadInputs.sipToConfusedScheme" },
-// 	{ sipEventBadChar, "BadInputs.sipEventBadChar" },
+	{ sipToConfusedScheme, "BadInputs.sipToConfusedScheme" },
+	{ sipEventBadChar, "BadInputs.sipEventBadChar" },
 	{ NULL, "BadInputs.default" },
 };
 
@@ -141,12 +152,12 @@ std::string testToStr( std::map<std::string, std::vector<uint8_t> > testCase ) {
 void displayStats() {
 	LOG() << "Breakdown:";
 	for( std::vector<unsigned long>::iterator it = resultCounts.begin(), ie = resultCounts.end(); it != ie; it++ )
-		LOG() << " " << *it;
-	LOG() << std::endl;
+		std::cerr << " " << *it;
+	std::cerr << std::endl;
 }
 
 int main(int argc, char **argv, char **envp) {
-	if ( argc < 1 || argc > 2 ) {
+	if ( argc < 2 || argc > 3 ) {
 		std::cerr << "Usage: " << argv[0] << " [-f] <input-file>" << std::endl;
 
 		return -1;
