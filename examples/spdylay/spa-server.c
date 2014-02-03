@@ -9,7 +9,7 @@
 
 #include <spa/spaRuntime.h>
 
-#define SERVER_PORT			6121
+#define SERVER_PORT			8000
 // #define SPDY_VERSION		SPDYLAY_PROTO_SPDY2
 // #define SPDY_VERSION		SPDYLAY_PROTO_SPDY3
 #define PUSH_METHOD			"GET"
