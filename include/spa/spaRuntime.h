@@ -87,7 +87,7 @@ SpaTag_t __attribute__((weak)) MsgReceived;
 	static uint8_t **initialValue = NULL; \
 	spa_input( &(var), sizeof( var ), "spa_in_msg_size_" name, &initialValue, "spa_init_in_msg_size_" name ); \
 	spa_runtime_call( spa_msg_input_size_handler, &(var), sizeof( var ), "spa_in_msg_size_" name ); \
-	klee_assume( var > 0 ); \
+	spa_assume( var > 0 ); \
 } while ( 0 )
 #define spa_msg_input_var( var ) spa_msg_input( &var, sizeof( var ), #var )
 #define spa_msg_output( var, size, maxSize, name ) do { __spa_output( (void *) var, size, maxSize, "spa_out_msg_" name, "spa_out_msg_size_" name ); spa_runtime_call( spa_msg_output_handler, var, size, maxSize, "spa_out_msg_" name ); } while ( 0 )

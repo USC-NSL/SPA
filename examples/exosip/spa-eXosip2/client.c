@@ -124,7 +124,7 @@ void __attribute__((noinline,used)) spa_SendOptionsFrom() {
 }
 
 void __attribute__((noinline,used)) spa_SendOptionsTo() {
-	spa_api_entry();
+// 	spa_api_entry();
 
 	init();
 	osip_message_t *msg;
@@ -154,11 +154,28 @@ void __attribute__((noinline,used)) spa_SendSubscribe() {
 	execute();
 }
 
+void __attribute__((noinline,used)) spa_SendRequest() {
+	spa_api_entry();
+
+	int requestType = 0;
+	spa_api_input_var( requestType );
+
+	switch ( requestType ) {
+		case 1: spa_SendInviteFrom(); break;
+		case 2: spa_SendInviteTo(); break;
+		case 3: spa_SendOptionsFrom(); break;
+		case 4: spa_SendOptionsTo(); break;
+		case 5: spa_SendSubscribe(); break;
+	}
+}
+
+
 int main( int argc, char **argv ) {
+	spa_SendRequest();
 // 	spa_SendInviteFrom();
 // 	spa_SendInviteTo();
 // 	spa_SendOptionsFrom();
-	spa_SendOptionsTo();
+// 	spa_SendOptionsTo();
 // 	spa_SendSubscribe();
 
 	return 0;
