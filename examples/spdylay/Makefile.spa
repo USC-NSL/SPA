@@ -26,7 +26,7 @@ all: $(TARGETS) $(BC_TARGETS) $(LOG_TARGETS) $(TEST_TARGETS)
 run-spa: BadInputs.tested
 
 %.exe: %.c $(DBG_LIBS)
-	$(CC) $^ -lz -o $@
+	$(CC) -I ../../include $^ -lz -o $@
 
 %.log.exe: %.c $(TEST_LIBS) $(LIB_SPA_LOG_MODULE)
 	$(CC) -DENABLE_SPA -lz -o $@ $^
