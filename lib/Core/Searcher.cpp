@@ -9,10 +9,10 @@
 
 #include "Common.h"
 
-#include "klee/Searcher.h"
+#include "Searcher.h"
 
 #include "CoreStats.h"
-#include "klee/Executor.h"
+#include "Executor.h"
 #include "PTree.h"
 #include "StatsTracker.h"
 
@@ -25,10 +25,15 @@
 #include "klee/Internal/ADT/RNG.h"
 #include "klee/Internal/Support/ModuleUtil.h"
 #include "klee/Internal/System/Time.h"
-
+#if LLVM_VERSION_CODE >= LLVM_VERSION(3, 3)
+#include "llvm/IR/Constants.h"
+#include "llvm/IR/Instructions.h"
+#include "llvm/IR/Module.h"
+#else
 #include "llvm/Constants.h"
 #include "llvm/Instructions.h"
 #include "llvm/Module.h"
+#endif
 #include "llvm/Support/CallSite.h"
 #include "llvm/Support/CFG.h"
 #include "llvm/Support/CommandLine.h"
@@ -73,6 +78,40 @@ void DFSSearcher::update(ExecutionState *current,
       bool ok = false;
 
       for (std::vector<ExecutionState*>::iterator it = states.begin(),
+             ie = states.end(); it != ie; ++it) {
+        if (es==*it) {
+          states.erase(it);
+          ok = true;
+          break;
+        }
+      }
+
+      assert(ok && "invalid state removed");
+    }
+  }
+}
+
+///
+
+ExecutionState &BFSSearcher::selectState() {
+  return *states.front();
+}
+
+void BFSSearcher::update(ExecutionState *current,
+                         const std::set<ExecutionState*> &addedStates,
+                         const std::set<ExecutionState*> &removedStates) {
+  states.insert(states.end(),
+                addedStates.begin(),
+                addedStates.end());
+  for (std::set<ExecutionState*>::const_iterator it = removedStates.begin(),
+         ie = removedStates.end(); it != ie; ++it) {
+    ExecutionState *es = *it;
+    if (es == states.front()) {
+      states.pop_front();
+    } else {
+      bool ok = false;
+
+      for (std::deque<ExecutionState*>::iterator it = states.begin(),
              ie = states.end(); it != ie; ++it) {
         if (es==*it) {
           states.erase(it);
@@ -154,12 +193,12 @@ double WeightedRandomSearcher::getWeight(ExecutionState *es) {
     return es->weight;
   case InstCount: {
     uint64_t count = theStatisticManager->getIndexedValue(stats::instructions,
-                                                          es->pc()->info->id);
+                                                          es->pc->info->id);
     double inv = 1. / std::max((uint64_t) 1, count);
     return inv * inv;
   }
   case CPInstCount: {
-    StackFrame &sf = es->stack().back();
+    StackFrame &sf = es->stack.back();
     uint64_t count = sf.callPathNode->statistics.getValue(stats::instructions);
     double inv = 1. / std::max((uint64_t) 1, count);
     return inv;
@@ -168,8 +207,8 @@ double WeightedRandomSearcher::getWeight(ExecutionState *es) {
     return (es->queryCost < .1) ? 1. : 1./es->queryCost;
   case CoveringNew:
   case MinDistToUncovered: {
-    uint64_t md2u = computeMinDistToUncovered(es->pc(),
-                                              es->stack().back().minDistToUncoveredOnReturn);
+    uint64_t md2u = computeMinDistToUncovered(es->pc,
+                                              es->stack.back().minDistToUncoveredOnReturn);
 
     double invMD2U = 1. / (md2u ? md2u : 10000);
     if (type==CoveringNew) {
@@ -262,7 +301,7 @@ BumpMergingSearcher::~BumpMergingSearcher() {
 
 Instruction *BumpMergingSearcher::getMergePoint(ExecutionState &es) {  
   if (mergeFunction) {
-    Instruction *i = es.pc()->inst;
+    Instruction *i = es.pc->inst;
 
     if (i->getOpcode()==Instruction::Call) {
       CallSite cs(cast<CallInst>(i));
@@ -282,7 +321,7 @@ entry:
       statesAtMerge.begin();
     ExecutionState *es = it->second;
     statesAtMerge.erase(it);
-    ++es->pc();
+    ++es->pc;
 
     baseSearcher->addState(es);
   }
@@ -303,10 +342,10 @@ entry:
         // hack, because we are terminating the state we need to let
         // the baseSearcher know about it again
         baseSearcher->addState(&es);
-        executor.terminateState(es, true);
+        executor.terminateState(es);
       } else {
         it->second = &es; // the bump
-        ++mergeWith->pc();
+        ++mergeWith->pc;
 
         baseSearcher->addState(mergeWith);
       }
@@ -340,7 +379,7 @@ MergingSearcher::~MergingSearcher() {
 
 Instruction *MergingSearcher::getMergePoint(ExecutionState &es) {
   if (mergeFunction) {
-    Instruction *i = es.pc()->inst;
+    Instruction *i = es.pc->inst;
 
     if (i->getOpcode()==Instruction::Call) {
       CallSite cs(cast<CallInst>(i));
@@ -415,13 +454,13 @@ ExecutionState &MergingSearcher::selectState() {
              ie = toErase.end(); it != ie; ++it) {
         std::set<ExecutionState*>::iterator it2 = toMerge.find(*it);
         assert(it2!=toMerge.end());
-        executor.terminateState(**it, true);
+        executor.terminateState(**it);
         toMerge.erase(it2);
       }
 
       // step past merge and toss base back in pool
       statesAtMerge.erase(statesAtMerge.find(base));
-      ++base->pc();
+      ++base->pc;
       baseSearcher->addState(base);
     }  
   }
@@ -456,7 +495,7 @@ void MergingSearcher::update(ExecutionState *current,
 
 BatchingSearcher::BatchingSearcher(Searcher *_baseSearcher,
                                    double _timeBudget,
-                                   unsigned _instructionBudget)
+                                   unsigned _instructionBudget) 
   : baseSearcher(_baseSearcher),
     timeBudget(_timeBudget),
     instructionBudget(_instructionBudget),

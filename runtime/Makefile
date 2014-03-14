@@ -15,12 +15,16 @@ LEVEL=..
 #
 # List all of the subdirectories that we will compile.
 #
-PARALLEL_DIRS=Intrinsic Runtest MaxAdversarialModule SpaTestModule SpaLogModule
+PARALLEL_DIRS=Intrinsic klee-libc Runtest MaxAdversarialModule SpaTestModule SpaLogModule
 
 include $(LEVEL)/Makefile.config
 
 ifeq ($(ENABLE_POSIX_RUNTIME),1)
 PARALLEL_DIRS += POSIX
+endif
+
+ifeq ($(ENABLE_UCLIBC),1)
+PARALLEL_DIRS += klee-uclibc
 endif
 
 include $(LEVEL)/Makefile.common

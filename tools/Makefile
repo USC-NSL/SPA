@@ -13,14 +13,14 @@
 LEVEL=..
 
 #
-# List all of the subdirectories that we will compile (without kleaver)
+# List all of the subdirectories that we will compile.
 #
-PARALLEL_DIRS=klee ktest-tool gen-random-bout klee-stats cloud9-worker cloud9-lb kleaver kleaver2smt max spa spaRR spaBadInputs spaE2ETest spaHandlerTest spaTest2Str spaAnalyzeTest
+PARALLEL_DIRS=klee kleaver ktest-tool gen-random-bout klee-stats max spa spaRR spaBadInputs spaE2ETest spaHandlerTest spaTest2Str spaAnalyzeTest
 
 include $(LEVEL)/Makefile.config
 
 ifeq ($(ENABLE_POSIX_RUNTIME),1)
-#PARALLEL_DIRS += klee-replay
+PARALLEL_DIRS += klee-replay
 endif
 
 include $(LEVEL)/Makefile.common
