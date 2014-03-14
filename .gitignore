@@ -1,0 +1,20 @@
+Release/
+Release+Asserts/
+Debug/
+Debug+Asserts/
+Output/
+
+cscope.*
+
+*.log
+*.sum
+*.out
+*.status
+
+*.config
+
+config.h
+site.exp
+
+# Site file for llvm-lit
+lit.site.cfg
