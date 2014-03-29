@@ -125,8 +125,8 @@ ExecutionState::ExecutionState(const ExecutionState& state)
     symbolics(state.symbolics),
     arrayNames(state.arrayNames),
     shadowObjects(state.shadowObjects),
-    incomingBBIndex(state.incomingBBIndex)
-	filtered(state.filtered)
+    incomingBBIndex(state.incomingBBIndex),
+    filtered(state.filtered)
 {
   for (unsigned int i=0; i<symbolics.size(); i++)
     symbolics[i].first->refCount++;

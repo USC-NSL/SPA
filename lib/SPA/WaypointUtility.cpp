@@ -6,7 +6,8 @@
 
 #include <sstream>
 
-#include "../../lib/Core/Memory.h"
+#include "../Core/Memory.h"
+#include <../Core/AddressSpace.h> 
 #include <klee/Internal/Module/KInstruction.h>
 
 #include <spa/SPA.h>
@@ -29,14 +30,14 @@ namespace SPA {
 		if ( ! addrMO )
 			return false;
 
-		const klee::ObjectState *addrOS = state->addressSpace().findObject( addrMO );
+		const klee::ObjectState *addrOS = state->addressSpace.findObject( addrMO );
 		assert( addrOS && "waypointsPtr not set." );
 
 		klee::ref<klee::Expr> addrExpr = addrOS->read( 0, klee::Context::get().getPointerWidth() );
 		assert( isa<klee::ConstantExpr>( addrExpr ) && "waypointsPtr is symbolic." );
-		klee::ref<klee::ConstantExpr> address = cast<klee::ConstantExpr>(addrExpr);
+		const klee::ref<klee::ConstantExpr> address = cast<klee::ConstantExpr>(addrExpr);
 		klee::ObjectPair op;
-		assert( ((klee::AddressSpace) state->addressSpace()).resolveOne( address, op ) && "waypointsPtr is not uniquely defined." );
+		assert( ((klee::AddressSpace) state->addressSpace).resolveOne( address, op ) && "waypointsPtr is not uniquely defined." );
 		const klee::MemoryObject *mo = op.first;
 		const klee::ObjectState *os = op.second;
 

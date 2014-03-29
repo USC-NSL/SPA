@@ -3,21 +3,27 @@ TOOLNAME = max
 
 include $(LEVEL)/Makefile.config
 
-STP_LIBS := stp_c_interface.a stp_AST.a stp_bitvec.a stp_constantbv.a stp_sat.a \
-        stp_simplifier.a
-        
+USEDLIBS = spa.a spaRuntime.a kleeCore.a kleeBasic.a kleeModule.a  kleaverSolver.a kleaverExpr.a kleeSupport.a 
+LINK_COMPONENTS = jit bitreader bitwriter ipo linker engine
 
-USEDLIBS = spa.a spaRuntime.a cloud9worker.a cloud9common.a kleeCore.a kleeModule.a kleaverSolver.a kleaverExpr.a kleeSupport.a kleeBasic.a cloud9instrum.a
-
-ifeq ($(ENABLE_EXT_STP),0)
-	USEDLIBS += $(STP_LIBS)
+ifeq ($(shell echo "$(LLVM_VERSION_MAJOR).$(LLVM_VERSION_MINOR) >= 3.3" | bc), 1)
+LINK_COMPONENTS += irreader
 endif
-
-LINK_COMPONENTS = jit engine bitreader bitwriter linker ipo
-
 include $(LEVEL)/Makefile.common
 
-LIBS += -lboost_system-mt -lboost_thread-mt -lprotobuf
-ifeq ($(ENABLE_EXT_STP),1)
-  LIBS += -lstp
+LIBS += -lstp
+
+ifeq ($(ENABLE_METASMT),1)
+  include $(METASMT_ROOT)/share/metaSMT/metaSMT.makefile
+  LD.Flags += -L$(METASMT_ROOT)/../../deps/Z3-4.1/lib \
+              -L$(METASMT_ROOT)/../../deps/boolector-1.5.118/lib \
+              -L$(METASMT_ROOT)/../../deps/minisat-git/lib/ \
+              -L$(METASMT_ROOT)/../../deps/boost-1_52_0/lib 
+  CXX.Flags += -DBOOST_HAS_GCC_TR1
+  CXX.Flags := $(filter-out -fno-exceptions,$(CXX.Flags)) 
+  LIBS += -lrt -lgomp -lboost_iostreams -lboost_thread -lboost_system -lmetaSMT -lz3 -lboolector -lminisat_core
+endif
+
+ifeq ($(STP_NEEDS_BOOST),1)
+	LIBS += $(UPSTREAM_STP_LINK_FLAGS)
 endif

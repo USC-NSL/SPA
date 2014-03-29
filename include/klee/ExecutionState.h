@@ -108,12 +108,16 @@ public:
 
   unsigned incomingBBIndex;
 
+  // SPA state
+  // Signals the path is no longer interesting and should be discarded.
+  bool filtered;
+
   std::string getFnAlias(std::string fn);
   void addFnAlias(std::string old_fn, std::string new_fn);
   void removeFnAlias(std::string fn);
   
 private:
-  ExecutionState() : fakeState(false), underConstrained(0), ptreeNode(0) {}
+  ExecutionState() : fakeState(false), underConstrained(0), ptreeNode(0), filtered(false) {}
 
 public:
   ExecutionState(KFunction *kf);

@@ -8,8 +8,7 @@
 #include <deque>
 #include <ctime>
 
-#include <klee/Searcher.h>
-#include <cloud9/worker/JobManager.h>
+#include <../Core/Searcher.h>
 
 #include <spa/StateUtility.h>
 #include <spa/FilteringEventHandler.h>
@@ -18,7 +17,6 @@
 namespace SPA {
 	class SpaSearcher : public klee::Searcher {
 	private:
-		cloud9::worker::JobManager *jobManager;
 		std::deque<StateUtility *> stateUtilities;
 		std::set<std::pair<std::vector<double>,klee::ExecutionState *> > states;
 		std::map<klee::ExecutionState *, std::vector<double> > oldUtilities;
@@ -36,8 +34,8 @@ namespace SPA {
 		void saveStates();
 
 	public:
-		explicit SpaSearcher( cloud9::worker::JobManager *_jobManager, std::deque<StateUtility *> _stateUtilities )
-			: jobManager( _jobManager ), stateUtilities( _stateUtilities ), statesDequeued( 0 ), statesFiltered( 0 ) { time( &lastSaved ); };
+		explicit SpaSearcher( std::deque<StateUtility *> _stateUtilities )
+			: stateUtilities( _stateUtilities ), statesDequeued( 0 ), statesFiltered( 0 ) { time( &lastSaved ); };
 		void addFilteringEventHandler( FilteringEventHandler *handler ) { filteringEventHandlers.push_back( handler ); }
 		~SpaSearcher() { };
 

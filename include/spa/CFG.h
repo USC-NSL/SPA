@@ -13,8 +13,8 @@ namespace SPA {
 #include <set>
 #include <ostream>
 
-#include "llvm/Module.h"
-#include "llvm/Instruction.h"
+#include "llvm/IR/Module.h"
+#include "llvm/IR/Instruction.h"
 
 #include "spa/CG.h"
 #include "spa/InstructionFilter.h"
@@ -23,7 +23,7 @@ namespace SPA {
 typedef enum {
 	FULL,
 	BASICBLOCK,
-	FUNCTION,
+	FUNCTION
 } compactness_t;
 
 namespace SPA {

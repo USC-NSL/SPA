@@ -49,8 +49,8 @@ namespace SPA {
 			return outputValues.count( name ) ? outputValues.find( name )->second.size() : 0;
 		}
 
-		const klee::ref<klee::Expr> getOutputValue( std::string name, int offset ) const {
-			assert( offset >=0 && offset < getOutputSize( name ) && "Symbol offset out of bounds." );
+		const klee::ref<klee::Expr> getOutputValue( std::string name, unsigned int offset ) const {
+			assert( offset < getOutputSize( name ) && "Symbol offset out of bounds." );
 			return outputValues.find( name )->second[offset];
 		}
 

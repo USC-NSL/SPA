@@ -9,10 +9,10 @@
 #undef PACKAGE_TARNAME
 #undef PACKAGE_VERSION
 
-#include "klee/Init.h"
 #include "klee/Expr.h"
 #include "klee/ExprBuilder.h"
 #include <klee/Solver.h>
+#include "../../lib/Core/Common.h"
 #include "../../lib/Core/Memory.h"
 
 #include "spa/CFG.h"
@@ -32,8 +32,13 @@
 #define MAX_HANDLER_NAME_TAG					"max_HandlerName"
 
 namespace {
+	std::string InputFile;
+
 	llvm::cl::opt<std::string> DumpCFG("dump-cfg", llvm::cl::desc(
 		"Dumps the analyzed program's annotated CFG to the given file, as a .dot file."));
+
+	llvm::cl::opt<std::string, true> InputFileOpt(llvm::cl::desc("<input bytecode>"),
+		llvm::cl::Positional, llvm::cl::location(InputFile), llvm::cl::init("-"));
 }
 
 class MaxPathFilter : public SPA::PathFilter {
@@ -46,24 +51,23 @@ public:
 
 int main(int argc, char **argv, char **envp) {
 	// Fill up every global cl::opt object declared in the program
-	cl::ParseCommandLineOptions( argc, argv, "Manipulation Attack eXplorer" );
-
-	llvm::Module *module = klee::loadByteCode();
-	module = klee::prepareModule( module );
+	llvm::cl::ParseCommandLineOptions( argc, argv, "Manipulation Attack eXplorer" );
 
 	std::ofstream pathFile( MAX_PATH_FILE, std::ios::out | std::ios::trunc );
 	assert( pathFile.is_open() && "Unable to open path file." );
-	SPA::SPA spa = SPA::SPA( module, pathFile );
+	SPA::SPA spa = SPA::SPA( InputFile, pathFile );
+
+	llvm::Module *module = spa.getModule();
 
 	// Pre-process the CFG and select useful paths.
-	CLOUD9_INFO( "Pruning CFG." );
+	klee::klee_message( "Pruning CFG." );
 
 	// Get full CFG and call-graph.
-	CLOUD9_DEBUG( "   Building CFG & CG." );
+	klee::klee_message( "   Building CFG & CG." );
 	SPA::CFG cfg( module );
 	SPA::CG cg( module );
 
-	CLOUD9_DEBUG( "   Creating CFG filter." );
+	klee::klee_message( "   Creating CFG filter." );
 	// Find message handling function entry points.
 	std::set<llvm::Instruction *> messageHandlers;
 	std::set<llvm::Instruction *> mhCallers = cg.getDefiniteCallers( module->getFunction( MAX_MESSAGE_HANDLER_ANNOTATION_FUNCTION ) );
@@ -87,7 +91,7 @@ int main(int argc, char **argv, char **envp) {
 	spa.addStateUtilityBack( &filter, false );
 
 	if ( DumpCFG.size() > 0 ) {
-		CLOUD9_DEBUG( "Dumping CFG to: " << DumpCFG.getValue() );
+		klee::klee_message( "Dumping CFG to: %s", DumpCFG.getValue().c_str() );
 		std::ofstream dotFile( DumpCFG.getValue().c_str() );
 		assert( dotFile.is_open() && "Unable to open dump file." );
 
@@ -106,12 +110,12 @@ int main(int argc, char **argv, char **envp) {
 	spa.setPathFilter( new MaxPathFilter() );
 	spa.setOutputTerminalPaths( false );
 
-	CLOUD9_DEBUG( "Starting SPA." );
+	klee::klee_message( "Starting SPA." );
 	spa.start();
 
 	pathFile.flush();
 	pathFile.close();
-	CLOUD9_DEBUG( "Done." );
+	klee::klee_message( "Done." );
 
 	return 0;
 }

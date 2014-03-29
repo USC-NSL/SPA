@@ -2,14 +2,14 @@
  * SPA - Systematic Protocol Analysis Framework
  */
 
+#include "spa/Util.h"
 #include "spa/CG.h"
 
 #include <vector>
 
-#include "llvm/Instructions.h"
-#include "llvm/Analysis/DebugInfo.h"
-
-#include "cloud9/Logger.h"
+#include "llvm/IR/Instructions.h"
+#include "llvm/DebugInfo.h"
+#include "../Core/Common.h"
 
 using namespace llvm;
 
@@ -28,7 +28,7 @@ namespace SPA {
 							definiteCallees[&*bbit].insert( ii->getCalledFunction() );
 							possibleCallees[&*bbit].insert( ii->getCalledFunction() );
 						} else {
-// 							CLOUD9_DEBUG( "Indirect function call at " << ii->getParent()->getParent()->getName().str() << ii->getDebugLoc().getLine() );
+// 							klee_message( "Indirect function call at " << ii->getParent()->getParent()->getName().str() << ii->getDebugLoc().getLine() );
 						}
 						definiteCallers[ii->getCalledFunction()].insert( &*bbit );
 						possibleCallers[ii->getCalledFunction()].insert( &*bbit );
@@ -38,7 +38,7 @@ namespace SPA {
 							definiteCallees[&*bbit].insert( ci->getCalledFunction() );
 							possibleCallees[&*bbit].insert( ci->getCalledFunction() );
 						} else {
-// 							CLOUD9_DEBUG( "Indirect function call at " << ci->getParent()->getParent()->getName().str() << ":" << ci->getDebugLoc().getLine() );
+// 							klee_message( "Indirect function call at " << ci->getParent()->getParent()->getName().str() << ":" << ci->getDebugLoc().getLine() );
 						}
 						definiteCallers[ci->getCalledFunction()].insert( &*bbit );
 						possibleCallers[ci->getCalledFunction()].insert( &*bbit );
@@ -68,7 +68,7 @@ namespace SPA {
 							break;
 					if ( i == argTypes.size() ) {
 						// Found possible match.
-// 						CLOUD9_DEBUG( "Resolving indirect call at " << (*iit)->getParent()->getParent()->getName().str() << ":" << (*iit)->getDebugLoc().getLine() << " to " << (*fit)->getName().str() );
+// 						klee_message( "Resolving indirect call at " << (*iit)->getParent()->getParent()->getName().str() << ":" << (*iit)->getDebugLoc().getLine() << " to " << (*fit)->getName().str() );
 						possibleCallers[*fit].insert( *iit );
 						possibleCallees[*iit].insert( *fit );
 					}
@@ -79,11 +79,11 @@ namespace SPA {
 		// Warn about functions with no callers.
 		for ( std::map<llvm::Function *,std::set<llvm::Instruction *> >::iterator it = possibleCallers.begin(), ie = possibleCallers.end(); it != ie; it++ )
 			if ( it->second.empty() )
-				CLOUD9_INFO( "Found function without any callers: " << it->first->getName().str() );
+				klee::klee_message( "Found function without any callers: %s", it->first->getName().str().c_str() );
 		// Warn about indirect calls without callees.
 		for ( std::map<llvm::Instruction *,std::set<llvm::Function *> >::iterator it = possibleCallees.begin(), ie = possibleCallees.end(); it != ie; it++ )
 			if ( it->second.empty() )
-				CLOUD9_INFO( "Found call-site without any callees: " << it->first );
+				klee::klee_message( "Found call-site without any callees: %s", debugLocation(it->first).c_str() );
 	}
 
 	void CG::dump( std::ostream &dotFile ) {

@@ -6,6 +6,8 @@
 #include <spa/TargetDistanceUtility.h>
 
 #include <sstream>
+#include <llvm/IR/Function.h>
+#include <../Core/Common.h>
 #include <klee/Internal/Module/KInstruction.h>
 
 
@@ -52,7 +54,7 @@ namespace SPA {
 		std::set<llvm::Function *> pathFunctions;
 		std::map<llvm::Function *, double> functionDepths;
 
-		CLOUD9_DEBUG( "      Processing direct paths." );
+		klee::klee_message( "      Processing direct paths." );
 		while ( ! worklist.empty() ) {
 			std::set<llvm::Instruction *>::iterator it = worklist.begin(), ie;
 			llvm::Instruction *inst = *it;
@@ -87,9 +89,9 @@ namespace SPA {
 			if ( pathFunctions.count( (*it)->getParent()->getParent() ) && ! distances.count( *it ) )
 				distances[*it] = std::pair<double, bool>( +INFINITY, true );
 
-		CLOUD9_DEBUG( "      Processing indirect paths." );
+		klee::klee_message( "      Processing indirect paths." );
 		std::set<llvm::Function *> spaReturnFunctions;
-		Function *fn = module->getFunction( SPA_RETURN_ANNOTATION_FUNCTION );
+		llvm::Function *fn = module->getFunction( SPA_RETURN_ANNOTATION_FUNCTION );
 		if ( fn ) {
 			std::set<llvm::Instruction *> spaReturnSuccessors = cg.getDefiniteCallers( fn );
 			for ( std::set<llvm::Instruction *>::iterator it = spaReturnSuccessors.begin(), ie = spaReturnSuccessors.end(); it != ie; it++ )
@@ -100,12 +102,12 @@ namespace SPA {
 				distances[inst] = std::pair<double, bool>( 0, false );
 				spaReturnSuccessors.insert( cfg.getSuccessors( inst ).begin(), cfg.getSuccessors( inst ).end() );
 				if ( ! spaReturnFunctions.count( inst->getParent()->getParent() ) ) {
-					CLOUD9_DEBUG( "      Found spa_return in function: " << inst->getParent()->getParent()->getName().str() << "." );
+					klee::klee_message( "      Found spa_return in function: %s.", inst->getParent()->getParent()->getName().str().c_str() );
 					spaReturnFunctions.insert( inst->getParent()->getParent() );
 				}
 			}
 		} else {
-			CLOUD9_DEBUG( "      Found no spa_returns." );
+			klee::klee_message( "      Found no spa_returns." );
 		}
 
 		// Find the depths of all instructions in indirect path functions without spa_returns.
@@ -180,11 +182,11 @@ namespace SPA {
 	double TargetDistanceUtility::getUtility( klee::ExecutionState *state ) {
 		assert( state );
 
-		double result = - getDistance( state->pc()->inst );
-		if ( isFinal( state->pc()->inst ) )
+		double result = - getDistance( state->pc->inst );
+		if ( isFinal( state->pc->inst ) )
 			return result > -INFINITY ? result : UTILITY_PROCESS_LAST;
 
-		for ( klee::ExecutionState::stack_ty::const_reverse_iterator it = state->stack().rbegin(), ie = state->stack().rend(); it != ie && it->caller; it++ ) {
+		for ( klee::ExecutionState::stack_ty::const_reverse_iterator it = state->stack.rbegin(), ie = state->stack.rend(); it != ie && it->caller; it++ ) {
 			result -= getDistance( it->caller->inst );
 			if ( isFinal( it->caller->inst ) )
 				return result > -INFINITY ? result : UTILITY_PROCESS_LAST;

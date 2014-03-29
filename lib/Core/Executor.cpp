@@ -654,6 +654,7 @@ void Executor::branch(ExecutionState &state,
 
     // XXX do proper balance or keep random?
     result.push_back(&state);
+    fireStateBranching(&state);
     for (unsigned i=1; i<N; ++i) {
       ExecutionState *es = result[theRNG.getInt32() % i];
       ExecutionState *ns = es->branch();
@@ -664,6 +665,8 @@ void Executor::branch(ExecutionState &state,
         processTree->split(es->ptreeNode, ns, es);
       ns->ptreeNode = res.first;
       es->ptreeNode = res.second;
+
+      fireStateBranched(ns, es, 0);
     }
   }
 
@@ -869,6 +872,8 @@ Executor::fork(ExecutionState &current, ref<Expr> condition, bool isInternal) {
 
     return StatePair(0, &current);
   } else {
+    fireStateBranching(&current);
+
     TimerStatIncrementer timer(stats::forkTime);
     ExecutionState *falseState, *trueState = &current;
 
@@ -919,6 +924,11 @@ Executor::fork(ExecutionState &current, ref<Expr> condition, bool isInternal) {
       processTree->split(current.ptreeNode, falseState, trueState);
     falseState->ptreeNode = res.first;
     trueState->ptreeNode = res.second;
+
+    if (&current == falseState)
+      fireStateBranched(trueState, falseState, 1);
+    else
+      fireStateBranched(falseState, trueState, 0);
 
     if (!isInternal) {
       if (pathWriter) {
@@ -1164,6 +1174,8 @@ void Executor::executeGetValue(ExecutionState &state,
 }
 
 void Executor::stepInstruction(ExecutionState &state) {
+  fireStep(&state);
+
   if (DebugPrintInstructions) {
     printFileLine(state, state.pc);
     std::cerr << std::setw(10) << stats::instructions << " ";
@@ -1185,6 +1197,8 @@ void Executor::executeCall(ExecutionState &state,
                            KInstruction *ki,
                            Function *f,
                            std::vector< ref<Expr> > &arguments) {
+  fireCall(&state);
+
   Instruction *i = ki->inst;
   if (f && f->isDeclaration()) {
     switch(f->getIntrinsicID()) {
@@ -1429,7 +1443,9 @@ void Executor::executeInstruction(ExecutionState &state, KInstruction *ki) {
     Instruction *caller = kcaller ? kcaller->inst : 0;
     bool isVoidReturn = (ri->getNumOperands() == 0);
     ref<Expr> result = ConstantExpr::alloc(0, Expr::Bool);
-    
+
+    fireReturn(&state);
+
     if (!isVoidReturn) {
       result = eval(ki, 0, state).value;
     }
@@ -2570,7 +2586,10 @@ void Executor::run(ExecutionState &initialState) {
       goto dump;
   }
 
-  searcher = constructUserSearcher(*this);
+  if (interpreterOpts.searcher)
+		searcher = interpreterOpts.searcher;
+	else
+		searcher = constructUserSearcher(*this);
 
   searcher->update(0, states, std::set<ExecutionState*>());
 
@@ -2692,6 +2711,8 @@ std::string Executor::getAddressInfo(ExecutionState &state,
 }
 
 void Executor::terminateState(ExecutionState &state) {
+  fireStateDestroy(&state);
+
   if (replayOut && replayPosition!=replayOut->numObjects) {
     klee_warning_once(replayOut, 
                       "replay did not consume all objects in test input.");

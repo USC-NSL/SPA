@@ -11,12 +11,13 @@
 #undef PACKAGE_TARNAME
 #undef PACKAGE_VERSION
 
-#include "klee/Init.h"
 #include "klee/Expr.h"
 #include "klee/ExprBuilder.h"
 #include <klee/Solver.h>
+#include "../../lib/Core/Common.h"
 #include "../../lib/Core/Memory.h"
 
+#include "spa/Util.h"
 #include "spa/CFG.h"
 #include "spa/CG.h"
 #include "spa/SPA.h"
@@ -30,9 +31,9 @@
 #include "spa/FilteredUtility.h"
 #include "spa/PathFilter.h"
 
-extern std::string InputFile;
-
 namespace {
+	std::string InputFile;
+
 	llvm::cl::opt<std::string> DumpCFG( "dump-cfg",
 		llvm::cl::desc( "Dumps the analyzed program's annotated CFG to the given file, as a .dot file." ) );
 
@@ -53,10 +54,13 @@ namespace {
 
 	llvm::cl::opt<bool> Client( "client",
 		llvm::cl::desc( "Explores client paths (API to packet output)." ),
-		cl::init( false ) );
+		llvm::cl::init( false ) );
 
 	llvm::cl::opt<bool> Server( "server",
 		llvm::cl::desc( "Explores server paths (packet input to API)." ) );
+
+	llvm::cl::opt<std::string, true> InputFileOpt(llvm::cl::desc("<input bytecode>"),
+		llvm::cl::Positional, llvm::cl::location(InputFile), llvm::cl::init("-"));
 }
 
 class SpaClientPathFilter : public SPA::PathFilter {
@@ -82,51 +86,50 @@ public:
 
 int main(int argc, char **argv, char **envp) {
 	// Fill up every global cl::opt object declared in the program
-	cl::ParseCommandLineOptions( argc, argv, "Systematic Protocol Analyzer - Request Response" );
+	llvm::cl::ParseCommandLineOptions( argc, argv, "Systematic Protocol Analyzer - Request Response" );
 
 	assert( ((! Client) != (! Server)) && "Must specify either --client or --server." );
-
-	llvm::Module *module = klee::loadByteCode();
-	module = klee::prepareModule( module );
 
 	std::string pathFileName = PathFile;
 	if ( pathFileName == "" )
 		pathFileName = InputFile + (Client ? ".client" : ".server") + ".paths";
-	CLOUD9_INFO( "Writing output to: " << pathFileName );
+	klee::klee_message( "Writing output to: %s", pathFileName.c_str() );
 	std::ofstream pathFile( pathFileName.c_str(), std::ios::out | std::ios::app );
 	assert( pathFile.is_open() && "Unable to open path file." );
-	SPA::SPA spa = SPA::SPA( module, pathFile );
+	SPA::SPA spa = SPA::SPA( InputFile, pathFile );
+
+	llvm::Module *module = spa.getModule();
 
 	// Pre-process the CFG and select useful paths.
-	CLOUD9_INFO( "Pruning CFG." );
+	klee::klee_message( "Pruning CFG." );
 
 	// Get full CFG and call-graph.
 	SPA::CFG cfg( module );
 	SPA::CG cg( module );
 
 	if ( InitValueFile.size() > 0 ) {
-		CLOUD9_DEBUG( "   Setting up initial values." );
-		Function *fn = module->getFunction( SPA_INPUT_ANNOTATION_FUNCTION );
+		klee::klee_message( "   Setting up initial values." );
+		llvm::Function *fn = module->getFunction( SPA_INPUT_ANNOTATION_FUNCTION );
 		assert( fn );
 		std::map<std::string,std::pair<llvm::Value *,size_t> > initValueVars;
 		for ( std::set<llvm::Instruction *>::iterator it = cg.getDefiniteCallers( fn ).begin(), ie = cg.getDefiniteCallers( fn ).end(); it != ie; it++ ) {
-			const CallInst *callInst;
-			assert( callInst = dyn_cast<CallInst>( *it ) );
+			const llvm::CallInst *callInst;
+			assert( callInst = dyn_cast<llvm::CallInst>( *it ) );
 			assert( callInst->getNumArgOperands() == 5 );
 			const llvm::ConstantInt *ci;
 			assert( ci = dyn_cast<llvm::ConstantInt>( callInst->getArgOperand( 1 ) ) );
 			uint64_t size = ci->getValue().getLimitedValue();
 			llvm::User *u;
-			assert( u = dyn_cast<User>( callInst->getArgOperand( 2 ) ) );
+			assert( u = dyn_cast<llvm::User>( callInst->getArgOperand( 2 ) ) );
 			llvm::GlobalVariable *gv;
-			assert( gv = dyn_cast<GlobalVariable>( u->getOperand( 0 ) ) );
-			llvm::ConstantArray *ca;
-			assert( ca = dyn_cast<ConstantArray>( gv->getInitializer() ) );
+			assert( gv = dyn_cast<llvm::GlobalVariable>( u->getOperand( 0 ) ) );
+			llvm::ConstantDataArray *cda;
+			assert( cda = dyn_cast<llvm::ConstantDataArray>( gv->getInitializer() ) );
 			// string reconversion to fix LLVM bug (includes null in std::string).
-			std::string name = ca->getAsString().c_str();
+			std::string name = cda->getAsString();
 			llvm::Value *var = callInst->getArgOperand( 3 );
 
-			CLOUD9_INFO( "      Found input " << name << "[" << size << "]." );
+			klee::klee_message( "      Found input %s[%ld].", name.c_str(), size );
 			assert( initValueVars.count( name ) == 0 && "Input multiply declared.");
 			initValueVars[name] = std::pair<llvm::Value *,size_t>( var, size );
 		}
@@ -156,7 +159,7 @@ int main(int argc, char **argv, char **envp) {
 					}
 				}
 
-				CLOUD9_DEBUG( "      Found initial value for " << name << "[" << value.size() << "]" << "." );
+				klee::klee_message( "      Found initial value for %s[%ld].", name.c_str(), value.size() );
 				assert( initValueVars.count( name ) > 0 && "Initial value defined but not used." );
 				assert( initValueVars[name].second >= value.size() && "Initial value doesn't fit in variable." );
 
@@ -167,25 +170,25 @@ int main(int argc, char **argv, char **envp) {
 				initValues[initValueVars[name].first].push_back( value );
 			} else {
 				if ( ! initValues.empty() ) {
-					CLOUD9_INFO( "      Adding set of " << initValues.size() << " initial values." );
+					klee::klee_message( "      Adding set of %ld initial values.", initValues.size() );
 					spa.addInitialValues( initValues );
 					initValues.clear();
 				}
 			}
 		}
 		if ( ! initValues.empty() ) {
-			CLOUD9_INFO( "      Adding initial value set." );
+			klee::klee_message( "      Adding initial value set." );
 			spa.addInitialValues( initValues );
 		}
 	} else {
-		CLOUD9_INFO( "      No initial input values given, leaving symbolic." );
+		klee::klee_message( "      No initial input values given, leaving symbolic." );
 		spa.addSymbolicInitialValues();
 	}
 
 // 	// Find seed IDs.
 // 	std::set<unsigned int> seedIDs;
 // 	if ( SaveSeeds ) {
-// 		CLOUD9_DEBUG( "   Setting up path seed generation." );
+// 		klee::klee_message( "   Setting up path seed generation." );
 // 		Function *fn = module->getFunction( SPA_SEED_ANNOTATION_FUNCTION );
 // 		assert( fn );
 // 		for ( std::set<llvm::Instruction *>::iterator it = cg.getDefiniteCallers( fn ).begin(), ie = cg.getDefiniteCallers( fn ).end(); it != ie; it++ ) {
@@ -196,7 +199,7 @@ int main(int argc, char **argv, char **envp) {
 // 			assert( constInt = dyn_cast<llvm::ConstantInt>( callInst->getArgOperand( 0 ) ) );
 // 			uint64_t id = constInt->getValue().getLimitedValue();
 // 			if ( ! seedIDs.count( id ) )
-// 				CLOUD9_INFO( "      Found seed id: " << id );
+// 				klee::klee_message( "      Found seed id: " << id );
 // 			seedIDs.insert( id );
 // 		}
 // 		assert( ! seedIDs.empty() );
@@ -205,11 +208,11 @@ int main(int argc, char **argv, char **envp) {
 	// Find entry handlers.
 	std::set<llvm::Instruction *> entryPoints;
 	if ( Client ) {
-		Function *fn = module->getFunction( SPA_API_ANNOTATION_FUNCTION );
+		llvm::Function *fn = module->getFunction( SPA_API_ANNOTATION_FUNCTION );
 		if ( fn ) {
 			std::set<llvm::Instruction *> apiCallers = cg.getDefiniteCallers( fn );
 			for ( std::set<llvm::Instruction *>::iterator cit = apiCallers.begin(), cie = apiCallers.end(); cit != cie; cit++ ) {
-				CLOUD9_DEBUG( "   Found API entry function: " << (*cit)->getParent()->getParent()->getName().str() );
+				klee::klee_message( "   Found API entry function: %s", (*cit)->getParent()->getParent()->getName().str().c_str() );
 // 				if ( seedIDs.empty() )
 					spa.addEntryFunction( (*cit)->getParent()->getParent() );
 // 				else
@@ -218,7 +221,7 @@ int main(int argc, char **argv, char **envp) {
 				entryPoints.insert( *cit );
 			}
 		} else {
-			CLOUD9_INFO( "   API annotation function not present in module." );
+			klee::klee_message( "   API annotation function not present in module." );
 		}
 		fn = module->getFunction( SPA_MESSAGE_HANDLER_ANNOTATION_FUNCTION );
 		if ( fn ) {
@@ -226,19 +229,19 @@ int main(int argc, char **argv, char **envp) {
 			if ( ! msgCallers.empty() )
 				spa.newEntryLevel();
 			for ( std::set<llvm::Instruction *>::iterator cit = msgCallers.begin(), cie = msgCallers.end(); cit != cie; cit++ ) {
-				CLOUD9_DEBUG( "   Found Message entry function: " << (*cit)->getParent()->getParent()->getName().str() );
+				klee::klee_message( "   Found Message entry function: %s", (*cit)->getParent()->getParent()->getName().str().c_str() );
 				spa.addEntryFunction( (*cit)->getParent()->getParent() );
 				entryPoints.insert( *cit );
 			}
 		} else {
-			CLOUD9_INFO( "   Message annotation function not present in module." );
+			klee::klee_message( "   Message annotation function not present in module." );
 		}
 	} else if ( Server ) {
-		Function *fn = module->getFunction( SPA_MESSAGE_HANDLER_ANNOTATION_FUNCTION );
+		llvm::Function *fn = module->getFunction( SPA_MESSAGE_HANDLER_ANNOTATION_FUNCTION );
 		if ( fn ) {
 			std::set<llvm::Instruction *> mhCallers = cg.getDefiniteCallers( fn );
 			for ( std::set<llvm::Instruction *>::iterator cit = mhCallers.begin(), cie = mhCallers.end(); cit != cie; cit++ ) {
-				CLOUD9_DEBUG( "   Found message handler entry function: " << (*cit)->getParent()->getParent()->getName().str() );
+				klee::klee_message( "   Found message handler entry function: %s", (*cit)->getParent()->getParent()->getName().str().c_str() );
 // 				if ( seedIDs.empty() )
 					spa.addEntryFunction( (*cit)->getParent()->getParent() );
 // 				else
@@ -247,7 +250,7 @@ int main(int argc, char **argv, char **envp) {
 				entryPoints.insert( *cit );
 			}
 		} else {
-			CLOUD9_INFO( "   Message handler annotation function not present in module." );
+			klee::klee_message( "   Message handler annotation function not present in module." );
 		}
 	}
 	assert( (! entryPoints.empty()) && "No APIs or message handlers found." );
@@ -257,7 +260,7 @@ int main(int argc, char **argv, char **envp) {
 	cg = SPA::CG( module );
 
 	if ( DumpCG.size() > 0 ) {
-		CLOUD9_DEBUG( "Dumping CG to: " << DumpCG.getValue() );
+		klee::klee_message( "Dumping CG to: %s", DumpCG.getValue().c_str() );
 		std::ofstream dotFile( DumpCG.getValue().c_str() );
 		assert( dotFile.is_open() && "Unable to open dump file." );
 
@@ -269,42 +272,42 @@ int main(int argc, char **argv, char **envp) {
 	}
 
 	// Find checkpoints.
-	CLOUD9_DEBUG( "   Setting up path checkpoints." );
-	Function *fn = module->getFunction( SPA_CHECKPOINT_ANNOTATION_FUNCTION );
+	klee::klee_message( "   Setting up path checkpoints." );
+	llvm::Function *fn = module->getFunction( SPA_CHECKPOINT_ANNOTATION_FUNCTION );
 	std::set<llvm::Instruction *> checkpoints;
 	if ( fn )
 		checkpoints = cg.getDefiniteCallers( fn );
 	else
-		CLOUD9_INFO( "   Checkpoint annotation function not present in module." );
+		klee::klee_message( "   Checkpoint annotation function not present in module." );
 	assert( ! checkpoints.empty() && "No checkpoints found." );
 
-	CLOUD9_DEBUG( "   Setting up path waypoints." );
+	klee::klee_message( "   Setting up path waypoints." );
 	fn = module->getFunction( SPA_WAYPOINT_ANNOTATION_FUNCTION );
 	std::map<unsigned int, std::set<llvm::Instruction *> > waypoints;
 	if ( fn ) {
 		for ( std::set<llvm::Instruction *>::iterator it = cg.getDefiniteCallers( fn ).begin(), ie = cg.getDefiniteCallers( fn ).end(); it != ie; it++ ) {
-			const CallInst *callInst;
-			CLOUD9_INFO( "Found waypoint in function: " << (*it)->getParent()->getParent()->getName().str() );
-			assert( callInst = dyn_cast<CallInst>( *it ) );
+			const llvm::CallInst *callInst;
+			assert( callInst = dyn_cast<llvm::CallInst>( *it ) );
 			if ( callInst->getNumArgOperands() != 1 ) {
-				CLOUD9_DEBUG( "Arguments: " << callInst->getNumArgOperands() );
+				klee::klee_message( "      Found waypoint at %s", SPA::debugLocation(*it).c_str() );
+				klee::klee_message( "Arguments: %d", callInst->getNumArgOperands() );
 				assert( false && "Waypoint annotation function has wrong number of arguments." );
 			}
 			const llvm::ConstantInt *constInt;
 			assert( constInt = dyn_cast<llvm::ConstantInt>( callInst->getArgOperand( 0 ) ) );
 			uint64_t id = constInt->getValue().getLimitedValue();
-			CLOUD9_INFO( "      Found waypoint with id " << id << " at " << (*it)->getParent()->getParent()->getName().str() << ":" << (*it)->getDebugLoc().getLine() );
+			klee::klee_message( "      Found waypoint with id %ld at %s", id, SPA::debugLocation(*it).c_str() );
 			waypoints[id].insert( *it );
 		}
 	} else {
-		CLOUD9_INFO( "   Waypoint annotation function not present in module." );
+		klee::klee_message( "   Waypoint annotation function not present in module." );
 	}
 
 	for ( std::set<llvm::Instruction *>::iterator it = checkpoints.begin(), ie = checkpoints.end(); it != ie; it++ )
 		spa.addCheckpoint( *it );
 
 	// Create instruction filter.
-	CLOUD9_DEBUG( "   Creating CFG filter." );
+	klee::klee_message( "   Creating CFG filter." );
 	SPA::CFGBackwardFilter *filter = new SPA::CFGBackwardFilter( cfg, cg, checkpoints );
 // 	if ( Client )
 // 		spa.addStateUtilityBack( filter, false );
@@ -312,7 +315,7 @@ int main(int argc, char **argv, char **envp) {
 		spa.addStateUtilityBack( filter, true );
 	for ( std::set<llvm::Instruction *>::iterator it = entryPoints.begin(), ie = entryPoints.end(); it != ie; it++ ) {
 		if ( ! filter->checkInstruction( *it ) ) {
-			CLOUD9_DEBUG( "Entry point at function " << (*it)->getParent()->getParent()->getName().str() << " is not included in filter." );
+			klee::klee_message( "Entry point at function %s is not included in filter.", (*it)->getParent()->getParent()->getName().str().c_str() );
 			assert( false && "Entry point is filtered out." );
 		}
 	}
@@ -320,13 +323,13 @@ int main(int argc, char **argv, char **envp) {
 	// Create waypoint utility.
 	SPA::WaypointUtility *waypointUtility = NULL;
 	if ( ! waypoints.empty() ) {
-		CLOUD9_DEBUG( "   Creating waypoint utility." );
+		klee::klee_message( "   Creating waypoint utility." );
 		waypointUtility = new SPA::WaypointUtility( cfg, cg, waypoints, true );
 		spa.addStateUtilityBack( waypointUtility, false );
 	}
 
 	// Create state utility function.
-	CLOUD9_DEBUG( "   Creating state utility function." );
+	klee::klee_message( "   Creating state utility function." );
 	
 	spa.addStateUtilityBack( new SPA::FilteredUtility(), false );
 // 	spa.addStateUtilityBack( new SPA::DepthUtility(), false );
@@ -349,7 +352,7 @@ int main(int argc, char **argv, char **envp) {
 	spa.addStateUtilityBack( new SPA::DepthUtility(), false );
 
 	if ( DumpCFG.size() > 0 ) {
-		CLOUD9_DEBUG( "Dumping CFG to: " << DumpCFG.getValue() );
+		klee::klee_message( "Dumping CFG to: %s", DumpCFG.getValue().c_str() );
 		std::ofstream dotFile( DumpCFG.getValue().c_str() );
 		assert( dotFile.is_open() && "Unable to open dump file." );
 
@@ -375,12 +378,12 @@ int main(int argc, char **argv, char **envp) {
 	}
 
 
-	CLOUD9_DEBUG( "Starting SPA." );
+	klee::klee_message( "Starting SPA." );
 	spa.start();
 
 	pathFile.flush();
 	pathFile.close();
-	CLOUD9_DEBUG( "Done." );
+	klee::klee_message( "Done." );
 
 	return 0;
 }

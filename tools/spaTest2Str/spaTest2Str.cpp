@@ -3,6 +3,7 @@
 #include <fstream>
 #include <sstream>
 #include <cstdlib>
+#include <unistd.h>
 
 
 std::string escapeChar( unsigned char c ) {

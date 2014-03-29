@@ -25,6 +25,7 @@ namespace klee {
 class ExecutionState;
 class Interpreter;
 class TreeStreamWriter;
+class Searcher;
 
 class InterpreterHandler {
 public:
@@ -41,6 +42,16 @@ public:
   virtual void processTestCase(const ExecutionState &state,
                                const char *err, 
                                const char *suffix) = 0;
+};
+
+class InterpreterEventListener {
+public:
+  virtual void onStateBranching(klee::ExecutionState *state) = 0;
+  virtual void onStateBranched(klee::ExecutionState *kState, klee::ExecutionState *parent, int index) = 0;
+  virtual void onStep(klee::ExecutionState *kState) = 0;
+  virtual void onCall(klee::ExecutionState *kState) = 0;
+  virtual void onReturn(klee::ExecutionState *kState) = 0;
+  virtual void onStateDestroy(klee::ExecutionState *kState) = 0;
 };
 
 class Interpreter {
@@ -74,9 +85,12 @@ public:
     /// symbolic values. This is used to test the correctness of the
     /// symbolic execution on concrete programs.
     unsigned MakeConcreteSymbolic;
+		//
+		Searcher *searcher;
 
     InterpreterOptions()
-      : MakeConcreteSymbolic(false)
+      : MakeConcreteSymbolic(false),
+				searcher(NULL)
     {}
   };
 
@@ -86,6 +100,33 @@ protected:
   Interpreter(const InterpreterOptions &_interpreterOpts)
     : interpreterOpts(_interpreterOpts)
   {}
+
+  std::set<InterpreterEventListener *> eventListeners;
+
+  void fireStateBranching(klee::ExecutionState *state) {
+    for (std::set<InterpreterEventListener *>::iterator it = eventListeners.begin(), ie = eventListeners.end(); it != ie; it++)
+      (*it)->onStateBranching(state);
+  }
+  void fireStateBranched(klee::ExecutionState *kState, klee::ExecutionState *parent, int index) {
+    for (std::set<InterpreterEventListener *>::iterator it = eventListeners.begin(), ie = eventListeners.end(); it != ie; it++)
+      (*it)->onStateBranched(kState, parent, index);
+  }
+  void fireStep(klee::ExecutionState *kState) {
+    for (std::set<InterpreterEventListener *>::iterator it = eventListeners.begin(), ie = eventListeners.end(); it != ie; it++)
+      (*it)->onStep(kState);
+  }
+  void fireCall(klee::ExecutionState *kState) {
+    for (std::set<InterpreterEventListener *>::iterator it = eventListeners.begin(), ie = eventListeners.end(); it != ie; it++)
+      (*it)->onCall(kState);
+  }
+  void fireReturn(klee::ExecutionState *kState) {
+    for (std::set<InterpreterEventListener *>::iterator it = eventListeners.begin(), ie = eventListeners.end(); it != ie; it++)
+      (*it)->onReturn(kState);
+  }
+  void fireStateDestroy(klee::ExecutionState *kState) {
+    for (std::set<InterpreterEventListener *>::iterator it = eventListeners.begin(), ie = eventListeners.end(); it != ie; it++)
+      (*it)->onStateDestroy(kState);
+  }
 
 public:
   virtual ~Interpreter() {}
@@ -151,6 +192,9 @@ public:
 
   virtual void getCoveredLines(const ExecutionState &state,
                                std::map<const std::string*, std::set<unsigned> > &res) = 0;
+
+  void addInterpreterEventListener(InterpreterEventListener *listener) { eventListeners.insert(listener); }
+  void removeInterpreterEventListener(InterpreterEventListener *listener) { eventListeners.erase(listener); }
 };
 
 } // End klee namespace

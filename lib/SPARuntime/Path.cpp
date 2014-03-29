@@ -24,14 +24,14 @@ namespace SPA {
 			symbols.insert( it->second );
 
 			if ( name.compare( 0, strlen( SPA_TAG_PREFIX ), SPA_TAG_PREFIX ) == 0 ) {
-				const klee::ObjectState *addrOS = kState->addressSpace().findObject( (*it).first );
+				const klee::ObjectState *addrOS = kState->addressSpace.findObject( (*it).first );
 				assert( addrOS && "Tag not set." );
 
 				klee::ref<klee::Expr> addrExpr = addrOS->read( 0, klee::Context::get().getPointerWidth() );
 				assert( isa<klee::ConstantExpr>( addrExpr ) && "Tag address is symbolic." );
 				klee::ref<klee::ConstantExpr> address = cast<klee::ConstantExpr>(addrExpr);
 				klee::ObjectPair op;
-				assert( kState->addressSpace().resolveOne( address, op ) && "Tag address is not uniquely defined." );
+				assert( kState->addressSpace.resolveOne( address, op ) && "Tag address is not uniquely defined." );
 				const klee::MemoryObject *mo = op.first;
 				const klee::ObjectState *os = op.second;
 
@@ -53,19 +53,19 @@ namespace SPA {
 
 				name = name.substr( strlen( SPA_TAG_PREFIX ) );
 				tags[name] = std::string( buf );
-// 				CLOUD9_DEBUG( "	Tag: " << name << " = " << buf );
+// 				klee_message( "	Tag: " << name << " = " << buf );
 				delete buf;
 			} else {
 				symbolNames[name] = it->second;
 
 				// Symbolic value.
 				if ( name.compare( 0, strlen( SPA_OUTPUT_PREFIX ), SPA_OUTPUT_PREFIX ) == 0 || name.compare( 0, strlen( SPA_STATE_PREFIX ), SPA_STATE_PREFIX ) == 0 || name.compare( 0, strlen( SPA_INIT_PREFIX ), SPA_INIT_PREFIX ) == 0 )
-					if ( const klee::ObjectState *os = kState->addressSpace().findObject( (*it).first ) )
+					if ( const klee::ObjectState *os = kState->addressSpace.findObject( (*it).first ) )
 						for ( unsigned int i = 0; i < os->size; i++ )
 							outputValues[name].push_back( os->read8( i ) );
 			}
 		}
-		constraints = kState->constraints();
+		constraints = kState->constraints;
 	}
 
 	std::ostream& operator<<( std::ostream &stream, const Path &path ) {

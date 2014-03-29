@@ -17,45 +17,35 @@
 #include <sys/wait.h>
 #include <sys/types.h>
 
-#include "llvm/LLVMContext.h"
-#include "llvm/Module.h"
-#include "llvm/Constants.h"
-#include "llvm/Instruction.h"
-#include "llvm/InstrTypes.h"
+#include "llvm/IR/LLVMContext.h"
+#include "llvm/IR/Module.h"
+#include "llvm/IR/Constants.h"
+#include "llvm/IR/Instruction.h"
+#include "llvm/IR/InstrTypes.h"
 #include "llvm/Bitcode/ReaderWriter.h"
 #include "llvm/Support/ManagedStatic.h"
 #include "llvm/Support/CommandLine.h"
+#include "llvm/Support/FileSystem.h"
 #include "llvm/Support/MemoryBuffer.h"
-#include "llvm/Target/TargetSelect.h"
+#include "llvm/Support/TargetSelect.h"
 #include "llvm/Support/Signals.h"
 #include "llvm/Support/system_error.h"
-#include "llvm/Support/IRBuilder.h"
-#include "llvm/Type.h"
-#include "llvm/Instructions.h"
+#include "llvm/IR/IRBuilder.h"
+#include "llvm/IR/Type.h"
+#include "llvm/IR/DerivedTypes.h"
+#include "llvm/IR/Instructions.h"
 
 #include "klee/Internal/System/Time.h"
 #include "klee/Internal/Support/ModuleUtil.h"
-#include "klee/Init.h"
-#include "klee/Executor.h"
-#include "klee/Searcher.h"
+#include "../Core/Common.h"
+#include "../Core/Executor.h"
+#include "../Core/Searcher.h"
 #include "klee/Expr.h"
 #include "klee/ExprBuilder.h"
 #include <expr/Parser.h>
 #include "../../lib/Core/Context.h"
 #include "../../lib/Core/TimingSolver.h"
-
-#include "cloud9/Logger.h"
-#include "cloud9/ExecutionTree.h"
-#include "cloud9/ExecutionPath.h"
-#include "cloud9/Protocols.h"
-#include "cloud9/worker/TreeNodeInfo.h"
-#include "cloud9/worker/JobManager.h"
-#include "cloud9/worker/WorkerCommon.h"
-#include "cloud9/worker/CoreStrategies.h"
-#include "cloud9/worker/KleeCommon.h"
-#include "cloud9/worker/CommManager.h"
-#include "cloud9/Utils.h"
-#include "cloud9/instrum/InstrumentationManager.h"
+#include "klee/Statistics.h"
 
 #include <spa/SPA.h>
 #include <spa/SpaSearcher.h>
@@ -66,13 +56,11 @@
 #define OLD_ENTRY_FUNCTION				"__spa_old_main"
 #define KLEE_INT_FUNCTION				"klee_int"
 #define MALLOC_FUNCTION					"malloc"
-extern cl::opt<double> MaxTime;
-extern cl::opt<bool> NoOutput;
 
 namespace {
-	cl::opt<bool> StandAlone("stand-alone",
-		cl::desc("Enable running a worker in stand alone mode"),
-		cl::init(true));
+	llvm::cl::opt<bool> StandAlone("stand-alone",
+		llvm::cl::desc("Enable running a worker in stand alone mode"),
+		llvm::cl::init(true));
 
 	typedef enum {
 		START,
@@ -89,110 +77,418 @@ namespace {
 }
 
 namespace SPA {
-	cl::opt<std::string> RecoverState( "recover-state",
+	llvm::cl::opt<std::string> RecoverState( "recover-state",
 		llvm::cl::desc( "Specifies a file with a previously saved processing queue to load." ) );
 
-	static bool Interrupted = false;
-	cloud9::worker::JobManager *theJobManager;
-
-	// This is a temporary hack. If the running process has access to
-	// externals then it can disable interrupts, which screws up the
-	// normal "nice" watchdog termination process. We try to request the
-	// interpreter to halt using this mechanism as a last resort to save
-	// the state data before going ahead and killing it.
-	/*
-	* This function invokes haltExecution() via gdb.
-	*/
-	static void haltViaGDB(int pid) {
-		char buffer[256];
-		sprintf(buffer, "gdb --batch --eval-command=\"p haltExecution()\" "
-			"--eval-command=detach --pid=%d &> /dev/null", pid);
-
-		if (system(buffer) == -1)
-			perror("system");
-	}
-
-	/*
-	* This function gets executed by the watchdog, via gdb.
-	*/
-	// Pulled out so it can be easily called from a debugger.
-	extern "C" void haltExecution() {
-		theJobManager->requestTermination();
-	}
-
-	/*
-	 * 
-	 */
 	static void interrupt_handle() {
-		if (!Interrupted && theJobManager) {
-			CLOUD9_INFO("Ctrl-C detected, requesting interpreter to halt.");
-			haltExecution();
-			sys::SetInterruptFunction(interrupt_handle);
-		} else {
-			CLOUD9_INFO("Ctrl+C detected, exiting.");
-			exit(1); // XXX Replace this with pthread_exit() or with longjmp
-		}
-		Interrupted = true;
+		std::cerr << "SPA: Ctrl-C detected, exiting.\n";
+		exit(1);
 	}
 
-	static int watchdog(int pid) {
-		CLOUD9_INFO("Watchdog: Watching " << pid);
+	// This is a terrible hack until we get some real modeling of the
+	// system. All we do is check the undefined symbols and warn about
+	// any "unrecognized" externals and about any obviously unsafe ones.
 
-		double nextStep = klee::util::getWallTime() + MaxTime * 1.1;
-		int level = 0;
+	// Symbols we explicitly support
+	static const char *modelledExternals[] = {
+		"_ZTVN10__cxxabiv117__class_type_infoE",
+		"_ZTVN10__cxxabiv120__si_class_type_infoE",
+		"_ZTVN10__cxxabiv121__vmi_class_type_infoE",
 
-		// Simple stupid code...
-		while (1) {
-			sleep(1);
+		// special functions
+		"_assert", 
+		"__assert_fail", 
+		"__assert_rtn", 
+		"calloc", 
+		"_exit", 
+		"exit", 
+		"free", 
+		"abort", 
+		"klee_abort", 
+		"klee_assume", 
+		"klee_check_memory_access",
+		"klee_define_fixed_object",
+		"klee_get_errno", 
+		"klee_get_valuef",
+		"klee_get_valued",
+		"klee_get_valuel",
+		"klee_get_valuell",
+		"klee_get_value_i32",
+		"klee_get_value_i64",
+		"klee_get_obj_size", 
+		"klee_is_symbolic", 
+		"klee_make_symbolic", 
+		"klee_mark_global", 
+		"klee_merge", 
+		"klee_prefer_cex",
+		"klee_print_expr", 
+		"klee_print_range", 
+		"klee_report_error", 
+		"klee_set_forking",
+		"klee_silent_exit", 
+		"klee_warning", 
+		"klee_warning_once", 
+		"klee_alias_function",
+		"klee_stack_trace",
+	#if LLVM_VERSION_CODE >= LLVM_VERSION(3, 1)
+		"llvm.dbg.declare",
+		"llvm.dbg.value",
+	#endif
+		"llvm.va_start", 
+		"llvm.va_end", 
+		"malloc", 
+		"realloc", 
+		"_ZdaPv", 
+		"_ZdlPv", 
+		"_Znaj", 
+		"_Znwj", 
+		"_Znam", 
+		"_Znwm", 
+	};
+	// Symbols we aren't going to warn about
+	static const char *dontCareExternals[] = {
+	#if 0
+		// stdio
+		"fprintf",
+		"fflush",
+		"fopen",
+		"fclose",
+		"fputs_unlocked",
+		"putchar_unlocked",
+		"vfprintf",
+		"fwrite",
+		"puts",
+		"printf",
+		"stdin",
+		"stdout",
+		"stderr",
+		"_stdio_term",
+		"__errno_location",
+		"fstat",
+	#endif
 
-			int status, res = waitpid(pid, &status, WNOHANG);
+		// static information, pretty ok to return
+		"getegid",
+		"geteuid",
+		"getgid",
+		"getuid",
+		"getpid",
+		"gethostname",
+		"getpgrp",
+		"getppid",
+		"getpagesize",
+		"getpriority",
+		"getgroups",
+		"getdtablesize",
+		"getrlimit",
+		"getrlimit64",
+		"getcwd",
+		"getwd",
+		"gettimeofday",
+		"uname",
 
-			if (res < 0) {
-				if (errno == ECHILD) { // No child, no need to watch but
-					// return error since we didn't catch
-					// the exit.
-					perror("waitpid:");
-					CLOUD9_INFO("Watchdog exiting (no child) @ " << klee::util::getWallTime());
-					return 1;
-				} else if (errno != EINTR) {
-					perror("Watchdog waitpid");
-					exit(1);
-				}
-			} else if (res == pid && WIFEXITED(status)) {
-				return WEXITSTATUS(status);
-			} else if (res == pid && WIFSIGNALED(status)) {
-				CLOUD9_INFO("killed by signal " <<  WTERMSIG(status));
-			} else if (res == pid && WIFSTOPPED(status)) {
-				CLOUD9_INFO("stopped by signal " <<  WSTOPSIG(status));
-			} else if ( res == pid && WIFCONTINUED(status)) {
-				CLOUD9_INFO("continued\n");
-			} else {
-				double time = klee::util::getWallTime();
+		// fp stuff we just don't worry about yet
+		"frexp",  
+		"ldexp",
+		"__isnan",
+		"__signbit",
+	};
+// 	// Extra symbols we aren't going to warn about with klee-libc
+// 	static const char *dontCareKlee[] = {
+// 		"__ctype_b_loc",
+// 		"__ctype_get_mb_cur_max",
+// 
+// 		// io system calls
+// 		"open",
+// 		"write",
+// 		"read",
+// 		"close",
+// 	};
+	// Extra symbols we aren't going to warn about with uclibc
+	static const char *dontCareUclibc[] = {
+		"__dso_handle",
 
-				if (time > nextStep) {
-					++level;
+		// Don't warn about these since we explicitly commented them out of
+		// uclibc.
+		"printf",
+		"vprintf"
+	};
+	// Symbols we consider unsafe
+	static const char *unsafeExternals[] = {
+		"fork", // oh lord
+		"exec", // heaven help us
+		"error", // calls _exit
+		"raise", // yeah
+		"kill", // mmmhmmm
+	};
+	#define NELEMS(array) (sizeof(array)/sizeof(array[0]))
+	void externalsAndGlobalsCheck(const llvm::Module *m) {
+		std::map<std::string, bool> externals;
+		std::set<std::string> modelled(modelledExternals, modelledExternals+NELEMS(modelledExternals));
+		std::set<std::string> dontCare(dontCareExternals, dontCareExternals+NELEMS(dontCareExternals));
+		std::set<std::string> unsafe(unsafeExternals, unsafeExternals+NELEMS(unsafeExternals));
 
-					if (level == 1) {
-						CLOUD9_INFO("Watchdog: time expired, attempting halt via INT");
-						kill(pid, SIGINT);
-					} else if (level == 2) {
-						CLOUD9_INFO("Watchdog: time expired, attempting halt via gdb");
-						haltViaGDB(pid);
-					} else {
-						CLOUD9_INFO("Watchdog: kill(9)ing child (I tried to be nice)");
-						kill(pid, SIGKILL);
-						return 1; // what more can we do
+		// Assume using KLEE uClibc
+		dontCare.insert(dontCareUclibc, dontCareUclibc+NELEMS(dontCareUclibc));
+		// Assume using POSIX runtime.
+		dontCare.insert("syscall");
+
+		for (llvm::Module::const_iterator fnIt = m->begin(), fn_ie = m->end(); fnIt != fn_ie; ++fnIt) {
+			if (fnIt->isDeclaration() && !fnIt->use_empty())
+				externals.insert(std::make_pair(fnIt->getName(), false));
+			for (llvm::Function::const_iterator bbIt = fnIt->begin(), bb_ie = fnIt->end(); bbIt != bb_ie; ++bbIt) {
+				for (llvm::BasicBlock::const_iterator it = bbIt->begin(), ie = bbIt->end(); it != ie; ++it) {
+					if (const llvm::CallInst *ci = dyn_cast<llvm::CallInst>(it)) {
+						if (isa<llvm::InlineAsm>(ci->getCalledValue())) {
+							klee::klee_warning_once(&*fnIt, "function \"%s\" has inline asm", fnIt->getName().data());
+						}
 					}
+				}
+			}
+		}
+		for (llvm::Module::const_global_iterator it = m->global_begin(), ie = m->global_end(); it != ie; ++it)
+			if (it->isDeclaration() && !it->use_empty())
+				externals.insert(std::make_pair(it->getName(), true));
+		// and remove aliases (they define the symbol after global
+		// initialization)
+		for (llvm::Module::const_alias_iterator it = m->alias_begin(), ie = m->alias_end(); it != ie; ++it) {
+			std::map<std::string, bool>::iterator it2 = externals.find(it->getName());
+			if (it2!=externals.end())
+				externals.erase(it2);
+		}
 
-					// Ideally this triggers a dump, which may take a while,
-					// so try and give the process extra time to clean up.
-					nextStep = klee::util::getWallTime() + std::max(15., MaxTime
-					* .1);
+		std::map<std::string, bool> foundUnsafe;
+		for (std::map<std::string, bool>::iterator it = externals.begin(), ie = externals.end(); it != ie; ++it) {
+			const std::string &ext = it->first;
+			if (!modelled.count(ext) && !dontCare.count(ext)) {
+				if (unsafe.count(ext)) {
+					foundUnsafe.insert(*it);
+				} else {
+					klee::klee_warning("undefined reference to %s: %s", it->second ? "variable" : "function", ext.c_str());
 				}
 			}
 		}
 
+		for (std::map<std::string, bool>::iterator it = foundUnsafe.begin(), ie = foundUnsafe.end(); it != ie; ++it) {
+			const std::string &ext = it->first;
+			klee::klee_warning("undefined reference to %s: %s (UNSAFE)!", it->second ? "variable" : "function", ext.c_str());
+		}
+	}
+
+	static int initEnv(llvm::Module *mainModule) {
+		/*
+		 *    nArgcP = alloc oldArgc->getType()
+		 *    nArgvV = alloc oldArgv->getType()
+		 *    store oldArgc nArgcP
+		 *    store oldArgv nArgvP
+		 *    klee_init_environment(nArgcP, nArgvP)
+		 *    nArgc = load nArgcP
+		 *    nArgv = load nArgvP
+		 *    oldArgc->replaceAllUsesWith(nArgc)
+		 *    oldArgv->replaceAllUsesWith(nArgv)
+		 */
+		llvm::Function *mainFn = mainModule->getFunction("main");
+
+		if (mainFn->arg_size() < 2) {
+			klee::klee_error("Cannot handle ""--posix-runtime"" when main() has less than two arguments.\n");
+		}
+
+		llvm::Instruction* firstInst = mainFn->begin()->begin();
+
+		llvm::Value* oldArgc = mainFn->arg_begin();
+		llvm::Value* oldArgv = ++mainFn->arg_begin();
+
+		llvm::AllocaInst* argcPtr = new llvm::AllocaInst(oldArgc->getType(), "argcPtr", firstInst);
+		llvm::AllocaInst* argvPtr = new llvm::AllocaInst(oldArgv->getType(), "argvPtr", firstInst);
+
+		/* Insert void klee_init_env(int* argc, char*** argv) */
+		std::vector<const llvm::Type*> params;
+		params.push_back(llvm::Type::getInt32Ty(llvm::getGlobalContext()));
+		params.push_back(llvm::Type::getInt32Ty(llvm::getGlobalContext()));
+		llvm::Function* initEnvFn = cast<llvm::Function>(mainModule->getOrInsertFunction("klee_init_env",
+				llvm::Type::getVoidTy(llvm::getGlobalContext()), argcPtr->getType(), argvPtr->getType(), NULL));
+		assert(initEnvFn);
+		std::vector<llvm::Value*> args;
+		args.push_back(argcPtr);
+		args.push_back(argvPtr);
+#if LLVM_VERSION_CODE >= LLVM_VERSION(3, 0)
+		llvm::Instruction* initEnvCall = llvm::CallInst::Create(initEnvFn, args, "", firstInst);
+#else
+		llvm::Instruction* initEnvCall = llvm::CallInst::Create(initEnvFn, args.begin(), args.end(), "", firstInst);
+#endif
+		llvm::Value *argc = new llvm::LoadInst(argcPtr, "newArgc", firstInst);
+		llvm::Value *argv = new llvm::LoadInst(argvPtr, "newArgv", firstInst);
+
+		oldArgc->replaceAllUsesWith(argc);
+		oldArgv->replaceAllUsesWith(argv);
+
+		new llvm::StoreInst(oldArgc, argcPtr, initEnvCall);
+		new llvm::StoreInst(oldArgv, argvPtr, initEnvCall);
+
 		return 0;
+	}
+
+#ifndef SUPPORT_KLEE_UCLIBC
+	static llvm::Module *linkWithUclibc(llvm::Module *mainModule, llvm::sys::Path libDir) {
+		fprintf(stderr, "error: invalid libc, no uclibc support!\n");
+		exit(1);
+		return 0;
+	}
+#else
+	static void replaceOrRenameFunction(llvm::Module *module, const char *old_name, const char *new_name) {
+		llvm::Function *f, *f2;
+		f = module->getFunction(new_name);
+		f2 = module->getFunction(old_name);
+		if (f2) {
+			if (f) {
+				f2->replaceAllUsesWith(f);
+				f2->eraseFromParent();
+			} else {
+				f2->setName(new_name);
+				assert(f2->getName() == new_name);
+			}
+		}
+	}
+
+	static llvm::Module *linkWithUclibc(llvm::Module *mainModule, llvm::sys::Path libDir) {
+		// Ensure that klee-uclibc exists
+		llvm::sys::Path uclibcBCA(libDir);
+		uclibcBCA.appendComponent(KLEE_UCLIBC_BCA_NAME);
+
+		bool uclibcExists = false;
+		llvm::sys::fs::exists(uclibcBCA.c_str(), uclibcExists);
+		if (! uclibcExists) klee::klee_error("Cannot find klee-uclibc : %s", uclibcBCA.c_str());
+
+		// force import of __uClibc_main
+		mainModule->getOrInsertFunction("__uClibc_main",
+				llvm::FunctionType::get(llvm::Type::getVoidTy(llvm::getGlobalContext()),
+					std::vector<LLVM_TYPE_Q llvm::Type*>(), true));
+
+		// force various imports
+		LLVM_TYPE_Q llvm::Type *i8Ty = llvm::Type::getInt8Ty(llvm::getGlobalContext());
+		mainModule->getOrInsertFunction("realpath",
+				llvm::PointerType::getUnqual(i8Ty), llvm::PointerType::getUnqual(i8Ty),
+				llvm::PointerType::getUnqual(i8Ty), NULL);
+		mainModule->getOrInsertFunction("getutent",
+				llvm::PointerType::getUnqual(i8Ty), NULL);
+		mainModule->getOrInsertFunction("__fgetc_unlocked",
+				llvm::Type::getInt32Ty(llvm::getGlobalContext()), llvm::PointerType::getUnqual(i8Ty), NULL);
+		mainModule->getOrInsertFunction("__fputc_unlocked",
+				llvm::Type::getInt32Ty(llvm::getGlobalContext()), llvm::Type::getInt32Ty(llvm::getGlobalContext()),
+				llvm::PointerType::getUnqual(i8Ty), NULL);
+
+		llvm::Function *f = mainModule->getFunction("__ctype_get_mb_cur_max");
+		if (f) f->setName("_stdlib_mb_cur_max");
+
+		// Strip off asm prefixes for 64 bit versions because they are not
+		// present in uclibc and we want to make sure stuff will get
+		// linked. In the off chance that both prefixed and unprefixed
+		// versions are present in the module, make sure we don't create a
+		// naming conflict.
+		for (llvm::Module::iterator fi = mainModule->begin(), fe = mainModule->end(); fi != fe; ++fi) {
+			llvm::Function *f = fi;
+			const std::string &name = f->getName();
+			if (name[0]=='\01') {
+				unsigned size = name.size();
+				if (name[size-2]=='6' && name[size-1]=='4') {
+					std::string unprefixed = name.substr(1);
+
+					// See if the unprefixed version exists.
+					if (llvm::Function *f2 = mainModule->getFunction(unprefixed)) {
+						f->replaceAllUsesWith(f2);
+						f->eraseFromParent();
+					} else {
+						f->setName(unprefixed);
+					}
+				}
+			}
+		}
+
+		mainModule = klee::linkWithLibrary(mainModule, uclibcBCA.c_str());
+		assert(mainModule && "unable to link with uclibc");
+
+		replaceOrRenameFunction(mainModule, "__libc_open", "open");
+		replaceOrRenameFunction(mainModule, "__libc_fcntl", "fcntl");
+
+		// XXX we need to rearchitect so this can also be used with
+		// programs externally linked with uclibc.
+
+		// We now need to swap things so that __uClibc_main is the entry
+		// point, in such a way that the arguments are passed to
+		// __uClibc_main correctly. We do this by renaming the user main
+		// and generating a stub function to call __uClibc_main. There is
+		// also an implicit cooperation in that runFunctionAsMain sets up
+		// the environment arguments to what uclibc expects (following
+		// argv), since it does not explicitly take an envp argument.
+		llvm::Function *userMainFn = mainModule->getFunction("main");
+		assert(userMainFn && "unable to get user main");
+		llvm::Function *uclibcMainFn = mainModule->getFunction("__uClibc_main");
+		assert(uclibcMainFn && "unable to get uclibc main");
+		userMainFn->setName("__user_main");
+
+		const llvm::FunctionType *ft = uclibcMainFn->getFunctionType();
+		assert(ft->getNumParams() == 7);
+
+		std::vector<LLVM_TYPE_Q llvm::Type*> fArgs;
+		fArgs.push_back(ft->getParamType(1)); // argc
+		fArgs.push_back(ft->getParamType(2)); // argv
+		llvm::Function *stub = llvm::Function::Create(
+				llvm::FunctionType::get(llvm::Type::getInt32Ty(llvm::getGlobalContext()), fArgs, false),
+				llvm::GlobalVariable::ExternalLinkage, "main", mainModule);
+		llvm::BasicBlock *bb = llvm::BasicBlock::Create(llvm::getGlobalContext(), "entry", stub);
+
+		std::vector<llvm::Value*> args;
+		args.push_back(llvm::ConstantExpr::getBitCast(userMainFn, ft->getParamType(0)));
+		args.push_back(stub->arg_begin()); // argc
+		args.push_back(++stub->arg_begin()); // argv
+		args.push_back(llvm::Constant::getNullValue(ft->getParamType(3))); // app_init
+		args.push_back(llvm::Constant::getNullValue(ft->getParamType(4))); // app_fini
+		args.push_back(llvm::Constant::getNullValue(ft->getParamType(5))); // rtld_fini
+		args.push_back(llvm::Constant::getNullValue(ft->getParamType(6))); // stack_end
+#if LLVM_VERSION_CODE >= LLVM_VERSION(3, 0)
+		llvm::CallInst::Create(uclibcMainFn, args, "", bb);
+#else
+		llvm::CallInst::Create(uclibcMainFn, args.begin(), args.end(), "", bb);
+#endif
+
+		new llvm::UnreachableInst(llvm::getGlobalContext(), bb);
+
+		klee::klee_message("NOTE: Using klee-uclibc : %s", uclibcBCA.c_str());
+		return mainModule;
+}
+#endif
+
+	llvm::Module *SPA::getModuleFromFile(std::string moduleFile) {
+		llvm::InitializeNativeTarget();
+
+		// Load the bytecode...
+		std::string ErrorMsg;
+		llvm::Module *mainModule = 0;
+		llvm::OwningPtr<llvm::MemoryBuffer> BufferPtr;
+		llvm::error_code ec = llvm::MemoryBuffer::getFileOrSTDIN(moduleFile.c_str(), BufferPtr);
+		if (ec) klee::klee_error("error loading program '%s': %s", moduleFile.c_str(), ec.message().c_str());
+		mainModule = getLazyBitcodeModule(BufferPtr.get(), llvm::getGlobalContext(), &ErrorMsg);
+
+		if (mainModule) {
+			if (mainModule->MaterializeAllPermanently(&ErrorMsg)) {
+				delete mainModule;
+				mainModule = 0;
+			}
+		}
+		if (! mainModule) klee::klee_error("error loading program '%s': %s", moduleFile.c_str(), ErrorMsg.c_str());
+
+		assert(initEnv(mainModule) == 0 && "Unable to initialize POSIX environment.");
+
+		llvm::sys::Path LibraryDir(KLEE_DIR "/" RUNTIME_CONFIGURATION "/lib");
+		mainModule = linkWithUclibc(mainModule, LibraryDir);
+
+		llvm::sys::Path modelFile = LibraryDir;
+		modelFile.appendComponent("libkleeRuntimePOSIX.bca");
+		klee::klee_message("NOTE: Using model: %s", modelFile.c_str());
+		mainModule = klee::linkWithLibrary(mainModule, modelFile.c_str());
+		assert(mainModule && "Unable to link with simple model.");
+
+		return mainModule;
 	}
 
 	SPA::SPA( llvm::Module *_module, std::ostream &_output ) :
@@ -200,39 +496,14 @@ namespace SPA {
 		pathFilter( NULL ), outputTerminalPaths( true ),
 		checkpointsFound( 0 ), filteredPathsFound( 0 ), terminalPathsFound( 0 ), outputtedPaths( 0 ) {
 
-		// Make sure to clean up properly before any exit point in the program
-		atexit(llvm::llvm_shutdown);
+#if ENABLE_STPLOG == 1
+    STPLOG_init("stplog.c");
+#endif
 
-		GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-		cloud9::Logger::getLogger().setLogPrefix("Worker<   >: ");
-
-		// JIT initialization
-		llvm::InitializeNativeTarget();
-
-		sys::PrintStackTraceOnErrorSignal();
-
-		cloud9::initBreakSignal();
-
-		// Setup the watchdog process
-		if (MaxTime == 0) {
-			CLOUD9_INFO("No max time specified; running without watchdog");
-		} else {
-			int pid = fork();
-			if (pid < 0) {
-				CLOUD9_EXIT("Unable to fork watchdog");
-			} else if (pid) {
-				int returnCode = watchdog(pid);
-				CLOUD9_INFO("Watchdog child exited with ret = " <<  returnCode);
-				exit( returnCode );
-			}
-		}
-
-		// At this point, if the watchdog is enabled, we are in the child process of
-		// the fork().
-
-		// Take care of Ctrl+C requests
-		sys::SetInterruptFunction(interrupt_handle);
+  atexit(llvm::llvm_shutdown);  // Call llvm_shutdown() on exit.
+  llvm::InitializeNativeTarget();
+  llvm::sys::PrintStackTraceOnErrorSignal();
+  llvm::sys::SetInterruptFunction(interrupt_handle);
 
 		generateMain();
 	}
@@ -306,7 +577,7 @@ namespace SPA {
 			kleeIntFunction = llvm::Function::Create(
 				llvm::FunctionType::get(
 					llvm::IntegerType::get( module->getContext(), 32 ),
-					llvm::ArrayRef<const llvm::Type *>( llvm::PointerType::get( llvm::IntegerType::get( module->getContext(), 8 ), 0 ) ).vec(),
+					llvm::ArrayRef<llvm::Type *>( llvm::PointerType::get( llvm::IntegerType::get( module->getContext(), 8 ), 0 ) ),
 					false ),
 				llvm::GlobalValue::ExternalLinkage, KLEE_INT_FUNCTION, module );
 			kleeIntFunction->setCallingConv( llvm::CallingConv::C );
@@ -319,12 +590,13 @@ namespace SPA {
 			llvm::GlobalValue::PrivateLinkage,
 			NULL,
 			SPA_INITVALUEID_VARIABLE );
-		initValueIDVarName->setInitializer( llvm::ConstantArray::get( module->getContext(), SPA_INITVALUEID_VARIABLE, true ) );
+		initValueIDVarName->setInitializer( llvm::ConstantDataArray::getString( module->getContext(), SPA_INITVALUEID_VARIABLE, true ) );
 		// initValueID = klee_int();
-		llvm::Constant *idxs[] = {llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, 0, true ) ), llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, 0, true ) )};
+		llvm::Constant *idxsa[] = {llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, 0, true ) ), llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, 0, true ) )};
+		llvm::ArrayRef<llvm::Constant *> idxsar(idxsa, 2);
 		llvm::CallInst *kleeIntCall = llvm::CallInst::Create(
 			kleeIntFunction,
-			llvm::ConstantExpr::getGetElementPtr( initValueIDVarName, idxs, 2, false ),
+			llvm::ConstantExpr::getGetElementPtr( initValueIDVarName, idxsar, false ),
 			"", initBB );
 		kleeIntCall->setCallingConv(llvm::CallingConv::C);
 		kleeIntCall->setTailCall(false);
@@ -343,7 +615,7 @@ namespace SPA {
 			llvm::GlobalValue::PrivateLinkage,
 			NULL,
 			SPA_HANDLERID_VARIABLE );
-		handlerIDVarName->setInitializer( llvm::ConstantArray::get( module->getContext(), SPA_HANDLERID_VARIABLE, true ) );
+		handlerIDVarName->setInitializer( llvm::ConstantDataArray::getString( module->getContext(), SPA_HANDLERID_VARIABLE, true ) );
 
 		// Set up basic blocks to add entry handlers.
 		llvm::BranchInst::Create( returnBB, nextHandlerBB );
@@ -401,7 +673,7 @@ namespace SPA {
 			kleeIntFunction = llvm::Function::Create(
 				llvm::FunctionType::get(
 					llvm::IntegerType::get( module->getContext(), 32 ),
-					llvm::ArrayRef<const llvm::Type *>( llvm::PointerType::get( llvm::IntegerType::get( module->getContext(), 8 ), 0 ) ).vec(),
+					llvm::ArrayRef<llvm::Type *>( llvm::PointerType::get( llvm::IntegerType::get( module->getContext(), 8 ), 0 ) ),
 					false ),
 				llvm::GlobalValue::ExternalLinkage, KLEE_INT_FUNCTION, module );
 			kleeIntFunction->setCallingConv( llvm::CallingConv::C );
@@ -410,10 +682,13 @@ namespace SPA {
 		// Remove the temporary branch instruction.
 		nextHandlerBB->begin()->eraseFromParent();
 		// handlerID = klee_int();
-		llvm::Constant *idxs[] = {llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, 0, true ) ), llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, 0, true ) )};
+		llvm::Constant *idxsa[] = {
+				llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, 0, true ) ),
+				llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, 0, true ) )};
+		llvm::ArrayRef<llvm::Constant *> idxsar(idxsa, 2);
 		llvm::CallInst *kleeIntCall = llvm::CallInst::Create(
 			kleeIntFunction,
-			llvm::ConstantExpr::getGetElementPtr( handlerIDVarName, idxs, 2, false ),
+			llvm::ConstantExpr::getGetElementPtr( handlerIDVarName, idxsar, false ),
 			"", nextHandlerBB );
 		kleeIntCall->setCallingConv(llvm::CallingConv::C);
 		kleeIntCall->setTailCall(false);
@@ -431,12 +706,12 @@ namespace SPA {
 		llvm::Function *mallocFunction = module->getFunction( MALLOC_FUNCTION );
 		if ( ! mallocFunction ) {
 			mallocFunction = llvm::Function::Create(
-				FunctionType::get(
-					PointerType::get( IntegerType::get( module->getContext(), 8 ), 0 ),
-					llvm::ArrayRef<const llvm::Type *>( IntegerType::get( module->getContext(), 64 ) ).vec(),
+				llvm::FunctionType::get(
+					llvm::PointerType::get( llvm::IntegerType::get( module->getContext(), 8 ), 0 ),
+					llvm::ArrayRef<llvm::Type *>( llvm::IntegerType::get( module->getContext(), 64 ) ),
 					false ),
-				GlobalValue::ExternalLinkage, "malloc", module );
-			mallocFunction->setCallingConv( CallingConv::C );
+				llvm::GlobalValue::ExternalLinkage, "malloc", module );
+			mallocFunction->setCallingConv( llvm::CallingConv::C );
 		}
 
 		// case x:
@@ -448,40 +723,40 @@ namespace SPA {
 		for ( std::map<llvm::Value *, std::vector<std::vector<std::pair<bool,uint8_t> > > >::iterator varit = values.begin(), varie = values.end(); varit != varie; varit++ ) {
 			// Store concrete values.
 			// %1 = malloc( (numValues + 1) * 2 );
-			CallInst *varMallocCallInst = CallInst::Create( mallocFunction, llvm::ConstantInt::get( module->getContext(), llvm::APInt( 64, (varit->second.size() + 1) * 2 * 8, true ) ), "", swBB );
-			varMallocCallInst->setCallingConv( CallingConv::C );
+			llvm::CallInst *varMallocCallInst = llvm::CallInst::Create( mallocFunction, llvm::ConstantInt::get( module->getContext(), llvm::APInt( 64, (varit->second.size() + 1) * 2 * 8, true ) ), "", swBB );
+			varMallocCallInst->setCallingConv( llvm::CallingConv::C );
 			varMallocCallInst->setTailCall( true );
-			CastInst *varMalloc = new BitCastInst( varMallocCallInst, PointerType::get( PointerType::get( IntegerType::get( module->getContext(), 8), 0), 0), "", swBB);
+			llvm::CastInst *varMalloc = new llvm::BitCastInst( varMallocCallInst, llvm::PointerType::get( llvm::PointerType::get( llvm::IntegerType::get( module->getContext(), 8), 0), 0), "", swBB);
 			// var = %1;
-			new StoreInst( varMalloc, GetElementPtrInst::Create( varit->first, llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, 0, true ) ), "", swBB), false, swBB );
+			new llvm::StoreInst( varMalloc, llvm::GetElementPtrInst::Create( varit->first, llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, 0, true ) ), "", swBB), false, swBB );
 			// Iterate distinct initial values for this variable.
 			unsigned int offset = 0, numSymbolic = 0;
 			for ( std::vector<std::vector<std::pair<bool,uint8_t> > >::iterator valit = varit->second.begin(), valie = varit->second.end(); valit != valie; valit++, offset += 2 ) {
 				// %2 = malloc( values[it].length );
-				CallInst* valMallocCallInst = CallInst::Create( mallocFunction, llvm::ConstantInt::get( module->getContext(), llvm::APInt( 64, valit->size(), true ) ), "", swBB );
-				valMallocCallInst->setCallingConv( CallingConv::C );
+        llvm::CallInst* valMallocCallInst = llvm::CallInst::Create( mallocFunction, llvm::ConstantInt::get( module->getContext(), llvm::APInt( 64, valit->size(), true ) ), "", swBB );
+        valMallocCallInst->setCallingConv( llvm::CallingConv::C );
 				valMallocCallInst->setTailCall( true );
-				CastInst *valMalloc = new BitCastInst( valMallocCallInst, PointerType::get( IntegerType::get( module->getContext(), 8), 0), "", swBB);
+        llvm::CastInst *valMalloc = new llvm::BitCastInst( valMallocCallInst, llvm::PointerType::get( llvm::IntegerType::get( module->getContext(), 8), 0), "", swBB);
 				// %1[offset+0] = %2;
-				new StoreInst( valMalloc, GetElementPtrInst::Create( varMalloc, llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, offset + 0, true ) ), "", swBB), false, swBB );
+        new llvm::StoreInst( valMalloc, llvm::GetElementPtrInst::Create( varMalloc, llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, offset + 0, true ) ), "", swBB), false, swBB );
 				// %3 = malloc( valueMasks[it].length );
-				CallInst* maskMallocCallInst = CallInst::Create( mallocFunction, llvm::ConstantInt::get( module->getContext(), llvm::APInt( 64, valit->size(), true ) ), "", swBB );
-				maskMallocCallInst->setCallingConv( CallingConv::C );
+        llvm::CallInst* maskMallocCallInst = llvm::CallInst::Create( mallocFunction, llvm::ConstantInt::get( module->getContext(), llvm::APInt( 64, valit->size(), true ) ), "", swBB );
+        maskMallocCallInst->setCallingConv( llvm::CallingConv::C );
 				maskMallocCallInst->setTailCall( true );
-				CastInst *maskMalloc = new BitCastInst( maskMallocCallInst, PointerType::get( IntegerType::get( module->getContext(), 8), 0), "", swBB);
+        llvm::CastInst *maskMalloc = new llvm::BitCastInst( maskMallocCallInst, llvm::PointerType::get( llvm::IntegerType::get( module->getContext(), 8), 0), "", swBB);
 				// %1[offset+1] = %2;
-				new StoreInst( maskMalloc, GetElementPtrInst::Create( varMalloc, llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, offset + 1, true ) ), "", swBB), false, swBB );
+        new llvm::StoreInst( maskMalloc, llvm::GetElementPtrInst::Create( varMalloc, llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, offset + 1, true ) ), "", swBB), false, swBB );
 				// Iterator over initial value bytes and mask.
 				bool containsSymbol = false;
 				for ( unsigned int i = 0; i < valit->size(); i++ ) {
 					// %2[i] = value[it][i];
-					new StoreInst(
+          new llvm::StoreInst(
 						llvm::ConstantInt::get( module->getContext(), llvm::APInt( 8, (*valit)[i].second, true ) ),
-						GetElementPtrInst::Create( valMalloc, llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, i, true ) ), "", swBB), false, swBB );
+						llvm::GetElementPtrInst::Create( valMalloc, llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, i, true ) ), "", swBB), false, swBB );
 					// %3[i] = valueMasks[it][i];
-					new StoreInst(
+          new llvm::StoreInst(
 						llvm::ConstantInt::get( module->getContext(), llvm::APInt( 8, (*valit)[i].first ? 1 : 0, true ) ),
-						GetElementPtrInst::Create( maskMalloc, llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, i, true ) ), "", swBB), false, swBB );
+						llvm::GetElementPtrInst::Create( maskMalloc, llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, i, true ) ), "", swBB), false, swBB );
 					if ( ! (*valit)[i].first )
 						containsSymbol = true;
 				}
@@ -506,101 +781,81 @@ namespace SPA {
 		}
 		assert( (outputFP || outputTerminalPaths || ! checkpoints.empty()) && "No points to output data from." );
 
-		int pArgc;
-		char **pArgv;
-		char **pEnvp;
-		char *envp[] = { NULL };
-		klee::readProgramArguments(pArgc, pArgv, pEnvp, envp );
-
-		// Create the job manager
-		NoOutput = true;
-		theJobManager = new cloud9::worker::JobManager( module, "main", pArgc, pArgv, pEnvp );
+		klee::Interpreter::InterpreterOptions IOpts;
+		IOpts.MakeConcreteSymbolic = false;
+		klee::Interpreter::ModuleOptions Opts(
+				/*LibraryDir=*/ KLEE_DIR "/" RUNTIME_CONFIGURATION "/lib",
+				/*Optimize=*/ true,
+				/*CheckDivZero=*/ true,
+				/*CheckOvershift=*/ true);
 
 		if ( ! stateUtilities.empty() ) {
-			CLOUD9_INFO( "Replacing strategy stack with SPA utility framework." );
-			SpaSearcher *spaSearcher = new SpaSearcher( theJobManager, stateUtilities );
+			klee::klee_message( "Replacing searcher with SPA utility framework." );
+			SpaSearcher *spaSearcher = new SpaSearcher( stateUtilities );
 			spaSearcher->addFilteringEventHandler( this );
-			theJobManager->setStrategy(
-				new cloud9::worker::RandomJobFromStateStrategy(
-					theJobManager->getTree(),
-					new cloud9::worker::KleeStrategy(
-						theJobManager->getTree(),
-						spaSearcher ),
-					theJobManager ) );
+			IOpts.searcher = spaSearcher;
 		}
 
-		(dynamic_cast<cloud9::worker::SymbolicEngine*>(theJobManager->getInterpreter()))
-			->registerStateEventHandler( this );
+		interpreter = klee::Interpreter::create(IOpts, this);
+		interpreter->addInterpreterEventListener(this);
 
-		if (StandAlone) {
-			CLOUD9_INFO("Running in stand-alone mode. No load balancer involved.");
+		externalsAndGlobalsCheck(interpreter->setModule(module, Opts));
 
-			if ( RecoverState.size() > 0 ) {
-				CLOUD9_DEBUG( "Recovering state from: " << RecoverState.getValue() );
-				std::ifstream stateFile( RecoverState.getValue().c_str() );
-				assert( stateFile.is_open() && "Unable to open state file." );
-				cloud9::ExecutionPathSetPin epsp = cloud9::ExecutionPathSet::parse( stateFile );
-				stateFile.close();
-				std::vector<long> replayInstrs;
-				theJobManager->importJobs(epsp, replayInstrs);
-				theJobManager->processLoop(true, false, (int)MaxTime.getValue());
-			} else {
-				theJobManager->processJobs(true, (int)MaxTime.getValue());
-			}
+		int pArgc = 1;
+		char argv0[] = "";
+		char *pArgv[2] = {argv0, NULL};
+		char **pEnvp = {NULL};
 
-			cloud9::instrum::theInstrManager.recordEvent(cloud9::instrum::TimeOut, "Timeout");
+		interpreter->runFunctionAsMain(entryFunction, pArgc, pArgv, pEnvp);
 
-			theJobManager->finalize();
-		} else {
-			cloud9::worker::CommManager commManager(theJobManager); // Handle outside communication
-			commManager.setup();
+		delete interpreter;
 
-			theJobManager->processJobs(false, (int)MaxTime.getValue()); // Blocking when no jobs are on the queue
+		uint64_t queries = *klee::theStatisticManager->getStatisticByName("Queries");
+		uint64_t queriesValid = *klee::theStatisticManager->getStatisticByName("QueriesValid");
+		uint64_t queriesInvalid = *klee::theStatisticManager->getStatisticByName("QueriesInvalid");
+		uint64_t queryCounterexamples = *klee::theStatisticManager->getStatisticByName("QueriesCEX");
+		uint64_t queryConstructs = *klee::theStatisticManager->getStatisticByName("QueriesConstructs");
+		uint64_t instructions = *klee::theStatisticManager->getStatisticByName("Instructions");
+		uint64_t forks = *klee::theStatisticManager->getStatisticByName("Forks");
 
-			cloud9::instrum::theInstrManager.recordEvent(cloud9::instrum::TimeOut, "Timeout");
-
-			// The order here matters, in order to avoid memory corruption
-			commManager.finalize();
-			theJobManager->finalize();
-		}
-
-		delete theJobManager;
-		theJobManager = NULL;
+		klee::klee_message("KLEE: done: explored paths = %ld\n", 1 + forks);
+		if (queries) klee::klee_message("KLEE: done: avg. constructs per query = %ld\n", queryConstructs / queries);
+		klee::klee_message("KLEE: done: total queries = %ld\n", queries);
+		klee::klee_message("KLEE: done: valid queries = %ld\n", queriesValid);
+		klee::klee_message("KLEE: done: invalid queries = %ld\n", queriesInvalid);
+		klee::klee_message("KLEE: done: query cex = %ld\n", queryCounterexamples);
+		klee::klee_message("KLEE: done: total instructions = %ld\n", instructions);
 	}
 
 	void SPA::showStats() {
-		CLOUD9_DEBUG( "Checkpoints: " << checkpointsFound
-			<< "; TerminalPaths: " << terminalPathsFound
-			<< "; Outputted: " << outputtedPaths
-			<< "; Filtered: " << filteredPathsFound );
+    klee::klee_message( "Checkpoints: %ld; TerminalPaths: %ld; Outputted: %ld; Filtered: %ld",
+        checkpointsFound, terminalPathsFound, outputtedPaths, filteredPathsFound );
 	}
 
 	void SPA::processPath( klee::ExecutionState *state ) {
 		Path path( state );
 
 		if ( ! pathFilter || pathFilter->checkPath( path ) ) {
-			CLOUD9_DEBUG( "Outputting path." );
+			klee::klee_message( "Outputting path." );
 			output << path;
 			outputtedPaths++;
 		}
 	}
 
-	void SPA::onControlFlowEvent( klee::ExecutionState *kState, cloud9::worker::ControlFlowEvent event ) {
-// 		if ( event == cloud9::worker::STEP ) {
-// 			CLOUD9_DEBUG( "Current state at:" );
-// 			klee::c9::printStateStack( std::cerr, *kState ) << std::endl;
-// 		}
+	void SPA::onStep(klee::ExecutionState *kState) {
+// 		klee_message( "Current state at:" );
+// 		klee::c9::printStateStack( std::cerr, *kState ) << std::endl;
 
-		if ( event == cloud9::worker::STEP && checkpoints.count( kState->pc()->inst ) ) {
-			CLOUD9_DEBUG( "Processing checkpoint path." );
+		if (checkpoints.count(kState->pc->inst)) {
+			klee::klee_message( "Processing checkpoint path." );
 			checkpointsFound++;
 			processPath( kState );
 			showStats();
 		}
 	}
 
-	void SPA::onStateDestroy(klee::ExecutionState *kState, bool silenced) {
-// 		CLOUD9_DEBUG( "Destroying path at:" );
+	void SPA::onStateDestroy(klee::ExecutionState *kState) {
+// 		klee_message( "Destroying path at:" );
 // 		klee::c9::printStateStack( std::cerr, *kState ) << std::endl;
 
 		if ( ! kState->filtered ) {
@@ -609,12 +864,12 @@ namespace SPA {
 			if ( outputTerminalPaths ) {
 				assert( kState );
 
-				CLOUD9_DEBUG( "Processing terminal path." );
+				klee::klee_message( "Processing terminal path." );
 
 				processPath( kState );
 			}
 		} else {
-			CLOUD9_DEBUG( "Filtered path destroyed." );
+			klee::klee_message( "Filtered path destroyed." );
 		}
 		showStats();
 	}
@@ -625,7 +880,7 @@ namespace SPA {
 		if ( outputFilteredPaths[id] ) {
 			assert( state );
 
-			CLOUD9_DEBUG( "Processing filtered path." );
+			klee::klee_message( "Processing filtered path." );
 
 			processPath( state );
 		}

@@ -7,7 +7,8 @@
 
 #include "llvm/Support/MemoryBuffer.h"
 
-#include "../../lib/Core/Memory.h"
+#include <../Core/Common.h>
+#include "../Core/Memory.h"
 #include "klee/ExprBuilder.h"
 #include <expr/Parser.h>
 
@@ -50,7 +51,7 @@ namespace SPA {
 	}
 
 	#define changeState( from, to ) \
-		if ( state != from ) { CLOUD9_ERROR( "Invalid path file. Error near line " << lineNumber << "." ); \
+		if ( state != from ) { klee::klee_message( "Invalid path file. Error near line %ld.", lineNumber ); \
 			assert( false && "Invalid path file." ); \
 		} \
 		state = to;
@@ -114,7 +115,7 @@ namespace SPA {
 							path->outputValues[sit->first].push_back( *vit );
 						}
 						if ( b != 0 || ((! symbolValueSize.empty()) && ++sit != sie) ) {
-							CLOUD9_ERROR( "Too few expressions in path file kquery. Error near line " << lineNumber << "." );
+							klee::klee_message( "Too few expressions in path file kquery. Error near line %ld.", lineNumber );
 							assert( false && "Invalid path file." );
 						}
 

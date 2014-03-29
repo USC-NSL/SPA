@@ -4,7 +4,7 @@
 
 #include <sstream>
 
-#include "llvm/Instructions.h"
+#include "llvm/IR/Instructions.h"
 
 #include "spa/CG.h"
 

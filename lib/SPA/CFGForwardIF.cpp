@@ -2,7 +2,7 @@
  * SPA - Systematic Protocol Analysis Framework
  */
 
-#include "llvm/Instructions.h"
+#include "llvm/IR/Instructions.h"
 
 #include "spa/CFGForwardIF.h"
 

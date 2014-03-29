@@ -49,6 +49,7 @@
 #else
 #include "llvm/Support/TargetSelect.h"
 #endif
+#include "llvm/Support/ManagedStatic.h"
 #include "llvm/Support/Signals.h"
 #include "llvm/Support/system_error.h"
 

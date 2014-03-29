@@ -4,9 +4,9 @@
 
 #include "spa/CFGBackwardFilter.h"
 
-#include "llvm/Instructions.h"
+#include "llvm/IR/Instructions.h"
+#include <../Core/Common.h>
 #include <klee/Internal/Module/KInstruction.h>
-#include "cloud9/Logger.h"
 
 namespace SPA {
 	CFGBackwardFilter::CFGBackwardFilter( CFG &cfg, CG &cg, std::set<llvm::Instruction *> &targets ) {
@@ -14,7 +14,7 @@ namespace SPA {
 		std::set<llvm::Instruction *> worklist = targets;
 		std::set<llvm::Function *> pathFunctions;
 
-		CLOUD9_DEBUG( "      Exploring reverse path." );
+		klee::klee_message( "      Exploring reverse path." );
 		while ( ! worklist.empty() ) {
 			std::set<llvm::Instruction *>::iterator it = worklist.begin(), ie;
 			llvm::Instruction *inst = *it;
@@ -29,7 +29,7 @@ namespace SPA {
 					worklist.insert( *it );
 			// Mark function as on direct path.
 // 			if ( pathFunctions.count( inst->getParent()->getParent() ) == 0 )
-// 				CLOUD9_DEBUG( "		Direct path function: " << inst->getParent()->getParent()->getName().str() );
+// 				klee_message( "		Direct path function: " << inst->getParent()->getParent()->getName().str() );
 			pathFunctions.insert( inst->getParent()->getParent() );
 			// Check if entry instruction.
 			if ( inst == &(inst->getParent()->getParent()->getEntryBlock().front()) ) {
@@ -55,7 +55,7 @@ namespace SPA {
 		bool knownFound = false;
 		// Traverse call stack downward from root to current PC.
 		// A filter out will match this regexp: ^[Unknown]*[Reaching]+[!Reaching].*$
-		for ( klee::ExecutionState::stack_ty::const_reverse_iterator it = state->stack().rbegin(), ie = state->stack().rend(); it != ie; it++ ) {
+		for ( klee::ExecutionState::stack_ty::const_reverse_iterator it = state->stack.rbegin(), ie = state->stack.rend(); it != ie; it++ ) {
 			if ( it->caller ) {
 				if ( reaching.count( it->caller->inst ) ) {
 					if ( knownFound && ! reaching[it->caller->inst] ) // Found non-reaching.

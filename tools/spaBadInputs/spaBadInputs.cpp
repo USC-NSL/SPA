@@ -1,6 +1,7 @@
 #include <assert.h>
 #include <string.h>
 #include <errno.h>
+#include <unistd.h>
 #include <sys/mman.h>
 #include <sys/file.h>
 #include <sys/wait.h>
@@ -23,7 +24,6 @@
 #include <klee/Constraints.h>
 #include <klee/ExprBuilder.h>
 #include <klee/Solver.h>
-#include <klee/Init.h>
 #include <klee/Expr.h>
 #include <klee/ExprBuilder.h>
 #include <klee/Solver.h>
@@ -451,7 +451,7 @@ bool restoreCheckpoint( std::string cpFileName,
 
 int main(int argc, char **argv, char **envp) {
 	// Fill up every global cl::opt object declared in the program
-	cl::ParseCommandLineOptions( argc, argv, "Systematic Protocol Analyzer - Bad Input Generator" );
+	llvm::cl::ParseCommandLineOptions( argc, argv, "Systematic Protocol Analyzer - Bad Input Generator" );
 
 	assert( ClientPathFile.size() > 0 && "No client path file specified." );
 	std::ifstream clientFile( ClientPathFile.getValue().c_str() );

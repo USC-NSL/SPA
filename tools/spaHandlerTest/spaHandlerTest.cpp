@@ -20,9 +20,8 @@
 #include "llvm/Support/system_error.h"
 #include "llvm/Bitcode/ReaderWriter.h"
 #include "llvm/ADT/OwningPtr.h"
-#include "llvm/LLVMContext.h"
-#include "llvm/Module.h"
-#include "llvm/Function.h"
+#include "llvm/IR/Module.h"
+#include "llvm/IR/Function.h"
 
 #include <spa/SPA.h>
 #include <spa/CG.h>
@@ -136,7 +135,7 @@ void xformServer() {
 	SPA::CFG cfg( module );
 	SPA::CG cg( module );
 	
-	Function *fn;
+	llvm::Function *fn;
 	assert( (fn = module->getFunction( SPA_MESSAGE_HANDLER_ANNOTATION_FUNCTION )) && "Message handler annotation function not present in module." );
 
 	std::set<llvm::Instruction *> mhCallers = cg.getDefiniteCallers( fn );

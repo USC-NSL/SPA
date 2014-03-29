@@ -7,7 +7,7 @@
 
 #include <set>
 
-#include <llvm/Instruction.h>
+#include <llvm/IR/Instruction.h>
 
 #include <spa/InstructionFilter.h>
 

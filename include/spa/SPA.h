@@ -10,10 +10,9 @@
 #include <list>
 #include <map>
 
-#include <llvm/Module.h>
-#include "llvm/Instructions.h"
-
-#include <cloud9/worker/SymbolicEngine.h>
+#include <llvm/IR/Module.h>
+#include <llvm/IR/Instructions.h>
+#include <klee/Interpreter.h>
 
 #include <spa/StateUtility.h>
 #include <spa/FilteringEventHandler.h>
@@ -57,8 +56,9 @@
 
 
 namespace SPA {
-	class SPA : public cloud9::worker::StateEventHandler, FilteringEventHandler {
+	class SPA : public klee::InterpreterHandler, public klee::InterpreterEventListener, public FilteringEventHandler {
 	private:
+		klee::Interpreter *interpreter;
 		llvm::Module *module;
 		llvm::Function *entryFunction;
 		llvm::Instruction *initHandlerPlaceHolder;
@@ -79,11 +79,13 @@ namespace SPA {
 
 		unsigned long checkpointsFound, filteredPathsFound, terminalPathsFound, outputtedPaths;
 
+		static llvm::Module *getModuleFromFile(std::string moduleFile);
 		void generateMain();
 		void showStats();
 		void processPath( klee::ExecutionState *state );
 
 	public:
+		SPA( std::string moduleFile, std::ostream &_output ) : SPA(getModuleFromFile(moduleFile), _output) {}
 		SPA( llvm::Module *_module, std::ostream &_output );
 		void addInitFunction( llvm::Function *fn );
 		void addEntryFunction( llvm::Function *fn );
@@ -105,14 +107,21 @@ namespace SPA {
 		llvm::Function *getMainFunction() { return entryFunction; }
 		void start();
 
-		bool onStateBranching(klee::ExecutionState *state, klee::ForkTag forkTag) { return true; }
-		void onStateBranched(klee::ExecutionState *kState, klee::ExecutionState *parent, int index, klee::ForkTag forkTag) {}
-		void onOutOfResources(klee::ExecutionState *destroyedState) {}
-		void onEvent(klee::ExecutionState *kState, unsigned int type, long int value) {}
-		void onDebugInfo(klee::ExecutionState *kState, const std::string &message) {}
+		llvm::Module *getModule() { return module; }
 
-		void onControlFlowEvent(klee::ExecutionState *kState, cloud9::worker::ControlFlowEvent event);
-		void onStateDestroy(klee::ExecutionState *kState, bool silenced);
+		std::ostream &getInfoStream() const { return std::cout; }
+		std::string getOutputFilename(const std::string &filename) { return "/tmp/" + filename; }
+		std::ostream *openOutputFile(const std::string &filename) { return NULL; }
+		void incPathsExplored() {}
+		void processTestCase(const klee::ExecutionState &state, const char *err, const char *suffix) {};
+
+		void onStateBranching(klee::ExecutionState *state) {}
+		void onStateBranched(klee::ExecutionState *kState, klee::ExecutionState *parent, int index) {}
+		void onStep(klee::ExecutionState *kState);
+		void onCall(klee::ExecutionState *kState) {};
+		void onReturn(klee::ExecutionState *kState) {};
+		void onStateDestroy(klee::ExecutionState *kState);
+
 		void onStateFiltered( klee::ExecutionState *state, unsigned int id );
 	};
 }

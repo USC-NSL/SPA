@@ -5,7 +5,7 @@
 #ifndef __InstructionFilter_H__
 #define __InstructionFilter_H__
 
-#include "llvm/Instruction.h"
+#include "llvm/IR/Instruction.h"
 
 namespace SPA {
 	class InstructionFilter {
