@@ -5,43 +5,45 @@ TARGETS = netcalc-client netcalc-server
 BC_TARGETS = netcalc-client.bc netcalc-server.bc
 TEST_TARGETS = netcalc-client.test netcalc-server.test
 HEADERS = netcalc.h
-LLVM_CC = /usr/local/bin/llvm-gcc4.2-2.9-x86_64-linux/bin/llvm-g++ -Wall -g --emit-llvm
-CC = g++ -Wall -g
-SPA_EXE = /usr/local/bin/spa/Release+Asserts/bin/spaRR
-SPA = $(SPA_EXE) --stand-alone --libc=uclibc --posix-runtime
-LIB_SPA_TEST_MODULE = /usr/local/bin/spa/Release+Asserts/lib/libSpaTestModule.so
+LLVM_CC = clang++ -emit-llvm
+CC = g++
+CXX_FLAGS = -Wall -Werror -g -I../../include
+SPA = ../../Release+Asserts/bin/spa
+SPABADINPUTS = ../../Release+Asserts/bin/spaBadInputs
+SPAE2ETEST = ../../Release+Asserts/bin/spaE2ETest
+LIB_SPA_TEST_MODULE = ../../Release+Asserts/lib/libSpaTestModule.so
 
 
 default: all
 
 all: $(TARGETS) $(BC_TARGETS) $(TEST_TARGETS)
 
-%: %.c $(HEADERS)
-	$(CC) -o $@ $<
+%: %.cpp $(HEADERS)
+	$(CC) $(CXX_FLAGS) -o $@ $<
 
-%.bc: %.c $(HEADERS)
-	$(LLVM_CC) -DENABLE_SPA -DENABLE_KLEE -c -o $@ $<
+%.bc: %.cpp $(HEADERS)
+	$(LLVM_CC) $(CXX_FLAGS) -DENABLE_SPA -DENABLE_KLEE -c -o $@ $<
 
-%.test: %.c $(HEADERS) $(LIB_SPA_TEST_MODULE)
-	$(CC) -DENABLE_SPA -o $@ $< $(LIB_SPA_TEST_MODULE)
+%.test: %.cpp $(HEADERS) $(LIB_SPA_TEST_MODULE)
+	$(CC) $(CXX_FLAGS) -DENABLE_SPA -o $@ $< $(LIB_SPA_TEST_MODULE)
 
-%.bc.client.paths: %.bc $(SPA_EXE)
+%.bc.client.paths: %.bc $(SPA)
 	$(SPA) --client $< 2>&1 | tee $@.log
 
-%.bc.server.paths: %.bc $(SPA_EXE)
+%.bc.server.paths: %.bc $(SPA)
 	$(SPA) --server $< 2>&1 | tee $@.log
 
 BadInputs.untested: $(PATHS)
-	spaBadInputs -client netcalc-client.bc.client.paths -server netcalc-server.bc.server.paths -o $@ -d $@.debug 2>&1 | tee $@.log
+	$(SPABADINPUTS) -client netcalc-client.bc.client.paths -server netcalc-server.bc.server.paths -o $@ -d $@.debug 2>&1 | tee $@.log
 
 BadInputs.tested: BadInputs.untested $(TEST_TARGETS)
-	spaE2ETest $< $@ './netcalc-client.test 1 1 +' './netcalc-server.test' 2>&1 | tee $@.log
+	$(SPABADINPUTS) $< $@ './netcalc-client.test 1 1 +' './netcalc-server.test' 2>&1 | tee $@.log
 
-netcalc-client.dot: netcalc-client.bc $(SPA_EXE)
-	spa --stand-alone --dump-cfg $@ --client $^
+netcalc-client.dot: netcalc-client.bc $(SPA)
+	$(SPA) --stand-alone --dump-cfg $@ --client $^
 
-netcalc-server.dot: netcalc-server.bc $(SPA_EXE)
-	spa --stand-alone --dump-cfg $@ --server $^
+netcalc-server.dot: netcalc-server.bc $(SPA)
+	$(SPA) --stand-alone --dump-cfg $@ --server $^
 
 %.pdf: %.dot
 	dot -Tpdf -o $@ $<
