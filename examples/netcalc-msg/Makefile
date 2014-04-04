@@ -37,7 +37,7 @@ BadInputs.untested: $(PATHS)
 	$(SPABADINPUTS) -client netcalc-client.bc.client.paths -server netcalc-server.bc.server.paths -o $@ -d $@.debug 2>&1 | tee $@.log
 
 BadInputs.tested: BadInputs.untested $(TEST_TARGETS)
-	$(SPABADINPUTS) $< $@ './netcalc-client.test 1 1 +' './netcalc-server.test' 2>&1 | tee $@.log
+	$(SPAE2ETEST) $< $@ './netcalc-client.test 1 1 +' './netcalc-server.test' 2>&1 | tee $@.log
 
 netcalc-client.dot: netcalc-client.bc $(SPA)
 	$(SPA) --stand-alone --dump-cfg $@ --client $^

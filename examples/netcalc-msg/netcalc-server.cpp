@@ -15,7 +15,7 @@ SpaTag_t QueryValid;
 // Handles the query and computes the response.
 void handleQuery( nc_query_t &query, nc_response_t &response ) {
 	spa_msg_input_var( query );
-	spa_seed_file( 1, &query, "query.seed" );
+// 	spa_seed_file( 1, &query, "query.seed" );
 // 	spa_seed( 1, &query, sizeof( query ), "\0\0\0\0\171\171\171\171\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0" );
 
 	response.err = NC_OK;
@@ -57,12 +57,12 @@ void handleQuery( nc_query_t &query, nc_response_t &response ) {
 // 		std::cerr << "Error: " << getErrText( response.err ) << std::endl;
 // 	}
 
-	spa_msg_output_var( response );
 	if ( response.err != NC_BADINPUT ) {
 		spa_valid_path();
-	} else {
-		spa_invalid_path();
+// 	} else {
+// 		spa_invalid_path();
 	}
+	spa_msg_output_var( response );
 }
 
 void SpaHandleQueryEntry() {
