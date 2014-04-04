@@ -467,7 +467,7 @@ namespace SPA {
 		llvm::OwningPtr<llvm::MemoryBuffer> BufferPtr;
 		llvm::error_code ec = llvm::MemoryBuffer::getFileOrSTDIN(moduleFile.c_str(), BufferPtr);
 		if (ec) klee::klee_error("error loading program '%s': %s", moduleFile.c_str(), ec.message().c_str());
-		mainModule = getLazyBitcodeModule(BufferPtr.get(), llvm::getGlobalContext(), &ErrorMsg);
+		mainModule = getLazyBitcodeModule(BufferPtr.take(), llvm::getGlobalContext(), &ErrorMsg);
 
 		if (mainModule) {
 			if (mainModule->MaterializeAllPermanently(&ErrorMsg)) {
@@ -785,7 +785,7 @@ namespace SPA {
 		IOpts.MakeConcreteSymbolic = false;
 		klee::Interpreter::ModuleOptions Opts(
 				/*LibraryDir=*/ KLEE_DIR "/" RUNTIME_CONFIGURATION "/lib",
-				/*Optimize=*/ true,
+				/*Optimize=*/ false,
 				/*CheckDivZero=*/ true,
 				/*CheckOvershift=*/ true);
 
@@ -799,12 +799,12 @@ namespace SPA {
 		interpreter = klee::Interpreter::create(IOpts, this);
 		interpreter->addInterpreterEventListener(this);
 
-		externalsAndGlobalsCheck(interpreter->setModule(module, Opts));
+		externalsAndGlobalsCheck(module = const_cast<llvm::Module *>(interpreter->setModule(module, Opts)));
 
 		int pArgc = 1;
 		char argv0[] = "";
 		char *pArgv[2] = {argv0, NULL};
-		char **pEnvp = {NULL};
+		char *pEnvp[1] = {NULL};
 
 		interpreter->runFunctionAsMain(entryFunction, pArgc, pArgv, pEnvp);
 

@@ -348,10 +348,10 @@ int main(int argc, char **argv, char **envp) {
 	}
 
 	if ( Client ) {
-		spa.setOutputTerminalPaths( true );
+		spa.setOutputTerminalPaths( false );
 		spa.setPathFilter( new SpaClientPathFilter() );
 	} else if ( Server ) {
-		spa.setOutputTerminalPaths( true );
+		spa.setOutputTerminalPaths( false );
 		spa.setPathFilter( new SpaServerPathFilter() );
 	}
 

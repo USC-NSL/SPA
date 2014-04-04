@@ -6,6 +6,7 @@
 #define __SPA_H__
 
 #include <iostream>
+#include <fstream>
 #include <deque>
 #include <list>
 #include <map>
@@ -111,7 +112,7 @@ namespace SPA {
 
 		std::ostream &getInfoStream() const { return std::cout; }
 		std::string getOutputFilename(const std::string &filename) { return "/tmp/" + filename; }
-		std::ostream *openOutputFile(const std::string &filename) { return NULL; }
+		std::ostream *openOutputFile(const std::string &filename) { return new std::ofstream("/dev/null"); }
 		void incPathsExplored() {}
 		void processTestCase(const klee::ExecutionState &state, const char *err, const char *suffix) {};
 
