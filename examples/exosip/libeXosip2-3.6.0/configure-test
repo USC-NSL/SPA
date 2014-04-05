@@ -1,7 +1,6 @@
 #!/bin/sh
 
-CFLAGS='-DENABLE_SPA -O0 -g -I/usr/local/bin/spa/examples/exosip/libosip2-3.6.0/include' \
-CXXFLAGS='-DENABLE_SPA -O0 -g -I/usr/local/bin/spa/examples/exosip/libosip2-3.6.0/include' \
+CFLAGS="-DENABLE_SPA -I`pwd`/../libosip2-3.6.0/include -I`pwd`/../../../include -O0 -g" \
 AR='echo' RANLIB='echo' ./configure \
 --disable-shared \
 --enable-static \

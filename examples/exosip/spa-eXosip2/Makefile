@@ -9,13 +9,13 @@ BC_LIBS = ../libeXosip2-3.6.0/libexosip2.bc
 # TEST_TARGETS = client.htest.exe server.htest.exe
 TEST_TARGETS = client.e2etest.exe server.e2etest.exe options-server.e2etest.exe
 LOG_TARGETS = client.log.exe server.log.exe options-server.log.exe
-CC = gcc -Wall -g -I/usr/local/bin/spa/examples/exosip/libosip2-3.6.0/include -I/usr/local/bin/spa/examples/exosip/libeXosip2-3.6.0/include
-LLVM_CC = llvm-gcc -Wall -g -O0 --emit-llvm -I/usr/local/bin/spa/examples/exosip/libosip2-3.6.0/include -I/usr/local/bin/spa/examples/exosip/libeXosip2-3.6.0/include
-LLVM_LD = llvm-ld -r -disable-opt
-LIB_SPA_TEST_MODULE = /usr/local/bin/spa/Release+Asserts/lib/libSpaTestModule.so
-LIB_SPA_LOG_MODULE = /usr/local/bin/spa/Release+Asserts/lib/libSpaLogModule.so
-SPA_EXE = /usr/local/bin/spa/Release+Asserts/bin/spa
-# SPA_EXE = /usr/local/bin/spa/Release+Asserts/bin/spaRR
+CC = gcc -Wall -g -I../libosip2-3.6.0/include -I../libeXosip2-3.6.0/include -I../../../include
+LLVM_CC = clang -Wall -g -O0 -emit-llvm -I../libosip2-3.6.0/include -I../libeXosip2-3.6.0/include -I../../../include
+LLVM_LD = llvm-link
+LIB_SPA_TEST_MODULE = ../../../Release+Asserts/lib/libSpaTestModule.so
+LIB_SPA_LOG_MODULE = ../../../Release+Asserts/lib/libSpaLogModule.so
+SPA_EXE = ../../../Release+Asserts/bin/spa
+# SPA_EXE = ../../../Release+Asserts/bin/spaRR
 SPA = time $(SPA_EXE) --stand-alone --libc=uclibc --posix-runtime --max-stp-time=1 --max-instruction-time=1
 
 default: all
