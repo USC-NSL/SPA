@@ -1,6 +1,6 @@
 #!/bin/sh
 
-CFLAGS='-O0 -g' ./configure \
+CFLAGS="-I`pwd`/../../include -O0 -g" ./configure \
 --disable-floating-point \
 --disable-sound \
 --disable-oss \

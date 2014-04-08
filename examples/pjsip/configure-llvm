@@ -1,9 +1,10 @@
 #!/bin/sh
 
-CC='llvm-gcc' CFLAGS='-DENABLE_SPA -DENABLE_KLEE -emit-llvm -use-gold-plugin -O0 -g' \
-CXX='llvm-g++' CXXFLAGS='-DENABLE_SPA -DENABLE_KLEE -emit-llvm -use-gold-plugin -O0 -g' \
-LD='llvm-ld' LDFLAGS='-disable-opt' \
-CPP='llvm-cpp' \
+CC='clang' CFLAGS="-DENABLE_SPA -DENABLE_KLEE -I`pwd`/../../include -emit-llvm -use-gold-plugin -O0 -g" \
+CXX='clang++' CXXFLAGS="-DENABLE_SPA -DENABLE_KLEE -I`pwd`/../../include -emit-llvm -use-gold-plugin -O0 -g" \
+LD='clang -emit-llvm -c' \
+CPP='clang -E' CPPFLAGS="-I`pwd`/../../include" \
+AR='llvm-link -o' RANLIB='echo' \
 ./configure \
 --disable-floating-point \
 --disable-sound \
