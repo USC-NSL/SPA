@@ -843,8 +843,8 @@ namespace SPA {
 	}
 
 	void SPA::onStep(klee::ExecutionState *kState) {
-// 		klee_message( "Current state at:" );
-// 		klee::c9::printStateStack( std::cerr, *kState ) << std::endl;
+// 		klee::klee_message( "Current state at:" );
+// 		kState->dumpStack( std::cerr );
 
 		if (checkpoints.count(kState->pc->inst)) {
 			klee::klee_message( "Processing checkpoint path." );
@@ -855,8 +855,8 @@ namespace SPA {
 	}
 
 	void SPA::onStateDestroy(klee::ExecutionState *kState) {
-// 		klee_message( "Destroying path at:" );
-// 		klee::c9::printStateStack( std::cerr, *kState ) << std::endl;
+		klee::klee_message( "Destroying path at:" );
+		kState->dumpStack( std::cerr );
 
 		if ( ! kState->filtered ) {
 			terminalPathsFound++;
