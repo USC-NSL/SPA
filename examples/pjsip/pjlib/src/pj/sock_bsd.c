@@ -530,7 +530,11 @@ PJ_DEF(pj_status_t) pj_sock_socket(int af,
     PJ_ASSERT_RETURN(PJ_INVALID_SOCKET==-1, 
                      (*sock=PJ_INVALID_SOCKET, PJ_EINVAL));
     
+#ifndef ENABLE_KLEE
     *sock = socket(af, type, proto);
+#else
+		*sock = 0;
+#endif
     if (*sock == PJ_INVALID_SOCKET)
 	return PJ_RETURN_OS_ERROR(pj_get_native_netos_error());
     else {
@@ -637,12 +641,16 @@ PJ_DEF(pj_status_t) pj_sock_getsockname( pj_sock_t sock,
 					 int *namelen)
 {
     PJ_CHECK_STACK();
+#ifndef ENABLE_KLEE
     if (getsockname(sock, (struct sockaddr*)addr, (socklen_t*)namelen) != 0)
 	return PJ_RETURN_OS_ERROR(pj_get_native_netos_error());
     else {
 	PJ_SOCKADDR_RESET_LEN(addr);
 	return PJ_SUCCESS;
     }
+#else
+	return PJ_SUCCESS;
+#endif
 }
 
 /*
@@ -785,10 +793,14 @@ PJ_DEF(pj_status_t) pj_sock_connect( pj_sock_t sock,
 				     int namelen)
 {
     PJ_CHECK_STACK();
+#ifndef ENABLE_KLEE
     if (connect(sock, (struct sockaddr*)addr, namelen) != 0)
 	return PJ_RETURN_OS_ERROR(pj_get_native_netos_error());
     else
 	return PJ_SUCCESS;
+#else
+	return PJ_SUCCESS;
+#endif
 }
 
 
