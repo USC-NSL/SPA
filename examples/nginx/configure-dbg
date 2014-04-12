@@ -1,6 +1,6 @@
 #!/bin/sh
 
-CFLAGS='-O0 -g -I/home/david/Projects/spa/include' CXXFLAGS='-O0 -g' \
+CFLAGS="-O0 -g -I`pwd`/../../include" CXXFLAGS='-O0 -g' \
 ./configure \
 	--with-http_spdy_module \
 	--without-http_charset_module \

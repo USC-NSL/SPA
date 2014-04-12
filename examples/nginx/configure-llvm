@@ -1,12 +1,12 @@
 #!/bin/sh
 
-CC='llvm-gcc' CFLAGS='-DENABLE_SPA -DENABLE_KLEE -emit-llvm -use-gold-plugin -O0 -g' \
-CXX='llvm-g++' CXXFLAGS='-DENABLE_SPA -DENABLE_KLEE -emit-llvm -use-gold-plugin -O0 -g' \
-LD='llvm-ld' LDFLAGS='-disable-opt' \
-CPP='llvm-cpp' \
+CC='clang' CFLAGS="-DENABLE_SPA -DENABLE_KLEE -I`pwd`/../../include -emit-llvm -use-gold-plugin -O0 -g" \
+CXX='clang++' CXXFLAGS="-DENABLE_SPA -DENABLE_KLEE -I`pwd`/../../include -emit-llvm -use-gold-plugin -O0 -g" \
+LD='llvm-link' \
+CPP='clang -E' \
 ./configure \
-	--prefix='/home/lpedrosa/spa/examples/nginx' \
-	--conf-path='/home/lpedrosa/spa/examples/nginx/conf/nginx.conf' \
+	--prefix="`pwd`" \
+	--conf-path="`pwd`/conf/nginx.conf" \
 	--with-http_spdy_module \
 	--without-http_charset_module \
 	--without-http_gzip_module \
@@ -36,10 +36,9 @@ CPP='llvm-cpp' \
 	--without-mail_pop3_module \
 	--without-mail_imap_module \
 	--without-mail_smtp_module \
-	--with-cc="llvm-gcc" \
-	--with-cpp="llvm-cpp" \
-	--with-cc-opt="-DENABLE_SPA -DENABLE_KLEE -emit-llvm -use-gold-plugin -O0 -g" \
-	--with-ld-opt="-disable-opt" \
+	--with-cc="clang" \
+	--with-cpp="clang -E" \
+	--with-cc-opt="-DENABLE_SPA -DENABLE_KLEE -I`pwd`/../../include -emit-llvm -use-gold-plugin -O0 -g" \
 	--without-pcre \
 	--with-zlib=zlib \
-	--with-zlib-opt='-DENABLE_SPA -DENABLE_KLEE -emit-llvm -use-gold-plugin -O0 -g'
+	--with-zlib-opt="-DENABLE_SPA -DENABLE_KLEE -I`pwd`/../../include -emit-llvm -use-gold-plugin -O0 -g"

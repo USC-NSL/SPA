@@ -1,0 +1,5 @@
+zlib.pc
+*.o
+libz.a
+zlib.3.pdf
+configure.log

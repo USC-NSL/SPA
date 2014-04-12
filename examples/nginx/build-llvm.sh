@@ -105,6 +105,6 @@ OBJS="objs/src/core/nginx.o \
 [ -f zlib/Makefile ] || (cd zlib; ./configure-llvm; cd ..)
 [ -f Makefile ] || ./configure-llvm
 
-make -f objs/Makefile -kj48 $OBJS
+make -f objs/Makefile -kj`grep -c processor /proc/cpuinfo` $OBJS
 
-llvm-ld -o objs/nginx $OBJS -disable-opt
+llvm-link -o objs/nginx.bc $OBJS
