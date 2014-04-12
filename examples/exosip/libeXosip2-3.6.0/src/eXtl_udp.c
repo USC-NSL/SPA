@@ -102,8 +102,12 @@ static int udp_tl_open(void)
 			continue;
 		}
 
+#ifndef ENABLE_KLEE
 		sock = (int) socket(curinfo->ai_family, curinfo->ai_socktype,
 							curinfo->ai_protocol);
+#else
+		sock = 0;
+#endif
 		if (sock < 0) {
 			OSIP_TRACE(osip_trace
 					   (__FILE__, __LINE__, OSIP_ERROR, NULL,
@@ -125,7 +129,11 @@ static int udp_tl_open(void)
 #endif							/* IPV6_V6ONLY */
 		}
 
+#ifndef ENABLE_KLEE
 		res = bind(sock, curinfo->ai_addr, curinfo->ai_addrlen);
+#else
+		res = 0;
+#endif
 		if (res < 0) {
 			OSIP_TRACE(osip_trace
 					   (__FILE__, __LINE__, OSIP_ERROR, NULL,
@@ -136,7 +144,11 @@ static int udp_tl_open(void)
 			continue;
 		}
 		len = sizeof(ai_addr);
+#ifndef ENABLE_KLEE
 		res = getsockname(sock, (struct sockaddr *) &ai_addr, &len);
+#else
+		res = 0;
+#endif
 		if (res != 0) {
 			OSIP_TRACE(osip_trace
 					   (__FILE__, __LINE__, OSIP_ERROR, NULL,
@@ -175,7 +187,11 @@ static int udp_tl_open(void)
 	if (eXtl_udp.proto_family == AF_INET)
 	{
 		int tos = (eXosip.dscp << 2) & 0xFC;
+#ifndef ENABLE_KLEE
 		res = setsockopt(udp_socket, IPPROTO_IP, IP_TOS, (SOCKET_OPTION_VALUE)&tos, sizeof(tos));
+#else
+		res = 0;
+#endif
 	} else {
 		int tos = (eXosip.dscp << 2) & 0xFC;
 #ifdef IPV6_TCLASS
