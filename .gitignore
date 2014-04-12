@@ -19,3 +19,5 @@ docs/doxygen.cfg
 
 # Site file for llvm-lit
 lit.site.cfg
+
+ctags
