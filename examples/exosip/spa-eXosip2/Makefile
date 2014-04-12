@@ -16,7 +16,7 @@ LIB_SPA_TEST_MODULE = ../../../Release+Asserts/lib/libSpaTestModule.so
 LIB_SPA_LOG_MODULE = ../../../Release+Asserts/lib/libSpaLogModule.so
 SPA_EXE = ../../../Release+Asserts/bin/spa
 # SPA_EXE = ../../../Release+Asserts/bin/spaRR
-SPA = time $(SPA_EXE) --stand-alone --libc=uclibc --posix-runtime --max-stp-time=1 --max-instruction-time=1
+SPA = time $(SPA_EXE) --max-solver-time=1 --max-instruction-time=1
 
 default: all
 
