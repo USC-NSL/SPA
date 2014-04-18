@@ -1,0 +1,8 @@
+#!/bin/sh
+
+CC='clang' CFLAGS="-DENABLE_SPA -DENABLE_KLEE  -emit-llvm -use-gold-plugin -O0 -g" \
+CXX='clang++' CXXFLAGS="-DENABLE_SPA -DENABLE_KLEE  -emit-llvm -use-gold-plugin -O0 -g" \
+LD='llvm-link' \
+CPP='clang -E' \
+./configure \
+	--prefix="`pwd`" 
