@@ -2,109 +2,194 @@
 
 set -e
 
-OBJS="objs/src/core/nginx.o \
-	objs/src/core/ngx_log.o \
-	objs/src/core/ngx_palloc.o \
-	objs/src/core/ngx_array.o \
-	objs/src/core/ngx_list.o \
-	objs/src/core/ngx_hash.o \
-	objs/src/core/ngx_buf.o \
-	objs/src/core/ngx_queue.o \
-	objs/src/core/ngx_output_chain.o \
-	objs/src/core/ngx_string.o \
-	objs/src/core/ngx_parse.o \
-	objs/src/core/ngx_inet.o \
-	objs/src/core/ngx_file.o \
-	objs/src/core/ngx_crc32.o \
-	objs/src/core/ngx_murmurhash.o \
-	objs/src/core/ngx_md5.o \
-	objs/src/core/ngx_rbtree.o \
-	objs/src/core/ngx_radix_tree.o \
-	objs/src/core/ngx_slab.o \
-	objs/src/core/ngx_times.o \
-	objs/src/core/ngx_shmtx.o \
-	objs/src/core/ngx_connection.o \
-	objs/src/core/ngx_cycle.o \
-	objs/src/core/ngx_spinlock.o \
-	objs/src/core/ngx_cpuinfo.o \
-	objs/src/core/ngx_conf_file.o \
-	objs/src/core/ngx_resolver.o \
-	objs/src/core/ngx_open_file_cache.o \
-	objs/src/core/ngx_crypt.o \
-	objs/src/event/ngx_event.o \
-	objs/src/event/ngx_event_timer.o \
-	objs/src/event/ngx_event_posted.o \
-	objs/src/event/ngx_event_busy_lock.o \
-	objs/src/event/ngx_event_accept.o \
-	objs/src/event/ngx_event_connect.o \
-	objs/src/event/ngx_event_pipe.o \
-	objs/src/os/unix/ngx_time.o \
-	objs/src/os/unix/ngx_errno.o \
-	objs/src/os/unix/ngx_alloc.o \
-	objs/src/os/unix/ngx_files.o \
-	objs/src/os/unix/ngx_socket.o \
-	objs/src/os/unix/ngx_recv.o \
-	objs/src/os/unix/ngx_readv_chain.o \
-	objs/src/os/unix/ngx_udp_recv.o \
-	objs/src/os/unix/ngx_send.o \
-	objs/src/os/unix/ngx_writev_chain.o \
-	objs/src/os/unix/ngx_channel.o \
-	objs/src/os/unix/ngx_shmem.o \
-	objs/src/os/unix/ngx_process.o \
-	objs/src/os/unix/ngx_daemon.o \
-	objs/src/os/unix/ngx_setaffinity.o \
-	objs/src/os/unix/ngx_setproctitle.o \
-	objs/src/os/unix/ngx_posix_init.o \
-	objs/src/os/unix/ngx_user.o \
-	objs/src/os/unix/ngx_process_cycle.o \
-	objs/src/os/unix/ngx_linux_init.o \
-	objs/src/event/modules/ngx_epoll_module.o \
-	objs/src/os/unix/ngx_linux_sendfile_chain.o \
-	objs/src/http/ngx_http.o \
-	objs/src/http/ngx_http_core_module.o \
-	objs/src/http/ngx_http_special_response.o \
-	objs/src/http/ngx_http_request.o \
-	objs/src/http/ngx_http_parse.o \
-	objs/src/http/ngx_http_header_filter_module.o \
-	objs/src/http/ngx_http_write_filter_module.o \
-	objs/src/http/ngx_http_copy_filter_module.o \
-	objs/src/http/modules/ngx_http_log_module.o \
-	objs/src/http/ngx_http_request_body.o \
-	objs/src/http/ngx_http_variables.o \
-	objs/src/http/ngx_http_script.o \
-	objs/src/http/ngx_http_upstream.o \
-	objs/src/http/ngx_http_upstream_round_robin.o \
-	objs/src/http/ngx_http_parse_time.o \
-	objs/src/http/modules/ngx_http_static_module.o \
-	objs/src/http/modules/ngx_http_index_module.o \
-	objs/src/http/modules/ngx_http_chunked_filter_module.o \
-	objs/src/http/modules/ngx_http_range_filter_module.o \
-	objs/src/http/modules/ngx_http_headers_filter_module.o \
-	objs/src/http/modules/ngx_http_not_modified_filter_module.o \
-	objs/src/http/ngx_http_busy_lock.o \
-	objs/src/http/ngx_http_spdy.o \
-	objs/src/http/ngx_http_spdy_module.o \
-	objs/src/http/ngx_http_spdy_filter_module.o \
-	objs/ngx_modules.o \
-	zlib/adler32.o \
-	zlib/compress.o \
-	zlib/crc32.o \
-	zlib/deflate.o \
-	zlib/gzclose.o \
-	zlib/gzlib.o \
-	zlib/gzread.o \
-	zlib/gzwrite.o \
-	zlib/infback.o \
-	zlib/inffast.o \
-	zlib/inflate.o \
-	zlib/inftrees.o \
-	zlib/trees.o \
-	zlib/uncompr.o \
-	zlib/zutil.o"
+OBJS="src/alert.o \
+src/allocator.o \
+src/asio.o \
+src/asio_ssl.o \
+src/assert.o \
+src/bandwidth_limit.o \
+src/bandwidth_manager.o \
+src/bandwidth_queue_entry.o \
+src/bloom_filter.o \
+src/broadcast_socket.o \
+src/bt_peer_connection.o \
+src/chained_buffer.o \
+src/connection_queue.o \
+src/ConvertUTF.o \
+src/create_torrent.o \
+src/dht_tracker.o \
+src/disk_buffer_holder.o \
+src/disk_buffer_pool.o \
+src/disk_io_thread.o \
+src/entry.o \
+src/enum_net.o \
+src/error_code.o \
+src/escape_string.o \
+src/file.o \
+src/file_pool.o \
+src/file_storage.o \
+src/find_data.o \
+src/GeoIP.o \
+src/gzip.o \
+src/http_connection.o \
+src/http_parser.o \
+src/http_seed_connection.o \
+src/http_stream.o \
+src/http_tracker_connection.o \
+src/i2p_stream.o \
+src/identify_client.o \
+src/instantiate_connection.o \
+src/ip_filter.o \
+src/lazy_bdecode.o \
+src/logger.o \
+src/lsd.o \
+src/lt_trackers.o \
+src/magnet_uri.o \
+src/metadata_transfer.o \
+src/mpi.o \
+src/natpmp.o \
+src/node_id.o \
+src/node.o \
+src/packet_buffer.o \
+src/parse_url.o \
+src/pe_crypto.o \
+src/peer_connection.o \
+src/piece_picker.o \
+src/policy.o \
+src/puff.o \
+src/random.o \
+src/refresh.o \
+src/routing_table.o \
+src/rpc_manager.o \
+src/rsa.o \
+src/rss.o \
+src/session_impl.o \
+src/session.o \
+src/settings.o \
+src/sha1.o \
+src/smart_ban.o \
+src/socket_io.o \
+src/socket_type.o \
+src/socks5_stream.o \
+src/stat.o \
+src/storage.o \
+src/string_util.o \
+src/thread.o \
+src/time.o \
+src/timestamp_history.o \
+src/torrent_handle.o \
+src/torrent_info.o \
+src/torrent.o \
+src/tracker_manager.o \
+src/traversal_algorithm.o \
+src/udp_socket.o \
+src/udp_tracker_connection.o \
+src/upnp.o \
+src/utf8.o \
+src/ut_metadata.o \
+src/ut_pex.o \
+src/utp_socket_manager.o \
+src/utp_stream.o \
+src/web_connection_base.o \
+src/web_peer_connection.o"
 
-[ -f zlib/Makefile ] || (cd zlib; ./configure-llvm; cd ..)
+BUILD_OBJS="alert.lo \
+allocator.lo \
+asio.lo \
+asio_ssl.lo \
+assert.lo \
+bandwidth_limit.lo \
+bandwidth_manager.lo \
+bandwidth_queue_entry.lo \
+bloom_filter.lo \
+broadcast_socket.lo \
+bt_peer_connection.lo \
+chained_buffer.lo \
+connection_queue.lo \
+ConvertUTF.lo \
+create_torrent.lo \
+dht_tracker.lo \
+disk_buffer_holder.lo \
+disk_buffer_pool.lo \
+disk_io_thread.lo \
+entry.lo \
+enum_net.lo \
+error_code.lo \
+escape_string.lo \
+file.lo \
+file_pool.lo \
+file_storage.lo \
+find_data.lo \
+GeoIP.lo \
+gzip.lo \
+http_connection.lo \
+http_parser.lo \
+http_seed_connection.lo \
+http_stream.lo \
+http_tracker_connection.lo \
+i2p_stream.lo \
+identify_client.lo \
+instantiate_connection.lo \
+ip_filter.lo \
+lazy_bdecode.lo \
+logger.lo \
+lsd.lo \
+lt_trackers.lo \
+magnet_uri.lo \
+metadata_transfer.lo \
+mpi.lo \
+natpmp.lo \
+node_id.lo \
+node.lo \
+packet_buffer.lo \
+parse_url.lo \
+pe_crypto.lo \
+peer_connection.lo \
+piece_picker.lo \
+policy.lo \
+puff.lo \
+random.lo \
+refresh.lo \
+routing_table.lo \
+rpc_manager.lo \
+rsa.lo \
+rss.lo \
+session_impl.lo \
+session.lo \
+settings.lo \
+sha1.lo \
+smart_ban.lo \
+socket_io.lo \
+socket_type.lo \
+socks5_stream.lo \
+stat.lo \
+storage.lo \
+string_util.lo \
+thread.lo \
+time.lo \
+timestamp_history.lo \
+torrent_handle.lo \
+torrent_info.lo \
+torrent.lo \
+tracker_manager.lo \
+traversal_algorithm.lo \
+udp_socket.lo \
+udp_tracker_connection.lo \
+upnp.lo \
+utf8.lo \
+ut_metadata.lo \
+ut_pex.lo \
+utp_socket_manager.lo \
+utp_stream.lo \
+web_connection_base.lo \
+web_peer_connection.lo"
+
+[ -f src/Makefile ] || ./configure-llvm
 [ -f Makefile ] || ./configure-llvm
 
-make -f objs/Makefile -kj`grep -c processor /proc/cpuinfo` $OBJS
+cd src
+make  -kj4 $BUILD_OBJS
+#-f src/Makefile
+cd ..
 
-llvm-link -o objs/nginx.bc $OBJS
+llvm-link -o src/libtorrent.bc $OBJS

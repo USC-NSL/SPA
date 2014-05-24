@@ -1,0 +1,7 @@
+#!/bin/sh
+
+CFLAGS="-I./libowfat-0.29" \
+CXXFLAGS="-I./libowfat-0.29" \
+LDFLAGS="-L." \
+make
+

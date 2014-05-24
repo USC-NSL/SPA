@@ -7,11 +7,12 @@ CPP='clang -E' \
 ./configure \
     --enable-encryption=no \
     --enable-pool-allocators=no \
-    --enable-invariant-checks=yes \
     --enable-deprecated-functions=no \
     --enable-statistics=no \
     --enable-disk-stats=no \
     --enable-geoip=no \
     --enable-examples=yes \
     --enable-tests=no \
-    --enable-python-binding=no 
+    --enable-python-binding=no  \
+    --enable-shared=no \
+    --enable-static=no

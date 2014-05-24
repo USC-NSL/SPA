@@ -1,0 +1,10 @@
+#!/bin/sh
+
+CC='clang' CFLAGS="-DENABLE_SPA -DENABLE_KLEE -I/home/sakekasi/UCLA/Spring2/CS199/opentracker/libowfat-0.29/ -emit-llvm -use-gold-plugin -O0 -g" LDFLAGS="-L. -Llibowfat-0.29 -emit-llvm -use-gold-plugin -O0 -g" \
+CXX='clang++' CXXFLAGS="-DENABLE_SPA -DENABLE_KLEE -I/home/sakekasi/UCLA/Spring2/CS199/opentracker/libowfat-0.29/ -emit-llvm -use-gold-plugin -O0 -g" \
+LD='llvm-link' \
+CPP='clang -E' \
+make
+
+rm opentracker
+llvm-link -o opentracker opentracker.o trackerlogic.o scan_urlencoded_query.o ot_mutex.o ot_stats.o ot_vector.o ot_clean.o ot_udp.o ot_iovec.o ot_fullscrape.o ot_accesslist.o ot_http.o ot_livesync.o ot_rijndael.o ./libowfat-0.29/libowfat.a

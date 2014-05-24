@@ -1,0 +1,31 @@
+am_libtorrent_rasterbar_la_OBJECTS = web_connection_base.lo alert.lo \
+	allocator.lo asio.lo assert.lo bandwidth_limit.lo \
+	bandwidth_manager.lo bandwidth_queue_entry.lo bloom_filter.lo \
+	broadcast_socket.lo bt_peer_connection.lo chained_buffer.lo \
+	connection_queue.lo ConvertUTF.lo create_torrent.lo \
+	disk_buffer_holder.lo disk_buffer_pool.lo disk_io_thread.lo \
+	entry.lo enum_net.lo error_code.lo escape_string.lo file.lo \
+	file_pool.lo file_storage.lo gzip.lo http_connection.lo \
+	http_parser.lo http_seed_connection.lo http_stream.lo \
+	http_tracker_connection.lo i2p_stream.lo identify_client.lo \
+	instantiate_connection.lo ip_filter.lo lazy_bdecode.lo \
+	logger.lo lsd.lo lt_trackers.lo magnet_uri.lo \
+	metadata_transfer.lo mpi.lo natpmp.lo parse_url.lo \
+	pe_crypto.lo peer_connection.lo piece_picker.lo \
+	packet_buffer.lo policy.lo puff.lo random.lo rsa.lo rss.lo \
+	session.lo session_impl.lo settings.lo sha1.lo smart_ban.lo \
+	socket_io.lo socket_type.lo socks5_stream.lo stat.lo \
+	storage.lo string_util.lo thread.lo torrent.lo \
+	torrent_handle.lo torrent_info.lo time.lo timestamp_history.lo \
+	tracker_manager.lo udp_socket.lo udp_tracker_connection.lo \
+	upnp.lo ut_metadata.lo ut_pex.lo utf8.lo utp_socket_manager.lo \
+	utp_stream.lo web_peer_connection.lo $(am__objects_1) \
+	$(am__objects_2) $(am__objects_3)
+
+am__objects_1 = dht_tracker.lo find_data.lo node.lo \
+	node_id.lo refresh.lo routing_table.lo \
+	rpc_manager.lo traversal_algorithm.lo
+
+#am__objects_2 = GeoIP.lo
+#am__objects_3 = asio_ssl.lo
+

@@ -1,0 +1,16 @@
+prefix=/usr/local
+exec_prefix=${prefix}
+bindir=${exec_prefix}/bin
+libdir=${exec_prefix}/lib
+datarootdir=${prefix}/share
+datadir=${datarootdir}
+sysconfdir=${prefix}/etc
+includedir=${prefix}/include
+package=libtorrent-rasterbar
+
+Name: libtorrent-rasterbar
+Description: Bittorrent library.
+Version: 0.16.15
+Libs: -L${libdir} -ltorrent-rasterbar -lboost_system 
+Libs.private: -lpthread   -lpthread  
+Cflags: -I${includedir} -I${includedir}/libtorrent  -DTORRENT_NO_DEPRECATE  -DTORRENT_DISABLE_ENCRYPTION  -DTORRENT_DISABLE_GEO_IP  -DBOOST_ASIO_HASH_MAP_BUCKETS=1021  -DBOOST_EXCEPTION_DISABLE  -DBOOST_ASIO_ENABLE_CANCELIO  -DBOOST_ASIO_DYN_LINK

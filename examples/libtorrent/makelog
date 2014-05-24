@@ -1,0 +1,2052 @@
+Making all in include/libtorrent
+make[1]: Entering directory `/home/sakekasi/UCLA/Spring2/CS199/spa/examples/libtorrent/include/libtorrent'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/sakekasi/UCLA/Spring2/CS199/spa/examples/libtorrent/include/libtorrent'
+Making all in src
+make[1]: Entering directory `/home/sakekasi/UCLA/Spring2/CS199/spa/examples/libtorrent/src'
+  CXX      web_connection_base.lo
+  CXX      alert.lo
+  CXX      allocator.lo
+  CXX      asio.lo
+  CXX      assert.lo
+  CXX      bandwidth_limit.lo
+  CXX      bandwidth_manager.lo
+  CXX      bandwidth_queue_entry.lo
+  CXX      bloom_filter.lo
+  CXX      broadcast_socket.lo
+  CXX      bt_peer_connection.lo
+  CXX      chained_buffer.lo
+  CXX      connection_queue.lo
+  CXX      ConvertUTF.lo
+  CXX      create_torrent.lo
+  CXX      disk_buffer_holder.lo
+  CXX      disk_buffer_pool.lo
+  CXX      disk_io_thread.lo
+  CXX      entry.lo
+  CXX      enum_net.lo
+  CXX      error_code.lo
+  CXX      escape_string.lo
+  CXX      file.lo
+  CXX      file_pool.lo
+  CXX      file_storage.lo
+  CXX      gzip.lo
+  CXX      http_connection.lo
+  CXX      http_parser.lo
+  CXX      http_seed_connection.lo
+  CXX      http_stream.lo
+  CXX      http_tracker_connection.lo
+  CXX      i2p_stream.lo
+  CXX      identify_client.lo
+  CXX      instantiate_connection.lo
+  CXX      ip_filter.lo
+  CXX      lazy_bdecode.lo
+  CXX      logger.lo
+  CXX      lsd.lo
+  CXX      lt_trackers.lo
+  CXX      magnet_uri.lo
+  CXX      metadata_transfer.lo
+  CC       mpi.lo
+clang: warning: -lpthread: 'linker' input unused
+  CXX      natpmp.lo
+  CXX      parse_url.lo
+  CXX      pe_crypto.lo
+  CXX      peer_connection.lo
+  CXX      piece_picker.lo
+  CXX      packet_buffer.lo
+  CXX      policy.lo
+  CXX      puff.lo
+  CXX      random.lo
+  CXX      rsa.lo
+  CXX      rss.lo
+rss.cpp:435:3: warning: offset of on non-POD type 'libtorrent::feed_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(std_string, url)
+                ^                           ~~~
+rss.cpp:432:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(feed_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+rss.cpp:436:3: warning: offset of on non-POD type 'libtorrent::feed_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, auto_download)
+                ^                        ~~~~~~~~~~~~~
+rss.cpp:432:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(feed_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+rss.cpp:437:3: warning: offset of on non-POD type 'libtorrent::feed_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, auto_map_handles)
+                ^                        ~~~~~~~~~~~~~~~~
+rss.cpp:432:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(feed_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+rss.cpp:438:3: warning: offset of on non-POD type 'libtorrent::feed_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, default_ttl)
+                ^                        ~~~~~~~~~~~
+rss.cpp:432:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(feed_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+rss.cpp:445:3: warning: offset of on non-POD type 'libtorrent::feed_item' [-Winvalid-offsetof]
+                TORRENT_SETTING(std_string, url)
+                ^                           ~~~
+rss.cpp:442:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(feed_item,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+rss.cpp:446:3: warning: offset of on non-POD type 'libtorrent::feed_item' [-Winvalid-offsetof]
+                TORRENT_SETTING(std_string, uuid)
+                ^                           ~~~~
+rss.cpp:442:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(feed_item,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+rss.cpp:447:3: warning: offset of on non-POD type 'libtorrent::feed_item' [-Winvalid-offsetof]
+                TORRENT_SETTING(std_string, title)
+                ^                           ~~~~~
+rss.cpp:442:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(feed_item,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+rss.cpp:448:3: warning: offset of on non-POD type 'libtorrent::feed_item' [-Winvalid-offsetof]
+                TORRENT_SETTING(std_string, description)
+                ^                           ~~~~~~~~~~~
+rss.cpp:442:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(feed_item,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+rss.cpp:449:3: warning: offset of on non-POD type 'libtorrent::feed_item' [-Winvalid-offsetof]
+                TORRENT_SETTING(std_string, comment)
+                ^                           ~~~~~~~
+rss.cpp:442:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(feed_item,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+rss.cpp:450:3: warning: offset of on non-POD type 'libtorrent::feed_item' [-Winvalid-offsetof]
+                TORRENT_SETTING(std_string, category)
+                ^                           ~~~~~~~~
+rss.cpp:442:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(feed_item,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+rss.cpp:451:3: warning: offset of on non-POD type 'libtorrent::feed_item' [-Winvalid-offsetof]
+                TORRENT_SETTING(size_integer, size)
+                ^                             ~~~~
+rss.cpp:442:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(feed_item,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+rss.cpp:458:3: warning: offset of on non-POD type 'libtorrent::feed' [-Winvalid-offsetof]
+                TORRENT_SETTING(std_string, m_title)
+                ^                           ~~~~~~~
+rss.cpp:455:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(feed,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+rss.cpp:459:3: warning: offset of on non-POD type 'libtorrent::feed' [-Winvalid-offsetof]
+                TORRENT_SETTING(std_string, m_description)
+                ^                           ~~~~~~~~~~~~~
+rss.cpp:455:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(feed,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+rss.cpp:460:3: warning: offset of on non-POD type 'libtorrent::feed' [-Winvalid-offsetof]
+                TORRENT_SETTING(time_integer, m_last_attempt)
+                ^                             ~~~~~~~~~~~~~~
+rss.cpp:455:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(feed,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+rss.cpp:461:3: warning: offset of on non-POD type 'libtorrent::feed' [-Winvalid-offsetof]
+                TORRENT_SETTING(time_integer, m_last_update)
+                ^                             ~~~~~~~~~~~~~
+rss.cpp:455:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(feed,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+rss.cpp:468:3: warning: offset of on non-POD type 'libtorrent::add_torrent_params' [-Winvalid-offsetof]
+                TORRENT_SETTING(std_string, save_path)
+                ^                           ~~~~~~~~~
+rss.cpp:465:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(add_torrent_params,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+rss.cpp:469:3: warning: offset of on non-POD type 'libtorrent::add_torrent_params' [-Winvalid-offsetof]
+                TORRENT_SETTING(size_integer, flags)
+                ^                             ~~~~~
+rss.cpp:465:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(add_torrent_params,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+17 warnings generated.
+  CXX      session.lo
+  CXX      session_impl.lo
+session_impl.cpp:284:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(std_string, user_agent)
+                ^                           ~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:285:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, tracker_completion_timeout)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:286:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, tracker_receive_timeout)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:287:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, stop_tracker_timeout)
+                ^                        ~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:288:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, tracker_maximum_response_length)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:289:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, piece_timeout)
+                ^                        ~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:290:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, request_timeout)
+                ^                        ~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:291:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, request_queue_time)
+                ^                        ~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:292:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, max_allowed_in_request_queue)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:293:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, max_out_request_queue)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:294:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, whole_pieces_threshold)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:295:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, peer_timeout)
+                ^                        ~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:296:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, urlseed_timeout)
+                ^                        ~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:297:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, urlseed_pipeline_size)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:298:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, urlseed_wait_retry)
+                ^                        ~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:299:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, file_pool_size)
+                ^                        ~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:300:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, allow_multiple_connections_per_ip)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:301:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, max_failcount)
+                ^                        ~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:302:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, min_reconnect_time)
+                ^                        ~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:303:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, peer_connect_timeout)
+                ^                        ~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:304:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, ignore_limits_on_local_network)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:305:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, connection_speed)
+                ^                        ~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:306:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, send_redundant_have)
+                ^                        ~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:307:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, lazy_bitfields)
+                ^                        ~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:308:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, inactivity_timeout)
+                ^                        ~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:309:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, unchoke_interval)
+                ^                        ~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:310:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, optimistic_unchoke_interval)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:311:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(std_string, announce_ip)
+                ^                           ~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:312:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, num_want)
+                ^                        ~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:313:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, initial_picker_threshold)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:314:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, allowed_fast_set_size)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:315:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, suggest_mode)
+                ^                        ~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:316:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, max_queued_disk_bytes)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:317:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, max_queued_disk_bytes_low_watermark)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:318:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, handshake_timeout)
+                ^                        ~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:320:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, use_dht_as_fallback)
+                ^                        ~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:322:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, free_torrent_hashes)
+                ^                        ~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:323:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, upnp_ignore_nonrouters)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:324:4: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, send_buffer_low_watermark)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:325:4: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, send_buffer_watermark)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:326:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, send_buffer_watermark_factor)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:331:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, choking_algorithm)
+                ^                        ~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:332:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, seed_choking_algorithm)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:333:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, use_parole_mode)
+                ^                        ~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:334:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, cache_size)
+                ^                        ~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:335:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, cache_buffer_chunk_size)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:336:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, cache_expiry)
+                ^                        ~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:337:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, use_read_cache)
+                ^                        ~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:338:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, explicit_read_cache)
+                ^                        ~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:339:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, disk_io_write_mode)
+                ^                        ~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:340:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, disk_io_read_mode)
+                ^                        ~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:341:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, coalesce_reads)
+                ^                        ~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:342:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, coalesce_writes)
+                ^                        ~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:343:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(character, peer_tos)
+                ^                          ~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:344:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, active_downloads)
+                ^                        ~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:345:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, active_seeds)
+                ^                        ~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:346:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, active_dht_limit)
+                ^                        ~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:347:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, active_tracker_limit)
+                ^                        ~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:348:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, active_lsd_limit)
+                ^                        ~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:349:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, active_limit)
+                ^                        ~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:350:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, auto_manage_prefer_seeds)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:351:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, dont_count_slow_torrents)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:352:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, auto_manage_interval)
+                ^                        ~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:353:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(floating_point, share_ratio_limit)
+                ^                               ~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:354:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(floating_point, seed_time_ratio_limit)
+                ^                               ~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:355:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, seed_time_limit)
+                ^                        ~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:356:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(floating_point, peer_turnover)
+                ^                               ~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:357:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(floating_point, peer_turnover_cutoff)
+                ^                               ~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:358:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, close_redundant_connections)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:359:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, auto_scrape_interval)
+                ^                        ~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:360:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, auto_scrape_min_interval)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:361:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, max_peerlist_size)
+                ^                        ~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:362:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, max_paused_peerlist_size)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:363:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, min_announce_interval)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:364:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, prioritize_partial_pieces)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:365:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, auto_manage_startup)
+                ^                        ~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:366:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, rate_limit_ip_overhead)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:367:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, announce_to_all_trackers)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:368:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, announce_to_all_tiers)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:369:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, prefer_udp_trackers)
+                ^                        ~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:370:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, strict_super_seeding)
+                ^                        ~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:371:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, seeding_piece_quota)
+                ^                        ~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:372:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, max_sparse_regions)
+                ^                        ~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:374:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, lock_disk_cache)
+                ^                        ~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:376:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, max_rejects)
+                ^                        ~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:377:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, recv_socket_buffer_size)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:378:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, send_socket_buffer_size)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:379:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, optimize_hashing_for_speed)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:380:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, file_checks_delay_per_block)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:381:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, disk_cache_algorithm)
+                ^                        ~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:382:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, read_cache_line_size)
+                ^                        ~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:383:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, write_cache_line_size)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:384:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, optimistic_disk_retry)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:385:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, disable_hash_checks)
+                ^                        ~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:386:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, allow_reordered_disk_operations)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:387:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, allow_i2p_mixed)
+                ^                        ~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:388:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, max_suggest_pieces)
+                ^                        ~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:389:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, drop_skipped_requests)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:390:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, low_prio_disk)
+                ^                        ~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:391:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, local_service_announce_interval)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:392:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, dht_announce_interval)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:393:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, udp_tracker_token_expiry)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:394:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, volatile_read_cache)
+                ^                        ~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:395:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, guided_read_cache)
+                ^                        ~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:396:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, default_cache_min_age)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:397:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, num_optimistic_unchoke_slots)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:398:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, no_atime_storage)
+                ^                        ~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:399:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, default_est_reciprocation_rate)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:400:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, increase_est_reciprocation_rate)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:401:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, decrease_est_reciprocation_rate)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:402:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, incoming_starts_queued_torrents)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:403:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, report_true_downloaded)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:404:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, strict_end_game_mode)
+                ^                        ~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:405:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, broadcast_lsd)
+                ^                        ~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:406:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, enable_outgoing_utp)
+                ^                        ~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:407:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, enable_incoming_utp)
+                ^                        ~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:408:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, enable_outgoing_tcp)
+                ^                        ~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:409:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, enable_incoming_tcp)
+                ^                        ~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:410:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, max_pex_peers)
+                ^                        ~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:411:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, ignore_resume_timestamps)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:412:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, no_recheck_incomplete_resume)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:413:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, anonymous_mode)
+                ^                        ~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:414:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, tick_interval)
+                ^                        ~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:415:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, report_web_seed_downloads)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:416:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, share_mode_target)
+                ^                        ~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:417:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, upload_rate_limit)
+                ^                        ~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:418:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, download_rate_limit)
+                ^                        ~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:419:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, local_upload_rate_limit)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:420:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, local_download_rate_limit)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:421:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, dht_upload_rate_limit)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:422:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, unchoke_slots_limit)
+                ^                        ~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:423:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, half_open_limit)
+                ^                        ~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:424:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, connections_limit)
+                ^                        ~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:425:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, utp_target_delay)
+                ^                        ~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:426:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, utp_gain_factor)
+                ^                        ~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:427:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, utp_syn_resends)
+                ^                        ~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:428:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, utp_fin_resends)
+                ^                        ~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:429:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, utp_num_resends)
+                ^                        ~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:430:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, utp_connect_timeout)
+                ^                        ~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:431:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, utp_delayed_ack)
+                ^                        ~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:432:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, utp_dynamic_sock_buf)
+                ^                        ~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:433:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, mixed_mode_algorithm)
+                ^                        ~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:434:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, rate_limit_utp)
+                ^                        ~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:435:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, listen_queue_size)
+                ^                        ~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:436:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, announce_double_nat)
+                ^                        ~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:437:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, torrent_connect_boost)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:438:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, seeding_outgoing_connections)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:439:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, no_connect_privileged_ports)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:440:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, alert_queue_size)
+                ^                        ~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:441:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, max_metadata_size)
+                ^                        ~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:442:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, smooth_connects)
+                ^                        ~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:443:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, always_send_user_agent)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:444:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, apply_ip_filter_to_trackers)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:445:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, read_job_every)
+                ^                        ~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:446:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, use_disk_read_ahead)
+                ^                        ~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:447:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, lock_files)
+                ^                        ~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:448:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, ssl_listen)
+                ^                        ~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:449:3: warning: offset of on non-POD type 'libtorrent::session_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, tracker_backoff)
+                ^                        ~~~~~~~~~~~~~~~
+session_impl.cpp:280:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(session_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:457:3: warning: offset of on non-POD type 'libtorrent::proxy_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(std_string, hostname)
+                ^                           ~~~~~~~~
+session_impl.cpp:453:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(proxy_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:458:3: warning: offset of on non-POD type 'libtorrent::proxy_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, port)
+                ^                        ~~~~
+session_impl.cpp:453:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(proxy_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:459:3: warning: offset of on non-POD type 'libtorrent::proxy_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(std_string, username)
+                ^                           ~~~~~~~~
+session_impl.cpp:453:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(proxy_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:460:3: warning: offset of on non-POD type 'libtorrent::proxy_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(std_string, password)
+                ^                           ~~~~~~~~
+session_impl.cpp:453:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(proxy_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:461:3: warning: offset of on non-POD type 'libtorrent::proxy_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, type)
+                ^                        ~~~~
+session_impl.cpp:453:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(proxy_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:462:3: warning: offset of on non-POD type 'libtorrent::proxy_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, proxy_hostnames)
+                ^                        ~~~~~~~~~~~~~~~
+session_impl.cpp:453:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(proxy_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:463:3: warning: offset of on non-POD type 'libtorrent::proxy_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(boolean, proxy_peer_connections)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:453:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(proxy_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:471:3: warning: offset of on non-POD type 'libtorrent::dht_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, max_peers_reply)
+                ^                        ~~~~~~~~~~~~~~~
+session_impl.cpp:468:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(dht_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:472:3: warning: offset of on non-POD type 'libtorrent::dht_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, search_branching)
+                ^                        ~~~~~~~~~~~~~~~~
+session_impl.cpp:468:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(dht_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:476:3: warning: offset of on non-POD type 'libtorrent::dht_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, max_fail_count)
+                ^                        ~~~~~~~~~~~~~~
+session_impl.cpp:468:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(dht_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:477:3: warning: offset of on non-POD type 'libtorrent::dht_settings' [-Winvalid-offsetof]
+                TORRENT_SETTING(integer, max_torrent_search_reply)
+                ^                        ~~~~~~~~~~~~~~~~~~~~~~~~
+session_impl.cpp:468:36: note: expanded from macro 'TORRENT_SETTING'
+#define TORRENT_SETTING(t, x) {#x, offsetof(dht_settings,x), t},
+                                   ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:524:3: warning: offset of on non-POD type 'libtorrent::aux::session_impl' [-Winvalid-offsetof]
+                TORRENT_CATEGORY("settings", save_settings, m_settings, session_settings_map)
+                ^                                           ~~~~~~~~~~
+session_impl.cpp:520:44: note: expanded from macro 'TORRENT_CATEGORY'
+        { name, map, lenof(map), session:: flag , offsetof(session_impl, member), offsetof(all_default_values, member) },
+                                                  ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:524:3: warning: offset of on non-POD type 'libtorrent::aux::all_default_values' [-Winvalid-offsetof]
+                TORRENT_CATEGORY("settings", save_settings, m_settings, session_settings_map)
+                ^                                           ~~~~~~~~~~
+session_impl.cpp:520:76: note: expanded from macro 'TORRENT_CATEGORY'
+        { name, map, lenof(map), session:: flag , offsetof(session_impl, member), offsetof(all_default_values, member) },
+                                                                                  ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:526:3: warning: offset of on non-POD type 'libtorrent::aux::session_impl' [-Winvalid-offsetof]
+                TORRENT_CATEGORY("dht", save_dht_settings, m_dht_settings, dht_settings_map)
+                ^                                          ~~~~~~~~~~~~~~
+session_impl.cpp:520:44: note: expanded from macro 'TORRENT_CATEGORY'
+        { name, map, lenof(map), session:: flag , offsetof(session_impl, member), offsetof(all_default_values, member) },
+                                                  ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:526:3: warning: offset of on non-POD type 'libtorrent::aux::all_default_values' [-Winvalid-offsetof]
+                TORRENT_CATEGORY("dht", save_dht_settings, m_dht_settings, dht_settings_map)
+                ^                                          ~~~~~~~~~~~~~~
+session_impl.cpp:520:76: note: expanded from macro 'TORRENT_CATEGORY'
+        { name, map, lenof(map), session:: flag , offsetof(session_impl, member), offsetof(all_default_values, member) },
+                                                                                  ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:528:3: warning: offset of on non-POD type 'libtorrent::aux::session_impl' [-Winvalid-offsetof]
+                TORRENT_CATEGORY("proxy", save_proxy, m_proxy, proxy_settings_map)
+                ^                                     ~~~~~~~
+session_impl.cpp:520:44: note: expanded from macro 'TORRENT_CATEGORY'
+        { name, map, lenof(map), session:: flag , offsetof(session_impl, member), offsetof(all_default_values, member) },
+                                                  ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+session_impl.cpp:528:3: warning: offset of on non-POD type 'libtorrent::aux::all_default_values' [-Winvalid-offsetof]
+                TORRENT_CATEGORY("proxy", save_proxy, m_proxy, proxy_settings_map)
+                ^                                     ~~~~~~~
+session_impl.cpp:520:76: note: expanded from macro 'TORRENT_CATEGORY'
+        { name, map, lenof(map), session:: flag , offsetof(session_impl, member), offsetof(all_default_values, member) },
+                                                                                  ^
+/usr/local/src/llvm/build/Release+Asserts/bin/../lib/clang/3.3/include/stddef.h:87:24: note: expanded from macro 'offsetof'
+#define offsetof(t, d) __builtin_offsetof(t, d)
+                       ^
+175 warnings generated.
+  CXX      settings.lo
+  CXX      sha1.lo
+  CXX      smart_ban.lo
+  CXX      socket_io.lo
+  CXX      socket_type.lo
+  CXX      socks5_stream.lo
+  CXX      stat.lo
+  CXX      storage.lo
+  CXX      string_util.lo
+  CXX      thread.lo
+  CXX      torrent.lo
+  CXX      torrent_handle.lo
+  CXX      torrent_info.lo
+  CXX      time.lo
+  CXX      timestamp_history.lo
+  CXX      tracker_manager.lo
+  CXX      udp_socket.lo
+  CXX      udp_tracker_connection.lo
+  CXX      upnp.lo
+  CXX      ut_metadata.lo
+  CXX      ut_pex.lo
+  CXX      utf8.lo
+  CXX      utp_socket_manager.lo
+  CXX      utp_stream.lo
+  CXX      web_peer_connection.lo
+  CXX      dht_tracker.lo
+  CXX      find_data.lo
+  CXX      node.lo
+  CXX      node_id.lo
+  CXX      refresh.lo
+  CXX      routing_table.lo
+  CXX      rpc_manager.lo
+  CXX      traversal_algorithm.lo
+  CXXLD    libtorrent-rasterbar.la
+make[1]: Leaving directory `/home/sakekasi/UCLA/Spring2/CS199/spa/examples/libtorrent/src'
+Making all in examples
+make[1]: Entering directory `/home/sakekasi/UCLA/Spring2/CS199/spa/examples/libtorrent/examples'
+  CXX      client_test.o
+  CXXLD    client_test
+clang: warning: argument unused during compilation: '-use-gold-plugin'
+/usr/bin/ld: error: ../src/.libs/libtorrent-rasterbar.a: no archive symbol table (run ranlib)
+client_test.cpp:702: error: undefined reference to 'libtorrent::torrent_info::torrent_info(std::string const&, boost::system::error_code&, int)'
+/usr/include/boost/function/function_template.hpp:517: error: undefined reference to 'libtorrent::default_storage_constructor(libtorrent::file_storage const&, libtorrent::file_storage const*, std::string const&, libtorrent::file_pool&, std::vector<unsigned char, std::allocator<unsigned char> > const&)'
+/usr/include/boost/function/function_template.hpp:517: error: undefined reference to 'libtorrent::disabled_storage_constructor(libtorrent::file_storage const&, libtorrent::file_storage const*, std::string const&, libtorrent::file_pool&, std::vector<unsigned char, std::allocator<unsigned char> > const&)'
+client_test.cpp:717: error: undefined reference to 'libtorrent::to_hex(std::string const&)'
+client_test.cpp:717: error: undefined reference to 'libtorrent::combine_path(std::string const&, std::string const&)'
+client_test.cpp:717: error: undefined reference to 'libtorrent::combine_path(std::string const&, std::string const&)'
+client_test.cpp:720: error: undefined reference to 'libtorrent::load_file(std::string const&, std::vector<char, std::allocator<char> >&, boost::system::error_code&, int)'
+client_test.cpp:730: error: undefined reference to 'libtorrent::session::async_add_torrent(libtorrent::add_torrent_params const&)'
+client_test.cpp:731: error: undefined reference to 'libtorrent::lazy_entry::clear()'
+client_test.cpp:731: error: undefined reference to 'libtorrent::lazy_entry::clear()'
+/usr/include/boost/checked_delete.hpp:34: error: undefined reference to 'libtorrent::torrent_info::~torrent_info()'
+client_test.cpp:834: error: undefined reference to 'libtorrent::file::file()'
+client_test.cpp:836: error: undefined reference to 'libtorrent::file::open(std::string const&, int, boost::system::error_code&)'
+client_test.cpp:839: error: undefined reference to 'libtorrent::file::writev(long, iovec const*, int, boost::system::error_code&)'
+client_test.cpp:842: error: undefined reference to 'libtorrent::file::~file()'
+client_test.cpp:843: error: undefined reference to 'libtorrent::file::~file()'
+client_test.cpp:895: error: undefined reference to 'libtorrent::torrent_handle::is_valid() const'
+client_test.cpp:896: error: undefined reference to 'libtorrent::torrent_handle::get_torrent_info() const'
+client_test.cpp:897: error: undefined reference to 'libtorrent::create_torrent::create_torrent(libtorrent::torrent_info const&)'
+client_test.cpp:898: error: undefined reference to 'libtorrent::create_torrent::generate() const'
+client_test.cpp:901: error: undefined reference to 'libtorrent::to_hex(std::string const&)'
+client_test.cpp:902: error: undefined reference to 'libtorrent::combine_path(std::string const&, std::string const&)'
+client_test.cpp:966: error: undefined reference to 'libtorrent::torrent_handle::set_max_connections(int) const'
+client_test.cpp:972: error: undefined reference to 'libtorrent::torrent_handle::save_resume_data(int) const'
+client_test.cpp:984: error: undefined reference to 'libtorrent::torrent_handle::save_path() const'
+client_test.cpp:984: error: undefined reference to 'libtorrent::torrent_handle::info_hash() const'
+client_test.cpp:984: error: undefined reference to 'libtorrent::to_hex(std::string const&)'
+client_test.cpp:984: error: undefined reference to 'libtorrent::combine_path(std::string const&, std::string const&)'
+client_test.cpp:985: error: undefined reference to 'libtorrent::torrent_handle::is_valid() const'
+client_test.cpp:989: error: undefined reference to 'libtorrent::session::remove_torrent(libtorrent::torrent_handle const&, int)'
+client_test.cpp:996: error: undefined reference to 'libtorrent::torrent_handle::is_valid() const'
+client_test.cpp:1000: error: undefined reference to 'libtorrent::session::remove_torrent(libtorrent::torrent_handle const&, int)'
+client_test.cpp:907: error: undefined reference to 'libtorrent::entry::~entry()'
+client_test.cpp:907: error: undefined reference to 'libtorrent::create_torrent::~create_torrent()'
+client_test.cpp:931: error: undefined reference to 'libtorrent::torrent_handle::set_max_connections(int) const'
+client_test.cpp:932: error: undefined reference to 'libtorrent::torrent_handle::set_max_uploads(int) const'
+client_test.cpp:933: error: undefined reference to 'libtorrent::torrent_handle::set_upload_limit(int) const'
+client_test.cpp:934: error: undefined reference to 'libtorrent::torrent_handle::set_download_limit(int) const'
+client_test.cpp:935: error: undefined reference to 'libtorrent::torrent_handle::use_interface(char const*) const'
+client_test.cpp:937: error: undefined reference to 'libtorrent::torrent_handle::resolve_countries(bool)'
+client_test.cpp:951: error: undefined reference to 'boost::asio::ip::address::from_string(char const*, boost::system::error_code&)'
+client_test.cpp:951: error: undefined reference to 'boost::asio::ip::detail::endpoint::endpoint(boost::asio::ip::address const&, unsigned short)'
+client_test.cpp:951: error: undefined reference to 'libtorrent::torrent_handle::connect_peer(boost::asio::ip::basic_endpoint<boost::asio::ip::tcp> const&, int) const'
+client_test.cpp:956: error: undefined reference to 'libtorrent::torrent_handle::status(unsigned int) const'
+client_test.cpp:956: error: undefined reference to 'libtorrent::hash_value(libtorrent::torrent_status const&)'
+client_test.cpp:1008: error: undefined reference to 'libtorrent::torrent_handle::save_resume_data(int) const'
+/usr/include/boost/functional/hash/extensions.hpp:269: error: undefined reference to 'libtorrent::hash_value(libtorrent::torrent_status const&)'
+client_test.cpp:907: error: undefined reference to 'libtorrent::entry::~entry()'
+client_test.cpp:907: error: undefined reference to 'libtorrent::create_torrent::~create_torrent()'
+/usr/include/boost/unordered/detail/buckets.hpp:384: error: undefined reference to 'libtorrent::torrent_status::~torrent_status()'
+client_test.cpp:956: error: undefined reference to 'libtorrent::torrent_status::~torrent_status()'
+client_test.cpp:956: error: undefined reference to 'libtorrent::torrent_status::~torrent_status()'
+../include/libtorrent/torrent_handle.hpp:120: error: undefined reference to 'boost::asio::ip::address_v4::address_v4(boost::array<unsigned char, 4ul> const&)'
+../include/libtorrent/torrent_handle.hpp:120: error: undefined reference to 'boost::asio::ip::address::address(boost::asio::ip::address_v4 const&)'
+../include/libtorrent/torrent_handle.hpp:117: error: undefined reference to 'boost::asio::ip::address_v6::address_v6(boost::array<unsigned char, 16ul> const&, unsigned long)'
+../include/libtorrent/torrent_handle.hpp:117: error: undefined reference to 'boost::asio::ip::address::address(boost::asio::ip::address_v6 const&)'
+/usr/include/boost/asio/ip/basic_endpoint.hpp:92: error: undefined reference to 'boost::asio::ip::detail::endpoint::endpoint(boost::asio::ip::address const&, unsigned short)'
+/usr/include/boost/asio/ip/basic_endpoint.hpp:193: error: undefined reference to 'boost::asio::ip::detail::operator==(boost::asio::ip::detail::endpoint const&, boost::asio::ip::detail::endpoint const&)'
+/usr/include/boost/asio/ip/basic_endpoint.hpp:193: error: undefined reference to 'boost::asio::ip::detail::operator==(boost::asio::ip::detail::endpoint const&, boost::asio::ip::detail::endpoint const&)'
+/usr/include/boost/asio/ip/basic_endpoint.hpp:193: error: undefined reference to 'boost::asio::ip::detail::operator==(boost::asio::ip::detail::endpoint const&, boost::asio::ip::detail::endpoint const&)'
+/usr/include/boost/asio/ip/basic_endpoint.hpp:193: error: undefined reference to 'boost::asio::ip::detail::operator==(boost::asio::ip::detail::endpoint const&, boost::asio::ip::detail::endpoint const&)'
+client_test.cpp:1100: error: undefined reference to 'libtorrent::time_now()'
+client_test.cpp:1195: error: undefined reference to 'libtorrent::session_settings::session_settings(std::string const&)'
+client_test.cpp:1207: error: undefined reference to 'libtorrent::time_now()'
+../include/libtorrent/session.hpp:145: error: undefined reference to 'libtorrent::rel_clocktime_pools_nolog_resolvecountries_nodeprecate_dht_ext_()'
+../include/libtorrent/session.hpp:146: error: undefined reference to 'libtorrent::session::init(std::pair<int, int>, char const*, libtorrent::fingerprint const&, int, unsigned int)'
+client_test.cpp:1233: error: undefined reference to 'libtorrent::load_file(std::string const&, std::vector<char, std::allocator<char> >&, boost::system::error_code&, int)'
+client_test.cpp:1236: error: undefined reference to 'libtorrent::lazy_bdecode(char const*, char const*, libtorrent::lazy_entry&, boost::system::error_code&, int*, int, int)'
+client_test.cpp:1237: error: undefined reference to 'libtorrent::session::load_state(libtorrent::lazy_entry const&)'
+client_test.cpp:1237: error: undefined reference to 'libtorrent::lazy_entry::clear()'
+client_test.cpp:1256: error: undefined reference to 'libtorrent::is_hex(char const*, int)'
+client_test.cpp:1261: error: undefined reference to 'libtorrent::from_hex(char const*, int, char*)'
+/usr/include/boost/function/function_template.hpp:517: error: undefined reference to 'libtorrent::default_storage_constructor(libtorrent::file_storage const&, libtorrent::file_storage const*, std::string const&, libtorrent::file_pool&, std::vector<unsigned char, std::allocator<unsigned char> > const&)'
+/usr/include/boost/function/function_template.hpp:517: error: undefined reference to 'libtorrent::disabled_storage_constructor(libtorrent::file_storage const&, libtorrent::file_storage const*, std::string const&, libtorrent::file_pool&, std::vector<unsigned char, std::allocator<unsigned char> > const&)'
+client_test.cpp:1363: error: undefined reference to 'libtorrent::session::set_i2p_proxy(libtorrent::proxy_settings const&)'
+client_test.cpp:1291: error: undefined reference to 'libtorrent::high_performance_seed()'
+client_test.cpp:1291: error: undefined reference to 'libtorrent::session_settings::~session_settings()'
+client_test.cpp:1343: error: undefined reference to 'boost::asio::ip::address_v4::address_v4(unsigned long)'
+client_test.cpp:1344: error: undefined reference to 'boost::asio::ip::address_v4::address_v4(unsigned long)'
+client_test.cpp:1347: error: undefined reference to 'boost::asio::ip::address::address(boost::asio::ip::address_v4 const&)'
+client_test.cpp:1347: error: undefined reference to 'boost::asio::ip::address::address(boost::asio::ip::address_v4 const&)'
+client_test.cpp:1347: error: undefined reference to 'libtorrent::ip_filter::add_rule(boost::asio::ip::address, boost::asio::ip::address, int)'
+client_test.cpp:1349: error: undefined reference to 'libtorrent::session::set_ip_filter(libtorrent::ip_filter const&)'
+client_test.cpp:1429: error: undefined reference to 'libtorrent::create_directory(std::string const&, boost::system::error_code&)'
+client_test.cpp:1434: error: undefined reference to 'libtorrent::session::start_lsd()'
+client_test.cpp:1438: error: undefined reference to 'libtorrent::session::start_upnp()'
+client_test.cpp:1439: error: undefined reference to 'libtorrent::session::start_natpmp()'
+client_test.cpp:1442: error: undefined reference to 'libtorrent::session::set_proxy(libtorrent::proxy_settings const&)'
+client_test.cpp:1445: error: undefined reference to 'libtorrent::session::listen_on(std::pair<int, int> const&, boost::system::error_code&, char const*, int)'
+client_test.cpp:1458: error: undefined reference to 'libtorrent::session::add_dht_router(std::pair<std::string, int> const&)'
+client_test.cpp:1460: error: undefined reference to 'libtorrent::session::add_dht_router(std::pair<std::string, int> const&)'
+client_test.cpp:1462: error: undefined reference to 'libtorrent::session::add_dht_router(std::pair<std::string, int> const&)'
+client_test.cpp:1465: error: undefined reference to 'libtorrent::session::start_dht()'
+client_test.cpp:1474: error: undefined reference to 'libtorrent::session::set_settings(libtorrent::session_settings const&)'
+client_test.cpp:1479: error: undefined reference to 'libtorrent::session::async_add_torrent(libtorrent::add_torrent_params const&)'
+/usr/include/boost/function/function_template.hpp:517: error: undefined reference to 'libtorrent::default_storage_constructor(libtorrent::file_storage const&, libtorrent::file_storage const*, std::string const&, libtorrent::file_pool&, std::vector<unsigned char, std::allocator<unsigned char> > const&)'
+/usr/include/boost/function/function_template.hpp:517: error: undefined reference to 'libtorrent::disabled_storage_constructor(libtorrent::file_storage const&, libtorrent::file_storage const*, std::string const&, libtorrent::file_pool&, std::vector<unsigned char, std::allocator<unsigned char> > const&)'
+/usr/include/boost/function/function_template.hpp:517: error: undefined reference to 'libtorrent::default_storage_constructor(libtorrent::file_storage const&, libtorrent::file_storage const*, std::string const&, libtorrent::file_pool&, std::vector<unsigned char, std::allocator<unsigned char> > const&)'
+client_test.cpp:1502: error: undefined reference to 'libtorrent::parse_magnet_uri(std::string const&, libtorrent::add_torrent_params&, boost::system::error_code&)'
+client_test.cpp:1507: error: undefined reference to 'libtorrent::to_hex(std::string const&)'
+client_test.cpp:1509: error: undefined reference to 'libtorrent::load_file(std::string const&, std::vector<char, std::allocator<char> >&, boost::system::error_code&, int)'
+client_test.cpp:1514: error: undefined reference to 'libtorrent::session::async_add_torrent(libtorrent::add_torrent_params const&)'
+client_test.cpp:1533: error: undefined reference to 'libtorrent::session::post_torrent_updates()'
+client_test.cpp:1541: error: undefined reference to 'libtorrent::torrent_handle::status(unsigned int) const'
+client_test.cpp:1541: error: undefined reference to 'libtorrent::torrent_status::~torrent_status()'
+client_test.cpp:1548: error: undefined reference to 'libtorrent::session::get_feeds(std::vector<libtorrent::feed_handle, std::allocator<libtorrent::feed_handle> >&) const'
+client_test.cpp:136: error: undefined reference to 'libtorrent::time_now_hires()'
+client_test.cpp:151: error: undefined reference to 'libtorrent::time_now_hires()'
+client_test.cpp:159: error: undefined reference to 'libtorrent::sleep(int)'
+client_test.cpp:1611: error: undefined reference to 'libtorrent::session::is_paused() const'
+client_test.cpp:1611: error: undefined reference to 'libtorrent::session::resume()'
+client_test.cpp:1612: error: undefined reference to 'libtorrent::session::pause()'
+/usr/include/boost/function/function_template.hpp:517: error: undefined reference to 'libtorrent::disabled_storage_constructor(libtorrent::file_storage const&, libtorrent::file_storage const*, std::string const&, libtorrent::file_pool&, std::vector<unsigned char, std::allocator<unsigned char> > const&)'
+client_test.cpp:1634: error: undefined reference to 'libtorrent::parse_magnet_uri(std::string const&, libtorrent::add_torrent_params&, boost::system::error_code&)'
+client_test.cpp:1641: error: undefined reference to 'libtorrent::load_file(std::string const&, std::vector<char, std::allocator<char> >&, boost::system::error_code&, int)'
+client_test.cpp:1646: error: undefined reference to 'libtorrent::session::async_add_torrent(libtorrent::add_torrent_params const&)'
+client_test.cpp:1654: error: undefined reference to 'libtorrent::session::get_torrents() const'
+client_test.cpp:1658: error: undefined reference to 'libtorrent::torrent_handle::get_full_peer_list(std::vector<libtorrent::peer_list_entry, std::allocator<libtorrent::peer_list_entry> >&) const'
+client_test.cpp:1659: error: undefined reference to 'libtorrent::torrent_handle::name() const'
+client_test.cpp:1662: error: undefined reference to 'boost::asio::ip::detail::endpoint::address() const'
+client_test.cpp:1664: error: undefined reference to 'libtorrent::print_address(boost::asio::ip::address const&)'
+client_test.cpp:1680: error: undefined reference to 'libtorrent::torrent_handle::is_valid() const'
+client_test.cpp:1683: error: undefined reference to 'libtorrent::torrent_handle::name() const'
+client_test.cpp:1694: error: undefined reference to 'libtorrent::remove(std::string const&, boost::system::error_code&)'
+client_test.cpp:1699: error: undefined reference to 'libtorrent::session::remove_torrent(libtorrent::torrent_handle const&, int)'
+client_test.cpp:1706: error: undefined reference to 'libtorrent::torrent_handle::force_recheck() const'
+client_test.cpp:1711: error: undefined reference to 'libtorrent::torrent_handle::force_reannounce() const'
+client_test.cpp:1717: error: undefined reference to 'libtorrent::torrent_handle::set_sequential_download(bool) const'
+client_test.cpp:1728: error: undefined reference to 'libtorrent::torrent_handle::save_resume_data(int) const'
+client_test.cpp:1741: error: undefined reference to 'libtorrent::torrent_handle::set_piece_deadline(int, int, int) const'
+client_test.cpp:1748: error: undefined reference to 'libtorrent::torrent_handle::scrape_tracker() const'
+client_test.cpp:1760: error: undefined reference to 'libtorrent::torrent_handle::auto_managed(bool) const'
+client_test.cpp:1761: error: undefined reference to 'libtorrent::torrent_handle::pause(int) const'
+client_test.cpp:1756: error: undefined reference to 'libtorrent::torrent_handle::auto_managed(bool) const'
+client_test.cpp:1769: error: undefined reference to 'libtorrent::torrent_handle::auto_managed(bool) const'
+client_test.cpp:1770: error: undefined reference to 'libtorrent::torrent_handle::resume() const'
+client_test.cpp:1776: error: undefined reference to 'libtorrent::torrent_handle::clear_error() const'
+client_test.cpp:1805: error: undefined reference to 'libtorrent::session::add_feed(libtorrent::feed_settings const&)'
+client_test.cpp:1806: error: undefined reference to 'libtorrent::feed_handle::update_feed()'
+client_test.cpp:1838: error: undefined reference to 'libtorrent::session::pop_alerts(std::deque<libtorrent::alert*, std::allocator<libtorrent::alert*> >*)'
+client_test.cpp:1839: error: undefined reference to 'libtorrent::time_now_string()'
+client_test.cpp:811: error: undefined reference to 'libtorrent::time_now_string()'
+client_test.cpp:823: error: undefined reference to 'libtorrent::time_now_string()'
+client_test.cpp:1867: error: undefined reference to 'libtorrent::session::status() const'
+client_test.cpp:1904: error: undefined reference to 'libtorrent::feed_handle::get_feed_status() const'
+client_test.cpp:1965: error: undefined reference to 'libtorrent::torrent_handle::name() const'
+client_test.cpp:2065: error: undefined reference to 'libtorrent::session::get_cache_status() const'
+client_test.cpp:2169: error: undefined reference to 'libtorrent::torrent_handle::get_peer_info(std::vector<libtorrent::peer_info, std::allocator<libtorrent::peer_info> >&) const'
+client_test.cpp:2172: error: undefined reference to 'libtorrent::torrent_handle::name() const'
+client_test.cpp:495: error: undefined reference to 'libtorrent::print_endpoint(boost::asio::ip::basic_endpoint<boost::asio::ip::tcp> const&)'
+client_test.cpp:506: error: undefined reference to 'libtorrent::print_endpoint(boost::asio::ip::basic_endpoint<boost::asio::ip::tcp> const&)'
+client_test.cpp:2180: error: undefined reference to 'libtorrent::torrent_handle::trackers() const'
+client_test.cpp:2181: error: undefined reference to 'libtorrent::time_now()'
+client_test.cpp:2200: error: undefined reference to 'libtorrent::torrent_handle::info_hash() const'
+client_test.cpp:2200: error: undefined reference to 'libtorrent::session::get_cache_info(libtorrent::big_number const&, std::vector<libtorrent::cached_piece_info, std::allocator<libtorrent::cached_piece_info> >&) const'
+client_test.cpp:2202: error: undefined reference to 'libtorrent::torrent_handle::get_download_queue(std::vector<libtorrent::partial_piece_info, std::allocator<libtorrent::partial_piece_info> >&) const'
+client_test.cpp:2246: error: undefined reference to 'libtorrent::torrent_handle::file_progress(std::vector<long, std::allocator<long> >&, int) const'
+client_test.cpp:2247: error: undefined reference to 'libtorrent::torrent_handle::get_torrent_info() const'
+client_test.cpp:2248: error: undefined reference to 'libtorrent::file_storage::at(int) const'
+client_test.cpp:2250: error: undefined reference to 'libtorrent::file_entry::~file_entry()'
+client_test.cpp:2250: error: undefined reference to 'libtorrent::file_storage::at(int) const'
+client_test.cpp:2253: error: undefined reference to 'libtorrent::file_storage::at(int) const'
+client_test.cpp:2253: error: undefined reference to 'libtorrent::file_entry::~file_entry()'
+client_test.cpp:2253: error: undefined reference to 'libtorrent::file_entry::~file_entry()'
+client_test.cpp:2255: error: undefined reference to 'libtorrent::file_storage::at(int) const'
+client_test.cpp:2255: error: undefined reference to 'libtorrent::file_entry::~file_entry()'
+../include/libtorrent/file_storage.hpp:107: error: undefined reference to 'libtorrent::internal_file_entry::set_name(char const*, int)'
+client_test.cpp:2263: error: undefined reference to 'libtorrent::file_storage::file_path(libtorrent::internal_file_entry const&) const'
+client_test.cpp:2263: error: undefined reference to 'libtorrent::filename(std::string const&)'
+client_test.cpp:2264: error: undefined reference to 'libtorrent::internal_file_entry::~internal_file_entry()'
+client_test.cpp:2288: error: undefined reference to 'libtorrent::time_now()'
+client_test.cpp:747: error: undefined reference to 'libtorrent::directory::directory(std::string const&, boost::system::error_code&)'
+client_test.cpp:749: error: undefined reference to 'libtorrent::directory::file() const'
+client_test.cpp:750: error: undefined reference to 'libtorrent::extension(std::string const&)'
+client_test.cpp:747: error: undefined reference to 'libtorrent::directory::next(boost::system::error_code&)'
+client_test.cpp:747: error: undefined reference to 'libtorrent::directory::~directory()'
+client_test.cpp:783: error: undefined reference to 'libtorrent::torrent_handle::auto_managed(bool) const'
+client_test.cpp:784: error: undefined reference to 'libtorrent::torrent_handle::pause(int) const'
+client_test.cpp:787: error: undefined reference to 'libtorrent::torrent_handle::need_save_resume_data() const'
+client_test.cpp:789: error: undefined reference to 'libtorrent::torrent_handle::save_resume_data(int) const'
+client_test.cpp:2302: error: undefined reference to 'libtorrent::session::pause()'
+client_test.cpp:2305: error: undefined reference to 'libtorrent::session::get_torrent_status(std::vector<libtorrent::torrent_status, std::allocator<libtorrent::torrent_status> >*, boost::function<bool (libtorrent::torrent_status const&)> const&, unsigned int) const'
+client_test.cpp:1236: error: undefined reference to 'libtorrent::lazy_entry::clear()'
+client_test.cpp:1291: error: undefined reference to 'libtorrent::session_settings::~session_settings()'
+client_test.cpp:2264: error: undefined reference to 'libtorrent::internal_file_entry::~internal_file_entry()'
+client_test.cpp:747: error: undefined reference to 'libtorrent::directory::~directory()'
+client_test.cpp:2335: error: undefined reference to 'libtorrent::session::wait_for_alert(libtorrent::time_duration)'
+client_test.cpp:2339: error: undefined reference to 'libtorrent::session::pop_alerts(std::deque<libtorrent::alert*, std::allocator<libtorrent::alert*> >*)'
+client_test.cpp:2340: error: undefined reference to 'libtorrent::time_now_string()'
+client_test.cpp:2376: error: undefined reference to 'libtorrent::torrent_handle::save_path() const'
+client_test.cpp:2376: error: undefined reference to 'libtorrent::torrent_handle::info_hash() const'
+client_test.cpp:2383: error: undefined reference to 'libtorrent::entry::entry()'
+client_test.cpp:2384: error: undefined reference to 'libtorrent::session::save_state(libtorrent::entry&, unsigned int) const'
+client_test.cpp:2389: error: undefined reference to 'libtorrent::entry::~entry()'
+client_test.cpp:2394: error: undefined reference to 'libtorrent::session::~session()'
+client_test.cpp:2394: error: undefined reference to 'libtorrent::session_settings::~session_settings()'
+client_test.cpp:2389: error: undefined reference to 'libtorrent::entry::~entry()'
+client_test.cpp:2394: error: undefined reference to 'libtorrent::session::~session()'
+client_test.cpp:2394: error: undefined reference to 'libtorrent::session_settings::~session_settings()'
+/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../include/c++/4.8/bits/stl_construct.h:102: error: undefined reference to 'libtorrent::feed_item::~feed_item()'
+/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../include/c++/4.8/bits/stl_construct.h:102: error: undefined reference to 'libtorrent::announce_entry::~announce_entry()'
+../include/libtorrent/bencode.hpp:177: error: undefined reference to 'libtorrent::entry::type() const'
+../include/libtorrent/bencode.hpp:181: error: undefined reference to 'libtorrent::entry::integer() const'
+../include/libtorrent/bencode.hpp:117: error: undefined reference to 'libtorrent::detail::integer_to_str(char*, int, long)'
+../include/libtorrent/bencode.hpp:186: error: undefined reference to 'libtorrent::entry::string() const'
+../include/libtorrent/bencode.hpp:117: error: undefined reference to 'libtorrent::detail::integer_to_str(char*, int, long)'
+../include/libtorrent/bencode.hpp:188: error: undefined reference to 'libtorrent::entry::string() const'
+../include/libtorrent/bencode.hpp:193: error: undefined reference to 'libtorrent::entry::list() const'
+../include/libtorrent/bencode.hpp:193: error: undefined reference to 'libtorrent::entry::list() const'
+../include/libtorrent/bencode.hpp:200: error: undefined reference to 'libtorrent::entry::dict() const'
+../include/libtorrent/bencode.hpp:201: error: undefined reference to 'libtorrent::entry::dict() const'
+../include/libtorrent/bencode.hpp:117: error: undefined reference to 'libtorrent::detail::integer_to_str(char*, int, long)'
+/usr/include/boost/asio/error.hpp:247: error: undefined reference to 'boost::asio::error::get_netdb_category()'
+/usr/include/boost/asio/error.hpp:249: error: undefined reference to 'boost::asio::error::get_addrinfo_category()'
+/usr/include/boost/asio/error.hpp:251: error: undefined reference to 'boost::asio::error::get_misc_category()'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [client_test] Error 1
+make[1]: Leaving directory `/home/sakekasi/UCLA/Spring2/CS199/spa/examples/libtorrent/examples'
+make: *** [all-recursive] Error 1
