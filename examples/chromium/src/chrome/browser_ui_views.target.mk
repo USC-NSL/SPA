@@ -49,6 +49,7 @@ DEFS_Debug := \
 CFLAGS_Debug := \
 	-fstack-protector \
 	--param=ssp-buffer-size=4 \
+	-Werror \
 	-pthread \
 	-fno-exceptions \
 	-fno-strict-aliasing \
@@ -57,6 +58,25 @@ CFLAGS_Debug := \
 	-fvisibility=hidden \
 	-pipe \
 	-fPIC \
+	-Wheader-hygiene \
+	-Wno-unused-function \
+	-Wno-char-subscripts \
+	-Wno-unnamed-type-template-args \
+	-Wno-c++11-extensions \
+	-Wno-covered-switch-default \
+	-Wstring-conversion \
+	-Xclang \
+	-load \
+	-Xclang \
+	/home/david/Projects/spa/examples/chromium/src/tools/clang/scripts/../../../third_party/llvm-build/Release+Asserts/lib/libFindBadConstructs.so \
+	-Xclang \
+	-add-plugin \
+	-Xclang \
+	find-bad-constructs \
+	-Xclang \
+	-plugin-arg-find-bad-constructs \
+	-Xclang \
+	skip-virtuals-in-implementations \
 	-pthread \
 	-I/usr/include/glib-2.0 \
 	-I/usr/lib/x86_64-linux-gnu/glib-2.0/include \
@@ -67,9 +87,10 @@ CFLAGS_Debug := \
 	-I/usr/include/gdk-pixbuf-2.0 \
 	-I/usr/include/pango-1.0 \
 	-I/usr/include/gio-unix-2.0/ \
-	-I/usr/include/pixman-1 \
 	-I/usr/include/freetype2 \
+	-I/usr/include/pixman-1 \
 	-I/usr/include/libpng12 \
+	-I/usr/include/harfbuzz \
 	-pthread \
 	-I/usr/include/glib-2.0 \
 	-I/usr/lib/x86_64-linux-gnu/glib-2.0/include \
@@ -153,6 +174,7 @@ DEFS_Release := \
 CFLAGS_Release := \
 	-fstack-protector \
 	--param=ssp-buffer-size=4 \
+	-Werror \
 	-pthread \
 	-fno-exceptions \
 	-fno-strict-aliasing \
@@ -161,6 +183,25 @@ CFLAGS_Release := \
 	-fvisibility=hidden \
 	-pipe \
 	-fPIC \
+	-Wheader-hygiene \
+	-Wno-unused-function \
+	-Wno-char-subscripts \
+	-Wno-unnamed-type-template-args \
+	-Wno-c++11-extensions \
+	-Wno-covered-switch-default \
+	-Wstring-conversion \
+	-Xclang \
+	-load \
+	-Xclang \
+	/home/david/Projects/spa/examples/chromium/src/tools/clang/scripts/../../../third_party/llvm-build/Release+Asserts/lib/libFindBadConstructs.so \
+	-Xclang \
+	-add-plugin \
+	-Xclang \
+	find-bad-constructs \
+	-Xclang \
+	-plugin-arg-find-bad-constructs \
+	-Xclang \
+	skip-virtuals-in-implementations \
 	-pthread \
 	-I/usr/include/glib-2.0 \
 	-I/usr/lib/x86_64-linux-gnu/glib-2.0/include \
@@ -171,16 +212,16 @@ CFLAGS_Release := \
 	-I/usr/include/gdk-pixbuf-2.0 \
 	-I/usr/include/pango-1.0 \
 	-I/usr/include/gio-unix-2.0/ \
-	-I/usr/include/pixman-1 \
 	-I/usr/include/freetype2 \
+	-I/usr/include/pixman-1 \
 	-I/usr/include/libpng12 \
+	-I/usr/include/harfbuzz \
 	-pthread \
 	-I/usr/include/glib-2.0 \
 	-I/usr/lib/x86_64-linux-gnu/glib-2.0/include \
 	-Wno-format \
 	-Wno-unused-result \
 	-O2 \
-	-fno-ident \
 	-fdata-sections \
 	-ffunction-sections
 

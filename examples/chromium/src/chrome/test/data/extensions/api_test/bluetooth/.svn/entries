@@ -1,52 +1,0 @@
-10
-
-dir
-197479
-http://src.chromium.org/svn/trunk/src/chrome/test/data/extensions/api_test/bluetooth
-http://src.chromium.org/svn
-
-
-
-2013-04-29T15:56:09.136049Z
-197048
-youngki@chromium.org
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4ff67af0-8c30-449e-8e8b-ad334ec8d88c
-
-discovery_in_progress
-dir
-
-get_devices
-dir
-
-get_profiles
-dir
-
-discovery_callback
-dir
-
-events
-dir
-
-get_devices_concurrently
-dir
-
-get_devices_error
-dir
-
-permissions
-dir
-

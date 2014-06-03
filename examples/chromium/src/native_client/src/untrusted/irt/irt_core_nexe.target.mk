@@ -9,7 +9,7 @@ cmd__home_david_Projects_spa_examples_chromium_src_native_client_src_untrusted_i
 $(builddir)/irt_core_newlib_x64.nexe: obj := $(abs_obj)
 $(builddir)/irt_core_newlib_x64.nexe: builddir := $(abs_builddir)
 $(builddir)/irt_core_newlib_x64.nexe: TOOLSET := $(TOOLSET)
-$(builddir)/irt_core_newlib_x64.nexe: native_client/build/build_nexe.py ../../../../../../../usr/include/_G_config.h ../../../../../../../usr/include/ctype.h ../../../../../../../usr/include/endian.h ../../../../../../../usr/include/features.h ../../../../../../../usr/include/gconv.h ../../../../../../../usr/include/getopt.h ../../../../../../../usr/include/libio.h ../../../../../../../usr/include/malloc.h ../../../../../../../usr/include/stdio.h ../../../../../../../usr/include/wchar.h ../../../../../../../usr/include/wctype.h ../../../../../../../usr/include/xlocale.h native_client/src/include/arm_sandbox.h native_client/src/include/elf32.h native_client/src/include/elf_auxv.h native_client/src/include/elf_constants.h native_client/src/include/nacl_asm.h native_client/src/include/nacl_base.h native_client/src/include/nacl_compiler_annotations.h native_client/src/include/nacl_macros.h native_client/src/include/portability.h native_client/src/include/win/port_win.h native_client/src/shared/platform/nacl_log.h native_client/src/shared/srpc/nacl_srpc.h native_client/src/third_party/dlmalloc/malloc.c native_client/src/third_party/valgrind/memcheck.h native_client/src/third_party/valgrind/valgrind.h native_client/src/trusted/service_runtime/include/bits/nacl_syscalls.h native_client/src/trusted/service_runtime/include/bits/wordsize.h native_client/src/trusted/service_runtime/include/machine/_types.h native_client/src/trusted/service_runtime/include/sys/nacl_name_service.h native_client/src/trusted/service_runtime/include/sys/nacl_syscalls.h native_client/src/trusted/service_runtime/include/sys/time.h native_client/src/trusted/service_runtime/nacl_config.h native_client/src/untrusted/nacl/nacl_irt.h native_client/src/untrusted/nacl/nacl_startup.h native_client/src/untrusted/nacl/nacl_thread.h native_client/src/untrusted/nacl/sys_private.c native_client/src/untrusted/nacl/syscall_bindings_trampoline.h native_client/src/untrusted/nacl/tls.h native_client/src/untrusted/nacl/tls_params.h native_client/src/untrusted/pthread/futex.c native_client/src/untrusted/pthread/futex.h native_client/src/untrusted/pthread/nc_condvar.c native_client/src/untrusted/pthread/nc_init_private.c native_client/src/untrusted/pthread/nc_mutex.c native_client/src/untrusted/pthread/nc_thread.c native_client/src/untrusted/pthread/nc_tsd.c native_client/src/untrusted/pthread/pthread.h native_client/src/untrusted/pthread/pthread_internal.h native_client/src/untrusted/pthread/pthread_types.h native_client/src/untrusted/valgrind/dynamic_annotations.c native_client/src/untrusted/valgrind/dynamic_annotations.h native_client/src/untrusted/irt/irt.h native_client/src/untrusted/irt/irt_basic.c native_client/src/untrusted/irt/irt_blockhook.c native_client/src/untrusted/irt/irt_clock.c native_client/src/untrusted/irt/irt_cond.c native_client/src/untrusted/irt/irt_core_entry.c native_client/src/untrusted/irt/irt_core_resource.c native_client/src/untrusted/irt/irt_dev_exception_handling.c native_client/src/untrusted/irt/irt_dev_getpid.c native_client/src/untrusted/irt/irt_dev_list_mappings.c native_client/src/untrusted/irt/irt_dyncode.c native_client/src/untrusted/irt/irt_entry.c native_client/src/untrusted/irt/irt_fdio.c native_client/src/untrusted/irt/irt_filename.c native_client/src/untrusted/irt/irt_interfaces.c native_client/src/untrusted/irt/irt_interfaces.h native_client/src/untrusted/irt/irt_malloc.c native_client/src/untrusted/irt/irt_memory.c native_client/src/untrusted/irt/irt_mutex.c native_client/src/untrusted/irt/irt_nameservice.c native_client/src/untrusted/irt/irt_private.h native_client/src/untrusted/irt/irt_private_pthread.c native_client/src/untrusted/irt/irt_private_tls.c native_client/src/untrusted/irt/irt_random.c native_client/src/untrusted/irt/irt_sem.c native_client/src/untrusted/irt/irt_thread.c native_client/src/untrusted/irt/irt_tls.c native_client/src/untrusted/irt/newlib-x86-64.irt_core_nexe.source_list.gypcmd $(obj)/gen/sdk/toolchain/linux_x86_newlib/stamp.prep FORCE_DO_CMD
+$(builddir)/irt_core_newlib_x64.nexe: native_client/build/build_nexe.py ../../../../../../../usr/include/_G_config.h ../../../../../../../usr/include/ctype.h ../../../../../../../usr/include/endian.h ../../../../../../../usr/include/features.h ../../../../../../../usr/include/gconv.h ../../../../../../../usr/include/getopt.h ../../../../../../../usr/include/libio.h ../../../../../../../usr/include/malloc.h ../../../../../../../usr/include/stdc-predef.h ../../../../../../../usr/include/stdio.h ../../../../../../../usr/include/wchar.h ../../../../../../../usr/include/wctype.h ../../../../../../../usr/include/xlocale.h native_client/src/include/arm_sandbox.h native_client/src/include/elf32.h native_client/src/include/elf_auxv.h native_client/src/include/elf_constants.h native_client/src/include/nacl_asm.h native_client/src/include/nacl_base.h native_client/src/include/nacl_compiler_annotations.h native_client/src/include/nacl_macros.h native_client/src/include/portability.h native_client/src/include/win/port_win.h native_client/src/shared/platform/nacl_log.h native_client/src/shared/srpc/nacl_srpc.h native_client/src/third_party/dlmalloc/malloc.c native_client/src/third_party/valgrind/memcheck.h native_client/src/third_party/valgrind/valgrind.h native_client/src/trusted/service_runtime/include/bits/nacl_syscalls.h native_client/src/trusted/service_runtime/include/bits/wordsize.h native_client/src/trusted/service_runtime/include/machine/_types.h native_client/src/trusted/service_runtime/include/sys/nacl_name_service.h native_client/src/trusted/service_runtime/include/sys/nacl_syscalls.h native_client/src/trusted/service_runtime/include/sys/time.h native_client/src/trusted/service_runtime/nacl_config.h native_client/src/untrusted/nacl/nacl_irt.h native_client/src/untrusted/nacl/nacl_startup.h native_client/src/untrusted/nacl/nacl_thread.h native_client/src/untrusted/nacl/sys_private.c native_client/src/untrusted/nacl/syscall_bindings_trampoline.h native_client/src/untrusted/nacl/tls.h native_client/src/untrusted/nacl/tls_params.h native_client/src/untrusted/pthread/futex.c native_client/src/untrusted/pthread/futex.h native_client/src/untrusted/pthread/nc_condvar.c native_client/src/untrusted/pthread/nc_init_private.c native_client/src/untrusted/pthread/nc_mutex.c native_client/src/untrusted/pthread/nc_thread.c native_client/src/untrusted/pthread/nc_tsd.c native_client/src/untrusted/pthread/pthread.h native_client/src/untrusted/pthread/pthread_internal.h native_client/src/untrusted/pthread/pthread_types.h native_client/src/untrusted/valgrind/dynamic_annotations.c native_client/src/untrusted/valgrind/dynamic_annotations.h native_client/src/untrusted/irt/irt.h native_client/src/untrusted/irt/irt_basic.c native_client/src/untrusted/irt/irt_blockhook.c native_client/src/untrusted/irt/irt_clock.c native_client/src/untrusted/irt/irt_cond.c native_client/src/untrusted/irt/irt_core_entry.c native_client/src/untrusted/irt/irt_core_resource.c native_client/src/untrusted/irt/irt_dev_exception_handling.c native_client/src/untrusted/irt/irt_dev_getpid.c native_client/src/untrusted/irt/irt_dev_list_mappings.c native_client/src/untrusted/irt/irt_dyncode.c native_client/src/untrusted/irt/irt_entry.c native_client/src/untrusted/irt/irt_fdio.c native_client/src/untrusted/irt/irt_filename.c native_client/src/untrusted/irt/irt_interfaces.c native_client/src/untrusted/irt/irt_interfaces.h native_client/src/untrusted/irt/irt_malloc.c native_client/src/untrusted/irt/irt_memory.c native_client/src/untrusted/irt/irt_mutex.c native_client/src/untrusted/irt/irt_nameservice.c native_client/src/untrusted/irt/irt_private.h native_client/src/untrusted/irt/irt_private_pthread.c native_client/src/untrusted/irt/irt_private_tls.c native_client/src/untrusted/irt/irt_random.c native_client/src/untrusted/irt/irt_sem.c native_client/src/untrusted/irt/irt_thread.c native_client/src/untrusted/irt/irt_tls.c native_client/src/untrusted/irt/newlib-x86-64.irt_core_nexe.source_list.gypcmd $(obj)/gen/sdk/toolchain/linux_x86_newlib/stamp.prep FORCE_DO_CMD
 	$(call do_cmd,_home_david_Projects_spa_examples_chromium_src_native_client_src_untrusted_irt_irt_gyp_irt_core_nexe_target_build_newlib_x86_64_nexe)
 
 all_deps += $(builddir)/irt_core_newlib_x64.nexe
@@ -22,7 +22,7 @@ cmd__home_david_Projects_spa_examples_chromium_src_native_client_src_untrusted_i
 $(builddir)/irt_core_newlib_x32.nexe: obj := $(abs_obj)
 $(builddir)/irt_core_newlib_x32.nexe: builddir := $(abs_builddir)
 $(builddir)/irt_core_newlib_x32.nexe: TOOLSET := $(TOOLSET)
-$(builddir)/irt_core_newlib_x32.nexe: native_client/build/build_nexe.py ../../../../../../../usr/include/_G_config.h ../../../../../../../usr/include/ctype.h ../../../../../../../usr/include/endian.h ../../../../../../../usr/include/features.h ../../../../../../../usr/include/gconv.h ../../../../../../../usr/include/getopt.h ../../../../../../../usr/include/libio.h ../../../../../../../usr/include/malloc.h ../../../../../../../usr/include/stdio.h ../../../../../../../usr/include/wchar.h ../../../../../../../usr/include/wctype.h ../../../../../../../usr/include/xlocale.h native_client/src/include/arm_sandbox.h native_client/src/include/elf32.h native_client/src/include/elf_auxv.h native_client/src/include/elf_constants.h native_client/src/include/nacl_asm.h native_client/src/include/nacl_base.h native_client/src/include/nacl_compiler_annotations.h native_client/src/include/nacl_macros.h native_client/src/include/portability.h native_client/src/include/win/port_win.h native_client/src/shared/platform/nacl_log.h native_client/src/shared/srpc/nacl_srpc.h native_client/src/third_party/dlmalloc/malloc.c native_client/src/third_party/valgrind/memcheck.h native_client/src/third_party/valgrind/valgrind.h native_client/src/trusted/service_runtime/include/bits/nacl_syscalls.h native_client/src/trusted/service_runtime/include/bits/wordsize.h native_client/src/trusted/service_runtime/include/machine/_types.h native_client/src/trusted/service_runtime/include/sys/nacl_name_service.h native_client/src/trusted/service_runtime/include/sys/nacl_syscalls.h native_client/src/trusted/service_runtime/include/sys/time.h native_client/src/trusted/service_runtime/nacl_config.h native_client/src/untrusted/nacl/nacl_irt.h native_client/src/untrusted/nacl/nacl_startup.h native_client/src/untrusted/nacl/nacl_thread.h native_client/src/untrusted/nacl/sys_private.c native_client/src/untrusted/nacl/syscall_bindings_trampoline.h native_client/src/untrusted/nacl/tls.h native_client/src/untrusted/nacl/tls_params.h native_client/src/untrusted/pthread/futex.c native_client/src/untrusted/pthread/futex.h native_client/src/untrusted/pthread/nc_condvar.c native_client/src/untrusted/pthread/nc_init_private.c native_client/src/untrusted/pthread/nc_mutex.c native_client/src/untrusted/pthread/nc_thread.c native_client/src/untrusted/pthread/nc_tsd.c native_client/src/untrusted/pthread/pthread.h native_client/src/untrusted/pthread/pthread_internal.h native_client/src/untrusted/pthread/pthread_types.h native_client/src/untrusted/valgrind/dynamic_annotations.c native_client/src/untrusted/valgrind/dynamic_annotations.h native_client/src/untrusted/irt/irt.h native_client/src/untrusted/irt/irt_basic.c native_client/src/untrusted/irt/irt_blockhook.c native_client/src/untrusted/irt/irt_clock.c native_client/src/untrusted/irt/irt_cond.c native_client/src/untrusted/irt/irt_core_entry.c native_client/src/untrusted/irt/irt_core_resource.c native_client/src/untrusted/irt/irt_dev_exception_handling.c native_client/src/untrusted/irt/irt_dev_getpid.c native_client/src/untrusted/irt/irt_dev_list_mappings.c native_client/src/untrusted/irt/irt_dyncode.c native_client/src/untrusted/irt/irt_entry.c native_client/src/untrusted/irt/irt_fdio.c native_client/src/untrusted/irt/irt_filename.c native_client/src/untrusted/irt/irt_interfaces.c native_client/src/untrusted/irt/irt_interfaces.h native_client/src/untrusted/irt/irt_malloc.c native_client/src/untrusted/irt/irt_memory.c native_client/src/untrusted/irt/irt_mutex.c native_client/src/untrusted/irt/irt_nameservice.c native_client/src/untrusted/irt/irt_private.h native_client/src/untrusted/irt/irt_private_pthread.c native_client/src/untrusted/irt/irt_private_tls.c native_client/src/untrusted/irt/irt_random.c native_client/src/untrusted/irt/irt_sem.c native_client/src/untrusted/irt/irt_thread.c native_client/src/untrusted/irt/irt_tls.c native_client/src/untrusted/irt/newlib-x86-32.irt_core_nexe.source_list.gypcmd $(obj)/gen/sdk/toolchain/linux_x86_newlib/stamp.prep FORCE_DO_CMD
+$(builddir)/irt_core_newlib_x32.nexe: native_client/build/build_nexe.py ../../../../../../../usr/include/_G_config.h ../../../../../../../usr/include/ctype.h ../../../../../../../usr/include/endian.h ../../../../../../../usr/include/features.h ../../../../../../../usr/include/gconv.h ../../../../../../../usr/include/getopt.h ../../../../../../../usr/include/libio.h ../../../../../../../usr/include/malloc.h ../../../../../../../usr/include/stdc-predef.h ../../../../../../../usr/include/stdio.h ../../../../../../../usr/include/wchar.h ../../../../../../../usr/include/wctype.h ../../../../../../../usr/include/xlocale.h native_client/src/include/arm_sandbox.h native_client/src/include/elf32.h native_client/src/include/elf_auxv.h native_client/src/include/elf_constants.h native_client/src/include/nacl_asm.h native_client/src/include/nacl_base.h native_client/src/include/nacl_compiler_annotations.h native_client/src/include/nacl_macros.h native_client/src/include/portability.h native_client/src/include/win/port_win.h native_client/src/shared/platform/nacl_log.h native_client/src/shared/srpc/nacl_srpc.h native_client/src/third_party/dlmalloc/malloc.c native_client/src/third_party/valgrind/memcheck.h native_client/src/third_party/valgrind/valgrind.h native_client/src/trusted/service_runtime/include/bits/nacl_syscalls.h native_client/src/trusted/service_runtime/include/bits/wordsize.h native_client/src/trusted/service_runtime/include/machine/_types.h native_client/src/trusted/service_runtime/include/sys/nacl_name_service.h native_client/src/trusted/service_runtime/include/sys/nacl_syscalls.h native_client/src/trusted/service_runtime/include/sys/time.h native_client/src/trusted/service_runtime/nacl_config.h native_client/src/untrusted/nacl/nacl_irt.h native_client/src/untrusted/nacl/nacl_startup.h native_client/src/untrusted/nacl/nacl_thread.h native_client/src/untrusted/nacl/sys_private.c native_client/src/untrusted/nacl/syscall_bindings_trampoline.h native_client/src/untrusted/nacl/tls.h native_client/src/untrusted/nacl/tls_params.h native_client/src/untrusted/pthread/futex.c native_client/src/untrusted/pthread/futex.h native_client/src/untrusted/pthread/nc_condvar.c native_client/src/untrusted/pthread/nc_init_private.c native_client/src/untrusted/pthread/nc_mutex.c native_client/src/untrusted/pthread/nc_thread.c native_client/src/untrusted/pthread/nc_tsd.c native_client/src/untrusted/pthread/pthread.h native_client/src/untrusted/pthread/pthread_internal.h native_client/src/untrusted/pthread/pthread_types.h native_client/src/untrusted/valgrind/dynamic_annotations.c native_client/src/untrusted/valgrind/dynamic_annotations.h native_client/src/untrusted/irt/irt.h native_client/src/untrusted/irt/irt_basic.c native_client/src/untrusted/irt/irt_blockhook.c native_client/src/untrusted/irt/irt_clock.c native_client/src/untrusted/irt/irt_cond.c native_client/src/untrusted/irt/irt_core_entry.c native_client/src/untrusted/irt/irt_core_resource.c native_client/src/untrusted/irt/irt_dev_exception_handling.c native_client/src/untrusted/irt/irt_dev_getpid.c native_client/src/untrusted/irt/irt_dev_list_mappings.c native_client/src/untrusted/irt/irt_dyncode.c native_client/src/untrusted/irt/irt_entry.c native_client/src/untrusted/irt/irt_fdio.c native_client/src/untrusted/irt/irt_filename.c native_client/src/untrusted/irt/irt_interfaces.c native_client/src/untrusted/irt/irt_interfaces.h native_client/src/untrusted/irt/irt_malloc.c native_client/src/untrusted/irt/irt_memory.c native_client/src/untrusted/irt/irt_mutex.c native_client/src/untrusted/irt/irt_nameservice.c native_client/src/untrusted/irt/irt_private.h native_client/src/untrusted/irt/irt_private_pthread.c native_client/src/untrusted/irt/irt_private_tls.c native_client/src/untrusted/irt/irt_random.c native_client/src/untrusted/irt/irt_sem.c native_client/src/untrusted/irt/irt_thread.c native_client/src/untrusted/irt/irt_tls.c native_client/src/untrusted/irt/newlib-x86-32.irt_core_nexe.source_list.gypcmd $(obj)/gen/sdk/toolchain/linux_x86_newlib/stamp.prep FORCE_DO_CMD
 	$(call do_cmd,_home_david_Projects_spa_examples_chromium_src_native_client_src_untrusted_irt_irt_gyp_irt_core_nexe_target_build_newlib_x86_32_nexe)
 
 all_deps += $(builddir)/irt_core_newlib_x32.nexe
@@ -88,10 +88,35 @@ CFLAGS_Debug := \
 	-fvisibility=hidden \
 	-pipe \
 	-fPIC \
+	-Wheader-hygiene \
+	-Wno-unused-function \
+	-Wno-char-subscripts \
+	-Wno-unnamed-type-template-args \
+	-Wno-c++11-extensions \
+	-Wno-covered-switch-default \
+	-Wstring-conversion \
+	-Xclang \
+	-load \
+	-Xclang \
+	/home/david/Projects/spa/examples/chromium/src/tools/clang/scripts/../../../third_party/llvm-build/Release+Asserts/lib/libFindBadConstructs.so \
+	-Xclang \
+	-add-plugin \
+	-Xclang \
+	find-bad-constructs \
+	-Xclang \
+	-plugin-arg-find-bad-constructs \
+	-Xclang \
+	skip-virtuals-in-implementations \
 	-pthread \
 	-fno-exceptions \
 	-m64 \
 	-fno-exceptions \
+	-Wheader-hygiene \
+	-Wno-unused-function \
+	-Wno-char-subscripts \
+	-Wno-unnamed-type-template-args \
+	-Wno-covered-switch-default \
+	-Wno-c++11-extensions \
 	-Wno-format \
 	-Wno-unused-result \
 	-O0 \
@@ -174,18 +199,41 @@ CFLAGS_Release := \
 	-fvisibility=hidden \
 	-pipe \
 	-fPIC \
+	-Wheader-hygiene \
+	-Wno-unused-function \
+	-Wno-char-subscripts \
+	-Wno-unnamed-type-template-args \
+	-Wno-c++11-extensions \
+	-Wno-covered-switch-default \
+	-Wstring-conversion \
+	-Xclang \
+	-load \
+	-Xclang \
+	/home/david/Projects/spa/examples/chromium/src/tools/clang/scripts/../../../third_party/llvm-build/Release+Asserts/lib/libFindBadConstructs.so \
+	-Xclang \
+	-add-plugin \
+	-Xclang \
+	find-bad-constructs \
+	-Xclang \
+	-plugin-arg-find-bad-constructs \
+	-Xclang \
+	skip-virtuals-in-implementations \
 	-pthread \
 	-fno-exceptions \
 	-m64 \
 	-fno-exceptions \
+	-Wheader-hygiene \
+	-Wno-unused-function \
+	-Wno-char-subscripts \
+	-Wno-unnamed-type-template-args \
+	-Wno-covered-switch-default \
+	-Wno-c++11-extensions \
 	-Wno-format \
 	-Wno-unused-result \
 	-O2 \
-	-fno-ident \
 	-fdata-sections \
 	-ffunction-sections \
 	-O2 \
-	-fno-ident \
 	-fdata-sections \
 	-ffunction-sections
 

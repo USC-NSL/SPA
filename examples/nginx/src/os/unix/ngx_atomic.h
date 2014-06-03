@@ -112,7 +112,11 @@ typedef volatile ngx_atomic_uint_t  ngx_atomic_t;
 #define ngx_atomic_fetch_add(value, add)                                      \
     __sync_fetch_and_add(value, add)
 
+#ifndef ENABLE_KLEE
 #define ngx_memory_barrier()        __sync_synchronize()
+#else
+#define ngx_memory_barrier()
+#endif
 
 #if ( __i386__ || __i386 || __amd64__ || __amd64 )
 #define ngx_cpu_pause()             __asm__ ("pause")
@@ -306,8 +310,13 @@ ngx_atomic_fetch_add(ngx_atomic_t *value, ngx_atomic_int_t add)
 
 void ngx_spinlock(ngx_atomic_t *lock, ngx_atomic_int_t value, ngx_uint_t spin);
 
+#ifndef ENABLE_KLEE
 #define ngx_trylock(lock)  (*(lock) == 0 && ngx_atomic_cmp_set(lock, 0, 1))
 #define ngx_unlock(lock)    *(lock) = 0
+#else
+#define ngx_trylock(lock)  (*(lock) == 0 && (*(lock) = 1))
+#define ngx_unlock(lock)    *(lock) = 0
+#endif
 
 
 #endif /* _NGX_ATOMIC_H_INCLUDED_ */

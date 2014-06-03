@@ -64,7 +64,6 @@ LIBS := \
 	-lgconf-2 \
 	-lresolv \
 	-ldbus-1 \
-	-lpthread \
 	-lXext \
 	-lXfixes
 

@@ -1,73 +1,0 @@
-10
-
-dir
-197479
-http://src.chromium.org/svn/trunk/src/chrome/test/data/extensions/api_test/window_open
-http://src.chromium.org/svn
-
-
-
-2013-04-30T20:24:50.638522Z
-197443
-miket@chromium.org
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4ff67af0-8c30-449e-8e8b-ad334ec8d88c
-
-focus
-dir
-
-panel_detached
-dir
-
-opener
-dir
-
-panel_not_enabled
-dir
-
-popup_small
-dir
-
-close_panels_on_uninstall
-dir
-
-panel
-dir
-
-window_size
-dir
-
-popup
-dir
-
-argument_overflow
-dir
-
-panel_window_open
-dir
-
-popup_blocking
-dir
-
-popup_large
-dir
-
-spanning
-dir
-
-browser_is_app
-dir
-

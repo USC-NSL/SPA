@@ -2,13 +2,6 @@
 
 TOOLSET := target
 TARGET := base_unittests
-### Generated for rule _home_david_Projects_spa_examples_chromium_src_base_base_gyp_base_unittests_target_run_nocompile:
-rule__home_david_Projects_spa_examples_chromium_src_base_base_gyp_base_unittests_target_run_nocompile_outputs :=
-
-### Finished generating for rule: _home_david_Projects_spa_examples_chromium_src_base_base_gyp_base_unittests_target_run_nocompile
-
-### Finished generating for all rules
-
 DEFS_Debug := \
 	'-D_FILE_OFFSET_BITS=64' \
 	'-DUSE_LINUX_BREAKPAD' \
@@ -63,6 +56,25 @@ CFLAGS_Debug := \
 	-fvisibility=hidden \
 	-pipe \
 	-fPIC \
+	-Wheader-hygiene \
+	-Wno-unused-function \
+	-Wno-char-subscripts \
+	-Wno-unnamed-type-template-args \
+	-Wno-c++11-extensions \
+	-Wno-covered-switch-default \
+	-Wstring-conversion \
+	-Xclang \
+	-load \
+	-Xclang \
+	/home/david/Projects/spa/examples/chromium/src/tools/clang/scripts/../../../third_party/llvm-build/Release+Asserts/lib/libFindBadConstructs.so \
+	-Xclang \
+	-add-plugin \
+	-Xclang \
+	find-bad-constructs \
+	-Xclang \
+	-plugin-arg-find-bad-constructs \
+	-Xclang \
+	skip-virtuals-in-implementations \
 	-pthread \
 	-I/usr/include/glib-2.0 \
 	-I/usr/lib/x86_64-linux-gnu/glib-2.0/include \
@@ -73,9 +85,10 @@ CFLAGS_Debug := \
 	-I/usr/include/gdk-pixbuf-2.0 \
 	-I/usr/include/pango-1.0 \
 	-I/usr/include/gio-unix-2.0/ \
-	-I/usr/include/pixman-1 \
 	-I/usr/include/freetype2 \
+	-I/usr/include/pixman-1 \
 	-I/usr/include/libpng12 \
+	-I/usr/include/harfbuzz \
 	-pthread \
 	-I/usr/include/glib-2.0 \
 	-I/usr/lib/x86_64-linux-gnu/glib-2.0/include \
@@ -157,6 +170,25 @@ CFLAGS_Release := \
 	-fvisibility=hidden \
 	-pipe \
 	-fPIC \
+	-Wheader-hygiene \
+	-Wno-unused-function \
+	-Wno-char-subscripts \
+	-Wno-unnamed-type-template-args \
+	-Wno-c++11-extensions \
+	-Wno-covered-switch-default \
+	-Wstring-conversion \
+	-Xclang \
+	-load \
+	-Xclang \
+	/home/david/Projects/spa/examples/chromium/src/tools/clang/scripts/../../../third_party/llvm-build/Release+Asserts/lib/libFindBadConstructs.so \
+	-Xclang \
+	-add-plugin \
+	-Xclang \
+	find-bad-constructs \
+	-Xclang \
+	-plugin-arg-find-bad-constructs \
+	-Xclang \
+	skip-virtuals-in-implementations \
 	-pthread \
 	-I/usr/include/glib-2.0 \
 	-I/usr/lib/x86_64-linux-gnu/glib-2.0/include \
@@ -167,16 +199,16 @@ CFLAGS_Release := \
 	-I/usr/include/gdk-pixbuf-2.0 \
 	-I/usr/include/pango-1.0 \
 	-I/usr/include/gio-unix-2.0/ \
-	-I/usr/include/pixman-1 \
 	-I/usr/include/freetype2 \
+	-I/usr/include/pixman-1 \
 	-I/usr/include/libpng12 \
+	-I/usr/include/harfbuzz \
 	-pthread \
 	-I/usr/include/glib-2.0 \
 	-I/usr/lib/x86_64-linux-gnu/glib-2.0/include \
 	-I/usr/include/nss \
 	-I/usr/include/nspr \
 	-O2 \
-	-fno-ident \
 	-fdata-sections \
 	-ffunction-sections
 
@@ -351,9 +383,6 @@ all_deps += $(OBJS)
 # Make sure our dependencies are built before any of us.
 $(OBJS): | $(obj).target/base/libbase.a $(obj).target/base/libbase_i18n.a $(obj).target/base/libbase_prefs.a $(obj).target/base/libbase_prefs_test_support.a $(obj).target/base/libbase_static.a $(obj).target/base/librun_all_unittests.a $(obj).target/base/libtest_support_base.a $(obj).target/base/third_party/dynamic_annotations/libdynamic_annotations.a $(obj).target/testing/libgmock.a $(obj).target/testing/libgtest.a $(obj).target/third_party/icu/libicui18n.a $(obj).target/third_party/icu/libicuuc.a $(obj).target/build/linux/glib.stamp $(obj).target/build/linux/ssl.stamp $(builddir)/xdisplaycheck $(obj).target/base/allocator/liballocator.a $(obj).target/build/linux/gtk.stamp $(obj).target/third_party/libevent/libevent.a $(obj).target/base/allocator/liballocator_extension_thunks.a $(obj).target/testing/gtest_prod.stamp $(obj).target/third_party/modp_b64/libmodp_b64.a $(obj).target/base/libsymbolize.a $(obj).target/base/libxdg_mime.a $(obj).target/build/linux/x11.stamp $(obj).target/third_party/icu/libicudata.a $(obj).target/net/third_party/nss/libcrssl.a $(obj).target/third_party/zlib/libchrome_zlib.a
 
-# Make sure our actions/rules run before any of us.
-$(OBJS): | $(rule__home_david_Projects_spa_examples_chromium_src_base_base_gyp_base_unittests_target_run_nocompile_outputs)
-
 # CFLAGS et al overrides must be target-local.
 # See "Target-specific Variable Values" in the GNU Make manual.
 $(OBJS): TOOLSET := $(TOOLSET)
@@ -375,12 +404,6 @@ $(obj).$(TOOLSET)/$(TARGET)/%.o: $(obj)/%.cc FORCE_DO_CMD
 
 # End of this set of suffix rules
 ### Rules for final target.
-# Build our special outputs first.
-$(builddir)/base_unittests: | $(rule__home_david_Projects_spa_examples_chromium_src_base_base_gyp_base_unittests_target_run_nocompile_outputs)
-
-# Preserve order dependency of special output on deps.
-$(rule__home_david_Projects_spa_examples_chromium_src_base_base_gyp_base_unittests_target_run_nocompile_outputs): | $(obj).target/base/libbase.a $(obj).target/base/libbase_i18n.a $(obj).target/base/libbase_prefs.a $(obj).target/base/libbase_prefs_test_support.a $(obj).target/base/libbase_static.a $(obj).target/base/librun_all_unittests.a $(obj).target/base/libtest_support_base.a $(obj).target/base/third_party/dynamic_annotations/libdynamic_annotations.a $(obj).target/testing/libgmock.a $(obj).target/testing/libgtest.a $(obj).target/third_party/icu/libicui18n.a $(obj).target/third_party/icu/libicuuc.a $(obj).target/build/linux/glib.stamp $(obj).target/build/linux/ssl.stamp $(builddir)/xdisplaycheck $(obj).target/base/allocator/liballocator.a $(obj).target/build/linux/gtk.stamp $(obj).target/third_party/libevent/libevent.a $(obj).target/base/allocator/liballocator_extension_thunks.a $(obj).target/testing/gtest_prod.stamp $(obj).target/third_party/modp_b64/libmodp_b64.a $(obj).target/base/libsymbolize.a $(obj).target/base/libxdg_mime.a $(obj).target/build/linux/x11.stamp $(obj).target/third_party/icu/libicudata.a $(obj).target/net/third_party/nss/libcrssl.a $(obj).target/third_party/zlib/libchrome_zlib.a
-
 LDFLAGS_Debug := \
 	-Wl,-z,now \
 	-Wl,-z,relro \
@@ -432,8 +455,8 @@ LIBS := \
 	-lgdk_pixbuf-2.0 \
 	-lcairo \
 	-lpango-1.0 \
-	-lfreetype \
 	-lfontconfig \
+	-lfreetype \
 	-lX11 \
 	-lXi \
 	-lnss3 \

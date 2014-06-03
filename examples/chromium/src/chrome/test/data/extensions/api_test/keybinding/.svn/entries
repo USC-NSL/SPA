@@ -1,46 +1,0 @@
-10
-
-dir
-197479
-http://src.chromium.org/svn/trunk/src/chrome/test/data/extensions/api_test/keybinding
-http://src.chromium.org/svn
-
-
-
-2013-04-19T22:05:59.121453Z
-195306
-finnur@chromium.org
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-4ff67af0-8c30-449e-8e8b-ad334ec8d88c
-
-conflicting
-dir
-
-basics
-dir
-
-script_badge
-dir
-
-page_action
-dir
-
-synthesized
-dir
-
-dont_overwrite_system
-dir
-

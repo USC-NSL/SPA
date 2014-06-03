@@ -1,70 +1,0 @@
-10
-
-dir
-197479
-http://src.chromium.org/svn/trunk/src/chrome/test/data/extensions/api_test/management
-http://src.chromium.org/svn
-
-
-
-2013-04-26T23:20:04.693471Z
-196874
-vadimt@chromium.org
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4ff67af0-8c30-449e-8e8b-ad334ec8d88c
-
-test
-dir
-
-launch_app_tab
-dir
-
-description
-dir
-
-disabled_extension
-dir
-
-admin_extension
-dir
-
-enabled_extension
-dir
-
-disabled_app
-dir
-
-internal_extension
-dir
-
-launch_app_panel
-dir
-
-enabled_app
-dir
-
-management_policy
-dir
-
-permissions
-dir
-
-launch_on_install
-dir
-
-external_extension
-dir
-

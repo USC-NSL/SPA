@@ -82,8 +82,10 @@ DEFS_Debug := \
 
 # Flags passed to all source files.
 CFLAGS_Debug := \
+	-Wglobal-constructors \
 	-fstack-protector \
 	--param=ssp-buffer-size=4 \
+	-Werror \
 	-pthread \
 	-fno-exceptions \
 	-fno-strict-aliasing \
@@ -92,6 +94,25 @@ CFLAGS_Debug := \
 	-fvisibility=hidden \
 	-pipe \
 	-fPIC \
+	-Wheader-hygiene \
+	-Wno-unused-function \
+	-Wno-char-subscripts \
+	-Wno-unnamed-type-template-args \
+	-Wno-c++11-extensions \
+	-Wno-covered-switch-default \
+	-Wstring-conversion \
+	-Xclang \
+	-load \
+	-Xclang \
+	/home/david/Projects/spa/examples/chromium/src/tools/clang/scripts/../../../third_party/llvm-build/Release+Asserts/lib/libFindBadConstructs.so \
+	-Xclang \
+	-add-plugin \
+	-Xclang \
+	find-bad-constructs \
+	-Xclang \
+	-plugin-arg-find-bad-constructs \
+	-Xclang \
+	skip-virtuals-in-implementations \
 	-Wno-format \
 	-Wno-unused-result \
 	-O0 \
@@ -102,7 +123,6 @@ CFLAGS_C_Debug :=
 
 # Flags passed to only C++ files.
 CFLAGS_CC_Debug := \
-	-Wno-c++0x-compat \
 	-fno-rtti \
 	-fno-threadsafe-statics \
 	-fvisibility-inlines-hidden \
@@ -194,8 +214,10 @@ DEFS_Release := \
 
 # Flags passed to all source files.
 CFLAGS_Release := \
+	-Wglobal-constructors \
 	-fstack-protector \
 	--param=ssp-buffer-size=4 \
+	-Werror \
 	-pthread \
 	-fno-exceptions \
 	-fno-strict-aliasing \
@@ -204,10 +226,28 @@ CFLAGS_Release := \
 	-fvisibility=hidden \
 	-pipe \
 	-fPIC \
+	-Wheader-hygiene \
+	-Wno-unused-function \
+	-Wno-char-subscripts \
+	-Wno-unnamed-type-template-args \
+	-Wno-c++11-extensions \
+	-Wno-covered-switch-default \
+	-Wstring-conversion \
+	-Xclang \
+	-load \
+	-Xclang \
+	/home/david/Projects/spa/examples/chromium/src/tools/clang/scripts/../../../third_party/llvm-build/Release+Asserts/lib/libFindBadConstructs.so \
+	-Xclang \
+	-add-plugin \
+	-Xclang \
+	find-bad-constructs \
+	-Xclang \
+	-plugin-arg-find-bad-constructs \
+	-Xclang \
+	skip-virtuals-in-implementations \
 	-Wno-format \
 	-Wno-unused-result \
 	-O2 \
-	-fno-ident \
 	-fdata-sections \
 	-ffunction-sections
 
@@ -216,7 +256,6 @@ CFLAGS_C_Release :=
 
 # Flags passed to only C++ files.
 CFLAGS_CC_Release := \
-	-Wno-c++0x-compat \
 	-fno-rtti \
 	-fno-threadsafe-statics \
 	-fvisibility-inlines-hidden \

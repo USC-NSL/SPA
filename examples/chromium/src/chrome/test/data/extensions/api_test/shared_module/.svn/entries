@@ -1,40 +1,0 @@
-10
-
-dir
-197479
-http://src.chromium.org/svn/trunk/src/chrome/test/data/extensions/api_test/shared_module
-http://src.chromium.org/svn
-
-
-
-2013-04-30T01:04:35.526110Z
-197201
-elijahtaylor@chromium.org
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4ff67af0-8c30-449e-8e8b-ad334ec8d88c
-
-import_pass
-dir
-
-shared
-dir
-
-import_non_existent
-dir
-
-import_wrong_version
-dir
-

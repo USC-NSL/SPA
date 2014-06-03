@@ -1,55 +1,0 @@
-10
-
-dir
-197479
-http://src.chromium.org/svn/trunk/src/chrome/test/data/extensions/context_menus
-http://src.chromium.org/svn
-
-
-
-2013-01-08T15:10:31.289841Z
-175527
-kalman@chromium.org
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4ff67af0-8c30-449e-8e8b-ad334ec8d88c
-
-long_title
-dir
-
-patterns
-dir
-
-separators
-dir
-
-incognito
-dir
-
-simple
-dir
-
-enabled
-dir
-
-target_urls
-dir
-
-event_page
-dir
-
-frames
-dir
-

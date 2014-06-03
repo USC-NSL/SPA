@@ -16,7 +16,11 @@
 
 typedef int  ngx_socket_t;
 
+#ifndef ENABLE_KLEE
 #define ngx_socket          socket
+#else
+int __attribute__((weak)) ngx_socket() { return 0; }
+#endif
 #define ngx_socket_n        "socket()"
 
 

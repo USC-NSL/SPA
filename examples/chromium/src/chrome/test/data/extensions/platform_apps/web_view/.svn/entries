@@ -1,70 +1,0 @@
-10
-
-dir
-197479
-http://src.chromium.org/svn/trunk/src/chrome/test/data/extensions/platform_apps/web_view
-http://src.chromium.org/svn
-
-
-
-2013-04-30T18:34:38.510003Z
-197413
-miket@chromium.org
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4ff67af0-8c30-449e-8e8b-ad334ec8d88c
-
-focus
-dir
-
-shim
-dir
-
-media_access
-dir
-
-isolation
-dir
-
-newwindow
-dir
-
-teardown
-dir
-
-geolocation
-dir
-
-speech
-dir
-
-download
-dir
-
-pointer_lock
-dir
-
-close_on_loadcommit
-dir
-
-console_messages
-dir
-
-src_attribute
-dir
-
-noprerenderer
-dir
-

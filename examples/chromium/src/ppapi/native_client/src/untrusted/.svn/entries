@@ -1,40 +1,0 @@
-10
-
-dir
-197479
-http://src.chromium.org/svn/trunk/src/ppapi/native_client/src/untrusted
-http://src.chromium.org/svn
-
-
-
-2013-04-30T18:12:49.431221Z
-197409
-teravest@chromium.org
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4ff67af0-8c30-449e-8e8b-ad334ec8d88c
-
-nacl_ppapi_util
-dir
-
-pnacl_support_extension
-dir
-
-pnacl_irt_shim
-dir
-
-irt_stub
-dir
-

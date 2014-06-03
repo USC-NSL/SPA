@@ -1,43 +1,0 @@
-10
-
-dir
-197479
-http://src.chromium.org/svn/trunk/src/chrome/test/data/extensions/api_test/usb
-http://src.chromium.org/svn
-
-
-
-2013-04-23T22:20:20.373674Z
-195918
-ikarienator@chromium.org
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4ff67af0-8c30-449e-8e8b-ad334ec8d88c
-
-device_handling
-dir
-
-zero_length_transfer
-dir
-
-transfer_event
-dir
-
-transfer_failure
-dir
-
-invalid_length_transfer
-dir
-

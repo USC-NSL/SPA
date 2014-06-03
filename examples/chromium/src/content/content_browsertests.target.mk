@@ -65,6 +65,25 @@ CFLAGS_Debug := \
 	-fvisibility=hidden \
 	-pipe \
 	-fPIC \
+	-Wheader-hygiene \
+	-Wno-unused-function \
+	-Wno-char-subscripts \
+	-Wno-unnamed-type-template-args \
+	-Wno-c++11-extensions \
+	-Wno-covered-switch-default \
+	-Wstring-conversion \
+	-Xclang \
+	-load \
+	-Xclang \
+	/home/david/Projects/spa/examples/chromium/src/tools/clang/scripts/../../../third_party/llvm-build/Release+Asserts/lib/libFindBadConstructs.so \
+	-Xclang \
+	-add-plugin \
+	-Xclang \
+	find-bad-constructs \
+	-Xclang \
+	-plugin-arg-find-bad-constructs \
+	-Xclang \
+	skip-virtuals-in-implementations \
 	-pthread \
 	-I/usr/include/glib-2.0 \
 	-I/usr/lib/x86_64-linux-gnu/glib-2.0/include \
@@ -75,9 +94,10 @@ CFLAGS_Debug := \
 	-I/usr/include/gdk-pixbuf-2.0 \
 	-I/usr/include/pango-1.0 \
 	-I/usr/include/gio-unix-2.0/ \
-	-I/usr/include/pixman-1 \
 	-I/usr/include/freetype2 \
+	-I/usr/include/pixman-1 \
 	-I/usr/include/libpng12 \
+	-I/usr/include/harfbuzz \
 	-pthread \
 	-I/usr/include/glib-2.0 \
 	-I/usr/lib/x86_64-linux-gnu/glib-2.0/include \
@@ -192,6 +212,25 @@ CFLAGS_Release := \
 	-fvisibility=hidden \
 	-pipe \
 	-fPIC \
+	-Wheader-hygiene \
+	-Wno-unused-function \
+	-Wno-char-subscripts \
+	-Wno-unnamed-type-template-args \
+	-Wno-c++11-extensions \
+	-Wno-covered-switch-default \
+	-Wstring-conversion \
+	-Xclang \
+	-load \
+	-Xclang \
+	/home/david/Projects/spa/examples/chromium/src/tools/clang/scripts/../../../third_party/llvm-build/Release+Asserts/lib/libFindBadConstructs.so \
+	-Xclang \
+	-add-plugin \
+	-Xclang \
+	find-bad-constructs \
+	-Xclang \
+	-plugin-arg-find-bad-constructs \
+	-Xclang \
+	skip-virtuals-in-implementations \
 	-pthread \
 	-I/usr/include/glib-2.0 \
 	-I/usr/lib/x86_64-linux-gnu/glib-2.0/include \
@@ -202,16 +241,16 @@ CFLAGS_Release := \
 	-I/usr/include/gdk-pixbuf-2.0 \
 	-I/usr/include/pango-1.0 \
 	-I/usr/include/gio-unix-2.0/ \
-	-I/usr/include/pixman-1 \
 	-I/usr/include/freetype2 \
+	-I/usr/include/pixman-1 \
 	-I/usr/include/libpng12 \
+	-I/usr/include/harfbuzz \
 	-pthread \
 	-I/usr/include/glib-2.0 \
 	-I/usr/lib/x86_64-linux-gnu/glib-2.0/include \
 	-I/usr/include/nss \
 	-I/usr/include/nspr \
 	-O2 \
-	-fno-ident \
 	-fdata-sections \
 	-ffunction-sections
 
@@ -420,8 +459,8 @@ LIBS := \
 	-lgdk_pixbuf-2.0 \
 	-lcairo \
 	-lpango-1.0 \
-	-lfreetype \
 	-lfontconfig \
+	-lfreetype \
 	-lXi \
 	-lasound \
 	-lXdamage \
@@ -436,7 +475,6 @@ LIBS := \
 	-lgconf-2 \
 	-lresolv \
 	-ldbus-1 \
-	-lpthread \
 	-lcups \
 	-lgssapi_krb5 \
 	-lkrb5 \
@@ -445,9 +483,9 @@ LIBS := \
 	-lgnutls \
 	-lgcrypt \
 	-lz \
-	-lcrypt \
+	-lpthread \
 	-lm \
-	-L/lib/x86_64-linux-gnu \
+	-lcrypt \
 	-lexpat \
 	-ludev
 

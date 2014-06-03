@@ -1,73 +1,0 @@
-10
-
-dir
-197479
-http://src.chromium.org/svn/trunk/src/chrome/test/data/extensions/platform_apps/ad_view
-http://src.chromium.org/svn
-
-
-
-2013-04-24T05:10:08.337299Z
-196036
-rpaquay@chromium.org
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4ff67af0-8c30-449e-8e8b-ad334ec8d88c
-
-src_flag_required
-dir
-
-load_event
-dir
-
-display_first_ad
-dir
-
-ad_network_site
-dir
-
-properties_exposed
-dir
-
-permission_required
-dir
-
-loadcommit_event
-dir
-
-ad_network
-dir
-
-src_not_exposed
-dir
-
-change_ad_network
-dir
-
-onloadcommit_ack
-dir
-
-invalid_ad_network
-dir
-
-ad_network_loaded
-dir
-
-loadabort_event
-dir
-
-flag_required
-dir
-
