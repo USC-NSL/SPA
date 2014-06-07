@@ -1,0 +1,33 @@
+.\" btlist
+.TH BTLIST "6" "December 2005" "btlist 1.05" "BitTorrent"
+.SH NAME
+btlist \- List the metadata in a BitTorrent torrent file
+.SH SYNOPSIS
+.B btlist
+[\fITORRENT\fR]
+.SH DESCRIPTION
+.\" Add any additional description here
+.PP
+Used to list all of the metadata contained in the TORRENT file.  This 
+includes the names of files in the torrent that can be used in btget
+for the '\-f' option.
+
+.TP
+\fB\-s\fR
+show statistics for the torrent
+.IP
+With the '\-s' option btlist attempts to get and display some summary
+information about the torrent, how many peers and how many seeds are 
+currently active.
+
+.SH AUTHOR
+Written by Kevin Smathers and all of the authors listed in CREDITS
+.SH "REPORTING BUGS"
+Report bugs at <http://www.sf.net/projects/libbt>
+.SH COPYRIGHT
+Copyright \(co 2004 Kevin Smathers, et. al.
+.br
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+.SH "SEE ALSO"
+btget(1), btcheck(1)

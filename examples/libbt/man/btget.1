@@ -1,0 +1,92 @@
+.\" btget
+.TH BTGET "6" "December 2005" "btget 1.05" "BitTorrent"
+.SH NAME
+btget \- Attach to a BitTorrent P2P cloud and retrieve or share a set of files
+.SH SYNOPSIS
+.B btget
+[\fIOPTION\fR]... [\fITORRENT\fR]...
+.SH DESCRIPTION
+.\" Add any additional description here
+.PP
+BitTorrent is a peer to peer protocol for transfer of large datasets.  Optimal
+use of BitTorrent requires appropriate configuration of your firewall so that
+other peers can reach your peer, but BitTorrent will also work at a diminished
+level through a firewall and NAT proxy.  The TORRENT parameter should be a
+special .torrent file that describes the dataset to be transferred, or with
+the use of the \-u option can be a URL from which to obtain the .torrent file.
+
+.TP
+\fB\-h\fR
+show a short help message
+.TP
+\fB\-f\fR[=\fIFILE\fR]
+torrent datasets may list multiple files to be transferred.  
+.IP
+With the '\-f' 
+option a single FILE may be transferred from the torrent.  Btget will request
+the minimum amount of data from the other peers to complete the file
+.TP
+\fB\-q\fR[=\fITIMEOUT\fR]
+once all peers are complete and TIMEOUT seconds have elapsed, btget will
+exit
+.TP
+\fB\-b\fR
+disable snubbing detection
+.TP
+\fB\-t\fR[=\fTIMEOUT\fR]
+progress report interval
+.IP
+Changes the reporting interval to the value specified
+.TP
+\fB\-u\fR
+treat the TORRENT parameter as a URL and retrieve the .torrent file from
+that server
+.TP
+\fB\-e\fR[=\fIRATIO\fR]
+exaggerate upload rates when talking to the tracker.  
+.IP
+Default RATIO is 1.0,
+while large values will over\-state upload totals, and lower numbers will 
+under\-state upload totals.
+.TP
+\fB\-i\fR[=\fIBADTRACKER\fR]
+ignore multi\-tracker entries that list BADTRACKER.
+.IP
+Some torrents include multiple tracker entries.  With this flag you can
+tell btget to ignore one or more of the trackers listed in a multi\-tracker
+record.  BADTRACKER is a string which causes an entry to be ignored if it
+appears anywhere within the tracker URL.
+.TP
+\fB\-s\fR
+seed the torrent without checking file integrity.  This will skip the file
+verification step and assume that all blocks are ok
+.TP
+\fB\-v\fR
+dump continuous updates about the state of the transfer and about each 
+peer to which we are connected.
+.PP
+By default, btget will listen on the first available port in the range
+6881\-6889.  Configuring your firewall so that your btget client is reachable
+on those ports will ensure that you can connect to the largest possible
+set of peers, which will in turn maximize your throughput.
+.SH ENVIRONMENT VARIABLES
+.TP\fBLIBBT_MINPORT\fR
+Start of port range for incoming connections
+.TP\fBLIBBT_MAXPORT\fR
+End of port range for incoming connections
+.SH FILES
+\fB./.libbtrc\fR holds the random identifier used to uniquely identify this 
+peer with the tracker.
+.SH AUTHOR
+Written by Kevin Smathers and all of the authors listed in CREDITS
+.SH "REPORTING BUGS"
+Report bugs at <http://www.sf.net/projects/libbt>
+.SH COPYRIGHT
+Copyright \(co 2004 Kevin Smathers, et. al.
+.br
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+.SH KNOWN BUGS
+The '\-f' option cannot be stacked.
+.SH "SEE ALSO"
+btlist(1), btcheck(1)

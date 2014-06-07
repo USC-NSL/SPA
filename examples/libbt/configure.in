@@ -1,0 +1,39 @@
+dnl Process this file with autoconf to produce a configure script.
+AC_INIT(include/bitset.h)
+AC_CONFIG_HEADER(include/config.h)
+
+dnl Checks for programs.
+AC_PROG_CC
+AC_CHECK_TOOL(AR, ar, ar)
+AC_PROG_MAKE_SET
+AC_PROG_RANLIB
+AC_CHECK_PROG(MAKEDEPEND, makedepend, makedepend)
+
+dnl Checks for libraries.
+AC_CHECK_LIB(curl, curl_easy_init)
+AC_CHECK_LIB(crypto, SHA1_Init)
+AC_CHECK_LIB(uuid, uuid_generate)
+
+dnl Checks for header files.
+AC_HEADER_STDC
+AC_CHECK_HEADERS(io.h fcntl.h unistd.h uuid/uuid.h)
+
+AC_SYS_LARGEFILE
+
+dnl Checks for typedefs, structures, and compiler characteristics.
+AC_TYPE_SIZE_T
+AC_HEADER_TIME
+dnl Check for siginfo_t members
+AC_CHECK_MEMBERS([siginfo_t.si_fd],,,[#include <signal.h>])
+
+dnl Checks for library functions.
+AC_TYPE_SIGNAL
+AC_CHECK_FUNC(res_mkquery)
+if test "$ac_cv_func_res_mkquery" != yes; then
+    AC_CHECK_LIB(resolv, res_mkquery)
+fi
+AC_CHECK_FUNCS(gethostname mkdir select socket strdup strerror strtoll uuid_generate on_exit)
+
+LIBBT_WITH_DMALLOC
+
+AC_OUTPUT(Makefile src/Makefile)

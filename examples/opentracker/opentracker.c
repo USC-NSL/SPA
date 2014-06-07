@@ -37,6 +37,9 @@
 #include "ot_stats.h"
 #include "ot_livesync.h"
 
+/*SPA*/
+#include "spa/spaRuntime.h"
+
 /* Globals */
 time_t       g_now_seconds;
 char *       g_redirecturl;
@@ -663,3 +666,18 @@ int main( int argc, char **argv ) {
 }
 
 const char *g_version_opentracker_c = "$Source$: $Revision$\n";
+
+void __attribute__((noinline,used)) spa_handleAnnounce()
+{
+        spa_message_handler_entry();
+
+        int argc = 3;
+        char *argv[] = {"opentracker",
+                        "-f",
+                        "/home/sakekasi/UCLA/Spring2/CS199/spa/examples/opentracker/opentracker.conf"};
+
+        main(argc, argv);
+
+}
+
+        

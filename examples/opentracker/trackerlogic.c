@@ -418,12 +418,16 @@ void trackerlogic_init( ) {
   g_stats_path_len = strlen( g_stats_path );
 
   /* Initialise background worker threads */
+#ifdef ENABLE_KLEE
+  //
+#else
   mutex_init( );
   clean_init( );
   fullscrape_init( );
   accesslist_init( );
   livesync_init( );
   stats_init( );
+#endif
 }
 
 void trackerlogic_deinit( void ) {

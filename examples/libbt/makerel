@@ -1,0 +1,13 @@
+make distclean
+./configure
+wd=`pwd`
+project=`basename $wd`
+cd src
+makedepend -Yfoobar -- -g -Wall -I../include -I../include - *.c 2>/dev/null
+cp Makefile Makefile.default
+cd ..
+cp Makefile Makefile.default
+cp include/config.h include/config.h.default
+make distclean
+cd ..
+tar --exclude CVS -cvzf $project.tar.gz $project

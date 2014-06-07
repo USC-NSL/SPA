@@ -1,0 +1,12 @@
+/* Message codes for BT peer-to-peer messages */
+enum {
+  BT_MSG_CHOKE,
+  BT_MSG_UNCHOKE,
+  BT_MSG_INTERESTED,
+  BT_MSG_NOTINTERESTED,
+  BT_MSG_HAVE,
+  BT_MSG_BITFIELD,
+  BT_MSG_REQUEST,
+  BT_MSG_PIECE,
+  BT_MSG_CANCEL
+};

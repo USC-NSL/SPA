@@ -1,0 +1,57 @@
+LibBT 1.06-pre1
+
+Description:
+
+LibBT is a C reimplementation of the BitTorrent core protocols.  Our
+goal for the project is to develop a low overhead library version of 
+the protocols so that BitTorrent transfers can easily be built in to 
+any existing application.
+
+The sample applications included with LibBT currently run in between 
+2Mb and 3.5Mb of memory (RSS), depending on the number of peers that 
+are attached.
+
+LibBT is currently targeted at the Linux Operating System.
+
+Prerequisites:
+
+The following libraries should already be installed on your
+system:
+
+* OpenSSL (http://www.openssl.org/)
+* LibCURL (http://curl.haxx.se/libcurl/)
+* libuuid-dev (or e2fsprogs-devel in some distributions)
+
+If you are building prerequisite libraries from source then don't forget 
+to add the library install directory to /etc/ld.so.conf, and run ldconfig, 
+or add the library directory to your LD_LIBRARY_PATH environment variable.
+
+Build instructions:
+
+After unpacking the source tree you will find that the project has been
+set up to build with autoconf.  The sources have only been tested on 
+various Redhat distributions of Linux.  Please let me know if you complete
+a port to another distribution or operating system.
+
+To build the sources you must first run configure, and then make as shown
+in the example below.  
+
+
+    $ ./configure
+    $ make
+
+
+In this early release there is only a static library available, together
+with three sample applications; btlist, btget, and btcheck.  There is 
+currently no 'make install' target, but the sample applications can be
+copied anywhere that you find convenient, and should still run.
+
+If changing the autoconf scripts then the following commands will rebuild
+the configure and config.h.in files:
+
+    $ autoconf
+    $ configure
+    $ autoheader
+    $ configure
+
+

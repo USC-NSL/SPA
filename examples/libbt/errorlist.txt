@@ -1,0 +1,219 @@
+benc_get_dict	
+benc_get_int	
+benc_get_list	
+benc_get_object	
+benc_get_string	
+benc_put_dict	
+benc_put_int	
+benc_put_object	
+benc_put_string	
+bs_countBits	
+bs_dump	
+bs_isSet	
+bs_set	
+btContext_create	
+btDict_add	Already have this key in dictionary
+btDict_cast	
+btDict_create	
+btDict_destroy	
+btDict_dump	
+btDict_find	
+btDict_iterator	
+btDictIt_create	
+btDictIt_first	
+btDictIt_hasNext	
+btDictIt_next	
+btFileSet_addfile	
+btFileSet_create	
+btInteger_cast	
+btInteger_create	
+btInteger_dump	
+btList_add	
+btList_cast	
+btList_create	
+btList_dump	
+btObject_destroy	
+btObject_dump	
+btObject_val	
+btPeerset_create	
+btrequest	
+bts_create_filestream	
+bts_create_filestream_fp	
+bts_create_strstream	
+bts_destroy	
+bts_filestream_peek	
+bts_filestream_read	
+bts_get_buf	
+bts_peek	
+bts_printf	
+bts_read	
+bts_rewind	Bts_rewind() function failed
+bts_scanbreak	
+bts_strstream_destroy	
+bts_strstream_peek	
+bts_strstream_read	
+bts_strstream_rewind	
+bts_strstream_write	
+bts_write	
+btString_buf	
+btString_cast	
+btString_cmp	
+btString_create	
+btString_destroy	
+btString_dump	
+btString_len	
+btString_setbuf	
+cacheopen	Cannot open file cache
+cinit	
+client_error	
+client_finit	
+close	Cannot close file
+ctrl_c_handler	
+ctx_addstatus	
+ctx_exit	
+ctx_loadfile	
+ctx_register	
+ctx_shutdown	
+ctx_startserver	
+doexit	
+dosmaperr	
+errno	
+exit	
+fclose	
+fflush	
+filbuf	
+flsall	
+flsbuf	
+fltout2	
+flush	
+flushall	
+fopen	
+fpmath	
+fptostr	
+fputchar	
+fread	
+fsopen	
+ftbuf	
+get_int_arg	
+get_osfhandle	
+getbuf	
+getopt	
+hexdigest	
+hw_cw	
+initterm	
+initterm_e	
+ioinit	
+isfavorite	
+kBitSet_create	
+kStream_bufferedRead	
+kStream_bufferedWrite	
+kStream_create	
+kStream_finit	
+kStream_flush	
+kStream_iqlen	
+kStream_oqlen	
+kStream_rawRead	
+kStream_rawWrite	
+kStringBuffer_create	
+kStringBuffer_finit	
+kStringBuffer_grow	
+malloc	
+memcmp	
+memcpy	
+memmove	
+memset	
+on_exit	
+on_exit_exit	
+onexit	
+open	Cannot open file
+openfile	
+output	
+parse_cmdline	
+peer_answer	
+peer_favorites	
+peer_recv_handshake	
+peer_send_bitfield	
+peer_send_handshake	
+peer_shutdown	
+peer_summary	
+printPeerState	
+read	
+RTC_Initialize	
+RTC_SetErrorFunc	
+RTC_Shutdown	
+RTC_Terminate	
+sbcat	
+sbtail	
+seg_findFile	
+seg_piecelen	
+seg_readbuf	
+seg_writebuf	
+seg_review	
+shift	
+snprintf	
+sopen	
+sprintf	
+stbuf	
+strchr	
+strcpy	
+strdup	
+strerror	
+strlen	
+strncmp	
+strncnt	
+time	
+vsnprintf	
+write	
+write_char	
+write_multi_char	
+write_string	
+writebts	
+PROTOCOL_ID	Bad protocol ID on peer connection
+UNKNOWN_FLAGS	Unrecognized Flags in peer protocol handshake
+HASH_MISMATCH	Peer hash value doesn't match my hash value
+NETWORK_ERROR	Peer disconnected after repeated errors
+BTSOCK_STARTUP	Sockets failed to initialize
+BTSOCK_POLL	Socket poll() function failed
+BTSOCK_ACCEPT	Incoming connection could not be accepted
+BAD_PEER_POINTER	The referenced peer object does not exist
+BAD_PEER_ID	The peer ID does not match expected value
+BTSOCK_CREATE_SOCKET	The socket could not be created
+peer_connect_request	
+BTSOCK_F_GETFL	Could not get socket status flags
+BTSOCK_F_SETFL	Could not set socket status flags
+BTSOCK_CONNECT	Socket connect() function failed
+BTSOCK_RECV	Socket recv() function failed
+BTSOCK_SEND	Socket send() function failed
+BTSOCK_BIND	Socket bind() function failed
+BTSOCK_LISTEN	Socket listen() function failed
+GUID	Can't make UUID
+sigaction	Sigaction() function failed
+file_open	Cannot open file
+lseek	
+file_write	Cannot write to file
+file_read	Cannot read from file
+md_no_files	Bad metadata file: no files
+md_load	Load metadata failed
+md_no_annouce	Bad metadata file: 'announce' missing
+tracker_bad_response	Bad response from the tracker
+file_not_found	File not found
+cacheopen_failed	Cacheopen couldn't open the file
+BTSOCK_ADD_EVENT	Could not create an event for this socket
+gethostname	Could not find local hostname
+mkdir	Cannot make directory
+oversized_request	Piece is too large to request
+queue_full	Request queue is full
+unknown_message	Unknown message received
+no_more_messages	
+peer_send_request	
+peer_send_message	
+process_queue	
+queue_empty	Request queue is empty
+peer_send_interested	
+no_interesting_pieces	
+not_a_BTSTRSTREAM	
+BTSTRSTREAM_too_small	
+null_file_pointer	
+btstream_file_read	bts_filestream_read - file read error
+btstream_EOF	bts_filestream_read - EOF
+btstream_file_write	bts_filestream_write - file write error

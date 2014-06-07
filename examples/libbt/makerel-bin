@@ -1,0 +1,35 @@
+#!/bin/sh
+RELEASE=1.06
+PROGRAMS="btget btlist btcheck"
+LIBRARY=libbt.a
+
+RELDIR=libbt-$RELEASE
+
+# RELDIR
+rm -rf $RELDIR
+mkdir $RELDIR
+mkdir $RELDIR/bin
+mkdir $RELDIR/include
+mkdir $RELDIR/examples
+mkdir $RELDIR/lib
+mkdir $RELDIR/man
+cp README CHANGELOG COPYING CREDITS $RELDIR
+
+cd src
+    # RELDIR/bin
+    make static
+    cp $PROGRAMS ../$RELDIR/bin
+
+    # RELDIR/lib
+    cp $LIBRARY ../$RELDIR/lib
+cd -
+
+# RELDIR/man
+cp man/*.1 $RELDIR/man
+
+# RELDIR/include
+cp include/*.h $RELDIR/include
+
+# RELDIR/examples
+cp src/btget.c src/btlist.c src/btcheck.c $RELDIR/examples
+cp rel/build.sh $RELDIR/examples

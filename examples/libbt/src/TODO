@@ -1,0 +1,3 @@
+Multi-downloader should use libcurl-multi
+Check more of the data from peers, trackers and torrent files
+Choke peer when no requests come in on an 45s unchoked line.  Re-unchoke later.

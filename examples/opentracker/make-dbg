@@ -1,7 +1,16 @@
 #!/bin/sh
 
-CFLAGS="-I./libowfat-0.29" \
-CXXFLAGS="-I./libowfat-0.29" \
-LDFLAGS="-L." \
+if [ "`file libowfat-0.29/libowfat.a`" = "libowfat-0.29/libowfat.a: current ar archive" ];
+then
+    cd libowfat-0.29 
+    make clean && ./make-dbg
+    cd .. 
+fi
+
+#make clean
+
+CFLAGS="-I../../include -I./libowfat-0.29 -DWANT_ACCESSLIST_BLACK" \
+CXXFLAGS="-I../../include -I./libowfat-0.29 -DWANT_ACCESSLIST_BLACK" \
+LDFLAGS="-L. -L./libowfat-0.29" \
 make
 

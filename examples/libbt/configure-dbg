@@ -1,0 +1,5 @@
+#!/bin/sh
+
+CFLAGS="-O0 -g -I`pwd`/../../include " \
+CXXFLAGS="-O0 -g -I`pwd`/../../include " \
+./configure

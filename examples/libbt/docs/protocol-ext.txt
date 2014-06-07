@@ -1,0 +1,27 @@
+There are two new GET parameters for the tracker in the latest
+release. They are -
+
+key=xxxx - this is like peer id, but it's only known to the client and the
+tracker. It allows clients to be behind dynamic IP. If a peer announced
+a key previously, then it's accepted if and only if it gives the same key
+again. If no key was given, then the fallback is checking that the IP
+hasn't changed. If the IP has changed, mainline currently will give a peer
+list but not change any data related to that peer, so that peers behind
+dynamic IP using old clients will continue to work okay. Currently
+mainline generates the value associated with key as eight random hex
+values, and the tracker accepts any string from clients.
+
+compact=1 - when a client sends this, the 'peers' return value is a single
+string whose length is a multiple of 6 rather than a dict. To extract peer
+information from the string, chop it into substrings of length 6. For each
+substring, the first four bytes are the IP and the last two are the port,
+encoded big-endian. This results in huge bandwidth savings.
+
+Everybody developing ports should implement these keys, they're very
+useful.
+
+-Bram
+
+
+
+

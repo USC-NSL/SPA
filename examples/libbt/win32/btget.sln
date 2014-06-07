@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "btget", "btget.vcproj", "{377F4210-3004-4655-9470-88534A350B0B}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{377F4210-3004-4655-9470-88534A350B0B}.Debug.ActiveCfg = Debug|Win32
+		{377F4210-3004-4655-9470-88534A350B0B}.Debug.Build.0 = Debug|Win32
+		{377F4210-3004-4655-9470-88534A350B0B}.Release.ActiveCfg = Release|Win32
+		{377F4210-3004-4655-9470-88534A350B0B}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

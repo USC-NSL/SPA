@@ -1,0 +1,73 @@
+-- 1.06
+Added Ryan Walklin's patches to make LibBT usable as an asynchronous library.
+Incorporated Leon Kos's patch to add scraping support for btlist.
+New btlist option '-s' uses the scrape convention to report torrent stats
+Bugfix - showed bad flag incorrectly
+Incorporated Leon Kos's patches to adjust MINPORT, MAXPORT, and change timeout
+New btget option '-t' to set the progress report interval to something longer
+Incorporated Ryan Walklin's patch to add PEX support
+Bugfix - core dump when initial connect to peer fails
+Bugfix - duplicate peer detection was faulty
+The man pages were malformed, now fixed.
+New btget option '-i' to ignore one or more trackers in a multitracker set
+Added support for multitrackers and UDP trackers (sponsored by EDiMAX)
+Random number generator wasn't being seeded properly
+Buffer overrun in the ID field when getting compressed results from the tracker
+Drop REQMAX to 5 outstanding requests per peer since we were overrunning some clients
+-- 1.05
+Core dump in countpeers() accessing deallocated piece when assigning new piece
+Error handling in the PIECE message killed the wrong connection. Fixed.
+Optimistic unchoke in advance of interest if no interested peers available
+Added LGPL or GPL license headers to the source code
+Fixed statmap synch error when peer_connect_request fails
+Bugfix for [ 1282595 ] Misallocation in `recv_peermsg' function resulting in crash
+-- 1.04
+Peer only assigns overlapping requests if fewer than 10 seeds, and even then
+limits the overlapping requests to four at a time.
+Bugfix for [ 1083910 ] bug in btString_cmp()
+Bugfix for [ 998162 ] bug in btcheck
+Bugfix for [ 1101174 ] Assertion failures in peer.c
+Fixed a problem with download strategy for torrents where almost all peers
+are complete.
+Bugfix for 1017044: ANSI compatible code
+Bugfix for 1034376: portability issue for Solaris
+Bugfix for 1023172: integer format specifier used for long long type
+Patch number 991427: fix header include order for compiler optimization
+Tamzdrgn added experimental support for peers that participate in a cloud
+without any idea what the packets are that they are sharing (hash mode).
+-- 1.03
+Bugfix for 977984: two errors in implementation of compact mode
+Bugfix for 968288: btcheck doesn't check its command args.
+Bugfix for 963996: Fix compilation bugs for gcc296
+-- 1.02
+Removed core dump on missing .torrent
+Implemented suggested security changes from James Antill:
+    Removed some unused functions
+    Cleanup vsnprintf() calls 
+    Changed assert()'s to DIE_UNLESS()
+    Error checking malloc's
+Fixed bugs with very large torrents (55G tested)
+-- 1.01
+Queue a larger number of requests with fast peers for better throughput
+Use fixed size requests (16k)
+Bug fix for snub handling & detection code
+Added new option (-b) to disable snubbing altogether
+Choke peer when they request an invalid block
+Implemented cancels for overlapping requests
+Added key= & compact= for the tracker protocol
+New peers are accepted from the tracker mid transfer 
+(used to only accept incoming connections post startup - this is needed for
+clients behind firewalls)
+-- 1.0
+Multi-torrent downloads
+Fixes for >2G torrents
+malloc()/free() cleanup; configurable to build with dmalloc
+New options:
+  -q<timeout>     quit when all peers are complete
+  -u		  download torrent from URL
+  -s              seed mode (assume that file is ok)
+  -e<multiplier>  exaggerate upload speed when talking to the tracker
+
+-- 0.03
+<prehistory>
+

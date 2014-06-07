@@ -1,6 +1,7 @@
 #!/bin/sh
 
-CFLAGS="-O0 -g -I`pwd`/../../include" CXXFLAGS='-O0 -g' \
+CFLAGS="-O0 -g -I`pwd`/../../include -DBOOST_DISABLE_THREADS" \
+CXXFLAGS='-O0 -g -DBOOST_DISABLE_THREADS' \
 ./configure \
     --enable-encryption=no \
     --enable-pool-allocators=no \

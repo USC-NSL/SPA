@@ -30,6 +30,9 @@
 #include "ot_stats.h"
 #include "ot_accesslist.h"
 
+/*SPA*/
+#include "spa/spaRuntime.h"
+
 #define OT_MAXMULTISCRAPE_COUNT 64
 extern char *g_redirecturl;
 
@@ -531,6 +534,9 @@ ssize_t http_handle_request( const int64 sock, struct ot_workstruct *ws ) {
   ssize_t reply_off, len;
   char   *read_ptr = ws->request, *write_ptr;
 
+  spa_msg_input(read_ptr, G_INBUF_SIZE, "request");
+  spa_msg_input_size(ws->request_size, "request");
+
 #ifdef WANT_FULLLOG_NETWORKS
   struct http_data *cookie = io_getcookie( sock );
   if( loglist_check_address( cookie->ip ) ) {
@@ -627,6 +633,8 @@ ssize_t http_handle_request( const int64 sock, struct ot_workstruct *ws ) {
   /* 3. Finally we join both blocks neatly */
   ws->outbuf[ SUCCESS_HTTP_HEADER_LENGTH - 1 ] = '\n';
 
+  spa_valid_path();
+  
   http_senddata( sock, ws );
   return ws->reply_size;
 }

@@ -1,0 +1,37 @@
+Sponsors:
+
+    John Hsieh (EDiMAX)
+      Sponsored the Multi-tracker and UDP-tracker development
+
+Developers:
+
+    Kevin Smathers
+      Initial code base
+
+    Jason Barons
+      Windows port
+
+    Emil Sit
+      Extensions, and other cleanup
+
+    Yann Vernier 
+      Multi-torrent transfers, protocol work, and other development
+
+    Elliott Mitchell (Tamzdrgn)
+      Hash mode patch
+
+    Ryan Walklin
+      Peer Exchange (PEX) implementation
+
+    Leon Kos
+      Various patches to increase the usability of LibBT.
+
+Documentation:
+
+    Dawid Potgieter
+      Web site
+
+Other Contributors:
+
+    Tony Arcieri, James Antill, Jim Burke, Simon Dassow
+
