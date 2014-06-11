@@ -1,23 +1,24 @@
+OBJS = spdylay_buffer.o spdylay_client_cert_vector.o spdylay_frame.o \
+       spdylay_gzip.o spdylay_helper.o spdylay_map.o spdylay_npn.o \
+       spdylay_outbound_item.o spdylay_pq.o spdylay_queue.o spdylay_session.o \
+       spdylay_stream.o spdylay_submit.o spdylay_zlib.o
 PATHS = spa-client.paths spa-server.paths
 LOGS = spa-client.log spa-server.log
 TARGETS = spa-client.exe spa-server.exe
-DBG_LIBS = libspdylay-dbg.o
-TEST_LIBS = libspdylay-test.o
 BC_TARGETS = spa-client.bc spa-server.bc
-BC_LIBS = libspdylay.bc
 TEST_TARGETS = spa-client.e2etest.exe spa-server.e2etest.exe
 LOG_TARGETS = spa-client.log.exe spa-server.log.exe
-CC = gcc -Wall -g -Ilib/includes
+CC = gcc -Wall -g -Ilib/includes -I../../include
 #-DANALYZE_RESPONSE
-LLVM_CC = llvm-gcc -Wall -g -O0 --emit-llvm -Ilib/includes
+LLVM_CC = clang -Wall -g -O0 -Ilib/includes -I../../include -emit-llvm
 #-DANALYZE_RESPONSE
-LLVM_LD = llvm-ld -r -disable-opt
-LIB_SPA_TEST_MODULE = /usr/local/bin/spa/Release+Asserts/lib/libSpaTestModule.so
-LIB_SPA_LOG_MODULE = /usr/local/bin/spa/Release+Asserts/lib/libSpaLogModule.so
+LLVM_LD = llvm-link
+LIB_SPA_TEST_MODULE = ../../Release+Asserts/lib/libSpaTestModule.so
+LIB_SPA_LOG_MODULE = ../../Release+Asserts/lib/libSpaLogModule.so
 TIME = /usr/bin/time
-SPA_EXE = /usr/local/bin/spa/Release+Asserts/bin/spa
+SPA_EXE = ../../Release+Asserts/bin/spa
 # SPA_EXE = /usr/local/bin/spa/Release+Asserts/bin/spaRR
-SPA = $(TIME) $(SPA_EXE) --stand-alone --libc=uclibc --posix-runtime --max-stp-time=1 --max-instruction-time=1
+SPA = $(TIME) $(SPA_EXE)
 
 default: all
 
@@ -25,23 +26,82 @@ all: $(TARGETS) $(BC_TARGETS) $(LOG_TARGETS) $(TEST_TARGETS)
 
 run-spa: BadInputs.tested
 
-%.exe: %.c $(DBG_LIBS)
-	$(CC) -I ../../include $^ -lz -o $@
+out/llvm/Makefile:
+	mkdir -p out/llvm
+	cd out/llvm; \
+	CC='clang' CXX='clang++' \
+	CFLAGS='-DENABLE_SPA -DENABLE_KLEE -emit-llvm -O0 -g' \
+	CXXFLAGS='-DENABLE_SPA -DENABLE_KLEE -emit-llvm -O0 -g' \
+	LD='llvm-link' CPP='clang -E' AR='true' RANLIB='true' ../../configure \
+		--disable-shared --enable-static \
+		--disable-xmltest --disable-largefile
 
-%.log.exe: %.c $(TEST_LIBS) $(LIB_SPA_LOG_MODULE)
-	$(CC) -DENABLE_SPA -lz -o $@ $^
+out/llvm-fixed/Makefile:
+	mkdir -p out/llvm-fixed
+	cd out/llvm-fixed; \
+	CC='clang' CXX='clang++' \
+	CFLAGS='-DENABLE_SPA -DENABLE_KLEE -DSPA_FIXES -emit-llvm -O0 -g' \
+	CXXFLAGS='-DENABLE_SPA -DENABLE_KLEE -DSPA_FIXES -emit-llvm -O0 -g' \
+	LD='llvm-link' CPP='clang -E' AR='true' RANLIB='true' ../../configure \
+		--disable-shared \
+		--enable-static \
+		--disable-xmltest --disable-largefile
+
+out/test/Makefile:
+	mkdir -p out/test
+	cd out/test; \
+	CFLAGS='-DENABLE_SPA -O0 -g' CXXFLAGS='-DENABLE_SPA -O0 -g' \
+	../../configure \
+		--disable-shared --enable-static
+
+out/test-fixed/Makefile:
+	mkdir -p out/test-fixed
+	cd out/test-fixed; \
+	CFLAGS='-DENABLE_SPA -DSPA_FIXES -O0 -g' \
+	CXXFLAGS='-DENABLE_SPA -DSPA_FIXES -O0 -g' ../../configure \
+		--disable-shared \
+		--enable-static
+
+out/dbg/Makefile:
+	mkdir -p out/dbg
+	cd out/dbg; \
+	CFLAGS='-O0 -g' CXXFLAGS='-O0 -g' ../../configure \
+		--disable-shared --enable-static
+
+out/dbg-fixed/Makefile:
+	mkdir -p out/dbg-fixed
+	cd out/dbg-fixed; \
+	CFLAGS='-DSPA_FIXES -O0 -g' CXXFLAGS='-DSPA_FIXES -O0 -g' \
+	../../configure \
+		--disable-shared \
+		--enable-static
+
+out/llvm/lib/.libs/libspdylay.a: out/llvm/Makefile
+	$(MAKE) -C `dirname $<`/lib $(OBJS)
+	mkdir -p `dirname $@`
+	llvm-link -o $@ $(OBJS:%=`dirname $<`/lib/%)
+
+%/lib/.libs/libspdylay.a: %/Makefile
+	rm -f `dirname $<`/lib/libspdylay.la
+	$(MAKE) -C `dirname $<`/lib libspdylay.la
+
+%.exe: %.c out/dbg/lib/.libs/libspdylay.a
+	$(CC) -I../../include -Iout/dbg/lib/includes $^ -lz -o $@
+
+%.log.exe: %.c out/test/lib/.libs/libspdylay.a $(LIB_SPA_LOG_MODULE)
+	$(CC) -DENABLE_SPA -Iout/test/lib/includes -lz -o $@ $^
 
 %.log: %.log.exe
 	SPA_LOG_FILE=$@ ./$<
 
-%.e2etest.exe: %.c $(TEST_LIBS) $(LIB_SPA_TEST_MODULE)
-	$(CC) -DENABLE_SPA -lz -o $@ $^
+%.e2etest.exe: %.c out/test/lib/.libs/libspdylay.a $(LIB_SPA_TEST_MODULE)
+	$(CC) -DENABLE_SPA -Iout/test/lib/includes -lz -o $@ $^
 
 %.bc.o: %.c
-	$(LLVM_CC) -DENABLE_SPA -DENABLE_KLEE -c $< -o $@
+	$(LLVM_CC) -Iout/llvm/lib/includes -DENABLE_SPA -DENABLE_KLEE -c $< -o $@
 
-%.bc: %.bc.o $(BC_LIBS)
-	$(LLVM_LD) $(BC_LIBS) $< -o $@
+%.bc: %.bc.o out/llvm/lib/.libs/libspdylay.a
+	$(LLVM_LD) $^ -o $@
 
 .PRECIOUS: $(PATHS) $(LOGS)
 
@@ -70,6 +130,7 @@ server.dot: server.bc $(SPA_EXE)
 	dot -Tpdf -o $@ $<
 
 clean:
+	rm -rf out/
 	rm -f $(TARGETS) $(BC_TARGETS) $(BC_TARGETS:.bc=.bc.o) $(TEST_TARGETS) $(TEST_TARGETS:.exe=.bc) $(LOG_TARGETS)
 # 	rm -f $(PATHS) $(LOGS)
 # 	rm -f BadInputs.untested BadInputs.untested.debug BadInputs.untested.log BadInputs.untested.checkpoint
