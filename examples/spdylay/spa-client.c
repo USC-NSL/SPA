@@ -173,10 +173,10 @@ void __attribute__((noinline,used)) spa_SendRequest() {
 	};
 #elif defined( ENABLE_SPA ) // #ifdef ANALYZE_RESPONSE
 	char	name1[REQUEST_MAXNAME + 1], value1[REQUEST_MAXVALUE + 1],
-			name2[REQUEST_MAXNAME + 1], value2[REQUEST_MAXVALUE + 1],
-			name3[REQUEST_MAXNAME + 1], value3[REQUEST_MAXVALUE + 1];
-// 			name4[REQUEST_MAXNAME + 1], value4[REQUEST_MAXVALUE + 1],
-// 			name5[REQUEST_MAXNAME + 1], value5[REQUEST_MAXVALUE + 1];
+				name2[REQUEST_MAXNAME + 1], value2[REQUEST_MAXVALUE + 1],
+				name3[REQUEST_MAXNAME + 1], value3[REQUEST_MAXVALUE + 1],
+				name4[REQUEST_MAXNAME + 1], value4[REQUEST_MAXVALUE + 1],
+				name5[REQUEST_MAXNAME + 1], value5[REQUEST_MAXVALUE + 1];
 	const char *nv[2 * (3 + 1)];
 	uint8_t numPairs = 0;
 	spa_api_input_var( numPairs );
@@ -208,24 +208,24 @@ void __attribute__((noinline,used)) spa_SendRequest() {
 		nv[5] = value3;
 		nv[6] = NULL;
 	}
-// 	if ( numPairs >= 4 ) {
-// 		spa_api_input_var( name4 );
-// 		spa_assume( name4[sizeof( name4 ) - 1] == '\0' );
-// 		spa_api_input_var( value4 );
-// 		spa_assume( value4[sizeof( value4 ) - 1] == '\0' );
-// 		nv[6] = name4;
-// 		nv[7] = value4;
-// 		nv[8] = NULL;
-// 	}
-// 	if ( numPairs >= 5 ) {
-// 		spa_api_input_var( name5 );
-// 		spa_assume( name5[sizeof( name5 ) - 1] == '\0' );
-// 		spa_api_input_var( value5 );
-// 		spa_assume( value5[sizeof( value5 ) - 1] == '\0' );
-// 		nv[8] = name5;
-// 		nv[9] = value5;
-// 		nv[10] = NULL;
-// 	}
+	if ( numPairs >= 4 ) {
+		spa_api_input_var( name4 );
+		spa_assume( name4[sizeof( name4 ) - 1] == '\0' );
+		spa_api_input_var( value4 );
+		spa_assume( value4[sizeof( value4 ) - 1] == '\0' );
+		nv[6] = name4;
+		nv[7] = value4;
+		nv[8] = NULL;
+	}
+	if ( numPairs >= 5 ) {
+		spa_api_input_var( name5 );
+		spa_assume( name5[sizeof( name5 ) - 1] == '\0' );
+		spa_api_input_var( value5 );
+		spa_assume( value5[sizeof( value5 ) - 1] == '\0' );
+		nv[8] = name5;
+		nv[9] = value5;
+		nv[10] = NULL;
+	}
 #else // #ifdef ANALYZE_RESPONSE #elif defined( ENABLE_SPA )
 	const char *nv[] = {
 		":method",	REQUEST_METHOD,
