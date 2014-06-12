@@ -16,18 +16,25 @@
 #include <string.h>
 
 #include <set>
+#include <chrono>
 
 using namespace klee;
 
 FILE* klee::klee_warning_file = NULL;
 FILE* klee::klee_message_file = NULL;
+auto start_time = std::chrono::steady_clock::now();
 
 static void klee_vfmessage(FILE *fp, const char *pfx, const char *msg, 
                            va_list ap) {
+  auto now = std::chrono::steady_clock::now();
+  auto elapsed_time_ms
+      = std::chrono::duration_cast<std::chrono::milliseconds>(now - start_time)
+          .count();
+
   if (!fp)
     return;
 
-  fprintf(fp, "KLEE: ");
+  fprintf(fp, "[%.3f] KLEE: ", elapsed_time_ms / 1000.0);
   if (pfx) fprintf(fp, "%s: ", pfx);
   vfprintf(fp, msg, ap);
   fprintf(fp, "\n");
