@@ -110,9 +110,12 @@ namespace SPA {
 
 		llvm::Module *getModule() { return module; }
 
-		std::ostream &getInfoStream() const { return std::cout; }
+		llvm::raw_ostream &getInfoStream() const { return llvm::outs(); }
 		std::string getOutputFilename(const std::string &filename) { return "/tmp/" + filename; }
-		std::ostream *openOutputFile(const std::string &filename) { return new std::ofstream("/dev/null"); }
+		llvm::raw_fd_ostream *openOutputFile(const std::string &filename) {
+			std::string err;
+			return new llvm::raw_fd_ostream("/dev/null", err);
+		}
 		void incPathsExplored() {}
 		void processTestCase(const klee::ExecutionState &state, const char *err, const char *suffix) {};
 

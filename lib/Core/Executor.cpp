@@ -47,6 +47,7 @@
 #include "klee/Internal/Module/KModule.h"
 #include "klee/Internal/Support/FloatEvaluation.h"
 #include "klee/Internal/System/Time.h"
+#include "klee/Internal/System/MemoryUsage.h"
 
 #if LLVM_VERSION_CODE >= LLVM_VERSION(3, 3)
 #include "llvm/IR/Function.h"
@@ -85,8 +86,8 @@
 
 #include <cassert>
 #include <algorithm>
-#include <iostream>
 #include <iomanip>
+#include <iosfwd>
 #include <fstream>
 #include <sstream>
 #include <vector>
@@ -162,6 +163,11 @@ namespace {
   cl::opt<bool>
   SimplifySymIndices("simplify-sym-indices",
                      cl::init(false));
+
+  cl::opt<bool>
+  EqualitySubstitution("equality-substitution",
+                     cl::init(true),
+                     cl::desc("Simplify equality expressions before querying the solver (default=on)."));
 
   cl::opt<unsigned>
   MaxSymArraySize("max-sym-array-size",
@@ -315,7 +321,7 @@ Executor::Executor(const InterpreterOptions &opts,
               assert(false);
               break;
     };
-    std::cerr << "Starting MetaSMTSolver(" << backend << ") ...\n";
+    llvm::errs() << "Starting MetaSMTSolver(" << backend << ") ...\n";
   }
   else {
     coreSolver = new STPSolver(UseForkedCoreSolver, CoreSolverOptimizeDivides);
@@ -332,7 +338,7 @@ Executor::Executor(const InterpreterOptions &opts,
                          interpreterHandler->getOutputFilename(ALL_QUERIES_PC_FILE_NAME),
                          interpreterHandler->getOutputFilename(SOLVER_QUERIES_PC_FILE_NAME));
   
-  this->solver = new TimingSolver(solver);
+  this->solver = new TimingSolver(solver, EqualitySubstitution);
 
   memory = new MemoryManager();
 }
@@ -1115,10 +1121,11 @@ Executor::toConstant(ExecutionState &state,
   assert(success && "FIXME: Unhandled solver failure");
   (void) success;
     
-  std::ostringstream os;
+  std::string str;
+  llvm::raw_string_ostream os(str);
   os << "silently concretizing (reason: " << reason << ") expression " << e 
-     << " to value " << value 
-     << " (" << (*(state.pc)).info->file << ":" << (*(state.pc)).info->line << ")";
+     << " to value " << value << " (" << (*(state.pc)).info->file << ":"
+     << (*(state.pc)).info->line << ")";
       
   if (AllExternalWarnings)
     klee_warning(reason, os.str().c_str());
@@ -1178,7 +1185,7 @@ void Executor::stepInstruction(ExecutionState &state) {
 
   if (DebugPrintInstructions) {
     printFileLine(state, state.pc);
-    std::cerr << std::setw(10) << stats::instructions << " ";
+    llvm::errs().indent(10) << stats::instructions << " ";
     llvm::errs() << *(state.pc->inst) << '\n';
   }
 
@@ -1365,9 +1372,9 @@ void Executor::transferToBasicBlock(BasicBlock *dst, BasicBlock *src,
 void Executor::printFileLine(ExecutionState &state, KInstruction *ki) {
   const InstructionInfo &ii = *ki->info;
   if (ii.file != "") 
-    std::cerr << "     " << ii.file << ":" << ii.line << ":";
+    llvm::errs() << "     " << ii.file << ":" << ii.line << ":";
   else
-    std::cerr << "     [no debug info]:";
+    llvm::errs() << "     [no debug info]:";
 }
 
 /// Compute the true target of a function call, resolving LLVM and KLEE aliases
@@ -2606,11 +2613,7 @@ void Executor::run(ExecutionState &initialState) {
         // We need to avoid calling GetMallocUsage() often because it
         // is O(elts on freelist). This is really bad since we start
         // to pummel the freelist once we hit the memory cap.
-#if LLVM_VERSION_CODE >= LLVM_VERSION(3, 3)
-        unsigned mbs = sys::Process::GetMallocUsage() >> 20;
-#else
-        unsigned mbs = sys::Process::GetTotalMemoryUsage() >> 20;
-#endif
+        unsigned mbs = util::GetTotalMallocUsage() >> 20;
         if (mbs > MaxMemory) {
           if (mbs > MaxMemory + 100) {
             // just guess at how many to kill
@@ -2649,7 +2652,7 @@ void Executor::run(ExecutionState &initialState) {
   
  dump:
   if (DumpStatesOnHalt && !states.empty()) {
-    std::cerr << "KLEE: halting execution, dumping remaining states\n";
+    llvm::errs() << "KLEE: halting execution, dumping remaining states\n";
     for (std::set<ExecutionState*>::iterator
            it = states.begin(), ie = states.end();
          it != ie; ++it) {
@@ -2663,7 +2666,8 @@ void Executor::run(ExecutionState &initialState) {
 
 std::string Executor::getAddressInfo(ExecutionState &state, 
                                      ref<Expr> address) const{
-  std::ostringstream info;
+  std::string Str;
+  llvm::raw_string_ostream info(Str);
   info << "\taddress: " << address << "\n";
   uint64_t example;
   if (ConstantExpr *CE = dyn_cast<ConstantExpr>(address)) {
@@ -2814,7 +2818,8 @@ void Executor::terminateStateOnError(ExecutionState &state,
     if (!EmitAllErrors)
       klee_message("NOTE: now ignoring this error at this location");
     
-    std::ostringstream msg;
+    std::string MsgString;
+    llvm::raw_string_ostream msg(MsgString);
     msg << "Error: " << message << "\n";
     if (ii.file != "") {
       msg << "File: " << ii.file << "\n";
@@ -2827,7 +2832,7 @@ void Executor::terminateStateOnError(ExecutionState &state,
     std::string info_str = info.str();
     if (info_str != "")
       msg << "Info: \n" << info_str;
-    interpreterHandler->processTestCase(state, msg.str().c_str(), suffix);
+    interpreterHandler->processTestCase(state, MsgString.c_str(), suffix);
   }
     
   terminateState(state);
@@ -2851,7 +2856,7 @@ void Executor::callExternalFunction(ExecutionState &state,
     return;
   
   if (NoExternals && !okExternals.count(function->getName())) {
-    std::cerr << "KLEE:ERROR: Calling not-OK external function : " 
+    llvm::errs() << "KLEE:ERROR: Calling not-OK external function : "
               << function->getName().str() << "\n";
     terminateStateOnError(state, "externals disallowed", "user.err");
     return;
@@ -2891,7 +2896,9 @@ void Executor::callExternalFunction(ExecutionState &state,
   state.addressSpace.copyOutConcretes();
 
   if (!SuppressExternalWarnings) {
-    std::ostringstream os;
+
+    std::string TmpStr;
+    llvm::raw_string_ostream os(TmpStr);
     os << "calling external: " << function->getName().str() << "(";
     for (unsigned i=0; i<arguments.size(); i++) {
       os << arguments[i];
@@ -2950,7 +2957,7 @@ ref<Expr> Executor::replaceReadWithSymbolic(ExecutionState &state,
                                  Expr::getMinBytesForWidth(e->getWidth()));
   ref<Expr> res = Expr::createTempRead(array, e->getWidth());
   ref<Expr> eq = NotOptimizedExpr::create(EqExpr::create(e, res));
-  std::cerr << "Making symbolic: " << eq << "\n";
+  llvm::errs() << "Making symbolic: " << eq << "\n";
   state.addConstraint(eq);
   return res;
 }
@@ -3062,7 +3069,9 @@ void Executor::executeAlloc(ExecutionState &state,
         }
         
         if (hugeSize.second) {
-          std::ostringstream info;
+
+          std::string Str;
+          llvm::raw_string_ostream info(Str);
           ExprPPrinter::printOne(info, "  size expr", size);
           info << "  concretization : " << example << "\n";
           info << "  unbound example: " << tmp << "\n";
@@ -3460,34 +3469,29 @@ unsigned Executor::getSymbolicPathStreamID(const ExecutionState &state) {
   return state.symPathOS.getID();
 }
 
-void Executor::getConstraintLog(const ExecutionState &state,
-                                std::string &res,
+void Executor::getConstraintLog(const ExecutionState &state, std::string &res,
                                 Interpreter::LogType logFormat) {
 
   std::ostringstream info;
 
-  switch(logFormat)
-  {
-  case STP:
-  {
+  switch (logFormat) {
+  case STP: {
 	  Query query(state.constraints, ConstantExpr::alloc(0, Expr::Bool));
 	  char *log = solver->getConstraintLog(query);
 	  res = std::string(log);
 	  free(log);
-  }
-	  break;
+  } break;
 
-  case KQUERY:
-  {
-	  std::ostringstream info;
+  case KQUERY: {
+    std::string Str;
+    llvm::raw_string_ostream info(Str);
 	  ExprPPrinter::printConstraints(info, state.constraints);
 	  res = info.str();
-  }
-	  break;
+  } break;
 
-  case SMTLIB2:
-  {
-	  std::ostringstream info;
+  case SMTLIB2: {
+    std::string Str;
+    llvm::raw_string_ostream info(Str);
 	  ExprSMTLIBPrinter* printer = createSMTLIBPrinter();
 	  printer->setOutput(info);
 	  Query query(state.constraints, ConstantExpr::alloc(0, Expr::Bool));
@@ -3495,8 +3499,7 @@ void Executor::getConstraintLog(const ExecutionState &state,
 	  printer->generateOutput();
 	  res = info.str();
 	  delete printer;
-  }
-	  break;
+  } break;
 
   default:
 	  klee_warning("Executor::getConstraintLog() : Log format not supported!");
@@ -3536,8 +3539,7 @@ bool Executor::getSymbolicSolution(const ExecutionState &state,
   solver->setTimeout(0);
   if (!success) {
     klee_warning("unable to compute initial values (invalid constraints?)!");
-    ExprPPrinter::printQuery(std::cerr,
-                             state.constraints, 
+    ExprPPrinter::printQuery(llvm::errs(), state.constraints,
                              ConstantExpr::alloc(0, Expr::Bool));
     return false;
   }

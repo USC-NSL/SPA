@@ -46,15 +46,12 @@
 #endif
 #include "llvm/Support/CommandLine.h"
 #include "llvm/Support/CFG.h"
-#include "llvm/Support/raw_os_ostream.h"
 #include "llvm/Support/Process.h"
 #include "llvm/Support/Path.h"
-#if LLVM_VERSION_CODE >= LLVM_VERSION(3, 1)
 #include "llvm/Support/FileSystem.h"
-#endif
 
-#include <iostream>
 #include <fstream>
+#include <unistd.h>
 
 using namespace klee;
 using namespace llvm;
@@ -182,20 +179,15 @@ StatsTracker::StatsTracker(Executor &_executor, std::string _objectFilename,
     updateMinDistToUncovered(_updateMinDistToUncovered) {
   KModule *km = executor.kmodule;
 
-  sys::Path module(objectFilename);
-#if LLVM_VERSION_CODE < LLVM_VERSION(3, 1)
-  if (!sys::Path(objectFilename).isAbsolute()) {
-#else
   if (!sys::path::is_absolute(objectFilename)) {
-#endif
-    sys::Path current = sys::Path::GetCurrentDirectory();
-    current.appendComponent(objectFilename);
-#if LLVM_VERSION_CODE < LLVM_VERSION(3, 1)
-    if (current.exists())
-#else
-    if (sys::fs::exists(current.c_str()))
-#endif
-      objectFilename = current.c_str();
+    SmallString<128> current(objectFilename);
+    if(sys::fs::make_absolute(current)) {
+      bool exists = false;
+      error_code ec = sys::fs::exists(current.str(), exists);
+      if (ec == errc::success && exists) {
+        objectFilename = current.c_str();
+      }
+    }
   }
 
   if (OutputIStats)
@@ -438,15 +430,16 @@ void StatsTracker::updateStateStatistics(uint64_t addend) {
 void StatsTracker::writeIStats() {
   Module *m = executor.kmodule->module;
   uint64_t istatsMask = 0;
-  std::ostream &of = *istatsFile;
+  llvm::raw_fd_ostream &of = *istatsFile;
   
-  of.seekp(0, std::ios::end);
-  unsigned istatsSize = of.tellp();
-  of.seekp(0);
+  // We assume that we didn't move the file pointer
+  unsigned istatsSize = of.tell();
+
+  of.seek(0);
 
   of << "version: 1\n";
   of << "creator: klee\n";
-  of << "pid: " << sys::Process::GetCurrentUserId() << "\n";
+  of << "pid: " << getpid() << "\n";
   of << "cmd: " << m->getModuleIdentifier() << "\n\n";
   of << "\n";
   
@@ -570,7 +563,7 @@ void StatsTracker::writeIStats() {
     updateStateStatistics((uint64_t)-1);
   
   // Clear then end of the file if necessary (no truncate op?).
-  unsigned pos = of.tellp();
+  unsigned pos = of.tell();
   for (unsigned i=pos; i<istatsSize; ++i)
     of << '\n';
   

@@ -13,6 +13,10 @@
 #include "../Core/Common.h"
 #include "../Core/SpecialFunctionHandler.h"
 
+#if LLVM_VERSION_CODE >= LLVM_VERSION(3, 4)
+#include "llvm/IR/LLVMContext.h"
+#endif
+
 #if LLVM_VERSION_CODE >= LLVM_VERSION(3, 3)
 #include "llvm/Bitcode/ReaderWriter.h"
 #include "llvm/IR/Function.h"
@@ -24,7 +28,6 @@
 #include "llvm/Object/ObjectFile.h"
 #include "llvm/Object/Error.h"
 #include "llvm/Support/FileSystem.h"
-#include "llvm/Support/raw_os_ostream.h"
 #include "llvm/IR/ValueSymbolTable.h"
 #include "llvm/Support/SourceMgr.h"
 #include "llvm/Support/DataStream.h"
@@ -47,7 +50,6 @@
 
 #include <map>
 #include <set>
-#include <iostream>
 #include <fstream>
 #include <sstream>
 #include <string>

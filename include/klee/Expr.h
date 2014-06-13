@@ -17,13 +17,15 @@
 #include "llvm/ADT/APFloat.h"
 #include "llvm/ADT/DenseSet.h"
 #include "llvm/ADT/SmallVector.h"
+#include "llvm/Support/raw_ostream.h"
 
+#include <sstream>
 #include <set>
 #include <vector>
-#include <iosfwd> // FIXME: Remove this!!!
 
 namespace llvm {
   class Type;
+  class raw_ostream;
 }
 
 namespace klee {
@@ -181,7 +183,7 @@ public:
   virtual unsigned getNumKids() const = 0;
   virtual ref<Expr> getKid(unsigned i) const = 0;
     
-  virtual void print(std::ostream &os) const;
+  virtual void print(llvm::raw_ostream &os) const;
 
   /// dump - Print the expression to stderr.
   void dump() const;
@@ -221,8 +223,8 @@ public:
 
   /* Static utility methods */
 
-  static void printKind(std::ostream &os, Kind k);
-  static void printWidth(std::ostream &os, Expr::Width w);
+  static void printKind(llvm::raw_ostream &os, Kind k);
+  static void printWidth(llvm::raw_ostream &os, Expr::Width w);
 
   /// returns the smallest number of bytes in which the given width fits
   static inline unsigned getMinBytesForWidth(Width w) {
@@ -291,13 +293,32 @@ inline bool operator>=(const Expr &lhs, const Expr &rhs) {
 
 // Printing operators
 
-inline std::ostream &operator<<(std::ostream &os, const Expr &e) {
+inline llvm::raw_ostream &operator<<(llvm::raw_ostream &os, const Expr &e) {
   e.print(os);
   return os;
 }
 
-inline std::ostream &operator<<(std::ostream &os, const Expr::Kind kind) {
+// XXX the following macro is to work around the ExprTest unit test compile error
+#ifndef LLVM_29_UNITTEST
+inline llvm::raw_ostream &operator<<(llvm::raw_ostream &os, const Expr::Kind kind) {
   Expr::printKind(os, kind);
+  return os;
+}
+#endif
+
+inline std::stringstream &operator<<(std::stringstream &os, const Expr &e) {
+  std::string str;
+  llvm::raw_string_ostream TmpStr(str);
+  e.print(TmpStr);
+  os << TmpStr.str();
+  return os;
+}
+
+inline std::stringstream &operator<<(std::stringstream &os, const Expr::Kind kind) {
+  std::string str;
+  llvm::raw_string_ostream TmpStr(str);
+  Expr::printKind(TmpStr, kind);
+  os << TmpStr.str();
   return os;
 }
 
@@ -587,7 +608,9 @@ public:
   /// a symbolic array. If non-empty, this size of this array is equivalent to
   /// the array size.
   const std::vector< ref<ConstantExpr> > constantValues;
-  
+
+  Expr::Width domain, range;
+
 public:
   /// Array - Construct a new array object.
   ///
@@ -598,9 +621,11 @@ public:
   /// distinguished once printed.
   Array(const std::string &_name, uint64_t _size, 
         const ref<ConstantExpr> *constantValuesBegin = 0,
-        const ref<ConstantExpr> *constantValuesEnd = 0)
+        const ref<ConstantExpr> *constantValuesEnd = 0,
+        Expr::Width _domain = Expr::Int32, Expr::Width _range = Expr::Int8)
     : name(_name), size(_size), 
-      constantValues(constantValuesBegin, constantValuesEnd) {      
+      constantValues(constantValuesBegin, constantValuesEnd),
+      domain(_domain), range(_range) {
     assert((isSymbolicArray() || constantValues.size() == size) &&
            "Invalid size for constant array!");
     computeHash();
@@ -616,8 +641,8 @@ public:
   bool isSymbolicArray() const { return constantValues.empty(); }
   bool isConstantArray() const { return !isSymbolicArray(); }
 
-  Expr::Width getDomain() const { return Expr::Int32; }
-  Expr::Width getRange() const { return Expr::Int8; }
+  Expr::Width getDomain() const { return domain; }
+  Expr::Width getRange() const { return range; }
   
   unsigned computeHash();
   unsigned hash() const { return hashValue; }
@@ -671,15 +696,15 @@ public:
   
   static ref<Expr> create(const UpdateList &updates, ref<Expr> i);
   
-  Width getWidth() const { return Expr::Int8; }
+  Width getWidth() const { assert(updates.root); return updates.root->getRange(); }
   Kind getKind() const { return Read; }
   
   unsigned getNumKids() const { return numKids; }
-  ref<Expr> getKid(unsigned i) const { return !i ? index : 0; }  
+  ref<Expr> getKid(unsigned i) const { return !i ? index : 0; }
   
   int compareContents(const Expr &b) const;
 
-  virtual ref<Expr> rebuild(ref<Expr> kids[]) const { 
+  virtual ref<Expr> rebuild(ref<Expr> kids[]) const {
     return create(updates, kids[0]);
   }
 
@@ -687,7 +712,7 @@ public:
 
 private:
   ReadExpr(const UpdateList &_updates, const ref<Expr> &_index) : 
-    updates(_updates), index(_index) {}
+    updates(_updates), index(_index) { assert(updates.root); }
 
 public:
   static bool classof(const Expr *E) {

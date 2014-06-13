@@ -34,7 +34,6 @@
 
 #include <algorithm> // max, min
 #include <cassert>
-#include <iostream>
 #include <map>
 #include <sstream>
 #include <vector>
@@ -439,7 +438,7 @@ ExprHandle STPBuilder::constructSDivByConstant(ExprHandle expr_n, unsigned width
     memmove(buf + space, buf, addrlen); // moving the address part to the end
     memcpy(buf, root->name.c_str(), space); // filling out the name part
     
-    array_expr = buildArray(buf, 32, 8);
+    array_expr = buildArray(buf, root->getDomain(), root->getRange());
     
     if (root->isConstantArray()) {
       // FIXME: Flush the concrete values into STP. Ideally we would do this
@@ -553,7 +552,8 @@ ExprHandle STPBuilder::constructActual(ref<Expr> e, int *width_out) {
 
   case Expr::Read: {
     ReadExpr *re = cast<ReadExpr>(e);
-    *width_out = 8;
+    assert(re && re->updates.root);
+    *width_out = re->updates.root->getRange();
     return vc_readExpr(vc,
                        getArrayForUpdate(re->updates.root, re->updates.head),
                        construct(re->index, 0));

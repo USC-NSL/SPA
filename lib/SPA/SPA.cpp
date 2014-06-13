@@ -856,7 +856,7 @@ namespace SPA {
 
 	void SPA::onStateDestroy(klee::ExecutionState *kState) {
 		klee::klee_message( "Destroying path at:" );
-		kState->dumpStack( std::cerr );
+		kState->dumpStack( llvm::errs() );
 
 		if ( ! kState->filtered ) {
 			terminalPathsFound++;

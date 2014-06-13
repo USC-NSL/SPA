@@ -8,4 +8,4 @@ set -e
 
 [ -f Makefile.config ] || CXXFLAGS='-std=c++11 -g' CFLAGS='-g' ./configure --with-llvmsrc=/usr/local/src/llvm --with-llvmobj=/usr/local/src/llvm/build --with-stp=/usr/local/src/stp/bin --with-uclibc=/usr/local/src/klee-uclibc --enable-posix-runtime
 
-make -skj`grep -c processor /proc/cpuinfo` ENABLE_OPTIMIZED=1
+make -okj`grep -c processor /proc/cpuinfo` ENABLE_OPTIMIZED=1

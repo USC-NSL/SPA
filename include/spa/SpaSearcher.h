@@ -42,8 +42,8 @@ namespace SPA {
 		klee::ExecutionState &selectState();
 		void update( klee::ExecutionState *current, const std::set<klee::ExecutionState *> &addedStates, const std::set<klee::ExecutionState *> &removedStates );
 		bool empty() { return states.empty(); }
-		void printName( std::ostream &os ) {
-			os << "SpaSearcher" << std::endl;
+		void printName( llvm::raw_ostream &os ) {
+			os << "SpaSearcher\n";
 		}
 	};
 }

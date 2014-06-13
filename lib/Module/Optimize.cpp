@@ -40,7 +40,6 @@
 #include "llvm/Transforms/Scalar.h"
 #include "llvm/Support/PassNameParser.h"
 #include "llvm/Support/PluginLoader.h"
-#include <iostream>
 using namespace llvm;
 
 #if 0
@@ -124,7 +123,9 @@ static void AddStandardCompilePasses(PassManager &PM) {
     addPass(PM, createFunctionInliningPass());   // Inline small functions
   addPass(PM, createArgumentPromotionPass());    // Scalarize uninlined fn args
 
+#if LLVM_VERSION_CODE < LLVM_VERSION(3, 4)
   addPass(PM, createSimplifyLibCallsPass());     // Library Call Optimizations
+#endif
   addPass(PM, createInstructionCombiningPass()); // Cleanup for scalarrepl.
   addPass(PM, createJumpThreadingPass());        // Thread jumps.
   addPass(PM, createCFGSimplificationPass());    // Merge & remove BBs
@@ -270,7 +271,7 @@ void Optimize(Module* M) {
     if (Opt->getNormalCtor())
       addPass(Passes, Opt->getNormalCtor()());
     else
-      std::cerr << "llvm-ld: cannot create pass: " << Opt->getPassName() 
+      llvm::errs() << "llvm-ld: cannot create pass: " << Opt->getPassName()
                 << "\n";
   }
 #endif
