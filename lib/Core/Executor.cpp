@@ -437,12 +437,22 @@ void Executor::initializeGlobalObject(ExecutionState &state, ObjectState *os,
     unsigned StoreBits = targetData->getTypeStoreSizeInBits(c->getType());
     ref<ConstantExpr> C = evalConstant(c);
 
-    // Extend the constant if necessary;
-    assert(StoreBits >= C->getWidth() && "Invalid store size!");
-    if (StoreBits > C->getWidth())
-      C = C->ZExt(StoreBits);
+    if (! C.isNull()) {
+      // Extend the constant if necessary;
+      assert(StoreBits >= C->getWidth() && "Invalid store size!");
+      if (StoreBits > C->getWidth())
+        C = C->ZExt(StoreBits);
 
-    os->write(offset, C);
+      os->write(offset, C);
+    } else {
+      std::string name;
+      os->getObject()->getAllocInfo(name);
+      if (name.empty())
+        name = "<unknown>";
+      klee_warning("Error initializing global object: %s "
+                   "(access will result in out of bounds error).",
+                   name.c_str());
+    }
   }
 }
 
@@ -570,12 +580,14 @@ void Executor::initializeGlobals(ExecutionState &state) {
         } else {
           addr = externalDispatcher->resolveSymbol(i->getName());
         }
-        if (!addr)
-          klee_error("unable to load symbol(%s) while initializing globals.", 
-                     i->getName().data());
-
-        for (unsigned offset=0; offset<mo->size; offset++)
-          os->write8(offset, ((unsigned char*)addr)[offset]);
+        if (addr) {
+          for (unsigned offset=0; offset<mo->size; offset++)
+            os->write8(offset, ((unsigned char*)addr)[offset]);
+        } else {
+          klee_warning("Unable to load symbol(%s) while initializing globals "
+                       "(use will result in out of bounds access).", 
+                       i->getName().data());
+        }
       }
     } else {
       LLVM_TYPE_Q Type *ty = i->getType()->getElementType();
@@ -619,8 +631,14 @@ void Executor::initializeGlobals(ExecutionState &state) {
   for (Module::alias_iterator i = m->alias_begin(), ie = m->alias_end(); 
        i != ie; ++i) {
     // Map the alias to its aliasee's address. This works because we have
-    // addresses for everything, even undefined functions. 
-    globalAddresses.insert(std::make_pair(i, evalConstant(i->getAliasee())));
+    // addresses for everything, even undefined functions.
+
+    // Actually, we may not have an address for everything.
+    // Ignore the cases where we don't, for now.
+    ref<klee::ConstantExpr> ce = evalConstant(i->getAliasee());
+    if (! ce.isNull()) {
+      globalAddresses.insert(std::make_pair(i, ce));
+    }
   }
 
   // once all objects are allocated, do the actual initialization
@@ -1005,7 +1023,11 @@ ref<klee::ConstantExpr> Executor::evalConstant(const Constant *c) {
     } else if (const ConstantFP *cf = dyn_cast<ConstantFP>(c)) {      
       return ConstantExpr::alloc(cf->getValueAPF().bitcastToAPInt());
     } else if (const GlobalValue *gv = dyn_cast<GlobalValue>(c)) {
-      return globalAddresses.find(gv)->second;
+      if (globalAddresses.count(gv)) {
+        return globalAddresses.find(gv)->second;
+      } else {
+        return NULL;
+      }
     } else if (isa<ConstantPointerNull>(c)) {
       return Expr::createPointer(0);
     } else if (isa<UndefValue>(c) || isa<ConstantAggregateZero>(c)) {
