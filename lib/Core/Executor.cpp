@@ -174,10 +174,12 @@ namespace {
                   cl::init(0));
 
   cl::opt<bool>
-  SuppressExternalWarnings("suppress-external-warnings");
+  SuppressExternalWarnings("suppress-external-warnings",
+                           cl::init(false));
 
   cl::opt<bool>
-  AllExternalWarnings("all-external-warnings");
+  AllExternalWarnings("all-external-warnings",
+                      cl::init(true));
 
   cl::opt<bool>
   OnlyOutputStatesCoveringNew("only-output-states-covering-new",
@@ -257,8 +259,8 @@ namespace {
   
   cl::opt<unsigned>
   MaxMemory("max-memory",
-            cl::desc("Refuse to fork when above this amount of memory (in MB, default=2000)"),
-            cl::init(2000));
+            cl::desc("Refuse to fork when above this amount of memory (in MB, default=0 (off))"),
+            cl::init(0));
 
   cl::opt<bool>
   MaxMemoryInhibit("max-memory-inhibit",
@@ -2927,8 +2929,9 @@ void Executor::callExternalFunction(ExecutionState &state,
       if (i != arguments.size()-1)
 	os << ", ";
     }
-    os << ")";
-    
+    os << ")\n";
+    state.dumpStack(os);
+
     if (AllExternalWarnings)
       klee_warning("%s", os.str().c_str());
     else
