@@ -93,6 +93,7 @@ namespace SPA {
 		llvm::raw_os_ostream ros(stream);
 		klee::ExprPPrinter::printQuery( ros, path.getConstraints(), exprBuilder->False(),
 			&evalExprs[0], &evalExprs[0] + evalExprs.size(), NULL, NULL, true );
+    ros.flush();
 		stream << SPA_PATH_KQUERY_END << std::endl;
 
 		return stream << SPA_PATH_END << std::endl;

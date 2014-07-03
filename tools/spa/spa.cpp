@@ -61,6 +61,12 @@ namespace {
 
 	llvm::cl::opt<std::string, true> InputFileOpt(llvm::cl::desc("<input bytecode>"),
 		llvm::cl::Positional, llvm::cl::location(InputFile), llvm::cl::init("-"));
+
+  llvm::cl::opt<std::string> SenderPaths( "sender-paths",
+    llvm::cl::desc( "Specifies a path-file to with sender path to seed receiving inputs with." ) );
+
+  llvm::cl::opt<bool> FollowSenderPaths( "follow-sender-paths",
+    llvm::cl::desc("Tells SPA to follow the specified sender path-file for new paths as they are generated (joint symbolic execution)."));
 }
 
 class SpaClientPathFilter : public SPA::PathFilter {
@@ -355,6 +361,13 @@ int main(int argc, char **argv, char **envp) {
 		spa.setPathFilter( new SpaServerPathFilter() );
 	}
 
+  std::ifstream ifs;
+	if (! SenderPaths.empty()) {
+    ifs.open(SenderPaths);
+    assert(ifs.good() && "Unable to open sender path file.");
+    klee::klee_message("   Seeding paths from sender path-file: %s", SenderPaths.c_str());
+    spa.setSenderPathLoader(new SPA::PathLoader(ifs), FollowSenderPaths);
+  }
 
 	klee::klee_message( "Starting SPA." );
 	spa.start();

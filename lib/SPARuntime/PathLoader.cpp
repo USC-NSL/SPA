@@ -166,4 +166,42 @@ namespace SPA {
 
 		return NULL;
 	}
+
+  Path *PathLoader::getPath(uint64_t pathID) {
+    restart();
+    for (uint64_t i = 0; i < pathID && skipPath(); i++);
+    return getPath();
+  }
+
+  bool PathLoader::skipPath() {
+    // Save current position in case of failure.
+    unsigned long checkpointLN = lineNumber;
+    std::streampos checkpointPos = input.tellg();
+
+    LoadState_t state = START;
+    while ( input.good() ) {
+      std::string line;
+      getline( input, line );
+      lineNumber++;
+      line = cleanUpLine( line );
+      if ( line.empty() )
+        continue;
+
+      if ( line == SPA_PATH_START ) {
+        changeState( START, PATH );
+      } else if ( line == SPA_PATH_END ) {
+        changeState( PATH, START );
+        return true;
+      } else {
+        changeState( PATH, PATH );
+      }
+    }
+
+    // Might have found an incomplete path, restore checkpoint position.
+    input.clear();
+    input.seekg( checkpointPos, std::ios::beg );
+    lineNumber = checkpointLN;
+
+    return false;
+  }
 }

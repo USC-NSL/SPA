@@ -14,12 +14,16 @@
 #include "TimingSolver.h"
 
 #include "klee/ExecutionState.h"
+#include <klee/ExprBuilder.h>
 
 #include "klee/Internal/Module/KInstruction.h"
 #include "klee/Internal/Module/KModule.h"
 
 #include "Executor.h"
 #include "MemoryManager.h"
+
+#include <spa/SPA.h>
+#include <spa/PathLoader.h>
 
 #if LLVM_VERSION_CODE >= LLVM_VERSION(3, 3)
 #include "llvm/IR/Module.h"
@@ -108,6 +112,8 @@ static SpecialFunctionHandler::HandlerInfo handlerInfo[] = {
   // operator new(unsigned long)
   add("_Znwm", handleNew, true),
 
+  add("spa_seed_symbol_check", handleSpaSeedSymbolCheck, true),
+  add("spa_seed_symbol", handleSpaSeedSymbol, false),
   add("spa_runtime_call", handleSpaRuntimeCall, false),
 #undef addDNR
 #undef add  
@@ -447,7 +453,8 @@ void SpecialFunctionHandler::handlePrintExpr(ExecutionState &state,
          "invalid number of arguments to klee_print_expr");
 
   std::string msg_str = readStringAtAddress(state, arguments[0]);
-  llvm::errs() << msg_str << ":" << arguments[1] << "\n";
+  llvm::errs() << msg_str << ":" << arguments[1] << "\nGiven:\n";
+  state.constraints.dump();
 }
 
 void SpecialFunctionHandler::handleSetForking(ExecutionState &state,
@@ -735,6 +742,100 @@ void SpecialFunctionHandler::handleMarkGlobal(ExecutionState &state,
     const MemoryObject *mo = it->first.first;
     assert(!mo->isLocal);
     mo->isGlobal = true;
+  }
+}
+
+namespace SPA {
+  PathLoader *senderPaths = NULL;
+  bool followSenderPaths = false;
+}
+
+void SpecialFunctionHandler::handleSpaSeedSymbolCheck(ExecutionState &state,
+    KInstruction *target, std::vector<ref<Expr> > &arguments) {
+  assert(arguments.size() == 2 && "Invalid number of arguments to spa_seed_symbol_check.");
+
+  Executor::ExactResolutionList rl;
+  executor.resolveExact(state, arguments[0], rl, "seed_symbol");
+  assert(rl.size() == 1 && "Seeding symbol that doesn't resolve to a single object.");
+  const MemoryObject *mo = rl[0].first.first;
+  const ObjectState *os = rl[0].first.second;
+  assert(! os->readOnly && "Seeding read-only object.");
+  std::string name = mo->name;
+
+  klee::ConstantExpr *ce;
+  assert(ce = dyn_cast<ConstantExpr>(executor.toUnique(state, arguments[1])));
+  uint64_t pathID = ce->getZExtValue();
+
+  if (name.compare(0, strlen(SPA_MESSAGE_INPUT_PREFIX), SPA_MESSAGE_INPUT_PREFIX) != 0) {
+    klee_message("[spa_seed_symbol_check] %s is not a message input. Not seeding symbol.", name.c_str());
+    executor.bindLocal(target, state, ConstantExpr::create(false, Expr::Int32));
+  } else if (! SPA::senderPaths) {
+    klee_message("[spa_seed_symbol_check] No sender path-file. Not seeding symbol.");
+    executor.bindLocal(target, state, ConstantExpr::create(false, Expr::Int32));
+  } else if (SPA::followSenderPaths) {
+    klee_message("[spa_seed_symbol_check] Following sender path-file. Seeding symbol. Path may not be ready yet.");
+    executor.bindLocal(target, state, ConstantExpr::create(true, Expr::Int32));
+  } else {
+    if (SPA::senderPaths->getPath(pathID)) {
+      klee_message("[spa_seed_symbol_check] Finite sender path-file. Seeding symbol with path %ld.", pathID);
+      executor.bindLocal(target, state, ConstantExpr::create(true, Expr::Int32));
+    } else {
+      klee_message("[spa_seed_symbol_check] Finished processing sender path-file. Path %ld out-of-bound. Terminating.", pathID);
+      executor.terminateStateOnError(state, "Path ID out-of-bounds.", "user.err");
+    }
+  }
+}
+
+void SpecialFunctionHandler::handleSpaSeedSymbol(ExecutionState &state,
+    KInstruction *target, std::vector<ref<Expr> > &arguments) {
+  assert(arguments.size() == 2 && "Invalid number of arguments to spa_seed_symbol.");
+  assert(SPA::senderPaths && "Attempting to seed symbol with no sender paths.");
+
+  klee::ConstantExpr *ce;
+  assert(ce = dyn_cast<ConstantExpr>(executor.toUnique(state, arguments[1])));
+  uint64_t pathID = ce->getZExtValue();
+
+  SPA::Path *path = SPA::senderPaths->getPath( pathID );
+  assert(path && "Attempting to process seed path before it's available.");
+
+  Executor::ExactResolutionList rl;
+  executor.resolveExact(state, arguments[0], rl, "seed_symbol");
+  assert(rl.size() == 1 && "Seeding symbol that doesn't resolve to a single object.");
+  const MemoryObject *mo = rl[0].first.first;
+  const ObjectState *os = rl[0].first.second;
+  assert(! os->readOnly && "Seeding read-only object.");
+
+  std::string name = mo->name;
+  klee_message("Seeding path %ld, on input: %s", pathID, name.c_str());
+  // Check if input message.
+  assert(name.compare(0, strlen(SPA_MESSAGE_INPUT_PREFIX), SPA_MESSAGE_INPUT_PREFIX) == 0 && "Seeding non-message input symbol.");
+  std::string type = name.substr(strlen(SPA_MESSAGE_INPUT_PREFIX), std::string::npos);
+
+  size_t size = mo->getSizeExpr()->getZExtValue(sizeof(size_t) * 8);
+
+  // Add client path constraints.
+  for (klee::ConstraintManager::const_iterator it = path->getConstraints().begin(),
+                                               ie = path->getConstraints().end();
+       it != ie; it++) {
+    state.addConstraint(*it);
+  }
+
+  // Flag indicating whether sender and receiver were connected at some point.
+  std::string senderOutName = std::string(SPA_MESSAGE_OUTPUT_PREFIX) + type;
+  // Check if sender outputs this message type.
+  if (path->hasOutput(senderOutName)) {
+    assert(size >= path->getOutputSize(senderOutName) && "Sender and receiver message size mismatch.");
+    // Add sender output values = server input array constraint.
+    for (size_t offset = 0; offset < path->getOutputSize(senderOutName); offset++) {
+      klee::ref<klee::Expr> e = klee::createDefaultExprBuilder()->Eq(
+        os->read8(offset),
+        path->getOutputValue(senderOutName, offset));
+      if (! state.addAndCheckConstraint(e)) {
+        executor.terminateStateOnError(state, "Seeding symbol made constraints trivially UNSAT (incompatible message for this path).", "user.err");
+      }
+    }
+  } else {
+    executor.terminateStateOnError(state, "Seeding symbol consumes a message type not generated by sender: " + type + ".", "user.err");
   }
 }
 

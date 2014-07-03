@@ -18,6 +18,7 @@
 #include <spa/StateUtility.h>
 #include <spa/FilteringEventHandler.h>
 #include <spa/PathFilter.h>
+#include <spa/PathLoader.h>
 
 #define SPA_API_ANNOTATION_FUNCTION				"spa_api_entry"
 #define SPA_MESSAGE_HANDLER_ANNOTATION_FUNCTION	"spa_message_handler_entry"
@@ -51,7 +52,7 @@
 
 #define SPA_INITVALUEID_VARIABLE	"spa_internal_initValueID"
 #define SPA_HANDLERID_VARIABLE		"spa_internal_HanderID"
-#define SPA_SEEDID_VARIABLE			"spa_internal_SeedID"
+// #define SPA_SEEDID_VARIABLE			"spa_internal_SeedID"
 
 #define LOG_FILE_VARIABLE			"SPA_LOG_FILE"
 
@@ -94,6 +95,7 @@ namespace SPA {
 		void newEntryLevel();
 		void addInitialValues( std::map<llvm::Value *, std::vector<std::vector<std::pair<bool,uint8_t> > > > values );
 		void addSymbolicInitialValues() { addInitialValues( std::map<llvm::Value *, std::vector<std::vector<std::pair<bool,uint8_t> > > >() ); }
+		void setSenderPathLoader( PathLoader *pathLoader, bool follow );
 		void addStateUtilityFront( StateUtility *stateUtility, bool _outputFilteredPaths ) {
 			stateUtilities.push_front( stateUtility );
 			outputFilteredPaths.push_front( _outputFilteredPaths );

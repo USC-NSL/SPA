@@ -57,7 +57,8 @@ void handleQuery( nc_query_t &query, nc_response_t &response ) {
 // 		std::cerr << "Error: " << getErrText( response.err ) << std::endl;
 // 	}
 
-	if ( response.err != NC_BADINPUT ) {
+ if ( response.err == NC_OK ) {
+// 	if ( response.err != NC_BADINPUT ) {
 		spa_valid_path();
 // 	} else {
 // 		spa_invalid_path();

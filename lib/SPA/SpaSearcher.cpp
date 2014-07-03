@@ -8,6 +8,7 @@
 #include <spa/SpaSearcher.h>
 
 #include <llvm/Support/CommandLine.h>
+#include <llvm/Support/raw_ostream.h>
 #include "../Core/Common.h"
 #include <../Core/Executor.h>
 #include <klee/ExecutionState.h>
@@ -137,9 +138,10 @@ namespace SPA {
 //                         statesDequeued,
 //                         statesFiltered );
 
-// 		klee_message( "[SpaSearcher] Selecting state:" );
-// 		klee::c9::printStateStack( std::cerr, *states.begin()->second ) << std::endl;
-		return *states.begin()->second;
+		klee::ExecutionState &state = *states.begin()->second;
+// 		klee::klee_message( "[SpaSearcher] Selecting state:" );
+// 		state.dumpStack(llvm::errs());
+		return state;
 	}
 
 	void SpaSearcher::update( klee::ExecutionState *current, const std::set<klee::ExecutionState *> &addedStates, const std::set<klee::ExecutionState *> &removedStates) {

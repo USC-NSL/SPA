@@ -58,10 +58,6 @@
 #define MALLOC_FUNCTION					"malloc"
 
 namespace {
-	llvm::cl::opt<bool> StandAlone("stand-alone",
-		llvm::cl::desc("Enable running a worker in stand alone mode"),
-		llvm::cl::init(true));
-
 	typedef enum {
 		START,
 		PATH,
@@ -79,6 +75,9 @@ namespace {
 namespace SPA {
 	llvm::cl::opt<std::string> RecoverState( "recover-state",
 		llvm::cl::desc( "Specifies a file with a previously saved processing queue to load." ) );
+
+  extern PathLoader *senderPaths;
+  extern bool followSenderPaths;
 
 	static void interrupt_handle() {
 		std::cerr << "SPA: Ctrl-C detected, exiting.\n";
@@ -768,6 +767,11 @@ namespace SPA {
 		// break;
 		llvm::BranchInst::Create( firstHandlerBB, swBB );
 	}
+
+  void SPA::setSenderPathLoader( PathLoader *pathLoader, bool follow ) {
+    senderPaths = pathLoader;
+    followSenderPaths = follow;
+  }
 
 	void SPA::start() {
 // 		entryFunction->dump();
