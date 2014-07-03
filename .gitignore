@@ -16,6 +16,7 @@ cscope.*
 config.h
 site.exp
 docs/doxygen.cfg
+docs/doxygen/
 
 # Site file for llvm-lit
 lit.site.cfg
