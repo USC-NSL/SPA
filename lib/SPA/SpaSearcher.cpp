@@ -4,6 +4,7 @@
 
 #include <fstream>
 #include <sstream>
+#include <chrono>
 
 #include <spa/SpaSearcher.h>
 
@@ -17,6 +18,7 @@
 #include <llvm/IR/BasicBlock.h>
 
 #define SAVE_STATE_PERIOD 30 // seconds
+#define PRINT_STATS_PERIOD 1000 // ms
 #define QUEUE_LIMIT	100000
 #define DROP_TO		 90000
 
@@ -131,12 +133,7 @@ namespace SPA {
 // 			lastSaved = time( NULL );
 // 		}
 
-// 		klee::klee_message( "[SpaSearcher] Queued: %ld; Utility Range: [%s; %s]; Processed: %ld; Filtered: %ld",
-//                         states.size(),
-//                         (states.size() ? utilityStr( states.rbegin()->first ).c_str() : ""),
-//                         (states.size() ? utilityStr( states.begin()->first ).c_str() : ""),
-//                         statesDequeued,
-//                         statesFiltered );
+    printStats();
 
 		klee::ExecutionState &state = *states.begin()->second;
 // 		klee::klee_message( "[SpaSearcher] Selecting state:" );
@@ -156,14 +153,24 @@ namespace SPA {
 		}
 		statesDequeued += removedStates.size();
 
-    klee::klee_message( "[SpaSearcher] Queued: %ld; Utility Range: [%s; %s]; Processed: %ld; Filtered: %ld",
-                        states.size(),
-                        (states.size() ? utilityStr( states.rbegin()->first ).c_str() : ""),
-                        (states.size() ? utilityStr( states.begin()->first ).c_str() : ""),
-                        statesDequeued,
-                        statesFiltered );
+    printStats();
 
 		if ( states.empty() )
 			klee::klee_message( "[SpaSearcher] State queue is empty!" );
 	}
+
+  void SpaSearcher::printStats() {
+    static auto last = std::chrono::steady_clock::now();
+    auto now = std::chrono::steady_clock::now();
+    if (std::chrono::duration_cast<std::chrono::milliseconds>(now - last).count() > PRINT_STATS_PERIOD) {
+      last = now;
+      klee::klee_message( "[SpaSearcher] Queued: %ld; Utility Range: [%s; %s]; Processed: %ld; Filtered: %ld",
+                          states.size(),
+                          (states.size() ? utilityStr( states.rbegin()->first ).c_str() : ""),
+                          (states.size() ? utilityStr( states.begin()->first ).c_str() : ""),
+                          statesDequeued,
+                          statesFiltered );
+    }
+  }
 }
+
