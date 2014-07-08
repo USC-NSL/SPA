@@ -156,6 +156,13 @@ namespace SPA {
 		}
 		statesDequeued += removedStates.size();
 
+    klee::klee_message( "[SpaSearcher] Queued: %ld; Utility Range: [%s; %s]; Processed: %ld; Filtered: %ld",
+                        states.size(),
+                        (states.size() ? utilityStr( states.rbegin()->first ).c_str() : ""),
+                        (states.size() ? utilityStr( states.begin()->first ).c_str() : ""),
+                        statesDequeued,
+                        statesFiltered );
+
 		if ( states.empty() )
 			klee::klee_message( "[SpaSearcher] State queue is empty!" );
 	}
