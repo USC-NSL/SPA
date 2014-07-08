@@ -2,4 +2,4 @@
 
 set -e
 
-make -okj`grep -c processor /proc/cpuinfo` -f Makefile.spa
+make -kj`grep -c processor /proc/cpuinfo` -f Makefile.spa
