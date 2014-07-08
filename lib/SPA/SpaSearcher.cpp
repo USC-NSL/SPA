@@ -19,8 +19,8 @@
 
 #define SAVE_STATE_PERIOD 30 // seconds
 #define PRINT_STATS_PERIOD 1000 // ms
-#define QUEUE_LIMIT	100000
-#define DROP_TO		 90000
+// #define QUEUE_LIMIT	1000000
+// #define DROP_TO		 900000
 
 
 namespace SPA {
@@ -119,6 +119,7 @@ namespace SPA {
 		else
 			reorderState( states.begin()->second );
 
+#ifdef QUEUE_LIMIT
 		if ( (! states.begin()->second->filtered) && states.size() > QUEUE_LIMIT ) {
 			int n = states.size() - DROP_TO;
 			klee::klee_message( "[SpaSearcher] Dropping %d states.", n );
@@ -127,6 +128,7 @@ namespace SPA {
 				it->second->filtered = true;
 			reorderAllStates();
 		}
+#endif
 
 // 		if ( SaveState.size() > 0 && difftime( time( NULL ), lastSaved ) > SAVE_STATE_PERIOD ) {
 // 			saveStates();
