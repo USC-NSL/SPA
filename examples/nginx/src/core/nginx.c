@@ -492,6 +492,10 @@ ngx_set_environment(ngx_cycle_t *cycle, ngx_uint_t *last)
 
     ccf = (ngx_core_conf_t *) ngx_get_conf(cycle->conf_ctx, ngx_core_module);
 
+#ifdef ENABLE_KLEE
+    return ccf->environment;
+#endif
+
     if (last == NULL && ccf->environment) {
         return ccf->environment;
     }
