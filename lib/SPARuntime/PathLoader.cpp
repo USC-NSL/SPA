@@ -169,8 +169,11 @@ namespace SPA {
 
   Path *PathLoader::getPath(uint64_t pathID) {
     restart();
-    for (uint64_t i = 0; i < pathID && skipPath(); i++);
-    return getPath();
+    if(skipPaths(pathID)) {
+      return getPath();
+    } else {
+      return NULL;
+    }
   }
 
   bool PathLoader::skipPath() {
@@ -203,5 +206,14 @@ namespace SPA {
     lineNumber = checkpointLN;
 
     return false;
+  }
+
+  bool PathLoader::skipPaths(uint64_t numPaths) {
+    for (uint64_t i = 0; i < numPaths; i++) {
+      if (! skipPath()) {
+        return false;
+      }
+    }
+    return true;
   }
 }

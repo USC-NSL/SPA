@@ -31,15 +31,17 @@ all: $(TARGETS) $(BC_TARGETS) $(TEST_TARGETS)
 	rm -f $@
 	$(SPA) --client $< 2>&1 | tee $@.log
 
-%.bc.server.paths: %.bc $(SPA)
-	rm -f $@
-	$(SPA) --server $< 2>&1 | tee $@.log
-# %.bc.server.paths: %.bc netcalc-client.bc.client.paths $(SPA)
+# %.bc.server.paths: %.bc $(SPA)
 # 	rm -f $@
-# 	$(SPA) --sender-paths netcalc-client.bc.client.paths --server $< 2>&1 | tee $@.log
+# 	$(SPA) --server $< 2>&1 | tee $@.log
+%.bc.server.paths: %.bc netcalc-client.bc.client.paths $(SPA)
+	rm -f $@
+	$(SPA) --sender-paths netcalc-client.bc.client.paths --server $< 2>&1 | tee $@.log
 
-BadInputs.untested: $(PATHS)
-	$(SPABADINPUTS) -client netcalc-client.bc.client.paths -server netcalc-server.bc.server.paths -o $@ -d $@.debug 2>&1 | tee $@.log
+# BadInputs.untested: $(PATHS)
+# 	$(SPABADINPUTS) -client netcalc-client.bc.client.paths -server netcalc-server.bc.server.paths -o $@ -d $@.debug 2>&1 | tee $@.log
+BadInputs.untested: netcalc-server.bc.server.paths
+	$(SPABADINPUTS) -server netcalc-server.bc.server.paths -o $@ -d $@.debug 2>&1 | tee $@.log
 
 BadInputs.tested: BadInputs.untested $(TEST_TARGETS)
 	$(SPAE2ETEST) $< $@ './netcalc-client.test 1 1 +' './netcalc-server.test' 2>&1 | tee $@.log
