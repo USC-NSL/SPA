@@ -47,13 +47,16 @@ BadInputs.tested: BadInputs.untested $(TEST_TARGETS)
 	$(SPAE2ETEST) $< $@ './netcalc-client.test 1 1 +' './netcalc-server.test' 2>&1 | tee $@.log
 
 netcalc-client.dot: netcalc-client.bc $(SPA)
-	$(SPA) --stand-alone --dump-cfg $@ --client $^
+	$(SPA) --dump-cfg $@ --client $<
 
 netcalc-server.dot: netcalc-server.bc $(SPA)
-	$(SPA) --stand-alone --dump-cfg $@ --server $^
+	$(SPA) --dump-cfg $@ --server $<
 
 %.pdf: %.dot
 	dot -Tpdf -o $@ $<
+
+%.png: %.dot
+	dot -Tpng -o $@ $<
 
 cfg: $(CFGS)
 

@@ -109,6 +109,8 @@ public:
   unsigned incomingBBIndex;
 
   // SPA state
+  // Execution depth in steps.
+  unsigned long step_depth;
   // Signals the path is no longer interesting and should be discarded.
   bool filtered;
 
@@ -117,7 +119,7 @@ public:
   void removeFnAlias(std::string fn);
   
 private:
-  ExecutionState() : fakeState(false), underConstrained(0), ptreeNode(0), filtered(false) {}
+  ExecutionState() : fakeState(false), underConstrained(0), ptreeNode(0), step_depth(0), filtered(false) {}
 
 public:
   ExecutionState(KFunction *kf);

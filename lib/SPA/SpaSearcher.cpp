@@ -138,7 +138,8 @@ namespace SPA {
     printStats();
 
 		klee::ExecutionState &state = *states.begin()->second;
-// 		klee::klee_message( "[SpaSearcher] Selecting state:" );
+// 		klee::klee_message( "[SpaSearcher] Selecting state with cost %s:",
+//                         utilityStr( states.begin()->first ).c_str() );
 // 		state.dumpStack(llvm::errs());
 		return state;
 	}

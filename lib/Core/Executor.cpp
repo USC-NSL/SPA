@@ -1220,6 +1220,8 @@ void Executor::stepInstruction(ExecutionState &state) {
   state.prevPC = state.pc;
   ++state.pc;
 
+  state.step_depth++;
+
   if (stats::instructions==StopAfterNInstructions)
     haltExecution = true;
 }

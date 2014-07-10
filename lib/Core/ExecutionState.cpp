@@ -78,6 +78,7 @@ ExecutionState::ExecutionState(KFunction *kf)
     coveredNew(false),
     forkDisabled(false),
     ptreeNode(0),
+    step_depth(0),
     filtered(false) {
   pushFrame(0, kf);
 }
@@ -88,6 +89,7 @@ ExecutionState::ExecutionState(const std::vector<ref<Expr> > &assumptions)
     constraints(assumptions),
     queryCost(0.),
     ptreeNode(0),
+    step_depth(0),
     filtered(false) {
 }
 
@@ -127,6 +129,7 @@ ExecutionState::ExecutionState(const ExecutionState& state)
     arrayNames(state.arrayNames),
     shadowObjects(state.shadowObjects),
     incomingBBIndex(state.incomingBBIndex),
+    step_depth(state.step_depth),
     filtered(state.filtered)
 {
   for (unsigned int i=0; i<symbolics.size(); i++)
@@ -143,6 +146,7 @@ ExecutionState *ExecutionState::branch() {
   weight *= .5;
   falseState->weight -= weight;
 
+  falseState->step_depth = this->step_depth;
   falseState->filtered = this->filtered;
 
   return falseState;

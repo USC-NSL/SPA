@@ -2,13 +2,18 @@
  * SPA - Systematic Protocol Analysis Framework
  */
 
+#include <sys/stat.h>
+
 #include <sstream>
+#include <fstream>
 
 #include "llvm/IR/Instructions.h"
 
-#include "spa/CG.h"
+#include "../Core/Common.h"
 
+#include "spa/CG.h"
 #include "spa/CFG.h"
+#include "spa/Util.h"
 
 
 using namespace llvm;
@@ -89,7 +94,7 @@ namespace SPA {
 				else
 					attributes << "shape = \"oval\"";
 				// Annotate source line.
-				attributes << " label = \"" << inst->getDebugLoc().getLine() << "\"";
+				attributes << " label = \"" << debugLocation(inst) << " | " << utility->getStaticUtility(inst) << "\"";
 				// Annotate utility color.
 				if ( utility )
 					attributes << " style=\"filled\" fillcolor = \"" << utility->getColor( *this, cg, inst ) << "\"";
@@ -196,4 +201,35 @@ namespace SPA {
 
 		dotFile << "}" << std::endl;
 	}
+
+  class FunctionInstructionFilter : public InstructionFilter {
+  private:
+    llvm::Function *function;
+  public:
+    FunctionInstructionFilter(llvm::Function *fn) : function(fn) {};
+    bool checkInstruction( llvm::Instruction *instruction ) {
+      return instruction->getParent()->getParent() == function;
+    }
+  };
+
+  void CFG::dumpDir(std::string directory, CG &cg, std::map<InstructionFilter *, std::string> &annotations, StateUtility *utility) {
+    auto result = mkdir(directory.c_str(), 0755);
+    assert(result == 0 || errno == EEXIST);
+
+    std::ofstream makefile(directory + "/Makefile");
+    assert(makefile.good());
+    makefile << "%.pdf: %.dot" << std::endl;
+    makefile << "\tdot -Tpdf -o $@ $<" << std::endl << std::endl;
+
+    for (auto it = cg.begin(), ie = cg.end(); it != ie; it++ ) {
+      klee::klee_message("Generating %s.dot", (*it)->getName().str().c_str());
+
+      std::ofstream dotFile(directory + "/" + (*it)->getName().str() + ".dot");
+      assert(dotFile.good());
+      FunctionInstructionFilter fif(*it);
+      dump(dotFile, cg, &fif, annotations, utility, FULL);
+
+      makefile << "default: " << (*it)->getName().str() << ".pdf" << std::endl;
+    }
+  }
 }
