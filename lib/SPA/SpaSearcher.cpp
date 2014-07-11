@@ -60,6 +60,7 @@ namespace SPA {
 
 	std::string utilityStr( const std::vector<double> &utility ) {
 		std::stringstream result;
+    result.precision(10);
 		for ( std::vector<double>::const_iterator it = utility.begin(), ie = utility.end(); it != ie; it++ )
 			result << (it != utility.begin() ? "," : "") << (-*it);
 		return result.str();
