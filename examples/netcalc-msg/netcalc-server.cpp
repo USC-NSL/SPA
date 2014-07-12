@@ -13,8 +13,9 @@
 SpaTag_t QueryValid;
 
 // Handles the query and computes the response.
-void handleQuery( nc_query_t &query, nc_response_t &response ) {
+void handleQuery( nc_query_t &query, ssize_t size, nc_response_t &response ) {
 	spa_msg_input_var( query );
+  spa_msg_input_size(size, "query");
 // 	spa_seed_file( 1, &query, "query.seed" );
 // 	spa_seed( 1, &query, sizeof( query ), "\0\0\0\0\171\171\171\171\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0" );
 
@@ -23,23 +24,43 @@ void handleQuery( nc_query_t &query, nc_response_t &response ) {
 	// Check operator.
 	switch ( query.op ) {
 		case NC_ADDITION : {
-			response.value = query.arg1 + query.arg2;
+      if (size == sizeof(query)) {
+        response.value = query.arg1 + query.arg2;
+      } else if (size == offsetof(nc_query_t, arg2)) {
+        response.value = query.arg1 + 1;
+      } else {
+        response.err = NC_BADINPUT;
+      }
 		} break;
 		case NC_SUBTRACTION : {
-			response.value = query.arg1 - query.arg2;
+      if (size == sizeof(query)) {
+        response.value = query.arg1 - query.arg2;
+      } else if (size == offsetof(nc_query_t, arg2)) {
+        response.value = - query.arg1;
+      } else {
+        response.err = NC_BADINPUT;
+      }
 		} break;
 		case NC_MUTIPLICATION : {
-			response.value = query.arg1 * query.arg2;
+      if (size == sizeof(query)) {
+        response.value = query.arg1 * query.arg2;
+      } else {
+        response.err = NC_BADINPUT;
+      }
 		} break;
 		case NC_DIVISION : {
-			if ( query.arg2 == 0 ) {
+      if (size != sizeof(query)) {
+        response.err = NC_BADINPUT;
+      } else if ( query.arg2 == 0 ) {
 				response.err = NC_DIV0;
 			} else {
 				response.value = query.arg1 / query.arg2;
 			}
 		} break;
 // 		case NC_MODULO : {
-// 			if ( query.arg2 == 0 ) {
+//       if (size != sizeof(query)) {
+//         response.err = NC_BADINPUT;
+//       } else if ( query.arg2 == 0 ) {
 // 				response.err = NC_DIV0;
 // 			} else {
 // 				response.value = query.arg1 % query.arg2;
@@ -69,8 +90,9 @@ void handleQuery( nc_query_t &query, nc_response_t &response ) {
 void SpaHandleQueryEntry() {
 	spa_message_handler_entry();
 	nc_query_t query;
+  ssize_t size = 0;
 	nc_response_t response;
-	handleQuery( query, response );
+	handleQuery( query, size, response );
 }
 
 int main( int argc, char **argv ) {
@@ -93,11 +115,12 @@ int main( int argc, char **argv ) {
 		socklen_t si_client_len = sizeof( si_client );
 		nc_query_t query;
 
-		assert( recvfrom( s, &query, sizeof( query ), 0, (struct sockaddr *) &si_client, &si_client_len ) == sizeof( query ) );
+		ssize_t size = recvfrom(s, &query, sizeof(query), 0, (struct sockaddr *) &si_client, &si_client_len);
+		assert(size >= 0);
 		std::cerr << "Received packet from " << inet_ntoa( si_client.sin_addr ) << ":" << ntohs( si_client.sin_port ) << std::endl;
 
 		nc_response_t response;
-		handleQuery( query, response );
+		handleQuery( query, size, response );
 
 		assert( sendto( s, &response, sizeof( response ), 0, (struct sockaddr *) &si_client, si_client_len ) == sizeof( response ) );
 	}

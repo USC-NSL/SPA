@@ -63,5 +63,5 @@ cfg: $(CFGS)
 run-spa: BadInputs.tested
 
 clean:
-	rm -f $(TARGETS) $(BC_TARGETS) $(TEST_TARGETS) $(PATHS) $(BADINPUTS) $(CFGS) $(CFGS:.pdf=.dot)
+	rm -rf $(TARGETS) $(BC_TARGETS) $(TEST_TARGETS) $(PATHS) $(BADINPUTS) $(CFGS) $(CFGS:.pdf=.dot)
 	rm -rf *.log *.debug klee-out-* klee-last

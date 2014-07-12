@@ -34,7 +34,7 @@ nc_operator_t getOpByName( std::string name ) {
 
 typedef long nc_value_t;
 
-typedef struct {
+typedef struct __attribute__((packed)) {
 	nc_operator_t op;
 	nc_value_t arg1;
 	nc_value_t arg2;
@@ -58,7 +58,7 @@ std::string getErrText( nc_error_t err ) {
 	}
 }
 
-typedef struct {
+typedef struct __attribute__((packed)) {
 	nc_error_t err;
 	nc_value_t value;
 } nc_response_t;
