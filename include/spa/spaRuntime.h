@@ -26,11 +26,11 @@ extern "C" {
 //   void __attribute__((noinline,weak)) spa_cost( int cost ) { static uint8_t i = 0; i++; } // Complicated NOP to prevent inlining.
 
 #ifdef ENABLE_KLEE
-  int32_t spa_seed_symbol_check( void *var, uint64_t pathID );
-  void spa_seed_symbol( void *var, uint64_t pathID );
+  int32_t spa_seed_symbol_check(uint64_t pathID);
+  void spa_seed_symbol(void *var, uint64_t pathID, uint8_t seedPC);
 #else
-  int32_t spa_seed_symbol_check( void *var, uint64_t pathID ) { return 0; }
-  void spa_seed_symbol( void *var, uint64_t pathID ) {}
+  int32_t spa_seed_symbol_check(uint64_t pathID) { return 0; }
+  void spa_seed_symbol(void *var, uint64_t pathID, uint8_t seedPC) {}
 #endif
 
 	void spa_api_input_handler( va_list args );
@@ -138,14 +138,18 @@ extern "C" {
 		uint8_t *symbol = (uint8_t *) malloc( size );
 		klee_make_symbolic( symbol, size, varName );
 
-    uint64_t pathID;
-    uint64_t choice = 0;
-    klee_make_symbolic( &choice, sizeof( choice ), "spa_choice" );
-    for ( pathID = 0; spa_seed_symbol_check( symbol, pathID ); pathID++ ) {
-      if ( pathID == choice ) {
-        spa_seed_symbol( symbol, pathID );
-        break;
+    static int64_t pathID = -1;
+    if (pathID < 0) {
+      uint64_t choice = 0;
+      klee_make_symbolic( &choice, sizeof( choice ), "spa_internal_PathID" );
+      for (pathID = 0; spa_seed_symbol_check(pathID); pathID++) {
+        if (pathID == choice) {
+          spa_seed_symbol(symbol, pathID, 1);
+          break;
+        }
       }
+    } else {
+      spa_seed_symbol(symbol, pathID, 0);
     }
 
 		// Check if initial assumptions are specified.

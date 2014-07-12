@@ -851,7 +851,8 @@ namespace SPA {
 // 		kState->dumpStack( std::cerr );
 
 		if (checkpoints.count(kState->pc->inst)) {
-			klee::klee_message( "Processing checkpoint path." );
+			klee::klee_message( "Processing checkpoint path at:" );
+      kState->dumpStack(llvm::errs());
 			checkpointsFound++;
 			processPath( kState );
 			showStats();

@@ -752,32 +752,22 @@ namespace SPA {
 
 void SpecialFunctionHandler::handleSpaSeedSymbolCheck(ExecutionState &state,
     KInstruction *target, std::vector<ref<Expr> > &arguments) {
-  assert(arguments.size() == 2 && "Invalid number of arguments to spa_seed_symbol_check.");
-
-  Executor::ExactResolutionList rl;
-  executor.resolveExact(state, arguments[0], rl, "seed_symbol");
-  assert(rl.size() == 1 && "Seeding symbol that doesn't resolve to a single object.");
-  const MemoryObject *mo = rl[0].first.first;
-  const ObjectState *os = rl[0].first.second;
-  assert(! os->readOnly && "Seeding read-only object.");
-  std::string name = mo->name;
+  assert(arguments.size() == 1 && "Invalid number of arguments to spa_seed_symbol_check.");
 
   klee::ConstantExpr *ce;
-  assert(ce = dyn_cast<ConstantExpr>(executor.toUnique(state, arguments[1])));
+  assert(ce = dyn_cast<ConstantExpr>(executor.toUnique(state, arguments[0])));
   uint64_t pathID = ce->getZExtValue();
 
-  if (name.compare(0, strlen(SPA_MESSAGE_INPUT_PREFIX), SPA_MESSAGE_INPUT_PREFIX) != 0) {
-    klee_message("[spa_seed_symbol_check] %s is not a message input. Not seeding symbol.", name.c_str());
-    executor.bindLocal(target, state, ConstantExpr::create(false, Expr::Int32));
-  } else if (! SPA::senderPaths) {
+  if (! SPA::senderPaths) {
     klee_message("[spa_seed_symbol_check] No sender path-file. Not seeding symbol.");
+    assert(pathID == 0 && "Checking for non-zero pathID without sender path-file.");
     executor.bindLocal(target, state, ConstantExpr::create(false, Expr::Int32));
   } else if (SPA::followSenderPaths) {
-    klee_message("[spa_seed_symbol_check] Following sender path-file. Seeding symbol. Path may not be ready yet.");
+    klee_message("[spa_seed_symbol_check] Following sender path-file. Allowing symbol to be seeded with path %ld. Path may not be ready yet.", pathID);
     executor.bindLocal(target, state, ConstantExpr::create(true, Expr::Int32));
   } else {
     if (SPA::senderPaths->getPath(pathID)) {
-      klee_message("[spa_seed_symbol_check] Finite sender path-file. Seeding symbol with path %ld.", pathID);
+      klee_message("[spa_seed_symbol_check] Finite sender path-file. Allowing symbol to be seeded with path %ld.", pathID);
       executor.bindLocal(target, state, ConstantExpr::create(true, Expr::Int32));
     } else {
       klee_message("[spa_seed_symbol_check] Finished processing sender path-file. Path %ld out-of-bound. Terminating.", pathID);
@@ -788,15 +778,17 @@ void SpecialFunctionHandler::handleSpaSeedSymbolCheck(ExecutionState &state,
 
 void SpecialFunctionHandler::handleSpaSeedSymbol(ExecutionState &state,
     KInstruction *target, std::vector<ref<Expr> > &arguments) {
-  assert(arguments.size() == 2 && "Invalid number of arguments to spa_seed_symbol.");
-  assert(SPA::senderPaths && "Attempting to seed symbol with no sender paths.");
+  assert(arguments.size() == 3 && "Invalid number of arguments to spa_seed_symbol.");
 
   klee::ConstantExpr *ce;
   assert(ce = dyn_cast<ConstantExpr>(executor.toUnique(state, arguments[1])));
   uint64_t pathID = ce->getZExtValue();
 
-  SPA::Path *path = SPA::senderPaths->getPath( pathID );
-  assert(path && "Attempting to process seed path before it's available.");
+  if (! SPA::senderPaths) {
+    klee_message("No sender path-file specified. No seeding symbol.");
+    assert(pathID == 0 && "Seeding non-zero pathID without a sender path-file.");
+    return;
+  }
 
   Executor::ExactResolutionList rl;
   executor.resolveExact(state, arguments[0], rl, "seed_symbol");
@@ -804,23 +796,35 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(ExecutionState &state,
   const MemoryObject *mo = rl[0].first.first;
   const ObjectState *os = rl[0].first.second;
   assert(! os->readOnly && "Seeding read-only object.");
-
   std::string name = mo->name;
-  klee_message("Seeding path %ld, on input: %s", pathID, name.c_str());
-  // Check if input message.
-  assert(name.compare(0, strlen(SPA_MESSAGE_INPUT_PREFIX), SPA_MESSAGE_INPUT_PREFIX) == 0 && "Seeding non-message input symbol.");
-  std::string type = name.substr(strlen(SPA_MESSAGE_INPUT_PREFIX), std::string::npos);
-
   size_t size = mo->getSizeExpr()->getZExtValue(sizeof(size_t) * 8);
 
-  // Add client path constraints.
-  for (klee::ConstraintManager::const_iterator it = path->getConstraints().begin(),
-                                               ie = path->getConstraints().end();
-       it != ie; it++) {
-    state.addConstraint(*it);
+  // Check if input message.
+  if (name.compare(0, strlen(SPA_MESSAGE_INPUT_PREFIX), SPA_MESSAGE_INPUT_PREFIX) != 0) {
+    klee_message("Input %s is not a message. Not seeding.", name.c_str());
+    return;
   }
 
-  // Flag indicating whether sender and receiver were connected at some point.
+  assert(ce = dyn_cast<ConstantExpr>(executor.toUnique(state, arguments[2])));
+  uint8_t seedPC = ce->getZExtValue();
+
+  klee_message("Seeding path %ld, on input: %s (%s path constraints)",
+               pathID, name.c_str(), seedPC ? "including" : "excluding");
+
+  SPA::Path *path = SPA::senderPaths->getPath( pathID );
+  assert(path && "Attempting to process seed path before it's available.");
+
+  std::string type = name.substr(strlen(SPA_MESSAGE_INPUT_PREFIX), std::string::npos);
+
+  // Add client path constraints.
+  if (seedPC) {
+    for (klee::ConstraintManager::const_iterator it = path->getConstraints().begin(),
+                                                 ie = path->getConstraints().end();
+         it != ie; it++) {
+      state.addConstraint(*it);
+    }
+  }
+
   std::string senderOutName = std::string(SPA_MESSAGE_OUTPUT_PREFIX) + type;
   // Check if sender outputs this message type.
   if (path->hasOutput(senderOutName)) {
