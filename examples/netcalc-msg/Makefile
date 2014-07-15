@@ -41,9 +41,11 @@ all: $(TARGETS) $(BC_TARGETS) $(TEST_TARGETS)
 # BadInputs.untested: $(PATHS)
 # 	$(SPABADINPUTS) -client netcalc-client.bc.client.paths -server netcalc-server.bc.server.paths -o $@ -d $@.debug 2>&1 | tee $@.log
 BadInputs.untested: netcalc-server.bc.server.paths
+	rm -f $@
 	$(SPABADINPUTS) -server netcalc-server.bc.server.paths -o $@ -d $@.debug 2>&1 | tee $@.log
 
 BadInputs.tested: BadInputs.untested $(TEST_TARGETS)
+	rm -f $@
 	$(SPAE2ETEST) $< $@ './netcalc-client.test 1 1 +' './netcalc-server.test' 2>&1 | tee $@.log
 
 netcalc-client.dot: netcalc-client.bc $(SPA)

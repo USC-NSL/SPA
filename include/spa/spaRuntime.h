@@ -27,10 +27,10 @@ extern "C" {
 
 #ifdef ENABLE_KLEE
   int32_t spa_seed_symbol_check(uint64_t pathID);
-  void spa_seed_symbol(void *var, uint64_t pathID, uint8_t seedPC);
+  void spa_seed_symbol(void *var, uint64_t pathID);
 #else
   int32_t spa_seed_symbol_check(uint64_t pathID) { return 0; }
-  void spa_seed_symbol(void *var, uint64_t pathID, uint8_t seedPC) {}
+  void spa_seed_symbol(void *var, uint64_t pathID) {}
 #endif
 
 	void spa_api_input_handler( va_list args );
@@ -144,12 +144,12 @@ extern "C" {
       klee_make_symbolic( &choice, sizeof( choice ), "spa_internal_PathID" );
       for (pathID = 0; spa_seed_symbol_check(pathID); pathID++) {
         if (pathID == choice) {
-          spa_seed_symbol(symbol, pathID, 1);
+          spa_seed_symbol(symbol, pathID);
           break;
         }
       }
     } else {
-      spa_seed_symbol(symbol, pathID, 0);
+      spa_seed_symbol(symbol, pathID);
     }
 
 		// Check if initial assumptions are specified.

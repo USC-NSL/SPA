@@ -130,7 +130,8 @@ ExecutionState::ExecutionState(const ExecutionState& state)
     shadowObjects(state.shadowObjects),
     incomingBBIndex(state.incomingBBIndex),
     step_depth(state.step_depth),
-    filtered(state.filtered)
+    filtered(state.filtered),
+    senderPath(state.senderPath)
 {
   for (unsigned int i=0; i<symbolics.size(); i++)
     symbolics[i].first->refCount++;
@@ -148,6 +149,7 @@ ExecutionState *ExecutionState::branch() {
 
   falseState->step_depth = this->step_depth;
   falseState->filtered = this->filtered;
+  falseState->senderPath = this->senderPath;
 
   return falseState;
 }

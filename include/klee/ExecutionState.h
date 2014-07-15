@@ -22,6 +22,10 @@
 #include <set>
 #include <vector>
 
+namespace SPA {
+  class Path;
+}
+
 namespace klee {
   class Array;
   class CallPathNode;
@@ -113,6 +117,8 @@ public:
   unsigned long step_depth;
   // Signals the path is no longer interesting and should be discarded.
   bool filtered;
+  // Path used for seeding symbols in this state and it successors.
+  std::shared_ptr<SPA::Path> senderPath;
 
   std::string getFnAlias(std::string fn);
   void addFnAlias(std::string old_fn, std::string new_fn);

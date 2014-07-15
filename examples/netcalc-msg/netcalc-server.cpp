@@ -26,8 +26,8 @@ void handleQuery( nc_query_t &query, ssize_t size, nc_response_t &response ) {
 		case NC_ADDITION : {
       if (size == sizeof(query)) {
         response.value = query.arg1 + query.arg2;
-      } else if (size == offsetof(nc_query_t, arg2)) {
-        response.value = query.arg1 + 1;
+//       } else if (size == offsetof(nc_query_t, arg2)) {
+//         response.value = query.arg1 + 1;
       } else {
         response.err = NC_BADINPUT;
       }

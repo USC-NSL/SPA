@@ -778,7 +778,7 @@ void SpecialFunctionHandler::handleSpaSeedSymbolCheck(ExecutionState &state,
 
 void SpecialFunctionHandler::handleSpaSeedSymbol(ExecutionState &state,
     KInstruction *target, std::vector<ref<Expr> > &arguments) {
-  assert(arguments.size() == 3 && "Invalid number of arguments to spa_seed_symbol.");
+  assert(arguments.size() == 2 && "Invalid number of arguments to spa_seed_symbol.");
 
   klee::ConstantExpr *ce;
   assert(ce = dyn_cast<ConstantExpr>(executor.toUnique(state, arguments[1])));
@@ -805,35 +805,34 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(ExecutionState &state,
     return;
   }
 
-  assert(ce = dyn_cast<ConstantExpr>(executor.toUnique(state, arguments[2])));
-  uint8_t seedPC = ce->getZExtValue();
+  klee_message("Seeding path %ld, on input: %s", pathID, name.c_str());
 
-  klee_message("Seeding path %ld, on input: %s (%s path constraints)",
-               pathID, name.c_str(), seedPC ? "including" : "excluding");
+  if (! state.senderPath) {
+    klee_message("  Loading path from file.");
+    state.senderPath.reset(SPA::senderPaths->getPath(pathID));
+    assert(state.senderPath && "Attempting to process seed path before it's available.");
 
-  SPA::Path *path = SPA::senderPaths->getPath( pathID );
-  assert(path && "Attempting to process seed path before it's available.");
-
-  std::string type = name.substr(strlen(SPA_MESSAGE_INPUT_PREFIX), std::string::npos);
-
-  // Add client path constraints.
-  if (seedPC) {
-    for (klee::ConstraintManager::const_iterator it = path->getConstraints().begin(),
-                                                 ie = path->getConstraints().end();
-         it != ie; it++) {
+    // Add client path constraints.
+    klee_message("  ANDing in sender path constraints.");
+    for (klee::ConstraintManager::const_iterator it = state.senderPath->getConstraints().begin(),
+                                                ie = state.senderPath->getConstraints().end();
+        it != ie; it++) {
       state.addConstraint(*it);
     }
   }
 
+  std::string type = name.substr(strlen(SPA_MESSAGE_INPUT_PREFIX), std::string::npos);
+  klee_message("  Connecting message type %s.", type.c_str());
+
   std::string senderOutName = std::string(SPA_MESSAGE_OUTPUT_PREFIX) + type;
   // Check if sender outputs this message type.
-  if (path->hasOutput(senderOutName)) {
-    assert(size >= path->getOutputSize(senderOutName) && "Sender and receiver message size mismatch.");
+  if (state.senderPath->hasOutput(senderOutName)) {
+    assert(size >= state.senderPath->getOutputSize(senderOutName) && "Sender and receiver message size mismatch.");
     // Add sender output values = server input array constraint.
-    for (size_t offset = 0; offset < path->getOutputSize(senderOutName); offset++) {
+    for (size_t offset = 0; offset < state.senderPath->getOutputSize(senderOutName); offset++) {
       klee::ref<klee::Expr> e = klee::createDefaultExprBuilder()->Eq(
         os->read8(offset),
-        path->getOutputValue(senderOutName, offset));
+        state.senderPath->getOutputValue(senderOutName, offset));
       if (! state.addAndCheckConstraint(e)) {
         executor.terminateStateOnError(state, "Seeding symbol made constraints trivially UNSAT (incompatible message for this path).", "user.err");
       }
