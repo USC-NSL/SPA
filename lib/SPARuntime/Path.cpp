@@ -2,6 +2,7 @@
  * SPA - Systematic Protocol Analysis Framework
  */
 
+#include <llvm/Support/raw_ostream.h>
 #include "llvm/Support/raw_os_ostream.h"
 #include "llvm/Support/MemoryBuffer.h"
 
@@ -66,6 +67,15 @@ namespace SPA {
 							outputValues[name].push_back( os->read8( i ) );
 			}
 		}
+
+    llvm::raw_null_ostream rnos{};
+    klee::PPrinter p(rnos);
+    for (klee::ConstraintManager::const_iterator it = kState->constraints.begin(), ie = kState->constraints.end(); it != ie; ++it)
+      p.scan(*it);
+    for (const klee::Array *a : p.usedArrays)
+      if (symbolNames.count(a->name) == 0)
+        symbolNames[a->name] = a;
+
 		constraints = kState->constraints;
 	}
 
@@ -93,6 +103,7 @@ namespace SPA {
 		llvm::raw_os_ostream ros(stream);
 		klee::ExprPPrinter::printQuery( ros, path.getConstraints(), exprBuilder->False(),
 			&evalExprs[0], &evalExprs[0] + evalExprs.size(), NULL, NULL, true );
+    ros.flush();
 		stream << SPA_PATH_KQUERY_END << std::endl;
 
 		return stream << SPA_PATH_END << std::endl;

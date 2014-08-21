@@ -3,7 +3,7 @@ TOOLNAME = spa
 
 include $(LEVEL)/Makefile.config
 
-USEDLIBS = spa.a spaRuntime.a kleeCore.a kleeBasic.a kleeModule.a  kleaverSolver.a kleaverExpr.a kleeSupport.a
+USEDLIBS = spa.a kleeCore.a spaRuntime.a kleeBasic.a kleeModule.a  kleaverSolver.a kleaverExpr.a kleeSupport.a
 LINK_COMPONENTS = jit bitreader bitwriter ipo linker engine
 
 ifeq ($(shell echo "$(LLVM_VERSION_MAJOR).$(LLVM_VERSION_MINOR) >= 3.3" | bc), 1)

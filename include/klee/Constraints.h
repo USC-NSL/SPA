@@ -44,7 +44,10 @@ public:
   ref<Expr> simplifyExpr(ref<Expr> e) const;
 
   void addConstraint(ref<Expr> e);
-  
+
+  // SPA added functions to prevent failed assertions.
+  bool addAndCheckConstraint(ref<Expr> e);
+
   bool empty() const {
     return constraints.empty();
   }
@@ -65,8 +68,8 @@ public:
     return constraints == other.constraints;
   }
 
-  // SPA added functions to prevent failed assertions.
-  bool addAndCheckConstraint(ref<Expr> e);
+  virtual void print(llvm::raw_ostream &os) const;
+  void dump() const;
 
 private:
   std::vector< ref<Expr> > constraints;

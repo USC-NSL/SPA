@@ -27,6 +27,10 @@ namespace SPA {
 			return targetDistance.getUtility( state ) - depth.getUtility( state );
 		}
 
+    double getStaticUtility(llvm::Instruction *instruction) {
+      return targetDistance.getStaticUtility(instruction) - depth.getStaticUtility(instruction);
+    }
+
 		std::string getColor( CFG &cfg, CG &cg, llvm::Instruction *instruction ) {
 			return targetDistance.getColor( cfg, cg, instruction );
 		}

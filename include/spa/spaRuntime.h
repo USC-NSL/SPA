@@ -23,6 +23,15 @@ extern "C" {
 	void __attribute__((noinline,weak)) spa_checkpoint() { static uint8_t i = 0; i++; } // Complicated NOP to prevent inlining.
 	void __attribute__((noinline,weak)) spa_return() { static uint8_t i = 0; i++; } // Complicated NOP to prevent inlining.
 	void __attribute__((noinline)) spa_runtime_call( SpaRuntimeHandler_t handler, ... );
+//   void __attribute__((noinline,weak)) spa_cost( int cost ) { static uint8_t i = 0; i++; } // Complicated NOP to prevent inlining.
+
+#ifdef ENABLE_KLEE
+  int32_t spa_seed_symbol_check(uint64_t pathID);
+  void spa_seed_symbol(void *var, uint64_t pathID);
+#else
+  int32_t spa_seed_symbol_check(uint64_t pathID) { return 0; }
+  void spa_seed_symbol(void *var, uint64_t pathID) {}
+#endif
 
 	void spa_api_input_handler( va_list args );
 	void spa_state_handler( va_list args );
@@ -42,8 +51,10 @@ extern "C" {
 
 #ifdef ENABLE_KLEE
 #define spa_assume( x ) klee_assume( x )
+#define spa_warning( x ) klee_warning( x )
 #else // #ifdef ENABLE_KLEE
 #define spa_assume( x ) assert( x )
+#define spa_warning( x ) printf( x )
 #endif // #ifdef ENABLE_KLEE #else
 
 #define spa_tag( var, value ) do { __spa_tag( &var, "spa_tag_" #var, value ); spa_runtime_call( spa_tag_handler, "spa_tag_" #var, value ); } while ( 0 )
@@ -126,6 +137,20 @@ extern "C" {
 #ifdef ENABLE_KLEE
 		uint8_t *symbol = (uint8_t *) malloc( size );
 		klee_make_symbolic( symbol, size, varName );
+
+    static int64_t pathID = -1;
+    if (pathID < 0) {
+      uint64_t choice = 0;
+      klee_make_symbolic( &choice, sizeof( choice ), "spa_internal_PathID" );
+      for (pathID = 0; spa_seed_symbol_check(pathID); pathID++) {
+        if (pathID == choice) {
+          spa_seed_symbol(symbol, pathID);
+          break;
+        }
+      }
+    } else {
+      spa_seed_symbol(symbol, pathID);
+    }
 
 		// Check if initial assumptions are specified.
 		klee_assert( initialValue );
@@ -238,6 +263,7 @@ extern "C" {
 #define spa_waypoint( id )
 
 #define spa_assume( x )
+#define spa_warning( x )
 
 #define spa_api_entry()
 #define spa_message_handler_entry()

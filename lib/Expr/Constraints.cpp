@@ -224,3 +224,15 @@ bool ConstraintManager::rewriteAndCheckConstraints(ExprVisitor &visitor) {
   }
   return true;
 }
+
+void ConstraintManager::print(llvm::raw_ostream &os) const {
+  for (auto c : constraints) {
+    c->print(os);
+    os << '\n';
+  }
+}
+
+void ConstraintManager::dump() const {
+  this->print(llvm::errs());
+  llvm::errs() << "\n";
+}

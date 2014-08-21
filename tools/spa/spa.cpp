@@ -61,6 +61,12 @@ namespace {
 
 	llvm::cl::opt<std::string, true> InputFileOpt(llvm::cl::desc("<input bytecode>"),
 		llvm::cl::Positional, llvm::cl::location(InputFile), llvm::cl::init("-"));
+
+  llvm::cl::opt<std::string> SenderPaths( "sender-paths",
+    llvm::cl::desc( "Specifies a path-file to with sender path to seed receiving inputs with." ) );
+
+  llvm::cl::opt<bool> FollowSenderPaths( "follow-sender-paths",
+    llvm::cl::desc("Tells SPA to follow the specified sender path-file for new paths as they are generated (joint symbolic execution)."));
 }
 
 class SpaClientPathFilter : public SPA::PathFilter {
@@ -331,30 +337,38 @@ int main(int argc, char **argv, char **envp) {
 
 	if ( DumpCFG.size() > 0 ) {
 		klee::klee_message( "Dumping CFG to: %s", DumpCFG.getValue().c_str() );
-		std::ofstream dotFile( DumpCFG.getValue().c_str() );
-		assert( dotFile.is_open() && "Unable to open dump file." );
+// 		std::ofstream dotFile( DumpCFG.getValue().c_str() );
+// 		assert( dotFile.is_open() && "Unable to open dump file." );
 
 		std::map<SPA::InstructionFilter *, std::string> annotations;
 		annotations[new SPA::WhitelistIF( checkpoints )] = "style = \"filled\" fillcolor = \"red\"";
 // 		if ( filter )
 // 			annotations[new SPA::NegatedIF( filter )] = "style = \"filled\" fillcolor = \"grey\"";
 
-		cfg.dump( dotFile, cg, /*filter*/ NULL, annotations, /*utility*/ /*waypointUtility*/ /*filter*/ /*NULL*/ new SPA::TargetDistanceUtility( module, cfg, cg, checkpoints ), /*FULL*/ /*BASICBLOCK*/ FUNCTION );
+// 		cfg.dump( dotFile, cg, /*filter*/ NULL, annotations, /*utility*/ /*waypointUtility*/ /*filter*/ /*NULL*/ new SPA::TargetDistanceUtility( module, cfg, cg, checkpoints ), /*FULL*/ /*BASICBLOCK*/ FUNCTION );
 // 		cg.dump( dotFile );
+    cfg.dumpDir(DumpCFG.getValue(), cg, annotations, /*utility*/ /*waypointUtility*/ /*filter*/ /*NULL*/ new SPA::TargetDistanceUtility( module, cfg, cg, checkpoints ));
 
-		dotFile.flush();
-		dotFile.close();
+// 		dotFile.flush();
+// 		dotFile.close();
 		return 0;
 	}
 
 	if ( Client ) {
-		spa.setOutputTerminalPaths( false );
+		spa.setOutputTerminalPaths( true );
 		spa.setPathFilter( new SpaClientPathFilter() );
 	} else if ( Server ) {
-		spa.setOutputTerminalPaths( false );
+		spa.setOutputTerminalPaths( true );
 		spa.setPathFilter( new SpaServerPathFilter() );
 	}
 
+  std::ifstream ifs;
+	if (! SenderPaths.empty()) {
+    klee::klee_message("   Seeding paths from sender path-file: %s", SenderPaths.c_str());
+    ifs.open(SenderPaths);
+    assert(ifs.good() && "Unable to open sender path file.");
+    spa.setSenderPathLoader(new SPA::PathLoader(ifs), FollowSenderPaths);
+  }
 
 	klee::klee_message( "Starting SPA." );
 	spa.start();

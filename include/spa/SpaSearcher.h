@@ -32,6 +32,7 @@ namespace SPA {
 		void reorderState( klee::ExecutionState *state );
 		void reorderAllStates();
 		void saveStates();
+    void printStats();
 
 	public:
 		explicit SpaSearcher( std::deque<StateUtility *> _stateUtilities )

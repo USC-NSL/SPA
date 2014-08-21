@@ -38,15 +38,26 @@ nc_value_t executeQuery( nc_operator_t op, nc_value_t arg1, nc_value_t arg2 ) {
 // 	assert( (op != NC_MODULO || arg2 != 0) && "Modulo by zero.");
 
 	nc_query_t query;
-	query.op = op;
-	query.arg1 = arg1;
-	query.arg2 = arg2;
+  ssize_t size;
 
-	spa_msg_output_var( query );
+  query.op = op;
+  if (op == NC_ADDITION && (arg1 == 1 || arg2 == 1)) {
+    query.arg1 = (arg2 == 1) ? arg1 : arg2;
+    size = offsetof(nc_query_t, arg2);
+  } else if (op == NC_SUBTRACTION && arg1 == 0) {
+    query.arg1 = arg2;
+    size = offsetof(nc_query_t, arg2);
+  } else {
+    query.arg1 = arg1;
+    query.arg2 = arg2;
+    size = sizeof(query);
+  }
+
+  spa_msg_output(&query, size, sizeof(query), "query");
 
 	// Send query.
 #ifndef ENABLE_KLEE
-	assert( sendto( sock, &query, sizeof( query ), 0, server->ai_addr, server->ai_addrlen ) == sizeof( query ) );
+  assert(sendto(sock, &query, size, 0, server->ai_addr, server->ai_addrlen) == size);
 #endif
 	// Get response.
 	nc_response_t response;

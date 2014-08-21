@@ -30,6 +30,14 @@ namespace SPA {
 		 */
 		virtual double getUtility( klee::ExecutionState *state ) = 0;
 
+    /**
+     * Provides a utility metric to a given instruction (used for static debugging).
+     * 
+     * @param instruction The instruction to check.
+     * @return The utility metric for the given instruction (higher = more useful).
+     */
+    virtual double getStaticUtility(llvm::Instruction *instruction) { return 0; }
+
 		/**
 		 * Gives a Graphviz color for a given node to aid in debugging.
 		 */

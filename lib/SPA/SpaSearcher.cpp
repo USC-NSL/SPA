@@ -4,10 +4,12 @@
 
 #include <fstream>
 #include <sstream>
+#include <chrono>
 
 #include <spa/SpaSearcher.h>
 
 #include <llvm/Support/CommandLine.h>
+#include <llvm/Support/raw_ostream.h>
 #include "../Core/Common.h"
 #include <../Core/Executor.h>
 #include <klee/ExecutionState.h>
@@ -16,8 +18,9 @@
 #include <llvm/IR/BasicBlock.h>
 
 #define SAVE_STATE_PERIOD 30 // seconds
-#define QUEUE_LIMIT	100000
-#define DROP_TO		 90000
+#define PRINT_STATS_PERIOD 1000 // ms
+// #define QUEUE_LIMIT	1000000
+// #define DROP_TO		 900000
 
 
 namespace SPA {
@@ -57,6 +60,7 @@ namespace SPA {
 
 	std::string utilityStr( const std::vector<double> &utility ) {
 		std::stringstream result;
+    result.precision(10);
 		for ( std::vector<double>::const_iterator it = utility.begin(), ie = utility.end(); it != ie; it++ )
 			result << (it != utility.begin() ? "," : "") << (-*it);
 		return result.str();
@@ -116,6 +120,7 @@ namespace SPA {
 		else
 			reorderState( states.begin()->second );
 
+#ifdef QUEUE_LIMIT
 		if ( (! states.begin()->second->filtered) && states.size() > QUEUE_LIMIT ) {
 			int n = states.size() - DROP_TO;
 			klee::klee_message( "[SpaSearcher] Dropping %d states.", n );
@@ -124,22 +129,20 @@ namespace SPA {
 				it->second->filtered = true;
 			reorderAllStates();
 		}
+#endif
 
 // 		if ( SaveState.size() > 0 && difftime( time( NULL ), lastSaved ) > SAVE_STATE_PERIOD ) {
 // 			saveStates();
 // 			lastSaved = time( NULL );
 // 		}
 
-// 		klee::klee_message( "[SpaSearcher] Queued: %ld; Utility Range: [%s; %s]; Processed: %ld; Filtered: %ld",
-//                         states.size(),
-//                         (states.size() ? utilityStr( states.rbegin()->first ).c_str() : ""),
-//                         (states.size() ? utilityStr( states.begin()->first ).c_str() : ""),
-//                         statesDequeued,
-//                         statesFiltered );
+    printStats();
 
-// 		klee_message( "[SpaSearcher] Selecting state:" );
-// 		klee::c9::printStateStack( std::cerr, *states.begin()->second ) << std::endl;
-		return *states.begin()->second;
+		klee::ExecutionState &state = *states.begin()->second;
+// 		klee::klee_message( "[SpaSearcher] Selecting state with cost %s:",
+//                         utilityStr( states.begin()->first ).c_str() );
+// 		state.dumpStack(llvm::errs());
+		return state;
 	}
 
 	void SpaSearcher::update( klee::ExecutionState *current, const std::set<klee::ExecutionState *> &addedStates, const std::set<klee::ExecutionState *> &removedStates) {
@@ -154,7 +157,24 @@ namespace SPA {
 		}
 		statesDequeued += removedStates.size();
 
+    printStats();
+
 		if ( states.empty() )
 			klee::klee_message( "[SpaSearcher] State queue is empty!" );
 	}
+
+  void SpaSearcher::printStats() {
+    static auto last = std::chrono::steady_clock::now();
+    auto now = std::chrono::steady_clock::now();
+    if (std::chrono::duration_cast<std::chrono::milliseconds>(now - last).count() > PRINT_STATS_PERIOD) {
+      last = now;
+      klee::klee_message( "[SpaSearcher] Queued: %ld; Utility Range: [%s; %s]; Processed: %ld; Filtered: %ld",
+                          states.size(),
+                          (states.size() ? utilityStr( states.rbegin()->first ).c_str() : ""),
+                          (states.size() ? utilityStr( states.begin()->first ).c_str() : ""),
+                          statesDequeued,
+                          statesFiltered );
+    }
+  }
 }
+

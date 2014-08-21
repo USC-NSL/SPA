@@ -13,13 +13,20 @@
 // #define SPDY_VERSION		SPDYLAY_PROTO_SPDY3
 #define REQUEST_METHOD		"GET"
 #define REQUEST_SCHEME		"http"
-#define REQUEST_PATH		"/"
-#define REQUEST_HOST		"127.0.0.1"
-#define REQUEST_PORT		8000
+#define REQUEST_PATH			"/"
+#define REQUEST_HOST			"127.0.0.1"
+#define REQUEST_PORT			8000
 #define REQUEST_VERSION		"HTTP/1.1"
 // #define REQUEST_PRIORITY	3
-#define REQUEST_MAXNAME		5
-#define REQUEST_MAXVALUE	5
+// #define REQUEST_MAXNVBUF 1000
+// #define REQUEST_MAXNVPAIRS 10
+#define REQUEST_MAXMETHOD		5
+#define REQUEST_MAXPATH			10
+#define REQUEST_MAXVERSION	9
+#define REQUEST_MAXHOST			10
+#define REQUEST_MAXSCHEME		6
+#define REQUEST_MAXNAME			10
+#define REQUEST_MAXVALUE		10
 #define RECEIVE_BUFFER_SIZE	1500
 
 #define QUOTE( str ) #str
@@ -172,60 +179,63 @@ void __attribute__((noinline,used)) spa_SendRequest() {
 		NULL
 	};
 #elif defined( ENABLE_SPA ) // #ifdef ANALYZE_RESPONSE
-	char	name1[REQUEST_MAXNAME + 1], value1[REQUEST_MAXVALUE + 1],
-				name2[REQUEST_MAXNAME + 1], value2[REQUEST_MAXVALUE + 1],
-				name3[REQUEST_MAXNAME + 1], value3[REQUEST_MAXVALUE + 1],
-				name4[REQUEST_MAXNAME + 1], value4[REQUEST_MAXVALUE + 1],
-				name5[REQUEST_MAXNAME + 1], value5[REQUEST_MAXVALUE + 1];
-	const char *nv[2 * (3 + 1)];
-	uint8_t numPairs = 0;
-	spa_api_input_var( numPairs );
-	spa_assume( numPairs <= 3 );
-	if ( numPairs >= 1 ) {
-		spa_api_input_var( name1 );
-		spa_assume( name1[sizeof( name1 ) - 1] == '\0' );
-		spa_api_input_var( value1 );
-		spa_assume( value1[sizeof( value1 ) - 1] == '\0' );
-		nv[0] = name1;
-		nv[1] = value1;
-		nv[2] = NULL;
-	}
-	if ( numPairs >= 2 ) {
-		spa_api_input_var( name2 );
-		spa_assume( name2[sizeof( name2 ) - 1] == '\0' );
-		spa_api_input_var( value2 );
-		spa_assume( value2[sizeof( value2 ) - 1] == '\0' );
-		nv[2] = name2;
-		nv[3] = value2;
-		nv[4] = NULL;
-	}
-	if ( numPairs >= 3 ) {
-		spa_api_input_var( name3 );
-		spa_assume( name3[sizeof( name3 ) - 1] == '\0' );
-		spa_api_input_var( value3 );
-		spa_assume( value3[sizeof( value3 ) - 1] == '\0' );
-		nv[4] = name3;
-		nv[5] = value3;
-		nv[6] = NULL;
-	}
-	if ( numPairs >= 4 ) {
-		spa_api_input_var( name4 );
-		spa_assume( name4[sizeof( name4 ) - 1] == '\0' );
-		spa_api_input_var( value4 );
-		spa_assume( value4[sizeof( value4 ) - 1] == '\0' );
-		nv[6] = name4;
-		nv[7] = value4;
-		nv[8] = NULL;
-	}
-	if ( numPairs >= 5 ) {
-		spa_api_input_var( name5 );
-		spa_assume( name5[sizeof( name5 ) - 1] == '\0' );
-		spa_api_input_var( value5 );
-		spa_assume( value5[sizeof( value5 ) - 1] == '\0' );
-		nv[8] = name5;
-		nv[9] = value5;
-		nv[10] = NULL;
-	}
+//   char nvbuf[REQUEST_MAXNVBUF];
+//   spa_api_input_var(nvbuf);
+//   spa_assume(nvbuf[sizeof(nvbuf) - 1] == '\0');
+// 
+//   uint16_t numPairs;
+//   spa_api_input_var(numPairs);
+//   spa_assume(numPairs <= REQUEST_MAXNVPAIRS);
+// 
+// 	const char *nv[REQUEST_MAXNVPAIRS * 2 + 2];
+//   int i, j, k;
+//   for (i = 0, j = 0; i < sizeof(nvbuf) && j < numPairs * 2; i++) {
+//     if (i == 0 || nvbuf[i - 1] == '\0') {
+//       nv[j++] = &nvbuf[i];
+//     }
+//   }
+//   printf("j = %d.\n", j);
+//   assert(j & 1 == 0);
+//   nv[j] = NULL;
+//   nv[j + 1] = NULL;
+
+  char method[REQUEST_MAXMETHOD];
+  spa_api_input_var(method);
+  spa_assume(method[sizeof(method) - 1] == '\0');
+
+  char path[REQUEST_MAXPATH];
+  spa_api_input_var(path);
+  spa_assume(path[sizeof(path) - 1] == '\0');
+
+  char version[REQUEST_MAXVERSION];
+  spa_api_input_var(version);
+  spa_assume(version[sizeof(version) - 1] == '\0');
+
+  char host[REQUEST_MAXHOST];
+  spa_api_input_var(host);
+  spa_assume(host[sizeof(host) - 1] == '\0');
+
+  char scheme[REQUEST_MAXSCHEME];
+  spa_api_input_var(scheme);
+  spa_assume(scheme[sizeof(scheme) - 1] == '\0');
+
+  char name[REQUEST_MAXNAME];
+  spa_api_input_var(name);
+  spa_assume(name[sizeof(name) - 1] == '\0');
+
+  char value[REQUEST_MAXVALUE];
+  spa_api_input_var(value);
+  spa_assume(value[sizeof(value) - 1] == '\0');
+
+  const char *nv[] = {
+    ":method",  method,
+    ":path",  path,
+    ":version", version,
+    ":host",  host,
+    ":scheme", scheme,
+    name, value,
+    NULL
+  };
 #else // #ifdef ANALYZE_RESPONSE #elif defined( ENABLE_SPA )
 	const char *nv[] = {
 		":method",	REQUEST_METHOD,

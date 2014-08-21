@@ -121,10 +121,10 @@ BadInputs.tested: BadInputs.untested $(TEST_TARGETS)
 	spaTest2Str $< $@ 2>&1 | tee $@.log
 
 client.dot: client.bc $(SPA_EXE)
-	spa --stand-alone --dump-cfg $@ --client $< 2>&1 | tee $@.log
+	spa --dump-cfg $@ --client $< 2>&1 | tee $@.log
 
 server.dot: server.bc $(SPA_EXE)
-	spa --stand-alone --dump-cfg $@ --server $< 2>&1 | tee $@.log
+	spa --dump-cfg $@ --server $< 2>&1 | tee $@.log
 
 %.pdf: %.dot
 	dot -Tpdf -o $@ $<

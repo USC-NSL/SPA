@@ -22,6 +22,10 @@
 #include <set>
 #include <vector>
 
+namespace SPA {
+  class Path;
+}
+
 namespace klee {
   class Array;
   class CallPathNode;
@@ -109,15 +113,19 @@ public:
   unsigned incomingBBIndex;
 
   // SPA state
+  // Execution depth in steps.
+  unsigned long step_depth;
   // Signals the path is no longer interesting and should be discarded.
   bool filtered;
+  // Path used for seeding symbols in this state and it successors.
+  std::shared_ptr<SPA::Path> senderPath;
 
   std::string getFnAlias(std::string fn);
   void addFnAlias(std::string old_fn, std::string new_fn);
   void removeFnAlias(std::string fn);
   
 private:
-  ExecutionState() : fakeState(false), underConstrained(0), ptreeNode(0), filtered(false) {}
+  ExecutionState() : fakeState(false), underConstrained(0), ptreeNode(0), step_depth(0), filtered(false) {}
 
 public:
   ExecutionState(KFunction *kf);
@@ -138,6 +146,9 @@ public:
   void addSymbolic(const MemoryObject *mo, const Array *array);
   void addConstraint(ref<Expr> e) { 
     constraints.addConstraint(e); 
+  }
+  bool addAndCheckConstraint(ref<Expr> e) { 
+    return constraints.addAndCheckConstraint(e); 
   }
 
   bool merge(const ExecutionState &b);

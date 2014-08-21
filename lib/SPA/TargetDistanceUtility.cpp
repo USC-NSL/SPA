@@ -64,7 +64,7 @@ namespace SPA {
 
 			// Check cost of successors.
 			for ( it = cfg.getSuccessors( inst ).begin(), ie = cfg.getSuccessors( inst ).end(); it != ie; it++ ) {
-				double d = cfg.getSuccessors( inst ).size() > 1 ? distances[*it].first + 1 : distances[*it].first;
+				double d = distances[*it].first + 1;
 				if ( distances[inst].first > d ) {
 					distances[inst] = std::pair<double, bool>( d, true );
 					updated = true;
@@ -130,7 +130,7 @@ namespace SPA {
 					depthWorklist.erase( inst );
 
 					for ( CFG::iterator pit = cfg.getPredecessors( inst ).begin(), pie = cfg.getPredecessors( inst ).end(); pit != pie; pit++ ) {
-						double d = cfg.getPredecessors( inst ).size() > 1 ? depths[*pit] + 1 : depths[*pit];
+						double d = depths[*pit] + 1;
 						if ( d < depths[inst] ) {
 							depths[inst] = d;
 							depthWorklist.insert( cfg.getSuccessors( inst ).begin(), cfg.getSuccessors( inst ).end() );
@@ -167,7 +167,7 @@ namespace SPA {
 			// Check cost of successors.
 			bool updated = false;
 			for ( it = cfg.getSuccessors( inst ).begin(), ie = cfg.getSuccessors( inst ).end(); it != ie; it++ ) {
-				double d = cfg.getSuccessors( inst ).size() > 1 ? distances[*it].first + 1 : distances[*it].first;
+				double d = distances[*it].first + 1;
 				if ( distances[inst].first > d ) {
 					distances[inst] = std::pair<double, bool>( d, false );
 					updated = true;
@@ -194,6 +194,11 @@ namespace SPA {
 		// No final state was found.
 		return UTILITY_PROCESS_LAST;
 	}
+
+  double TargetDistanceUtility::getStaticUtility(llvm::Instruction *instruction) {
+    assert(instruction);
+    return - getDistance(instruction);
+  }
 
 	std::string TargetDistanceUtility::getColor( CFG &cfg, CG &cg, llvm::Instruction *instruction ) {
 		double minPartial = +INFINITY, maxPartial = -INFINITY,

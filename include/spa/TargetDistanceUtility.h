@@ -32,6 +32,7 @@ namespace SPA {
 		TargetDistanceUtility( llvm::Module *module, CFG &cfg, CG &cg, std::set<llvm::Instruction *> &targets );
 		TargetDistanceUtility( llvm::Module *module, CFG &cfg, CG &cg, InstructionFilter &filter );
 		double getUtility( klee::ExecutionState *state );
+    double getStaticUtility(llvm::Instruction *instruction);
 		std::string getColor( CFG &cfg, CG &cg, llvm::Instruction *instruction );
 	};
 }
