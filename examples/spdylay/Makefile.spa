@@ -24,7 +24,7 @@ default: all
 
 all: $(TARGETS) $(BC_TARGETS) $(LOG_TARGETS) $(TEST_TARGETS)
 
-run-spa: BadInputs.tested
+run-spa: BadInputs.tested.txt BadInputs.default
 
 out/llvm/Makefile:
 	mkdir -p out/llvm
@@ -108,17 +108,26 @@ out/llvm/lib/.libs/libspdylay.a: out/llvm/Makefile
 spa-client.paths: spa-client.bc $(SPA_EXE)
 	$(SPA) --path-file $@ --client $< 2>&1 | tee $@.log
 
-spa-server.paths: spa-server.bc $(SPA_EXE)
-	$(SPA) --path-file $@ --server $< 2>&1 | tee $@.log
+# spa-server.paths: spa-server.bc $(SPA_EXE)
+# 	$(SPA) --path-file $@ --server $< 2>&1 | tee $@.log
+# spa-server.paths: spa-server.bc spa-client.paths $(SPA_EXE)
+# 	$(SPA) --path-file $@ -sender-paths spa-client.paths --server $< 2>&1 | tee $@.log
+spa-server.paths: spa-server.bc spa-client.paths
+	./parallel-spa-server.sh $^ $@
 
-BadInputs.untested: $(PATHS)
-	spaBadInputs -p 8 -client spa-client.paths -server spa-server.paths -o $@ -d $@.debug 2>&1 | tee $@.log
+# BadInputs.untested: $(PATHS)
+# 	spaBadInputs -p 8 -client spa-client.paths -server spa-server.paths -o $@ -d $@.debug 2>&1 | tee $@.log
+BadInputs.untested: spa-server.paths
+	spaBadInputs -p 8 -server spa-server.paths -o $@ -d $@.debug 2>&1 | tee $@.log
 
 BadInputs.tested: BadInputs.untested $(TEST_TARGETS)
 	spaE2ETest $< $@ './spa-client.e2etest.exe' './spa-server.e2etest.exe' 2>&1 | tee $@.log
 
 %.tested.txt: %.tested
 	spaTest2Str $< $@ 2>&1 | tee $@.log
+
+BadInputs.default: BadInputs.tested
+	spaAnalyzeTest $< 2>&1 | tee $@.log
 
 client.dot: client.bc $(SPA_EXE)
 	spa --dump-cfg $@ --client $< 2>&1 | tee $@.log
