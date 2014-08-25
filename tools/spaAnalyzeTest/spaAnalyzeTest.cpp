@@ -125,10 +125,10 @@ static struct {
 	TestClassifier classifier;
 	const char *outFileName;
 } classifiers[] = {
-// 	{ spdylayDiffVersion, "BadInputs.spdylayDiffVersion" },
-// 	{ spdylayBadName, "BadInputs.spdylayBadName" },
-// 	{ spdylayBadValue, "BadInputs.spdylayBadValue" },
-// 	{ spdylayNoDataLength, "BadInputs.spdylayNoDataLength" },
+	{ spdylayDiffVersion, "BadInputs.spdylayDiffVersion" },
+	{ spdylayBadName, "BadInputs.spdylayBadName" },
+	{ spdylayBadValue, "BadInputs.spdylayBadValue" },
+	{ spdylayNoDataLength, "BadInputs.spdylayNoDataLength" },
 	{ sipFromBadChar, "BadInputs.sipFromBadChar" },
 	{ sipFromNoScheme, "BadInputs.sipFromNoScheme" },
 	{ sipToConfusedScheme, "BadInputs.sipToConfusedScheme" },
