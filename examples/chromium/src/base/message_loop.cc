@@ -144,7 +144,9 @@ MessageLoop::MessageLoop(Type type)
       os_modal_loop_(false),
 #endif  // OS_WIN
       next_sequence_num_(0) {
+#ifndef ENABLE_KLEE
   DCHECK(!current()) << "should only have one message loop per thread";
+#endif
   lazy_tls_ptr.Pointer()->Set(this);
 
   message_loop_proxy_ = new MessageLoopProxyImpl();

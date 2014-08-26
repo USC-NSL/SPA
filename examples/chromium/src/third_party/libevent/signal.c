@@ -97,6 +97,7 @@ evsignal_init(struct event_base *base)
 {
 	int i;
 
+#ifndef ENABLE_KLEE
 	/* 
 	 * Our signal handler is going to write to one end of the socket
 	 * pair to wake up our event loop.  The event loop then scans for
@@ -116,6 +117,7 @@ evsignal_init(struct event_base *base)
 
 	FD_CLOSEONEXEC(base->sig.ev_signal_pair[0]);
 	FD_CLOSEONEXEC(base->sig.ev_signal_pair[1]);
+#endif
 	base->sig.sh_old = NULL;
 	base->sig.sh_old_max = 0;
 	base->sig.evsignal_caught = 0;

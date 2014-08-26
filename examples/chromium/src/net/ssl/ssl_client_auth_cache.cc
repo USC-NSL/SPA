@@ -10,7 +10,9 @@
 namespace net {
 
 SSLClientAuthCache::SSLClientAuthCache() {
+#ifndef ENABLE_KLEE
   CertDatabase::GetInstance()->AddObserver(this);
+#endif
 }
 
 SSLClientAuthCache::~SSLClientAuthCache() {

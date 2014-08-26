@@ -47,6 +47,7 @@ HttpAuthHandlerRegistryFactory* HttpAuthHandlerFactory::CreateDefault(
   DCHECK(host_resolver);
   HttpAuthHandlerRegistryFactory* registry_factory =
       new HttpAuthHandlerRegistryFactory();
+#ifndef ENABLE_KLEE
   registry_factory->RegisterSchemeFactory(
       "basic", new HttpAuthHandlerBasic::Factory());
   registry_factory->RegisterSchemeFactory(
@@ -70,6 +71,7 @@ HttpAuthHandlerRegistryFactory* HttpAuthHandlerFactory::CreateDefault(
   ntlm_factory->set_sspi_library(new SSPILibraryDefault());
 #endif
   registry_factory->RegisterSchemeFactory("ntlm", ntlm_factory);
+#endif
   return registry_factory;
 }
 
