@@ -556,6 +556,7 @@ LogMessage::LogMessage(const char* file, int line, LogSeverity severity,
 }
 
 LogMessage::~LogMessage() {
+#ifndef ENABLE_KLEE
   // TODO(port): enable stacktrace generation on LOG_FATAL once backtrace are
   // working in Android.
 #if  !defined(NDEBUG) && !defined(OS_ANDROID) && !defined(OS_NACL)
@@ -672,6 +673,7 @@ LogMessage::~LogMessage() {
       DisplayDebugMessageInDialog(stream_.str());
     }
   }
+#endif
 }
 
 // writes the common header info to the stream

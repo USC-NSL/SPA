@@ -14,8 +14,12 @@
 // enabled.  For example a non-official release build may have
 // DCHECK_ALWAYS_ON undefined (and therefore ThreadChecker would be
 // disabled) but have DCHECKs enabled at runtime.
+#ifndef ENABLE_KLEE
 #if (!defined(NDEBUG) || defined(DCHECK_ALWAYS_ON))
 #define ENABLE_THREAD_CHECKER 1
+#else
+#define ENABLE_THREAD_CHECKER 0
+#endif
 #else
 #define ENABLE_THREAD_CHECKER 0
 #endif

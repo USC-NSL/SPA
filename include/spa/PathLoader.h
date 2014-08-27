@@ -29,6 +29,8 @@ namespace SPA {
 
 		Path *getPath();
     Path *getPath(uint64_t pathID);
+    std::string getPathText();
+    std::string getPathText(uint64_t pathID);
     bool skipPath();
     bool skipPaths(uint64_t pathID);
 	};

@@ -1713,7 +1713,9 @@ HostResolverImpl::HostResolverImpl(
   EnsureWinsockInit();
 #endif
 #if defined(OS_POSIX) && !defined(OS_MACOSX)
+#ifndef ENABLE_KLEE
   new LoopbackProbeJob(weak_ptr_factory_.GetWeakPtr());
+#endif
 #endif
   NetworkChangeNotifier::AddIPAddressObserver(this);
   NetworkChangeNotifier::AddDNSObserver(this);

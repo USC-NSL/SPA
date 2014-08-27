@@ -364,9 +364,9 @@ int main(int argc, char **argv, char **envp) {
 
   std::ifstream ifs;
 	if (! SenderPaths.empty()) {
+    klee::klee_message("   Seeding paths from sender path-file: %s", SenderPaths.c_str());
     ifs.open(SenderPaths);
     assert(ifs.good() && "Unable to open sender path file.");
-    klee::klee_message("   Seeding paths from sender path-file: %s", SenderPaths.c_str());
     spa.setSenderPathLoader(new SPA::PathLoader(ifs), FollowSenderPaths);
   }
 

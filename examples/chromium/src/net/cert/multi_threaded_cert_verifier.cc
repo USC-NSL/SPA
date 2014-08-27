@@ -389,7 +389,9 @@ MultiThreadedCertVerifier::MultiThreadedCertVerifier(
       inflight_joins_(0),
       verify_proc_(verify_proc),
       trust_anchor_provider_(NULL) {
+#ifndef ENABLE_KLEE
   CertDatabase::GetInstance()->AddObserver(this);
+#endif
 }
 
 MultiThreadedCertVerifier::~MultiThreadedCertVerifier() {

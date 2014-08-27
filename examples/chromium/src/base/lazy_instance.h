@@ -151,6 +151,7 @@ class LazyInstance {
     // private_instance_ > creating needs to acquire visibility over
     // the associated data (private_buf_). Pairing Release_Store is in
     // CompleteLazyInstance().
+#ifndef ENABLE_KLEE
     subtle::AtomicWord value = subtle::Acquire_Load(&private_instance_);
     if (!(value & kLazyInstanceCreatedMask) &&
         internal::NeedsLazyInstance(&private_instance_)) {
@@ -160,6 +161,7 @@ class LazyInstance {
       internal::CompleteLazyInstance(&private_instance_, value, this,
                                      Traits::kRegisterOnExit ? OnExit : NULL);
     }
+#endif
 
     // This annotation helps race detectors recognize correct lock-less
     // synchronization between different threads calling Pointer().

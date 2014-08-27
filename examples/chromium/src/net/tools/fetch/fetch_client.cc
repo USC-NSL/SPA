@@ -126,10 +126,12 @@ class Client {
   scoped_refptr<net::IOBuffer> buffer_;
 };
 
-int main(int argc, char** argv) {
+int original_main(int argc, char** argv) {
   base::AtExitManager exit;
+#ifndef ENABLE_KLEE
   base::StatsTable table("fetchclient", 50, 1000);
   table.set_current(&table);
+#endif
 
   CommandLine::Init(argc, argv);
   const CommandLine& parsed_command_line = *CommandLine::ForCurrentProcess();
@@ -155,11 +157,17 @@ int main(int argc, char** argv) {
   if (!url.length())
     usage(argv[0]);
   int client_limit = 1;
+#ifndef ENABLE_KLEE
   if (parsed_command_line.HasSwitch("n")) {
     base::StringToInt(parsed_command_line.GetSwitchValueASCII("n"),
                       &client_limit);
   }
+#endif
+#ifndef ENABLE_KLEE
   bool use_cache = parsed_command_line.HasSwitch("use-cache");
+#else
+  bool use_cache = false;
+#endif
 
   // Do work here.
   MessageLoop loop(MessageLoop::TYPE_IO);
@@ -206,8 +214,10 @@ int main(int argc, char** argv) {
   }
 
   {
+#ifndef ENABLE_KLEE
     base::StatsCounterTimer driver_time("FetchClient.total_time");
     base::StatsScope<base::StatsCounterTimer> scope(driver_time);
+#endif
 
     Client** clients = new Client*[client_limit];
     for (int i = 0; i < client_limit; i++)
@@ -217,6 +227,7 @@ int main(int argc, char** argv) {
   }
 
   // Print Statistics here.
+#ifndef ENABLE_KLEE
   int num_clients = table.GetCounterValue("c:FetchClient.requests");
   int test_time = table.GetCounterValue("t:FetchClient.total_time");
   int bytes_read = table.GetCounterValue("c:FetchClient.bytes_read");
@@ -253,7 +264,12 @@ int main(int argc, char** argv) {
     }
     printf("</stats>\n");
   }
+#endif
   return 0;
+}
+
+int main(int argc, char** argv) {
+  original_main(argc, argv);
 }
 
 void __attribute__((used)) SpaEntry() {
@@ -262,5 +278,5 @@ void __attribute__((used)) SpaEntry() {
 	char arg0[] = "fetch_client";
 	char empty[] = "";
 	char *argv[2] = {arg0, empty};
-	main(0, argv);
+	original_main(0, argv);
 }

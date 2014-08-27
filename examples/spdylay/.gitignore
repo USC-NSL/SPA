@@ -39,3 +39,5 @@ spa-client.e2etest.exe
 spa-server.e2etest.exe
 spa-client.log.exe
 spa-server.log.exe
+spa-client-*.paths
+spa-server-spa-client-*.paths
