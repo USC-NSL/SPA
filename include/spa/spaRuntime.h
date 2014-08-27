@@ -29,8 +29,8 @@ extern "C" {
   int32_t spa_seed_symbol_check(uint64_t pathID);
   void spa_seed_symbol(void *var, uint64_t pathID);
 #else
-  int32_t spa_seed_symbol_check(uint64_t pathID) { return 0; }
-  void spa_seed_symbol(void *var, uint64_t pathID) {}
+	int32_t __attribute__((weak)) spa_seed_symbol_check(uint64_t pathID) { return 0; }
+	void __attribute__((weak)) spa_seed_symbol(void *var, uint64_t pathID) {}
 #endif
 
 	void spa_api_input_handler( va_list args );
