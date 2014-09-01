@@ -12,4 +12,12 @@ parallel --progress --joblog $3.joblog \
   /home/lpedrosa/spa/Release+Asserts/bin/spa --path-file spa-server-{} -sender-paths {} --server $1" \
   ::: spa-client-*.paths 2>&1 | tee $3.log
 
+# parallel --progress --joblog $3.joblog \
+#   --controlmaster -v --tag --ungroup --linebuffer \
+#   -S david@192.168.3.6 -S david@192.168.3.254 \
+#   --basefile $1 --transfer --return spa-server-{} --cleanup \
+#   "echo Basefile: $1; echo Transfer: {}; echo Return: spa-server-{}; echo ls:; ls; \
+#   /home/david/Projects/spa/Release+Asserts/bin/spa --path-file spa-server-{} -sender-paths {} --server $1" \
+#   ::: spa-client-*.paths 2>&1 | tee $3.log
+
 cat spa-server-*.paths > $3
