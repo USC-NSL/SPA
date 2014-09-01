@@ -19,14 +19,14 @@
 #define REQUEST_VERSION		"HTTP/1.1"
 // #define REQUEST_PRIORITY	3
 // #define REQUEST_MAXNVBUF 1000
-// #define REQUEST_MAXNVPAIRS 10
-#define REQUEST_MAXMETHOD		5
+// #define REQUEST_MAXNVPAIRS 3
+// #define REQUEST_MAXMETHOD		5
 #define REQUEST_MAXPATH			10
-#define REQUEST_MAXVERSION	9
-#define REQUEST_MAXHOST			10
-#define REQUEST_MAXSCHEME		6
-#define REQUEST_MAXNAME			10
-#define REQUEST_MAXVALUE		10
+// #define REQUEST_MAXVERSION	9
+// #define REQUEST_MAXHOST			10
+// #define REQUEST_MAXSCHEME		6
+// #define REQUEST_MAXNAME			2
+// #define REQUEST_MAXVALUE		1
 #define RECEIVE_BUFFER_SIZE	1500
 
 #define QUOTE( str ) #str
@@ -179,6 +179,23 @@ void __attribute__((noinline,used)) spa_SendRequest() {
 		NULL
 	};
 #elif defined( ENABLE_SPA ) // #ifdef ANALYZE_RESPONSE
+//   uint8_t numPairs = 0;
+//   char name[REQUEST_MAXNAME + 1], value[REQUEST_MAXVALUE + 1];
+//   spa_api_input_var( numPairs );
+//   spa_assume( numPairs <= REQUEST_MAXNVPAIRS );
+//   spa_api_input_var( name );
+//   spa_assume( name[sizeof( name ) - 1] == '\0' );
+//   spa_api_input_var( value );
+//   spa_assume( value[sizeof( value ) - 1] == '\0' );
+// 
+//   const char *nv[2 * (REQUEST_MAXNVPAIRS + 1)];
+//   uint8_t i;
+//   for ( i = 0; i < numPairs; i++ ) {
+//     nv[2*i] = name;
+//     nv[2*i+1] = value;
+//   }
+//   nv[2*numPairs] = NULL;
+
 //   char nvbuf[REQUEST_MAXNVBUF];
 //   spa_api_input_var(nvbuf);
 //   spa_assume(nvbuf[sizeof(nvbuf) - 1] == '\0');
@@ -199,33 +216,74 @@ void __attribute__((noinline,used)) spa_SendRequest() {
 //   nv[j] = NULL;
 //   nv[j + 1] = NULL;
 
-  char method[REQUEST_MAXMETHOD];
-  spa_api_input_var(method);
-  spa_assume(method[sizeof(method) - 1] == '\0');
+//   char method[REQUEST_MAXMETHOD];
+//   spa_api_input_var(method);
+//   spa_assume(method[sizeof(method) - 1] == '\0');
+// 
+//   char path[REQUEST_MAXPATH];
+//   spa_api_input_var(path);
+//   spa_assume(path[sizeof(path) - 1] == '\0');
+// 
+//   char version[REQUEST_MAXVERSION];
+//   spa_api_input_var(version);
+//   spa_assume(version[sizeof(version) - 1] == '\0');
+// 
+//   char host[REQUEST_MAXHOST];
+//   spa_api_input_var(host);
+//   spa_assume(host[sizeof(host) - 1] == '\0');
+// 
+//   char scheme[REQUEST_MAXSCHEME];
+//   spa_api_input_var(scheme);
+//   spa_assume(scheme[sizeof(scheme) - 1] == '\0');
+// 
+//   char name[REQUEST_MAXNAME];
+//   spa_api_input_var(name);
+//   spa_assume(name[sizeof(name) - 1] == '\0');
+// 
+//   char value[REQUEST_MAXVALUE];
+//   spa_api_input_var(value);
+//   spa_assume(value[sizeof(value) - 1] == '\0');
+// 
+//   const char *nv[] = {
+//     ":method",  method,
+//     ":path",  path,
+//     ":version", version,
+//     ":host",  host,
+//     ":scheme", scheme,
+//     name, value,
+//     NULL
+//   };
+
+  const char *methods[] = {
+    "GET", "POST", "HEAD", "OPTIONS", "PUT", "DELETE", "TRACE", "CONNECT"
+  };
+  uint8_t methodId = 0;
+  spa_api_input_var(methodId);
+  spa_assume(methodId < (sizeof(methods) / sizeof(methods[0])));
+  const char *method = methods[methodId];
 
   char path[REQUEST_MAXPATH];
   spa_api_input_var(path);
+  spa_assume(path[0] == '/');
   spa_assume(path[sizeof(path) - 1] == '\0');
 
-  char version[REQUEST_MAXVERSION];
-  spa_api_input_var(version);
-  spa_assume(version[sizeof(version) - 1] == '\0');
+  const char *versions[] = {
+    "HTTP/1.1", "HTTP/1.0", "HTTP/0.9"
+  };
+  uint8_t versionId = 0;
+  spa_api_input_var(versionId);
+  spa_assume(versionId < (sizeof(versions) / sizeof(versions[0])));
+  const char *version = versions[versionId];
 
-  char host[REQUEST_MAXHOST];
-  spa_api_input_var(host);
-  spa_assume(host[sizeof(host) - 1] == '\0');
+  char host[] = REQUEST_HOSTPATH;
 
-  char scheme[REQUEST_MAXSCHEME];
-  spa_api_input_var(scheme);
-  spa_assume(scheme[sizeof(scheme) - 1] == '\0');
-
-  char name[REQUEST_MAXNAME];
-  spa_api_input_var(name);
-  spa_assume(name[sizeof(name) - 1] == '\0');
-
-  char value[REQUEST_MAXVALUE];
-  spa_api_input_var(value);
-  spa_assume(value[sizeof(value) - 1] == '\0');
+  const char *schemes[] = {
+    "http", "https"
+  };
+  uint8_t schemeId = 0;
+  spa_api_input_var(schemeId);
+  spa_assume(schemeId < (sizeof(schemes) / sizeof(schemes[0])));
+  const char *scheme = schemes[schemeId];
 
   const char *nv[] = {
     ":method",  method,
@@ -233,7 +291,6 @@ void __attribute__((noinline,used)) spa_SendRequest() {
     ":version", version,
     ":host",  host,
     ":scheme", scheme,
-    name, value,
     NULL
   };
 #else // #ifdef ANALYZE_RESPONSE #elif defined( ENABLE_SPA )
