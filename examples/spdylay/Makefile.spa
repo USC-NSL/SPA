@@ -142,6 +142,7 @@ clean:
 	rm -rf out/
 	rm -f $(TARGETS) $(BC_TARGETS) $(BC_TARGETS:.bc=.bc.o) $(TEST_TARGETS) $(TEST_TARGETS:.exe=.bc) $(LOG_TARGETS)
 # 	rm -f $(PATHS) $(LOGS)
+# 	rm -f spa-client-*.paths spa-server-spa-client-*.paths
 # 	rm -f BadInputs.untested BadInputs.untested.debug BadInputs.untested.log BadInputs.untested.checkpoint
 # 	rm -f BadInputs.tested BadInputs.tested.log
 	rm -rf *.log klee-out-* klee-last
