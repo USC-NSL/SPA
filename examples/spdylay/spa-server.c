@@ -12,21 +12,21 @@
 #define SERVER_PORT			8000
 // #define SPDY_VERSION		SPDYLAY_PROTO_SPDY2
 // #define SPDY_VERSION		SPDYLAY_PROTO_SPDY3
-#define PUSH_METHOD			"GET"
-#define PUSH_SCHEME			"http"
-#define PUSH_PATH			"/"
-#define PUSH_HOST			"127.0.0.1"
-#define PUSH_PRIORITY		3
+// #define PUSH_METHOD			"GET"
+// #define PUSH_SCHEME			"http"
+// #define PUSH_PATH			"/"
+// #define PUSH_HOST			"127.0.0.1"
+// #define PUSH_PRIORITY		3
 #define RESPONSE_STATUS		"200 OK"
 #define RESPONSE_VERSION	"HTTP/1.1"
-#define RESPONSE_MAXPAIRS	3
-#define RESPONSE_MAXNAME	2
-#define RESPONSE_MAXVALUE	1
+// #define RESPONSE_MAXPAIRS	3
+// #define RESPONSE_MAXNAME	2
+// #define RESPONSE_MAXVALUE	1
 #define RESPONSE_DATA		"Response Data"
-#define RESPONSE_MAX_DATA	2
+// #define RESPONSE_MAX_DATA	2
 #define RECEIVE_BUFFER_SIZE	1500
 
-#define PUSH_HOSTPATH	PUSH_HOST ":" #SERVER_PORT
+// #define PUSH_HOSTPATH	PUSH_HOST ":" #SERVER_PORT
 
 int connectionSock = -1;
 int32_t stream_id = -1;
@@ -139,30 +139,30 @@ void request_recv_callback( spdylay_session *session, int32_t stream_id, void *u
 	spa_valid_path();
 #endif // #ifndef ANALYZE_RESPONSE
 
-#ifdef ENABLE_SPA
-	uint8_t numPairs = 0;
-	char name[RESPONSE_MAXNAME + 1], value[RESPONSE_MAXVALUE + 1];
-	spa_api_input_var( numPairs );
-	spa_assume( numPairs <= RESPONSE_MAXPAIRS );
-	spa_api_input_var( name );
-	spa_assume( name[sizeof( name ) - 1] == '\0' );
-	spa_api_input_var( value );
-	spa_assume( value[sizeof( value ) - 1] == '\0' );
-
-	const char *nv[2 * (RESPONSE_MAXPAIRS + 1)];
-	uint8_t i;
-	for ( i = 0; i < numPairs; i++ ) {
-		nv[2*i] = name;
-		nv[2*i+1] = value;
-	}
-	nv[2*numPairs] = NULL;
-#else // #ifdef ENABLE_SPA
+// #ifdef ENABLE_SPA
+// 	uint8_t numPairs = 0;
+// 	char name[RESPONSE_MAXNAME + 1], value[RESPONSE_MAXVALUE + 1];
+// 	spa_api_input_var( numPairs );
+// 	spa_assume( numPairs <= RESPONSE_MAXPAIRS );
+// 	spa_api_input_var( name );
+// 	spa_assume( name[sizeof( name ) - 1] == '\0' );
+// 	spa_api_input_var( value );
+// 	spa_assume( value[sizeof( value ) - 1] == '\0' );
+// 
+// 	const char *nv[2 * (RESPONSE_MAXPAIRS + 1)];
+// 	uint8_t i;
+// 	for ( i = 0; i < numPairs; i++ ) {
+// 		nv[2*i] = name;
+// 		nv[2*i+1] = value;
+// 	}
+// 	nv[2*numPairs] = NULL;
+// #else // #ifdef ENABLE_SPA
 	const char *nv[] = {
 		":status",	RESPONSE_STATUS,
 		":version",	RESPONSE_VERSION,
 		NULL
 	};
-#endif // #ifdef ENABLE_SPA #else
+// #endif // #ifdef ENABLE_SPA #else
 
 	spdylay_data_provider dp;
 	dp.source.ptr = NULL;
