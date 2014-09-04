@@ -1,8 +1,14 @@
 #!/bin/bash
 
+set -e
+
+[ -r "$1" ] || (echo "Error reading bit-code: $1."; exit 1)
+[ -r "$2" ] || (echo "Error reading client paths: $2."; exit 1)
+[ -n "$3" ] || (echo "No server path-file specied."; exit 1)
+
 rm -f spa-client-*.paths spa-server-*.paths $3.joblog
 
-spaSplitPaths -i $2 -o 'spa-client-%03d.paths' -n 500
+spaSplitPaths -i $2 -o 'spa-client-%04d.paths' -n 1000
 
 parallel --progress --joblog $3.joblog \
   --controlmaster -v --tag --ungroup --linebuffer \
