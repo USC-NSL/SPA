@@ -4,7 +4,7 @@ set -e
 
 [ -r "$1" ] || (echo "Error reading bit-code: $1."; exit 1)
 [ -r "$2" ] || (echo "Error reading client paths: $2."; exit 1)
-[ -n "$3" ] || (echo "No server path-file specied."; exit 1)
+[ -n "$3" ] || (echo "No server path-file specified."; exit 1)
 
 rm -f spa-client-*.paths spa-server-*.paths $3.joblog
 

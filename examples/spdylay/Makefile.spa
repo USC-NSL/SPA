@@ -117,8 +117,10 @@ spa-server.paths: spa-server.bc spa-client.paths
 
 # BadInputs.untested: $(PATHS)
 # 	spaBadInputs -p 8 -client spa-client.paths -server spa-server.paths -o $@ -d $@.debug 2>&1 | tee $@.log
+# BadInputs.untested: spa-server.paths
+# 	spaBadInputs -p 8 -server spa-server.paths -o $@ -d $@.debug 2>&1 | tee $@.log
 BadInputs.untested: spa-server.paths
-	spaBadInputs -p 8 -server spa-server.paths -o $@ -d $@.debug 2>&1 | tee $@.log
+	parallel-badinputs.sh $< $@
 
 BadInputs.tested: BadInputs.untested $(TEST_TARGETS)
 	spaE2ETest $< $@ './spa-client.e2etest.exe' './spa-server.e2etest.exe' 2>&1 | tee $@.log
