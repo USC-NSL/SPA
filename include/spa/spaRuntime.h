@@ -49,6 +49,8 @@ extern "C" {
 
 #ifdef ENABLE_SPA
 
+#define spa_done() exit(0);
+
 #ifdef ENABLE_KLEE
 #define spa_assume( x ) klee_assume( x )
 #define spa_warning( x ) klee_warning( x )
