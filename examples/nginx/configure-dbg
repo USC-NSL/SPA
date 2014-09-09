@@ -2,6 +2,8 @@
 
 CFLAGS="-O0 -g -I`pwd`/../../include" CXXFLAGS='-O0 -g' \
 ./configure \
+  --prefix="`pwd`" \
+  --conf-path="`pwd`/conf/nginx.conf" \
 	--with-http_spdy_module \
 	--without-http_charset_module \
 	--without-http_gzip_module \
