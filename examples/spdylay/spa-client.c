@@ -25,8 +25,8 @@
 // #define REQUEST_MAXVERSION	9
 // #define REQUEST_MAXHOST			10
 // #define REQUEST_MAXSCHEME		6
-// #define REQUEST_MAXNAME			2
-// #define REQUEST_MAXVALUE		1
+#define REQUEST_MAXNAME			3
+#define REQUEST_MAXVALUE		3
 #define RECEIVE_BUFFER_SIZE	1500
 
 #define QUOTE( str ) #str
@@ -285,12 +285,21 @@ void __attribute__((noinline,used)) spa_SendRequest() {
   spa_assume(schemeId < (sizeof(schemes) / sizeof(schemes[0])));
   const char *scheme = schemes[schemeId];
 
+  char name1[REQUEST_MAXNAME];
+  spa_api_input_var(name1);
+  spa_assume(name1[sizeof(name1) - 1] == '\0');
+
+  char value1[REQUEST_MAXVALUE];
+  spa_api_input_var(value1);
+  spa_assume(value1[sizeof(value1) - 1] == '\0');
+
   const char *nv[] = {
     ":method",  method,
-    ":path",  path,
+    ":path",    path,
     ":version", version,
-    ":host",  host,
-    ":scheme", scheme,
+    ":host",    host,
+    ":scheme",  scheme,
+    name1,      value1,
     NULL
   };
 #else // #ifdef ANALYZE_RESPONSE #elif defined( ENABLE_SPA )

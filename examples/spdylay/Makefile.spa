@@ -112,8 +112,8 @@ spa-client.paths: spa-client.bc $(SPA_EXE)
 # 	$(SPA) --path-file $@ --server $< 2>&1 | tee $@.log
 # spa-server.paths: spa-server.bc spa-client.paths $(SPA_EXE)
 # 	$(SPA) --path-file $@ -sender-paths spa-client.paths --server $< 2>&1 | tee $@.log
-spa-server.paths: spa-server.bc spa-client.paths
-	parallel-spa-server.sh $^ $@
+spa-server.paths: spa-client.paths spa-server.bc
+	parallel-spa-server.sh $< $@ spa-server.bc
 
 # BadInputs.untested: $(PATHS)
 # 	spaBadInputs -p 8 -client spa-client.paths -server spa-server.paths -o $@ -d $@.debug 2>&1 | tee $@.log
