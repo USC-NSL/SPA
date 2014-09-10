@@ -316,9 +316,11 @@ int main(int argc, char **argv, char **envp) {
 	// Create waypoint utility.
 	SPA::WaypointUtility *waypointUtility = NULL;
 	if ( ! waypoints.empty() ) {
-		klee::klee_message( "   Creating waypoint utility." );
-		waypointUtility = new SPA::WaypointUtility( cfg, cg, waypoints, true );
-		spa.addStateUtilityBack( waypointUtility, false );
+    if (Client) {
+      klee::klee_message( "   Creating waypoint utility." );
+      waypointUtility = new SPA::WaypointUtility( cfg, cg, waypoints, true );
+      spa.addStateUtilityBack( waypointUtility, false );
+    }
 	}
 
 	// Create state utility function.
@@ -328,9 +330,9 @@ int main(int argc, char **argv, char **envp) {
 	if ( Client ) {
 		spa.addStateUtilityBack( new SPA::AstarUtility( module, cfg, cg, checkpoints ), false );
 		spa.addStateUtilityBack( new SPA::TargetDistanceUtility( module, cfg, cg, checkpoints ), false );
-	} else if ( Server && filter ) {
-		spa.addStateUtilityBack( new SPA::AstarUtility( module, cfg, cg, *filter ), false );
-		spa.addStateUtilityBack( new SPA::TargetDistanceUtility( module, cfg, cg, *filter ), false );
+// 	} else if ( Server && filter ) {
+// 		spa.addStateUtilityBack( new SPA::AstarUtility( module, cfg, cg, *filter ), false );
+// 		spa.addStateUtilityBack( new SPA::TargetDistanceUtility( module, cfg, cg, *filter ), false );
 	}
 	// All else being the same, go DFS.
 	spa.addStateUtilityBack( new SPA::DepthUtility(), false );
