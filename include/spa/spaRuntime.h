@@ -49,7 +49,7 @@ extern "C" {
 
 #ifdef ENABLE_SPA
 
-#define spa_done() exit(0);
+#define spa_done() exit(0)
 
 #ifdef ENABLE_KLEE
 #define spa_assume( x ) klee_assume( x )
@@ -247,6 +247,7 @@ extern "C" {
 #define spa_default_valid()
 #define spa_invalid_path() printf( "[SPA] Invalid Path.\n" )
 #define spa_valid_path() printf( "[SPA] Valid Path.\n" )
+#define spa_done() printf( "[SPA] Done.\n" )
 
 #define spa_tag( var, value )
 
