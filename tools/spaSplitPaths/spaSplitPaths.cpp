@@ -1,4 +1,4 @@
-#include <vector>
+#include <set>
 
 #include "llvm/Support/CommandLine.h"
 
@@ -28,22 +28,21 @@ namespace {
     "Number of paths per output file."));
 }
 
-std::vector<std::ofstream *> output;
+void addOutput(unsigned long index, std::string text) {
+  static std::set<unsigned long> initializedFiles;
 
-std::ofstream *getOutput(unsigned long index) {
-  if (index >= output.size()) {
-    for (unsigned long i = output.size(); i <= index; i++ ) {
-      char fileName[MAX_FILE_NAME];
-      assert(snprintf(fileName, sizeof(fileName), OutputPattern.getValue().c_str(), i + 1) > 0);
-      llvm::outs() << "Creating " << fileName << ".\n";
-      std::ofstream *ofs = new std::ofstream(fileName, std::ios_base::out);
-      assert(ofs->is_open() && "Unable to open output file." );
-      output.push_back(ofs);
-    }
-  }
-  assert(index < output.size());
+  char fileName[MAX_FILE_NAME];
+  assert(snprintf(fileName, sizeof(fileName), OutputPattern.getValue().c_str(), index + 1) > 0);
 
-  return output[index];
+  std::ofstream ofs(fileName,
+                    std::ios_base::out
+                      | (initializedFiles.count(index) ?
+                           std::ios_base::app : std::ios_base::trunc));
+  assert(ofs.is_open() && "Unable to open output file." );
+  initializedFiles.insert(index);
+
+  ofs << text;
+  ofs.close();
 }
 
 int main(int argc, char **argv, char **envp) {
@@ -56,6 +55,8 @@ int main(int argc, char **argv, char **envp) {
   assert( ifs.good() && "Unable to open input path-file." );
   SPA::PathLoader input(ifs);
 
+  unsigned long pathCount = 0, numFiles = 0, numPathsPerFile = 0;
+
   if (NumOutFiles.getValue() > 0) {
     bool done = false;
     do {
@@ -65,9 +66,13 @@ int main(int argc, char **argv, char **envp) {
           done = true;
           break;
         }
-        *getOutput(i) << p;
+        addOutput(i, p);
+        pathCount++;
       }
     } while (! done);
+
+    numFiles = std::min(pathCount, (unsigned long) NumOutFiles.getValue());
+    numPathsPerFile = ceil(((double) pathCount) / numFiles);
   } else {
     assert(NumPathsPerFile.getValue() > 0);
     unsigned long j = 0;
@@ -79,13 +84,16 @@ int main(int argc, char **argv, char **envp) {
           done = true;
           break;
         }
-        *getOutput(j) << p;
+        addOutput(j, p);
+        pathCount++;
       }
       j++;
     } while (! done);
+
+    numPathsPerFile = std::min(pathCount, (unsigned long) NumPathsPerFile.getValue());
+    numFiles = ceil(((double) pathCount) / NumPathsPerFile.getValue());
   }
 
-  for (std::ofstream *ofs : output) {
-    ofs->close();
-  }
+  llvm::outs() << "Created " << numFiles
+      << " path-files with up to " << numPathsPerFile << " paths per file.\n";
 }

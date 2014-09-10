@@ -7,7 +7,7 @@ set -e
 
 rm -f spa-server-*.paths badinputs-*.txt $2.joblog
 
-spaSplitPaths -i $1 -o 'spa-server-%04d.paths' -n 1000
+spaSplitPaths -i $1 -o 'spa-server-%04d.paths' -p 1
 
 parallel --progress --joblog $2.joblog \
   --controlmaster -v --tag --linebuffer \

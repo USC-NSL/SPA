@@ -19,7 +19,7 @@ done
 
 rm -f spa-client-*.paths spa-server-*.paths $SERVER_PATHS.joblog
 
-spaSplitPaths -i $CLIENT_PATHS -o 'spa-client-%04d.paths' -n 1000
+spaSplitPaths -i $CLIENT_PATHS -o 'spa-client-%04d.paths' -p 1
 
 parallel --progress --joblog $SERVER_PATHS.joblog \
   --controlmaster -v --tag --linebuffer \
