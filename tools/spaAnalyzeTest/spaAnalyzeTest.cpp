@@ -131,15 +131,15 @@ static struct {
 	TestClassifier classifier;
 	const char *outFileName;
 } classifiers[] = {
-// 	{ spdylayDiffVersion, "BadInputs.spdylayDiffVersion" },
-// 	{ spdylayBadName, "BadInputs.spdylayBadName" },
-// 	{ spdylayBadValue, "BadInputs.spdylayBadValue" },
-// 	{ spdylayNoDataLength, "BadInputs.spdylayNoDataLength" },
+  { spdylayDiffVersion, "BadInputs.spdylayDiffVersion" },
   { nginxSpdy3, "BadInputs.nginxSpdy3" },
-//   { sipFromBadChar, "BadInputs.sipFromBadChar" },
-// 	{ sipFromNoScheme, "BadInputs.sipFromNoScheme" },
-// 	{ sipToConfusedScheme, "BadInputs.sipToConfusedScheme" },
-// 	{ sipEventBadChar, "BadInputs.sipEventBadChar" },
+  { spdylayBadName, "BadInputs.spdylayBadName" },
+  { spdylayBadValue, "BadInputs.spdylayBadValue" },
+  { spdylayNoDataLength, "BadInputs.spdylayNoDataLength" },
+  { sipFromBadChar, "BadInputs.sipFromBadChar" },
+  { sipFromNoScheme, "BadInputs.sipFromNoScheme" },
+  { sipToConfusedScheme, "BadInputs.sipToConfusedScheme" },
+  { sipEventBadChar, "BadInputs.sipEventBadChar" },
 	{ NULL, "BadInputs.default" },
 };
 
@@ -158,10 +158,9 @@ std::string testToStr( std::map<std::string, std::vector<uint8_t> > testCase ) {
 }
 
 void displayStats() {
-	LOG() << "Breakdown:";
-	for( std::vector<unsigned long>::iterator it = resultCounts.begin(), ie = resultCounts.end(); it != ie; it++ )
-		std::cerr << " " << *it;
-	std::cerr << std::endl;
+  LOG() << "Breakdown:" << std::endl;
+  for (unsigned i = 0; i < resultCounts.size(); i++)
+    LOG() << "  " << classifiers[i].outFileName << ": " << resultCounts[i] << std::endl;
 }
 
 int main(int argc, char **argv, char **envp) {
@@ -235,7 +234,7 @@ int main(int argc, char **argv, char **envp) {
 						*outputFiles[i] << testToStr( testCase );
 						outputFiles[i]->flush();
 						resultCounts[i]++;
-						displayStats();
+// 						displayStats();
 						break;
 					}
 				}
@@ -244,10 +243,11 @@ int main(int argc, char **argv, char **envp) {
 					*outputFiles[i] << testToStr( testCase );
 					outputFiles[i]->flush();
 					resultCounts[i]++;
-					displayStats();
+// 					displayStats();
 				}
 				testCase.clear();
 			}
 		}
 	}
+  displayStats();
 }
