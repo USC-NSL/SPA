@@ -159,8 +159,12 @@ std::string testToStr( std::map<std::string, std::vector<uint8_t> > testCase ) {
 
 void displayStats() {
   LOG() << "Breakdown:" << std::endl;
-  for (unsigned i = 0; i < resultCounts.size(); i++)
+  unsigned long total = 0;
+  for (unsigned i = 0; i < resultCounts.size(); i++) {
     LOG() << "  " << classifiers[i].outFileName << ": " << resultCounts[i] << std::endl;
+    total += resultCounts[i];
+  }
+  LOG() << "  Total: " << total << std::endl;
 }
 
 int main(int argc, char **argv, char **envp) {
