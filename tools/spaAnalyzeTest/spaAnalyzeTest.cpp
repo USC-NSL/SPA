@@ -52,6 +52,12 @@ bool spdylayNoDataLength( std::map<std::string, std::vector<uint8_t> > testCase 
 	return testCase.count( "spa_in_api_dataLength" ) == 0;
 }
 
+bool nginxSpdy3(std::map<std::string, std::vector<uint8_t> > testCase) {
+  if (testCase.count("spa_in_api_clientVersion"))
+    return testCase["spa_in_api_clientVersion"] != std::vector<uint8_t>({2, 0});
+  return false;
+}
+
 bool sipFromBadChar( std::map<std::string, std::vector<uint8_t> > testCase ) {
 // 	assert( testCase.count( "spa_in_api_from" ) );
 	if ( testCase.count( "spa_in_api_from" ) ) {
@@ -125,14 +131,15 @@ static struct {
 	TestClassifier classifier;
 	const char *outFileName;
 } classifiers[] = {
-	{ spdylayDiffVersion, "BadInputs.spdylayDiffVersion" },
-	{ spdylayBadName, "BadInputs.spdylayBadName" },
-	{ spdylayBadValue, "BadInputs.spdylayBadValue" },
-	{ spdylayNoDataLength, "BadInputs.spdylayNoDataLength" },
-	{ sipFromBadChar, "BadInputs.sipFromBadChar" },
-	{ sipFromNoScheme, "BadInputs.sipFromNoScheme" },
-	{ sipToConfusedScheme, "BadInputs.sipToConfusedScheme" },
-	{ sipEventBadChar, "BadInputs.sipEventBadChar" },
+// 	{ spdylayDiffVersion, "BadInputs.spdylayDiffVersion" },
+// 	{ spdylayBadName, "BadInputs.spdylayBadName" },
+// 	{ spdylayBadValue, "BadInputs.spdylayBadValue" },
+// 	{ spdylayNoDataLength, "BadInputs.spdylayNoDataLength" },
+  { nginxSpdy3, "BadInputs.nginxSpdy3" },
+//   { sipFromBadChar, "BadInputs.sipFromBadChar" },
+// 	{ sipFromNoScheme, "BadInputs.sipFromNoScheme" },
+// 	{ sipToConfusedScheme, "BadInputs.sipToConfusedScheme" },
+// 	{ sipEventBadChar, "BadInputs.sipEventBadChar" },
 	{ NULL, "BadInputs.default" },
 };
 
