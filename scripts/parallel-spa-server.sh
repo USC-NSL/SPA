@@ -21,8 +21,8 @@ rm -f spa-client-*.paths spa-server-*.paths $SERVER_PATHS.joblog
 
 spaSplitPaths -i $CLIENT_PATHS -o 'spa-client-%04d.paths' -p 1
 
-parallel --progress --joblog $SERVER_PATHS.joblog \
-  --controlmaster -v --tag --linebuffer \
+parallel --progress --eta --joblog $SERVER_PATHS.joblog \
+  --controlmaster --noswap -v --tag --linebuffer \
   -S lpedrosa@spa1.pedrosa.3-a.net -S lpedrosa@spa2.pedrosa.3-a.net -S lpedrosa@spa3.pedrosa.3-a.net \
   $BASEFILES --transfer --return spa-server-{} --cleanup \
   "echo Basefiles: $BASEFILES; echo Transfer: {}; echo Return: spa-server-{}; echo ls:; ls; \
@@ -31,8 +31,8 @@ parallel --progress --joblog $SERVER_PATHS.joblog \
   date '+Finished: %s.%N (%c)';" \
   ::: spa-client-*.paths 2>&1 | tee $SERVER_PATHS.log
 
-# parallel --progress --joblog $SERVER_PATHS.joblog \
-#   --controlmaster -v --tag --linebuffer \
+# parallel --progress --eta --joblog $SERVER_PATHS.joblog \
+#   --controlmaster --noswap -v --tag --linebuffer \
 #   -S david@192.168.3.6 \
 #   $BASEFILES --transfer --return spa-server-{} --cleanup \
 #   "echo Basefiles: $BASEFILES; echo Transfer: {}; echo Return: spa-server-{}; echo ls:; ls; \
