@@ -7,10 +7,10 @@ default: BadInputs.default
 spa-server.paths: $(CLIENT_PATHS) $(BASEFILES)
 	parallel-spa-server.sh $(CLIENT_PATHS) spa-server.paths $(NGINX_BC) $(BASEFILES)
 
-BadInputs.untested: spa-server.paths
-	spaBadInputs -p 5 -j 100 -server $< -o $@ -d $@.debug 2>&1 | tee $@.log
 # BadInputs.untested: spa-server.paths
-# 	parallel-badinputs.sh $< $@
+# 	spaBadInputs -p 5 -j 100 -server $< -o $@ -d $@.debug 2>&1 | tee $@.log
+BadInputs.untested: spa-server.paths
+	parallel-badinputs.sh $< $@
 
 BadInputs.default: BadInputs.untested
 	spaAnalyzeTest $<
