@@ -15,7 +15,7 @@ parallel --progress --joblog $2.joblog \
   --transfer --return badinputs-{}.txt --cleanup \
   "echo Transfer: {}; echo Return: badinputs-{}.txt; echo ls:; ls; \
   date '+Started: %s.%N (%c)'; \
-  /home/lpedrosa/spa/Release+Asserts/bin/spaBadInputs --server {} -o badinputs-{}.txt -d /dev/null -p 1 -j 100 -w 1; \
+  /home/lpedrosa/spa/Release+Asserts/bin/spaBadInputs --server {} -o badinputs-{}.txt -d /dev/null -p 1 -j 10 -w 1; \
   date '+Finished: %s.%N (%c)';" \
   ::: badinputs-*.paths 2>&1 | tee $2.log
 
@@ -25,7 +25,7 @@ parallel --progress --joblog $2.joblog \
 #   --transfer --return badinputs-{}.txt --cleanup \
 #   "echo Transfer: {}; echo Return: badinputs-{}.txt; echo ls:; ls; \
 #   date '+Started: %s.%N (%c)'; \
-#   /home/lpedrosa/spa/Release+Asserts/bin/spaBadInputs --server {} -o badinputs-{}.txt -d /dev/null -p 1 -j 1 -w 1; \
+#   /home/lpedrosa/spa/Release+Asserts/bin/spaBadInputs --server {} -o badinputs-{}.txt -d /dev/null -p 1 -j 10 -w 1; \
 #   date '+Finished: %s.%N (%c)';" \
 #   ::: badinputs-*.paths 2>&1 | tee $2.log
 
