@@ -5,9 +5,9 @@ set -e
 [ -r "$1" ] || (echo "Error reading server paths: $2."; exit 1)
 [ -n "$2" ] || (echo "No output specified."; exit 1)
 
-rm -f spa-server-*.paths badinputs-*.txt $2.joblog
+rm -f badinputs-*.paths badinputs-*.txt $2.joblog
 
-spaSplitPaths -i $1 -o 'spa-server-%04d.paths' -p 100
+spaSplitPaths -i $1 -o 'badinputs-%04d.paths' -p 100
 
 parallel --progress --joblog $2.joblog \
   --controlmaster -v --tag --linebuffer \
@@ -15,9 +15,9 @@ parallel --progress --joblog $2.joblog \
   --transfer --return badinputs-{}.txt --cleanup \
   "echo Transfer: {}; echo Return: badinputs-{}.txt; echo ls:; ls; \
   date '+Started: %s.%N (%c)'; \
-  /home/lpedrosa/spa/Release+Asserts/bin/spaBadInputs --server {} -o badinputs-{}.txt -p 1 -j 100 -w 1; \
+  /home/lpedrosa/spa/Release+Asserts/bin/spaBadInputs --server {} -o badinputs-{}.txt -d /dev/null -p 1 -j 100 -w 1; \
   date '+Finished: %s.%N (%c)';" \
-  ::: spa-server-*.paths 2>&1 | tee $2.log
+  ::: badinputs-*.paths 2>&1 | tee $2.log
 
 # parallel --progress --joblog $2.joblog \
 #   --controlmaster -v --tag --linebuffer \
@@ -25,10 +25,10 @@ parallel --progress --joblog $2.joblog \
 #   --transfer --return badinputs-{}.txt --cleanup \
 #   "echo Transfer: {}; echo Return: badinputs-{}.txt; echo ls:; ls; \
 #   date '+Started: %s.%N (%c)'; \
-#   /home/lpedrosa/spa/Release+Asserts/bin/spaBadInputs --server {} -o badinputs-{}.txt -p 1 -j 1 -w 1; \
+#   /home/lpedrosa/spa/Release+Asserts/bin/spaBadInputs --server {} -o badinputs-{}.txt -d /dev/null -p 1 -j 1 -w 1; \
 #   date '+Finished: %s.%N (%c)';" \
-#   ::: spa-server-*.paths 2>&1 | tee $2.log
+#   ::: badinputs-*.paths 2>&1 | tee $2.log
 
 cat badinputs-*.txt > $2
 
-rm -f spa-server-*.paths badinputs-*.txt $2.joblog
+rm -f badinputs-*.paths badinputs-*.txt $2.joblog
