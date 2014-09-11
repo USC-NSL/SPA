@@ -1,3 +1,5 @@
 spa-client-*.paths
 spa-server-*.paths
+badinputs-*.paths
+badinputs-*.txt
 *.joblog
