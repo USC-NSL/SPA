@@ -7,7 +7,7 @@ set -e
 
 rm -f spa-server-*.paths badinputs-*.txt $2.joblog
 
-spaSplitPaths -i $1 -o 'spa-server-%04d.paths' -p 1
+spaSplitPaths -i $1 -o 'spa-server-%04d.paths' -p 100
 
 parallel --progress --joblog $2.joblog \
   --controlmaster -v --tag --linebuffer \
@@ -15,7 +15,7 @@ parallel --progress --joblog $2.joblog \
   --transfer --return badinputs-{}.txt --cleanup \
   "echo Transfer: {}; echo Return: badinputs-{}.txt; echo ls:; ls; \
   date '+Started: %s.%N (%c)'; \
-  /home/lpedrosa/spa/Release+Asserts/bin/spaBadInputs --server {} -o badinputs-{}.txt -p 1 -j 1 -w 1; \
+  /home/lpedrosa/spa/Release+Asserts/bin/spaBadInputs --server {} -o badinputs-{}.txt -p 1 -j 100 -w 1; \
   date '+Finished: %s.%N (%c)';" \
   ::: spa-server-*.paths 2>&1 | tee $2.log
 
