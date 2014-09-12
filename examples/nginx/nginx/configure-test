@@ -1,6 +1,7 @@
 #!/bin/sh
 
-CFLAGS="-O0 -g -I`pwd`/../../include" CXXFLAGS='-O0 -g' \
+CFLAGS="-DENABLE_SPA -I`pwd`/../../../../include -O0 -g" \
+CXXFLAGS="-DENABLE_SPA -I`pwd`/../../../../include -O0 -g" \
 ./configure \
   --prefix="`pwd`" \
   --conf-path="`pwd`/conf/nginx.conf" \
@@ -33,7 +34,7 @@ CFLAGS="-O0 -g -I`pwd`/../../include" CXXFLAGS='-O0 -g' \
 	--without-mail_pop3_module \
 	--without-mail_imap_module \
 	--without-mail_smtp_module \
-	--with-cc-opt="-O0 -g" \
+	--with-cc-opt="-DENABLE_SPA -I`pwd`/../../../../include -O0 -g" \
 	--without-pcre \
 	--with-zlib=zlib \
-	--with-zlib-opt='-O0 -g'
+	--with-zlib-opt="-DENABLE_SPA -I`pwd`/../../../../include -O0 -g"

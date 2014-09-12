@@ -1,0 +1,5 @@
+#!/bin/sh
+
+CFLAGS='-DENABLE_SPA -O0 -g' \
+CXXFLAGS='-DENABLE_SPA -O0 -g' \
+./configure -static
