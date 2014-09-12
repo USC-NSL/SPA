@@ -7,7 +7,7 @@ set -e
 
 rm -f badinputs-*.paths badinputs-*.txt $2.joblog
 
-spaSplitPaths -i $1 -o 'badinputs-%04d.paths' -p 10
+spaSplitPaths -i $1 -o 'badinputs-%04d.paths' -n 1000
 
 parallel --progress --eta --joblog $2.joblog \
   --controlmaster --noswap -v --tag --linebuffer \
@@ -15,7 +15,7 @@ parallel --progress --eta --joblog $2.joblog \
   --transfer --return badinputs-{}.txt --cleanup \
   "echo Transfer: {}; echo Return: badinputs-{}.txt; echo ls:; ls; \
   date '+Started: %s.%N (%c)'; \
-  /home/lpedrosa/spa/Release+Asserts/bin/spaBadInputs --server {} -o badinputs-{}.txt -d /dev/null -p 1 -j 10 -w 1; \
+  /home/lpedrosa/spa/Release+Asserts/bin/spaBadInputs --server {} -o badinputs-{}.txt -d /dev/null -p 1 -j 1000 -w 1; \
   date '+Finished: %s.%N (%c)';" \
   ::: badinputs-*.paths 2>&1 | tee $2.log
 
@@ -25,7 +25,7 @@ parallel --progress --eta --joblog $2.joblog \
 #   --transfer --return badinputs-{}.txt --cleanup \
 #   "echo Transfer: {}; echo Return: badinputs-{}.txt; echo ls:; ls; \
 #   date '+Started: %s.%N (%c)'; \
-#   /home/lpedrosa/spa/Release+Asserts/bin/spaBadInputs --server {} -o badinputs-{}.txt -d /dev/null -p 1 -j 10 -w 1; \
+#   /home/lpedrosa/spa/Release+Asserts/bin/spaBadInputs --server {} -o badinputs-{}.txt -d /dev/null -p 1 -j 1000 -w 1; \
 #   date '+Finished: %s.%N (%c)';" \
 #   ::: badinputs-*.paths 2>&1 | tee $2.log
 
