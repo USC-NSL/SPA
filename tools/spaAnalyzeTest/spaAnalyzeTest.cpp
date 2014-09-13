@@ -58,6 +58,28 @@ bool nginxSpdy3(std::map<std::string, std::vector<uint8_t> > testCase) {
   return false;
 }
 
+bool nginxHttp09(std::map<std::string, std::vector<uint8_t> > testCase) {
+  if (testCase.count("spa_in_api_versionId"))
+    return testCase["spa_in_api_versionId"] == std::vector<uint8_t>({2});
+  return false;
+}
+
+bool nginxBadUrlPercent(std::map<std::string, std::vector<uint8_t> > testCase) {
+  if (testCase.count("spa_in_api_path")) {
+    for (unsigned i = 0; i < testCase["spa_in_api_path"].size(); i++) {
+      if (testCase["spa_in_api_path"][i] == '%') {
+        if (i > testCase["spa_in_api_path"].size() - 3)
+          return true;
+        if (! isxdigit(testCase["spa_in_api_path"][i+1]))
+          return true;
+        if (! isxdigit(testCase["spa_in_api_path"][i+2]))
+          return true;
+      }
+    }
+  }
+  return false;
+}
+
 bool sipFromBadChar( std::map<std::string, std::vector<uint8_t> > testCase ) {
 // 	assert( testCase.count( "spa_in_api_from" ) );
 	if ( testCase.count( "spa_in_api_from" ) ) {
@@ -133,9 +155,11 @@ static struct {
 } classifiers[] = {
   { spdylayDiffVersion, "BadInputs.spdylayDiffVersion" },
   { nginxSpdy3, "BadInputs.nginxSpdy3" },
+  { nginxHttp09, "BadInputs.nginxHttp09" },
+  { nginxBadUrlPercent, "BadInputs.nginxBadUrlPercent" },
   { spdylayBadName, "BadInputs.spdylayBadName" },
   { spdylayBadValue, "BadInputs.spdylayBadValue" },
-  { spdylayNoDataLength, "BadInputs.spdylayNoDataLength" },
+//   { spdylayNoDataLength, "BadInputs.spdylayNoDataLength" },
   { sipFromBadChar, "BadInputs.sipFromBadChar" },
   { sipFromNoScheme, "BadInputs.sipFromNoScheme" },
   { sipToConfusedScheme, "BadInputs.sipToConfusedScheme" },
