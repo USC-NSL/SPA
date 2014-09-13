@@ -5,8 +5,8 @@ CXX='clang++' CXXFLAGS="-DENABLE_SPA -DENABLE_KLEE -I`pwd`/../../../../include -
 LD='llvm-link' \
 CPP='clang -E' \
 ./configure \
-	--prefix="/home/lpedrosa" \
-	--conf-path="/home/lpedrosa/conf/nginx.conf" \
+	--prefix="/home/lpedrosa/nginx" \
+	--conf-path="/home/lpedrosa/nginx/conf/nginx.conf" \
 	--with-http_spdy_module \
 	--without-http_charset_module \
 	--without-http_gzip_module \
