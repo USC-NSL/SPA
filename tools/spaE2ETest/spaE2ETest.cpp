@@ -8,6 +8,9 @@
 
 #include <spa/SPA.h>
 
+#define SERVER_WAIT 1000000 // us
+#define CLIENT_WAIT  500000 // us
+
 #define LOG_FILE_VARIABLE	"SPA_LOG_FILE"
 
 #define LOG() \
@@ -36,12 +39,12 @@ bool processTestCase( char *clientCmd, char *serverCmd ) {
 	if ( clientPID == 0 ) {
 		setpgid( 0, 0 );
 		setenv( LOG_FILE_VARIABLE, clientLog.c_str(), 1 );
-		sleep( 1 );
+		usleep(SERVER_WAIT);
 		LOG() << "Launching client: " << clientCmd << std::endl;
 		exit( system( clientCmd ) );
 	}
 	
-	sleep( 2 );
+	usleep(CLIENT_WAIT + SERVER_WAIT);
 	LOG() << "Killing processes." << std::endl;
 	kill( - serverPID, SIGTERM );
 	kill( - clientPID, SIGTERM );
@@ -89,8 +92,8 @@ bool processTestCase( char *clientCmd, char *serverCmd ) {
 }
 
 int main(int argc, char **argv, char **envp) {
-	if ( argc < 5 || argc > 7  ) {
-		std::cerr << "Usage: " << argv[0] << " [-f] <input-file> <output-file> <client-cmd> <server-cmd> [reference-server-cmd]" << std::endl;
+	if ( argc < 6 || argc > 8  ) {
+		std::cerr << "Usage: " << argv[0] << " [-f] <input-file> <true-positive-file> <false-positive-file> <client-cmd> <server-cmd> [reference-server-cmd]" << std::endl;
 
 		return -1;
 	}
@@ -104,19 +107,21 @@ int main(int argc, char **argv, char **envp) {
 		follow = true;
 		arg++;
 	}
-	char *inputFileName		= argv[arg++];
-	char *outputFileName	= argv[arg++];
-	char *clientCmd			= argv[arg++];
-	char *serverCmd			= argv[arg++];
-	char *refServerCmd		= NULL;
+  char *inputFileName         = argv[arg++];
+  char *truePositivesFileName  = argv[arg++];
+  char *falsePositivesFileName = argv[arg++];
+  char *clientCmd             = argv[arg++];
+  char *serverCmd             = argv[arg++];
+  char *refServerCmd          = NULL;
 	if ( arg < (unsigned int) argc )
 		refServerCmd = argv[arg++];
 
-	// Load previously confirmed results to prevent redundant results.
-	std::ifstream inputFile( outputFileName );
+  std::set<std::string> testedBundles;
+
+  // Load previously confirmed results to prevent redundant results.
+  LOG() << "Loading previous results." << std::endl;
+  std::ifstream inputFile( truePositivesFileName );
 	std::string bundle;
-	std::set<std::string> testedBundles;
-	LOG() << "Loading previous results." << std::endl;
 	while ( inputFile.good() ) {
 		std::string line;
 		std::getline( inputFile, line );
@@ -131,12 +136,33 @@ int main(int argc, char **argv, char **envp) {
 		}
 	}
 	inputFile.close();
+  unsigned long truePositives = testedBundles.size();
 
-	unsigned long numTestCases = 0;
-	unsigned long truePositives = testedBundles.size();
-	unsigned long falsePositives = 0;
+  inputFile.open( falsePositivesFileName );
+  bundle.clear();
+  while ( inputFile.good() ) {
+    std::string line;
+    std::getline( inputFile, line );
+
+    if ( ! line.empty() ) {
+      bundle += line + '\n';
+    } else {
+      if ( ! bundle.empty() ) {
+        testedBundles.insert( bundle );
+        bundle.clear();
+      }
+    }
+  }
+  inputFile.close();
+  unsigned long falsePositives = testedBundles.size() - truePositives;
+  unsigned long numTestCases = testedBundles.size();
+
 	inputFile.open( inputFileName );
-	std::ofstream outputFile( outputFileName, std::ios_base::app );
+  assert(inputFile.is_open());
+  std::ofstream truePositivesFile(truePositivesFileName, std::ios_base::app);
+  assert(truePositivesFile.is_open());
+  std::ofstream falsePositivesFile(falsePositivesFileName, std::ios_base::app);
+  assert(falsePositivesFile.is_open());
 
 	while ( inputFile.good() || follow ) {
 		if ( follow && ! inputFile.good() ) {
@@ -175,15 +201,20 @@ int main(int argc, char **argv, char **envp) {
 					if ( crossInterop && (! refInterop) ) {
 						LOG() << "Found true positive. Outputting" << std::endl;
 						truePositives++;
-						outputFile << bundle << std::endl;
+						truePositivesFile << bundle << std::endl;
 					} else {
 						LOG() << "Found false positive. Filtering." << std::endl;
 						falsePositives++;
-					}
+            falsePositivesFile << bundle << std::endl;
+          }
 					LOG() << "--------------------------------------------------" << std::endl;
 				}
 				bundle.clear();
-				LOG() << "Processed " << numTestCases << " test cases: " << truePositives << " true positives, " << falsePositives << " false positives." << std::endl;
+				LOG() << "Processed " << numTestCases << " test cases: "
+              << truePositives << " true positives, "
+              << falsePositives << " false positives, "
+              << (numTestCases - truePositives - falsePositives) << " repeats."
+              << std::endl;
 			}
 		}
 	}
