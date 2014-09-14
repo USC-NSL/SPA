@@ -7,6 +7,7 @@
 #include <stdint.h>
 #include <map>
 #include <vector>
+#include <algorithm>
 
 #define LOG() \
 	std::cerr << "[" << difftime( time( NULL ), programStartTime ) << "] "
@@ -75,6 +76,18 @@ bool nginxBadUrlPercent(std::map<std::string, std::vector<uint8_t> > testCase) {
         if (! isxdigit(testCase["spa_in_api_path"][i+2]))
           return true;
       }
+    }
+  }
+  return false;
+}
+
+bool nginxValueCrLf(std::map<std::string, std::vector<uint8_t> > testCase) {
+  const char *values[] = {"spa_in_api_value", "spa_in_api_value1", "spa_in_api_value2", "spa_in_api_value3", "spa_in_api_value4", "spa_in_api_value5", NULL};
+  for (int i = 0; values[i]; i++) {
+    if (testCase.count(values[i]) > 0
+        && (std::find(testCase[values[i]].begin(), testCase[values[i]].end(), '\r') !=testCase[values[i]].end()
+            || std::find(testCase[values[i]].begin(), testCase[values[i]].end(), '\n') != testCase[values[i]].end())) {
+      return true;
     }
   }
   return false;
@@ -157,6 +170,7 @@ static struct {
   { nginxSpdy3, "BadInputs.nginxSpdy3" },
   { nginxHttp09, "BadInputs.nginxHttp09" },
   { nginxBadUrlPercent, "BadInputs.nginxBadUrlPercent" },
+  { nginxValueCrLf, "BadInputs.nginxValueCrLf" },
   { spdylayBadName, "BadInputs.spdylayBadName" },
   { spdylayBadValue, "BadInputs.spdylayBadValue" },
 //   { spdylayNoDataLength, "BadInputs.spdylayNoDataLength" },
