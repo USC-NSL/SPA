@@ -17,11 +17,11 @@ while [ "$1" != "" ]; do
 	shift
 done
 
-rm -f spa-client-*.paths spa-server-*.paths $SERVER_PATHS.joblog
+rm -f spa-client-*.paths spa-server-*.paths
 
 spaSplitPaths -i $CLIENT_PATHS -o 'spa-client-%04d.paths' -p 1
 
-parallel --progress --eta --joblog $SERVER_PATHS.joblog \
+parallel --progress --eta --joblog $SERVER_PATHS.joblog --resume \
   --controlmaster --noswap -v --tag --linebuffer \
   -S lpedrosa@spa1.pedrosa.3-a.net -S lpedrosa@spa2.pedrosa.3-a.net -S lpedrosa@spa3.pedrosa.3-a.net \
   $BASEFILES --transfer --return spa-server-{} --cleanup \
@@ -29,9 +29,9 @@ parallel --progress --eta --joblog $SERVER_PATHS.joblog \
   date '+Started: %s.%N (%c)'; \
   /home/lpedrosa/spa/Release+Asserts/bin/spa -max-instruction-time=1 -max-solver-time=1 --path-file spa-server-{} -sender-paths {} --server $SERVER_BC; \
   date '+Finished: %s.%N (%c)';" \
-  ::: spa-client-*.paths 2>&1 | tee $SERVER_PATHS.log
+  ::: spa-client-*.paths 2>&1 | tee -a $SERVER_PATHS.log
 
-# parallel --progress --eta --joblog $SERVER_PATHS.joblog \
+# parallel --progress --eta --joblog $SERVER_PATHS.joblog --resume \
 #   --controlmaster --noswap -v --tag --linebuffer \
 #   -S david@192.168.3.6 \
 #   $BASEFILES --transfer --return spa-server-{} --cleanup \
@@ -39,7 +39,7 @@ parallel --progress --eta --joblog $SERVER_PATHS.joblog \
 #   date '+Started: %s.%N (%c)'; \
 #   /home/lpedrosa/spa/Release+Asserts/bin/spa -max-instruction-time=1 -max-solver-time=1 --path-file spa-server-{} -sender-paths {} --server $SERVER_BC; \
 #   date '+Finished: %s.%N (%c)';" \
-#   ::: spa-client-*.paths 2>&1 | tee $SERVER_PATHS.log
+#   ::: spa-client-*.paths 2>&1 | tee -a $SERVER_PATHS.log
 
 cat spa-server-*.paths > $SERVER_PATHS
 
