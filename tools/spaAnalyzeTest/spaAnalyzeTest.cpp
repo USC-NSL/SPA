@@ -82,7 +82,7 @@ bool nginxBadUrlPercent(std::map<std::string, std::vector<uint8_t> > testCase) {
 }
 
 bool nginxValueCrLf(std::map<std::string, std::vector<uint8_t> > testCase) {
-  const char *values[] = {"spa_in_api_value", "spa_in_api_value1", "spa_in_api_value2", "spa_in_api_value3", "spa_in_api_value4", "spa_in_api_value5", NULL};
+  const char *values[] = {"spa_in_api_value", "spa_in_api_value1", "spa_in_api_value2", "spa_in_api_value3", "spa_in_api_value4", "spa_in_api_value5", "spa_in_api_path", NULL};
   for (int i = 0; values[i]; i++) {
     if (testCase.count(values[i]) > 0
         && (std::find(testCase[values[i]].begin(), testCase[values[i]].end(), '\r') !=testCase[values[i]].end()
