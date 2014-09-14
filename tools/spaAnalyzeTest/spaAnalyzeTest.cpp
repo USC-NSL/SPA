@@ -144,6 +144,12 @@ bool nginxDotDotPastRoot(std::map<std::string, std::vector<uint8_t> > testCase) 
   return false;
 }
 
+bool nginxTrace(std::map<std::string, std::vector<uint8_t> > testCase) {
+  if (testCase.count("spa_in_api_methodId"))
+    return testCase["spa_in_api_methodId"] == std::vector<uint8_t>({6});
+  return false;
+}
+
 bool sipFromBadChar( std::map<std::string, std::vector<uint8_t> > testCase ) {
 // 	assert( testCase.count( "spa_in_api_from" ) );
 	if ( testCase.count( "spa_in_api_from" ) ) {
@@ -223,6 +229,7 @@ static struct {
   { nginxBadUrlPercent, "BadInputs.nginxBadUrlPercent" },
   { nginxValueCrLf, "BadInputs.nginxValueCrLf" },
   { nginxDotDotPastRoot, "BadInputs.nginxDotDotPastRoot" },
+  { nginxTrace, "BadInputs.nginxTrace" },
   { spdylayBadName, "BadInputs.spdylayBadName" },
   { spdylayBadValue, "BadInputs.spdylayBadValue" },
 //   { spdylayNoDataLength, "BadInputs.spdylayNoDataLength" },
