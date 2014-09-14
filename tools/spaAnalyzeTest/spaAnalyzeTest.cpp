@@ -93,6 +93,57 @@ bool nginxValueCrLf(std::map<std::string, std::vector<uint8_t> > testCase) {
   return false;
 }
 
+bool nginxDotDotPastRoot(std::map<std::string, std::vector<uint8_t> > testCase) {
+  if (testCase.count("spa_in_api_path")) {
+    int depth = 0;
+
+    enum { SLASH, DIR, DOT, DOTDOT } state = SLASH;
+    for (auto c : testCase["spa_in_api_path"]) {
+      switch (state) {
+        case SLASH:
+          if (c == '/') {
+            state = SLASH;
+          } else if (c == '.') {
+            state = DOT;
+          } else {
+            state = DIR;
+            depth++;
+          }
+        break;
+        case DIR:
+          if (c == '/') {
+            state = SLASH;
+          } else {
+            state = DIR;
+          }
+        break;
+        case DOT:
+          if (c == '/') {
+            state = SLASH;
+          } else if (c == '.') {
+            state = DOTDOT;
+          } else {
+            state = DIR;
+          }
+        break;
+        case DOTDOT:
+          if (c == '/') {
+            state = SLASH;
+            depth--;
+          } else {
+            state = DIR;
+          }
+        break;
+        default:
+          assert(0 && "Bad state.");
+      }
+      if (depth < 0)
+        return true;
+    }
+  }
+  return false;
+}
+
 bool sipFromBadChar( std::map<std::string, std::vector<uint8_t> > testCase ) {
 // 	assert( testCase.count( "spa_in_api_from" ) );
 	if ( testCase.count( "spa_in_api_from" ) ) {
@@ -171,6 +222,7 @@ static struct {
   { nginxHttp09, "BadInputs.nginxHttp09" },
   { nginxBadUrlPercent, "BadInputs.nginxBadUrlPercent" },
   { nginxValueCrLf, "BadInputs.nginxValueCrLf" },
+  { nginxDotDotPastRoot, "BadInputs.nginxDotDotPastRoot" },
   { spdylayBadName, "BadInputs.spdylayBadName" },
   { spdylayBadValue, "BadInputs.spdylayBadValue" },
 //   { spdylayNoDataLength, "BadInputs.spdylayNoDataLength" },
