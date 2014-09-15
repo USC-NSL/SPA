@@ -111,7 +111,9 @@ void ctrl_recv_callback( spdylay_session *session, spdylay_frame_type type, spdy
 
 void data_chunk_recv_callback( spdylay_session *session, uint8_t flags, int32_t stream_id, const uint8_t *data, size_t len, void *user_data ) {
 #ifndef ENABLE_KLEE
-	printf( "Received data on stream %d of %s: \"%s\"\n", stream_id, (char *) user_data, data );
+  char data_str[len + 1];
+  strncpy(data_str, (char *) data, len);
+  printf( "Received data on stream %d of %s: \"%s\"\n", stream_id, (char *) user_data, data_str );
 #endif // #ifndef ENABLE_KLEE
 	spa_valid_path();
 }
