@@ -422,10 +422,8 @@ void __attribute__((used)) SpaEntry() {
 	spa_message_handler_entry();
 
 	char arg0[] = "nginx";
-	char arg1[] = "-p";
-	char arg2[] = "/home/lpedrosa/spa/examples/nginx";
 	char empty[] = "";
-	char *argv[4] = {arg0, arg1, arg2, empty};
+	char *argv[] = {arg0, empty};
 	new_main(0, argv);
 }
 
