@@ -315,6 +315,7 @@ int main(int argc, char **argv, char **envp) {
 	std::map<std::string, std::vector<uint8_t> > testCase;
 	while ( inputFile.good() || follow ) {
 		if ( follow && ! inputFile.good() ) {
+      displayStats();
 			LOG() << "Reached end of input. Sleeping." << std::endl;
 			sleep( 1 );
 			inputFile.clear();
