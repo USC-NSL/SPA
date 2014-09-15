@@ -81,6 +81,19 @@ bool nginxBadUrlPercent(std::map<std::string, std::vector<uint8_t> > testCase) {
   return false;
 }
 
+bool nginxPercent00(std::map<std::string, std::vector<uint8_t> > testCase) {
+  if (testCase.count("spa_in_api_path")) {
+    for (unsigned i = 0; i < testCase["spa_in_api_path"].size() - 2; i++) {
+      if (testCase["spa_in_api_path"][i] == '%'
+          && testCase["spa_in_api_path"][i + 1] == '0'
+          && testCase["spa_in_api_path"][i + 2] == '0') {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
 bool nginxValueCrLf(std::map<std::string, std::vector<uint8_t> > testCase) {
   const char *values[] = {"spa_in_api_value", "spa_in_api_value1", "spa_in_api_value2", "spa_in_api_value3", "spa_in_api_value4", "spa_in_api_value5", "spa_in_api_path", NULL};
   for (int i = 0; values[i]; i++) {
@@ -227,6 +240,7 @@ static struct {
   { nginxSpdy3, "BadInputs.nginxSpdy3" },
   { nginxHttp09, "BadInputs.nginxHttp09" },
   { nginxBadUrlPercent, "BadInputs.nginxBadUrlPercent" },
+  { nginxPercent00, "BadInputs.nginxPercent00" },
   { nginxValueCrLf, "BadInputs.nginxValueCrLf" },
   { nginxDotDotPastRoot, "BadInputs.nginxDotDotPastRoot" },
   { nginxTrace, "BadInputs.nginxTrace" },
