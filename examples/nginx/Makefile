@@ -45,7 +45,7 @@ out/test/objs/nginx: out/test/Makefile
 	cd ../..
 
 nginx.paths: $(CLIENT_PATHS) $(BASEFILES)
-	parallel-spa-server.sh $< $@ $(NGINX_BC) $(BASEFILES)
+	parallel-spa-server.sh $< $@ out/llvm/objs/nginx $(BASEFILES)
 
 # BadInputs.untested: spa-server.paths
 # 	spaBadInputs -p 5 -j 100 -server $< -o $@ -d $@.debug 2>&1 | tee $@.log
