@@ -291,7 +291,15 @@ ngx_linux_sendfile_chain(ngx_connection_t *c, ngx_chain_t *in, off_t limit)
                            rc, file->file_pos, sent, file_size);
 
         } else {
+#ifndef ENABLE_KLEE
             rc = writev(c->fd, header.elts, header.nelts);
+#else
+            rc = 0;
+            int i;
+            for (i = 0; i < header.nelts; i++) {
+              rc += ((struct iovec *) header.elts)[i].iov_len;
+            }
+#endif
 
             if (rc == -1) {
                 err = ngx_errno;

@@ -32,9 +32,18 @@ typedef volatile ngx_atomic_uint_t  ngx_atomic_t;
 
 #define ngx_atomic_cmp_set(lock, old, new)                                    \
     AO_compare_and_swap(lock, old, new)
+
+#ifndef ENABLE_KLEE
 #define ngx_atomic_fetch_add(value, add)                                      \
     AO_fetch_and_add(value, add)
 #define ngx_memory_barrier()        AO_nop()
+
+#else // #ifndef ENABLE_KLEE
+
+#define ngx_atomic_fetch_add(value, add) do { value += add; } while (0)
+#define ngx_memory_barrier()
+#endif // #else // #ifndef ENABLE_KLEE
+
 #define ngx_cpu_pause()
 
 
@@ -106,6 +115,7 @@ typedef unsigned long               ngx_atomic_uint_t;
 typedef volatile ngx_atomic_uint_t  ngx_atomic_t;
 
 
+#ifndef ENABLE_KLEE
 #define ngx_atomic_cmp_set(lock, old, set)                                    \
     __sync_bool_compare_and_swap(lock, old, set)
 
@@ -113,6 +123,17 @@ typedef volatile ngx_atomic_uint_t  ngx_atomic_t;
     __sync_fetch_and_add(value, add)
 
 #define ngx_memory_barrier()        __sync_synchronize()
+
+#else // #ifndef ENABLE_KLEE
+
+#define ngx_atomic_cmp_set(lock, old, set)                                    \
+    ngx_atomic_compare_and_swap(lock, old, set)
+
+#define ngx_atomic_fetch_add(value, add)                                      \
+    (*(value) + (add))
+
+#define ngx_memory_barrier()
+#endif // #else // #ifndef ENABLE_KLEE
 
 #if ( __i386__ || __i386 || __amd64__ || __amd64 )
 #define ngx_cpu_pause()             __asm__ ("pause")
@@ -306,8 +327,13 @@ ngx_atomic_fetch_add(ngx_atomic_t *value, ngx_atomic_int_t add)
 
 void ngx_spinlock(ngx_atomic_t *lock, ngx_atomic_int_t value, ngx_uint_t spin);
 
+#ifndef ENABLE_KLEE
 #define ngx_trylock(lock)  (*(lock) == 0 && ngx_atomic_cmp_set(lock, 0, 1))
 #define ngx_unlock(lock)    *(lock) = 0
+#else
+#define ngx_trylock(lock)  (*(lock) == 0 && (*(lock) = 1))
+#define ngx_unlock(lock)    *(lock) = 0
+#endif
 
 
 #endif /* _NGX_ATOMIC_H_INCLUDED_ */

@@ -9,6 +9,8 @@
 #include <ngx_core.h>
 #include <nginx.h>
 
+#include <spa/spaRuntime.h>
+
 
 static ngx_int_t ngx_add_inherited_sockets(ngx_cycle_t *cycle);
 static ngx_int_t ngx_get_options(int argc, char *const *argv);
@@ -200,6 +202,12 @@ static char **ngx_os_environ;
 
 int ngx_cdecl
 main(int argc, char *const *argv)
+{
+	new_main(argc, argv);
+}
+
+int ngx_cdecl
+new_main(int argc, char *const *argv)
 {
     ngx_int_t         i;
     ngx_log_t        *log;
@@ -410,6 +418,14 @@ main(int argc, char *const *argv)
     return 0;
 }
 
+void __attribute__((used)) SpaEntry() {
+	spa_message_handler_entry();
+
+	char arg0[] = "nginx";
+	char empty[] = "";
+	char *argv[] = {arg0, empty};
+	new_main(0, argv);
+}
 
 static ngx_int_t
 ngx_add_inherited_sockets(ngx_cycle_t *cycle)
@@ -473,6 +489,10 @@ ngx_set_environment(ngx_cycle_t *cycle, ngx_uint_t *last)
     ngx_core_conf_t   *ccf;
 
     ccf = (ngx_core_conf_t *) ngx_get_conf(cycle->conf_ctx, ngx_core_module);
+
+#ifdef ENABLE_KLEE
+    return ccf->environment;
+#endif
 
     if (last == NULL && ccf->environment) {
         return ccf->environment;

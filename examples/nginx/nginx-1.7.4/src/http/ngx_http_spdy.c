@@ -12,6 +12,8 @@
 
 #include <zlib.h>
 
+#include <spa/spaRuntime.h>
+
 
 #if (NGX_HAVE_LITTLE_ENDIAN && NGX_HAVE_NONALIGNED)
 
@@ -510,6 +512,7 @@ ngx_http_spdy_init(ngx_event_t *rev)
     c->write->handler = ngx_http_spdy_write_handler;
 
     ngx_http_spdy_read_handler(rev);
+    spa_done();
 }
 
 
@@ -3121,6 +3124,8 @@ ngx_http_spdy_run_request(ngx_http_request_t *r)
         ngx_http_finalize_request(r, NGX_HTTP_BAD_REQUEST);
         return;
     }
+
+    spa_valid_path();
 
     ngx_http_process_request(r);
 }

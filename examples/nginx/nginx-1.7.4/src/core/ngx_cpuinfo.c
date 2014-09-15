@@ -9,7 +9,7 @@
 #include <ngx_core.h>
 
 
-#if (( __i386__ || __amd64__ ) && ( __GNUC__ || __INTEL_COMPILER ))
+#if (( __i386__ || __amd64__ ) && ( __GNUC__ || __INTEL_COMPILER )) && ! defined(ENABLE_KLEE)
 
 
 static ngx_inline void ngx_cpuid(uint32_t i, uint32_t *buf);

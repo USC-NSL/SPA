@@ -571,6 +571,7 @@ ngx_create_paths(ngx_cycle_t *cycle, ngx_uid_t user)
     for (i = 0; i < cycle->paths.nelts; i++) {
 
         if (ngx_create_dir(path[i]->name.data, 0700) == NGX_FILE_ERROR) {
+#ifndef ENABLE_KLEE
             err = ngx_errno;
             if (err != NGX_EEXIST) {
                 ngx_log_error(NGX_LOG_EMERG, cycle->log, err,
@@ -578,6 +579,7 @@ ngx_create_paths(ngx_cycle_t *cycle, ngx_uid_t user)
                               path[i]->name.data);
                 return NGX_ERROR;
             }
+#endif
         }
 
         if (user == (ngx_uid_t) NGX_CONF_UNSET_UINT) {
