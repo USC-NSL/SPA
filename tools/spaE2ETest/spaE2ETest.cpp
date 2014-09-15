@@ -155,9 +155,10 @@ int main(int argc, char **argv, char **envp) {
   }
   inputFile.close();
   unsigned long falsePositives = testedBundles.size() - truePositives;
-  unsigned long numTestCases = testedBundles.size();
 
-	inputFile.open( inputFileName );
+  unsigned long numTestCases = 0, numRepeats = 0;
+
+  inputFile.open( inputFileName );
   assert(inputFile.is_open());
   std::ofstream truePositivesFile(truePositivesFileName, std::ios_base::app);
   assert(truePositivesFile.is_open());
@@ -189,6 +190,7 @@ int main(int argc, char **argv, char **envp) {
 				numTestCases++;
 				if ( testedBundles.count( bundle ) ) {
 					LOG() << "Redundant test case. Ignoring." << std::endl;
+          numRepeats++;
 				} else {
 					LOG() << "Processing test case." << std::endl;
 					testedBundles.insert( bundle );
@@ -213,7 +215,7 @@ int main(int argc, char **argv, char **envp) {
 				LOG() << "Processed " << numTestCases << " test cases: "
               << truePositives << " true positives, "
               << falsePositives << " false positives, "
-              << (numTestCases - truePositives - falsePositives) << " repeats."
+              << numRepeats << " repeats."
               << std::endl;
 			}
 		}
