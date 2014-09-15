@@ -342,26 +342,20 @@ int main(int argc, char **argv, char **envp) {
 			}
 			testCase[name] = value;
 		} else {
-			if ( ! testCase.empty() ) {
-				for ( i = 0; classifiers[i].classifier; i++ ) {
-					if ( classifiers[i].classifier( testCase ) ) {
-						LOG() << "Test-case just before line " << lineNo << " classified as " << i << std::endl;
-						*outputFiles[i] << testToStr( testCase );
-						outputFiles[i]->flush();
-						resultCounts[i]++;
-// 						displayStats();
-						break;
-					}
-				}
-				if ( ! classifiers[i].classifier ) {
-					LOG() << "Test-case just before line " << lineNo << " classified as default." << std::endl;
-					*outputFiles[i] << testToStr( testCase );
-					outputFiles[i]->flush();
-					resultCounts[i]++;
-// 					displayStats();
-				}
-				testCase.clear();
-			}
+      if ( ! testCase.empty() ) {
+        for ( i = 0; classifiers[i].classifier; i++ ) {
+          if ((! classifiers[i].classifier) || classifiers[i].classifier(testCase)) {
+            LOG() << "Test-case just before line " << lineNo
+                  << " classified as " << classifiers[i].outFileName << std::endl;
+            *outputFiles[i] << testToStr( testCase );
+            outputFiles[i]->flush();
+            resultCounts[i]++;
+//             displayStats();
+            break;
+          }
+        }
+        testCase.clear();
+      }
 		}
 	}
   displayStats();
