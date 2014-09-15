@@ -155,7 +155,7 @@ int main(int argc, char **argv, char **envp) {
   }
   inputFile.close();
   unsigned long falsePositives = testedBundles.size() - truePositives;
-  unsigned long numTestCases = 0;
+  unsigned long numTestCases = testedBundles.size();
 
 	inputFile.open( inputFileName );
   assert(inputFile.is_open());
