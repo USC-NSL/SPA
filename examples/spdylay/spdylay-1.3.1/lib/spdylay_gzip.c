@@ -39,18 +39,22 @@ int spdylay_gzip_inflate_new(spdylay_gzip **inflater_ptr)
   (*inflater_ptr)->zst.zalloc = Z_NULL;
   (*inflater_ptr)->zst.zfree = Z_NULL;
   (*inflater_ptr)->zst.opaque = Z_NULL;
+#ifndef ENABLE_KLEE
   rv = inflateInit2(&(*inflater_ptr)->zst, 47);
   if(rv != Z_OK) {
     free(*inflater_ptr);
     return SPDYLAY_ERR_GZIP;
   }
+#endif // #ifndef ENABLE_KLEE
   return 0;
 }
 
 void spdylay_gzip_inflate_del(spdylay_gzip *inflater)
 {
   if(inflater != NULL) {
+#ifndef ENABLE_KLEE
     inflateEnd(&inflater->zst);
+#endif // #ifndef ENABLE_KLEE
     free(inflater);
   }
 }
@@ -68,6 +72,7 @@ int spdylay_gzip_inflate(spdylay_gzip *inflater,
   inflater->zst.avail_out = *outlen_ptr;
   inflater->zst.next_out = out;
 
+#ifndef ENABLE_KLEE
   rv = inflate(&inflater->zst, Z_NO_FLUSH);
 
   *inlen_ptr -= inflater->zst.avail_in;
@@ -88,4 +93,10 @@ int spdylay_gzip_inflate(spdylay_gzip *inflater,
     /* We need this for some compilers */
     return 0;
   }
+#else // #ifndef ENABLE_KLEE
+	assert( *outlen_ptr >= *inlen_ptr );
+	memmove( out, in, *inlen_ptr );
+	*outlen_ptr = *inlen_ptr;
+	return 0;
+#endif // #ifndef ENABLE_KLEE #else
 }
