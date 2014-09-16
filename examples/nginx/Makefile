@@ -58,7 +58,7 @@ BadInputs.untested: nginx.paths
 	parallel-badinputs.sh $< $@
 
 BadInputs.tested: BadInputs.untested out/test/objs/nginx
-	spaE2ETest $< $@ BadInputs.FalsePositives '../spdylay/spa-client.e2etest.exe' './out/test/objs/nginx' 2>&1 | tee $@.log
+	spaE2ETest $< $@ BadInputs.FalsePositives 8000 '../spdylay/spa-client.e2etest.exe' './out/test/objs/nginx' 2>&1 | tee $@.log
 
 .PRECIOUS: $(CLIENT_PATHS) nginx.paths BadInputs.untested BadInputs.tested
 

@@ -4,21 +4,104 @@
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
+#include <chrono>
 #include <unistd.h>
 
 #include <spa/SPA.h>
 
-#define SERVER_WAIT 1000000 // us
-#define CLIENT_WAIT  500000 // us
+#define RECHECK_WAIT    100000 // us
+#define LISTEN_TIMEOUT 5000000 // us
+#define FINISH_TIMEOUT 5000000 // us
+#define LOGS_TIMEOUT   1000000 // us
 
 #define LOG_FILE_VARIABLE	"SPA_LOG_FILE"
 
+#define TCP_LISTEN 10
+
 #define LOG() \
-	std::cerr << "[" << difftime( time( NULL ), programStartTime ) << "] "
+std::cerr << "[" << (std::chrono::duration_cast<std::chrono::milliseconds>( \
+                      std::chrono::steady_clock::now() \
+                        - programStartTime).count() / 1000.0) << "] "
 
-time_t programStartTime;
+auto programStartTime = std::chrono::steady_clock::now();
 
-bool processTestCase( char *clientCmd, char *serverCmd ) {
+void waitListen(uint16_t port) {
+  LOG() << "Waiting for server to listen on port " << port << "." << std::endl;
+
+  auto start_time = std::chrono::steady_clock::now();
+
+  do {
+    std::ifstream tcp_table("/proc/net/tcp");
+    std::string line;
+    std::getline( tcp_table, line ); // Ignore table header.
+    while (tcp_table.good()) {
+      std::getline( tcp_table, line );
+      if (! line.empty()) {
+        uint16_t local_port, state;
+
+        std::istringstream tokenizer(line);
+        std::string token;
+        tokenizer >> token >> token;
+        std::istringstream hexconverter(token.substr(token.find(':') + 1));
+        hexconverter >> std::hex >> local_port;
+        tokenizer >> token >> std::hex >> state;
+
+        if (local_port == port && state == TCP_LISTEN)
+          return;
+      }
+    }
+
+    usleep(RECHECK_WAIT);
+  } while (std::chrono::duration_cast<std::chrono::nanoseconds>(
+             std::chrono::steady_clock::now() - start_time).count()
+               <= LISTEN_TIMEOUT);
+}
+
+void waitFinish(std::set<pid_t> pids) {
+  LOG() << "Waiting for processes to finish." << std::endl;
+
+  do {
+    auto start_time = std::chrono::steady_clock::now();
+
+    while ((! pids.empty()) && std::chrono::duration_cast<std::chrono::nanoseconds>(
+            std::chrono::steady_clock::now() - start_time).count()
+              <= FINISH_TIMEOUT) {
+      pid_t pid = *pids.begin();
+      int status;
+      assert(waitpid(pid, &status, WNOHANG) != -1);
+      if (WIFEXITED(status) || WIFSIGNALED(status)) {
+        pids.erase(pid);
+      } else {
+        usleep(RECHECK_WAIT);
+      }
+    }
+
+    if (! pids.empty()) {
+      LOG() << "Killing processes." << std::endl;
+
+      for (pid_t pid : pids) {
+        kill(- pid, SIGKILL);
+      }
+    }
+  } while (! pids.empty());
+}
+
+void waitFiles(std::set<std::string> files) {
+  auto start_time = std::chrono::steady_clock::now();
+
+  while ((! files.empty()) && std::chrono::duration_cast<std::chrono::nanoseconds>(
+      std::chrono::steady_clock::now() - start_time).count()
+        <= LOGS_TIMEOUT) {
+    std::string file = *files.begin();
+    if (std::ifstream(file).is_open()) {
+      files.erase(file);
+    } else {
+      usleep(RECHECK_WAIT);
+    }
+  }
+}
+
+bool processTestCase( char *clientCmd, char *serverCmd, uint16_t port ) {
 	std::string serverLog = tmpnam( NULL );
 	LOG() << "Logging server results to: " << serverLog << std::endl;
 
@@ -30,34 +113,25 @@ bool processTestCase( char *clientCmd, char *serverCmd ) {
 		LOG() << "Launching server: " << serverCmd << std::endl;
 		exit( system( serverCmd ) );
 	}
-	
-	std::string clientLog = tmpnam( NULL );
-	LOG() << "Logging client results to: " << clientLog << std::endl;
-	
-	pid_t clientPID = fork();
-	assert( clientPID >= 0 && "Error forking client process." );
-	if ( clientPID == 0 ) {
-		setpgid( 0, 0 );
-		setenv( LOG_FILE_VARIABLE, clientLog.c_str(), 1 );
-		usleep(SERVER_WAIT);
-		LOG() << "Launching client: " << clientCmd << std::endl;
-		exit( system( clientCmd ) );
-	}
-	
-	usleep(CLIENT_WAIT + SERVER_WAIT);
-	LOG() << "Killing processes." << std::endl;
-	kill( - serverPID, SIGTERM );
-	kill( - clientPID, SIGTERM );
-	
-	int clientStatus = 0, serverStatus = 0;
-	// 					LOG() << "Waiting for server." << std::endl;
-	assert( waitpid( serverPID, &serverStatus, 0 ) != -1 );
-	// 					LOG() << "Waiting for client." << std::endl;
-	assert( waitpid( clientPID, &clientStatus, 0 ) != -1 );
-	
+  waitListen(port);
+
+  std::string clientLog = tmpnam( NULL );
+  LOG() << "Logging client results to: " << clientLog << std::endl;
+
+  pid_t clientPID = fork();
+  assert( clientPID >= 0 && "Error forking client process." );
+  if ( clientPID == 0 ) {
+    setpgid( 0, 0 );
+    setenv( LOG_FILE_VARIABLE, clientLog.c_str(), 1 );
+    LOG() << "Launching client: " << clientCmd << std::endl;
+    exit( system( clientCmd ) );
+  }
+  waitFinish({clientPID, serverPID});
+  waitFiles({clientLog, serverLog});
+
 	LOG() << "Processing outputs." << std::endl;
 	std::ifstream logFile( clientLog.c_str() );
-	// 					assert( logFile.is_open() && "Unable to open client log file." );
+  assert( logFile.is_open() && "Unable to open client log file." );
 	bool clientValid = false;
 	while ( logFile.good() ) {
 		std::string line;
@@ -92,13 +166,11 @@ bool processTestCase( char *clientCmd, char *serverCmd ) {
 }
 
 int main(int argc, char **argv, char **envp) {
-	if ( argc < 6 || argc > 8  ) {
-		std::cerr << "Usage: " << argv[0] << " [-f] <input-file> <true-positive-file> <false-positive-file> <client-cmd> <server-cmd> [reference-server-cmd]" << std::endl;
+	if ( argc < 7 || argc > 9  ) {
+		std::cerr << "Usage: " << argv[0] << " [-f] <input-file> <true-positive-file> <false-positive-file> <client-cmd> <server-cmd> <port> [reference-server-cmd]" << std::endl;
 
 		return -1;
 	}
-
-	programStartTime = time( NULL );
 
 	bool follow = false;
 
@@ -107,11 +179,12 @@ int main(int argc, char **argv, char **envp) {
 		follow = true;
 		arg++;
 	}
-  char *inputFileName         = argv[arg++];
+  char *inputFileName          = argv[arg++];
   char *truePositivesFileName  = argv[arg++];
   char *falsePositivesFileName = argv[arg++];
-  char *clientCmd             = argv[arg++];
-  char *serverCmd             = argv[arg++];
+  uint16_t port                = atoi(argv[arg++]);
+  char *clientCmd              = argv[arg++];
+  char *serverCmd              = argv[arg++];
   char *refServerCmd          = NULL;
 	if ( arg < (unsigned int) argc )
 		refServerCmd = argv[arg++];
@@ -195,10 +268,15 @@ int main(int argc, char **argv, char **envp) {
 					LOG() << "Processing test case." << std::endl;
 					testedBundles.insert( bundle );
 
-					LOG() << "Testing cross-interoperability." << std::endl;
-					bool crossInterop = processTestCase( clientCmd, serverCmd );
-					LOG() << "Testing reference-interoperability." << std::endl;
-					bool refInterop = refServerCmd != NULL ? processTestCase( clientCmd, refServerCmd ) : false;
+          LOG() << "Testing cross-interoperability." << std::endl;
+          bool crossInterop = processTestCase(clientCmd, serverCmd, port);
+          bool refInterop;
+          if (refServerCmd != NULL) {
+            LOG() << "Testing reference-interoperability." << std::endl;
+            refInterop = processTestCase(clientCmd, refServerCmd, port);
+          } else {
+            refInterop = false;
+          }
 					// Only consider interoperability bugs where the client and reference server assert valid but test server doesn't.
 					if ( crossInterop && (! refInterop) ) {
 						LOG() << "Found true positive. Outputting" << std::endl;
