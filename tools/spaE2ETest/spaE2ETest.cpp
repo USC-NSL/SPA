@@ -10,9 +10,10 @@
 #include <spa/SPA.h>
 
 #define RECHECK_WAIT    100000 // us
+// Timeouts of 0 mean no timeout (wait indefinitely).
 #define LISTEN_TIMEOUT 5000000 // us
 #define FINISH_TIMEOUT 5000000 // us
-#define LOGS_TIMEOUT   1000000 // us
+#define LOGS_TIMEOUT         0 // us
 
 #define LOG_FILE_VARIABLE	"SPA_LOG_FILE"
 
@@ -52,9 +53,10 @@ void waitListen(uint16_t port) {
     }
 
     usleep(RECHECK_WAIT);
-  } while (std::chrono::duration_cast<std::chrono::nanoseconds>(
-             std::chrono::steady_clock::now() - start_time).count()
-               <= LISTEN_TIMEOUT);
+  } while (LISTEN_TIMEOUT == 0
+           || std::chrono::duration_cast<std::chrono::nanoseconds>(
+                std::chrono::steady_clock::now() - start_time).count()
+                  <= LISTEN_TIMEOUT);
 }
 
 void waitFinish(std::set<pid_t> pids) {
@@ -63,9 +65,10 @@ void waitFinish(std::set<pid_t> pids) {
   do {
     auto start_time = std::chrono::steady_clock::now();
 
-    while ((! pids.empty()) && std::chrono::duration_cast<std::chrono::nanoseconds>(
-            std::chrono::steady_clock::now() - start_time).count()
-              <= FINISH_TIMEOUT) {
+    while ((! pids.empty()) && (FINISH_TIMEOUT == 0
+             || std::chrono::duration_cast<std::chrono::nanoseconds>(
+                  std::chrono::steady_clock::now() - start_time).count()
+                    <= FINISH_TIMEOUT)) {
       pid_t pid = *pids.begin();
       int status;
       assert(waitpid(pid, &status, WNOHANG) != -1);
@@ -86,12 +89,15 @@ void waitFinish(std::set<pid_t> pids) {
   } while (! pids.empty());
 }
 
-void waitFiles(std::set<std::string> files) {
+void waitLogs(std::set<std::string> files) {
+  LOG() << "Waiting for logs to be ready." << std::endl;
+
   auto start_time = std::chrono::steady_clock::now();
 
-  while ((! files.empty()) && std::chrono::duration_cast<std::chrono::nanoseconds>(
-      std::chrono::steady_clock::now() - start_time).count()
-        <= LOGS_TIMEOUT) {
+  while ((! files.empty()) && (LOGS_TIMEOUT == 0
+           || std::chrono::duration_cast<std::chrono::nanoseconds>(
+                std::chrono::steady_clock::now() - start_time).count()
+                  <= LOGS_TIMEOUT)) {
     std::string file = *files.begin();
     if (std::ifstream(file).is_open()) {
       files.erase(file);
@@ -127,7 +133,7 @@ bool processTestCase( char *clientCmd, char *serverCmd, uint16_t port ) {
     exit( system( clientCmd ) );
   }
   waitFinish({clientPID, serverPID});
-  waitFiles({clientLog, serverLog});
+  waitLogs({clientLog, serverLog});
 
 	LOG() << "Processing outputs." << std::endl;
 	std::ifstream logFile( clientLog.c_str() );
