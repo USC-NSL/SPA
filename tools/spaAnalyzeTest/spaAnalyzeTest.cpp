@@ -8,11 +8,14 @@
 #include <map>
 #include <vector>
 #include <algorithm>
+#include <chrono>
 
 #define LOG() \
-	std::cerr << "[" << difftime( time( NULL ), programStartTime ) << "] "
+std::cerr << "[" << (std::chrono::duration_cast<std::chrono::milliseconds>( \
+                      std::chrono::steady_clock::now() \
+                        - programStartTime).count() / 1000.0) << "] "
 
-time_t programStartTime;
+auto programStartTime = std::chrono::steady_clock::now();
 
 typedef bool (*TestClassifier)( std::map<std::string, std::vector<uint8_t> > );
 
@@ -284,8 +287,6 @@ int main(int argc, char **argv, char **envp) {
 
 		return -1;
 	}
-
-	programStartTime = time( NULL );
 
 	bool follow = false;
 	char *inputFileName;
