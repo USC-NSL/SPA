@@ -1,0 +1,37 @@
+commit 4513a878ea69eb38af4673ffc694d6ed41f5aa58
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2014-08-24
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2014-08-24
+
+    Bump up version number to 1.3.1 and LT revision to 8:1:1
+
+commit 5bbe568ad75beb0bd7bf9ca80629e2aa0cc1b3bd
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2014-08-24
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2014-08-24
+
+    Update NEWS
+
+commit d1e8fa13d74d722b15a5a7d1e443bc45d29f9f84
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2014-08-24
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2014-08-24
+
+    Fix bug that connection window is consumed excessively
+    
+    Previously we consider bytes as consumed in spdylay_session_mem_recv()
+    even if it is not ignored and is passing to application.  As a result,
+    excessive number of bytes are considered as consumed and library sends
+    excessive amount of WINDOW_UPDATE to peer.  This commit fixes this
+    bug.
+
+commit e9184dd48100f2b9e2d3225c574a62ef45e60437
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2014-08-23
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2014-08-23
+
+    Bump up version number to 1.3.1-DEV
