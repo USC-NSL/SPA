@@ -149,19 +149,26 @@ bool processTestCase( char *clientCmd, char *serverCmd, uint16_t port ) {
 	logFile.open( serverLog.c_str() );
 	assert( logFile.is_open() && "Unable to open server log file." );
 	bool serverValid = false;
-	while ( logFile.good() ) {
+  bool serverReceived = false;
+  while ( logFile.good() ) {
 		std::string line;
 		std::getline( logFile, line );
 		if ( line.compare( 0, strlen( SPA_TAG_PREFIX SPA_VALIDPATH_TAG ), SPA_TAG_PREFIX SPA_VALIDPATH_TAG ) == 0 ) {
 			size_t boundary = line.find( ' ' );
 			assert( boundary != std::string::npos && boundary < line.size() - 1 && "Malformed tag." );
 			serverValid = (line.substr( boundary + 1 ) == SPA_VALIDPATH_VALUE);
-		}
-	}
-	logFile.close();
-	remove( serverLog.c_str() );
-	LOG() << "Server validity: " << serverValid << std::endl;
-	
+    } else if (line.compare(0, strlen(SPA_TAG_PREFIX SPA_MSGRECEIVED_TAG), SPA_TAG_PREFIX SPA_MSGRECEIVED_TAG) == 0) {
+      size_t boundary = line.find( ' ' );
+      assert( boundary != std::string::npos && boundary < line.size() - 1 && "Malformed tag." );
+      serverReceived = (line.substr( boundary + 1 ) == SPA_MSGRECEIVED_VALUE);
+    }
+  }
+  logFile.close();
+  remove( serverLog.c_str() );
+  LOG() << "Server received: " << serverReceived << std::endl;
+  LOG() << "Server validity: " << serverValid << std::endl;
+  assert(clientValid == serverReceived && "Message sent but not received.");
+
 	return clientValid && (! serverValid);
 }
 
