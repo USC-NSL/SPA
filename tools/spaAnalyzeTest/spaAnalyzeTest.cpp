@@ -22,8 +22,10 @@ typedef bool (*TestClassifier)( std::map<std::string, std::vector<uint8_t> > );
 bool spdylayDiffVersion( std::map<std::string, std::vector<uint8_t> > testCase ) {
 // 	assert( testCase.count( "spa_in_api_clientVersion" ) );
 // 	assert( testCase.count( "spa_in_api_serverVersion" ) );
-	if ( testCase.count( "spa_in_api_clientVersion" ) && testCase.count( "spa_in_api_serverVersion" ) )
-		return testCase["spa_in_api_clientVersion"] != testCase["spa_in_api_serverVersion"];
+	if ( testCase.count( "spa_in_api_clientVersion" ) && testCase.count( "spa_in_api_serverVersion" ) ) {
+    return (testCase["spa_in_api_clientVersion"] == std::vector<uint8_t>({2, 0}))
+           != (testCase["spa_in_api_serverVersion"] == std::vector<uint8_t>({2, 0}));
+  }
 	return false;
 }
 
@@ -43,13 +45,94 @@ bool spdylayBadName( std::map<std::string, std::vector<uint8_t> > testCase ) {
 	return false;
 }
 
-bool spdylayBadValue( std::map<std::string, std::vector<uint8_t> > testCase ) {
+bool spdylayEmptyValue( std::map<std::string, std::vector<uint8_t> > testCase ) {
 // 	assert( testCase.count( "spa_in_api_value" ) );
 	const char *values[] = { "spa_in_api_value", "spa_in_api_value1", "spa_in_api_value2", "spa_in_api_value3", "spa_in_api_value4", "spa_in_api_value5", NULL };
 	for ( int i = 0; values[i]; i++ )
 		if ( testCase.count( values[i] ) > 0 && testCase[values[i]][0] == '\0' )
 			return true;
 	return false;
+}
+
+// From spdylay_frame.c:
+static int VALID_HD_VALUE_CHARS[] = {
+  1 /* NUL  */, 0 /* SOH  */, 0 /* STX  */, 0 /* ETX  */,
+  0 /* EOT  */, 0 /* ENQ  */, 0 /* ACK  */, 0 /* BEL  */,
+  0 /* BS   */, 1 /* HT   */, 0 /* LF   */, 0 /* VT   */,
+  0 /* FF   */, 0 /* CR   */, 0 /* SO   */, 0 /* SI   */,
+  0 /* DLE  */, 0 /* DC1  */, 0 /* DC2  */, 0 /* DC3  */,
+  0 /* DC4  */, 0 /* NAK  */, 0 /* SYN  */, 0 /* ETB  */,
+  0 /* CAN  */, 0 /* EM   */, 0 /* SUB  */, 0 /* ESC  */,
+  0 /* FS   */, 0 /* GS   */, 0 /* RS   */, 0 /* US   */,
+  1 /* SPC  */, 1 /* !    */, 1 /* "    */, 1 /* #    */,
+  1 /* $    */, 1 /* %    */, 1 /* &    */, 1 /* '    */,
+  1 /* (    */, 1 /* )    */, 1 /* *    */, 1 /* +    */,
+  1 /* ,    */, 1 /* -    */, 1 /* .    */, 1 /* /    */,
+  1 /* 0    */, 1 /* 1    */, 1 /* 2    */, 1 /* 3    */,
+  1 /* 4    */, 1 /* 5    */, 1 /* 6    */, 1 /* 7    */,
+  1 /* 8    */, 1 /* 9    */, 1 /* :    */, 1 /* ;    */,
+  1 /* <    */, 1 /* =    */, 1 /* >    */, 1 /* ?    */,
+  1 /* @    */, 1 /* A    */, 1 /* B    */, 1 /* C    */,
+  1 /* D    */, 1 /* E    */, 1 /* F    */, 1 /* G    */,
+  1 /* H    */, 1 /* I    */, 1 /* J    */, 1 /* K    */,
+  1 /* L    */, 1 /* M    */, 1 /* N    */, 1 /* O    */,
+  1 /* P    */, 1 /* Q    */, 1 /* R    */, 1 /* S    */,
+  1 /* T    */, 1 /* U    */, 1 /* V    */, 1 /* W    */,
+  1 /* X    */, 1 /* Y    */, 1 /* Z    */, 1 /* [    */,
+  1 /* \    */, 1 /* ]    */, 1 /* ^    */, 1 /* _    */,
+  1 /* `    */, 1 /* a    */, 1 /* b    */, 1 /* c    */,
+  1 /* d    */, 1 /* e    */, 1 /* f    */, 1 /* g    */,
+  1 /* h    */, 1 /* i    */, 1 /* j    */, 1 /* k    */,
+  1 /* l    */, 1 /* m    */, 1 /* n    */, 1 /* o    */,
+  1 /* p    */, 1 /* q    */, 1 /* r    */, 1 /* s    */,
+  1 /* t    */, 1 /* u    */, 1 /* v    */, 1 /* w    */,
+  1 /* x    */, 1 /* y    */, 1 /* z    */, 1 /* {    */,
+  1 /* |    */, 1 /* }    */, 1 /* ~    */, 0 /* DEL  */,
+  1 /* 0x80 */, 1 /* 0x81 */, 1 /* 0x82 */, 1 /* 0x83 */,
+  1 /* 0x84 */, 1 /* 0x85 */, 1 /* 0x86 */, 1 /* 0x87 */,
+  1 /* 0x88 */, 1 /* 0x89 */, 1 /* 0x8a */, 1 /* 0x8b */,
+  1 /* 0x8c */, 1 /* 0x8d */, 1 /* 0x8e */, 1 /* 0x8f */,
+  1 /* 0x90 */, 1 /* 0x91 */, 1 /* 0x92 */, 1 /* 0x93 */,
+  1 /* 0x94 */, 1 /* 0x95 */, 1 /* 0x96 */, 1 /* 0x97 */,
+  1 /* 0x98 */, 1 /* 0x99 */, 1 /* 0x9a */, 1 /* 0x9b */,
+  1 /* 0x9c */, 1 /* 0x9d */, 1 /* 0x9e */, 1 /* 0x9f */,
+  1 /* 0xa0 */, 1 /* 0xa1 */, 1 /* 0xa2 */, 1 /* 0xa3 */,
+  1 /* 0xa4 */, 1 /* 0xa5 */, 1 /* 0xa6 */, 1 /* 0xa7 */,
+  1 /* 0xa8 */, 1 /* 0xa9 */, 1 /* 0xaa */, 1 /* 0xab */,
+  1 /* 0xac */, 1 /* 0xad */, 1 /* 0xae */, 1 /* 0xaf */,
+  1 /* 0xb0 */, 1 /* 0xb1 */, 1 /* 0xb2 */, 1 /* 0xb3 */,
+  1 /* 0xb4 */, 1 /* 0xb5 */, 1 /* 0xb6 */, 1 /* 0xb7 */,
+  1 /* 0xb8 */, 1 /* 0xb9 */, 1 /* 0xba */, 1 /* 0xbb */,
+  1 /* 0xbc */, 1 /* 0xbd */, 1 /* 0xbe */, 1 /* 0xbf */,
+  1 /* 0xc0 */, 1 /* 0xc1 */, 1 /* 0xc2 */, 1 /* 0xc3 */,
+  1 /* 0xc4 */, 1 /* 0xc5 */, 1 /* 0xc6 */, 1 /* 0xc7 */,
+  1 /* 0xc8 */, 1 /* 0xc9 */, 1 /* 0xca */, 1 /* 0xcb */,
+  1 /* 0xcc */, 1 /* 0xcd */, 1 /* 0xce */, 1 /* 0xcf */,
+  1 /* 0xd0 */, 1 /* 0xd1 */, 1 /* 0xd2 */, 1 /* 0xd3 */,
+  1 /* 0xd4 */, 1 /* 0xd5 */, 1 /* 0xd6 */, 1 /* 0xd7 */,
+  1 /* 0xd8 */, 1 /* 0xd9 */, 1 /* 0xda */, 1 /* 0xdb */,
+  1 /* 0xdc */, 1 /* 0xdd */, 1 /* 0xde */, 1 /* 0xdf */,
+  1 /* 0xe0 */, 1 /* 0xe1 */, 1 /* 0xe2 */, 1 /* 0xe3 */,
+  1 /* 0xe4 */, 1 /* 0xe5 */, 1 /* 0xe6 */, 1 /* 0xe7 */,
+  1 /* 0xe8 */, 1 /* 0xe9 */, 1 /* 0xea */, 1 /* 0xeb */,
+  1 /* 0xec */, 1 /* 0xed */, 1 /* 0xee */, 1 /* 0xef */,
+  1 /* 0xf0 */, 1 /* 0xf1 */, 1 /* 0xf2 */, 1 /* 0xf3 */,
+  1 /* 0xf4 */, 1 /* 0xf5 */, 1 /* 0xf6 */, 1 /* 0xf7 */,
+  1 /* 0xf8 */, 1 /* 0xf9 */, 1 /* 0xfa */, 1 /* 0xfb */,
+  1 /* 0xfc */, 1 /* 0xfd */, 1 /* 0xfe */, 1 /* 0xff */
+};
+bool spdylayBadValueChar( std::map<std::string, std::vector<uint8_t> > testCase ) {
+  //  assert( testCase.count( "spa_in_api_value" ) );
+  const char *values[] = { "spa_in_api_path", "spa_in_api_value", "spa_in_api_value1", "spa_in_api_value2", "spa_in_api_value3", "spa_in_api_value4", "spa_in_api_value5", NULL };
+  for (int i = 0; values[i]; i++) {
+    if (testCase.count(values[i])) {
+      for (uint8_t c : testCase[values[i]]) {
+        if (! VALID_HD_VALUE_CHARS[c])
+          return true;
+      }
+    }
+  }
+  return false;
 }
 
 bool spdylayNoDataLength( std::map<std::string, std::vector<uint8_t> > testCase ) {
@@ -248,7 +331,8 @@ static struct {
   { nginxDotDotPastRoot, "BadInputs.nginxDotDotPastRoot" },
   { nginxTrace, "BadInputs.nginxTrace" },
   { spdylayBadName, "BadInputs.spdylayBadName" },
-  { spdylayBadValue, "BadInputs.spdylayBadValue" },
+  { spdylayEmptyValue, "BadInputs.spdylayEmptyValue" },
+  { spdylayBadValueChar, "BadInputs.spdylayBadValueChar" },
 //   { spdylayNoDataLength, "BadInputs.spdylayNoDataLength" },
   { sipFromBadChar, "BadInputs.sipFromBadChar" },
   { sipFromNoScheme, "BadInputs.sipFromNoScheme" },
@@ -345,7 +429,7 @@ int main(int argc, char **argv, char **envp) {
 			testCase[name] = value;
 		} else {
       if ( ! testCase.empty() ) {
-        for ( i = 0; classifiers[i].classifier; i++ ) {
+        for ( i = 0; ; i++ ) {
           if ((! classifiers[i].classifier) || classifiers[i].classifier(testCase)) {
             LOG() << "Test-case just before line " << lineNo
                   << " classified as " << classifiers[i].outFileName << std::endl;
