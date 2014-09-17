@@ -124,7 +124,7 @@ BadInputs.untested: spa-server.paths
 	parallel-badinputs.sh $< $@
 
 BadInputs.tested: BadInputs.untested $(TEST_TARGETS)
-	spaE2ETest $< $@ './spa-client.e2etest.exe' './spa-server.e2etest.exe' 2>&1 | tee $@.log
+	spaE2ETest $< $@ BadInputs.FalsePositives 8000 './spa-client.e2etest.exe' './spa-server.e2etest.exe' 2>&1 | tee $@.log
 
 %.tested.txt: %.tested
 	spaTest2Str $< $@ 2>&1 | tee $@.log
