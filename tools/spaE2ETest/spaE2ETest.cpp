@@ -180,7 +180,7 @@ bool processTestCase( char *clientCmd, char *serverCmd, uint16_t port ) {
 
 int main(int argc, char **argv, char **envp) {
 	if ( argc < 7 || argc > 9  ) {
-		std::cerr << "Usage: " << argv[0] << " [-f] <input-file> <true-positive-file> <false-positive-file> <client-cmd> <server-cmd> <port> [reference-server-cmd]" << std::endl;
+    std::cerr << "Usage: " << argv[0] << " [-f] <input-file> <true-positive-file> <false-positive-file> <port> <client-cmd> <server-cmd> [reference-server-cmd]" << std::endl;
 
 		return -1;
 	}
