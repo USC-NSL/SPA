@@ -227,7 +227,7 @@ void __attribute__((noinline,used)) spa_HandleRequest() {
 #else
 	uint16_t serverVersion = 0;
 	spa_api_input_var( serverVersion );
-	spa_assume( serverVersion == SPDYLAY_PROTO_SPDY2 || serverVersion == SPDYLAY_PROTO_SPDY3 );
+// 	spa_assume( serverVersion == SPDYLAY_PROTO_SPDY2 || serverVersion == SPDYLAY_PROTO_SPDY3 );
 #endif // #ifdef SPDY_VERSION
 	assert( spdylay_session_server_new( &session, serverVersion, &callbacks, "SPDY Server Session" ) == SPDYLAY_OK );
 
