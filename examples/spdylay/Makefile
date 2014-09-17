@@ -86,19 +86,19 @@ out/llvm/lib/.libs/libspdylay.a: out/llvm/Makefile
 	rm -f `dirname $<`/lib/libspdylay.la
 	$(MAKE) -C `dirname $<`/lib libspdylay.la
 
-%.exe: $(SPDYLAY)/%.c out/dbg/lib/.libs/libspdylay.a
+%.exe: %.c out/dbg/lib/.libs/libspdylay.a
 	$(CC) -Iout/dbg/lib/includes $^ -lz -o $@
 
-%.log.exe: $(SPDYLAY)/%.c out/test/lib/.libs/libspdylay.a $(LIB_SPA_LOG_MODULE)
+%.log.exe: %.c out/test/lib/.libs/libspdylay.a $(LIB_SPA_LOG_MODULE)
 	$(CC) -DENABLE_SPA -Iout/test/lib/includes -lz -o $@ $^
 
 %.log: %.log.exe
 	SPA_LOG_FILE=$@ ./$<
 
-%.e2etest.exe: $(SPDYLAY)/%.c out/test/lib/.libs/libspdylay.a $(LIB_SPA_TEST_MODULE)
+%.e2etest.exe: %.c out/test/lib/.libs/libspdylay.a $(LIB_SPA_TEST_MODULE)
 	$(CC) -DENABLE_SPA -Iout/test/lib/includes -lz -o $@ $^
 
-%.bc.o: $(SPDYLAY)/%.c
+%.bc.o: %.c
 	$(LLVM_CC) -Iout/llvm/lib/includes -DENABLE_SPA -DENABLE_KLEE -c $< -o $@
 
 %.bc: %.bc.o out/llvm/lib/.libs/libspdylay.a
