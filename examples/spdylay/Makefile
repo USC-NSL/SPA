@@ -104,7 +104,7 @@ out/llvm/lib/.libs/libspdylay.a: out/llvm/Makefile
 %.bc: %.bc.o out/llvm/lib/.libs/libspdylay.a
 	$(LLVM_LD) $^ -o $@
 
-.PRECIOUS: $(PATHS) $(LOGS)
+.PRECIOUS: $(PATHS) $(LOGS) BadInputs.untested BadInputs.tested
 
 spa-client.paths: spa-client.bc $(SPA_EXE)
 	$(SPA) --path-file $@ --client $< 2>&1 | tee $@.log
