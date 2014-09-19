@@ -13,6 +13,7 @@ cscope.*
 *.config
 
 config.h
+config.log
 site.exp
 docs/doxygen.cfg
 docs/doxygen/
