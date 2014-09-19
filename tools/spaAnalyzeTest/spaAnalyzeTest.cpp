@@ -7,6 +7,7 @@
 #include <stdint.h>
 #include <map>
 #include <vector>
+#include <set>
 #include <algorithm>
 #include <chrono>
 
@@ -148,6 +149,21 @@ bool nginxSpdy3(std::map<std::string, std::vector<uint8_t> > testCase) {
 bool nginxHttp09(std::map<std::string, std::vector<uint8_t> > testCase) {
   if (testCase.count("spa_in_api_versionId"))
     return testCase["spa_in_api_versionId"] == std::vector<uint8_t>({2});
+  return false;
+}
+
+bool nginxUnknownColonHeader(std::map<std::string, std::vector<uint8_t> > testCase) {
+  std::set<std::string> names = {"spa_in_api_name", "spa_in_api_name1", "spa_in_api_name2", "spa_in_api_name3", "spa_in_api_name4", "spa_in_api_name5"};
+  // From ngx_http_spdy.c:373
+  std::set<std::string> whitelist = {"method", "scheme", "host", "path", "version"};
+  for (auto name : names) {
+    if (testCase.count(name) > 0 && testCase[name][0] == ':') {
+      std::string header(testCase[name].begin(), testCase[name].end());
+      if (whitelist.count(header.substr(1)) == 0) {
+        return true;
+      }
+    }
+  }
   return false;
 }
 
@@ -323,23 +339,24 @@ static struct {
 	const char *outFileName;
 } classifiers[] = {
   { spdylayDiffVersion, "BadInputs.spdylayDiffVersion" },
-  { nginxSpdy3, "BadInputs.nginxSpdy3" },
   { nginxHttp09, "BadInputs.nginxHttp09" },
+  { nginxUnknownColonHeader, "BadInputs.nginxUnknownColonHeader" },
   { nginxBadUrlPercent, "BadInputs.nginxBadUrlPercent" },
   { nginxPercent00, "BadInputs.nginxPercent00" },
   { nginxValueCrLf, "BadInputs.nginxValueCrLf" },
   { nginxDotDotPastRoot, "BadInputs.nginxDotDotPastRoot" },
   { nginxTrace, "BadInputs.nginxTrace" },
   { spdylayBadName, "BadInputs.spdylayBadName" },
-  { spdylayEmptyValue, "BadInputs.spdylayEmptyValue" },
   { spdylayBadValueChar, "BadInputs.spdylayBadValueChar" },
-//   { spdylayNoDataLength, "BadInputs.spdylayNoDataLength" },
   { sipFromBadChar, "BadInputs.sipFromBadChar" },
   { sipFromNoScheme, "BadInputs.sipFromNoScheme" },
   { sipToConfusedScheme, "BadInputs.sipToConfusedScheme" },
   { sipEventBadChar, "BadInputs.sipEventBadChar" },
 	{ NULL, "BadInputs.default" },
 };
+//   { nginxSpdy3, "BadInputs.nginxSpdy3" },
+//   { spdylayEmptyValue, "BadInputs.spdylayEmptyValue" },
+//   { spdylayNoDataLength, "BadInputs.spdylayNoDataLength" },
 
 std::vector<unsigned long> resultCounts;
 
