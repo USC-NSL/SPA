@@ -12,6 +12,7 @@
 #define SERVER_PORT			8000
 // #define SPDY_VERSION		SPDYLAY_PROTO_SPDY2
 // #define SPDY_VERSION		SPDYLAY_PROTO_SPDY3
+// #define SPDY_VERSION   SPDYLAY_PROTO_SPDY3_1
 // #define PUSH_METHOD			"GET"
 // #define PUSH_SCHEME			"http"
 // #define PUSH_PATH			"/"
