@@ -6,7 +6,7 @@ LD='llvm-link' \
 CPP='clang -E' \
 ./configure \
 	--prefix="/home/lpedrosa/nginx" \
-	--conf-path="/home/lpedrosa/nginx/conf/nginx.conf" \
+	--conf-path="/home/lpedrosa/nginx-1.7.4/conf/nginx.conf" \
 	--with-http_spdy_module \
 	--without-http_charset_module \
 	--without-http_gzip_module \
