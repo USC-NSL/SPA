@@ -7,7 +7,7 @@ set -e
 
 rm -f badinputs-*.paths badinputs-*.txt
 
-spaSplitPaths -i $1 -o 'badinputs-%04d.paths' -n 1000
+spaSplitPaths -i $1 -o 'badinputs-%06d.paths' -n 1000
 
 parallel --progress --eta --joblog $2.joblog --resume \
   --controlmaster --noswap -v --tag --linebuffer \

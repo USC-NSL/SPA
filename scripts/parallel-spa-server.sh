@@ -19,7 +19,7 @@ done
 
 rm -f spa-client-*.paths spa-server-*.paths
 
-spaSplitPaths -i $CLIENT_PATHS -o 'spa-client-%04d.paths' -p 1
+spaSplitPaths -i $CLIENT_PATHS -o 'spa-client-%06d.paths' -p 1
 
 parallel --progress --eta --joblog $SERVER_PATHS.joblog --resume \
   --controlmaster --noswap -v --tag --linebuffer \
@@ -27,7 +27,9 @@ parallel --progress --eta --joblog $SERVER_PATHS.joblog --resume \
   $BASEFILES --transfer --return spa-server-{} --cleanup \
   "echo Basefiles: $BASEFILES; echo Transfer: {}; echo Return: spa-server-{}; echo ls:; ls; \
   date '+Started: %s.%N (%c)'; \
-  /home/lpedrosa/spa/Release+Asserts/bin/spa -max-instruction-time=1 -max-solver-time=1 --path-file spa-server-{} -sender-paths {} --server $SERVER_BC; \
+  /home/lpedrosa/spa/Release+Asserts/bin/spa \
+  -max-instruction-time=1 -max-solver-time=1 -max-time=3600 \
+  --path-file spa-server-{} -sender-paths {} --server $SERVER_BC; \
   date '+Finished: %s.%N (%c)';" \
   ::: spa-client-*.paths 2>&1 | tee -a $SERVER_PATHS.log
 
