@@ -339,13 +339,13 @@ static struct {
 	const char *outFileName;
 } classifiers[] = {
   { spdylayDiffVersion, "BadInputs.spdylayDiffVersion" },
-  { nginxHttp09, "BadInputs.nginxHttp09" },
   { nginxUnknownColonHeader, "BadInputs.nginxUnknownColonHeader" },
+  { nginxTrace, "BadInputs.nginxTrace" },
+  { nginxValueCrLf, "BadInputs.nginxValueCrLf" },
   { nginxBadUrlPercent, "BadInputs.nginxBadUrlPercent" },
   { nginxPercent00, "BadInputs.nginxPercent00" },
-  { nginxValueCrLf, "BadInputs.nginxValueCrLf" },
   { nginxDotDotPastRoot, "BadInputs.nginxDotDotPastRoot" },
-  { nginxTrace, "BadInputs.nginxTrace" },
+  { nginxHttp09, "BadInputs.nginxHttp09" },
   { spdylayBadName, "BadInputs.spdylayBadName" },
   { spdylayBadValueChar, "BadInputs.spdylayBadValueChar" },
   { sipFromBadChar, "BadInputs.sipFromBadChar" },
