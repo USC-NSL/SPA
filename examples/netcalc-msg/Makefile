@@ -1,4 +1,4 @@
-BADINPUTS = BadInputs.untested BadInputs.tested
+BADINPUTS = BadInputs.untested BadInputs.tested BadInputs.FalsePositives
 PATHS = netcalc-client.bc.client.paths netcalc-server.bc.server.paths
 CFGS = netcalc-client.pdf netcalc-server.pdf
 TARGETS = netcalc-client netcalc-server
@@ -46,7 +46,7 @@ BadInputs.untested: netcalc-server.bc.server.paths
 
 BadInputs.tested: BadInputs.untested $(TEST_TARGETS)
 	rm -f $@
-	$(SPAE2ETEST) $< $@ './netcalc-client.test 1 1 +' './netcalc-server.test' 2>&1 | tee $@.log
+	$(SPAE2ETEST) $< $@ BadInputs.FalsePositives 3141 './netcalc-client.test 1 1 +' './netcalc-server.test' 2>&1 | tee $@.log
 
 netcalc-client.dot: netcalc-client.bc $(SPA)
 	$(SPA) --dump-cfg $@ --client $<

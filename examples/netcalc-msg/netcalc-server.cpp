@@ -123,5 +123,7 @@ int main( int argc, char **argv ) {
 		handleQuery( query, size, response );
 
 		assert( sendto( s, &response, sizeof( response ), 0, (struct sockaddr *) &si_client, si_client_len ) == sizeof( response ) );
+
+    spa_done();
 	}
 }
