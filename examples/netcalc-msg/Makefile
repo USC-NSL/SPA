@@ -11,7 +11,7 @@ CXX_FLAGS = -Wall -Werror -g -I../../include
 SPA = $(shell which spa)
 SPABADINPUTS = $(shell which spaBadInputs)
 SPAE2ETEST = $(shell which spaE2ETest)
-LIB_SPA_TEST_MODULE = ../../Release+Asserts/lib/libSpaTestModule.so
+LIB_SPA_TEST_MODULE = $(shell dirname $(shell dirname $(SPA)))/lib/libSpaTestModule.so
 
 
 default: all
@@ -63,6 +63,8 @@ netcalc-server.dot: netcalc-server.bc $(SPA)
 cfg: $(CFGS)
 
 run-spa: BadInputs.tested
+
+.PRECIOUS: $(PATHS) $(BADINPUTS)
 
 clean:
 	rm -rf $(TARGETS) $(BC_TARGETS) $(TEST_TARGETS) $(PATHS) $(BADINPUTS) $(CFGS) $(CFGS:.pdf=.dot)
