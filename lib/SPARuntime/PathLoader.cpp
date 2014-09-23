@@ -27,7 +27,7 @@ namespace {
 		SYMBOLS,
 		TAGS,
 		KQUERY,
-		PATH_DONE
+    TESTCASE
 	} LoadState_t;
 }
 
@@ -91,7 +91,7 @@ namespace SPA {
 			} else if ( line == SPA_PATH_KQUERY_START ) {
 				changeState( PATH, KQUERY );
 			} else if ( line == SPA_PATH_KQUERY_END ) {
-				changeState( KQUERY, PATH_DONE );
+        changeState(KQUERY, PATH);
 
 				llvm::MemoryBuffer *MB = llvm::MemoryBuffer::getMemBuffer( kQuery );
 				klee::ExprBuilder *Builder = klee::createDefaultExprBuilder();
@@ -126,8 +126,12 @@ namespace SPA {
 				delete P;
 				delete Builder;
 				delete MB;
-			} else if ( line == SPA_PATH_END ) {
-				changeState( PATH_DONE, START );
+      } else if ( line == SPA_PATH_TESTCASE_START ) {
+        changeState(PATH, TESTCASE);
+      } else if ( line == SPA_PATH_TESTCASE_END ) {
+        changeState(TESTCASE, PATH);
+      } else if ( line == SPA_PATH_END ) {
+				changeState( PATH, START );
 				if ( ! filter || filter->checkPath( *path ) )
 					return path;
 				else
@@ -152,7 +156,9 @@ namespace SPA {
 					case KQUERY : {
 						kQuery += " " + line;
 					} break;
-					default : {
+          case TESTCASE : {
+          } break;
+          default : {
 						assert( false && "Invalid path file." );
 					} break;
 				}

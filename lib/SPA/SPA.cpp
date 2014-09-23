@@ -837,7 +837,7 @@ namespace SPA {
 	}
 
 	void SPA::processPath( klee::ExecutionState *state ) {
-		Path path( state );
+    Path path(state, interpreter->getSolver());
 
 		if ( ! pathFilter || pathFilter->checkPath( path ) ) {
 			klee::klee_message( "Outputting path." );

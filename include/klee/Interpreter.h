@@ -28,6 +28,7 @@ class ExecutionState;
 class Interpreter;
 class TreeStreamWriter;
 class Searcher;
+class Solver;
 
 class InterpreterHandler {
 public:
@@ -201,6 +202,7 @@ public:
                                    std::pair<std::string,
                                    std::vector<unsigned char> > >
                                    &res) = 0;
+  virtual klee::Solver *getSolver() = 0;
 
   virtual void getCoveredLines(const ExecutionState &state,
                                std::map<const std::string*, std::set<unsigned> > &res) = 0;

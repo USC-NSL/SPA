@@ -461,6 +461,7 @@ public:
                                    std::pair<std::string,
                                    std::vector<unsigned char> > >
                                    &res);
+  virtual klee::Solver *getSolver();
 
   virtual void getCoveredLines(const ExecutionState &state,
                                std::map<const std::string*, std::set<unsigned> > &res);

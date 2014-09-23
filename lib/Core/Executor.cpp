@@ -3577,6 +3577,10 @@ bool Executor::getSymbolicSolution(const ExecutionState &state,
   return true;
 }
 
+klee::Solver *Executor::getSolver() {
+  return solver->solver;
+}
+
 void Executor::getCoveredLines(const ExecutionState &state,
                                std::map<const std::string*, std::set<unsigned> > &res) {
   res = state.coveredLines;

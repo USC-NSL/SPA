@@ -9,19 +9,22 @@
 
 #include <klee/Constraints.h>
 #include "klee/ExecutionState.h"
+#include <klee/Solver.h>
 
-#define SPA_PATH_START						"--- PATH START ---"
-#define SPA_PATH_SYMBOLS_START				"--- SYMBOLS START ---"
-#define SPA_PATH_SYMBOL_DELIMITER			"	"
-#define SPA_PATH_SYMBOLS_END				"--- SYMBOLS END ---"
-#define SPA_PATH_TAGS_START					"--- TAGS START ---"
-#define SPA_PATH_TAG_DELIMITER				"	"
-#define SPA_PATH_TAGS_END					"--- TAGS END ---"
-#define SPA_PATH_KQUERY_START				"--- KQUERY START ---"
-#define SPA_PATH_KQUERY_END					"--- KQUERY END ---"
-#define SPA_PATH_END						"--- PATH END ---"
-#define SPA_PATH_COMMENT					"#"
-#define SPA_PATH_WHITE_SPACE				" 	\r\n"
+#define SPA_PATH_START            "--- PATH START ---"
+#define SPA_PATH_SYMBOLS_START    "--- SYMBOLS START ---"
+#define SPA_PATH_SYMBOL_DELIMITER "	"
+#define SPA_PATH_SYMBOLS_END      "--- SYMBOLS END ---"
+#define SPA_PATH_TAGS_START       "--- TAGS START ---"
+#define SPA_PATH_TAG_DELIMITER    "	"
+#define SPA_PATH_TAGS_END         "--- TAGS END ---"
+#define SPA_PATH_KQUERY_START     "--- KQUERY START ---"
+#define SPA_PATH_KQUERY_END       "--- KQUERY END ---"
+#define SPA_PATH_TESTCASE_START   "--- TESTCASE START ---"
+#define SPA_PATH_TESTCASE_END     "--- TESTCASE END ---"
+#define SPA_PATH_END              "--- PATH END ---"
+#define SPA_PATH_COMMENT          "#"
+#define SPA_PATH_WHITE_SPACE      " 	\r\n"
 
 namespace SPA {
 	class Path {
@@ -31,11 +34,12 @@ namespace SPA {
 		std::map<std::string, std::vector<klee::ref<klee::Expr> > > outputValues;
 		std::map<std::string, std::string> tags;
 		klee::ConstraintManager constraints;
+    std::map<std::string, std::vector<uint8_t>> testCase;
 
 		Path();
 
 	public:
-		Path( klee::ExecutionState *kState );
+    Path(klee::ExecutionState *kState, klee::Solver *solver);
 
 		const klee::Array *getSymbol( std::string name ) const {
 			return symbolNames.count( name ) ? symbolNames.find( name )->second : NULL;
@@ -54,9 +58,9 @@ namespace SPA {
 			return outputValues.find( name )->second[offset];
 		}
 
-		std::map<std::string, const klee::Array *>::const_iterator beginSymbols() { return symbolNames.begin(); }
+		std::map<std::string, const klee::Array *>::const_iterator beginSymbols() const { return symbolNames.begin(); }
 
-		std::map<std::string, const klee::Array *>::const_iterator endSymbols() { return symbolNames.end(); }
+		std::map<std::string, const klee::Array *>::const_iterator endSymbols() const { return symbolNames.end(); }
 
 		std::map<std::string, std::vector<klee::ref<klee::Expr> > >::const_iterator beginOutputs() { return outputValues.begin(); }
 
@@ -65,12 +69,16 @@ namespace SPA {
 		std::string getTag( std::string key ) const {
 			return tags.count( key ) ? tags.find( key )->second : std::string();
 		}
-		
+
 		const klee::ConstraintManager &getConstraints() const {
 			return constraints;
 		}
 
-		friend class PathLoader;
+		const std::map<std::string, std::vector<uint8_t>> &getTestCase() const {
+      return testCase;
+    }
+
+    friend class PathLoader;
 		friend std::ostream& operator<<( std::ostream &stream, const Path &path );
 	};
 
