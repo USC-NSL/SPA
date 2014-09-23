@@ -859,27 +859,38 @@ namespace SPA {
 		}
 	}
 
-	void SPA::onStateDestroy(klee::ExecutionState *kState) {
-		klee::klee_message( "Destroying path at:" );
-		kState->dumpStack( llvm::errs() );
+  void SPA::onStateTerminateEarly(klee::ExecutionState *kState) {
+    klee::klee_message( "State terminated early at:" );
+    kState->dumpStack( llvm::errs() );
 
-		if ( ! kState->filtered ) {
-			terminalPathsFound++;
+    if (kState->filtered) {
+      klee::klee_message( "Filtered path destroyed." );
+    }
+    showStats();
+  }
 
-			if ( outputTerminalPaths ) {
-				assert( kState );
+  void SPA::onStateTerminateError(klee::ExecutionState *kState) {
+    klee::klee_message( "State terminated with error at:" );
+    kState->dumpStack( llvm::errs() );
 
-				klee::klee_message( "Processing terminal path." );
+    showStats();
+  }
 
-				processPath( kState );
-			}
-		} else {
-			klee::klee_message( "Filtered path destroyed." );
-		}
-		showStats();
-	}
+  void SPA::onStateTerminateDone(klee::ExecutionState *kState) {
+    klee::klee_message( "State terminated naturally at:" );
+    kState->dumpStack( llvm::errs() );
 
-	void SPA::onStateFiltered( klee::ExecutionState *state, unsigned int id ) {
+    terminalPathsFound++;
+
+    if (outputTerminalPaths) {
+      assert( kState );
+      klee::klee_message( "Processing terminal path." );
+      processPath( kState );
+    }
+    showStats();
+  }
+
+  void SPA::onStateFiltered( klee::ExecutionState *state, unsigned int id ) {
 		filteredPathsFound++;
 
 		if ( outputFilteredPaths[id] ) {

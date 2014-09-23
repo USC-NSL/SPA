@@ -1465,7 +1465,7 @@ static inline const llvm::fltSemantics * fpWidthToSemantics(unsigned width) {
 
 void Executor::executeInstruction(ExecutionState &state, KInstruction *ki) {
   if (state.filtered) {
-    return terminateStateOnExecError(state, "Filtered out.");
+    return terminateStateEarly(state, "Filtered out.");
   }
   Instruction *i = ki->inst;
   switch (i->getOpcode()) {
@@ -2741,8 +2741,6 @@ std::string Executor::getAddressInfo(ExecutionState &state,
 }
 
 void Executor::terminateState(ExecutionState &state) {
-  fireStateDestroy(&state);
-
   if (replayOut && replayPosition!=replayOut->numObjects) {
     klee_warning_once(replayOut, 
                       "replay did not consume all objects in test input.");
@@ -2773,6 +2771,7 @@ void Executor::terminateStateEarly(ExecutionState &state,
       (AlwaysOutputSeeds && seedMap.count(&state)))
     interpreterHandler->processTestCase(state, (message + "\n").str().c_str(),
                                         "early");
+  fireStateTerminateEarly(&state);
   terminateState(state);
 }
 
@@ -2780,6 +2779,7 @@ void Executor::terminateStateOnExit(ExecutionState &state) {
   if (!OnlyOutputStatesCoveringNew || state.coveredNew || 
       (AlwaysOutputSeeds && seedMap.count(&state)))
     interpreterHandler->processTestCase(state, 0, 0);
+  fireStateTerminateDone(&state);
   terminateState(state);
 }
 
@@ -2860,7 +2860,8 @@ void Executor::terminateStateOnError(ExecutionState &state,
       msg << "Info: \n" << info_str;
     interpreterHandler->processTestCase(state, MsgString.c_str(), suffix);
   }
-    
+
+  fireStateTerminateError(&state);
   terminateState(state);
 }
 

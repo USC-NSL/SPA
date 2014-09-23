@@ -126,8 +126,10 @@ namespace SPA {
 		void onStep(klee::ExecutionState *kState);
 		void onCall(klee::ExecutionState *kState) {};
 		void onReturn(klee::ExecutionState *kState) {};
-		void onStateDestroy(klee::ExecutionState *kState);
-
+		void onStateTerminateEarly(klee::ExecutionState *kState);
+    void onStateTerminateError(klee::ExecutionState *kState);
+    void onStateTerminateDone(klee::ExecutionState *kState);
+    
 		void onStateFiltered( klee::ExecutionState *state, unsigned int id );
 	};
 }

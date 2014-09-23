@@ -53,7 +53,9 @@ public:
   virtual void onStep(klee::ExecutionState *kState) = 0;
   virtual void onCall(klee::ExecutionState *kState) = 0;
   virtual void onReturn(klee::ExecutionState *kState) = 0;
-  virtual void onStateDestroy(klee::ExecutionState *kState) = 0;
+  virtual void onStateTerminateEarly(klee::ExecutionState *kState) = 0;
+  virtual void onStateTerminateError(klee::ExecutionState *kState) = 0;
+  virtual void onStateTerminateDone(klee::ExecutionState *kState) = 0;
 };
 
 class Interpreter {
@@ -125,9 +127,17 @@ protected:
     for (std::set<InterpreterEventListener *>::iterator it = eventListeners.begin(), ie = eventListeners.end(); it != ie; it++)
       (*it)->onReturn(kState);
   }
-  void fireStateDestroy(klee::ExecutionState *kState) {
+  void fireStateTerminateEarly(klee::ExecutionState *kState) {
     for (std::set<InterpreterEventListener *>::iterator it = eventListeners.begin(), ie = eventListeners.end(); it != ie; it++)
-      (*it)->onStateDestroy(kState);
+      (*it)->onStateTerminateEarly(kState);
+  }
+  void fireStateTerminateError(klee::ExecutionState *kState) {
+    for (std::set<InterpreterEventListener *>::iterator it = eventListeners.begin(), ie = eventListeners.end(); it != ie; it++)
+      (*it)->onStateTerminateError(kState);
+  }
+  void fireStateTerminateDone(klee::ExecutionState *kState) {
+    for (std::set<InterpreterEventListener *>::iterator it = eventListeners.begin(), ie = eventListeners.end(); it != ie; it++)
+      (*it)->onStateTerminateDone(kState);
   }
 
 public:
