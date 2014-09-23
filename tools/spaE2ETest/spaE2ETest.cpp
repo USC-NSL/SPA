@@ -9,11 +9,12 @@
 
 #include <spa/SPA.h>
 
-#define RECHECK_WAIT    100000 // us
+#define RECHECK_WAIT      100000 // us
 // Timeouts of 0 mean no timeout (wait indefinitely).
-#define LISTEN_TIMEOUT 5000000 // us
-#define FINISH_TIMEOUT 5000000 // us
-#define LOGS_TIMEOUT         0 // us
+#define PORTFREE_TIMEOUT       0 // us
+#define LISTEN_TIMEOUT         0 // us
+#define FINISH_TIMEOUT   5000000 // us
+#define LOGS_TIMEOUT           0 // us
 
 #define LOG_FILE_VARIABLE	"SPA_LOG_FILE"
 
@@ -26,37 +27,65 @@ std::cerr << "[" << (std::chrono::duration_cast<std::chrono::milliseconds>( \
 
 auto programStartTime = std::chrono::steady_clock::now();
 
-void waitListen(uint16_t port) {
-  LOG() << "Waiting for server to listen on port " << port << "." << std::endl;
+bool checkTable(std::string file, uint16_t port, uint8_t listenState) {
+  std::ifstream table(file);
+  assert(table.good());
+  std::string line;
+  std::getline(table, line); // Ignore table header.
+  while (table.good()) {
+    std::getline( table, line );
+    if (! line.empty()) {
+      uint16_t local_port, state;
+
+      std::istringstream tokenizer(line);
+      std::string token;
+      tokenizer >> token >> token;
+      std::istringstream hexconverter(token.substr(token.find(':') + 1));
+      hexconverter >> std::hex >> local_port;
+      tokenizer >> token >> std::hex >> state;
+
+      if (local_port == port && (listenState == 0 || state == listenState))
+        return true;
+    }
+  }
+  return false;
+}
+
+bool isListening(uint16_t port) {
+  return checkTable("/proc/net/tcp", port, TCP_LISTEN)
+         || checkTable("/proc/net/udp", port, 0);
+}
+
+void waitPortFree(uint16_t port) {
+  LOG() << "Waiting for port " << port << " to become free." << std::endl;
 
   auto start_time = std::chrono::steady_clock::now();
 
   do {
-    std::ifstream tcp_table("/proc/net/tcp");
-    std::string line;
-    std::getline( tcp_table, line ); // Ignore table header.
-    while (tcp_table.good()) {
-      std::getline( tcp_table, line );
-      if (! line.empty()) {
-        uint16_t local_port, state;
+    if (! isListening(port))
+      return;
 
-        std::istringstream tokenizer(line);
-        std::string token;
-        tokenizer >> token >> token;
-        std::istringstream hexconverter(token.substr(token.find(':') + 1));
-        hexconverter >> std::hex >> local_port;
-        tokenizer >> token >> std::hex >> state;
+    usleep(RECHECK_WAIT);
+  } while (PORTFREE_TIMEOUT == 0
+  || std::chrono::duration_cast<std::chrono::nanoseconds>(
+    std::chrono::steady_clock::now() - start_time).count()
+    <= PORTFREE_TIMEOUT);
+}
 
-        if (local_port == port && state == TCP_LISTEN)
-          return;
-      }
-    }
+void waitListen(uint16_t port) {
+  LOG() << "Waiting for server to listen on port " << port << "." << std::endl;
+  
+  auto start_time = std::chrono::steady_clock::now();
+  
+  do {
+    if (isListening(port))
+      return;
 
     usleep(RECHECK_WAIT);
   } while (LISTEN_TIMEOUT == 0
-           || std::chrono::duration_cast<std::chrono::nanoseconds>(
-                std::chrono::steady_clock::now() - start_time).count()
-                  <= LISTEN_TIMEOUT);
+  || std::chrono::duration_cast<std::chrono::nanoseconds>(
+    std::chrono::steady_clock::now() - start_time).count()
+    <= LISTEN_TIMEOUT);
 }
 
 void waitFinish(std::set<pid_t> pids) {
@@ -108,6 +137,8 @@ void waitLogs(std::set<std::string> files) {
 }
 
 bool processTestCase( char *clientCmd, char *serverCmd, uint16_t port ) {
+  waitPortFree(port);
+
 	std::string serverLog = tmpnam( NULL );
 	LOG() << "Logging server results to: " << serverLog << std::endl;
 
