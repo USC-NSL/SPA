@@ -873,6 +873,14 @@ namespace SPA {
     klee::klee_message( "State terminated with error at:" );
     kState->dumpStack( llvm::errs() );
 
+    terminalPathsFound++;
+
+    if (outputTerminalPaths) {
+      assert( kState );
+      klee::klee_message( "Processing terminal path." );
+      processPath( kState );
+    }
+
     showStats();
   }
 
