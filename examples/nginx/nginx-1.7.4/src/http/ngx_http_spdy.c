@@ -512,7 +512,6 @@ ngx_http_spdy_init(ngx_event_t *rev)
     c->write->handler = ngx_http_spdy_write_handler;
 
     ngx_http_spdy_read_handler(rev);
-    spa_done();
 }
 
 
