@@ -1,3 +1,4 @@
+#NGINX        := nginx-1.5.5
 NGINX        := nginx-1.7.4
 TARGETS      := out/dbg/objs/nginx out/llvm/objs/nginx out/test/objs/nginx
 CLIENT_PATHS := spdylay.paths
