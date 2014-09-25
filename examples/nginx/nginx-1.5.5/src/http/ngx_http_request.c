@@ -738,6 +738,7 @@ ngx_http_ssl_handshake_handler(ngx_connection_t *c)
 
         if (len == spdy.len && ngx_strncmp(data, spdy.data, spdy.len) == 0) {
             ngx_http_spdy_init(c->read);
+            spa_done();
             return;
         }
         }
