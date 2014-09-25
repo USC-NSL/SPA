@@ -865,6 +865,13 @@ namespace SPA {
 
     if (kState->filtered) {
       klee::klee_message( "Filtered path destroyed." );
+    } else {
+      terminalPathsFound++;
+      if (outputTerminalPaths) {
+        assert( kState );
+        klee::klee_message( "Processing terminal path." );
+        processPath( kState );
+      }
     }
     showStats();
   }
@@ -873,6 +880,12 @@ namespace SPA {
     klee::klee_message( "State terminated with error at:" );
     kState->dumpStack( llvm::errs() );
 
+    terminalPathsFound++;
+    if (outputTerminalPaths) {
+      assert( kState );
+      klee::klee_message( "Processing terminal path." );
+      processPath( kState );
+    }
     showStats();
   }
 
@@ -881,7 +894,6 @@ namespace SPA {
     kState->dumpStack( llvm::errs() );
 
     terminalPathsFound++;
-
     if (outputTerminalPaths) {
       assert( kState );
       klee::klee_message( "Processing terminal path." );
