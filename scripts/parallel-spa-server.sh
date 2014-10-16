@@ -28,20 +28,10 @@ parallel --progress --eta --joblog $SERVER_PATHS.joblog --resume \
   "echo Basefiles: $BASEFILES; echo Transfer: {}; echo Return: spa-server-{}; echo ls:; ls; \
   date '+Started: %s.%N (%c)'; \
   /home/lpedrosa/spa/Release+Asserts/bin/spa \
-  -max-instruction-time=1 -max-solver-time=1 -max-time=3600 \
+  -max-instruction-time=10 -max-solver-time=10 -max-time=7200 \
   --path-file spa-server-{} -sender-paths {} --server $SERVER_BC; \
   date '+Finished: %s.%N (%c)';" \
   ::: spa-client-*.paths 2>&1 | tee -a $SERVER_PATHS.log
-
-# parallel --progress --eta --joblog $SERVER_PATHS.joblog --resume \
-#   --controlmaster --noswap -v --tag --linebuffer \
-#   -S david@192.168.3.6 \
-#   $BASEFILES --transfer --return spa-server-{} --cleanup \
-#   "echo Basefiles: $BASEFILES; echo Transfer: {}; echo Return: spa-server-{}; echo ls:; ls; \
-#   date '+Started: %s.%N (%c)'; \
-#   /home/lpedrosa/spa/Release+Asserts/bin/spa -max-instruction-time=1 -max-solver-time=1 --path-file spa-server-{} -sender-paths {} --server $SERVER_BC; \
-#   date '+Finished: %s.%N (%c)';" \
-#   ::: spa-client-*.paths 2>&1 | tee -a $SERVER_PATHS.log
 
 cat spa-server-*.paths > $SERVER_PATHS
 
