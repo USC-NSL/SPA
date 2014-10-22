@@ -1,5 +1,5 @@
 LEVEL = ../..
-TOOLNAME = pic
+TOOLNAME = spa-pic
 
 include $(LEVEL)/Makefile.config
 

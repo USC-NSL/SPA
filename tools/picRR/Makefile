@@ -1,5 +1,5 @@
 LEVEL = ../..
-TOOLNAME = picRR
+TOOLNAME = spa-picRR
 
 include $(LEVEL)/Makefile.config
 
