@@ -51,19 +51,19 @@ llvm::cl::opt<std::string> OutputPaths(
 
 llvm::cl::list<std::string> StartFrom(
     "start-from",
-    llvm::cl::desc(
-        "Specifies the function to start execution from (default: main)."));
-
-llvm::cl::list<std::string> StopAt(
-    "stop-at",
-    llvm::cl::desc("Indicates a code-point to stop symbolic execution after."));
+    llvm::cl::desc("Functions to start execution from (default: main)."));
 
 llvm::cl::list<std::string>
-    Toward("toward", llvm::cl::desc("Code-point to direct execution towards."));
+    StopAt("stop-at",
+           llvm::cl::desc("Code-points to stop symbolic execution after."));
+
+llvm::cl::list<std::string>
+    Toward("toward",
+           llvm::cl::desc("Code-points to direct execution towards."));
 
 llvm::cl::list<std::string>
     AwayFrom("away-from",
-             llvm::cl::desc("Code-point to direct execution away from."));
+             llvm::cl::desc("Code-points to direct execution away from."));
 
 llvm::cl::opt<bool>
     OutputTerminal("output-terminal",
@@ -73,9 +73,8 @@ llvm::cl::opt<bool>
     OutputEarly("output-early",
                 llvm::cl::desc("Enable outputting early terminated paths."));
 
-llvm::cl::list<std::string> OutputAt(
-    "output-at",
-    llvm::cl::desc("Enable outputting paths at the specified code-point."));
+llvm::cl::list<std::string>
+    OutputAt("output-at", llvm::cl::desc("Code-points to output paths at."));
 
 llvm::cl::opt<std::string, true>
     InputBCFileOpt(llvm::cl::desc("<input bytecode>"), llvm::cl::Positional,
