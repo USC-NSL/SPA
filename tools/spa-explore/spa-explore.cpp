@@ -66,24 +66,22 @@ llvm::cl::list<std::string>
              llvm::cl::desc("Code-points to direct execution away from."));
 
 llvm::cl::opt<bool>
-    OutputTerminal("output-terminal",
+    OutputTerminal("output-terminal", llvm::cl::init(false),
                    llvm::cl::desc("Enable outputting terminal paths."));
-
-llvm::cl::opt<bool>
-    OutputEarly("output-early",
-                llvm::cl::desc("Enable outputting early terminated paths."));
 
 llvm::cl::list<std::string>
     OutputAt("output-at", llvm::cl::desc("Code-points to output paths at."));
 
 llvm::cl::opt<std::string, true>
-    InputBCFileOpt(llvm::cl::desc("<input bytecode>"), llvm::cl::Positional,
-                   llvm::cl::location(InputBCFile));
+    InputBCFileOpt(llvm::cl::Positional, llvm::cl::Required,
+                   llvm::cl::location(InputBCFile),
+                   llvm::cl::desc("<input bytecode>"));
 }
 
 int main(int argc, char **argv, char **envp) {
   // Fill up every global cl::opt object declared in the program
-  llvm::cl::ParseCommandLineOptions(argc, argv, "Systematic Protocol Analyzer");
+  llvm::cl::ParseCommandLineOptions(argc, argv,
+                                    "Systematic Protocol Analysis - Explore");
 
   std::string pathFileName = OutputPaths;
   if (pathFileName == "")
@@ -95,26 +93,22 @@ int main(int argc, char **argv, char **envp) {
 
   llvm::Module *module = spa.getModule();
 
-  // Pre-process the CFG and select useful paths.
-  klee::klee_message("Pruning CFG.");
-
-  // Get full CFG and call-graph.
-  SPA::CFG cfg(module);
-  SPA::CG cg(module);
+  if (StartFrom.size() > 0) {
+    for (auto entryFnName : StartFrom) {
+      klee::klee_message("Starting symbolic execution at: %s",
+                         entryFnName.c_str());
+      llvm::Function *fn = module->getFunction(entryFnName);
+      assert(fn && "Start point function not found.");
+      spa.addEntryFunction(fn);
+    }
+  } else {
+    klee::klee_message("Starting symbolic execution at: main");
+    llvm::Function *fn = module->getFunction("main");
+    assert(fn && "Start point function not found.");
+    spa.addEntryFunction(fn);
+  }
 
   spa.addSymbolicInitialValues();
-
-  // Rebuild full CFG and call-graph (changed by SPA after adding init/entry
-  // handlers).
-  cfg = SPA::CFG(module);
-  cg = SPA::CG(module);
-
-  // Create state utility function.
-  klee::klee_message("   Creating state utility function.");
-
-  spa.addStateUtilityBack(new SPA::FilteredUtility(), false);
-  // All else being the same, go DFS.
-  spa.addStateUtilityBack(new SPA::DepthUtility(), false);
 
   std::ifstream ifs;
   if (!InPaths.empty()) {
@@ -123,6 +117,47 @@ int main(int argc, char **argv, char **envp) {
     assert(ifs.good() && "Unable to open input path file.");
     spa.setSenderPathLoader(new SPA::PathLoader(ifs), false);
   }
+
+  for (auto connection : Connect) {
+    //TODO: Implement.
+    assert(false && "Not implemented.");
+  }
+
+  // Get full CFG and call-graph.
+  //   SPA::CFG cfg(module);
+  //   SPA::CG cg(module);
+
+  for (auto stopPoint : StopAt) {
+    //TODO: Implement.
+    assert(false && "Not implemented.");
+  }
+
+  // Create state utility function.
+  klee::klee_message("   Creating state utility function.");
+
+  for (auto towardsPoint : Toward) {
+    klee::klee_message("      Directing towards: %s", towardsPoint.c_str());
+    //TODO: Implement.
+    assert(false && "Not implemented.");
+  }
+
+  for (auto awayFromPoint : AwayFrom) {
+    klee::klee_message("      Directing away from: %s", awayFromPoint.c_str());
+    //TODO: Implement.
+    assert(false && "Not implemented.");
+  }
+
+  spa.addStateUtilityBack(new SPA::FilteredUtility(), false);
+  // All else being the same, go DFS.
+  spa.addStateUtilityBack(new SPA::DepthUtility(), false);
+
+  for (auto outputPoint : OutputAt) {
+    klee::klee_message("Adding a checkpoint at: %s", outputPoint.c_str());
+    //TODO: Implement.
+    assert(false && "Not implemented.");
+  }
+
+  spa.setOutputTerminalPaths(OutputTerminal);
 
   klee::klee_message("Starting SPA.");
   spa.start();
