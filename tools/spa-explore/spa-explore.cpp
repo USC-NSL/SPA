@@ -11,25 +11,26 @@
 #undef PACKAGE_TARNAME
 #undef PACKAGE_VERSION
 
-#include "klee/Expr.h"
-#include "klee/ExprBuilder.h"
-#include <klee/Solver.h>
+// #include "klee/Expr.h"
+// #include "klee/ExprBuilder.h"
+// #include <klee/Solver.h>
 #include "../../lib/Core/Common.h"
-#include "../../lib/Core/Memory.h"
-
-#include "spa/Util.h"
-#include "spa/CFG.h"
-#include "spa/CG.h"
+// #include "../../lib/Core/Memory.h"
+// 
+// #include "spa/Util.h"
+// #include "spa/CFG.h"
+// #include "spa/CG.h"
 #include "spa/SPA.h"
-#include "spa/Path.h"
-#include "spa/CFGBackwardFilter.h"
-#include "spa/WhitelistIF.h"
-#include "spa/DummyIF.h"
-#include "spa/NegatedIF.h"
-#include "spa/WaypointUtility.h"
+// #include "spa/Path.h"
+// #include "spa/CFGBackwardFilter.h"
+// #include "spa/WhitelistIF.h"
+// #include "spa/DummyIF.h"
+#include "spa/DbgLineIF.h"
+// #include "spa/NegatedIF.h"
+// #include "spa/WaypointUtility.h"
 #include "spa/AstarUtility.h"
 #include "spa/FilteredUtility.h"
-#include "spa/PathFilter.h"
+// #include "spa/PathFilter.h"
 
 namespace {
 std::string InputBCFile;
@@ -128,8 +129,7 @@ int main(int argc, char **argv, char **envp) {
   //   SPA::CG cg(module);
 
   for (auto stopPoint : StopAt) {
-    //TODO: Implement.
-    assert(false && "Not implemented.");
+    SPA::DbgLineIF dbgInsts(module, stopPoint);
   }
 
   // Create state utility function.

@@ -314,12 +314,12 @@ int main(int argc, char **argv, char **envp) {
 // 	}
 
 	// Create waypoint utility.
-	SPA::WaypointUtility *waypointUtility = NULL;
-	if ( ! waypoints.empty() ) {
-		klee::klee_message( "   Creating waypoint utility." );
-		waypointUtility = new SPA::WaypointUtility( cfg, cg, waypoints, true );
+// 	SPA::WaypointUtility *waypointUtility = NULL;
+// 	if ( ! waypoints.empty() ) {
+// 		klee::klee_message( "   Creating waypoint utility." );
+// 		waypointUtility = new SPA::WaypointUtility( cfg, cg, waypoints, true );
 // 		spa.addStateUtilityBack( waypointUtility, false );
-	}
+// 	}
 
 	// Create state utility function.
 	klee::klee_message( "   Creating state utility function." );

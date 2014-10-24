@@ -12,14 +12,18 @@
 #include <spa/InstructionFilter.h>
 
 namespace SPA {
-	class WhitelistIF : public InstructionFilter {
-	private:
-		std::set<llvm::Instruction *> whitelist;
+class WhitelistIF : public InstructionFilter {
+protected:
+  std::set<llvm::Instruction *> whitelist;
 
-	public:
-		WhitelistIF( std::set<llvm::Instruction *> _whitelist ) : whitelist( _whitelist ) { }
-		bool checkInstruction( llvm::Instruction *instruction );
-	};
+public:
+  WhitelistIF(std::set<llvm::Instruction *> _whitelist =
+                  std::set<llvm::Instruction *>())
+      : whitelist(_whitelist) {}
+  bool checkInstruction(llvm::Instruction *instruction) {
+    return whitelist.count(instruction);
+  }
+};
 }
 
 #endif // #ifndef __WhitelistIF_H__
