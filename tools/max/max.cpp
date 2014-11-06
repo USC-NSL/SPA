@@ -20,7 +20,7 @@
 #include "spa/SPA.h"
 #include "spa/Path.h"
 // #include "spa/CFGForwardIF.h"
-#include "spa/CFGBackwardFilter.h"
+#include "spa/CFGBackwardIF.h"
 #include "spa/WhitelistIF.h"
 #include "spa/NegatedIF.h"
 // #include "spa/IntersectionIF.h"
@@ -87,7 +87,7 @@ int main(int argc, char **argv, char **envp) {
 // 	SPA::IntersectionIF filter = SPA::IntersectionIF();
 // 	filter.addIF( new SPA::CFGForwardIF( cfg, cg, messageHandlers ) );
 // 	filter.addIF( new SPA::CFGBackwardIF( cfg, cg, interestingInstructions ) );
-	SPA::CFGBackwardFilter filter = SPA::CFGBackwardFilter( cfg, cg, interestingInstructions );
+	SPA::CFGBackwardIF filter = SPA::CFGBackwardIF( cfg, cg, interestingInstructions );
 	spa.addStateUtilityBack( &filter, false );
 
 	if ( DumpCFG.size() > 0 ) {

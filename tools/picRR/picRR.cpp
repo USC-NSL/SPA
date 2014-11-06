@@ -22,7 +22,7 @@
 #include "spa/CG.h"
 #include "spa/SPA.h"
 #include "spa/Path.h"
-#include "spa/CFGBackwardFilter.h"
+#include "spa/CFGBackwardIF.h"
 #include "spa/WhitelistIF.h"
 #include "spa/DummyIF.h"
 #include "spa/NegatedIF.h"
@@ -308,7 +308,7 @@ int main(int argc, char **argv, char **envp) {
 
 	// Create instruction filter.
 	klee::klee_message( "   Creating CFG filter." );
-	SPA::CFGBackwardFilter *filter = new SPA::CFGBackwardFilter( cfg, cg, checkpoints );
+	SPA::CFGBackwardIF *filter = new SPA::CFGBackwardIF( cfg, cg, checkpoints );
 // 	if ( Client )
 // 		spa.addStateUtilityBack( filter, false );
 // 	else if ( Server )

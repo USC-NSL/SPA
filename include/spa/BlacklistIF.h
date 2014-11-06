@@ -11,10 +11,11 @@
 #include <spa/WhitelistIF.h>
 
 namespace SPA {
-	class BlacklistIF : public InstructionFilter, private NegatedIF {
-	public:
-		BlacklistIF( std::set<Instruction *> blacklist ) : NegatedIF( new WhitelistIF( blacklist ) ) { }
-	};
+class BlacklistIF : public InstructionFilter, private NegatedIF {
+public:
+  BlacklistIF(std::set<Instruction *> blacklist)
+      : NegatedIF(new WhitelistIF(blacklist)) {}
+};
 }
 
 #endif // #ifndef __BlacklistIF_H__

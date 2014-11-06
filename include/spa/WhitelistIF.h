@@ -23,6 +23,8 @@ public:
   bool checkInstruction(llvm::Instruction *instruction) {
     return whitelist.count(instruction);
   }
+
+  std::set<llvm::Instruction *> getWhitelist() { return whitelist; }
 };
 }
 

@@ -6,6 +6,18 @@
 
 #include "spa/Util.h"
 
+typedef enum {
+  AT,
+  BEFORE,
+  AFTER,
+  REACHING,
+  NOT_REACHING,
+  KEYWORD_MAX
+} prefix_t;
+
+std::string prefixes[] = { "AT ", "BEFORE ", "AFTER ", "REACHING ",
+                           "NOT REACHING " };
+
 namespace SPA {
 DbgLineIF::DbgLineIF(llvm::Module *module, std::string dbgPoint) {
   // Check if specified point is a function.
@@ -18,23 +30,26 @@ DbgLineIF::DbgLineIF(llvm::Module *module, std::string dbgPoint) {
     return;
   }
 
-  // Parse from dir/file:line
-  auto dirFileBoundary = dbgPoint.find("/");
-  auto fileLineBoundary = dbgPoint.find(":");
-  assert(fileLineBoundary != std::string::npos &&
-         "Must specify file name and line number.");
-
-  if (dirFileBoundary == std::string::npos) {
-    dirFileBoundary = -1;
+  // Parse from "prefix dir/file:line"
+  prefix_t prefix = AT;
+  for (int i = 0; i < KEYWORD_MAX; i++) {
+    if (dbgPoint.compare(0, prefixes[i].length(), prefixes[i]) == 0) {
+      prefix = (prefix_t) i;
+      dbgPoint = dbgPoint.substr(prefixes[i].length());
+    }
   }
-  assert(dirFileBoundary < fileLineBoundary &&
-         "Must specify file name and line number.");
 
-  std::string dbgDir =
-      dirFileBoundary > 0 ? dbgPoint.substr(0, dirFileBoundary) : "";
-  std::string dbgFile = dbgPoint.substr(dirFileBoundary + 1,
-                                        fileLineBoundary - dirFileBoundary - 1);
-  long dbgLineNo = SPA::strToNum<long>(dbgPoint.substr(fileLineBoundary + 1));
+  auto b = dbgPoint.find("/");
+  std::string dbgDir;
+  if (b != std::string::npos) {
+    dbgDir = dbgPoint.substr(0, b);
+    dbgPoint = dbgPoint.substr(b + 1);
+  }
+
+  b = dbgPoint.find(":");
+  assert(b != std::string::npos && "Must specify file name and line number.");
+  std::string dbgFile = dbgPoint.substr(0, b);
+  long dbgLineNo = SPA::strToNum<long>(dbgPoint.substr(b + 1));
 
   // Canonical debug location of what is found (used to ensure uniqueness).
   std::string foundDbgLoc;
@@ -74,5 +89,7 @@ DbgLineIF::DbgLineIF(llvm::Module *module, std::string dbgPoint) {
   }
   assert((!foundDbgLoc.empty()) &&
          "Specified filename/line criteria didn't match any known location.");
+
+  assert(prefix == AT && "Not implemented.");
 }
 }

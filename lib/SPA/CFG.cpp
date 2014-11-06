@@ -14,6 +14,7 @@
 #include "spa/CG.h"
 #include "spa/CFG.h"
 #include "spa/Util.h"
+#include "spa/InstructionFilter.h"
 
 
 using namespace llvm;

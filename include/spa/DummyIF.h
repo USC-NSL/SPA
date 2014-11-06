@@ -12,11 +12,11 @@
 #include <spa/InstructionFilter.h>
 
 namespace SPA {
-	class DummyIF : public InstructionFilter {
-	public:
-		DummyIF() { }
-		bool checkInstruction( llvm::Instruction *instruction ) { return true; }
-	};
+class DummyIF : public InstructionFilter {
+public:
+  DummyIF() {}
+  bool checkInstruction(llvm::Instruction *instruction) { return true; }
+};
 }
 
 #endif // #ifndef __DummyIF_H__

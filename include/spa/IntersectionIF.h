@@ -10,16 +10,17 @@
 #include <spa/InstructionFilter.h>
 
 namespace SPA {
-	class IntersectionIF : public InstructionFilter {
-	private:
-		std::set<InstructionFilter *> subFilters;
+class IntersectionIF : public InstructionFilter {
+private:
+  std::set<InstructionFilter *> subFilters;
 
-	public:
-		IntersectionIF() { }
-		IntersectionIF( std::set<InstructionFilter *> _subFilters ) : subFilters( _subFilters ) { }
-		void addIF( InstructionFilter *instructionFilter );
-		bool checkInstruction( llvm::Instruction *instruction );
-	};
+public:
+  IntersectionIF() {}
+  IntersectionIF(std::set<InstructionFilter *> _subFilters)
+      : subFilters(_subFilters) {}
+  void addIF(InstructionFilter *instructionFilter);
+  bool checkInstruction(llvm::Instruction *instruction);
+};
 }
 
 #endif // #ifndef __IntersectionIF_H__

@@ -16,7 +16,7 @@ namespace SPA {
 	WaypointUtility::WaypointUtility( CFG &cfg, CG &cg, std::map<unsigned int, std::set<llvm::Instruction *> > &waypoints, bool _mandatory ) :
 		mandatory( _mandatory ) {
 		for ( std::map<unsigned int, std::set<llvm::Instruction *> >::iterator it = waypoints.begin(), ie = waypoints.end(); it != ie; it++ )
-			filters[it->first] = new CFGBackwardFilter( cfg, cg, it->second );
+			filters[it->first] = new CFGBackwardIF( cfg, cg, it->second );
 	}
 
 	bool checkWaypoint( const klee::ExecutionState *state, unsigned int id ) {
@@ -57,7 +57,7 @@ namespace SPA {
 	double WaypointUtility::getUtility( klee::ExecutionState *state ) {
 		unsigned int count = 0;
 
-		for ( std::map<unsigned int, CFGBackwardFilter *>::iterator it = filters.begin(), ie = filters.end(); it != ie; it++ ) {
+		for ( std::map<unsigned int, CFGBackwardIF *>::iterator it = filters.begin(), ie = filters.end(); it != ie; it++ ) {
 			if ( it->second->getUtility( state ) != UTILITY_FILTER_OUT || checkWaypoint( state, it->first ) ) {
 				count++;
 				continue;
@@ -71,7 +71,7 @@ namespace SPA {
 
 	std::string WaypointUtility::getColor( CFG &cfg, CG &cg, llvm::Instruction *instruction ) {
 		unsigned int count = 0;
-		for ( std::map<unsigned int, CFGBackwardFilter *>::iterator it = filters.begin(), ie = filters.end(); it != ie; it++ )
+		for ( std::map<unsigned int, CFGBackwardIF *>::iterator it = filters.begin(), ie = filters.end(); it != ie; it++ )
 			if ( it->second->checkInstruction( instruction ) )
 				count++;
 

@@ -11,26 +11,16 @@
 #undef PACKAGE_TARNAME
 #undef PACKAGE_VERSION
 
-// #include "klee/Expr.h"
-// #include "klee/ExprBuilder.h"
-// #include <klee/Solver.h>
 #include "../../lib/Core/Common.h"
-// #include "../../lib/Core/Memory.h"
-// 
-// #include "spa/Util.h"
-// #include "spa/CFG.h"
-// #include "spa/CG.h"
+
 #include "spa/SPA.h"
-// #include "spa/Path.h"
-// #include "spa/CFGBackwardFilter.h"
-// #include "spa/WhitelistIF.h"
-// #include "spa/DummyIF.h"
+#include "spa/CFGBackwardIF.h"
 #include "spa/DbgLineIF.h"
-// #include "spa/NegatedIF.h"
-// #include "spa/WaypointUtility.h"
+#include "spa/UnionIF.h"
+#include "spa/NegatedIF.h"
+#include "spa/EnteringIF.h"
 #include "spa/AstarUtility.h"
 #include "spa/FilteredUtility.h"
-// #include "spa/PathFilter.h"
 
 namespace {
 std::string InputBCFile;
@@ -125,36 +115,39 @@ int main(int argc, char **argv, char **envp) {
   }
 
   // Get full CFG and call-graph.
-  //   SPA::CFG cfg(module);
-  //   SPA::CG cg(module);
+  SPA::CFG cfg(module);
+  SPA::CG cg(module);
 
   for (auto stopPoint : StopAt) {
-    SPA::DbgLineIF dbgInsts(module, stopPoint);
+    SPA::DbgLineIF *dbgInsts = new SPA::DbgLineIF(module, stopPoint);
+    spa.addStopPoint(dbgInsts);
   }
 
   // Create state utility function.
   klee::klee_message("   Creating state utility function.");
 
+  SPA::UnionIF directingTargets;
   for (auto towardsPoint : Toward) {
     klee::klee_message("      Directing towards: %s", towardsPoint.c_str());
-    //TODO: Implement.
-    assert(false && "Not implemented.");
+    directingTargets.addIF(new SPA::DbgLineIF(module, towardsPoint));
   }
 
   for (auto awayFromPoint : AwayFrom) {
     klee::klee_message("      Directing away from: %s", awayFromPoint.c_str());
-    //TODO: Implement.
-    assert(false && "Not implemented.");
+    directingTargets.addIF(new SPA::NegatedIF(new SPA::CFGBackwardIF(
+        cfg, cg, new SPA::DbgLineIF(module, awayFromPoint))));
   }
 
   spa.addStateUtilityBack(new SPA::FilteredUtility(), false);
+  spa.addStateUtilityBack(
+      new SPA::TargetDistanceUtility(module, cfg, cg, directingTargets), false);
   // All else being the same, go DFS.
   spa.addStateUtilityBack(new SPA::DepthUtility(), false);
 
   for (auto outputPoint : OutputAt) {
     klee::klee_message("Adding a checkpoint at: %s", outputPoint.c_str());
-    //TODO: Implement.
-    assert(false && "Not implemented.");
+    spa.addCheckpoint(
+        new SPA::EnteringIF(cfg, cg, new SPA::DbgLineIF(module, outputPoint)));
   }
 
   spa.setOutputTerminalPaths(OutputTerminal);

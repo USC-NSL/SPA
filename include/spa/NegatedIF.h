@@ -10,14 +10,14 @@
 #include <spa/InstructionFilter.h>
 
 namespace SPA {
-	class NegatedIF : public InstructionFilter {
-	private:
-		InstructionFilter *subFilter;
+class NegatedIF : public InstructionFilter {
+private:
+  InstructionFilter *subFilter;
 
-	public:
-		NegatedIF( InstructionFilter *_subFilters ) : subFilter( _subFilters ) { }
-		bool checkInstruction( llvm::Instruction *instruction );
-	};
+public:
+  NegatedIF(InstructionFilter *_subFilters) : subFilter(_subFilters) {}
+  bool checkInstruction(llvm::Instruction *instruction);
+};
 }
 
 #endif // #ifndef __NegatedIF_H__

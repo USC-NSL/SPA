@@ -7,19 +7,22 @@
 
 #include "spa/StateUtility.h"
 
-#include <spa/CFGBackwardFilter.h>
+#include <spa/CFGBackwardIF.h>
 
 namespace SPA {
-	class WaypointUtility : public StateUtility {
-	private:
-		std::map<unsigned int, CFGBackwardFilter *> filters;
-		bool mandatory;
+class WaypointUtility : public StateUtility {
+private:
+  std::map<unsigned int, CFGBackwardIF *> filters;
+  bool mandatory;
 
-	public:
-		WaypointUtility( CFG &cfg, CG &cg, std::map<unsigned int, std::set<llvm::Instruction *> > &_waypoints, bool _mandatory );
-		double getUtility( klee::ExecutionState *state );
-		std::string getColor( CFG &cfg, CG &cg, llvm::Instruction *instruction );
-	};
+public:
+  WaypointUtility(
+      CFG &cfg, CG &cg,
+      std::map<unsigned int, std::set<llvm::Instruction *> > &_waypoints,
+      bool _mandatory);
+  double getUtility(klee::ExecutionState *state);
+  std::string getColor(CFG &cfg, CG &cg, llvm::Instruction *instruction);
+};
 }
 
 #endif // #ifndef __WaypointUtility_H__

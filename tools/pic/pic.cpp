@@ -22,7 +22,7 @@
 #include "spa/CG.h"
 #include "spa/SPA.h"
 #include "spa/Path.h"
-#include "spa/CFGBackwardFilter.h"
+#include "spa/CFGBackwardIF.h"
 #include "spa/WhitelistIF.h"
 #include "spa/DummyIF.h"
 #include "spa/NegatedIF.h"
@@ -299,7 +299,7 @@ int main(int argc, char **argv, char **envp) {
 
 	// Create instruction filter.
 	klee::klee_message( "   Creating CFG filter." );
-	SPA::CFGBackwardFilter *filter = new SPA::CFGBackwardFilter( cfg, cg, checkpoints );
+	SPA::CFGBackwardIF *filter = new SPA::CFGBackwardIF( cfg, cg, checkpoints );
 	for ( std::set<llvm::Instruction *>::iterator it = entryPoints.begin(), ie = entryPoints.end(); it != ie; it++ ) {
 		if ( ! filter->checkInstruction( *it ) ) {
 			klee::klee_message( "Entry point at function %s is not included in filter. Disabling filter.", (*it)->getParent()->getParent()->getName().str().c_str() );
