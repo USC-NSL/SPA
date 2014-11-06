@@ -10,16 +10,18 @@
 #include <spa/InstructionFilter.h>
 
 namespace SPA {
-	class UnionIF : public InstructionFilter {
-	private:
-		std::set<InstructionFilter *> subFilters;
+class UnionIF : public InstructionFilter {
+private:
+  std::set<InstructionFilter *> subFilters;
 
-	public:
-		UnionIF() { };
-		UnionIF( std::set<InstructionFilter *> _subFilters ) : subFilters( _subFilters ) { }
-		void addIF( InstructionFilter *instructionFilter );
-		bool checkInstruction( llvm::Instruction *instruction );
-	};
+public:
+  UnionIF() {}
+  ;
+  UnionIF(std::set<InstructionFilter *> _subFilters)
+      : subFilters(_subFilters) {}
+  void addIF(InstructionFilter *instructionFilter);
+  bool checkInstruction(llvm::Instruction *instruction);
+};
 }
 
 #endif // #ifndef __UnionIF_H__

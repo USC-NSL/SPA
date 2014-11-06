@@ -11,22 +11,24 @@
 #include "spa/InstructionFilter.h"
 
 namespace SPA {
-	class InstructionFilterUtility : public StateUtility {
-	private:
-		InstructionFilter *instructionFilter;
+class InstructionFilterUtility : public StateUtility {
+private:
+  InstructionFilter *instructionFilter;
 
-	public:
-		InstructionFilterUtility( InstructionFilter *_instructionFilter ) :
-			instructionFilter( _instructionFilter ) { }
+public:
+  InstructionFilterUtility(InstructionFilter *_instructionFilter)
+      : instructionFilter(_instructionFilter) {}
 
-		double getUtility( klee::ExecutionState *state ) {
-			return instructionFilter->checkInstruction( state->pc()->inst ) ? UTILITY_DEFAULT : UTILITY_FILTER_OUT;
-		}
+  double getUtility(klee::ExecutionState *state) {
+    return instructionFilter->checkInstruction(state->pc()->inst)
+               ? UTILITY_DEFAULT
+               : UTILITY_FILTER_OUT;
+  }
 
-		std::string getColor( CFG &cfg, CG &cg, llvm::Instruction *instruction ) {
-			return "white";
-		}
-	};
+  std::string getColor(CFG &cfg, CG &cg, llvm::Instruction *instruction) {
+    return "white";
+  }
+};
 }
 
 #endif // #ifndef __InstructionFilterUtility_H__

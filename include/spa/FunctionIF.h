@@ -12,14 +12,17 @@
 #include <spa/InstructionFilter.h>
 
 namespace SPA {
-	class FunctionIF : public InstructionFilter {
-	private:
-		llvm::Function *function;
+class FunctionIF : public InstructionFilter {
+private:
+  llvm::Function *function;
 
-	public:
-		FunctionIF( llvm::Function *_function ) : function( _function );
-		bool checkInstruction( llvm::Instruction *instruction ) { return instruction->getParent()->getParent() == function };
-	};
+public:
+  FunctionIF(llvm::Function *_function) : function(_function);
+  bool checkInstruction(llvm::Instruction *instruction) {
+    return instruction->getParent()->getParent() == function
+  }
+  ;
+};
 }
 
 #endif // #ifndef __FunctionIF_H__

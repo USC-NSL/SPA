@@ -8,11 +8,11 @@
 #include "spa/StateUtility.h"
 
 namespace SPA {
-	class DepthUtility : public StateUtility {
-	public:
-		DepthUtility() { }
-		double getUtility( klee::ExecutionState *state );
-	};
+class DepthUtility : public StateUtility {
+public:
+  DepthUtility() {}
+  double getUtility(klee::ExecutionState *state);
+};
 }
 
 #endif // #ifndef __DepthUtility_H__

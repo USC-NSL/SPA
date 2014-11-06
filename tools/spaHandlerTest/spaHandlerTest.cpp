@@ -26,24 +26,28 @@
 #include <spa/SPA.h>
 #include <spa/CG.h>
 
-#define MAIN_ENTRY_FUNCTION				"__user_main"
-#define ALTERNATIVE_MAIN_ENTRY_FUNCTION	"main"
-#define OLD_ENTRY_FUNCTION				"__spa_old_main"
+#define MAIN_ENTRY_FUNCTION "__user_main"
+#define ALTERNATIVE_MAIN_ENTRY_FUNCTION "main"
+#define OLD_ENTRY_FUNCTION "__spa_old_main"
 
 extern std::string InputFile;
 
 namespace {
-	llvm::cl::opt<std::string> Client( "client",
-		llvm::cl::desc( "Species the client binary (to transform or run)." ) );
+llvm::cl::opt<std::string>
+    Client("client",
+           llvm::cl::desc("Species the client binary (to transform or run)."));
 
-	llvm::cl::opt<std::string> Server( "server",
-		llvm::cl::desc( "Specifies the server binary (to transform or to run)." ) );
+llvm::cl::opt<std::string> Server(
+    "server",
+    llvm::cl::desc("Specifies the server binary (to transform or to run)."));
 
-	llvm::cl::opt<std::string> Input( "input",
-		llvm::cl::desc( "Specifies the file to load test data from." ) );
+llvm::cl::opt<std::string>
+    Input("input",
+          llvm::cl::desc("Specifies the file to load test data from."));
 
-	llvm::cl::opt<std::string> Output( "output",
-		llvm::cl::desc( "Specifies the file to output the modified binary or the test results to." ) );
+llvm::cl::opt<std::string>
+    Output("output", llvm::cl::desc("Specifies the file to output the modified "
+                                    "binary or the test results to."));
 }
 
 /**
@@ -54,236 +58,271 @@ namespace {
  *		return 0;
  *	}
  */
-void generateMain( llvm::Module *module, llvm::Function *handler ) {
-	// Rename old main function
-	llvm::Function *oldEntryFunction = module->getFunction( MAIN_ENTRY_FUNCTION );
-	if ( ! oldEntryFunction )
-		oldEntryFunction = module->getFunction( ALTERNATIVE_MAIN_ENTRY_FUNCTION );
-	assert( oldEntryFunction && "No main function found to replace." );
-	std::string entryFunctionName = oldEntryFunction->getName().str();
-	oldEntryFunction->setName( OLD_ENTRY_FUNCTION );
-	// Create new one.
-	llvm::Function *entryFunction = llvm::Function::Create(
-		oldEntryFunction->getFunctionType(),
-		llvm::GlobalValue::ExternalLinkage, entryFunctionName, module );
-	entryFunction->setCallingConv( llvm::CallingConv::C );
-	// Replace the old with the new.
-	oldEntryFunction->replaceAllUsesWith( entryFunction );
+void generateMain(llvm::Module *module, llvm::Function *handler) {
+  // Rename old main function
+  llvm::Function *oldEntryFunction = module->getFunction(MAIN_ENTRY_FUNCTION);
+  if (!oldEntryFunction)
+    oldEntryFunction = module->getFunction(ALTERNATIVE_MAIN_ENTRY_FUNCTION);
+  assert(oldEntryFunction && "No main function found to replace.");
+  std::string entryFunctionName = oldEntryFunction->getName().str();
+  oldEntryFunction->setName(OLD_ENTRY_FUNCTION);
+  // Create new one.
+  llvm::Function *entryFunction = llvm::Function::Create(
+      oldEntryFunction->getFunctionType(), llvm::GlobalValue::ExternalLinkage,
+      entryFunctionName, module);
+  entryFunction->setCallingConv(llvm::CallingConv::C);
+  // Replace the old with the new.
+  oldEntryFunction->replaceAllUsesWith(entryFunction);
 
-	// Declare arguments.
-	llvm::Function::arg_iterator args = entryFunction->arg_begin();
-	llvm::Value *argcVar = args++;
-	argcVar->setName( "argc" );
-	llvm::Value *argvVar = args++;
-	argvVar->setName( "argv" );
+  // Declare arguments.
+  llvm::Function::arg_iterator args = entryFunction->arg_begin();
+  llvm::Value *argcVar = args++;
+  argcVar->setName("argc");
+  llvm::Value *argvVar = args++;
+  argvVar->setName("argv");
 
-	// Create the entry basic block.
-	llvm::BasicBlock* entryBB = llvm::BasicBlock::Create( module->getContext(), "", entryFunction, 0);
+  // Create the entry basic block.
+  llvm::BasicBlock *entryBB =
+      llvm::BasicBlock::Create(module->getContext(), "", entryFunction, 0);
 
-	// Allocate arguments.
-	new llvm::StoreInst( argcVar, new llvm::AllocaInst( llvm::IntegerType::get( module->getContext(), 32 ), "", entryBB ), false, entryBB );
-	new llvm::StoreInst( argvVar, new llvm::AllocaInst( llvm::PointerType::get( llvm::PointerType::get( llvm::IntegerType::get( module->getContext(), 8 ), 0 ), 0 ), "", entryBB ), false, entryBB );
+  // Allocate arguments.
+  new llvm::StoreInst(
+      argcVar,
+      new llvm::AllocaInst(llvm::IntegerType::get(module->getContext(), 32), "",
+                           entryBB),
+      false, entryBB);
+  new llvm::StoreInst(
+      argvVar, new llvm::AllocaInst(
+                   llvm::PointerType::get(
+                       llvm::PointerType::get(
+                           llvm::IntegerType::get(module->getContext(), 8), 0),
+                       0),
+                   "", entryBB),
+      false, entryBB);
 
-	// handler();
-	llvm::CallInst *handlerCallInst = llvm::CallInst::Create( handler, "", entryBB );
-	handlerCallInst->setCallingConv( llvm::CallingConv::C );
-	handlerCallInst->setTailCall( false );
+  // handler();
+  llvm::CallInst *handlerCallInst =
+      llvm::CallInst::Create(handler, "", entryBB);
+  handlerCallInst->setCallingConv(llvm::CallingConv::C);
+  handlerCallInst->setTailCall(false);
 
-	// return 0;
-	llvm::ReturnInst::Create( module->getContext(), llvm::ConstantInt::get( module->getContext(), llvm::APInt( 32, 0, true ) ), entryBB );
+  // return 0;
+  llvm::ReturnInst::Create(
+      module->getContext(),
+      llvm::ConstantInt::get(module->getContext(), llvm::APInt(32, 0, true)),
+      entryBB);
 }
 
 void xformClient() {
-	std::cerr << "Loading client byte-code from: " << Client << std::endl;
-	llvm::OwningPtr<llvm::MemoryBuffer> mb;
-	assert( llvm::MemoryBuffer::getFile( Client.c_str(), mb ) == 0 );
+  std::cerr << "Loading client byte-code from: " << Client << std::endl;
+  llvm::OwningPtr<llvm::MemoryBuffer> mb;
+  assert(llvm::MemoryBuffer::getFile(Client.c_str(), mb) == 0);
 
-	llvm::LLVMContext ctx;
-	llvm::Module *module;
-	assert( module = llvm::ParseBitcodeFile( mb.get(), ctx ) );
+  llvm::LLVMContext ctx;
+  llvm::Module *module;
+  assert(module = llvm::ParseBitcodeFile(mb.get(), ctx));
 
-	SPA::CFG cfg( module );
-	SPA::CG cg( module );
+  SPA::CFG cfg(module);
+  SPA::CG cg(module);
 
-	llvm::Function *fn;
-	assert( (fn = module->getFunction( SPA_API_ANNOTATION_FUNCTION )) && "API annotation function not present in module." );
+  llvm::Function *fn;
+  assert((fn = module->getFunction(SPA_API_ANNOTATION_FUNCTION)) &&
+         "API annotation function not present in module.");
 
-	std::set<llvm::Instruction *> apiCallers = cg.getDefiniteCallers( fn );
-	assert( apiCallers.size() == 1 && "Currently only handling one API handler." );
+  std::set<llvm::Instruction *> apiCallers = cg.getDefiniteCallers(fn);
+  assert(apiCallers.size() == 1 && "Currently only handling one API handler.");
 
-	generateMain( module, (*apiCallers.begin())->getParent()->getParent() );
+  generateMain(module, (*apiCallers.begin())->getParent()->getParent());
 
-	std::string outFileName = Output;
-	if ( outFileName == "" )
-		outFileName = Client + ".chtest.bc";
-	std::cerr << "Writing client byte-code to: " << outFileName << std::endl;
-	std::string errInfo;
-	llvm::raw_fd_ostream outFile( outFileName.c_str(), errInfo );
-	assert( errInfo.empty() && "Error opening output file." );
-	llvm::WriteBitcodeToFile( module, outFile );
+  std::string outFileName = Output;
+  if (outFileName == "")
+    outFileName = Client + ".chtest.bc";
+  std::cerr << "Writing client byte-code to: " << outFileName << std::endl;
+  std::string errInfo;
+  llvm::raw_fd_ostream outFile(outFileName.c_str(), errInfo);
+  assert(errInfo.empty() && "Error opening output file.");
+  llvm::WriteBitcodeToFile(module, outFile);
 }
 
 void xformServer() {
-	std::cerr << "Loading server byte-code from: " << Server << std::endl;
-	llvm::OwningPtr<llvm::MemoryBuffer> mb;
-	assert( llvm::MemoryBuffer::getFile( Server.c_str(), mb ) == 0 );
+  std::cerr << "Loading server byte-code from: " << Server << std::endl;
+  llvm::OwningPtr<llvm::MemoryBuffer> mb;
+  assert(llvm::MemoryBuffer::getFile(Server.c_str(), mb) == 0);
 
-	llvm::LLVMContext ctx;
-	llvm::Module *module;
-	assert( module = llvm::ParseBitcodeFile( mb.get(), ctx ) );
+  llvm::LLVMContext ctx;
+  llvm::Module *module;
+  assert(module = llvm::ParseBitcodeFile(mb.get(), ctx));
 
-	SPA::CFG cfg( module );
-	SPA::CG cg( module );
-	
-	llvm::Function *fn;
-	assert( (fn = module->getFunction( SPA_MESSAGE_HANDLER_ANNOTATION_FUNCTION )) && "Message handler annotation function not present in module." );
+  SPA::CFG cfg(module);
+  SPA::CG cg(module);
 
-	std::set<llvm::Instruction *> mhCallers = cg.getDefiniteCallers( fn );
-	assert( mhCallers.size() == 1 && "Currently only handling one message handler." );
+  llvm::Function *fn;
+  assert((fn = module->getFunction(SPA_MESSAGE_HANDLER_ANNOTATION_FUNCTION)) &&
+         "Message handler annotation function not present in module.");
 
-	generateMain( module, (*mhCallers.begin())->getParent()->getParent() );
+  std::set<llvm::Instruction *> mhCallers = cg.getDefiniteCallers(fn);
+  assert(mhCallers.size() == 1 &&
+         "Currently only handling one message handler.");
 
-	std::string outFileName = Output;
-	if ( outFileName == "" )
-		outFileName = Server + ".shtest.bc";
-	std::cerr << "Writing server byte-code to: " << outFileName << std::endl;
-	std::string errInfo;
-	llvm::raw_fd_ostream outFile( outFileName.c_str(), errInfo );
-	assert( errInfo.empty() && "Error opening output file." );
-	llvm::WriteBitcodeToFile( module, outFile );
+  generateMain(module, (*mhCallers.begin())->getParent()->getParent());
+
+  std::string outFileName = Output;
+  if (outFileName == "")
+    outFileName = Server + ".shtest.bc";
+  std::cerr << "Writing server byte-code to: " << outFileName << std::endl;
+  std::string errInfo;
+  llvm::raw_fd_ostream outFile(outFileName.c_str(), errInfo);
+  assert(errInfo.empty() && "Error opening output file.");
+  llvm::WriteBitcodeToFile(module, outFile);
 }
 
 void runTests() {
-	assert( Input.size() > 0 && "Must specify --input." );
-	std::cerr << "Loading test inputs from: " << Input << std::endl;
+  assert(Input.size() > 0 && "Must specify --input.");
+  std::cerr << "Loading test inputs from: " << Input << std::endl;
 
-	std::string outFileName = Output;
-	if ( outFileName == "" )
-		outFileName = Input + ".tested";
-	std::cerr << "Writing test results to: " << outFileName << std::endl;
+  std::string outFileName = Output;
+  if (outFileName == "")
+    outFileName = Input + ".tested";
+  std::cerr << "Writing test results to: " << outFileName << std::endl;
 
-	std::ifstream inputFile( Input.c_str() );
-	std::ofstream outputFile( outFileName.c_str() );
+  std::ifstream inputFile(Input.c_str());
+  std::ofstream outputFile(outFileName.c_str());
 
-	std::string bundle;
-	while ( inputFile.good() ) {
-		std::string line;
-		std::getline( inputFile, line );
+  std::string bundle;
+  while (inputFile.good()) {
+    std::string line;
+    std::getline(inputFile, line);
 
-		if ( ! line.empty() ) {
-			bundle += line + '\n';
+    if (!line.empty()) {
+      bundle += line + '\n';
 
-			size_t d = line.find( ' ' );
-			std::string name = line.substr( 0, d );
-			assert( ! name.empty() && "Empty variable name." );
-			std::string value;
-			if ( d != std::string::npos )
-				value = line.substr( d + 1, std::string::npos );
-			setenv( name.c_str(), value.c_str(), 1 );
-		} else {
-			if ( ! bundle.empty() ) {
-				std::cerr << "Processing test case." << std::endl;
+      size_t d = line.find(' ');
+      std::string name = line.substr(0, d);
+      assert(!name.empty() && "Empty variable name.");
+      std::string value;
+      if (d != std::string::npos)
+        value = line.substr(d + 1, std::string::npos);
+      setenv(name.c_str(), value.c_str(), 1);
+    } else {
+      if (!bundle.empty()) {
+        std::cerr << "Processing test case." << std::endl;
 
-				std::string logFileName = tmpnam( NULL );
-				std::cerr << "Logging client results to: " << logFileName << std::endl;
+        std::string logFileName = tmpnam(NULL);
+        std::cerr << "Logging client results to: " << logFileName << std::endl;
 
-				pid_t pid = fork();
-				assert( pid >= 0 && "Error forking client process." );
-				if ( pid == 0 ) {
-					setpgid( 0, 0 );
-					setenv( LOG_FILE_VARIABLE, logFileName.c_str(), 1 );
-					std::cerr << "Launching client handler: " << Client << std::endl;
-					exit( system( Client.c_str() ) );
-				}
-				sleep( 1 );
-				std::cerr << "Killing process." << std::endl;
-				kill( pid, SIGTERM );
+        pid_t pid = fork();
+        assert(pid >= 0 && "Error forking client process.");
+        if (pid == 0) {
+          setpgid(0, 0);
+          setenv(LOG_FILE_VARIABLE, logFileName.c_str(), 1);
+          std::cerr << "Launching client handler: " << Client << std::endl;
+          exit(system(Client.c_str()));
+        }
+        sleep(1);
+        std::cerr << "Killing process." << std::endl;
+        kill(pid, SIGTERM);
 
-				int status = 0;
-// 				std::cerr << "Waiting for process." << std::endl;
-				assert( waitpid( pid, &status, 0 ) != -1 );
+        int status = 0;
+        // 				std::cerr << "Waiting for process." << std::endl;
+        assert(waitpid(pid, &status, 0) != -1);
 
-				std::cerr << "Processing outputs." << std::endl;
-				std::ifstream logFile( logFileName.c_str() );
-				bool output = false;
-				while ( logFile.good() ) {
-					std::getline( logFile, line );
-					if ( line.compare( 0, strlen( SPA_MESSAGE_OUTPUT_PREFIX ), SPA_MESSAGE_OUTPUT_PREFIX ) == 0 ) {
-						std::cerr << "Transforming: " << line << std::endl;
-						size_t boundary = line.find( ' ' );
-						assert( boundary != std::string::npos && boundary < line.size() - 1 && "Malformed output." );
-						std::string name = SPA_MESSAGE_INPUT_PREFIX + line.substr( strlen( SPA_MESSAGE_OUTPUT_PREFIX ), boundary - strlen( SPA_MESSAGE_OUTPUT_PREFIX ) );
-						std::string value = line.substr( boundary + 1 );
-						setenv( name.c_str(), value.c_str(), 1 );
-					} else if ( line.compare( 0, strlen( SPA_TAG_PREFIX SPA_OUTPUT_TAG ), SPA_TAG_PREFIX SPA_OUTPUT_TAG ) == 0 ) {
-						size_t boundary = line.find( ' ' );
-						assert( boundary != std::string::npos && boundary < line.size() - 1 && "Malformed tag." );
-						std::string value = line.substr( boundary + 1 );
-						output = (value == SPA_OUTPUT_VALUE);
-					}
-				}
-				logFile.close();
-				remove( logFileName.c_str() );
+        std::cerr << "Processing outputs." << std::endl;
+        std::ifstream logFile(logFileName.c_str());
+        bool output = false;
+        while (logFile.good()) {
+          std::getline(logFile, line);
+          if (line.compare(0, strlen(SPA_MESSAGE_OUTPUT_PREFIX),
+                           SPA_MESSAGE_OUTPUT_PREFIX) == 0) {
+            std::cerr << "Transforming: " << line << std::endl;
+            size_t boundary = line.find(' ');
+            assert(boundary != std::string::npos &&
+                   boundary < line.size() - 1 && "Malformed output.");
+            std::string name =
+                SPA_MESSAGE_INPUT_PREFIX +
+                line.substr(strlen(SPA_MESSAGE_OUTPUT_PREFIX),
+                            boundary - strlen(SPA_MESSAGE_OUTPUT_PREFIX));
+            std::string value = line.substr(boundary + 1);
+            setenv(name.c_str(), value.c_str(), 1);
+          } else if (line.compare(0, strlen(SPA_TAG_PREFIX SPA_OUTPUT_TAG),
+                                  SPA_TAG_PREFIX SPA_OUTPUT_TAG) == 0) {
+            size_t boundary = line.find(' ');
+            assert(boundary != std::string::npos &&
+                   boundary < line.size() - 1 && "Malformed tag.");
+            std::string value = line.substr(boundary + 1);
+            output = (value == SPA_OUTPUT_VALUE);
+          }
+        }
+        logFile.close();
+        remove(logFileName.c_str());
 
-				if ( output ) {
-					logFileName = tmpnam( NULL );
-					std::cerr << "Logging server results to: " << logFileName << std::endl;
+        if (output) {
+          logFileName = tmpnam(NULL);
+          std::cerr << "Logging server results to: " << logFileName
+                    << std::endl;
 
-					pid = fork();
-					assert( pid >= 0 && "Error forking server process." );
-					if ( pid == 0 ) {
-						setpgid( 0, 0 );
-						setenv( LOG_FILE_VARIABLE, logFileName.c_str(), 1 );
-						std::cerr << "Launching server handler: " << Server << std::endl;
-						exit( system( Server.c_str() ) );
-					}
-					sleep( 1 );
-					std::cerr << "Killing process." << std::endl;
-					kill( pid, SIGTERM );
+          pid = fork();
+          assert(pid >= 0 && "Error forking server process.");
+          if (pid == 0) {
+            setpgid(0, 0);
+            setenv(LOG_FILE_VARIABLE, logFileName.c_str(), 1);
+            std::cerr << "Launching server handler: " << Server << std::endl;
+            exit(system(Server.c_str()));
+          }
+          sleep(1);
+          std::cerr << "Killing process." << std::endl;
+          kill(pid, SIGTERM);
 
-	// 				std::cerr << "Waiting for process." << std::endl;
-					assert( waitpid( pid, &status, 0 ) != -1 );
+          // 				std::cerr << "Waiting for process." << std::endl;
+          assert(waitpid(pid, &status, 0) != -1);
 
-					std::cerr << "Processing results." << std::endl;
-					std::ifstream logFile( logFileName.c_str() );
-					bool validPath = false;
-					while ( logFile.good() ) {
-						std::getline( logFile, line );
-						if ( line.compare( 0, strlen( SPA_TAG_PREFIX SPA_VALIDPATH_TAG ), SPA_TAG_PREFIX SPA_VALIDPATH_TAG ) == 0 ) {
-							size_t boundary = line.find( ' ' );
-							assert( boundary != std::string::npos && boundary < line.size() - 1 && "Malformed tag." );
-							std::string value = line.substr( boundary + 1 );
-							validPath = (value == SPA_VALIDPATH_VALUE);
-						}
-					}
-					logFile.close();
-					remove( logFileName.c_str() );
+          std::cerr << "Processing results." << std::endl;
+          std::ifstream logFile(logFileName.c_str());
+          bool validPath = false;
+          while (logFile.good()) {
+            std::getline(logFile, line);
+            if (line.compare(0, strlen(SPA_TAG_PREFIX SPA_VALIDPATH_TAG),
+                             SPA_TAG_PREFIX SPA_VALIDPATH_TAG) == 0) {
+              size_t boundary = line.find(' ');
+              assert(boundary != std::string::npos &&
+                     boundary < line.size() - 1 && "Malformed tag.");
+              std::string value = line.substr(boundary + 1);
+              validPath = (value == SPA_VALIDPATH_VALUE);
+            }
+          }
+          logFile.close();
+          remove(logFileName.c_str());
 
-					if ( ! validPath ) {
-						std::cerr << "Found true positive. Outputting" << std::endl;
-						outputFile << bundle << std::endl;
-					} else {
-						std::cerr << "Found false positive (valid on server). Filtering." << std::endl;
-					}
-				} else {
-					std::cerr << "Found false positive (no client message). Filtering." << std::endl;
-				}
-				bundle.clear();
-				std::cerr << "--------------------------------------------------" << std::endl;
-			}
-		}
-	}
+          if (!validPath) {
+            std::cerr << "Found true positive. Outputting" << std::endl;
+            outputFile << bundle << std::endl;
+          } else {
+            std::cerr << "Found false positive (valid on server). Filtering."
+                      << std::endl;
+          }
+        } else {
+          std::cerr << "Found false positive (no client message). Filtering."
+                    << std::endl;
+        }
+        bundle.clear();
+        std::cerr << "--------------------------------------------------"
+                  << std::endl;
+      }
+    }
+  }
 }
 
 int main(int argc, char **argv, char **envp) {
-	// Fill up every global cl::opt object declared in the program
-	llvm::cl::ParseCommandLineOptions( argc, argv, "Systematic Protocol Analyzer - Handler Test Generator/Runner" );
+  // Fill up every global cl::opt object declared in the program
+  llvm::cl::ParseCommandLineOptions(
+      argc, argv,
+      "Systematic Protocol Analyzer - Handler Test Generator/Runner");
 
-	assert( (Client.size() > 0 || Server.size() > 0) && "Must specify --client or --server." );
-	if ( Client.size() > 0 && Server.size() == 0 )
-		xformClient();
-	else if ( Client.size() == 0 && Server.size() > 0 )
-		xformServer();
-	else
-		runTests();
+  assert((Client.size() > 0 || Server.size() > 0) &&
+         "Must specify --client or --server.");
+  if (Client.size() > 0 && Server.size() == 0)
+    xformClient();
+  else if (Client.size() == 0 && Server.size() > 0)
+    xformServer();
+  else
+    runTests();
 }
