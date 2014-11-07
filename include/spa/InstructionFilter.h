@@ -13,12 +13,12 @@ namespace SPA {
 class InstructionFilter {
 public:
   /**
-    * Checks if an instruction should be processed or filtered out.
-    *
-    * @param instruction The instruction to check.
-    * @return true if the instruction should be processed;
-    *         false if it should be filtered out.
-    */
+   * Checks if an instruction should be processed or filtered out.
+   *
+   * @param instruction The instruction to check.
+   * @return true if the instruction should be processed;
+   *         false if it should be filtered out.
+   */
   virtual bool checkInstruction(llvm::Instruction *instruction) = 0;
 
   std::set<llvm::Instruction *> toInstructionSet(CFG &cfg) {

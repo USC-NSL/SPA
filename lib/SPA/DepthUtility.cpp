@@ -5,9 +5,9 @@
 #include <spa/DepthUtility.h>
 
 namespace SPA {
-	double DepthUtility::getUtility( klee::ExecutionState *state ) {
-		assert( state );
+double DepthUtility::getUtility(klee::ExecutionState *state) {
+  assert(state);
 
-		return (double) state->step_depth;
-	}
+  return (double) state->step_depth;
+}
 }

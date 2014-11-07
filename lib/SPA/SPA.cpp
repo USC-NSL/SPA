@@ -493,35 +493,35 @@ SPA::SPA(llvm::Module *_module, std::ostream &_output)
 }
 
 /**
-	 * Generates a new main function that looks like:
-	 *
-	 *	int main( int argc, char **argv ) {
-	 * 		init1();
-	 * 		init2();
-	 * 		(...)
-	 *		int initValueID = klee_int( "initValueID" );
-	 *		switch ( initValueID ) {
-	 *			case 1:
-	 *				var = malloc( (numValues + 1) * 2 );
-	 * 				var[0] = malloc( values[0].length );
-	 * 				var[0][0] = values[0][0]; (...);
-	 * 				var[1] = malloc( valueMasks[0].length );
-	 *				var[1][0] = valueMasks[0][0]; (...);
-	 *				(...);
-	 * 			break;
-	 *			(...)
-	 * 			default: return 0;
-	 *		}
-	 *		int handlerID = klee_int( "handlerID" );
-	 *		switch ( handlerID ) {
-	 *			case 1: handler1(); break;
-	 *			case 2: spa_internal_SeedID = seedID; handler2(); break;
-	 *			(...)
-	 *		}
-	 * 		(...)
-	 *		return 0;
-	 *	}
-	 */
+ * Generates a new main function that looks like:
+ *
+ * int main( int argc, char **argv ) {
+ *   init1();
+ *   init2();
+ *   (...)
+ *   int initValueID = klee_int( "initValueID" );
+ *   switch ( initValueID ) {
+ *     case 1:
+ *       var = malloc( (numValues + 1) * 2 );
+ *       var[0] = malloc( values[0].length );
+ *       var[0][0] = values[0][0]; (...);
+ *       var[1] = malloc( valueMasks[0].length );
+ *       var[1][0] = valueMasks[0][0]; (...);
+ *       (...);
+ *       break;
+ *     (...)
+ *     default: return 0;
+ *   }
+ *   int handlerID = klee_int( "handlerID" );
+ *   switch ( handlerID ) {
+ *     case 1: handler1(); break;
+ *     case 2: spa_internal_SeedID = seedID; handler2(); break;
+ *     (...)
+ *   }
+ *   (...)
+ *   return 0;
+ * }
+ */
 void SPA::generateMain() {
   // Rename old main function
   llvm::Function *oldEntryFunction = module->getFunction(MAIN_ENTRY_FUNCTION);
