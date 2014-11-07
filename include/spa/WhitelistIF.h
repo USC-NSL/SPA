@@ -24,7 +24,7 @@ public:
     return whitelist.count(instruction);
   }
 
-  std::set<llvm::Instruction *> getWhitelist() { return whitelist; }
+  std::set<llvm::Instruction *> &getWhitelist() { return whitelist; }
 };
 }
 

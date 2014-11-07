@@ -642,9 +642,9 @@ void SPA::addInitFunction(llvm::Function *fn) {
 void SPA::addEntryFunction(llvm::Function *fn) {
   // Check function signature.
   assert(!fn->isVarArg() && "Unsupported function type for entry function.");
-  assert(!fn->getReturnType()->getTypeID() == llvm::Type::VoidTyID &&
+  assert(fn->getReturnType()->getTypeID() == llvm::Type::VoidTyID &&
          "Unsupported function type for entry function.");
-  assert(!fn->getFunctionType()->getNumParams() == 0 &&
+  assert(fn->getFunctionType()->getNumParams() == 0 &&
          "Unsupported function type for entry function.");
 
   // case x:
@@ -874,10 +874,8 @@ void SPA::start() {
   // 		entryFunction->dump();
 
   bool outputFP = false;
-  for (std::deque<bool>::iterator it = outputFilteredPaths.begin(),
-                                  ie = outputFilteredPaths.end();
-       it != ie; it++) {
-    if (*it) {
+  for (auto it : outputFilteredPaths) {
+    if (it) {
       outputFP = true;
       break;
     }
