@@ -108,6 +108,8 @@ public:
                  std::vector<std::vector<std::pair<bool, uint8_t> > > >());
   }
   void setSenderPathLoader(PathLoader *pathLoader, bool follow);
+  void addValueMapping(std::string senderVar, std::string receiverVar);
+  void addDefaultValueMappings();
   void addStateUtilityFront(StateUtility *stateUtility,
                             bool _outputFilteredPaths) {
     stateUtilities.push_front(stateUtility);

@@ -748,6 +748,7 @@ void SpecialFunctionHandler::handleMarkGlobal(ExecutionState &state,
 namespace SPA {
   PathLoader *senderPaths = NULL;
   bool followSenderPaths = false;
+  std::map<std::string, std::string> seedSymbolMappings;
 }
 
 void SpecialFunctionHandler::handleSpaSeedSymbolCheck(ExecutionState &state,

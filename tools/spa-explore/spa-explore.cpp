@@ -32,8 +32,14 @@ llvm::cl::opt<std::string> InPaths(
 
 llvm::cl::list<std::string> Connect(
     "connect",
-    llvm::cl::desc("Specifies symbols to connect in a symbol1=symbol2 format "
-                   "(default: auto-detect out=in like patterns)."));
+    llvm::cl::desc(
+        "Specifies symbols to connect in a receiverSymbol1=senderSymbol2 "
+        "format (default: auto-detect out=in like patterns)."));
+
+llvm::cl::opt<bool> ConnectDefault(
+    "connect-default", llvm::cl::init(false),
+    llvm::cl::desc(
+        "Automatically add default symbol mappings (matching I/Os)."));
 
 llvm::cl::opt<std::string> OutputPaths(
     "out-paths",
@@ -110,8 +116,14 @@ int main(int argc, char **argv, char **envp) {
   }
 
   for (auto connection : Connect) {
-    //TODO: Implement.
-    assert(false && "Not implemented.");
+    auto delim = connection.find('=');
+    std::string rValue = connection.substr(0, delim);
+    std::string sValue = connection.substr(delim + 1);
+    spa.addValueMapping(sValue, rValue);
+  }
+
+  if (ConnectDefault) {
+    spa.addDefaultValueMappings();
   }
 
   // Get full CFG and call-graph.

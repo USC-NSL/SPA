@@ -80,6 +80,7 @@ llvm::cl::opt<std::string> RecoverState(
 
 extern PathLoader *senderPaths;
 extern bool followSenderPaths;
+extern std::map<std::string, std::string> seedSymbolMappings;
 
 static void interrupt_handle() {
   std::cerr << "SPA: Ctrl-C detected, exiting.\n";
@@ -868,6 +869,15 @@ void SPA::addInitialValues(
 void SPA::setSenderPathLoader(PathLoader *pathLoader, bool follow) {
   senderPaths = pathLoader;
   followSenderPaths = follow;
+}
+
+void SPA::addValueMapping(std::string senderVar,
+                                std::string receiverVar) {
+  seedSymbolMappings[receiverVar] = senderVar;
+}
+
+void SPA::addDefaultValueMappings() {
+  assert(false && "Unimplemented.");
 }
 
 void SPA::start() {
