@@ -92,4 +92,8 @@ DbgLineIF::DbgLineIF(llvm::Module *module, std::string dbgPoint) {
 
   assert(prefix == AT && "Not implemented.");
 }
+
+bool DbgLineIF::checkSyntax(std::string dbgPoint) {
+  assert(false && "Not implemented.");
+}
 }
