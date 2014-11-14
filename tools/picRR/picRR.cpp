@@ -328,15 +328,12 @@ int main(int argc, char **argv, char **envp) {
   fn = module->getFunction(SPA_WAYPOINT_ANNOTATION_FUNCTION);
   std::map<unsigned int, std::set<llvm::Instruction *> > waypoints;
   if (fn) {
-    for (std::set<llvm::Instruction *>::iterator
-             it = cg.getDefiniteCallers(fn).begin(),
-             ie = cg.getDefiniteCallers(fn).end();
-         it != ie; it++) {
+    for (auto it : cg.getDefiniteCallers(fn)) {
       const llvm::CallInst *callInst;
-      assert(callInst = dyn_cast<llvm::CallInst>(*it));
+      assert(callInst = dyn_cast<llvm::CallInst>(it));
       if (callInst->getNumArgOperands() != 1) {
         klee::klee_message("      Found waypoint at %s",
-                           SPA::debugLocation(*it).c_str());
+                           SPA::debugLocation(it).c_str());
         klee::klee_message("Arguments: %d", callInst->getNumArgOperands());
         assert(false &&
                "Waypoint annotation function has wrong number of arguments.");
@@ -346,8 +343,8 @@ int main(int argc, char **argv, char **envp) {
                  dyn_cast<llvm::ConstantInt>(callInst->getArgOperand(0)));
       uint64_t id = constInt->getValue().getLimitedValue();
       klee::klee_message("      Found waypoint with id %ld at %s", id,
-                         SPA::debugLocation(*it).c_str());
-      waypoints[id].insert(*it);
+                         SPA::debugLocation(it).c_str());
+      waypoints[id].insert(it);
     }
   } else {
     klee::klee_message(

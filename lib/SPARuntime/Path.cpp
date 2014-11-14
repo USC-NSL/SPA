@@ -85,8 +85,7 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
     }
   }
 
-  llvm::raw_null_ostream rnos {}
-  ;
+  llvm::raw_null_ostream rnos;
   klee::PPrinter p(rnos);
   for (klee::ConstraintManager::const_iterator it = state.constraints.begin(),
                                                ie = state.constraints.end();

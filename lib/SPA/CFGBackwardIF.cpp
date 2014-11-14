@@ -17,17 +17,16 @@ CFGBackwardIF::CFGBackwardIF(CFG &cfg, CG &cg,
 
   klee::klee_message("      Exploring reverse path.");
   while (!worklist.empty()) {
-    std::set<llvm::Instruction *>::iterator it = worklist.begin(), ie;
-    llvm::Instruction *inst = *it;
-    worklist.erase(it);
+    llvm::Instruction *inst = *worklist.begin();
+    worklist.erase(worklist.begin());
 
     // Mark instruction as reaching.
     reaching[inst] = true;
-    std::set<llvm::Instruction *> p = cfg.getPredecessors(inst);
+    std::set<llvm::Instruction *> preds = cfg.getPredecessors(inst);
     // Add all non-reaching predecessors to work list.
-    for (it = p.begin(), ie = p.end(); it != ie; it++)
-      if (reaching.count(*it) == 0)
-        worklist.insert(*it);
+    for (auto it : preds)
+      if (reaching.count(it) == 0)
+        worklist.insert(it);
     // Mark function as on direct path.
     // 			if ( pathFunctions.count( inst->getParent()->getParent() ) == 0 )
     // 				klee_message( "		Direct path function: " <<
@@ -35,11 +34,10 @@ CFGBackwardIF::CFGBackwardIF(CFG &cfg, CG &cg,
     pathFunctions.insert(inst->getParent()->getParent());
     // Check if entry instruction.
     if (inst == &(inst->getParent()->getParent()->getEntryBlock().front())) {
-      p = cg.getPossibleCallers(inst->getParent()->getParent());
       // Add all non-reaching callers to work list.
-      for (it = p.begin(), ie = p.end(); it != ie; it++)
-        if (reaching.count(*it) == 0)
-          worklist.insert(*it);
+      for (auto it : cg.getPossibleCallers(inst->getParent()->getParent()))
+        if (reaching.count(it) == 0)
+          worklist.insert(it);
     }
   }
 

@@ -131,73 +131,67 @@ void CFG::dump(std::ostream &dotFile, CG &cg, InstructionFilter *filter,
   // Add edges.
   // Successors.
   dotFile << "	edge [color = \"green\"];" << std::endl;
-  for (iterator it1 = begin(), ie1 = end(); it1 != ie1; it1++) {
-    for (iterator it2 = getSuccessors(*it1).begin(),
-                  ie2 = getSuccessors(*it1).end();
-         it2 != ie2; it2++) {
-      if (filter && (!filter->checkInstruction(*it1)) &&
-          (!filter->checkInstruction(*it2)))
+  for (auto it1 : *this) {
+    for (auto it2 : getSuccessors(it1)) {
+      if (filter && (!filter->checkInstruction(it1)) &&
+          (!filter->checkInstruction(it2)))
         continue;
-      if (compactness == BASICBLOCK &&
-          (*it1)->getParent() == (*it2)->getParent())
+      if (compactness == BASICBLOCK && it1->getParent() == it2->getParent())
         continue;
       if (compactness == FUNCTION &&
-          (*it1)->getParent()->getParent() == (*it2)->getParent()->getParent())
+          it1->getParent()->getParent() == it2->getParent()->getParent())
         continue;
 
       if (compactness == BASICBLOCK)
-        dotFile << "	n" << ((unsigned long)(*it1)->getParent()) << " -> n"
-                << ((unsigned long)(*it2)->getParent()) << ";" << std::endl;
+        dotFile << "	n" << ((unsigned long) it1->getParent()) << " -> n"
+                << ((unsigned long) it2->getParent()) << ";" << std::endl;
       else if (compactness == FULL)
-        dotFile << "	n" << ((unsigned long) * it1) << " -> n"
-                << ((unsigned long) * it2) << ";" << std::endl;
+        dotFile << "	n" << ((unsigned long) it1) << " -> n"
+                << ((unsigned long) it2) << ";" << std::endl;
     }
   }
   // Callers.
   dotFile << "	edge [color = \"blue\"];" << std::endl;
-  for (CG::iterator it1 = cg.begin(), ie1 = cg.end(); it1 != ie1; it1++) {
-    llvm::Function *fn = *it1;
-    for (std::set<llvm::Instruction *>::iterator
-             it2 = cg.getDefiniteCallers(fn).begin(),
-             ie2 = cg.getDefiniteCallers(fn).end();
-         it2 != ie2; it2++) {
-      if (!filter || filter->checkInstruction(*it2)) {
+  for (auto it1 : cg) {
+    llvm::Function *fn = it1;
+    for (auto it2 : cg.getDefiniteCallers(fn)) {
+      if (!filter || filter->checkInstruction(it2)) {
         if (fn == NULL) {
           dotFile << "	IndirectFunction [label = \"*\" shape = \"box\"]"
                   << std::endl;
           if (compactness == BASICBLOCK)
-            dotFile << "	n" << (unsigned long)(*it2)->getParent()
-                    << " -> IndirectFunction;" << std::endl;
+            dotFile << "	n" << (unsigned long)
+                it2->getParent() << " -> IndirectFunction;" << std::endl;
           else if (compactness == FUNCTION)
-            dotFile << "	n" << (unsigned long)(*it2)->getParent()->getParent()
+            dotFile << "	n" << (unsigned long) it2->getParent()->getParent()
                     << " -> IndirectFunction;" << std::endl;
           else // compactness == FULL
-            dotFile << "	n" << (unsigned long) * it2 << " -> IndirectFunction;"
-                    << std::endl;
+            dotFile << "	n" << (unsigned long)
+                it2 << " -> IndirectFunction;" << std::endl;
         } else if (!fn->empty()) {
           if (compactness == BASICBLOCK)
-            dotFile << "	n" << ((unsigned long)(*it2)->getParent()) << " -> n"
+            dotFile << "	n" << ((unsigned long) it2->getParent()) << " -> n"
                     << ((unsigned long) & (fn->getEntryBlock())) << ";"
                     << std::endl;
           else if (compactness == FUNCTION)
-            dotFile << "	n" << ((unsigned long)(*it2)->getParent()->getParent())
+            dotFile << "	n" << ((unsigned long) it2->getParent()->getParent())
                     << " -> n" << ((unsigned long) fn) << ";" << std::endl;
           else // compactness == FULL
-            dotFile << "	n" << ((unsigned long) * it2) << " -> n"
+            dotFile << "	n" << ((unsigned long) it2) << " -> n"
                     << ((unsigned long) & (fn->getEntryBlock().front())) << ";"
                     << std::endl;
         } else {
           dotFile << "	n" << ((unsigned long) fn) << " [label = \""
                   << fn->getName().str() << "\" shape = \"box\"]" << std::endl;
           if (compactness == BASICBLOCK)
-            dotFile << "	n" << (unsigned long)(*it2)->getParent() << " -> n"
+            dotFile << "	n" << (unsigned long) it2->getParent() << " -> n"
                     << ((unsigned long) fn) << ";" << std::endl;
           else if (compactness == FUNCTION)
-            dotFile << "	n" << (unsigned long)(*it2)->getParent()->getParent()
+            dotFile << "	n" << (unsigned long) it2->getParent()->getParent()
                     << " -> n" << ((unsigned long) fn) << ";" << std::endl;
           else // compactness == FULL
-            dotFile << "	n" << (unsigned long) * it2 << " -> n"
-                    << ((unsigned long) fn) << ";" << std::endl;
+            dotFile << "	n" << (unsigned long)
+                it2 << " -> n" << ((unsigned long) fn) << ";" << std::endl;
         }
       }
     }
@@ -205,47 +199,44 @@ void CFG::dump(std::ostream &dotFile, CG &cg, InstructionFilter *filter,
   dotFile << "	edge [color = \"cyan\"];" << std::endl;
   for (CG::iterator it1 = cg.begin(), ie1 = cg.end(); it1 != ie1; it1++) {
     llvm::Function *fn = *it1;
-    for (std::set<llvm::Instruction *>::iterator
-             it2 = cg.getPossibleCallers(fn).begin(),
-             ie2 = cg.getPossibleCallers(fn).end();
-         it2 != ie2; it2++) {
-      if (!filter || filter->checkInstruction(*it2)) {
+    for (auto it2 : cg.getPossibleCallers(fn)) {
+      if (!filter || filter->checkInstruction(it2)) {
         if (fn == NULL) {
           dotFile << "	IndirectFunction [label = \"*\" shape = \"box\"]"
                   << std::endl;
           if (compactness == BASICBLOCK)
-            dotFile << "	n" << (unsigned long)(*it2)->getParent()
-                    << " -> IndirectFunction;" << std::endl;
+            dotFile << "	n" << (unsigned long)
+                it2->getParent() << " -> IndirectFunction;" << std::endl;
           if (compactness == FUNCTION)
-            dotFile << "	n" << (unsigned long)(*it2)->getParent()->getParent()
+            dotFile << "	n" << (unsigned long) it2->getParent()->getParent()
                     << " -> IndirectFunction;" << std::endl;
           else // compactness == FULL
-            dotFile << "	n" << (unsigned long) * it2 << " -> IndirectFunction;"
-                    << std::endl;
+            dotFile << "	n" << (unsigned long)
+                it2 << " -> IndirectFunction;" << std::endl;
         } else if (!fn->empty()) {
           if (compactness == BASICBLOCK)
-            dotFile << "	n" << ((unsigned long)(*it2)->getParent()) << " -> n"
+            dotFile << "	n" << ((unsigned long) it2->getParent()) << " -> n"
                     << ((unsigned long) & (fn->getEntryBlock())) << ";"
                     << std::endl;
           else if (compactness == FUNCTION)
-            dotFile << "	n" << ((unsigned long)(*it2)->getParent()->getParent())
+            dotFile << "	n" << ((unsigned long) it2->getParent()->getParent())
                     << " -> n" << ((unsigned long) fn) << ";" << std::endl;
           else // compactness == FULL
-            dotFile << "	n" << ((unsigned long) * it2) << " -> n"
+            dotFile << "	n" << ((unsigned long) it2) << " -> n"
                     << ((unsigned long) & (fn->getEntryBlock().front())) << ";"
                     << std::endl;
         } else {
           dotFile << "	n" << ((unsigned long) fn) << " [label = \""
                   << fn->getName().str() << "\" shape = \"box\"]" << std::endl;
           if (compactness == BASICBLOCK)
-            dotFile << "	n" << (unsigned long)(*it2)->getParent() << " -> n"
+            dotFile << "	n" << (unsigned long) it2->getParent() << " -> n"
                     << ((unsigned long) fn) << ";" << std::endl;
           if (compactness == FUNCTION)
-            dotFile << "	n" << (unsigned long)(*it2)->getParent()->getParent()
+            dotFile << "	n" << (unsigned long) it2->getParent()->getParent()
                     << " -> n" << ((unsigned long) fn) << ";" << std::endl;
           else // compactness == FULL
-            dotFile << "	n" << (unsigned long) * it2 << " -> n"
-                    << ((unsigned long) fn) << ";" << std::endl;
+            dotFile << "	n" << (unsigned long)
+                it2 << " -> n" << ((unsigned long) fn) << ";" << std::endl;
         }
       }
     }

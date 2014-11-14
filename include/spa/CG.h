@@ -8,7 +8,7 @@
 #include <map>
 #include <set>
 
-#include "CFG.h"
+#include <llvm/IR/Instructions.h>
 
 namespace SPA {
 class CG {
