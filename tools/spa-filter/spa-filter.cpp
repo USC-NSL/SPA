@@ -1,8 +1,9 @@
 #include <fstream>
 
 #include <llvm/ADT/OwningPtr.h>
-#include <llvm/Support/raw_ostream.h>
 #include <llvm/Support/CommandLine.h>
+
+#include "../../lib/Core/Common.h"
 
 #include <spa/Path.h>
 #include <spa/DbgLineIF.h>
@@ -187,12 +188,12 @@ int main(int argc, char **argv, char **envp) {
   std::ifstream outFile(OutFileName);
   assert(outFile.is_open() && "Unable to open output path-file.");
 
-  llvm::outs() << "Parsing criteria.\n";
+  klee::klee_message("Parsing criteria.");
   llvm::OwningPtr<Expression> expr(parseExpression(Criteria));
   assert(expr);
 
   if (EnableDbg) {
-    llvm::outs() << "Expression parsed as: " << expr->dbg_str() << '\n';
+    klee::klee_message("Expression parsed as: %s", expr->dbg_str().c_str());
   }
 
   return 0;
