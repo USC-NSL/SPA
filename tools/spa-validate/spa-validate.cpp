@@ -1,3 +1,9 @@
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <algorithm>
+#include <iterator>
+#include <cctype>
 #include <fstream>
 
 // #include <llvm/ADT/OwningPtr.h>
@@ -40,17 +46,46 @@ int main(int argc, char **argv, char **envp) {
   std::ifstream outFile(OutFileName);
   assert(outFile.is_open() && "Unable to open output path-file.");
 
-  for (size_t pos = 0; pos != std::string::npos;
-       pos = Commands.find(";", pos) + 1) {
+  size_t pos = -1;
+  do {
+    pos++;
     std::string cmd = Commands.substr(pos, Commands.find(";", pos));
     // Trim
     cmd.erase(0, cmd.find_first_not_of(" \n\r\t"));
     cmd.erase(cmd.find_last_not_of(" \n\r\t") + 1);
 
+    if (cmd.empty())
+      continue;
+
     if (EnableDbg) {
-      klee::klee_message("Command: %s", cmd.c_str());
+      klee::klee_message("Parsing command: %s", cmd.c_str());
     }
-  }
+
+    std::istringstream iss(cmd);
+    std::vector<std::string> args;
+    copy(std::istream_iterator<std::string>(iss),
+         std::istream_iterator<std::string>(), back_inserter(args));
+
+    if (args[0] == "RUN") {
+    } else if (args[0] == "WAIT") {
+      if (args[1] == "LISTEN") {
+        int port = atoi(args[3].c_str());
+
+        if (args[2] == "TCP") {
+        } else if (args[2] == "UDP") {
+        } else {
+          assert(false && "Unknown protocol to listen for.");
+        }
+      } else if (std::all_of(args[1].begin(), args[1].end(), isdigit)) {
+      } else {
+        assert(false && "Invalid WAIT command.");
+      }
+    } else if (args[0] == "CHECK") {
+    } else if (args[0] == "TIMEOUT") {
+    } else {
+      assert(false && "Unknown command.");
+    }
+  } while ((pos = Commands.find(";", pos)) != std::string::npos);
 
   return 0;
 }
