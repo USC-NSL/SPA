@@ -63,17 +63,17 @@ netcalc-server.dot: netcalc-server.bc $(SPA)
 cfg: $(CFGS)
 
 netcalc-client.paths: netcalc-client.bc
-	spa-explore $< --out-paths $@ --start-from SpaExecuteQueryEntry --toward "AFTER spa_msg_output" --stop-at "AFTER spa_msg_output" --output-at "AFTER spa_msg_output"
+	spa-explore $< --out-paths $@ --start-from SpaExecuteQueryEntry --toward "AFTER netcalc-client.cpp:56" --stop-at "AFTER netcalc-client.cpp:56" --output-at "AFTER netcalc-client.cpp:56"
 
 netcalc-server.paths: netcalc-server.bc netcalc-client.paths
 	spa-explore $< --in-paths netcalc-client.paths --out-paths $@ --start-from SpaHandleQueryEntry --away-from spa_valid_path --output-terminal --output-at "NOT REACHING spa_valid_path"
 
-validated.paths: netcalc-server.path $(TEST_TARGETS)
+validated.paths: netcalc-server.paths $(TEST_TARGETS)
 	spa-validate -d $< $@ "RUN netcalc-server.exe; WAIT LISTEN TCP 8000; RUN netcalc-client.exe; TIMEOUT 2s; CHECK NOT REACHED spa_valid_path"
 
 run-pic: BadInputs.tested
 
-run-spa: netcalc-server.paths
+run-spa: validated.paths
 
 .PRECIOUS: $(PATHS) $(BADINPUTS)
 

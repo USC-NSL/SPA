@@ -119,10 +119,13 @@ int main(int argc, char **argv, char **envp) {
     auto delim = connection.find('=');
     std::string rValue = connection.substr(0, delim);
     std::string sValue = connection.substr(delim + 1);
+    klee::klee_message("   Seeding symbol %s with values from %s",
+                       rValue.c_str(), sValue.c_str());
     spa.addValueMapping(sValue, rValue);
   }
 
   if (ConnectDefault) {
+    klee::klee_message("   Using default symbol value mappings.");
     spa.addDefaultValueMappings();
   }
 
@@ -131,6 +134,7 @@ int main(int argc, char **argv, char **envp) {
   SPA::CG cg(module);
 
   for (auto stopPoint : StopAt) {
+    klee::klee_message("   Stopping at: %s", stopPoint.c_str());
     SPA::DbgLineIF *dbgInsts = new SPA::DbgLineIF(module, stopPoint);
     spa.addStopPoint(dbgInsts);
   }

@@ -81,6 +81,7 @@ nc_value_t executeQuery(nc_operator_t op, nc_value_t arg1, nc_value_t arg2) {
   return response.value;
 }
 
+extern "C" {
 void __attribute__((used)) SpaExecuteQueryEntry() {
   spa_api_entry();
 
@@ -96,6 +97,7 @@ void __attribute__((used)) SpaExecuteQueryEntry() {
   // server->ai_protocol )) >= 0 && "Host could not be resolved." );
 
   executeQuery(NC_ADDITION, 0, 0);
+}
 }
 
 // Handle an RPN operation (either an operator or a number to push).
