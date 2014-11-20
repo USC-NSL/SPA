@@ -89,12 +89,14 @@ void handleQuery(nc_query_t &query, ssize_t size, nc_response_t &response) {
   spa_msg_output_var(response);
 }
 
+extern "C" {
 void SpaHandleQueryEntry() {
   spa_message_handler_entry();
   nc_query_t query;
   ssize_t size = 0;
   nc_response_t response;
   handleQuery(query, size, response);
+}
 }
 
 int main(int argc, char **argv) {
