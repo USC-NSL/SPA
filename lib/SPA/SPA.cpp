@@ -480,6 +480,7 @@ SPA::SPA(llvm::Module *_module, std::ostream &_output)
       outputTerminalPaths(true), checkpointsFound(0), filteredPathsFound(0),
       terminalPathsFound(0), outputtedPaths(0) {
   checkpointFilter.addIF(&checkpointWhitelist);
+  stopPointFilter.addIF(&stopPointWhitelist);
 
 #if ENABLE_STPLOG == 1
   STPLOG_init("stplog.c");
@@ -936,20 +937,20 @@ void SPA::start() {
     IOpts.searcher = spaSearcher;
   }
 
-  interpreter = klee::Interpreter::create(IOpts, this);
-  interpreter->addInterpreterEventListener(this);
+  executor = static_cast<klee::Executor *>(klee::Interpreter::create(IOpts, this));
+  executor->addInterpreterEventListener(this);
 
   externalsAndGlobalsCheck(module = const_cast<llvm::Module *>(
-      interpreter->setModule(module, Opts)));
+      executor->setModule(module, Opts)));
 
   int pArgc = 1;
   char argv0[] = "";
   char *pArgv[2] = { argv0, NULL };
   char *pEnvp[1] = { NULL };
 
-  interpreter->runFunctionAsMain(entryFunction, pArgc, pArgv, pEnvp);
+  executor->runFunctionAsMain(entryFunction, pArgc, pArgv, pEnvp);
 
-  delete interpreter;
+  delete executor;
 
   uint64_t queries = *klee::theStatisticManager->getStatisticByName("Queries");
   uint64_t queriesValid =
@@ -982,7 +983,7 @@ void SPA::showStats() {
 }
 
 void SPA::processPath(klee::ExecutionState *state) {
-  Path path(state, interpreter->getSolver());
+  Path path(state, executor->getSolver());
 
   if (!pathFilter || pathFilter->checkPath(path)) {
     klee::klee_message("Outputting path.");
@@ -1001,6 +1002,12 @@ void SPA::onStep(klee::ExecutionState *kState) {
     checkpointsFound++;
     processPath(kState);
     showStats();
+  }
+
+  if (stopPointFilter.checkInstruction(kState->pc->inst)) {
+    klee::klee_message("Path reached stop point:");
+    kState->dumpStack(llvm::errs());
+    executor->terminateStateEarly(*kState, "Reached stop point.");;
   }
 }
 

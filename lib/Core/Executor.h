@@ -345,6 +345,7 @@ private:
   const InstructionInfo & getLastNonKleeInternalInstruction(const ExecutionState &state,
       llvm::Instruction** lastInstruction);
 
+public:
   // remove state from queue and delete
   void terminateState(ExecutionState &state);
   // call exit handler and terminate state
@@ -366,6 +367,7 @@ private:
     terminateStateOnError(state, message, "exec.err", info);
   }
 
+private:
   /// bindModuleConstants - Initialize the module constant table.
   void bindModuleConstants();
 

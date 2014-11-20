@@ -14,6 +14,7 @@
 #include <llvm/IR/Module.h>
 #include <llvm/IR/Instructions.h>
 #include <klee/Interpreter.h>
+#include "../../lib/Core/Executor.h"
 
 #include <spa/UnionIF.h>
 #include <spa/WhitelistIF.h>
@@ -63,7 +64,7 @@ class SPA : public klee::InterpreterHandler,
             public klee::InterpreterEventListener,
             public FilteringEventHandler {
 private:
-  klee::Interpreter *interpreter;
+  klee::Executor *executor;
   llvm::Module *module;
   llvm::Function *entryFunction;
   llvm::Instruction *initHandlerPlaceHolder;
@@ -78,6 +79,8 @@ private:
   std::ostream &output;
   UnionIF checkpointFilter;
   WhitelistIF checkpointWhitelist;
+  UnionIF stopPointFilter;
+  WhitelistIF stopPointWhitelist;
   std::deque<StateUtility *> stateUtilities;
   std::deque<bool> outputFilteredPaths;
   PathFilter *pathFilter;
@@ -128,10 +131,10 @@ public:
     checkpointFilter.addIF(filter);
   }
   void addStopPoint(llvm::Instruction *instruction) {
-    assert(false && "Not implemented.");
+    stopPointWhitelist.getWhitelist().insert(instruction);
   }
-  void addStopPoint(InstructionFilter *instructionFilter) {
-    assert(false && "Not implemented.");
+  void addStopPoint(InstructionFilter *filter) {
+    stopPointFilter.addIF(filter);
   }
   void setOutputTerminalPaths(bool _outputTerminalPaths) {
     outputTerminalPaths = _outputTerminalPaths;
