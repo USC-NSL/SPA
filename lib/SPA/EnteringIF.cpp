@@ -21,14 +21,12 @@ EnteringIF::EnteringIF(CFG &cfg, CG &cg, InstructionFilter *filter) {
         preds.insert(p.begin(), p.end());
       }
 
-      bool isEntering =
-          preds.empty() || !filter->checkInstruction(*preds.begin());
+      // Check if at least one predecessor isn't in set.
       for (auto p : preds) {
-        assert(isEntering == !filter->checkInstruction(p) &&
-               "Entry point in the middle of a segment.");
-      }
-      if (isEntering) {
-        whitelist.insert(inst);
+        if (!filter->checkInstruction(p)) {
+          whitelist.insert(inst);
+          break;
+        }
       }
     }
   }
