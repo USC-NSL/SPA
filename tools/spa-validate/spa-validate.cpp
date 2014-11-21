@@ -43,7 +43,7 @@ int main(int argc, char **argv, char **envp) {
   std::ifstream inFile(InFileName);
   assert(inFile.is_open() && "Unable to open input path-file.");
 
-  std::ifstream outFile(OutFileName);
+  std::ofstream outFile(OutFileName);
   assert(outFile.is_open() && "Unable to open output path-file.");
 
   size_t pos = -1;
