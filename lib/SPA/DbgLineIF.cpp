@@ -5,6 +5,8 @@
 #include "spa/DbgLineIF.h"
 
 #include "spa/CFG.h"
+#include "spa/CFGBackwardIF.h"
+#include "spa/NegatedIF.h"
 #include "spa/Util.h"
 
 typedef enum {
@@ -105,6 +107,7 @@ DbgLineIF::DbgLineIF(llvm::Module *module, std::string dbgPoint) {
 
   case BEFORE: {
     CFG cfg(module);
+    // Whitelist all instructions that are fully succeeded by specification.
     for (auto inst : cfg) {
       if (dbgInsts.count(inst) == 0 && !cfg.getSuccessors(inst).empty()) {
         bool isCandidate = dbgInsts.count(*cfg.getSuccessors(inst).begin()) > 0;
@@ -122,6 +125,7 @@ DbgLineIF::DbgLineIF(llvm::Module *module, std::string dbgPoint) {
 
   case AFTER: {
     CFG cfg(module);
+    // Whitelist all instructions that are fully preceded by specification.
     for (auto inst : cfg) {
       if (dbgInsts.count(inst) == 0 && !cfg.getPredecessors(inst).empty()) {
         bool isCandidate =
@@ -139,11 +143,45 @@ DbgLineIF::DbgLineIF(llvm::Module *module, std::string dbgPoint) {
   } break;
 
   case REACHING: {
-    assert(false && "Not implemented.");
+    CFG cfg(module);
+    // Initialize worklist as predecessors of specification.
+    std::set<llvm::Instruction *> worklist;
+    for (auto inst : dbgInsts) {
+      auto predecessors = cfg.getPredecessors(inst);
+      worklist.insert(predecessors.begin(), predecessors.end());
+    }
+    // Process worklist.
+    while (!worklist.empty()) {
+      auto inst = *worklist.begin();
+      worklist.erase(inst);
+
+      // Check if instruction is fully succeeded either by whitelist or
+      // specification.
+      bool reaching = true;
+      for (auto successor : cfg.getSuccessors(inst)) {
+        if (dbgInsts.count(successor) == 0 && whitelist.count(successor) == 0) {
+          reaching = false;
+          break;
+        }
+      }
+      if (reaching) {
+        whitelist.insert(inst);
+        auto predecessors = cfg.getPredecessors(inst);
+        worklist.insert(predecessors.begin(), predecessors.end());
+      }
+    }
   } break;
 
   case NOT_REACHING: {
-    assert(false && "Not implemented.");
+    CFG cfg(module);
+    CG cg(module);
+    CFGBackwardIF reachable(cfg, cg, dbgInsts);
+    NegatedIF nonreaching(&reachable);
+    for (auto inst : cfg) {
+      if (nonreaching.checkInstruction(inst)) {
+        whitelist.insert(inst);
+      }
+    }
   } break;
 
   default: {
