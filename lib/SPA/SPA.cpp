@@ -73,6 +73,10 @@ typedef enum {
 }
 
 namespace SPA {
+llvm::cl::opt<bool> StepDebug(
+    "step-debug",
+    llvm::cl::desc("Enables outputting debug data at each execution step."));
+
 llvm::cl::opt<std::string> RecoverState(
     "recover-state",
     llvm::cl::desc(
@@ -937,11 +941,12 @@ void SPA::start() {
     IOpts.searcher = spaSearcher;
   }
 
-  executor = static_cast<klee::Executor *>(klee::Interpreter::create(IOpts, this));
+  executor =
+      static_cast<klee::Executor *>(klee::Interpreter::create(IOpts, this));
   executor->addInterpreterEventListener(this);
 
-  externalsAndGlobalsCheck(module = const_cast<llvm::Module *>(
-      executor->setModule(module, Opts)));
+  externalsAndGlobalsCheck(
+      module = const_cast<llvm::Module *>(executor->setModule(module, Opts)));
 
   int pArgc = 1;
   char argv0[] = "";
@@ -993,8 +998,10 @@ void SPA::processPath(klee::ExecutionState *state) {
 }
 
 void SPA::onStep(klee::ExecutionState *kState) {
-  // 		klee::klee_message( "Current state at:" );
-  // 		kState->dumpStack( std::cerr );
+  if (StepDebug) {
+    klee::klee_message("Current state at:");
+    kState->dumpStack(llvm::outs());
+  }
 
   if (checkpointFilter.checkInstruction(kState->pc->inst)) {
     klee::klee_message("Processing checkpoint path at:");
@@ -1007,7 +1014,7 @@ void SPA::onStep(klee::ExecutionState *kState) {
   if (stopPointFilter.checkInstruction(kState->pc->inst)) {
     klee::klee_message("Path reached stop point:");
     kState->dumpStack(llvm::errs());
-    executor->terminateStateEarly(*kState, "Reached stop point.");;
+    executor->terminateStateEarly(*kState, "Reached stop point.");
   }
 }
 
