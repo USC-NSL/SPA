@@ -5,8 +5,9 @@
 #include <iterator>
 #include <cctype>
 #include <fstream>
+#include <chrono>
 
-// #include <llvm/ADT/OwningPtr.h>
+#include <llvm/ADT/OwningPtr.h>
 // #include <llvm/Support/raw_ostream.h>
 #include <llvm/Support/CommandLine.h>
 
@@ -34,6 +35,68 @@ llvm::cl::opt<std::string> OutFileName(llvm::cl::Positional, llvm::cl::Required,
 llvm::cl::opt<std::string> Commands(llvm::cl::Positional, llvm::cl::Required,
                                     llvm::cl::desc("<validation commands>"));
 }
+
+class Action {
+public:
+  virtual void operator()() = 0;
+  virtual ~Action() {}
+  ;
+};
+
+class Condition {
+public:
+  virtual bool operator()() = 0;
+  virtual ~Condition() {}
+  ;
+};
+
+class RunAction : public Action {
+private:
+  std::string command;
+
+public:
+  RunAction(std::string command) : command(command) {}
+
+  void operator()() { assert(false && "Not implemented."); }
+};
+
+class WaitAction : public Action {
+private:
+  llvm::OwningPtr<Condition> condition;
+
+public:
+  WaitAction(Condition *condition) : condition(condition) {}
+
+  void operator()() { assert(false && "Not implemented."); }
+};
+
+#define TCP_CONN_TABLE "/proc/net/tcp"
+#define UDP_CONN_TABLE "/proc/net/udp"
+#define ANY_CONN_STATE 0
+#define TCP_LISTEN 10
+class ListenCondition : public Condition {
+private:
+  std::string connTable;
+  uint16_t port;
+  uint8_t listenState;
+
+public:
+  ListenCondition(std::string connTable, uint16_t port,
+                  uint8_t listenState = ANY_CONN_STATE)
+      : connTable(connTable), port(port), listenState(listenState) {}
+  bool operator()() { assert(false && "Not implemented."); }
+};
+
+class TimedCondition : public Condition {
+private:
+  uint64_t duration_ms;
+
+public:
+  TimedCondition(uint64_t duration_ms) : duration_ms(duration_ms) {}
+  bool operator()() { assert(false && "Not implemented."); }
+};
+
+std::vector<llvm::OwningPtr<Action> > actions;
 
 int main(int argc, char **argv, char **envp) {
   // Fill up every global cl::opt object declared in the program
@@ -67,19 +130,27 @@ int main(int argc, char **argv, char **envp) {
          std::istream_iterator<std::string>(), back_inserter(args));
 
     if (args[0] == "RUN") {
+      actions.push_back(
+          llvm::OwningPtr<Action>(new RunAction(cmd.substr(cmd.find(' ')))));
     } else if (args[0] == "WAIT") {
+      Condition *condition;
       if (args[1] == "LISTEN") {
         int port = atoi(args[3].c_str());
 
         if (args[2] == "TCP") {
+          condition = new ListenCondition(TCP_CONN_TABLE, port, TCP_LISTEN);
         } else if (args[2] == "UDP") {
+          condition = new ListenCondition(UDP_CONN_TABLE, port);
         } else {
           assert(false && "Unknown protocol to listen for.");
         }
       } else if (std::all_of(args[1].begin(), args[1].end(), isdigit)) {
+        condition = new TimedCondition(atoi(args[2].c_str()));
       } else {
         assert(false && "Invalid WAIT command.");
       }
+
+      actions.push_back(llvm::OwningPtr<Action>(new WaitAction(condition)));
     } else if (args[0] == "CHECK") {
     } else if (args[0] == "TIMEOUT") {
     } else {
