@@ -41,12 +41,10 @@ bool spdylayBadName(std::map<std::string, std::vector<uint8_t> > testCase) {
                           "spa_in_api_name4", "spa_in_api_name5", NULL };
   for (int i = 0; names[i]; i++) {
     if (testCase.count(names[i]) > 0) {
-      for (std::vector<uint8_t>::iterator it = testCase[names[i]].begin(),
-                                          ie = testCase[names[i]].end();
-           it != ie; it++) {
-        if (*it == '\0')
+      for (auto it : testCase[names[i]]) {
+        if (it == '\0')
           break;
-        if (*it < 0x20)
+        if (it < 0x20)
           return true;
       }
     }
@@ -293,13 +291,10 @@ bool nginxTrace(std::map<std::string, std::vector<uint8_t> > testCase) {
 bool sipFromBadChar(std::map<std::string, std::vector<uint8_t> > testCase) {
   // 	assert( testCase.count( "spa_in_api_from" ) );
   if (testCase.count("spa_in_api_from")) {
-    for (std::vector<uint8_t>::iterator
-             it = testCase["spa_in_api_from"].begin(),
-             ie = testCase["spa_in_api_from"].end();
-         it != ie; it++) {
-      if (*it == '\0')
+    for (auto it : testCase["spa_in_api_from"]) {
+      if (it == '\0')
         break;
-      if (!isprint(*it))
+      if (!isprint(it))
         return true;
     }
   }
@@ -310,13 +305,10 @@ bool sipFromNoScheme(std::map<std::string, std::vector<uint8_t> > testCase) {
   // 	assert( testCase.count( "spa_in_api_from" ) );
   if (testCase.count("spa_in_api_from")) {
     std::string from;
-    for (std::vector<uint8_t>::iterator
-             it = testCase["spa_in_api_from"].begin(),
-             ie = testCase["spa_in_api_from"].end();
-         it != ie; it++) {
-      if (*it == '\0')
+    for (auto it : testCase["spa_in_api_from"]) {
+      if (it == '\0')
         break;
-      from += (char) * it;
+      from += (char) it;
     }
     return from.find("sip:") == std::string::npos;
   }
@@ -343,12 +335,10 @@ sipToConfusedScheme(std::map<std::string, std::vector<uint8_t> > testCase) {
   // 	assert( testCase.count( "spa_in_api_to" ) );
   if (testCase.count("spa_in_api_to")) {
     std::string to;
-    for (std::vector<uint8_t>::iterator it = testCase["spa_in_api_to"].begin(),
-                                        ie = testCase["spa_in_api_to"].end();
-         it != ie; it++) {
-      if (*it == '\0')
+    for (auto it : testCase["spa_in_api_to"]) {
+      if (it == '\0')
         break;
-      to += (char) tolower(*it);
+      to += (char) tolower(it);
     }
     if (to.compare(0, 3, "sip") == 0 && to[4] == ':')
       return true;
@@ -361,13 +351,10 @@ sipToConfusedScheme(std::map<std::string, std::vector<uint8_t> > testCase) {
 bool sipEventBadChar(std::map<std::string, std::vector<uint8_t> > testCase) {
   // 	assert( testCase.count( "spa_in_api_event" ) );
   if (testCase.count("spa_in_api_event")) {
-    for (std::vector<uint8_t>::iterator
-             it = testCase["spa_in_api_event"].begin(),
-             ie = testCase["spa_in_api_event"].end();
-         it != ie; it++) {
-      if (*it == '\0')
+    for (auto it : testCase["spa_in_api_event"]) {
+      if (it == '\0')
         break;
-      if (!isprint(*it))
+      if (!isprint(it))
         return true;
     }
   }
@@ -401,15 +388,10 @@ std::vector<unsigned long> resultCounts;
 
 std::string testToStr(std::map<std::string, std::vector<uint8_t> > testCase) {
   std::stringstream result;
-  for (std::map<std::string, std::vector<uint8_t> >::iterator
-           vit = testCase.begin(),
-           vie = testCase.end();
-       vit != vie; vit++) {
-    result << vit->first;
-    for (std::vector<uint8_t>::iterator bit = vit->second.begin(),
-                                        bie = vit->second.end();
-         bit != bie; bit++)
-      result << " " << std::hex << (int) * bit;
+  for (auto vit : testCase) {
+    result << vit.first;
+    for (auto bit : vit.second)
+      result << " " << std::hex << (int) bit;
     result << std::endl;
   }
   result << std::endl;

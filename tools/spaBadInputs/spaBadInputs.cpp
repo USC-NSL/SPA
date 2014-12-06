@@ -357,10 +357,8 @@ void processPaths(SPA::Path *cp, SPA::Path *sp) {
       // 				LOG() << "	Outputting solution for: " << objectNames[i] <<
       // std::endl;
       o << objectNames[i];
-      for (std::vector<unsigned char>::iterator it = result[i].begin(),
-                                                ie = result[i].end();
-           it != ie; it++)
-        o << " " << std::hex << (int) * it;
+      for (auto it : result[i])
+        o << " " << std::hex << (int) it;
       o << std::endl;
     }
     o << std::endl;
@@ -375,16 +373,15 @@ void processPaths(SPA::Path *cp, SPA::Path *sp) {
     d << "*********/" << std::endl << std::endl;
     for (size_t i = 0; i < result.size(); i++) {
       d << "uint8_t " << objectNames[i] << "[" << result[i].size() << "] = {";
-      for (std::vector<unsigned char>::iterator it = result[i].begin(),
-                                                ie = result[i].end();
-           it != ie; it++)
-        d << " " << (int) * it << (it != result[i].end() ? "," : "");
+      for (auto it : result[i])
+        d << " " << (int) it << ",";
       d << " };" << std::endl;
       d << "char " << objectNames[i] << "[" << result[i].size() << "] = \"";
-      for (std::vector<unsigned char>::iterator it = result[i].begin(),
-                                                ie = result[i].end();
-           it != ie && *it != '\0'; it++)
-        d << escapeChar(*it);
+      for (auto it : result[i]) {
+        if (it == '\0')
+          break;
+        d << escapeChar(it);
+      }
       d << "\";" << std::endl;
       d << std::endl;
     }
@@ -433,9 +430,8 @@ void processJob(SPA::Path *cp, SPA::Path *sp, bool deletecp, bool deletesp) {
     if (pid == 0) {
       signal(SIGINT, SIG_IGN);
       time_t startTime = time(NULL);
-      for (std::list<job_t *>::iterator it = queue.begin(), ie = queue.end();
-           it != ie; it++)
-        processPaths((*it)->cp, (*it)->sp);
+      for (auto it : queue)
+        processPaths(it->cp, it->sp);
       time_t now = time(NULL);
 
       int fd = open(OutputFile.getValue().c_str(), O_APPEND);
@@ -451,13 +447,12 @@ void processJob(SPA::Path *cp, SPA::Path *sp, bool deletecp, bool deletesp) {
 
       runningWorkers++;
 
-      for (std::list<job_t *>::iterator it = queue.begin(), ie = queue.end();
-           it != ie; it++) {
-        if ((*it)->deletecp)
-          delete (*it)->cp;
-        if ((*it)->deletesp)
-          delete (*it)->sp;
-        delete *it;
+      for (auto it : queue) {
+        if (it->deletecp)
+          delete it->cp;
+        if (it->deletesp)
+          delete it->sp;
+        delete it;
       }
 
       queue.clear();

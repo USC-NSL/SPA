@@ -74,12 +74,10 @@ int main(int argc, char **argv, char **envp) {
   std::set<llvm::Instruction *> messageHandlers;
   std::set<llvm::Instruction *> mhCallers = cg.getDefiniteCallers(
       module->getFunction(MAX_MESSAGE_HANDLER_ANNOTATION_FUNCTION));
-  for (std::set<llvm::Instruction *>::iterator it = mhCallers.begin(),
-                                               ie = mhCallers.end();
-       it != ie; it++) {
-    spa.addEntryFunction((*it)->getParent()->getParent());
+  for (auto it : mhCallers) {
+    spa.addEntryFunction(it->getParent()->getParent());
     messageHandlers.insert(
-        &(*it)->getParent()->getParent()->getEntryBlock().front());
+        &it->getParent()->getParent()->getEntryBlock().front());
   }
   assert(!messageHandlers.empty() && "No message handlers found.");
 
@@ -88,11 +86,8 @@ int main(int argc, char **argv, char **envp) {
       module->getFunction(MAX_INTERESTING_ANNOTATION_FUNCTION));
   assert(!interestingInstructions.empty() &&
          "No interesting statements found.");
-  for (std::set<llvm::Instruction *>::iterator
-           it = interestingInstructions.begin(),
-           ie = interestingInstructions.end();
-       it != ie; it++)
-    spa.addCheckpoint(*it);
+  for (auto it : interestingInstructions)
+    spa.addCheckpoint(NULL, it);
 
   // Create instruction filter.
   // 	SPA::IntersectionIF filter = SPA::IntersectionIF();
