@@ -26,12 +26,22 @@ public:
 
   std::set<InstructionFilter *> getSubFilters() { return subFilters; }
 
-  bool checkInstruction(llvm::Instruction *instruction) {
-    for (std::set<InstructionFilter *>::iterator it = subFilters.begin(),
-                                                 ie = subFilters.end();
-         it != ie; it++)
-      if ((*it)->checkInstruction(instruction))
+  bool checkStep(llvm::Instruction *preInstruction,
+                 llvm::Instruction *postInstruction) {
+    for (auto it : subFilters) {
+      if (it->checkStep(preInstruction, postInstruction)) {
         return true;
+      }
+    }
+    return false;
+  }
+
+  bool checkInstruction(llvm::Instruction *instruction) {
+    for (auto it : subFilters) {
+      if (it->checkInstruction(instruction)) {
+        return true;
+      }
+    }
     return false;
   }
 };

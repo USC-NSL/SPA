@@ -10,7 +10,6 @@
 #include "spa/Util.h"
 
 typedef enum {
-  AT,
   BEFORE,
   AFTER,
   REACHING,
@@ -18,13 +17,13 @@ typedef enum {
   KEYWORD_MAX
 } prefix_t;
 
-std::string prefixes[] = { "AT ", "BEFORE ", "AFTER ", "REACHING ",
+std::string prefixes[] = { "BEFORE ", "AFTER ", "REACHING ",
                            "NOT REACHING " };
 
 namespace SPA {
 DbgLineIF::DbgLineIF(llvm::Module *module, std::string dbgPoint) {
   // Parse from "prefix {dir/file:line | function}"
-  prefix_t prefix = AT;
+  prefix_t prefix = BEFORE;
   for (int i = 0; i < KEYWORD_MAX; i++) {
     if (dbgPoint.compare(0, prefixes[i].length(), prefixes[i]) == 0) {
       prefix = (prefix_t) i;
@@ -101,43 +100,41 @@ DbgLineIF::DbgLineIF(llvm::Module *module, std::string dbgPoint) {
   assert((!dbgInsts.empty()) && "Found no instructions matching criteria.");
 
   switch (prefix) {
-  case AT: {
-    whitelist = dbgInsts;
-  } break;
-
   case BEFORE: {
     CFG cfg(module);
-    // Whitelist all instructions that are fully succeeded by specification.
-    for (auto inst : cfg) {
-      if (dbgInsts.count(inst) == 0 && !cfg.getSuccessors(inst).empty()) {
-        bool isCandidate = dbgInsts.count(*cfg.getSuccessors(inst).begin()) > 0;
-        for (auto successor : cfg.getSuccessors(inst)) {
-          assert(
-              (dbgInsts.count(successor) > 0) == isCandidate &&
-              "Instruction has successors both in and out of specified set.");
+    // Whitelist all edges with just a tail in the specification.
+    for (auto postInstruction : cfg) {
+      // Check control flow edges.
+      for (auto preInstruction : cfg.getPredecessors(postInstruction)) {
+        if ((!dbgInsts.count(preInstruction)) &&
+            dbgInsts.count(postInstruction)) {
+          whitelist.insert(std::make_pair(preInstruction, postInstruction));
         }
-        if (isCandidate) {
-          whitelist.insert(inst);
-        }
+      }
+      // Check call edges.
+      if (postInstruction ==
+          &postInstruction->getParent()->getParent()->getEntryBlock().front()) {
+        whitelist.insert(
+            std::make_pair((llvm::Instruction *)NULL, postInstruction));
       }
     }
   } break;
 
   case AFTER: {
     CFG cfg(module);
-    // Whitelist all instructions that are fully preceded by specification.
-    for (auto inst : cfg) {
-      if (dbgInsts.count(inst) == 0 && !cfg.getPredecessors(inst).empty()) {
-        bool isCandidate =
-            dbgInsts.count(*cfg.getPredecessors(inst).begin()) > 0;
-        for (auto successor : cfg.getPredecessors(inst)) {
-          assert(
-              (dbgInsts.count(successor) > 0) == isCandidate &&
-              "Instruction has predecessors both in and out of specified set.");
+    // Whitelist all edges with only the tail in the specification.
+    for (auto preInstruction : cfg) {
+      // Check control flow edges.
+      for (auto postInstruction : cfg.getSuccessors(preInstruction)) {
+        if (dbgInsts.count(preInstruction) &&
+            (!dbgInsts.count(postInstruction))) {
+          whitelist.insert(std::make_pair(preInstruction, postInstruction));
         }
-        if (isCandidate) {
-          whitelist.insert(inst);
-        }
+      }
+      // Check call edges.
+      if (cfg.getSuccessors(preInstruction).empty()) {
+        whitelist.insert(
+            std::make_pair(preInstruction, (llvm::Instruction *)NULL));
       }
     }
   } break;
@@ -159,13 +156,15 @@ DbgLineIF::DbgLineIF(llvm::Module *module, std::string dbgPoint) {
       // specification.
       bool reaching = true;
       for (auto successor : cfg.getSuccessors(inst)) {
-        if (dbgInsts.count(successor) == 0 && whitelist.count(successor) == 0) {
+        if (dbgInsts.count(successor) == 0 &&
+            whitelist.count(
+                std::make_pair((llvm::Instruction *)NULL, successor)) == 0) {
           reaching = false;
           break;
         }
       }
       if (reaching) {
-        whitelist.insert(inst);
+        whitelist.insert(std::make_pair((llvm::Instruction *)NULL, inst));
         auto predecessors = cfg.getPredecessors(inst);
         worklist.insert(predecessors.begin(), predecessors.end());
       }
@@ -179,7 +178,7 @@ DbgLineIF::DbgLineIF(llvm::Module *module, std::string dbgPoint) {
     NegatedIF nonreaching(&reachable);
     for (auto inst : cfg) {
       if (nonreaching.checkInstruction(inst)) {
-        whitelist.insert(inst);
+        whitelist.insert(std::make_pair((llvm::Instruction *)NULL, inst));
       }
     }
   } break;

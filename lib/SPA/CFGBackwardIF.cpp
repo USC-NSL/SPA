@@ -53,6 +53,11 @@ bool CFGBackwardIF::checkInstruction(llvm::Instruction *instruction) {
   return reaching.count(instruction) && reaching[instruction];
 }
 
+bool CFGBackwardIF::checkStep(llvm::Instruction *preInstruction,
+                              llvm::Instruction *postInstruction) {
+  return checkInstruction(postInstruction);
+}
+
 double CFGBackwardIF::getUtility(klee::ExecutionState *state) {
   bool knownFound = false;
   // Traverse call stack downward from root to current PC.

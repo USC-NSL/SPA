@@ -16,10 +16,32 @@ private:
 
 public:
   IntersectionIF() {}
+
   IntersectionIF(std::set<InstructionFilter *> _subFilters)
       : subFilters(_subFilters) {}
-  void addIF(InstructionFilter *instructionFilter);
-  bool checkInstruction(llvm::Instruction *instruction);
+
+  void addIF(InstructionFilter *instructionFilter) {
+    subFilters.insert(instructionFilter);
+  }
+
+  bool checkStep(llvm::Instruction *preInstruction,
+                 llvm::Instruction *postInstruction) {
+    for (auto it : subFilters) {
+      if (!(*it)->checkInstruction(preInstruction, postInstruction)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  bool checkInstruction(llvm::Instruction *instruction) {
+    for (auto it : subFilters) {
+      if (!(*it)->checkInstruction(instruction)) {
+        return false;
+      }
+    }
+    return true;
+  }
 };
 }
 

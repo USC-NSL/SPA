@@ -124,14 +124,18 @@ public:
     outputFilteredPaths.push_back(_outputFilteredPaths);
   }
   void setPathFilter(PathFilter *_pathFilter) { pathFilter = _pathFilter; }
-  void addCheckpoint(llvm::Instruction *instruction) {
-    checkpointWhitelist.getWhitelist().insert(instruction);
+  void addCheckpoint(llvm::Instruction *preInstruction,
+                     llvm::Instruction *postInstruction) {
+    checkpointWhitelist.getWhitelist()
+        .insert(std::make_pair(preInstruction, postInstruction));
   }
   void addCheckpoint(InstructionFilter *filter) {
     checkpointFilter.addIF(filter);
   }
-  void addStopPoint(llvm::Instruction *instruction) {
-    stopPointWhitelist.getWhitelist().insert(instruction);
+  void addStopPoint(llvm::Instruction *preInstruction,
+                    llvm::Instruction *postInstruction) {
+    stopPointWhitelist.getWhitelist()
+        .insert(std::make_pair(preInstruction, postInstruction));
   }
   void addStopPoint(InstructionFilter *filter) {
     stopPointFilter.addIF(filter);

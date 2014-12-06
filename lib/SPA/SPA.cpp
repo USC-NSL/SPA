@@ -1003,7 +1003,9 @@ void SPA::onStep(klee::ExecutionState *kState) {
     kState->dumpStack(llvm::outs());
   }
 
-  if (checkpointFilter.checkInstruction(kState->pc->inst)) {
+  if (checkpointFilter.checkStep(kState->prevPC->inst, kState->pc->inst) ||
+      checkpointFilter.checkStep(NULL, kState->pc->inst) ||
+      checkpointFilter.checkStep(kState->prevPC->inst, NULL)) {
     klee::klee_message("Processing checkpoint path at:");
     kState->dumpStack(llvm::errs());
     checkpointsFound++;
@@ -1011,7 +1013,9 @@ void SPA::onStep(klee::ExecutionState *kState) {
     showStats();
   }
 
-  if (stopPointFilter.checkInstruction(kState->pc->inst)) {
+  if (stopPointFilter.checkStep(kState->prevPC->inst, kState->pc->inst) ||
+      stopPointFilter.checkStep(NULL, kState->pc->inst) ||
+      stopPointFilter.checkStep(kState->prevPC->inst, NULL)) {
     klee::klee_message("Path reached stop point:");
     kState->dumpStack(llvm::errs());
     executor->terminateStateEarly(*kState, "Reached stop point.");

@@ -18,7 +18,6 @@
 #include "spa/DbgLineIF.h"
 #include "spa/UnionIF.h"
 #include "spa/NegatedIF.h"
-#include "spa/EnteringIF.h"
 #include "spa/AstarUtility.h"
 #include "spa/FilteredUtility.h"
 
@@ -162,8 +161,7 @@ int main(int argc, char **argv, char **envp) {
 
   for (auto outputPoint : OutputAt) {
     klee::klee_message("Adding a checkpoint at: %s", outputPoint.c_str());
-    spa.addCheckpoint(
-        new SPA::EnteringIF(cfg, cg, new SPA::DbgLineIF(module, outputPoint)));
+    spa.addCheckpoint(new SPA::DbgLineIF(module, outputPoint));
   }
 
   spa.setOutputTerminalPaths(OutputTerminal);

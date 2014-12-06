@@ -14,17 +14,29 @@
 namespace SPA {
 class WhitelistIF : public InstructionFilter {
 protected:
-  std::set<llvm::Instruction *> whitelist;
+  std::set<std::pair<llvm::Instruction *, llvm::Instruction *> > whitelist;
 
 public:
-  WhitelistIF(std::set<llvm::Instruction *> _whitelist =
-                  std::set<llvm::Instruction *>())
+  WhitelistIF(
+      std::set<std::pair<llvm::Instruction *, llvm::Instruction *> >
+          _whitelist =
+              std::set<std::pair<llvm::Instruction *, llvm::Instruction *> >())
       : whitelist(_whitelist) {}
-  bool checkInstruction(llvm::Instruction *instruction) {
-    return whitelist.count(instruction);
+
+  WhitelistIF(std::set<llvm::Instruction *> _whitelist) {
+    for (auto it : _whitelist)
+      whitelist.insert(std::make_pair((llvm::Instruction *)NULL, it));
   }
 
-  std::set<llvm::Instruction *> &getWhitelist() { return whitelist; }
+  bool checkStep(llvm::Instruction *preInstruction,
+                 llvm::Instruction *postInstruction) {
+    return whitelist.count(std::make_pair(preInstruction, postInstruction));
+  }
+
+  std::set<std::pair<llvm::Instruction *, llvm::Instruction *> > &
+  getWhitelist() {
+    return whitelist;
+  }
 };
 }
 

@@ -20,6 +20,8 @@ public:
   CFGBackwardIF(CFG &cfg, CG &cg, std::set<llvm::Instruction *> targets);
   CFGBackwardIF(CFG &cfg, CG &cg, InstructionFilter *filter)
       : CFGBackwardIF(cfg, cg, filter->toInstructionSet(cfg)) {}
+  bool checkStep(llvm::Instruction *preInstruction,
+                 llvm::Instruction *postInstruction);
   bool checkInstruction(llvm::Instruction *instruction);
   double getUtility(klee::ExecutionState *state);
   std::string getColor(CFG &cfg, CG &cg, llvm::Instruction *instruction);

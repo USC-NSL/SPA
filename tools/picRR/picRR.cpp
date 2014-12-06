@@ -123,12 +123,9 @@ int main(int argc, char **argv, char **envp) {
     llvm::Function *fn = module->getFunction(SPA_INPUT_ANNOTATION_FUNCTION);
     assert(fn);
     std::map<std::string, std::pair<llvm::Value *, size_t> > initValueVars;
-    for (std::set<llvm::Instruction *>::iterator
-             it = cg.getDefiniteCallers(fn).begin(),
-             ie = cg.getDefiniteCallers(fn).end();
-         it != ie; it++) {
+    for (auto it : cg.getDefiniteCallers(fn)) {
       const llvm::CallInst *callInst;
-      assert(callInst = dyn_cast<llvm::CallInst>(*it));
+      assert(callInst = dyn_cast<llvm::CallInst>(it));
       assert(callInst->getNumArgOperands() == 5);
       const llvm::ConstantInt *ci;
       assert(ci = dyn_cast<llvm::ConstantInt>(callInst->getArgOperand(1)));
@@ -232,38 +229,32 @@ int main(int argc, char **argv, char **envp) {
   if (Client) {
     llvm::Function *fn = module->getFunction(SPA_API_ANNOTATION_FUNCTION);
     if (fn) {
-      std::set<llvm::Instruction *> apiCallers = cg.getDefiniteCallers(fn);
-      for (std::set<llvm::Instruction *>::iterator cit = apiCallers.begin(),
-                                                   cie = apiCallers.end();
-           cit != cie; cit++) {
+      for (auto cit : cg.getDefiniteCallers(fn)) {
         klee::klee_message(
             "   Found API entry function: %s",
-            (*cit)->getParent()->getParent()->getName().str().c_str());
+            cit->getParent()->getParent()->getName().str().c_str());
         // 				if ( seedIDs.empty() )
-        spa.addEntryFunction((*cit)->getParent()->getParent());
+        spa.addEntryFunction(cit->getParent()->getParent());
         // 				else
         // 					for ( std::set<unsigned int>::iterator sit = seedIDs.begin(),
         // sie = seedIDs.end(); sit != sie; sit++ )
         // 						spa.addSeedEntryFunction( *sit,
         // (*cit)->getParent()->getParent() );
-        entryPoints.insert(*cit);
+        entryPoints.insert(cit);
       }
     } else {
       klee::klee_message("   API annotation function not present in module.");
     }
     fn = module->getFunction(SPA_MESSAGE_HANDLER_ANNOTATION_FUNCTION);
     if (fn) {
-      std::set<llvm::Instruction *> msgCallers = cg.getDefiniteCallers(fn);
-      if (!msgCallers.empty())
+      if (!cg.getDefiniteCallers(fn).empty())
         spa.newEntryLevel();
-      for (std::set<llvm::Instruction *>::iterator cit = msgCallers.begin(),
-                                                   cie = msgCallers.end();
-           cit != cie; cit++) {
+      for (auto cit : cg.getDefiniteCallers(fn)) {
         klee::klee_message(
             "   Found Message entry function: %s",
-            (*cit)->getParent()->getParent()->getName().str().c_str());
-        spa.addEntryFunction((*cit)->getParent()->getParent());
-        entryPoints.insert(*cit);
+            cit->getParent()->getParent()->getName().str().c_str());
+        spa.addEntryFunction(cit->getParent()->getParent());
+        entryPoints.insert(cit);
       }
     } else {
       klee::klee_message(
@@ -273,21 +264,18 @@ int main(int argc, char **argv, char **envp) {
     llvm::Function *fn =
         module->getFunction(SPA_MESSAGE_HANDLER_ANNOTATION_FUNCTION);
     if (fn) {
-      std::set<llvm::Instruction *> mhCallers = cg.getDefiniteCallers(fn);
-      for (std::set<llvm::Instruction *>::iterator cit = mhCallers.begin(),
-                                                   cie = mhCallers.end();
-           cit != cie; cit++) {
+      for (auto cit : cg.getDefiniteCallers(fn)) {
         klee::klee_message(
             "   Found message handler entry function: %s",
-            (*cit)->getParent()->getParent()->getName().str().c_str());
+            cit->getParent()->getParent()->getName().str().c_str());
         // 				if ( seedIDs.empty() )
-        spa.addEntryFunction((*cit)->getParent()->getParent());
+        spa.addEntryFunction(cit->getParent()->getParent());
         // 				else
         // 					for ( std::set<unsigned int>::iterator sit = seedIDs.begin(),
         // sie = seedIDs.end(); sit != sie; sit++ )
         // 						spa.addSeedEntryFunction( *sit,
         // (*cit)->getParent()->getParent() );
-        entryPoints.insert(*cit);
+        entryPoints.insert(cit);
       }
     } else {
       klee::klee_message(
@@ -352,7 +340,7 @@ int main(int argc, char **argv, char **envp) {
   }
 
   for (auto it : checkpoints) {
-    spa.addCheckpoint(it);
+    spa.addCheckpoint(NULL, it);
   }
 
   // Create instruction filter.

@@ -251,7 +251,13 @@ private:
 
 public:
   FunctionInstructionFilter(llvm::Function *fn) : function(fn) {}
-  ;
+
+  bool checkStep(llvm::Instruction *preInstruction,
+                 llvm::Instruction *postInstruction) {
+    return checkInstruction(preInstruction) &&
+           checkInstruction(postInstruction);
+  }
+
   bool checkInstruction(llvm::Instruction *instruction) {
     return instruction->getParent()->getParent() == function;
   }

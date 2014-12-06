@@ -16,7 +16,15 @@ private:
 
 public:
   NegatedIF(InstructionFilter *_subFilters) : subFilter(_subFilters) {}
-  bool checkInstruction(llvm::Instruction *instruction);
+
+  bool checkStep(llvm::Instruction *preInstruction,
+                 llvm::Instruction *postInstruction) {
+    return !subFilter->checkStep(preInstruction, postInstruction);
+  }
+
+  bool checkInstruction(llvm::Instruction *instruction) {
+    return !subFilter->checkInstruction(instruction);
+  }
 };
 }
 
