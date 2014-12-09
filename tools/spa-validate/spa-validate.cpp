@@ -8,12 +8,10 @@
 #include <chrono>
 
 #include <llvm/ADT/OwningPtr.h>
-// #include <llvm/Support/raw_ostream.h>
 #include <llvm/Support/CommandLine.h>
-
 #include "../../lib/Core/Common.h"
-
-// #include <spa/Path.h>
+#include <spa/FilterExpression.h>
+#include <spa/PathLoader.h>
 
 // FIXME: Ugh, this is gross. But otherwise our config.h conflicts with LLVMs.
 #undef PACKAGE_BUGREPORT
@@ -38,16 +36,16 @@ llvm::cl::opt<std::string> Commands(llvm::cl::Positional, llvm::cl::Required,
 
 class Action {
 public:
-  virtual void operator()() = 0;
+  virtual void operator()(SPA::Path *path) {
+    assert(false && "Not implemented.");
+  }
   virtual ~Action() {}
-  ;
 };
 
 class Condition {
 public:
   virtual bool operator()() = 0;
   virtual ~Condition() {}
-  ;
 };
 
 class RunAction : public Action {
@@ -57,7 +55,7 @@ private:
 public:
   RunAction(std::string command) : command(command) {}
 
-  void operator()() { assert(false && "Not implemented."); }
+  //   void operator()(SPA::Path *path) { assert(false && "Not implemented."); }
 };
 
 class WaitAction : public Action {
@@ -67,7 +65,7 @@ private:
 public:
   WaitAction(Condition *condition) : condition(condition) {}
 
-  void operator()() { assert(false && "Not implemented."); }
+  //   void operator()(SPA::Path *path) { assert(false && "Not implemented."); }
 };
 
 #define TCP_CONN_TABLE "/proc/net/tcp"
@@ -96,7 +94,9 @@ public:
   bool operator()() { assert(false && "Not implemented."); }
 };
 
-std::vector<llvm::OwningPtr<Action> > actions;
+std::vector<Action> actions;
+llvm::OwningPtr<SPA::FilterExpression> checkExpression;
+std::chrono::duration<long, std::milli> timeout;
 
 int main(int argc, char **argv, char **envp) {
   // Fill up every global cl::opt object declared in the program
@@ -130,8 +130,7 @@ int main(int argc, char **argv, char **envp) {
          std::istream_iterator<std::string>(), back_inserter(args));
 
     if (args[0] == "RUN") {
-      actions.push_back(
-          llvm::OwningPtr<Action>(new RunAction(cmd.substr(cmd.find(' ')))));
+      actions.push_back(RunAction(cmd.substr(cmd.find(' '))));
     } else if (args[0] == "WAIT") {
       Condition *condition;
       if (args[1] == "LISTEN") {
@@ -150,13 +149,44 @@ int main(int argc, char **argv, char **envp) {
         assert(false && "Invalid WAIT command.");
       }
 
-      actions.push_back(llvm::OwningPtr<Action>(new WaitAction(condition)));
+      actions.push_back(WaitAction(condition));
     } else if (args[0] == "CHECK") {
+      SPA::FilterExpression *expr =
+          SPA::FilterExpression::parse(cmd.substr(cmd.find(' ')));
+      assert(expr && "Invalid CHECK expression.");
+
+      if (checkExpression) {
+        checkExpression.reset(new SPA::AndFE(checkExpression.take(), expr));
+      } else {
+        checkExpression.reset(expr);
+      }
     } else if (args[0] == "TIMEOUT") {
+      timeout = std::chrono::duration<long, std::milli>(atol(args[1].c_str()));
     } else {
       assert(false && "Unknown command.");
     }
   } while ((pos = Commands.find(";", pos)) != std::string::npos);
+
+  SPA::PathLoader pathLoader(inFile);
+  SPA::Path *path;
+  while ((path = pathLoader.getPath())) {
+    if (timeout.count()) {
+      assert(false && "Not implemented.");
+      //       std::chrono::time_point<std::chrono::system_clock> watchdog =
+      //           std::chrono::system_clock::now() + timeout;
+    }
+
+    for (auto action : actions)
+      action(path);
+
+    klee::klee_message("Checking validity condition.");
+    if (checkExpression->check(path)){
+      klee::klee_message("Path valid. Outputting.");
+      outFile << path;
+    } else {
+      klee::klee_message("Path invalid. Dropping.");
+    }
+  }
 
   return 0;
 }
