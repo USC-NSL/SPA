@@ -22,9 +22,7 @@ std::string OrFE::dbg_str() {
   return "(" + l->dbg_str() + " OR " + r->dbg_str() + ")";
 }
 
-NotFE::NotFE(FilterExpression *subExpr) : subExpr(subExpr) {
-  assert(subExpr);
-}
+NotFE::NotFE(FilterExpression *subExpr) : subExpr(subExpr) { assert(subExpr); }
 bool NotFE::check(SPA::Path *p) { return !subExpr->check(p); }
 std::string NotFE::dbg_str() { return "(NOT " + subExpr->dbg_str() + ")"; }
 
@@ -32,10 +30,7 @@ ConstFE::ConstFE(bool c) : c(c) {}
 bool ConstFE::check(SPA::Path *p) { return c; }
 std::string ConstFE::dbg_str() { return c ? TRUE : FALSE; }
 
-ReachedFE::ReachedFE(std::string dbgStr) : dbgStr(dbgStr) {
-  assert(false && "Not implemented.");
-  //         dbgIF(new SPA::DbgLineIF(module, dbgStr))
-}
+ReachedFE::ReachedFE(std::string dbgStr) : dbgStr(dbgStr) {}
 bool ReachedFE::check(SPA::Path *p) { assert(false && "Not implemented."); }
 std::string ReachedFE::dbg_str() { return "(REACHED " + dbgStr + ")"; }
 
@@ -114,8 +109,6 @@ FilterExpression *parseConstFE(std::string str) {
 FilterExpression *parseReachedFE(std::string str) {
   if (str.substr(0, strlen(REACHED)) != REACHED)
     return NULL;
-  if (!SPA::DbgLineIF::checkSyntax(str.substr(strlen(REACHED))))
-    return NULL;
-  return new ReachedFE(str);
+  return new ReachedFE(str.substr(strlen(REACHED)));
 }
 }

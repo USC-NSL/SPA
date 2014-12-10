@@ -17,11 +17,10 @@ typedef enum {
   KEYWORD_MAX
 } prefix_t;
 
-std::string prefixes[] = { "BEFORE ", "AFTER ", "REACHING ",
-                           "NOT REACHING " };
+std::string prefixes[] = { "BEFORE ", "AFTER ", "REACHING ", "NOT REACHING " };
 
 namespace SPA {
-DbgLineIF::DbgLineIF(llvm::Module *module, std::string dbgPoint) {
+DbgLineIF *DbgLineIF::parse(llvm::Module *module, std::string dbgPoint) {
   // Parse from "prefix {dir/file:line | function}"
   prefix_t prefix = BEFORE;
   for (int i = 0; i < KEYWORD_MAX; i++) {
@@ -47,9 +46,9 @@ DbgLineIF::DbgLineIF(llvm::Module *module, std::string dbgPoint) {
       dbgPoint = dbgPoint.substr(b + 1);
     }
 
-    b = dbgPoint.find(":");
-    assert(b != std::string::npos &&
-           "Must either specify file name and line number or a function.");
+    // Must either specify file name and line number or a function.
+    if ((b = dbgPoint.find(":")) == std::string::npos)
+      return NULL;
     std::string dbgFile = dbgPoint.substr(0, b);
     long dbgLineNo = SPA::strToNum<long>(dbgPoint.substr(b + 1));
 
@@ -85,19 +84,25 @@ DbgLineIF::DbgLineIF(llvm::Module *module, std::string dbgPoint) {
               if (foundDbgLoc.empty()) {
                 foundDbgLoc = SPA::debugLocation(&inst);
               } else {
-                assert(foundDbgLoc == SPA::debugLocation(&inst) &&
-                       "Multiple distinct file locations match the specified "
-                       "criteria (files with same name, different directory).");
+                // Check if multiple distinct file locations match the specified
+                // criteria (files with same name, different directory).
+                if (foundDbgLoc != SPA::debugLocation(&inst))
+                  return NULL;
               }
             }
           }
         }
       }
     }
-    assert((!foundDbgLoc.empty()) &&
-           "Specified filename/line criteria didn't match any known location.");
+    // Check if specified filename/line criteria matched a known location.
+    if (foundDbgLoc.empty())
+      return NULL;
   }
-  assert((!dbgInsts.empty()) && "Found no instructions matching criteria.");
+  // Check if any instructions matched criteria.
+  if (dbgInsts.empty())
+    return NULL;
+
+  std::set<std::pair<llvm::Instruction *, llvm::Instruction *> > whitelist;
 
   switch (prefix) {
   case BEFORE: {
@@ -184,12 +189,11 @@ DbgLineIF::DbgLineIF(llvm::Module *module, std::string dbgPoint) {
   } break;
 
   default: {
-    assert(false && "Unknown prefix.");
+    // Unknown prefix.
+    return NULL;
   } break;
   }
-}
 
-bool DbgLineIF::checkSyntax(std::string dbgPoint) {
-  assert(false && "Not implemented.");
+  return new DbgLineIF(whitelist);
 }
 }

@@ -10,9 +10,13 @@
 
 namespace SPA {
 class DbgLineIF : public WhitelistIF {
+private:
+  DbgLineIF(
+      std::set<std::pair<llvm::Instruction *, llvm::Instruction *> > whitelist)
+      : WhitelistIF(whitelist) {}
+
 public:
-  DbgLineIF(llvm::Module *module, std::string dbgPoint);
-  static bool checkSyntax(std::string dbgPoint);
+  static DbgLineIF *parse(llvm::Module *module, std::string dbgPoint);
 };
 }
 

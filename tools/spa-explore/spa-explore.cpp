@@ -134,7 +134,8 @@ int main(int argc, char **argv, char **envp) {
 
   for (auto stopPoint : StopAt) {
     klee::klee_message("   Stopping at: %s", stopPoint.c_str());
-    SPA::DbgLineIF *dbgInsts = new SPA::DbgLineIF(module, stopPoint);
+    SPA::DbgLineIF *dbgInsts = SPA::DbgLineIF::parse(module, stopPoint);
+    assert(dbgInsts && "Error parsing stop point.");
     spa.addStopPoint(dbgInsts);
   }
 
@@ -144,13 +145,17 @@ int main(int argc, char **argv, char **envp) {
   SPA::UnionIF directingTargets;
   for (auto towardsPoint : Toward) {
     klee::klee_message("      Directing towards: %s", towardsPoint.c_str());
-    directingTargets.addIF(new SPA::DbgLineIF(module, towardsPoint));
+    SPA::DbgLineIF *dbgInsts = SPA::DbgLineIF::parse(module, towardsPoint);
+    assert(dbgInsts && "Error parsing towards point.");
+    directingTargets.addIF(dbgInsts);
   }
 
   for (auto awayFromPoint : AwayFrom) {
     klee::klee_message("      Directing away from: %s", awayFromPoint.c_str());
-    directingTargets.addIF(new SPA::NegatedIF(new SPA::CFGBackwardIF(
-        cfg, cg, new SPA::DbgLineIF(module, awayFromPoint))));
+    SPA::DbgLineIF *dbgInsts = SPA::DbgLineIF::parse(module, awayFromPoint);
+    assert(dbgInsts && "Error parsing away from point.");
+    directingTargets.addIF(
+        new SPA::NegatedIF(new SPA::CFGBackwardIF(cfg, cg, dbgInsts)));
   }
 
   spa.addStateUtilityBack(new SPA::FilteredUtility(), false);
@@ -161,7 +166,9 @@ int main(int argc, char **argv, char **envp) {
 
   for (auto outputPoint : OutputAt) {
     klee::klee_message("Adding a checkpoint at: %s", outputPoint.c_str());
-    spa.addCheckpoint(new SPA::DbgLineIF(module, outputPoint));
+    SPA::DbgLineIF *dbgInsts = SPA::DbgLineIF::parse(module, outputPoint);
+    assert(dbgInsts && "Error parsing output point.");
+    spa.addCheckpoint(dbgInsts);
   }
 
   spa.setOutputTerminalPaths(OutputTerminal);

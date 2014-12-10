@@ -1,5 +1,4 @@
 #include <llvm/ADT/OwningPtr.h>
-#include <spa/DbgLineIF.h>
 #include <spa/Path.h>
 
 namespace SPA {
@@ -56,7 +55,6 @@ public:
 class ReachedFE : public FilterExpression {
 private:
   std::string dbgStr;
-  llvm::OwningPtr<SPA::DbgLineIF> dbgIF;
 
 public:
   ReachedFE(std::string dbgStr);
