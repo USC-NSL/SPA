@@ -67,13 +67,13 @@ public:
   RunAction(std::string command) : command(command) {}
 
   void run(SPA::Path *path) {
-    klee::klee_message("Running: %s", command.c_str());
     pid_t pid = fork();
     assert(pid >= 0 && "Error forking process.");
     if (pid == 0) {
       setpgid(0, 0);
       exit(system(command.c_str()));
     }
+    klee::klee_message("Running: %s [%d]", command.c_str(), pid);
     waitPIDs.insert(pid);
   }
 };
@@ -109,7 +109,8 @@ public:
       : connTable(connTable), port(port), listenState(listenState) {}
   bool check() {
     klee::klee_message("Waiting for server to listen on %s port %d.",
-                       connTable.substr(connTable.rfind("/") + 1).c_str(), port);
+                       connTable.substr(connTable.rfind("/") + 1).c_str(),
+                       port);
 
     std::ifstream table(connTable);
     assert(table.is_open());
@@ -135,6 +136,25 @@ public:
   }
 };
 
+class ProcsDoneCondition : public Condition {
+public:
+  bool check() {
+    klee::klee_message("Waiting for %ld processes to terminate.",
+                       waitPIDs.size());
+
+    for (auto pid : waitPIDs) {
+      int status;
+      assert(waitpid(pid, &status, WNOHANG) != -1);
+      if (WIFEXITED(status) || WIFSIGNALED(status)) {
+        klee::klee_message("Process %d terminated.", pid);
+        waitPIDs.erase(pid);
+      }
+    }
+
+    return waitPIDs.empty();
+  }
+};
+
 class TimedCondition : public Condition {
 private:
   std::chrono::duration<long, std::milli> duration;
@@ -152,30 +172,33 @@ public:
   }
 };
 
-void waitFinish(std::set<pid_t> pids) {
-  klee::klee_message("Waiting for processes to finish.");
-
+void waitFinish() {
   do {
-    while ((!pids.empty()) && (timeout.count() == 0 ||
-                               std::chrono::system_clock::now() <= watchdog)) {
-      pid_t pid = *pids.begin();
+    klee::klee_message("Waiting for %ld processes to finish.", waitPIDs.size());
+
+    while ((!waitPIDs.empty()) &&
+           (timeout.count() == 0 ||
+            std::chrono::system_clock::now() <= watchdog)) {
+      pid_t pid = *waitPIDs.begin();
       int status;
       assert(waitpid(pid, &status, WNOHANG) != -1);
       if (WIFEXITED(status) || WIFSIGNALED(status)) {
-        pids.erase(pid);
+        klee::klee_message("Process %d terminated.", pid);
+        waitPIDs.erase(pid);
       } else {
         usleep(RECHECK_WAIT);
       }
     }
 
-    if (!pids.empty()) {
-      klee::klee_message("Killing processes.");
-
-      for (pid_t pid : pids) {
+    if (!waitPIDs.empty()) {
+      for (pid_t pid : waitPIDs) {
+        klee::klee_message("Killing process %d.", pid);
         kill(-pid, SIGKILL);
       }
+
+      usleep(RECHECK_WAIT);
     }
-  } while (!pids.empty());
+  } while (!waitPIDs.empty());
 }
 
 int main(int argc, char **argv, char **envp) {
@@ -223,8 +246,10 @@ int main(int argc, char **argv, char **envp) {
         } else {
           assert(false && "Unknown protocol to listen for.");
         }
+      } else if (args[1] == "DONE") {
+        condition = new ProcsDoneCondition();
       } else if (std::all_of(args[1].begin(), args[1].end(), isdigit)) {
-        condition = new TimedCondition(atol(args[2].c_str()));
+        condition = new TimedCondition(atol(args[1].c_str()));
       } else {
         assert(false && "Invalid WAIT command.");
       }
@@ -254,9 +279,12 @@ int main(int argc, char **argv, char **envp) {
       watchdog = std::chrono::system_clock::now() + timeout;
     }
 
-    for (auto action : actions)
+    for (auto action : actions) {
+      if (timeout.count() && std::chrono::system_clock::now() > watchdog)
+        break;
       action->run(path);
-    waitFinish(waitPIDs);
+    }
+    waitFinish();
 
     klee::klee_message("Checking validity condition.");
     if (checkExpression->check(path)) {

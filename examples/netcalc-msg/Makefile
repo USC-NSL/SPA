@@ -69,9 +69,9 @@ netcalc-server.paths: netcalc-server.bc netcalc-client.paths
 	spa-explore $< --in-paths netcalc-client.paths --out-paths $@ --start-from SpaHandleQueryEntry --away-from netcalc-server.cpp:85 --output-terminal --output-at "NOT REACHING netcalc-server.cpp:85" 2>&1 | tee $@.log
 
 validated.paths: netcalc-server.paths $(TEST_TARGETS) $(shell which spa-validate)
+	killall netcalc-client.test netcalc-server.test || true
 	spa-validate -d $< $@ \
-		"RUN killall netcalc-client.test netcalc-server.test; \
-		RUN ./netcalc-server.test; \
+		"RUN ./netcalc-server.test; \
 		WAIT LISTEN UDP 3141; \
 		RUN ./netcalc-client.test; \
 		TIMEOUT 2000; \
