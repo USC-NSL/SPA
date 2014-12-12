@@ -17,11 +17,11 @@ protected:
   std::set<std::pair<llvm::Instruction *, llvm::Instruction *> > whitelist;
 
 public:
+  WhitelistIF() {}
+
   WhitelistIF(
-      std::set<std::pair<llvm::Instruction *, llvm::Instruction *> >
-          _whitelist =
-              std::set<std::pair<llvm::Instruction *, llvm::Instruction *> >())
-      : whitelist(_whitelist) {}
+      std::set<std::pair<llvm::Instruction *, llvm::Instruction *> > whitelist)
+      : whitelist(whitelist) {}
 
   WhitelistIF(std::set<llvm::Instruction *> _whitelist) {
     for (auto it : _whitelist)
