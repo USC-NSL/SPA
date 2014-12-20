@@ -28,7 +28,7 @@ typedef enum {
   SYMBOLS,
   TAGS,
   KQUERY,
-  TESTCASE
+  TESTINPUTS
 } LoadState_t;
 }
 
@@ -136,10 +136,10 @@ Path *PathLoader::getPath() {
       delete P;
       delete Builder;
       delete MB;
-    } else if (line == SPA_PATH_TESTCASE_START) {
-      changeState(PATH, TESTCASE);
-    } else if (line == SPA_PATH_TESTCASE_END) {
-      changeState(TESTCASE, PATH);
+    } else if (line == SPA_PATH_TESTINPUTS_START) {
+      changeState(PATH, TESTINPUTS);
+    } else if (line == SPA_PATH_TESTINPUTS_END) {
+      changeState(TESTINPUTS, PATH);
     } else if (line == SPA_PATH_END) {
       changeState(PATH, START);
       if (!filter || filter->checkPath(*path))
@@ -166,7 +166,18 @@ Path *PathLoader::getPath() {
       case KQUERY: {
         kQuery += " " + line;
       } break;
-      case TESTCASE: {
+      case TESTINPUTS: {
+        std::string name = line.substr(0, line.find(" "));
+        std::stringstream ss(line.substr(name.length()));
+        std::vector<uint8_t> value;
+
+        while (ss.good()) {
+          unsigned int n;
+          ss >> std::hex >> n;
+          value.push_back(n);
+        }
+
+        path->testInputs[name] = value;
       } break;
       default: {
         assert(false && "Invalid path file.");

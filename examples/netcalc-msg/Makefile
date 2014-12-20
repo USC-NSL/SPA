@@ -25,7 +25,7 @@ all: $(TARGETS) $(BC_TARGETS) $(TEST_TARGETS)
 	$(LLVM_CC) $(CXX_FLAGS) -DENABLE_SPA -DENABLE_KLEE -c -o $@ $<
 
 %.test: %.cpp $(HEADERS) $(LIB_SPA_TEST_MODULE)
-	$(CC) $(CXX_FLAGS) -DENABLE_SPA -o $@ $< $(LIB_SPA_TEST_MODULE)
+	$(CC) $(CXX_FLAGS) --coverage -DENABLE_SPA -o $@ $< $(LIB_SPA_TEST_MODULE)
 
 %.bc.client.paths: %.bc $(SPA)
 	rm -f $@
@@ -63,10 +63,10 @@ netcalc-server.dot: netcalc-server.bc $(SPA)
 cfg: $(CFGS)
 
 netcalc-client.paths: netcalc-client.bc $(shell which spa-explore)
-	spa-explore $< --out-paths $@ --start-from SpaExecuteQueryEntry --toward "AFTER netcalc-client.cpp:56" --stop-at "AFTER netcalc-client.cpp:56" --output-at "AFTER netcalc-client.cpp:56" 2>&1 | tee $@.log
+	spa-explore $< --out-paths $@ --start-from SpaExecuteQueryEntry --toward "AFTER netcalc-client.cpp:56" --stop-at "AFTER netcalc-client.cpp:56" --output-at "AFTER netcalc-client.cpp:56"
 
 netcalc-server.paths: netcalc-server.bc netcalc-client.paths
-	spa-explore $< --in-paths netcalc-client.paths --out-paths $@ --start-from SpaHandleQueryEntry --away-from netcalc-server.cpp:85 --output-terminal --output-at "NOT REACHING netcalc-server.cpp:85" 2>&1 | tee $@.log
+	spa-explore $< --in-paths netcalc-client.paths --out-paths $@ --start-from SpaHandleQueryEntry --away-from netcalc-server.cpp:85 --output-terminal --output-at "NOT REACHING netcalc-server.cpp:85"
 
 validated.paths: netcalc-server.paths $(TEST_TARGETS) $(shell which spa-validate)
 	killall netcalc-client.test netcalc-server.test || true
@@ -74,9 +74,10 @@ validated.paths: netcalc-server.paths $(TEST_TARGETS) $(shell which spa-validate
 		"RUN ./netcalc-server.test; \
 		WAIT LISTEN UDP 3141; \
 		RUN ./netcalc-client.test; \
+		WAIT DONE 2; \
+		KILL 1; \
 		TIMEOUT 2000; \
-		CHECK NOT REACHED spa_valid_path" \
-		2>&1 | tee $@.log
+		CHECK NOT REACHED spa_valid_path"
 
 run-pic: BadInputs.tested
 

@@ -20,21 +20,29 @@
 #define SPA_PATH_TAGS_END "--- TAGS END ---"
 #define SPA_PATH_KQUERY_START "--- KQUERY START ---"
 #define SPA_PATH_KQUERY_END "--- KQUERY END ---"
-#define SPA_PATH_TESTCASE_START "--- TESTCASE START ---"
-#define SPA_PATH_TESTCASE_END "--- TESTCASE END ---"
+#define SPA_PATH_TESTINPUTS_START "--- TEST INPUTS START ---"
+#define SPA_PATH_TESTINPUTS_END "--- TEST INPUTS END ---"
+#define SPA_PATH_TESTCOVERAGE_START "--- TEST COVERAGE START ---"
+#define SPA_PATH_TESTCOVERAGE_END "--- TEST COVERAGE END ---"
 #define SPA_PATH_END "--- PATH END ---"
 #define SPA_PATH_COMMENT "#"
 #define SPA_PATH_WHITE_SPACE " 	\r\n"
 
+void loadCoverage(SPA::Path *path);
+
 namespace SPA {
 class Path {
+  friend void ::loadCoverage(SPA::Path *path);
+
 private:
   std::set<const klee::Array *> symbols;
   std::map<std::string, const klee::Array *> symbolNames;
   std::map<std::string, std::vector<klee::ref<klee::Expr> > > outputValues;
   std::map<std::string, std::string> tags;
   klee::ConstraintManager constraints;
-  std::map<std::string, std::vector<uint8_t> > testCase;
+  std::map<std::string, std::vector<uint8_t> > testInputs;
+  std::map<std::string, std::set<long> > testLineCoverage;
+  std::set<std::string> testFunctionCoverage;
 
   Path();
 
@@ -86,8 +94,16 @@ public:
 
   const klee::ConstraintManager &getConstraints() const { return constraints; }
 
-  const std::map<std::string, std::vector<uint8_t> > &getTestCase() const {
-    return testCase;
+  const std::map<std::string, std::vector<uint8_t> > &getTestInputs() const {
+    return testInputs;
+  }
+
+  const std::map<std::string, std::set<long> > getTestLineCoverage() {
+    return testLineCoverage;
+  }
+
+  const std::set<std::string> getTestFunctionCoverage() {
+    return testFunctionCoverage;
   }
 
   friend class PathLoader;

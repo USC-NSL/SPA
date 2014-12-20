@@ -118,7 +118,7 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
           klee::Query(constraints, klee::createDefaultExprBuilder()->False()),
           objects, result)) {
     for (size_t i = 0; i < result.size(); i++) {
-      testCase[objectNames[i]] = result[i];
+      testInputs[objectNames[i]] = result[i];
     }
   }
 }
@@ -165,15 +165,15 @@ std::ostream &operator<<(std::ostream &stream, const Path &path) {
   ros.flush();
   stream << SPA_PATH_KQUERY_END << std::endl;
 
-  stream << SPA_PATH_TESTCASE_START << std::endl;
-  for (auto input : path.getTestCase()) {
+  stream << SPA_PATH_TESTINPUTS_START << std::endl;
+  for (auto input : path.getTestInputs()) {
     stream << input.first << std::hex;
     for (uint8_t b : input.second) {
       stream << " " << (int) b;
     }
     stream << std::dec << std::endl;
   }
-  stream << SPA_PATH_TESTCASE_END << std::endl;
+  stream << SPA_PATH_TESTINPUTS_END << std::endl;
 
   return stream << SPA_PATH_END << std::endl;
 }
