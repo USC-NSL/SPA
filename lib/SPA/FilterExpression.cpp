@@ -2,8 +2,10 @@
 
 #define AND " AND "
 #define OR " OR "
+#define NOT "NOT "
 #define TRUE "TRUE"
 #define FALSE "FALSE"
+#define REACHED "REACHED "
 
 namespace SPA {
 AndFE::AndFE(FilterExpression *l, FilterExpression *r) : l(l), r(r) {
@@ -11,7 +13,7 @@ AndFE::AndFE(FilterExpression *l, FilterExpression *r) : l(l), r(r) {
 }
 bool AndFE::check(SPA::Path *p) { return l->check(p) && r->check(p); }
 std::string AndFE::dbg_str() {
-  return "(" + l->dbg_str() + " AND " + r->dbg_str() + ")";
+  return "(" + l->dbg_str() + AND + r->dbg_str() + ")";
 }
 
 OrFE::OrFE(FilterExpression *l, FilterExpression *r) : l(l), r(r) {
@@ -19,20 +21,53 @@ OrFE::OrFE(FilterExpression *l, FilterExpression *r) : l(l), r(r) {
 }
 bool OrFE::check(SPA::Path *p) { return l->check(p) || r->check(p); }
 std::string OrFE::dbg_str() {
-  return "(" + l->dbg_str() + " OR " + r->dbg_str() + ")";
+  return "(" + l->dbg_str() + OR + r->dbg_str() + ")";
 }
 
 NotFE::NotFE(FilterExpression *subExpr) : subExpr(subExpr) { assert(subExpr); }
 bool NotFE::check(SPA::Path *p) { return !subExpr->check(p); }
-std::string NotFE::dbg_str() { return "(NOT " + subExpr->dbg_str() + ")"; }
+std::string NotFE::dbg_str() { return "(" NOT + subExpr->dbg_str() + ")"; }
 
 ConstFE::ConstFE(bool c) : c(c) {}
 bool ConstFE::check(SPA::Path *p) { return c; }
 std::string ConstFE::dbg_str() { return c ? TRUE : FALSE; }
 
-ReachedFE::ReachedFE(std::string dbgStr) : dbgStr(dbgStr) {}
-bool ReachedFE::check(SPA::Path *p) { assert(false && "Not implemented."); }
-std::string ReachedFE::dbg_str() { return "(REACHED " + dbgStr + ")"; }
+ReachedFE::ReachedFE(std::string dbgStr) {
+  // Check if function or source line.
+  auto fileLineDelim = dbgStr.rfind(":");
+  if (fileLineDelim == std::string::npos) {
+    function = dbgStr;
+  } else {
+    auto dirFilePos = dbgStr.rfind("/");
+    dirFilePos = dirFilePos == std::string::npos ? 0 : dirFilePos + 1;
+    srcFile = dbgStr.substr(dirFilePos, fileLineDelim - dirFilePos);
+    srcLine = atol(dbgStr.substr(fileLineDelim + 1).c_str());
+  }
+}
+bool ReachedFE::check(SPA::Path *p) {
+  assert((!p->getTestLineCoverage().empty()) &&
+         (!p->getTestFunctionCoverage().empty()) && "No test coverage data.");
+
+  if (!function.empty() && !p->getTestFunctionCoverage().count(function)) {
+    return false;
+  }
+
+  if (!srcFile.empty() && srcLine &&
+      !p->getTestLineCoverage()[srcFile].count(srcLine)) {
+    return false;
+  }
+
+  return true;
+}
+std::string ReachedFE::dbg_str() {
+  std::string result;
+  if (!srcFile.empty() && srcLine) {
+    result = srcFile + ":" + srcFile;
+  } else if (!function.empty()) {
+    result = function;
+  }
+  return "(" REACHED + result + ")";
+}
 
 FilterExpression *parseParFE(std::string str);
 template <class C>
@@ -86,7 +121,6 @@ FilterExpression *parseBinaryFE(std::string str, std::string op) {
   return NULL;
 }
 
-#define NOT "NOT "
 FilterExpression *parseNotFE(std::string str) {
   if (str.substr(0, strlen(NOT)) != NOT)
     return NULL;
@@ -105,7 +139,6 @@ FilterExpression *parseConstFE(std::string str) {
   return NULL;
 }
 
-#define REACHED "REACHED "
 FilterExpression *parseReachedFE(std::string str) {
   if (str.substr(0, strlen(REACHED)) != REACHED)
     return NULL;

@@ -6,7 +6,7 @@ class FilterExpression {
 public:
   static FilterExpression *parse(std::string str);
 
-  virtual bool check(SPA::Path *p) =0;
+  virtual bool check(SPA::Path *p) = 0;
   virtual std::string dbg_str() = 0;
 
   virtual ~FilterExpression() {}
@@ -54,7 +54,9 @@ public:
 
 class ReachedFE : public FilterExpression {
 private:
-  std::string dbgStr;
+  std::string srcFile;
+  long srcLine;
+  std::string function;
 
 public:
   ReachedFE(std::string dbgStr);

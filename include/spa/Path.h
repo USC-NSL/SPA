@@ -94,15 +94,15 @@ public:
 
   const klee::ConstraintManager &getConstraints() const { return constraints; }
 
-  const std::map<std::string, std::vector<uint8_t> > &getTestInputs() const {
+  std::map<std::string, std::vector<uint8_t> > getTestInputs() const {
     return testInputs;
   }
 
-  const std::map<std::string, std::set<long> > getTestLineCoverage() {
+  std::map<std::string, std::set<long> > getTestLineCoverage() {
     return testLineCoverage;
   }
 
-  const std::set<std::string> getTestFunctionCoverage() {
+  std::set<std::string> getTestFunctionCoverage() {
     return testFunctionCoverage;
   }
 

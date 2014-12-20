@@ -341,7 +341,7 @@ int gcovGcovWalker(const char *fpath, const struct stat *sb, int typeflag) {
       if (numCalls > 0) {
         gcovFunctionCoverage.insert(fn);
       }
-    } else if (isdigit(line[0])) {
+    } else if (isdigit(line[0]) || line[0] == '-' || line[0] == '#') {
       auto countLineDelim = line.find(":");
       auto lineSrcDelim = line.find(":", countLineDelim + 1);
       long count = atol(line.substr(0, countLineDelim).c_str());
@@ -355,6 +355,8 @@ int gcovGcovWalker(const char *fpath, const struct stat *sb, int typeflag) {
         }
       } else {
         if (count > 0) {
+          assert((!srcFile.empty()) &&
+                 "Source file not specified in GCOV file.");
           gcovLineCoverage[srcFile].insert(lineNum);
         }
       }
@@ -380,10 +382,11 @@ void loadCoverage(SPA::Path *path) {
   auto cwd = getcwd(NULL, 0);
   std::string cmd = std::string() + "cd " + gcovDir + "; gcov -b -o " +
                     gcovDir + cwd + gcovFiles;
-  if (!EnableDbg) {
-    cmd += " > /dev/null";
+  if (EnableDbg) {
+    klee::klee_message("Running: %s", cmd.c_str());
+  } else {
+    cmd += " >/dev/null 2>/dev/null";
   }
-  klee::klee_message("Running: %s", cmd.c_str());
   assert(system(cmd.c_str()) == 0);
   free(cwd);
 
@@ -486,6 +489,10 @@ int main(int argc, char **argv, char **envp) {
   } while ((pos = Commands.find(";", pos)) != std::string::npos);
 
   assert(checkExpression && "Must specify check clause.");
+  if (EnableDbg) {
+    klee::klee_message("Final expression: %s",
+                       checkExpression->dbg_str().c_str());
+  }
 
   SPA::PathLoader pathLoader(inFile);
   SPA::Path *path;
