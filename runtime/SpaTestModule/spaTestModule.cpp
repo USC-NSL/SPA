@@ -5,6 +5,14 @@
 #include <sstream>
 #include <string>
 #include <spa/spaRuntimeImpl.h>
+#include <signal.h>
+
+void handleSignal(int signum) {
+  std::cerr << "Flushing GCOV data." << std::endl;
+  exit(-1);
+}
+
+bool signalRegistered = (signal(SIGUSR1, handleSignal) != SIG_ERR);
 
 void handle_input(uint8_t *var, size_t size, const char *name) {
   char *value = getenv(name);
@@ -32,6 +40,8 @@ void handle_input(uint8_t *var, size_t size, const char *name) {
 }
 
 std::ostream &log() {
+  assert(signalRegistered && "Unable to register signal to flush GCOV data.");
+
   static std::ofstream logFile;
 
   if (!logFile.is_open()) {

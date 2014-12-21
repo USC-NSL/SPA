@@ -133,6 +133,6 @@ int main(int argc, char **argv) {
                   (struct sockaddr *)&si_client, si_client_len) ==
            sizeof(response));
 
-    spa_done();
+//     spa_done();
   }
 }

@@ -41,8 +41,8 @@ private:
   std::map<std::string, std::string> tags;
   klee::ConstraintManager constraints;
   std::map<std::string, std::vector<uint8_t> > testInputs;
-  std::map<std::string, std::set<long> > testLineCoverage;
-  std::set<std::string> testFunctionCoverage;
+  std::map<std::string, std::map<long, bool> > testLineCoverage;
+  std::map<std::string, bool> testFunctionCoverage;
 
   Path();
 
@@ -98,11 +98,11 @@ public:
     return testInputs;
   }
 
-  std::map<std::string, std::set<long> > getTestLineCoverage() {
+  std::map<std::string, std::map<long, bool> > getTestLineCoverage() const {
     return testLineCoverage;
   }
 
-  std::set<std::string> getTestFunctionCoverage() {
+  std::map<std::string, bool> getTestFunctionCoverage() const {
     return testFunctionCoverage;
   }
 

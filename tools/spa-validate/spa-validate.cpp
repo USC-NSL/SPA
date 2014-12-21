@@ -1,5 +1,6 @@
 #include <string>
 #include <sstream>
+#include <iomanip>
 #include <algorithm>
 #include <iterator>
 #include <cctype>
@@ -44,7 +45,7 @@ llvm::cl::opt<std::string> Commands(llvm::cl::Positional, llvm::cl::Required,
 #define GCOV_DIR_TEMPLATE "/tmp/spa-validate-XXXXXX"
 
 // Signals to try on a process we're trying to kill.
-int signals[] = { SIGINT, SIGTERM, SIGKILL };
+int signals[] = { SIGUSR1, SIGINT, SIGTERM, SIGKILL };
 
 class Action;
 bool waitFinish(bool wait, bool terminate, pid_t pid = 0);
@@ -55,8 +56,8 @@ std::chrono::duration<long, std::milli> timeout;
 std::chrono::time_point<std::chrono::system_clock> watchdog;
 char gcovDir[] = GCOV_DIR_TEMPLATE;
 std::string gcovFiles;
-std::map<std::string, std::set<long> > gcovLineCoverage;
-std::set<std::string> gcovFunctionCoverage;
+std::map<std::string, std::map<long, bool> > gcovLineCoverage;
+std::map<std::string, bool> gcovFunctionCoverage;
 std::set<pid_t> waitPIDs;
 std::vector<pid_t> runPIDs;
 
@@ -88,12 +89,19 @@ public:
       setpgid(0, 0);
 
       // Set up test-case environment.
+      if (EnableDbg) {
+        klee::klee_message("Test inputs:");
+      }
       for (auto variable : path->getTestInputs()) {
-        // Only set API inputs.
-        if (variable.first.compare(0, strlen(SPA_API_INPUT_PREFIX),
-                                   SPA_API_INPUT_PREFIX) == 0) {
-          setenv(variable.first.c_str(), variable.first.c_str(), 1);
+        std::stringstream ss;
+        for (auto b : variable.second) {
+          ss << " " << std::hex << (int) b;
         }
+        if (EnableDbg) {
+          klee::klee_message("  %s = %s", variable.first.c_str(),
+                             ss.str().substr(1).c_str());
+        }
+        setenv(variable.first.c_str(), ss.str().substr(1).c_str(), 1);
       }
       // Set up GCOV environment.
       setenv("GCOV_PREFIX", gcovDir, 1);
@@ -338,13 +346,12 @@ int gcovGcovWalker(const char *fpath, const struct stat *sb, int typeflag) {
                          strlen(FUNCTION_SUMMARY_CALLED_PREFIX);
       long numCalls = atol(line.substr(
           numCallsPos, line.find(" ", numCallsPos) - numCallsPos).c_str());
-      if (numCalls > 0) {
-        gcovFunctionCoverage.insert(fn);
-      }
+      gcovFunctionCoverage[fn] = (numCalls > 0);
     } else if (isdigit(line[0]) || line[0] == '-' || line[0] == '#') {
       auto countLineDelim = line.find(":");
       auto lineSrcDelim = line.find(":", countLineDelim + 1);
-      long count = atol(line.substr(0, countLineDelim).c_str());
+      long count =
+          line[0] == '-' ? -1 : atol(line.substr(0, countLineDelim).c_str());
       long lineNum = atol(line.substr(
           countLineDelim + 1, lineSrcDelim - countLineDelim - 1).c_str());
       std::string src = line.substr(lineSrcDelim + 1);
@@ -354,10 +361,10 @@ int gcovGcovWalker(const char *fpath, const struct stat *sb, int typeflag) {
           srcFile = src.substr(strlen(SOURCE_KEY_PREFIX));
         }
       } else {
-        if (count > 0) {
+        if (count >= 0) {
           assert((!srcFile.empty()) &&
                  "Source file not specified in GCOV file.");
-          gcovLineCoverage[srcFile].insert(lineNum);
+          gcovLineCoverage[srcFile][lineNum] = (count > 0);
         }
       }
     }
@@ -512,8 +519,10 @@ int main(int argc, char **argv, char **envp) {
     }
 
     for (auto action : actions) {
-      if (timeout.count() && std::chrono::system_clock::now() > watchdog)
+      if (timeout.count() && std::chrono::system_clock::now() > watchdog) {
+        klee::klee_message("Path processing timed out.");
         break;
+      }
       action->run(path);
     }
     waitFinish(true, true);
@@ -523,7 +532,7 @@ int main(int argc, char **argv, char **envp) {
     klee::klee_message("Checking validity condition.");
     if (checkExpression->check(path)) {
       klee::klee_message("Path valid. Outputting.");
-      outFile << path;
+      outFile << *path;
     } else {
       klee::klee_message("Path invalid. Dropping.");
     }

@@ -73,12 +73,12 @@ validated.paths: netcalc-server.paths $(TEST_TARGETS) $(shell which spa-validate
 	spa-validate $< $@ \
 		"RUN ./netcalc-server.test; \
 		WAIT LISTEN UDP 3141; \
-		RUN ./netcalc-client.test; \
+		RUN ./netcalc-client.test 0 0 +; \
 		WAIT DONE 2; \
 		KILL 1; \
 		TIMEOUT 2000; \
 		CHECK REACHED netcalc-server.cpp:17; \
-		CHECK NOT REACHED spa_valid_path"
+		CHECK NOT REACHED netcalc-server.cpp:85;"
 
 run-pic: BadInputs.tested
 

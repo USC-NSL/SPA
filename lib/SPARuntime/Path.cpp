@@ -175,6 +175,22 @@ std::ostream &operator<<(std::ostream &stream, const Path &path) {
   }
   stream << SPA_PATH_TESTINPUTS_END << std::endl;
 
+  if ((!path.getTestLineCoverage().empty()) ||
+      (!path.getTestFunctionCoverage().empty())) {
+    stream << SPA_PATH_TESTCOVERAGE_START << std::endl;
+    for (auto srcFile : path.getTestLineCoverage()) {
+      stream << srcFile.first;
+      for (auto line : srcFile.second) {
+        stream << " " << (line.second ? "" : "!") << line.first;
+      }
+      stream << std::endl;
+    }
+    for (auto fn : path.getTestFunctionCoverage()) {
+      stream << (fn.second ? "" : "!") << fn.first << std::endl;
+    }
+    stream << SPA_PATH_TESTCOVERAGE_END << std::endl;
+  }
+
   return stream << SPA_PATH_END << std::endl;
 }
 }

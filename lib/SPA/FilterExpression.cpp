@@ -48,13 +48,17 @@ bool ReachedFE::check(SPA::Path *p) {
   assert((!p->getTestLineCoverage().empty()) &&
          (!p->getTestFunctionCoverage().empty()) && "No test coverage data.");
 
-  if (!function.empty() && !p->getTestFunctionCoverage().count(function)) {
-    return false;
+  if (!function.empty()) {
+    assert(p->getTestFunctionCoverage().count(function) &&
+           "No coverage data for specified function.");
+    return p->getTestFunctionCoverage()[function];
   }
 
-  if (!srcFile.empty() && srcLine &&
-      !p->getTestLineCoverage()[srcFile].count(srcLine)) {
-    return false;
+  if (!srcFile.empty() && srcLine) {
+    assert(p->getTestLineCoverage().count(srcFile) &&
+           p->getTestLineCoverage()[srcFile].count(srcLine) &&
+           "No coverage data for specified source line.");
+    return p->getTestLineCoverage()[srcFile][srcLine];
   }
 
   return true;
