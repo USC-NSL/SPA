@@ -131,11 +131,11 @@ void spa_tag_handler(va_list args) {
 
 void spa_valid_path_handler(va_list args) {
   std::cerr << "Valid path." << std::endl;
-  exit(200);
+//   exit(200);
 }
 
 void spa_invalid_path_handler(va_list args) {
   std::cerr << "Invalid path." << std::endl;
-  exit(201);
+//   exit(201);
 }
 }
