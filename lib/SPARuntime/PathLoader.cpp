@@ -28,7 +28,8 @@ typedef enum {
   SYMBOLS,
   TAGS,
   KQUERY,
-  TESTINPUTS
+  TESTINPUTS,
+  TESTCOVERAGE
 } LoadState_t;
 }
 
@@ -140,6 +141,10 @@ Path *PathLoader::getPath() {
       changeState(PATH, TESTINPUTS);
     } else if (line == SPA_PATH_TESTINPUTS_END) {
       changeState(TESTINPUTS, PATH);
+    } else if (line == SPA_PATH_TESTCOVERAGE_START) {
+      changeState(PATH, TESTCOVERAGE);
+    } else if (line == SPA_PATH_TESTCOVERAGE_END) {
+      changeState(TESTCOVERAGE, PATH);
     } else if (line == SPA_PATH_END) {
       changeState(PATH, START);
       if (!filter || filter->checkPath(*path))
@@ -178,6 +183,35 @@ Path *PathLoader::getPath() {
         }
 
         path->testInputs[name] = value;
+      } break;
+      case TESTCOVERAGE: {
+        std::string name = line.substr(0, line.find(" "));
+        std::stringstream ss(line.substr(name.length()));
+        std::map<long, bool> coverage;
+
+        while (ss.good()) {
+          while (ss.peek() == ' ') {
+            ss.get();
+          }
+          bool covered = (ss.peek() == '!');
+          if (!covered) {
+            ss.get();
+          }
+          long line;
+          ss >> line;
+          coverage[line] = covered;
+        }
+
+        if (coverage.empty()) {
+          if (name[0] == '!') {
+            name = name.substr(1);
+            path->testFunctionCoverage[name] = false;
+          } else {
+            path->testFunctionCoverage[name] = true;
+          }
+        } else {
+          path->testLineCoverage[name] = coverage;
+        }
       } break;
       default: {
         assert(false && "Invalid path file.");
