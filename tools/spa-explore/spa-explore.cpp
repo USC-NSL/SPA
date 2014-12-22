@@ -83,7 +83,7 @@ int main(int argc, char **argv, char **envp) {
   if (pathFileName == "")
     pathFileName = InputBCFile + ".paths";
   klee::klee_message("Writing output to: %s", pathFileName.c_str());
-  std::ofstream pathFile(pathFileName.c_str(), std::ios::out | std::ios::app);
+  std::ofstream pathFile(pathFileName.c_str());
   assert(pathFile.is_open() && "Unable to open path file.");
   SPA::SPA spa(InputBCFile, pathFile);
 

@@ -88,4 +88,5 @@ run-spa: validated.paths
 
 clean:
 	rm -rf $(TARGETS) $(BC_TARGETS) $(TEST_TARGETS) $(PATHS) $(BADINPUTS) $(CFGS) $(CFGS:.pdf=.dot)
+	rm -f netcalc-client.paths netcalc-server.paths validated.paths
 	rm -rf *.log *.debug klee-out-* klee-last
