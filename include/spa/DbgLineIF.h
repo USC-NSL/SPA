@@ -5,18 +5,29 @@
 #ifndef __DbgLineIF_H__
 #define __DbgLineIF_H__
 
-#include <spa/WhitelistIF.h>
+#include <spa/InstructionFilter.h>
 #include <spa/CFG.h>
 
 namespace SPA {
-class DbgLineIF : public WhitelistIF {
+class DbgLineIF : public InstructionFilter {
 private:
-  DbgLineIF(
-      std::set<std::pair<llvm::Instruction *, llvm::Instruction *> > whitelist)
-      : WhitelistIF(whitelist) {}
+  std::set<llvm::Instruction *> dbgZone;
+  bool entering;
+
+  DbgLineIF(std::set<llvm::Instruction *> dbgZone, bool entering)
+      : dbgZone(dbgZone), entering(entering) {}
 
 public:
   static DbgLineIF *parse(llvm::Module *module, std::string dbgPoint);
+
+  bool checkStep(llvm::Instruction *preInstruction,
+                 llvm::Instruction *postInstruction) {
+    if (entering) {
+      return (!dbgZone.count(preInstruction)) && dbgZone.count(postInstruction);
+    } else {
+      return dbgZone.count(preInstruction) && !dbgZone.count(postInstruction);
+    }
+  }
 };
 }
 

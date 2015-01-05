@@ -27,6 +27,7 @@ DbgLineIF *DbgLineIF::parse(llvm::Module *module, std::string dbgPoint) {
     if (dbgPoint.compare(0, prefixes[i].length(), prefixes[i]) == 0) {
       prefix = (prefix_t) i;
       dbgPoint = dbgPoint.substr(prefixes[i].length());
+      break;
     }
   }
 
@@ -102,50 +103,18 @@ DbgLineIF *DbgLineIF::parse(llvm::Module *module, std::string dbgPoint) {
   if (dbgInsts.empty())
     return NULL;
 
-  std::set<std::pair<llvm::Instruction *, llvm::Instruction *> > whitelist;
-
   switch (prefix) {
   case BEFORE: {
-    CFG cfg(module);
-    // Whitelist all edges with just a tail in the specification.
-    for (auto postInstruction : cfg) {
-      // Check control flow edges.
-      for (auto preInstruction : cfg.getPredecessors(postInstruction)) {
-        if ((!dbgInsts.count(preInstruction)) &&
-            dbgInsts.count(postInstruction)) {
-          whitelist.insert(std::make_pair(preInstruction, postInstruction));
-        }
-      }
-      // Check call edges.
-      if (postInstruction ==
-          &postInstruction->getParent()->getParent()->getEntryBlock().front()) {
-        whitelist.insert(
-            std::make_pair((llvm::Instruction *)NULL, postInstruction));
-      }
-    }
+    return new DbgLineIF(dbgInsts, true);
   } break;
 
   case AFTER: {
-    CFG cfg(module);
-    // Whitelist all edges with only the tail in the specification.
-    for (auto preInstruction : cfg) {
-      // Check control flow edges.
-      for (auto postInstruction : cfg.getSuccessors(preInstruction)) {
-        if (dbgInsts.count(preInstruction) &&
-            (!dbgInsts.count(postInstruction))) {
-          whitelist.insert(std::make_pair(preInstruction, postInstruction));
-        }
-      }
-      // Check call edges.
-      if (cfg.getSuccessors(preInstruction).empty()) {
-        whitelist.insert(
-            std::make_pair(preInstruction, (llvm::Instruction *)NULL));
-      }
-    }
+    return new DbgLineIF(dbgInsts, false);
   } break;
 
   case REACHING: {
     CFG cfg(module);
+    std::set<llvm::Instruction *> reachingSet = dbgInsts;
     // Initialize worklist as predecessors of specification.
     std::set<llvm::Instruction *> worklist;
     for (auto inst : dbgInsts) {
@@ -157,23 +126,21 @@ DbgLineIF *DbgLineIF::parse(llvm::Module *module, std::string dbgPoint) {
       auto inst = *worklist.begin();
       worklist.erase(inst);
 
-      // Check if instruction is fully succeeded either by whitelist or
-      // specification.
+      // Check if instruction is fully succeeded by reaching set.
       bool reaching = true;
       for (auto successor : cfg.getSuccessors(inst)) {
-        if (dbgInsts.count(successor) == 0 &&
-            whitelist.count(
-                std::make_pair((llvm::Instruction *)NULL, successor)) == 0) {
+        if (!reachingSet.count(successor)) {
           reaching = false;
           break;
         }
       }
       if (reaching) {
-        whitelist.insert(std::make_pair((llvm::Instruction *)NULL, inst));
+        reachingSet.insert(inst);
         auto predecessors = cfg.getPredecessors(inst);
         worklist.insert(predecessors.begin(), predecessors.end());
       }
     }
+    return new DbgLineIF(reachingSet, true);
   } break;
 
   case NOT_REACHING: {
@@ -181,11 +148,7 @@ DbgLineIF *DbgLineIF::parse(llvm::Module *module, std::string dbgPoint) {
     CG cg(module);
     CFGBackwardIF reachable(cfg, cg, dbgInsts);
     NegatedIF nonreaching(&reachable);
-    for (auto inst : cfg) {
-      if (nonreaching.checkInstruction(inst)) {
-        whitelist.insert(std::make_pair((llvm::Instruction *)NULL, inst));
-      }
-    }
+    return new DbgLineIF(nonreaching.toInstructionSet(cfg), true);
   } break;
 
   default: {
@@ -193,7 +156,5 @@ DbgLineIF *DbgLineIF::parse(llvm::Module *module, std::string dbgPoint) {
     return NULL;
   } break;
   }
-
-  return new DbgLineIF(whitelist);
 }
 }
