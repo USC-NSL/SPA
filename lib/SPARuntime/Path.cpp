@@ -22,18 +22,13 @@ Path::Path() {}
 
 Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
   klee::ExecutionState state(*kState);
-  for (std::vector<std::pair<const klee::MemoryObject *,
-                             const klee::Array *> >::iterator
-           it = state.symbolics.begin(),
-           ie = state.symbolics.end();
-       it != ie; it++) {
-    std::string name = (*it).first->name;
+  for (auto it : state.symbolics) {
+    std::string name = it.first->name;
 
-    symbols.insert(it->second);
+    symbols.insert(it.second);
 
     if (name.compare(0, strlen(SPA_TAG_PREFIX), SPA_TAG_PREFIX) == 0) {
-      const klee::ObjectState *addrOS =
-          state.addressSpace.findObject((*it).first);
+      const klee::ObjectState *addrOS = state.addressSpace.findObject(it.first);
       assert(addrOS && "Tag not set.");
 
       klee::ref<klee::Expr> addrExpr =
@@ -72,14 +67,14 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
       // 				klee_message( "	Tag: " << name << " = " << buf );
       delete buf;
     } else {
-      symbolNames[name] = it->second;
+      symbolNames[name] = it.second;
 
       // Symbolic value.
       if (name.compare(0, strlen(SPA_OUTPUT_PREFIX), SPA_OUTPUT_PREFIX) == 0 ||
           name.compare(0, strlen(SPA_STATE_PREFIX), SPA_STATE_PREFIX) == 0 ||
           name.compare(0, strlen(SPA_INIT_PREFIX), SPA_INIT_PREFIX) == 0)
         if (const klee::ObjectState *os =
-                state.addressSpace.findObject((*it).first))
+                state.addressSpace.findObject(it.first))
           for (unsigned int i = 0; i < os->size; i++)
             outputValues[name].push_back(os->read8(i));
     }
@@ -87,10 +82,8 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
 
   llvm::raw_null_ostream rnos;
   klee::PPrinter p(rnos);
-  for (klee::ConstraintManager::const_iterator it = state.constraints.begin(),
-                                               ie = state.constraints.end();
-       it != ie; ++it)
-    p.scan(*it);
+  for (auto it : state.constraints)
+    p.scan(it);
   for (const klee::Array *a : p.usedArrays)
     if (symbolNames.count(a->name) == 0)
       symbolNames[a->name] = a;
@@ -101,15 +94,12 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
   std::vector<std::string> objectNames;
   std::vector<const klee::Array *> objects;
   // Process inputs.
-  for (std::map<std::string, const klee::Array *>::const_iterator
-           it = beginSymbols(),
-           ie = endSymbols();
-       it != ie; it++) {
+  for (auto it : symbolNames) {
     // Check if API input.
-    if (it->first.compare(0, strlen(SPA_API_INPUT_PREFIX),
-                          SPA_API_INPUT_PREFIX) == 0) {
-      objectNames.push_back(it->first);
-      objects.push_back(it->second);
+    if (it.first.compare(0, strlen(SPA_API_INPUT_PREFIX),
+                         SPA_API_INPUT_PREFIX) == 0) {
+      objectNames.push_back(it.first);
+      objects.push_back(it.second);
     }
   }
 
