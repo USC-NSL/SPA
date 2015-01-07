@@ -508,9 +508,16 @@ int main(int argc, char **argv, char **envp) {
   }
 
   SPA::PathLoader pathLoader(inFile);
+  std::set<std::map<std::string, std::vector<uint8_t> > > processedTestCases;
   SPA::Path *path;
   while ((path = pathLoader.getPath())) {
     klee::klee_message("Processing path.");
+
+    if (processedTestCases.count(path->getTestInputs())) {
+      klee::klee_message("Found repeated test-case. Dropping path.");
+      continue;
+    }
+    processedTestCases.insert(path->getTestInputs());
 
     if (timeout.count()) {
       watchdog = std::chrono::system_clock::now() + timeout;
