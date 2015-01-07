@@ -37,6 +37,10 @@ llvm::cl::opt<std::string> InFileName(llvm::cl::Positional, llvm::cl::Required,
 llvm::cl::opt<std::string> OutFileName(llvm::cl::Positional, llvm::cl::Required,
                                        llvm::cl::desc("<output path-file>"));
 
+llvm::cl::opt<std::string>
+    FPOutFileName(llvm::cl::Positional, llvm::cl::Optional,
+                  llvm::cl::desc("[output false-positive path-file]"));
+
 llvm::cl::opt<std::string> Commands(llvm::cl::Positional, llvm::cl::Required,
                                     llvm::cl::desc("<validation commands>"));
 }
@@ -423,6 +427,13 @@ int main(int argc, char **argv, char **envp) {
   std::ofstream outFile(OutFileName);
   assert(outFile.is_open() && "Unable to open output path-file.");
 
+  std::ofstream fpOutFile;
+  if (!FPOutFileName.empty()) {
+    fpOutFile.open(FPOutFileName);
+    assert(fpOutFile.is_open() &&
+           "Unable to open false-positive output path-file.");
+  }
+
   size_t pos = -1;
   do {
     pos++;
@@ -550,10 +561,15 @@ int main(int argc, char **argv, char **envp) {
 
       klee::klee_message("Checking validity condition.");
       if (checkExpression->check(path)) {
-        klee::klee_message("Path valid. Outputting.");
+        klee::klee_message("Path valid. Outputting as true-positive.");
         outFile << *path;
       } else {
-        klee::klee_message("Path invalid. Dropping.");
+        if (fpOutFile.is_open()) {
+          klee::klee_message("Path invalid. Outputting as false-positive.");
+          fpOutFile << *path;
+        } else {
+          klee::klee_message("Path invalid. Dropping.");
+        }
       }
     }
 

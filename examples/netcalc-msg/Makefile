@@ -70,7 +70,7 @@ netcalc-server.paths: netcalc-server.bc netcalc-client.paths
 
 validated.paths: netcalc-server.paths $(TEST_TARGETS) $(shell which spa-validate)
 	killall netcalc-client.test netcalc-server.test || true
-	spa-validate $< $@ \
+	spa-validate $< $@ false-positives.paths \
 		"RUN ./netcalc-server.test; \
 		WAIT LISTEN UDP 3141; \
 		RUN ./netcalc-client.test 0 0 +; \
