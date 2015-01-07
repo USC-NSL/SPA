@@ -91,9 +91,11 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
 
   constraints = state.constraints;
 
-  for (auto srcFile : state.coveredLines) {
-    exploredLineCoverage[*srcFile.first]
-        .insert(srcFile.second.begin(), srcFile.second.end());
+  for (auto inst : state.instructionCoverage) {
+    std::string srcLoc = debugLocation(inst);
+    std::string srcFile = srcLoc.substr(0, srcLoc.find(":"));
+    long srcLineNum = atol(srcLoc.substr(srcLoc.find(":") + 1).c_str());
+    exploredLineCoverage[srcFile].insert(srcLineNum);
   }
 
   for (auto branchDecision : state.branchDecisions) {

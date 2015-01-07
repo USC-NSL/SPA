@@ -1009,6 +1009,8 @@ void SPA::onStep(klee::ExecutionState *kState) {
     kState->dumpStack(llvm::outs());
   }
 
+  kState->instructionCoverage.insert(kState->pc->inst);
+
   if (checkpointFilter.checkStep(kState->prevPC->inst, kState->pc->inst) ||
       checkpointFilter.checkStep(NULL, kState->pc->inst) ||
       checkpointFilter.checkStep(kState->prevPC->inst, NULL)) {

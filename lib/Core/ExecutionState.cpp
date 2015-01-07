@@ -132,6 +132,7 @@ ExecutionState::ExecutionState(const ExecutionState& state)
     step_depth(state.step_depth),
     filtered(state.filtered),
     senderPath(state.senderPath),
+    instructionCoverage(state.instructionCoverage),
     branchDecisions(state.branchDecisions)
 {
   for (unsigned int i=0; i<symbolics.size(); i++)
@@ -151,6 +152,7 @@ ExecutionState *ExecutionState::branch() {
   falseState->step_depth = this->step_depth;
   falseState->filtered = this->filtered;
   falseState->senderPath = this->senderPath;
+  falseState->instructionCoverage = this->instructionCoverage;
   falseState->branchDecisions = this->branchDecisions;
 
   return falseState;

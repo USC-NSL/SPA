@@ -121,6 +121,8 @@ public:
   bool filtered;
   // Path used for seeding symbols in this state and it successors.
   std::shared_ptr<SPA::Path> senderPath;
+  // Detailed instruction coverage (for each step).
+  std::set<llvm::Instruction *> instructionCoverage;
   // Path followed.
   std::vector<std::pair<llvm::Instruction *, bool> > branchDecisions;
 
