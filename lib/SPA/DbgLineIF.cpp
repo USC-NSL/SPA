@@ -147,8 +147,7 @@ DbgLineIF *DbgLineIF::parse(llvm::Module *module, std::string dbgPoint) {
     CFG cfg(module);
     CG cg(module);
     CFGBackwardIF reachable(cfg, cg, dbgInsts);
-    NegatedIF nonreaching(&reachable);
-    return new DbgLineIF(nonreaching.toInstructionSet(cfg), true);
+    return new DbgLineIF(reachable.toInstructionSet(cfg), false);
   } break;
 
   default: {
