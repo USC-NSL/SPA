@@ -63,7 +63,7 @@ netcalc-server.dot: netcalc-server.bc $(SPA)
 cfg: $(CFGS)
 
 netcalc-client.paths: netcalc-client.bc $(shell which spa-explore)
-	spa-explore $< --out-paths $@ --start-from SpaExecuteQueryEntry --toward "AFTER netcalc-client.cpp:56" --stop-at "AFTER netcalc-client.cpp:56" --output-at "AFTER netcalc-client.cpp:56"
+	spa-explore $< --out-paths $@ --start-from SpaExecuteQueryEntry --toward "SUCCEEDING netcalc-client.cpp:56" --stop-at "SUCCEEDING netcalc-client.cpp:56" --output-at "SUCCEEDING netcalc-client.cpp:56"
 
 netcalc-server.paths: netcalc-server.bc netcalc-client.paths
 	spa-explore $< --in-paths netcalc-client.paths --out-paths $@ --start-from SpaHandleQueryEntry --away-from netcalc-server.cpp:85 --output-terminal --output-at "NOT REACHING netcalc-server.cpp:85"
