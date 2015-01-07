@@ -20,6 +20,8 @@
 #define SPA_PATH_TAGS_END "--- TAGS END ---"
 #define SPA_PATH_KQUERY_START "--- KQUERY START ---"
 #define SPA_PATH_KQUERY_END "--- KQUERY END ---"
+#define SPA_PATH_EXPLORECOVERAGE_START "--- EXPLORE COVERAGE START ---"
+#define SPA_PATH_EXPLORECOVERAGE_END "--- EXPLORE COVERAGE END ---"
 #define SPA_PATH_TESTINPUTS_START "--- TEST INPUTS START ---"
 #define SPA_PATH_TESTINPUTS_END "--- TEST INPUTS END ---"
 #define SPA_PATH_TESTCOVERAGE_START "--- TEST COVERAGE START ---"
@@ -40,6 +42,7 @@ private:
   std::map<std::string, std::vector<klee::ref<klee::Expr> > > outputValues;
   std::map<std::string, std::string> tags;
   klee::ConstraintManager constraints;
+  std::map<std::string, std::set<long> > exploreLineCoverage;
   std::map<std::string, std::vector<uint8_t> > testInputs;
   std::map<std::string, std::map<long, bool> > testLineCoverage;
   std::map<std::string, bool> testFunctionCoverage;
@@ -93,6 +96,10 @@ public:
   }
 
   const klee::ConstraintManager &getConstraints() const { return constraints; }
+
+  std::map<std::string, std::set<long> > getExploreLineCoverage() const {
+    return exploreLineCoverage;
+  }
 
   std::map<std::string, std::vector<uint8_t> > getTestInputs() const {
     return testInputs;

@@ -28,6 +28,7 @@ typedef enum {
   SYMBOLS,
   TAGS,
   KQUERY,
+  EXPLORECOVERAGE,
   TESTINPUTS,
   TESTCOVERAGE
 } LoadState_t;
@@ -137,6 +138,10 @@ Path *PathLoader::getPath() {
       delete P;
       delete Builder;
       delete MB;
+    } else if (line == SPA_PATH_EXPLORECOVERAGE_START) {
+      changeState(PATH, EXPLORECOVERAGE);
+    } else if (line == SPA_PATH_EXPLORECOVERAGE_END) {
+      changeState(EXPLORECOVERAGE, PATH);
     } else if (line == SPA_PATH_TESTINPUTS_START) {
       changeState(PATH, TESTINPUTS);
     } else if (line == SPA_PATH_TESTINPUTS_END) {
@@ -170,6 +175,22 @@ Path *PathLoader::getPath() {
       } break;
       case KQUERY: {
         kQuery += " " + line;
+      } break;
+      case EXPLORECOVERAGE: {
+        const std::string name = line.substr(0, line.find(" "));
+        std::stringstream ss(line.substr(name.length()));
+        std::set<long> coverage;
+
+        while (ss.good()) {
+          while (ss.peek() == ' ') {
+            ss.get();
+          }
+          long line;
+          ss >> line;
+          coverage.insert(line);
+        }
+
+        path->exploreLineCoverage[name] = coverage;
       } break;
       case TESTINPUTS: {
         std::string name = line.substr(0, line.find(" "));

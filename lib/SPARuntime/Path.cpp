@@ -90,6 +90,11 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
 
   constraints = state.constraints;
 
+  for (auto srcFile : state.coveredLines) {
+    exploreLineCoverage[*srcFile.first]
+        .insert(srcFile.second.begin(), srcFile.second.end());
+  }
+
   // Unknowns to solve for,
   std::vector<std::string> objectNames;
   std::vector<const klee::Array *> objects;
@@ -154,6 +159,18 @@ std::ostream &operator<<(std::ostream &stream, const Path &path) {
       &evalExprs[0] + evalExprs.size(), NULL, NULL, true);
   ros.flush();
   stream << SPA_PATH_KQUERY_END << std::endl;
+
+  if (!path.getExploreLineCoverage().empty()) {
+    stream << SPA_PATH_EXPLORECOVERAGE_START << std::endl;
+    for (auto srcFile : path.getExploreLineCoverage()) {
+      stream << srcFile.first;
+      for (auto line : srcFile.second) {
+        stream << " " << line;
+      }
+      stream << std::endl;
+    }
+    stream << SPA_PATH_EXPLORECOVERAGE_END << std::endl;
+  }
 
   stream << SPA_PATH_TESTINPUTS_START << std::endl;
   for (auto input : path.getTestInputs()) {
