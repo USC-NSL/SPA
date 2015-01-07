@@ -14,10 +14,12 @@ typedef enum {
   AFTER,
   REACHING,
   NOT_REACHING,
+  SUCCEEDING,
   KEYWORD_MAX
 } prefix_t;
 
-std::string prefixes[] = { "BEFORE ", "AFTER ", "REACHING ", "NOT REACHING " };
+std::string prefixes[] = { "BEFORE ", "AFTER ", "REACHING ", "NOT REACHING ",
+                           "SUCCEEDING " };
 
 namespace SPA {
 DbgLineIF *DbgLineIF::parse(llvm::Module *module, std::string dbgPoint) {
@@ -148,6 +150,41 @@ DbgLineIF *DbgLineIF::parse(llvm::Module *module, std::string dbgPoint) {
     CG cg(module);
     CFGBackwardIF reachable(cfg, cg, dbgInsts);
     return new DbgLineIF(reachable.toInstructionSet(cfg), false);
+  } break;
+
+  case SUCCEEDING: {
+    CFG cfg(module);
+    std::set<llvm::Instruction *> succeedingSet;
+    // Initialize worklist as successors of specification.
+    std::set<llvm::Instruction *> worklist;
+    for (auto inst : dbgInsts) {
+      auto successors = cfg.getSuccessors(inst);
+      worklist.insert(successors.begin(), successors.end());
+    }
+    // Process worklist.
+    while (!worklist.empty()) {
+      auto inst = *worklist.begin();
+      worklist.erase(inst);
+
+      // Check if instruction is fully preceeded by specification or succeeding
+      // set.
+      bool succeeding = (dbgInsts.count(inst) == 0);
+      if (succeeding) {
+        for (auto predecessor : cfg.getPredecessors(inst)) {
+          if ((!succeedingSet.count(predecessor)) &&
+              (!dbgInsts.count(predecessor))) {
+            succeeding = false;
+            break;
+          }
+        }
+      }
+      if (succeeding) {
+        succeedingSet.insert(inst);
+        auto successors = cfg.getSuccessors(inst);
+        worklist.insert(successors.begin(), successors.end());
+      }
+    }
+    return new DbgLineIF(succeedingSet, true);
   } break;
 
   default: {
