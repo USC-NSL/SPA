@@ -63,7 +63,7 @@ std::vector<pid_t> runPIDs;
 
 class Action {
 public:
-  virtual void run(SPA::Path *path) = 0;
+  virtual bool run(SPA::Path *path) = 0;
   virtual ~Action() {}
 };
 
@@ -80,8 +80,11 @@ private:
 public:
   RunAction(std::string command) : command(command) {}
 
-  void run(SPA::Path *path) {
-    assert((!path->getTestInputs().empty()) && "No test-case.");
+  bool run(SPA::Path *path) {
+    if (path->getTestInputs().empty()) {
+      klee::klee_message("Path has no test-case.");
+      return false;
+    }
 
     pid_t pid = fork();
     assert(pid >= 0 && "Error forking process.");
@@ -111,6 +114,7 @@ public:
     klee::klee_message("Running: %s [%d]", command.c_str(), pid);
     waitPIDs.insert(pid);
     runPIDs.push_back(pid);
+    return true;
   }
 };
 
@@ -121,7 +125,7 @@ private:
 public:
   KillAction(int procNum = -1) : procNum(procNum) {}
 
-  void run(SPA::Path *path) {
+  bool run(SPA::Path *path) {
     if (procNum >= 0) {
       klee::klee_message("Killing process %d [%d].", procNum + 1,
                          runPIDs[procNum]);
@@ -131,6 +135,7 @@ public:
       for (auto pid : runPIDs)
         waitFinish(false, true, pid);
     }
+    return true;
   }
 };
 
@@ -141,11 +146,12 @@ private:
 public:
   WaitAction(Condition *condition) : condition(condition) {}
 
-  void run(SPA::Path *path) {
+  bool run(SPA::Path *path) {
     while ((timeout.count() == 0 || std::chrono::system_clock::now() <=
                                         watchdog) && !condition->check()) {
       usleep(RECHECK_WAIT);
     }
+    return true;
   }
 };
 
@@ -518,23 +524,30 @@ int main(int argc, char **argv, char **envp) {
       klee::klee_message("Storing GCOV data in: %s", gcovDir);
     }
 
+    bool skipPath = false;
     for (auto action : actions) {
       if (timeout.count() && std::chrono::system_clock::now() > watchdog) {
         klee::klee_message("Path processing timed out.");
         break;
       }
-      action->run(path);
+      if (!action->run(path)) {
+        klee::klee_message("Action failed. Dropping path.");
+        skipPath = true;
+        break;
+      }
     }
     waitFinish(true, true);
 
-    loadCoverage(path);
+    if (!skipPath) {
+      loadCoverage(path);
 
-    klee::klee_message("Checking validity condition.");
-    if (checkExpression->check(path)) {
-      klee::klee_message("Path valid. Outputting.");
-      outFile << *path;
-    } else {
-      klee::klee_message("Path invalid. Dropping.");
+      klee::klee_message("Checking validity condition.");
+      if (checkExpression->check(path)) {
+        klee::klee_message("Path valid. Outputting.");
+        outFile << *path;
+      } else {
+        klee::klee_message("Path invalid. Dropping.");
+      }
     }
 
     klee::klee_message("Cleaning up.");
