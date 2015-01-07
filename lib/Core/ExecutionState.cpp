@@ -131,7 +131,8 @@ ExecutionState::ExecutionState(const ExecutionState& state)
     incomingBBIndex(state.incomingBBIndex),
     step_depth(state.step_depth),
     filtered(state.filtered),
-    senderPath(state.senderPath)
+    senderPath(state.senderPath),
+    branchDecisions(state.branchDecisions)
 {
   for (unsigned int i=0; i<symbolics.size(); i++)
     symbolics[i].first->refCount++;
@@ -150,6 +151,7 @@ ExecutionState *ExecutionState::branch() {
   falseState->step_depth = this->step_depth;
   falseState->filtered = this->filtered;
   falseState->senderPath = this->senderPath;
+  falseState->branchDecisions = this->branchDecisions;
 
   return falseState;
 }

@@ -28,7 +28,8 @@ typedef enum {
   SYMBOLS,
   TAGS,
   KQUERY,
-  EXPLORECOVERAGE,
+  EXPLOREDCOVERAGE,
+  EXPLOREDPATH,
   TESTINPUTS,
   TESTCOVERAGE
 } LoadState_t;
@@ -138,10 +139,14 @@ Path *PathLoader::getPath() {
       delete P;
       delete Builder;
       delete MB;
-    } else if (line == SPA_PATH_EXPLORECOVERAGE_START) {
-      changeState(PATH, EXPLORECOVERAGE);
-    } else if (line == SPA_PATH_EXPLORECOVERAGE_END) {
-      changeState(EXPLORECOVERAGE, PATH);
+    } else if (line == SPA_PATH_EXPLOREDCOVERAGE_START) {
+      changeState(PATH, EXPLOREDCOVERAGE);
+    } else if (line == SPA_PATH_EXPLOREDCOVERAGE_END) {
+      changeState(EXPLOREDCOVERAGE, PATH);
+    } else if (line == SPA_PATH_EXPLOREDPATH_START) {
+      changeState(PATH, EXPLOREDPATH);
+    } else if (line == SPA_PATH_EXPLOREDPATH_END) {
+      changeState(EXPLOREDPATH, PATH);
     } else if (line == SPA_PATH_TESTINPUTS_START) {
       changeState(PATH, TESTINPUTS);
     } else if (line == SPA_PATH_TESTINPUTS_END) {
@@ -176,8 +181,8 @@ Path *PathLoader::getPath() {
       case KQUERY: {
         kQuery += " " + line;
       } break;
-      case EXPLORECOVERAGE: {
-        const std::string name = line.substr(0, line.find(" "));
+      case EXPLOREDCOVERAGE: {
+        std::string name = line.substr(0, line.find(" "));
         std::stringstream ss(line.substr(name.length()));
         std::set<long> coverage;
 
@@ -190,7 +195,14 @@ Path *PathLoader::getPath() {
           coverage.insert(line);
         }
 
-        path->exploreLineCoverage[name] = coverage;
+        path->exploredLineCoverage[name] = coverage;
+      } break;
+      case EXPLOREDPATH: {
+        auto delim = line.find(" ");
+        std::string srcLine = line.substr(0, delim);
+        bool branch = !(line.substr(delim + 1) == "0");
+
+        path->exploredPath.push_back(std::make_pair(srcLine, branch));
       } break;
       case TESTINPUTS: {
         std::string name = line.substr(0, line.find(" "));

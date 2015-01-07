@@ -14,6 +14,7 @@
 #include <klee/Solver.h>
 
 #include <spa/SPA.h>
+#include <spa/Util.h>
 
 #include <spa/Path.h>
 
@@ -91,8 +92,13 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
   constraints = state.constraints;
 
   for (auto srcFile : state.coveredLines) {
-    exploreLineCoverage[*srcFile.first]
+    exploredLineCoverage[*srcFile.first]
         .insert(srcFile.second.begin(), srcFile.second.end());
+  }
+
+  for (auto branchDecision : state.branchDecisions) {
+    exploredPath.push_back(std::make_pair(debugLocation(branchDecision.first),
+                                          branchDecision.second));
   }
 
   // Unknowns to solve for,
@@ -160,16 +166,24 @@ std::ostream &operator<<(std::ostream &stream, const Path &path) {
   ros.flush();
   stream << SPA_PATH_KQUERY_END << std::endl;
 
-  if (!path.getExploreLineCoverage().empty()) {
-    stream << SPA_PATH_EXPLORECOVERAGE_START << std::endl;
-    for (auto srcFile : path.getExploreLineCoverage()) {
+  if (!path.getExploredLineCoverage().empty()) {
+    stream << SPA_PATH_EXPLOREDCOVERAGE_START << std::endl;
+    for (auto srcFile : path.getExploredLineCoverage()) {
       stream << srcFile.first;
       for (auto line : srcFile.second) {
         stream << " " << line;
       }
       stream << std::endl;
     }
-    stream << SPA_PATH_EXPLORECOVERAGE_END << std::endl;
+    stream << SPA_PATH_EXPLOREDCOVERAGE_END << std::endl;
+  }
+
+  if (!path.getExploredPath().empty()) {
+    stream << SPA_PATH_EXPLOREDPATH_START << std::endl;
+    for (auto it : path.getExploredPath()) {
+      stream << it.first << " " << it.second << std::endl;
+    }
+    stream << SPA_PATH_EXPLOREDPATH_END << std::endl;
   }
 
   stream << SPA_PATH_TESTINPUTS_START << std::endl;

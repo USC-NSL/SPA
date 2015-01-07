@@ -162,7 +162,7 @@ public:
 
   void onStateBranching(klee::ExecutionState *state) {}
   void onStateBranched(klee::ExecutionState *kState,
-                       klee::ExecutionState *parent, int index) {}
+                       klee::ExecutionState *parent, int index);
   void onStep(klee::ExecutionState *kState);
   void onCall(klee::ExecutionState *kState) {}
   void onReturn(klee::ExecutionState *kState) {}

@@ -10,6 +10,8 @@
 #ifndef KLEE_EXECUTIONSTATE_H
 #define KLEE_EXECUTIONSTATE_H
 
+#include <llvm/IR/Instruction.h>
+
 #include "klee/Constraints.h"
 #include "klee/Expr.h"
 #include "klee/Internal/ADT/TreeStream.h"
@@ -119,6 +121,8 @@ public:
   bool filtered;
   // Path used for seeding symbols in this state and it successors.
   std::shared_ptr<SPA::Path> senderPath;
+  // Path followed.
+  std::vector<std::pair<llvm::Instruction *, bool> > branchDecisions;
 
   std::string getFnAlias(std::string fn);
   void addFnAlias(std::string old_fn, std::string new_fn);

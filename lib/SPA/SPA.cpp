@@ -997,6 +997,12 @@ void SPA::processPath(klee::ExecutionState *state) {
   }
 }
 
+void SPA::onStateBranched(klee::ExecutionState *kState,
+                          klee::ExecutionState *parent, int index) {
+  kState->branchDecisions
+      .push_back(std::make_pair(kState->prevPC->inst, index));
+}
+
 void SPA::onStep(klee::ExecutionState *kState) {
   if (StepDebug) {
     klee::klee_message("Current state at:");

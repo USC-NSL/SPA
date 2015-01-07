@@ -951,10 +951,13 @@ Executor::fork(ExecutionState &current, ref<Expr> condition, bool isInternal) {
     falseState->ptreeNode = res.first;
     trueState->ptreeNode = res.second;
 
-    if (&current == falseState)
+    if (&current == falseState) {
       fireStateBranched(trueState, falseState, 1);
-    else
+      fireStateBranched(falseState, falseState, 0);
+    } else {
       fireStateBranched(falseState, trueState, 0);
+      fireStateBranched(trueState, trueState, 1);
+    }
 
     if (!isInternal) {
       if (pathWriter) {
