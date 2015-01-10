@@ -33,6 +33,28 @@ std::string __attribute__((weak)) debugLocation(llvm::Instruction *inst) {
     return "(unknown)";
   }
 }
+
+bool __attribute__((weak))
+    pathPrefixMatch(std::string longPath, std::string shortPath) {
+  auto delim = longPath.rfind("/");
+  std::string longDir =
+      delim == std::string::npos ? "" : longPath.substr(0, delim);
+  std::string longFile =
+      delim == std::string::npos ? longPath : longPath.substr(delim + 1);
+  delim = shortPath.rfind("/");
+  std::string shortDir =
+      delim == std::string::npos ? "" : shortPath.substr(0, delim);
+  std::string shortFile =
+      delim == std::string::npos ? shortPath : shortPath.substr(delim + 1);
+
+  // Exact match file.
+  // shortDir must be a suffix of longDir, with care that it comes right
+  // after a / or matches exactly.
+  return shortFile == longFile && longDir.length() >= shortDir.length() &&
+         longDir.substr(longDir.length() - shortDir.length()) == shortDir &&
+         (shortDir == "" || shortDir.length() == longDir.length() ||
+          longDir[longDir.length() - shortDir.length() - 1] == '/');
+}
 }
 
 #endif // #ifndef __UTIL_H__

@@ -42,18 +42,12 @@ DbgLineIF *DbgLineIF::parse(llvm::Module *module, std::string dbgPoint) {
       }
     }
   } else {
-    auto b = dbgPoint.find("/");
-    std::string dbgDir;
-    if (b != std::string::npos) {
-      dbgDir = dbgPoint.substr(0, b);
-      dbgPoint = dbgPoint.substr(b + 1);
-    }
-
+    auto delim = dbgPoint.find(":");
     // Must either specify file name and line number or a function.
-    if ((b = dbgPoint.find(":")) == std::string::npos)
+    if (delim == std::string::npos)
       return NULL;
-    std::string dbgFile = dbgPoint.substr(0, b);
-    long dbgLineNo = SPA::strToNum<long>(dbgPoint.substr(b + 1));
+    std::string dbgPath = dbgPoint.substr(0, delim);
+    long dbgLineNo = SPA::strToNum<long>(dbgPoint.substr(delim + 1));
 
     // Canonical debug location of what is found (used to ensure uniqueness).
     std::string foundDbgLoc;
@@ -69,19 +63,9 @@ DbgLineIF *DbgLineIF::parse(llvm::Module *module, std::string dbgPoint) {
             if ((!instPath.empty()) && instPath[0] != '/') {
               instPath = loc.getDirectory().str() + "/" + instPath;
             }
-
-            std::string instDir = instPath.substr(0, instPath.rfind("/"));
-            std::string instFile = instPath.substr(instPath.rfind("/") + 1);
             long instLineNo = loc.getLineNumber();
 
-            // Exact match file and line number.
-            // dbgDir must be a suffix of instDir, with care that it comes right
-            // after a / or matches exactly.
-            if (instFile == dbgFile && instLineNo == dbgLineNo &&
-                instDir.length() >= dbgDir.length() &&
-                instDir.substr(instDir.length() - dbgDir.length()) == dbgDir &&
-                (dbgDir == "" || instDir.length() == dbgDir.length() ||
-                 instDir[instDir.length() - dbgDir.length() - 1] == '/')) {
+            if (pathPrefixMatch(instPath, dbgPath) && instLineNo == dbgLineNo) {
               dbgInsts.insert(&inst);
 
               if (foundDbgLoc.empty()) {

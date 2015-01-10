@@ -44,13 +44,19 @@ private:
   std::map<std::string, std::vector<klee::ref<klee::Expr> > > outputValues;
   std::map<std::string, std::string> tags;
   klee::ConstraintManager constraints;
-  std::map<std::string, std::set<long> > exploredLineCoverage;
+  std::map<std::string, std::map<long, bool> > exploredLineCoverage;
+  std::map<std::string, bool> exploredFunctionCoverage;
   std::vector<std::pair<std::string, bool> > exploredPath;
   std::map<std::string, std::vector<uint8_t> > testInputs;
   std::map<std::string, std::map<long, bool> > testLineCoverage;
   std::map<std::string, bool> testFunctionCoverage;
 
   Path();
+  static bool isFunctionCovered(std::string fn,
+                                std::map<std::string, bool> &coverage);
+  static bool
+      isLineCovered(std::string dbgStr,
+                    std::map<std::string, std::map<long, bool> > &coverage);
 
 public:
   Path(klee::ExecutionState *kState, klee::Solver *solver);
@@ -100,9 +106,7 @@ public:
 
   const klee::ConstraintManager &getConstraints() const { return constraints; }
 
-  std::map<std::string, std::set<long> > getExploredLineCoverage() const {
-    return exploredLineCoverage;
-  }
+  bool isCovered(std::string dbgStr);
 
   std::vector<std::pair<std::string, bool> > getExploredPath() const {
     return exploredPath;
@@ -110,14 +114,6 @@ public:
 
   std::map<std::string, std::vector<uint8_t> > getTestInputs() const {
     return testInputs;
-  }
-
-  std::map<std::string, std::map<long, bool> > getTestLineCoverage() const {
-    return testLineCoverage;
-  }
-
-  std::map<std::string, bool> getTestFunctionCoverage() const {
-    return testFunctionCoverage;
   }
 
   friend class PathLoader;

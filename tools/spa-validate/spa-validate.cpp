@@ -19,6 +19,7 @@
 #include <spa/PathLoader.h>
 #include <spa/SPA.h>
 #include <spa/Path.h>
+#include <spa/Util.h>
 
 // FIXME: Ugh, this is gross. But otherwise our config.h conflicts with LLVMs.
 #undef PACKAGE_BUGREPORT
@@ -354,16 +355,17 @@ int gcovGcovWalker(const char *fpath, const struct stat *sb, int typeflag) {
       std::string fn = line.substr(fnPos, line.find(" ", fnPos) - fnPos);
       auto numCallsPos = line.find(FUNCTION_SUMMARY_CALLED_PREFIX) +
                          strlen(FUNCTION_SUMMARY_CALLED_PREFIX);
-      long numCalls = atol(line.substr(
-          numCallsPos, line.find(" ", numCallsPos) - numCallsPos).c_str());
+      long numCalls = SPA::strToNum<long>(
+          line.substr(numCallsPos, line.find(" ", numCallsPos) - numCallsPos));
       gcovFunctionCoverage[fn] = (numCalls > 0);
     } else if (isdigit(line[0]) || line[0] == '-' || line[0] == '#') {
       auto countLineDelim = line.find(":");
       auto lineSrcDelim = line.find(":", countLineDelim + 1);
       long count =
-          line[0] == '-' ? -1 : atol(line.substr(0, countLineDelim).c_str());
-      long lineNum = atol(line.substr(
-          countLineDelim + 1, lineSrcDelim - countLineDelim - 1).c_str());
+          line[0] == '-' ? -1
+                         : SPA::strToNum<long>(line.substr(0, countLineDelim));
+      long lineNum = SPA::strToNum<long>(
+          line.substr(countLineDelim + 1, lineSrcDelim - countLineDelim - 1));
       std::string src = line.substr(lineSrcDelim + 1);
 
       if (lineNum == 0) {
@@ -488,7 +490,7 @@ int main(int argc, char **argv, char **envp) {
         }
       } else if (args[1] == "TIME") {
         assert(args.size() == 3 && "Wrong number of arguments in WAIT TIME.");
-        condition = new TimedCondition(atol(args[1].c_str()));
+        condition = new TimedCondition(SPA::strToNum<long>(args[1]));
       } else {
         assert(false && "Invalid WAIT command.");
       }
@@ -506,7 +508,8 @@ int main(int argc, char **argv, char **envp) {
       }
     } else if (args[0] == "TIMEOUT") {
       assert(args.size() == 2 && "Wrong number of arguments in TIMEMOUT.");
-      timeout = std::chrono::duration<long, std::milli>(atol(args[1].c_str()));
+      timeout =
+          std::chrono::duration<long, std::milli>(SPA::strToNum<long>(args[1]));
     } else {
       assert(false && "Unknown command.");
     }
@@ -520,8 +523,8 @@ int main(int argc, char **argv, char **envp) {
 
   SPA::PathLoader pathLoader(inFile);
   std::set<std::map<std::string, std::vector<uint8_t> > > processedTestCases;
-  SPA::Path *path;
-  while ((path = pathLoader.getPath())) {
+  llvm::OwningPtr<SPA::Path> path;
+  while (path.reset(pathLoader.getPath()), path) {
     klee::klee_message("Processing path.");
 
     if (processedTestCases.count(path->getTestInputs())) {
@@ -548,7 +551,7 @@ int main(int argc, char **argv, char **envp) {
         klee::klee_message("Path processing timed out.");
         break;
       }
-      if (!action->run(path)) {
+      if (!action->run(path.get())) {
         klee::klee_message("Action failed. Dropping path.");
         skipPath = true;
         break;
@@ -557,10 +560,10 @@ int main(int argc, char **argv, char **envp) {
     waitFinish(true, true);
 
     if (!skipPath) {
-      loadCoverage(path);
+      loadCoverage(path.get());
 
       klee::klee_message("Checking validity condition.");
-      if (checkExpression->check(path)) {
+      if (checkExpression->check(path.get())) {
         klee::klee_message("Path valid. Outputting as true-positive.");
         outFile << *path;
       } else {

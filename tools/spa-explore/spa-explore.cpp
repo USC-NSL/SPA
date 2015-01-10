@@ -159,8 +159,10 @@ int main(int argc, char **argv, char **envp) {
   }
 
   spa.addStateUtilityBack(new SPA::FilteredUtility(), false);
+  auto directingTargetsSet = directingTargets.toInstructionSet(cfg);
   spa.addStateUtilityBack(
-      new SPA::TargetDistanceUtility(module, cfg, cg, directingTargets), false);
+      new SPA::TargetDistanceUtility(module, cfg, cg, directingTargetsSet),
+      false);
   // All else being the same, go DFS.
   spa.addStateUtilityBack(new SPA::DepthUtility(), false);
 

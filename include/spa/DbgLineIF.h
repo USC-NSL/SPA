@@ -20,12 +20,21 @@ private:
 public:
   static DbgLineIF *parse(llvm::Module *module, std::string dbgPoint);
 
+  bool checkInstruction(llvm::Instruction *instruction) {
+    return dbgZone.count(instruction);
+  }
+
   bool checkStep(llvm::Instruction *preInstruction,
                  llvm::Instruction *postInstruction) {
-    if (entering) {
-      return (!dbgZone.count(preInstruction)) && dbgZone.count(postInstruction);
+    if (preInstruction && postInstruction) {
+      if (entering) {
+        return (!dbgZone.count(preInstruction)) &&
+               dbgZone.count(postInstruction);
+      } else {
+        return dbgZone.count(preInstruction) && !dbgZone.count(postInstruction);
+      }
     } else {
-      return dbgZone.count(preInstruction) && !dbgZone.count(postInstruction);
+      return false;
     }
   }
 };

@@ -184,18 +184,31 @@ Path *PathLoader::getPath() {
       case EXPLOREDCOVERAGE: {
         std::string name = line.substr(0, line.find(" "));
         std::stringstream ss(line.substr(name.length()));
-        std::set<long> coverage;
+        std::map<long, bool> coverage;
 
         while (ss.good()) {
           while (ss.peek() == ' ') {
             ss.get();
           }
+          bool covered = (ss.peek() == '!');
+          if (!covered) {
+            ss.get();
+          }
           long line;
           ss >> line;
-          coverage.insert(line);
+          coverage[line] = covered;
         }
 
-        path->exploredLineCoverage[name] = coverage;
+        if (coverage.empty()) {
+          if (name[0] == '!') {
+            name = name.substr(1);
+            path->exploredFunctionCoverage[name] = false;
+          } else {
+            path->exploredFunctionCoverage[name] = true;
+          }
+        } else {
+          path->exploredLineCoverage[name] = coverage;
+        }
       } break;
       case EXPLOREDPATH: {
         auto delim = line.find(" ");

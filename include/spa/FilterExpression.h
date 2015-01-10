@@ -1,6 +1,8 @@
 #include <llvm/ADT/OwningPtr.h>
 #include <spa/Path.h>
 
+#define REACHED "REACHED "
+
 namespace SPA {
 class FilterExpression {
 public:
@@ -54,13 +56,11 @@ public:
 
 class ReachedFE : public FilterExpression {
 private:
-  std::string srcFile;
-  long srcLine;
-  std::string function;
+  std::string dbgStr;
 
 public:
-  ReachedFE(std::string dbgStr);
-  bool check(SPA::Path *p);
-  std::string dbg_str();
+  ReachedFE(std::string dbgStr) : dbgStr(dbgStr) {}
+  bool check(SPA::Path *p) { return p->isCovered(dbgStr); }
+  std::string dbg_str() { return std::string("(" REACHED) + dbgStr + ")"; }
 };
 }

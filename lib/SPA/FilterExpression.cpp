@@ -5,7 +5,6 @@
 #define NOT "NOT "
 #define TRUE "TRUE"
 #define FALSE "FALSE"
-#define REACHED "REACHED "
 
 namespace SPA {
 AndFE::AndFE(FilterExpression *l, FilterExpression *r) : l(l), r(r) {
@@ -31,47 +30,6 @@ std::string NotFE::dbg_str() { return "(" NOT + subExpr->dbg_str() + ")"; }
 ConstFE::ConstFE(bool c) : c(c) {}
 bool ConstFE::check(SPA::Path *p) { return c; }
 std::string ConstFE::dbg_str() { return c ? TRUE : FALSE; }
-
-ReachedFE::ReachedFE(std::string dbgStr) {
-  // Check if function or source line.
-  auto fileLineDelim = dbgStr.rfind(":");
-  if (fileLineDelim == std::string::npos) {
-    function = dbgStr;
-  } else {
-    auto dirFilePos = dbgStr.rfind("/");
-    dirFilePos = dirFilePos == std::string::npos ? 0 : dirFilePos + 1;
-    srcFile = dbgStr.substr(dirFilePos, fileLineDelim - dirFilePos);
-    srcLine = atol(dbgStr.substr(fileLineDelim + 1).c_str());
-  }
-}
-bool ReachedFE::check(SPA::Path *p) {
-  assert((!p->getTestLineCoverage().empty()) &&
-         (!p->getTestFunctionCoverage().empty()) && "No test coverage data.");
-
-  if (!function.empty()) {
-    assert(p->getTestFunctionCoverage().count(function) &&
-           "No coverage data for specified function.");
-    return p->getTestFunctionCoverage()[function];
-  }
-
-  if (!srcFile.empty() && srcLine) {
-    assert(p->getTestLineCoverage().count(srcFile) &&
-           p->getTestLineCoverage()[srcFile].count(srcLine) &&
-           "No coverage data for specified source line.");
-    return p->getTestLineCoverage()[srcFile][srcLine];
-  }
-
-  return true;
-}
-std::string ReachedFE::dbg_str() {
-  std::string result;
-  if (!srcFile.empty() && srcLine) {
-    result = srcFile + ":" + srcFile;
-  } else if (!function.empty()) {
-    result = function;
-  }
-  return "(" REACHED + result + ")";
-}
 
 FilterExpression *parseParFE(std::string str);
 template <class C>
