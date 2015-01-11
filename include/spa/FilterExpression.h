@@ -1,14 +1,15 @@
 #include <llvm/ADT/OwningPtr.h>
 #include <spa/Path.h>
+#include <spa/PathFilter.h>
 
 #define REACHED "REACHED "
 
 namespace SPA {
-class FilterExpression {
+class FilterExpression : public PathFilter {
 public:
   static FilterExpression *parse(std::string str);
 
-  virtual bool check(SPA::Path *p) = 0;
+  virtual bool checkPath(Path &p) = 0;
   virtual std::string dbg_str() = 0;
 
   virtual ~FilterExpression() {}
@@ -20,7 +21,7 @@ private:
 
 public:
   AndFE(FilterExpression *l, FilterExpression *r);
-  bool check(SPA::Path *p);
+  bool checkPath(Path &p);
   std::string dbg_str();
 };
 
@@ -30,7 +31,7 @@ private:
 
 public:
   OrFE(FilterExpression *l, FilterExpression *r);
-  bool check(SPA::Path *p);
+  bool checkPath(Path &p);
   std::string dbg_str();
 };
 
@@ -40,7 +41,7 @@ private:
 
 public:
   NotFE(FilterExpression *subExpr);
-  bool check(SPA::Path *p);
+  bool checkPath(Path &p);
   std::string dbg_str();
 };
 
@@ -50,7 +51,7 @@ private:
 
 public:
   ConstFE(bool c);
-  bool check(SPA::Path *p);
+  bool checkPath(Path &p);
   std::string dbg_str();
 };
 
@@ -60,7 +61,7 @@ private:
 
 public:
   ReachedFE(std::string dbgStr) : dbgStr(dbgStr) {}
-  bool check(SPA::Path *p) { return p->isCovered(dbgStr); }
+  bool checkPath(Path &p) { return p.isCovered(dbgStr); }
   std::string dbg_str() { return std::string("(" REACHED) + dbgStr + ")"; }
 };
 }

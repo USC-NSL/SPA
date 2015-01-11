@@ -563,7 +563,7 @@ int main(int argc, char **argv, char **envp) {
       loadCoverage(path.get());
 
       klee::klee_message("Checking validity condition.");
-      if (checkExpression->check(path.get())) {
+      if (checkExpression->checkPath(*path.get())) {
         klee::klee_message("Path valid. Outputting as true-positive.");
         outFile << *path;
       } else {

@@ -64,7 +64,7 @@ int main(int argc, char **argv, char **envp) {
   while (path.reset(pathLoader.getPath()), path) {
     klee::klee_message("Processing path.");
 
-    if (expr->check(path.get())) {
+    if (expr->checkPath(*path.get())) {
       klee::klee_message("Path accepted. Outputting.");
       outFile << *path;
     } else {

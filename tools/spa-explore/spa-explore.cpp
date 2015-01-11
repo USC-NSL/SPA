@@ -20,6 +20,7 @@
 #include "spa/NegatedIF.h"
 #include "spa/AstarUtility.h"
 #include "spa/FilteredUtility.h"
+#include "spa/FilterExpression.h"
 
 namespace {
 std::string InputBCFile;
@@ -67,6 +68,11 @@ llvm::cl::opt<bool>
 
 llvm::cl::list<std::string>
     OutputAt("output-at", llvm::cl::desc("Code-points to output paths at."));
+
+llvm::cl::opt<std::string> OutputFilter(
+    "filter-output",
+    llvm::cl::desc("Conditions that paths must meet to be outputted. "
+                   "Equivalent to using spa-filter on output."));
 
 llvm::cl::opt<std::string, true>
     InputBCFileOpt(llvm::cl::Positional, llvm::cl::Required,
@@ -174,6 +180,13 @@ int main(int argc, char **argv, char **envp) {
   }
 
   spa.setOutputTerminalPaths(OutputTerminal);
+
+  if (!OutputFilter.empty()) {
+    SPA::FilterExpression *filter = SPA::FilterExpression::parse(OutputFilter);
+    assert(filter && "Invalid filter expression.");
+
+    spa.setPathFilter(filter);
+  }
 
   klee::klee_message("Starting SPA.");
   spa.start();

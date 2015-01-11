@@ -66,7 +66,7 @@ netcalc-client.paths: netcalc-client.bc $(shell which spa-explore)
 	spa-explore $< --out-paths $@ --start-from SpaExecuteQueryEntry --toward "SUCCEEDING netcalc-client.cpp:56" --stop-at "SUCCEEDING netcalc-client.cpp:56" --output-at "SUCCEEDING netcalc-client.cpp:56"
 
 netcalc-server.paths: netcalc-server.bc netcalc-client.paths
-	spa-explore $< --in-paths netcalc-client.paths --connect-default --out-paths $@ --start-from SpaHandleQueryEntry --away-from netcalc-server.cpp:85 --output-terminal --output-at "NOT REACHING netcalc-server.cpp:85"
+	spa-explore $< --in-paths netcalc-client.paths --connect-default --out-paths $@ --start-from SpaHandleQueryEntry --away-from netcalc-server.cpp:85 --output-terminal --output-at "NOT REACHING netcalc-server.cpp:85" --filter-output "REACHED netcalc-server.cpp:23"
 
 validated.paths: netcalc-server.paths $(TEST_TARGETS) $(shell which spa-validate)
 	killall netcalc-client.test netcalc-server.test || true
