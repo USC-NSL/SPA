@@ -465,9 +465,14 @@ void ExprPPrinter::printQuery(llvm::raw_ostream &os,
   if (printArrayDecls) {
     for (const Array * const* it = evalArraysBegin; it != evalArraysEnd; ++it)
       p.usedArrays.insert(*it);
-    for (std::set<const Array*>::iterator it = p.usedArrays.begin(), 
-           ie = p.usedArrays.end(); it != ie; ++it) {
-      const Array *A = *it;
+    std::vector<const Array*> usedArrays(p.usedArrays.begin(),
+                                         p.usedArrays.end());
+    sort(usedArrays.begin(), usedArrays.end(),
+         [](const Array *a, const Array *b) -> bool {
+           return a->name > b->name;
+         });
+    for (auto const it : usedArrays) {
+      const Array *A = it;
       // FIXME: Print correct name, domain, and range.
       PC << "array " << A->name
          << "[" << A->size << "]"
