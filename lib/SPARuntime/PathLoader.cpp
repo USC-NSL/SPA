@@ -182,32 +182,35 @@ Path *PathLoader::getPath() {
         kQuery += " " + line;
       } break;
       case EXPLOREDCOVERAGE: {
-        std::string name = line.substr(0, line.find(" "));
-        std::stringstream ss(line.substr(name.length()));
-        std::map<long, bool> coverage;
+        auto delim = line.find(" ");
+        std::string name = line.substr(0, delim);
 
-        while (ss.good()) {
-          while (ss.peek() == ' ') {
-            ss.get();
-          }
-          bool covered = (ss.peek() == '!');
-          if (!covered) {
-            ss.get();
-          }
-          long line;
-          ss >> line;
-          coverage[line] = covered;
-        }
+        if (delim != std::string::npos) {
+          std::stringstream ss(line.substr(name.length()));
+          std::map<long, bool> coverage;
 
-        if (coverage.empty()) {
+          while (ss.good()) {
+            while (ss.peek() == ' ') {
+              ss.get();
+            }
+            bool covered = (ss.peek() != '!');
+            if (!covered) {
+              ss.get();
+            }
+            long lineNo;
+            ss >> lineNo;
+            coverage[lineNo] = covered;
+          }
+
+          assert(!coverage.empty() && "Invalid line coverage line.");
+          path->exploredLineCoverage[name] = coverage;
+        } else {
           if (name[0] == '!') {
             name = name.substr(1);
             path->exploredFunctionCoverage[name] = false;
           } else {
             path->exploredFunctionCoverage[name] = true;
           }
-        } else {
-          path->exploredLineCoverage[name] = coverage;
         }
       } break;
       case EXPLOREDPATH: {
@@ -239,7 +242,7 @@ Path *PathLoader::getPath() {
           while (ss.peek() == ' ') {
             ss.get();
           }
-          bool covered = (ss.peek() == '!');
+          bool covered = (ss.peek() != '!');
           if (!covered) {
             ss.get();
           }
