@@ -17,15 +17,16 @@ LLVM_LD = llvm-link
 LIB_SPA_TEST_MODULE = ../../Release+Asserts/lib/libSpaTestModule.so
 LIB_SPA_LOG_MODULE = ../../Release+Asserts/lib/libSpaLogModule.so
 TIME = /usr/bin/time
-SPA_EXE = ../../Release+Asserts/bin/spa
-# SPA_EXE = /usr/local/bin/spa/Release+Asserts/bin/spaRR
+SPA_EXE = ../../Release+Asserts/bin/pic
+# SPA_EXE = /usr/local/bin/spa/Release+Asserts/bin/picRR
 SPA = $(TIME) $(SPA_EXE)
 
 default: all
 
 all: $(TARGETS) $(BC_TARGETS) $(LOG_TARGETS) $(TEST_TARGETS)
 
-run-spa: BadInputs.tested.txt BadInputs.default
+run-pic: BadInputs.tested.txt BadInputs.default
+run-spa: validated.paths
 
 out/llvm/Makefile:
 	mkdir -p out/llvm
@@ -106,25 +107,57 @@ out/llvm/lib/.libs/libspdylay.a: out/llvm/Makefile
 
 .PRECIOUS: $(PATHS) $(LOGS) BadInputs.untested BadInputs.tested
 
-spa-client.paths: spa-client.bc $(SPA_EXE)
-	$(SPA) --path-file $@ --client $< 2>&1 | tee $@.log
+# spa-client.paths: spa-client.bc $(SPA_EXE)
+# 	$(SPA) --path-file $@ --client $< 2>&1 | tee $@.log
+spa-client.paths: spa-client.bc $(shell which spa-explore)
+	spa-explore \
+		--out-paths $@ \
+		--start-from spa_SendRequest \
+		--stop-at spa-client.c:41 \
+		--toward spa-client.c:41 \
+		--output-at spa-client.c:41 \
+		$< 2>&1 | tee $@.log
 
 # spa-server.paths: spa-server.bc $(SPA_EXE)
 # 	$(SPA) --path-file $@ --server $< 2>&1 | tee $@.log
 # spa-server.paths: spa-server.bc spa-client.paths $(SPA_EXE)
 # 	$(SPA) --path-file $@ -sender-paths spa-client.paths --server $< 2>&1 | tee $@.log
-spa-server.paths: spa-client.paths spa-server.bc
-	parallel-spa-server.sh $< $@ spa-server.bc
+# spa-server.paths: spa-client.paths spa-server.bc
+# 	parallel-spa-server.sh $< $@ spa-server.bc
+spa-server.paths: spa-server.bc spa-client.paths $(shell which spa-explore)
+	spa-explore \
+		--in-paths spa-client.paths --connect-default \
+		--out-paths $@ \
+		--start-from spa_HandleRequest \
+		--away-from request_recv_callback \
+		--output-terminal \
+		--output-at "NOT REACHING request_recv_callback" \
+		--filter-output "REACHED spa-server.c:249 \
+			AND NOT REACHED request_recv_callback" \
+		$< 2>&1 | tee $@.log
 
 # BadInputs.untested: $(PATHS)
 # 	spaBadInputs -p 8 -client spa-client.paths -server spa-server.paths -o $@ -d $@.debug 2>&1 | tee $@.log
 # BadInputs.untested: spa-server.paths
 # 	spaBadInputs -p 8 -server spa-server.paths -o $@ -d $@.debug 2>&1 | tee $@.log
-BadInputs.untested: spa-server.paths
-	parallel-badinputs.sh $< $@
+# BadInputs.untested: spa-server.paths
+# 	parallel-badinputs.sh $< $@
 
-BadInputs.tested: BadInputs.untested $(TEST_TARGETS)
-	spaE2ETest $< $@ BadInputs.FalsePositives 8000 './spa-client.e2etest.exe' './spa-server.e2etest.exe' 2>&1 | tee $@.log
+# BadInputs.tested: BadInputs.untested $(TEST_TARGETS)
+# 	spaE2ETest $< $@ BadInputs.FalsePositives 8000 './spa-client.e2etest.exe' './spa-server.e2etest.exe' 2>&1 | tee $@.log
+
+validated.paths: spa-server.paths $(TEST_TARGETS) $(shell which spa-validate)
+	killall spa-client.e2etest.exe spa-server.e2etest.exe || true
+	spa-validate $< $@ false-positives.paths \
+		"RUN ./spa-server.e2etest.exe; \
+		WAIT LISTEN UDP 8000; \
+		RUN ./spa-client.e2etest.exe; \
+		WAIT DONE 2; \
+		KILL 1; \
+		TIMEOUT 2000; \
+		CHECK REACHED REACHED spa-server.c:249 \
+			AND NOT REACHED request_recv_callback;" \
+		2>&1 | tee $@.log
 
 %.tested.txt: %.tested
 	spaTest2Str $< $@ 2>&1 | tee $@.log
