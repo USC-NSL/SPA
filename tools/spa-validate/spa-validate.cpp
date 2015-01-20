@@ -32,6 +32,9 @@ namespace {
 llvm::cl::opt<bool> EnableDbg("d", llvm::cl::init(false),
                               llvm::cl::desc("Output debug information."));
 
+llvm::cl::opt<bool> Follow("f", llvm::cl::init(false),
+                           llvm::cl::desc("Follow inputs file."));
+
 llvm::cl::opt<std::string> gcnoDirMap(
     "gcno-dir-map",
     llvm::cl::desc(
@@ -52,6 +55,7 @@ llvm::cl::opt<std::string> Commands(llvm::cl::Positional, llvm::cl::Required,
 }
 
 #define RECHECK_WAIT 100000 // us
+#define FOLLOW_WAIT 1000000 // us
 #define GCOV_DIR_TEMPLATE "/tmp/spa-validate-XXXXXX"
 
 // Signals to try on a process we're trying to kill.
@@ -542,7 +546,13 @@ int main(int argc, char **argv, char **envp) {
   SPA::PathLoader pathLoader(inFile);
   std::set<std::map<std::string, std::vector<uint8_t> > > processedTestCases;
   llvm::OwningPtr<SPA::Path> path;
-  while (path.reset(pathLoader.getPath()), path) {
+  while (path.reset(pathLoader.getPath()), path || Follow) {
+    if (!path) {
+      klee::klee_message("Waiting for new input paths.");
+      usleep(FOLLOW_WAIT);
+      continue;
+    }
+
     klee::klee_message("Processing path.");
 
     if (processedTestCases.count(path->getTestInputs())) {
