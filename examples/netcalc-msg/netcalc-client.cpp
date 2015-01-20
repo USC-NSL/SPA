@@ -69,12 +69,16 @@ nc_value_t executeQuery(nc_operator_t op, nc_value_t arg1, nc_value_t arg2) {
 
   // Output operation.
   if (response.err == NC_OK) {
+#ifndef ENABLE_KLEE
     std::cerr << "	" << query.arg1 << " " << getOpName(query.op) << " "
               << query.arg2 << " = " << response.value << std::endl;
+#endif
     spa_valid_path();
   } else {
+#ifndef ENABLE_KLEE
     std::cerr << "Error: " << getErrText(response.err) << std::endl;
-    spa_invalid_path();
+#endif
+    //     spa_invalid_path();
   }
   assert(response.err == NC_OK && "Query failed.");
 
