@@ -32,6 +32,11 @@ namespace {
 llvm::cl::opt<bool> EnableDbg("d", llvm::cl::init(false),
                               llvm::cl::desc("Output debug information."));
 
+llvm::cl::opt<std::string> gcnoDirMap(
+    "gcno-dir-map",
+    llvm::cl::desc(
+        "Map one directory to another when searching for GCNO files."));
+
 llvm::cl::opt<std::string> InFileName(llvm::cl::Positional, llvm::cl::Required,
                                       llvm::cl::desc("<input path-file>"));
 
@@ -318,6 +323,15 @@ int gcovGcnaWalker(const char *fpath, const struct stat *sb, int typeflag) {
   basePath = basePath.substr(0, basePath.rfind("."));
   std::string dirPath = fpathstr.substr(0, fpathstr.rfind("/"));
   std::string gcnoPath = basePath + ".gcno";
+  if (!gcnoDirMap.empty()) {
+    auto delim = gcnoDirMap.find("=");
+    assert(delim != std::string::npos);
+    std::string lvalue = gcnoDirMap.substr(0, delim);
+    std::string rvalue = gcnoDirMap.substr(delim + 1);
+    if (gcnoPath.substr(0, lvalue.size()) == lvalue) {
+      gcnoPath = rvalue + gcnoPath.substr(lvalue.size());
+    }
+  }
   gcovFiles += std::string(" ") + basePath;
 
   if (EnableDbg) {
@@ -515,7 +529,11 @@ int main(int argc, char **argv, char **envp) {
     }
   } while ((pos = Commands.find(";", pos)) != std::string::npos);
 
-  assert(checkExpression && "Must specify check clause.");
+  if (!checkExpression) {
+    klee::klee_message("No check expression specified. Accepting all paths.");
+    checkExpression.reset(new SPA::ConstFE(true));
+  }
+
   if (EnableDbg) {
     klee::klee_message("Final expression: %s",
                        checkExpression->dbg_str().c_str());
