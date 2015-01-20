@@ -1,3 +1,4 @@
+#include <unistd.h>
 #include <set>
 
 #include "llvm/Support/CommandLine.h"
@@ -12,6 +13,7 @@
 #include "spa/PathLoader.h"
 
 #define MAX_FILE_NAME 100
+#define FOLLOW_WAIT_US 1000000
 
 namespace {
 llvm::cl::opt<std::string> InputFile("i", llvm::cl::desc("Input path-file."),
@@ -26,6 +28,8 @@ llvm::cl::opt<unsigned> NumOutFiles("n",
 
 llvm::cl::opt<unsigned>
     NumPathsPerFile("p", llvm::cl::desc("Number of paths per output file."));
+
+llvm::cl::opt<bool> Follow("f", llvm::cl::desc("Follow the input file."));
 }
 
 void addOutput(unsigned long index, std::string text) {
@@ -64,15 +68,23 @@ int main(int argc, char **argv, char **envp) {
     bool done = false;
     do {
       for (unsigned long i = 0; i < NumOutFiles.getValue(); i++) {
-        std::string p = input.getPathText();
+        std::string p;
+        do {
+          p = input.getPathText();
+          if (p.empty() && Follow) {
+            usleep(FOLLOW_WAIT_US);
+          }
+        } while (Follow && p.empty());
+
         if (p.empty()) {
           done = true;
           break;
         }
+
         addOutput(i, p);
         pathCount++;
       }
-    } while (!done);
+    } while ((!done) || Follow);
 
     numFiles = std::min(pathCount, (unsigned long) NumOutFiles.getValue());
     numPathsPerFile = ceil(((double) pathCount) / numFiles);
@@ -82,7 +94,14 @@ int main(int argc, char **argv, char **envp) {
     bool done = false;
     do {
       for (unsigned long i = 0; i < NumPathsPerFile.getValue(); i++) {
-        std::string p = input.getPathText();
+        std::string p;
+        do {
+          p = input.getPathText();
+          if (p.empty() && Follow) {
+            usleep(FOLLOW_WAIT_US);
+          }
+        } while (Follow && p.empty());
+
         if (p.empty()) {
           done = true;
           break;
