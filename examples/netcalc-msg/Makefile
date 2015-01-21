@@ -111,6 +111,9 @@ validated.paths: netcalc-client.bc netcalc-server.bc netcalc-client.test netcalc
 		netcalc-client.test netcalc-server.test \
 		netcalc-client.gcno netcalc-server.gcno
 
+cluster: validated.paths
+	spaManualCluster $<
+
 run-pic: BadInputs.tested
 
 run-spa: validated.paths
