@@ -22,6 +22,8 @@
 #define SPA_PATH_KQUERY_END "--- KQUERY END ---"
 #define SPA_PATH_EXPLOREDCOVERAGE_START "--- EXPLORED COVERAGE START ---"
 #define SPA_PATH_EXPLOREDCOVERAGE_END "--- EXPLORED COVERAGE END ---"
+#define SPA_PATH_PARTICIPANTS_START "--- PARTICIPANTS START ---"
+#define SPA_PATH_PARTICIPANTS_END "--- PARTICIPANTS END ---"
 #define SPA_PATH_EXPLOREDPATH_START "--- EXPLORED PATH START ---"
 #define SPA_PATH_EXPLOREDPATH_END "--- EXPLORED PATH END ---"
 #define SPA_PATH_TESTINPUTS_START "--- TEST INPUTS START ---"
@@ -46,6 +48,7 @@ private:
   klee::ConstraintManager constraints;
   std::map<std::string, std::map<long, bool> > exploredLineCoverage;
   std::map<std::string, bool> exploredFunctionCoverage;
+  std::vector<std::string> participants;
   std::vector<std::pair<std::string, bool> > exploredPath;
   std::map<std::string, std::vector<uint8_t> > testInputs;
   std::map<std::string, std::map<long, bool> > testLineCoverage;
@@ -107,6 +110,8 @@ public:
   const klee::ConstraintManager &getConstraints() const { return constraints; }
 
   bool isCovered(std::string dbgStr);
+
+  std::vector<std::string> getParticipants() const { return participants; }
 
   std::vector<std::pair<std::string, bool> > getExploredPath() const {
     return exploredPath;

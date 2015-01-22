@@ -133,7 +133,8 @@ ExecutionState::ExecutionState(const ExecutionState& state)
     filtered(state.filtered),
     senderPath(state.senderPath),
     instructionCoverage(state.instructionCoverage),
-    branchDecisions(state.branchDecisions)
+    branchDecisions(state.branchDecisions),
+    participants(state.participants)
 {
   for (unsigned int i=0; i<symbolics.size(); i++)
     symbolics[i].first->refCount++;
@@ -154,6 +155,7 @@ ExecutionState *ExecutionState::branch() {
   falseState->senderPath = this->senderPath;
   falseState->instructionCoverage = this->instructionCoverage;
   falseState->branchDecisions = this->branchDecisions;
+  falseState->participants = this->participants;
 
   return falseState;
 }

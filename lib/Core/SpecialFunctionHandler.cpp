@@ -818,6 +818,9 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(ExecutionState &state,
     for (auto it : state.senderPath->getConstraints()) {
       state.addConstraint(it);
     }
+
+    // Load previous participants.
+    state.participants = state.senderPath->getParticipants();
   }
 
   std::string senderOutName = SPA::seedSymbolMappings[name];

@@ -120,6 +120,10 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
     }
   }
 
+  participants = kState->participants;
+  participants.push_back(kState->pc->inst->getParent()->getParent()->getParent()
+                             ->getModuleIdentifier());
+
   for (auto branchDecision : state.branchDecisions) {
     exploredPath.push_back(std::make_pair(debugLocation(branchDecision.first),
                                           branchDecision.second));
@@ -249,6 +253,14 @@ std::ostream &operator<<(std::ostream &stream, const Path &path) {
       stream << (fn.second ? "" : "!") << fn.first << std::endl;
     }
     stream << SPA_PATH_EXPLOREDCOVERAGE_END << std::endl;
+  }
+
+  if (!path.getParticipants().empty()) {
+    stream << SPA_PATH_PARTICIPANTS_START << std::endl;
+    for (auto it : path.getParticipants()) {
+      stream << it << std::endl;
+    }
+    stream << SPA_PATH_PARTICIPANTS_END << std::endl;
   }
 
   if (!path.getExploredPath().empty()) {

@@ -125,6 +125,8 @@ public:
   std::set<llvm::Instruction *> instructionCoverage;
   // Path followed.
   std::vector<std::pair<llvm::Instruction *, bool> > branchDecisions;
+  // List of protocol participants that have spliced path data in.
+  std::vector<std::string> participants;
 
   std::string getFnAlias(std::string fn);
   void addFnAlias(std::string old_fn, std::string new_fn);

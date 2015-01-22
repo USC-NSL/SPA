@@ -29,6 +29,7 @@ typedef enum {
   TAGS,
   KQUERY,
   EXPLOREDCOVERAGE,
+  PARTICIPANTS,
   EXPLOREDPATH,
   TESTINPUTS,
   TESTCOVERAGE
@@ -143,6 +144,10 @@ Path *PathLoader::getPath() {
       changeState(PATH, EXPLOREDCOVERAGE);
     } else if (line == SPA_PATH_EXPLOREDCOVERAGE_END) {
       changeState(EXPLOREDCOVERAGE, PATH);
+    } else if (line == SPA_PATH_PARTICIPANTS_START) {
+      changeState(PATH, PARTICIPANTS);
+    } else if (line == SPA_PATH_PARTICIPANTS_END) {
+      changeState(PARTICIPANTS, PATH);
     } else if (line == SPA_PATH_EXPLOREDPATH_START) {
       changeState(PATH, EXPLOREDPATH);
     } else if (line == SPA_PATH_EXPLOREDPATH_END) {
@@ -212,6 +217,9 @@ Path *PathLoader::getPath() {
             path->exploredFunctionCoverage[name] = true;
           }
         }
+      } break;
+      case PARTICIPANTS: {
+        path->participants.push_back(line);
       } break;
       case EXPLOREDPATH: {
         auto delim = line.find(" ");
