@@ -11,6 +11,20 @@
 #include <algorithm>
 #include <chrono>
 
+#include <spa/Path.h>
+#include <spa/PathLoader.h>
+
+#define NETCALC_CLIENT_BC "netcalc-client.bc"
+#define NETCALC_SERVER_BC "netcalc-server.bc"
+#define SPDYLAY_CLIENT_BC "spa-client.bc"
+#define SPDYLAY_SERVER_BC "spa-server.bc"
+#define NGINX_BC "nginx"
+#define EXOSIP_CLIENT_BC "client.bc"
+#define EXOSIP_SERVER_BC "server.bc"
+#define EXOSIP_OPTIONIONS_SERVER_BC "options-server.bc"
+#define PJSIP_CLIENT_BC "pjsua.spa.bc"
+#define PJSIP_SERVER_BC "pjsua.spa.bc"
+
 #define LOG()                                                                  \
   std::cerr << "[" << (std::chrono::duration_cast<std::chrono::milliseconds>(  \
                           std::chrono::steady_clock::now() - programStartTime) \
@@ -18,32 +32,73 @@
 
 auto programStartTime = std::chrono::steady_clock::now();
 
-typedef bool (*TestClassifier)(std::map<std::string, std::vector<uint8_t> >);
+typedef bool (*TestClassifier)(SPA::Path *path);
 
-bool spdylayDiffVersion(std::map<std::string, std::vector<uint8_t> > testCase) {
-  // 	assert( testCase.count( "spa_in_api_clientVersion" ) );
-  // 	assert( testCase.count( "spa_in_api_serverVersion" ) );
-  if (testCase.count("spa_in_api_clientVersion") &&
-      testCase.count("spa_in_api_serverVersion")) {
-    return (testCase["spa_in_api_clientVersion"] == std::vector<uint8_t>({
+bool netcalcDiv0(SPA::Path *path) {
+  if (path->getParticipants()[0] == NETCALC_CLIENT_BC &&
+      path->getParticipants()[1] == NETCALC_SERVER_BC) {
+    assert(path->getTestInputs().count("spa_in_api_op") &&
+           path->getTestInputs().count("spa_in_api_arg2"));
+    return std::set<std::vector<uint8_t> >({
+      std::vector<uint8_t>({
+        3, 0, 0, 0
+      }),
+          std::vector<uint8_t>({
+        4, 0, 0, 0
+      })
+    })
+               .count(path->getTestInputs()["spa_in_api_op"]) &&
+           path->getTestInputs()["spa_in_api_arg2"] == std::vector<uint8_t>({
+      0, 0, 0, 0, 0, 0, 0, 0
+    });
+  }
+  return false;
+}
+
+bool netcalcImplicitArg(SPA::Path *path) {
+  if (path->getParticipants()[0] == NETCALC_CLIENT_BC &&
+      path->getParticipants()[1] == NETCALC_SERVER_BC) {
+    assert(path->getTestInputs().count("spa_in_api_op") &&
+           path->getTestInputs().count("spa_in_api_arg1") &&
+           path->getTestInputs().count("spa_in_api_arg2"));
+    return path->getTestInputs()["spa_in_api_op"] == std::vector<uint8_t>({
+      0, 0, 0, 0
+    }) &&
+           (path->getTestInputs()["spa_in_api_arg1"] == std::vector<uint8_t>({
+      1, 0, 0, 0, 0, 0, 0, 0
+    }) ||
+            path->getTestInputs()["spa_in_api_arg2"] == std::vector<uint8_t>({
+      1, 0, 0, 0, 0, 0, 0, 0
+    }));
+  }
+  return false;
+}
+
+bool spdylayDiffVersion(SPA::Path *path) {
+  if (path->getParticipants()[0] == SPDYLAY_CLIENT_BC &&
+      path->getParticipants()[1] == SPDYLAY_SERVER_BC) {
+    assert(path->getTestInputs().count("spa_in_api_clientVersion") &&
+           path->getTestInputs().count("spa_in_api_serverVersion"));
+    return (path->getTestInputs()["spa_in_api_clientVersion"] ==
+            std::vector<uint8_t>({
       2, 0
-    })) != (testCase["spa_in_api_serverVersion"] == std::vector<uint8_t>({
+    })) !=
+           (path->getTestInputs()["spa_in_api_serverVersion"] ==
+            std::vector<uint8_t>({
       2, 0
     }));
   }
   return false;
 }
 
-bool spdylayBadName(std::map<std::string, std::vector<uint8_t> > testCase) {
-  // 	assert( testCase.count( "spa_in_api_name" ) );
-  const char *names[] = { "spa_in_api_name", "spa_in_api_name1",
-                          "spa_in_api_name2", "spa_in_api_name3",
-                          "spa_in_api_name4", "spa_in_api_name5", NULL };
-  for (int i = 0; names[i]; i++) {
-    if (testCase.count(names[i]) > 0) {
-      for (auto it : testCase[names[i]]) {
-        if (it == '\0')
-          break;
+bool spdylayBadName(SPA::Path *path) {
+  std::set<std::string> names = { "spa_in_api_name", "spa_in_api_name1",
+                                  "spa_in_api_name2", "spa_in_api_name3",
+                                  "spa_in_api_name4", "spa_in_api_name5" };
+  if (path->getParticipants()[0] == SPDYLAY_CLIENT_BC) {
+    for (auto name : names) {
+      assert(path->getTestInputs().count(name));
+      for (auto it : path->getTestInputs()[name]) {
         if (it < 0x20)
           return true;
       }
@@ -52,14 +107,18 @@ bool spdylayBadName(std::map<std::string, std::vector<uint8_t> > testCase) {
   return false;
 }
 
-bool spdylayEmptyValue(std::map<std::string, std::vector<uint8_t> > testCase) {
-  // 	assert( testCase.count( "spa_in_api_value" ) );
-  const char *values[] = { "spa_in_api_value", "spa_in_api_value1",
-                           "spa_in_api_value2", "spa_in_api_value3",
-                           "spa_in_api_value4", "spa_in_api_value5", NULL };
-  for (int i = 0; values[i]; i++)
-    if (testCase.count(values[i]) > 0 && testCase[values[i]][0] == '\0')
-      return true;
+bool spdylayEmptyValue(SPA::Path *path) {
+  std::set<std::string> values = { "spa_in_api_value", "spa_in_api_value1",
+                                   "spa_in_api_value2", "spa_in_api_value3",
+                                   "spa_in_api_value4", "spa_in_api_value5" };
+  if (path->getParticipants()[0] == SPDYLAY_CLIENT_BC) {
+    for (auto value : values) {
+      assert(path->getTestInputs().count(value));
+      if (path->getTestInputs()[value].empty()) {
+        return true;
+      }
+    }
+  }
   return false;
 }
 
@@ -118,16 +177,15 @@ static int VALID_HD_VALUE_CHARS[] = {
   1 /* 0xfa */, 1 /* 0xfb */, 1 /* 0xfc */, 1 /* 0xfd */, 1 /* 0xfe */,
   1 /* 0xff */
 };
-bool
-spdylayBadValueChar(std::map<std::string, std::vector<uint8_t> > testCase) {
-  //  assert( testCase.count( "spa_in_api_value" ) );
-  const char *values[] = { "spa_in_api_path", "spa_in_api_value",
-                           "spa_in_api_value1", "spa_in_api_value2",
-                           "spa_in_api_value3", "spa_in_api_value4",
-                           "spa_in_api_value5", NULL };
-  for (int i = 0; values[i]; i++) {
-    if (testCase.count(values[i])) {
-      for (uint8_t c : testCase[values[i]]) {
+bool spdylayBadValueChar(SPA::Path *path) {
+  std::set<std::string> values = { "spa_in_api_path", "spa_in_api_value",
+                                   "spa_in_api_value1", "spa_in_api_value2",
+                                   "spa_in_api_value3", "spa_in_api_value4",
+                                   "spa_in_api_value5" };
+  if (path->getParticipants()[0] == SPDYLAY_CLIENT_BC) {
+    for (auto value : values) {
+      assert(path->getTestInputs().count(value));
+      for (auto c : path->getTestInputs()[value]) {
         if (!VALID_HD_VALUE_CHARS[c])
           return true;
       }
@@ -136,39 +194,88 @@ spdylayBadValueChar(std::map<std::string, std::vector<uint8_t> > testCase) {
   return false;
 }
 
-bool
-spdylayNoDataLength(std::map<std::string, std::vector<uint8_t> > testCase) {
-  return testCase.count("spa_in_api_dataLength") == 0;
+bool spdylayNoDataLength(SPA::Path *path) {
+  if (path->getParticipants()[0] == SPDYLAY_CLIENT_BC) {
+    return !path->getTestInputs().count("spa_in_api_dataLength");
+  }
+  return false;
 }
 
-bool nginxSpdy3(std::map<std::string, std::vector<uint8_t> > testCase) {
-  if (testCase.count("spa_in_api_clientVersion"))
-    return testCase["spa_in_api_clientVersion"] != std::vector<uint8_t>({
+bool nginxSpdy3(SPA::Path *path) {
+  if (path->getParticipants()[0] == SPDYLAY_CLIENT_BC &&
+      path->getParticipants()[1] == NGINX_BC) {
+    assert(path->getTestInputs().count("spa_in_api_clientVersion"));
+    return path->getTestInputs()["spa_in_api_clientVersion"] !=
+           std::vector<uint8_t>({
       2, 0
     });
+  }
   return false;
 }
 
-bool nginxHttp09(std::map<std::string, std::vector<uint8_t> > testCase) {
-  if (testCase.count("spa_in_api_versionId"))
-    return testCase["spa_in_api_versionId"] == std::vector<uint8_t>({
+bool nginxHttp09(SPA::Path *path) {
+  if (path->getParticipants()[0] == SPDYLAY_CLIENT_BC &&
+      path->getParticipants()[1] == NGINX_BC) {
+    assert(path->getTestInputs().count("spa_in_api_versionId"));
+    return path->getTestInputs()["spa_in_api_versionId"] ==
+           std::vector<uint8_t>({
       2
     });
+  }
   return false;
 }
 
-bool
-nginxUnknownColonHeader(std::map<std::string, std::vector<uint8_t> > testCase) {
+bool nginxUnknownColonHeader(SPA::Path *path) {
   std::set<std::string> names = { "spa_in_api_name", "spa_in_api_name1",
                                   "spa_in_api_name2", "spa_in_api_name3",
                                   "spa_in_api_name4", "spa_in_api_name5" };
   // From ngx_http_spdy.c:373
   std::set<std::string> whitelist = { "method", "scheme", "host", "path",
                                       "version" };
-  for (auto name : names) {
-    if (testCase.count(name) > 0 && testCase[name][0] == ':') {
-      std::string header(testCase[name].begin(), testCase[name].end());
-      if (whitelist.count(header.substr(1)) == 0) {
+  if (path->getParticipants()[0] == SPDYLAY_CLIENT_BC &&
+      path->getParticipants()[1] == NGINX_BC) {
+    for (auto name : names) {
+      assert(path->getTestInputs().count(name));
+      if (path->getTestInputs()[name][0] == ':') {
+        std::string header(path->getTestInputs()[name].begin(),
+                           path->getTestInputs()[name].end());
+        if (whitelist.count(header.substr(1)) == 0) {
+          return true;
+        }
+      }
+    }
+  }
+  return false;
+}
+
+bool nginxBadUrlPercent(SPA::Path *path) {
+  if (path->getParticipants()[0] == SPDYLAY_CLIENT_BC &&
+      path->getParticipants()[1] == NGINX_BC) {
+    assert(path->getTestInputs().count("spa_in_api_path"));
+    for (unsigned i = 0; i < path->getTestInputs()["spa_in_api_path"].size();
+         i++) {
+      if (path->getTestInputs()["spa_in_api_path"][i] == '%') {
+        if (i > path->getTestInputs()["spa_in_api_path"].size() - 3)
+          return true;
+        if (!isxdigit(path->getTestInputs()["spa_in_api_path"][i + 1]))
+          return true;
+        if (!isxdigit(path->getTestInputs()["spa_in_api_path"][i + 2]))
+          return true;
+      }
+    }
+  }
+  return false;
+}
+
+bool nginxPercent00(SPA::Path *path) {
+  if (path->getParticipants()[0] == SPDYLAY_CLIENT_BC &&
+      path->getParticipants()[1] == NGINX_BC) {
+    assert(path->getTestInputs().count("spa_in_api_path"));
+    for (unsigned i = 0;
+         i < path->getTestInputs()["spa_in_api_path"].size() - 2; i++) {
+      if (path->getTestInputs()["spa_in_api_path"][i] == '%' &&
+          path->getTestInputs()["spa_in_api_path"][i + 1] == '0' &&
+          path->getTestInputs()["spa_in_api_path"][i + 2] == '0') {
         return true;
       }
     }
@@ -176,28 +283,18 @@ nginxUnknownColonHeader(std::map<std::string, std::vector<uint8_t> > testCase) {
   return false;
 }
 
-bool nginxBadUrlPercent(std::map<std::string, std::vector<uint8_t> > testCase) {
-  if (testCase.count("spa_in_api_path")) {
-    for (unsigned i = 0; i < testCase["spa_in_api_path"].size(); i++) {
-      if (testCase["spa_in_api_path"][i] == '%') {
-        if (i > testCase["spa_in_api_path"].size() - 3)
-          return true;
-        if (!isxdigit(testCase["spa_in_api_path"][i + 1]))
-          return true;
-        if (!isxdigit(testCase["spa_in_api_path"][i + 2]))
-          return true;
-      }
-    }
-  }
-  return false;
-}
-
-bool nginxPercent00(std::map<std::string, std::vector<uint8_t> > testCase) {
-  if (testCase.count("spa_in_api_path")) {
-    for (unsigned i = 0; i < testCase["spa_in_api_path"].size() - 2; i++) {
-      if (testCase["spa_in_api_path"][i] == '%' &&
-          testCase["spa_in_api_path"][i + 1] == '0' &&
-          testCase["spa_in_api_path"][i + 2] == '0') {
+bool nginxValueCrLf(SPA::Path *path) {
+  std::set<std::string> values = { "spa_in_api_value", "spa_in_api_value1",
+                                   "spa_in_api_value2", "spa_in_api_value3",
+                                   "spa_in_api_value4", "spa_in_api_value5",
+                                   "spa_in_api_path" };
+  if (path->getParticipants()[0] == SPDYLAY_CLIENT_BC &&
+      path->getParticipants()[1] == NGINX_BC) {
+    for (auto value : values) {
+      assert(path->getTestInputs().count(value));
+      if (std::string(path->getTestInputs()[value].begin(),
+                      path->getTestInputs()[value].end())
+              .find_first_of("\r\n") != std::string::npos) {
         return true;
       }
     }
@@ -205,27 +302,9 @@ bool nginxPercent00(std::map<std::string, std::vector<uint8_t> > testCase) {
   return false;
 }
 
-bool nginxValueCrLf(std::map<std::string, std::vector<uint8_t> > testCase) {
-  const char *values[] = { "spa_in_api_value", "spa_in_api_value1",
-                           "spa_in_api_value2", "spa_in_api_value3",
-                           "spa_in_api_value4", "spa_in_api_value5",
-                           "spa_in_api_path", NULL };
-  for (int i = 0; values[i]; i++) {
-    if (testCase.count(values[i]) > 0 &&
-        (std::find(testCase[values[i]].begin(), testCase[values[i]].end(),
-                   '\r') !=
-             testCase[values[i]].end() ||
-         std::find(testCase[values[i]].begin(), testCase[values[i]].end(),
-                   '\n') != testCase[values[i]].end())) {
-      return true;
-    }
-  }
-  return false;
-}
-
-bool
-nginxDotDotPastRoot(std::map<std::string, std::vector<uint8_t> > testCase) {
-  if (testCase.count("spa_in_api_path")) {
+bool nginxDotDotPastRoot(SPA::Path *path) {
+  if (path->getParticipants()[0] == SPDYLAY_CLIENT_BC &&
+      path->getParticipants()[1] == NGINX_BC) {
     int depth = 0;
 
     enum {
@@ -234,7 +313,8 @@ nginxDotDotPastRoot(std::map<std::string, std::vector<uint8_t> > testCase) {
       DOT,
       DOTDOT
     } state = SLASH;
-    for (auto c : testCase["spa_in_api_path"]) {
+    assert(path->getTestInputs().count("spa_in_api_path"));
+    for (auto c : path->getTestInputs()["spa_in_api_path"]) {
       switch (state) {
       case SLASH:
         if (c == '/') {
@@ -280,20 +360,22 @@ nginxDotDotPastRoot(std::map<std::string, std::vector<uint8_t> > testCase) {
   return false;
 }
 
-bool nginxTrace(std::map<std::string, std::vector<uint8_t> > testCase) {
-  if (testCase.count("spa_in_api_methodId"))
-    return testCase["spa_in_api_methodId"] == std::vector<uint8_t>({
+bool nginxTrace(SPA::Path *path) {
+  if (path->getParticipants()[0] == SPDYLAY_CLIENT_BC &&
+      path->getParticipants()[1] == NGINX_BC) {
+    assert(path->getTestInputs().count("spa_in_api_methodId"));
+    return path->getTestInputs()["spa_in_api_methodId"] ==
+           std::vector<uint8_t>({
       6
     });
+  }
   return false;
 }
 
-bool sipFromBadChar(std::map<std::string, std::vector<uint8_t> > testCase) {
-  // 	assert( testCase.count( "spa_in_api_from" ) );
-  if (testCase.count("spa_in_api_from")) {
-    for (auto it : testCase["spa_in_api_from"]) {
-      if (it == '\0')
-        break;
+bool sipFromBadChar(SPA::Path *path) {
+  if (path->getParticipants()[0] == EXOSIP_CLIENT_BC) {
+    assert(path->getTestInputs().count("spa_in_api_from"));
+    for (auto it : path->getTestInputs()["spa_in_api_from"]) {
       if (!isprint(it))
         return true;
     }
@@ -301,45 +383,36 @@ bool sipFromBadChar(std::map<std::string, std::vector<uint8_t> > testCase) {
   return false;
 }
 
-bool sipFromNoScheme(std::map<std::string, std::vector<uint8_t> > testCase) {
-  // 	assert( testCase.count( "spa_in_api_from" ) );
-  if (testCase.count("spa_in_api_from")) {
-    std::string from;
-    for (auto it : testCase["spa_in_api_from"]) {
-      if (it == '\0')
-        break;
-      from += (char) it;
-    }
+bool sipFromNoScheme(SPA::Path *path) {
+  if (path->getParticipants()[0] == EXOSIP_CLIENT_BC) {
+    assert(path->getTestInputs().count("spa_in_api_from"));
+    std::string from(path->getTestInputs()["spa_in_api_from"].begin(),
+                     path->getTestInputs()["spa_in_api_from"].end());
     return from.find("sip:") == std::string::npos;
   }
   return false;
 }
 
-// bool sipFromBadQuote( std::map<std::string, std::vector<uint8_t> > testCase )
-// {
-// 	assert( testCase.count( "spa_in_api_from" ) );
-// 	unsigned long count = 0;
-// 	for ( std::vector<uint8_t>::iterator it =
-// testCase["spa_in_api_from"].begin(), ie = testCase["spa_in_api_from"].end();
-// it != ie; it++ ) {
-// 		if ( *it == '\0' )
-// 			break;
-// 		if ( *it == '\"' )
-// 			count++;
-// 	}
-// 	return count != 0 && count != 2;
-// }
-
-bool
-sipToConfusedScheme(std::map<std::string, std::vector<uint8_t> > testCase) {
-  // 	assert( testCase.count( "spa_in_api_to" ) );
-  if (testCase.count("spa_in_api_to")) {
-    std::string to;
-    for (auto it : testCase["spa_in_api_to"]) {
-      if (it == '\0')
-        break;
-      to += (char) tolower(it);
+bool sipFromBadQuote(SPA::Path *path) {
+  if (path->getParticipants()[0] == EXOSIP_CLIENT_BC) {
+    unsigned long count = 0;
+    assert(path->getTestInputs().count("spa_in_api_from"));
+    for (auto it : path->getTestInputs()["spa_in_api_from"]) {
+      if (it == '\"')
+        count++;
     }
+    return count != 0 && count != 2;
+  }
+  return false;
+}
+
+bool sipToConfusedScheme(SPA::Path *path) {
+  if (path->getParticipants()[0] == EXOSIP_CLIENT_BC) {
+    assert(path->getTestInputs().count("spa_in_api_to"));
+    std::string to;
+    std::transform(path->getTestInputs()["spa_in_api_to"].begin(),
+                   path->getTestInputs()["spa_in_api_to"].end(), to.begin(),
+                   ::tolower);
     if (to.compare(0, 3, "sip") == 0 && to[4] == ':')
       return true;
     if (to.compare(0, 4, "<sip") == 0 && to[5] == ':')
@@ -348,10 +421,10 @@ sipToConfusedScheme(std::map<std::string, std::vector<uint8_t> > testCase) {
   return false;
 }
 
-bool sipEventBadChar(std::map<std::string, std::vector<uint8_t> > testCase) {
-  // 	assert( testCase.count( "spa_in_api_event" ) );
-  if (testCase.count("spa_in_api_event")) {
-    for (auto it : testCase["spa_in_api_event"]) {
+bool sipEventBadChar(SPA::Path *path) {
+  if (path->getParticipants()[0] == EXOSIP_CLIENT_BC) {
+    assert(path->getTestInputs().count("spa_in_api_event"));
+    for (auto it : path->getTestInputs()["spa_in_api_event"]) {
       if (it == '\0')
         break;
       if (!isprint(it))
@@ -361,50 +434,39 @@ bool sipEventBadChar(std::map<std::string, std::vector<uint8_t> > testCase) {
   return false;
 }
 
-static struct {
-  TestClassifier classifier;
-  const char *outFileName;
-} classifiers[] = { { spdylayDiffVersion, "BadInputs.spdylayDiffVersion" },
-                    { nginxUnknownColonHeader,
-                      "BadInputs.nginxUnknownColonHeader" },
-                    { nginxTrace, "BadInputs.nginxTrace" },
-                    { nginxValueCrLf, "BadInputs.nginxValueCrLf" },
-                    { nginxBadUrlPercent, "BadInputs.nginxBadUrlPercent" },
-                    { nginxPercent00, "BadInputs.nginxPercent00" },
-                    { nginxDotDotPastRoot, "BadInputs.nginxDotDotPastRoot" },
-                    { nginxHttp09, "BadInputs.nginxHttp09" },
-                    { spdylayBadName, "BadInputs.spdylayBadName" },
-                    { spdylayBadValueChar, "BadInputs.spdylayBadValueChar" },
-                    { sipFromBadChar, "BadInputs.sipFromBadChar" },
-                    { sipFromNoScheme, "BadInputs.sipFromNoScheme" },
-                    { sipToConfusedScheme, "BadInputs.sipToConfusedScheme" },
-                    { sipEventBadChar, "BadInputs.sipEventBadChar" },
-                    { NULL, "BadInputs.default" }, };
-//   { nginxSpdy3, "BadInputs.nginxSpdy3" },
-//   { spdylayEmptyValue, "BadInputs.spdylayEmptyValue" },
-//   { spdylayNoDataLength, "BadInputs.spdylayNoDataLength" },
+static std::vector<std::pair<TestClassifier, std::string> > classifiers = {
+  { netcalcDiv0, "netcalcDiv0.paths" },
+  { netcalcImplicitArg, "netcalcImplicitArg.paths" },
+  { spdylayDiffVersion, "spdylayDiffVersion.paths" },
+  { spdylayEmptyValue, "spdylayEmptyValue.paths" },
+  { spdylayNoDataLength, "spdylayNoDataLength.paths" },
+  //   { nginxSpdy3, "nginxSpdy3.paths" },
+  { nginxUnknownColonHeader, "nginxUnknownColonHeader.paths" },
+  { nginxTrace, "nginxTrace.paths" },
+  { nginxValueCrLf, "nginxValueCrLf.paths" },
+  { nginxBadUrlPercent, "nginxBadUrlPercent.paths" },
+  { nginxPercent00, "nginxPercent00.paths" },
+  { nginxDotDotPastRoot, "nginxDotDotPastRoot.paths" },
+  { nginxHttp09, "nginxHttp09.paths" },
+  { spdylayBadName, "spdylayBadName.paths" },
+  { spdylayBadValueChar, "spdylayBadValueChar.paths" },
+  { sipFromBadChar, "sipFromBadChar.paths" },
+  { sipFromNoScheme, "sipFromNoScheme.paths" },
+  { sipToConfusedScheme, "sipToConfusedScheme.paths" },
+  { sipEventBadChar, "sipEventBadChar.paths" }, { NULL, "default.paths" },
+};
 
 std::vector<unsigned long> resultCounts;
-
-std::string testToStr(std::map<std::string, std::vector<uint8_t> > testCase) {
-  std::stringstream result;
-  for (auto vit : testCase) {
-    result << vit.first;
-    for (auto bit : vit.second)
-      result << " " << std::hex << (int) bit;
-    result << std::endl;
-  }
-  result << std::endl;
-  return result.str();
-}
 
 void displayStats() {
   LOG() << "Breakdown:" << std::endl;
   unsigned long total = 0;
   for (unsigned i = 0; i < resultCounts.size(); i++) {
-    LOG() << "  " << classifiers[i].outFileName << ": " << resultCounts[i]
-          << std::endl;
-    total += resultCounts[i];
+    if (resultCounts[i]) {
+      LOG() << "  " << classifiers[i].second << ": " << resultCounts[i]
+            << std::endl;
+      total += resultCounts[i];
+    }
   }
   LOG() << "  Total: " << total << std::endl;
 }
@@ -427,68 +489,33 @@ int main(int argc, char **argv, char **envp) {
   }
 
   std::ifstream inputFile(inputFileName);
-  unsigned long lineNo = 0;
+  assert(inputFile.is_open() && "Unable to open input file.");
+  SPA::PathLoader pathLoader(inputFile);
 
-  int i = 0;
-  std::vector<std::ofstream *> outputFiles;
-  do {
-    if (classifiers[i].classifier)
-      LOG() << "Class " << i << " outputted to: " << classifiers[i].outFileName
-            << std::endl;
-    else
-      LOG() << "Default class outputted to: " << classifiers[i].outFileName
-            << std::endl;
-    outputFiles.push_back(new std::ofstream(classifiers[i].outFileName));
-    assert(outputFiles[i]->is_open());
-    resultCounts.push_back(0);
-  } while (classifiers[i++].classifier);
+  std::vector<std::ofstream *> outputFiles(classifiers.size());
+  resultCounts.resize(classifiers.size());
 
-  std::map<std::string, std::vector<uint8_t> > testCase;
-  while (inputFile.good() || follow) {
-    if (follow && !inputFile.good()) {
+  SPA::Path *path;
+  while ((path = pathLoader.getPath()) || follow) {
+    if (!path) {
       displayStats();
       LOG() << "Reached end of input. Sleeping." << std::endl;
       sleep(1);
-      inputFile.clear();
       continue;
     }
-    std::string line;
-    std::getline(inputFile, line);
-    lineNo++;
-
-    if (!line.empty()) {
-      size_t d = line.find(' ');
-      std::string name = line.substr(0, d);
-      assert(!name.empty() && "Empty variable name.");
-
-      std::vector<uint8_t> value;
-      if (d != std::string::npos) {
-        std::stringstream ss(line.substr(d + 1, std::string::npos));
-        ss << std::hex;
-
-        while (ss.good()) {
-          int c;
-          ss >> c;
-          value.push_back(c);
+    for (int i = 0;; i++) {
+      if ((!classifiers[i].first) || classifiers[i].first(path)) {
+        LOG() << "Test-case classified as " << classifiers[i].second
+              << std::endl;
+        if (!outputFiles[i]) {
+          outputFiles[i] = new std::ofstream(classifiers[i].second);
+          assert(outputFiles[i]->is_open());
         }
-      }
-      testCase[name] = value;
-    } else {
-      if (!testCase.empty()) {
-        for (i = 0;; i++) {
-          if ((!classifiers[i].classifier) ||
-              classifiers[i].classifier(testCase)) {
-            LOG() << "Test-case just before line " << lineNo
-                  << " classified as " << classifiers[i].outFileName
-                  << std::endl;
-            *outputFiles[i] << testToStr(testCase);
-            outputFiles[i]->flush();
-            resultCounts[i]++;
-            //             displayStats();
-            break;
-          }
-        }
-        testCase.clear();
+        *outputFiles[i] << *path;
+        outputFiles[i]->flush();
+        resultCounts[i]++;
+        displayStats();
+        break;
       }
     }
   }
