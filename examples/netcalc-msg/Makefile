@@ -95,8 +95,11 @@ cfg: $(CFGS)
 # 		CHECK REACHED netcalc-server.cpp:23; \
 # 		CHECK NOT REACHED netcalc-server.cpp:85;" \
 # 		2>&1 | tee $@.log
+# 
+# cluster: validated.paths
+# 	spa-cluster-manual $<
 
-validated.paths: netcalc-client.bc netcalc-server.bc netcalc-client.test netcalc-server.test
+cluster: netcalc-client.bc netcalc-server.bc netcalc-client.test netcalc-server.test
 	parallel-pic.sh \
 		netcalc-client.bc netcalc-server.bc\
 		netcalc-client.paths netcalc-server.paths $@ \
@@ -107,12 +110,7 @@ validated.paths: netcalc-client.bc netcalc-server.bc netcalc-client.test netcalc
 		KILL 1; \
 		TIMEOUT 2000; \
 		CHECK REACHED netcalc-server.cpp:23; \
-		CHECK NOT REACHED netcalc-server.cpp:85;" \
-		netcalc-client.test netcalc-server.test \
-		netcalc-client.gcno netcalc-server.gcno
-
-cluster: validated.paths
-	spaManualCluster $<
+		CHECK NOT REACHED netcalc-server.cpp:85;"
 
 run-pic: BadInputs.tested
 
@@ -122,5 +120,7 @@ run-spa: validated.paths
 
 clean:
 	rm -rf $(TARGETS) $(BC_TARGETS) $(TEST_TARGETS) $(PATHS) $(BADINPUTS) $(CFGS) $(CFGS:.pdf=.dot)
-	rm -f netcalc-client.paths netcalc-server.paths validated.paths false-positives.paths
+	rm -f netcalc-client.paths netcalc-server.paths
+	rm -f validated.paths false-positives.paths
+	rm -f default.paths netcalcDiv0.paths netcalcImplicitArg.paths
 	rm -rf *.gcno *.log *.debug klee-out-* klee-last

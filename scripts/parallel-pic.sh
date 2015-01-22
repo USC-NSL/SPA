@@ -163,6 +163,9 @@ tail --follow=name $VALID_PATHS_LIST 2>/dev/null \
   | parallel cat {} >> $VALID_PATHS &
 VALID_JOIN_PID=$!
 
+spa-cluster-manual -f $VALID_PATHS &
+CLUSTER_PID=$!
+
 (START_TIME="`date '+%s.%N'`"
 while [ 1 ]; do
   CUR_TIME="`date '+%s.%N'`"
@@ -194,6 +197,9 @@ wait $UNTESTED_LIST_PID
 wait $VALIDATE_PID
 wait $VALID_LIST_PID
 wait $VALID_JOIN_PID
+sleep 1
+kill $CLUSTER_PID
+wait $CLUSTER_PID 2>/dev/null || true
 sleep 1
 kill $STATS_PID
 wait $STATS_PID 2>/dev/null || true
