@@ -120,7 +120,9 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
     }
   }
 
-  participants = kState->participants;
+  if (kState->senderPath) {
+    participants = kState->senderPath->getParticipants();
+  }
   participants.push_back(kState->pc->inst->getParent()->getParent()->getParent()
                              ->getModuleIdentifier());
 
