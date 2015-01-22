@@ -102,7 +102,7 @@ cfg: $(CFGS)
 cluster: netcalc-client.bc netcalc-server.bc netcalc-client.test netcalc-server.test
 	parallel-pic.sh \
 		netcalc-client.bc netcalc-server.bc\
-		netcalc-client.paths netcalc-server.paths $@ \
+		netcalc-client.paths netcalc-server.paths validated.paths \
 		"RUN ./netcalc-server.test; \
 		WAIT LISTEN UDP 3141; \
 		RUN ./netcalc-client.test 0 0 +; \
