@@ -223,10 +223,17 @@ Path *PathLoader::getPath() {
       } break;
       case EXPLOREDPATH: {
         auto delim = line.find(" ");
-        std::string srcLine = line.substr(0, delim);
-        bool branch = !(line.substr(delim + 1) == "0");
+        static std::string moduleName = "";
+        if (delim == std::string::npos) {
+          moduleName = line.substr(delim + 1);
+        } else {
+          std::string srcLine = line.substr(0, delim);
+          bool branch = !(line.substr(delim + 1) == "0");
 
-        path->exploredPath.push_back(std::make_pair(srcLine, branch));
+          assert(!moduleName.empty());
+          path->exploredPath[moduleName]
+              .push_back(std::make_pair(srcLine, branch));
+        }
       } break;
       case TESTINPUTS: {
         std::string name = line.substr(0, line.find(" "));

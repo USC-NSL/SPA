@@ -23,6 +23,18 @@ Path::Path() {}
 
 Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
   klee::ExecutionState state(*kState);
+
+  // Load data from sender path.
+  if (kState->senderPath) {
+    tags = kState->senderPath->tags;
+    exploredLineCoverage = kState->senderPath->exploredLineCoverage;
+    exploredFunctionCoverage = kState->senderPath->exploredFunctionCoverage;
+    participants = kState->senderPath->getParticipants();
+    exploredPath = kState->senderPath->exploredPath;
+    testLineCoverage = kState->senderPath->testLineCoverage;
+    testFunctionCoverage = kState->senderPath->testFunctionCoverage;
+  }
+
   for (auto it : state.symbolics) {
     std::string name = it.first->name;
 
@@ -98,7 +110,6 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
     exploredLineCoverage[srcFile][srcLineNum] = true;
     exploredFunctionCoverage[inst->getParent()->getParent()->getName().str()] =
         true;
-
   }
   for (llvm::Function &fn :
        *state.pc->inst->getParent()->getParent()->getParent()) {
@@ -120,15 +131,14 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
     }
   }
 
-  if (kState->senderPath) {
-    participants = kState->senderPath->getParticipants();
-  }
-  participants.push_back(kState->pc->inst->getParent()->getParent()->getParent()
-                             ->getModuleIdentifier());
+  std::string moduleName = kState->pc->inst->getParent()->getParent()
+      ->getParent()->getModuleIdentifier();
+  participants.push_back(moduleName);
 
+  exploredPath[moduleName].clear();
   for (auto branchDecision : state.branchDecisions) {
-    exploredPath.push_back(std::make_pair(debugLocation(branchDecision.first),
-                                          branchDecision.second));
+    exploredPath[moduleName].push_back(std::make_pair(
+        debugLocation(branchDecision.first), branchDecision.second));
   }
 
   // Unknowns to solve for,
@@ -267,8 +277,11 @@ std::ostream &operator<<(std::ostream &stream, const Path &path) {
 
   if (!path.getExploredPath().empty()) {
     stream << SPA_PATH_EXPLOREDPATH_START << std::endl;
-    for (auto it : path.getExploredPath()) {
-      stream << it.first << " " << it.second << std::endl;
+    for (auto moduleIt : path.getExploredPath()) {
+      stream << moduleIt.first << std::endl;
+      for (auto pathIt : moduleIt.second) {
+        stream << pathIt.first << " " << pathIt.second << std::endl;
+      }
     }
     stream << SPA_PATH_EXPLOREDPATH_END << std::endl;
   }

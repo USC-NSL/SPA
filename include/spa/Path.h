@@ -49,7 +49,8 @@ private:
   std::map<std::string, std::map<long, bool> > exploredLineCoverage;
   std::map<std::string, bool> exploredFunctionCoverage;
   std::vector<std::string> participants;
-  std::vector<std::pair<std::string, bool> > exploredPath;
+  std::map<std::string, std::vector<std::pair<std::string, bool> > >
+      exploredPath;
   std::map<std::string, std::vector<uint8_t> > testInputs;
   std::map<std::string, std::map<long, bool> > testLineCoverage;
   std::map<std::string, bool> testFunctionCoverage;
@@ -113,7 +114,8 @@ public:
 
   std::vector<std::string> getParticipants() const { return participants; }
 
-  std::vector<std::pair<std::string, bool> > getExploredPath() const {
+  std::map<std::string, std::vector<std::pair<std::string, bool> > >
+  getExploredPath() const {
     return exploredPath;
   }
 
