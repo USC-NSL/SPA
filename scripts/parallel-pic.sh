@@ -7,7 +7,8 @@ SERVER_BC="$2"
 CLIENT_PATHS="$3"
 SERVER_PATHS="$4"
 VALID_PATHS="$5"
-VALIDATION_SCRIPT="$6"
+VALIDATION_WORK_DIR="$6"
+VALIDATION_SCRIPT="$7"
 
 [ -r "$CLIENT_BC" ] \
   || (echo "Error reading client bit-code: $CLIENT_BC."; exit 1)
@@ -16,10 +17,11 @@ VALIDATION_SCRIPT="$6"
 [ -n "$CLIENT_PATHS" ] || (echo "No client path-file specified."; exit 1)
 [ -n "$SERVER_PATHS" ] || (echo "No server path-file specified."; exit 1)
 [ -n "$VALID_PATHS" ] || (echo "No validated path-file specified."; exit 1)
+[ -n "$VALIDATION_WORK_DIR" ] || (echo "No validation work directory."; exit 1)
 [ -n "$VALIDATION_SCRIPT" ] || (echo "No validation script."; exit 1)
 
 BASEFILES=""
-shift 6
+shift 7
 while [ "$1" != "" ]; do
   BASEFILES="$BASEFILES --basefile $1"
   [ -r "$1" ] || (echo "Error reading basefile: $1."; exit 1)
@@ -115,32 +117,25 @@ touch $UNTESTED_PATHS_LIST
   done) &
 UNTESTED_LIST_PID=$!
 
-# tail --follow=name $UNTESTED_PATHS_LIST 2>/dev/null \
-#   | parallel --progress --eta \
-#       --sshloginfile .. --controlmaster \
-#       --noswap -v --tag --linebuffer \
-#       $BASEFILES --transfer --return "{.}-valid.paths" --cleanup \
-#       "echo Basefiles: $BASEFILES; \
-#       echo Transfer: {}; echo Return: {.}-valid.paths; echo ls:; ls; \
-#       echo netns: spa{#}; \
-#       echo user: \$USER; \
-#       date '+Started: %s.%N (%c)'; \
-#       sudo ip netns add spa{#}; \
-#       sudo ip netns exec spa{#} ifconfig lo 127.0.0.1/8 up; \
-#       sudo ip netns exec spa{#} sudo -u \$USER \
-#         LD_LIBRARY_PATH=spa/Release+Asserts/lib \
-#           spa/Release+Asserts/bin/spa-validate \
-#             -d -gcno-dir-map $PWD=. \
-#             {} {.}-valid.paths \
-#             \"$VALIDATION_SCRIPT\"; \
-#       sudo ip netns delete spa{#}; \
-#       date '+Finished: %s.%N (%c)';" 2>&1 | tee $VALID_PATHS.log &
 tail --follow=name $UNTESTED_PATHS_LIST 2>/dev/null \
-  | parallel -j 1 --progress --eta \
+  | parallel --progress --eta \
+      --sshloginfile .. --controlmaster \
       --noswap -v --tag --linebuffer \
-      "spa-validate {} {.}-valid.paths.tmp \"$VALIDATION_SCRIPT\"; \
-       mv {.}-valid.paths.tmp {.}-valid.paths" \
-      >$VALID_PATHS.log 2>&1 &
+      --transfer --return "{.}-valid.paths" --cleanup \
+      "cd $VALIDATION_WORK_DIR; \
+      echo Transfer: {}; echo Return: {.}-valid.paths; echo pwd: \$PWD; \
+      echo ls:; ls; \
+      echo netns: spa{#}; \
+      echo user: \$USER; \
+      date '+Started: %s.%N (%c)'; \
+      sudo ip netns add spa{#}; \
+      sudo ip netns exec spa{#} ifconfig lo 127.0.0.1/8 up; \
+      sudo ip netns exec spa{#} sudo -u \$USER \
+        \$HOME/spa/Release+Asserts/bin/spa-validate -d \
+          {} {.}-valid.paths \
+          \"$VALIDATION_SCRIPT\"; \
+      sudo ip netns delete spa{#}; \
+      date '+Finished: %s.%N (%c)';" 2>&1 | tee $VALID_PATHS.log &
 VALIDATE_PID=$!
 
 touch $VALID_PATHS_LIST

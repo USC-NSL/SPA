@@ -62,47 +62,48 @@ netcalc-server.dot: netcalc-server.bc $(SPA)
 
 cfg: $(CFGS)
 
-# netcalc-client.paths: netcalc-client.bc $(shell which spa-explore)
-# 	spa-explore \
-# 		--out-paths $@ \
-# 		--start-from SpaExecuteQueryEntry \
-# 		--toward "SUCCEEDING netcalc-client.cpp:56" \
-# 		--stop-at "SUCCEEDING netcalc-client.cpp:56" \
-# 		--output-at "SUCCEEDING netcalc-client.cpp:56" \
-# 		$< 2>&1 | tee $@.log
-# 
-# netcalc-server.paths: netcalc-server.bc netcalc-client.paths
-# 	spa-explore \
-# 		--in-paths netcalc-client.paths --connect-default \
-# 		--out-paths $@ \
-# 		--start-from SpaHandleQueryEntry \
-# 		--away-from netcalc-server.cpp:85 \
-# 		--output-terminal \
-# 		--output-at "NOT REACHING netcalc-server.cpp:85" \
-# 		--filter-output "REACHED netcalc-server.cpp:23 \
-# 		                 AND NOT REACHED netcalc-server.cpp:85" \
-# 		$< 2>&1 | tee $@.log
-# 
-# validated.paths: netcalc-server.paths $(TEST_TARGETS) $(shell which spa-validate)
-# 	killall netcalc-client.test netcalc-server.test || true
-# 	spa-validate $< $@ false-positives.paths \
-# 		"RUN ./netcalc-server.test; \
-# 		WAIT LISTEN UDP 3141; \
-# 		RUN ./netcalc-client.test 0 0 +; \
-# 		WAIT DONE 2; \
-# 		KILL 1; \
-# 		TIMEOUT 2000; \
-# 		CHECK REACHED netcalc-server.cpp:23; \
-# 		CHECK NOT REACHED netcalc-server.cpp:85;" \
-# 		2>&1 | tee $@.log
-# 
-# cluster: validated.paths
-# 	spa-cluster-manual $<
+netcalc-client.paths: netcalc-client.bc $(shell which spa-explore)
+	spa-explore \
+		--out-paths $@ \
+		--start-from SpaExecuteQueryEntry \
+		--toward "SUCCEEDING netcalc-client.cpp:56" \
+		--stop-at "SUCCEEDING netcalc-client.cpp:56" \
+		--output-at "SUCCEEDING netcalc-client.cpp:56" \
+		$< 2>&1 | tee $@.log
 
-cluster: netcalc-client.bc netcalc-server.bc netcalc-client.test netcalc-server.test
+netcalc-server.paths: netcalc-server.bc netcalc-client.paths
+	spa-explore \
+		--in-paths netcalc-client.paths --connect-default \
+		--out-paths $@ \
+		--start-from SpaHandleQueryEntry \
+		--away-from netcalc-server.cpp:85 \
+		--output-terminal \
+		--output-at "NOT REACHING netcalc-server.cpp:85" \
+		--filter-output "REACHED netcalc-server.cpp:23 \
+		                 AND NOT REACHED netcalc-server.cpp:85" \
+		$< 2>&1 | tee $@.log
+
+validated.paths: netcalc-server.paths $(TEST_TARGETS) $(shell which spa-validate)
+	killall netcalc-client.test netcalc-server.test || true
+	spa-validate $< $@ false-positives.paths \
+		"RUN ./netcalc-server.test; \
+		WAIT LISTEN UDP 3141; \
+		RUN ./netcalc-client.test 0 0 +; \
+		WAIT DONE 2; \
+		KILL 1; \
+		TIMEOUT 2000; \
+		CHECK REACHED netcalc-server.cpp:23; \
+		CHECK NOT REACHED netcalc-server.cpp:85;" \
+		2>&1 | tee $@.log
+
+cluster: validated.paths
+	spa-cluster-manual $<
+
+parallel-cluster: netcalc-client.bc netcalc-server.bc netcalc-client.test netcalc-server.test
 	parallel-pic.sh \
 		netcalc-client.bc netcalc-server.bc\
 		netcalc-client.paths netcalc-server.paths validated.paths \
+		"spa/examples/netcalc-msg" \
 		"RUN ./netcalc-server.test; \
 		WAIT LISTEN UDP 3141; \
 		RUN ./netcalc-client.test 0 0 +; \
@@ -112,9 +113,9 @@ cluster: netcalc-client.bc netcalc-server.bc netcalc-client.test netcalc-server.
 		CHECK REACHED netcalc-server.cpp:23; \
 		CHECK NOT REACHED netcalc-server.cpp:85;"
 
-run-pic: BadInputs.tested
+run-pic: parallel-cluster
 
-run-spa: validated.paths
+run-spa: cluster
 
 .PRECIOUS: $(PATHS) $(BADINPUTS)
 
