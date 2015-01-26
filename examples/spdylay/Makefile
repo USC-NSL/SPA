@@ -113,9 +113,9 @@ spa-client.paths: spa-client.bc $(shell which spa-explore)
 	spa-explore \
 		--out-paths $@ \
 		--start-from spa_SendRequest \
-		--stop-at spa-client.c:41 \
-		--toward spa-client.c:41 \
-		--output-at spa-client.c:41 \
+		--stop-at spa_msg_output_point \
+		--toward spa_msg_output_point \
+		--output-at spa_msg_output_point \
 		$< 2>&1 | tee $@.log
 
 # spa-server.paths: spa-server.bc $(SPA_EXE)
@@ -129,11 +129,11 @@ spa-server.paths: spa-server.bc spa-client.paths $(shell which spa-explore)
 		--in-paths spa-client.paths --connect-default \
 		--out-paths $@ \
 		--start-from spa_HandleRequest \
-		--away-from request_recv_callback \
+		--away-from spa_valid_path_point \
 		--output-terminal \
-		--output-at "NOT REACHING request_recv_callback" \
-		--filter-output "REACHED spa-server.c:249 \
-			AND NOT REACHED request_recv_callback" \
+		--output-at "NOT REACHING spa_valid_path_point" \
+		--filter-output "REACHED spa_msg_input_point \
+			AND NOT REACHED spa_valid_path_point" \
 		$< 2>&1 | tee $@.log
 
 # BadInputs.untested: $(PATHS)
@@ -155,8 +155,8 @@ validated.paths: spa-server.paths $(TEST_TARGETS) $(shell which spa-validate)
 		WAIT DONE 2; \
 		KILL 1; \
 		TIMEOUT 2000; \
-		CHECK REACHED REACHED spa-server.c:249 \
-			AND NOT REACHED request_recv_callback;" \
+		CHECK REACHED REACHED spa_msg_input_point \
+			AND NOT REACHED spa_valid_path_point;" \
 		2>&1 | tee $@.log
 
 %.tested.txt: %.tested
