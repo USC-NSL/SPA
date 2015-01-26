@@ -155,9 +155,21 @@ validated.paths: spa-server.paths $(TEST_TARGETS) $(shell which spa-validate)
 		WAIT DONE 2; \
 		KILL 1; \
 		TIMEOUT 2000; \
-		CHECK REACHED REACHED spa_msg_input_point \
+		CHECK REACHED spa_msg_input_point \
 			AND NOT REACHED spa_valid_path_point;" \
 		2>&1 | tee $@.log
+
+parallel-pic: spa-client.bc spa-server.bc
+	parallel-pic.sh $^ \
+		spa-client.paths spa-server.paths validated.paths \
+		"RUN ./spa-server.e2etest.exe; \
+		WAIT LISTEN UDP 8000; \
+		RUN ./spa-client.e2etest.exe; \
+		WAIT DONE 2; \
+		KILL 1; \
+		TIMEOUT 2000; \
+		CHECK REACHED spa_msg_input_point \
+			AND NOT REACHED spa_valid_path_point;"
 
 %.tested.txt: %.tested
 	spaTest2Str $< $@ 2>&1 | tee $@.log

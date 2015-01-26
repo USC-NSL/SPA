@@ -99,9 +99,8 @@ validated.paths: netcalc-server.paths $(TEST_TARGETS) $(shell which spa-validate
 cluster: validated.paths
 	spa-cluster-manual $<
 
-parallel-cluster: netcalc-client.bc netcalc-server.bc netcalc-client.test netcalc-server.test
-	parallel-pic.sh \
-		netcalc-client.bc netcalc-server.bc\
+parallel-cluster: netcalc-client.bc netcalc-server.bc
+	parallel-pic.sh $^ \
 		netcalc-client.paths netcalc-server.paths validated.paths \
 		"spa/examples/netcalc-msg" \
 		"RUN ./netcalc-server.test; \
