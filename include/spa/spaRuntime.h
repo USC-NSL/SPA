@@ -29,6 +29,21 @@ void __attribute__((noinline, weak)) spa_return() {
   static uint8_t i = 0;
   i++;
 }
+void __attribute__((noinline, weak)) spa_msg_output_point() {
+  // Complicated NOP to prevent inlining.
+  static uint8_t i = 0;
+  i++;
+}
+void __attribute__((noinline, weak)) spa_msg_input_point() {
+  // Complicated NOP to prevent inlining.
+  static uint8_t i = 0;
+  i++;
+}
+void __attribute__((noinline, weak)) spa_valid_path_point() {
+  // Complicated NOP to prevent inlining.
+  static uint8_t i = 0;
+  i++;
+}
 void __attribute__((noinline))
     spa_runtime_call(SpaRuntimeHandler_t handler, ...);
 // void __attribute__((noinline, weak)) spa_cost(int cost) {
@@ -97,6 +112,7 @@ SpaTag_t __attribute__((weak)) ValidPath;
   do {                                                                         \
     spa_tag(ValidPath, "1");                                                   \
     spa_runtime_call(spa_valid_path_handler);                                  \
+    spa_valid_path_point();                                                    \
     spa_waypoint(SPA_MAX_WAYPOINTS - 2);                                       \
     spa_checkpoint();                                                          \
   } while (0)
@@ -136,6 +152,7 @@ SpaTag_t __attribute__((weak)) MsgReceived;
               "spa_init_in_msg_" name);                                        \
     spa_tag(MsgReceived, "1");                                                 \
     spa_runtime_call(spa_msg_input_handler, var, size, "spa_in_msg_" name);    \
+    spa_msg_input_point();                                                     \
   } while (0)
 #ifdef ENABLE_KLEE
 #define spa_msg_input_size(var, name)                                          \
@@ -164,6 +181,7 @@ SpaTag_t __attribute__((weak)) MsgReceived;
                  "spa_out_msg_size_" name);                                    \
     spa_runtime_call(spa_msg_output_handler, var, size, maxSize,               \
                      "spa_out_msg_" name);                                     \
+    spa_msg_output_point();                                                    \
   } while (0)
 #define spa_msg_output_var(var)                                                \
   spa_msg_output(&var, sizeof(var), sizeof(var), #var)
