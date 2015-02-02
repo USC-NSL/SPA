@@ -162,6 +162,7 @@ validated.paths: spa-server.paths $(TEST_TARGETS) $(shell which spa-validate)
 parallel-pic: spa-client.bc spa-server.bc
 	parallel-pic.sh $^ \
 		spa-client.paths spa-server.paths validated.paths \
+		"spa/examples/spdylay" \
 		"RUN ./spa-server.e2etest.exe; \
 		WAIT LISTEN UDP 8000; \
 		RUN ./spa-client.e2etest.exe; \
