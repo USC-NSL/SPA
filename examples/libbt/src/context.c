@@ -58,6 +58,11 @@
 #   define snprintf _snprintf
 #endif
 
+#ifdef ENABLE_SPA
+ /*SPA*/
+#include "spa/spaRuntime.h"
+#endif
+
 static int parse_config_int( 
 	const char *file, int lineno, const char *token, 
 	int *value,
@@ -458,6 +463,10 @@ static btObject* btrequest(
 	    );
     }
     url[sizeof(url)-1]=0;
+
+    spa_msg_output_var(url);
+    spa_valid_path();
+
     btfree(idurl); btfree(dgurl); btfree(keyurl);
     curl_easy_setopt( hdl, CURLOPT_URL, url);
     io = bts_create_strstream( BTS_OUTPUT);

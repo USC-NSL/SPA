@@ -19,6 +19,7 @@
 #   include <arpa/inet.h>
 #   include <netdb.h>
 #   include <sys/socket.h>
+#   include <limits.h>
 #   if HAVE_UNISTD_H
 #      include <unistd.h>
 #   endif

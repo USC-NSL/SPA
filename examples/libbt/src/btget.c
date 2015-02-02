@@ -73,6 +73,11 @@
 
 #define V(vers) #vers
 
+#ifdef ENABLE_SPA
+ /*SPA*/
+#include "spa/spaRuntime.h"
+#endif
+
 /* globals */
 btContext context;
 int opthelp = 0;
@@ -257,6 +262,7 @@ btStream *fetchtorrent( char *url) {
 }
 
 int main( int argc, char **argv) {
+
     btStream *bts;
     struct btContext *ctx = &context;
     int cs;
@@ -342,12 +348,23 @@ int main( int argc, char **argv) {
 	exit(1);
     }
 
-    btContext_create( ctx, optexaggerate, ".libbtrc");
+    btContext_create( ctx, optexaggerate, NULL);
     while(optind<argc) {
 	if (opturl) {
 	    bts = fetchtorrent( argv[optind]);
 	} else {
+
+#ifdef ENABLE_SPA
+		int BUF_SIZE = 500;
+		char torrent_buf[BUF_SIZE];
+		spa_api_input_var(torrent_buf);
+		spa_assume(torrent_buf[sizeof(torrent_buf) - 1] == '\0');
+		bts = bts_create_strstream(BTS_INPUT);
+		bts_write(bts, torrent_buf, BUF_SIZE);
+#else
 	    bts = bts_create_filestream( argv[optind], BTS_INPUT);
+#endif
+
 	}
     
 	/* load tracker file */
@@ -666,4 +683,14 @@ int main( int argc, char **argv) {
     return 0;
 }
 
+#ifdef ENABLE_SPA
 
+void __attribute__((noinline,used)) SpaMainEntry() {
+  spa_api_entry();
+  int argc = 2;
+  char *argv[] = {"btget", "test.torrent"};
+  
+  main(argc, argv);
+}
+
+#endif
