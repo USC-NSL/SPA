@@ -9,7 +9,7 @@ TARGETS = spa-client.exe spa-server.exe
 BC_TARGETS = spa-client.bc spa-server.bc
 TEST_TARGETS = spa-client.e2etest.exe spa-server.e2etest.exe
 LOG_TARGETS = spa-client.log.exe spa-server.log.exe
-CC = gcc -Wall -g -I$(SPDYLAY)/include -I$(SPDYLAY)/lib/includes -I../../include
+CC = gcc -Wall -g --coverage -I$(SPDYLAY)/include -I$(SPDYLAY)/lib/includes -I../../include
 #-DANALYZE_RESPONSE
 LLVM_CC = clang -Wall -g -O0 -I$(SPDYLAY)/include -I$(SPDYLAY)/lib/includes -I../../include -emit-llvm
 #-DANALYZE_RESPONSE
@@ -52,15 +52,19 @@ out/llvm-fixed/Makefile:
 out/test/Makefile:
 	mkdir -p out/test
 	cd out/test; \
-	CFLAGS='-DENABLE_SPA -O0 -g' CXXFLAGS='-DENABLE_SPA -O0 -g' \
+	CFLAGS='-DENABLE_SPA -O0 -g --coverage' \
+	CXXFLAGS='-DENABLE_SPA -O0 -g --coverage' \
+	LDFLAGS='--coverage' \
 	../../$(SPDYLAY)/configure \
 		--disable-shared --enable-static
 
 out/test-fixed/Makefile:
 	mkdir -p out/test-fixed
 	cd out/test-fixed; \
-	CFLAGS='-DENABLE_SPA -DSPA_FIXES -O0 -g' \
-	CXXFLAGS='-DENABLE_SPA -DSPA_FIXES -O0 -g' ../../$(SPDYLAY)/configure \
+	CFLAGS='-DENABLE_SPA -DSPA_FIXES -O0 -g --coverage' \
+	CXXFLAGS='-DENABLE_SPA -DSPA_FIXES -O0 -g --coverage' \
+	LDFLAGS='--coverage'
+	../../$(SPDYLAY)/configure \
 		--disable-shared \
 		--enable-static
 
@@ -150,7 +154,7 @@ validated.paths: spa-server.paths $(TEST_TARGETS) $(shell which spa-validate)
 	killall spa-client.e2etest.exe spa-server.e2etest.exe || true
 	spa-validate $< $@ false-positives.paths \
 		"RUN ./spa-server.e2etest.exe; \
-		WAIT LISTEN UDP 8000; \
+		WAIT LISTEN TCP 8000; \
 		RUN ./spa-client.e2etest.exe; \
 		WAIT DONE 2; \
 		KILL 1; \
@@ -164,7 +168,7 @@ parallel-pic: spa-client.bc spa-server.bc
 		spa-client.paths spa-server.paths validated.paths \
 		"spa/examples/spdylay" \
 		"RUN ./spa-server.e2etest.exe; \
-		WAIT LISTEN UDP 8000; \
+		WAIT LISTEN TCP 8000; \
 		RUN ./spa-client.e2etest.exe; \
 		WAIT DONE 2; \
 		KILL 1; \
