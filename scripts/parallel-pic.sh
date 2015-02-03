@@ -56,7 +56,8 @@ CLIENT_SPLIT_PID=$!
 grep --line-buffered '/[0-9]*-client.paths$' $CLIENT_PATHS_LIST \
   | parallel --progress \
     --sshloginfile .. \
-    --noswap -v --tag --linebuffer \
+    --noswap --load 95% \
+    -v --tag --linebuffer \
     --transfer --return "{.}-server.paths" --cleanup \
     "cd $WORK_DIR; \
     echo Transfer: {}; echo Return: {.}-server.paths; echo pwd: \$PWD; \
@@ -78,7 +79,8 @@ SERVER_SPLIT_PID=$!
 grep --line-buffered '/[0-9]*-untested.paths$' $UNTESTED_PATHS_LIST \
   | parallel --progress \
     --sshloginfile .. \
-    --noswap -v --tag --linebuffer \
+    --noswap \
+    -v --tag --linebuffer \
     --transfer --return "{.}-valid.paths" --cleanup \
     "cd $WORK_DIR; \
     echo Transfer: {}; echo Return: {.}-valid.paths; echo pwd: \$PWD; \
@@ -126,6 +128,44 @@ spa-pic -max-instruction-time=10 -max-solver-time=10 -max-time=7200 \
   >$CLIENT_PATHS.log 2>&1 &
 CLIENT_PID=$!
 
+function interrupt {
+  echo "Killing client."
+  while kill $CLIENT_PID; do sleep 1; done
+  echo "Killing client split."
+  while kill $CLIENT_SPLIT_PID; do sleep 1; done
+  echo "Killing client list."
+  while kill $CLIENT_LIST_PID; do sleep 1; done
+  echo "Killing server."
+  while kill $SERVER_PID; do sleep 1; done
+  echo "Killing server list."
+  while kill $SERVER_LIST_PID; do sleep 1; done
+  echo "Killing server join."
+  while kill $SERVER_JOIN_PID; do sleep 1; done
+  echo "Killing server split."
+  while kill $SERVER_SPLIT_PID; do sleep 1; done
+  echo "Killing untested list."
+  while kill $UNTESTED_LIST_PID; do sleep 1; done
+  echo "Killing validate."
+  while kill $VALIDATE_PID; do sleep 1; done
+  echo "Killing valid list."
+  while kill $VALID_LIST_PID; do sleep 1; done
+  echo "Killing valid join."
+  while kill $VALID_JOIN_PID; do sleep 1; done
+  echo "Killing cluster."
+  while kill $CLUSTER_PID; do sleep 1; done
+  echo "Killing stats."
+  while kill $STATS_PID; do sleep 1; done
+
+  echo "Waiting."
+  wait
+
+  echo "Cleaning up."
+  rm -rf $TMPDIR
+
+  echo "Done."
+}
+trap interrupt SIGINT SIGTERM
+
 # Flush the pipeline
 wait $CLIENT_PID || true
 echo "Client analysis complete."
@@ -149,20 +189,13 @@ echo "Validation analysis complete."
 kill $VALID_LIST_PID
 wait $VALID_LIST_PID 2>/dev/null || true
 wait $VALID_JOIN_PID || true
-
-function clean_up {
-  kill $CLUSTER_PID
-  wait $CLUSTER_PID 2>/dev/null || true
-  sleep 1
-  kill $STATS_PID
-  wait $STATS_PID 2>/dev/null || true
-
-  echo "Cleaning up."
-  rm -rf $TMPDIR
-}
-trap clean_up SIGINT SIGTERM
-
+kill $CLUSTER_PID
+wait $CLUSTER_PID 2>/dev/null || true
 sleep 1
-clean_up
+kill $STATS_PID
+wait $STATS_PID 2>/dev/null || true
+
+echo "Cleaning up."
+rm -rf $TMPDIR
 
 echo "Done."
