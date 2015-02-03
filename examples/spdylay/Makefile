@@ -168,7 +168,7 @@ parallel-pic: spa-client.bc spa-server.bc
 		RUN ./spa-client.e2etest.exe; \
 		WAIT DONE 2; \
 		KILL 1; \
-		TIMEOUT 2000; \
+		TIMEOUT 600000; \
 		CHECK REACHED spa_msg_input_point \
 			AND NOT REACHED spa_valid_path_point;"
 
