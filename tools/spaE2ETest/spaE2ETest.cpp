@@ -138,7 +138,8 @@ void waitLogs(std::set<std::string> files) {
   }
 }
 
-bool processTestCase(char *clientCmd, char *serverCmd, uint16_t port) {
+bool processTestCase(char *clientCmd, char *serverCmd, uint16_t port,
+                     SPA::Path *path) {
   waitPortFree(port);
 
   std::string serverLog = tmpnam(NULL);
@@ -149,6 +150,19 @@ bool processTestCase(char *clientCmd, char *serverCmd, uint16_t port) {
   if (serverPID == 0) {
     setpgid(0, 0);
     setenv(LOG_FILE_VARIABLE, serverLog.c_str(), 1);
+
+    // Load test-case into environment.
+    for (auto input : path->getTestInputs()) {
+      std::stringstream value;
+      for (uint8_t b : input.second) {
+        if (!value.str().empty()) {
+          value << " ";
+        }
+        value << std::hex << (int) b;
+      }
+      setenv(input.first.c_str(), value.str().c_str(), 1);
+    }
+
     LOG() << "Launching server: " << serverCmd << std::endl;
     exit(system(serverCmd));
   }
@@ -162,6 +176,19 @@ bool processTestCase(char *clientCmd, char *serverCmd, uint16_t port) {
   if (clientPID == 0) {
     setpgid(0, 0);
     setenv(LOG_FILE_VARIABLE, clientLog.c_str(), 1);
+
+    // Load test-case into environment.
+    for (auto input : path->getTestInputs()) {
+      std::stringstream value;
+      for (uint8_t b : input.second) {
+        if (!value.str().empty()) {
+          value << " ";
+        }
+        value << std::hex << (int) b;
+      }
+      setenv(input.first.c_str(), value.str().c_str(), 1);
+    }
+
     LOG() << "Launching client: " << clientCmd << std::endl;
     exit(system(clientCmd));
   }
@@ -249,114 +276,81 @@ int main(int argc, char **argv, char **envp) {
   if (arg < (unsigned int) argc)
     refServerCmd = argv[arg++];
 
-  std::set<std::string> testedBundles;
+  std::set<std::map<std::string, std::vector<uint8_t> > > testedCases;
 
   // Load previously confirmed results to prevent redundant results.
   LOG() << "Loading previous results." << std::endl;
   std::ifstream inputFile(truePositivesFileName);
-  std::string bundle;
-  while (inputFile.good()) {
-    std::string line;
-    std::getline(inputFile, line);
-
-    if (!line.empty()) {
-      bundle += line + '\n';
-    } else {
-      if (!bundle.empty()) {
-        testedBundles.insert(bundle);
-        bundle.clear();
-      }
-    }
+  llvm::OwningPtr<SPA::PathLoader> pathLoader(new SPA::PathLoader(inputFile));
+  llvm::OwningPtr<SPA::Path> path;
+  while (path.reset(pathLoader->getPath()), path) {
+    testedCases.insert(path->getTestInputs());
   }
   inputFile.close();
-  unsigned long truePositives = testedBundles.size();
+  unsigned long truePositives = testedCases.size();
 
   inputFile.open(falsePositivesFileName);
-  bundle.clear();
-  while (inputFile.good()) {
-    std::string line;
-    std::getline(inputFile, line);
-
-    if (!line.empty()) {
-      bundle += line + '\n';
-    } else {
-      if (!bundle.empty()) {
-        testedBundles.insert(bundle);
-        bundle.clear();
-      }
-    }
+  pathLoader.reset(new SPA::PathLoader(inputFile));
+  while (path.reset(pathLoader->getPath()), path) {
+    testedCases.insert(path->getTestInputs());
   }
   inputFile.close();
-  unsigned long falsePositives = testedBundles.size() - truePositives;
+  unsigned long falsePositives = testedCases.size() - truePositives;
 
   unsigned long numTestCases = 0, numRepeats = 0;
 
   inputFile.open(inputFileName);
   assert(inputFile.is_open());
+  pathLoader.reset(new SPA::PathLoader(inputFile));
   std::ofstream truePositivesFile(truePositivesFileName, std::ios_base::app);
   assert(truePositivesFile.is_open());
   std::ofstream falsePositivesFile(falsePositivesFileName, std::ios_base::app);
   assert(falsePositivesFile.is_open());
 
-  while (inputFile.good() || follow) {
-    if (follow && !inputFile.good()) {
+  while ((path.reset(pathLoader->getPath()), path) || follow) {
+    if (follow && !path) {
       LOG() << "Reached end of input. Sleeping." << std::endl;
       sleep(1);
-      inputFile.clear();
       continue;
     }
-    std::string line;
-    std::getline(inputFile, line);
 
-    if (!line.empty()) {
-      bundle += line + '\n';
+    if (!path->getTestInputs().empty()) {
+      numTestCases++;
+      if (testedCases.count(path->getTestInputs())) {
+        LOG() << "Redundant test case. Ignoring." << std::endl;
+        numRepeats++;
+      } else {
+        LOG() << "Processing test case." << std::endl;
+        testedCases.insert(path->getTestInputs());
 
-      size_t d = line.find(' ');
-      std::string name = line.substr(0, d);
-      assert(!name.empty() && "Empty variable name.");
-      std::string value;
-      if (d != std::string::npos)
-        value = line.substr(d + 1, std::string::npos);
-      setenv(name.c_str(), value.c_str(), 1);
-    } else {
-      if (!bundle.empty()) {
-        numTestCases++;
-        if (testedBundles.count(bundle)) {
-          LOG() << "Redundant test case. Ignoring." << std::endl;
-          numRepeats++;
+        LOG() << "Testing cross-interoperability." << std::endl;
+        bool crossInterop =
+            processTestCase(clientCmd, serverCmd, port, path.get());
+        bool refInterop;
+        if (refServerCmd != NULL) {
+          LOG() << "Testing reference-interoperability." << std::endl;
+          refInterop =
+              processTestCase(clientCmd, refServerCmd, port, path.get());
         } else {
-          LOG() << "Processing test case." << std::endl;
-          testedBundles.insert(bundle);
-
-          LOG() << "Testing cross-interoperability." << std::endl;
-          bool crossInterop = processTestCase(clientCmd, serverCmd, port);
-          bool refInterop;
-          if (refServerCmd != NULL) {
-            LOG() << "Testing reference-interoperability." << std::endl;
-            refInterop = processTestCase(clientCmd, refServerCmd, port);
-          } else {
-            refInterop = false;
-          }
-          // Only consider interoperability bugs where the client and reference
-          // server assert valid but test server doesn't.
-          if (crossInterop && (!refInterop)) {
-            LOG() << "Found true positive. Outputting" << std::endl;
-            truePositives++;
-            truePositivesFile << bundle << std::endl;
-          } else {
-            LOG() << "Found false positive. Filtering." << std::endl;
-            falsePositives++;
-            falsePositivesFile << bundle << std::endl;
-          }
-          LOG() << "--------------------------------------------------"
-                << std::endl;
+          refInterop = false;
         }
-        bundle.clear();
-        LOG() << "Processed " << numTestCases
-              << " test cases: " << truePositives << " true positives, "
-              << falsePositives << " false positives, " << numRepeats
-              << " repeats." << std::endl;
+        // Only consider interoperability bugs where the client and reference
+        // server assert valid but test server doesn't.
+        if (crossInterop && (!refInterop)) {
+          LOG() << "Found true positive. Outputting" << std::endl;
+          truePositives++;
+          truePositivesFile << *path << std::endl;
+        } else {
+          LOG() << "Found false positive. Filtering." << std::endl;
+          falsePositives++;
+          falsePositivesFile << *path << std::endl;
+        }
+        LOG() << "--------------------------------------------------"
+              << std::endl;
       }
+      LOG() << "Processed " << numTestCases << " test cases: " << truePositives
+            << " true positives, " << falsePositives << " false positives, "
+            << numRepeats << " repeats." << std::endl;
     }
   }
 }
