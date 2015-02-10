@@ -165,16 +165,9 @@ validated.paths: spa-server.paths $(TEST_TARGETS) $(shell which spa-validate)
 
 parallel-pic: spa-client.bc spa-server.bc
 	parallel-pic.sh $^ \
-		spa-client.paths spa-server.paths validated.paths \
-		"spa/examples/spdylay" \
-		"RUN ./spa-server.e2etest.exe; \
-		WAIT LISTEN TCP 8000; \
-		RUN ./spa-client.e2etest.exe; \
-		WAIT DONE 2; \
-		KILL 1; \
-		TIMEOUT 600000; \
-		CHECK REACHED spa_msg_input_point \
-			AND NOT REACHED spa_valid_path_point;"
+		'spa/examples/spdylay' \
+		'./spa-client.e2etest.exe' './spa-server.e2etest.exe' 8000 \
+		spa-client.paths spa-server.paths validated.paths
 
 %.tested.txt: %.tested
 	spaTest2Str $< $@ 2>&1 | tee $@.log
