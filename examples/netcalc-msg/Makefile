@@ -94,18 +94,11 @@ validated.paths: netcalc-server.paths $(TEST_TARGETS) $(shell which spa-validate
 cluster: validated.paths
 	spa-cluster-manual $<
 
-parallel-cluster: netcalc-client.bc netcalc-server.bc
-	parallel-pic.sh $^ \
-		netcalc-client.paths netcalc-server.paths validated.paths \
+parallel-cluster:
+	parallel-pic.sh $(BC_TARGETS) \
 		"spa/examples/netcalc-msg" \
-		"RUN ./netcalc-server.test; \
-		WAIT LISTEN UDP 3141; \
-		RUN ./netcalc-client.test 0 0 +; \
-		WAIT DONE 2; \
-		KILL 1; \
-		TIMEOUT 2000; \
-		CHECK REACHED spa_msg_input_point; \
-		CHECK NOT REACHED spa_valid_path_point;"
+		"./netcalc-client.test 0 0 +" "./netcalc-server.test" 3141 \
+		netcalc-client.paths netcalc-server.paths validated.paths
 
 .PRECIOUS: $(PATHS) $(BADINPUTS)
 

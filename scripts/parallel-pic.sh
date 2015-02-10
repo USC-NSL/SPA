@@ -4,19 +4,23 @@ set -e
 
 CLIENT_BC="$1"
 SERVER_BC="$2"
-CLIENT_PATHS="$3"
-SERVER_PATHS="$4"
-VALID_PATHS="$5"
-WORK_DIR="$6"
-VALIDATION_SCRIPT="$7"
+WORK_DIR="$3"
+CLIENT_INVOKE="$4"
+SERVER_INVOKE="$5"
+PORT="$6"
+CLIENT_PATHS="$7"
+SERVER_PATHS="$8"
+VALID_PATHS="$9"
 
 [ -n "$CLIENT_BC" ] || (echo "No client bit-code."; exit 1)
 [ -n "$SERVER_BC" ] || (echo "No server bit-code."; exit 1)
+[ -n "$WORK_DIR" ] || (echo "No working directory."; exit 1)
+[ -n "$CLIENT_INVOKE" ] || (echo "No client invocation specified."; exit 1)
+[ -n "$SERVER_INVOKE" ] || (echo "No server invocation specified."; exit 1)
+[ -n "$PORT" ] || (echo "No port specified."; exit 1)
 [ -n "$CLIENT_PATHS" ] || (echo "No client path-file specified."; exit 1)
 [ -n "$SERVER_PATHS" ] || (echo "No server path-file specified."; exit 1)
 [ -n "$VALID_PATHS" ] || (echo "No validated path-file specified."; exit 1)
-[ -n "$WORK_DIR" ] || (echo "No work directory."; exit 1)
-[ -n "$VALIDATION_SCRIPT" ] || (echo "No validation script."; exit 1)
 
 TMPDIR="`mktemp -d`"
 CLIENT_PATHS_LIST="$TMPDIR/client-paths.list"
@@ -91,9 +95,9 @@ grep --line-buffered '/[0-9]*-untested.paths$' $UNTESTED_PATHS_LIST \
     sudo ip netns add spa{#}; \
     sudo ip netns exec spa{#} ifconfig lo 127.0.0.1/8 up; \
     sudo ip netns exec spa{#} sudo -u \$USER \
-      \$HOME/spa/Release+Asserts/bin/spa-validate -d \
-        {} {.}-valid.paths \
-        \"$VALIDATION_SCRIPT\"; \
+      \$HOME/spa/Release+Asserts/bin/spaE2ETest \
+        {} {.}-valid.paths /dev/null \
+        $PORT \"$CLIENT_INVOKE\" \"$SERVER_INVOKE\"; \
     sudo ip netns delete spa{#}; \
     date '+Finished: %s.%N (%c)';" >$VALID_PATHS.log 2>&1 &
 VALIDATE_PID=$!
