@@ -105,10 +105,11 @@ bool spdylayBadName(SPA::Path *path) {
                                   "spa_in_api_name4", "spa_in_api_name5" };
   if (stripDir(path->getParticipants()[0]) == SPDYLAY_CLIENT_BC) {
     for (auto name : names) {
-      assert(path->getTestInputs().count(name));
-      for (auto it : path->getTestInputs()[name]) {
-        if (it < 0x20)
-          return true;
+      if (path->getTestInputs().count(name)) {
+        for (auto it : path->getTestInputs()[name]) {
+          if (it < 0x20)
+            return true;
+        }
       }
     }
   }
@@ -121,9 +122,10 @@ bool spdylayEmptyValue(SPA::Path *path) {
                                    "spa_in_api_value4", "spa_in_api_value5" };
   if (stripDir(path->getParticipants()[0]) == SPDYLAY_CLIENT_BC) {
     for (auto value : values) {
-      assert(path->getTestInputs().count(value));
-      if (path->getTestInputs()[value].empty()) {
-        return true;
+      if (path->getTestInputs().count(value)) {
+        if (path->getTestInputs()[value].empty()) {
+          return true;
+        }
       }
     }
   }
@@ -192,10 +194,11 @@ bool spdylayBadValueChar(SPA::Path *path) {
                                    "spa_in_api_value5" };
   if (stripDir(path->getParticipants()[0]) == SPDYLAY_CLIENT_BC) {
     for (auto value : values) {
-      assert(path->getTestInputs().count(value));
-      for (auto c : path->getTestInputs()[value]) {
-        if (!VALID_HD_VALUE_CHARS[c])
-          return true;
+      if (path->getTestInputs().count(value)) {
+        for (auto c : path->getTestInputs()[value]) {
+          if (!VALID_HD_VALUE_CHARS[c])
+            return true;
+        }
       }
     }
   }
@@ -243,12 +246,13 @@ bool nginxUnknownColonHeader(SPA::Path *path) {
   if (stripDir(path->getParticipants()[0]) == SPDYLAY_CLIENT_BC &&
       stripDir(path->getParticipants()[1]) == NGINX_BC) {
     for (auto name : names) {
-      assert(path->getTestInputs().count(name));
-      if (path->getTestInputs()[name][0] == ':') {
-        std::string header(path->getTestInputs()[name].begin(),
-                           path->getTestInputs()[name].end());
-        if (whitelist.count(header.substr(1)) == 0) {
-          return true;
+      if (path->getTestInputs().count(name)) {
+        if (path->getTestInputs()[name][0] == ':') {
+          std::string header(path->getTestInputs()[name].begin(),
+                             path->getTestInputs()[name].end());
+          if (whitelist.count(header.substr(1)) == 0) {
+            return true;
+          }
         }
       }
     }
@@ -299,11 +303,12 @@ bool nginxValueCrLf(SPA::Path *path) {
   if (stripDir(path->getParticipants()[0]) == SPDYLAY_CLIENT_BC &&
       stripDir(path->getParticipants()[1]) == NGINX_BC) {
     for (auto value : values) {
-      assert(path->getTestInputs().count(value));
-      if (std::string(path->getTestInputs()[value].begin(),
-                      path->getTestInputs()[value].end())
-              .find_first_of("\r\n") != std::string::npos) {
-        return true;
+      if (path->getTestInputs().count(value)) {
+        if (std::string(path->getTestInputs()[value].begin(),
+                        path->getTestInputs()[value].end())
+                .find_first_of("\r\n") != std::string::npos) {
+          return true;
+        }
       }
     }
   }
@@ -359,7 +364,7 @@ bool nginxDotDotPastRoot(SPA::Path *path) {
         }
         break;
       default:
-        assert(0 && "Bad state.");
+        assert(false && "Bad state.");
       }
       if (depth < 0)
         return true;
@@ -431,12 +436,13 @@ bool sipToConfusedScheme(SPA::Path *path) {
 
 bool sipEventBadChar(SPA::Path *path) {
   if (stripDir(path->getParticipants()[0]) == EXOSIP_CLIENT_BC) {
-    assert(path->getTestInputs().count("spa_in_api_event"));
-    for (auto it : path->getTestInputs()["spa_in_api_event"]) {
-      if (it == '\0')
-        break;
-      if (!isprint(it))
-        return true;
+    if (path->getTestInputs().count("spa_in_api_event")) {
+      for (auto it : path->getTestInputs()["spa_in_api_event"]) {
+        if (it == '\0')
+          break;
+        if (!isprint(it))
+          return true;
+      }
     }
   }
   return false;
