@@ -11,6 +11,8 @@
 #include <algorithm>
 #include <chrono>
 
+#include <llvm/ADT/OwningPtr.h>
+
 #include <spa/Path.h>
 #include <spa/PathLoader.h>
 
@@ -511,8 +513,8 @@ int main(int argc, char **argv, char **envp) {
   std::vector<std::ofstream *> outputFiles(classifiers.size());
   resultCounts.resize(classifiers.size());
 
-  SPA::Path *path;
-  while ((path = pathLoader.getPath()) || follow) {
+  llvm::OwningPtr<SPA::Path> path;
+  while ((path.reset(pathLoader.getPath()), path.get()) || follow) {
     if (!path) {
       displayStats();
       LOG() << "Reached end of input. Sleeping." << std::endl;
@@ -520,7 +522,7 @@ int main(int argc, char **argv, char **envp) {
       continue;
     }
     for (int i = 0;; i++) {
-      if ((!classifiers[i].first) || classifiers[i].first(path)) {
+      if ((!classifiers[i].first) || classifiers[i].first(path.get())) {
         LOG() << "Test-case classified as " << classifiers[i].second
               << std::endl;
         if (!outputFiles[i]) {
