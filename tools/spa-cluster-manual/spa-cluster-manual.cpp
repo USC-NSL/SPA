@@ -123,7 +123,7 @@ bool spdylayEmptyValue(SPA::Path *path) {
   if (stripDir(path->getParticipants()[0]) == SPDYLAY_CLIENT_BC) {
     for (auto value : values) {
       if (path->getTestInputs().count(value)) {
-        if (path->getTestInput(value).empty()) {
+        if (path->getTestInput(value)[0] == '\0') {
           return true;
         }
       }
@@ -192,7 +192,8 @@ bool spdylayBadValueChar(SPA::Path *path) {
                                    "spa_in_api_value1", "spa_in_api_value2",
                                    "spa_in_api_value3", "spa_in_api_value4",
                                    "spa_in_api_value5" };
-  if (stripDir(path->getParticipants()[0]) == SPDYLAY_CLIENT_BC) {
+  if (stripDir(path->getParticipants()[0]) == SPDYLAY_CLIENT_BC &&
+      stripDir(path->getParticipants()[1]) == SPDYLAY_SERVER_BC) {
     for (auto value : values) {
       if (path->getTestInputs().count(value)) {
         for (auto c : path->getTestInput(value)) {
