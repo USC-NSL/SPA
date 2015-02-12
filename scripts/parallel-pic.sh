@@ -60,7 +60,6 @@ CLIENT_SPLIT_PID=$!
 grep --line-buffered '/[0-9]*-client.paths$' $CLIENT_PATHS_LIST \
   | parallel --progress \
     --sshloginfile .. \
-    --noswap --load 95% \
     -v --tag --linebuffer \
     --transfer --return "{.}-server.paths" --cleanup \
     "cd $WORK_DIR; \
@@ -83,7 +82,6 @@ SERVER_SPLIT_PID=$!
 grep --line-buffered '/[0-9]*-untested.paths$' $UNTESTED_PATHS_LIST \
   | parallel --progress \
     --sshloginfile .. \
-    --noswap \
     -v --tag --linebuffer \
     --transfer --return "{.}-valid.paths" --cleanup \
     "cd $WORK_DIR; \
