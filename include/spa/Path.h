@@ -119,8 +119,17 @@ public:
     return exploredPath;
   }
 
-  std::map<std::string, std::vector<uint8_t> > getTestInputs() const {
+  const std::map<std::string, std::vector<uint8_t> > &getTestInputs() const {
     return testInputs;
+  }
+
+  const std::vector<uint8_t> &getTestInput(std::string name) const {
+    if (testInputs.count(name)) {
+      return testInputs.find(name)->second;
+    } else {
+      static std::vector<uint8_t> empty;
+      return empty;
+    }
   }
 
   friend class PathLoader;
