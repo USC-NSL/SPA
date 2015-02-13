@@ -118,6 +118,23 @@ bool spdylayBadName(SPA::Path *path) {
   return false;
 }
 
+bool nginxBadName(SPA::Path *path) {
+  std::set<std::string> names = { "spa_in_api_name", "spa_in_api_name1",
+                                  "spa_in_api_name2", "spa_in_api_name3",
+                                  "spa_in_api_name4", "spa_in_api_name5" };
+  if (stripDir(path->getParticipants()[0]) == SPDYLAY_CLIENT_BC) {
+    for (auto name : names) {
+      if (path->getTestInputs().count(name)) {
+        for (auto it : path->getTestInput(name)) {
+          if (it == 0x20)
+            return true;
+        }
+      }
+    }
+  }
+  return false;
+}
+
 bool spdylayEmptyValue(SPA::Path *path) {
   std::set<std::string> values = { "spa_in_api_value", "spa_in_api_value1",
                                    "spa_in_api_value2", "spa_in_api_value3",
@@ -464,6 +481,7 @@ static std::vector<std::pair<TestClassifier, std::string> > classifiers = {
   { nginxDotDotPastRoot, "nginxDotDotPastRoot.paths" },
   { nginxHttp09, "nginxHttp09.paths" },
   { spdylayBadName, "spdylayBadName.paths" },
+  { nginxBadName, "nginxBadName.paths" },
   { spdylayBadValueChar, "spdylayBadValueChar.paths" },
   { sipFromBadChar, "sipFromBadChar.paths" },
   { sipFromNoScheme, "sipFromNoScheme.paths" },
