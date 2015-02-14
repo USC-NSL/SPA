@@ -26,8 +26,8 @@
 // #define REQUEST_MAXVERSION	9
 // #define REQUEST_MAXHOST			10
 // #define REQUEST_MAXSCHEME		6
-#define REQUEST_MAXNAME			3
-#define REQUEST_MAXVALUE		3
+#define REQUEST_MAXNAME			10
+#define REQUEST_MAXVALUE		10
 #define RECEIVE_BUFFER_SIZE	1500
 
 #define QUOTE( str ) #str
