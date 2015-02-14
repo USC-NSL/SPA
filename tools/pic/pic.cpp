@@ -370,13 +370,13 @@ int main(int argc, char **argv, char **envp) {
   if (Client) {
 //     spa.addStateUtilityBack(new SPA::AstarUtility(module, cfg, cg, checkpoints),
 //                             false);
-    spa.addStateUtilityBack(
-        new SPA::TargetDistanceUtility(module, cfg, cg, checkpoints), false);
+//     spa.addStateUtilityBack(
+//         new SPA::TargetDistanceUtility(module, cfg, cg, checkpoints), false);
   } else if (Server && filter) {
 //     spa.addStateUtilityBack(new SPA::AstarUtility(module, cfg, cg, *filter),
 //                             false);
-    spa.addStateUtilityBack(
-        new SPA::TargetDistanceUtility(module, cfg, cg, *filter), false);
+//     spa.addStateUtilityBack(
+//         new SPA::TargetDistanceUtility(module, cfg, cg, *filter), false);
   }
   // All else being the same, go DFS.
   spa.addStateUtilityBack(new SPA::DepthUtility(), false);
