@@ -348,20 +348,20 @@ int main(int argc, char **argv, char **envp) {
       filter = NULL;
     }
   }
-  // 	if ( filter ) {
-  // 		if ( Client )
-  // 			spa.addStateUtilityBack( filter, false );
-  // 		else if ( Server )
-  // 			spa.addStateUtilityBack( filter, true );
-  // 	}
+  if (filter) {
+    if (Client)
+      spa.addStateUtilityBack(filter, false);
+    else if (Server)
+      spa.addStateUtilityBack(filter, true);
+  }
 
   // Create waypoint utility.
-  // 	SPA::WaypointUtility *waypointUtility = NULL;
-  // 	if ( ! waypoints.empty() ) {
-  // 		klee::klee_message( "   Creating waypoint utility." );
-  // 		waypointUtility = new SPA::WaypointUtility( cfg, cg, waypoints, true );
-  // 		spa.addStateUtilityBack( waypointUtility, false );
-  // 	}
+//   SPA::WaypointUtility *waypointUtility = NULL;
+//   if (!waypoints.empty()) {
+//     klee::klee_message("   Creating waypoint utility.");
+//     waypointUtility = new SPA::WaypointUtility(cfg, cg, waypoints, true);
+//     spa.addStateUtilityBack(waypointUtility, false);
+//   }
 
   // Create state utility function.
   klee::klee_message("   Creating state utility function.");
