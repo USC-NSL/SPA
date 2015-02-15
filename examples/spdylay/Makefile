@@ -1,3 +1,4 @@
+#SPDYLAY := spdylay-0.3.7
 SPDYLAY := spdylay-1.3.1
 OBJS = spdylay_buffer.o spdylay_client_cert_vector.o spdylay_frame.o \
        spdylay_gzip.o spdylay_helper.o spdylay_map.o spdylay_npn.o \
