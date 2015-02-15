@@ -226,7 +226,8 @@ bool spdylayBadValueChar(SPA::Path *path) {
 }
 
 bool spdylayNoDataLength(SPA::Path *path) {
-  if (stripDir(path->getParticipants()[1]) == SPDYLAY_SERVER_BC) {
+  if (stripDir(path->getParticipants()[0]) == SPDYLAY_SERVER_BC &&
+      stripDir(path->getParticipants()[1]) == SPDYLAY_CLIENT_BC) {
     return !path->getTestInputs().count("spa_in_api_dataLength");
   }
   return false;
