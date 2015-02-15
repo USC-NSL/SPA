@@ -73,6 +73,10 @@ typedef enum {
 }
 
 namespace SPA {
+llvm::cl::opt<int>
+    MaxPaths("max-paths",
+             llvm::cl::desc("Stop after outputting this many paths."));
+
 llvm::cl::opt<bool> StepDebug(
     "step-debug",
     llvm::cl::desc("Enables outputting debug data at each execution step."));
@@ -994,6 +998,11 @@ void SPA::processPath(klee::ExecutionState *state) {
     klee::klee_message("Outputting path.");
     output << path;
     outputtedPaths++;
+
+    if (MaxPaths && outputtedPaths >= MaxPaths) {
+      klee::klee_message("Found specified number of paths. Halting.");
+      executor->setHaltExecution(true);
+    }
   }
 }
 
