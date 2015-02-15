@@ -19,15 +19,15 @@
 #define REQUEST_PORT			8000
 #define REQUEST_VERSION		"HTTP/1.1"
 // #define REQUEST_PRIORITY	3
-#define REQUEST_MAXNVBUF 1000
-#define REQUEST_MAXNVPAIRS 10
+// #define REQUEST_MAXNVBUF 10
+// #define REQUEST_MAXNVPAIRS 2
 // #define REQUEST_MAXMETHOD		5
 // #define REQUEST_MAXPATH			5
 // #define REQUEST_MAXVERSION	9
 // #define REQUEST_MAXHOST			10
 // #define REQUEST_MAXSCHEME		6
-// #define REQUEST_MAXNAME			3
-// #define REQUEST_MAXVALUE		3
+#define REQUEST_MAXNAME			3
+#define REQUEST_MAXVALUE		3
 #define RECEIVE_BUFFER_SIZE	1500
 
 #define QUOTE( str ) #str
@@ -199,30 +199,61 @@ void __attribute__((noinline,used)) spa_SendRequest() {
 //   }
 //   nv[2*numPairs] = NULL;
 
-  char nvbuf[REQUEST_MAXNVBUF];
-  spa_api_input_var(nvbuf);
-  spa_assume(nvbuf[sizeof(nvbuf) - 1] == '\0');
+//   char nvbuf[REQUEST_MAXNVBUF];
+//   spa_api_input_var(nvbuf);
+//   spa_assume(nvbuf[sizeof(nvbuf) - 1] == '\0');
+// 
+//   uint16_t numPairs;
+//   spa_api_input_var(numPairs);
+//   spa_assume(numPairs <= REQUEST_MAXNVPAIRS);
+// 
+//   const char *nv[REQUEST_MAXNVPAIRS * 2 + 2];
+//   int pair, pos = 0;
+//   for (pair = 0; pair != numPairs; pair++) {
+//     int i;
+//     for (i = 0; i < 2; i++ ) {
+//       assert(pos < sizeof(nvbuf));
+//       for (; pos < sizeof(nvbuf); pos++) {
+//         if (pos == 0 || nvbuf[pos - 1] == '\0') {
+//           nv[pair + i] = &nvbuf[pos];
+//           break;
+//         }
+//       }
+//     }
+//   }
+//   nv[pair] = NULL;
+//   nv[pair + 1] = NULL;
 
-  uint16_t numPairs;
-  spa_api_input_var(numPairs);
-  spa_assume(numPairs <= REQUEST_MAXNVPAIRS);
+  char name1[REQUEST_MAXNAME];
+  spa_api_input_var(name1);
+  spa_assume(name1[sizeof(name1) - 1] == '\0');
 
-  const char *nv[REQUEST_MAXNVPAIRS * 2 + 2];
-  int pair, pos = 0;
-  for (pair = 0; pair != numPairs; pair++) {
-    int i;
-    for (i = 0; i < 2; i++ ) {
-      assert(pos < sizeof(nvbuf));
-      for (; pos < sizeof(nvbuf); pos++) {
-        if (pos == 0 || nvbuf[pos - 1] == '\0') {
-          nv[pair + i] = &nvbuf[pos];
-          break;
-        }
-      }
-    }
-  }
-  nv[pair] = NULL;
-  nv[pair + 1] = NULL;
+  char value1[REQUEST_MAXNAME];
+  spa_api_input_var(value1);
+  spa_assume(value1[sizeof(value1) - 1] == '\0');
+
+  char name2[REQUEST_MAXNAME];
+  spa_api_input_var(name2);
+  spa_assume(name2[sizeof(name2) - 1] == '\0');
+
+  char value2[REQUEST_MAXNAME];
+  spa_api_input_var(value2);
+  spa_assume(value2[sizeof(value2) - 1] == '\0');
+
+//   char name3[REQUEST_MAXNAME];
+//   spa_api_input_var(name3);
+//   spa_assume(name3[sizeof(name3) - 1] == '\0');
+// 
+//   char value3[REQUEST_MAXNAME];
+//   spa_api_input_var(value3);
+//   spa_assume(value3[sizeof(value3) - 1] == '\0');
+
+  const char *nv[] = {
+    name1,  value1,
+    name2,  value2,
+//     name3,  value3,
+    NULL
+  };
 
 //   char method[REQUEST_MAXMETHOD];
 //   spa_api_input_var(method);
