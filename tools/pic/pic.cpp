@@ -339,15 +339,14 @@ int main(int argc, char **argv, char **envp) {
   // Create instruction filter.
   klee::klee_message("   Creating CFG filter.");
   SPA::CFGBackwardIF *filter = new SPA::CFGBackwardIF(cfg, cg, checkpoints);
-//   for (auto it : entryPoints) {
-//     if (!filter->checkInstruction(it)) {
-//       klee::klee_message(
-//           "Entry point at function %s is not included in filter. Disabling "
-//           "filter.",
-//           it->getParent()->getParent()->getName().str().c_str());
-//       filter = NULL;
-//     }
-//   }
+  for (auto it : entryPoints) {
+    if (!filter->checkInstruction(it)) {
+      klee::klee_message(
+          "Entry point at function %s is not included in filter.",
+          it->getParent()->getParent()->getName().str().c_str());
+      assert(false && "Entry point not included in filter.");
+    }
+  }
 //   if (filter) {
 //     if (Client)
 //       spa.addStateUtilityBack(filter, false);
