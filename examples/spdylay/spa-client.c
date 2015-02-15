@@ -215,7 +215,7 @@ void __attribute__((noinline,used)) spa_SendRequest() {
       assert(pos < sizeof(nvbuf));
       for (; pos < sizeof(nvbuf); pos++) {
         if (pos == 0 || nvbuf[pos - 1] == '\0') {
-          nv[pair] = &nvbuf[pos];
+          nv[pair + i] = &nvbuf[pos];
           break;
         }
       }
