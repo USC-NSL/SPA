@@ -999,7 +999,7 @@ void SPA::processPath(klee::ExecutionState *state) {
     output << path;
     outputtedPaths++;
 
-    if (MaxPaths && outputtedPaths >= MaxPaths) {
+    if (MaxPaths && outputtedPaths >= (unsigned) MaxPaths) {
       klee::klee_message("Found specified number of paths. Halting.");
       executor->setHaltExecution(true);
     }
