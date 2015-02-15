@@ -208,16 +208,21 @@ void __attribute__((noinline,used)) spa_SendRequest() {
   spa_assume(numPairs <= REQUEST_MAXNVPAIRS);
 
   const char *nv[REQUEST_MAXNVPAIRS * 2 + 2];
-  int i, j, k;
-  for (i = 0, j = 0; i < sizeof(nvbuf) && j < numPairs * 2; i++) {
-    if (i == 0 || nvbuf[i - 1] == '\0') {
-      nv[j++] = &nvbuf[i];
+  int pair, pos = 0;
+  for (pair = 0; pair < numPairs; pair++) {
+    int i;
+    for (i = 0; i < 2; i++ ) {
+      assert(pos < sizeof(nvbuf));
+      for (; pos < sizeof(nvbuf); pos++) {
+        if (pos == 0 || nvbuf[pos - 1] == '\0') {
+          nv[pair] = &nvbuf[pos];
+          break;
+        }
+      }
     }
   }
-//   printf("j = %d.\n", j);
-  assert(j & 1 == 0);
-  nv[j] = NULL;
-  nv[j + 1] = NULL;
+  nv[numPairs] = NULL;
+  nv[numPairs + 1] = NULL;
 
 //   char method[REQUEST_MAXMETHOD];
 //   spa_api_input_var(method);
