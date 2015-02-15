@@ -348,12 +348,12 @@ int main(int argc, char **argv, char **envp) {
       filter = NULL;
     }
   }
-  if (filter) {
-    if (Client)
-      spa.addStateUtilityBack(filter, false);
-    else if (Server)
-      spa.addStateUtilityBack(filter, true);
-  }
+//   if (filter) {
+//     if (Client)
+//       spa.addStateUtilityBack(filter, false);
+//     else if (Server)
+//       spa.addStateUtilityBack(filter, true);
+//   }
 
   // Create waypoint utility.
 //   SPA::WaypointUtility *waypointUtility = NULL;
