@@ -221,8 +221,8 @@ void __attribute__((noinline,used)) spa_SendRequest() {
       }
     }
   }
-  nv[numPairs] = NULL;
-  nv[numPairs + 1] = NULL;
+  nv[pair] = NULL;
+  nv[pair + 1] = NULL;
 
 //   char method[REQUEST_MAXMETHOD];
 //   spa_api_input_var(method);
