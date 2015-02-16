@@ -26,8 +26,8 @@
 // #define REQUEST_MAXVERSION	9
 // #define REQUEST_MAXHOST			10
 // #define REQUEST_MAXSCHEME		6
-#define REQUEST_MAXNAME			3
-#define REQUEST_MAXVALUE		3
+#define REQUEST_MAXNAME			5
+#define REQUEST_MAXVALUE		5
 #define RECEIVE_BUFFER_SIZE	1500
 
 #define QUOTE( str ) #str
@@ -240,18 +240,18 @@ void __attribute__((noinline,used)) spa_SendRequest() {
   spa_api_input_var(value2);
   spa_assume(value2[sizeof(value2) - 1] == '\0');
 
-//   char name3[REQUEST_MAXNAME];
-//   spa_api_input_var(name3);
-//   spa_assume(name3[sizeof(name3) - 1] == '\0');
-// 
-//   char value3[REQUEST_MAXNAME];
-//   spa_api_input_var(value3);
-//   spa_assume(value3[sizeof(value3) - 1] == '\0');
+  char name3[REQUEST_MAXNAME];
+  spa_api_input_var(name3);
+  spa_assume(name3[sizeof(name3) - 1] == '\0');
+
+  char value3[REQUEST_MAXNAME];
+  spa_api_input_var(value3);
+  spa_assume(value3[sizeof(value3) - 1] == '\0');
 
   const char *nv[] = {
     name1,  value1,
     name2,  value2,
-//     name3,  value3,
+    name3,  value3,
     NULL
   };
 
