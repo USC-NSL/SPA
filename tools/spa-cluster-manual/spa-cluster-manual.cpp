@@ -473,7 +473,7 @@ static std::vector<std::pair<TestClassifier, std::string> > classifiers = {
   { spdylayDiffVersion, "spdylayDiffVersion.paths" },
   { spdylayEmptyValue, "spdylayEmptyValue.paths" },
   { spdylayNoDataLength, "spdylayNoDataLength.paths" },
-  //   { nginxSpdy3, "nginxSpdy3.paths" },
+  { nginxSpdy3, "nginxSpdy3.paths" },
   { nginxUnknownColonHeader, "nginxUnknownColonHeader.paths" },
   { nginxTrace, "nginxTrace.paths" },
   { nginxValueCrLf, "nginxValueCrLf.paths" },
