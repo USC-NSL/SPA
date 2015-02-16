@@ -94,7 +94,7 @@ void execute() {
 }
 
 void __attribute__((noinline,used)) spa_SendInviteFrom() {
-// 	spa_api_entry();
+	spa_api_entry();
 	
 	init();
 	osip_message_t *msg;
@@ -155,7 +155,7 @@ void __attribute__((noinline,used)) spa_SendSubscribe() {
 }
 
 void __attribute__((noinline,used)) spa_SendRequest() {
-	spa_api_entry();
+// 	spa_api_entry();
 
 	int requestType = 0;
 	spa_api_input_var( requestType );

@@ -475,8 +475,10 @@ static int eXtl_update_local_target(osip_message_t * req)
 	int i;
 	osip_naptr_t *naptr_record=NULL;
 
+#ifndef ENABLE_KLEE
 	if (udp_socket <= 0)
 		return -1;
+#endif
 
 	if (host == NULL) {
 		host = sip->req_uri->host;
@@ -711,7 +713,7 @@ static int eXtl_update_local_target(osip_message_t * req)
 
 	spa_msg_output( message, length, SIP_MESSAGE_MAX_LENGTH, "message" );
 #ifdef ENABLE_KLEE
-	assert( length == sendto(udp_socket, (const void *) message, length, 0, (struct sockaddr *) &addr, len) );
+// 	assert( length == sendto(udp_socket, (const void *) message, length, 0, (struct sockaddr *) &addr, len) );
 #else
 	if (0 >
 		sendto(udp_socket, (const void *) message, length, 0,

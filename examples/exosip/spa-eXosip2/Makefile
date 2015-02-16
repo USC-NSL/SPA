@@ -14,9 +14,8 @@ LLVM_CC = clang -Wall -g -O0 -emit-llvm -I../libosip2-3.6.0/include -I../libeXos
 LLVM_LD = llvm-link
 LIB_SPA_TEST_MODULE = ../../../Release+Asserts/lib/libSpaTestModule.so
 LIB_SPA_LOG_MODULE = ../../../Release+Asserts/lib/libSpaLogModule.so
-SPA_EXE = ../../../Release+Asserts/bin/spa
-# SPA_EXE = ../../../Release+Asserts/bin/spaRR
-SPA = time $(SPA_EXE) --max-solver-time=1 --max-instruction-time=1
+SPA_EXE = $(shell which spa-pic)
+SPA = time $(SPA_EXE) --max-solver-time=5 --max-instruction-time=5
 
 default: all
 
