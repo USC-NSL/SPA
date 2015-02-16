@@ -189,8 +189,9 @@ void TargetDistanceUtility::processWorklist(
     if (pathFunctions.count(it->getParent()->getParent()) == 0 &&
         cfg.getSuccessors(it).empty() &&
         spaReturnFunctions.count(it->getParent()->getParent()) == 0) {
-      distances[it] = std::make_pair(
-          functionDepths[it->getParent()->getParent()] - depths[it], false);
+//       distances[it] = std::make_pair(
+//           functionDepths[it->getParent()->getParent()] - depths[it], false);
+      distances[it] = std::make_pair(0, false);
       worklist.insert(cfg.getPredecessors(it).begin(),
                       cfg.getPredecessors(it).end());
     }
