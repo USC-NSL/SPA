@@ -344,9 +344,10 @@ int main(int argc, char **argv, char **envp) {
   for (auto it : entryPoints) {
     if (!filter->checkInstruction(it)) {
       klee::klee_message(
-          "Entry point at function %s is not included in filter.",
+          "Entry point at function %s is not included in filter. Disabling.",
           it->getParent()->getParent()->getName().str().c_str());
-      assert(false && "Entry point not included in filter.");
+      //       assert(false && "Entry point not included in filter.");
+      filter = NULL;
     }
   }
   //   if (filter) {
@@ -368,17 +369,17 @@ int main(int argc, char **argv, char **envp) {
   klee::klee_message("   Creating state utility function.");
 
   spa.addStateUtilityBack(new SPA::FilteredUtility(), false);
-//   if (Client) {
-//     spa.addStateUtilityBack(new SPA::AstarUtility(module, cfg, cg, checkpoints),
-//                             false);
-//     spa.addStateUtilityBack(
-//         new SPA::TargetDistanceUtility(module, cfg, cg, checkpoints), false);
-//   } else if (Server && filter) {
-//     spa.addStateUtilityBack(new SPA::AstarUtility(module, cfg, cg, *filter),
-//                             false);
-//     spa.addStateUtilityBack(
-//         new SPA::TargetDistanceUtility(module, cfg, cg, *filter), false);
-//   }
+  if (Client) {
+    spa.addStateUtilityBack(new SPA::AstarUtility(module, cfg, cg, checkpoints),
+                            false);
+    spa.addStateUtilityBack(
+        new SPA::TargetDistanceUtility(module, cfg, cg, checkpoints), false);
+  } else if (Server && filter) {
+    spa.addStateUtilityBack(new SPA::AstarUtility(module, cfg, cg, *filter),
+                            false);
+    spa.addStateUtilityBack(
+        new SPA::TargetDistanceUtility(module, cfg, cg, *filter), false);
+  }
   // All else being the same, go DFS.
   spa.addStateUtilityBack(new SPA::DepthUtility(), false);
 
