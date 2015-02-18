@@ -26,8 +26,8 @@
 // #define REQUEST_MAXVERSION	9
 // #define REQUEST_MAXHOST			10
 // #define REQUEST_MAXSCHEME		6
-#define REQUEST_MAXNAME			5
-#define REQUEST_MAXVALUE		5
+#define REQUEST_MAXNAME			3
+#define REQUEST_MAXVALUE		3
 #define RECEIVE_BUFFER_SIZE	1500
 
 #define QUOTE( str ) #str
@@ -332,13 +332,13 @@ void __attribute__((noinline,used)) spa_SendRequest() {
   spa_api_input_var(value1);
   spa_assume(value1[sizeof(value1) - 1] == '\0');
 
-//   char name2[REQUEST_MAXNAME];
-//   spa_api_input_var(name2);
-//   spa_assume(name2[sizeof(name2) - 1] == '\0');
-// 
-//   char value2[REQUEST_MAXVALUE];
-//   spa_api_input_var(value2);
-//   spa_assume(value2[sizeof(value2) - 1] == '\0');
+  char name2[REQUEST_MAXNAME];
+  spa_api_input_var(name2);
+  spa_assume(name2[sizeof(name2) - 1] == '\0');
+
+  char value2[REQUEST_MAXVALUE];
+  spa_api_input_var(value2);
+  spa_assume(value2[sizeof(value2) - 1] == '\0');
 
   const char *nv[] = {
     ":method",  method,
@@ -347,7 +347,7 @@ void __attribute__((noinline,used)) spa_SendRequest() {
     ":host",    host,
     ":scheme",  scheme,
     name1,      value1,
-//     name2,      value2,
+    name2,      value2,
     NULL
   };
 #else // #ifdef ANALYZE_RESPONSE #elif defined( ENABLE_SPA )
