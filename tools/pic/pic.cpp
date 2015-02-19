@@ -88,7 +88,7 @@ llvm::cl::opt<bool> FollowSenderPaths(
                    "paths as they are generated (joint symbolic execution)."));
 
 llvm::cl::opt<SearchStrategy_t> SearchStrategy(
-    llvm::cl::desc("Search strategy:"),
+    "search-strategy", llvm::cl::desc("Search strategy:"),
     llvm::cl::values(clEnumVal(Astar, "A*"),
                      clEnumVal(BestFS, "Best-first-search"),
                      clEnumVal(DFS, "Depth-first-search"), clEnumValEnd),
