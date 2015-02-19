@@ -381,6 +381,20 @@ int main(int argc, char **argv, char **envp) {
 
   // Create state utility function.
   klee::klee_message("   Creating state utility function.");
+  switch (SearchStrategy) {
+  case Astar:
+    klee::klee_message("      Using A* search.");
+    break;
+  case BestFS:
+    klee::klee_message("      Using best-first-search search.");
+    break;
+  case DFS:
+    klee::klee_message("      Using depth-first-search search.");
+    break;
+  default:
+    assert(false && "Unknown search strategy.");
+    break;
+  }
 
   spa.addStateUtilityBack(new SPA::FilteredUtility(), false);
   if (Client) {
