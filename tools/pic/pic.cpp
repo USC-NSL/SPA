@@ -32,6 +32,12 @@
 #include "spa/PathFilter.h"
 
 namespace {
+enum SearchStrategy_t {
+  Astar,
+  BestFS,
+  DFS
+};
+
 std::string InputFile;
 
 llvm::cl::opt<std::string>
@@ -80,6 +86,14 @@ llvm::cl::opt<bool> FollowSenderPaths(
     "follow-sender-paths",
     llvm::cl::desc("Tells SPA to follow the specified sender path-file for new "
                    "paths as they are generated (joint symbolic execution)."));
+
+llvm::cl::opt<SearchStrategy_t> SearchStrategy(
+    llvm::cl::desc("Search strategy:"),
+    llvm::cl::values(clEnumVal(Astar, "A*"),
+                     clEnumVal(BestFS, "Best-first-search"),
+                     clEnumVal(DFS, "Depth-first-search"), clEnumValEnd),
+    llvm::cl::init(Astar));
+
 }
 
 class SpaClientPathFilter : public SPA::PathFilter {
@@ -370,15 +384,23 @@ int main(int argc, char **argv, char **envp) {
 
   spa.addStateUtilityBack(new SPA::FilteredUtility(), false);
   if (Client) {
-//     spa.addStateUtilityBack(new SPA::AstarUtility(module, cfg, cg, checkpoints),
-//                             false);
-    spa.addStateUtilityBack(
-        new SPA::TargetDistanceUtility(module, cfg, cg, checkpoints), false);
+    if (SearchStrategy == Astar) {
+      spa.addStateUtilityBack(
+          new SPA::AstarUtility(module, cfg, cg, checkpoints), false);
+    }
+    if (SearchStrategy == Astar || SearchStrategy == BestFS) {
+      spa.addStateUtilityBack(
+          new SPA::TargetDistanceUtility(module, cfg, cg, checkpoints), false);
+    }
   } else if (Server && filter) {
-//     spa.addStateUtilityBack(new SPA::AstarUtility(module, cfg, cg, *filter),
-//                             false);
-    spa.addStateUtilityBack(
-        new SPA::TargetDistanceUtility(module, cfg, cg, *filter), false);
+    if (SearchStrategy == Astar) {
+      spa.addStateUtilityBack(new SPA::AstarUtility(module, cfg, cg, *filter),
+                              false);
+    }
+    if (SearchStrategy == Astar || SearchStrategy == BestFS) {
+      spa.addStateUtilityBack(
+          new SPA::TargetDistanceUtility(module, cfg, cg, *filter), false);
+    }
   }
   // All else being the same, go DFS.
   spa.addStateUtilityBack(new SPA::DepthUtility(), false);
