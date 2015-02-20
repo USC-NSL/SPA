@@ -179,6 +179,7 @@ void TargetDistanceUtility::processWorklist(
   }
   // Calculate each functions max depth.
   if (!NoReturnEqualization) {
+    klee::klee_message("      Normalizing returns.");
     for (auto it : cfg) {
       if (pathFunctions.count(it->getParent()->getParent()) == 0 &&
           spaReturnFunctions.count(it->getParent()->getParent()) == 0) {
@@ -187,6 +188,8 @@ void TargetDistanceUtility::processWorklist(
         }
       }
     }
+  } else {
+    klee::klee_message("      Return normalization disabled.");
   }
 
   // Initialize costs of return instructions in functions without spa_returns.
