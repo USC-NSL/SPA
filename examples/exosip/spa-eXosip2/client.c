@@ -171,8 +171,8 @@ void __attribute__((noinline,used)) spa_SendRequest() {
 
 
 int main( int argc, char **argv ) {
-	spa_SendRequest();
-// 	spa_SendInviteFrom();
+// 	spa_SendRequest();
+	spa_SendInviteFrom();
 // 	spa_SendInviteTo();
 // 	spa_SendOptionsFrom();
 // 	spa_SendOptionsTo();
