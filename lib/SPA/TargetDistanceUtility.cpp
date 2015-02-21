@@ -19,8 +19,8 @@ llvm::cl::opt<bool> NoReturnEqualization(
     llvm::cl::init(false));
 
 TargetDistanceUtility::TargetDistanceUtility(llvm::Module *module, CFG &cfg,
-                                             CG &cg,
-                                             InstructionFilter &filter) {
+                                             CG &cg, InstructionFilter &filter)
+    : cfg(cfg), cg(cg) {
   std::set<llvm::Instruction *> worklist;
 
   for (auto it : cfg) {
@@ -28,17 +28,18 @@ TargetDistanceUtility::TargetDistanceUtility(llvm::Module *module, CFG &cfg,
       distances[it] = std::make_pair(+INFINITY, false);
     } else {
       distances[it] = std::make_pair(0, true);
-      propagateChanges(cfg, cg, worklist, it);
+      propagateChanges(worklist, it);
     }
   }
 
   assert((!worklist.empty()) && "Filter must exclude something.");
-  processWorklist(module, cfg, cg, worklist);
+  processWorklist(module, worklist);
 }
 
 TargetDistanceUtility::TargetDistanceUtility(
     llvm::Module *module, CFG &cfg, CG &cg,
-    std::set<llvm::Instruction *> &targets) {
+    std::set<llvm::Instruction *> &targets)
+    : cfg(cfg), cg(cg) {
   std::set<llvm::Instruction *> worklist;
 
   for (auto it : cfg) {
@@ -47,15 +48,14 @@ TargetDistanceUtility::TargetDistanceUtility(
 
   for (auto it : targets) {
     distances[it] = std::make_pair(0, true);
-    propagateChanges(cfg, cg, worklist, it);
+    propagateChanges(worklist, it);
   }
 
-  processWorklist(module, cfg, cg, worklist);
+  processWorklist(module, worklist);
 }
 
 void
-TargetDistanceUtility::propagateChanges(CFG &cfg, CG &cg,
-                                        std::set<llvm::Instruction *> &worklist,
+TargetDistanceUtility::propagateChanges(std::set<llvm::Instruction *> &worklist,
                                         llvm::Instruction *instruction) {
   // Propagate changes to predecessors.
   worklist.insert(cfg.getPredecessors(instruction).begin(),
@@ -70,10 +70,8 @@ TargetDistanceUtility::propagateChanges(CFG &cfg, CG &cg,
 }
 
 void TargetDistanceUtility::processWorklist(
-    llvm::Module *module, CFG &cfg, CG &cg,
-    std::set<llvm::Instruction *> &worklist) {
+    llvm::Module *module, std::set<llvm::Instruction *> &worklist) {
 
-  klee::klee_message("      Processing indirect paths.");
   std::set<llvm::Instruction *> blockedReturns;
   llvm::Function *fn = module->getFunction(SPA_RETURN_ANNOTATION_FUNCTION);
   if (fn) {
@@ -114,142 +112,219 @@ void TargetDistanceUtility::processWorklist(
     klee::klee_message("      Found no spa_returns.");
   }
 
-  // Initialize the cost of all returns.
+  // Initialize the cost of all instructions.
+  std::set<llvm::Instruction *> indirectWorklist;
+  klee::klee_message("      Initializing costs.");
   for (auto inst : cfg) {
+    if (distances[inst].second)
+      continue;
     if (cfg.returns(inst)) {
       if (blockedReturns.count(inst)) {
         distances[inst] = std::make_pair(+INFINITY, false);
       } else {
-        distances[inst] = std::make_pair(1, false);
-      }
-    }
-  }
-
-  // Calculate each functions max depth.
-  if (!NoReturnEqualization) {
-    for (auto it : cfg) {
-      if (pathFunctions.count(it->getParent()->getParent()) == 0 &&
-          spaReturnFunctions.count(it->getParent()->getParent()) == 0) {
-        if (depths[it] > functionDepths[it->getParent()->getParent()]) {
-          functionDepths[it->getParent()->getParent()] = depths[it];
+        if (NoReturnEqualization) {
+          distances[inst] = std::make_pair(1, false);
+        } else {
+          // Initialize to the function's max depth - the depth of the
+          // particular
+          // return.
+          // This equalizes the cost of reaching all returns.
+          distances[inst] =
+              std::make_pair(getFunctionDepth(inst->getParent()->getParent(),
+                                              std::set<llvm::Function *>()) -
+                                 getInstructionDepth(inst),
+                             false);
+          indirectWorklist.insert(cfg.getPredecessors(inst).begin(),
+                                  cfg.getPredecessors(inst).end());
         }
       }
+    } else {
+      distances[inst] = std::make_pair(+INFINITY, false);
     }
   }
 
-  // Initialize costs of return instructions in functions without spa_returns.
-  // Initialize to the function's max depth - the depth of the particular
-  // return.
-  // This equalizes the cost of reaching all returns.
-  for (auto it : cfg) {
-    if (pathFunctions.count(it->getParent()->getParent()) == 0 &&
-        cfg.getSuccessors(it).empty() &&
-        spaReturnFunctions.count(it->getParent()->getParent()) == 0) {
-      distances[it] = std::make_pair(
-          NoReturnEqualization
-              ? 0
-              : functionDepths[it->getParent()->getParent()] - depths[it],
-          false);
-      worklist.insert(cfg.getPredecessors(it).begin(),
-                      cfg.getPredecessors(it).end());
-    }
-  }
-  while (!worklist.empty()) {
-    llvm::Instruction *inst = *worklist.begin();
-    worklist.erase(inst);
+  // Process indirect worklist.
+  klee::klee_message("      Processing indirect paths.");
+  while (!indirectWorklist.empty()) {
+    llvm::Instruction *inst = *indirectWorklist.begin();
+    indirectWorklist.erase(inst);
 
     if (distances[inst].second)
       continue;
 
     // Check cost of successors.
-    bool updated = false;
+    double minSCost = +INFINITY;
     for (auto it : cfg.getSuccessors(inst)) {
       double d = distances[it].first + 1;
-      if (distances[inst].first > d) {
-        distances[inst] = std::make_pair(d, false);
-        updated = true;
+      if (d < minSCost) {
+        minSCost = d;
       }
     }
-    if (updated)
-      // Propagate changes to predecessors.
-      worklist.insert(cfg.getPredecessors(inst).begin(),
-                      cfg.getPredecessors(inst).end());
+    double minCCost;
+    if (cg.getPossibleCallees(inst).empty()) {
+      minCCost = 0;
+    } else {
+      minCCost = +INFINITY;
+
+      for (auto it : cg.getPossibleCallees(inst)) {
+        double d = getFunctionDepth(it, std::set<llvm::Function *>()) + 1;
+        if (d < minCCost) {
+          minCCost = d;
+        }
+      }
+    }
+
+    if ((!distances.count(inst)) ||
+        minSCost + minCCost < distances[inst].first) {
+      distances[inst] = std::make_pair(minSCost + minCCost, false);
+      propagateChanges(indirectWorklist, inst);
+    }
   }
 
   klee::klee_message("      Processing direct paths.");
+  std::set<llvm::Function *> pathFunctions;
   while (!worklist.empty()) {
     llvm::Instruction *inst = *worklist.begin();
     worklist.erase(inst);
 
-    bool updated = false;
-
-    // Check cost of successors.
-    if (cg.getPossibleCallees(inst).empty()) {
-      // Not a call instruction, distance = min(successor) + 1
-      for (auto it : cfg.getSuccessors(inst)) {
-        double d = distances[it].first + 1;
-        if (distances[inst].first > d) {
-          distances[inst] = std::make_pair(d, true);
-          updated = true;
-        }
-      }
-    } else {
-      // Call instruction. distance = successor + min(caller) + 1
-      // Check cost of callees.
-      for (auto it : cg.getPossibleCallees(inst)) {
-        if ((!it->empty()) &&
-            distances[inst].first >
-                distances[&it->getEntryBlock().front()].first) {
-          distances[inst] = std::make_pair(
-              distances[&it->getEntryBlock().front()].first, true);
-          updated = true;
-        }
-      }
-    }
     // Mark function as on direct path.
     pathFunctions.insert(inst->getParent()->getParent());
 
-    if (updated)
-      propagateChanges(cfg, cg, worklist, inst);
+    // Check cost of successors.
+    if (cg.getPossibleCallees(inst).empty()) {
+      // Normal succession. distance = min(successors) + 1
+      double minSCost = +INFINITY;
+      for (auto it : cfg.getSuccessors(inst)) {
+        if (distances[it].second) {
+          double d = distances[it].first + 1;
+          if (d < minSCost) {
+            minSCost = d;
+          }
+        }
+      }
+      if ((!distances[inst].second) || minSCost < distances[inst].first) {
+        distances[inst] = std::make_pair(minSCost, true);
+        propagateChanges(worklist, inst);
+      }
+    } else {
+      // Function call. Check if call is on direct path.
+      bool isDirectCall = false;
+      for (auto it : cg.getPossibleCallees(inst)) {
+        if (pathFunctions.count(it)) {
+          isDirectCall = true;
+          break;
+        }
+      }
+      if (isDirectCall) {
+        // Call on direct path. distance = min(callees) + 1
+        double minCCost = +INFINITY;
+        for (auto it : cg.getPossibleCallees(inst)) {
+          if ((!it->empty()) && distances[&it->front().front()].second) {
+            double d = distances[&it->front().front()].first + 1;
+            if (d < minCCost) {
+              minCCost = d;
+            }
+          }
+        }
+        if ((!distances[inst].second) || minCCost < distances[inst].first) {
+          distances[inst] = std::make_pair(minCCost, true);
+          propagateChanges(worklist, inst);
+        }
+      } else {
+        // Call to function on indirect path.
+        // distance = min(successors) + 1 + min(callees) + 1
+        // Check cost of successors.
+        double minSCost = +INFINITY;
+        for (auto it : cfg.getSuccessors(inst)) {
+          double d = distances[it].first + 1;
+          if (d < minSCost) {
+            minSCost = d;
+          }
+        }
+        double minCCost;
+        if (cg.getPossibleCallees(inst).empty()) {
+          minCCost = 0;
+        } else {
+          minCCost = +INFINITY;
+
+          for (auto it : cg.getPossibleCallees(inst)) {
+            double d = getFunctionDepth(it, std::set<llvm::Function *>()) + 1;
+            if (d < minCCost) {
+              minCCost = d;
+            }
+          }
+        }
+
+        if ((!distances[inst].second) ||
+            minSCost + minCCost < distances[inst].first) {
+          distances[inst] = std::make_pair(minSCost + minCCost, true);
+          propagateChanges(worklist, inst);
+        }
+      }
+    }
   }
 
   // Instructions in direct path functions but not on direct path are
   // non-reaching.
   for (auto it : cfg) {
     if (pathFunctions.count(it->getParent()->getParent()) &&
-        !distances.count(it)) {
+        !distances[it].second) {
       distances[it] = std::make_pair(+INFINITY, true);
+    }
+  }
+
+  // Fill in call-site successor distances.
+  for (auto inst : cfg) {
+    if (!cg.getPossibleCallees(inst).empty()) {
+      for (auto successor : cfg.getSuccessors(inst)) {
+        successorDistances[successor] = distances[inst];
+      }
     }
   }
 }
 
 double
-TargetDistanceUtility::getFunctionDepth(CFG &cfg, CG &cg, llvm::Function *fn,
+TargetDistanceUtility::getFunctionDepth(llvm::Function *fn,
                                         std::set<llvm::Function *> stack) {
-  if (functionDepths.count(std::make_pair(fn, stack))) {
-    return cachedResults[std::make_pair(fn, stack)];
+  // Handle empty functions.
+  if (fn->empty()) {
+    return 0;
   }
 
   // Prevent infinite recursion.
   if (stack.count(fn)) {
     return 0;
   }
-  stack.insert(fn);
+  std::set<llvm::Function *> newStack = stack;
+  newStack.insert(fn);
 
-  // Initialize to +INFINITY
-  for (auto it : cfg) {
-    instructionDepths[it] = +INFINITY;
+  if (stack.empty()) {
+    if (functionDepths.count(fn)) {
+      return functionDepths[fn];
+    }
+
+    // Clear context.
+    functionDepthsInContext.clear();
+    // Initialize all instruction depths to +INFINITY
+    for (auto it : cfg) {
+      instructionDepthsInContext[it] = +INFINITY;
+    }
+  } else {
+    if (functionDepthsInContext.count(fn)) {
+      return functionDepthsInContext[fn];
+    }
   }
-  std::set<llvm::Instruction *> depthWorklist;
+
+  std::set<llvm::Instruction *> worklist;
   llvm::Instruction *inst;
   // Calculate all depths with a worklist.
   inst = &fn->getEntryBlock().front();
-  instructionDepths[inst] = 0;
-  depthWorklist.insert(cfg.getSuccessors(inst).begin(),
-                       cfg.getSuccessors(inst).end());
-  while (!depthWorklist.empty()) {
-    inst = *depthWorklist.begin();
-    depthWorklist.erase(inst);
+  instructionDepthsInContext[inst] = 0;
+  worklist.insert(cfg.getSuccessors(inst).begin(),
+                  cfg.getSuccessors(inst).end());
+  while (!worklist.empty()) {
+    inst = *worklist.begin();
+    worklist.erase(inst);
 
     // Get min cost of succeeding predecessors.
     for (auto pit : cfg.getPredecessors(inst)) {
@@ -257,7 +332,7 @@ TargetDistanceUtility::getFunctionDepth(CFG &cfg, CG &cg, llvm::Function *fn,
       // If functions called, get min cost of call.
       if (!cg.getPossibleCallees(pit).empty()) {
         for (auto cit : cg.getPossibleCallees(pit)) {
-          double fd = getFunctionDepth(cfg, cg, cit, stack);
+          double fd = getFunctionDepth(cit, newStack);
           if (fd < d) {
             d = fd;
           }
@@ -265,11 +340,11 @@ TargetDistanceUtility::getFunctionDepth(CFG &cfg, CG &cg, llvm::Function *fn,
         // Cost of returning
         d++;
       }
-      d += instructionDepths[pit] + 1;
-      if (d < instructionDepths[inst]) {
-        instructionDepths[inst] = d;
-        depthWorklist.insert(cfg.getSuccessors(inst).begin(),
-                             cfg.getSuccessors(inst).end());
+      d += instructionDepthsInContext[pit] + 1;
+      if (d < instructionDepthsInContext[inst]) {
+        instructionDepthsInContext[inst] = d;
+        worklist.insert(cfg.getSuccessors(inst).begin(),
+                        cfg.getSuccessors(inst).end());
       }
     }
   }
@@ -278,13 +353,28 @@ TargetDistanceUtility::getFunctionDepth(CFG &cfg, CG &cg, llvm::Function *fn,
   double maxDepth = 0;
   for (auto &bbit : *fn) {
     for (auto &iit : bbit) {
-      if (instructionDepths[&iit] > maxDepth) {
-        maxDepth = instructionDepths[&iit];
+      if (instructionDepthsInContext[&iit] < +INFINITY &&
+          instructionDepthsInContext[&iit] > maxDepth) {
+        maxDepth = instructionDepthsInContext[&iit];
       }
     }
   }
+  assert(maxDepth < +INFINITY);
 
-  cachedResults[std::make_pair(fn, stack)] = maxDepth;
+  if (stack.empty()) {
+    // Cache in global cache.
+    functionDepths[fn] = maxDepth;
+    // Clear local cache.
+    functionDepthsInContext.clear();
+    // Copy relevant part of instruction depths to global cache.
+    for (auto &bbit : *fn) {
+      for (auto &iit : bbit) {
+        instructionDepths[&iit] = instructionDepthsInContext[&iit];
+      }
+    }
+  } else {
+    functionDepthsInContext[fn] = maxDepth;
+  }
   return maxDepth;
 }
 
@@ -299,8 +389,8 @@ double TargetDistanceUtility::getUtility(klee::ExecutionState *state) {
            it = state->stack.rbegin(),
            ie = state->stack.rend();
        it != ie && it->caller; it++) {
-    result -= getDistance(it->caller->inst);
-    if (isFinal(it->caller->inst))
+    result -= getSuccessorDistance(it->caller->inst);
+    if (isSuccessorFinal(it->caller->inst))
       return result > -INFINITY ? result : UTILITY_PROCESS_LAST;
   }
   // No final state was found.
