@@ -115,6 +115,11 @@ void TargetDistanceUtility::processWorklist(
   // Initialize the cost of all instructions.
   std::set<llvm::Instruction *> indirectWorklist;
   klee::klee_message("      Initializing costs.");
+  if (NoReturnEqualization) {
+    klee::klee_message("      Disabled return equalization.");
+  } else {
+    klee::klee_message("      Using return equalization.");
+  }
   for (auto inst : cfg) {
     if (distances[inst].second)
       continue;
