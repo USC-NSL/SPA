@@ -123,7 +123,7 @@ void TargetDistanceUtility::processWorklist(
   for (auto inst : cfg) {
     if (distances[inst].second)
       continue;
-    if (cfg.returns(inst)) {
+    if (cfg.getSuccessors(inst).empty()) {
       if (blockedReturns.count(inst)) {
         distances[inst] = std::make_pair(+INFINITY, false);
       } else {
@@ -139,9 +139,9 @@ void TargetDistanceUtility::processWorklist(
                                               std::set<llvm::Function *>()) -
                                  getInstructionDepth(inst),
                              false);
-          indirectWorklist.insert(cfg.getPredecessors(inst).begin(),
-                                  cfg.getPredecessors(inst).end());
         }
+        indirectWorklist.insert(cfg.getPredecessors(inst).begin(),
+                                cfg.getPredecessors(inst).end());
       }
     } else {
       distances[inst] = std::make_pair(+INFINITY, false);
