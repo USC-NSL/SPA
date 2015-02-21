@@ -324,21 +324,21 @@ void __attribute__((noinline,used)) spa_SendRequest() {
   spa_assume(schemeId < (sizeof(schemes) / sizeof(schemes[0])));
   const char *scheme = schemes[schemeId];
 
-  char name1[REQUEST_MAXNAME];
-  spa_api_input_var(name1);
-  spa_assume(name1[sizeof(name1) - 1] == '\0');
-
-  char value1[REQUEST_MAXVALUE];
-  spa_api_input_var(value1);
-  spa_assume(value1[sizeof(value1) - 1] == '\0');
-
-  char name2[REQUEST_MAXNAME];
-  spa_api_input_var(name2);
-  spa_assume(name2[sizeof(name2) - 1] == '\0');
-
-  char value2[REQUEST_MAXVALUE];
-  spa_api_input_var(value2);
-  spa_assume(value2[sizeof(value2) - 1] == '\0');
+//   char name1[REQUEST_MAXNAME];
+//   spa_api_input_var(name1);
+//   spa_assume(name1[sizeof(name1) - 1] == '\0');
+// 
+//   char value1[REQUEST_MAXVALUE];
+//   spa_api_input_var(value1);
+//   spa_assume(value1[sizeof(value1) - 1] == '\0');
+// 
+//   char name2[REQUEST_MAXNAME];
+//   spa_api_input_var(name2);
+//   spa_assume(name2[sizeof(name2) - 1] == '\0');
+// 
+//   char value2[REQUEST_MAXVALUE];
+//   spa_api_input_var(value2);
+//   spa_assume(value2[sizeof(value2) - 1] == '\0');
 
   const char *nv[] = {
     ":method",  method,
@@ -346,8 +346,8 @@ void __attribute__((noinline,used)) spa_SendRequest() {
     ":version", version,
     ":host",    host,
     ":scheme",  scheme,
-    name1,      value1,
-    name2,      value2,
+//     name1,      value1,
+//     name2,      value2,
     NULL
   };
 #else // #ifdef ANALYZE_RESPONSE #elif defined( ENABLE_SPA )

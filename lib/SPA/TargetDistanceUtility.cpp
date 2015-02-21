@@ -7,11 +7,17 @@
 #include <spa/Util.h>
 
 #include <sstream>
+#include "llvm/Support/CommandLine.h"
 #include <llvm/IR/Function.h>
 #include <../Core/Common.h>
 #include <klee/Internal/Module/KInstruction.h>
 
 namespace SPA {
+llvm::cl::opt<bool> NoReturnEqualization(
+    "no-return-equalization",
+    llvm::cl::desc("Disables return equalization in the distance metric."),
+    llvm::cl::init(false));
+
 TargetDistanceUtility::TargetDistanceUtility(llvm::Module *module, CFG &cfg,
                                              CG &cg,
                                              InstructionFilter &filter) {
@@ -120,11 +126,13 @@ void TargetDistanceUtility::processWorklist(
   }
 
   // Calculate each functions max depth.
-  for (auto it : cfg) {
-    if (pathFunctions.count(it->getParent()->getParent()) == 0 &&
-        spaReturnFunctions.count(it->getParent()->getParent()) == 0) {
-      if (depths[it] > functionDepths[it->getParent()->getParent()]) {
-        functionDepths[it->getParent()->getParent()] = depths[it];
+  if (!NoReturnEqualization) {
+    for (auto it : cfg) {
+      if (pathFunctions.count(it->getParent()->getParent()) == 0 &&
+          spaReturnFunctions.count(it->getParent()->getParent()) == 0) {
+        if (depths[it] > functionDepths[it->getParent()->getParent()]) {
+          functionDepths[it->getParent()->getParent()] = depths[it];
+        }
       }
     }
   }
@@ -138,7 +146,10 @@ void TargetDistanceUtility::processWorklist(
         cfg.getSuccessors(it).empty() &&
         spaReturnFunctions.count(it->getParent()->getParent()) == 0) {
       distances[it] = std::make_pair(
-          functionDepths[it->getParent()->getParent()] - depths[it], false);
+          NoReturnEqualization
+              ? 0
+              : functionDepths[it->getParent()->getParent()] - depths[it],
+          false);
       worklist.insert(cfg.getPredecessors(it).begin(),
                       cfg.getPredecessors(it).end());
     }
