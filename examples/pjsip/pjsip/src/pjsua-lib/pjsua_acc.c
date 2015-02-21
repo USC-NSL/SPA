@@ -508,6 +508,10 @@ PJ_DEF(pj_status_t) pjsua_acc_add_local( pjsua_transport_id tid,
     }
 
     /* Build URI for the account */
+#ifdef ENABLE_KLEE
+    strcpy(uri, 
+         "<sip:127.0.0.1:5060>");
+#else
     pj_ansi_snprintf(uri, PJSIP_MAX_URL_SIZE,
 		     "<sip:%s%.*s%s:%d%s>", 
 		     beginquote,
@@ -516,6 +520,7 @@ PJ_DEF(pj_status_t) pjsua_acc_add_local( pjsua_transport_id tid,
 		     endquote,
 		     t->local_name.port,
 		     transport_param);
+#endif
 
     cfg.id = pj_str(uri);
     

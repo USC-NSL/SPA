@@ -21,39 +21,30 @@ using namespace llvm;
 namespace SPA {
 CFG::CFG(Module *module) {
   // Iterate functions.
-  for (Module::iterator mit = module->begin(), mie = module->end(); mit != mie;
-       mit++) {
-    Function &fn = *mit;
+  for (auto &fn : *module) {
     // Iterate basic blocks.
-    for (Function::iterator fit = fn.begin(), fie = fn.end(); fit != fie;
-         fit++) {
-      BasicBlock &bb = *fit;
+    for (auto &bb : fn) {
       // Connect across basic blocks.
       // Iterate successors.
       TerminatorInst *ti = bb.getTerminator();
-      unsigned int ns = ti->getNumSuccessors();
-      for (unsigned int i = 0; i < ns; i++) {
+      for (unsigned int i = 0; i < ti->getNumSuccessors(); i++) {
         // Add entry (even if with no successors) for the current predecessor.
         predecessors[&(bb.front())];
-        successors[ti];
         predecessors[&(ti->getSuccessor(i)->front())].insert(ti);
         successors[ti].insert(&(ti->getSuccessor(i)->front()));
       }
       // Connect within basic block.
       // Iterate instructions.
-      BasicBlock::iterator bbit = bb.begin(), bbie = bb.end();
-      instructions.insert(&(*bbit));
-      functionInstructions[&fn].push_back(&(*bbit));
-      Instruction *prevInst = &(*(bbit++));
-      for (; bbit != bbie; bbit++) {
-        Instruction *inst = &(*bbit);
-        instructions.insert(inst);
-        functionInstructions[&fn].push_back(inst);
-        predecessors[inst];
-        successors[inst];
-        predecessors[inst].insert(prevInst);
-        successors[prevInst].insert(inst);
-        prevInst = inst;
+      Instruction *prevInst = NULL;
+      for (auto &inst : bb) {
+        instructions.insert(&inst);
+        functionInstructions[&fn].push_back(&inst);
+        if (prevInst) {
+          successors[&inst];
+          predecessors[&inst].insert(prevInst);
+          successors[prevInst].insert(&inst);
+        }
+        prevInst = &inst;
       }
     }
   }

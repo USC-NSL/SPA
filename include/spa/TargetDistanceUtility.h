@@ -15,17 +15,47 @@ private:
   // A state's distance is calculated by traversing the stack and adding up
   // partial distances until a final one is found.
   std::map<llvm::Instruction *, std::pair<double, bool> > distances;
-  void propagateChanges(CFG &cfg, CG &cg,
-                        std::set<llvm::Instruction *> &worklist,
+  // Used for call sites.
+  std::map<llvm::Instruction *, std::pair<double, bool> > successorDistances;
+
+  // CFG and CG
+  CFG &cfg;
+  CG &cg;
+  // Cached function depths.
+  std::map<llvm::Function *, double> functionDepths, functionDepthsInContext;
+  // Cached instruction depth.
+  std::map<llvm::Instruction *, double> instructionDepths,
+      instructionDepthsInContext;
+
+  void propagateChanges(std::set<llvm::Instruction *> &worklist,
                         llvm::Instruction *instruction);
-  void processWorklist(llvm::Module *module, CFG &cfg, CG &cg,
+  void processWorklist(llvm::Module *module,
                        std::set<llvm::Instruction *> &worklist);
+  double getFunctionDepth(llvm::Function *fn, std::set<llvm::Function *> stack);
+  double getInstructionDepth(llvm::Instruction *inst) {
+    if (!instructionDepths.count(inst)) {
+      getFunctionDepth(inst->getParent()->getParent(),
+                       std::set<llvm::Function *>());
+    }
+    assert(instructionDepths.count(inst));
+    return instructionDepths[inst];
+  }
   double getDistance(llvm::Instruction *instruction) {
     return distances.count(instruction) ? distances[instruction].first
                                         : +INFINITY;
   }
+  double getSuccessorDistance(llvm::Instruction *instruction) {
+    return successorDistances.count(instruction)
+               ? successorDistances[instruction].first
+               : +INFINITY;
+  }
   bool isFinal(llvm::Instruction *instruction) {
     return distances.count(instruction) ? distances[instruction].second : true;
+  }
+  bool isSuccessorFinal(llvm::Instruction *instruction) {
+    return successorDistances.count(instruction)
+               ? successorDistances[instruction].second
+               : true;
   }
 
 public:

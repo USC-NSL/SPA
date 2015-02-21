@@ -46,6 +46,12 @@ public:
       getSuccessors(llvm::Instruction *instruction);
   const std::set<llvm::Instruction *> &
       getPredecessors(llvm::Instruction *instruction);
+  bool returns(llvm::Instruction *inst) {
+    return isa<llvm::ReturnInst>(inst) || isa<llvm::ResumeInst>(inst);
+  }
+  bool terminates(llvm::Instruction *inst) {
+    return getSuccessors(inst).empty() && !returns(inst);
+  }
   // Dumps CFG as a GraphViz DOT-file.
   void dump(std::ostream &dotFile, SPA::CG &cg, InstructionFilter *filter,
             std::map<InstructionFilter *, std::string> &annotations,

@@ -360,6 +360,10 @@ PJ_DEF(pj_status_t) pj_inet_ntop(int af, const void *src,
 				 char *dst, int size)
 
 {
+#ifdef ENABLE_KLEE
+  dst = "127.0.0.1";
+  return PJ_SUCCESS;
+#else
     PJ_ASSERT_RETURN(src && dst && size, PJ_EINVAL);
 
     *dst = '\0';
@@ -438,6 +442,7 @@ PJ_DEF(pj_status_t) pj_inet_ntop(int af, const void *src,
 #else
     pj_assert(!"Not supported");
     return PJ_EIPV6NOTSUP;
+#endif
 #endif
 }
 
@@ -568,9 +573,11 @@ PJ_DEF(pj_status_t) pj_sock_bind( pj_sock_t sock,
 
     CHECK_ADDR_LEN(addr, len);
 
+#ifndef ENABLE_KLEE
     if (bind(sock, (struct sockaddr*)addr, len) != 0)
 	return PJ_RETURN_OS_ERROR(pj_get_native_netos_error());
     else
+#endif
 	return PJ_SUCCESS;
 }
 

@@ -106,10 +106,12 @@ static pj_status_t ioqueue_init_key( pj_pool_t *pool,
     /* Get socket type. When socket type is datagram, some optimization
      * will be performed during send to allow parallel send operations.
      */
+#ifndef ENABLE_KLEE
     optlen = sizeof(key->fd_type);
     rc = pj_sock_getsockopt(sock, pj_SOL_SOCKET(), pj_SO_TYPE(),
                             &key->fd_type, &optlen);
     if (rc != PJ_SUCCESS)
+#endif
         key->fd_type = pj_SOCK_STREAM();
 
     /* Create mutex for the key. */

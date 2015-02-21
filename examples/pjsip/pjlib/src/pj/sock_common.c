@@ -105,8 +105,12 @@ PJ_DEF(char*) pj_sockaddr_print( const pj_sockaddr_t *addr,
 	port[0] = '\0';
     }
 
+#ifdef ENABLE_KLEE
+    strncpy(buf, "127.0.0.1:1061", size);
+#else
     pj_ansi_snprintf(buf, size, "%s%s%s%s",
 		     bquote, txt, equote, port);
+#endif
 
     return buf;
 }
@@ -304,8 +308,10 @@ PJ_DEF(void*) pj_sockaddr_get_addr(const pj_sockaddr_t *addr)
 {
     const pj_sockaddr *a = (const pj_sockaddr*)addr;
 
+#ifndef ENABLE_KLEE
     PJ_ASSERT_RETURN(a->addr.sa_family == PJ_AF_INET ||
 		     a->addr.sa_family == PJ_AF_INET6, NULL);
+#endif
 
     if (a->addr.sa_family == PJ_AF_INET6)
 	return (void*) &a->ipv6.sin6_addr;
@@ -358,8 +364,10 @@ PJ_DEF(pj_uint16_t) pj_sockaddr_get_port(const pj_sockaddr_t *addr)
 {
     const pj_sockaddr *a = (const pj_sockaddr*) addr;
 
+#ifndef ENABLE_KLEE
     PJ_ASSERT_RETURN(a->addr.sa_family == PJ_AF_INET ||
 		     a->addr.sa_family == PJ_AF_INET6, (pj_uint16_t)0xFFFF);
+#endif
 
     return pj_ntohs((pj_uint16_t)(a->addr.sa_family == PJ_AF_INET6 ?
 				    a->ipv6.sin6_port : a->ipv4.sin_port));
