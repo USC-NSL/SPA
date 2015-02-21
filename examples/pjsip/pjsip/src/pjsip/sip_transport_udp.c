@@ -561,7 +561,9 @@ static void udp_set_pub_name(struct udp_transport *tp,
     enum { INFO_LEN = 80 };
     char local_addr[PJ_INET6_ADDRSTRLEN+10];
 
+#ifndef ENABLE_KLEE
     pj_assert(a_name->host.slen != 0);
+#endif
     pj_strdup_with_null(tp->base.pool, &tp->base.local_name.host, 
 			&a_name->host);
     tp->base.local_name.port = a_name->port;

@@ -42,6 +42,10 @@ PJ_DEF(void) pj_throw_exception_(int exception_id)
 {
     struct pj_exception_state_t *handler;
 
+#ifdef ENABLE_KLEE
+    assert(0);
+#endif
+
     handler = (struct pj_exception_state_t*) 
 	      pj_thread_local_get(thread_local_id);
     if (handler == NULL) {
