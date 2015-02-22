@@ -42,12 +42,12 @@ private:
   }
   double getDistance(llvm::Instruction *instruction) {
     return distances.count(instruction) ? distances[instruction].first
-                                        : 0;
+                                        : +INFINITY;
   }
   double getSuccessorDistance(llvm::Instruction *instruction) {
     return successorDistances.count(instruction)
                ? successorDistances[instruction].first
-               : 0;
+               : +INFINITY;
   }
   bool isFinal(llvm::Instruction *instruction) {
     return distances.count(instruction) ? distances[instruction].second : true;
