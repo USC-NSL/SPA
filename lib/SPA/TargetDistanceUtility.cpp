@@ -17,6 +17,10 @@ llvm::cl::opt<bool> NoReturnEqualization(
     "no-return-equalization",
     llvm::cl::desc("Disables return equalization in the distance metric."),
     llvm::cl::init(false));
+llvm::cl::opt<bool> UseShallowDistance(
+    "use-shallow-distance",
+    llvm::cl::desc("Performs a faster but less precise call-depth analysis."),
+    llvm::cl::init(false));
 
 TargetDistanceUtility::TargetDistanceUtility(llvm::Module *module, CFG &cfg,
                                              CG &cg, InstructionFilter &filter)
@@ -119,6 +123,11 @@ void TargetDistanceUtility::processWorklist(
     klee::klee_message("      Disabled return equalization.");
   } else {
     klee::klee_message("      Using return equalization.");
+  }
+  if (UseShallowDistance) {
+    klee::klee_message("      Using shallow distance call-depth analysis.");
+  } else {
+    klee::klee_message("      Using full call-depth analysis.");
   }
   for (auto inst : cfg) {
     if (distances[inst].second)
@@ -366,17 +375,19 @@ TargetDistanceUtility::getFunctionDepth(llvm::Function *fn,
   }
   assert(maxDepth < +INFINITY);
 
-  if (stack.empty()) {
+  if (stack.empty() || UseShallowDistance) {
     // Cache in global cache.
     functionDepths[fn] = maxDepth;
-    // Clear local cache.
-    functionDepthsInContext.clear();
     // Copy relevant part of instruction depths to global cache.
     for (auto &bbit : *fn) {
       for (auto &iit : bbit) {
         instructionDepths[&iit] = instructionDepthsInContext[&iit];
       }
     }
+  }
+  if (stack.empty()) {
+    // Clear local cache.
+    functionDepthsInContext.clear();
   } else {
     functionDepthsInContext[fn] = maxDepth;
   }
