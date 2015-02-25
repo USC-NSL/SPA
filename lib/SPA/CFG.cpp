@@ -8,6 +8,7 @@
 #include <fstream>
 
 #include "llvm/IR/Instructions.h"
+#include <llvm/Support/raw_ostream.h>
 
 #include "../Core/Common.h"
 
@@ -67,167 +68,116 @@ const std::set<Instruction *> &CFG::getPredecessors(Instruction *instruction) {
   return predecessors[instruction];
 }
 
-void CFG::dump(std::ostream &dotFile, CG &cg, InstructionFilter *filter,
+void CFG::dump(std::ostream &dotFile, llvm::Function *fn, CG &cg,
                std::map<InstructionFilter *, std::string> &annotations,
-               StateUtility *utility, compactness_t compactness) {
+               StateUtility *utility) {
   // Generate CFG DOT file.
   dotFile << "digraph CFG {" << std::endl;
 
-  // Add all instructions.
-  for (iterator it = begin(), ie = end(); it != ie; it++) {
-    if (!filter || filter->checkInstruction(*it)) {
-      Instruction *inst = *it;
+  std::string signature;
+  llvm::raw_string_ostream ss(signature);
+  fn->getFunctionType()->print(ss);
+  ss.flush();
+  std::replace(signature.begin(), signature.end(), '\"', '\'');
+  dotFile << "	label = \"" << fn->getName().str() << ": " << signature << "\""
+          << std::endl;
+  dotFile << "	labelloc = \"t\"" << std::endl;
+
+  unsigned long entryRef =
+      fn->empty() ? (unsigned long) fn
+                  : (unsigned long) & fn->getEntryBlock().front();
+  // Add edges to definite callers.
+  dotFile << "  edge [color = \"blue\"];" << std::endl;
+  for (auto caller : cg.getDefiniteCallers(fn)) {
+    dotFile << "  n" << ((unsigned long) caller) << " -> n" << entryRef << ";"
+            << std::endl;
+    dotFile << "  n" << ((unsigned long) caller) << " [label = \""
+            << caller->getParent()->getParent()->getName().str() << "\\n"
+            << debugLocation(caller) << "\" shape = \"invhouse\" href=\""
+            << caller->getParent()->getParent()->getName().str() << ".html\"]"
+            << std::endl;
+  }
+  // Add edges to possible callers.
+  dotFile << "  edge [color = \"cyan\"];" << std::endl;
+  for (auto caller : cg.getPossibleCallers(fn)) {
+    if (!cg.getDefiniteCallers(fn).count(caller)) {
+      dotFile << "  n" << ((unsigned long) caller) << " -> n" << entryRef << ";"
+              << std::endl;
+      dotFile << "  n" << ((unsigned long) caller) << " [label = \""
+              << caller->getParent()->getParent()->getName().str() << "\\n"
+              << debugLocation(caller) << "\" shape = \"invhouse\" href=\""
+              << caller->getParent()->getParent()->getName().str() << ".html\"]"
+              << std::endl;
+    }
+  }
+
+  // Add all instructions in the function.
+  for (auto &bb : *fn) {
+    for (auto &inst : bb) {
       std::stringstream attributes;
       // Annotate entry / exit points.
-      if (getSuccessors(inst).empty())
+      if (returns(&inst)) {
         attributes << "shape = \"doublecircle\"";
-      else if (inst ==
-               &(inst->getParent()->getParent()->getEntryBlock().front()))
+      } else if (&inst ==
+                 &(inst.getParent()->getParent()->getEntryBlock().front())) {
         attributes << "shape = \"box\"";
-      else
-        attributes << "shape = \"oval\"";
+      } else {
+        attributes << "shape = \"circle\"";
+      }
       // Annotate source line.
-      attributes << " label = \"" << debugLocation(inst) << " | "
-                 << utility->getStaticUtility(inst) << "\"";
+      attributes << " label = \"" << utility->getStaticUtility(&inst) << "\""
+                 << " tooltip = \"" << debugLocation(&inst) << "\"";
       // Annotate utility color.
       if (utility)
         attributes << " style=\"filled\" fillcolor = \""
-                   << utility->getColor(*this, cg, inst) << "\"";
+                   << utility->getColor(*this, cg, &inst) << "\"";
       // Add user annotations.
-      for (std::map<InstructionFilter *, std::string>::iterator
-               it = annotations.begin(),
-               ie = annotations.end();
-           it != ie; it++)
-        if (it->first->checkInstruction(inst))
-          attributes << " " << it->second;
-
-      dotFile << "	subgraph cluster_"
-              << inst->getParent()->getParent()->getName().str() << " {"
-              << std::endl << "		label = \""
-              << inst->getParent()->getParent()->getName().str() << "\";"
-              << std::endl;
-      if (compactness == BASICBLOCK)
-        dotFile << "		n" << (unsigned long)
-            inst->getParent() << " [" << attributes.str() << "];" << std::endl;
-      else if (compactness == FUNCTION)
-        dotFile << "		n" << (unsigned long) inst->getParent()->getParent()
-                << " [" << attributes.str() << "];" << std::endl;
-      else // compactness == FULL
-        dotFile << "		n" << (unsigned long)
-            inst << " [" << attributes.str() << "];" << std::endl;
-
-      dotFile << "	}" << std::endl;
-    }
-  }
-  // Add edges.
-  // Successors.
-  dotFile << "	edge [color = \"green\"];" << std::endl;
-  for (auto it1 : *this) {
-    for (auto it2 : getSuccessors(it1)) {
-      if (filter && (!filter->checkInstruction(it1)) &&
-          (!filter->checkInstruction(it2)))
-        continue;
-      if (compactness == BASICBLOCK && it1->getParent() == it2->getParent())
-        continue;
-      if (compactness == FUNCTION &&
-          it1->getParent()->getParent() == it2->getParent()->getParent())
-        continue;
-
-      if (compactness == BASICBLOCK)
-        dotFile << "	n" << ((unsigned long) it1->getParent()) << " -> n"
-                << ((unsigned long) it2->getParent()) << ";" << std::endl;
-      else if (compactness == FULL)
-        dotFile << "	n" << ((unsigned long) it1) << " -> n"
-                << ((unsigned long) it2) << ";" << std::endl;
-    }
-  }
-  // Callers.
-  dotFile << "	edge [color = \"blue\"];" << std::endl;
-  for (auto it1 : cg) {
-    llvm::Function *fn = it1;
-    for (auto it2 : cg.getDefiniteCallers(fn)) {
-      if (!filter || filter->checkInstruction(it2)) {
-        if (fn == NULL) {
-          dotFile << "	IndirectFunction [label = \"*\" shape = \"box\"]"
-                  << std::endl;
-          if (compactness == BASICBLOCK)
-            dotFile << "	n" << (unsigned long)
-                it2->getParent() << " -> IndirectFunction;" << std::endl;
-          else if (compactness == FUNCTION)
-            dotFile << "	n" << (unsigned long) it2->getParent()->getParent()
-                    << " -> IndirectFunction;" << std::endl;
-          else // compactness == FULL
-            dotFile << "	n" << (unsigned long)
-                it2 << " -> IndirectFunction;" << std::endl;
-        } else if (!fn->empty()) {
-          if (compactness == BASICBLOCK)
-            dotFile << "	n" << ((unsigned long) it2->getParent()) << " -> n"
-                    << ((unsigned long) & (fn->getEntryBlock())) << ";"
-                    << std::endl;
-          else if (compactness == FUNCTION)
-            dotFile << "	n" << ((unsigned long) it2->getParent()->getParent())
-                    << " -> n" << ((unsigned long) fn) << ";" << std::endl;
-          else // compactness == FULL
-            dotFile << "	n" << ((unsigned long) it2) << " -> n"
-                    << ((unsigned long) & (fn->getEntryBlock().front())) << ";"
-                    << std::endl;
-        } else {
-          dotFile << "	n" << ((unsigned long) fn) << " [label = \""
-                  << fn->getName().str() << "\" shape = \"box\"]" << std::endl;
-          if (compactness == BASICBLOCK)
-            dotFile << "	n" << (unsigned long) it2->getParent() << " -> n"
-                    << ((unsigned long) fn) << ";" << std::endl;
-          else if (compactness == FUNCTION)
-            dotFile << "	n" << (unsigned long) it2->getParent()->getParent()
-                    << " -> n" << ((unsigned long) fn) << ";" << std::endl;
-          else // compactness == FULL
-            dotFile << "	n" << (unsigned long)
-                it2 << " -> n" << ((unsigned long) fn) << ";" << std::endl;
+      for (auto annotation : annotations) {
+        if (annotation.first->checkInstruction(&inst)) {
+          attributes << " " << annotation.second;
         }
       }
-    }
-  }
-  dotFile << "	edge [color = \"cyan\"];" << std::endl;
-  for (CG::iterator it1 = cg.begin(), ie1 = cg.end(); it1 != ie1; it1++) {
-    llvm::Function *fn = *it1;
-    for (auto it2 : cg.getPossibleCallers(fn)) {
-      if (!filter || filter->checkInstruction(it2)) {
-        if (fn == NULL) {
-          dotFile << "	IndirectFunction [label = \"*\" shape = \"box\"]"
-                  << std::endl;
-          if (compactness == BASICBLOCK)
-            dotFile << "	n" << (unsigned long)
-                it2->getParent() << " -> IndirectFunction;" << std::endl;
-          if (compactness == FUNCTION)
-            dotFile << "	n" << (unsigned long) it2->getParent()->getParent()
-                    << " -> IndirectFunction;" << std::endl;
-          else // compactness == FULL
-            dotFile << "	n" << (unsigned long)
-                it2 << " -> IndirectFunction;" << std::endl;
-        } else if (!fn->empty()) {
-          if (compactness == BASICBLOCK)
-            dotFile << "	n" << ((unsigned long) it2->getParent()) << " -> n"
-                    << ((unsigned long) & (fn->getEntryBlock())) << ";"
-                    << std::endl;
-          else if (compactness == FUNCTION)
-            dotFile << "	n" << ((unsigned long) it2->getParent()->getParent())
-                    << " -> n" << ((unsigned long) fn) << ";" << std::endl;
-          else // compactness == FULL
-            dotFile << "	n" << ((unsigned long) it2) << " -> n"
-                    << ((unsigned long) & (fn->getEntryBlock().front())) << ";"
-                    << std::endl;
+      dotFile << "	n" << ((unsigned long) & inst) << " [" << attributes.str()
+              << "];" << std::endl;
+      // Add edges to successors.
+      dotFile << "	edge [color = \"black\"];" << std::endl;
+      for (auto successor : getSuccessors(&inst)) {
+        dotFile << "	n" << ((unsigned long) & inst) << " -> n"
+                << ((unsigned long) successor) << ";" << std::endl;
+      }
+      // Add edges to definite callees.
+      dotFile << "	edge [color = \"blue\"];" << std::endl;
+      for (auto callee : cg.getDefiniteCallees(&inst)) {
+        if (callee) {
+          dotFile << "	n" << ((unsigned long) & inst) << " -> n"
+                  << ((unsigned long) callee) << ";" << std::endl;
+          dotFile << "	n" << ((unsigned long) callee) << " [label = \""
+                  << callee->getName().str() << "\" shape = \"folder\" href=\""
+                  << callee->getName().str() << ".html\"]" << std::endl;
         } else {
-          dotFile << "	n" << ((unsigned long) fn) << " [label = \""
-                  << fn->getName().str() << "\" shape = \"box\"]" << std::endl;
-          if (compactness == BASICBLOCK)
-            dotFile << "	n" << (unsigned long) it2->getParent() << " -> n"
-                    << ((unsigned long) fn) << ";" << std::endl;
-          if (compactness == FUNCTION)
-            dotFile << "	n" << (unsigned long) it2->getParent()->getParent()
-                    << " -> n" << ((unsigned long) fn) << ";" << std::endl;
-          else // compactness == FULL
-            dotFile << "	n" << (unsigned long)
-                it2 << " -> n" << ((unsigned long) fn) << ";" << std::endl;
+          dotFile << "	IndirectFunction [label = \"*\" shape = \"folder\"]"
+                  << std::endl;
+          dotFile << "	n" << ((unsigned long) & inst) << " -> IndirectFunction;"
+                  << std::endl;
+        }
+      }
+      // Add edges to possible callees.
+      dotFile << "	edge [color = \"cyan\"];" << std::endl;
+      for (auto callee : cg.getPossibleCallees(&inst)) {
+        if (!cg.getDefiniteCallees(&inst).count(callee)) {
+          if (callee) {
+            dotFile << "	n" << ((unsigned long) callee) << " [label = \""
+                    << callee->getName().str()
+                    << "\" shape = \"folder\" href=\""
+                    << callee->getName().str() << ".html\"]" << std::endl;
+            dotFile << "	n" << ((unsigned long) & inst) << " -> n"
+                    << ((unsigned long) callee) << ";" << std::endl;
+          } else {
+            dotFile << "	IndirectFunction [label = \"*\" shape = \"folder\"]"
+                    << std::endl;
+            dotFile << "	n" << ((unsigned long) & inst)
+                    << " -> IndirectFunction;" << std::endl;
+          }
         }
       }
     }
@@ -235,24 +185,6 @@ void CFG::dump(std::ostream &dotFile, CG &cg, InstructionFilter *filter,
 
   dotFile << "}" << std::endl;
 }
-
-class FunctionInstructionFilter : public InstructionFilter {
-private:
-  llvm::Function *function;
-
-public:
-  FunctionInstructionFilter(llvm::Function *fn) : function(fn) {}
-
-  bool checkStep(llvm::Instruction *preInstruction,
-                 llvm::Instruction *postInstruction) {
-    return checkInstruction(preInstruction) &&
-           checkInstruction(postInstruction);
-  }
-
-  bool checkInstruction(llvm::Instruction *instruction) {
-    return instruction->getParent()->getParent() == function;
-  }
-};
 
 void CFG::dumpDir(std::string directory, CG &cg,
                   std::map<InstructionFilter *, std::string> &annotations,
@@ -264,16 +196,28 @@ void CFG::dumpDir(std::string directory, CG &cg,
   assert(makefile.good());
   makefile << "%.pdf: %.dot" << std::endl;
   makefile << "\tdot -Tpdf -o $@ $<" << std::endl << std::endl;
+  makefile << "%.svg: %.dot" << std::endl;
+  makefile << "\tdot -Tsvg -o $@ $<" << std::endl << std::endl;
+  makefile << "%.cmapx: %.dot" << std::endl;
+  makefile << "\tdot -Tcmapx -o $@ $<" << std::endl << std::endl;
+  makefile << "%.html: %.cmapx" << std::endl;
+  makefile
+      << "\techo \"<html><img src='$(@:.html=.svg)' usemap='#CFG' />\" > $@"
+      << std::endl;
+  makefile << "\tcat $< >> $@" << std::endl;
+  makefile << "\techo '</html>' >> $@" << std::endl << std::endl;
+  makefile << "default: all" << std::endl;
 
-  for (auto it = cg.begin(), ie = cg.end(); it != ie; it++) {
-    klee::klee_message("Generating %s.dot", (*it)->getName().str().c_str());
+  for (auto fn : cg) {
+    klee::klee_message("Generating %s.dot", fn->getName().str().c_str());
 
-    std::ofstream dotFile(directory + "/" + (*it)->getName().str() + ".dot");
+    std::ofstream dotFile(directory + "/" + fn->getName().str() + ".dot");
     assert(dotFile.good());
-    FunctionInstructionFilter fif(*it);
-    dump(dotFile, cg, &fif, annotations, utility, FULL);
+    dump(dotFile, fn, cg, annotations, utility);
 
-    makefile << "default: " << (*it)->getName().str() << ".pdf" << std::endl;
+    makefile << "all: " << fn->getName().str() << std::endl;
+    makefile << fn->getName().str() << ": " << fn->getName().str() << ".html "
+             << fn->getName().str() << ".svg" << std::endl;
   }
 }
 }
