@@ -701,6 +701,10 @@ PJ_DEF(pj_status_t) pj_sockaddr_parse( int af, unsigned options,
 /* Resolve the IP address of local machine */
 PJ_DEF(pj_status_t) pj_gethostip(int af, pj_sockaddr *addr)
 {
+#ifdef ENABLE_KLEE
+  addr->ipv4.sin_addr.s_addr = pj_htonl (0x7f000001);
+  return PJ_SUCCESS;
+#else
     unsigned i, count, cand_cnt;
     enum {
 	CAND_CNT = 8,
@@ -962,6 +966,7 @@ PJ_DEF(pj_status_t) pj_gethostip(int af, pj_sockaddr *addr)
     }
 
     return PJ_SUCCESS;
+#endif
 }
 
 /* Get the default IP interface */
