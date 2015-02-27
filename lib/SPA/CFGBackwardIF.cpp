@@ -50,7 +50,7 @@ CFGBackwardIF::CFGBackwardIF(CFG &cfg, CG &cg,
 }
 
 bool CFGBackwardIF::checkInstruction(llvm::Instruction *instruction) {
-  return reaching.count(instruction) && reaching[instruction];
+  return (!reaching.count(instruction)) || reaching[instruction];
 }
 
 bool CFGBackwardIF::checkStep(llvm::Instruction *preInstruction,

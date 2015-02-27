@@ -99,9 +99,6 @@ int main(int argc, char **argv, char **envp) {
 
   if (DumpCFG.size() > 0) {
     klee::klee_message("Dumping CFG to: %s", DumpCFG.getValue().c_str());
-    std::ofstream dotFile(DumpCFG.getValue().c_str());
-    assert(dotFile.is_open() && "Unable to open dump file.");
-
     std::map<SPA::InstructionFilter *, std::string> annotations;
     annotations[new SPA::WhitelistIF(messageHandlers)] =
         "style = \"filled\" color = \"green\"";
@@ -109,11 +106,7 @@ int main(int argc, char **argv, char **envp) {
         "style = \"filled\" color = \"red\"";
     annotations[new SPA::NegatedIF(&filter)] = "style = \"filled\"";
 
-    // 		cfg.dump( dotFile, NULL, annotations, NULL, FULL );
-    cfg.dump(dotFile, cg, &filter, annotations, NULL, FULL);
-
-    dotFile.flush();
-    dotFile.close();
+    cfg.dumpDir(DumpCFG.getValue(), cg, annotations, NULL);
   }
 
   spa.setPathFilter(new MaxPathFilter());

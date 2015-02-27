@@ -400,9 +400,6 @@ int main(int argc, char **argv, char **envp) {
 
   if (DumpCFG.size() > 0) {
     klee::klee_message("Dumping CFG to: %s", DumpCFG.getValue().c_str());
-    std::ofstream dotFile(DumpCFG.getValue().c_str());
-    assert(dotFile.is_open() && "Unable to open dump file.");
-
     std::map<SPA::InstructionFilter *, std::string> annotations;
     annotations[new SPA::WhitelistIF(checkpoints)] =
         "style = \"filled\" fillcolor = \"red\"";
@@ -410,12 +407,9 @@ int main(int argc, char **argv, char **envp) {
     // 			annotations[new SPA::NegatedIF( filter )] = "style = \"filled\"
     // fillcolor = \"grey\"";
 
-    cfg.dump(dotFile, cg, /*filter*/ NULL, annotations,
-             /*utility*/ /*waypointUtility*/ filter /*NULL*/,
-             FULL /*BASICBLOCK*/);
+    cfg.dumpDir(DumpCFG.getValue(), cg, annotations,
+             /*utility*/ /*waypointUtility*/ filter /*NULL*/);
 
-    dotFile.flush();
-    dotFile.close();
     return 0;
   }
 

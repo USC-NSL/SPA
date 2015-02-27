@@ -15,12 +15,6 @@
 #include "spa/CG.h"
 #include "spa/StateUtility.h"
 
-typedef enum {
-  FULL,
-  BASICBLOCK,
-  FUNCTION
-} compactness_t;
-
 namespace SPA {
 class InstructionFilter;
 
@@ -53,9 +47,9 @@ public:
     return getSuccessors(inst).empty() && !returns(inst);
   }
   // Dumps CFG as a GraphViz DOT-file.
-  void dump(std::ostream &dotFile, SPA::CG &cg, InstructionFilter *filter,
+  void dump(std::ostream &dotFile, llvm::Function *fn, SPA::CG &cg,
             std::map<InstructionFilter *, std::string> &annotations,
-            StateUtility *utility, compactness_t compactness);
+            StateUtility *utility);
   // Dumps CFG as a browseable directory with GraphViz DOT-files.
   void dumpDir(std::string directory, SPA::CG &cg,
                std::map<InstructionFilter *, std::string> &annotations,

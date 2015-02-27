@@ -431,16 +431,15 @@ int main(int argc, char **argv, char **envp) {
     // 			annotations[new SPA::NegatedIF( filter )] = "style = \"filled\"
     // fillcolor = \"grey\"";
 
-    // 		cfg.dump( dotFile, cg, /*filter*/ NULL, annotations, /*utility*/
-    // /*waypointUtility*/ /*filter*/ /*NULL*/ new SPA::TargetDistanceUtility(
-    // module, cfg, cg, checkpoints ), /*FULL*/ /*BASICBLOCK*/ FUNCTION );
-    // 		cg.dump( dotFile );
-    cfg.dumpDir(DumpCFG.getValue(), cg, annotations,
-                /*utility*/ /*waypointUtility*/ /*filter*/ /*NULL*/ new SPA::
-                    TargetDistanceUtility(module, cfg, cg, checkpoints));
-
-    // 		dotFile.flush();
-    // 		dotFile.close();
+    if (Client) {
+      cfg.dumpDir(DumpCFG.getValue(), cg, annotations,
+                  new SPA::TargetDistanceUtility(module, cfg, cg, checkpoints));
+    } else if (Server) {
+      cfg.dumpDir(
+          DumpCFG.getValue(), cg, annotations,
+          new SPA::TargetDistanceUtility(
+              module, cfg, cg, *(new SPA::CFGBackwardIF(cfg, cg, checkpoints))));
+    }
     return 0;
   }
 

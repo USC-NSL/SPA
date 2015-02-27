@@ -1,9 +1,9 @@
 BADINPUTS = BadInputs.untested BadInputs.tested BadInputs.FalsePositives
 PATHS = netcalc-client.bc.client.paths netcalc-server.bc.server.paths
-CFGS = netcalc-client.pdf netcalc-server.pdf
 TARGETS = netcalc-client netcalc-server
 BC_TARGETS = netcalc-client.bc netcalc-server.bc
 TEST_TARGETS = netcalc-client.test netcalc-server.test
+CFGS = netcalc-client.cfg netcalc-server.cfg
 HEADERS = netcalc.h
 LLVM_CC = clang++ -emit-llvm
 CC = g++
@@ -24,17 +24,11 @@ all: $(TARGETS) $(BC_TARGETS) $(TEST_TARGETS)
 %.test: %.cpp $(HEADERS) $(LIB_SPA_TEST_MODULE)
 	$(CC) $(CXX_FLAGS) --coverage -DENABLE_SPA -o $@ $< $(LIB_SPA_TEST_MODULE)
 
-netcalc-client.dot: netcalc-client.bc $(shell which spa-pic)
+netcalc-client.cfg: netcalc-client.bc $(shell which spa-pic)
 	spa-pic --dump-cfg $@ --client $<
 
-netcalc-server.dot: netcalc-server.bc $(shell which spa-pic)
+netcalc-server.cfg: netcalc-server.bc $(shell which spa-pic)
 	spa-pic --dump-cfg $@ --server $<
-
-%.pdf: %.dot
-	dot -Tpdf -o $@ $<
-
-%.png: %.dot
-	dot -Tpng -o $@ $<
 
 cfg: $(CFGS)
 
@@ -103,7 +97,7 @@ parallel-cluster:
 .PRECIOUS: $(PATHS) $(BADINPUTS)
 
 clean:
-	rm -rf $(TARGETS) $(BC_TARGETS) $(TEST_TARGETS) $(PATHS) $(BADINPUTS) $(CFGS) $(CFGS:.pdf=.dot)
+	rm -rf $(TARGETS) $(BC_TARGETS) $(TEST_TARGETS) $(PATHS) $(BADINPUTS) $(CFGS)
 	rm -f netcalc-client.paths netcalc-server.paths
 	rm -f validated.paths false-positives.paths
 	rm -f default.paths netcalcDiv0.paths netcalcImplicitArg.paths
