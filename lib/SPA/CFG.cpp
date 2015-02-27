@@ -79,7 +79,7 @@ void CFG::dump(std::ostream &dotFile, CG &cg, InstructionFilter *filter,
       Instruction *inst = *it;
       std::stringstream attributes;
       // Annotate entry / exit points.
-      if (getSuccessors(inst).empty())
+      if (returns(inst))
         attributes << "shape = \"doublecircle\"";
       else if (inst ==
                &(inst->getParent()->getParent()->getEntryBlock().front()))
