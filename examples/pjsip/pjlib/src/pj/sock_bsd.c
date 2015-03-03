@@ -740,8 +740,6 @@ PJ_DEF(pj_status_t) pj_sock_recvfrom(pj_sock_t sock,
     PJ_ASSERT_RETURN(from && fromlen, (*len=-1, PJ_EINVAL));
 
 #ifdef ENABLE_KLEE
-	spa_msg_input( buf, 2000/*PJSIP_MAX_PKT_LEN*//* *len*/, "message" );
-	spa_msg_input_size( *len, "message" );
 	((struct sockaddr_in *) from)->sin_family = AF_INET;
 	((struct sockaddr_in *) from)->sin_port = htons( 5061 );
 	assert( inet_pton( AF_INET, "127.0.0.1", &((struct sockaddr_in *) from)->sin_addr ) == 1 );
@@ -749,6 +747,8 @@ PJ_DEF(pj_status_t) pj_sock_recvfrom(pj_sock_t sock,
     *len = recvfrom(sock, (char*)buf, *len, flags, 
 		    (struct sockaddr*)from, (socklen_t*)fromlen);
 #endif
+	spa_msg_input( buf, 2000/*PJSIP_MAX_PKT_LEN*//* *len*/, "message" );
+	spa_msg_input_size( *len, "message" );
 
     if (*len < 0) 
 	return PJ_RETURN_OS_ERROR(pj_get_native_netos_error());
