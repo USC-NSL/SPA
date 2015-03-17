@@ -67,7 +67,7 @@ grep --line-buffered '/[0-9]*-client.paths$' $CLIENT_PATHS_LIST \
     echo ls:; ls; \
     date '+Started: %s.%N (%c)'; \
     \$HOME/spa/Release+Asserts/bin/spa-pic \
-      -max-instruction-time=10 -max-solver-time=10 -max-time=7200 -max-paths=1 \
+      -max-instruction-time=10 -max-solver-time=10 -max-time=7200 \
       --path-file {.}-server.paths -sender-paths {} --server $SERVER_BC; \
     date '+Finished: %s.%N (%c)';" >$SERVER_PATHS.log 2>&1 &
 SERVER_PID=$!
