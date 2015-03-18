@@ -3,6 +3,9 @@ PATHS = netcalc-client.bc.client.paths netcalc-server.bc.server.paths
 TARGETS = netcalc-client netcalc-server
 BC_TARGETS = netcalc-client.bc netcalc-server.bc
 TEST_TARGETS = netcalc-client.test netcalc-server.test
+FIXED_TARGETS = netcalc-client-fixed netcalc-server-fixed
+FIXED_BC_TARGETS = netcalc-client-fixed.bc netcalc-server-fixed.bc
+FIXED_TEST_TARGETS = netcalc-client-fixed.test netcalc-server-fixed.test
 CFGS = netcalc-client.cfg netcalc-server.cfg
 HEADERS = netcalc.h
 LLVM_CC = clang++ -emit-llvm
@@ -13,7 +16,8 @@ LIB_SPA_TEST_MODULE = $(shell dirname $(shell dirname $(shell which spa-pic)))/l
 
 default: all
 
-all: $(TARGETS) $(BC_TARGETS) $(TEST_TARGETS)
+all: $(TARGETS) $(BC_TARGETS) $(TEST_TARGETS) \
+     $(FIXED_TARGETS) $(FIXED_BC_TARGETS) $(FIXED_TEST_TARGETS)
 
 %: %.cpp $(HEADERS)
 	$(CC) $(CXX_FLAGS) -o $@ $<
@@ -23,6 +27,15 @@ all: $(TARGETS) $(BC_TARGETS) $(TEST_TARGETS)
 
 %.test: %.cpp $(HEADERS) $(LIB_SPA_TEST_MODULE)
 	$(CC) $(CXX_FLAGS) --coverage -DENABLE_SPA -o $@ $< $(LIB_SPA_TEST_MODULE)
+
+%-fixed: %.cpp $(HEADERS)
+	$(CC) $(CXX_FLAGS) -DENABLE_FIX -o $@ $<
+
+%-fixed.bc: %.cpp $(HEADERS)
+	$(LLVM_CC) $(CXX_FLAGS) -DENABLE_SPA -DENABLE_KLEE -DENABLE_FIX -c -o $@ $<
+
+%-fixed.test: %.cpp $(HEADERS) $(LIB_SPA_TEST_MODULE)
+	$(CC) $(CXX_FLAGS) --coverage -DENABLE_SPA -DENABLE_FIX -o $@ $< $(LIB_SPA_TEST_MODULE)
 
 netcalc-client.cfg: netcalc-client.bc $(shell which spa-pic)
 	spa-pic --dump-cfg $@ --client $<
@@ -85,6 +98,25 @@ validated.paths: netcalc-server.paths $(TEST_TARGETS) $(shell which spa-validate
 		CHECK NOT REACHED spa_valid_path_point;" \
 		2>&1 | tee $@.log
 
+netcalc-server-diff1.paths: netcalc-server.bc $(shell which spa-explore)
+	spa-explore \
+		--out-paths $@ \
+		--start-from SpaHandleQueryEntry \
+		--toward "spa_msg_output_point" \
+		--stop-at "spa_msg_output_point" \
+		--output-at "spa_msg_output_point" \
+		$< 2>&1 | tee $@.log
+
+netcalc-server-diff2.paths: netcalc-server-fixed.bc netcalc-server-diff1.paths $(shell which spa-explore)
+	spa-explore \
+		--in-paths netcalc-server-diff1.paths --connect-in-in \
+		--out-paths $@ \
+		--start-from SpaHandleQueryEntry \
+		--toward "spa_msg_output_point" \
+		--stop-at "spa_msg_output_point" \
+		--output-at "spa_msg_output_point" \
+		$< 2>&1 | tee $@.log
+
 cluster: validated.paths
 	spa-cluster-manual $<
 
@@ -93,6 +125,8 @@ parallel-cluster:
 		"spa/examples/netcalc-msg" \
 		"./netcalc-client.test 0 0 +" "./netcalc-server.test" 3141 \
 		netcalc-client.paths netcalc-server.paths validated.paths
+
+server-diff: netcalc-server-diff2.paths
 
 .PRECIOUS: $(PATHS) $(BADINPUTS)
 
