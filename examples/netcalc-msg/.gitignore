@@ -24,9 +24,9 @@ netcalc-client-fixed.test
 netcalc-server-fixed
 netcalc-server-fixed.bc
 netcalc-server-fixed.test
-netcalc-server-diff1.paths
-netcalc-server-diff1.paths.log
-netcalc-server-diff2.paths
-netcalc-server-diff2.paths.log
-netcalc-server-diff3.paths
-netcalc-server-diff3.paths.log
+netcalc-server-sequiv1.paths
+netcalc-server-sequiv1.paths.log
+netcalc-server-sequiv2.paths
+netcalc-server-sequiv2.paths.log
+netcalc-server-sequiv3.paths
+netcalc-server-sequiv3.paths.log

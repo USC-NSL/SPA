@@ -1,5 +1,5 @@
 BADINPUTS = BadInputs.untested BadInputs.tested BadInputs.FalsePositives
-PATHS = netcalc-client.bc.client.paths netcalc-server.bc.server.paths netcalc-server-diff1.paths netcalc-server-diff2.paths netcalc-server-diff3.paths
+PATHS = netcalc-client.bc.client.paths netcalc-server.bc.server.paths netcalc-server-sequiv1.paths netcalc-server-sequiv2.paths netcalc-server-sequiv3.paths
 TARGETS = netcalc-client netcalc-server
 BC_TARGETS = netcalc-client.bc netcalc-server.bc
 TEST_TARGETS = netcalc-client.test netcalc-server.test
@@ -99,7 +99,7 @@ validated.paths: netcalc-server.paths $(TEST_TARGETS) $(shell which spa-validate
 		CHECK NOT REACHED spa_valid_path_point;" \
 		2>&1 | tee $@.log
 
-netcalc-server-diff1.paths: netcalc-server.bc $(shell which spa-explore)
+netcalc-server-sequiv1.paths: netcalc-server.bc $(shell which spa-explore)
 	spa-explore \
 		--out-paths $@ \
 		--start-from SpaHandleQueryEntry \
@@ -108,9 +108,9 @@ netcalc-server-diff1.paths: netcalc-server.bc $(shell which spa-explore)
 		--output-at "spa_msg_output_point" \
 		$< 2>&1 | tee $@.log
 
-netcalc-server-diff2.paths: netcalc-server-fixed.bc netcalc-server-diff1.paths $(shell which spa-explore)
+netcalc-server-sequiv2.paths: netcalc-server-fixed.bc netcalc-server-sequiv1.paths $(shell which spa-explore)
 	spa-explore \
-		--in-paths netcalc-server-diff1.paths --connect-in-in \
+		--in-paths netcalc-server-sequiv1.paths --connect-in-in \
 		--out-paths $@ \
 		--start-from SpaHandleQueryEntry \
 		--toward "spa_msg_output_point" \
@@ -118,9 +118,9 @@ netcalc-server-diff2.paths: netcalc-server-fixed.bc netcalc-server-diff1.paths $
 		--output-at "spa_msg_output_point" \
 		$< 2>&1 | tee $@.log
 
-netcalc-server-diff3.paths: $(LIB_MSG_COMPARE_BC) netcalc-server-diff2.paths $(shell which spa-explore)
+netcalc-server-sequiv3.paths: $(LIB_MSG_COMPARE_BC) netcalc-server-sequiv2.paths $(shell which spa-explore)
 	spa-explore \
-		--in-paths netcalc-server-diff2.paths \
+		--in-paths netcalc-server-sequiv2.paths \
 		--connect spa_in_msg_message1=spa_out_msg_response \
 		--connect spa_in_msg_size_message1=spa_out_msg_size_response \
 		--connect spa_in_msg_message2=spa_out_msg_response2 \
@@ -140,7 +140,7 @@ parallel-cluster:
 		"./netcalc-client.test 0 0 +" "./netcalc-server.test" 3141 \
 		netcalc-client.paths netcalc-server.paths validated.paths
 
-server-diff: netcalc-server-diff3.paths
+server-equiv: netcalc-server-sequiv3.paths
 
 .PRECIOUS: $(PATHS) $(BADINPUTS)
 
