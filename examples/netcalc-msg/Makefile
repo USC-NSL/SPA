@@ -58,6 +58,15 @@ netcalc-client.paths: netcalc-client.bc $(shell which spa-explore)
 		--output-at "spa_msg_output_point" \
 		$< 2>&1 | tee $@.log
 
+netcalc-client-fixed.paths: netcalc-client-fixed.bc $(shell which spa-explore)
+	spa-explore \
+		--out-paths $@ \
+		--start-from SpaExecuteQueryEntry \
+		--toward "spa_msg_output_point" \
+		--stop-at "spa_msg_output_point" \
+		--output-at "spa_msg_output_point" \
+		$< 2>&1 | tee $@.log
+
 # netcalc-server.paths: netcalc-server.bc $(shell which spa-pic)
 # 	rm -f $@
 # 	spa-pic --server $< 2>&1 | tee $@.log
@@ -131,6 +140,39 @@ netcalc-server-sequiv3.paths: $(LIB_MSG_COMPARE_BC) netcalc-server-sequiv2.paths
 		--max-instruction-time=5 \
 		$< 2>&1 | tee $@.log
 
+netcalc-server-csequiv1.paths: netcalc-server.bc netcalc-client-fixed.paths $(shell which spa-explore)
+	spa-explore \
+		--in-paths netcalc-client-fixed.paths --connect-in-out \
+		--out-paths $@ \
+		--start-from SpaHandleQueryEntry \
+		--toward "spa_msg_output_point" \
+		--stop-at "spa_msg_output_point" \
+		--output-at "spa_msg_output_point" \
+		$< 2>&1 | tee $@.log
+
+netcalc-server-csequiv2.paths: netcalc-server-fixed.bc netcalc-server-csequiv1.paths $(shell which spa-explore)
+	spa-explore \
+		--in-paths netcalc-server-csequiv1.paths --connect-in-in \
+		--out-paths $@ \
+		--start-from SpaHandleQueryEntry \
+		--toward "spa_msg_output_point" \
+		--stop-at "spa_msg_output_point" \
+		--output-at "spa_msg_output_point" \
+		$< 2>&1 | tee $@.log
+
+netcalc-server-csequiv3.paths: $(LIB_MSG_COMPARE_BC) netcalc-server-csequiv2.paths $(shell which spa-explore)
+	spa-explore \
+		--in-paths netcalc-server-csequiv2.paths \
+		--connect spa_in_msg_message1=spa_out_msg_response \
+		--connect spa_in_msg_size_message1=spa_out_msg_size_response \
+		--connect spa_in_msg_message2=spa_out_msg_response2 \
+		--connect spa_in_msg_size_message2=spa_out_msg_size_response2 \
+		--out-paths $@ \
+		--start-from MsgCompareEntry \
+		--output-at MsgsDifferent \
+		--max-instruction-time=5 \
+		$< 2>&1 | tee $@.log
+
 cluster: validated.paths
 	spa-cluster-manual $<
 
@@ -141,12 +183,10 @@ parallel-cluster:
 		netcalc-client.paths netcalc-server.paths validated.paths
 
 server-equiv: netcalc-server-sequiv3.paths
+client-server-equiv: netcalc-server-csequiv3.paths
 
 .PRECIOUS: $(PATHS) $(BADINPUTS)
 
 clean:
-	rm -rf $(TARGETS) $(BC_TARGETS) $(TEST_TARGETS) $(PATHS) $(BADINPUTS) $(CFGS)
-	rm -f netcalc-client.paths netcalc-server.paths
-	rm -f validated.paths false-positives.paths
-	rm -f default.paths netcalcDiv0.paths netcalcImplicitArg.paths
-	rm -rf *.gcda *.gcno *.log *.debug klee-out-* klee-last
+	rm -rf $(TARGETS) $(BC_TARGETS) $(TEST_TARGETS) $(BADINPUTS) $(CFGS)
+	rm -rf *.gcda *.gcno *.paths *.log *.debug klee-out-* klee-last
