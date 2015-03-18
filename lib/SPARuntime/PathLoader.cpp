@@ -13,6 +13,7 @@
 #include <expr/Parser.h>
 
 #include <spa/PathLoader.h>
+#include <spa/Util.h>
 
 #define changeState(from, to)                                                  \
   if (state != from) {                                                         \
@@ -26,6 +27,7 @@ typedef enum {
   START,
   PATH,
   SYMBOLS,
+  OUTPUTS,
   TAGS,
   KQUERY,
   EXPLOREDCOVERAGE,
@@ -69,7 +71,7 @@ Path *PathLoader::getPath() {
   LoadState_t state = START;
   Path *path = NULL;
   std::map<std::string, std::string> arrayToName;
-  std::vector<std::pair<std::string, size_t> > symbolValueSize;
+  std::vector<std::pair<std::string, size_t> > outputSizes;
   std::string kQuery;
   while (input.good()) {
     std::string line;
@@ -83,12 +85,16 @@ Path *PathLoader::getPath() {
       changeState(START, PATH);
       path = new Path();
       arrayToName.clear();
-      symbolValueSize.clear();
+      outputSizes.clear();
       kQuery = "";
     } else if (line == SPA_PATH_SYMBOLS_START) {
       changeState(PATH, SYMBOLS);
     } else if (line == SPA_PATH_SYMBOLS_END) {
       changeState(SYMBOLS, PATH);
+    } else if (line == SPA_PATH_OUTPUTS_START) {
+      changeState(PATH, OUTPUTS);
+    } else if (line == SPA_PATH_OUTPUTS_END) {
+      changeState(OUTPUTS, PATH);
     } else if (line == SPA_PATH_TAGS_START) {
       changeState(PATH, TAGS);
     } else if (line == SPA_PATH_TAGS_END) {
@@ -111,27 +117,16 @@ Path *PathLoader::getPath() {
                        dyn_cast<klee::expr::QueryCommand>(D)) {
           path->constraints = klee::ConstraintManager(QC->Constraints);
 
-          std::vector<std::pair<std::string, size_t> >::iterator
-              sit = symbolValueSize.begin(),
-              sie = symbolValueSize.end();
-          unsigned b = sit != sie ? sit->second : 0;
-          for (std::vector<klee::ref<klee::Expr> >::const_iterator
-                   vit = QC->Values.begin(),
-                   vie = QC->Values.end();
-               vit != vie; vit++, b--) {
-            if (b == 0) {
-              assert(++sit != sie &&
-                     "Too many expressions in path file kquery.");
-              b = sit->second;
+          for (auto vit : QC->Values) {
+            assert((!outputSizes.empty()) && outputSizes.front().second > 0 &&
+                   "Too many expressions in path file kquery.");
+            path->outputValues[outputSizes.front().first].push_back(vit);
+            if (--outputSizes.front().second == 0) {
+              outputSizes.erase(outputSizes.begin());
             }
-            path->outputValues[sit->first].push_back(*vit);
           }
-          if (b != 0 || ((!symbolValueSize.empty()) && ++sit != sie)) {
-            klee::klee_message(
-                "Too few expressions in path file kquery. Error near line %ld.",
-                lineNumber);
-            assert(false && "Invalid path file.");
-          }
+          assert(outputSizes.empty() &&
+                 "Too few expressions in path file kquery.");
 
           delete D;
           break;
@@ -170,13 +165,13 @@ Path *PathLoader::getPath() {
       switch (state) {
       case SYMBOLS: {
         std::vector<std::string> s = split(line, SPA_PATH_SYMBOL_DELIMITER);
-        assert(s.size() == 3 && "Invalid symbol specification in path file.");
+        assert(s.size() == 2 && "Invalid symbol specification in path file.");
         arrayToName[s[1]] = s[0];
-        std::stringstream ss(s[2]);
-        size_t vs = 0;
-        ss >> vs;
-        if (vs > 0)
-          symbolValueSize.push_back(std::pair<std::string, size_t>(s[0], vs));
+      } break;
+      case OUTPUTS: {
+        std::vector<std::string> s = split(line, SPA_PATH_OUTPUT_DELIMITER);
+        assert(s.size() == 2 && "Invalid output specification in path file.");
+        outputSizes.push_back(std::make_pair(s[0], strToNum<int>(s[1])));
       } break;
       case TAGS: {
         std::vector<std::string> s = split(line, SPA_PATH_TAG_DELIMITER);

@@ -6,6 +6,7 @@
 #include "llvm/Support/raw_os_ostream.h"
 #include "llvm/Support/MemoryBuffer.h"
 
+#include "../Core/Common.h"
 #include "../../lib/Core/Memory.h"
 #include "klee/ExecutionState.h"
 #include "klee/ExprBuilder.h"
@@ -25,14 +26,52 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
   klee::ExecutionState state(*kState);
 
   // Load data from sender path.
-  if (kState->senderPath) {
-    tags = kState->senderPath->tags;
-    exploredLineCoverage = kState->senderPath->exploredLineCoverage;
-    exploredFunctionCoverage = kState->senderPath->exploredFunctionCoverage;
-    participants = kState->senderPath->getParticipants();
-    exploredPath = kState->senderPath->exploredPath;
-    testLineCoverage = kState->senderPath->testLineCoverage;
-    testFunctionCoverage = kState->senderPath->testFunctionCoverage;
+  if (state.senderPath) {
+    tags = state.senderPath->tags;
+    exploredLineCoverage = state.senderPath->exploredLineCoverage;
+    exploredFunctionCoverage = state.senderPath->exploredFunctionCoverage;
+    participants = state.senderPath->getParticipants();
+    exploredPath = state.senderPath->exploredPath;
+    testLineCoverage = state.senderPath->testLineCoverage;
+    testFunctionCoverage = state.senderPath->testFunctionCoverage;
+
+    // Rename colliding inputs.
+    for (auto it = state.senderPath->beginSymbols(),
+              ie = state.senderPath->endSymbols();
+         it != ie; it++) {
+      if (state.arrayNames.count(it->first)) {
+        std::string newName;
+        int s = 2;
+        while (
+            state.arrayNames.count((newName = it->first + numToStr<int>(s)))) {
+          s++;
+        }
+        klee::klee_message(
+            "Renaming colliding symbol from input path: %s -> %s",
+            it->first.c_str(), newName.c_str());
+        *const_cast<std::string *>(&it->second->name) = newName;
+      }
+    }
+
+    // Merge outputs.
+    for (auto it = state.senderPath->beginOutputs(),
+              ie = state.senderPath->endOutputs();
+         it != ie; it++) {
+      if (!state.arrayNames.count(it->first)) {
+        outputValues[it->first] = it->second;
+      } else {
+        std::string newName;
+        int s = 2;
+        while (
+            state.arrayNames.count((newName = it->first + numToStr<int>(s)))) {
+          s++;
+        }
+        klee::klee_message(
+            "Renaming colliding output from input path: %s -> %s",
+            it->first.c_str(), newName.c_str());
+        outputValues[newName] = it->second;
+      }
+    }
   }
 
   for (auto it : state.symbolics) {
@@ -131,8 +170,8 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
     }
   }
 
-  std::string moduleName = kState->pc->inst->getParent()->getParent()
-      ->getParent()->getModuleIdentifier();
+  std::string moduleName = state.pc->inst->getParent()->getParent()->getParent()
+      ->getModuleIdentifier();
   participants.push_back(moduleName);
 
   exploredPath[moduleName].clear();
@@ -212,38 +251,33 @@ bool Path::isCovered(std::string dbgStr) {
 std::ostream &operator<<(std::ostream &stream, const Path &path) {
   stream << SPA_PATH_START << std::endl;
   stream << SPA_PATH_SYMBOLS_START << std::endl;
-  for (std::map<std::string, const klee::Array *>::const_iterator
-           it = path.symbolNames.begin(),
-           ie = path.symbolNames.end();
-       it != ie; it++)
-    stream << it->first << SPA_PATH_SYMBOL_DELIMITER << it->second->name
-           << SPA_PATH_SYMBOL_DELIMITER
-           << (path.outputValues.count(it->first)
-                   ? path.outputValues.find(it->first)->second.size()
-                   : 0) << std::endl;
+  for (auto it : path.symbolNames) {
+    stream << it.first << SPA_PATH_SYMBOL_DELIMITER << it.second->name
+           << SPA_PATH_SYMBOL_DELIMITER << std::endl;
+  }
   stream << SPA_PATH_SYMBOLS_END << std::endl;
 
+  stream << SPA_PATH_OUTPUTS_START << std::endl;
+  for (auto it : path.outputValues) {
+    stream << it.first << SPA_PATH_OUTPUT_DELIMITER << it.second.size()
+           << std::endl;
+  }
+  stream << SPA_PATH_OUTPUTS_END << std::endl;
+
   stream << SPA_PATH_TAGS_START << std::endl;
-  for (std::map<std::string, std::string>::const_iterator
-           it = path.tags.begin(),
-           ie = path.tags.end();
-       it != ie; it++)
-    stream << it->first << SPA_PATH_TAG_DELIMITER << it->second << std::endl;
+  for (auto it : path.tags) {
+    stream << it.first << SPA_PATH_TAG_DELIMITER << it.second << std::endl;
+  }
   stream << SPA_PATH_TAGS_END << std::endl;
 
   stream << SPA_PATH_KQUERY_START << std::endl;
   klee::ExprBuilder *exprBuilder = klee::createDefaultExprBuilder();
   std::vector<klee::ref<klee::Expr> > evalExprs;
-  for (std::map<std::string, const klee::Array *>::const_iterator
-           it = path.symbolNames.begin(),
-           ie = path.symbolNames.end();
-       it != ie; it++)
-    if (path.outputValues.count(it->first))
-      for (std::vector<klee::ref<klee::Expr> >::const_iterator
-               it2 = path.outputValues.find(it->first)->second.begin(),
-               ie2 = path.outputValues.find(it->first)->second.end();
-           it2 != ie2; it2++)
-        evalExprs.push_back(*it2);
+  for (auto it : path.outputValues) {
+    for (auto it2 : it.second) {
+      evalExprs.push_back(it2);
+    }
+  }
   llvm::raw_os_ostream ros(stream);
   klee::ExprPPrinter::printQuery(
       ros, path.getConstraints(), exprBuilder->False(), &evalExprs[0],
