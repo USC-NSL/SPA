@@ -3,10 +3,15 @@
 
 #include <spa/spaRuntime.h>
 
-#define UDP_PORT 1234
 #define MAX_MESSAGE_SIZE 1500
 
 SpaTag_t MessagesEqual;
+
+extern "C" {
+void done();
+void MsgsEqual();
+void MsgsDifferent();
+}
 
 void compareMsgs(char *msg1, ssize_t size1, char *msg2, ssize_t size2) {
   spa_msg_input(msg1, MAX_MESSAGE_SIZE, "message1");
@@ -16,20 +21,41 @@ void compareMsgs(char *msg1, ssize_t size1, char *msg2, ssize_t size2) {
 
   if (size1 == size2 && memcmp(msg1, msg2, size1) == 0) {
     spa_tag(MessagesEqual, "1");
+    MsgsEqual();
   } else {
     spa_tag(MessagesEqual, "0");
+    MsgsDifferent();
   }
+  done();
 }
 
 extern "C" {
-void SpaEntry() {
+void MsgCompareEntry() {
   spa_message_handler_entry();
   char msg1[MAX_MESSAGE_SIZE], msg2[MAX_MESSAGE_SIZE];
   compareMsgs(msg1, 0, msg2, 0);
 }
+void __attribute__((noinline)) done() {
+  // Complicated NOP to prevent inlining.
+  static uint8_t i = 0;
+  i++;
+}
+void __attribute__((noinline)) MsgsEqual() {
+  // Complicated NOP to prevent inlining.
+  static uint8_t i = 0;
+  i++;
+}
+void __attribute__((noinline)) MsgsDifferent() {
+  // Complicated NOP to prevent inlining.
+  static uint8_t i = 0;
+  i++;
+}
 }
 
 int main(int argc, char **argv) {
+  assert(argc == 2 && "Must specify listen port.");
+  int port = atoi(argv[1]);
+
   struct sockaddr_in si_server;
   int s;
 
@@ -37,11 +63,11 @@ int main(int argc, char **argv) {
 
   bzero(&si_server, sizeof(si_server));
   si_server.sin_family = AF_INET;
-  si_server.sin_port = htons(UDP_PORT);
+  si_server.sin_port = htons(port);
   si_server.sin_addr.s_addr = htonl(INADDR_ANY);
   assert(bind(s, (struct sockaddr *)&si_server, sizeof(si_server)) == 0);
 
-  std::cerr << "Listening on UDP port " << UDP_PORT << "." << std::endl;
+  std::cerr << "Listening on UDP port " << port << "." << std::endl;
 
   struct sockaddr_in si_client;
   socklen_t si_client_len = sizeof(si_client);

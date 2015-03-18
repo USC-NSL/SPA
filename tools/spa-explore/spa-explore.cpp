@@ -30,21 +30,17 @@ llvm::cl::opt<std::string> InPaths(
     llvm::cl::desc("Specifies the input path file to connect when processing "
                    "inputs (default: leave inputs unconstrained)."));
 
-llvm::cl::list<std::string> Connect(
-    "connect",
-    llvm::cl::desc(
-        "Specifies symbols to connect in a receiverSymbol1=senderSymbol2 "
-        "format (default: auto-detect out=in like patterns)."));
+llvm::cl::list<std::string>
+    Connect("connect", llvm::cl::desc("Specifies symbols to connect in a "
+                                      "receiverSymbol1=senderSymbol2 format."));
 
-llvm::cl::opt<bool> ConnectInOut(
-    "connect-in-out", llvm::cl::init(false),
-    llvm::cl::desc(
-        "Automatically connect inputs to outputs."));
+llvm::cl::opt<bool>
+    ConnectInOut("connect-in-out", llvm::cl::init(false),
+                 llvm::cl::desc("Automatically connect inputs to outputs."));
 
-llvm::cl::opt<bool> ConnectInIn(
-    "connect-in-in", llvm::cl::init(false),
-    llvm::cl::desc(
-        "Automatically connect common inputs."));
+llvm::cl::opt<bool>
+    ConnectInIn("connect-in-in", llvm::cl::init(false),
+                llvm::cl::desc("Automatically connect common inputs."));
 
 llvm::cl::opt<std::string> OutputPaths(
     "out-paths",
