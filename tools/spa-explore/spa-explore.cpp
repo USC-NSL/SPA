@@ -36,10 +36,15 @@ llvm::cl::list<std::string> Connect(
         "Specifies symbols to connect in a receiverSymbol1=senderSymbol2 "
         "format (default: auto-detect out=in like patterns)."));
 
-llvm::cl::opt<bool> ConnectDefault(
-    "connect-default", llvm::cl::init(false),
+llvm::cl::opt<bool> ConnectInOut(
+    "connect-in-out", llvm::cl::init(false),
     llvm::cl::desc(
-        "Automatically add default symbol mappings (matching I/Os)."));
+        "Automatically connect inputs to outputs."));
+
+llvm::cl::opt<bool> ConnectInIn(
+    "connect-in-in", llvm::cl::init(false),
+    llvm::cl::desc(
+        "Automatically connect common inputs."));
 
 llvm::cl::opt<std::string> OutputPaths(
     "out-paths",
@@ -129,9 +134,14 @@ int main(int argc, char **argv, char **envp) {
     spa.addValueMapping(sValue, rValue);
   }
 
-  if (ConnectDefault) {
-    klee::klee_message("   Using default symbol value mappings.");
-    spa.addDefaultValueMappings();
+  if (ConnectInOut) {
+    klee::klee_message("   Connecting inputs to outputs.");
+    spa.mapInputsToOutputs();
+  }
+
+  if (ConnectInIn) {
+    klee::klee_message("   Connecting common inputs.");
+    spa.mapCommonInputs();
   }
 
   // Get full CFG and call-graph.

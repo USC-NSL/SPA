@@ -823,14 +823,26 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(ExecutionState &state,
   std::string senderOutName = SPA::seedSymbolMappings[name];
   klee_message("  Connecting symbols %s = %s", name.c_str(), senderOutName.c_str());
 
-  // Check if sender outputs this message type.
-  if (state.senderPath->hasOutput(senderOutName)) {
-    assert(size >= state.senderPath->getOutputSize(senderOutName) && "Sender and receiver message size mismatch.");
+  if (state.senderPath->hasOutput(senderOutName)) { // Check if sender outputs this message type.
+    assert(size >= state.senderPath->getOutputSize(senderOutName) && "Symbol size mismatch.");
     // Add sender output values = server input array constraint.
     for (size_t offset = 0; offset < state.senderPath->getOutputSize(senderOutName); offset++) {
       klee::ref<klee::Expr> e = klee::createDefaultExprBuilder()->Eq(
         os->read8(offset),
         state.senderPath->getOutputValue(senderOutName, offset));
+      if (! state.addAndCheckConstraint(e)) {
+        executor.terminateStateOnError(state, "Seeding symbol made constraints trivially UNSAT (incompatible message for this path).", "user.err");
+      }
+    }
+  } else if (state.senderPath->getSymbol(senderOutName)) { // Check if defined as an input instead.
+    assert(size == state.senderPath->getSymbol(senderOutName)->size && "Symbol size mismatch.");
+    // Add sender input values = server input array constraint.
+    for (size_t offset = 0; offset < state.senderPath->getSymbol(senderOutName)->size; offset++) {
+      klee::UpdateList ul(state.senderPath->getSymbol(senderOutName), 0);
+      llvm::OwningPtr<klee::ExprBuilder> exprBuilder(klee::createDefaultExprBuilder());
+      klee::ref<klee::Expr> e = exprBuilder->Eq(
+        os->read8(offset),
+        exprBuilder->Read(ul, exprBuilder->Constant(offset, klee::Expr::Int32)));
       if (! state.addAndCheckConstraint(e)) {
         executor.terminateStateOnError(state, "Seeding symbol made constraints trivially UNSAT (incompatible message for this path).", "user.err");
       }

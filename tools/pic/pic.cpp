@@ -458,7 +458,7 @@ int main(int argc, char **argv, char **envp) {
     ifs.open(SenderPaths);
     assert(ifs.good() && "Unable to open sender path file.");
     spa.setSenderPathLoader(new SPA::PathLoader(ifs), FollowSenderPaths);
-    spa.addDefaultValueMappings();
+    spa.mapInputsToOutputs();
   }
 
   klee::klee_message("Starting SPA.");

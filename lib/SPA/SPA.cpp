@@ -886,8 +886,8 @@ void SPA::addValueMapping(std::string senderVar, std::string receiverVar) {
   seedSymbolMappings[receiverVar] = senderVar;
 }
 
-void SPA::addDefaultValueMappings() {
-  klee::klee_message("   Loading default value mappings.");
+void SPA::mapInputsToOutputs() {
+  klee::klee_message("   Loading input/output value mappings.");
 
   llvm::Function *fn = module->getFunction(SPA_INPUT_ANNOTATION_FUNCTION);
   assert(fn && "spa_input not found in module.");
@@ -911,6 +911,37 @@ void SPA::addDefaultValueMappings() {
                                 SPA_MESSAGE_INPUT_PREFIX) == 0) {
       std::string senderVarName =
           std::string(SPA_MESSAGE_OUTPUT_PREFIX) +
+          receiverVarName.substr(strlen(SPA_MESSAGE_INPUT_PREFIX));
+      addValueMapping(senderVarName, receiverVarName);
+    }
+  }
+}
+
+void SPA::mapCommonInputs() {
+  klee::klee_message("   Loading input/input value mappings.");
+
+  llvm::Function *fn = module->getFunction(SPA_INPUT_ANNOTATION_FUNCTION);
+  assert(fn && "spa_input not found in module.");
+
+  CG cg(module);
+  std::set<llvm::Instruction *> annotations = cg.getDefiniteCallers(fn);
+
+  for (auto it : annotations) {
+    const llvm::CallInst *callInst;
+    assert(callInst = dyn_cast<llvm::CallInst>(it));
+    assert(callInst->getNumArgOperands() == 5);
+    llvm::GlobalVariable *gv;
+    assert(gv = dyn_cast<llvm::GlobalVariable>(callInst->getArgOperand(2)
+                                                   ->stripPointerCasts()));
+    llvm::ConstantDataArray *cda;
+    assert(cda = dyn_cast<llvm::ConstantDataArray>(gv->getInitializer()));
+    std::string receiverVarName = cda->getAsCString().str();
+
+    // Check if input message.
+    if (receiverVarName.compare(0, strlen(SPA_MESSAGE_INPUT_PREFIX),
+                                SPA_MESSAGE_INPUT_PREFIX) == 0) {
+      std::string senderVarName =
+          std::string(SPA_MESSAGE_INPUT_PREFIX) +
           receiverVarName.substr(strlen(SPA_MESSAGE_INPUT_PREFIX));
       addValueMapping(senderVarName, receiverVarName);
     }
