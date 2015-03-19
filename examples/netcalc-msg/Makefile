@@ -1,17 +1,16 @@
 BADINPUTS = BadInputs.untested BadInputs.tested BadInputs.FalsePositives
-PATHS = netcalc-client.bc.client.paths netcalc-server.bc.server.paths netcalc-server-sequiv1.paths netcalc-server-sequiv2.paths netcalc-server-sequiv3.paths
-TARGETS = netcalc-client netcalc-server
-BC_TARGETS = netcalc-client.bc netcalc-server.bc
-TEST_TARGETS = netcalc-client.test netcalc-server.test
-FIXED_TARGETS = netcalc-client-fixed netcalc-server-fixed
-FIXED_BC_TARGETS = netcalc-client-fixed.bc netcalc-server-fixed.bc
-FIXED_TEST_TARGETS = netcalc-client-fixed.test netcalc-server-fixed.test
+TARGETS = netcalc-client netcalc-server netcalc-proxy
+BC_TARGETS = netcalc-client.bc netcalc-server.bc netcalc-proxy.bc
+TEST_TARGETS = netcalc-client.test netcalc-server.test netcalc-proxy.test
+FIXED_TARGETS = netcalc-client-fixed netcalc-server-fixed netcalc-proxy-fixed
+FIXED_BC_TARGETS = netcalc-client-fixed.bc netcalc-server-fixed.bc netcalc-proxy-fixed.bc
+FIXED_TEST_TARGETS = netcalc-client-fixed.test netcalc-server-fixed.test netcalc-proxy-fixed.test
 CFGS = netcalc-client.cfg netcalc-server.cfg
 HEADERS = netcalc.h
 LLVM_CC = clang++ -emit-llvm
 CC = g++
 CXX_FLAGS = -Wall -Werror -g -I../../include
-LIB_SPA_TEST_MODULE = $(shell dirname $(shell dirname $(shell which spa-pic)))/lib/libSpaTestModule.so
+LIB_SPA_TEST_MODULE = ../../Release+Asserts/lib/libSpaTestModule.so
 LIB_MSG_COMPARE_BC = ../spa-tools/msg-compare.bc
 
 
@@ -85,7 +84,7 @@ netcalc-server.paths: netcalc-server.bc netcalc-client.paths
 		                 AND NOT REACHED spa_valid_path_point" \
 		$< 2>&1 | tee $@.log
 
-# BadInputs.untested: $(PATHS) $(shell which spaBadInputs)
+# BadInputs.untested: netcalc-client.bc.client.paths netcalc-server.bc.server.paths $(shell which spaBadInputs)
 # 	spaBadInputs -client netcalc-client.bc.client.paths -server netcalc-server.bc.server.paths -o $@ -d $@.debug 2>&1 | tee $@.log
 # BadInputs.untested: netcalc-server.bc.server.paths $(shell which spaBadInputs)
 # 	rm -f $@
@@ -185,7 +184,7 @@ parallel-cluster:
 server-equiv: netcalc-server-sequiv3.paths
 client-server-equiv: netcalc-server-csequiv3.paths
 
-.PRECIOUS: $(PATHS) $(BADINPUTS)
+.PRECIOUS: *.paths $(BADINPUTS)
 
 clean:
 	rm -rf $(TARGETS) $(BC_TARGETS) $(TEST_TARGETS) $(BADINPUTS) $(CFGS)

@@ -10,6 +10,8 @@
 
 #include "netcalc.h"
 
+#define UDP_PORT 3141
+
 SpaTag_t QueryValid;
 
 // Handles the query and computes the response.
@@ -111,11 +113,11 @@ int main(int argc, char **argv) {
 
   bzero(&si_server, sizeof(si_server));
   si_server.sin_family = AF_INET;
-  si_server.sin_port = htons(NETCALC_UDP_PORT);
+  si_server.sin_port = htons(UDP_PORT);
   si_server.sin_addr.s_addr = htonl(INADDR_ANY);
   assert(bind(s, (struct sockaddr *)&si_server, sizeof(si_server)) == 0);
 
-  std::cerr << "Listening for queries on UDP port " << NETCALC_UDP_PORT << "."
+  std::cerr << "Listening for queries on UDP port " << UDP_PORT << "."
             << std::endl;
 
   // Handle queries indefinitely.

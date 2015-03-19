@@ -12,7 +12,9 @@
 #include "netcalc.h"
 
 #define DEFAULT_HOST "localhost"
+#define DEFAULT_PORT 3141
 #define HOST_PARAM "--host"
+#define PORT_PARAM "--port"
 
 int sock;
 struct addrinfo *server;
@@ -72,8 +74,8 @@ nc_value_t executeQuery(nc_operator_t op, nc_value_t arg1, nc_value_t arg2) {
   // Output operation.
   if (response.err == NC_OK) {
 #ifndef ENABLE_KLEE
-    std::cerr << "	" << query.arg1 << " " << getOpName(query.op) << " "
-              << query.arg2 << " = " << response.value << std::endl;
+    std::cerr << "	" << arg1 << " " << getOpName(query.op) << " " << arg2
+              << " = " << response.value << std::endl;
 #endif
     spa_valid_path();
   } else {
@@ -159,7 +161,16 @@ int main(int argc, char **argv) {
     host = args.front().c_str();
     args.pop_front();
   }
-  std::cerr << "Sending queries to " << host << "." << std::endl;
+
+  int port = DEFAULT_PORT;
+  // Check if user specified a port.
+  if (args.size() > 2 && args.front() == PORT_PARAM) {
+    args.pop_front();
+    port = atoi(args.front().c_str());
+    args.pop_front();
+  }
+
+  std::cerr << "Sending queries to " << host << ":" << port << "." << std::endl;
 
   struct addrinfo hints, *result;
   bzero(&hints, sizeof(hints));
@@ -169,7 +180,7 @@ int main(int argc, char **argv) {
   assert(!getaddrinfo(host, NULL, &hints, &result));
 
   for (server = result; server; server = server->ai_next) {
-    ((struct sockaddr_in *)result->ai_addr)->sin_port = htons(NETCALC_UDP_PORT);
+    ((struct sockaddr_in *)result->ai_addr)->sin_port = htons(port);
     if ((sock = socket(server->ai_family, server->ai_socktype,
                        server->ai_protocol)) < 0)
       continue;

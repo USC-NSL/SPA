@@ -1,4 +1,4 @@
-#define NETCALC_UDP_PORT 3141
+#include <string>
 
 typedef enum {
   NC_ADDITION = 0,
