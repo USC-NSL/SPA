@@ -17,6 +17,14 @@ netcalc-client.cfg
 netcalc-client.gcno
 netcalc-client.test
 netcalc-proxy
+netcalc-proxy-csequiv1.paths
+netcalc-proxy-csequiv1.paths.log
+netcalc-proxy-csequiv2.paths
+netcalc-proxy-csequiv2.paths.log
+netcalc-proxy-csequiv3.paths
+netcalc-proxy-csequiv3.paths.log
+netcalc-proxy-csequiv4.paths
+netcalc-proxy-csequiv4.paths.log
 netcalc-proxy-fixed
 netcalc-proxy-fixed.bc
 netcalc-proxy-fixed.test

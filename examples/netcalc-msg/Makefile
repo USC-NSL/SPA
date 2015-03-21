@@ -172,6 +172,53 @@ netcalc-server-csequiv3.paths: $(LIB_MSG_COMPARE_BC) netcalc-server-csequiv2.pat
 		--max-instruction-time=5 \
 		$< 2>&1 | tee $@.log
 
+netcalc-proxy-csequiv1.paths: netcalc-proxy.bc netcalc-client-fixed.paths $(shell which spa-explore)
+	spa-explore \
+		--in-paths netcalc-client-fixed.paths \
+		--connect spa_in_msg_in_query=spa_out_msg_query \
+		--connect spa_in_msg_size_in_query=spa_out_msg_size_query \
+		--out-paths $@ \
+		--start-from SpaHandleQueryEntry \
+		--toward "spa_msg_output_point" \
+		--stop-at "spa_msg_output_point" \
+		--output-at "spa_msg_output_point" \
+		$< 2>&1 | tee $@.log
+
+netcalc-proxy-csequiv2.paths: netcalc-server.bc netcalc-proxy-csequiv1.paths $(shell which spa-explore)
+	spa-explore \
+		--in-paths netcalc-proxy-csequiv1.paths \
+		--connect spa_in_msg_query=spa_out_msg_out_query \
+		--connect spa_in_msg_size_query=spa_out_msg_size_out_query \
+		--out-paths $@ \
+		--start-from SpaHandleQueryEntry \
+		--toward "spa_msg_output_point" \
+		--stop-at "spa_msg_output_point" \
+		--output-at "spa_msg_output_point" \
+		$< 2>&1 | tee $@.log
+
+netcalc-proxy-csequiv3.paths: netcalc-server.bc netcalc-proxy-csequiv2.paths $(shell which spa-explore)
+	spa-explore \
+		--in-paths netcalc-proxy-csequiv2.paths --connect-in-out \
+		--out-paths $@ \
+		--start-from SpaHandleQueryEntry \
+		--toward "spa_msg_output_point" \
+		--stop-at "spa_msg_output_point" \
+		--output-at "spa_msg_output_point" \
+		$< 2>&1 | tee $@.log
+
+netcalc-proxy-csequiv4.paths: $(LIB_MSG_COMPARE_BC) netcalc-proxy-csequiv3.paths $(shell which spa-explore)
+	spa-explore \
+		--in-paths netcalc-proxy-csequiv3.paths \
+		--connect spa_in_msg_message1=spa_out_msg_response \
+		--connect spa_in_msg_size_message1=spa_out_msg_size_response \
+		--connect spa_in_msg_message2=spa_out_msg_response2 \
+		--connect spa_in_msg_size_message2=spa_out_msg_size_response2 \
+		--out-paths $@ \
+		--start-from MsgCompareEntry \
+		--output-at MsgsDifferent \
+		--max-instruction-time=5 \
+		$< 2>&1 | tee $@.log
+
 cluster: validated.paths
 	spa-cluster-manual $<
 
@@ -183,6 +230,7 @@ parallel-cluster:
 
 server-equiv: netcalc-server-sequiv3.paths
 client-server-equiv: netcalc-server-csequiv3.paths
+proxy-equiv: netcalc-proxy-csequiv4.paths
 
 .PRECIOUS: *.paths $(BADINPUTS)
 
