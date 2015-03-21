@@ -43,7 +43,9 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
         std::string newName;
         int s = 2;
         while (
-            state.arrayNames.count((newName = it->first + numToStr<int>(s)))) {
+            state.arrayNames.count((newName = it->first + numToStr<int>(s))) ||
+            state.senderPath->getSymbol((newName)) ||
+            state.senderPath->hasOutput(newName)) {
           s++;
         }
         klee::klee_message(
@@ -63,7 +65,9 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
         std::string newName;
         int s = 2;
         while (
-            state.arrayNames.count((newName = it->first + numToStr<int>(s)))) {
+            state.arrayNames.count((newName = it->first + numToStr<int>(s))) ||
+            state.senderPath->getSymbol((newName)) ||
+            state.senderPath->hasOutput(newName)) {
           s++;
         }
         klee::klee_message(
