@@ -110,15 +110,19 @@ public:
         klee::klee_message("Test inputs:");
       }
       for (auto variable : path->getTestInputs()) {
-        std::stringstream ss;
-        for (auto b : variable.second) {
-          ss << " " << std::hex << (int) b;
+        // Only inject API inputs.
+        if (variable.first.compare(0, strlen(SPA_API_INPUT_PREFIX),
+                                   SPA_API_INPUT_PREFIX) == 0) {
+          std::stringstream ss;
+          for (auto b : variable.second) {
+            ss << " " << std::hex << (int) b;
+          }
+          if (EnableDbg) {
+            klee::klee_message("  %s = %s", variable.first.c_str(),
+                               ss.str().substr(1).c_str());
+          }
+          setenv(variable.first.c_str(), ss.str().substr(1).c_str(), 1);
         }
-        if (EnableDbg) {
-          klee::klee_message("  %s = %s", variable.first.c_str(),
-                             ss.str().substr(1).c_str());
-        }
-        setenv(variable.first.c_str(), ss.str().substr(1).c_str(), 1);
       }
       // Set up GCOV environment.
       setenv("GCOV_PREFIX", gcovDir, 1);

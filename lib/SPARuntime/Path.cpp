@@ -190,8 +190,7 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
   // Process inputs.
   for (auto it : symbolNames) {
     // Check if API input.
-    if (it.first.compare(0, strlen(SPA_API_INPUT_PREFIX),
-                         SPA_API_INPUT_PREFIX) == 0) {
+    if (it.first.compare(0, strlen(SPA_INPUT_PREFIX), SPA_INPUT_PREFIX) == 0) {
       objectNames.push_back(it.first);
       objects.push_back(it.second);
     }

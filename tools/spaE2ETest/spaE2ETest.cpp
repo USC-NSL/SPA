@@ -153,14 +153,18 @@ bool processTestCase(char *clientCmd, char *serverCmd, uint16_t port,
 
     // Load test-case into environment.
     for (auto input : path->getTestInputs()) {
-      std::stringstream value;
-      for (uint8_t b : input.second) {
-        if (!value.str().empty()) {
-          value << " ";
+      // Only inject API inputs.
+      if (input.first.compare(0, strlen(SPA_API_INPUT_PREFIX),
+                              SPA_API_INPUT_PREFIX) == 0) {
+        std::stringstream value;
+        for (uint8_t b : input.second) {
+          if (!value.str().empty()) {
+            value << " ";
+          }
+          value << std::hex << (int) b;
         }
-        value << std::hex << (int) b;
+        setenv(input.first.c_str(), value.str().c_str(), 1);
       }
-      setenv(input.first.c_str(), value.str().c_str(), 1);
     }
 
     LOG() << "Launching server: " << serverCmd << std::endl;
