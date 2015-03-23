@@ -74,7 +74,7 @@ netcalc-client-fixed.paths: netcalc-client-fixed.bc $(shell which spa-explore)
 # 	spa-pic --sender-paths netcalc-client.paths --server $< --path-file $@ 2>&1 | tee $@.log
 netcalc-server.paths: netcalc-server.bc netcalc-client.paths
 	spa-explore \
-		--in-paths netcalc-client.paths --connect-default \
+		--in-paths netcalc-client.paths --connect-in-out \
 		--out-paths $@ \
 		--start-from SpaHandleQueryEntry \
 		--away-from spa_valid_path_point \
@@ -228,6 +228,7 @@ parallel-cluster:
 		"./netcalc-client.test 0 0 +" "./netcalc-server.test" 3141 \
 		netcalc-client.paths netcalc-server.paths validated.paths
 
+interop: validated.paths
 server-equiv: netcalc-server-sequiv3.paths
 client-server-equiv: netcalc-server-csequiv3.paths
 proxy-equiv: netcalc-proxy-csequiv4.paths
@@ -235,5 +236,5 @@ proxy-equiv: netcalc-proxy-csequiv4.paths
 .PRECIOUS: *.paths $(BADINPUTS)
 
 clean:
-	rm -rf $(TARGETS) $(BC_TARGETS) $(TEST_TARGETS) $(BADINPUTS) $(CFGS)
+	rm -rf $(TARGETS) $(FIXED_TARGETS) $(BC_TARGETS) $(FIXED_BC_TARGETS) $(TEST_TARGETS) $(FIXED_TEST_TARGETS) $(BADINPUTS) $(CFGS)
 	rm -rf *.gcda *.gcno *.paths *.log *.debug klee-out-* klee-last
