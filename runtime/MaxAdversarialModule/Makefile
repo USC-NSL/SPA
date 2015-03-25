@@ -15,7 +15,7 @@ LINK_LIBS_IN_SHARED = 1
 DONT_BUILD_RELINKED = 1
 # NO_PEDANTIC=1
 
-USEDLIBS = spaRuntime.a kleeBasic.a kleeModule.a  kleaverSolver.a kleaverExpr.a kleeSupport.a
+USEDLIBS = spaRuntime.a kleeBasic.a kleeModule.a  kleaverSolver.a kleaverExpr.a kleeSupport.a kleeBasic.a kleeCore.a
 LINK_COMPONENTS = jit bitreader bitwriter ipo linker engine
 
 ifeq ($(shell echo "$(LLVM_VERSION_MAJOR).$(LLVM_VERSION_MINOR) >= 3.3" | bc), 1)
