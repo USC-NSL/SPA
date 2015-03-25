@@ -18,8 +18,18 @@ ecn: ecn.c
 %.bc: %.c
 	$(LLVM_CC) $(CFLAGS) -DENABLE_KLEE -DENABLE_MAX -c -o $@ $^
 
-run-max: ecn.bc
-	max $^
+# run-max: ecn.bc
+# 	max $^
+max_paths.txt: ecn.bc
+	spa-explore \
+		--out-paths $@ \
+		--start-from MaxSenderHandlePacketEntry \
+		--toward max_interesting \
+		--output-at max_interesting \
+		--stop-at max_interesting \
+		$< 2>&1 | tee $@.log
+
+run-max: max_paths.txt
 
 clean:
 	rm -f $(TARGETS) $(OBJECTS)
