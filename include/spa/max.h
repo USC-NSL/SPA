@@ -10,9 +10,15 @@
 
 SpaTag_t max_HandlerName = NULL;
 
+#ifdef __cplusplus
+extern "C" {
+#endif // #ifdef __cplusplus
 void maxSolveSymbolicHandler(va_list args);
 void maxInputFixedHandler(va_list args);
 void maxInputVarHandler(va_list args);
+#ifdef __cplusplus
+}
+#endif // #ifdef __cplusplus
 
 void __attribute__((noinline)) max_message_handler_entry() {}
 void __attribute__((noinline)) max_interesting() {}
