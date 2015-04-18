@@ -1,7 +1,3 @@
-SPA_EXE=/usr/local/bin/spa/Release+Asserts/bin/spa
-SPA_EXE+=" --stand-alone --libc=uclibc --posix-runtime"
-echo $SPA_EXE
-
 spa-explore \
 		--out-paths libbt.paths \
 		--start-from SpaMainEntry \

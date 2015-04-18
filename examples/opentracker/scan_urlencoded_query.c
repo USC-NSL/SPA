@@ -87,7 +87,6 @@ ssize_t scan_urlencoded_query(char **string, char *deststring, SCAN_SEARCHPATH_F
   const unsigned char* s=*(const unsigned char**) string;
   unsigned char *d = (unsigned char*)deststring;
   unsigned char b, c;
-
   /* This is the main decoding loop.
     'flag' determines, which characters are non-terminating in current context
     (ie. stop at '=' and '&' if scanning for a 'param'; stop at '?' if scanning for the path )

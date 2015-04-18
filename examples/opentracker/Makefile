@@ -13,9 +13,11 @@ CC?=gcc
 # LIBOWFAT_LIBRARY=$(PREFIX)/lib
 
 # Debug flavour
-PREFIX?=..
-LIBOWFAT_HEADERS=$(PREFIX)/libowfat
-LIBOWFAT_LIBRARY=$(PREFIX)/libowfat
+PREFIX?=.
+LIBOWFAT_HEADERS=$(PREFIX)/libowfat-0.29
+LIBOWFAT_LIBRARY=$(PREFIX)/libowfat-0.29
+
+
 
 BINDIR?=$(PREFIX)/bin
 
@@ -37,14 +39,14 @@ BINDIR?=$(PREFIX)/bin
 #FEATURES+=-DWANT_SPOT_WOODPECKER
 #FEATURES+=-DWANT_SYSLOGS
 #FEATURES+=-DWANT_DEV_RANDOM
-FEATURES+=-DWANT_FULLSCRAPE
+#FEATURES+=-DWANT_FULLSCRAPE
 
 #FEATURES+=-D_DEBUG_HTTPERROR
 
 OPTS_debug=-D_DEBUG -g -ggdb # -pg -fprofile-arcs -ftest-coverage
-OPTS_production=-O3
+#OPTS_production=-O3
 
-CFLAGS+=-I$(LIBOWFAT_HEADERS) -Wall -pipe -Wextra #-ansi -pedantic
+CFLAGS+=-I$(LIBOWFAT_HEADERS) -DENABLE_SPA -I../../include -I/home/kasey/spa/include -Wall -pipe -Wextra#-ansi -pedantic
 LDFLAGS+=-L$(LIBOWFAT_LIBRARY) -lowfat -pthread -lpthread -lz
 
 BINARY =opentracker
@@ -85,3 +87,7 @@ clean:
 
 install:
 	install -m 755 opentracker $(BINDIR)
+
+validate: $(OBJECTS) $(HEADERS)
+	$(CC) $(CFLAGS) -o ot.validate $(OBJECTS) /usr/local/lib/libSpaTestModule.so $(LDFLAGS) 
+

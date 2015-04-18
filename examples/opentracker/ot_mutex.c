@@ -79,11 +79,15 @@ static void bucket_remove( int bucket ) {
 
 /* Can block */
 ot_vector *mutex_bucket_lock( int bucket ) {
+#ifndef ENABLE_KLEE
   pthread_mutex_lock( &bucket_mutex );
   while( bucket_check( bucket ) )
     pthread_cond_wait( &bucket_being_unlocked, &bucket_mutex );
+#endif
   bucket_push( bucket );
+#ifndef ENABLE_KLEE
   pthread_mutex_unlock( &bucket_mutex );
+#endif
   return all_torrents + bucket;
 }
 
@@ -92,11 +96,15 @@ ot_vector *mutex_bucket_lock_by_hash( ot_hash hash ) {
 }
 
 void mutex_bucket_unlock( int bucket, int delta_torrentcount ) {
+#ifndef ENABLE_KLEE
   pthread_mutex_lock( &bucket_mutex );
+#endif 
   bucket_remove( bucket );
   g_torrent_count += delta_torrentcount;
+#ifndef ENABLE_KLEE
   pthread_cond_broadcast( &bucket_being_unlocked );
   pthread_mutex_unlock( &bucket_mutex );
+#endif
 }
 
 void mutex_bucket_unlock_by_hash( ot_hash hash, int delta_torrentcount ) {

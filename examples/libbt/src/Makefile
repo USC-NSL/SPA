@@ -4,7 +4,7 @@ srcdir := .
 top_srcdir := ..
 
 
-CC:=clang -emit-llvm
+CC:=gcc
 AR:=ar
 RANLIB:=ranlib
 
@@ -27,7 +27,7 @@ SRCS:=\
 	peerexchange.c
 OBJS:= ${SRCS:.c=.o}
 
-CPPFLAGS:=-DENABLE_SPA -DENABLE_KLEE -I/home/kasey/spa/examples/libbt/../../include
+CPPFLAGS:=-DENABLE_SPA -I/home/kasey/spa/examples/libbt/../../include
 CFLAGS:=-g -Wall -I../include -I$(top_srcdir)/include
 
 LIBS:=-lcurl  -lssl -lcrypto -lssl `curl-config --libs` -lm
@@ -68,3 +68,6 @@ libbt.a: ${OBJS}
 
 .c.o:
 	${CC} -c ${CFLAGS} ${CPPFLAGS} $< -o $@
+
+bttest: ${LIBBT} btget.c
+	${CC} ${CFLAGS} -I/home/kasey/spa/include -DVERSION=${VERSION} ${LDFLAGS} --coverage -DENABLE_SPA -o $@ btget.c -lbt ${LIBS} /usr/local/lib/libSpaTestModule.so

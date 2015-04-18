@@ -18,7 +18,7 @@ BUILD_OBJS="\
     udpproto.o \
 	peerexchange.o"
 
-FLAGS="-emit-llvm -I../include -DENABLE_SPA -DENABLE_KLEE -I../../../include -DVERSION=1.06"
+FLAGS="-emit-llvm -g -I../include -DENABLE_SPA -DENABLE_KLEE -I../../../include -DVERSION=1.06"
 
 LIBFLAGS="-lbt -lcurl  -lssl -lcrypto -lssl `curl-config --libs` -lm"
 

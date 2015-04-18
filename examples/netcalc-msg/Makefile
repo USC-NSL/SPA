@@ -96,7 +96,7 @@ netcalc-server.paths: netcalc-server.bc netcalc-client.paths
 # 	spaE2ETest $< $@ false-positives.paths 3141 './netcalc-client.test 1 1 +' './netcalc-server.test' 2>&1 | tee $@.log
 validated.paths: netcalc-server.paths $(TEST_TARGETS) $(shell which spa-validate)
 	killall netcalc-client.test netcalc-server.test || true
-	spa-validate $< $@ false-positives.paths \
+	spa-validate -d $< $@ false-positives.paths \
 		"RUN ./netcalc-server.test; \
 		WAIT LISTEN UDP 3141; \
 		RUN ./netcalc-client.test 0 0 +; \

@@ -102,7 +102,7 @@ ssize_t http_issue_error( const int64 sock, struct ot_workstruct *ws, int code )
   char *error_code[] = { "302 Found", "400 Invalid Request", "400 Invalid Request", "400 Invalid Request", "402 Payment Required",
                          "403 Not Modest", "403 Access Denied", "404 Not Found", "500 Internal Server Error" };
   char *title = error_code[code];
-
+  spa_invalid_path();
   ws->reply = ws->outbuf;
   if( code == CODE_HTTPERROR_302 )
     ws->reply_size = snprintf( ws->reply, G_OUTBUF_SIZE, "HTTP/1.0 302 Found\r\nContent-Length: 0\r\nLocation: %s\r\n\r\n", g_redirecturl );
@@ -385,8 +385,9 @@ static ssize_t http_handle_announce( const int64 sock, struct ot_workstruct *ws,
   unsigned short    port = 0;
   char             *write_ptr;
   ssize_t           len;
+#ifndef ENABLE_KLEE
   struct http_data *cookie = io_getcookie( sock );
-
+#endif
   /* This is to hack around stupid clients that send "announce ?info_hash" */
   if( read_ptr[-1] != '?' ) {
     while( ( *read_ptr != '?' ) && ( *read_ptr != '\n' ) ) ++read_ptr;
@@ -404,7 +405,10 @@ static ssize_t http_handle_announce( const int64 sock, struct ot_workstruct *ws,
       OT_SETIP( &ws->peer, cookie->ip );
   } else
 #endif
+
+#ifndef ENABLE_KLEE
   OT_SETIP( &ws->peer, cookie->ip );
+#endif
 
   ws->peer_id = NULL;
   ws->hash = NULL;
@@ -534,9 +538,8 @@ ssize_t http_handle_request( const int64 sock, struct ot_workstruct *ws ) {
   ssize_t reply_off, len;
   char   *read_ptr = ws->request, *write_ptr;
 
-  spa_msg_input(read_ptr, G_INBUF_SIZE, "request");
-  spa_msg_input_size(ws->request_size, "request");
-
+#ifndef ENABLE_KLEE
+  spa_msg_input_point();
 #ifdef WANT_FULLLOG_NETWORKS
   struct http_data *cookie = io_getcookie( sock );
   if( loglist_check_address( cookie->ip ) ) {
@@ -568,6 +571,7 @@ ssize_t http_handle_request( const int64 sock, struct ot_workstruct *ws ) {
   memcpy( ws->debugbuf, ws->request, reply_off );
   ws->debugbuf[ reply_off ] = 0;
 #endif
+#endif //ENABLE_KLEE
   
   /* Tell subroutines where to put reply data */
   ws->reply = ws->outbuf + SUCCESS_HTTP_HEADER_LENGTH;
@@ -601,8 +605,9 @@ ssize_t http_handle_request( const int64 sock, struct ot_workstruct *ws ) {
   /* All the rest is matched the standard way */
   else if( len == g_stats_path_len && !memcmp( write_ptr, g_stats_path, len ) )
     http_handle_stats( sock, ws, read_ptr );
-  else
+  else{
     HTTPERROR_404;
+  }
 
   /* Find out if the client wants to keep this connection alive */
   ws->keep_alive = 0;
@@ -612,10 +617,11 @@ ssize_t http_handle_request( const int64 sock, struct ot_workstruct *ws ) {
 #endif
 
   /* If routines handled sending themselves, just return */
-  if( ws->reply_size == -2 ) return 0;
+  if( ws->reply_size == -2 ) { spa_valid_path(); return 0; }
   /* If routine failed, let http error take over */
   if( ws->reply_size <= 0 ) HTTPERROR_500;
-
+  
+  spa_valid_path();
   /* This one is rather ugly, so I take you step by step through it.
 
      1. In order to avoid having two buffers, one for header and one for content, we allow all above functions from trackerlogic to
@@ -632,8 +638,6 @@ ssize_t http_handle_request( const int64 sock, struct ot_workstruct *ws ) {
 
   /* 3. Finally we join both blocks neatly */
   ws->outbuf[ SUCCESS_HTTP_HEADER_LENGTH - 1 ] = '\n';
-
-  spa_valid_path();
   
   http_senddata( sock, ws );
   return ws->reply_size;

@@ -21,7 +21,7 @@ CROSS=
 #CC=$(CROSS)gcc
 CC=clang
 CFLAGS=-pipe -W -Wall -O2 -fomit-frame-pointer
-CFLAGS += -DENABLE_SPA -DENABLE_KLEE -I`pwd`/../../include -emit-llvm -use-gold-plugin -O0 -g
+CFLAGS += -DENABLE_SPA -DENABLE_KLEE -I`pwd`/../../include -emit-llvm -g
 
 LD=llvm-link
 #CFLAGS=-pipe -Os -march=pentiumpro -mcpu=pentiumpro -fomit-frame-pointer -fschedule-insns2 -Wall

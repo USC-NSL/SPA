@@ -75,7 +75,7 @@
 
 #ifdef ENABLE_SPA
  /*SPA*/
-#include "spa/spaRuntime.h"
+#include <spa/spaRuntime.h>
 #endif
 
 /* globals */
@@ -261,9 +261,8 @@ btStream *fetchtorrent( char *url) {
     return io;
 }
 
-int main( int argc, char **argv) {
-
-    btStream *bts;
+int main_fn(int argc, char **argv) {
+	btStream *bts;
     struct btContext *ctx = &context;
     int cs;
     struct sockaddr csin;
@@ -281,7 +280,7 @@ int main( int argc, char **argv) {
     int opturl = 0;
     int dl;
     int opttime = 0;
-
+#ifndef ENABLE_KLEE
     /* initialize */
     time(&choke_timer);
     time(&report_timer);
@@ -347,26 +346,27 @@ int main( int argc, char **argv) {
     printf("  -t<interval>  Time between report intervals\n");
 	exit(1);
     }
-
+#endif
     btContext_create( ctx, optexaggerate, NULL);
     while(optind<argc) {
 	if (opturl) {
 	    bts = fetchtorrent( argv[optind]);
 	} else {
-
 #ifdef ENABLE_SPA
-		int BUF_SIZE = 500;
-		char torrent_buf[BUF_SIZE];
-		spa_api_input_var(torrent_buf);
-		spa_assume(torrent_buf[sizeof(torrent_buf) - 1] == '\0');
+		//Outline of the structure for a bencoded torrent file
+		//* represents  a symbolic character
+		//# represents a symbolic char that must be a number
+		#define SPA_DICT "d8:announce30:http://localhost:6969/announce13:creation datei0e10:created by2:KC4:infod6:lengthi4096e4:name2:KC12:piece lengthi16e6:pieces20:00000000000000000000ee"
+		char* spa_dict = SPA_DICT;
+			
 		bts = bts_create_strstream(BTS_INPUT);
-		bts_write(bts, torrent_buf, BUF_SIZE);
+		bts_write(bts, spa_dict, sizeof(SPA_DICT));
 #else
 	    bts = bts_create_filestream( argv[optind], BTS_INPUT);
 #endif
 
 	}
-    
+
 	/* load tracker file */
 	dl=ctx_loadfile( bts, ctx, ".", optseed, optignore);
 	if (dl < 0) {
@@ -374,13 +374,13 @@ int main( int argc, char **argv) {
 	    optind++;
 	    continue;
 	}
-	
 	bts_destroy( bts);
-	
+
 	// Check hash
 	kBitSet partialData;
 	kBitSet_create(&partialData, ctx->downloads[dl]->fileset.npieces);
-	
+
+#ifndef ENABLE_SPA	
 	int igood = ctx_readfastresume(ctx->downloads[dl], &partialData);
 	if (igood < 0)
 	{    
@@ -393,12 +393,18 @@ int main( int argc, char **argv) {
 	if (optfile) {
 	    seg_markFile( &ctx->downloads[dl]->fileset, optfile, &ctx->downloads[dl]->interested);
 	}
+#else
+	//ctx_hashpartialdata(&ctx->downloads[dl]->fileset, &partialData);
+	ctx_writehashtodownload(ctx->downloads[dl], &partialData);
+	kBitSet_finit(&partialData);
+#endif
 	optind++;
     }
 
+#ifndef ENABLE_KLEE
     /* server listener */
     ctx_startserver( ctx);
-
+#endif
     /* initial contact with the tracker */
     for(dl=0; dl<ctx->downloadcount; dl++) {
         if (ctx->downloads[dl]) {
@@ -683,14 +689,17 @@ int main( int argc, char **argv) {
     return 0;
 }
 
-#ifdef ENABLE_SPA
+int main( int argc, char **argv) {
+    return main_fn(argc, argv);
+}
+
+#ifdef ENABLE_KLEE
 
 void __attribute__((noinline,used)) SpaMainEntry() {
   spa_api_entry();
   int argc = 2;
   char *argv[] = {"btget", "test.torrent"};
-  
-  main(argc, argv);
+  main_fn(argc, argv);
 }
 
 #endif

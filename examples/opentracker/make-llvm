@@ -1,16 +1,14 @@
 #!/bin/bash
 
-if [ "`file libowfat-0.29/libowfat.a`" = "libowfat-0.29/libowfat.a: LLVM bitcode" ];
-then
-    cd libowfat-0.29 
-    make clean && ./make-llvm 
-    cd .. 
-fi
+cd libowfat-0.29
+#make clean && ./make-llvm
+cd ..
+
 
 make clean
 
-CC='clang' CFLAGS="-DENABLE_SPA -DENABLE_KLEE -I../../include -I./libowfat-0.29/ -emit-llvm -use-gold-plugin -O0 -g" LDFLAGS="-L. -L./libowfat-0.29/ -emit-llvm -use-gold-plugin -O0 -g" \
-CXX='clang++' CXXFLAGS="-DENABLE_SPA -DENABLE_KLEE -I../../include -I./libowfat-0.29/ -emit-llvm -use-gold-plugin -O0 -g" \
+CC='clang' CFLAGS="-DENABLE_SPA -DENABLE_KLEE -I../../include -I./libowfat-0.29/ -emit-llvm" LDFLAGS="-L. -L./libowfat-0.29/ -emit-llvm " \
+CXX='clang++' CXXFLAGS="-DENABLE_SPA -DENABLE_KLEE -I../../include -I./libowfat-0.29/ -emit-llvm" \
 LD='llvm-link' \
 CPP='clang -E' \
 make opentracker.o trackerlogic.o scan_urlencoded_query.o ot_mutex.o ot_stats.o ot_vector.o ot_clean.o ot_udp.o ot_iovec.o ot_fullscrape.o ot_accesslist.o ot_http.o ot_livesync.o ot_rijndael.o

@@ -37,10 +37,13 @@
 #endif
 #include "bterror.h"
 #include "util.h"
+ 
+#ifndef ENABLE_KLEE
 #undef malloc
 #undef calloc
 #undef realloc
 #undef free
+#endif
 
 #ifdef WITH_DMALLOC
 #include <dmalloc.h>

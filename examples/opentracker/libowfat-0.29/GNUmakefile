@@ -15,23 +15,40 @@ textcode.a cdb.a
 
 all: $(LIBS) libowfat.a libsocket t
 
+#
+#Flags for LLVM BC Version
+#Build using ./make-llvm
+#Make sure to update libowfat.a and %.o
+#
+
 CROSS=
 #CROSS=i686-mingw-
-#CC=$(CROSS)gcc
+CC=$(CROSS)gcc
 CC=clang
 CFLAGS=-pipe -W -Wall -O2 -fomit-frame-pointer
-CFLAGS += -DENABLE_SPA -DENABLE_KLEE -I`pwd`/../../include -emit-llvm -use-gold-plugin -O0 -g
+CFLAGS += -DENABLE_SPA -DENABLE_KLEE -I`pwd`/../../include -emit-llvm
 
 LD=llvm-link
 #CFLAGS=-pipe -Os -march=pentiumpro -mcpu=pentiumpro -fomit-frame-pointer -fschedule-insns2 -Wall
 
-# CFLAGS += -fstrict-aliasing -Wstrict-aliasing=2
-
+#CFLAGS += -fstrict-aliasing -Wstrict-aliasing=2
 CFLAGS += -D_REENTRANT
+
+#
+#Flags for regular library
+#
+
+# CROSS=
+# #CROSS=i686-mingw-
+# CC=$(CROSS)gcc
+# CFLAGS=-pipe -W -Wall -O2 -fomit-frame-pointer
+# #CFLAGS=-pipe -Os -march=pentiumpro -mcpu=pentiumpro -fomit-frame-pointer -fschedule-insns2 -Wall
+# CFLAGS += -fstrict-aliasing -Wstrict-aliasing=2
+# CFLAGS += -D_REENTRANT
 
 # startrip
 ifneq ($(DEBUG),)
-CFLAGS=-pipe -Wall -g
+CFLAGS=-pipe -Wall
 endif
 path = $(subst :, ,$(PATH))
 diet_path = $(foreach dir,$(path),$(wildcard $(dir)/diet))
@@ -139,9 +156,11 @@ $(TAIA_OBJS) $(TAI_OBJS) $(CASE_OBJS) $(ARRAY_OBJS) $(MULT_OBJS) \
 $(IO_OBJS) $(CDB_OBJS)
 
 libowfat.a: $(ALL_OBJS)
+#For KLEE 
 	llvm-link -o $@ $(ALL_OBJS)
-#	$(CROSS)ar cr $@ $(ALL_OBJS)
-#	-$(CROSS)ranlib $@
+#For regular
+	# $(CROSS)ar cr $@ $(ALL_OBJS)
+	# -$(CROSS)ranlib $@
 
 CFLAGS+=-I.
 
@@ -149,9 +168,11 @@ CFLAGS+=-I.
 	$(DIET) $(CC) -c $< $(CFLAGS)
 
 %.a:
+#For KLEE 
 	llvm-link -o $@ $^
-#	ar cr $@ $^
-#	-ranlib $@
+#For regular
+	# ar cr $@ $^
+	# -ranlib $@
 
 t.o: t.c fmt.h scan.h str.h uint16.h uint32.h stralloc.h socket.h \
   buffer.h ip4.h ip6.h byte.h mmap.h open.h textcode.h dns.h iopause.h \
@@ -160,7 +181,7 @@ t.o: t.c fmt.h scan.h str.h uint16.h uint32.h stralloc.h socket.h \
   havesigio.h CAS.h
 
 t: t.o libowfat.a libsocket
-	$(DIET) $(CC) -g -o $@ t.o libowfat.a `cat libsocket` -lpthread
+	$(DIET) $(CC) -o $@ t.o libowfat.a `cat libsocket` -lpthread
 
 .PHONY: all clean tar install rename
 clean:

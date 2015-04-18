@@ -620,6 +620,8 @@ int main( int argc, char **argv ) {
     }
   }
 
+//  printf("Running Opentracker\n");
+
   /* Bind to our default tcp/udp ports */
   if( !bound) {
     ot_try_bind( serverip, 6969, FLAG_TCP );
@@ -669,15 +671,16 @@ const char *g_version_opentracker_c = "$Source$: $Revision$\n";
 
 void __attribute__((noinline,used)) spa_handleAnnounce()
 {
-        spa_message_handler_entry();
+  spa_message_handler_entry();
+  struct ot_workstruct ws;
 
-        int argc = 3;
-        char *argv[] = {"opentracker",
-                        "-f",
-                        "/home/sakekasi/UCLA/Spring2/CS199/spa/examples/opentracker/opentracker.conf"};
-
-        main(argc, argv);
-
+  /* Initialize our "thread local storage" */
+  ws.inbuf   = malloc( G_INBUF_SIZE );
+  ws.outbuf  = malloc( G_OUTBUF_SIZE );
+  ws.request = ws.inbuf;
+  spa_msg_input(ws.request, G_INBUF_SIZE, "url");
+  spa_msg_input_size(ws.request_size, "url");
+  http_handle_request(0, &ws);
 }
 
         

@@ -58,10 +58,8 @@
 #   define snprintf _snprintf
 #endif
 
-#ifdef ENABLE_SPA
- /*SPA*/
 #include "spa/spaRuntime.h"
-#endif
+
 
 static int parse_config_int( 
 	const char *file, int lineno, const char *token, 
@@ -148,10 +146,17 @@ btContext *btContext_create( btContext *ctx, float ulfactor, char *rcfile) {
     /* read defaults */
     if (!rcfile)
     {
+#ifndef ENABLE_KLEE
 	randomid( ctx->myid, IDSIZE);
 	randomid( ctx->mykey, KEYSIZE);
 	ctx->minport = MINPORT;
 	ctx->maxport = MAXPORT;
+#else
+	spa_api_input(ctx->myid, IDSIZE, "myid");
+	spa_api_input(ctx->mykey, KEYSIZE, "mykey");
+	ctx->minport = MINPORT;
+	ctx->maxport = MAXPORT;
+#endif
     } else {
 	config=fopen(rcfile, "r");
 	if (!config) {
@@ -200,7 +205,6 @@ btContext *btContext_create( btContext *ctx, float ulfactor, char *rcfile) {
     }
     ctx->ulfactor = ulfactor;
     ctx->listenport = ctx->minport;
-
     return ctx;
 }
 
@@ -437,6 +441,7 @@ static btObject* btrequest(
     dgurl=hexdigest(digest, SHA_DIGEST_LENGTH);
     idurl=hexdigest(myid, IDSIZE);
     keyurl=hexdigest(mykey, KEYSIZE);
+#ifndef ENABLE_KLEE
     hdl = curl_easy_init();
     if (event) {
 	snprintf( url, sizeof(url)-1, "%s?info_hash=%s&peer_id=%s&key=%s&port=%d&uploaded=%lld&downloaded=%lld&left=%lld&event=%s&compact=1", 
@@ -462,6 +467,31 @@ static btObject* btrequest(
 		left
 	    );
     }
+#else
+    //Pretend it is a full get request
+    if (event) {
+	snprintf( url, sizeof(url)-1, "GET /announce?info_hash=%s&peer_id=%s&key=%s&port=%d&uploaded=%lld&downloaded=%lld&left=%lld&event=%s&compact=1", 
+		dgurl,
+		idurl,
+		keyurl,
+		port,
+		uploaded, 
+		downloaded,
+		left,
+		event
+	    );
+    } else {
+	snprintf( url, sizeof(url)-1, "GET /announce?info_hash=%s&peer_id=%s&key=%s&port=%d&uploaded=%lld&downloaded=%lld&left=%lld&compact=1", 
+		dgurl,
+		idurl,
+		keyurl,
+		port,
+		uploaded, 
+		downloaded,
+		left
+	    );
+    }
+#endif
     url[sizeof(url)-1]=0;
 
     spa_msg_output_var(url);
@@ -491,6 +521,7 @@ static btObject* btrequest(
     }
     bts_destroy (io);
     curl_easy_cleanup( hdl);
+    exit(1);
     return result;
 }
 
@@ -843,7 +874,6 @@ int ctx_loadfile(
     int i, j, dlid;
     btDownload *dl;
     btInteger *isprivate;
-
     /* Allocate the new download */
     for(dlid=0; dlid<ctx->downloadcount; dlid++) {
 	if (!ctx->downloads[dlid]) break;
@@ -857,7 +887,6 @@ int ctx_loadfile(
 	}
 	ctx->downloads=l;
     }
-
     dl=btcalloc(1, sizeof(btDownload));
     if(!dl) return -ENOMEM;
 
@@ -867,14 +896,17 @@ int ctx_loadfile(
       return -EINVAL;
       /*DIE("Load metadata failed");*/
     }
-
     /* calculate infohash */
     infostr = bts_create_strstream( BTS_OUTPUT);
     benc_put_object( infostr, btObject_val( dl->md, "info"));
     strbuf = bts_get_buf( infostr);
+#ifndef ENABLE_KLEE
     SHA1( strbuf.buf, strbuf.len, dl->infohash);
+#else
+    //memset(dl->infohash, 0, SHA_DIGEST_LENGTH);
+#endif
+    spa_api_input(dl->infohash, SHA_DIGEST_LENGTH, "dl_infohash");
     bts_destroy( infostr);
-
     /* copy out url */
     announcelist = BTLIST( btObject_val( dl->md, "announce-list"));
     if (announcelist) {
@@ -965,8 +997,8 @@ int ctx_loadfile(
 	    kStringBuffer_finit( &path);
 	}
     }
+
     dl->fileset.left = dl->fileset.tsize;
-    
     ctx->downloads[dlid]=dl;
     return dlid;
 }
@@ -1200,12 +1232,13 @@ int ctx_writehashtodownload(btDownload *dl, kBitSet *partialData)
             bs_clr(&dl->interested, i);
         }
     }
-    
+#ifndef ENABLE_KLEE    
     printf("\n");
     printf("Total good pieces %d (%d%%)\n", igood, igood * 100 / dl->fileset.npieces);
     printf("Total archive size %lld\n", dl->fileset.tsize);
     bs_dump( "completed", &dl->fileset.completed);
-    return igood;   
+#endif
+    return igood;
 }
 
 #pragma mark -

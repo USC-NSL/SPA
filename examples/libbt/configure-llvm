@@ -4,5 +4,5 @@
 #CXX='clang++' CXXFLAGS="-DENABLE_SPA -DENABLE_KLEE -I`pwd`/../../include -emit-llvm -use-gold-plugin -O0 -g" \
 #LD='llvm-link' \
 #CPP='clang -E' \
-./configure CC='clang -emit-llvm' CPPFLAGS="-DENABLE_SPA -DENABLE_KLEE -I`pwd`/../../include"
+./configure CC='clang -g -emit-llvm' CPPFLAGS="-DENABLE_SPA -DENABLE_KLEE -I`pwd`/../../include"
 

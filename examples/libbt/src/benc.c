@@ -299,6 +299,7 @@ int benc_get_object( btStream *bts, btObject **o) {
     int c = bts_peek( bts);
 
     if (c<0) return -1;
+
     switch (c) {
         case 'd':        
             d = btDict_create(NULL);

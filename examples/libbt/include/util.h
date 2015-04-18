@@ -53,11 +53,14 @@ int hexdecode (unsigned char *digest, int len, const char *buf, int buflen);
 	typedef void (*exitfn_ptr) (int,void*);
 	int on_exit( exitfn_ptr exitfn, void* data) ;
 #endif
+
+#ifndef ENABLE_SPA
 #define malloc(s) use_btmalloc_instead
 #define calloc(n,s) use_btcalloc_instead
 #define realloc(p,s) use_btrealloc_instead
 #undef free
 #define free(p) use_btfree_instead
+#endif
 
 void hexdump( void *buf, int buflen);
 
