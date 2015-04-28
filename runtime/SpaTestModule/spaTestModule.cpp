@@ -90,7 +90,7 @@ void spa_state_handler(va_list args) {
 void spa_api_output_handler(va_list args) {
   uint8_t *var = (uint8_t *)va_arg(args, void *);
   size_t size = va_arg(args, size_t);
-  //   size_t maxSize = va_arg(args, size_t);
+  size_t maxSize = va_arg(args, size_t);
   const char *name = va_arg(args, const char *);
 
   handle_output(var, size, name);
@@ -115,7 +115,7 @@ void spa_msg_input_size_handler(va_list args) {
 void spa_msg_output_handler(va_list args) {
   uint8_t *var = (uint8_t *)va_arg(args, void *);
   size_t size = va_arg(args, size_t);
-  //   size_t maxSize = va_arg(args, size_t);
+  size_t maxSize = va_arg(args, size_t);
   const char *name = va_arg(args, const char *);
 
   handle_output(var, size, name);
