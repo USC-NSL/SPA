@@ -26,12 +26,9 @@ void handleQuery(nc_query_t &in_query, ssize_t size, nc_query_t &out_query) {
   out_query = in_query;
 
   // Expand implicit operators.
-  if (in_query.op == NC_ADDITION && size == offsetof(nc_query_t, arg2)) {
+  if (size == offsetof(nc_query_t, arg2) &&
+      (in_query.op == NC_ADDITION || in_query.op == NC_SUBTRACTION)) {
     out_query.arg2 = 1;
-  }
-  if (in_query.op == NC_SUBTRACTION && size == offsetof(nc_query_t, arg2)) {
-    out_query.arg1 = 0;
-    out_query.arg2 = in_query.arg1;
   }
 
   spa_msg_output_var(out_query);

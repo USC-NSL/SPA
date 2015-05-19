@@ -27,14 +27,6 @@ nc_value_t executeQuery(nc_operator_t op, nc_value_t arg1, nc_value_t arg2) {
   spa_api_input_var(arg1);
   spa_api_input_var(arg2);
 
-  spa_seed_var(1, op, NC_ADDITION);
-  spa_seed_var(1, arg1, 1);
-  spa_seed_var(1, arg2, 2);
-
-  spa_seed_var(2, op, NC_SUBTRACTION);
-  spa_seed_var(2, arg1, 2);
-  spa_seed_var(2, arg2, 1);
-
   assert(op >= 0 && op < NC_OPERATOR_END && "Invalid operator in query.");
 #ifdef ENABLE_FIX
   assert((op != NC_DIVISION || arg2 != 0) && "Division by zero.");
@@ -48,7 +40,7 @@ nc_value_t executeQuery(nc_operator_t op, nc_value_t arg1, nc_value_t arg2) {
   if (op == NC_ADDITION && (arg1 == 1 || arg2 == 1)) {
     query.arg1 = (arg2 == 1) ? arg1 : arg2;
     size = offsetof(nc_query_t, arg2);
-  } else if (op == NC_SUBTRACTION && arg1 == 0) {
+  } else if (op == NC_SUBTRACTION && arg2 == 1) {
     query.arg1 = arg2;
     size = offsetof(nc_query_t, arg2);
   } else {

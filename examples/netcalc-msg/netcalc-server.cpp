@@ -18,9 +18,6 @@ SpaTag_t QueryValid;
 void handleQuery(nc_query_t &query, ssize_t size, nc_response_t &response) {
   spa_msg_input_var(query);
   spa_msg_input_size(size, "query");
-  // 	spa_seed_file( 1, &query, "query.seed" );
-  // 	spa_seed( 1, &query, sizeof( query ),
-  // "\0\0\0\0\171\171\171\171\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0" );
 
   response.err = NC_OK;
 
@@ -29,10 +26,8 @@ void handleQuery(nc_query_t &query, ssize_t size, nc_response_t &response) {
   case NC_ADDITION: {
     if (size == sizeof(query)) {
       response.value = query.arg1 + query.arg2;
-#ifdef ENABLE_FIX
     } else if (size == offsetof(nc_query_t, arg2)) {
       response.value = query.arg1 + 1;
-#endif
     } else {
       response.err = NC_BADINPUT;
     }
@@ -40,8 +35,10 @@ void handleQuery(nc_query_t &query, ssize_t size, nc_response_t &response) {
   case NC_SUBTRACTION: {
     if (size == sizeof(query)) {
       response.value = query.arg1 - query.arg2;
+#ifdef ENABLE_FIX
     } else if (size == offsetof(nc_query_t, arg2)) {
-      response.value = -query.arg1;
+      response.value = query.arg1 - 1;
+#endif
     } else {
       response.err = NC_BADINPUT;
     }
