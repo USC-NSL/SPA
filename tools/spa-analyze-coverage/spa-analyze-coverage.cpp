@@ -40,7 +40,7 @@ int main(int argc, char **argv, char **envp) {
 
   SPA::PathLoader pathLoader(inFile);
   llvm::OwningPtr<SPA::Path> path;
-  unsigned long path_id = 0;
+  unsigned long numPaths = 0;
 
   std::map<std::pair<std::string, long>, long> exploredNotTestLineCoverage;
   std::map<std::string, long> exploredNotTestFunctionCoverage;
@@ -48,7 +48,7 @@ int main(int argc, char **argv, char **envp) {
   std::map<std::string, long> testNotExploredFunctionCoverage;
 
   while (path.reset(pathLoader.getPath()), path) {
-    klee::klee_message("Processing path %ld.", path_id++);
+    klee::klee_message("Processing path %ld.", ++numPaths);
 
     if (DiffStats) {
       // Find lines covered during exploration, but not during testing.
@@ -103,26 +103,27 @@ int main(int argc, char **argv, char **envp) {
 
     for (auto a : exploredNotTestLineCoverage) {
       sortedExploredNotTestLineCoverage.insert(
-          std::make_pair(a.second, a.first));
+          std::make_pair(-a.second, a.first));
     }
     for (auto a : exploredNotTestFunctionCoverage) {
       sortedExploredNotTestFunctionCoverage.insert(
-          std::make_pair(a.second, a.first));
+          std::make_pair(-a.second, a.first));
     }
     for (auto a : testNotExploredLineCoverage) {
       sortedTestNotExploredLineCoverage.insert(
-          std::make_pair(a.second, a.first));
+          std::make_pair(-a.second, a.first));
     }
     for (auto a : testNotExploredFunctionCoverage) {
       sortedTestNotExploredFunctionCoverage.insert(
-          std::make_pair(a.second, a.first));
+          std::make_pair(-a.second, a.first));
     }
 
     klee::klee_message(
         "Top lines covered during exploration, but not in testing:");
     long count = N;
     for (auto a : sortedExploredNotTestLineCoverage) {
-      klee::klee_message("  %s:%ld", a.second.first.c_str(), a.second.second);
+      klee::klee_message("  %s:%ld (%ld%% of paths)", a.second.first.c_str(),
+                         a.second.second, -a.first * 100 / numPaths);
       if (--count == 0) {
         break;
       }
@@ -132,7 +133,8 @@ int main(int argc, char **argv, char **envp) {
         "Top functions covered during exploration, but not in testing:");
     count = N;
     for (auto a : sortedExploredNotTestFunctionCoverage) {
-      klee::klee_message("  %s", a.second.c_str());
+      klee::klee_message("  %s (%ld%% of paths)", a.second.c_str(),
+                         -a.first * 100 / numPaths);
       if (--count == 0) {
         break;
       }
@@ -142,7 +144,8 @@ int main(int argc, char **argv, char **envp) {
         "Top lines covered in testing, but not during exploration:");
     count = N;
     for (auto a : sortedTestNotExploredLineCoverage) {
-      klee::klee_message("  %s:%ld", a.second.first.c_str(), a.second.second);
+      klee::klee_message("  %s:%ld (%ld%% of paths)", a.second.first.c_str(),
+                         a.second.second, -a.first * 100 / numPaths);
       if (--count == 0) {
         break;
       }
@@ -152,7 +155,8 @@ int main(int argc, char **argv, char **envp) {
         "Top functions covered in testing, but not during exploration:");
     count = N;
     for (auto a : sortedTestNotExploredFunctionCoverage) {
-      klee::klee_message("  %s", a.second.c_str());
+      klee::klee_message("  %s (%ld%% of paths)", a.second.c_str(),
+                         -a.first * 100 / numPaths);
       if (--count == 0) {
         break;
       }
