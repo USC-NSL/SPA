@@ -135,6 +135,22 @@ public:
     }
   }
 
+  std::map<std::string, std::map<long, bool> > getExploredLineCoverage() {
+    return exploredLineCoverage;
+  }
+
+  std::map<std::string, bool> getExploredFunctionCoverage() {
+    return exploredFunctionCoverage;
+  }
+
+  std::map<std::string, std::map<long, bool> > getTestLineCoverage() {
+    return testLineCoverage;
+  }
+
+  std::map<std::string, bool> getTestFunctionCoverage() {
+    return testFunctionCoverage;
+  }
+
   friend class PathLoader;
   friend std::ostream &operator<<(std::ostream &stream, const Path &path);
 };
