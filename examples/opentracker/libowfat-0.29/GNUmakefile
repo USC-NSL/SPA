@@ -21,30 +21,30 @@ all: $(LIBS) libowfat.a libsocket t
 #Make sure to update libowfat.a and %.o
 #
 
-CROSS=
-#CROSS=i686-mingw-
-CC=$(CROSS)gcc
-CC=clang
-CFLAGS=-pipe -W -Wall -O2 -fomit-frame-pointer
-CFLAGS += -DENABLE_SPA -DENABLE_KLEE -I`pwd`/../../include -emit-llvm
+# CROSS=
+# #CROSS=i686-mingw-
+# CC=$(CROSS)gcc
+# CC=clang
+# CFLAGS=-pipe -W -Wall -O2 -fomit-frame-pointer
+# CFLAGS += -DENABLE_SPA -DENABLE_KLEE -I`pwd`/../../include -emit-llvm
 
-LD=llvm-link
-#CFLAGS=-pipe -Os -march=pentiumpro -mcpu=pentiumpro -fomit-frame-pointer -fschedule-insns2 -Wall
+# LD=llvm-link
+# #CFLAGS=-pipe -Os -march=pentiumpro -mcpu=pentiumpro -fomit-frame-pointer -fschedule-insns2 -Wall
 
-#CFLAGS += -fstrict-aliasing -Wstrict-aliasing=2
-CFLAGS += -D_REENTRANT
+# #CFLAGS += -fstrict-aliasing -Wstrict-aliasing=2
+# CFLAGS += -D_REENTRANT
 
 #
 #Flags for regular library
 #
 
-# CROSS=
-# #CROSS=i686-mingw-
-# CC=$(CROSS)gcc
-# CFLAGS=-pipe -W -Wall -O2 -fomit-frame-pointer
-# #CFLAGS=-pipe -Os -march=pentiumpro -mcpu=pentiumpro -fomit-frame-pointer -fschedule-insns2 -Wall
-# CFLAGS += -fstrict-aliasing -Wstrict-aliasing=2
-# CFLAGS += -D_REENTRANT
+CROSS=
+#CROSS=i686-mingw-
+CC=$(CROSS)gcc
+CFLAGS=-pipe -W -Wall -O2 -fomit-frame-pointer
+#CFLAGS=-pipe -Os -march=pentiumpro -mcpu=pentiumpro -fomit-frame-pointer -fschedule-insns2 -Wall
+CFLAGS += -fstrict-aliasing -Wstrict-aliasing=2
+CFLAGS += -D_REENTRANT
 
 # startrip
 ifneq ($(DEBUG),)
@@ -157,10 +157,10 @@ $(IO_OBJS) $(CDB_OBJS)
 
 libowfat.a: $(ALL_OBJS)
 #For KLEE 
-	llvm-link -o $@ $(ALL_OBJS)
+	# llvm-link -o $@ $(ALL_OBJS)
 #For regular
-	# $(CROSS)ar cr $@ $(ALL_OBJS)
-	# -$(CROSS)ranlib $@
+	$(CROSS)ar cr $@ $(ALL_OBJS)
+	-$(CROSS)ranlib $@
 
 CFLAGS+=-I.
 
@@ -169,10 +169,10 @@ CFLAGS+=-I.
 
 %.a:
 #For KLEE 
-	llvm-link -o $@ $^
+	# llvm-link -o $@ $^
 #For regular
-	# ar cr $@ $^
-	# -ranlib $@
+	ar cr $@ $^
+	-ranlib $@
 
 t.o: t.c fmt.h scan.h str.h uint16.h uint32.h stralloc.h socket.h \
   buffer.h ip4.h ip6.h byte.h mmap.h open.h textcode.h dns.h iopause.h \

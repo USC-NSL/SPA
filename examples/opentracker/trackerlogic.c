@@ -28,6 +28,8 @@
 #include "ot_fullscrape.h"
 #include "ot_livesync.h"
 
+#include <spa/spaRuntime.h>
+
 /* Forward declaration */
 size_t return_peers_for_torrent( ot_torrent *torrent, size_t amount, char *reply, PROTO_FLAG proto );
 
@@ -75,17 +77,28 @@ size_t add_peer_to_torrent_and_return_peers( PROTO_FLAG proto, struct ot_workstr
   int         exactmatch, delta_torrentcount = 0;
   ot_torrent *torrent;
   ot_peer    *peer_dest;
-  ot_vector  *torrents_list = mutex_bucket_lock_by_hash( *ws->hash );
+  ot_vector  *torrents_list;
+#ifndef ENABLE_KLEE
+  torrents_list = mutex_bucket_lock_by_hash( *ws->hash );
+#endif
 
   if( !accesslist_hashisvalid( *ws->hash ) ) {
+#ifndef ENABLE_KLEE
     mutex_bucket_unlock_by_hash( *ws->hash, 0 );
+#endif
     if( proto == FLAG_TCP ) {
       const char invalid_hash[] = "d14:failure reason63:Requested download is not authorized for use with this tracker.e";
+      spa_invalid_path();
       memcpy( ws->reply, invalid_hash, strlen( invalid_hash ) );
       return strlen( invalid_hash );
     }
     return 0;
   }
+
+//We skip the rest since it interferes with klee and it doesn't affect message acceptance
+#ifdef ENABLE_KLEE
+  return 20; //Positice value indicates success
+#endif
 
   torrent = vector_find_or_insert( torrents_list, (void*)ws->hash, sizeof( ot_torrent ), OT_HASH_COMPARE_SIZE, &exactmatch );
   if( !torrent ) {
@@ -271,11 +284,14 @@ size_t return_peers_for_torrent( ot_torrent *torrent, size_t amount, char *reply
 
   if( proto == FLAG_TCP ) {
     int erval = OT_CLIENT_REQUEST_INTERVAL_RANDOM;
+    spa_valid_path();
     r += sprintf( r, "d8:completei%zde10:downloadedi%zde10:incompletei%zde8:intervali%ie12:min intervali%ie" PEERS_BENCODED "%zd:", peer_list->seed_count, peer_list->down_count, peer_list->peer_count-peer_list->seed_count, erval, erval/2, OT_PEER_COMPARE_SIZE*amount );
   } else {
+#ifndef ENABLE_KLEE
     *(uint32_t*)(r+0) = htonl( OT_CLIENT_REQUEST_INTERVAL_RANDOM );
     *(uint32_t*)(r+4) = htonl( peer_list->peer_count - peer_list->seed_count );
     *(uint32_t*)(r+8) = htonl( peer_list->seed_count );
+#endif
     r += 12;
   }
 

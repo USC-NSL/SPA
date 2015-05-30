@@ -103,6 +103,7 @@ ssize_t http_issue_error( const int64 sock, struct ot_workstruct *ws, int code )
                          "403 Not Modest", "403 Access Denied", "404 Not Found", "500 Internal Server Error" };
   char *title = error_code[code];
   spa_invalid_path();
+  spa_done();
   ws->reply = ws->outbuf;
   if( code == CODE_HTTPERROR_302 )
     ws->reply_size = snprintf( ws->reply, G_OUTBUF_SIZE, "HTTP/1.0 302 Found\r\nContent-Length: 0\r\nLocation: %s\r\n\r\n", g_redirecturl );
@@ -426,7 +427,12 @@ static ssize_t http_handle_announce( const int64 sock, struct ot_workstruct *ws,
     case 1: /* matched "port" */
       len = scan_urlencoded_query( &read_ptr, write_ptr = read_ptr, SCAN_SEARCHPATH_VALUE );
       if( ( len <= 0 ) || scan_fixed_int( write_ptr, len, &tmp ) || ( tmp > 0xffff ) ) HTTPERROR_400_PARAM;
-      port = htons( tmp ); OT_SETPORT( &ws->peer, &port );
+#ifndef ENABLE_KLEE
+      port = htons( tmp );
+#else
+      port = tmp;
+#endif
+      OT_SETPORT( &ws->peer, &port );
       break;
     case 2: /* matched "left" */
       if( ( len = scan_urlencoded_query( &read_ptr, write_ptr = read_ptr, SCAN_SEARCHPATH_VALUE ) ) <= 0 ) HTTPERROR_400_PARAM;
@@ -522,8 +528,10 @@ static ssize_t http_handle_announce( const int64 sock, struct ot_workstruct *ws,
   stats_issue_event( EVENT_ACCEPT, FLAG_TCP, (uintptr_t)ws->reply );
 
   /* Scanned whole query string */
-  if( !ws->hash )
+  if( !ws->hash ) {
+    spa_invalid_path();
     return ws->reply_size = sprintf( ws->reply, "d14:failure reason80:Your client forgot to send your torrent's info_hash. Please upgrade your client.e" );
+  }
 
   if( OT_PEERFLAG( &ws->peer ) & PEER_FLAG_STOPPED )
     ws->reply_size = remove_peer_from_torrent( FLAG_TCP, ws );
@@ -539,7 +547,10 @@ ssize_t http_handle_request( const int64 sock, struct ot_workstruct *ws ) {
   char   *read_ptr = ws->request, *write_ptr;
 
 #ifndef ENABLE_KLEE
-  spa_msg_input_point();
+  spa_msg_input(ws->request, G_INBUF_SIZE, "url");
+  spa_msg_input_size(ws->request_size, "url");
+#endif
+#ifndef ENABLE_KLEE
 #ifdef WANT_FULLLOG_NETWORKS
   struct http_data *cookie = io_getcookie( sock );
   if( loglist_check_address( cookie->ip ) ) {
@@ -617,11 +628,12 @@ ssize_t http_handle_request( const int64 sock, struct ot_workstruct *ws ) {
 #endif
 
   /* If routines handled sending themselves, just return */
-  if( ws->reply_size == -2 ) { spa_valid_path(); return 0; }
+  if( ws->reply_size == -2 ) { spa_valid_path(); spa_done(); return 0; }
   /* If routine failed, let http error take over */
   if( ws->reply_size <= 0 ) HTTPERROR_500;
-  
+  printf("TEST4\n");
   spa_valid_path();
+  spa_done();
   /* This one is rather ugly, so I take you step by step through it.
 
      1. In order to avoid having two buffers, one for header and one for content, we allow all above functions from trackerlogic to

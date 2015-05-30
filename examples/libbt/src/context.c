@@ -152,8 +152,12 @@ btContext *btContext_create( btContext *ctx, float ulfactor, char *rcfile) {
 	ctx->minport = MINPORT;
 	ctx->maxport = MAXPORT;
 #else
-	spa_api_input(ctx->myid, IDSIZE, "myid");
-	spa_api_input(ctx->mykey, KEYSIZE, "mykey");
+	//spa_api_input(ctx->myid, IDSIZE, "myid");
+	//spa_api_input(ctx->mykey, KEYSIZE, "mykey");
+	// spa_api_input(&(ctx->minport), sizeof(ctx->minport), "ctx_minport");
+	// spa_api_input(&(ctx->maxport), sizeof(ctx->minport), "ctx_maxport");
+	// spa_assume(ctx->minport > 0);
+	// spa_assume(ctx->maxport == ctx->minport + 10);
 	ctx->minport = MINPORT;
 	ctx->maxport = MAXPORT;
 #endif
@@ -250,12 +254,39 @@ void btContext_destroy( btContext *ctx) {
     ctx->downloadcount=0;
 }
 
+#ifdef ENABLE_SPA
+static int isValidHex(char c) {
+	return (c >= 'a' && c <= 'f') || (c >= '0' && c <= '9');
+}
+
+#define SPA_HEX_BUFFER(pointer, len, name)					\
+	do {													\
+		int __i;											\
+		pointer = btmalloc(3*len + 1);						\
+		spa_api_input(pointer, 3*len+1, name);				\
+		for (__i = 0; __i < len; __i++) {					\
+			spa_assume(pointer[__i*3] == '%');				\
+			spa_assume(isValidHex( pointer[__i*3 + 1]));	\
+			spa_assume(isValidHex( pointer[__i*3 + 2]));	\
+		}													\
+	} while (0)
+
+#endif
+
 static char* hexdigest(unsigned char *digest, int len) {
     int i;
-    char *buf = btmalloc(3*len+1);
+    char *buf = btmalloc(3*len+1);;
+#ifndef ENABLE_KLEE
     for (i=0; i<len; i++) {
 	sprintf(buf+3*i, "%%%02x", digest[i]);
     }
+#else
+
+    for (i=0; i<len; i++) {
+    	buf[3*i] = '%';
+    }
+#endif
+
     return buf;
 }
 
@@ -438,9 +469,16 @@ static btObject* btrequest(
     btStream *io;
     btObject *result;
     int curlret;
+
+#ifndef ENABLE_SPA
     dgurl=hexdigest(digest, SHA_DIGEST_LENGTH);
     idurl=hexdigest(myid, IDSIZE);
     keyurl=hexdigest(mykey, KEYSIZE);
+#else
+    SPA_HEX_BUFFER(dgurl, SHA_DIGEST_LENGTH, "dgurl");
+    SPA_HEX_BUFFER(idurl, IDSIZE, "idurl");
+    SPA_HEX_BUFFER(keyurl, KEYSIZE, "keyurl");
+#endif
 #ifndef ENABLE_KLEE
     hdl = curl_easy_init();
     if (event) {
@@ -493,7 +531,6 @@ static btObject* btrequest(
     }
 #endif
     url[sizeof(url)-1]=0;
-
     spa_msg_output_var(url);
     spa_valid_path();
 
@@ -504,6 +541,7 @@ static btObject* btrequest(
     curl_easy_setopt( hdl, CURLOPT_WRITEFUNCTION, writebts);
     if ((curlret = curl_easy_perform( hdl)) != CURLE_OK)
     {
+      spa_done();
       switch (curlret)
       {
       case CURLE_COULDNT_CONNECT:
@@ -515,13 +553,14 @@ static btObject* btrequest(
     }
     else
     {
+    	spa_done();
       /* parse the response */
       if (bts_rewind( io, BTS_INPUT)) DIE("bts_rewind");
       if (benc_get_object( io, &result)) DIE("bad response");
     }
     bts_destroy (io);
     curl_easy_cleanup( hdl);
-    exit(1);
+
     return result;
 }
 
@@ -670,7 +709,6 @@ int ctx_register( struct btContext *ctx, unsigned download)
     btDownload *dl=ctx->downloads[download];
     btObject *resp;
     int nok=0;
-
     DIE_UNLESS(download<ctx->downloadcount);
     do {
 	/* contact tracker */
@@ -905,7 +943,7 @@ int ctx_loadfile(
 #else
     //memset(dl->infohash, 0, SHA_DIGEST_LENGTH);
 #endif
-    spa_api_input(dl->infohash, SHA_DIGEST_LENGTH, "dl_infohash");
+    //spa_api_input(dl->infohash, SHA_DIGEST_LENGTH, "dl_infohash");
     bts_destroy( infostr);
     /* copy out url */
     announcelist = BTLIST( btObject_val( dl->md, "announce-list"));

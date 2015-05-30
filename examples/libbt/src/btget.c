@@ -354,8 +354,6 @@ int main_fn(int argc, char **argv) {
 	} else {
 #ifdef ENABLE_SPA
 		//Outline of the structure for a bencoded torrent file
-		//* represents  a symbolic character
-		//# represents a symbolic char that must be a number
 		#define SPA_DICT "d8:announce30:http://localhost:6969/announce13:creation datei0e10:created by2:KC4:infod6:lengthi4096e4:name2:KC12:piece lengthi16e6:pieces20:00000000000000000000ee"
 		char* spa_dict = SPA_DICT;
 			
@@ -393,10 +391,9 @@ int main_fn(int argc, char **argv) {
 	if (optfile) {
 	    seg_markFile( &ctx->downloads[dl]->fileset, optfile, &ctx->downloads[dl]->interested);
 	}
-#else
-	//ctx_hashpartialdata(&ctx->downloads[dl]->fileset, &partialData);
-	ctx_writehashtodownload(ctx->downloads[dl], &partialData);
-	kBitSet_finit(&partialData);
+	// ctx_hashpartialdata(&ctx->downloads[dl]->fileset, &partialData);
+	// ctx_writehashtodownload(ctx->downloads[dl], &partialData);
+	// kBitSet_finit(&partialData);
 #endif
 	optind++;
     }

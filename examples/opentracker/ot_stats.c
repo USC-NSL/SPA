@@ -634,6 +634,10 @@ static void stats_make( int *iovec_entries, struct iovec **iovector, ot_tasktype
 }
 
 void stats_issue_event( ot_status_event event, PROTO_FLAG proto, uintptr_t event_data ) {
+#ifdef ENABLE_KLEE
+  //This function is for logging only and interfere with KLEE
+  return;
+#endif
   switch( event ) {
     case EVENT_ACCEPT:
       if( proto == FLAG_TCP ) ot_overall_tcp_connections++; else ot_overall_udp_connections++;

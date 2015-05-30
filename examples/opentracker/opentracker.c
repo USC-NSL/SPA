@@ -170,6 +170,9 @@ static void handle_dead( const int64 sock ) {
 static void handle_read( const int64 sock, struct ot_workstruct *ws ) {
   struct http_data* cookie = io_getcookie( sock );
   ssize_t byte_count;
+#ifndef ENABLE_KLEE
+  spa_msg_input_point();
+#endif
 
   if( ( byte_count = io_tryread( sock, ws->inbuf, G_INBUF_SIZE ) ) <= 0 ) {
     handle_dead( sock );

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 spa-explore \
-	--in-paths libbt.paths --connect-default \
+	--in-paths libbt.paths --connect-in-out \
 	--out-paths opentracker.paths \
 	--start-from spa_handleAnnounce \
 	--away-from spa_valid_path_point \
