@@ -97,7 +97,7 @@ size_t add_peer_to_torrent_and_return_peers( PROTO_FLAG proto, struct ot_workstr
 
 //We skip the rest since it interferes with klee and it doesn't affect message acceptance
 #ifdef ENABLE_KLEE
-  return 20; //Positice value indicates success
+  return 20; //Positive value indicates success
 #endif
 
   torrent = vector_find_or_insert( torrents_list, (void*)ws->hash, sizeof( ot_torrent ), OT_HASH_COMPARE_SIZE, &exactmatch );

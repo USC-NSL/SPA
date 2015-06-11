@@ -90,22 +90,22 @@ netcalc-server.paths: netcalc-server.bc netcalc-client.paths
 # 	rm -f $@
 # 	spaBadInputs -server netcalc-server.bc.server.paths -o $@ -d $@.debug 2>&1 | tee $@.log
 
-# validated.paths: netcalc-server.paths $(TEST_TARGETS) $(shell which spa-validate)
-# 	rm -f $@
-# 	killall netcalc-client.test netcalc-server.test || true
-# 	spaE2ETest $< $@ false-positives.paths 3141 './netcalc-client.test 1 1 +' './netcalc-server.test' 2>&1 | tee $@.log
 validated.paths: netcalc-server.paths $(TEST_TARGETS) $(shell which spa-validate)
+	rm -f $@
 	killall netcalc-client.test netcalc-server.test || true
-	spa-validate -d $< $@ false-positives.paths \
-		"RUN ./netcalc-server.test; \
-		WAIT LISTEN UDP 3141; \
-		RUN ./netcalc-client.test 0 0 +; \
-		WAIT DONE 2; \
-		KILL 1; \
-		TIMEOUT 2000; \
-		CHECK REACHED spa_msg_input_point; \
-		CHECK NOT REACHED spa_valid_path_point;" \
-		2>&1 | tee $@.log
+	spaE2ETest $< $@ false-positives.paths 3141 './netcalc-client.test 1 1 +' './netcalc-server.test' 2>&1 | tee $@.log
+# validated.paths: netcalc-server.paths $(TEST_TARGETS) $(shell which spa-validate)
+# 	killall netcalc-client.test netcalc-server.test || true
+# 	spa-validate -d $< $@ false-positives.paths \
+# 		"RUN ./netcalc-server.test; \
+# 		WAIT LISTEN UDP 3141; \
+# 		RUN ./netcalc-client.test 0 0 +; \
+# 		WAIT DONE 2; \
+# 		KILL 1; \
+# 		TIMEOUT 2000; \
+# 		CHECK REACHED spa_msg_input_point; \
+# 		CHECK NOT REACHED spa_valid_path_point;" \
+# 		2>&1 | tee $@.log
 
 netcalc-server-sequiv1.paths: netcalc-server.bc $(shell which spa-explore)
 	spa-explore \

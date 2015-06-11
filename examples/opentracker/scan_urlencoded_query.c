@@ -12,6 +12,8 @@
 /* System */
 #include <string.h>
 
+#include "spa/spaRuntime.h"
+
 /* Idea is to do a in place replacement or guarantee at least
    strlen( string ) bytes in deststring
    watch http://www.ietf.org/rfc/rfc2396.txt
@@ -87,6 +89,7 @@ ssize_t scan_urlencoded_query(char **string, char *deststring, SCAN_SEARCHPATH_F
   const unsigned char* s=*(const unsigned char**) string;
   unsigned char *d = (unsigned char*)deststring;
   unsigned char b, c;
+
   /* This is the main decoding loop.
     'flag' determines, which characters are non-terminating in current context
     (ie. stop at '=' and '&' if scanning for a 'param'; stop at '?' if scanning for the path )
@@ -97,7 +100,7 @@ ssize_t scan_urlencoded_query(char **string, char *deststring, SCAN_SEARCHPATH_F
     if( c=='%') {
       if( ( b = fromhex(*s++) ) == 0xff ) return -1;
       if( ( c = fromhex(*s++) ) == 0xff ) return -1;
-      c|=(b<<4);
+      c|=(b * 16);
     }
 
     /* Write (possibly decoded) character to output */

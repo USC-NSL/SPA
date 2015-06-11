@@ -530,6 +530,7 @@ static ssize_t http_handle_announce( const int64 sock, struct ot_workstruct *ws,
   /* Scanned whole query string */
   if( !ws->hash ) {
     spa_invalid_path();
+    spa_done();
     return ws->reply_size = sprintf( ws->reply, "d14:failure reason80:Your client forgot to send your torrent's info_hash. Please upgrade your client.e" );
   }
 
@@ -631,7 +632,7 @@ ssize_t http_handle_request( const int64 sock, struct ot_workstruct *ws ) {
   if( ws->reply_size == -2 ) { spa_valid_path(); spa_done(); return 0; }
   /* If routine failed, let http error take over */
   if( ws->reply_size <= 0 ) HTTPERROR_500;
-  printf("TEST4\n");
+
   spa_valid_path();
   spa_done();
   /* This one is rather ugly, so I take you step by step through it.

@@ -475,6 +475,7 @@ static btObject* btrequest(
     idurl=hexdigest(myid, IDSIZE);
     keyurl=hexdigest(mykey, KEYSIZE);
 #else
+    spa_api_input_var(left);
     SPA_HEX_BUFFER(dgurl, SHA_DIGEST_LENGTH, "dgurl");
     SPA_HEX_BUFFER(idurl, IDSIZE, "idurl");
     SPA_HEX_BUFFER(keyurl, KEYSIZE, "keyurl");
