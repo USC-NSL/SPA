@@ -75,6 +75,15 @@ llvm::cl::opt<std::string> OutputFilter(
     llvm::cl::desc("Conditions that paths must meet to be outputted. "
                    "Equivalent to using spa-filter on output."));
 
+llvm::cl::opt<std::string>
+    DumpCFG("dump-cfg",
+            llvm::cl::desc("Dumps the analyzed program's annotated CFG to the "
+                           "given directory."));
+
+llvm::cl::opt<std::string>
+    DumpCFGFunction("dump-cfg-fn",
+                    llvm::cl::desc("Only dump the specified function."));
+
 llvm::cl::opt<std::string, true>
     InputBCFileOpt(llvm::cl::Positional, llvm::cl::Required,
                    llvm::cl::location(InputBCFile),
@@ -173,8 +182,7 @@ int main(int argc, char **argv, char **envp) {
   spa.addStateUtilityBack(new SPA::FilteredUtility(), false);
   auto directingTargetsSet = directingTargets.toInstructionSet(cfg);
   spa.addStateUtilityBack(
-      new SPA::TargetDistanceUtility(module, cfg, cg, directingTargetsSet),
-      false);
+      new SPA::AstarUtility(module, cfg, cg, directingTargetsSet), false);
   // All else being the same, go DFS.
   spa.addStateUtilityBack(new SPA::DepthUtility(), false);
 
@@ -192,6 +200,31 @@ int main(int argc, char **argv, char **envp) {
     assert(filter && "Invalid filter expression.");
 
     spa.setPathFilter(filter);
+  }
+
+  if (DumpCFG.size() > 0) {
+    klee::klee_message("Dumping CFG to: %s", DumpCFG.getValue().c_str());
+
+    std::map<SPA::InstructionFilter *, std::string> annotations;
+    annotations[new SPA::WhitelistIF(directingTargetsSet)] =
+        "style = \"filled\" fillcolor = \"red\"";
+
+    if (DumpCFGFunction.empty()) {
+      cfg.dumpDir(
+          DumpCFG.getValue(), cg, annotations,
+          new SPA::TargetDistanceUtility(module, cfg, cg, directingTargetsSet));
+    } else {
+      llvm::Function *fn = module->getFunction(DumpCFGFunction);
+      assert(fn && "Cannot dump invalid function.");
+
+      std::ofstream dotFile(DumpCFG + "/" + fn->getName().str() + ".dot");
+      assert(dotFile.good());
+
+      cfg.dump(
+          dotFile, fn, cg, annotations,
+          new SPA::TargetDistanceUtility(module, cfg, cg, directingTargetsSet));
+    }
+    return 0;
   }
 
   klee::klee_message("Starting SPA.");
