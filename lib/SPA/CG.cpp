@@ -37,16 +37,18 @@ CG::CG(llvm::Module *module) {
           possibleCallers[ii->getCalledFunction()].insert(&bbit);
         }
         if (const CallInst *ci = dyn_cast<CallInst>(&bbit)) {
-          if (ci->getCalledFunction()) {
-            definiteCallees[&bbit].insert(ci->getCalledFunction());
-            possibleCallees[&bbit].insert(ci->getCalledFunction());
-          } else {
-            // 							klee_message( "Indirect function call at " <<
-            // ci->getParent()->getParent()->getName().str() << ":" <<
-            // ci->getDebugLoc().getLine() );
+          if (!ci->isInlineAsm()) {
+            if (ci->getCalledFunction()) {
+              definiteCallees[&bbit].insert(ci->getCalledFunction());
+              possibleCallees[&bbit].insert(ci->getCalledFunction());
+            } else {
+              // 							klee_message( "Indirect function call at " <<
+              // ci->getParent()->getParent()->getName().str() << ":" <<
+              // ci->getDebugLoc().getLine() );
+            }
+            definiteCallers[ci->getCalledFunction()].insert(&bbit);
+            possibleCallers[ci->getCalledFunction()].insert(&bbit);
           }
-          definiteCallers[ci->getCalledFunction()].insert(&bbit);
-          possibleCallers[ci->getCalledFunction()].insert(&bbit);
         }
       }
     }
