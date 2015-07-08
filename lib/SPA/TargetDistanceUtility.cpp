@@ -295,6 +295,19 @@ void TargetDistanceUtility::processWorklist(
       }
     }
   }
+
+  // Pre-compute min and max distances to normalize colors in CFG.
+  for (auto it : cfg) {
+    if (getDistance(it) == INFINITY)
+      continue;
+    if (isFinal(it)) {
+      minFinal = std::min(minFinal, getDistance(it));
+      maxFinal = std::max(maxFinal, getDistance(it));
+    } else {
+      minPartial = std::min(minPartial, getDistance(it));
+      maxPartial = std::max(maxPartial, getDistance(it));
+    }
+  }
 }
 
 double
@@ -420,21 +433,6 @@ double TargetDistanceUtility::getStaticUtility(llvm::Instruction *instruction) {
 
 std::string TargetDistanceUtility::getColor(CFG &cfg, CG &cg,
                                             llvm::Instruction *instruction) {
-  if (minPartial > maxPartial || minFinal > maxFinal) {
-    for (auto it : cfg) {
-      if (getDistance(it) == INFINITY)
-        continue;
-      if (isFinal(it)) {
-        minFinal = std::min(minFinal, getDistance(it));
-        maxFinal = std::max(maxFinal, getDistance(it));
-      } else if (it->getParent()->getParent() ==
-                 instruction->getParent()->getParent()) {
-        minPartial = std::min(minPartial, getDistance(it));
-        maxPartial = std::max(maxPartial, getDistance(it));
-      }
-    }
-  }
-
   std::stringstream result;
   if (isFinal(instruction)) {
     // Min = White, Max = Green
