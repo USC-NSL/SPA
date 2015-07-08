@@ -27,6 +27,10 @@ private:
   std::map<llvm::Instruction *, double> instructionDepths,
       instructionDepthsInContext;
 
+  // Min and max distances used to compute colors in visual CFG.
+  double minPartial = +INFINITY, maxPartial = -INFINITY, minFinal = +INFINITY,
+         maxFinal = -INFINITY;
+
   void propagateChanges(std::set<llvm::Instruction *> &worklist,
                         llvm::Instruction *instruction);
   void processWorklist(llvm::Module *module,

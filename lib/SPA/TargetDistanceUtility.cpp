@@ -420,19 +420,18 @@ double TargetDistanceUtility::getStaticUtility(llvm::Instruction *instruction) {
 
 std::string TargetDistanceUtility::getColor(CFG &cfg, CG &cg,
                                             llvm::Instruction *instruction) {
-  double minPartial = +INFINITY, maxPartial = -INFINITY, minFinal = +INFINITY,
-         maxFinal = -INFINITY;
-
-  for (auto it : cfg) {
-    if (getDistance(it) == INFINITY)
-      continue;
-    if (isFinal(it)) {
-      minFinal = std::min(minFinal, getDistance(it));
-      maxFinal = std::max(maxFinal, getDistance(it));
-    } else if (it->getParent()->getParent() ==
-               instruction->getParent()->getParent()) {
-      minPartial = std::min(minPartial, getDistance(it));
-      maxPartial = std::max(maxPartial, getDistance(it));
+  if (minPartial > maxPartial || minFinal > maxFinal) {
+    for (auto it : cfg) {
+      if (getDistance(it) == INFINITY)
+        continue;
+      if (isFinal(it)) {
+        minFinal = std::min(minFinal, getDistance(it));
+        maxFinal = std::max(maxFinal, getDistance(it));
+      } else if (it->getParent()->getParent() ==
+                 instruction->getParent()->getParent()) {
+        minPartial = std::min(minPartial, getDistance(it));
+        maxPartial = std::max(maxPartial, getDistance(it));
+      }
     }
   }
 

@@ -181,26 +181,6 @@ int main(int argc, char **argv, char **envp) {
 
   spa.addStateUtilityBack(new SPA::FilteredUtility(), false);
   auto directingTargetsSet = directingTargets.toInstructionSet(cfg);
-  spa.addStateUtilityBack(
-      new SPA::AstarUtility(module, cfg, cg, directingTargetsSet), false);
-  // All else being the same, go DFS.
-  spa.addStateUtilityBack(new SPA::DepthUtility(), false);
-
-  for (auto outputPoint : OutputAt) {
-    klee::klee_message("Adding a checkpoint at: %s", outputPoint.c_str());
-    SPA::DbgLineIF *dbgInsts = SPA::DbgLineIF::parse(module, outputPoint);
-    assert(dbgInsts && "Error parsing output point.");
-    spa.addCheckpoint(dbgInsts);
-  }
-
-  spa.setOutputTerminalPaths(OutputTerminal);
-
-  if (!OutputFilter.empty()) {
-    SPA::FilterExpression *filter = SPA::FilterExpression::parse(OutputFilter);
-    assert(filter && "Invalid filter expression.");
-
-    spa.setPathFilter(filter);
-  }
 
   if (DumpCFG.size() > 0) {
     klee::klee_message("Dumping CFG to: %s", DumpCFG.getValue().c_str());
@@ -225,6 +205,27 @@ int main(int argc, char **argv, char **envp) {
           new SPA::TargetDistanceUtility(module, cfg, cg, directingTargetsSet));
     }
     return 0;
+  }
+
+  spa.addStateUtilityBack(
+      new SPA::AstarUtility(module, cfg, cg, directingTargetsSet), false);
+  // All else being the same, go DFS.
+  spa.addStateUtilityBack(new SPA::DepthUtility(), false);
+
+  for (auto outputPoint : OutputAt) {
+    klee::klee_message("Adding a checkpoint at: %s", outputPoint.c_str());
+    SPA::DbgLineIF *dbgInsts = SPA::DbgLineIF::parse(module, outputPoint);
+    assert(dbgInsts && "Error parsing output point.");
+    spa.addCheckpoint(dbgInsts);
+  }
+
+  spa.setOutputTerminalPaths(OutputTerminal);
+
+  if (!OutputFilter.empty()) {
+    SPA::FilterExpression *filter = SPA::FilterExpression::parse(OutputFilter);
+    assert(filter && "Invalid filter expression.");
+
+    spa.setPathFilter(filter);
   }
 
   klee::klee_message("Starting SPA.");
