@@ -74,32 +74,35 @@ CG::CG(llvm::Module *module) {
     // Make a list of argument types.
     std::vector<const llvm::Type *> argTypes;
     if (llvm::InvokeInst *ii = llvm::dyn_cast<llvm::InvokeInst>(iit)) {
-      for (unsigned i = 0; i < ii->getNumArgOperands(); i++)
+      for (unsigned i = 0; i < ii->getNumArgOperands(); i++) {
         argTypes.push_back(ii->getArgOperand(i)->getType());
-    }
-    if (llvm::CallInst *ci = llvm::dyn_cast<llvm::CallInst>(iit))
-      for (unsigned i = 0; i < ci->getNumArgOperands(); i++)
+      }
+    } else if (llvm::CallInst *ci = llvm::dyn_cast<llvm::CallInst>(iit)) {
+      for (unsigned i = 0; i < ci->getNumArgOperands(); i++) {
         argTypes.push_back(ci->getArgOperand(i)->getType());
+      }
+    }
     // Look for functions of same type.
     for (auto fit : *this) {
-      // Ignore blacklisted functions.
-      if (indirectCallBlacklist.count(fit->getName())) {
-        continue;
-      }
       // Compare argument arity and type.
       if (argTypes.size() == fit->getFunctionType()->getNumParams()) {
         unsigned i;
-        for (i = 0; i < argTypes.size(); i++)
-          if (argTypes[i] != fit->getFunctionType()->getParamType(i))
+        for (i = 0; i < argTypes.size(); i++) {
+          if (argTypes[i] != fit->getFunctionType()->getParamType(i)) {
             break;
+          }
+        }
         if (i == argTypes.size()) {
           // Found possible match.
-          // 						klee_message( "Resolving indirect call at " <<
-          // (iit)->getParent()->getParent()->getName().str() << ":" <<
-          // (iit)->getDebugLoc().getLine() << " to " <<
-          // (*fit)->getName().str() );
-          possibleCallers[fit].insert(iit);
-          possibleCallees[iit].insert(fit);
+          // Ignore blacklisted functions.
+          if (!indirectCallBlacklist.count(fit->getName())) {
+            // 						klee_message( "Resolving indirect call at " <<
+            // (iit)->getParent()->getParent()->getName().str() << ":" <<
+            // (iit)->getDebugLoc().getLine() << " to " <<
+            // (*fit)->getName().str() );
+            possibleCallers[fit].insert(iit);
+            possibleCallees[iit].insert(fit);
+          }
         }
       }
     }
