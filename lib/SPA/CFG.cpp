@@ -124,9 +124,10 @@ void CFG::dump(std::ostream &dotFile, llvm::Function *fn, CG &cg,
       } else {
         attributes << "shape = \"circle\"";
       }
-      // Annotate source line.
+      // Annotate source line and instruction print-out.
       attributes << " label = \"" << utility->getStaticUtility(&inst) << "\""
-                 << " tooltip = \"" << debugLocation(&inst) << "\"";
+                 << " tooltip = \"" << debugLocation(&inst) << "&#10;"
+                 << inst.getOpcodeName() << "\"";
       // Annotate utility color.
       if (utility)
         attributes << " style=\"filled\" fillcolor = \""
