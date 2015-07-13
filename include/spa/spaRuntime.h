@@ -350,14 +350,27 @@ void __attribute__((noinline, weak)) spa_message_handler_entry() {
   printf("[SPA] Sending API Output: %s.\n", name)
 #define spa_api_output_var(var) printf("[SPA] Sending API Output: %s.\n", #var)
 #define spa_msg_input(var, size, name)                                         \
-  printf("[SPA] Received message: %s[%d].\n", name, (int) size)
+  do {                                                                         \
+    printf("[SPA] Received message: %s[%d].\n", name, (int) size);             \
+    spa_msg_input_point();                                                     \
+  } while (0)
 #define spa_msg_input_size(var, name)                                          \
   printf("[SPA] Received message size: %s[%d].\n", name, (int) var)
-#define spa_msg_input_var(var) printf("[SPA] Received message: %s.\n", #var)
+#define spa_msg_input_var(var)                                                 \
+  do {                                                                         \
+    printf("[SPA] Received message: %s.\n", #var);                             \
+    spa_msg_input_point();                                                     \
+  } while (0)
 #define spa_msg_output(var, size, maxSize, name)                               \
-  printf("[SPA] Sending message: %s[%d].\n", name, (int) size)
+  do {                                                                         \
+    printf("[SPA] Sending message: %s[%d].\n", name, (int) size);              \
+    spa_msg_output_point();                                                    \
+  } while (0)
 #define spa_msg_output_var(var)                                                \
-  printf("[SPA] Sending message: %s[%zu].\n", #var, sizeof(var))
+  do {                                                                         \
+    printf("[SPA] Sending message: %s[%zu].\n", #var, sizeof(var));            \
+    spa_msg_output_point();                                                    \
+  } while (0)
 
 #define spa_waypoint(id)
 
