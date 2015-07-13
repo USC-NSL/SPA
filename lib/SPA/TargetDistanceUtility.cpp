@@ -304,8 +304,16 @@ void TargetDistanceUtility::processWorklist(
       minFinal = std::min(minFinal, getDistance(it));
       maxFinal = std::max(maxFinal, getDistance(it));
     } else {
-      minPartial = std::min(minPartial, getDistance(it));
-      maxPartial = std::max(maxPartial, getDistance(it));
+      if (!minPartial.count(it->getParent()->getParent())) {
+        minPartial[it->getParent()->getParent()] = +INFINITY;
+      }
+      if (!maxPartial.count(it->getParent()->getParent())) {
+        maxPartial[it->getParent()->getParent()] = -INFINITY;
+      }
+      minPartial[it->getParent()->getParent()] =
+          std::min(minPartial[it->getParent()->getParent()], getDistance(it));
+      maxPartial[it->getParent()->getParent()] =
+          std::max(maxPartial[it->getParent()->getParent()], getDistance(it));
     }
   }
 }
@@ -443,9 +451,14 @@ std::string TargetDistanceUtility::getColor(CFG &cfg, CG &cg,
       result << "0.33+0.0+1.0";
   } else {
     // Min = White, Max = Blue
-    if (minPartial < maxPartial && getDistance(instruction) != INFINITY)
-      result << "0.67+" << ((maxPartial - getDistance(instruction)) /
-                            (maxPartial - minPartial)) << "+1.0";
+    if (minPartial[instruction->getParent()->getParent()] <
+            maxPartial[instruction->getParent()->getParent()] &&
+        getDistance(instruction) != INFINITY)
+      result << "0.67+" << ((maxPartial[instruction->getParent()->getParent()] -
+                             getDistance(instruction)) /
+                            (maxPartial[instruction->getParent()->getParent()] -
+                             minPartial[instruction->getParent()->getParent()]))
+             << "+1.0";
     else
       result << "0.67+0.0+1.0";
   }
