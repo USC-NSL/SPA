@@ -41,6 +41,8 @@ CG::CG(llvm::Module *module) {
           if (!ci->isInlineAsm()) {
             calledFunction = ci->getCalledFunction();
           }
+        } else {
+          continue;
         }
         // Check if function is called indirectly through a constant pointer.
         if (calledFunction == NULL) {
