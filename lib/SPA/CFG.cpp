@@ -200,16 +200,24 @@ void CFG::dumpDir(std::string directory, CG &cg,
   assert(makefile.good());
   makefile << "%.pdf: %.dot" << std::endl;
   makefile << "\tdot -Tpdf -o $@ $<" << std::endl << std::endl;
+
   makefile << "%.svg: %.dot" << std::endl;
   makefile << "\tdot -Tsvg -o $@ $<" << std::endl << std::endl;
+
   makefile << "%.cmapx: %.dot" << std::endl;
   makefile << "\tdot -Tcmapx -o $@ $<" << std::endl << std::endl;
+
   makefile << "%.html: %.cmapx" << std::endl;
   makefile
       << "\techo \"<html><img src='$(@:.html=.svg)' usemap='#CFG' />\" > $@"
       << std::endl;
   makefile << "\tcat $< >> $@" << std::endl;
   makefile << "\techo '</html>' >> $@" << std::endl << std::endl;
+
+  makefile << "%.clean:" << std::endl;
+  makefile << "\trm -f $(@:.clean=.html) $(@:.clean=.svg) $(@:.clean=.cmapx)"
+           << std::endl << std::endl;
+
   makefile << "default: all" << std::endl;
 
   for (auto fn : cg) {
@@ -222,6 +230,7 @@ void CFG::dumpDir(std::string directory, CG &cg,
     makefile << "all: " << fn->getName().str() << std::endl;
     makefile << fn->getName().str() << ": " << fn->getName().str() << ".html "
              << fn->getName().str() << ".svg" << std::endl;
+    makefile << "clean: " << fn->getName().str() << ".clean" << std::endl;
   }
 }
 }
