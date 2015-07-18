@@ -90,7 +90,9 @@ CG::CG(llvm::Module *module) {
       if (argTypes.size() == fit->getFunctionType()->getNumParams()) {
         unsigned i;
         for (i = 0; i < argTypes.size(); i++) {
-          if (argTypes[i] != fit->getFunctionType()->getParamType(i)) {
+          if (argTypes[i] != fit->getFunctionType()->getParamType(i) &&
+              ((!argTypes[i]->isPointerTy()) ||
+               (!fit->getFunctionType()->getParamType(i)->isPointerTy()))) {
             break;
           }
         }
