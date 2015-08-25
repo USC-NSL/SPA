@@ -408,12 +408,12 @@ int main(int argc, char **argv, char **envp) {
     }
   } else if (Server && filter) {
     if (SearchStrategy == Astar) {
-      spa.addStateUtilityBack(new SPA::AstarUtility(module, cfg, cg, *filter),
+      spa.addStateUtilityBack(new SPA::AstarUtility(module, cfg, cg, filter),
                               false);
     }
     if (SearchStrategy == Astar || SearchStrategy == BestFS) {
       spa.addStateUtilityBack(
-          new SPA::TargetDistanceUtility(module, cfg, cg, *filter), false);
+          new SPA::TargetDistanceUtility(module, cfg, cg, filter), false);
     }
   }
   // All else being the same, go DFS.
@@ -438,7 +438,7 @@ int main(int argc, char **argv, char **envp) {
       cfg.dumpDir(
           DumpCFG.getValue(), cg, annotations,
           new SPA::TargetDistanceUtility(
-              module, cfg, cg, *(new SPA::CFGBackwardIF(cfg, cg, checkpoints))));
+              module, cfg, cg, new SPA::CFGBackwardIF(cfg, cg, checkpoints)));
     }
     return 0;
   }

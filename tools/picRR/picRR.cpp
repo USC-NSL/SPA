@@ -378,10 +378,10 @@ int main(int argc, char **argv, char **envp) {
     // 		spa.addStateUtilityBack( new SPA::TargetDistanceUtility( cfg, cg,
     // checkpoints ), false );
     if (filter) {
-      spa.addStateUtilityBack(new SPA::AstarUtility(module, cfg, cg, *filter),
+      spa.addStateUtilityBack(new SPA::AstarUtility(module, cfg, cg, filter),
                               false);
       spa.addStateUtilityBack(
-          new SPA::TargetDistanceUtility(module, cfg, cg, *filter), false);
+          new SPA::TargetDistanceUtility(module, cfg, cg, filter), false);
     }
   } else if (Server) {
     // 		if ( filter ) {
@@ -408,7 +408,7 @@ int main(int argc, char **argv, char **envp) {
     // fillcolor = \"grey\"";
 
     cfg.dumpDir(DumpCFG.getValue(), cg, annotations,
-             /*utility*/ /*waypointUtility*/ filter /*NULL*/);
+                /*utility*/ /*waypointUtility*/ filter /*NULL*/);
 
     return 0;
   }

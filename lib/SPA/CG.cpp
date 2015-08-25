@@ -25,10 +25,9 @@ std::set<std::string> indirectCallBlacklist = {
 };
 
 namespace SPA {
-CG::CG(llvm::Module *module) {
+void CG::init() {
   // Iterate functions.
   for (auto &mit : *module) {
-    functions.insert(&mit);
     // Iterate basic blocks.
     for (auto &fit : mit) {
       // Iterate instructions.
@@ -85,27 +84,27 @@ CG::CG(llvm::Module *module) {
       }
     }
     // Look for functions of same type.
-    for (auto fit : *this) {
+    for (auto &fit : *this) {
       // Compare argument arity and type.
-      if (argTypes.size() == fit->getFunctionType()->getNumParams()) {
+      if (argTypes.size() == fit.getFunctionType()->getNumParams()) {
         unsigned i;
         for (i = 0; i < argTypes.size(); i++) {
-          if (argTypes[i] != fit->getFunctionType()->getParamType(i) &&
+          if (argTypes[i] != fit.getFunctionType()->getParamType(i) &&
               ((!argTypes[i]->isPointerTy()) ||
-               (!fit->getFunctionType()->getParamType(i)->isPointerTy()))) {
+               (!fit.getFunctionType()->getParamType(i)->isPointerTy()))) {
             break;
           }
         }
         if (i == argTypes.size()) {
           // Found possible match.
           // Ignore blacklisted functions.
-          if (!indirectCallBlacklist.count(fit->getName())) {
+          if (!indirectCallBlacklist.count(fit.getName())) {
             // 						klee_message( "Resolving indirect call at " <<
             // (iit)->getParent()->getParent()->getName().str() << ":" <<
             // (iit)->getDebugLoc().getLine() << " to " <<
             // (*fit)->getName().str() );
-            possibleCallers[fit].insert(iit);
-            possibleCallees[iit].insert(fit);
+            possibleCallers[&fit].insert(iit);
+            possibleCallees[iit].insert(&fit);
           }
         }
       }
@@ -125,6 +124,9 @@ CG::CG(llvm::Module *module) {
 }
 
 void CG::dump(std::ostream &dotFile) {
+  if (!initialized) {
+    init();
+  }
   std::set<std::pair<llvm::Function *, llvm::Function *> > definiteCG;
   std::set<std::pair<llvm::Function *, llvm::Function *> > possibleCG;
 
@@ -150,8 +152,8 @@ void CG::dump(std::ostream &dotFile) {
   // Generate CG DOT file.
   dotFile << "digraph CG {" << std::endl;
   // Add all functions.
-  for (auto it : *this) {
-    dotFile << "	f" << it << " [label = \"" << it->getName().str() << "\"];"
+  for (auto &it : *this) {
+    dotFile << "	f" << &it << " [label = \"" << it.getName().str() << "\"];"
             << std::endl;
   }
 

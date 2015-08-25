@@ -6,10 +6,12 @@
 #define __TargetDistanceUtility_H__
 
 #include "spa/StateUtility.h"
+#include "spa/NegatedIF.h"
 
 namespace SPA {
 class TargetDistanceUtility : public StateUtility {
 private:
+  bool initialized = false;
   // Stores precomputed instruction distances.
   // The bool indicates whether it is partial (false) or final (true).
   // A state's distance is calculated by traversing the stack and adding up
@@ -18,9 +20,12 @@ private:
   // Used for call sites.
   std::map<llvm::Instruction *, std::pair<double, bool> > successorDistances;
 
-  // CFG and CG
+  // Module data
+  llvm::Module *module;
   CFG &cfg;
   CG &cg;
+  // Target instructions
+  std::set<llvm::Instruction *> targets;
   // Cached function depths.
   std::map<llvm::Function *, double> functionDepths, functionDepthsInContext;
   // Cached instruction depth.
@@ -31,6 +36,7 @@ private:
   double minFinal, maxFinal;
   std::map<llvm::Function *,double> minPartial, maxPartial;
 
+  void init();
   void propagateChanges(std::set<llvm::Instruction *> &worklist,
                         llvm::Instruction *instruction);
   void processWorklist(llvm::Module *module,
@@ -64,11 +70,20 @@ private:
 
 public:
   TargetDistanceUtility(llvm::Module *module, CFG &cfg, CG &cg,
-                        std::set<llvm::Instruction *> &targets);
+                        std::set<llvm::Instruction *> targets)
+      : module(module), cfg(cfg), cg(cg), targets(targets) {}
   TargetDistanceUtility(llvm::Module *module, CFG &cfg, CG &cg,
-                        InstructionFilter &filter);
+                        InstructionFilter *filter)
+      : TargetDistanceUtility(module, cfg, cg,
+                              NegatedIF(filter).toInstructionSet(cfg)) {}
   double getUtility(klee::ExecutionState *state);
-  double getStaticUtility(llvm::Instruction *instruction);
+  double getStaticUtility(llvm::Instruction *instruction) {
+    if (!initialized) {
+      init();
+    }
+    assert(instruction);
+    return -getDistance(instruction);
+  }
   std::string getColor(CFG &cfg, CG &cg, llvm::Instruction *instruction);
 };
 }

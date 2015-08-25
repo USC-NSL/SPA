@@ -25,18 +25,15 @@ WaypointUtility::WaypointUtility(
 
 bool checkWaypoint(const klee::ExecutionState *state, unsigned int id) {
   const klee::MemoryObject *addrMO = NULL;
-  for (std::vector<std::pair<const klee::MemoryObject *,
-                             const klee::Array *> >::const_iterator
-           it = state->symbolics.begin(),
-           ie = state->symbolics.end();
-       it != ie; it++) {
-    if (it->first->name == SPA_WAYPOINTS_VARIABLE) {
-      addrMO = it->first;
+  for (auto it : state->symbolics) {
+    if (it.first->name == SPA_WAYPOINTS_VARIABLE) {
+      addrMO = it.first;
       break;
     }
   }
-  if (!addrMO)
+  if (!addrMO) {
     return false;
+  }
 
   const klee::ObjectState *addrOS = state->addressSpace.findObject(addrMO);
   assert(addrOS && "waypointsPtr not set.");
@@ -77,8 +74,9 @@ double WaypointUtility::getUtility(klee::ExecutionState *state) {
       count++;
       continue;
     }
-    if (mandatory)
+    if (mandatory) {
       return UTILITY_FILTER_OUT;
+    }
   }
 
   return mandatory ? UTILITY_DEFAULT : count;

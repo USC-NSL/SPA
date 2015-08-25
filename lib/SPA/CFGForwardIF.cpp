@@ -7,8 +7,7 @@
 #include "spa/CFGForwardIF.h"
 
 namespace SPA {
-CFGForwardIF::CFGForwardIF(CFG &cfg, CG &cg,
-                           std::set<llvm::Instruction *> &startingPoints) {
+void CFGForwardIF::init() {
   // Use a work list to add all successors of starting instruction.
   std::set<llvm::Instruction *> worklist = startingPoints;
   std::set<llvm::Instruction *> reachable;
@@ -47,9 +46,5 @@ CFGForwardIF::CFGForwardIF(CFG &cfg, CG &cg,
   for (CFG::iterator it = cfg.begin(), ie = cfg.end(); it != ie; it++)
     if (reachable.count(*it) == 0)
       filterOut.insert(*it);
-}
-
-bool CFGForwardIF::checkInstruction(llvm::Instruction *instruction) {
-  return filterOut.count(instruction) == 0;
 }
 }
