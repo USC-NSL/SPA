@@ -419,8 +419,9 @@ double TargetDistanceUtility::getUtility(klee::ExecutionState *state) {
   assert(state);
 
   double result = -getDistance(state->pc->inst);
-  if (isFinal(state->pc->inst))
+  if (isFinal(state->pc->inst)) {
     return result > -INFINITY ? result : UTILITY_PROCESS_LAST;
+  }
 
   for (klee::ExecutionState::stack_ty::const_reverse_iterator
            it = state->stack.rbegin(),
