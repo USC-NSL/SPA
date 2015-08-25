@@ -12,7 +12,17 @@
 #include "llvm/DebugInfo.h"
 #include "../Core/Common.h"
 
-using namespace llvm;
+// Blacklist of functions that can be assumed to never be indirectly called.
+std::set<std::string> indirectCallBlacklist = {
+  "__spa_output", "__spa_tag", "spa_api_entry", "spa_api_input_handler",
+  "spa_api_output_handler", "spa_checkpoint", "spa_input",
+  "spa_invalid_path_handler", "spa_message_handler_entry",
+  "spa_msg_input_handler", "spa_msg_input_point", "spa_msg_input_size_handler",
+  "spa_msg_output_handler", "spa_msg_output_point", "spa_return",
+  "spa_runtime_call", "spa_seed", "spa_seed_symbol", "spa_seed_symbol_check",
+  "spa_state_handler", "spa_tag_handler", "spa_valid_path_handler",
+  "spa_valid_path_point", "spa_waypoint"
+};
 
 namespace SPA {
 void CG::init() {
@@ -22,33 +32,40 @@ void CG::init() {
     for (auto &fit : mit) {
       // Iterate instructions.
       for (auto &bbit : fit) {
+        llvm::Function *calledFunction = NULL;
         // Check for CallInst or InvokeInst.
-        if (const InvokeInst *ii = dyn_cast<InvokeInst>(&bbit)) {
-          if (ii->getCalledFunction()) {
-            definiteCallees[&bbit].insert(ii->getCalledFunction());
-            possibleCallees[&bbit].insert(ii->getCalledFunction());
-          } else {
-            // 							klee_message( "Indirect function call at " <<
-            // ii->getParent()->getParent()->getName().str() <<
-            // ii->getDebugLoc().getLine() );
-          }
-          definiteCallers[ii->getCalledFunction()].insert(&bbit);
-          possibleCallers[ii->getCalledFunction()].insert(&bbit);
-        }
-        if (const CallInst *ci = dyn_cast<CallInst>(&bbit)) {
+        if (llvm::InvokeInst *ii = llvm::dyn_cast<llvm::InvokeInst>(&bbit)) {
+          calledFunction = ii->getCalledFunction();
+        } else if (llvm::CallInst *ci = llvm::dyn_cast<llvm::CallInst>(&bbit)) {
           if (!ci->isInlineAsm()) {
-            if (ci->getCalledFunction()) {
-              definiteCallees[&bbit].insert(ci->getCalledFunction());
-              possibleCallees[&bbit].insert(ci->getCalledFunction());
-            } else {
-              // 							klee_message( "Indirect function call at " <<
-              // ci->getParent()->getParent()->getName().str() << ":" <<
-              // ci->getDebugLoc().getLine() );
+            calledFunction = ci->getCalledFunction();
+          }
+        } else {
+          continue;
+        }
+        // Check if function is called indirectly through a constant pointer.
+        if (calledFunction == NULL) {
+          llvm::Value *calledValue = NULL;
+          // Check for CallInst or InvokeInst.
+          if (llvm::InvokeInst *ii = llvm::dyn_cast<llvm::InvokeInst>(&bbit)) {
+            calledValue = ii->getCalledValue();
+          } else if (llvm::CallInst *ci =
+                         llvm::dyn_cast<llvm::CallInst>(&bbit)) {
+            if (!ci->isInlineAsm()) {
+              calledValue = ci->getCalledValue();
             }
-            definiteCallers[ci->getCalledFunction()].insert(&bbit);
-            possibleCallers[ci->getCalledFunction()].insert(&bbit);
+          }
+          if (calledValue) {
+            calledFunction = llvm::dyn_cast<llvm::Function>(
+                calledValue->stripPointerCasts());
           }
         }
+        if (calledFunction) {
+          definiteCallees[&bbit].insert(calledFunction);
+          possibleCallees[&bbit].insert(calledFunction);
+        }
+        definiteCallers[calledFunction].insert(&bbit);
+        possibleCallers[calledFunction].insert(&bbit);
       }
     }
   }
@@ -57,29 +74,38 @@ void CG::init() {
   for (auto iit : definiteCallers[NULL]) {
     // Make a list of argument types.
     std::vector<const llvm::Type *> argTypes;
-    if (const InvokeInst *ii = dyn_cast<InvokeInst>(iit)) {
-      for (unsigned i = 0; i < ii->getNumArgOperands(); i++)
+    if (llvm::InvokeInst *ii = llvm::dyn_cast<llvm::InvokeInst>(iit)) {
+      for (unsigned i = 0; i < ii->getNumArgOperands(); i++) {
         argTypes.push_back(ii->getArgOperand(i)->getType());
-    }
-    if (const CallInst *ci = dyn_cast<CallInst>(iit))
-      for (unsigned i = 0; i < ci->getNumArgOperands(); i++)
+      }
+    } else if (llvm::CallInst *ci = llvm::dyn_cast<llvm::CallInst>(iit)) {
+      for (unsigned i = 0; i < ci->getNumArgOperands(); i++) {
         argTypes.push_back(ci->getArgOperand(i)->getType());
+      }
+    }
     // Look for functions of same type.
     for (auto &fit : *this) {
       // Compare argument arity and type.
       if (argTypes.size() == fit.getFunctionType()->getNumParams()) {
         unsigned i;
-        for (i = 0; i < argTypes.size(); i++)
-          if (argTypes[i] != fit.getFunctionType()->getParamType(i))
+        for (i = 0; i < argTypes.size(); i++) {
+          if (argTypes[i] != fit.getFunctionType()->getParamType(i) &&
+              ((!argTypes[i]->isPointerTy()) ||
+               (!fit.getFunctionType()->getParamType(i)->isPointerTy()))) {
             break;
+          }
+        }
         if (i == argTypes.size()) {
           // Found possible match.
-          // 						klee_message( "Resolving indirect call at " <<
-          // (iit)->getParent()->getParent()->getName().str() << ":" <<
-          // (iit)->getDebugLoc().getLine() << " to " <<
-          // (*fit)->getName().str() );
-          possibleCallers[&fit].insert(iit);
-          possibleCallees[iit].insert(&fit);
+          // Ignore blacklisted functions.
+          if (!indirectCallBlacklist.count(fit.getName())) {
+            // 						klee_message( "Resolving indirect call at " <<
+            // (iit)->getParent()->getParent()->getName().str() << ":" <<
+            // (iit)->getDebugLoc().getLine() << " to " <<
+            // (*fit)->getName().str() );
+            possibleCallers[&fit].insert(iit);
+            possibleCallees[iit].insert(&fit);
+          }
         }
       }
     }
@@ -107,19 +133,19 @@ void CG::dump(std::ostream &dotFile) {
   // Find CG edges.
   for (auto it1 : definiteCallees)
     for (auto it2 : it1.second)
-      definiteCG.insert(std::pair<llvm::Function *, llvm::Function *>(
-          it1.first->getParent()->getParent(), it2));
+      definiteCG.insert(
+          std::make_pair(it1.first->getParent()->getParent(), it2));
   for (auto it1 : possibleCallees) {
     if (!it1.second.empty()) {
       for (auto it2 : it1.second)
-        if (definiteCG.count(std::pair<llvm::Function *, llvm::Function *>(
-                it1.first->getParent()->getParent(), it2)) == 0) {
-          possibleCG.insert(std::pair<llvm::Function *, llvm::Function *>(
-              it1.first->getParent()->getParent(), it2));
+        if (definiteCG.count(std::make_pair(it1.first->getParent()->getParent(),
+                                            it2)) == 0) {
+          possibleCG.insert(
+              std::make_pair(it1.first->getParent()->getParent(), it2));
         }
     } else {
-      possibleCG.insert(std::pair<llvm::Function *, llvm::Function *>(
-          it1.first->getParent()->getParent(), NULL));
+      possibleCG.insert(std::make_pair(it1.first->getParent()->getParent(),
+                                       (llvm::Function *)NULL));
     }
   }
 
