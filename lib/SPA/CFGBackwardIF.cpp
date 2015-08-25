@@ -9,8 +9,7 @@
 #include <klee/Internal/Module/KInstruction.h>
 
 namespace SPA {
-CFGBackwardIF::CFGBackwardIF(CFG &cfg, CG &cg,
-                             std::set<llvm::Instruction *> targets) {
+void CFGBackwardIF::init() {
   // Use a worklist to add all predecessors of target instruction.
   std::set<llvm::Instruction *> worklist = targets;
   std::set<llvm::Function *> pathFunctions;
@@ -49,16 +48,10 @@ CFGBackwardIF::CFGBackwardIF(CFG &cfg, CG &cg,
       reaching[*it] = false;
 }
 
-bool CFGBackwardIF::checkInstruction(llvm::Instruction *instruction) {
-  return (!reaching.count(instruction)) || reaching[instruction];
-}
-
-bool CFGBackwardIF::checkStep(llvm::Instruction *preInstruction,
-                              llvm::Instruction *postInstruction) {
-  return checkInstruction(postInstruction);
-}
-
 double CFGBackwardIF::getUtility(klee::ExecutionState *state) {
+  if (!initialized) {
+    init();
+  }
   bool knownFound = false;
   // Traverse call stack downward from root to current PC.
   // A filter out will match this regexp: ^[Unknown]*[Reaching]+[!Reaching].*$
@@ -78,15 +71,5 @@ double CFGBackwardIF::getUtility(klee::ExecutionState *state) {
     }
   }
   return UTILITY_DEFAULT;
-}
-
-std::string CFGBackwardIF::getColor(CFG &cfg, CG &cg,
-                                    llvm::Instruction *instruction) {
-  if (reaching.count(instruction) == 0)
-    return "grey";
-  else if (reaching[instruction])
-    return "white";
-  else
-    return "dimgrey";
 }
 }

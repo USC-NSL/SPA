@@ -8,37 +8,53 @@
 #include <map>
 #include <set>
 
+#include <llvm/IR/Module.h>
 #include <llvm/IR/Instructions.h>
 
 namespace SPA {
 class CG {
 private:
+  bool initialized = false;
+  llvm::Module *module;
   std::map<llvm::Function *, std::set<llvm::Instruction *> > definiteCallers;
   std::map<llvm::Function *, std::set<llvm::Instruction *> > possibleCallers;
   std::map<llvm::Instruction *, std::set<llvm::Function *> > definiteCallees;
   std::map<llvm::Instruction *, std::set<llvm::Function *> > possibleCallees;
-  std::set<llvm::Function *> functions;
+
+  void init();
 
 public:
-  typedef std::set<llvm::Function *>::iterator iterator;
+  typedef llvm::Module::iterator iterator;
 
-  CG(llvm::Module *module);
-  iterator begin() { return functions.begin(); }
-  iterator end() { return functions.end(); }
+  CG(llvm::Module *module) : module(module) {}
+  iterator begin() { return module->begin(); }
+  iterator end() { return module->end(); }
   const std::set<llvm::Instruction *> &
   getDefiniteCallers(llvm::Function *function) {
+    if (!initialized) {
+      init();
+    }
     return definiteCallers[function];
   }
   const std::set<llvm::Instruction *> &
   getPossibleCallers(llvm::Function *function) {
+    if (!initialized) {
+      init();
+    }
     return possibleCallers[function];
   }
   const std::set<llvm::Function *> &
   getDefiniteCallees(llvm::Instruction *instruction) {
+    if (!initialized) {
+      init();
+    }
     return definiteCallees[instruction];
   }
   const std::set<llvm::Function *> &
   getPossibleCallees(llvm::Instruction *instruction) {
+    if (!initialized) {
+      init();
+    }
     return possibleCallees[instruction];
   }
   // Dumps CG as a GraphViz DOT-file.

@@ -22,28 +22,7 @@ llvm::cl::opt<bool> UseShallowDistance(
     llvm::cl::desc("Performs a faster but less precise call-depth analysis."),
     llvm::cl::init(false));
 
-TargetDistanceUtility::TargetDistanceUtility(llvm::Module *module, CFG &cfg,
-                                             CG &cg, InstructionFilter &filter)
-    : cfg(cfg), cg(cg) {
-  std::set<llvm::Instruction *> worklist;
-
-  for (auto it : cfg) {
-    if (filter.checkInstruction(it)) {
-      distances[it] = std::make_pair(+INFINITY, false);
-    } else {
-      distances[it] = std::make_pair(0, true);
-      propagateChanges(worklist, it);
-    }
-  }
-
-  assert((!worklist.empty()) && "Filter must exclude something.");
-  processWorklist(module, worklist);
-}
-
-TargetDistanceUtility::TargetDistanceUtility(
-    llvm::Module *module, CFG &cfg, CG &cg,
-    std::set<llvm::Instruction *> &targets)
-    : cfg(cfg), cg(cg) {
+void TargetDistanceUtility::init() {
   std::set<llvm::Instruction *> worklist;
 
   for (auto it : cfg) {
@@ -55,6 +34,7 @@ TargetDistanceUtility::TargetDistanceUtility(
     propagateChanges(worklist, it);
   }
 
+  assert((!worklist.empty()) && "Filter must exclude something.");
   processWorklist(module, worklist);
 }
 
@@ -408,6 +388,10 @@ TargetDistanceUtility::getFunctionDepth(llvm::Function *fn,
 }
 
 double TargetDistanceUtility::getUtility(klee::ExecutionState *state) {
+  if (!initialized) {
+    init();
+  }
+
   assert(state);
 
   double result = -getDistance(state->pc->inst);
@@ -426,13 +410,12 @@ double TargetDistanceUtility::getUtility(klee::ExecutionState *state) {
   return UTILITY_PROCESS_LAST;
 }
 
-double TargetDistanceUtility::getStaticUtility(llvm::Instruction *instruction) {
-  assert(instruction);
-  return -getDistance(instruction);
-}
-
 std::string TargetDistanceUtility::getColor(CFG &cfg, CG &cg,
                                             llvm::Instruction *instruction) {
+  if (!initialized) {
+    init();
+  }
+
   std::stringstream result;
   if (isFinal(instruction)) {
     // Min = White, Max = Green

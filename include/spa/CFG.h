@@ -20,26 +20,55 @@ class InstructionFilter;
 
 class CFG {
 private:
+  bool initialized = false;
+  llvm::Module *module;
   std::set<llvm::Instruction *> instructions;
   std::map<llvm::Function *, std::vector<llvm::Instruction *> >
       functionInstructions;
   std::map<llvm::Instruction *, std::set<llvm::Instruction *> > predecessors,
       successors;
 
+  void init();
+
 public:
   typedef std::set<llvm::Instruction *>::iterator iterator;
 
-  CFG(llvm::Module *module);
+  CFG(llvm::Module *module) : module(module) {}
   // Iterates over all instructions in an arbitrary order.
-  iterator begin();
-  iterator end();
+  iterator begin() {
+    if (!initialized) {
+      init();
+    }
+    return instructions.begin();
+  }
+  iterator end() {
+    if (!initialized) {
+      init();
+    }
+    return instructions.end();
+  }
   // Gets the instructions of a function.
-  const std::vector<llvm::Instruction *> &getInstructions(llvm::Function *fn);
+  const std::vector<llvm::Instruction *> &getInstructions(llvm::Function *fn) {
+    if (!initialized) {
+      init();
+    }
+    return functionInstructions[fn];
+  }
   // Gets CFG data.
   const std::set<llvm::Instruction *> &
-      getSuccessors(llvm::Instruction *instruction);
+  getSuccessors(llvm::Instruction *instruction) {
+    if (!initialized) {
+      init();
+    }
+    return successors[instruction];
+  }
   const std::set<llvm::Instruction *> &
-      getPredecessors(llvm::Instruction *instruction);
+  getPredecessors(llvm::Instruction *instruction) {
+    if (!initialized) {
+      init();
+    }
+    return predecessors[instruction];
+  }
   bool returns(llvm::Instruction *inst) {
     return isa<llvm::ReturnInst>(inst) || isa<llvm::ResumeInst>(inst);
   }

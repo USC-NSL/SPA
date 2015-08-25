@@ -20,7 +20,7 @@
 using namespace llvm;
 
 namespace SPA {
-CFG::CFG(Module *module) {
+void CFG::init() {
   // Iterate functions.
   for (auto &fn : *module) {
     // Iterate basic blocks.
@@ -51,26 +51,12 @@ CFG::CFG(Module *module) {
   }
 }
 
-CFG::iterator CFG::begin() { return instructions.begin(); }
-
-CFG::iterator CFG::end() { return instructions.end(); }
-
-const std::vector<llvm::Instruction *> &
-CFG::getInstructions(llvm::Function *fn) {
-  return functionInstructions[fn];
-}
-
-const std::set<Instruction *> &CFG::getSuccessors(Instruction *instruction) {
-  return successors[instruction];
-}
-
-const std::set<Instruction *> &CFG::getPredecessors(Instruction *instruction) {
-  return predecessors[instruction];
-}
-
 void CFG::dump(std::ostream &dotFile, llvm::Function *fn, CG &cg,
                std::map<InstructionFilter *, std::string> &annotations,
                StateUtility *utility) {
+  if (!initialized) {
+    init();
+  }
   // Generate CFG DOT file.
   dotFile << "digraph CFG {" << std::endl;
 
@@ -189,6 +175,9 @@ void CFG::dump(std::ostream &dotFile, llvm::Function *fn, CG &cg,
 void CFG::dumpDir(std::string directory, CG &cg,
                   std::map<InstructionFilter *, std::string> &annotations,
                   StateUtility *utility) {
+  if (!initialized) {
+    init();
+  }
   auto result = mkdir(directory.c_str(), 0755);
   assert(result == 0 || errno == EEXIST);
 
@@ -208,16 +197,16 @@ void CFG::dumpDir(std::string directory, CG &cg,
   makefile << "\techo '</html>' >> $@" << std::endl << std::endl;
   makefile << "default: all" << std::endl;
 
-  for (auto fn : cg) {
-    klee::klee_message("Generating %s.dot", fn->getName().str().c_str());
+  for (auto &fn : cg) {
+    klee::klee_message("Generating %s.dot", fn.getName().str().c_str());
 
-    std::ofstream dotFile(directory + "/" + fn->getName().str() + ".dot");
+    std::ofstream dotFile(directory + "/" + fn.getName().str() + ".dot");
     assert(dotFile.good());
-    dump(dotFile, fn, cg, annotations, utility);
+    dump(dotFile, &fn, cg, annotations, utility);
 
-    makefile << "all: " << fn->getName().str() << std::endl;
-    makefile << fn->getName().str() << ": " << fn->getName().str() << ".html "
-             << fn->getName().str() << ".svg" << std::endl;
+    makefile << "all: " << fn.getName().str() << std::endl;
+    makefile << fn.getName().str() << ": " << fn.getName().str() << ".html "
+             << fn.getName().str() << ".svg" << std::endl;
   }
 }
 }

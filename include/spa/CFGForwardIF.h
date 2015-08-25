@@ -14,11 +14,23 @@
 namespace SPA {
 class CFGForwardIF : public InstructionFilter {
 private:
+  bool initialized = false;
+  CFG cfg;
+  CG cg;
+  std::set<llvm::Instruction *> startingPoints;
   std::set<llvm::Instruction *> filterOut;
 
+  void init();
+
 public:
-  CFGForwardIF(CFG &cfg, CG &cg, std::set<llvm::Instruction *> &startingPoints);
-  bool checkInstruction(llvm::Instruction *instruction);
+  CFGForwardIF(CFG &cfg, CG &cg, std::set<llvm::Instruction *> startingPoints)
+      : cfg(cfg), cg(cg), startingPoints(startingPoints) {}
+  bool checkInstruction(llvm::Instruction *instruction) {
+    if (!initialized) {
+      init();
+    }
+    return filterOut.count(instruction) == 0;
+  }
 };
 }
 

@@ -22,7 +22,7 @@ public:
                std::set<llvm::Instruction *> &targets)
       : targetDistance(module, cfg, cg, targets) {}
   AstarUtility(llvm::Module *module, CFG &cfg, CG &cg,
-               InstructionFilter &filter)
+               InstructionFilter *filter)
       : targetDistance(module, cfg, cg, filter) {}
 
   double getUtility(klee::ExecutionState *state) {
