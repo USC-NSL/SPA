@@ -382,8 +382,11 @@ ngx_epoll_done(ngx_cycle_t *cycle)
 }
 
 #ifdef ENABLE_KLEE
-struct epoll_event spa_epolled_event;
-int spa_has_epolled_event = 0;
+#define SPA_MAX_EPOLLED_EVENTS 2
+struct epoll_event spa_epolled_events[SPA_MAX_EPOLLED_EVENTS];
+int spa_num_epolled_events = 0;
+int spa_epolled_event_sequence[] = {0, 1, -1};
+int spa_epolled_event_id = 0;
 #endif
 
 static ngx_int_t
@@ -436,8 +439,7 @@ ngx_epoll_add_event(ngx_event_t *ev, ngx_int_t event, ngx_uint_t flags)
         return NGX_ERROR;
     }
 #else
-	memcpy(&spa_epolled_event, &ee, sizeof(ee));
-	spa_has_epolled_event = 1;
+	memcpy(&spa_epolled_events[spa_num_epolled_events++], &ee, sizeof(ee));
 #endif
 
     ev->active = 1;
@@ -525,8 +527,7 @@ ngx_epoll_add_connection(ngx_connection_t *c)
         return NGX_ERROR;
     }
 #else
-	memcpy(&spa_epolled_event, &ee, sizeof(ee));
-	spa_has_epolled_event = 1;
+	memcpy(&spa_epolled_events[spa_num_epolled_events++], &ee, sizeof(ee));
 #endif
 
     c->read->active = 1;
@@ -593,10 +594,10 @@ ngx_epoll_process_events(ngx_cycle_t *cycle, ngx_msec_t timer, ngx_uint_t flags)
 #ifndef ENABLE_KLEE
     events = epoll_wait(ep, event_list, (int) nevents, timer);
 #else
-	if ( spa_has_epolled_event ) {
+	if ( spa_epolled_event_sequence[spa_epolled_event_id] >= 0 ) {
 		events = 1;
-		memcpy(&event_list[0], &spa_epolled_event, sizeof(spa_epolled_event));
-		spa_has_epolled_event = 0;
+		memcpy(&event_list[0], &spa_epolled_events[spa_epolled_event_sequence[spa_epolled_event_id]], sizeof(spa_epolled_events[0]));
+		spa_epolled_event_id++;
 	} else {
 		exit(1);
 	}

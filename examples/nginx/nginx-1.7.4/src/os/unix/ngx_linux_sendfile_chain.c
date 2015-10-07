@@ -9,6 +9,8 @@
 #include <ngx_core.h>
 #include <ngx_event.h>
 
+#include <spa/spaRuntime.h>
+
 
 /*
  * On Linux up to 2.4.21 sendfile() (syscall #187) works with 32-bit
@@ -291,6 +293,18 @@ ngx_linux_sendfile_chain(ngx_connection_t *c, ngx_chain_t *in, off_t limit)
                            rc, file->file_pos, sent, file_size);
 
         } else {
+            { // Conversion of iovec to single buffer for SPA.
+              char buf[1500];
+              struct iovec *in_pos = header.elts;
+              int out_pos = 0;
+              while (in_pos - ((struct iovec *) header.elts) < header.nelts) {
+                assert(out_pos + in_pos->iov_len <= sizeof(buf));
+                memcpy(&buf[out_pos], in_pos->iov_base, in_pos->iov_len);
+                out_pos += in_pos->iov_len;
+                in_pos++;
+              }
+              spa_msg_output(buf, out_pos, 1500, "response");
+            }
 #ifndef ENABLE_KLEE
             rc = writev(c->fd, header.elts, header.nelts);
 #else
