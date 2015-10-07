@@ -1,13 +1,12 @@
-TARGETS = msg-compare msg-compare.test msg-compare.bc
+TOOLS = msg-compare spdy-response-status
 LLVM_CC = clang++ -emit-llvm
 CC = g++
 CXX_FLAGS = -Wall -Werror -g -I../../include
 LIB_SPA_TEST_MODULE = ../../Release+Asserts/lib/libSpaTestModule.so
 
-
 default: all
 
-all: msg-compare msg-compare.test msg-compare.bc $(TARGETS)
+all: $(TOOLS) $(TOOLS:=.bc) $(TOOLS:=.test)
 
 %: %.cpp
 	$(CC) $(CXX_FLAGS) -o $@ $<
