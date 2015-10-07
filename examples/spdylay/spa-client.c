@@ -84,7 +84,13 @@ void ctrl_recv_callback( spdylay_session *session, spdylay_frame_type type, spdy
 			break;
 		case SPDYLAY_SETTINGS: // The SETTINGS control frame.
 			printf( "Received SETTINGS control frame on %s.\n", (char *) user_data );
-			break;
+      assert( ((spdylay_settings *) frame)->iv );
+      printf( "	Headers:\n" );
+      spdylay_settings_entry *iv;
+      for (iv = ((spdylay_settings *) frame)->iv; iv - ((spdylay_settings *) frame)->iv < ((spdylay_settings *) frame)->niv; iv++) {
+        printf( "		%d: %d (%d)\n", iv->settings_id, iv->value, iv->flags);
+      }
+      break;
 		case SPDYLAY_NOOP: // The NOOP control frame. This was deprecated in SPDY/3.
 			printf( "Received NOOP control frame on %s.\n", (char *) user_data );
 			break;
