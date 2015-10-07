@@ -180,19 +180,17 @@ int main(int argc, char **argv, char **envp) {
   }
 
   spa.addStateUtilityBack(new SPA::FilteredUtility(), false);
-  auto directingTargetsSet = directingTargets.toInstructionSet(cfg);
 
   if (DumpCFG.size() > 0) {
     klee::klee_message("Dumping CFG to: %s", DumpCFG.getValue().c_str());
 
     std::map<SPA::InstructionFilter *, std::string> annotations;
-    annotations[new SPA::WhitelistIF(directingTargetsSet)] =
-        "style = \"filled\" fillcolor = \"red\"";
+    annotations[&directingTargets] = "style = \"filled\" fillcolor = \"red\"";
 
     if (DumpCFGFunction.empty()) {
-      cfg.dumpDir(
-          DumpCFG.getValue(), cg, annotations,
-          new SPA::TargetDistanceUtility(module, cfg, cg, directingTargetsSet));
+      cfg.dumpDir(DumpCFG.getValue(), cg, annotations,
+                  new SPA::TargetDistanceUtility(
+                      module, cfg, cg, new SPA::NegatedIF(&directingTargets)));
     } else {
       llvm::Function *fn = module->getFunction(DumpCFGFunction);
       assert(fn && "Cannot dump invalid function.");
@@ -200,15 +198,17 @@ int main(int argc, char **argv, char **envp) {
       std::ofstream dotFile(DumpCFG + "/" + fn->getName().str() + ".dot");
       assert(dotFile.good());
 
-      cfg.dump(
-          dotFile, fn, cg, annotations,
-          new SPA::TargetDistanceUtility(module, cfg, cg, directingTargetsSet));
+      cfg.dump(dotFile, fn, cg, annotations,
+               new SPA::TargetDistanceUtility(
+                   module, cfg, cg, new SPA::NegatedIF(&directingTargets)));
     }
     return 0;
   }
 
   spa.addStateUtilityBack(
-      new SPA::AstarUtility(module, cfg, cg, directingTargetsSet), false);
+      new SPA::AstarUtility(module, cfg, cg,
+                            new SPA::NegatedIF(&directingTargets)),
+      false);
   // All else being the same, go DFS.
   spa.addStateUtilityBack(new SPA::DepthUtility(), false);
 

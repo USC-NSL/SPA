@@ -29,13 +29,17 @@ void TargetDistanceUtility::init() {
     distances[it] = std::make_pair(+INFINITY, false);
   }
 
-  for (auto it : targets) {
-    distances[it] = std::make_pair(0, true);
-    propagateChanges(worklist, it);
+  for (auto it : cfg) {
+    if (!filter->checkInstruction(it)) {
+      distances[it] = std::make_pair(0, true);
+      propagateChanges(worklist, it);
+    }
   }
 
   assert((!worklist.empty()) && "Filter must exclude something.");
   processWorklist(module, worklist);
+
+  initialized = true;
 }
 
 void
@@ -269,10 +273,9 @@ void TargetDistanceUtility::processWorklist(
 
   // Fill in call-site successor distances.
   for (auto inst : cfg) {
-    if (!cg.getPossibleCallees(inst).empty()) {
-      for (auto successor : cfg.getSuccessors(inst)) {
-        successorDistances[successor] = distances[inst];
-      }
+    if (cfg.calls(inst)) {
+      assert(cfg.getSuccessors(inst).size() == 1);
+      successorDistances[inst] = distances[*cfg.getSuccessors(inst).begin()];
     }
   }
 

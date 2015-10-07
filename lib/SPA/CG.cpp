@@ -112,15 +112,21 @@ void CG::init() {
   }
 
   // Warn about functions with no callers.
-  for (auto it : possibleCallers)
-    if (it.second.empty())
+  for (auto it : possibleCallers) {
+    if (it.second.empty()) {
       klee::klee_message("Found function without any callers: %s",
                          it.first->getName().str().c_str());
+    }
+  }
   // Warn about indirect calls without callees.
-  for (auto it : possibleCallees)
-    if (it.second.empty())
+  for (auto it : possibleCallees) {
+    if (it.second.empty()) {
       klee::klee_message("Found call-site without any callees: %s",
                          debugLocation(it.first).c_str());
+    }
+  }
+
+  initialized = true;
 }
 
 void CG::dump(std::ostream &dotFile) {

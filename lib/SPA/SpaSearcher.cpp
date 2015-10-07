@@ -2,16 +2,21 @@
  * SPA - Systematic Protocol Analysis Framework
  */
 
+#include <iostream>
 #include <fstream>
 #include <sstream>
 #include <chrono>
 
 #include <spa/SpaSearcher.h>
 
+#include <spa/Util.h>
+#include <spa/Path.h>
+
 #include <llvm/Support/CommandLine.h>
 #include <llvm/Support/raw_ostream.h>
 #include "../Core/Common.h"
 #include <../Core/Executor.h>
+#include <klee/Solver.h>
 #include <klee/ExecutionState.h>
 #include <klee/Internal/Module/KInstruction.h>
 #include <llvm/IR/Function.h>
@@ -28,11 +33,19 @@ namespace SPA {
 // 		llvm::cl::desc( "Specifies a file to periodically save the processing queue
 // to." ) );
 
+std::string utilityStr(const std::vector<double> &utility) {
+  std::stringstream result;
+  result.precision(10);
+  for (std::vector<double>::const_iterator it = utility.begin(),
+                                           ie = utility.end();
+       it != ie; it++)
+    result << (it != utility.begin() ? "," : "") << (-*it);
+  return result.str();
+}
+
 bool SpaSearcher::checkState(klee::ExecutionState *state, unsigned int &id) {
-  for (std::deque<StateUtility *>::iterator it = stateUtilities.begin(),
-                                            ie = stateUtilities.end();
-       it != ie; it++, id++) {
-    if ((*it)->getUtility(state) == UTILITY_FILTER_OUT) {
+  for (auto it : stateUtilities) {
+    if (it->getUtility(state) == UTILITY_FILTER_OUT) {
       klee::klee_message(
           "[SpaSearcher] Filtering state due to utility %d at %s:%d", id,
           state->pc->inst->getParent()->getParent()->getName().str().c_str(),
@@ -41,17 +54,17 @@ bool SpaSearcher::checkState(klee::ExecutionState *state, unsigned int &id) {
       // 				state->pc()->inst->dump();
       return false;
     }
+    id++;
   }
   return true;
 }
 
 void SpaSearcher::enqueueState(klee::ExecutionState *state) {
   std::vector<double> u;
-  for (std::deque<StateUtility *>::iterator it = stateUtilities.begin(),
-                                            ie = stateUtilities.end();
-       it != ie; it++)
+  for (auto it : stateUtilities) {
     // Invert search order to get high priority states at beginning of queue.
-    u.push_back(-(*it)->getUtility(state));
+    u.push_back(-it->getUtility(state));
+  }
   states.insert(
       std::pair<std::vector<double>, klee::ExecutionState *>(u, state));
   oldUtilities[state] = u;
@@ -63,16 +76,6 @@ klee::ExecutionState *SpaSearcher::dequeueState(klee::ExecutionState *state) {
   oldUtilities.erase(state);
 
   return state;
-}
-
-std::string utilityStr(const std::vector<double> &utility) {
-  std::stringstream result;
-  result.precision(10);
-  for (std::vector<double>::const_iterator it = utility.begin(),
-                                           ie = utility.end();
-       it != ie; it++)
-    result << (it != utility.begin() ? "," : "") << (-*it);
-  return result.str();
 }
 
 void SpaSearcher::filterState(klee::ExecutionState *state, unsigned int id) {
@@ -95,12 +98,9 @@ void SpaSearcher::reorderAllStates() {
       states;
   states.clear();
 
-  for (std::set<
-           std::pair<std::vector<double>, klee::ExecutionState *> >::iterator
-           it = tempStates.begin(),
-           ie = tempStates.end();
-       it != ie; it++)
-    enqueueState(it->second);
+  for (auto it : tempStates) {
+    enqueueState(it.second);
+  }
 }
 
 // 	void SpaSearcher::saveStates() {
@@ -164,9 +164,10 @@ klee::ExecutionState &SpaSearcher::selectState() {
   printStats();
 
   klee::ExecutionState &state = *states.begin()->second;
-  //   klee::klee_message("[SpaSearcher] Selecting state with cost %s:",
-  //                      utilityStr(states.begin()->first).c_str());
-  //   state.dumpStack(llvm::errs());
+  klee::klee_message("[SpaSearcher] Selecting state with cost %s:",
+                     utilityStr(states.begin()->first).c_str());
+  state.dumpStack(llvm::errs());
+
   return state;
 }
 
@@ -174,25 +175,23 @@ void
 SpaSearcher::update(klee::ExecutionState *current,
                     const std::set<klee::ExecutionState *> &addedStates,
                     const std::set<klee::ExecutionState *> &removedStates) {
-  for (std::set<klee::ExecutionState *>::iterator sit = addedStates.begin(),
-                                                  sie = addedStates.end();
-       sit != sie; sit++)
-    enqueueState(*sit);
-  for (std::set<klee::ExecutionState *>::iterator it = removedStates.begin(),
-                                                  ie = removedStates.end();
-       it != ie; it++) {
-    dequeueState(*it);
-    // 			klee_message( "[SpaSearcher] Dequeuing state at "
-    // 				<< (*((*it)->pc())).inst->getParent()->getParent()->getName().str()
-    // 				<< ":" << (*((*it)->pc())).inst->getDebugLoc().getLine() );
-    // 			klee::c9::printStateStack( std::cerr, **it ) << std::endl;
+  for (auto sit : addedStates) {
+    enqueueState(sit);
   }
+  for (auto it : removedStates) {
+    dequeueState(it);
+  }
+  // 			klee_message( "[SpaSearcher] Dequeuing state at "
+  // 				<< (*((*it)->pc())).inst->getParent()->getParent()->getName().str()
+  // 				<< ":" << (*((*it)->pc())).inst->getDebugLoc().getLine() );
+  // 			klee::c9::printStateStack( std::cerr, **it ) << std::endl;
   statesDequeued += removedStates.size();
 
   printStats();
 
-  if (states.empty())
+  if (states.empty()) {
     klee::klee_message("[SpaSearcher] State queue is empty!");
+  }
 }
 
 void SpaSearcher::printStats() {
@@ -208,6 +207,13 @@ void SpaSearcher::printStats() {
         (states.size() ? utilityStr(states.rbegin()->first).c_str() : ""),
         (states.size() ? utilityStr(states.begin()->first).c_str() : ""),
         statesDequeued, statesFiltered);
+    klee::klee_message("[SpaSearcher] States:");
+    for (auto state : states) {
+      klee::klee_message("[SpaSearcher]   %s: %s",
+                         debugLocation(state.second->pc->inst).c_str(),
+                         utilityStr(state.first).c_str());
+
+    }
   }
 }
 }

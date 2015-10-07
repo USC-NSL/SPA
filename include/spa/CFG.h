@@ -69,6 +69,9 @@ public:
     }
     return predecessors[instruction];
   }
+  bool calls(llvm::Instruction *inst) {
+    return isa<llvm::CallInst>(inst) || isa<llvm::InvokeInst>(inst);
+  }
   bool returns(llvm::Instruction *inst) {
     return isa<llvm::ReturnInst>(inst) || isa<llvm::ResumeInst>(inst);
   }

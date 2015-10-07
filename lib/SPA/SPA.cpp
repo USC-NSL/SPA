@@ -570,9 +570,10 @@ void SPA::generateMain() {
   std::string entryFunctionName = oldEntryFunction->getName().str();
   oldEntryFunction->setName(OLD_ENTRY_FUNCTION);
   // Create new one.
-  entryFunction = llvm::Function::Create(oldEntryFunction->getFunctionType(),
-                                         llvm::GlobalValue::ExternalLinkage,
-                                         entryFunctionName, module);
+  entryFunction = llvm::dyn_cast<llvm::Function>(module->getOrInsertFunction(
+      entryFunctionName, oldEntryFunction->getFunctionType()));
+  assert(entryFunction && entryFunction->empty() &&
+         "Could not add new entry function.");
   entryFunction->setCallingConv(llvm::CallingConv::C);
   // Replace the old with the new.
   oldEntryFunction->replaceAllUsesWith(entryFunction);

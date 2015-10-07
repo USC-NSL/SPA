@@ -49,6 +49,8 @@ void CFG::init() {
       }
     }
   }
+
+  initialized = true;
 }
 
 void CFG::dump(std::ostream &dotFile, llvm::Function *fn, CG &cg,

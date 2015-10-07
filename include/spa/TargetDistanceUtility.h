@@ -6,7 +6,7 @@
 #define __TargetDistanceUtility_H__
 
 #include "spa/StateUtility.h"
-#include "spa/NegatedIF.h"
+#include "spa/BlacklistIF.h"
 
 namespace SPA {
 class TargetDistanceUtility : public StateUtility {
@@ -25,7 +25,7 @@ private:
   CFG &cfg;
   CG &cg;
   // Target instructions
-  std::set<llvm::Instruction *> targets;
+  InstructionFilter *filter;
   // Cached function depths.
   std::map<llvm::Function *, double> functionDepths, functionDepthsInContext;
   // Cached instruction depth.
@@ -34,7 +34,7 @@ private:
 
   // Min and max distances used to compute colors in visual CFG.
   double minFinal, maxFinal;
-  std::map<llvm::Function *,double> minPartial, maxPartial;
+  std::map<llvm::Function *, double> minPartial, maxPartial;
 
   void init();
   void propagateChanges(std::set<llvm::Instruction *> &worklist,
@@ -51,31 +51,33 @@ private:
     return instructionDepths[inst];
   }
   double getDistance(llvm::Instruction *instruction) {
-    return distances.count(instruction) ? distances[instruction].first
-                                        : +INFINITY;
+    assert(distances.count(instruction) &&
+           "Instruction not processed during initialization.");
+    return distances[instruction].first;
   }
   double getSuccessorDistance(llvm::Instruction *instruction) {
-    return successorDistances.count(instruction)
-               ? successorDistances[instruction].first
-               : +INFINITY;
+    assert(successorDistances.count(instruction) &&
+           "Instruction not processed during initialization.");
+    return successorDistances[instruction].first;
   }
   bool isFinal(llvm::Instruction *instruction) {
-    return distances.count(instruction) ? distances[instruction].second : true;
+    assert(distances.count(instruction) &&
+           "Instruction not processed during initialization.");
+    return distances[instruction].second;
   }
   bool isSuccessorFinal(llvm::Instruction *instruction) {
-    return successorDistances.count(instruction)
-               ? successorDistances[instruction].second
-               : true;
+    assert(successorDistances.count(instruction) &&
+           "Instruction not processed during initialization.");
+    return successorDistances[instruction].second;
   }
 
 public:
   TargetDistanceUtility(llvm::Module *module, CFG &cfg, CG &cg,
                         std::set<llvm::Instruction *> targets)
-      : module(module), cfg(cfg), cg(cg), targets(targets) {}
+      : TargetDistanceUtility(module, cfg, cg, new BlacklistIF(targets)) {}
   TargetDistanceUtility(llvm::Module *module, CFG &cfg, CG &cg,
                         InstructionFilter *filter)
-      : TargetDistanceUtility(module, cfg, cg,
-                              NegatedIF(filter).toInstructionSet(cfg)) {}
+      : module(module), cfg(cfg), cg(cg), filter(filter) {}
   double getUtility(klee::ExecutionState *state);
   double getStaticUtility(llvm::Instruction *instruction) {
     if (!initialized) {
