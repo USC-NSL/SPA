@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# gdb --args \
+spa-explore \
+    --out-paths kv-client.paths \
+    --start-from spa_entry \
+    --output-terminal \
+    --output-at spa_msg_output_point \
+    kv-client.bc

@@ -2,6 +2,8 @@
 #include <cassert>
 #include <vector>
 
+#include <spa/spaRuntime.h>
+
 #include "kv.h"
 
 int main(int argc, char *argv[]) {
@@ -28,4 +30,37 @@ int main(int argc, char *argv[]) {
     }
   }
   return 0;
+}
+
+#define SPA_KEY "k"
+typedef enum {
+  GET,
+  SET
+} op_t;
+
+extern "C" {
+void __attribute__((noinline, used)) spa_entry() {
+  struct {
+    op_t op;
+    char value;
+  } operations[5];
+
+  spa_api_input_var(operations);
+
+  for (auto operation : operations) {
+    switch (operation.op) {
+    case GET:
+      kv_get(SPA_KEY);
+      break;
+    case SET:
+      char value[2];
+      value[0] = operation.value;
+      value[1] = '\0';
+      kv_set(SPA_KEY, value);
+      break;
+    default:
+      break;
+    }
+  }
+}
 }
