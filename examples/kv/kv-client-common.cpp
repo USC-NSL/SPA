@@ -1,15 +1,14 @@
 #include <iostream>
 #include <cassert>
-#include <vector>
 
 #include <spa/spaRuntime.h>
 
 #include "kv.h"
 
 int main(int argc, char *argv[]) {
-  std::vector<std::string> args(argv + 1, argv + argc);
+  for (int i = 1; i < argc; i++) {
+    std::string arg = argv[i];
 
-  for (std::string arg : args) {
     size_t d;
     if ((d = arg.find("==")) != std::string::npos) {
       std::string key = arg.substr(0, d);

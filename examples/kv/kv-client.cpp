@@ -1,4 +1,3 @@
-#include <vector>
 #include <map>
 #include <iostream>
 #include <cassert>
@@ -12,7 +11,7 @@
 #define R 2
 #define W 2
 
-std::vector<std::string> servers = { "127.0.0.1:12340", "127.0.0.1:12341",
+std::string servers[] = { "127.0.0.1:12340", "127.0.0.1:12341",
                                      "127.0.0.1:12342" };
 
 std::string kv_get(std::string key) {
@@ -38,7 +37,7 @@ std::string kv_get(std::string key) {
              sizeof(struct timeval));
 
   std::map<std::string, int> values;
-  for (unsigned i = 0; i < servers.size(); i++) {
+  for (unsigned i = 0; i < sizeof(servers) / sizeof(servers[0]); i++) {
     char resp[100];
     struct sockaddr_in srvaddr;
     socklen_t socklen = sizeof(srvaddr);
