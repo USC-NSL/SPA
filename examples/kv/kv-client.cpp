@@ -11,7 +11,7 @@
 #define R 2
 #define W 2
 
-std::string servers[] = { "127.0.0.1:12340", "127.0.0.1:12341",
+const char *servers[] = { "127.0.0.1:12340", "127.0.0.1:12341",
                                      "127.0.0.1:12342" };
 
 std::string kv_get(std::string key) {
@@ -73,7 +73,8 @@ std::string kv_get(std::string key) {
 void kv_set(std::string key, std::string value) {
   int sockfd = socket(AF_INET, SOCK_DGRAM, 0);
 
-  for (std::string server : servers) {
+  for (const char *s : servers) {
+    std::string server = s;
     struct sockaddr_in srvaddr;
     bzero(&srvaddr, sizeof(srvaddr));
     srvaddr.sin_family = AF_INET;
