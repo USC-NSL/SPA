@@ -12,7 +12,7 @@ default: $(TARGETS) $(TARGETS:=.bc)
 	g++ -o $@ $^
 
 %.bc.o: %.cpp
-	clang++ $(CFLAGS) -emit-llvm -c $< -o $@
+	clang++ $(CFLAGS) -DENABLE_SPA -DENABLE_KLEE -emit-llvm -c $< -o $@
 
 %.bc: %.bc.o
 	llvm-link -o $@ $^
