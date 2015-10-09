@@ -205,10 +205,12 @@ int main(int argc, char **argv, char **envp) {
     return 0;
   }
 
-  spa.addStateUtilityBack(
-      new SPA::AstarUtility(module, cfg, cg,
-                            new SPA::NegatedIF(&directingTargets)),
-      false);
+  if (!directingTargets.getSubFilters().empty()) {
+    spa.addStateUtilityBack(
+        new SPA::AstarUtility(module, cfg, cg,
+                              new SPA::NegatedIF(&directingTargets)),
+        false);
+  }
   // All else being the same, go DFS.
   spa.addStateUtilityBack(new SPA::DepthUtility(), false);
 
