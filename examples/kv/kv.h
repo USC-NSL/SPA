@@ -1,4 +1,2 @@
-#include <string>
-
-std::string kv_get(std::string key);
-void kv_set(std::string key, std::string value);
+char *kv_get(char *key);
+void kv_set(char *key, char *value);

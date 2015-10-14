@@ -1,26 +1,28 @@
 TARGETS = kv-local kv-client kv-server
-CFLAGS = -Wall -g -std=c++11 -I../../include
+CFLAGS = -Wall -g -std=c99 -I../../include
 
 .SUFFIXES:
 
 default: $(TARGETS) $(TARGETS:=.bc)
 
-%.o: %.cpp
-	g++ $(CFLAGS) -c $< -o $@
+%.o: %.c
+	gcc $(CFLAGS) -c $< -o $@
 
 %: %.o
-	g++ -o $@ $^
+	gcc -o $@ $^
 
-%.bc.o: %.cpp
-	clang++ $(CFLAGS) -DENABLE_SPA -DENABLE_KLEE -emit-llvm -c $< -o $@
+%.bc.o: %.c
+	clang $(CFLAGS) -DENABLE_SPA -DENABLE_KLEE -emit-llvm -c $< -o $@
 
 %.bc: %.bc.o
 	llvm-link -o $@ $^
 
 kv-local: kv-client-common.o
 kv-client: kv-client-common.o
+kv-server: kv-local.o
 kv-local.bc: kv-client-common.bc.o
 kv-client.bc: kv-client-common.bc.o
+kv-server.bc: kv-local.bc.o
 
 clean:
 	rm -f $(TARGETS) $(TARGETS:=.bc) *.o
