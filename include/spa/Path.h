@@ -12,9 +12,6 @@
 #include <klee/Solver.h>
 
 #define SPA_PATH_START "--- PATH START ---"
-#define SPA_PATH_SYMBOLS_START "--- SYMBOLS START ---"
-#define SPA_PATH_SYMBOL_DELIMITER "	"
-#define SPA_PATH_SYMBOLS_END "--- SYMBOLS END ---"
 #define SPA_PATH_OUTPUTS_START "--- OUTPUTS START ---"
 #define SPA_PATH_OUTPUT_DELIMITER "	"
 #define SPA_PATH_OUTPUTS_END "--- OUTPUTS END ---"

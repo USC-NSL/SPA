@@ -26,7 +26,6 @@ namespace {
 typedef enum {
   START,
   PATH,
-  SYMBOLS,
   OUTPUTS,
   TAGS,
   KQUERY,
@@ -70,7 +69,6 @@ Path *PathLoader::getPath() {
 
   LoadState_t state = START;
   Path *path = NULL;
-  std::map<std::string, std::string> arrayToName;
   std::vector<std::pair<std::string, size_t> > outputSizes;
   std::string kQuery;
   while (input.good()) {
@@ -84,13 +82,8 @@ Path *PathLoader::getPath() {
     if (line == SPA_PATH_START) {
       changeState(START, PATH);
       path = new Path();
-      arrayToName.clear();
       outputSizes.clear();
       kQuery = "";
-    } else if (line == SPA_PATH_SYMBOLS_START) {
-      changeState(PATH, SYMBOLS);
-    } else if (line == SPA_PATH_SYMBOLS_END) {
-      changeState(SYMBOLS, PATH);
     } else if (line == SPA_PATH_OUTPUTS_START) {
       changeState(PATH, OUTPUTS);
     } else if (line == SPA_PATH_OUTPUTS_END) {
@@ -110,8 +103,7 @@ Path *PathLoader::getPath() {
       while (klee::expr::Decl *D = P->ParseTopLevelDecl()) {
         assert(!P->GetNumErrors() && "Error parsing kquery in path file.");
         if (klee::expr::ArrayDecl *AD = dyn_cast<klee::expr::ArrayDecl>(D)) {
-          if (arrayToName.count(AD->Root->name))
-            path->symbols[arrayToName[AD->Root->name]] = AD->Root;
+          path->symbols[AD->Root->name] = AD->Root;
         } else if (klee::expr::QueryCommand *QC =
                        dyn_cast<klee::expr::QueryCommand>(D)) {
           path->constraints = klee::ConstraintManager(QC->Constraints);
@@ -162,11 +154,6 @@ Path *PathLoader::getPath() {
         delete path;
     } else {
       switch (state) {
-      case SYMBOLS: {
-        std::vector<std::string> s = split(line, SPA_PATH_SYMBOL_DELIMITER);
-        assert(s.size() == 2 && "Invalid symbol specification in path file.");
-        arrayToName[s[1]] = s[0];
-      } break;
       case OUTPUTS: {
         std::vector<std::string> s = split(line, SPA_PATH_OUTPUT_DELIMITER);
         assert(s.size() == 2 && "Invalid output specification in path file.");

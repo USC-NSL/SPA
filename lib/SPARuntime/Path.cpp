@@ -252,13 +252,6 @@ bool Path::isCovered(std::string dbgStr) {
 
 std::ostream &operator<<(std::ostream &stream, const Path &path) {
   stream << SPA_PATH_START << std::endl;
-  stream << SPA_PATH_SYMBOLS_START << std::endl;
-  for (auto it : path.symbols) {
-    stream << it.first << SPA_PATH_SYMBOL_DELIMITER << it.second->name
-           << SPA_PATH_SYMBOL_DELIMITER << std::endl;
-  }
-  stream << SPA_PATH_SYMBOLS_END << std::endl;
-
   stream << SPA_PATH_OUTPUTS_START << std::endl;
   for (auto it : path.outputValues) {
     stream << it.first << SPA_PATH_OUTPUT_DELIMITER << it.second.size()
