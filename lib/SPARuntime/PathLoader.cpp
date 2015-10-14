@@ -110,9 +110,8 @@ Path *PathLoader::getPath() {
       while (klee::expr::Decl *D = P->ParseTopLevelDecl()) {
         assert(!P->GetNumErrors() && "Error parsing kquery in path file.");
         if (klee::expr::ArrayDecl *AD = dyn_cast<klee::expr::ArrayDecl>(D)) {
-          path->symbols.insert(AD->Root);
           if (arrayToName.count(AD->Root->name))
-            path->symbolNames[arrayToName[AD->Root->name]] = AD->Root;
+            path->symbols[arrayToName[AD->Root->name]] = AD->Root;
         } else if (klee::expr::QueryCommand *QC =
                        dyn_cast<klee::expr::QueryCommand>(D)) {
           path->constraints = klee::ConstraintManager(QC->Constraints);

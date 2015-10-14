@@ -36,22 +36,20 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
     testFunctionCoverage = state.senderPath->testFunctionCoverage;
 
     // Rename colliding inputs.
-    for (auto it = state.senderPath->beginSymbols(),
-              ie = state.senderPath->endSymbols();
-         it != ie; it++) {
-      if (state.arrayNames.count(it->first)) {
+    for (auto it : state.senderPath->symbols) {
+      if (state.arrayNames.count(it.first)) {
         std::string newName;
         int s = 2;
         while (
-            state.arrayNames.count((newName = it->first + numToStr<int>(s))) ||
+            state.arrayNames.count((newName = it.first + numToStr<int>(s))) ||
             state.senderPath->getSymbol((newName)) ||
             state.senderPath->hasOutput(newName)) {
           s++;
         }
         klee::klee_message(
             "Renaming colliding symbol from input path: %s -> %s",
-            it->first.c_str(), newName.c_str());
-        *const_cast<std::string *>(&it->second->name) = newName;
+            it.first.c_str(), newName.c_str());
+        *const_cast<std::string *>(&it.second->name) = newName;
       }
     }
 
@@ -80,8 +78,6 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
 
   for (auto it : state.symbolics) {
     std::string name = it.first->name;
-
-    symbols.insert(it.second);
 
     if (name.compare(0, strlen(SPA_TAG_PREFIX), SPA_TAG_PREFIX) == 0) {
       const klee::ObjectState *addrOS = state.addressSpace.findObject(it.first);
@@ -123,7 +119,7 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
       // 				klee_message( "	Tag: " << name << " = " << buf );
       delete buf;
     } else {
-      symbolNames[name] = it.second;
+      symbols[name] = it.second;
 
       // Symbolic value.
       if (name.compare(0, strlen(SPA_OUTPUT_PREFIX), SPA_OUTPUT_PREFIX) == 0 ||
@@ -138,11 +134,14 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
 
   llvm::raw_null_ostream rnos;
   klee::PPrinter p(rnos);
-  for (auto it : state.constraints)
+  for (auto it : state.constraints) {
     p.scan(it);
-  for (const klee::Array *a : p.usedArrays)
-    if (symbolNames.count(a->name) == 0)
-      symbolNames[a->name] = a;
+  }
+  for (const klee::Array *a : p.usedArrays) {
+    if (symbols.count(a->name) == 0) {
+      symbols[a->name] = a;
+    }
+  }
 
   constraints = state.constraints;
 
@@ -188,7 +187,7 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
   std::vector<std::string> objectNames;
   std::vector<const klee::Array *> objects;
   // Process inputs.
-  for (auto it : symbolNames) {
+  for (auto it : symbols) {
     // Check if API input.
     if (it.first.compare(0, strlen(SPA_INPUT_PREFIX), SPA_INPUT_PREFIX) == 0) {
       objectNames.push_back(it.first);
@@ -254,7 +253,7 @@ bool Path::isCovered(std::string dbgStr) {
 std::ostream &operator<<(std::ostream &stream, const Path &path) {
   stream << SPA_PATH_START << std::endl;
   stream << SPA_PATH_SYMBOLS_START << std::endl;
-  for (auto it : path.symbolNames) {
+  for (auto it : path.symbols) {
     stream << it.first << SPA_PATH_SYMBOL_DELIMITER << it.second->name
            << SPA_PATH_SYMBOL_DELIMITER << std::endl;
   }

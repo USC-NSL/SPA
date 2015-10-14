@@ -44,8 +44,7 @@ class Path {
   friend void ::loadCoverage(SPA::Path *path);
 
 private:
-  std::set<const klee::Array *> symbols;
-  std::map<std::string, const klee::Array *> symbolNames;
+  std::map<std::string, const klee::Array *> symbols;
   std::map<std::string, std::vector<klee::ref<klee::Expr> > > outputValues;
   std::map<std::string, std::string> tags;
   klee::ConstraintManager constraints;
@@ -69,7 +68,7 @@ public:
   Path(klee::ExecutionState *kState, klee::Solver *solver);
 
   const klee::Array *getSymbol(std::string name) const {
-    return symbolNames.count(name) ? symbolNames.find(name)->second : NULL;
+    return symbols.count(name) ? symbols.find(name)->second : NULL;
   }
 
   bool hasOutput(std::string name) const {
@@ -87,14 +86,8 @@ public:
     return outputValues.find(name)->second[offset];
   }
 
-  std::map<std::string, const klee::Array *>::const_iterator
-  beginSymbols() const {
-    return symbolNames.begin();
-  }
-
-  std::map<std::string, const klee::Array *>::const_iterator
-  endSymbols() const {
-    return symbolNames.end();
+  const std::map<std::string, const klee::Array *> getSymbols() const {
+    return symbols;
   }
 
   std::map<std::string, std::vector<klee::ref<klee::Expr> > >::const_iterator
