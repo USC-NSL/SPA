@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <strings.h>
 #include <unistd.h>
 #include <stdarg.h>
 #include <assert.h>
@@ -216,6 +217,8 @@ SpaTag_t __attribute__((weak)) MsgReceived;
     }                                                                          \
   } while (0)
 
+uint64_t io_sequence_number = 0;
+
 #ifdef __cplusplus
 extern "C" {
 #endif // #ifdef __cplusplus
@@ -223,8 +226,11 @@ void __attribute__((noinline, weak))
     spa_input(void *var, size_t size, const char varName[],
               uint8_t ***initialValue, const char initialValueName[]) {
 #ifdef ENABLE_KLEE
+  char fullVarName[100];
+  snprintf(fullVarName, sizeof(fullVarName), "%s[%ld]", varName,
+           io_sequence_number++);
   uint8_t *symbol = (uint8_t *)malloc(size);
-  klee_make_symbolic(symbol, size, varName);
+  klee_make_symbolic(symbol, size, fullVarName);
 
   static int64_t pathID = -1;
   if (pathID < 0) {
@@ -305,11 +311,18 @@ void __attribute__((weak))
 #ifdef ENABLE_KLEE
   }
 #endif // #ifdef ENABLE_KLEE
+  char fullVarName[100];
+  snprintf(fullVarName, sizeof(fullVarName), "%s[%ld]", varName,
+           io_sequence_number++);
+  char fullSizeName[100];
+  snprintf(fullSizeName, sizeof(fullSizeName), "%s[%ld]", sizeName,
+           io_sequence_number++);
+
   void *buffer = malloc(bufferSize);
-  klee_make_symbolic(buffer, bufferSize, varName);
+  klee_make_symbolic(buffer, bufferSize, fullVarName);
   memcpy(buffer, var, bufferSize);
   size_t *bufSize = (size_t *)malloc(sizeof(size_t));
-  klee_make_symbolic(bufSize, sizeof(size_t), sizeName);
+  klee_make_symbolic(bufSize, sizeof(size_t), fullSizeName);
   *bufSize = size;
   spa_tag(Output, "1");
   spa_checkpoint();
