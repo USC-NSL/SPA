@@ -85,18 +85,20 @@ char *kv_get(char *key) {
     assert(socklen == sizeof(srvaddr));
     resp[resplen] = '\0';
 
-    char srvstr[INET_ADDRSTRLEN + 1 + 5 + 1];
-    inet_ntop(AF_INET, &srvaddr.sin_addr.s_addr, srvstr, socklen);
-    int pos = strlen(srvstr);
-    srvstr[pos++] = ':';
-    snprintf(&srvstr[pos], 6, "%d", ntohs(srvaddr.sin_port));
-
     char *srv_key = resp;
-    pos = strlen(srv_key) + 1;
+    int pos = strlen(srv_key) + 1;
     assert(resplen > pos);
     char *srv_value = &resp[pos];
 
+#ifndef ENABLE_KLEE
+    char srvstr[INET_ADDRSTRLEN + 1 + 5 + 1];
+    inet_ntop(AF_INET, &srvaddr.sin_addr.s_addr, srvstr, socklen);
+    pos = strlen(srvstr);
+    srvstr[pos++] = ':';
+    snprintf(&srvstr[pos], 6, "%d", ntohs(srvaddr.sin_port));
+
     printf("%s %s == %s\n", srvstr, srv_key, srv_value);
+#endif
 
     assert(strcmp(key, srv_key) == 0);
 
@@ -146,18 +148,20 @@ void kv_set(char *key, char *value) {
     assert(socklen == sizeof(srvaddr));
     resp[resplen] = '\0';
 
-    char srvstr[INET_ADDRSTRLEN + 1 + 5 + 1];
-    inet_ntop(AF_INET, &srvaddr.sin_addr.s_addr, srvstr, socklen);
-    int pos = strlen(srvstr);
-    srvstr[pos++] = ':';
-    snprintf(&srvstr[pos], 6, "%d", ntohs(srvaddr.sin_port));
-
     char *srv_key = resp;
-    pos = strlen(srv_key) + 1;
+    int pos = strlen(srv_key) + 1;
     assert(resplen > pos);
     char *srv_value = &resp[pos];
 
+#ifndef ENABLE_KLEE
+    char srvstr[INET_ADDRSTRLEN + 1 + 5 + 1];
+    inet_ntop(AF_INET, &srvaddr.sin_addr.s_addr, srvstr, socklen);
+    pos = strlen(srvstr);
+    srvstr[pos++] = ':';
+    snprintf(&srvstr[pos], 6, "%d", ntohs(srvaddr.sin_port));
+
     printf("%s %s = %s\n", srvstr, srv_key, srv_value);
+#endif
 
     assert(strcmp(key, srv_key) == 0);
     assert(strcmp(value, srv_value) == 0);

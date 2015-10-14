@@ -24,7 +24,9 @@ int main(int argc, char *argv[]) {
   srvaddr.sin_port = htons(port);
   bind(sockfd, (struct sockaddr *)&srvaddr, sizeof(srvaddr));
 
+#ifndef ENABLE_KLEE
   printf("Listening on port: %d\n", port);
+#endif
 
   for (;;) {
     socklen_t socklen = sizeof(cliaddr);
@@ -33,11 +35,13 @@ int main(int argc, char *argv[]) {
     assert(socklen == sizeof(cliaddr));
     msg[msglen] = '\0';
 
+#ifndef ENABLE_KLEE
     char clistr[INET_ADDRSTRLEN + 1 + 5 + 1];
     inet_ntop(AF_INET, &cliaddr.sin_addr.s_addr, clistr, socklen);
     int pos = strlen(clistr);
     clistr[pos++] = ':';
     snprintf(&clistr[pos], 6, "%d", ntohs(cliaddr.sin_port));
+#endif
 
     char *key = msg;
     char *value;
@@ -49,11 +53,15 @@ int main(int argc, char *argv[]) {
       value = &msg[key_len + 1];
       kv_set(key, value);
 
+#ifndef ENABLE_KLEE
       printf("%s %s = %s\n", clistr, key, value);
+#endif
     } else { // 1 string: get $1
       value = kv_get(key);
 
+#ifndef ENABLE_KLEE
       printf("%s %s == %s", clistr, key, value);
+#endif
     }
 
     int value_len = strlen(value);
