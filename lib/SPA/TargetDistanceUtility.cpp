@@ -274,8 +274,18 @@ void TargetDistanceUtility::processWorklist(
   // Fill in call-site successor distances.
   for (auto inst : cfg) {
     if (cfg.calls(inst)) {
-      assert(cfg.getSuccessors(inst).size() == 1);
-      successorDistances[inst] = distances[*cfg.getSuccessors(inst).begin()];
+      assert(cfg.getSuccessors(inst).size() >= 1);
+      bool final = false;
+      double min = +INFINITY;
+      for (auto successor : cfg.getSuccessors(inst)) {
+        if (((!final) && distances[successor].second) ||
+            (final == distances[successor].second &&
+             distances[successor].first < min)) {
+          min = distances[successor].first;
+          final = distances[successor].second;
+        }
+      }
+      successorDistances[inst] = std::make_pair(min, final);
     }
   }
 
