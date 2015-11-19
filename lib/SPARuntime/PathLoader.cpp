@@ -144,21 +144,21 @@ Path *PathLoader::getPath() {
       delete MB;
 
       for (auto fullName : symbolNamesLog) {
-        std::string qualifiedName =
-            fullName.substr(0, fullName.rfind(SPA_SYMBOL_DELIMITER));
-
-        assert(symbols.count(fullName));
-        path->symbolLog.push_back(symbols[fullName]);
-
-        if (qualifiedName.compare(0, strlen(SPA_INPUT_PREFIX),
-                                  SPA_INPUT_PREFIX) == 0) {
+        if (symbols.count(fullName)) {
           path->symbolLog.push_back(symbols[fullName]);
-          path->inputSymbols[qualifiedName].push_back(symbols[fullName]);
-        } else if (qualifiedName.compare(0, strlen(SPA_OUTPUT_PREFIX),
-                                         SPA_OUTPUT_PREFIX) == 0 ||
-                   qualifiedName.compare(0, strlen(SPA_INIT_PREFIX),
-                                         SPA_INIT_PREFIX) == 0) {
-          path->outputSymbols[qualifiedName].push_back(symbols[fullName]);
+
+          std::string qualifiedName =
+              fullName.substr(0, fullName.rfind(SPA_SYMBOL_DELIMITER));
+          if (qualifiedName.compare(0, strlen(SPA_INPUT_PREFIX),
+                                    SPA_INPUT_PREFIX) == 0) {
+            path->symbolLog.push_back(symbols[fullName]);
+            path->inputSymbols[qualifiedName].push_back(symbols[fullName]);
+          } else if (qualifiedName.compare(0, strlen(SPA_OUTPUT_PREFIX),
+                                           SPA_OUTPUT_PREFIX) == 0 ||
+                     qualifiedName.compare(0, strlen(SPA_INIT_PREFIX),
+                                           SPA_INIT_PREFIX) == 0) {
+            path->outputSymbols[qualifiedName].push_back(symbols[fullName]);
+          }
         }
       }
     } else if (line == SPA_PATH_EXPLOREDCOVERAGE_START) {
