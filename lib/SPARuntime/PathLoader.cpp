@@ -147,6 +147,7 @@ Path *PathLoader::getPath() {
         std::string qualifiedName =
             fullName.substr(0, fullName.rfind(SPA_SYMBOL_DELIMITER));
 
+        assert(symbols.count(fullName));
         path->symbolLog.push_back(symbols[fullName]);
 
         if (qualifiedName.compare(0, strlen(SPA_INPUT_PREFIX),
