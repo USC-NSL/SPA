@@ -36,17 +36,9 @@ auto programStartTime = std::chrono::steady_clock::now();
 
 typedef bool (*TestClassifier)(SPA::Path *path);
 
-std::string stripDir(std::string name) {
-  if (name.find("/")) {
-    return name.substr(name.rfind("/") + 1);
-  } else {
-    return name;
-  }
-}
-
 bool netcalcDiv0(SPA::Path *path) {
-  if (stripDir(path->getParticipants()[0]) == NETCALC_CLIENT_BC &&
-      stripDir(path->getParticipants()[1]) == NETCALC_SERVER_BC) {
+  if (path->getParticipants()[0] == NETCALC_CLIENT_BC &&
+      path->getParticipants()[1] == NETCALC_SERVER_BC) {
     assert(path->getTestInputs().count("spa_in_api_op") &&
            path->getTestInputs().count("spa_in_api_arg2"));
     return std::set<std::vector<uint8_t> >({
@@ -66,8 +58,8 @@ bool netcalcDiv0(SPA::Path *path) {
 }
 
 bool netcalcImplicitArg(SPA::Path *path) {
-  if (stripDir(path->getParticipants()[0]) == NETCALC_CLIENT_BC &&
-      stripDir(path->getParticipants()[1]) == NETCALC_SERVER_BC) {
+  if (path->getParticipants()[0] == NETCALC_CLIENT_BC &&
+      path->getParticipants()[1] == NETCALC_SERVER_BC) {
     assert(path->getTestInputs().count("spa_in_api_op") &&
            path->getTestInputs().count("spa_in_api_arg1") &&
            path->getTestInputs().count("spa_in_api_arg2"));
@@ -85,8 +77,8 @@ bool netcalcImplicitArg(SPA::Path *path) {
 }
 
 bool spdylayDiffVersion(SPA::Path *path) {
-  if (stripDir(path->getParticipants()[0]) == SPDYLAY_CLIENT_BC &&
-      stripDir(path->getParticipants()[1]) == SPDYLAY_SERVER_BC) {
+  if (path->getParticipants()[0] == SPDYLAY_CLIENT_BC &&
+      path->getParticipants()[1] == SPDYLAY_SERVER_BC) {
     assert(path->getTestInputs().count("spa_in_api_clientVersion") &&
            path->getTestInputs().count("spa_in_api_serverVersion"));
     return (path->getTestInput("spa_in_api_clientVersion") ==
@@ -105,7 +97,7 @@ bool spdylayBadName(SPA::Path *path) {
   std::set<std::string> names = { "spa_in_api_name", "spa_in_api_name1",
                                   "spa_in_api_name2", "spa_in_api_name3",
                                   "spa_in_api_name4", "spa_in_api_name5" };
-  if (stripDir(path->getParticipants()[0]) == SPDYLAY_CLIENT_BC) {
+  if (path->getParticipants()[0] == SPDYLAY_CLIENT_BC) {
     for (auto name : names) {
       if (path->getTestInputs().count(name)) {
         for (auto it : path->getTestInput(name)) {
@@ -122,7 +114,7 @@ bool nginxBadName(SPA::Path *path) {
   std::set<std::string> names = { "spa_in_api_name", "spa_in_api_name1",
                                   "spa_in_api_name2", "spa_in_api_name3",
                                   "spa_in_api_name4", "spa_in_api_name5" };
-  if (stripDir(path->getParticipants()[0]) == SPDYLAY_CLIENT_BC) {
+  if (path->getParticipants()[0] == SPDYLAY_CLIENT_BC) {
     for (auto name : names) {
       if (path->getTestInputs().count(name)) {
         for (auto it : path->getTestInput(name)) {
@@ -139,7 +131,7 @@ bool spdylayEmptyValue(SPA::Path *path) {
   std::set<std::string> values = { "spa_in_api_value", "spa_in_api_value1",
                                    "spa_in_api_value2", "spa_in_api_value3",
                                    "spa_in_api_value4", "spa_in_api_value5" };
-  if (stripDir(path->getParticipants()[0]) == SPDYLAY_CLIENT_BC) {
+  if (path->getParticipants()[0] == SPDYLAY_CLIENT_BC) {
     for (auto value : values) {
       if (path->getTestInputs().count(value)) {
         if (path->getTestInput(value)[0] == '\0') {
@@ -211,8 +203,8 @@ bool spdylayBadValueChar(SPA::Path *path) {
                                    "spa_in_api_value1", "spa_in_api_value2",
                                    "spa_in_api_value3", "spa_in_api_value4",
                                    "spa_in_api_value5" };
-  if (stripDir(path->getParticipants()[0]) == SPDYLAY_CLIENT_BC &&
-      stripDir(path->getParticipants()[1]) == SPDYLAY_SERVER_BC) {
+  if (path->getParticipants()[0] == SPDYLAY_CLIENT_BC &&
+      path->getParticipants()[1] == SPDYLAY_SERVER_BC) {
     for (auto value : values) {
       if (path->getTestInputs().count(value)) {
         for (auto c : path->getTestInput(value)) {
@@ -226,16 +218,16 @@ bool spdylayBadValueChar(SPA::Path *path) {
 }
 
 bool spdylayNoDataLength(SPA::Path *path) {
-  if (stripDir(path->getParticipants()[0]) == SPDYLAY_SERVER_BC &&
-      stripDir(path->getParticipants()[1]) == SPDYLAY_CLIENT_BC) {
+  if (path->getParticipants()[0] == SPDYLAY_SERVER_BC &&
+      path->getParticipants()[1] == SPDYLAY_CLIENT_BC) {
     return !path->getTestInputs().count("spa_in_api_dataLength");
   }
   return false;
 }
 
 bool nginxSpdy3(SPA::Path *path) {
-  if (stripDir(path->getParticipants()[0]) == SPDYLAY_CLIENT_BC &&
-      stripDir(path->getParticipants()[1]) == NGINX_BC) {
+  if (path->getParticipants()[0] == SPDYLAY_CLIENT_BC &&
+      path->getParticipants()[1] == NGINX_BC) {
     assert(path->getTestInputs().count("spa_in_api_clientVersion"));
     return path->getTestInput("spa_in_api_clientVersion") !=
            std::vector<uint8_t>({
@@ -246,8 +238,8 @@ bool nginxSpdy3(SPA::Path *path) {
 }
 
 bool nginxHttp09(SPA::Path *path) {
-  if (stripDir(path->getParticipants()[0]) == SPDYLAY_CLIENT_BC &&
-      stripDir(path->getParticipants()[1]) == NGINX_BC) {
+  if (path->getParticipants()[0] == SPDYLAY_CLIENT_BC &&
+      path->getParticipants()[1] == NGINX_BC) {
     assert(path->getTestInputs().count("spa_in_api_versionId"));
     return path->getTestInput("spa_in_api_versionId") == std::vector<uint8_t>({
       2
@@ -263,8 +255,8 @@ bool nginxUnknownColonHeader(SPA::Path *path) {
   // From ngx_http_spdy.c:373
   std::set<std::string> whitelist = { "method", "scheme", "host", "path",
                                       "version" };
-  if (stripDir(path->getParticipants()[0]) == SPDYLAY_CLIENT_BC &&
-      stripDir(path->getParticipants()[1]) == NGINX_BC) {
+  if (path->getParticipants()[0] == SPDYLAY_CLIENT_BC &&
+      path->getParticipants()[1] == NGINX_BC) {
     for (auto name : names) {
       if (path->getTestInputs().count(name)) {
         if (path->getTestInput(name)[0] == ':') {
@@ -281,8 +273,8 @@ bool nginxUnknownColonHeader(SPA::Path *path) {
 }
 
 bool nginxBadUrlPercent(SPA::Path *path) {
-  if (stripDir(path->getParticipants()[0]) == SPDYLAY_CLIENT_BC &&
-      stripDir(path->getParticipants()[1]) == NGINX_BC) {
+  if (path->getParticipants()[0] == SPDYLAY_CLIENT_BC &&
+      path->getParticipants()[1] == NGINX_BC) {
     assert(path->getTestInputs().count("spa_in_api_path"));
     for (unsigned i = 0; i < path->getTestInput("spa_in_api_path").size();
          i++) {
@@ -300,8 +292,8 @@ bool nginxBadUrlPercent(SPA::Path *path) {
 }
 
 bool nginxPercent00(SPA::Path *path) {
-  if (stripDir(path->getParticipants()[0]) == SPDYLAY_CLIENT_BC &&
-      stripDir(path->getParticipants()[1]) == NGINX_BC) {
+  if (path->getParticipants()[0] == SPDYLAY_CLIENT_BC &&
+      path->getParticipants()[1] == NGINX_BC) {
     assert(path->getTestInputs().count("spa_in_api_path"));
     for (unsigned i = 0; i < path->getTestInput("spa_in_api_path").size() - 2;
          i++) {
@@ -320,8 +312,8 @@ bool nginxValueCrLf(SPA::Path *path) {
                                    "spa_in_api_value2", "spa_in_api_value3",
                                    "spa_in_api_value4", "spa_in_api_value5",
                                    "spa_in_api_path" };
-  if (stripDir(path->getParticipants()[0]) == SPDYLAY_CLIENT_BC &&
-      stripDir(path->getParticipants()[1]) == NGINX_BC) {
+  if (path->getParticipants()[0] == SPDYLAY_CLIENT_BC &&
+      path->getParticipants()[1] == NGINX_BC) {
     for (auto value : values) {
       if (path->getTestInputs().count(value)) {
         if (std::string(path->getTestInput(value).begin(),
@@ -336,8 +328,8 @@ bool nginxValueCrLf(SPA::Path *path) {
 }
 
 bool nginxDotDotPastRoot(SPA::Path *path) {
-  if (stripDir(path->getParticipants()[0]) == SPDYLAY_CLIENT_BC &&
-      stripDir(path->getParticipants()[1]) == NGINX_BC) {
+  if (path->getParticipants()[0] == SPDYLAY_CLIENT_BC &&
+      path->getParticipants()[1] == NGINX_BC) {
     int depth = 0;
 
     enum {
@@ -394,8 +386,8 @@ bool nginxDotDotPastRoot(SPA::Path *path) {
 }
 
 bool nginxTrace(SPA::Path *path) {
-  if (stripDir(path->getParticipants()[0]) == SPDYLAY_CLIENT_BC &&
-      stripDir(path->getParticipants()[1]) == NGINX_BC) {
+  if (path->getParticipants()[0] == SPDYLAY_CLIENT_BC &&
+      path->getParticipants()[1] == NGINX_BC) {
     assert(path->getTestInputs().count("spa_in_api_methodId"));
     return path->getTestInput("spa_in_api_methodId") == std::vector<uint8_t>({
       6
@@ -405,7 +397,7 @@ bool nginxTrace(SPA::Path *path) {
 }
 
 bool sipFromBadChar(SPA::Path *path) {
-  if (stripDir(path->getParticipants()[0]) == EXOSIP_CLIENT_BC) {
+  if (path->getParticipants()[0] == EXOSIP_CLIENT_BC) {
     assert(path->getTestInputs().count("spa_in_api_from"));
     for (auto it : path->getTestInput("spa_in_api_from")) {
       if (!isprint(it))
@@ -416,7 +408,7 @@ bool sipFromBadChar(SPA::Path *path) {
 }
 
 bool sipFromNoScheme(SPA::Path *path) {
-  if (stripDir(path->getParticipants()[0]) == EXOSIP_CLIENT_BC) {
+  if (path->getParticipants()[0] == EXOSIP_CLIENT_BC) {
     assert(path->getTestInputs().count("spa_in_api_from"));
     std::string from(path->getTestInput("spa_in_api_from").begin(),
                      path->getTestInput("spa_in_api_from").end());
@@ -426,7 +418,7 @@ bool sipFromNoScheme(SPA::Path *path) {
 }
 
 bool sipFromBadQuote(SPA::Path *path) {
-  if (stripDir(path->getParticipants()[0]) == EXOSIP_CLIENT_BC) {
+  if (path->getParticipants()[0] == EXOSIP_CLIENT_BC) {
     unsigned long count = 0;
     assert(path->getTestInputs().count("spa_in_api_from"));
     for (auto it : path->getTestInput("spa_in_api_from")) {
@@ -439,7 +431,7 @@ bool sipFromBadQuote(SPA::Path *path) {
 }
 
 bool sipToConfusedScheme(SPA::Path *path) {
-  if (stripDir(path->getParticipants()[0]) == EXOSIP_CLIENT_BC) {
+  if (path->getParticipants()[0] == EXOSIP_CLIENT_BC) {
     assert(path->getTestInputs().count("spa_in_api_to"));
     std::string to;
     std::transform(path->getTestInput("spa_in_api_to").begin(),
@@ -454,7 +446,7 @@ bool sipToConfusedScheme(SPA::Path *path) {
 }
 
 bool sipEventBadChar(SPA::Path *path) {
-  if (stripDir(path->getParticipants()[0]) == EXOSIP_CLIENT_BC) {
+  if (path->getParticipants()[0] == EXOSIP_CLIENT_BC) {
     if (path->getTestInputs().count("spa_in_api_event")) {
       for (auto it : path->getTestInput("spa_in_api_event")) {
         if (it == '\0')
@@ -479,8 +471,7 @@ static std::vector<std::pair<TestClassifier, std::string> > classifiers = {
   { nginxBadUrlPercent, "nginxBadUrlPercent.paths" },
   { nginxPercent00, "nginxPercent00.paths" },
   { nginxDotDotPastRoot, "nginxDotDotPastRoot.paths" },
-  { nginxHttp09, "nginxHttp09.paths" },
-  { nginxSpdy3, "nginxSpdy3.paths" },
+  { nginxHttp09, "nginxHttp09.paths" }, { nginxSpdy3, "nginxSpdy3.paths" },
   { spdylayBadName, "spdylayBadName.paths" },
   { nginxBadName, "nginxBadName.paths" },
   { spdylayBadValueChar, "spdylayBadValueChar.paths" },
