@@ -290,11 +290,6 @@ int main(int argc, char **argv, char **envp) {
   }
   assert((!entryPoints.empty()) && "No APIs or message handlers found.");
 
-  // Rebuild full CFG and call-graph (changed by SPA after adding init/entry
-  // handlers).
-  cfg = SPA::CFG(module);
-  cg = SPA::CG(module);
-
   if (DumpCG.size() > 0) {
     klee::klee_message("Dumping CG to: %s", DumpCG.getValue().c_str());
     std::ofstream dotFile(DumpCG.getValue().c_str());
@@ -351,6 +346,11 @@ int main(int argc, char **argv, char **envp) {
                        SPA::debugLocation(it).c_str());
     spa.addCheckpoint(NULL, it);
   }
+
+  // Rebuild full CFG and call-graph (changed by SPA after adding init/entry
+  // handlers).
+  cfg = SPA::CFG(module);
+  cg = SPA::CG(module);
 
   // Create instruction filter.
   klee::klee_message("   Creating CFG filter.");
