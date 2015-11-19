@@ -10,7 +10,7 @@ namespace SPA {
 AndFE::AndFE(FilterExpression *l, FilterExpression *r) : l(l), r(r) {
   assert(l && r);
 }
-bool AndFE::checkPath(SPA::Path &p) { return l->checkPath(p) && r->checkPath(p); }
+bool AndFE::checkPath(Path &p) { return l->checkPath(p) && r->checkPath(p); }
 std::string AndFE::dbg_str() {
   return "(" + l->dbg_str() + AND + r->dbg_str() + ")";
 }
@@ -18,17 +18,17 @@ std::string AndFE::dbg_str() {
 OrFE::OrFE(FilterExpression *l, FilterExpression *r) : l(l), r(r) {
   assert(l && r);
 }
-bool OrFE::checkPath(SPA::Path &p) { return l->checkPath(p) || r->checkPath(p); }
+bool OrFE::checkPath(Path &p) { return l->checkPath(p) || r->checkPath(p); }
 std::string OrFE::dbg_str() {
   return "(" + l->dbg_str() + OR + r->dbg_str() + ")";
 }
 
 NotFE::NotFE(FilterExpression *subExpr) : subExpr(subExpr) { assert(subExpr); }
-bool NotFE::checkPath(SPA::Path &p) { return !subExpr->checkPath(p); }
+bool NotFE::checkPath(Path &p) { return !subExpr->checkPath(p); }
 std::string NotFE::dbg_str() { return "(" NOT + subExpr->dbg_str() + ")"; }
 
 ConstFE::ConstFE(bool c) : c(c) {}
-bool ConstFE::checkPath(SPA::Path &p) { return c; }
+bool ConstFE::checkPath(Path &p) { return c; }
 std::string ConstFE::dbg_str() { return c ? TRUE : FALSE; }
 
 FilterExpression *parseParFE(std::string str);
