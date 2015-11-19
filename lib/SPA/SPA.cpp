@@ -934,8 +934,8 @@ void SPA::mapInputsToOutputs() {
     llvm::GlobalVariable *gv;
     assert(gv = dyn_cast<llvm::GlobalVariable>(callInst->getArgOperand(2)
                                                    ->stripPointerCasts()));
-    llvm::ConstantDataArray *cda;
-    if ((cda = dyn_cast<llvm::ConstantDataArray>(gv->getInitializer()))) {
+    if (llvm::ConstantDataArray *cda =
+            dyn_cast<llvm::ConstantDataArray>(gv->getInitializer())) {
       std::string receiverVarName = cda->getAsCString().str();
 
       // Check if input message.

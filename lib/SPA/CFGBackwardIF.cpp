@@ -42,10 +42,14 @@ void CFGBackwardIF::init() {
 
   // Define filter out set as opposite of reaching set within analyzed direct
   // path functions.
-  for (CFG::iterator it = cfg.begin(), ie = cfg.end(); it != ie; it++)
-    if (pathFunctions.count((*it)->getParent()->getParent()) &&
-        !reaching.count(*it))
-      reaching[*it] = false;
+  for (auto it : cfg) {
+    if (pathFunctions.count(it->getParent()->getParent()) &&
+        !reaching.count(it)) {
+      reaching[it] = false;
+    }
+  }
+
+  initialized = true;
 }
 
 double CFGBackwardIF::getUtility(klee::ExecutionState *state) {

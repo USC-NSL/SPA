@@ -15,8 +15,8 @@ namespace SPA {
 class CFGBackwardIF : public InstructionFilter, public StateUtility {
 private:
   bool initialized = false;
-  CFG cfg;
-  CG cg;
+  CFG &cfg;
+  CG &cg;
   std::set<llvm::Instruction *> targets;
   std::map<llvm::Instruction *, bool> reaching;
 

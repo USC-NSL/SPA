@@ -164,9 +164,9 @@ klee::ExecutionState &SpaSearcher::selectState() {
   printStats();
 
   klee::ExecutionState &state = *states.begin()->second;
-  klee::klee_message("[SpaSearcher] Selecting state with cost %s:",
-                     utilityStr(states.begin()->first).c_str());
-  state.dumpStack(llvm::errs());
+//   klee::klee_message("[SpaSearcher] Selecting state with cost %s:",
+//                      utilityStr(states.begin()->first).c_str());
+//   state.dumpStack(llvm::errs());
 
   return state;
 }
@@ -207,13 +207,13 @@ void SpaSearcher::printStats() {
         (states.size() ? utilityStr(states.rbegin()->first).c_str() : ""),
         (states.size() ? utilityStr(states.begin()->first).c_str() : ""),
         statesDequeued, statesFiltered);
-    klee::klee_message("[SpaSearcher] States:");
-    for (auto state : states) {
-      klee::klee_message("[SpaSearcher]   %s: %s",
-                         debugLocation(state.second->pc->inst).c_str(),
-                         utilityStr(state.first).c_str());
-
-    }
+//     klee::klee_message("[SpaSearcher] States:");
+//     for (auto state : states) {
+//       klee::klee_message("[SpaSearcher]   %s: %s",
+//                          debugLocation(state.second->pc->inst).c_str(),
+//                          utilityStr(state.first).c_str());
+// 
+//     }
   }
 }
 }
