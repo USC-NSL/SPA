@@ -932,17 +932,18 @@ void SPA::mapInputsToOutputs() {
     llvm::GlobalVariable *gv;
     assert(gv = dyn_cast<llvm::GlobalVariable>(callInst->getArgOperand(2)
                                                    ->stripPointerCasts()));
-    llvm::ConstantDataArray *cda;
-    assert(cda = dyn_cast<llvm::ConstantDataArray>(gv->getInitializer()));
-    std::string receiverVarName = cda->getAsCString().str();
+    if (llvm::ConstantDataArray *cda =
+            dyn_cast<llvm::ConstantDataArray>(gv->getInitializer())) {
+      std::string receiverVarName = cda->getAsCString().str();
 
-    // Check if input message.
-    if (receiverVarName.compare(0, strlen(SPA_MESSAGE_INPUT_PREFIX),
-                                SPA_MESSAGE_INPUT_PREFIX) == 0) {
-      std::string senderVarName =
-          std::string(SPA_MESSAGE_OUTPUT_PREFIX) +
-          receiverVarName.substr(strlen(SPA_MESSAGE_INPUT_PREFIX));
-      addValueMapping(senderVarName, receiverVarName);
+      // Check if input message.
+      if (receiverVarName.compare(0, strlen(SPA_MESSAGE_INPUT_PREFIX),
+                                  SPA_MESSAGE_INPUT_PREFIX) == 0) {
+        std::string senderVarName =
+            std::string(SPA_MESSAGE_OUTPUT_PREFIX) +
+            receiverVarName.substr(strlen(SPA_MESSAGE_INPUT_PREFIX));
+        addValueMapping(senderVarName, receiverVarName);
+      }
     }
   }
 }
