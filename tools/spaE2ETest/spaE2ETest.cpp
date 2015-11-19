@@ -8,6 +8,7 @@
 #include <unistd.h>
 
 #include <spa/SPA.h>
+#include <spa/PathLoader.h>
 
 #define RECHECK_WAIT 100000 // us
                            // Timeouts of 0 mean no timeout (wait indefinitely).

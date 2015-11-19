@@ -22,6 +22,7 @@
 #include "spa/CG.h"
 #include "spa/SPA.h"
 #include "spa/Path.h"
+#include "spa/PathLoader.h"
 #include "spa/CFGBackwardIF.h"
 #include "spa/WhitelistIF.h"
 #include "spa/DummyIF.h"
