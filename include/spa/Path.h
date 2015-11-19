@@ -127,18 +127,6 @@ public:
     return outputSymbols;
   }
 
-  //   std::map<std::string, std::vector<klee::ref<klee::Expr> >
-  // >::const_iterator
-  //   beginOutputs() {
-  //     return outputValues.begin();
-  //   }
-  //
-  //   std::map<std::string, std::vector<klee::ref<klee::Expr> >
-  // >::const_iterator
-  //   endOutputs() {
-  //     return outputValues.end();
-  //   }
-
   std::string getTag(std::string key) const {
     return tags.count(key) ? tags.find(key)->second : std::string();
   }
