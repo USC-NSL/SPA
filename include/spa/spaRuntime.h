@@ -47,11 +47,11 @@ void __attribute__((noinline, weak)) spa_valid_path_point() {
 }
 void __attribute__((noinline))
     spa_runtime_call(SpaRuntimeHandler_t handler, ...);
-// void __attribute__((noinline, weak)) spa_cost(int cost) {
-//   // Complicated NOP to prevent inlining.
-//   static uint8_t i = 0;
-//   i++;
-// }
+void __attribute__((noinline, weak)) spa_cost(unsigned long cost) {
+  // Complicated NOP to prevent inlining.
+  static uint8_t i = 0;
+  i++;
+}
 
 #ifdef ENABLE_KLEE
 int32_t spa_seed_symbol_check(uint64_t pathID);
@@ -217,7 +217,9 @@ SpaTag_t __attribute__((weak)) MsgReceived;
     }                                                                          \
   } while (0)
 
-uint64_t io_sequence_number = 0;
+__attribute__((weak)) char *spa_internal_participantName = "(unknown)";
+__attribute__((weak)) char *spa_internal_defaultBindAddr = "127.0.0.1";
+__attribute__((weak)) uint64_t spa_internal_io_sequence_number = 0;
 
 #ifdef __cplusplus
 extern "C" {
@@ -227,8 +229,8 @@ void __attribute__((noinline, weak))
               uint8_t ***initialValue, const char initialValueName[]) {
 #ifdef ENABLE_KLEE
   char fullVarName[100];
-  snprintf(fullVarName, sizeof(fullVarName), "%s[%ld]", varName,
-           io_sequence_number++);
+  snprintf(fullVarName, sizeof(fullVarName), "%s_%s_%ld", varName,
+           spa_internal_participantName, spa_internal_io_sequence_number++);
   uint8_t *symbol = (uint8_t *)malloc(size);
   klee_make_symbolic(symbol, size, fullVarName);
 
@@ -240,6 +242,8 @@ void __attribute__((noinline, weak))
       if (pathID == choice) {
         spa_seed_symbol(symbol, pathID);
         break;
+      } else {
+        spa_cost(1000000);
       }
     }
   } else {
@@ -277,7 +281,7 @@ void __attribute__((noinline, weak)) spa_waypoint(unsigned int id) {
   static uint8_t waypoints[SPA_MAX_WAYPOINTS / 8 + 1];
   static uint8_t *waypointsPtr;
   if (!init) {
-    bzero(waypoints, sizeof(waypoints));
+    memset(waypoints, 0, sizeof(waypoints));
     klee_make_symbolic(&waypointsPtr, sizeof(waypointsPtr), "spa_waypoints");
     waypointsPtr = waypoints;
     init = 1;
@@ -312,11 +316,11 @@ void __attribute__((weak))
   }
 #endif // #ifdef ENABLE_KLEE
   char fullVarName[100];
-  snprintf(fullVarName, sizeof(fullVarName), "%s[%ld]", varName,
-           io_sequence_number++);
+  snprintf(fullVarName, sizeof(fullVarName), "%s_%s_%ld", varName,
+           spa_internal_participantName, spa_internal_io_sequence_number++);
   char fullSizeName[100];
-  snprintf(fullSizeName, sizeof(fullSizeName), "%s[%ld]", sizeName,
-           io_sequence_number++);
+  snprintf(fullSizeName, sizeof(fullSizeName), "%s_%s_%ld", sizeName,
+           spa_internal_participantName, spa_internal_io_sequence_number++);
 
   void *buffer = malloc(bufferSize);
   klee_make_symbolic(buffer, bufferSize, fullVarName);

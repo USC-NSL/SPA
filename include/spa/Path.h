@@ -11,7 +11,14 @@
 #include "klee/ExecutionState.h"
 #include <klee/Solver.h>
 
+#include <spa/SPA.h>
+
 #define SPA_PATH_START "--- PATH START ---"
+#define SPA_PATH_PARTICIPANTS_START "--- PARTICIPANTS START ---"
+#define SPA_PATH_PARTICIPANT_DELIMITER "	"
+#define SPA_PATH_PARTICIPANTS_END "--- PARTICIPANTS END ---"
+#define SPA_PATH_SYMBOLLOG_START "--- SYMBOL LOG START ---"
+#define SPA_PATH_SYMBOLLOG_END "--- SYMBOL LOG END ---"
 #define SPA_PATH_OUTPUTS_START "--- OUTPUTS START ---"
 #define SPA_PATH_OUTPUT_DELIMITER "	"
 #define SPA_PATH_OUTPUTS_END "--- OUTPUTS END ---"
@@ -22,8 +29,6 @@
 #define SPA_PATH_KQUERY_END "--- KQUERY END ---"
 #define SPA_PATH_EXPLOREDCOVERAGE_START "--- EXPLORED COVERAGE START ---"
 #define SPA_PATH_EXPLOREDCOVERAGE_END "--- EXPLORED COVERAGE END ---"
-#define SPA_PATH_PARTICIPANTS_START "--- PARTICIPANTS START ---"
-#define SPA_PATH_PARTICIPANTS_END "--- PARTICIPANTS END ---"
 #define SPA_PATH_EXPLOREDPATH_START "--- EXPLORED PATH START ---"
 #define SPA_PATH_EXPLOREDPATH_END "--- EXPLORED PATH END ---"
 #define SPA_PATH_TESTINPUTS_START "--- TEST INPUTS START ---"
@@ -37,24 +42,67 @@
 void loadCoverage(SPA::Path *path);
 
 namespace SPA {
+class Symbol {
+private:
+  std::string name;
+  const klee::Array *array = NULL;
+  std::vector<klee::ref<klee::Expr> > outputValues;
+
+public:
+  Symbol(std::string name, const klee::Array *array)
+      : name(name), array(array) {
+    assert(
+        ((name.compare(0, strlen(SPA_INPUT_PREFIX), SPA_INPUT_PREFIX) == 0) ||
+         (name.compare(0, strlen(SPA_INTERNAL_PREFIX), SPA_INTERNAL_PREFIX) ==
+          0)) && "Input symbol with bad name.");
+  }
+
+  Symbol(std::string name, std::vector<klee::ref<klee::Expr> > outputValues =
+                               std::vector<klee::ref<klee::Expr> >())
+      : name(name), outputValues(outputValues) {
+    assert(name.compare(0, strlen(SPA_OUTPUT_PREFIX), SPA_OUTPUT_PREFIX) == 0 &&
+           "Output symbol with bad name.");
+  }
+
+  std::string getName() const { return name; }
+
+  bool isInput() const {
+    return name.compare(0, strlen(SPA_INPUT_PREFIX), SPA_INPUT_PREFIX) == 0 &&
+           array;
+  }
+
+  bool isOutput() const {
+    return name.compare(0, strlen(SPA_OUTPUT_PREFIX), SPA_OUTPUT_PREFIX) == 0 &&
+           outputValues.size() > 0;
+  }
+
+  const klee::Array *getInputArray() const { return array; }
+
+  const std::vector<klee::ref<klee::Expr> > &getOutputValues() const {
+    return outputValues;
+  }
+
+  friend class PathLoader;
+};
+
 class Path {
-  friend void ::loadCoverage(SPA::Path *path);
+  friend void ::loadCoverage(Path *path);
 
 private:
-  std::map<std::string, const klee::Array *> symbols;
-  std::map<std::string, std::vector<klee::ref<klee::Expr> > > outputValues;
+  std::vector<std::string> participants;
+  std::vector<std::shared_ptr<Symbol> > symbolLog;
+  std::map<std::string, std::vector<std::shared_ptr<Symbol> > > inputSymbols;
+  std::map<std::string, std::vector<std::shared_ptr<Symbol> > > outputSymbols;
   std::map<std::string, std::string> tags;
   klee::ConstraintManager constraints;
   std::map<std::string, std::map<long, bool> > exploredLineCoverage;
   std::map<std::string, bool> exploredFunctionCoverage;
-  std::vector<std::string> participants;
   std::map<std::string, std::vector<std::pair<std::string, bool> > >
       exploredPath;
   std::map<std::string, std::vector<uint8_t> > testInputs;
   std::map<std::string, std::map<long, bool> > testLineCoverage;
   std::map<std::string, bool> testFunctionCoverage;
 
-  Path();
   static bool isFunctionCovered(std::string fn,
                                 std::map<std::string, bool> &coverage);
   static bool
@@ -62,40 +110,34 @@ private:
                     std::map<std::string, std::map<long, bool> > &coverage);
 
 public:
+  Path() {}
   Path(klee::ExecutionState *kState, klee::Solver *solver);
 
-  const klee::Array *getSymbol(std::string name) const {
-    return symbols.count(name) ? symbols.find(name)->second : NULL;
+  const decltype(participants) & getParticipants() const {
+    return participants;
   }
 
-  bool hasOutput(std::string name) const {
-    return outputValues.count(name) > 0;
+  const decltype(symbolLog) & getSymbolLog() const { return symbolLog; }
+
+  const decltype(inputSymbols) & getInputSymbols() const {
+    return inputSymbols;
   }
 
-  size_t getOutputSize(std::string name) const {
-    return outputValues.count(name) ? outputValues.find(name)->second.size()
-                                    : 0;
+  const decltype(outputSymbols) & getOutputSymbols() const {
+    return outputSymbols;
   }
 
-  const klee::ref<klee::Expr> getOutputValue(std::string name,
-                                             unsigned int offset) const {
-    assert(offset < getOutputSize(name) && "Symbol offset out of bounds.");
-    return outputValues.find(name)->second[offset];
-  }
-
-  const std::map<std::string, const klee::Array *> getSymbols() const {
-    return symbols;
-  }
-
-  std::map<std::string, std::vector<klee::ref<klee::Expr> > >::const_iterator
-  beginOutputs() {
-    return outputValues.begin();
-  }
-
-  std::map<std::string, std::vector<klee::ref<klee::Expr> > >::const_iterator
-  endOutputs() {
-    return outputValues.end();
-  }
+  //   std::map<std::string, std::vector<klee::ref<klee::Expr> >
+  // >::const_iterator
+  //   beginOutputs() {
+  //     return outputValues.begin();
+  //   }
+  //
+  //   std::map<std::string, std::vector<klee::ref<klee::Expr> >
+  // >::const_iterator
+  //   endOutputs() {
+  //     return outputValues.end();
+  //   }
 
   std::string getTag(std::string key) const {
     return tags.count(key) ? tags.find(key)->second : std::string();
@@ -104,8 +146,6 @@ public:
   const klee::ConstraintManager &getConstraints() const { return constraints; }
 
   bool isCovered(std::string dbgStr);
-
-  std::vector<std::string> getParticipants() const { return participants; }
 
   std::map<std::string, std::vector<std::pair<std::string, bool> > >
   getExploredPath() const {

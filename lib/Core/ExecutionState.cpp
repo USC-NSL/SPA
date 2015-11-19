@@ -132,6 +132,7 @@ ExecutionState::ExecutionState(const ExecutionState& state)
     step_depth(state.step_depth),
     filtered(state.filtered),
     senderPath(state.senderPath),
+    senderLogPos(state.senderLogPos),
     instructionCoverage(state.instructionCoverage),
     branchDecisions(state.branchDecisions)
 {
@@ -152,6 +153,7 @@ ExecutionState *ExecutionState::branch() {
   falseState->step_depth = this->step_depth;
   falseState->filtered = this->filtered;
   falseState->senderPath = this->senderPath;
+  falseState->senderLogPos = this->senderLogPos;
   falseState->instructionCoverage = this->instructionCoverage;
   falseState->branchDecisions = this->branchDecisions;
 

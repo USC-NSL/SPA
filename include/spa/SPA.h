@@ -21,7 +21,6 @@
 #include <spa/StateUtility.h>
 #include <spa/FilteringEventHandler.h>
 #include <spa/PathFilter.h>
-#include <spa/PathLoader.h>
 
 #define SPA_API_ANNOTATION_FUNCTION "spa_api_entry"
 #define SPA_MESSAGE_HANDLER_ANNOTATION_FUNCTION "spa_message_handler_entry"
@@ -29,11 +28,12 @@
 #define SPA_WAYPOINT_ANNOTATION_FUNCTION "spa_waypoint"
 #define SPA_RETURN_ANNOTATION_FUNCTION "spa_return"
 #define SPA_INPUT_ANNOTATION_FUNCTION "spa_input"
+#define SPA_COST_ANNOTATION_FUNCTION "spa_cost"
 // #define SPA_SEED_ANNOTATION_FUNCTION			"spa_seed"
 
 #define SPA_PREFIX "spa_"
 #define SPA_TAG_PREFIX SPA_PREFIX "tag_"
-#define SPA_STATE_PREFIX SPA_PREFIX "state_"
+#define SPA_INTERNAL_PREFIX SPA_PREFIX "internal_"
 #define SPA_INPUT_PREFIX SPA_PREFIX "in_"
 #define SPA_INIT_PREFIX SPA_PREFIX "init_"
 #define SPA_API_INPUT_PREFIX SPA_INPUT_PREFIX "api_"
@@ -42,6 +42,7 @@
 #define SPA_API_OUTPUT_PREFIX SPA_OUTPUT_PREFIX "api_"
 #define SPA_MESSAGE_OUTPUT_PREFIX SPA_OUTPUT_PREFIX "msg_"
 #define SPA_WAYPOINTS_VARIABLE SPA_PREFIX "waypoints"
+#define SPA_SYMBOL_DELIMITER "_"
 
 #define SPA_HANDLERTYPE_TAG "HandlerType"
 #define SPA_MESSAGEHANDLER_VALUE "Message"
@@ -53,13 +54,18 @@
 #define SPA_VALIDPATH_TAG "ValidPath"
 #define SPA_VALIDPATH_VALUE "1"
 
+#define SPA_PARTICIPANTNAME_VARIABLE "spa_internal_participantName"
+#define SPA_DEFAULTBINDADDR_VARIABLE "spa_internal_defaultBindAddr"
 #define SPA_INITVALUEID_VARIABLE "spa_internal_initValueID"
 #define SPA_HANDLERID_VARIABLE "spa_internal_HanderID"
+#define SPA_PATHID_VARIABLE "spa_internal_pathID"
 // #define SPA_SEEDID_VARIABLE			"spa_internal_SeedID"
 
 #define LOG_FILE_VARIABLE "SPA_LOG_FILE"
 
 namespace SPA {
+class PathLoader;
+
 class SPA : public klee::InterpreterHandler,
             public klee::InterpreterEventListener,
             public FilteringEventHandler {
@@ -114,6 +120,7 @@ public:
   void addValueMapping(std::string senderVar, std::string receiverVar);
   void mapInputsToOutputs();
   void mapCommonInputs();
+  void mapSockets();
   void addStateUtilityFront(StateUtility *stateUtility,
                             bool _outputFilteredPaths) {
     stateUtilities.push_front(stateUtility);

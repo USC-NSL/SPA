@@ -74,6 +74,12 @@ typedef enum {
 }
 
 namespace SPA {
+extern llvm::cl::opt<std::string> Participant;
+
+llvm::cl::opt<std::string>
+IP("ip", llvm::cl::desc(
+  "Sets the participant IP address when bind doesn't (default: 127.0.0.1)."));
+
 llvm::cl::opt<int>
     MaxPaths("max-paths",
              llvm::cl::desc("Stop after outputting this many paths."));
@@ -95,6 +101,7 @@ llvm::cl::opt<std::string> DumpCovOnInterrupt(
 extern PathLoader *senderPaths;
 extern bool followSenderPaths;
 extern std::map<std::string, std::string> seedSymbolMappings;
+extern bool connectSockets;
 
 std::set<llvm::Instruction *> coverage;
 
@@ -792,18 +799,14 @@ void SPA::addInitialValues(
       swBB);
 
   // Iterate over variables to initialize.
-  for (std::map<llvm::Value *,
-                std::vector<std::vector<std::pair<bool, uint8_t> > > >::iterator
-           varit = values.begin(),
-           varie = values.end();
-       varit != varie; varit++) {
+  for (auto varit : values) {
     // Store concrete values.
     // %1 = malloc( (numValues + 1) * 2 );
     llvm::CallInst *varMallocCallInst = llvm::CallInst::Create(
         mallocFunction,
         llvm::ConstantInt::get(
             module->getContext(),
-            llvm::APInt(64, (varit->second.size() + 1) * 2 * 8, true)),
+            llvm::APInt(64, (varit.second.size() + 1) * 2 * 8, true)),
         "", swBB);
     varMallocCallInst->setCallingConv(llvm::CallingConv::C);
     varMallocCallInst->setTailCall(true);
@@ -818,15 +821,15 @@ void SPA::addInitialValues(
     new llvm::StoreInst(
         varMalloc,
         llvm::GetElementPtrInst::Create(
-            varit->first, llvm::ConstantInt::get(module->getContext(),
-                                                 llvm::APInt(32, 0, true)),
+            varit.first, llvm::ConstantInt::get(module->getContext(),
+                                                llvm::APInt(32, 0, true)),
             "", swBB),
         false, swBB);
     // Iterate distinct initial values for this variable.
     unsigned int offset = 0, numSymbolic = 0;
     for (std::vector<std::vector<std::pair<bool, uint8_t> > >::iterator
-             valit = varit->second.begin(),
-             valie = varit->second.end();
+             valit = varit.second.begin(),
+             valie = varit.second.end();
          valit != valie; valit++, offset += 2) {
       // %2 = malloc( values[it].length );
       llvm::CallInst *valMallocCallInst = llvm::CallInst::Create(
@@ -933,16 +936,17 @@ void SPA::mapInputsToOutputs() {
     assert(gv = dyn_cast<llvm::GlobalVariable>(callInst->getArgOperand(2)
                                                    ->stripPointerCasts()));
     llvm::ConstantDataArray *cda;
-    assert(cda = dyn_cast<llvm::ConstantDataArray>(gv->getInitializer()));
-    std::string receiverVarName = cda->getAsCString().str();
+    if ((cda = dyn_cast<llvm::ConstantDataArray>(gv->getInitializer()))) {
+      std::string receiverVarName = cda->getAsCString().str();
 
-    // Check if input message.
-    if (receiverVarName.compare(0, strlen(SPA_MESSAGE_INPUT_PREFIX),
-                                SPA_MESSAGE_INPUT_PREFIX) == 0) {
-      std::string senderVarName =
-          std::string(SPA_MESSAGE_OUTPUT_PREFIX) +
-          receiverVarName.substr(strlen(SPA_MESSAGE_INPUT_PREFIX));
-      addValueMapping(senderVarName, receiverVarName);
+      // Check if input message.
+      if (receiverVarName.compare(0, strlen(SPA_MESSAGE_INPUT_PREFIX),
+                                  SPA_MESSAGE_INPUT_PREFIX) == 0) {
+        std::string senderVarName =
+            std::string(SPA_MESSAGE_OUTPUT_PREFIX) +
+            receiverVarName.substr(strlen(SPA_MESSAGE_INPUT_PREFIX));
+        addValueMapping(senderVarName, receiverVarName);
+      }
     }
   }
 }
@@ -978,8 +982,55 @@ void SPA::mapCommonInputs() {
   }
 }
 
+void SPA::mapSockets() {
+  klee::klee_message("   Mapping socket symbols.");
+  connectSockets = true;
+}
+
 void SPA::start() {
-  // 		entryFunction->dump();
+  // Set the participant name for symbol naming.
+  if (Participant.empty()) {
+    Participant = module->getModuleIdentifier();
+  }
+  llvm::GlobalVariable *participantNameVar =
+      module->getNamedGlobal(SPA_PARTICIPANTNAME_VARIABLE);
+  assert(participantNameVar &&
+         "participantName variable not declared in module.");
+  llvm::Constant *participantNameConstant =
+      llvm::ConstantDataArray::getString(module->getContext(), Participant);
+  std::vector<llvm::Constant *> indices;
+  indices.push_back(
+      llvm::ConstantInt::get(module->getContext(), llvm::APInt(32, 0)));
+  indices.push_back(
+      llvm::ConstantInt::get(module->getContext(), llvm::APInt(32, 0)));
+  participantNameVar->setInitializer(llvm::ConstantExpr::getGetElementPtr(
+      new llvm::GlobalVariable(*module, participantNameConstant->getType(),
+                               true, llvm::GlobalValue::PrivateLinkage,
+                               participantNameConstant,
+                               SPA_PARTICIPANTNAME_VARIABLE "_value"),
+      indices));
+
+  // Set the source address for default binding.
+  if (IP.empty()) { // Default to loop-back network.
+    IP = "127.0.0.1";
+  }
+  llvm::GlobalVariable *defaultBindAddrVar =
+      module->getNamedGlobal(SPA_DEFAULTBINDADDR_VARIABLE);
+  assert(defaultBindAddrVar &&
+         "defaultBindAddrVar variable not declared in module.");
+  llvm::Constant *defaultBindAddrConstant =
+      llvm::ConstantDataArray::getString(module->getContext(), IP);
+  indices.clear();
+  indices.push_back(
+      llvm::ConstantInt::get(module->getContext(), llvm::APInt(32, 0)));
+  indices.push_back(
+      llvm::ConstantInt::get(module->getContext(), llvm::APInt(32, 0)));
+  defaultBindAddrVar->setInitializer(llvm::ConstantExpr::getGetElementPtr(
+      new llvm::GlobalVariable(*module, defaultBindAddrConstant->getType(),
+                               true, llvm::GlobalValue::PrivateLinkage,
+                               defaultBindAddrConstant,
+                               SPA_DEFAULTBINDADDR_VARIABLE "_value"),
+      indices));
 
   bool outputFP = false;
   for (auto it : outputFilteredPaths) {

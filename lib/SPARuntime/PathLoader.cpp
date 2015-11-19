@@ -26,11 +26,12 @@ namespace {
 typedef enum {
   START,
   PATH,
+  PARTICIPANTS,
+  SYMBOLLOG,
   OUTPUTS,
   TAGS,
   KQUERY,
   EXPLOREDCOVERAGE,
-  PARTICIPANTS,
   EXPLOREDPATH,
   TESTINPUTS,
   TESTCOVERAGE
@@ -63,12 +64,19 @@ std::vector<std::string> split(std::string str, std::string delimiter) {
 }
 
 Path *PathLoader::getPath() {
+  if (loadEmpty) {
+    loadEmpty = false;
+    return new Path();
+  }
+
   // Save current position in case of failure.
   unsigned long checkpointLN = lineNumber;
   std::streampos checkpointPos = input.tellg();
 
   LoadState_t state = START;
   Path *path = NULL;
+  std::map<std::string, std::shared_ptr<Symbol> > symbols;
+  std::vector<std::string> symbolNamesLog;
   std::vector<std::pair<std::string, size_t> > outputSizes;
   std::string kQuery;
   while (input.good()) {
@@ -84,6 +92,14 @@ Path *PathLoader::getPath() {
       path = new Path();
       outputSizes.clear();
       kQuery = "";
+    } else if (line == SPA_PATH_PARTICIPANTS_START) {
+      changeState(PATH, PARTICIPANTS);
+    } else if (line == SPA_PATH_PARTICIPANTS_END) {
+      changeState(PARTICIPANTS, PATH);
+    } else if (line == SPA_PATH_SYMBOLLOG_START) {
+      changeState(PATH, SYMBOLLOG);
+    } else if (line == SPA_PATH_SYMBOLLOG_END) {
+      changeState(SYMBOLLOG, PATH);
     } else if (line == SPA_PATH_OUTPUTS_START) {
       changeState(PATH, OUTPUTS);
     } else if (line == SPA_PATH_OUTPUTS_END) {
@@ -103,7 +119,7 @@ Path *PathLoader::getPath() {
       while (klee::expr::Decl *D = P->ParseTopLevelDecl()) {
         assert(!P->GetNumErrors() && "Error parsing kquery in path file.");
         if (klee::expr::ArrayDecl *AD = dyn_cast<klee::expr::ArrayDecl>(D)) {
-          path->symbols[AD->Root->name] = AD->Root;
+          symbols[AD->Root->name].reset(new Symbol(AD->Root->name, AD->Root));
         } else if (klee::expr::QueryCommand *QC =
                        dyn_cast<klee::expr::QueryCommand>(D)) {
           path->constraints = klee::ConstraintManager(QC->Constraints);
@@ -111,7 +127,7 @@ Path *PathLoader::getPath() {
           for (auto vit : QC->Values) {
             assert((!outputSizes.empty()) && outputSizes.front().second > 0 &&
                    "Too many expressions in path file kquery.");
-            path->outputValues[outputSizes.front().first].push_back(vit);
+            symbols[outputSizes.front().first]->outputValues.push_back(vit);
             if (--outputSizes.front().second == 0) {
               outputSizes.erase(outputSizes.begin());
             }
@@ -126,14 +142,28 @@ Path *PathLoader::getPath() {
       delete P;
       delete Builder;
       delete MB;
+
+      for (auto fullName : symbolNamesLog) {
+        std::string qualifiedName =
+            fullName.substr(0, fullName.rfind(SPA_SYMBOL_DELIMITER));
+
+        path->symbolLog.push_back(symbols[fullName]);
+
+        if (qualifiedName.compare(0, strlen(SPA_INPUT_PREFIX),
+                                  SPA_INPUT_PREFIX) == 0) {
+          path->symbolLog.push_back(symbols[fullName]);
+          path->inputSymbols[qualifiedName].push_back(symbols[fullName]);
+        } else if (qualifiedName.compare(0, strlen(SPA_OUTPUT_PREFIX),
+                                         SPA_OUTPUT_PREFIX) == 0 ||
+                   qualifiedName.compare(0, strlen(SPA_INIT_PREFIX),
+                                         SPA_INIT_PREFIX) == 0) {
+          path->outputSymbols[qualifiedName].push_back(symbols[fullName]);
+        }
+      }
     } else if (line == SPA_PATH_EXPLOREDCOVERAGE_START) {
       changeState(PATH, EXPLOREDCOVERAGE);
     } else if (line == SPA_PATH_EXPLOREDCOVERAGE_END) {
       changeState(EXPLOREDCOVERAGE, PATH);
-    } else if (line == SPA_PATH_PARTICIPANTS_START) {
-      changeState(PATH, PARTICIPANTS);
-    } else if (line == SPA_PATH_PARTICIPANTS_END) {
-      changeState(PARTICIPANTS, PATH);
     } else if (line == SPA_PATH_EXPLOREDPATH_START) {
       changeState(PATH, EXPLOREDPATH);
     } else if (line == SPA_PATH_EXPLOREDPATH_END) {
@@ -154,10 +184,17 @@ Path *PathLoader::getPath() {
         delete path;
     } else {
       switch (state) {
+      case PARTICIPANTS: {
+        path->participants.push_back(line);
+      } break;
+      case SYMBOLLOG: {
+        symbolNamesLog.push_back(line);
+      } break;
       case OUTPUTS: {
         std::vector<std::string> s = split(line, SPA_PATH_OUTPUT_DELIMITER);
         assert(s.size() == 2 && "Invalid output specification in path file.");
         outputSizes.push_back(std::make_pair(s[0], strToNum<int>(s[1])));
+        symbols[s[0]].reset(new Symbol(s[0]));
       } break;
       case TAGS: {
         std::vector<std::string> s = split(line, SPA_PATH_TAG_DELIMITER);
@@ -198,9 +235,6 @@ Path *PathLoader::getPath() {
             path->exploredFunctionCoverage[name] = true;
           }
         }
-      } break;
-      case PARTICIPANTS: {
-        path->participants.push_back(line);
       } break;
       case EXPLOREDPATH: {
         auto delim = line.find(" ");
@@ -283,6 +317,11 @@ Path *PathLoader::getPath(uint64_t pathID) {
 }
 
 std::string PathLoader::getPathText() {
+  if (loadEmpty) {
+    loadEmpty = false;
+    return "";
+  }
+
   // Save current position in case of failure.
   unsigned long checkpointLN = lineNumber;
   std::streampos checkpointPos = input.tellg();
@@ -326,6 +365,11 @@ std::string PathLoader::getPathText(uint64_t pathID) {
 }
 
 bool PathLoader::skipPath() {
+  if (loadEmpty) {
+    loadEmpty = false;
+    return true;
+  }
+
   // Save current position in case of failure.
   unsigned long checkpointLN = lineNumber;
   std::streampos checkpointPos = input.tellg();

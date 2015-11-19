@@ -14,28 +14,35 @@ namespace SPA {
 class PathLoader {
 private:
   std::ifstream &input;
+  bool loadEmptyFirst;
+  bool loadEmpty;
   unsigned long lineNumber;
   PathFilter *filter;
 
+  bool savedLoadEmpty;
   unsigned long savedLN;
   std::streampos savedPos;
 
 public:
-  PathLoader(std::ifstream &_input)
-      : input(_input), lineNumber(0), filter(NULL), savedLN(0), savedPos(0) {}
+  PathLoader(std::ifstream &input, bool loadEmptyFirst = false)
+      : input(input), loadEmptyFirst(loadEmptyFirst), loadEmpty(loadEmptyFirst), lineNumber(0), filter(NULL),
+        savedLN(0), savedPos(0) {}
   void setFilter(PathFilter *_filter) { filter = _filter; }
   void restart() {
     input.clear();
     input.seekg(0, std::ios::beg);
+    loadEmpty = loadEmptyFirst;
     lineNumber = 0;
   }
   void save() {
+    savedLoadEmpty = loadEmpty;
     savedPos = input.tellg();
     savedLN = lineNumber;
   }
   void load() {
     input.clear();
     input.seekg(savedPos, std::ios::beg);
+    loadEmpty = savedLoadEmpty;
     lineNumber = savedLN;
   }
 

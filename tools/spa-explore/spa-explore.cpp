@@ -14,6 +14,7 @@
 #include "../../lib/Core/Common.h"
 
 #include "spa/SPA.h"
+#include "spa/PathLoader.h"
 #include "spa/CFGBackwardIF.h"
 #include "spa/DbgLineIF.h"
 #include "spa/UnionIF.h"
@@ -30,6 +31,11 @@ llvm::cl::opt<std::string> InPaths(
     llvm::cl::desc("Specifies the input path file to connect when processing "
                    "inputs (default: leave inputs unconstrained)."));
 
+llvm::cl::opt<bool> FollowInPaths(
+    "follow-in-paths",
+    llvm::cl::desc(
+        "Enables folowing the input path file as new data as added."));
+
 llvm::cl::list<std::string>
     Connect("connect", llvm::cl::desc("Specifies symbols to connect in a "
                                       "receiverSymbol1=senderSymbol2 format."));
@@ -42,10 +48,18 @@ llvm::cl::opt<bool>
     ConnectInIn("connect-in-in", llvm::cl::init(false),
                 llvm::cl::desc("Automatically connect common inputs."));
 
+llvm::cl::opt<bool> ConnectSockets(
+    "connect-sockets", llvm::cl::init(false),
+    llvm::cl::desc("Automatically connect socket inputs to outputs."));
+
 llvm::cl::opt<std::string> OutputPaths(
     "out-paths",
     llvm::cl::desc(
         "Sets the output path file (default: <input-bytecode>.paths)."));
+
+llvm::cl::opt<bool>
+    OutputPathsAppend("out-paths-append",
+                      llvm::cl::desc("Enable appending paths to output file."));
 
 llvm::cl::list<std::string> StartFrom(
     "start-from",
@@ -99,7 +113,10 @@ int main(int argc, char **argv, char **envp) {
   if (pathFileName == "")
     pathFileName = InputBCFile + ".paths";
   klee::klee_message("Writing output to: %s", pathFileName.c_str());
-  std::ofstream pathFile(pathFileName.c_str());
+  std::ofstream pathFile(
+      pathFileName.c_str(),
+      std::ios_base::out | OutputPathsAppend ? std::ios_base::app
+                                             : std::ios_base::trunc);
   assert(pathFile.is_open() && "Unable to open path file.");
   SPA::SPA spa(InputBCFile, pathFile);
 
@@ -127,7 +144,7 @@ int main(int argc, char **argv, char **envp) {
     klee::klee_message("   Seeding paths from path-file: %s", InPaths.c_str());
     ifs.open(InPaths);
     assert(ifs.good() && "Unable to open input path file.");
-    spa.setSenderPathLoader(new SPA::PathLoader(ifs), false);
+    spa.setSenderPathLoader(new SPA::PathLoader(ifs, true), FollowInPaths);
   }
 
   for (auto connection : Connect) {
@@ -147,6 +164,11 @@ int main(int argc, char **argv, char **envp) {
   if (ConnectInIn) {
     klee::klee_message("   Connecting common inputs.");
     spa.mapCommonInputs();
+  }
+
+  if (ConnectSockets) {
+    klee::klee_message("   Connecting sockets inputs to outputs.");
+    spa.mapSockets();
   }
 
   // Get full CFG and call-graph.

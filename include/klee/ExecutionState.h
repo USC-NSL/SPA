@@ -11,6 +11,7 @@
 #define KLEE_EXECUTIONSTATE_H
 
 #include <llvm/IR/Instruction.h>
+#include <llvm/ADT/OwningPtr.h>
 
 #include "klee/Constraints.h"
 #include "klee/Expr.h"
@@ -25,6 +26,7 @@
 #include <vector>
 
 namespace SPA {
+  class Symbol;
   class Path;
 }
 
@@ -121,6 +123,8 @@ public:
   bool filtered;
   // Path used for seeding symbols in this state and it successors.
   std::shared_ptr<SPA::Path> senderPath;
+  // Keeps track of where in the log the path seeding process is.
+  std::vector<std::shared_ptr<SPA::Symbol> >::const_iterator senderLogPos;
   // Detailed instruction coverage (for each step).
   std::set<llvm::Instruction *> instructionCoverage;
   // Path followed.

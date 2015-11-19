@@ -2,6 +2,7 @@
  * SPA - Systematic Protocol Analysis Framework
  */
 
+#include "llvm/Support/CommandLine.h"
 #include <llvm/Support/raw_ostream.h>
 #include "llvm/Support/raw_os_ostream.h"
 #include "llvm/Support/MemoryBuffer.h"
@@ -14,71 +15,41 @@
 #include <expr/Parser.h>
 #include <klee/Solver.h>
 
-#include <spa/SPA.h>
 #include <spa/Util.h>
 
 #include <spa/Path.h>
 
 namespace SPA {
-Path::Path() {}
+extern llvm::cl::opt<std::string> Participant;
 
 Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
   klee::ExecutionState state(*kState);
 
   // Load data from sender path.
   if (state.senderPath) {
+    participants = state.senderPath->participants;
+    symbolLog = state.senderPath->symbolLog;
+    inputSymbols = state.senderPath->inputSymbols;
+    outputSymbols = state.senderPath->outputSymbols;
     tags = state.senderPath->tags;
     exploredLineCoverage = state.senderPath->exploredLineCoverage;
     exploredFunctionCoverage = state.senderPath->exploredFunctionCoverage;
-    participants = state.senderPath->getParticipants();
     exploredPath = state.senderPath->exploredPath;
     testLineCoverage = state.senderPath->testLineCoverage;
     testFunctionCoverage = state.senderPath->testFunctionCoverage;
-
-    // Rename colliding inputs.
-    for (auto it : state.senderPath->symbols) {
-      if (state.arrayNames.count(it.first)) {
-        std::string newName;
-        int s = 2;
-        while (
-            state.arrayNames.count((newName = it.first + numToStr<int>(s))) ||
-            state.senderPath->getSymbol((newName)) ||
-            state.senderPath->hasOutput(newName)) {
-          s++;
-        }
-        klee::klee_message(
-            "Renaming colliding symbol from input path: %s -> %s",
-            it.first.c_str(), newName.c_str());
-        *const_cast<std::string *>(&it.second->name) = newName;
-      }
-    }
-
-    // Merge outputs.
-    for (auto it = state.senderPath->beginOutputs(),
-              ie = state.senderPath->endOutputs();
-         it != ie; it++) {
-      if (!state.arrayNames.count(it->first)) {
-        outputValues[it->first] = it->second;
-      } else {
-        std::string newName;
-        int s = 2;
-        while (
-            state.arrayNames.count((newName = it->first + numToStr<int>(s))) ||
-            state.senderPath->getSymbol((newName)) ||
-            state.senderPath->hasOutput(newName)) {
-          s++;
-        }
-        klee::klee_message(
-            "Renaming colliding output from input path: %s -> %s",
-            it->first.c_str(), newName.c_str());
-        outputValues[newName] = it->second;
-      }
-    }
   }
 
-  for (auto it : state.symbolics) {
-    std::string name = it.first->name;
+  std::string participantName = Participant;
+  if (participantName.find("/")) {
+    participantName =
+        participantName.substr(participantName.find_last_of("/") + 1);
+  }
+  participants.push_back(participantName);
 
+  std::map<uint64_t, std::pair<const klee::MemoryObject *,
+                               const klee::Array *> > orderedSymbols;
+  for (auto it : state.symbolics) {
+    std::string name = it.second->name;
     if (name.compare(0, strlen(SPA_TAG_PREFIX), SPA_TAG_PREFIX) == 0) {
       const klee::ObjectState *addrOS = state.addressSpace.findObject(it.first);
       assert(addrOS && "Tag not set.");
@@ -114,32 +85,43 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
       }
       buf[i] = 0;
 
-      name = name.substr(strlen(SPA_TAG_PREFIX));
-      tags[name] = std::string(buf);
-      // 				klee_message( "	Tag: " << name << " = " << buf );
+      tags[name.substr(strlen(SPA_TAG_PREFIX))] = std::string(buf);
       delete buf;
-    } else {
-      symbols[name] = it.second;
-
-      // Symbolic value.
-      if (name.compare(0, strlen(SPA_OUTPUT_PREFIX), SPA_OUTPUT_PREFIX) == 0 ||
-          name.compare(0, strlen(SPA_STATE_PREFIX), SPA_STATE_PREFIX) == 0 ||
-          name.compare(0, strlen(SPA_INIT_PREFIX), SPA_INIT_PREFIX) == 0)
-        if (const klee::ObjectState *os =
-                state.addressSpace.findObject(it.first))
-          for (unsigned int i = 0; i < os->size; i++)
-            outputValues[name].push_back(os->read8(i));
+    } else if (name.compare(0, strlen(SPA_INPUT_PREFIX), SPA_INPUT_PREFIX) ==
+               0 || name.compare(0, strlen(SPA_OUTPUT_PREFIX),
+                                 SPA_OUTPUT_PREFIX) == 0) {
+      uint64_t id =
+          strToNum<uint64_t>(name.substr(name.rfind(SPA_SYMBOL_DELIMITER) + 1));
+      assert(orderedSymbols.count(id) == 0 &&
+             "Repeated symbol sequence number.");
+      orderedSymbols[id] = it;
     }
   }
 
-  llvm::raw_null_ostream rnos;
-  klee::PPrinter p(rnos);
-  for (auto it : state.constraints) {
-    p.scan(it);
-  }
-  for (const klee::Array *a : p.usedArrays) {
-    if (symbols.count(a->name) == 0) {
-      symbols[a->name] = a;
+  for (auto it : orderedSymbols) {
+    std::string fullName = it.second.second->name;
+    std::string qualifiedName =
+        fullName.substr(0, fullName.rfind(SPA_SYMBOL_DELIMITER));
+
+    if (qualifiedName.compare(0, strlen(SPA_INPUT_PREFIX), SPA_INPUT_PREFIX) ==
+        0) {
+      std::shared_ptr<Symbol> s(new Symbol(fullName, it.second.second));
+      symbolLog.push_back(s);
+      inputSymbols[qualifiedName].push_back(s);
+    } else if (qualifiedName.compare(0, strlen(SPA_OUTPUT_PREFIX),
+                                     SPA_OUTPUT_PREFIX) == 0 ||
+               qualifiedName.compare(0, strlen(SPA_INIT_PREFIX),
+                                     SPA_INIT_PREFIX) == 0) {
+      if (const klee::ObjectState *os =
+              state.addressSpace.findObject(it.second.first)) {
+        std::vector<klee::ref<klee::Expr> > outputValues;
+        for (unsigned int i = 0; i < os->size; i++) {
+          outputValues.push_back(os->read8(i));
+        }
+        std::shared_ptr<Symbol> s(new Symbol(fullName, outputValues));
+        symbolLog.push_back(s);
+        outputSymbols[qualifiedName].push_back(s);
+      }
     }
   }
 
@@ -173,13 +155,9 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
     }
   }
 
-  std::string moduleName = state.pc->inst->getParent()->getParent()->getParent()
-      ->getModuleIdentifier();
-  participants.push_back(moduleName);
-
-  exploredPath[moduleName].clear();
+  exploredPath[participantName].clear();
   for (auto branchDecision : state.branchDecisions) {
-    exploredPath[moduleName].push_back(std::make_pair(
+    exploredPath[participantName].push_back(std::make_pair(
         debugLocation(branchDecision.first), branchDecision.second));
   }
 
@@ -187,11 +165,14 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
   std::vector<std::string> objectNames;
   std::vector<const klee::Array *> objects;
   // Process inputs.
-  for (auto it : symbols) {
+  for (auto iit : inputSymbols) {
     // Check if API input.
-    if (it.first.compare(0, strlen(SPA_INPUT_PREFIX), SPA_INPUT_PREFIX) == 0) {
-      objectNames.push_back(it.first);
-      objects.push_back(it.second);
+    if (iit.first.compare(0, strlen(SPA_API_INPUT_PREFIX),
+                          SPA_API_INPUT_PREFIX) == 0) {
+      for (auto sit : iit.second) {
+        objectNames.push_back(sit->getName());
+        objects.push_back(sit->getInputArray());
+      }
     }
   }
 
@@ -252,10 +233,28 @@ bool Path::isCovered(std::string dbgStr) {
 
 std::ostream &operator<<(std::ostream &stream, const Path &path) {
   stream << SPA_PATH_START << std::endl;
+  stream << SPA_PATH_PARTICIPANTS_START << std::endl;
+  for (auto it : path.participants) {
+    stream << it << std::endl;
+  }
+  stream << SPA_PATH_PARTICIPANTS_END << std::endl;
+
+  stream << SPA_PATH_SYMBOLLOG_START << std::endl;
+  for (auto it : path.symbolLog) {
+    stream << it->getName() << std::endl;
+  }
+  stream << SPA_PATH_SYMBOLLOG_END << std::endl;
+
   stream << SPA_PATH_OUTPUTS_START << std::endl;
-  for (auto it : path.outputValues) {
-    stream << it.first << SPA_PATH_OUTPUT_DELIMITER << it.second.size()
-           << std::endl;
+  std::vector<klee::ref<klee::Expr> > evalExprs;
+  for (auto oit : path.outputSymbols) {
+    for (auto sit : oit.second) {
+      stream << sit->getName() << SPA_PATH_OUTPUT_DELIMITER
+             << sit->getOutputValues().size() << std::endl;
+      for (auto bit : sit->getOutputValues()) {
+        evalExprs.push_back(bit);
+      }
+    }
   }
   stream << SPA_PATH_OUTPUTS_END << std::endl;
 
@@ -267,12 +266,6 @@ std::ostream &operator<<(std::ostream &stream, const Path &path) {
 
   stream << SPA_PATH_KQUERY_START << std::endl;
   klee::ExprBuilder *exprBuilder = klee::createDefaultExprBuilder();
-  std::vector<klee::ref<klee::Expr> > evalExprs;
-  for (auto it : path.outputValues) {
-    for (auto it2 : it.second) {
-      evalExprs.push_back(it2);
-    }
-  }
   llvm::raw_os_ostream ros(stream);
   klee::ExprPPrinter::printQuery(
       ros, path.getConstraints(), exprBuilder->False(), &evalExprs[0],
@@ -280,29 +273,21 @@ std::ostream &operator<<(std::ostream &stream, const Path &path) {
   ros.flush();
   stream << SPA_PATH_KQUERY_END << std::endl;
 
-  if ((!path.exploredLineCoverage.empty()) ||
-      (!path.exploredFunctionCoverage.empty())) {
-    stream << SPA_PATH_EXPLOREDCOVERAGE_START << std::endl;
-    for (auto srcFile : path.exploredLineCoverage) {
-      stream << srcFile.first;
-      for (auto line : srcFile.second) {
-        stream << " " << (line.second ? "" : "!") << line.first;
-      }
-      stream << std::endl;
-    }
-    for (auto fn : path.exploredFunctionCoverage) {
-      stream << (fn.second ? "" : "!") << fn.first << std::endl;
-    }
-    stream << SPA_PATH_EXPLOREDCOVERAGE_END << std::endl;
-  }
-
-  if (!path.getParticipants().empty()) {
-    stream << SPA_PATH_PARTICIPANTS_START << std::endl;
-    for (auto it : path.getParticipants()) {
-      stream << it << std::endl;
-    }
-    stream << SPA_PATH_PARTICIPANTS_END << std::endl;
-  }
+  //   if ((!path.exploredLineCoverage.empty()) ||
+  //       (!path.exploredFunctionCoverage.empty())) {
+  //     stream << SPA_PATH_EXPLOREDCOVERAGE_START << std::endl;
+  //     for (auto srcFile : path.exploredLineCoverage) {
+  //       stream << srcFile.first;
+  //       for (auto line : srcFile.second) {
+  //         stream << " " << (line.second ? "" : "!") << line.first;
+  //       }
+  //       stream << std::endl;
+  //     }
+  //     for (auto fn : path.exploredFunctionCoverage) {
+  //       stream << (fn.second ? "" : "!") << fn.first << std::endl;
+  //     }
+  //     stream << SPA_PATH_EXPLOREDCOVERAGE_END << std::endl;
+  //   }
 
   if (!path.getExploredPath().empty()) {
     stream << SPA_PATH_EXPLOREDPATH_START << std::endl;

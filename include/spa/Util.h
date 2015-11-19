@@ -24,7 +24,7 @@ template <typename T> T strToNum(const std::string &s) {
   return ss >> result ? result : 0;
 }
 
-std::string __attribute__((weak)) debugLocation(llvm::Instruction *inst) {
+std::string __attribute__((weak)) debugLocation(const llvm::Instruction *inst) {
   if (llvm::MDNode *node = inst->getMetadata("dbg")) {
     llvm::DILocation loc(node);
     return loc.getDirectory().str() + "/" + loc.getFilename().str() + ":" +

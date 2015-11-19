@@ -42,6 +42,18 @@ void TargetDistanceUtility::init() {
   initialized = true;
 }
 
+double instructionCost(llvm::Instruction *inst) {
+  llvm::CallInst *ci = dyn_cast<llvm::CallInst>(inst);
+  if (ci && ci->getCalledFunction() &&
+      ci->getCalledFunction()->getName() == SPA_COST_ANNOTATION_FUNCTION) {
+    const llvm::ConstantInt *constInt;
+    assert(constInt = dyn_cast<llvm::ConstantInt>(ci->getArgOperand(0)));
+    return constInt->getValue().getLimitedValue();
+  } else {
+    return 1;
+  }
+}
+
 void
 TargetDistanceUtility::propagateChanges(std::set<llvm::Instruction *> &worklist,
                                         llvm::Instruction *instruction) {
@@ -153,7 +165,7 @@ void TargetDistanceUtility::processWorklist(
     // Check cost of successors.
     double minSCost = +INFINITY;
     for (auto it : cfg.getSuccessors(inst)) {
-      double d = distances[it].first + 1;
+      double d = distances[it].first + instructionCost(inst);
       if (d < minSCost) {
         minSCost = d;
       }
@@ -165,7 +177,8 @@ void TargetDistanceUtility::processWorklist(
       minCCost = +INFINITY;
 
       for (auto it : cg.getPossibleCallees(inst)) {
-        double d = getFunctionDepth(it, std::set<llvm::Function *>()) + 1;
+        double d = getFunctionDepth(it, std::set<llvm::Function *>()) +
+                   instructionCost(inst);
         if (d < minCCost) {
           minCCost = d;
         }
@@ -190,11 +203,11 @@ void TargetDistanceUtility::processWorklist(
 
     // Check cost of successors.
     if (cg.getPossibleCallees(inst).empty()) {
-      // Normal succession. distance = min(successors) + 1
+      // Normal succession. distance = min(successors) + instruction cost
       double minSCost = +INFINITY;
       for (auto it : cfg.getSuccessors(inst)) {
         if (distances[it].second) {
-          double d = distances[it].first + 1;
+          double d = distances[it].first + instructionCost(inst);
           if (d < minSCost) {
             minSCost = d;
           }
@@ -214,11 +227,12 @@ void TargetDistanceUtility::processWorklist(
         }
       }
       if (isDirectCall) {
-        // Call on direct path. distance = min(callees) + 1
+        // Call on direct path. distance = min(callees) + instruction cost
         double minCCost = +INFINITY;
         for (auto it : cg.getPossibleCallees(inst)) {
           if ((!it->empty()) && distances[&it->front().front()].second) {
-            double d = distances[&it->front().front()].first + 1;
+            double d =
+                distances[&it->front().front()].first + instructionCost(inst);
             if (d < minCCost) {
               minCCost = d;
             }
@@ -230,7 +244,7 @@ void TargetDistanceUtility::processWorklist(
         }
       } else {
         // Call to function on indirect path.
-        // distance = min(successors) + 1 + min(callees) + 1
+        // distance = min(successors) + 1 + min(callees) + instruction cost
         // Check cost of successors.
         double minSCost = +INFINITY;
         for (auto it : cfg.getSuccessors(inst)) {
@@ -246,7 +260,8 @@ void TargetDistanceUtility::processWorklist(
           minCCost = +INFINITY;
 
           for (auto it : cg.getPossibleCallees(inst)) {
-            double d = getFunctionDepth(it, std::set<llvm::Function *>()) + 1;
+            double d = getFunctionDepth(it, std::set<llvm::Function *>()) +
+                       instructionCost(inst);
             if (d < minCCost) {
               minCCost = d;
             }
@@ -354,7 +369,7 @@ TargetDistanceUtility::getFunctionDepth(llvm::Function *fn,
     inst = *worklist.begin();
     worklist.erase(inst);
 
-    // Get min cost of succeeding predecessors.
+    // Get min cost of predecessors.
     for (auto pit : cfg.getPredecessors(inst)) {
       double d = 0;
       // If functions called, get min cost of call.
@@ -368,7 +383,7 @@ TargetDistanceUtility::getFunctionDepth(llvm::Function *fn,
         // Cost of returning
         d++;
       }
-      d += instructionDepthsInContext[pit] + 1;
+      d += instructionDepthsInContext[pit] + instructionCost(pit);
       if (d < instructionDepthsInContext[inst]) {
         instructionDepthsInContext[inst] = d;
         worklist.insert(cfg.getSuccessors(inst).begin(),

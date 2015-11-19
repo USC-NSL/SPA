@@ -74,9 +74,12 @@ void solvePath(char *name) {
       // And all relevant fixed input constraints.
       for (auto iit : fixedInputs) {
         // Check if input is relevant.
-        if (pit->getSymbol(iit.first)) {
+        if (pit->getInputSymbols().count(iit.first)) {
           // Add the comparison of each byte.
-          klee::UpdateList ul(pit->getSymbol(iit.first), 0);
+          assert(pit->getInputSymbols().at(iit.first).size() == 1 &&
+                 "Can only handle single message interactions.");
+          klee::UpdateList ul(
+              pit->getInputSymbols().at(iit.first)[0]->getInputArray(), 0);
           for (size_t p = 0; p < iit.second.second; p++) {
             cm.addConstraint(exprBuilder->Eq(
                 klee::ReadExpr::create(
@@ -90,8 +93,12 @@ void solvePath(char *name) {
       // Created list of variable inputs.
       std::vector<const klee::Array *> objects;
       for (auto iit : varInputs) {
-        assert(pit->getSymbol(iit.first) && "Unrecognized variable.");
-        objects.push_back(pit->getSymbol(iit.first));
+        assert(pit->getInputSymbols().count(iit.first) &&
+               "Unrecognized variable.");
+        assert(pit->getInputSymbols().at(iit.first).size() == 1 &&
+               "Can only handle single message interactions.");
+        objects.push_back(pit->getInputSymbols().at(iit.first)[0]
+                              ->getInputArray());
       }
       assert(!objects.empty() && "No variable inputs to solve for.");
 
