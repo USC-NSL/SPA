@@ -217,8 +217,8 @@ SpaTag_t __attribute__((weak)) MsgReceived;
     }                                                                          \
   } while (0)
 
-__attribute__((weak)) char *spa_internal_participantName = "(unknown)";
-__attribute__((weak)) char *spa_internal_defaultBindAddr = "127.0.0.1";
+__attribute__((weak)) const char *spa_internal_participantName = "(unknown)";
+__attribute__((weak)) const char *spa_internal_defaultBindAddr = "127.0.0.1";
 __attribute__((weak)) uint64_t spa_internal_io_sequence_number = 0;
 
 #ifdef __cplusplus
