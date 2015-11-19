@@ -77,8 +77,8 @@ namespace SPA {
 extern llvm::cl::opt<std::string> Participant;
 
 llvm::cl::opt<std::string>
-IP("ip", llvm::cl::desc(
-  "Sets the participant IP address when bind doesn't (default: 127.0.0.1)."));
+    IP("ip", llvm::cl::desc("Sets the participant IP address when bind doesn't "
+                            "(default: 127.0.0.1)."));
 
 llvm::cl::opt<int>
     MaxPaths("max-paths",
@@ -827,15 +827,12 @@ void SPA::addInitialValues(
         false, swBB);
     // Iterate distinct initial values for this variable.
     unsigned int offset = 0, numSymbolic = 0;
-    for (std::vector<std::vector<std::pair<bool, uint8_t> > >::iterator
-             valit = varit.second.begin(),
-             valie = varit.second.end();
-         valit != valie; valit++, offset += 2) {
+    for (auto valit : varit.second) {
       // %2 = malloc( values[it].length );
       llvm::CallInst *valMallocCallInst = llvm::CallInst::Create(
           mallocFunction,
           llvm::ConstantInt::get(module->getContext(),
-                                 llvm::APInt(64, valit->size(), true)),
+                                 llvm::APInt(64, valit.size(), true)),
           "", swBB);
       valMallocCallInst->setCallingConv(llvm::CallingConv::C);
       valMallocCallInst->setTailCall(true);
@@ -856,7 +853,7 @@ void SPA::addInitialValues(
       llvm::CallInst *maskMallocCallInst = llvm::CallInst::Create(
           mallocFunction,
           llvm::ConstantInt::get(module->getContext(),
-                                 llvm::APInt(64, valit->size(), true)),
+                                 llvm::APInt(64, valit.size(), true)),
           "", swBB);
       maskMallocCallInst->setCallingConv(llvm::CallingConv::C);
       maskMallocCallInst->setTailCall(true);
@@ -875,11 +872,11 @@ void SPA::addInitialValues(
                           false, swBB);
       // Iterator over initial value bytes and mask.
       bool containsSymbol = false;
-      for (unsigned int i = 0; i < valit->size(); i++) {
+      for (unsigned int i = 0; i < valit.size(); i++) {
         // %2[i] = value[it][i];
         new llvm::StoreInst(
             llvm::ConstantInt::get(module->getContext(),
-                                   llvm::APInt(8, (*valit)[i].second, true)),
+                                   llvm::APInt(8, valit[i].second, true)),
             llvm::GetElementPtrInst::Create(
                 valMalloc, llvm::ConstantInt::get(module->getContext(),
                                                   llvm::APInt(32, i, true)),
@@ -889,18 +886,20 @@ void SPA::addInitialValues(
         new llvm::StoreInst(
             llvm::ConstantInt::get(
                 module->getContext(),
-                llvm::APInt(8, (*valit)[i].first ? 1 : 0, true)),
+                llvm::APInt(8, valit[i].first ? 1 : 0, true)),
             llvm::GetElementPtrInst::Create(
                 maskMalloc, llvm::ConstantInt::get(module->getContext(),
                                                    llvm::APInt(32, i, true)),
                 "", swBB),
             false, swBB);
-        if (!(*valit)[i].first)
+        if (!valit[i].first)
           containsSymbol = true;
       }
-      if (containsSymbol)
+      if (containsSymbol) {
         assert(++numSymbolic <= 1 && "More than one symbolic initial values "
                                      "declared for a single variable.");
+      }
+      offset += 2;
     }
   }
 
