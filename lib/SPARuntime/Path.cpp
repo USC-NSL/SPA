@@ -273,21 +273,21 @@ std::ostream &operator<<(std::ostream &stream, const Path &path) {
   ros.flush();
   stream << SPA_PATH_KQUERY_END << std::endl;
 
-  //   if ((!path.exploredLineCoverage.empty()) ||
-  //       (!path.exploredFunctionCoverage.empty())) {
-  //     stream << SPA_PATH_EXPLOREDCOVERAGE_START << std::endl;
-  //     for (auto srcFile : path.exploredLineCoverage) {
-  //       stream << srcFile.first;
-  //       for (auto line : srcFile.second) {
-  //         stream << " " << (line.second ? "" : "!") << line.first;
-  //       }
-  //       stream << std::endl;
-  //     }
-  //     for (auto fn : path.exploredFunctionCoverage) {
-  //       stream << (fn.second ? "" : "!") << fn.first << std::endl;
-  //     }
-  //     stream << SPA_PATH_EXPLOREDCOVERAGE_END << std::endl;
-  //   }
+  if ((!path.exploredLineCoverage.empty()) ||
+      (!path.exploredFunctionCoverage.empty())) {
+    stream << SPA_PATH_EXPLOREDCOVERAGE_START << std::endl;
+    for (auto srcFile : path.exploredLineCoverage) {
+      stream << srcFile.first;
+      for (auto line : srcFile.second) {
+        stream << " " << (line.second ? "" : "!") << line.first;
+      }
+      stream << std::endl;
+    }
+    for (auto fn : path.exploredFunctionCoverage) {
+      stream << (fn.second ? "" : "!") << fn.first << std::endl;
+    }
+    stream << SPA_PATH_EXPLOREDCOVERAGE_END << std::endl;
+  }
 
   if (!path.getExploredPath().empty()) {
     stream << SPA_PATH_EXPLOREDPATH_START << std::endl;
