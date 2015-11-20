@@ -2,7 +2,9 @@
 
 set -e
 
-[ -d ../../Release+Asserts/bin ] && DIR=../../Release+Asserts/bin || DIR=../../Debug+Asserts/bin
+[ -d ../../Debug+Asserts/bin ] && DIR=../../Debug+Asserts/bin || DIR=../../Release+Asserts/bin
+
+rm -f *.paths
 
 # Client-side analysis.
 $DIR/spa-pic --client netcalc-client.bc --path-file netcalc-client.paths
