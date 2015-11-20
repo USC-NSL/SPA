@@ -864,7 +864,7 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
       // Strip participant and sequence number from sender symbol as well.
       symbolName = symbolName.substr(0, symbolName.rfind(SPA_SYMBOL_DELIMITER));
       symbolName = symbolName.substr(0, symbolName.rfind(SPA_SYMBOL_DELIMITER));
-      if (symbolName != senderName) {
+      if (symbolName == senderName) {
         break;
       }
     }
