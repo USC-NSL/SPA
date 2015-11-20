@@ -65,14 +65,22 @@ bool netcalcImplicitArg(SPA::Path *path) {
     assert(path->getTestInputs().count("spa_in_api_op_netcalc-client.bc_0") &&
            path->getTestInputs().count("spa_in_api_arg1_netcalc-client.bc_1") &&
            path->getTestInputs().count("spa_in_api_arg2_netcalc-client.bc_2"));
-    return path->getTestInput("spa_in_api_op_netcalc-client.bc_0") ==
-               std::vector<uint8_t>({
+    return (path->getTestInput("spa_in_api_op_netcalc-client.bc_0") ==
+                std::vector<uint8_t>({
       0, 0, 0, 0
     }) &&
-           (path->getTestInput("spa_in_api_arg1_netcalc-client.bc_1") ==
-                std::vector<uint8_t>({
+            (path->getTestInput("spa_in_api_arg1_netcalc-client.bc_1") ==
+                 std::vector<uint8_t>({
       1, 0, 0, 0, 0, 0, 0, 0
     }) ||
+             path->getTestInput("spa_in_api_arg2_netcalc-client.bc_2") ==
+                 std::vector<uint8_t>({
+      1, 0, 0, 0, 0, 0, 0, 0
+    }))) ||
+           (path->getTestInput("spa_in_api_op_netcalc-client.bc_0") ==
+                std::vector<uint8_t>({
+      1, 0, 0, 0
+    }) &&
             path->getTestInput("spa_in_api_arg2_netcalc-client.bc_2") ==
                 std::vector<uint8_t>({
       1, 0, 0, 0, 0, 0, 0, 0
