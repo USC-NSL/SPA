@@ -858,9 +858,15 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
   if (SPA::seedSymbolMappings.count(baseName)) { // Explicit mapping.
     std::string senderName = SPA::seedSymbolMappings[baseName];
     // Skip log entries until named symbol.
-    while (state.senderLogPos != state.senderPath->getSymbolLog().end() &&
-           (*state.senderLogPos)->getName() != senderName) {
-      state.senderLogPos++;
+    for (; state.senderLogPos != state.senderPath->getSymbolLog().end();
+         state.senderLogPos++) {
+      std::string symbolName = (*state.senderLogPos)->getName();
+      // Strip participant and sequence number from sender symbol as well.
+      symbolName = symbolName.substr(0, symbolName.rfind(SPA_SYMBOL_DELIMITER));
+      symbolName = symbolName.substr(0, symbolName.rfind(SPA_SYMBOL_DELIMITER));
+      if (symbolName != senderName) {
+        break;
+      }
     }
   } else if (SPA::connectSockets &&
              baseName.compare(0, strlen(SPA_MESSAGE_INPUT_PREFIX),
