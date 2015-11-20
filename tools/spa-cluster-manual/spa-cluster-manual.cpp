@@ -39,8 +39,8 @@ typedef bool (*TestClassifier)(SPA::Path *path);
 bool netcalcDiv0(SPA::Path *path) {
   if (path->getParticipants()[0] == NETCALC_CLIENT_BC &&
       path->getParticipants()[1] == NETCALC_SERVER_BC) {
-    assert(path->getTestInputs().count("spa_in_api_op") &&
-           path->getTestInputs().count("spa_in_api_arg2"));
+    assert(path->getTestInputs().count("spa_in_api_op_netcalc-client.bc_0") &&
+           path->getTestInputs().count("spa_in_api_arg2_netcalc-client.bc_0"));
     return std::set<std::vector<uint8_t> >({
       std::vector<uint8_t>({
         3, 0, 0, 0
@@ -49,8 +49,10 @@ bool netcalcDiv0(SPA::Path *path) {
         4, 0, 0, 0
       })
     })
-               .count(path->getTestInput("spa_in_api_op")) &&
-           path->getTestInput("spa_in_api_arg2") == std::vector<uint8_t>({
+               .count(
+                   path->getTestInput("spa_in_api_op_netcalc-client.bc_0")) &&
+           path->getTestInput("spa_in_api_arg2_netcalc-client.bc_0") ==
+               std::vector<uint8_t>({
       0, 0, 0, 0, 0, 0, 0, 0
     });
   }
@@ -60,16 +62,19 @@ bool netcalcDiv0(SPA::Path *path) {
 bool netcalcImplicitArg(SPA::Path *path) {
   if (path->getParticipants()[0] == NETCALC_CLIENT_BC &&
       path->getParticipants()[1] == NETCALC_SERVER_BC) {
-    assert(path->getTestInputs().count("spa_in_api_op") &&
-           path->getTestInputs().count("spa_in_api_arg1") &&
-           path->getTestInputs().count("spa_in_api_arg2"));
-    return path->getTestInput("spa_in_api_op") == std::vector<uint8_t>({
+    assert(path->getTestInputs().count("spa_in_api_op_netcalc-client.bc_0") &&
+           path->getTestInputs().count("spa_in_api_arg1_netcalc-client.bc_0") &&
+           path->getTestInputs().count("spa_in_api_arg2_netcalc-client.bc_0"));
+    return path->getTestInput("spa_in_api_op_netcalc-client.bc_0") ==
+               std::vector<uint8_t>({
       0, 0, 0, 0
     }) &&
-           (path->getTestInput("spa_in_api_arg1") == std::vector<uint8_t>({
+           (path->getTestInput("spa_in_api_arg1_netcalc-client.bc_0") ==
+                std::vector<uint8_t>({
       1, 0, 0, 0, 0, 0, 0, 0
     }) ||
-            path->getTestInput("spa_in_api_arg2") == std::vector<uint8_t>({
+            path->getTestInput("spa_in_api_arg2_netcalc-client.bc_0") ==
+                std::vector<uint8_t>({
       1, 0, 0, 0, 0, 0, 0, 0
     }));
   }
