@@ -41,7 +41,7 @@ nc_value_t executeQuery(nc_operator_t op, nc_value_t arg1, nc_value_t arg2) {
     query.arg1 = (arg2 == 1) ? arg1 : arg2;
     size = offsetof(nc_query_t, arg2);
   } else if (op == NC_SUBTRACTION && arg2 == 1) {
-    query.arg1 = arg2;
+    query.arg1 = arg1;
     size = offsetof(nc_query_t, arg2);
   } else {
     query.arg1 = arg1;
