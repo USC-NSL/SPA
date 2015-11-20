@@ -228,6 +228,10 @@ extern "C" {
 void __attribute__((noinline, weak))
     spa_input(void *var, size_t size, const char varName[],
               uint8_t ***initialValue, const char initialValueName[]) {
+#ifndef ENABLE_KLEE
+  spa_internal_participantName = getenv("spa_internal_participantName");
+#endif
+
   char fullVarName[100];
   snprintf(fullVarName, sizeof(fullVarName), "%s_%s_%ld", varName,
            spa_internal_participantName, spa_internal_io_sequence_number++);

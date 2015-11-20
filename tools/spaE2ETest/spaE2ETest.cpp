@@ -153,6 +153,9 @@ bool processTestCase(char *clientCmd, char *serverCmd, uint16_t port,
     setenv(LOG_FILE_VARIABLE, serverLog.c_str(), 1);
 
     // Load test-case into environment.
+    // Server participant name.
+    setenv(SPA_PARTICIPANTNAME_VARIABLE, path->getParticipants()[1].c_str(), 1);
+    // Inputs.
     for (auto input : path->getTestInputs()) {
       // Only inject API inputs.
       if (input.first.compare(0, strlen(SPA_API_INPUT_PREFIX),
@@ -183,6 +186,9 @@ bool processTestCase(char *clientCmd, char *serverCmd, uint16_t port,
     setenv(LOG_FILE_VARIABLE, clientLog.c_str(), 1);
 
     // Load test-case into environment.
+    // Client participant name.
+    setenv(SPA_PARTICIPANTNAME_VARIABLE, path->getParticipants()[0].c_str(), 1);
+    // Inputs.
     for (auto input : path->getTestInputs()) {
       std::stringstream value;
       for (uint8_t b : input.second) {
