@@ -63,6 +63,7 @@ int32_t __attribute__((weak)) spa_seed_symbol_check(uint64_t pathID) {
 void __attribute__((weak)) spa_seed_symbol(void *var, uint64_t pathID) {}
 #endif
 
+void spa_input_handler(va_list args);
 void spa_api_input_handler(va_list args);
 void spa_state_handler(va_list args);
 void spa_api_output_handler(va_list args);
@@ -227,10 +228,11 @@ extern "C" {
 void __attribute__((noinline, weak))
     spa_input(void *var, size_t size, const char varName[],
               uint8_t ***initialValue, const char initialValueName[]) {
-#ifdef ENABLE_KLEE
   char fullVarName[100];
   snprintf(fullVarName, sizeof(fullVarName), "%s_%s_%ld", varName,
            spa_internal_participantName, spa_internal_io_sequence_number++);
+
+#ifdef ENABLE_KLEE
   uint8_t *symbol = (uint8_t *)malloc(size);
   klee_make_symbolic(symbol, size, fullVarName);
 
@@ -274,6 +276,7 @@ void __attribute__((noinline, weak))
     memcpy(var, symbol, size);
   }
 #endif
+  spa_runtime_call(spa_input_handler, var, size, fullVarName);
 }
 
 void __attribute__((noinline, weak)) spa_waypoint(unsigned int id) {
