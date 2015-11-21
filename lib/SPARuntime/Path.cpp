@@ -29,8 +29,6 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
   if (state.senderPath) {
     participants = state.senderPath->participants;
     symbolLog = state.senderPath->symbolLog;
-    inputSymbols = state.senderPath->inputSymbols;
-    outputSymbols = state.senderPath->outputSymbols;
     tags = state.senderPath->tags;
     exploredLineCoverage = state.senderPath->exploredLineCoverage;
     exploredFunctionCoverage = state.senderPath->exploredFunctionCoverage;
@@ -122,6 +120,18 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
         symbolLog.push_back(s);
         outputSymbols[qualifiedName].push_back(s);
       }
+    }
+  }
+
+  // Add non-colliding symbols from sender path.
+  for (auto it : state.senderPath->inputSymbols) {
+    if (inputSymbols.count(it.first) == 0) {
+      inputSymbols[it.first] = it.second;
+    }
+  }
+  for (auto it : state.senderPath->outputSymbols) {
+    if (outputSymbols.count(it.first) == 0) {
+      outputSymbols[it.first] = it.second;
     }
   }
 
