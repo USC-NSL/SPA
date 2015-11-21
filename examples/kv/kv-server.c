@@ -9,9 +9,7 @@
 
 #include "kv.h"
 
-int main(int argc, char *argv[]) {
-  short port = (short) atoi(argv[1]);
-
+void runServer(short port) {
   int sockfd;
   struct sockaddr_in srvaddr, cliaddr;
   char msg[100];
@@ -71,5 +69,15 @@ int main(int argc, char *argv[]) {
     sendto(sockfd, resp, key_len + 1 + value_len + 1, 0,
            (struct sockaddr *)&cliaddr, sizeof(cliaddr));
   }
+}
+
+int main(int argc, char *argv[]) {
+  runServer(atoi(argv[1]));
   return 0;
 }
+
+void __attribute__((noinline, used)) spa_entry1() { runServer(12340); }
+
+void __attribute__((noinline, used)) spa_entry2() { runServer(12341); }
+
+void __attribute__((noinline, used)) spa_entry3() { runServer(12342); }
