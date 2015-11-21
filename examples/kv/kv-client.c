@@ -60,7 +60,7 @@ char *kv_get(char *key) {
     struct sockaddr_in srvaddr;
     bzero(&srvaddr, sizeof(srvaddr));
     srvaddr.sin_family = AF_INET;
-    inet_pton(AF_INET, servers[i].ip, &srvaddr.sin_addr.s_addr);
+    inet_pton(AF_INET, servers[i].ip, &srvaddr.sin_addr);
     srvaddr.sin_port = htons(servers[i].port);
 
     sendto(sockfd, key, strlen(key) + 1, 0, (struct sockaddr *)&srvaddr,
