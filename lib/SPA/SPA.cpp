@@ -535,6 +535,10 @@ SPA::SPA(llvm::Module *_module, std::ostream &_output)
   llvm::sys::PrintStackTraceOnErrorSignal();
   llvm::sys::SetInterruptFunction(interrupt_handle);
 
+  if (Participant.empty()) {
+    Participant = module->getModuleIdentifier();
+  }
+
   generateMain();
 }
 
@@ -988,9 +992,6 @@ void SPA::mapSockets() {
 
 void SPA::start() {
   // Set the participant name for symbol naming.
-  if (Participant.empty()) {
-    Participant = module->getModuleIdentifier();
-  }
   llvm::GlobalVariable *participantNameVar =
       module->getNamedGlobal(SPA_PARTICIPANTNAME_VARIABLE);
   assert(participantNameVar &&
