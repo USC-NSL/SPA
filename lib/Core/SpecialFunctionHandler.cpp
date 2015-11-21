@@ -833,7 +833,25 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
     // Add client path constraints.
     klee_message("  ANDing in sender path constraints.");
     for (auto it : state.senderPath->getConstraints()) {
-      state.addConstraint(it);
+      // Don't add internal symbols as they may collide.
+      if (klee::EqExpr *eqExpr = llvm::dyn_cast<klee::EqExpr>(it)) {
+        if (klee::ConcatExpr *catExpr =
+                llvm::dyn_cast<klee::ConcatExpr>(eqExpr->right)) {
+          if (klee::ReadExpr *rdExpr =
+                  llvm::dyn_cast<klee::ReadExpr>(catExpr->getLeft())) {
+            if (rdExpr->updates.root->name.compare(
+                    0, strlen(SPA_INTERNAL_PREFIX), SPA_INTERNAL_PREFIX) == 0) {
+              continue;
+            }
+          }
+        }
+      }
+      if (!state.addAndCheckConstraint(it)) {
+        executor.terminateStateOnError(
+            state, "Seeding symbol made constraints trivially UNSAT "
+                   "(incompatible message for this path).",
+            "user.err");
+      }
     }
   }
 
