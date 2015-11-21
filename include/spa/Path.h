@@ -50,19 +50,11 @@ private:
 
 public:
   Symbol(std::string name, const klee::Array *array)
-      : name(name), array(array) {
-    assert(
-        ((name.compare(0, strlen(SPA_INPUT_PREFIX), SPA_INPUT_PREFIX) == 0) ||
-         (name.compare(0, strlen(SPA_INTERNAL_PREFIX), SPA_INTERNAL_PREFIX) ==
-          0)) && "Input symbol with bad name.");
-  }
+      : name(name), array(array) {}
 
   Symbol(std::string name, std::vector<klee::ref<klee::Expr> > outputValues =
                                std::vector<klee::ref<klee::Expr> >())
-      : name(name), outputValues(outputValues) {
-    assert(name.compare(0, strlen(SPA_OUTPUT_PREFIX), SPA_OUTPUT_PREFIX) == 0 &&
-           "Output symbol with bad name.");
-  }
+      : name(name), outputValues(outputValues) {}
 
   std::string getName() const { return name; }
 
