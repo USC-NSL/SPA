@@ -1,17 +1,18 @@
 TARGETS = kv-local kv-client kv-server
 CFLAGS = -Wall -g -std=c99 -I../../include
+SPA_HEADER = ../../include/spa/spaRuntime.h
 
 .SUFFIXES:
 
 default: $(TARGETS) $(TARGETS:=.bc)
 
-%.o: %.c
+%.o: %.c $(SPA_HEADER)
 	gcc $(CFLAGS) -c $< -o $@
 
 %: %.o
 	gcc -o $@ $^
 
-%.bc.o: %.c
+%.bc.o: %.c $(SPA_HEADER)
 	clang $(CFLAGS) -DENABLE_SPA -DENABLE_KLEE -emit-llvm -c $< -o $@
 
 %.bc: %.bc.o
