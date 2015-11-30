@@ -37,12 +37,7 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
     testFunctionCoverage = state.senderPath->testFunctionCoverage;
   }
 
-  std::string participantName = Participant;
-  if (participantName.find("/")) {
-    participantName =
-        participantName.substr(participantName.find_last_of("/") + 1);
-  }
-  participants.push_back(participantName);
+  participants.push_back(Participant);
 
   std::map<uint64_t, std::pair<const klee::MemoryObject *,
                                const klee::Array *> > orderedSymbols;
@@ -165,9 +160,9 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
     }
   }
 
-  exploredPath[participantName].clear();
+  exploredPath[Participant].clear();
   for (auto branchDecision : state.branchDecisions) {
-    exploredPath[participantName].push_back(std::make_pair(
+    exploredPath[Participant].push_back(std::make_pair(
         debugLocation(branchDecision.first), branchDecision.second));
   }
 

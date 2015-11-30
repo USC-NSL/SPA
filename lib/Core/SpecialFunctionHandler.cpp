@@ -24,6 +24,7 @@
 
 #include <spa/SPA.h>
 #include <spa/PathLoader.h>
+#include <spa/Util.h>
 
 #if LLVM_VERSION_CODE >= LLVM_VERSION(3, 3)
 #include "llvm/IR/Module.h"
@@ -36,6 +37,8 @@
 
 #include <unistd.h>
 #include <errno.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
 
 using namespace llvm;
 using namespace klee;
@@ -817,18 +820,73 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
       sleep(1);
     }
 
-    // Check if the the current participant is that last one to add to the log.
-    if ((!path->getParticipants().empty()) &&
-        path->getParticipants().back() == SPA::Participant) {
-      klee_message("[spa_seed_symbol] Cannot seed path outputted by myself. "
-                   "Terminating.");
-      executor.terminateStateOnError(state, "Path came from self.", "user.err");
-    }
-
     state.senderPath.reset(path);
     assert(state.senderPath &&
            "Attempting to process seed path before it's available.");
     state.senderLogPos = state.senderPath->getSymbolLog().begin();
+
+    // Get current participant's IP/Port.
+    std::string participantIPPort = "0.0.0.0.0";
+    for (auto it : path->getOutputSymbols()) {
+      std::string name = it.first;
+      std::string participantName =
+          name.substr(name.rfind(SPA_SYMBOL_DELIMITER) + 1);
+      if (name.compare(0, strlen(SPA_MESSAGE_OUTPUT_SRC_PREFIX),
+                       SPA_MESSAGE_OUTPUT_SRC_PREFIX) == 0 &&
+          participantName == SPA::Participant) {
+        struct sockaddr_in src;
+        assert(it.second[0]->getOutputValues().size() == sizeof(src));
+        for (unsigned i = 0; i < sizeof(src); i++) {
+          ConstantExpr *ce =
+              llvm::dyn_cast<ConstantExpr>(it.second[0]->getOutputValues()[i]);
+          assert(ce && "Non-constant source IP.");
+          ((char *)&src)[i] = ce->getLimitedValue();
+        }
+        char srcTxt[INET_ADDRSTRLEN];
+        assert(inet_ntop(AF_INET, &src, srcTxt, sizeof(srcTxt)));
+        participantIPPort =
+            std::string() + srcTxt + "." + SPA::numToStr(ntohs(src.sin_port));
+        break;
+      }
+    }
+    // Check if there are any symbols in the log that can be consumed but that
+    // come after any symbols outputted by the current participant.
+    // To check this, check the log in reverse and find the first of either a
+    // symbol outputted by the current participant or a symbol that can be
+    // consumed.
+    for (auto it = path->getSymbolLog().rbegin();
+         it != path->getSymbolLog().rend(); it++) {
+      // Check if symbol can be consumed by a direct mapping.
+      if (SPA::seedSymbolMappings.count((*it)->getName())) {
+        break;
+      }
+      // Check if symbol can be consumed via symbolic socket layer.
+
+      std::string symbolName = (*it)->getName();
+      std::string symbolQualifiedName =
+          symbolName.substr(0, symbolName.rfind(SPA_SYMBOL_DELIMITER));
+      std::string symbolParticipant = symbolQualifiedName.substr(
+          symbolQualifiedName.rfind(SPA_SYMBOL_DELIMITER) + 1);
+      std::string symbolLocalName = symbolQualifiedName.substr(
+          0, symbolQualifiedName.rfind(SPA_SYMBOL_DELIMITER));
+      std::string symbolIPPort = symbolLocalName.substr(
+          symbolLocalName.rfind(SPA_SYMBOL_DELIMITER) + 1);
+      if (SPA::connectSockets &&
+          symbolName.compare(0, strlen(SPA_MESSAGE_OUTPUT_PREFIX),
+                             SPA_MESSAGE_OUTPUT_PREFIX) &&
+          symbolParticipant == SPA::Participant &&
+          symbolIPPort == participantIPPort) {
+        break;
+      }
+
+      if ((*it)->isOutput() && symbolParticipant == SPA::Participant) {
+        klee_message("[spa_seed_symbol] Cannot seed path with no new inputs."
+                     "Terminating.");
+        executor.terminateStateOnError(state, "Path has no new inputs.",
+                                       "user.err");
+        return;
+      }
+    }
 
     // Add client path constraints.
     klee_message("  ANDing in sender path constraints.");
@@ -851,6 +909,7 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
             state, "Seeding symbol made constraints trivially UNSAT "
                    "(incompatible message for this path).",
             "user.err");
+        return;
       }
     }
   }
@@ -930,6 +989,7 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
             state, "Seeding symbol made constraints trivially UNSAT "
                    "(incompatible message for this path).",
             "user.err");
+        return;
       }
     }
   } else if ((*state.senderLogPos)
@@ -955,6 +1015,7 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
             state, "Seeding symbol made constraints trivially UNSAT "
                    "(incompatible message for this path).",
             "user.err");
+        return;
       }
     }
   } else {

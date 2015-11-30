@@ -1104,6 +1104,10 @@ void SPA::showStats() {
 }
 
 void SPA::processPath(klee::ExecutionState *state) {
+  if (state->isReplayingSpaLog()) {
+    return;
+  }
+
   Path path(state, executor->getSolver());
 
   if (!pathFilter || pathFilter->checkPath(path)) {
