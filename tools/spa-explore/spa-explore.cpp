@@ -21,6 +21,7 @@
 #include "spa/NegatedIF.h"
 #include "spa/AstarUtility.h"
 #include "spa/FilteredUtility.h"
+#include "spa/JSEUtility.h"
 #include "spa/FilterExpression.h"
 
 namespace {
@@ -202,6 +203,7 @@ int main(int argc, char **argv, char **envp) {
   }
 
   spa.addStateUtilityBack(new SPA::FilteredUtility(), false);
+  spa.addStateUtilityBack(new SPA::JSEUtility(), false);
 
   if (DumpCFG.size() > 0) {
     klee::klee_message("Dumping CFG to: %s", DumpCFG.getValue().c_str());

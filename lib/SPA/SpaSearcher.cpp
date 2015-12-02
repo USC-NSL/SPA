@@ -134,12 +134,17 @@ void SpaSearcher::reorderAllStates() {
 // 	}
 
 klee::ExecutionState &SpaSearcher::selectState() {
-  // Reorder head state to keep set coherent.
+  // Reorder head state until set is coherent.
   unsigned int id = 0;
-  if (!checkState(states.begin()->second, id))
-    filterState(states.begin()->second, id);
-  else
-    reorderState(states.begin()->second);
+  klee::ExecutionState *state;
+  do {
+    state = states.begin()->second;
+    if (!checkState(state, id)) {
+      filterState(state, id);
+    } else {
+      reorderState(state);
+    }
+  } while (state != states.begin()->second);
 
 #ifdef QUEUE_LIMIT
   if ((!states.begin()->second->filtered) && states.size() > QUEUE_LIMIT) {
@@ -163,12 +168,11 @@ klee::ExecutionState &SpaSearcher::selectState() {
 
   printStats();
 
-  klee::ExecutionState &state = *states.begin()->second;
 //   klee::klee_message("[SpaSearcher] Selecting state with cost %s:",
 //                      utilityStr(states.begin()->first).c_str());
-//   state.dumpStack(llvm::errs());
+//   state->dumpStack(llvm::errs());
 
-  return state;
+  return *state;
 }
 
 void
@@ -212,7 +216,7 @@ void SpaSearcher::printStats() {
 //       klee::klee_message("[SpaSearcher]   %s: %s",
 //                          debugLocation(state.second->pc->inst).c_str(),
 //                          utilityStr(state.first).c_str());
-// 
+//       state.second->dumpStack(llvm::errs());
 //     }
   }
 }
