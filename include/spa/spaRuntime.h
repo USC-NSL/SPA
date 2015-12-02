@@ -249,7 +249,7 @@ void __attribute__((noinline, weak))
         spa_seed_symbol(symbol, pathID);
         break;
       } else {
-        spa_cost(1000000);
+//         spa_cost(1000000);
       }
     }
   } else {
