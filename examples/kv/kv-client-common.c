@@ -6,39 +6,38 @@ int main(int argc, char *argv[]) {
   for (int i = 1; i < argc; i++) {
     char *d;
     if ((d = strstr(argv[i], "==")) != NULL) {
-      *d = '\0';
-      char *key = argv[i];
-      char *expected_value = d + 2;
+      key_t key = argv[i][0];
+      value_t expected_value = *(d + 2);
 
-      char *actual_value = kv_get(key);
-      printf("%s == %s / %s\n", key, expected_value, actual_value);
-      assert(strcmp(expected_value, actual_value) == 0);
+      value_t actual_value = kv_get(key);
+      printf("%c == %c / %c\n", key, expected_value, actual_value);
+      assert(expected_value == actual_value);
     } else if ((d = strstr(argv[i], "=")) != NULL) {
       *d = '\0';
-      char *key = argv[i];
-      char *value = d + 1;
+      key_t key = argv[i][0];
+      value_t value = *(d + 1);
 
-      printf("%s = %s\n", key, value);
+      printf("%c = %c\n", key, value);
       kv_set(key, value);
     } else {
-      printf("%s == %s\n", argv[i], kv_get(argv[i]));
+      printf("%c == %c\n", argv[i][0], kv_get(argv[i][0]));
     }
   }
   return 0;
 }
 
-#define SPA_KEY "k"
+#define SPA_KEY 'k'
 typedef enum {
   GET,
   SET
 } op_t;
 typedef struct {
   char op;
-  char value;
+  value_t value;
 } operation_t;
 
 void __attribute__((noinline, used)) spa_entry() {
-  operation_t operations[5];
+  operation_t operations[1];
 
   spa_api_input_var(operations);
 
@@ -48,9 +47,8 @@ void __attribute__((noinline, used)) spa_entry() {
       kv_get(SPA_KEY);
     } break;
     case SET: {
-      char value[2];
-      value[0] = operations[i].value;
-      value[1] = '\0';
+      value_t value;
+      value = operations[i].value;
       kv_set(SPA_KEY, value);
     } break;
     default:
