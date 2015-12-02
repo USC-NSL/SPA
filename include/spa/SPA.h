@@ -59,7 +59,7 @@
 #define SPA_DEFAULTBINDADDR_VARIABLE "spa_internal_defaultBindAddr"
 #define SPA_INITVALUEID_VARIABLE "spa_internal_initValueID"
 #define SPA_HANDLERID_VARIABLE "spa_internal_HanderID"
-#define SPA_PATHID_VARIABLE "spa_internal_pathID"
+#define SPA_PATHID_VARIABLE "spa_internal_PathID"
 // #define SPA_SEEDID_VARIABLE			"spa_internal_SeedID"
 
 #define LOG_FILE_VARIABLE "SPA_LOG_FILE"
