@@ -12,8 +12,11 @@
 #include <klee/Solver.h>
 
 #include <spa/SPA.h>
+#include <spa/Util.h>
 
 #define SPA_PATH_START "--- PATH START ---"
+#define SPA_PATH_UUID_START "--- UUID START ---"
+#define SPA_PATH_UUID_END "--- UUID END ---"
 #define SPA_PATH_PARTICIPANTS_START "--- PARTICIPANTS START ---"
 #define SPA_PATH_PARTICIPANT_DELIMITER "	"
 #define SPA_PATH_PARTICIPANTS_END "--- PARTICIPANTS END ---"
@@ -112,6 +115,7 @@ class Path {
   friend void ::loadCoverage(Path *path);
 
 private:
+  std::string uuid = generateUUID();
   std::vector<std::string> participants;
   std::vector<std::shared_ptr<Symbol> > symbolLog;
   std::map<std::string, std::vector<std::shared_ptr<Symbol> > > inputSymbols;
@@ -135,6 +139,10 @@ private:
 public:
   Path() {}
   Path(klee::ExecutionState *kState, klee::Solver *solver);
+
+  const decltype(uuid) & getUUID() const {
+    return uuid;
+  }
 
   const decltype(participants) & getParticipants() const {
     return participants;

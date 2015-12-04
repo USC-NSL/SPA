@@ -64,7 +64,7 @@ std::string sanitize(std::string name) {
   return "node_" + name;
 }
 
-void processPath(SPA::Path *path, unsigned long pathID) {
+void processPath(SPA::Path *path) {
   std::map<std::string, std::shared_ptr<participant_t> > participantByName;
   std::map<std::string, std::shared_ptr<participant_t> > participantByIpPort;
 
@@ -232,11 +232,10 @@ void processPath(SPA::Path *path, unsigned long pathID) {
   }
 
   // Generate CFG DOT file.
-  std::ofstream dotFile(Directory + "/" + SPA::numToStr(pathID) + ".dot");
+  std::ofstream dotFile(Directory + "/" + path->getUUID() + ".dot");
   assert(dotFile.good());
 
   dotFile << "digraph CFG {" << std::endl;
-  dotFile << "  label = \"Path " << pathID << "\"" << std::endl;
 
   for (auto it : participantByName) {
     std::string participantToken = sanitize(it.first);
@@ -298,6 +297,17 @@ int main(int argc, char **argv, char **envp) {
 
   makefile << "default: all" << std::endl;
 
+  std::ofstream index(Directory + "/index.html");
+  assert(index.good());
+  index << "<!DOCTYPE html>" << std::endl;
+  index << "<html lang=\"en\">" << std::endl;
+  index << "  <head>" << std::endl;
+  index << "    <meta charset=\"utf-8\">" << std::endl;
+  index << "    <title>" << InFileName << "</title>" << std::endl;
+  index << "  </head>" << std::endl;
+  index << "  <body>" << std::endl;
+  index << "    <ol>" << std::endl;
+
   SPA::PathLoader pathLoader(inFile);
   std::unique_ptr<SPA::Path> path;
   unsigned long numPaths = 0;
@@ -305,14 +315,20 @@ int main(int argc, char **argv, char **envp) {
   while (path.reset(pathLoader.getPath()), path) {
     klee::klee_message("Processing path %ld.", ++numPaths);
 
-    processPath(path.get(), numPaths);
+    processPath(path.get());
 
-    makefile << "all: path-" << SPA::numToStr(numPaths) << std::endl;
-    makefile << "path-" << SPA::numToStr(numPaths) << ": "
-             << SPA::numToStr(numPaths) << ".html " << SPA::numToStr(numPaths)
-             << ".svg" << std::endl;
-    makefile << "clean: " << SPA::numToStr(numPaths) << ".clean" << std::endl;
+    makefile << "all: " << path->getUUID() << std::endl;
+    makefile << path->getUUID() << ": " << path->getUUID() << ".html "
+             << path->getUUID() << ".svg" << std::endl;
+    makefile << "clean: " << path->getUUID() << ".clean" << std::endl;
+
+    index << "      <li><a href=\"" << path->getUUID() << ".html\">Path "
+          << numPaths << "</a></li>" << std::endl;
   }
+
+  index << "    </ol>" << std::endl;
+  index << "  </body>" << std::endl;
+  index << "</html>" << std::endl;
 
   return 0;
 }

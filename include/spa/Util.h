@@ -7,6 +7,7 @@
 
 #include <string>
 #include <sstream>
+#include <fstream>
 
 #include <llvm/IR/Instruction.h>
 #include <llvm/DebugInfo.h>
@@ -54,6 +55,15 @@ bool __attribute__((weak))
          longDir.substr(longDir.length() - shortDir.length()) == shortDir &&
          (shortDir == "" || shortDir.length() == longDir.length() ||
           longDir[longDir.length() - shortDir.length() - 1] == '/');
+}
+
+std::string __attribute__((weak)) generateUUID() {
+  std::ifstream ifs("/proc/sys/kernel/random/uuid");
+  assert(ifs.good() && "Unable to open UUID generation file.");
+
+  std::string uuid;
+  std::getline(ifs, uuid);
+  return uuid;
 }
 }
 

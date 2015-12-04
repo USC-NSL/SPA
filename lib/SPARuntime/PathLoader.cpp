@@ -26,6 +26,7 @@ namespace {
 typedef enum {
   START,
   PATH,
+  UUID,
   PARTICIPANTS,
   SYMBOLLOG,
   OUTPUTS,
@@ -92,6 +93,10 @@ Path *PathLoader::getPath() {
       path = new Path();
       outputSizes.clear();
       kQuery = "";
+    } else if (line == SPA_PATH_UUID_START) {
+      changeState(PATH, UUID);
+    } else if (line == SPA_PATH_UUID_END) {
+      changeState(UUID, PATH);
     } else if (line == SPA_PATH_PARTICIPANTS_START) {
       changeState(PATH, PARTICIPANTS);
     } else if (line == SPA_PATH_PARTICIPANTS_END) {
@@ -184,6 +189,9 @@ Path *PathLoader::getPath() {
         delete path;
     } else {
       switch (state) {
+      case UUID: {
+        path->uuid = line;
+      } break;
       case PARTICIPANTS: {
         path->participants.push_back(line);
       } break;

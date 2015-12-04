@@ -238,6 +238,10 @@ bool Path::isCovered(std::string dbgStr) {
 
 std::ostream &operator<<(std::ostream &stream, const Path &path) {
   stream << SPA_PATH_START << std::endl;
+  stream << SPA_PATH_UUID_START << std::endl;
+  stream << path.uuid << std::endl;
+  stream << SPA_PATH_UUID_END << std::endl;
+
   stream << SPA_PATH_PARTICIPANTS_START << std::endl;
   for (auto it : path.participants) {
     stream << it << std::endl;
