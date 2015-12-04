@@ -151,7 +151,6 @@ Path *PathLoader::getPath() {
               fullName.substr(0, fullName.rfind(SPA_SYMBOL_DELIMITER));
           if (qualifiedName.compare(0, strlen(SPA_INPUT_PREFIX),
                                     SPA_INPUT_PREFIX) == 0) {
-            path->symbolLog.push_back(symbols[fullName]);
             path->inputSymbols[qualifiedName].push_back(symbols[fullName]);
           } else if (qualifiedName.compare(0, strlen(SPA_OUTPUT_PREFIX),
                                            SPA_OUTPUT_PREFIX) == 0 ||
