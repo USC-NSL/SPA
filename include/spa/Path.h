@@ -58,6 +58,13 @@ public:
 
   std::string getName() const { return name; }
 
+  std::string getParticipant() const {
+    std::string participant = name.substr(0, name.rfind(SPA_SYMBOL_DELIMITER));
+    participant =
+        participant.substr(participant.rfind(SPA_SYMBOL_DELIMITER) + 1);
+    return participant;
+  }
+
   bool isInput() const {
     return name.compare(0, strlen(SPA_INPUT_PREFIX), SPA_INPUT_PREFIX) == 0 &&
            array;
@@ -66,6 +73,30 @@ public:
   bool isOutput() const {
     return name.compare(0, strlen(SPA_OUTPUT_PREFIX), SPA_OUTPUT_PREFIX) == 0 &&
            outputValues.size() > 0;
+  }
+
+  bool isAPI() const {
+    if (isInput()) {
+      return name.compare(0, strlen(SPA_API_INPUT_PREFIX),
+                          SPA_API_INPUT_PREFIX) == 0;
+    } else if (isOutput()) {
+      return name.compare(0, strlen(SPA_API_OUTPUT_PREFIX),
+                          SPA_API_OUTPUT_PREFIX) == 0;
+    } else {
+      assert(false && "Symbol is neither input nor output.");
+    }
+  }
+
+  bool isMessage() const {
+    if (isInput()) {
+      return name.compare(0, strlen(SPA_MESSAGE_INPUT_PREFIX),
+                          SPA_MESSAGE_INPUT_PREFIX) == 0;
+    } else if (isOutput()) {
+      return name.compare(0, strlen(SPA_MESSAGE_OUTPUT_PREFIX),
+                          SPA_MESSAGE_OUTPUT_PREFIX) == 0;
+    } else {
+      assert(false && "Symbol is neither input nor output.");
+    }
   }
 
   const klee::Array *getInputArray() const { return array; }

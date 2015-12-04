@@ -831,8 +831,8 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
       std::string name = it.first;
       std::string participantName =
           name.substr(name.rfind(SPA_SYMBOL_DELIMITER) + 1);
-      if (name.compare(0, strlen(SPA_MESSAGE_OUTPUT_SRC_PREFIX),
-                       SPA_MESSAGE_OUTPUT_SRC_PREFIX) == 0 &&
+      if (name.compare(0, strlen(SPA_MESSAGE_OUTPUT_SOURCE_PREFIX),
+                       SPA_MESSAGE_OUTPUT_SOURCE_PREFIX) == 0 &&
           participantName == SPA::Participant) {
         struct sockaddr_in src;
         assert(it.second[0]->getOutputValues().size() == sizeof(src));
