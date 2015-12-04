@@ -72,15 +72,15 @@ void processPath(SPA::Path *path) {
 
   // Load participant names.
   for (auto it : path->getParticipants()) {
-    if (!participantByName.count(it)) {
+    if (!participantByName.count(it->getName())) {
       if (Debug) {
-        klee::klee_message("  Found participant: %s", it.c_str());
+        klee::klee_message("  Found participant: %s", it->getName().c_str());
       }
-      participantByName[it].reset(new participant_t {
-        it, ""
+      participantByName[it->getName()].reset(new participant_t {
+        it->getName(), ""
       });
-      participantByName[API_PREFIX + it].reset(new participant_t {
-        API_PREFIX + it, ""
+      participantByName[API_PREFIX + it->getName()].reset(new participant_t {
+        API_PREFIX + it->getName(), ""
       });
     }
   }

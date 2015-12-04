@@ -746,7 +746,7 @@ SpecialFunctionHandler::handleMarkGlobal(ExecutionState &state,
 }
 
 namespace SPA {
-llvm::cl::opt<std::string> Participant(
+llvm::cl::opt<std::string> ParticipantName(
     "participant",
     llvm::cl::desc("Sets the participant name (default: module-name)."));
 
@@ -833,7 +833,7 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
           name.substr(name.rfind(SPA_SYMBOL_DELIMITER) + 1);
       if (name.compare(0, strlen(SPA_MESSAGE_OUTPUT_SOURCE_PREFIX),
                        SPA_MESSAGE_OUTPUT_SOURCE_PREFIX) == 0 &&
-          participantName == SPA::Participant) {
+          participantName == SPA::ParticipantName) {
         struct sockaddr_in src;
         assert(it.second[0]->getOutputValues().size() == sizeof(src));
         for (unsigned i = 0; i < sizeof(src); i++) {
@@ -874,12 +874,12 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
       if (SPA::connectSockets &&
           symbolName.compare(0, strlen(SPA_MESSAGE_OUTPUT_PREFIX),
                              SPA_MESSAGE_OUTPUT_PREFIX) &&
-          symbolParticipant == SPA::Participant &&
+          symbolParticipant == SPA::ParticipantName &&
           symbolIPPort == participantIPPort) {
         break;
       }
 
-      if ((*it)->isOutput() && symbolParticipant == SPA::Participant) {
+      if ((*it)->isOutput() && symbolParticipant == SPA::ParticipantName) {
         klee_message("[spa_seed_symbol] Cannot seed path with no new inputs."
                      "Terminating.");
         executor.terminateStateOnError(state, "Path has no new inputs.",

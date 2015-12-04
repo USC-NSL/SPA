@@ -20,7 +20,7 @@
 #include <spa/Path.h>
 
 namespace SPA {
-extern llvm::cl::opt<std::string> Participant;
+extern llvm::cl::opt<std::string> ParticipantName;
 
 Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
   klee::ExecutionState state(*kState);
@@ -37,7 +37,7 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
     testFunctionCoverage = state.senderPath->testFunctionCoverage;
   }
 
-  participants.push_back(Participant);
+  participants.emplace_back(new Participant(ParticipantName, uuid));
 
   std::map<uint64_t, std::pair<const klee::MemoryObject *,
                                const klee::Array *> > orderedSymbols;
@@ -160,9 +160,9 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
     }
   }
 
-  exploredPath[Participant].clear();
+  exploredPath[ParticipantName].clear();
   for (auto branchDecision : state.branchDecisions) {
-    exploredPath[Participant].push_back(std::make_pair(
+    exploredPath[ParticipantName].push_back(std::make_pair(
         debugLocation(branchDecision.first), branchDecision.second));
   }
 
@@ -244,7 +244,8 @@ std::ostream &operator<<(std::ostream &stream, const Path &path) {
 
   stream << SPA_PATH_PARTICIPANTS_START << std::endl;
   for (auto it : path.participants) {
-    stream << it << std::endl;
+    stream << it->getName() << SPA_PATH_PARTICIPANT_DELIMITER
+           << it->getPathUUID() << std::endl;
   }
   stream << SPA_PATH_PARTICIPANTS_END << std::endl;
 

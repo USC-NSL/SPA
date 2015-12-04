@@ -74,7 +74,7 @@ typedef enum {
 }
 
 namespace SPA {
-extern llvm::cl::opt<std::string> Participant;
+extern llvm::cl::opt<std::string> ParticipantName;
 
 llvm::cl::opt<std::string>
     IP("ip", llvm::cl::desc("Sets the participant IP address when bind doesn't "
@@ -535,8 +535,8 @@ SPA::SPA(llvm::Module *_module, std::ostream &_output)
   llvm::sys::PrintStackTraceOnErrorSignal();
   llvm::sys::SetInterruptFunction(interrupt_handle);
 
-  if (Participant.empty()) {
-    Participant = module->getModuleIdentifier();
+  if (ParticipantName.empty()) {
+    ParticipantName = module->getModuleIdentifier();
   }
 
   generateMain();
@@ -997,7 +997,7 @@ void SPA::start() {
   assert(participantNameVar &&
          "participantName variable not declared in module.");
   llvm::Constant *participantNameConstant =
-      llvm::ConstantDataArray::getString(module->getContext(), Participant);
+      llvm::ConstantDataArray::getString(module->getContext(), ParticipantName);
   std::vector<llvm::Constant *> indices;
   indices.push_back(
       llvm::ConstantInt::get(module->getContext(), llvm::APInt(32, 0)));

@@ -111,12 +111,24 @@ public:
   friend class PathLoader;
 };
 
+class Participant {
+private:
+  std::string name;
+  std::string pathUUID;
+
+public:
+  Participant(std::string name, std::string pathUUID)
+      : name(name), pathUUID(pathUUID) {}
+  decltype(name) getName() const { return name; }
+  decltype(pathUUID) getPathUUID() const { return pathUUID; }
+};
+
 class Path {
   friend void ::loadCoverage(Path *path);
 
 private:
   std::string uuid = generateUUID();
-  std::vector<std::string> participants;
+  std::vector<std::shared_ptr<Participant> > participants;
   std::vector<std::shared_ptr<Symbol> > symbolLog;
   std::map<std::string, std::vector<std::shared_ptr<Symbol> > > inputSymbols;
   std::map<std::string, std::vector<std::shared_ptr<Symbol> > > outputSymbols;
@@ -140,9 +152,7 @@ public:
   Path() {}
   Path(klee::ExecutionState *kState, klee::Solver *solver);
 
-  const decltype(uuid) & getUUID() const {
-    return uuid;
-  }
+  const decltype(uuid) & getUUID() const { return uuid; }
 
   const decltype(participants) & getParticipants() const {
     return participants;

@@ -37,7 +37,7 @@
 using namespace llvm;
 using namespace klee;
 
-namespace SPA { extern llvm::cl::opt<std::string> Participant; }
+namespace SPA { extern llvm::cl::opt<std::string> ParticipantName; }
 
 namespace { cl::opt<bool> DebugLogStateMerge("debug-log-state-merge"); }
 

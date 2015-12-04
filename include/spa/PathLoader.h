@@ -25,8 +25,8 @@ private:
 
 public:
   PathLoader(std::ifstream &input, bool loadEmptyFirst = false)
-      : input(input), loadEmptyFirst(loadEmptyFirst), loadEmpty(loadEmptyFirst), lineNumber(0), filter(NULL),
-        savedLN(0), savedPos(0) {}
+      : input(input), loadEmptyFirst(loadEmptyFirst), loadEmpty(loadEmptyFirst),
+        lineNumber(0), filter(NULL), savedLN(0), savedPos(0) {}
   void setFilter(PathFilter *_filter) { filter = _filter; }
   void restart() {
     input.clear();

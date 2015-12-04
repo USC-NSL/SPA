@@ -193,7 +193,11 @@ Path *PathLoader::getPath() {
         path->uuid = line;
       } break;
       case PARTICIPANTS: {
-        path->participants.push_back(line);
+        std::string name =
+            line.substr(0, line.find(SPA_PATH_PARTICIPANT_DELIMITER));
+        std::string uuid =
+            line.substr(line.find(SPA_PATH_PARTICIPANT_DELIMITER) + 1);
+        path->participants.emplace_back(new Participant(name, uuid));
       } break;
       case SYMBOLLOG: {
         symbolNamesLog.push_back(line);
