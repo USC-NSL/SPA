@@ -231,11 +231,10 @@ void processPath(SPA::Path *path) {
     }
   }
 
-  // Generate CFG DOT file.
   std::ofstream dotFile(Directory + "/" + path->getUUID() + ".dot");
   assert(dotFile.good());
 
-  dotFile << "digraph CFG {" << std::endl;
+  dotFile << "digraph G {" << std::endl;
 
   for (auto it : participantByName) {
     std::string participantToken = sanitize(it.first);
@@ -286,7 +285,7 @@ int main(int argc, char **argv, char **envp) {
 
   makefile << "%.html: %.cmapx" << std::endl;
   makefile
-      << "\techo \"<html><img src='$(@:.html=.svg)' usemap='#CFG' />\" > $@"
+      << "\techo \"<html><img src='$(@:.html=.svg)' usemap='#G' />\" > $@"
       << std::endl;
   makefile << "\tcat $< >> $@" << std::endl;
   makefile << "\techo '</html>' >> $@" << std::endl << std::endl;
@@ -296,24 +295,24 @@ int main(int argc, char **argv, char **envp) {
            << std::endl << std::endl;
 
   makefile << "default: all" << std::endl;
+  makefile << "all: index" << std::endl;
+  makefile << "index: index.html index.svg" << std::endl;
+  makefile << "clean: index.clean" << std::endl;
 
-  std::ofstream index(Directory + "/index.html");
+  std::ofstream index(Directory + "/index.dot");
   assert(index.good());
-  index << "<!DOCTYPE html>" << std::endl;
-  index << "<html lang=\"en\">" << std::endl;
-  index << "  <head>" << std::endl;
-  index << "    <meta charset=\"utf-8\">" << std::endl;
-  index << "    <title>" << InFileName << "</title>" << std::endl;
-  index << "  </head>" << std::endl;
-  index << "  <body>" << std::endl;
-  index << "    <ol>" << std::endl;
+  index << "digraph G {" << std::endl;
+  index << "  root [label=\"Path 0\"]" << std::endl;
 
   SPA::PathLoader pathLoader(inFile);
   std::unique_ptr<SPA::Path> path;
-  unsigned long numPaths = 0;
+  unsigned long pathID = 0;
+  std::map<std::string, unsigned long> uuidToId;
 
   while (path.reset(pathLoader.getPath()), path) {
-    klee::klee_message("Processing path %ld.", ++numPaths);
+    klee::klee_message("Processing path %ld.", ++pathID);
+
+    uuidToId[path->getUUID()] = pathID;
 
     processPath(path.get());
 
@@ -322,13 +321,20 @@ int main(int argc, char **argv, char **envp) {
              << path->getUUID() << ".svg" << std::endl;
     makefile << "clean: " << path->getUUID() << ".clean" << std::endl;
 
-    index << "      <li><a href=\"" << path->getUUID() << ".html\">Path "
-          << numPaths << "</a></li>" << std::endl;
+    index << "  path_" << pathID << " [label=\"Path " << pathID << "\\n"
+          << path->getParticipants().back()->getName() << "\" URL=\""
+          << path->getUUID() << ".html\"]" << std::endl;
+    if (path->getParticipants().size() == 1) {
+      index << "  root -> path_" << pathID << std::endl;
+    } else if (path->getParticipants().size() >= 2) {
+      auto parent = path->getParticipants().size() - 2;
+      index << "  path_"
+            << uuidToId[path->getParticipants()[parent]->getPathUUID()]
+            << " -> path_" << pathID << std::endl;
+    }
   }
 
-  index << "    </ol>" << std::endl;
-  index << "  </body>" << std::endl;
-  index << "</html>" << std::endl;
+  index << "}" << std::endl;
 
   return 0;
 }
