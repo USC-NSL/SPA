@@ -91,29 +91,36 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
     }
   }
 
+  std::set<std::string> symbolsInSenderLog;
+  for (auto it : symbolLog) {
+    symbolsInSenderLog.insert(it->getName());
+  }
+
   for (auto it : orderedSymbols) {
     std::string fullName = it.second.second->name;
-    std::string qualifiedName =
-        fullName.substr(0, fullName.rfind(SPA_SYMBOL_DELIMITER));
+    if (symbolsInSenderLog.count(fullName) == 0) {
+      std::string qualifiedName =
+          fullName.substr(0, fullName.rfind(SPA_SYMBOL_DELIMITER));
 
-    if (qualifiedName.compare(0, strlen(SPA_INPUT_PREFIX), SPA_INPUT_PREFIX) ==
-        0) {
-      std::shared_ptr<Symbol> s(new Symbol(fullName, it.second.second));
-      symbolLog.push_back(s);
-      inputSymbols[qualifiedName].push_back(s);
-    } else if (qualifiedName.compare(0, strlen(SPA_OUTPUT_PREFIX),
-                                     SPA_OUTPUT_PREFIX) == 0 ||
-               qualifiedName.compare(0, strlen(SPA_INIT_PREFIX),
-                                     SPA_INIT_PREFIX) == 0) {
-      if (const klee::ObjectState *os =
-              state.addressSpace.findObject(it.second.first)) {
-        std::vector<klee::ref<klee::Expr> > outputValues;
-        for (unsigned int i = 0; i < os->size; i++) {
-          outputValues.push_back(os->read8(i));
-        }
-        std::shared_ptr<Symbol> s(new Symbol(fullName, outputValues));
+      if (qualifiedName.compare(0, strlen(SPA_INPUT_PREFIX),
+                                SPA_INPUT_PREFIX) == 0) {
+        std::shared_ptr<Symbol> s(new Symbol(fullName, it.second.second));
         symbolLog.push_back(s);
-        outputSymbols[qualifiedName].push_back(s);
+        inputSymbols[qualifiedName].push_back(s);
+      } else if (qualifiedName.compare(0, strlen(SPA_OUTPUT_PREFIX),
+                                       SPA_OUTPUT_PREFIX) == 0 ||
+                 qualifiedName.compare(0, strlen(SPA_INIT_PREFIX),
+                                       SPA_INIT_PREFIX) == 0) {
+        if (const klee::ObjectState *os =
+                state.addressSpace.findObject(it.second.first)) {
+          std::vector<klee::ref<klee::Expr> > outputValues;
+          for (unsigned int i = 0; i < os->size; i++) {
+            outputValues.push_back(os->read8(i));
+          }
+          std::shared_ptr<Symbol> s(new Symbol(fullName, outputValues));
+          symbolLog.push_back(s);
+          outputSymbols[qualifiedName].push_back(s);
+        }
       }
     }
   }
