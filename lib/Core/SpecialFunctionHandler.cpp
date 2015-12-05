@@ -813,21 +813,23 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
   }
 
   if (!state.senderPath) {
-    klee_message("  Loading path from file.");
-    SPA::Path *path;
-    while (!(path = SPA::senderPaths->getPath(pathID))) {
-      klee_message("    Path not yet available. Waiting.");
+    klee_message("  Loading path %ld from file.", pathID);
+    while (!(state.senderPath.reset(SPA::senderPaths->getPath(pathID)),
+             state.senderPath)) {
+      klee_message("    Path %ld not yet available. Waiting.", pathID);
       sleep(1);
     }
-
-    state.senderPath.reset(path);
     assert(state.senderPath &&
            "Attempting to process seed path before it's available.");
+
+    klee_message("  Starting joint symbolic execution on path %s.",
+                 state.senderPath->getUUID().c_str());
+
     state.senderLogPos = state.senderPath->getSymbolLog().begin();
 
     // Get current participant's IP/Port.
     std::string participantIPPort = "0.0.0.0.0";
-    for (auto it : path->getOutputSymbols()) {
+    for (auto it : state.senderPath->getOutputSymbols()) {
       std::string name = it.first;
       std::string participantName =
           name.substr(name.rfind(SPA_SYMBOL_DELIMITER) + 1);
@@ -843,9 +845,9 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
           ((char *)&src)[i] = ce->getLimitedValue();
         }
         char srcTxt[INET_ADDRSTRLEN];
-        assert(inet_ntop(AF_INET, &src, srcTxt, sizeof(srcTxt)));
+        assert(inet_ntop(AF_INET, &src.sin_addr, srcTxt, sizeof(srcTxt)));
         participantIPPort =
-            std::string() + srcTxt + "." + SPA::numToStr(ntohs(src.sin_port));
+            std::string(srcTxt) + "." + SPA::numToStr(ntohs(src.sin_port));
         break;
       }
     }
@@ -854,37 +856,35 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
     // To check this, check the log in reverse and find the first of either a
     // symbol outputted by the current participant or a symbol that can be
     // consumed.
-    for (auto it = path->getSymbolLog().rbegin();
-         it != path->getSymbolLog().rend(); it++) {
-      // Check if symbol can be consumed by a direct mapping.
-      if (SPA::seedSymbolMappings.count((*it)->getName())) {
-        break;
-      }
-      // Check if symbol can be consumed via symbolic socket layer.
+    for (auto it = state.senderPath->getSymbolLog().rbegin();
+         it != state.senderPath->getSymbolLog().rend(); it++) {
+      if ((*it)->isOutput()) {
+        std::string symbolName = (*it)->getName();
+        std::string symbolQualifiedName =
+            symbolName.substr(0, symbolName.rfind(SPA_SYMBOL_DELIMITER));
+        std::string symbolParticipant = symbolQualifiedName.substr(
+            symbolQualifiedName.rfind(SPA_SYMBOL_DELIMITER) + 1);
+        std::string symbolLocalName = symbolQualifiedName.substr(
+            0, symbolQualifiedName.rfind(SPA_SYMBOL_DELIMITER));
+        std::string symbolIPPort = symbolLocalName.substr(
+            symbolLocalName.rfind(SPA_SYMBOL_DELIMITER) + 1);
 
-      std::string symbolName = (*it)->getName();
-      std::string symbolQualifiedName =
-          symbolName.substr(0, symbolName.rfind(SPA_SYMBOL_DELIMITER));
-      std::string symbolParticipant = symbolQualifiedName.substr(
-          symbolQualifiedName.rfind(SPA_SYMBOL_DELIMITER) + 1);
-      std::string symbolLocalName = symbolQualifiedName.substr(
-          0, symbolQualifiedName.rfind(SPA_SYMBOL_DELIMITER));
-      std::string symbolIPPort = symbolLocalName.substr(
-          symbolLocalName.rfind(SPA_SYMBOL_DELIMITER) + 1);
-      if (SPA::connectSockets &&
-          symbolName.compare(0, strlen(SPA_MESSAGE_OUTPUT_PREFIX),
-                             SPA_MESSAGE_OUTPUT_PREFIX) &&
-          symbolParticipant == SPA::ParticipantName &&
-          symbolIPPort == participantIPPort) {
-        break;
-      }
-
-      if ((*it)->isOutput() && symbolParticipant == SPA::ParticipantName) {
-        klee_message("[spa_seed_symbol] Cannot seed path with no new inputs."
-                     "Terminating.");
-        executor.terminateStateOnError(state, "Path has no new inputs.",
-                                       "user.err");
-        return;
+        // Check if symbol can be consumed by a direct mapping.
+        if (SPA::seedSymbolMappings.count(symbolQualifiedName)) {
+          break;
+        }
+        // Check if symbol can be consumed via symbolic socket layer.
+        if (SPA::connectSockets && symbolIPPort == participantIPPort) {
+          break;
+        }
+        // Check if symbol was outputted by current participant.
+        if (symbolParticipant == SPA::ParticipantName) {
+          klee_message("[spa_seed_symbol] Cannot seed path with no new inputs."
+                       "Terminating.");
+          executor.terminateStateOnError(state, "Path has no new inputs.",
+                                         "user.err");
+          return;
+        }
       }
     }
 
@@ -945,19 +945,35 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
         break;
       }
     }
-  } else if (SPA::connectSockets &&
-             baseName.compare(0, strlen(SPA_MESSAGE_INPUT_PREFIX),
-                              SPA_MESSAGE_INPUT_PREFIX) ==
-             0) { // Socket mapping.
-                  // Convert symbol name from in to out.
-    std::string senderPrefix =
-        std::string(SPA_MESSAGE_OUTPUT_PREFIX) +
-        baseName.substr(strlen(SPA_MESSAGE_INPUT_PREFIX)) + "_";
-    // Skip log entries until named symbol.
-    while (state.senderLogPos != state.senderPath->getSymbolLog().end() &&
-           (*state.senderLogPos)->getName().compare(0, senderPrefix.length(),
-                                                    senderPrefix) != 0) {
-      state.senderLogPos++;
+  } else if (SPA::connectSockets) {
+    if (baseName.compare(0, strlen(SPA_MESSAGE_INPUT_PREFIX),
+                         SPA_MESSAGE_INPUT_PREFIX) == 0) {
+      // Socket mapping in=out.
+      // Convert symbol name from in to out.
+      std::string senderPrefix =
+          std::string(SPA_MESSAGE_OUTPUT_PREFIX) +
+          baseName.substr(strlen(SPA_MESSAGE_INPUT_PREFIX)) + "_";
+      // Skip log entries until named symbol.
+      while (state.senderLogPos != state.senderPath->getSymbolLog().end() &&
+             (*state.senderLogPos)->getName().compare(0, senderPrefix.length(),
+                                                      senderPrefix) != 0) {
+        state.senderLogPos++;
+      }
+    } else if (baseName.compare(0, strlen(SPA_API_INPUT_PREFIX),
+                                SPA_API_INPUT_PREFIX) == 0) {
+      // The root path can't be connected.
+      if (pathID == 0) {
+        klee_message("Input %s is not connected. Not seeding.",
+                     fullName.c_str());
+        return;
+      }
+
+      // API mapping in=in.
+      // Skip log entries until same symbol.
+      while (state.senderLogPos != state.senderPath->getSymbolLog().end() &&
+             fullName != (*state.senderLogPos)->getName()) {
+        state.senderLogPos++;
+      }
     }
   } else { // Not mapped, leave symbol unconstrained.
     klee_message("Input %s is not connected. Not seeding.", fullName.c_str());
