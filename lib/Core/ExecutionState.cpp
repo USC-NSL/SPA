@@ -384,8 +384,12 @@ bool ExecutionState::isReplayingSpaLog() const {
 
     // Check if all SPA symbols are accounted for in the sender log.
     for (auto it : symbolics) {
-      if (symbolNames.count(it.second->name) == 0) {
-        return false;
+      std::string name = it.second->name;
+      if (name.compare(0, strlen(SPA_INPUT_PREFIX), SPA_INPUT_PREFIX) == 0 ||
+          name.compare(0, strlen(SPA_OUTPUT_PREFIX), SPA_OUTPUT_PREFIX) == 0) {
+        if (symbolNames.count(name) == 0) {
+          return false;
+        }
       }
     }
 
