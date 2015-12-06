@@ -64,7 +64,7 @@ std::string sanitize(std::string name) {
   return "node_" + name;
 }
 
-void processPath(SPA::Path *path) {
+void processPath(SPA::Path *path, unsigned long pathID) {
   std::map<std::string, std::shared_ptr<participant_t> > participantByName;
   std::map<std::string, std::shared_ptr<participant_t> > participantByIpPort;
 
@@ -232,7 +232,8 @@ void processPath(SPA::Path *path) {
   }
 
   std::ofstream dotFile(Directory + "/" + path->getUUID() + ".dot");
-  assert(dotFile.good());
+  std::ofstream htmlFile(Directory + "/" + path->getUUID() + ".html.inc");
+  assert(dotFile.good() && htmlFile.good());
 
   dotFile << "digraph G {" << std::endl;
 
@@ -246,18 +247,87 @@ void processPath(SPA::Path *path) {
     }
   }
 
+  htmlFile << "    <p><a href=\"index.html\">Return to path index</a></p>"
+           << std::endl;
+
+  htmlFile << "    <h1>Path " << pathID << "</h1>" << std::endl;
+
+  htmlFile << "    <p><b>UUID:</b> " << path->getUUID() << "</p>" << std::endl;
+
+  htmlFile << "    <p><b>Lineage:</b>" << std::endl;
+  htmlFile << "      <ol>" << std::endl;
+  for (auto it : path->getParticipants()) {
+    htmlFile << "      <li><a href='" << it->getPathUUID() << ".html'>"
+             << it->getName() << "</a></td></tr>" << std::endl;
+  }
+  htmlFile << "      </ol>" << std::endl;
+  htmlFile << "    </p>" << std::endl;
+
+  htmlFile << "    <p><b>Tags:</b>" << std::endl;
+  htmlFile << "      <table border='1'>" << std::endl;
+  htmlFile << "        <tr><th>Key</th><th>Value</th></tr>" << std::endl;
+  for (auto it : path->getTags()) {
+    htmlFile << "        <tr><td>" << it.first << "</td><td>" << it.second
+             << "</td></tr>" << std::endl;
+  }
+  htmlFile << "      </table>" << std::endl;
+  htmlFile << "    </p>" << std::endl;
+
   for (unsigned i = 0; i < messages.size(); i++) {
     dotFile << "  " << sanitize(messages[i]->from->name) << " -> "
             << sanitize(messages[i]->to->name) << "[label=\"" << (i + 1)
             << "\" arrowhead=\"" << (messages[i]->received ? "normal" : "dot")
-            << "\" tooltip=\"";
+            << "\" href=\"#msg" << i << "\"]" << std::endl;
+
+    htmlFile << "    <div class='box' id='msg" << i << "'>" << std::endl;
+    htmlFile << "      <a class='closebutton' href='#'>&#x2715;</a>"
+             << std::endl;
+    htmlFile << "      <h1>Message " << i << " symbols</h1>" << std::endl;
+    htmlFile << "      <ul>" << std::endl;
     for (auto it : messages[i]->symbolNames) {
-      dotFile << it << "&#10;";
+      htmlFile << "        <li><a href='#" << it << "'>" << it << "</a></li>"
+               << std::endl;
     }
-    dotFile << "\"]" << std::endl;
+    htmlFile << "      </ul>" << std::endl;
+    htmlFile << "    </div>" << std::endl;
+  }
+
+  for (auto sit : path->getSymbolLog()) {
+    htmlFile << "    <div class='box' id='" << sit->getName() << "'>"
+             << std::endl;
+    htmlFile << "      <a class='closebutton' href='#'>&#x2715;</a>"
+             << std::endl;
+    htmlFile << "      <h1>Symbol " << sit->getName() << "</h1>" << std::endl;
+    if (sit->isInput()) {
+      htmlFile << "      <p><b>Type:</b> input</p>" << std::endl;
+      htmlFile << "      <p><b>Size:</b> " << sit->getInputArray()->size
+               << "</p>" << std::endl;
+    } else if (sit->isOutput()) {
+      htmlFile << "      <p><b>Type:</b> output</p>" << std::endl;
+      htmlFile << "      <p><b>Size:</b> " << sit->getOutputValues().size()
+               << "</p>" << std::endl;
+      htmlFile << "      <p><b>Byte Values:</b>" << std::endl;
+      htmlFile << "        <table border='1'>" << std::endl;
+      htmlFile << "          <tr><th>Index</th><th>Expression</th></tr>"
+               << std::endl;
+      for (unsigned long i = 0; i < sit->getOutputValues().size(); i++) {
+        std::string exprStr;
+        llvm::raw_string_ostream exprRSO(exprStr);
+        sit->getOutputValues()[i]->print(exprRSO);
+        htmlFile << "          <tr><td>" << i << "</td><td>" << exprRSO.str()
+                 << "</td></tr>" << std::endl;
+      }
+      htmlFile << "        </table>" << std::endl;
+      htmlFile << "      </p>" << std::endl;
+    } else {
+      assert(false && "Unknown symbol type.");
+    }
+    htmlFile << "    </div>" << std::endl;
   }
 
   dotFile << "}" << std::endl;
+
+  htmlFile << "    <p><b>Messages</b></p>" << std::endl;
 }
 
 int main(int argc, char **argv, char **envp) {
@@ -283,12 +353,42 @@ int main(int argc, char **argv, char **envp) {
   makefile << "%.cmapx: %.dot" << std::endl;
   makefile << "\tdot -Tcmapx -o $@ $<" << std::endl << std::endl;
 
-  makefile << "%.html: %.cmapx" << std::endl;
-  makefile
-      << "\techo \"<html><img src='$(@:.html=.svg)' usemap='#G' />\" > $@"
-      << std::endl;
-  makefile << "\tcat $< >> $@" << std::endl;
-  makefile << "\techo '</html>' >> $@" << std::endl << std::endl;
+  makefile << "%.html: %.cmapx %.html.inc" << std::endl;
+  makefile << "\techo '<!doctype html>' > $@" << std::endl;
+  makefile << "\techo '<html lang=\"en\">' >> $@" << std::endl;
+  makefile << "\techo '  <head>' >> $@" << std::endl;
+  makefile << "\techo '    <meta charset=\"utf-8\">' >> $@" << std::endl;
+  makefile << "\techo '    <title>$(@:.html=)</title>' >> $@" << std::endl;
+  makefile << "\techo '    <style>' >> $@" << std::endl;
+  makefile << "\techo '      div.box {' >> $@" << std::endl;
+  makefile << "\techo '        display: none;' >> $@" << std::endl;
+  makefile << "\techo '        width: 1000px;' >> $@" << std::endl;
+  makefile << "\techo '        position: fixed;' >> $@" << std::endl;
+  makefile << "\techo '        top: 100px; ' >> $@" << std::endl;
+  makefile << "\techo '        left: 50%;' >> $@" << std::endl;
+  makefile << "\techo '        margin-left: -500px;' >> $@" << std::endl;
+  makefile << "\techo '        border-radius: 10px;' >> $@" << std::endl;
+  makefile << "\techo '        padding: 10px;' >> $@" << std::endl;
+  makefile << "\techo '        border: 5px solid black;' >> $@" << std::endl;
+  makefile << "\techo '      }' >> $@" << std::endl;
+  makefile << "\techo '      div.box:target {' >> $@" << std::endl;
+  makefile << "\techo '        display: block;' >> $@" << std::endl;
+  makefile << "\techo '      }' >> $@" << std::endl;
+  makefile << "\techo '      a.closebutton {' >> $@" << std::endl;
+  makefile << "\techo '        position: absolute;' >> $@" << std::endl;
+  makefile << "\techo '        top: 0;' >> $@" << std::endl;
+  makefile << "\techo '        right: 5px;' >> $@" << std::endl;
+  makefile << "\techo '        font-size: 20pt;' >> $@" << std::endl;
+  makefile << "\techo '      }' >> $@" << std::endl;
+  makefile << "\techo '    </style>' >> $@" << std::endl;
+  makefile << "\techo '  </head>' >> $@" << std::endl;
+  makefile << "\techo '  <body>' >> $@" << std::endl;
+  makefile << "\tcat $(@:.html=.html.inc) >> $@" << std::endl;
+  makefile << "\techo '    <img src=\"$(@:.html=.svg)\" usemap=\"#G\" />' >> $@"
+           << std::endl;
+  makefile << "\tcat $(@:.html=.cmapx) >> $@" << std::endl;
+  makefile << "\techo '  </body>' >> $@" << std::endl;
+  makefile << "\techo '</html>' >> $@" << std::endl;
 
   makefile << "%.clean:" << std::endl;
   makefile << "\trm -f $(@:.clean=.html) $(@:.clean=.svg) $(@:.clean=.cmapx)"
@@ -299,10 +399,11 @@ int main(int argc, char **argv, char **envp) {
   makefile << "index: index.html index.svg" << std::endl;
   makefile << "clean: index.clean" << std::endl;
 
-  std::ofstream index(Directory + "/index.dot");
-  assert(index.good());
-  index << "digraph G {" << std::endl;
-  index << "  root [label=\"Path 0\"]" << std::endl;
+  std::ofstream indexDot(Directory + "/index.dot");
+  std::ofstream indexHtml(Directory + "/index.html.inc");
+  assert(indexDot.good() && indexHtml.good());
+  indexDot << "digraph G {" << std::endl;
+  indexDot << "  root [label=\"Path 0\"]" << std::endl;
 
   SPA::PathLoader pathLoader(inFile);
   std::unique_ptr<SPA::Path> path;
@@ -314,27 +415,27 @@ int main(int argc, char **argv, char **envp) {
 
     uuidToId[path->getUUID()] = pathID;
 
-    processPath(path.get());
+    processPath(path.get(), pathID);
 
     makefile << "all: " << path->getUUID() << std::endl;
     makefile << path->getUUID() << ": " << path->getUUID() << ".html "
              << path->getUUID() << ".svg" << std::endl;
     makefile << "clean: " << path->getUUID() << ".clean" << std::endl;
 
-    index << "  path_" << pathID << " [label=\"Path " << pathID << "\\n"
-          << path->getParticipants().back()->getName() << "\" URL=\""
-          << path->getUUID() << ".html\"]" << std::endl;
+    indexDot << "  path_" << pathID << " [label=\"Path " << pathID << "\\n"
+             << path->getParticipants().back()->getName() << "\" URL=\""
+             << path->getUUID() << ".html\"]" << std::endl;
     if (path->getParticipants().size() == 1) {
-      index << "  root -> path_" << pathID << std::endl;
+      indexDot << "  root -> path_" << pathID << std::endl;
     } else if (path->getParticipants().size() >= 2) {
       auto parent = path->getParticipants().size() - 2;
-      index << "  path_"
-            << uuidToId[path->getParticipants()[parent]->getPathUUID()]
-            << " -> path_" << pathID << std::endl;
+      indexDot << "  path_"
+               << uuidToId[path->getParticipants()[parent]->getPathUUID()]
+               << " -> path_" << pathID << std::endl;
     }
   }
 
-  index << "}" << std::endl;
+  indexDot << "}" << std::endl;
 
   return 0;
 }
