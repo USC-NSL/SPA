@@ -100,18 +100,18 @@ llvm::cl::opt<SearchStrategy_t> SearchStrategy(
 class SpaClientPathFilter : public SPA::PathFilter {
 public:
   bool checkPath(SPA::Path &path) {
-    return path.getTag(SPA_HANDLERTYPE_TAG) == SPA_APIHANDLER_VALUE &&
-           path.getTag(SPA_OUTPUT_TAG) == SPA_OUTPUT_VALUE /*&&
-      			path.getTag( "ReplayDone" ) == "1"*/;
+    return path.getTags()[SPA_HANDLERTYPE_TAG] == SPA_APIHANDLER_VALUE &&
+           path.getTags()[SPA_OUTPUT_TAG] == SPA_OUTPUT_VALUE /*&&
+      			path.getTags()["ReplayDone"] == "1"*/;
   }
 };
 
 class SpaServerPathFilter : public SPA::PathFilter {
 public:
   bool checkPath(SPA::Path &path) {
-    return path.getTag(SPA_HANDLERTYPE_TAG) == SPA_MESSAGEHANDLER_VALUE &&
-           path.getTag(SPA_MSGRECEIVED_TAG) == SPA_MSGRECEIVED_VALUE &&
-           path.getTag(SPA_VALIDPATH_TAG) != SPA_VALIDPATH_VALUE;
+    return path.getTags()[SPA_HANDLERTYPE_TAG] == SPA_MESSAGEHANDLER_VALUE &&
+           path.getTags()[SPA_MSGRECEIVED_TAG] == SPA_MSGRECEIVED_VALUE &&
+           path.getTags()[SPA_VALIDPATH_TAG] != SPA_VALIDPATH_VALUE;
   }
 };
 
@@ -356,15 +356,16 @@ int main(int argc, char **argv, char **envp) {
   // Create instruction filter.
   klee::klee_message("   Creating CFG filter.");
   SPA::CFGBackwardIF *filter = new SPA::CFGBackwardIF(cfg, cg, checkpoints);
-//   for (auto it : entryPoints) {
-//     if (!filter->checkInstruction(it)) {
-//       klee::klee_message(
-//           "Entry point at function %s is not included in filter. Disabling.",
-//           it->getParent()->getParent()->getName().str().c_str());
-//       assert(false && "Entry point not included in filter.");
-//       filter = NULL;
-//     }
-//   }
+  //   for (auto it : entryPoints) {
+  //     if (!filter->checkInstruction(it)) {
+  //       klee::klee_message(
+  //           "Entry point at function %s is not included in filter.
+  // Disabling.",
+  //           it->getParent()->getParent()->getName().str().c_str());
+  //       assert(false && "Entry point not included in filter.");
+  //       filter = NULL;
+  //     }
+  //   }
   //   if (filter) {
   //     if (Client)
   //       spa.addStateUtilityBack(filter, false);

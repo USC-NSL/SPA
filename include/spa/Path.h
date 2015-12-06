@@ -168,9 +168,7 @@ public:
     return outputSymbols;
   }
 
-  std::string getTag(std::string key) const {
-    return tags.count(key) ? tags.find(key)->second : std::string();
-  }
+  decltype(tags) getTags() const { return tags; }
 
   const klee::ConstraintManager &getConstraints() const { return constraints; }
 

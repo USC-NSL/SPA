@@ -47,7 +47,7 @@ llvm::cl::opt<std::string, true>
 class MaxPathFilter : public SPA::PathFilter {
 public:
   bool checkPath(SPA::Path &path) {
-    return !path.getTag(MAX_HANDLER_NAME_TAG).empty();
+    return path.getTags().count(MAX_HANDLER_NAME_TAG);
   }
 };
 

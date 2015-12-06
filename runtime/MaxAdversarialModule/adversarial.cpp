@@ -34,8 +34,8 @@ void initAdversarialModule() {
 
     SPA::PathLoader pathLoader(pathFile);
     while (SPA::Path *path = pathLoader.getPath()) {
-      if (!path->getTag(std::string(HANDLER_NAME_TAG)).empty()) {
-        paths[path->getTag(std::string(HANDLER_NAME_TAG))].insert(path);
+      if (path->getTags().count(HANDLER_NAME_TAG)) {
+        paths[path->getTags()[HANDLER_NAME_TAG]].insert(path);
       }
     }
 

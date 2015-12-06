@@ -75,21 +75,21 @@ llvm::cl::opt<std::string, true>
 class SpaClientPathFilter : public SPA::PathFilter {
 public:
   bool checkPath(SPA::Path &path) {
-    return path.getTag(SPA_OUTPUT_TAG) == SPA_OUTPUT_VALUE &&
-           path.getTag(SPA_MSGRECEIVED_TAG) == SPA_MSGRECEIVED_VALUE &&
-           path.getTag(SPA_VALIDPATH_TAG) != SPA_VALIDPATH_VALUE;
+    return path.getTags()[SPA_OUTPUT_TAG] == SPA_OUTPUT_VALUE &&
+           path.getTags()[SPA_MSGRECEIVED_TAG] == SPA_MSGRECEIVED_VALUE &&
+           path.getTags()[SPA_VALIDPATH_TAG] != SPA_VALIDPATH_VALUE;
   }
 };
 
 class SpaServerPathFilter : public SPA::PathFilter {
 public:
   bool checkPath(SPA::Path &path) {
-    // 		return path.getTag( SPA_MSGRECEIVED_TAG ) == SPA_MSGRECEIVED_VALUE &&
-    // 			(path.getTag( SPA_OUTPUT_TAG ) == SPA_OUTPUT_VALUE ||
-    // 				path.getTag( SPA_VALIDPATH_TAG ) != SPA_VALIDPATH_VALUE);
-    return path.getTag(SPA_MSGRECEIVED_TAG) == SPA_MSGRECEIVED_VALUE &&
-           path.getTag(SPA_OUTPUT_TAG) == SPA_OUTPUT_VALUE &&
-           path.getTag(SPA_VALIDPATH_TAG) == SPA_VALIDPATH_VALUE;
+    // 		return path.getTags()[SPA_MSGRECEIVED_TAG] == SPA_MSGRECEIVED_VALUE &&
+    // 			(path.getTags()[SPA_OUTPUT_TAG] == SPA_OUTPUT_VALUE ||
+    // 				path.getTags()[SPA_VALIDPATH_TAG] != SPA_VALIDPATH_VALUE);
+    return path.getTags()[SPA_MSGRECEIVED_TAG] == SPA_MSGRECEIVED_VALUE &&
+           path.getTags()[SPA_OUTPUT_TAG] == SPA_OUTPUT_VALUE &&
+           path.getTags()[SPA_VALIDPATH_TAG] == SPA_VALIDPATH_VALUE;
   }
 };
 
