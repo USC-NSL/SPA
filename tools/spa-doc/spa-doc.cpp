@@ -387,6 +387,7 @@ int main(int argc, char **argv, char **envp) {
   makefile << "\techo '        border-radius: 10px;' >> $@" << std::endl;
   makefile << "\techo '        padding: 10px;' >> $@" << std::endl;
   makefile << "\techo '        border: 5px solid black;' >> $@" << std::endl;
+  makefile << "\techo '        background-color: white;' >> $@" << std::endl;
   makefile << "\techo '      }' >> $@" << std::endl;
   makefile << "\techo '      div.box:target {' >> $@" << std::endl;
   makefile << "\techo '        display: block;' >> $@" << std::endl;
