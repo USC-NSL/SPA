@@ -273,6 +273,15 @@ void processPath(SPA::Path *path, unsigned long pathID) {
   htmlFile << "      </table>" << std::endl;
   htmlFile << "    </p>" << std::endl;
 
+  htmlFile << "    <p><b>Constraints:</b><br />" << std::endl;
+  for (auto it : path->getConstraints()) {
+    std::string exprStr;
+    llvm::raw_string_ostream exprROS(exprStr);
+    it->print(exprROS);
+    htmlFile << "    " << exprROS.str() << "<br />" << std::endl;
+  }
+  htmlFile << "    </p>" << std::endl;
+
   for (unsigned i = 0; i < messages.size(); i++) {
     dotFile << "  " << sanitize(messages[i]->from->name) << " -> "
             << sanitize(messages[i]->to->name) << "[label=\"" << (i + 1)
@@ -302,6 +311,14 @@ void processPath(SPA::Path *path, unsigned long pathID) {
       htmlFile << "      <p><b>Type:</b> input</p>" << std::endl;
       htmlFile << "      <p><b>Size:</b> " << sit->getInputArray()->size
                << "</p>" << std::endl;
+      if (path->getTestInputs().count(sit->getName())) {
+        std::stringstream value;
+        copy(path->getTestInput(sit->getName()).begin(),
+             path->getTestInput(sit->getName()).end(),
+             std::ostream_iterator<int>(value, " "));
+        htmlFile << "      <p><b>Test Case Value:</b> " << value.str() << "</p>"
+                 << std::endl;
+      }
     } else if (sit->isOutput()) {
       htmlFile << "      <p><b>Type:</b> output</p>" << std::endl;
       htmlFile << "      <p><b>Size:</b> " << sit->getOutputValues().size()
@@ -312,9 +329,9 @@ void processPath(SPA::Path *path, unsigned long pathID) {
                << std::endl;
       for (unsigned long i = 0; i < sit->getOutputValues().size(); i++) {
         std::string exprStr;
-        llvm::raw_string_ostream exprRSO(exprStr);
-        sit->getOutputValues()[i]->print(exprRSO);
-        htmlFile << "          <tr><td>" << i << "</td><td>" << exprRSO.str()
+        llvm::raw_string_ostream exprROS(exprStr);
+        sit->getOutputValues()[i]->print(exprROS);
+        htmlFile << "          <tr><td>" << i << "</td><td>" << exprROS.str()
                  << "</td></tr>" << std::endl;
       }
       htmlFile << "        </table>" << std::endl;
