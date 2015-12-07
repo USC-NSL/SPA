@@ -235,23 +235,19 @@ void processPath(SPA::Path *path, unsigned long pathID) {
   std::ofstream htmlFile(Directory + "/" + path->getUUID() + ".html.inc");
   assert(dotFile.good() && htmlFile.good());
 
-  dotFile << "digraph G {" << std::endl;
-
-  for (auto it : participantByName) {
-    std::string participantToken = sanitize(it.first);
-    if (it.first.compare(0, strlen(API_PREFIX), API_PREFIX) == 0) {
-      dotFile << "  " << participantToken << " [style=\"invis\"]" << std::endl;
-    } else {
-      dotFile << "  " << participantToken << " [label=\"" << it.first << "\\n"
-              << it.second->ipPort << "\"]" << std::endl;
-    }
-  }
-
-  htmlFile << "    <p><a href=\"index.html\">Return to path index</a></p>"
+  htmlFile << "    <div id=\"header\">" << std::endl;
+  htmlFile << "      <a href=\"#metadata\">Path Meta-data</a>" << std::endl;
+  htmlFile << "      <a href=\"#messages\">Message Log</a>" << std::endl;
+  htmlFile << "      <a href=\"#constraints\">Symbolic Contraints</a>"
            << std::endl;
+  htmlFile << "      <a href=\"#src\">Path Source</a>" << std::endl;
+  htmlFile << "      <a href=\"index.html\">Path Index</a>" << std::endl;
+  htmlFile << "    </div>" << std::endl;
 
+  htmlFile << "    <a class='anchor' id='metadata'></a>" << std::endl;
   htmlFile << "    <h1>Path " << pathID << "</h1>" << std::endl;
 
+  htmlFile << "    <h2>Path Meta-data</h2>" << std::endl;
   htmlFile << "    <p><b>UUID:</b> " << path->getUUID() << "</p>" << std::endl;
 
   htmlFile << "    <p><b>Lineage:</b>" << std::endl;
@@ -273,6 +269,29 @@ void processPath(SPA::Path *path, unsigned long pathID) {
   htmlFile << "      </table>" << std::endl;
   htmlFile << "    </p>" << std::endl;
 
+  htmlFile << "    <a class='anchor' id='messages'></a>" << std::endl;
+  htmlFile << "    <h2>Message Log</h2>" << std::endl;
+  htmlFile << "    <img src='" << path->getUUID() << ".svg' usemap='#G' />"
+           << std::endl;
+
+  htmlFile << "    <a class='anchor' id='constraints'></a>" << std::endl;
+  htmlFile << "    <h2>Symbolic Constraint</h2>" << std::endl;
+  htmlFile << "    <p><b>Input Symbols:</b><br />" << std::endl;
+  htmlFile << "    <table border='1'>" << std::endl;
+  htmlFile << "      <tr><th>Name</th><th>Instances</th></tr>" << std::endl;
+  for (auto it : path->getInputSymbols()) {
+    htmlFile << "      <tr>" << std::endl;
+    htmlFile << "        <td>" << it.first << "</td>" << std::endl;
+    htmlFile << "        <td>" << std::endl;
+    for (unsigned long i = 0; i < it.second.size(); i++) {
+      htmlFile << "          <a href='#" << it.second[i]->getName() << "'>"
+               << (i + 1) << "</a>" << std::endl;
+    }
+    htmlFile << "        </td>" << std::endl;
+    htmlFile << "      </tr>" << std::endl;
+  }
+  htmlFile << "    </table></p>" << std::endl;
+
   htmlFile << "    <p><b>Constraints:</b><br />" << std::endl;
   for (auto it : path->getConstraints()) {
     std::string exprStr;
@@ -281,6 +300,33 @@ void processPath(SPA::Path *path, unsigned long pathID) {
     htmlFile << "    " << exprROS.str() << "<br />" << std::endl;
   }
   htmlFile << "    </p>" << std::endl;
+
+  htmlFile << "    <p><b>Output Symbols:</b><br />" << std::endl;
+  htmlFile << "    <table border='1'>" << std::endl;
+  htmlFile << "      <tr><th>Name</th><th>Instances</th></tr>" << std::endl;
+  for (auto it : path->getOutputSymbols()) {
+    htmlFile << "      <tr>" << std::endl;
+    htmlFile << "        <td>" << it.first << "</td>" << std::endl;
+    htmlFile << "        <td>" << std::endl;
+    for (unsigned long i = 0; i < it.second.size(); i++) {
+      htmlFile << "          <a href='#" << it.second[i]->getName() << "'>"
+               << (i + 1) << "</a>" << std::endl;
+    }
+    htmlFile << "        </td>" << std::endl;
+    htmlFile << "      </tr>" << std::endl;
+  }
+  htmlFile << "    </table></p>" << std::endl;
+
+  dotFile << "digraph G {" << std::endl;
+  for (auto it : participantByName) {
+    std::string participantToken = sanitize(it.first);
+    if (it.first.compare(0, strlen(API_PREFIX), API_PREFIX) == 0) {
+      dotFile << "  " << participantToken << " [style=\"invis\"]" << std::endl;
+    } else {
+      dotFile << "  " << participantToken << " [label=\"" << it.first << "\\n"
+              << it.second->ipPort << "\"]" << std::endl;
+    }
+  }
 
   for (unsigned i = 0; i < messages.size(); i++) {
     dotFile << "  " << sanitize(messages[i]->from->name) << " -> "
@@ -300,6 +346,7 @@ void processPath(SPA::Path *path, unsigned long pathID) {
     htmlFile << "      </ul>" << std::endl;
     htmlFile << "    </div>" << std::endl;
   }
+  dotFile << "}" << std::endl;
 
   for (auto sit : path->getSymbolLog()) {
     htmlFile << "    <div class='box' id='" << sit->getName() << "'>"
@@ -342,9 +389,11 @@ void processPath(SPA::Path *path, unsigned long pathID) {
     htmlFile << "    </div>" << std::endl;
   }
 
-  dotFile << "}" << std::endl;
-
-  htmlFile << "    <p><b>Messages</b></p>" << std::endl;
+  htmlFile << "    <a class='anchor' id='src'></a>" << std::endl;
+  htmlFile << "    <h2>Path Source</h2>" << std::endl;
+  htmlFile << "<pre>" << std::endl;
+  htmlFile << *path;
+  htmlFile << "</pre>" << std::endl;
 }
 
 int main(int argc, char **argv, char **envp) {
@@ -376,13 +425,11 @@ int main(int argc, char **argv, char **envp) {
   makefile << "\techo '  <head>' >> $@" << std::endl;
   makefile << "\techo '    <meta charset=\"utf-8\">' >> $@" << std::endl;
   makefile << "\techo '    <title>$(@:.html=)</title>' >> $@" << std::endl;
-  makefile << "\techo '     <link rel=\"stylesheet\" type=\"text/css\" "
+  makefile << "\techo '    <link rel=\"stylesheet\" type=\"text/css\" "
               "href=\"style.css\">' >> $@" << std::endl;
   makefile << "\techo '  </head>' >> $@" << std::endl;
   makefile << "\techo '  <body>' >> $@" << std::endl;
   makefile << "\tcat $(@:.html=.html.inc) >> $@" << std::endl;
-  makefile << "\techo '    <img src=\"$(@:.html=.svg)\" usemap=\"#G\" />' >> $@"
-           << std::endl;
   makefile << "\tcat $(@:.html=.cmapx) >> $@" << std::endl;
   makefile << "\techo '  </body>' >> $@" << std::endl;
   makefile << "\techo '</html>' >> $@" << std::endl;
@@ -398,6 +445,38 @@ int main(int argc, char **argv, char **envp) {
 
   std::ofstream cssFile(Directory + "/style.css");
   assert(cssFile.good());
+  cssFile << "body {" << std::endl;
+  cssFile << "  padding-top: 30px;" << std::endl;
+  cssFile << "}" << std::endl;
+  cssFile << "a.anchor {" << std::endl;
+  cssFile << "  display: block;" << std::endl;
+  cssFile << "  position: relative;" << std::endl;
+  cssFile << "  top: -50px;" << std::endl;
+  cssFile << "  visibility: hidden;" << std::endl;
+  cssFile << "}" << std::endl;
+  cssFile << "div#header {" << std::endl;
+  cssFile << "  position: fixed;" << std::endl;
+  cssFile << "  width: 100%;" << std::endl;
+  cssFile << "  top: 0; " << std::endl;
+  cssFile << "  left: 0; " << std::endl;
+  cssFile << "  margin: 0;" << std::endl;
+  cssFile << "  padding: 0;" << std::endl;
+  cssFile << "  background-color: lightgray;" << std::endl;
+  cssFile << "}" << std::endl;
+  cssFile << "div#header a {" << std::endl;
+  cssFile << "  display: block;" << std::endl;
+  cssFile << "  float: left;" << std::endl;
+  cssFile << "  width: 200px;" << std::endl;
+  cssFile << "  padding: 14px 16px;" << std::endl;
+  cssFile << "  text-align: center;" << std::endl;
+  cssFile << "  text-decoration: none;" << std::endl;
+  cssFile << "  font-weight: bold;" << std::endl;
+  cssFile << "  color: black;" << std::endl;
+  cssFile << "}" << std::endl;
+  cssFile << "div#header a:hover {" << std::endl;
+  cssFile << "  background-color: black;" << std::endl;
+  cssFile << "  color: white;" << std::endl;
+  cssFile << "}" << std::endl;
   cssFile << "div.box {" << std::endl;
   cssFile << "  display: none;" << std::endl;
   cssFile << "  width: 1000px;" << std::endl;
@@ -423,6 +502,9 @@ int main(int argc, char **argv, char **envp) {
   std::ofstream indexDot(Directory + "/index.dot");
   std::ofstream indexHtml(Directory + "/index.html.inc");
   assert(indexDot.good() && indexHtml.good());
+
+  indexHtml << "    <img src='index.svg' usemap='#G' />" << std::endl;
+
   indexDot << "digraph G {" << std::endl;
   indexDot << "  root [label=\"Path 0\"]" << std::endl;
 
