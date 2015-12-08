@@ -35,6 +35,7 @@
 #include "llvm/Support/Debug.h"
 #include "llvm/Support/CommandLine.h"
 
+#include <stdio.h>
 #include <unistd.h>
 #include <errno.h>
 #include <netinet/in.h>
@@ -110,6 +111,7 @@ static SpecialFunctionHandler::HandlerInfo handlerInfo[] = {
   add("spa_seed_symbol_check", handleSpaSeedSymbolCheck, true),
   add("spa_seed_symbol", handleSpaSeedSymbol, false),
   add("spa_runtime_call", handleSpaRuntimeCall, false),
+  add("spa_snprintf3", handleSpaSnprintf3, false),
 #undef addDNR
 #undef add
 };
@@ -1037,6 +1039,46 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
   } else {
     assert(false && "Sender symbol neither input nor output.");
   }
+}
+
+void
+SpecialFunctionHandler::handleSpaSnprintf3(ExecutionState &state,
+                                           KInstruction *target,
+                                           std::vector<ref<Expr> > &arguments) {
+  assert(arguments.size() == 6 &&
+         "Invalid number of arguments to spa_sprintf3.");
+
+  klee::ConstantExpr *ce;
+  assert(ce = dyn_cast<ConstantExpr>(executor.toUnique(state, arguments[1])));
+  unsigned length = ce->getZExtValue();
+
+  std::string format = readStringAtAddress(state, arguments[2]);
+  std::string in1 = readStringAtAddress(state, arguments[3]);
+  std::string in2 = readStringAtAddress(state, arguments[4]);
+
+  assert(ce = dyn_cast<ConstantExpr>(executor.toUnique(state, arguments[5])));
+  unsigned long in3 = ce->getZExtValue();
+
+  char *result = new char[length];
+  unsigned resultSize = snprintf(result, length, format.c_str(), in1.c_str(),
+                                 in2.c_str(), in3) + 1;
+
+  ObjectPair op;
+  ref<ConstantExpr> address =
+      cast<ConstantExpr>(executor.toUnique(state, arguments[0]));
+  assert(state.addressSpace.resolveOne(address, op) &&
+         "XXX out of bounds / multiple resolution unhandled");
+  bool res;
+  assert(executor.solver->mustBeTrue(
+      state, EqExpr::create(address, op.first->getBaseExpr()), res) && res &&
+         "XXX interior pointer unhandled");
+  ObjectState *os = const_cast<ObjectState *>(op.second);
+
+  unsigned i;
+  for (i = 0; i <= resultSize; i++) {
+    os->write8(i, result[i]);
+  }
+  delete[] result;
 }
 
 void SpecialFunctionHandler::handleSpaRuntimeCall(
