@@ -446,7 +446,7 @@ int main(int argc, char **argv, char **envp) {
   std::ofstream cssFile(Directory + "/style.css");
   assert(cssFile.good());
   cssFile << "body {" << std::endl;
-  cssFile << "  padding-top: 30px;" << std::endl;
+  cssFile << "  padding-top: 50px;" << std::endl;
   cssFile << "}" << std::endl;
   cssFile << "a.anchor {" << std::endl;
   cssFile << "  display: block;" << std::endl;
@@ -462,13 +462,14 @@ int main(int argc, char **argv, char **envp) {
   cssFile << "  margin: 0;" << std::endl;
   cssFile << "  padding: 0;" << std::endl;
   cssFile << "  background-color: lightgray;" << std::endl;
+  cssFile << "  display: table;" << std::endl;
+  cssFile << "  table-layout: fixed;" << std::endl;
   cssFile << "}" << std::endl;
   cssFile << "div#header a {" << std::endl;
-  cssFile << "  display: block;" << std::endl;
-  cssFile << "  float: left;" << std::endl;
-  cssFile << "  width: 200px;" << std::endl;
+  cssFile << "  display: table-cell;" << std::endl;
   cssFile << "  padding: 14px 16px;" << std::endl;
   cssFile << "  text-align: center;" << std::endl;
+  cssFile << "  vertical-align: middle;" << std::endl;
   cssFile << "  text-decoration: none;" << std::endl;
   cssFile << "  font-weight: bold;" << std::endl;
   cssFile << "  color: black;" << std::endl;
