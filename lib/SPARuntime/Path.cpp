@@ -126,14 +126,16 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
   }
 
   // Add non-colliding symbols from sender path.
-  for (auto it : state.senderPath->inputSymbols) {
-    if (inputSymbols.count(it.first) == 0) {
-      inputSymbols[it.first] = it.second;
+  if (state.senderPath) {
+    for (auto it : state.senderPath->inputSymbols) {
+      if (inputSymbols.count(it.first) == 0) {
+        inputSymbols[it.first] = it.second;
+      }
     }
-  }
-  for (auto it : state.senderPath->outputSymbols) {
-    if (outputSymbols.count(it.first) == 0) {
-      outputSymbols[it.first] = it.second;
+    for (auto it : state.senderPath->outputSymbols) {
+      if (outputSymbols.count(it.first) == 0) {
+        outputSymbols[it.first] = it.second;
+      }
     }
   }
 

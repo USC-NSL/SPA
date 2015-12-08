@@ -1039,7 +1039,7 @@ void SPA::start() {
       break;
     }
   }
-  assert((outputFP || outputTerminalPaths ||
+  assert((outputFP || outputTerminalPaths || outputDone || outputLogExhausted ||
           checkpointFilter.getSubFilters().size() > 1 ||
           !checkpointWhitelist.getWhitelist().empty()) &&
          "No points to output data from.");
@@ -1180,8 +1180,18 @@ void SPA::onStateTerminateError(klee::ExecutionState *kState) {
   klee::klee_message("State terminated with error at:");
   kState->dumpStack(llvm::errs());
 
+  bool logExhausted = false;
+  if (outputLogExhausted) {
+    llvm::Function *fn = kState->pc->inst->getParent()->getParent();
+    if (fn && fn->getName() == SPA_INPUT_ANNOTATION_FUNCTION &&
+        (!kState->isReplayingSpaLog())) {
+      klee::klee_message("Processing path with exhausted symbol log.");
+      logExhausted = true;
+    }
+  }
+
   terminalPathsFound++;
-  if (outputTerminalPaths) {
+  if (outputTerminalPaths || (outputLogExhausted && logExhausted)) {
     assert(kState);
     klee::klee_message("Processing terminal path.");
     processPath(kState);
@@ -1194,7 +1204,7 @@ void SPA::onStateTerminateDone(klee::ExecutionState *kState) {
   kState->dumpStack(llvm::errs());
 
   terminalPathsFound++;
-  if (outputTerminalPaths) {
+  if (outputTerminalPaths || outputDone) {
     assert(kState);
     klee::klee_message("Processing terminal path.");
     processPath(kState);

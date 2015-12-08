@@ -13,7 +13,8 @@ spa-explore \
     --connect-sockets \
     --start-from spa_entry \
     --toward spa_msg_output_point \
-    --output-at spa_msg_output_point \
+    --output-when-log-exhausted \
+    --output-done \
     --participant kv-client \
     kv-client.bc \
     2>&1 | tee kv-client.log &

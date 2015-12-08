@@ -95,6 +95,8 @@ private:
   std::deque<bool> outputFilteredPaths;
   PathFilter *pathFilter;
   bool outputTerminalPaths;
+  bool outputDone;
+  bool outputLogExhausted;
 
   unsigned long checkpointsFound, filteredPathsFound, terminalPathsFound,
       outputtedPaths;
@@ -154,6 +156,12 @@ public:
   }
   void setOutputTerminalPaths(bool _outputTerminalPaths) {
     outputTerminalPaths = _outputTerminalPaths;
+  }
+  void setOutputDone(bool _outputDone) {
+    outputDone = _outputDone;
+  }
+  void setOutputLogExhausted(bool _outputLogExhausted) {
+    outputLogExhausted = _outputLogExhausted;
   }
   llvm::Function *getMainFunction() { return entryFunction; }
   void start();

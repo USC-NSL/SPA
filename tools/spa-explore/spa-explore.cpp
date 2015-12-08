@@ -82,6 +82,15 @@ llvm::cl::opt<bool>
     OutputTerminal("output-terminal", llvm::cl::init(false),
                    llvm::cl::desc("Enable outputting terminal paths."));
 
+llvm::cl::opt<bool>
+    OutputDone("output-done", llvm::cl::init(false),
+                   llvm::cl::desc("Output paths when the program finishes."));
+
+llvm::cl::opt<bool> OutputLogExhausted(
+    "output-when-log-exhausted", llvm::cl::init(false),
+    llvm::cl::desc("Output paths when they exhaust the symbolic log (receive "
+                   "the first input after replay)."));
+
 llvm::cl::list<std::string>
     OutputAt("output-at", llvm::cl::desc("Code-points to output paths at."));
 
@@ -246,6 +255,8 @@ int main(int argc, char **argv, char **envp) {
   }
 
   spa.setOutputTerminalPaths(OutputTerminal);
+  spa.setOutputDone(OutputDone);
+  spa.setOutputLogExhausted(OutputLogExhausted);
 
   if (!OutputFilter.empty()) {
     SPA::FilterExpression *filter = SPA::FilterExpression::parse(OutputFilter);
