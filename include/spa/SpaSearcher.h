@@ -30,6 +30,7 @@ private:
   void filterState(klee::ExecutionState *state, unsigned int id);
   void reorderState(klee::ExecutionState *state);
   void reorderAllStates();
+  void doPeriodicReordering();
   void saveStates();
   void printStats();
 

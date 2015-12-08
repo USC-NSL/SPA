@@ -24,8 +24,10 @@
 
 #define SAVE_STATE_PERIOD 30    // seconds
 #define PRINT_STATS_PERIOD 1000 // ms
-                                // #define QUEUE_LIMIT	1000000
-                                // #define DROP_TO		 900000
+#define REORDER_PERIOD 10000    // ms
+
+// #define QUEUE_LIMIT	1000000
+// #define DROP_TO		 900000
 
 namespace SPA {
 // 	extern llvm::cl::opt<std::string> RecoverState;
@@ -36,10 +38,9 @@ namespace SPA {
 std::string utilityStr(const std::vector<double> &utility) {
   std::stringstream result;
   result.precision(10);
-  for (std::vector<double>::const_iterator it = utility.begin(),
-                                           ie = utility.end();
-       it != ie; it++)
+  for (auto it = utility.begin(), ie = utility.end(); it != ie; it++) {
     result << (it != utility.begin() ? "," : "") << (-*it);
+  }
   return result.str();
 }
 
@@ -94,12 +95,22 @@ void SpaSearcher::reorderState(klee::ExecutionState *state) {
 }
 
 void SpaSearcher::reorderAllStates() {
-  std::set<std::pair<std::vector<double>, klee::ExecutionState *> > tempStates =
-      states;
+  auto tempStates = states;
   states.clear();
 
   for (auto it : tempStates) {
     enqueueState(it.second);
+  }
+}
+
+void SpaSearcher::doPeriodicReordering() {
+  static auto last = std::chrono::steady_clock::now();
+  auto now = std::chrono::steady_clock::now();
+  if (std::chrono::duration_cast<std::chrono::milliseconds>(now - last)
+          .count() > REORDER_PERIOD) {
+    last = now;
+    klee::klee_message("[SpaSearcher] Performing periodic state reordering.");
+    reorderAllStates();
   }
 }
 
@@ -134,6 +145,8 @@ void SpaSearcher::reorderAllStates() {
 // 	}
 
 klee::ExecutionState &SpaSearcher::selectState() {
+  doPeriodicReordering();
+
   // Reorder head state until set is coherent.
   unsigned int id = 0;
   klee::ExecutionState *state;
@@ -168,9 +181,9 @@ klee::ExecutionState &SpaSearcher::selectState() {
 
   printStats();
 
-//   klee::klee_message("[SpaSearcher] Selecting state with cost %s:",
-//                      utilityStr(states.begin()->first).c_str());
-//   state->dumpStack(llvm::errs());
+  //   klee::klee_message("[SpaSearcher] Selecting state with cost %s:",
+  //                      utilityStr(states.begin()->first).c_str());
+  //   state->dumpStack(llvm::errs());
 
   return *state;
 }
@@ -211,13 +224,13 @@ void SpaSearcher::printStats() {
         (states.size() ? utilityStr(states.rbegin()->first).c_str() : ""),
         (states.size() ? utilityStr(states.begin()->first).c_str() : ""),
         statesDequeued, statesFiltered);
-//     klee::klee_message("[SpaSearcher] States:");
-//     for (auto state : states) {
-//       klee::klee_message("[SpaSearcher]   %s: %s",
-//                          debugLocation(state.second->pc->inst).c_str(),
-//                          utilityStr(state.first).c_str());
-//       state.second->dumpStack(llvm::errs());
-//     }
+    //     klee::klee_message("[SpaSearcher] States:");
+    //     for (auto state : states) {
+    //       klee::klee_message("[SpaSearcher]   %s: %s",
+    //                          debugLocation(state.second->pc->inst).c_str(),
+    //                          utilityStr(state.first).c_str());
+    //       state.second->dumpStack(llvm::errs());
+    //     }
   }
 }
 }
