@@ -36,6 +36,12 @@ typedef struct {
   value_t value;
 } operation_t;
 
+void __attribute__((noinline, weak)) kv_done() {
+  // Complicated NOP to prevent inlining.
+  static uint8_t i = 0;
+  i++;
+}
+
 void __attribute__((noinline, used)) spa_entry() {
   operation_t operations[1];
 
@@ -56,4 +62,6 @@ void __attribute__((noinline, used)) spa_entry() {
       break;
     }
   }
+
+  kv_done();
 }

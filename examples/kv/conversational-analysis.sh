@@ -12,9 +12,9 @@ spa-explore \
     --out-paths-append \
     --connect-sockets \
     --start-from spa_entry \
-    --toward spa_msg_output_point \
+    --toward kv_done \
     --output-when-log-exhausted \
-    --output-done \
+    --output-at kv_done \
     --participant kv-client \
     kv-client.bc \
     2>&1 | tee kv-client.log &
