@@ -84,11 +84,17 @@ std::string sanitizeToken(std::string name) {
 
 std::string sanitizeHTML(std::string text) {
   // Escape special chars.
-  size_t pos;
-  while ((pos = text.find("<")) != std::string::npos) {
+  size_t pos = 0;
+  while ((pos = text.find("&", pos)) != std::string::npos) {
+    text.replace(pos, 1, "&amp;");
+    pos++;
+  }
+  pos = 0;
+  while ((pos = text.find("<", pos)) != std::string::npos) {
     text.replace(pos, 1, "&lt;");
   }
-  while ((pos = text.find(">")) != std::string::npos) {
+  pos = 0;
+  while ((pos = text.find(">", pos)) != std::string::npos) {
     text.replace(pos, 1, "&gt;");
   }
   return text;
