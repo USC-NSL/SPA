@@ -553,7 +553,6 @@ int main(int argc, char **argv, char **envp) {
   cssFile << "  display: table;" << std::endl;
   cssFile << "}" << std::endl;
   cssFile << "div.src {" << std::endl;
-//   cssFile << "  margin-top: 20px;" << std::endl;
   cssFile << "  max-height: calc(100vh - 150px);" << std::endl;
   cssFile << "  width: 700px;" << std::endl;
   cssFile << "  overflow: scroll;" << std::endl;
