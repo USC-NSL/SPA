@@ -174,14 +174,9 @@ public:
 
   bool isCovered(std::string dbgStr);
 
-  std::map<std::string, std::vector<std::pair<std::string, bool> > >
-  getExploredPath() const {
-    return exploredPath;
-  }
+  decltype(exploredPath) getExploredPath() const { return exploredPath; }
 
-  const std::map<std::string, std::vector<uint8_t> > &getTestInputs() const {
-    return testInputs;
-  }
+  const decltype(testInputs) & getTestInputs() const { return testInputs; }
 
   const std::vector<uint8_t> &getTestInput(std::string name) const {
     if (testInputs.count(name)) {
@@ -192,19 +187,17 @@ public:
     }
   }
 
-  std::map<std::string, std::map<long, bool> > getExploredLineCoverage() {
+  decltype(exploredLineCoverage) getExploredLineCoverage() {
     return exploredLineCoverage;
   }
 
-  std::map<std::string, bool> getExploredFunctionCoverage() {
+  decltype(exploredFunctionCoverage) getExploredFunctionCoverage() {
     return exploredFunctionCoverage;
   }
 
-  std::map<std::string, std::map<long, bool> > getTestLineCoverage() {
-    return testLineCoverage;
-  }
+  decltype(testLineCoverage) getTestLineCoverage() { return testLineCoverage; }
 
-  std::map<std::string, bool> getTestFunctionCoverage() {
+  decltype(testFunctionCoverage) getTestFunctionCoverage() {
     return testFunctionCoverage;
   }
 

@@ -20,7 +20,12 @@ namespace {
 llvm::cl::opt<std::string> Directory(
     "dir", llvm::cl::init("."),
     llvm::cl::desc(
-        "The directory to place teh generated documentation in (default: .)."));
+        "The directory to place the generated documentation in (default: .)."));
+
+llvm::cl::opt<int>
+    OnlyPathID("only-path",
+               llvm::cl::desc("Only generate index and documentation for given "
+                              "path id (useful to parallelize)."));
 
 llvm::cl::opt<bool> Debug("d", llvm::cl::desc("Enable debug messages."));
 
@@ -55,7 +60,7 @@ std::string getIpPort(SPA::Symbol *symbol) {
   return symbolName;
 }
 
-std::string sanitize(std::string name) {
+std::string sanitizeToken(std::string name) {
   // Sanitize name to make valid token.
   size_t pos;
   while ((pos = name.find_first_of("-.:")) != std::string::npos) {
@@ -64,11 +69,25 @@ std::string sanitize(std::string name) {
   return "node_" + name;
 }
 
+std::string sanitizeHTML(std::string text) {
+  // Escape special chars.
+  size_t pos;
+  while ((pos = text.find("<")) != std::string::npos) {
+    text.replace(pos, 1, "&lt;");
+  }
+  while ((pos = text.find(">")) != std::string::npos) {
+    text.replace(pos, 1, "&gt;");
+  }
+  return text;
+}
+
 void processPath(SPA::Path *path, unsigned long pathID) {
   std::map<std::string, std::shared_ptr<participant_t> > participantByName;
   std::map<std::string, std::shared_ptr<participant_t> > participantByIpPort;
 
   std::vector<std::shared_ptr<message_t> > messages;
+
+  klee::klee_message("Processing path %ld.", pathID);
 
   // Load participant names.
   for (auto it : path->getParticipants()) {
@@ -240,6 +259,7 @@ void processPath(SPA::Path *path, unsigned long pathID) {
   htmlFile << "      <a href=\"#messages\">Message Log</a>" << std::endl;
   htmlFile << "      <a href=\"#constraints\">Symbolic Contraints</a>"
            << std::endl;
+  htmlFile << "      <a href=\"#coverage\">Coverage</a>" << std::endl;
   htmlFile << "      <a href=\"#src\">Path Source</a>" << std::endl;
   htmlFile << "      <a href=\"index.html\">Path Index</a>" << std::endl;
   htmlFile << "    </div>" << std::endl;
@@ -319,7 +339,7 @@ void processPath(SPA::Path *path, unsigned long pathID) {
 
   dotFile << "digraph G {" << std::endl;
   for (auto it : participantByName) {
-    std::string participantToken = sanitize(it.first);
+    std::string participantToken = sanitizeToken(it.first);
     if (it.first.compare(0, strlen(API_PREFIX), API_PREFIX) == 0) {
       dotFile << "  " << participantToken << " [style=\"invis\"]" << std::endl;
     } else {
@@ -329,8 +349,8 @@ void processPath(SPA::Path *path, unsigned long pathID) {
   }
 
   for (unsigned i = 0; i < messages.size(); i++) {
-    dotFile << "  " << sanitize(messages[i]->from->name) << " -> "
-            << sanitize(messages[i]->to->name) << "[label=\"" << (i + 1)
+    dotFile << "  " << sanitizeToken(messages[i]->from->name) << " -> "
+            << sanitizeToken(messages[i]->to->name) << "[label=\"" << (i + 1)
             << "\" arrowhead=\"" << (messages[i]->received ? "normal" : "dot")
             << "\" href=\"#msg" << i << "\"]" << std::endl;
 
@@ -386,6 +406,42 @@ void processPath(SPA::Path *path, unsigned long pathID) {
     } else {
       assert(false && "Unknown symbol type.");
     }
+    htmlFile << "    </div>" << std::endl;
+  }
+
+  htmlFile << "    <a class='anchor' id='coverage'></a>" << std::endl;
+  htmlFile << "    <h2>Coverage</h2>" << std::endl;
+  htmlFile << "    <p><b>Files:</b><br />" << std::endl;
+  for (auto it : path->getExploredLineCoverage()) {
+    htmlFile << "      <a href='#" << it.first << "'>" << it.first
+             << "</a><br />" << std::endl;
+  }
+  htmlFile << "    </p>" << std::endl;
+
+  for (auto fit : path->getExploredLineCoverage()) {
+    htmlFile << "    <div class='box' id='" << fit.first << "'>" << std::endl;
+    htmlFile << "      <a class='closebutton' href='#'>&#x2715;</a>"
+             << std::endl;
+    htmlFile << "      <b>" << fit.first << "</b>" << std::endl;
+    htmlFile << "      <div class='src'>" << std::endl;
+    std::ifstream srcFile(fit.first);
+    unsigned long lastLineNum =
+        fit.second.empty() ? 0 : fit.second.rbegin()->first;
+    for (unsigned long srcLineNum = 1;
+         srcFile.good() || srcLineNum <= lastLineNum; srcLineNum++) {
+      std::string srcLine;
+      std::getline(srcFile, srcLine);
+      htmlFile << "        <div class='line "
+               << (fit.second.count(srcLineNum)
+                       ? (fit.second[srcLineNum] ? "covered" : "uncovered")
+                       : "unknown") << "'>" << std::endl;
+      htmlFile << "          <div class='number'>" << srcLineNum << "</div>"
+               << std::endl;
+      htmlFile << "          <div class='content'>" << sanitizeHTML(srcLine)
+               << "</div>" << std::endl;
+      htmlFile << "        </div>" << std::endl;
+    }
+    htmlFile << "      </div>" << std::endl;
     htmlFile << "    </div>" << std::endl;
   }
 
@@ -480,23 +536,55 @@ int main(int argc, char **argv, char **envp) {
   cssFile << "}" << std::endl;
   cssFile << "div.box {" << std::endl;
   cssFile << "  display: none;" << std::endl;
-  cssFile << "  width: 1000px;" << std::endl;
   cssFile << "  position: fixed;" << std::endl;
-  cssFile << "  top: 100px; " << std::endl;
-  cssFile << "  left: 50%;" << std::endl;
-  cssFile << "  margin-left: -500px;" << std::endl;
+  cssFile << "  left: 0;" << std::endl;
+  cssFile << "  right: 0;" << std::endl;
+  cssFile << "  top: 0;" << std::endl;
+  cssFile << "  margin-left: auto;" << std::endl;
+  cssFile << "  margin-right: auto;" << std::endl;
+  cssFile << "  margin-top: 50px;" << std::endl;
+  cssFile << "  max-width: 90vw;" << std::endl;
   cssFile << "  border-radius: 10px;" << std::endl;
   cssFile << "  padding: 10px;" << std::endl;
   cssFile << "  border: 5px solid black;" << std::endl;
   cssFile << "  background-color: white;" << std::endl;
   cssFile << "}" << std::endl;
   cssFile << "div.box:target {" << std::endl;
-  cssFile << "  display: block;" << std::endl;
+  cssFile << "  display: table;" << std::endl;
+  cssFile << "}" << std::endl;
+  cssFile << "div.src {" << std::endl;
+//   cssFile << "  margin-top: 20px;" << std::endl;
+  cssFile << "  max-height: calc(100vh - 150px);" << std::endl;
+  cssFile << "  width: 700px;" << std::endl;
+  cssFile << "  overflow: scroll;" << std::endl;
+  cssFile << "  line-height: 100%;" << std::endl;
+  cssFile << "}" << std::endl;
+  cssFile << "div.src div.line {" << std::endl;
+  cssFile << "  clear: left;" << std::endl;
+  cssFile << "}" << std::endl;
+  cssFile << "div.src div.line div.number {" << std::endl;
+  cssFile << "  width: 50px;" << std::endl;
+  cssFile << "  float: left;" << std::endl;
+  cssFile << "  text-align: right;" << std::endl;
+  cssFile << "  padding-right: 5px;" << std::endl;
+  cssFile << "  background-color: lightgray;" << std::endl;
+  cssFile << "}" << std::endl;
+  cssFile << "div.src div.line div.content {" << std::endl;
+  cssFile << "  width: 100%;" << std::endl;
+  cssFile << "  unicode-bidi: embed;" << std::endl;
+  cssFile << "  font-family: monospace;" << std::endl;
+  cssFile << "  white-space: pre;" << std::endl;
+  cssFile << "}" << std::endl;
+  cssFile << "div.src div.covered div.content {" << std::endl;
+  cssFile << "  background-color: lightgreen;" << std::endl;
+  cssFile << "}" << std::endl;
+  cssFile << "div.src div.uncovered div.content {" << std::endl;
+  cssFile << "  background-color: lightcoral;" << std::endl;
   cssFile << "}" << std::endl;
   cssFile << "a.closebutton {" << std::endl;
   cssFile << "  position: absolute;" << std::endl;
-  cssFile << "  top: 0;" << std::endl;
-  cssFile << "  right: 5px;" << std::endl;
+  cssFile << "  top: 3px;" << std::endl;
+  cssFile << "  right: 8px;" << std::endl;
   cssFile << "  font-size: 20pt;" << std::endl;
   cssFile << "}" << std::endl;
 
@@ -515,11 +603,11 @@ int main(int argc, char **argv, char **envp) {
   std::map<std::string, unsigned long> uuidToId;
 
   while (path.reset(pathLoader.getPath()), path) {
-    klee::klee_message("Processing path %ld.", ++pathID);
+    uuidToId[path->getUUID()] = ++pathID;
 
-    uuidToId[path->getUUID()] = pathID;
-
-    processPath(path.get(), pathID);
+    if (OnlyPathID == 0 || OnlyPathID == (int) pathID) {
+      processPath(path.get(), pathID);
+    }
 
     makefile << "all: " << path->getUUID() << std::endl;
     makefile << path->getUUID() << ": " << path->getUUID() << ".html "
