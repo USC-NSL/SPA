@@ -723,10 +723,10 @@ int main(int argc, char **argv, char **envp) {
                    << std::endl;
       coverageHtml << "          <div class='content'>" << sanitizeHTML(srcLine)
                    << "</div>" << std::endl;
-      coverageHtml << "        </div>" << std::endl;
       if (fit.second.count(srcLineNum)) {
         coverageHtml << "        </a>" << std::endl;
       }
+      coverageHtml << "        </div>" << std::endl;
     }
     coverageHtml << "      </div>" << std::endl;
     coverageHtml << "    </div>" << std::endl;
