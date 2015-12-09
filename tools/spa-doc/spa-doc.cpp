@@ -5,6 +5,7 @@
 #include <spa/PathLoader.h>
 #include <spa/Util.h>
 
+#include <sys/unistd.h>
 #include <sys/stat.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
@@ -22,10 +23,13 @@ llvm::cl::opt<std::string> Directory(
     llvm::cl::desc(
         "The directory to place the generated documentation in (default: .)."));
 
+llvm::cl::opt<int> OnlyPathID(
+    "only-path",
+    llvm::cl::desc("Only generate index and documentation for given path ID."));
+
 llvm::cl::opt<int>
-    OnlyPathID("only-path",
-               llvm::cl::desc("Only generate index and documentation for given "
-                              "path id (useful to parallelize)."));
+    NumProcesses("j", llvm::cl::init(1),
+                 llvm::cl::desc("Number of worker processes to spawn."));
 
 llvm::cl::opt<bool> Debug("d", llvm::cl::desc("Enable debug messages."));
 
@@ -45,6 +49,11 @@ typedef struct {
   bool received;
   std::set<std::string> symbolNames;
 } message_t;
+
+// file -> (line -> (covered -> uuids))
+std::map<std::string,
+         std::map<unsigned long, std::map<bool, std::set<std::string> > > >
+    coverage;
 
 std::string getIpPort(SPA::Symbol *symbol) {
   std::string symbolName = symbol->getName();
@@ -435,11 +444,18 @@ void processPath(SPA::Path *path, unsigned long pathID) {
                << (fit.second.count(srcLineNum)
                        ? (fit.second[srcLineNum] ? "covered" : "uncovered")
                        : "unknown") << "'>" << std::endl;
+      if (fit.second.count(srcLineNum)) {
+        htmlFile << "<a href='coverage.html#" << fit.first << ":" << srcLineNum
+                 << "'>" << std::endl;
+      }
       htmlFile << "          <div class='number'>" << srcLineNum << "</div>"
                << std::endl;
       htmlFile << "          <div class='content'>" << sanitizeHTML(srcLine)
                << "</div>" << std::endl;
       htmlFile << "        </div>" << std::endl;
+      if (fit.second.count(srcLineNum)) {
+        htmlFile << "        </a>" << std::endl;
+      }
     }
     htmlFile << "      </div>" << std::endl;
     htmlFile << "    </div>" << std::endl;
@@ -561,6 +577,9 @@ int main(int argc, char **argv, char **envp) {
   cssFile << "div.src div.line {" << std::endl;
   cssFile << "  clear: left;" << std::endl;
   cssFile << "}" << std::endl;
+  cssFile << "div.src div.line a {" << std::endl;
+  cssFile << "  text-decoration: none;" << std::endl;
+  cssFile << "}" << std::endl;
   cssFile << "div.src div.line div.number {" << std::endl;
   cssFile << "  width: 50px;" << std::endl;
   cssFile << "  float: left;" << std::endl;
@@ -596,16 +615,18 @@ int main(int argc, char **argv, char **envp) {
   indexDot << "digraph G {" << std::endl;
   indexDot << "  root [label=\"Path 0\"]" << std::endl;
 
-  SPA::PathLoader pathLoader(inFile);
+  std::unique_ptr<SPA::PathLoader> pathLoader(new SPA::PathLoader(inFile));
   std::unique_ptr<SPA::Path> path;
-  unsigned long pathID = 0;
   std::map<std::string, unsigned long> uuidToId;
 
-  while (path.reset(pathLoader.getPath()), path) {
-    uuidToId[path->getUUID()] = ++pathID;
+  for (unsigned long pathID = 1; path.reset(pathLoader->getPath()), path;
+       pathID++) {
+    uuidToId[path->getUUID()] = pathID;
 
-    if (OnlyPathID == 0 || OnlyPathID == (int) pathID) {
-      processPath(path.get(), pathID);
+    for (auto fit : path->getExploredLineCoverage()) {
+      for (auto lit : fit.second) {
+        coverage[fit.first][lit.first][lit.second].insert(path->getUUID());
+      }
     }
 
     makefile << "all: " << path->getUUID() << std::endl;
@@ -625,8 +646,118 @@ int main(int argc, char **argv, char **envp) {
                << " -> path_" << pathID << std::endl;
     }
   }
-
   indexDot << "}" << std::endl;
+
+  std::ofstream coverageHtml(Directory + "/coverage.html");
+  assert(coverageHtml.good());
+  coverageHtml << "<!doctype html>" << std::endl;
+  coverageHtml << "<html lang=\"en\">" << std::endl;
+  coverageHtml << "  <head>" << std::endl;
+  coverageHtml << "    <meta charset=\"utf-8\">" << std::endl;
+  coverageHtml << "    <title>Coverage</title>" << std::endl;
+  coverageHtml
+      << "    <link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">"
+      << std::endl;
+  coverageHtml << "  </head>" << std::endl;
+  coverageHtml << "  <body>" << std::endl;
+  coverageHtml << "    <h1>Coverage</h1>" << std::endl;
+  coverageHtml << "    <p><b>Files:</b><br />" << std::endl;
+  for (auto it : coverage) {
+    coverageHtml << "    <a href='#" << it.first << "'>" << it.first
+                 << "</a><br />" << std::endl;
+  }
+  coverageHtml << "    </p>" << std::endl;
+
+  for (auto fit : coverage) {
+    coverageHtml << "    <div class='box' id='" << fit.first << "'>"
+                 << std::endl;
+    coverageHtml << "      <a class='closebutton' href='#'>&#x2715;</a>"
+                 << std::endl;
+    coverageHtml << "      <b>" << fit.first << "</b>" << std::endl;
+    coverageHtml << "      <div class='src'>" << std::endl;
+    std::ifstream srcFile(fit.first);
+    unsigned long lastLineNum =
+        fit.second.empty() ? 0 : fit.second.rbegin()->first;
+    for (unsigned long srcLineNum = 1;
+         srcFile.good() || srcLineNum <= lastLineNum; srcLineNum++) {
+      std::string srcLine;
+      std::getline(srcFile, srcLine);
+      coverageHtml << "        <div class='line'>" << std::endl;
+      if (fit.second.count(srcLineNum)) {
+        coverageHtml << "<a href='coverage.html#" << fit.first << ":"
+                     << srcLineNum << "'>" << std::endl;
+      }
+      coverageHtml << "          <div class='number'>" << srcLineNum << "</div>"
+                   << std::endl;
+      coverageHtml << "          <div class='content'>" << sanitizeHTML(srcLine)
+                   << "</div>" << std::endl;
+      coverageHtml << "        </div>" << std::endl;
+      if (fit.second.count(srcLineNum)) {
+        coverageHtml << "        </a>" << std::endl;
+      }
+    }
+    coverageHtml << "      </div>" << std::endl;
+    coverageHtml << "    </div>" << std::endl;
+  }
+
+  for (auto fit : coverage) {
+    for (auto lit : fit.second) {
+      coverageHtml << "    <div class='box' id='" << fit.first << ":"
+                   << lit.first << "'>" << std::endl;
+      coverageHtml << "      <a class='closebutton' href='#'>&#x2715;</a>"
+                   << std::endl;
+      coverageHtml << "      <h2>" << fit.first << ":" << lit.first << "</h2>"
+                   << std::endl;
+
+      coverageHtml << "      <p><b>Other paths that reached here:</b><br />"
+                   << std::endl;
+      unsigned long counter = 1;
+      for (auto pit : lit.second[true]) {
+        coverageHtml << "      <a href='" << pit << ".html'>" << counter++
+                     << "</a>" << std::endl;
+      }
+      coverageHtml << "      </p>" << std::endl;
+
+      coverageHtml
+          << "      <p><b>Other paths that didn't reach here:</b><br />"
+          << std::endl;
+      counter = 1;
+      for (auto pit : lit.second[false]) {
+        coverageHtml << "      <a href='" << pit << ".html'>" << counter++
+                     << "</a>" << std::endl;
+      }
+      coverageHtml << "      </p>" << std::endl;
+
+      coverageHtml << "    </div>" << std::endl;
+    }
+  }
+  coverageHtml << "  </body>" << std::endl;
+  coverageHtml << "</html>" << std::endl;
+
+  if (OnlyPathID) {
+    path.reset(pathLoader->getPath(OnlyPathID - 1));
+    assert(path && "Specified path does not exist.");
+    processPath(path.get(), OnlyPathID);
+  } else {
+    int workerID;
+    for (workerID = 0; workerID < NumProcesses - 1; workerID++) {
+      if (fork() == 0) {
+        break;
+      }
+    }
+    klee::klee_message("Running worker %d of %d.", workerID + 1,
+                       NumProcesses + 0);
+
+    inFile.close();
+    inFile.open(InFileName);
+    pathLoader.reset(new SPA::PathLoader(inFile));
+    for (unsigned long pathID = 1; path.reset(pathLoader->getPath()), path;
+         pathID++) {
+      if (pathID % NumProcesses == workerID) {
+        processPath(path.get(), pathID);
+      }
+    }
+  }
 
   return 0;
 }
