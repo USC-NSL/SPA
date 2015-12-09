@@ -462,10 +462,10 @@ void processPath(SPA::Path *path, unsigned long pathID) {
                << std::endl;
       htmlFile << "          <div class='content'>" << sanitizeHTML(srcLine)
                << "</div>" << std::endl;
-      htmlFile << "        </div>" << std::endl;
       if (fit.second.count(srcLineNum)) {
         htmlFile << "        </a>" << std::endl;
       }
+      htmlFile << "        </div>" << std::endl;
     }
     htmlFile << "      </div>" << std::endl;
     htmlFile << "    </div>" << std::endl;
