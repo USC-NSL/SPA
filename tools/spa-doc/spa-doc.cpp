@@ -50,6 +50,10 @@ typedef struct {
   std::set<std::string> symbolNames;
 } message_t;
 
+// uuid -> [participant, uuid]s.
+std::map<std::string, std::set<std::pair<std::string, std::string> > >
+    childrenPaths;
+
 // file -> (line -> (covered -> uuids))
 std::map<std::string,
          std::map<unsigned long, std::map<bool, std::set<std::string> > > >
@@ -283,7 +287,16 @@ void processPath(SPA::Path *path, unsigned long pathID) {
   htmlFile << "      <ol>" << std::endl;
   for (auto it : path->getParticipants()) {
     htmlFile << "      <li><a href='" << it->getPathUUID() << ".html'>"
-             << it->getName() << "</a></td></tr>" << std::endl;
+             << it->getName() << "</a></li>" << std::endl;
+  }
+  htmlFile << "      </ol>" << std::endl;
+  htmlFile << "    </p>" << std::endl;
+
+  htmlFile << "    <p><b>Children:</b>" << std::endl;
+  htmlFile << "      <ol>" << std::endl;
+  for (auto it : childrenPaths[path->getUUID()]) {
+    htmlFile << "      <li><a href='" << it.second << ".html'>" << it.first
+             << "</a></li>" << std::endl;
   }
   htmlFile << "      </ol>" << std::endl;
   htmlFile << "    </p>" << std::endl;
@@ -622,6 +635,13 @@ int main(int argc, char **argv, char **envp) {
   for (unsigned long pathID = 1; path.reset(pathLoader->getPath()), path;
        pathID++) {
     uuidToId[path->getUUID()] = pathID;
+
+    if (path->getParticipants().size() > 1) {
+      auto parent = path->getParticipants()[path->getParticipants().size() - 2];
+      auto child = path->getParticipants()[path->getParticipants().size() - 1];
+      childrenPaths[parent->getPathUUID()]
+          .insert(std::make_pair(child->getName(), child->getPathUUID()));
+    }
 
     for (auto fit : path->getExploredLineCoverage()) {
       for (auto lit : fit.second) {
