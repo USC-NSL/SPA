@@ -281,35 +281,33 @@ void processPath(SPA::Path *path, unsigned long pathID) {
   htmlFile << "    <h1>Path " << pathID << "</h1>" << std::endl;
 
   htmlFile << "    <h2>Path Meta-data</h2>" << std::endl;
-  htmlFile << "    <p><b>UUID:</b> " << path->getUUID() << "</p>" << std::endl;
+  htmlFile << "    <b>UUID:</b> " << path->getUUID() << "<br /><br />"
+           << std::endl;
 
-  htmlFile << "    <p><b>Lineage:</b>" << std::endl;
-  htmlFile << "      <ol>" << std::endl;
+  htmlFile << "    <b>Lineage:</b><br />" << std::endl;
+  htmlFile << "    <ol>" << std::endl;
   for (auto it : path->getParticipants()) {
-    htmlFile << "      <li><a href='" << it->getPathUUID() << ".html'>"
+    htmlFile << "    <li><a href='" << it->getPathUUID() << ".html'>"
              << it->getName() << "</a></li>" << std::endl;
   }
-  htmlFile << "      </ol>" << std::endl;
-  htmlFile << "    </p>" << std::endl;
+  htmlFile << "    </ol><br />" << std::endl;
 
-  htmlFile << "    <p><b>Children:</b>" << std::endl;
-  htmlFile << "      <ol>" << std::endl;
+  htmlFile << "    <b>Children:</b><br />" << std::endl;
+  htmlFile << "    <ol>" << std::endl;
   for (auto it : childrenPaths[path->getUUID()]) {
-    htmlFile << "      <li><a href='" << it.second << ".html'>" << it.first
+    htmlFile << "    <li><a href='" << it.second << ".html'>" << it.first
              << "</a></li>" << std::endl;
   }
-  htmlFile << "      </ol>" << std::endl;
-  htmlFile << "    </p>" << std::endl;
+  htmlFile << "    </ol><br />" << std::endl;
 
-  htmlFile << "    <p><b>Tags:</b>" << std::endl;
-  htmlFile << "      <table border='1'>" << std::endl;
-  htmlFile << "        <tr><th>Key</th><th>Value</th></tr>" << std::endl;
+  htmlFile << "    <b>Tags:</b><br />" << std::endl;
+  htmlFile << "    <table border='1'>" << std::endl;
+  htmlFile << "      <tr><th>Key</th><th>Value</th></tr>" << std::endl;
   for (auto it : path->getTags()) {
-    htmlFile << "        <tr><td>" << it.first << "</td><td>" << it.second
+    htmlFile << "      <tr><td>" << it.first << "</td><td>" << it.second
              << "</td></tr>" << std::endl;
   }
-  htmlFile << "      </table>" << std::endl;
-  htmlFile << "    </p>" << std::endl;
+  htmlFile << "    </table><br />" << std::endl;
 
   htmlFile << "    <a class='anchor' id='messages'></a>" << std::endl;
   htmlFile << "    <h2>Message Log</h2>" << std::endl;
@@ -319,7 +317,7 @@ void processPath(SPA::Path *path, unsigned long pathID) {
 
   htmlFile << "    <a class='anchor' id='constraints'></a>" << std::endl;
   htmlFile << "    <h2>Symbolic Constraint</h2>" << std::endl;
-  htmlFile << "    <p><b>Input Symbols:</b><br />" << std::endl;
+  htmlFile << "    <b>Input Symbols:</b><br />" << std::endl;
   htmlFile << "    <table border='1'>" << std::endl;
   htmlFile << "      <tr><th>Name</th><th>Instances</th></tr>" << std::endl;
   for (auto it : path->getInputSymbols()) {
@@ -333,18 +331,18 @@ void processPath(SPA::Path *path, unsigned long pathID) {
     htmlFile << "        </td>" << std::endl;
     htmlFile << "      </tr>" << std::endl;
   }
-  htmlFile << "    </table></p>" << std::endl;
+  htmlFile << "    </table><br />" << std::endl;
 
-  htmlFile << "    <p><b>Constraints:</b><br />" << std::endl;
+  htmlFile << "    <b>Constraints:</b><br />" << std::endl;
   for (auto it : path->getConstraints()) {
     std::string exprStr;
     llvm::raw_string_ostream exprROS(exprStr);
     it->print(exprROS);
     htmlFile << "    " << exprROS.str() << "<br />" << std::endl;
   }
-  htmlFile << "    </p>" << std::endl;
+  htmlFile << "    <br />" << std::endl;
 
-  htmlFile << "    <p><b>Output Symbols:</b><br />" << std::endl;
+  htmlFile << "    <b>Output Symbols:</b><br />" << std::endl;
   htmlFile << "    <table border='1'>" << std::endl;
   htmlFile << "      <tr><th>Name</th><th>Instances</th></tr>" << std::endl;
   for (auto it : path->getOutputSymbols()) {
@@ -358,7 +356,7 @@ void processPath(SPA::Path *path, unsigned long pathID) {
     htmlFile << "        </td>" << std::endl;
     htmlFile << "      </tr>" << std::endl;
   }
-  htmlFile << "    </table></p>" << std::endl;
+  htmlFile << "    </table><br />" << std::endl;
 
   dotFile << "digraph G {" << std::endl;
   for (auto it : participantByName) {
@@ -398,34 +396,33 @@ void processPath(SPA::Path *path, unsigned long pathID) {
              << std::endl;
     htmlFile << "      <h1>Symbol " << sit->getName() << "</h1>" << std::endl;
     if (sit->isInput()) {
-      htmlFile << "      <p><b>Type:</b> input</p>" << std::endl;
-      htmlFile << "      <p><b>Size:</b> " << sit->getInputArray()->size
-               << "</p>" << std::endl;
+      htmlFile << "      <b>Type:</b> input<br />" << std::endl;
+      htmlFile << "      <b>Size:</b> " << sit->getInputArray()->size
+               << "<br />" << std::endl;
       if (path->getTestInputs().count(sit->getName())) {
         std::stringstream value;
         copy(path->getTestInput(sit->getName()).begin(),
              path->getTestInput(sit->getName()).end(),
              std::ostream_iterator<int>(value, " "));
-        htmlFile << "      <p><b>Test Case Value:</b> " << value.str() << "</p>"
+        htmlFile << "      <b>Test Case Value:</b> " << value.str() << "<br />"
                  << std::endl;
       }
     } else if (sit->isOutput()) {
-      htmlFile << "      <p><b>Type:</b> output</p>" << std::endl;
-      htmlFile << "      <p><b>Size:</b> " << sit->getOutputValues().size()
-               << "</p>" << std::endl;
-      htmlFile << "      <p><b>Byte Values:</b>" << std::endl;
-      htmlFile << "        <table border='1'>" << std::endl;
-      htmlFile << "          <tr><th>Index</th><th>Expression</th></tr>"
+      htmlFile << "      <b>Type:</b> output<br />" << std::endl;
+      htmlFile << "      <b>Size:</b> " << sit->getOutputValues().size()
+               << "<br />" << std::endl;
+      htmlFile << "      <b>Byte Values:</b><br />" << std::endl;
+      htmlFile << "      <table border='1'>" << std::endl;
+      htmlFile << "        <tr><th>Index</th><th>Expression</th></tr>"
                << std::endl;
       for (unsigned long i = 0; i < sit->getOutputValues().size(); i++) {
         std::string exprStr;
         llvm::raw_string_ostream exprROS(exprStr);
         sit->getOutputValues()[i]->print(exprROS);
-        htmlFile << "          <tr><td>" << i << "</td><td>" << exprROS.str()
+        htmlFile << "        <tr><td>" << i << "</td><td>" << exprROS.str()
                  << "</td></tr>" << std::endl;
       }
-      htmlFile << "        </table>" << std::endl;
-      htmlFile << "      </p>" << std::endl;
+      htmlFile << "      </table>" << std::endl;
     } else {
       assert(false && "Unknown symbol type.");
     }
@@ -434,12 +431,11 @@ void processPath(SPA::Path *path, unsigned long pathID) {
 
   htmlFile << "    <a class='anchor' id='coverage'></a>" << std::endl;
   htmlFile << "    <h2>Coverage</h2>" << std::endl;
-  htmlFile << "    <p><b>Files:</b><br />" << std::endl;
+  htmlFile << "    <b>Files:</b><br />" << std::endl;
   for (auto it : path->getExploredLineCoverage()) {
-    htmlFile << "      <a href='#" << it.first << "'>" << it.first
-             << "</a><br />" << std::endl;
+    htmlFile << "    <a href='#" << it.first << "'>" << it.first << "</a><br />"
+             << std::endl;
   }
-  htmlFile << "    </p>" << std::endl;
 
   for (auto fit : path->getExploredLineCoverage()) {
     htmlFile << "    <div class='box' id='" << fit.first << "'>" << std::endl;
@@ -692,12 +688,11 @@ int main(int argc, char **argv, char **envp) {
   coverageHtml << "      <a href=\"coverage.html\">Coverage</a>" << std::endl;
   coverageHtml << "    </div>" << std::endl;
   coverageHtml << "    <h1>Coverage</h1>" << std::endl;
-  coverageHtml << "    <p><b>Files:</b><br />" << std::endl;
+  coverageHtml << "    <b>Files:</b><br />" << std::endl;
   for (auto it : coverage) {
     coverageHtml << "    <a href='#" << it.first << "'>" << it.first
                  << "</a><br />" << std::endl;
   }
-  coverageHtml << "    </p>" << std::endl;
 
   for (auto fit : coverage) {
     coverageHtml << "    <div class='box' id='" << fit.first << "'>"
@@ -740,24 +735,23 @@ int main(int argc, char **argv, char **envp) {
       coverageHtml << "      <h2>" << fit.first << ":" << lit.first << "</h2>"
                    << std::endl;
 
-      coverageHtml << "      <p><b>Other paths that reached here:</b><br />"
+      coverageHtml << "      <b>Other paths that reached here:</b><br />"
                    << std::endl;
       unsigned long counter = 1;
       for (auto pit : lit.second[true]) {
         coverageHtml << "      <a href='" << pit << ".html'>" << counter++
                      << "</a>" << std::endl;
       }
-      coverageHtml << "      </p>" << std::endl;
+      coverageHtml << "      <br />" << std::endl;
 
-      coverageHtml
-          << "      <p><b>Other paths that didn't reach here:</b><br />"
-          << std::endl;
+      coverageHtml << "      <b>Other paths that didn't reach here:</b><br />"
+                   << std::endl;
       counter = 1;
       for (auto pit : lit.second[false]) {
         coverageHtml << "      <a href='" << pit << ".html'>" << counter++
                      << "</a>" << std::endl;
       }
-      coverageHtml << "      </p>" << std::endl;
+      coverageHtml << "      <br />" << std::endl;
 
       coverageHtml << "    </div>" << std::endl;
     }
