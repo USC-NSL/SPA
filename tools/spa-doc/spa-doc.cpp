@@ -623,6 +623,10 @@ int main(int argc, char **argv, char **envp) {
   std::ofstream indexHtml(Directory + "/index.html.inc");
   assert(indexDot.good() && indexHtml.good());
 
+  indexHtml << "    <div id=\"header\">" << std::endl;
+  indexHtml << "      <a href=\"index.html\">Path Index</a>" << std::endl;
+  indexHtml << "      <a href=\"coverage.html\">Coverage</a>" << std::endl;
+  indexHtml << "    </div>" << std::endl;
   indexHtml << "    <img src='index.svg' usemap='#G' />" << std::endl;
 
   indexDot << "digraph G {" << std::endl;
@@ -680,6 +684,10 @@ int main(int argc, char **argv, char **envp) {
       << std::endl;
   coverageHtml << "  </head>" << std::endl;
   coverageHtml << "  <body>" << std::endl;
+  coverageHtml << "    <div id=\"header\">" << std::endl;
+  coverageHtml << "      <a href=\"index.html\">Path Index</a>" << std::endl;
+  coverageHtml << "      <a href=\"coverage.html\">Coverage</a>" << std::endl;
+  coverageHtml << "    </div>" << std::endl;
   coverageHtml << "    <h1>Coverage</h1>" << std::endl;
   coverageHtml << "    <p><b>Files:</b><br />" << std::endl;
   for (auto it : coverage) {
