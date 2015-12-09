@@ -313,7 +313,8 @@ void processPath(SPA::Path *path, unsigned long pathID) {
 
   htmlFile << "    <a class='anchor' id='messages'></a>" << std::endl;
   htmlFile << "    <h2>Message Log</h2>" << std::endl;
-  htmlFile << "    <img src='" << path->getUUID() << ".svg' usemap='#G' />"
+  htmlFile << "    <img src='" << path->getUUID()
+           << ".svg' alt='Message Sequence Diagram' usemap='#G' />"
            << std::endl;
 
   htmlFile << "    <a class='anchor' id='constraints'></a>" << std::endl;
@@ -627,7 +628,9 @@ int main(int argc, char **argv, char **envp) {
   indexHtml << "      <a href=\"index.html\">Path Index</a>" << std::endl;
   indexHtml << "      <a href=\"coverage.html\">Coverage</a>" << std::endl;
   indexHtml << "    </div>" << std::endl;
-  indexHtml << "    <img src='index.svg' usemap='#G' />" << std::endl;
+  indexHtml
+      << "    <img src='index.svg' alt='Path Dependency Graph' usemap='#G' />"
+      << std::endl;
 
   indexDot << "digraph G {" << std::endl;
   indexDot << "  root [label=\"Path 0\"]" << std::endl;
