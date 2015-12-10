@@ -64,4 +64,5 @@ void __attribute__((noinline, used)) spa_entry() {
   }
 
   kv_done();
+  return;
 }

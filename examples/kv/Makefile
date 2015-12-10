@@ -1,5 +1,5 @@
 TARGETS = kv-local kv-client kv-server
-CFLAGS = -Wall -g -std=c99 -I../../include
+CFLAGS = -Wall -O0 -g -std=c99 -I../../include
 SPA_HEADER = ../../include/spa/spaRuntime.h
 
 .SUFFIXES:
