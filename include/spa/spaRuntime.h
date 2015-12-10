@@ -56,6 +56,7 @@ void __attribute__((noinline, weak)) spa_cost(unsigned long cost) {
 #ifdef ENABLE_KLEE
 int32_t spa_seed_symbol_check(uint64_t pathID);
 void spa_seed_symbol(void *var, uint64_t pathID);
+int32_t spa_check_symbol(const char varName[]);
 void spa_snprintf3(char *out, unsigned size, const char *format,
                    const char *in1, const char *in2, unsigned long in3);
 #else
@@ -63,6 +64,9 @@ int32_t __attribute__((weak)) spa_seed_symbol_check(uint64_t pathID) {
   return 0;
 }
 void __attribute__((weak)) spa_seed_symbol(void *var, uint64_t pathID) {}
+int32_t __attribute__((weak)) spa_check_symbol(const char varName[]) {
+  return 0;
+}
 void __attribute__((weak))
     spa_snprintf3(char *out, unsigned size, const char *format, const char *in1,
                   const char *in2, unsigned long in3) {}

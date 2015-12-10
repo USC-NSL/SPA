@@ -110,6 +110,7 @@ static SpecialFunctionHandler::HandlerInfo handlerInfo[] = {
   add("_Znwm", handleNew, true),
   add("spa_seed_symbol_check", handleSpaSeedSymbolCheck, true),
   add("spa_seed_symbol", handleSpaSeedSymbol, false),
+  add("spa_check_symbol", handleSpaCheckSymbol, true),
   add("spa_runtime_call", handleSpaRuntimeCall, false),
   add("spa_snprintf3", handleSpaSnprintf3, false),
 #undef addDNR
@@ -1037,6 +1038,81 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
     }
   } else {
     assert(false && "Sender symbol neither input nor output.");
+  }
+}
+
+void SpecialFunctionHandler::handleSpaCheckSymbol(
+    ExecutionState &state, KInstruction *target,
+    std::vector<ref<Expr> > &arguments) {
+  assert(arguments.size() == 1 &&
+         "Invalid number of arguments to spa_check_symbol.");
+
+  std::string fullName = readStringAtAddress(state, arguments[0]);
+
+  if (!SPA::senderPaths || !state.senderPath) {
+    klee_message(
+        "Path doesn't have a symbol log yet. Considering %s as available.",
+        fullName.c_str());
+    executor.bindLocal(target, state, ConstantExpr::create(true, Expr::Int32));
+    return;
+  }
+
+  // Drop the participant and sequence number.
+  std::string baseName =
+      fullName.substr(0, fullName.rfind(SPA_SYMBOL_DELIMITER));
+  baseName = baseName.substr(0, baseName.rfind(SPA_SYMBOL_DELIMITER));
+
+  // Check if input mapped.
+  if (SPA::seedSymbolMappings.count(baseName)) { // Explicit mapping.
+    std::string senderName = SPA::seedSymbolMappings[baseName];
+    // Skip log entries until named symbol.
+    for (; state.senderLogPos != state.senderPath->getSymbolLog().end();
+         state.senderLogPos++) {
+      std::string symbolName = (*state.senderLogPos)->getName();
+      // Strip participant and sequence number from sender symbol as well.
+      symbolName = symbolName.substr(0, symbolName.rfind(SPA_SYMBOL_DELIMITER));
+      symbolName = symbolName.substr(0, symbolName.rfind(SPA_SYMBOL_DELIMITER));
+      if (symbolName == senderName) {
+        break;
+      }
+    }
+  } else if (SPA::connectSockets) {
+    if (baseName.compare(0, strlen(SPA_MESSAGE_INPUT_PREFIX),
+                         SPA_MESSAGE_INPUT_PREFIX) == 0) {
+      // Socket mapping in=out.
+      // Convert symbol name from in to out.
+      std::string senderPrefix =
+          std::string(SPA_MESSAGE_OUTPUT_PREFIX) +
+          baseName.substr(strlen(SPA_MESSAGE_INPUT_PREFIX)) + "_";
+      // Skip log entries until named symbol.
+      while (state.senderLogPos != state.senderPath->getSymbolLog().end() &&
+             (*state.senderLogPos)->getName().compare(0, senderPrefix.length(),
+                                                      senderPrefix) != 0) {
+        state.senderLogPos++;
+      }
+    } else if (baseName.compare(0, strlen(SPA_API_INPUT_PREFIX),
+                                SPA_API_INPUT_PREFIX) == 0) {
+      // API mapping in=in.
+      // Skip log entries until same symbol.
+      while (state.senderLogPos != state.senderPath->getSymbolLog().end() &&
+             fullName != (*state.senderLogPos)->getName()) {
+        state.senderLogPos++;
+      }
+    }
+  } else { // Not mapped, leave symbol unconstrained.
+    klee_message("%s is not connected. Considering as available.",
+                 fullName.c_str());
+    executor.bindLocal(target, state, ConstantExpr::create(true, Expr::Int32));
+    return;
+  }
+
+  // Check if log ran out.
+  if (state.senderLogPos == state.senderPath->getSymbolLog().end()) {
+    klee_message("%s is not available in log.", fullName.c_str());
+    executor.bindLocal(target, state, ConstantExpr::create(false, Expr::Int32));
+  } else {
+    klee_message("%s is available in log.", fullName.c_str());
+    executor.bindLocal(target, state, ConstantExpr::create(true, Expr::Int32));
   }
 }
 

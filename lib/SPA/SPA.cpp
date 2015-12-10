@@ -1166,8 +1166,13 @@ void SPA::onStateTerminateEarly(klee::ExecutionState *kState) {
   if (kState->filtered) {
     klee::klee_message("Filtered path destroyed.");
   } else {
+    bool logExhausted = !kState->isReplayingSpaLog();
+    if (outputLogExhausted && logExhausted) {
+      klee::klee_message("Processing path with exhausted symbol log.");
+    }
+
     terminalPathsFound++;
-    if (outputTerminalPaths) {
+    if (outputTerminalPaths || (outputLogExhausted && logExhausted)) {
       assert(kState);
       klee::klee_message("Processing terminal path.");
       processPath(kState);
@@ -1180,14 +1185,9 @@ void SPA::onStateTerminateError(klee::ExecutionState *kState) {
   klee::klee_message("State terminated with error at:");
   kState->dumpStack(llvm::errs());
 
-  bool logExhausted = false;
-  if (outputLogExhausted) {
-    llvm::Function *fn = kState->pc->inst->getParent()->getParent();
-    if (fn && fn->getName() == SPA_INPUT_ANNOTATION_FUNCTION &&
-        (!kState->isReplayingSpaLog())) {
-      klee::klee_message("Processing path with exhausted symbol log.");
-      logExhausted = true;
-    }
+  bool logExhausted = !kState->isReplayingSpaLog();
+  if (outputLogExhausted && logExhausted) {
+    klee::klee_message("Processing path with exhausted symbol log.");
   }
 
   terminalPathsFound++;
@@ -1203,8 +1203,14 @@ void SPA::onStateTerminateDone(klee::ExecutionState *kState) {
   klee::klee_message("State terminated naturally at:");
   kState->dumpStack(llvm::errs());
 
+  bool logExhausted = !kState->isReplayingSpaLog();
+  if (outputLogExhausted && logExhausted) {
+    klee::klee_message("Processing path with exhausted symbol log.");
+  }
+
   terminalPathsFound++;
-  if (outputTerminalPaths || outputDone) {
+  if (outputTerminalPaths || outputDone ||
+      (outputLogExhausted && logExhausted)) {
     assert(kState);
     klee::klee_message("Processing terminal path.");
     processPath(kState);
