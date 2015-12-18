@@ -1,8 +1,10 @@
 *.o
 *.bc
 *.bc.o
-kv-client
 kv-local
-kv-server
+kv-client-udp
+kv-client-tcp
+kv-server-udp
+kv-server-tcp
 *.paths
 *.log

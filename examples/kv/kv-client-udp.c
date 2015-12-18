@@ -61,13 +61,12 @@ value_t kv_get(key_t key) {
     inet_pton(AF_INET, servers[i].ip, &srvaddr.sin_addr);
     srvaddr.sin_port = htons(servers[i].port);
 
-    sendto(sockfd, &key, sizeof(key_t), 0, (struct sockaddr *)&srvaddr, sizeof(srvaddr));
+    sendto(sockfd, &key, sizeof(key_t), 0, (struct sockaddr *)&srvaddr,
+           sizeof(srvaddr));
   }
 
 #ifndef ENABLE_KLEE
-  struct timeval tv;
-  tv.tv_sec = 1;
-  tv.tv_usec = 0;
+  struct timeval tv = { 1, 0 };
   setsockopt(sockfd, SOL_SOCKET, SO_RCVTIMEO, (char *)&tv,
              sizeof(struct timeval));
 #endif

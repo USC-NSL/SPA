@@ -1,4 +1,4 @@
-TARGETS = kv-local kv-client kv-server
+TARGETS = kv-local kv-client-udp kv-server-udp kv-client-tcp kv-server-tcp
 CFLAGS = -Wall -O0 -g -std=c99 -I../../include
 SPA_HEADER = ../../include/spa/spaRuntime.h
 
@@ -18,12 +18,10 @@ default: $(TARGETS) $(TARGETS:=.bc)
 %.bc: %.bc.o
 	llvm-link -o $@ $^
 
-kv-local: kv-client-common.o
-kv-client: kv-client-common.o
-kv-server: kv-local.o
-kv-local.bc: kv-client-common.bc.o
-kv-client.bc: kv-client-common.bc.o
-kv-server.bc: kv-local.bc.o
+kv-local kv-client-udp kv-client-tcp: kv-client-common.o
+kv-server-udp kv-server-tcp: kv-local.o
+kv-local.bc kv-client-udp.bc kv-client-tcp.bc: kv-client-common.bc.o
+kv-server-udp.bc kv-server-tcp.bc: kv-local.bc.o
 
 clean:
 	rm -f $(TARGETS) $(TARGETS:=.bc) *.o
