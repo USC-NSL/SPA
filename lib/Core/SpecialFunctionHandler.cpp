@@ -1063,12 +1063,13 @@ void SpecialFunctionHandler::handleSpaCheckSymbol(
   baseName = baseName.substr(0, baseName.rfind(SPA_SYMBOL_DELIMITER));
 
   // Check if input mapped.
+  auto senderLogPos = state.senderLogPos;
   if (SPA::seedSymbolMappings.count(baseName)) { // Explicit mapping.
     std::string senderName = SPA::seedSymbolMappings[baseName];
     // Skip log entries until named symbol.
-    for (; state.senderLogPos != state.senderPath->getSymbolLog().end();
-         state.senderLogPos++) {
-      std::string symbolName = (*state.senderLogPos)->getName();
+    for (; senderLogPos != state.senderPath->getSymbolLog().end();
+         senderLogPos++) {
+      std::string symbolName = (*senderLogPos)->getName();
       // Strip participant and sequence number from sender symbol as well.
       symbolName = symbolName.substr(0, symbolName.rfind(SPA_SYMBOL_DELIMITER));
       symbolName = symbolName.substr(0, symbolName.rfind(SPA_SYMBOL_DELIMITER));
@@ -1085,18 +1086,18 @@ void SpecialFunctionHandler::handleSpaCheckSymbol(
           std::string(SPA_MESSAGE_OUTPUT_PREFIX) +
           baseName.substr(strlen(SPA_MESSAGE_INPUT_PREFIX)) + "_";
       // Skip log entries until named symbol.
-      while (state.senderLogPos != state.senderPath->getSymbolLog().end() &&
-             (*state.senderLogPos)->getName().compare(0, senderPrefix.length(),
-                                                      senderPrefix) != 0) {
-        state.senderLogPos++;
+      while (senderLogPos != state.senderPath->getSymbolLog().end() &&
+             (*senderLogPos)->getName().compare(0, senderPrefix.length(),
+                                                senderPrefix) != 0) {
+        senderLogPos++;
       }
     } else if (baseName.compare(0, strlen(SPA_API_INPUT_PREFIX),
                                 SPA_API_INPUT_PREFIX) == 0) {
       // API mapping in=in.
       // Skip log entries until same symbol.
-      while (state.senderLogPos != state.senderPath->getSymbolLog().end() &&
-             fullName != (*state.senderLogPos)->getName()) {
-        state.senderLogPos++;
+      while (senderLogPos != state.senderPath->getSymbolLog().end() &&
+             fullName != (*senderLogPos)->getName()) {
+        senderLogPos++;
       }
     }
   } else { // Not mapped, leave symbol unconstrained.
@@ -1107,7 +1108,7 @@ void SpecialFunctionHandler::handleSpaCheckSymbol(
   }
 
   // Check if log ran out.
-  if (state.senderLogPos == state.senderPath->getSymbolLog().end()) {
+  if (senderLogPos == state.senderPath->getSymbolLog().end()) {
     klee_message("%s is not available in log.", fullName.c_str());
     executor.bindLocal(target, state, ConstantExpr::create(false, Expr::Int32));
   } else {
