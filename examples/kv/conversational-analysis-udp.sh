@@ -16,9 +16,8 @@ spa-explore \
     --output-when-log-exhausted \
     --output-at kv_done \
     --participant kv-client \
-    kv-client.bc \
+    kv-client-udp.bc \
     2>&1 | tee kv-client.log &
-CLIENT_PID=$!
 
 # gdb --args \
 spa-explore \
@@ -31,9 +30,8 @@ spa-explore \
     --toward spa_msg_output_point \
     --output-at spa_msg_output_point \
     --participant kv-server-1 \
-    kv-server.bc \
+    kv-server-udp.bc \
     2>&1 | tee kv-server1.log &
-SERVER1_PID=$!
 
 # gdb --args \
 spa-explore \
@@ -46,9 +44,8 @@ spa-explore \
     --toward spa_msg_output_point \
     --output-at spa_msg_output_point \
     --participant kv-server-2 \
-    kv-server.bc \
+    kv-server-udp.bc \
     2>&1 | tee kv-server2.log &
-SERVER2_PID=$!
 
 # gdb --args \
 spa-explore \
@@ -61,8 +58,9 @@ spa-explore \
     --toward spa_msg_output_point \
     --output-at spa_msg_output_point \
     --participant kv-server-3 \
-    kv-server.bc \
+    kv-server-udp.bc \
     2>&1 | tee kv-server3.log &
-SERVER3_PID=$!
+
+trap 'kill $(jobs -p)' EXIT
 
 wait
