@@ -40,6 +40,11 @@ void __attribute__((noinline, weak)) spa_msg_input_point() {
   static uint8_t i = 0;
   i++;
 }
+void __attribute__((noinline, weak)) spa_msg_no_input_point() {
+  // Complicated NOP to prevent inlining.
+  static uint8_t i = 0;
+  i++;
+}
 void __attribute__((noinline, weak)) spa_valid_path_point() {
   // Complicated NOP to prevent inlining.
   static uint8_t i = 0;
@@ -255,7 +260,7 @@ void __attribute__((noinline, weak))
 
   static int64_t pathID = -1;
   if (pathID < 0) {
-    uint64_t choice = 0;
+    int64_t choice = 0;
     klee_make_symbolic(&choice, sizeof(choice), "spa_internal_PathID");
     for (pathID = 0; spa_seed_symbol_check(pathID); pathID++) {
       if (pathID == choice) {

@@ -1291,7 +1291,7 @@ ssize_t readlink(const char *path, char *buf, size_t bufsize) {
 #define	FD_CLR(n, p)	((p)->fds_bits[(n)/NFDBITS] &= ~(1 << ((n) % NFDBITS)))
 #define	FD_ISSET(n, p)	((p)->fds_bits[(n)/NFDBITS] & (1 << ((n) % NFDBITS)))
 #define FD_ZERO(p)	memset((char *)(p), '\0', sizeof(*(p)))
-int select(int nfds, fd_set *read, fd_set *write,
+int file_select(int nfds, fd_set *read, fd_set *write,
            fd_set *except, struct timeval *timeout) {
   fd_set in_read, in_write, in_except, os_read, os_write, os_except;
   int i, count = 0, os_nfds = 0;

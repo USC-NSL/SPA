@@ -1,0 +1,237 @@
+#include <string.h>
+#include <assert.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+
+#define ENABLE_SPA
+#define ENABLE_KLEE
+#include <spa/spaRuntime.h>
+
+struct {
+  int type;
+  struct sockaddr_in bind_addr;
+  struct sockaddr_in connect_addr;
+} sockets[10];
+int next_available_sockfd = 0;
+
+int spa_socket(int family, int type, int protocol) {
+  memset(&sockets[next_available_sockfd], 0,
+         sizeof(sockets[next_available_sockfd]));
+
+  // Bind default IP.
+  sockets[next_available_sockfd].bind_addr.sin_family = AF_INET;
+  inet_pton(AF_INET, spa_internal_defaultBindAddr,
+            &sockets[next_available_sockfd].bind_addr.sin_addr);
+  // Generate default port from socket number.
+  sockets[next_available_sockfd].bind_addr.sin_port =
+      htons(10000 + next_available_sockfd);
+
+  return next_available_sockfd++;
+}
+
+int spa_bind(int sockfd, const struct sockaddr *myaddr, socklen_t addrlen) {
+  memcpy(&sockets[sockfd].bind_addr, myaddr, addrlen);
+
+  // Bind default IP if none given.
+  if (sockets[sockfd].bind_addr.sin_addr.s_addr == htonl(INADDR_ANY)) {
+    struct in_addr default_bind_addr;
+    inet_pton(AF_INET, spa_internal_defaultBindAddr, &default_bind_addr);
+    sockets[sockfd].bind_addr.sin_addr = default_bind_addr;
+  }
+
+  return 0;
+}
+
+int listen(int sockfd, int backlog) {
+  assert(0 && "Using POSIX model.");
+  return 0;
+}
+
+int connect(int sockfd, const struct sockaddr *saddr, socklen_t addrlen) {
+  char addr[100], src_name[100], srcsize_name[100];
+
+  memcpy(&sockets[sockfd].connect_addr, saddr, addrlen);
+
+  assert(sockets[sockfd].connect_addr.sin_family == AF_INET);
+  inet_ntop(AF_INET, &sockets[sockfd].connect_addr.sin_addr.s_addr, addr,
+            sizeof(addr));
+  // snprintf(src_name, sizeof(src_name), "spa_out_msg_src_%s.%d",
+  //          addr, ntohs(sockets[sockfd].connect_addr.sin_port));
+  spa_snprintf3(src_name, sizeof(src_name), "%s_%s.%d", "spa_out_msg_src", addr,
+                ntohs(sockets[sockfd].connect_addr.sin_port));
+  // snprintf(srcsize_name, sizeof(srcsize_name), "spa_out_msg_size_src_%s.%d",
+  //          addr, ntohs(sockets[sockfd].connect_addr.sin_port));
+  spa_snprintf3(srcsize_name, sizeof(srcsize_name), "%s_%s.%d",
+                "spa_out_msg_size_src", addr,
+                ntohs(sockets[sockfd].connect_addr.sin_port));
+
+  __spa_output((void *)&sockets[sockfd].bind_addr, sizeof(struct sockaddr_in),
+               sizeof(struct sockaddr_in), src_name, srcsize_name);
+
+  return 0;
+}
+
+int accept(int s, struct sockaddr *addr, socklen_t *addrlen) {
+  assert(0 && "Using POSIX model.");
+  static char addr_str[100], src_name[100], init_src_name[100];
+  static uint8_t **init_src_value = NULL;
+
+  inet_ntop(AF_INET, &sockets[s].bind_addr.sin_addr.s_addr, addr_str,
+            sizeof(addr_str));
+  // snprintf(src_name, sizeof(src_name), "spa_in_msg_src_%s.%d",
+  //          addr_str, ntohs(sockets[s].bind_addr.sin_port));
+  snprintf(src_name, sizeof(src_name), "%s_%s.%d", "spa_in_msg_src", addr_str,
+           ntohs(sockets[s].bind_addr.sin_port));
+  // snprintf(init_src_name, sizeof(init_src_name), "spa_init_in_msg_src_%s.%d",
+  //          addr_str, ntohs(sockets[s].bind_addr.sin_port));
+  spa_snprintf3(init_src_name, sizeof(init_src_name), "%s_%s.%d",
+                "spa_init_in_msg_src", addr_str,
+                ntohs(sockets[s].bind_addr.sin_port));
+
+  if (spa_check_symbol(src_name)) {
+    if (addr && addrlen) {
+      assert(*addrlen >= sizeof(struct sockaddr_in));
+      spa_input(addr, sizeof(struct sockaddr_in), src_name, &init_src_value,
+                init_src_name);
+      for (unsigned int i = 0; i < *addrlen; i++) {
+        ((char *)addr)[i] = klee_get_value_i32(((char *)addr)[i]);
+      }
+      *addrlen = sizeof(struct sockaddr_in);
+    }
+
+    // Keep bind address from parent socket.
+    memcpy(&sockets[next_available_sockfd].bind_addr, &sockets[s].bind_addr,
+           sizeof(struct sockaddr_in));
+    // Get connect address from received symbol.
+    memcpy(&sockets[next_available_sockfd].connect_addr, addr,
+           sizeof(struct sockaddr_in));
+
+    return next_available_sockfd++;
+  } else {
+    spa_msg_no_input_point();
+    return -1;
+  }
+}
+
+ssize_t send(int sockfd, const void *buffer, size_t len, int flags) {
+  return (sendto(sockfd, buffer, len, flags, NULL, 0));
+}
+
+ssize_t sendto(int sockfd, const void *buffer, size_t len, int flags,
+               const struct sockaddr *to, socklen_t tolen) {
+  char addr[100], msg_name[100], size_name[100], src_name[100],
+      srcsize_name[100];
+
+  if (!to) {
+    to = (const struct sockaddr *)&sockets[sockfd].connect_addr;
+  }
+
+  assert(to->sa_family == AF_INET);
+  inet_ntop(AF_INET, &((struct sockaddr_in *)to)->sin_addr.s_addr, addr,
+            sizeof(addr));
+  // snprintf(msg_name, sizeof(msg_name), "spa_out_msg_%s.%d",
+  //          addr, ntohs(((struct sockaddr_in *) to)->sin_port));
+  spa_snprintf3(msg_name, sizeof(msg_name), "%s_%s.%d", "spa_out_msg", addr,
+                ntohs(((struct sockaddr_in *)to)->sin_port));
+  // snprintf(size_name, sizeof(size_name), "spa_out_msg_size_%s.%d",
+  //          addr, ntohs(((struct sockaddr_in *) to)->sin_port));
+  spa_snprintf3(size_name, sizeof(size_name), "%s_%s.%d", "spa_out_msg_size",
+                addr, ntohs(((struct sockaddr_in *)to)->sin_port));
+  // snprintf(src_name, sizeof(src_name), "spa_out_msg_src_%s.%d",
+  //          addr, ntohs(((struct sockaddr_in *) to)->sin_port));
+  spa_snprintf3(src_name, sizeof(src_name), "%s_%s.%d", "spa_out_msg_src", addr,
+                ntohs(((struct sockaddr_in *)to)->sin_port));
+  // snprintf(srcsize_name, sizeof(srcsize_name), "spa_out_msg_size_src_%s.%d",
+  //          addr, ntohs(((struct sockaddr_in *) to)->sin_port));
+  spa_snprintf3(srcsize_name, sizeof(srcsize_name), "%s_%s.%d",
+                "spa_out_msg_size_src", addr,
+                ntohs(((struct sockaddr_in *)to)->sin_port));
+
+  __spa_output((void *)buffer, len, 1500, msg_name, size_name);
+  spa_runtime_call(spa_msg_output_handler, buffer, len, 1500, msg_name);
+
+  __spa_output((void *)&sockets[sockfd].bind_addr, sizeof(struct sockaddr_in),
+               sizeof(struct sockaddr_in), src_name, srcsize_name);
+
+  spa_msg_output_point();
+
+  return len;
+}
+
+ssize_t recv(int sockfd, __ptr_t buffer, size_t len, int flags) {
+  assert(0 && "Using POSIX model.");
+  return (recvfrom(sockfd, buffer, len, flags, NULL, NULL));
+}
+
+ssize_t recvfrom(int sockfd, __ptr_t buffer, size_t len, int flags,
+                 struct sockaddr *src, socklen_t *srclen) {
+  static char addr[100], msg_name[100], init_msg_name[100], size_name[100],
+      init_size_name[100], src_name[100], init_src_name[100];
+  static uint8_t **init_msg_value = NULL, **init_size_value = NULL,
+                 **init_src_value = NULL;
+  int64_t size = 0;
+
+  inet_ntop(AF_INET, &sockets[sockfd].bind_addr.sin_addr.s_addr, addr,
+            sizeof(addr));
+  // snprintf(msg_name, sizeof(msg_name), "spa_in_msg_%s.%d",
+  //          addr, ntohs(sockets[sockfd].bind_addr.sin_port));
+  spa_snprintf3(msg_name, sizeof(msg_name), "%s_%s.%d", "spa_in_msg", addr,
+                ntohs(sockets[sockfd].bind_addr.sin_port));
+  // snprintf(init_msg_name, sizeof(init_msg_name), "spa_init_in_msg_%s.%d",
+  //          addr, ntohs(sockets[sockfd].bind_addr.sin_port));
+  spa_snprintf3(init_msg_name, sizeof(init_msg_name), "%s_%s.%d",
+                "spa_init_in_msg", addr,
+                ntohs(sockets[sockfd].bind_addr.sin_port));
+  // snprintf(size_name, sizeof(size_name), "spa_in_msg_size_%s.%d",
+  //          addr, ntohs(sockets[sockfd].bind_addr.sin_port));
+  spa_snprintf3(size_name, sizeof(size_name), "%s_%s.%d", "spa_in_msg_size",
+                addr, ntohs(sockets[sockfd].bind_addr.sin_port));
+  // snprintf(init_size_name, sizeof(init_size_name),
+  //          "spa_init_in_msg_size_%s.%d",
+  //          addr, ntohs(sockets[sockfd].bind_addr.sin_port));
+  spa_snprintf3(init_size_name, sizeof(init_size_name), "%s_%s.%d",
+                "spa_init_in_msg_size", addr,
+                ntohs(sockets[sockfd].bind_addr.sin_port));
+  // snprintf(src_name, sizeof(src_name), "spa_in_msg_src_%s.%d",
+  //          addr, ntohs(sockets[sockfd].bind_addr.sin_port));
+  snprintf(src_name, sizeof(src_name), "%s_%s.%d", "spa_in_msg_src", addr,
+           ntohs(sockets[sockfd].bind_addr.sin_port));
+  // snprintf(init_src_name, sizeof(init_src_name), "spa_init_in_msg_src_%s.%d",
+  //          addr, ntohs(sockets[sockfd].bind_addr.sin_port));
+  spa_snprintf3(init_src_name, sizeof(init_src_name), "%s_%s.%d",
+                "spa_init_in_msg_src", addr,
+                ntohs(sockets[sockfd].bind_addr.sin_port));
+
+  if (spa_check_symbol(msg_name)) {
+    spa_input(buffer, len, msg_name, &init_msg_value, init_msg_name);
+    spa_runtime_call(spa_msg_input_handler, buffer, len, msg_name);
+
+    spa_input(&size, sizeof(size), size_name, &init_size_value, init_size_name);
+    spa_runtime_call(spa_msg_input_size_handler, &size, sizeof(size),
+                     size_name);
+    spa_assume(size > 0);
+
+    if (src && srclen) {
+      assert(*srclen >= sizeof(struct sockaddr_in));
+      spa_input(src, sizeof(struct sockaddr_in), src_name, &init_src_value,
+                init_src_name);
+      for (unsigned int i = 0; i < *srclen; i++) {
+        ((char *)src)[i] = klee_get_value_i32(((char *)src)[i]);
+      }
+      *srclen = sizeof(struct sockaddr_in);
+    }
+
+    spa_tag(MsgReceived, "1");
+    spa_msg_input_point();
+
+    return size;
+  } else {
+    spa_msg_no_input_point();
+    return -1;
+  }
+}
+
+int select(int nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds,
+           struct timeval *timeout) {
+  return -1;
+}

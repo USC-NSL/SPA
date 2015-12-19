@@ -516,6 +516,10 @@ llvm::Module *SPA::getModuleFromFile(std::string moduleFile) {
   mainModule = klee::linkWithLibrary(mainModule, modelFile.c_str());
   assert(mainModule && "Unable to link with simple model.");
 
+  // Replace klee-uClibc functions with spa model.
+  replaceOrRenameFunction(mainModule, "socket", "spa_socket");
+  replaceOrRenameFunction(mainModule, "bind", "spa_bind");
+
   return mainModule;
 }
 
