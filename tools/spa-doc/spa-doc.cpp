@@ -39,7 +39,7 @@ llvm::cl::opt<std::string> InFileName(llvm::cl::Positional, llvm::cl::Required,
 
 typedef struct {
   std::string name;
-  std::string ipPort;
+  std::set<std::string> ipPort;
 } participant_t;
 #define API_PREFIX "api_"
 
@@ -115,10 +115,10 @@ void processPath(SPA::Path *path, unsigned long pathID) {
         klee::klee_message("  Found participant: %s", it->getName().c_str());
       }
       participantByName[it->getName()].reset(new participant_t {
-        it->getName(), ""
+        it->getName(), std::set<std::string>()
       });
       participantByName[API_PREFIX + it->getName()].reset(new participant_t {
-        API_PREFIX + it->getName(), ""
+        API_PREFIX + it->getName(), std::set<std::string>()
       });
     }
   }
@@ -150,15 +150,13 @@ void processPath(SPA::Path *path, unsigned long pathID) {
         ipPort = std::string(srcTxt) + ":" + SPA::numToStr(ntohs(src.sin_port));
       }
 
-      assert(participantByName.count(participant) &&
-             (participantByName[participant]->ipPort.empty() ||
-              participantByName[participant]->ipPort == ipPort));
+      assert(participantByName.count(participant));
 
       if (Debug) {
         klee::klee_message("  Participant %s listens on: %s",
                            participant.c_str(), ipPort.c_str());
       }
-      participantByName[participant]->ipPort = ipPort;
+      participantByName[participant]->ipPort.insert(ipPort);
       participantByIpPort[ipPort] = participantByName[participant];
     }
   }
@@ -175,7 +173,9 @@ void processPath(SPA::Path *path, unsigned long pathID) {
         }
         std::string name = "Unknown-" + SPA::numToStr(unknownId++);
         participantByName[name].reset(new participant_t {
-          name, ipPort
+          name, std::set<std::string>({
+            ipPort
+          })
         });
         participantByIpPort[ipPort] = participantByName[name];
       }
@@ -251,10 +251,16 @@ void processPath(SPA::Path *path, unsigned long pathID) {
                                    SPA_MESSAGE_OUTPUT_SIZE_PREFIX) == 0 ||
             sit->getName().compare(0, strlen(SPA_MESSAGE_OUTPUT_SOURCE_PREFIX),
                                    SPA_MESSAGE_OUTPUT_SOURCE_PREFIX) == 0) {
-          assert(messages.back()->from == participantByName[participant] &&
-                 messages.back()->to ==
-                     participantByIpPort[getIpPort(sit.get())]);
-          messages.back()->symbolNames.insert(sit->getName());
+          if (messages.back()->from == participantByName[participant] &&
+              messages.back()->to ==
+                  participantByIpPort[getIpPort(sit.get())]) {
+            messages.back()->symbolNames.insert(sit->getName());
+          } else {
+            messages.emplace_back(new message_t());
+            messages.back()->from = participantByName[participant];
+            messages.back()->to = participantByIpPort[getIpPort(sit.get())];
+            messages.back()->symbolNames.insert(sit->getName());
+          }
         } else {
           messages.emplace_back(new message_t());
           messages.back()->from = participantByName[participant];
@@ -365,13 +371,16 @@ void processPath(SPA::Path *path, unsigned long pathID) {
   htmlFile << "    </table><br />" << std::endl;
 
   dotFile << "digraph G {" << std::endl;
-  for (auto it : participantByName) {
-    std::string participantToken = sanitizeToken(it.first);
-    if (it.first.compare(0, strlen(API_PREFIX), API_PREFIX) == 0) {
+  for (auto pit : participantByName) {
+    std::string participantToken = sanitizeToken(pit.first);
+    if (pit.first.compare(0, strlen(API_PREFIX), API_PREFIX) == 0) {
       dotFile << "  " << participantToken << " [style=\"invis\"]" << std::endl;
     } else {
-      dotFile << "  " << participantToken << " [label=\"" << it.first << "\\n"
-              << it.second->ipPort << "\"]" << std::endl;
+      dotFile << "  " << participantToken << " [label=\"" << pit.first << "\\n";
+      for (auto ipit : pit.second->ipPort) {
+        dotFile << ipit << "\\n";
+      }
+      dotFile << "\"]" << std::endl;
     }
   }
 
