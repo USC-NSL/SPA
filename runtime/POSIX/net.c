@@ -42,8 +42,7 @@ int spa_bind(int sockfd, const struct sockaddr *myaddr, socklen_t addrlen) {
   return 0;
 }
 
-int listen(int sockfd, int backlog) {
-  assert(0 && "Using POSIX model.");
+int spa_listen(int sockfd, int backlog) {
   return 0;
 }
 
@@ -72,7 +71,6 @@ int connect(int sockfd, const struct sockaddr *saddr, socklen_t addrlen) {
 }
 
 int accept(int s, struct sockaddr *addr, socklen_t *addrlen) {
-  assert(0 && "Using POSIX model.");
   static char addr_str[100], src_name[100], init_src_name[100];
   static uint8_t **init_src_value = NULL;
 
@@ -159,7 +157,6 @@ ssize_t sendto(int sockfd, const void *buffer, size_t len, int flags,
 }
 
 ssize_t recv(int sockfd, __ptr_t buffer, size_t len, int flags) {
-  assert(0 && "Using POSIX model.");
   return (recvfrom(sockfd, buffer, len, flags, NULL, NULL));
 }
 
@@ -233,5 +230,6 @@ ssize_t recvfrom(int sockfd, __ptr_t buffer, size_t len, int flags,
 
 int select(int nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds,
            struct timeval *timeout) {
+  assert(0 && "Not implemented.");
   return -1;
 }

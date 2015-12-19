@@ -519,6 +519,7 @@ llvm::Module *SPA::getModuleFromFile(std::string moduleFile) {
   // Replace klee-uClibc functions with spa model.
   replaceOrRenameFunction(mainModule, "socket", "spa_socket");
   replaceOrRenameFunction(mainModule, "bind", "spa_bind");
+  replaceOrRenameFunction(mainModule, "listen", "spa_listen");
 
   return mainModule;
 }
