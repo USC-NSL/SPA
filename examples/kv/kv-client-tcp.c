@@ -14,6 +14,11 @@
 #define R 2
 #define W 2
 
+#ifdef ENABLE_KLEE
+#undef FD_ZERO
+#define FD_ZERO(fdset) memset(fdset, 0, sizeof(fd_set))
+#endif
+
 struct {
   const char *ip;
   short port;
