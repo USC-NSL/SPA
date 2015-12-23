@@ -133,9 +133,10 @@ namespace klee {
     HANDLER(handleWarning);
     HANDLER(handleWarningOnce);
 
-    HANDLER(handleSpaSeedSymbolCheck);
-    HANDLER(handleSpaSeedSymbol);
+    HANDLER(handleSpaCheckPath);
+    HANDLER(handleSpaLoadPath);
     HANDLER(handleSpaCheckSymbol);
+    HANDLER(handleSpaSeedSymbol);
     HANDLER(handleSpaSnprintf3);
     HANDLER(handleSpaRuntimeCall);
 #undef HANDLER

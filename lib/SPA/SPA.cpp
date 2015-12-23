@@ -711,6 +711,15 @@ void SPA::addEntryFunction(llvm::Function *fn) {
       llvm::ConstantInt::get(module->getContext(),
                              llvm::APInt(32, entryHandlerID++, true)),
       swBB);
+  // Add call to spa_path_fork before calling entry handler.
+  llvm::Function *spaPathForkFunction =
+      module->getFunction(SPA_PATH_FORK_FUNCTION);
+  assert(spaPathForkFunction && "spa_path_fork not defined in module.");
+  // spa_path_fork();
+  llvm::CallInst *spaPathForkCallInst =
+      llvm::CallInst::Create(spaPathForkFunction, "", swBB);
+  spaPathForkCallInst->setCallingConv(llvm::CallingConv::C);
+  spaPathForkCallInst->setTailCall(false);
   // handlerx();
   llvm::CallInst *handlerCallInst = llvm::CallInst::Create(fn, "", swBB);
   handlerCallInst->setCallingConv(llvm::CallingConv::C);
