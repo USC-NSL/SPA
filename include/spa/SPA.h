@@ -27,6 +27,7 @@
 #define SPA_CHECKPOINT_ANNOTATION_FUNCTION "spa_checkpoint"
 #define SPA_WAYPOINT_ANNOTATION_FUNCTION "spa_waypoint"
 #define SPA_RETURN_ANNOTATION_FUNCTION "spa_return"
+#define SPA_PATH_FORK_FUNCTION "spa_path_fork"
 #define SPA_INPUT_ANNOTATION_FUNCTION "spa_input"
 #define SPA_COST_ANNOTATION_FUNCTION "spa_cost"
 // #define SPA_SEED_ANNOTATION_FUNCTION			"spa_seed"
@@ -157,9 +158,7 @@ public:
   void setOutputTerminalPaths(bool _outputTerminalPaths) {
     outputTerminalPaths = _outputTerminalPaths;
   }
-  void setOutputDone(bool _outputDone) {
-    outputDone = _outputDone;
-  }
+  void setOutputDone(bool _outputDone) { outputDone = _outputDone; }
   void setOutputLogExhausted(bool _outputLogExhausted) {
     outputLogExhausted = _outputLogExhausted;
   }

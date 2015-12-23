@@ -59,19 +59,19 @@ void __attribute__((noinline, weak)) spa_cost(unsigned long cost) {
 }
 
 #ifdef ENABLE_KLEE
-int32_t spa_seed_symbol_check(uint64_t pathID);
-void spa_seed_symbol(void *var, uint64_t pathID);
+int32_t spa_check_path(uint64_t pathID);
+void spa_load_path(uint64_t pathID);
 int32_t spa_check_symbol(const char varName[]);
+void spa_seed_symbol(void *var, uint64_t pathID);
 void spa_snprintf3(char *out, unsigned size, const char *format,
                    const char *in1, const char *in2, unsigned long in3);
 #else
-int32_t __attribute__((weak)) spa_seed_symbol_check(uint64_t pathID) {
-  return 0;
-}
-void __attribute__((weak)) spa_seed_symbol(void *var, uint64_t pathID) {}
+int32_t __attribute__((weak)) spa_check_path(uint64_t pathID) { return 0; }
+void __attribute__((weak)) spa_load_path(uint64_t pathID) {}
 int32_t __attribute__((weak)) spa_check_symbol(const char varName[]) {
   return 0;
 }
+void __attribute__((weak)) spa_seed_symbol(void *var, uint64_t pathID) {}
 void __attribute__((weak))
     spa_snprintf3(char *out, unsigned size, const char *format, const char *in1,
                   const char *in2, unsigned long in3) {}
@@ -235,10 +235,24 @@ SpaTag_t __attribute__((weak)) MsgReceived;
 __attribute__((weak)) const char *spa_internal_participantName = "(unknown)";
 __attribute__((weak)) const char *spa_internal_defaultBindAddr = "127.0.0.1";
 __attribute__((weak)) uint64_t spa_internal_io_sequence_number = 0;
+__attribute__((weak)) int64_t pathID = -1;
 
 #ifdef __cplusplus
 extern "C" {
 #endif // #ifdef __cplusplus
+void __attribute__((noinline, weak)) spa_path_fork() {
+  int64_t choice = 0;
+  klee_make_symbolic(&choice, sizeof(choice), "spa_internal_PathID");
+  for (pathID = 0; spa_check_path(pathID); pathID++) {
+    if (pathID == choice) {
+      spa_load_path(pathID);
+      break;
+    } else {
+      // spa_cost(1000000);
+    }
+  }
+}
+
 void __attribute__((noinline, weak))
     spa_input(void *var, size_t size, const char varName[],
               uint8_t ***initialValue, const char initialValueName[]) {
@@ -258,21 +272,7 @@ void __attribute__((noinline, weak))
   uint8_t *symbol = (uint8_t *)malloc(size);
   klee_make_symbolic(symbol, size, fullVarName);
 
-  static int64_t pathID = -1;
-  if (pathID < 0) {
-    int64_t choice = 0;
-    klee_make_symbolic(&choice, sizeof(choice), "spa_internal_PathID");
-    for (pathID = 0; spa_seed_symbol_check(pathID); pathID++) {
-      if (pathID == choice) {
-        spa_seed_symbol(symbol, pathID);
-        break;
-      } else {
-        //         spa_cost(1000000);
-      }
-    }
-  } else {
-    spa_seed_symbol(symbol, pathID);
-  }
+  spa_seed_symbol(symbol, pathID);
 
   // Check if initial assumptions are specified.
   klee_assert(initialValue);
