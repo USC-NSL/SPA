@@ -13,7 +13,7 @@ extern PathLoader *senderPaths;
 double JSEUtility::getUtility(klee::ExecutionState *state) {
   assert(state);
 
-  // Find teh sender path ID for the current state.
+  // Find the sender path ID for the current state.
   int64_t pathID = -1;
   for (auto it : state->constraints) {
     if (klee::EqExpr *eqExpr = llvm::dyn_cast<klee::EqExpr>(it)) {
