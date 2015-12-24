@@ -86,7 +86,7 @@ value_t kv_get(key_t key) {
   struct timeval tv = { 0, 0 };
   assert(select(max_fd + 1, NULL, &set, NULL, &tv) >= 0);
   for (unsigned i = 0; i < sizeof(servers) / sizeof(servers[0]); i++) {
-    if (FD_ISSET(sockfd[i], &set)) {
+    if (sockfd[i] >= 0 && FD_ISSET(sockfd[i], &set)) {
       send(sockfd[i], &key, sizeof(key_t), 0);
     }
   }
@@ -107,7 +107,7 @@ value_t kv_get(key_t key) {
     assert(select(max_fd + 1, &set, NULL, NULL, &tv) >= 0);
 
     for (unsigned i = 0; i < sizeof(servers) / sizeof(servers[0]); i++) {
-      if (FD_ISSET(sockfd[i], &set)) {
+      if (sockfd[i] >= 0 && FD_ISSET(sockfd[i], &set)) {
         selected_server = i;
         break;
       }
@@ -170,7 +170,7 @@ void kv_set(key_t key, value_t value) {
   struct timeval tv = { 1, 0 };
   assert(select(max_fd + 1, NULL, &set, NULL, &tv) >= 0);
   for (unsigned i = 0; i < sizeof(servers) / sizeof(servers[0]); i++) {
-    if (FD_ISSET(sockfd[i], &set)) {
+    if (sockfd[i] >= 0 && FD_ISSET(sockfd[i], &set)) {
       char msg[sizeof(key_t) + sizeof(value_t)];
       *((key_t *)&msg[0]) = key;
       *((value_t *)&msg[sizeof(key_t)]) = value;
@@ -195,7 +195,7 @@ void kv_set(key_t key, value_t value) {
     assert(select(max_fd + 1, &set, NULL, NULL, &tv) >= 0);
 
     for (unsigned i = 0; i < sizeof(servers) / sizeof(servers[0]); i++) {
-      if (FD_ISSET(sockfd[i], &set)) {
+      if (sockfd[i] >= 0 && FD_ISSET(sockfd[i], &set)) {
         selected_server = i;
         break;
       }
