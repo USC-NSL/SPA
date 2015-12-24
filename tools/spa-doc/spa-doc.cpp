@@ -255,11 +255,6 @@ void processPath(SPA::Path *path, unsigned long pathID) {
               messages.back()->to ==
                   participantByIpPort[getIpPort(sit.get())]) {
             messages.back()->symbolNames.insert(sit->getName());
-          } else {
-            messages.emplace_back(new message_t());
-            messages.back()->from = participantByName[participant];
-            messages.back()->to = participantByIpPort[getIpPort(sit.get())];
-            messages.back()->symbolNames.insert(sit->getName());
           }
         } else {
           messages.emplace_back(new message_t());
