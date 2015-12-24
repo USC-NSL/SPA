@@ -201,7 +201,7 @@ ssize_t recvfrom(int sockfd, __ptr_t buffer, size_t len, int flags,
 int select(int nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds,
            struct timeval *timeout) {
   // The number of fds that won't block.
-  int fd_count = 0, read_fd = -1, read_fd_distance = INT_MAX;
+  int fd_count = 0, read_fd = -1, read_fd_distance = INT_MAX, read_tried = 0;
 
   for (int i = 0; i < nfds; i++) {
     // Writes and exceptions never block.
@@ -224,12 +224,17 @@ int select(int nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds,
       }
 
       FD_CLR(i, readfds);
+      read_tried = 1;
     }
   }
 
   if (read_fd >= 0) {
     FD_SET(read_fd, readfds);
     fd_count++;
+  } else {
+    if (read_tried) {
+      spa_msg_no_input_point();
+    }
   }
 
   return fd_count;
