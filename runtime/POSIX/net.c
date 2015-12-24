@@ -1,5 +1,6 @@
 #include <string.h>
 #include <assert.h>
+#include <limits.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
 
@@ -42,9 +43,7 @@ int spa_bind(int sockfd, const struct sockaddr *myaddr, socklen_t addrlen) {
   return 0;
 }
 
-int spa_listen(int sockfd, int backlog) {
-  return 0;
-}
+int spa_listen(int sockfd, int backlog) { return 0; }
 
 int connect(int sockfd, const struct sockaddr *saddr, socklen_t addrlen) {
   char addr[100], src_name[100], srcsize_name[100];
@@ -54,12 +53,8 @@ int connect(int sockfd, const struct sockaddr *saddr, socklen_t addrlen) {
   assert(sockets[sockfd].connect_addr.sin_family == AF_INET);
   inet_ntop(AF_INET, &sockets[sockfd].connect_addr.sin_addr.s_addr, addr,
             sizeof(addr));
-  // snprintf(src_name, sizeof(src_name), "spa_out_msg_src_%s.%d",
-  //          addr, ntohs(sockets[sockfd].connect_addr.sin_port));
   spa_snprintf3(src_name, sizeof(src_name), "%s_%s.%d", "spa_out_msg_src", addr,
                 ntohs(sockets[sockfd].connect_addr.sin_port));
-  // snprintf(srcsize_name, sizeof(srcsize_name), "spa_out_msg_size_src_%s.%d",
-  //          addr, ntohs(sockets[sockfd].connect_addr.sin_port));
   spa_snprintf3(srcsize_name, sizeof(srcsize_name), "%s_%s.%d",
                 "spa_out_msg_size_src", addr,
                 ntohs(sockets[sockfd].connect_addr.sin_port));
@@ -76,17 +71,13 @@ int accept(int s, struct sockaddr *addr, socklen_t *addrlen) {
 
   inet_ntop(AF_INET, &sockets[s].bind_addr.sin_addr.s_addr, addr_str,
             sizeof(addr_str));
-  // snprintf(src_name, sizeof(src_name), "spa_in_msg_src_%s.%d",
-  //          addr_str, ntohs(sockets[s].bind_addr.sin_port));
-  snprintf(src_name, sizeof(src_name), "%s_%s.%d", "spa_in_msg_src", addr_str,
-           ntohs(sockets[s].bind_addr.sin_port));
-  // snprintf(init_src_name, sizeof(init_src_name), "spa_init_in_msg_src_%s.%d",
-  //          addr_str, ntohs(sockets[s].bind_addr.sin_port));
+  spa_snprintf3(src_name, sizeof(src_name), "%s_%s.%d", "spa_in_msg_src",
+                addr_str, ntohs(sockets[s].bind_addr.sin_port));
   spa_snprintf3(init_src_name, sizeof(init_src_name), "%s_%s.%d",
                 "spa_init_in_msg_src", addr_str,
                 ntohs(sockets[s].bind_addr.sin_port));
 
-  if (spa_check_symbol(src_name)) {
+  if (spa_check_symbol(src_name, pathID) >= 0) {
     if (addr && addrlen) {
       assert(*addrlen >= sizeof(struct sockaddr_in));
       spa_input(addr, sizeof(struct sockaddr_in), src_name, &init_src_value,
@@ -127,20 +118,12 @@ ssize_t sendto(int sockfd, const void *buffer, size_t len, int flags,
   assert(to->sa_family == AF_INET);
   inet_ntop(AF_INET, &((struct sockaddr_in *)to)->sin_addr.s_addr, addr,
             sizeof(addr));
-  // snprintf(msg_name, sizeof(msg_name), "spa_out_msg_%s.%d",
-  //          addr, ntohs(((struct sockaddr_in *) to)->sin_port));
   spa_snprintf3(msg_name, sizeof(msg_name), "%s_%s.%d", "spa_out_msg", addr,
                 ntohs(((struct sockaddr_in *)to)->sin_port));
-  // snprintf(size_name, sizeof(size_name), "spa_out_msg_size_%s.%d",
-  //          addr, ntohs(((struct sockaddr_in *) to)->sin_port));
   spa_snprintf3(size_name, sizeof(size_name), "%s_%s.%d", "spa_out_msg_size",
                 addr, ntohs(((struct sockaddr_in *)to)->sin_port));
-  // snprintf(src_name, sizeof(src_name), "spa_out_msg_src_%s.%d",
-  //          addr, ntohs(((struct sockaddr_in *) to)->sin_port));
   spa_snprintf3(src_name, sizeof(src_name), "%s_%s.%d", "spa_out_msg_src", addr,
                 ntohs(((struct sockaddr_in *)to)->sin_port));
-  // snprintf(srcsize_name, sizeof(srcsize_name), "spa_out_msg_size_src_%s.%d",
-  //          addr, ntohs(((struct sockaddr_in *) to)->sin_port));
   spa_snprintf3(srcsize_name, sizeof(srcsize_name), "%s_%s.%d",
                 "spa_out_msg_size_src", addr,
                 ntohs(((struct sockaddr_in *)to)->sin_port));
@@ -170,36 +153,23 @@ ssize_t recvfrom(int sockfd, __ptr_t buffer, size_t len, int flags,
 
   inet_ntop(AF_INET, &sockets[sockfd].bind_addr.sin_addr.s_addr, addr,
             sizeof(addr));
-  // snprintf(msg_name, sizeof(msg_name), "spa_in_msg_%s.%d",
-  //          addr, ntohs(sockets[sockfd].bind_addr.sin_port));
   spa_snprintf3(msg_name, sizeof(msg_name), "%s_%s.%d", "spa_in_msg", addr,
                 ntohs(sockets[sockfd].bind_addr.sin_port));
-  // snprintf(init_msg_name, sizeof(init_msg_name), "spa_init_in_msg_%s.%d",
-  //          addr, ntohs(sockets[sockfd].bind_addr.sin_port));
   spa_snprintf3(init_msg_name, sizeof(init_msg_name), "%s_%s.%d",
                 "spa_init_in_msg", addr,
                 ntohs(sockets[sockfd].bind_addr.sin_port));
-  // snprintf(size_name, sizeof(size_name), "spa_in_msg_size_%s.%d",
-  //          addr, ntohs(sockets[sockfd].bind_addr.sin_port));
   spa_snprintf3(size_name, sizeof(size_name), "%s_%s.%d", "spa_in_msg_size",
                 addr, ntohs(sockets[sockfd].bind_addr.sin_port));
-  // snprintf(init_size_name, sizeof(init_size_name),
-  //          "spa_init_in_msg_size_%s.%d",
-  //          addr, ntohs(sockets[sockfd].bind_addr.sin_port));
   spa_snprintf3(init_size_name, sizeof(init_size_name), "%s_%s.%d",
                 "spa_init_in_msg_size", addr,
                 ntohs(sockets[sockfd].bind_addr.sin_port));
-  // snprintf(src_name, sizeof(src_name), "spa_in_msg_src_%s.%d",
-  //          addr, ntohs(sockets[sockfd].bind_addr.sin_port));
-  snprintf(src_name, sizeof(src_name), "%s_%s.%d", "spa_in_msg_src", addr,
-           ntohs(sockets[sockfd].bind_addr.sin_port));
-  // snprintf(init_src_name, sizeof(init_src_name), "spa_init_in_msg_src_%s.%d",
-  //          addr, ntohs(sockets[sockfd].bind_addr.sin_port));
+  spa_snprintf3(src_name, sizeof(src_name), "%s_%s.%d", "spa_in_msg_src", addr,
+                ntohs(sockets[sockfd].bind_addr.sin_port));
   spa_snprintf3(init_src_name, sizeof(init_src_name), "%s_%s.%d",
                 "spa_init_in_msg_src", addr,
                 ntohs(sockets[sockfd].bind_addr.sin_port));
 
-  if (spa_check_symbol(msg_name)) {
+  if (spa_check_symbol(msg_name, pathID) >= 0) {
     spa_input(buffer, len, msg_name, &init_msg_value, init_msg_name);
     spa_runtime_call(spa_msg_input_handler, buffer, len, msg_name);
 
@@ -230,6 +200,37 @@ ssize_t recvfrom(int sockfd, __ptr_t buffer, size_t len, int flags,
 
 int select(int nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds,
            struct timeval *timeout) {
-  assert(0 && "Not implemented.");
-  return -1;
+  // The number of fds that won't block.
+  int fd_count = 0, read_fd = -1, read_fd_distance = INT_MAX;
+
+  for (int i = 0; i < nfds; i++) {
+    // Writes and exceptions never block.
+    fd_count += (writefds && FD_ISSET(i, writefds) ? 1 : 0) +
+                (exceptfds && FD_ISSET(i, exceptfds) ? 1 : 0);
+
+    // Finds available read fd which is closest in the log,.
+    if (readfds && FD_ISSET(i, readfds)) {
+      static char addr[100], src_name[100];
+
+      inet_ntop(AF_INET, &sockets[i].bind_addr.sin_addr.s_addr, addr,
+                sizeof(addr));
+      spa_snprintf3(src_name, sizeof(src_name), "%s_%s.%d", "spa_in_msg_src",
+                    addr, ntohs(sockets[i].bind_addr.sin_port));
+
+      int distance = spa_check_symbol(src_name, pathID);
+      if (distance >= 0 && distance < read_fd_distance) {
+        read_fd = i;
+        read_fd_distance = distance;
+      }
+
+      FD_CLR(i, readfds);
+    }
+  }
+
+  if (read_fd >= 0) {
+    FD_SET(read_fd, readfds);
+    fd_count++;
+  }
+
+  return fd_count;
 }
