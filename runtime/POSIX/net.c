@@ -12,8 +12,8 @@ struct {
   int type;
   struct sockaddr_in bind_addr;
   struct sockaddr_in connect_addr;
-} sockets[10];
-int next_available_sockfd = 0;
+} sockets[20];
+int next_available_sockfd = 10;
 
 int spa_socket(int family, int type, int protocol) {
   memset(&sockets[next_available_sockfd], 0,
