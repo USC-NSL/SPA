@@ -6,6 +6,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <chrono>
 #include <vector>
 #include <map>
 #include <set>
@@ -52,6 +53,8 @@
 #include <spa/Path.h>
 #include <spa/Util.h>
 
+#define DUMP_COVERAGE_PERIOD 10000
+
 #define MAIN_ENTRY_FUNCTION "__user_main"
 #define ALTERNATIVE_MAIN_ENTRY_FUNCTION "main"
 #define OLD_ENTRY_FUNCTION "__spa_old_main"
@@ -93,10 +96,10 @@ llvm::cl::opt<std::string> RecoverState(
     llvm::cl::desc(
         "Specifies a file with a previously saved processing queue to load."));
 
-llvm::cl::opt<std::string> DumpCovOnInterrupt(
-    "dump-cov-on-interrupt",
-    llvm::cl::desc("Specifies a file to dump global coverage data to on "
-                   "interrupt (Ctrl-C)."));
+llvm::cl::opt<std::string> DumpCov(
+    "dump-cov",
+    llvm::cl::desc(
+        "Specifies a file to periodically dump global coverage data to."));
 
 extern PathLoader *senderPaths;
 extern bool followSenderPaths;
@@ -107,27 +110,6 @@ std::set<llvm::Instruction *> coverage;
 
 static void interrupt_handle() {
   std::cerr << "SPA: Ctrl-C detected, exiting.\n";
-  if (!DumpCovOnInterrupt.empty()) {
-    std::cerr << "Dumping global coverage data to: " << DumpCovOnInterrupt
-              << "\n";
-    std::ofstream dumpFile(DumpCovOnInterrupt.c_str());
-    assert(dumpFile.is_open() && "Unable to open path dump file.");
-    std::map<std::string, std::set<long> > lineCoverage;
-    for (auto inst : coverage) {
-      if (llvm::MDNode *node = inst->getMetadata("dbg")) {
-        llvm::DILocation loc(node);
-        lineCoverage[loc.getDirectory().str() + "/" + loc.getFilename().str()]
-            .insert(loc.getLineNumber());
-      }
-    }
-    for (auto file : lineCoverage) {
-      dumpFile << file.first;
-      for (auto line : file.second) {
-        dumpFile << " " << line;
-      }
-      dumpFile << '\n';
-    }
-  }
   exit(1);
 }
 
@@ -1145,11 +1127,39 @@ void SPA::onStateBranched(klee::ExecutionState *kState,
 void SPA::onStep(klee::ExecutionState *kState) {
   if (StepDebug) {
     klee::klee_message("Current state at:");
-    kState->dumpStack(llvm::outs());
+    kState->dumpStack(llvm::errs());
   }
 
-  if (!DumpCovOnInterrupt.empty()) {
+  if (!DumpCov.empty()) {
     coverage.insert(kState->pc->inst);
+
+    static auto last = std::chrono::steady_clock::now();
+    auto now = std::chrono::steady_clock::now();
+    if (std::chrono::duration_cast<std::chrono::milliseconds>(now - last)
+            .count() > DUMP_COVERAGE_PERIOD) {
+      last = now;
+
+      klee::klee_message("Dumping global coverage data to: %s",
+                         DumpCov.c_str());
+      std::ofstream dumpFile(DumpCov.c_str());
+      assert(dumpFile.is_open() && "Unable to open path dump file.");
+      std::map<std::string, std::set<long> > lineCoverage;
+      for (auto inst : coverage) {
+        if (llvm::MDNode *node = inst->getMetadata("dbg")) {
+          llvm::DILocation loc(node);
+          lineCoverage[loc.getDirectory().str() + "/" + loc.getFilename().str()]
+              .insert(loc.getLineNumber());
+        }
+      }
+      for (auto file : lineCoverage) {
+        dumpFile << file.first;
+        for (auto line : file.second) {
+          dumpFile << " " << line;
+        }
+        dumpFile << '\n';
+      }
+      dumpFile.close();
+    }
   }
 
   kState->instructionCoverage.insert(kState->pc->inst);
