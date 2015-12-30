@@ -22,6 +22,8 @@
 #include "spa/AstarUtility.h"
 #include "spa/FilteredUtility.h"
 #include "spa/JSEUtility.h"
+#include "spa/SenderLogDepthUtility.h"
+#include "spa/SymbolLogDepthUtility.h"
 #include "spa/FilterExpression.h"
 
 namespace {
@@ -32,10 +34,15 @@ llvm::cl::opt<std::string> InPaths(
     llvm::cl::desc("Specifies the input path file to connect when processing "
                    "inputs (default: leave inputs unconstrained)."));
 
+llvm::cl::opt<bool>
+    DontLoadEmptyPath("dont-load-empty-path", llvm::cl::init(false),
+                      llvm::cl::desc("Disables loading the empty path as path "
+                                     "0 (used to seed API inputs)."));
+
 llvm::cl::opt<bool> FollowInPaths(
     "follow-in-paths",
     llvm::cl::desc(
-        "Enables folowing the input path file as new data as added."));
+        "Enables following the input path file as new data as added."));
 
 llvm::cl::list<std::string>
     Connect("connect", llvm::cl::desc("Specifies symbols to connect in a "
@@ -84,7 +91,7 @@ llvm::cl::opt<bool>
 
 llvm::cl::opt<bool>
     OutputDone("output-done", llvm::cl::init(false),
-                   llvm::cl::desc("Output paths when the program finishes."));
+               llvm::cl::desc("Output paths when the program finishes."));
 
 llvm::cl::opt<bool> OutputLogExhausted(
     "output-when-log-exhausted", llvm::cl::init(false),
@@ -154,7 +161,8 @@ int main(int argc, char **argv, char **envp) {
     klee::klee_message("   Seeding paths from path-file: %s", InPaths.c_str());
     ifs.open(InPaths);
     assert(ifs.good() && "Unable to open input path file.");
-    spa.setSenderPathLoader(new SPA::PathLoader(ifs, true), FollowInPaths);
+    spa.setSenderPathLoader(new SPA::PathLoader(ifs, !DontLoadEmptyPath),
+                            FollowInPaths);
   }
 
   for (auto connection : Connect) {
@@ -213,6 +221,8 @@ int main(int argc, char **argv, char **envp) {
 
   spa.addStateUtilityBack(new SPA::FilteredUtility(), false);
   spa.addStateUtilityBack(new SPA::JSEUtility(), false);
+  spa.addStateUtilityBack(new SPA::SenderLogDepthUtility(), false);
+  spa.addStateUtilityBack(new SPA::SymbolLogDepthUtility(), false);
 
   if (DumpCFG.size() > 0) {
     klee::klee_message("Dumping CFG to: %s", DumpCFG.getValue().c_str());
