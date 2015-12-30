@@ -17,6 +17,10 @@ struct {
 int next_available_sockfd = 10;
 
 int spa_socket(int family, int type, int protocol) {
+  if (family != AF_INET) {
+    return -1;
+  }
+
   memset(&sockets[next_available_sockfd], 0,
          sizeof(sockets[next_available_sockfd]));
   sockets[next_available_sockfd].type = type;
@@ -27,6 +31,8 @@ int spa_socket(int family, int type, int protocol) {
   // Generate default port from socket number.
   sockets[next_available_sockfd].bind_addr.sin_port =
       htons(10000 + next_available_sockfd);
+
+  printf("[model socket] Created socket: %d.\n", next_available_sockfd);
 
   return next_available_sockfd++;
 }
@@ -40,6 +46,8 @@ int spa_bind(int sockfd, const struct sockaddr *myaddr, socklen_t addrlen) {
     inet_pton(AF_INET, spa_internal_defaultBindAddr, &default_bind_addr);
     sockets[sockfd].bind_addr.sin_addr = default_bind_addr;
   }
+
+  printf("[model bind] Bound socket: %d.\n", sockfd);
 
   return 0;
 }
@@ -65,6 +73,9 @@ int connect(int sockfd, const struct sockaddr *saddr, socklen_t addrlen) {
 
   __spa_output((void *)&sockets[sockfd].bind_addr, sizeof(struct sockaddr_in),
                sizeof(struct sockaddr_in), src_name, srcsize_name);
+
+  printf("[model connect] Connect socket %d to %s:%d.\n", sockfd, addr,
+         ntohs(sockets[sockfd].connect_addr.sin_port));
 
   return 0;
 }
@@ -103,8 +114,13 @@ int accept(int s, struct sockaddr *addr, socklen_t *addrlen) {
     memcpy(&sockets[next_available_sockfd].connect_addr, addr,
            sizeof(struct sockaddr_in));
 
+    printf("[model accept] Accept on socket %d created new socket %d.\n", s,
+           next_available_sockfd);
+
     return next_available_sockfd++;
   } else {
+    printf("[model accept] Accept on socket %d failed.\n", s);
+
     spa_msg_no_input_point();
     return -1;
   }
@@ -141,6 +157,9 @@ ssize_t sendto(int sockfd, const void *buffer, size_t len, int flags,
 
   __spa_output((void *)&sockets[sockfd].bind_addr, sizeof(struct sockaddr_in),
                sizeof(struct sockaddr_in), src_name, srcsize_name);
+
+  printf("[model sendto] Sending message on socket %d to %s:%d.\n", sockfd,
+         addr, ntohs(((struct sockaddr_in *)to)->sin_port));
 
   spa_msg_output_point();
 
@@ -196,11 +215,14 @@ ssize_t recvfrom(int sockfd, __ptr_t buffer, size_t len, int flags,
       *srclen = sizeof(struct sockaddr_in);
     }
 
+    printf("[model recvfrom] Received message on socket %d.\n", sockfd);
+
     spa_tag(MsgReceived, "1");
     spa_msg_input_point();
 
     return size;
   } else {
+    printf("[model recvfrom] Receiving message on socket %d failed.\n", sockfd);
     spa_msg_no_input_point();
     return -1;
   }
@@ -219,6 +241,8 @@ int select(int nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds,
     // Finds available read fd which is closest in the log,.
     if (readfds && FD_ISSET(i, readfds)) {
       static char addr[100], src_name[100];
+
+      printf("[model select] Checking socket %d for read.\n", i);
 
       inet_ntop(AF_INET, &sockets[i].bind_addr.sin_addr.s_addr, addr,
                 sizeof(addr));
@@ -240,7 +264,9 @@ int select(int nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds,
   if (read_fd >= 0) {
     FD_SET(read_fd, readfds);
     fd_count++;
+    printf("[model select] Choosing socket %d for next read.\n", read_fd);
   } else {
+    printf("[model select] No read socket chosen.\n");
     if (read_tried) {
       spa_msg_no_input_point();
     }
