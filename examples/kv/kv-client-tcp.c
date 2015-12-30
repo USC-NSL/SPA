@@ -78,7 +78,9 @@ value_t kv_get(key_t key) {
         max_fd = sockfd[i];
       }
     } else {
+#ifndef ENABLE_KLEE
       assert(close(sockfd[i]) == 0);
+#endif
       sockfd[i] = -1;
     }
   }
@@ -117,7 +119,9 @@ value_t kv_get(key_t key) {
     char resp[sizeof(key_t) + sizeof(value_t)];
     ssize_t resplen = recv(sockfd[selected_server], resp, sizeof(resp), 0);
 
+#ifndef ENABLE_KLEE
     assert(close(sockfd[selected_server]) == 0);
+#endif
     sockfd[selected_server] = -1;
 
     assert(resplen == sizeof(resp));
@@ -161,7 +165,9 @@ void kv_set(key_t key, value_t value) {
         max_fd = sockfd[i];
       }
     } else {
+#ifndef ENABLE_KLEE
       assert(close(sockfd[i]) == 0);
+#endif
       sockfd[i] = -1;
     }
   }
@@ -205,7 +211,9 @@ void kv_set(key_t key, value_t value) {
 
     char resp[sizeof(key_t) + sizeof(value_t)];
     ssize_t resplen = recv(sockfd[selected_server], resp, sizeof(resp), 0);
+#ifndef ENABLE_KLEE
     assert(close(sockfd[selected_server]) == 0);
+#endif
     sockfd[selected_server] = -1;
 
     assert(resplen == sizeof(resp));
