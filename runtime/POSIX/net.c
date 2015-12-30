@@ -97,7 +97,8 @@ int accept(int s, struct sockaddr *addr, socklen_t *addrlen) {
       assert(*addrlen >= sizeof(struct sockaddr_in));
       spa_input(addr, sizeof(struct sockaddr_in), src_name, &init_src_value,
                 init_src_name);
-      for (unsigned int i = 0; i < *addrlen; i++) {
+      unsigned int i;
+      for (i = 0; i < *addrlen; i++) {
         ((char *)addr)[i] = klee_get_value_i32(((char *)addr)[i]);
       }
       *addrlen = sizeof(struct sockaddr_in);
@@ -209,7 +210,8 @@ ssize_t recvfrom(int sockfd, __ptr_t buffer, size_t len, int flags,
       assert(*srclen >= sizeof(struct sockaddr_in));
       spa_input(src, sizeof(struct sockaddr_in), src_name, &init_src_value,
                 init_src_name);
-      for (unsigned int i = 0; i < *srclen; i++) {
+      unsigned int i;
+      for (i = 0; i < *srclen; i++) {
         ((char *)src)[i] = klee_get_value_i32(((char *)src)[i]);
       }
       *srclen = sizeof(struct sockaddr_in);
@@ -233,7 +235,8 @@ int select(int nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds,
   // The number of fds that won't block.
   int fd_count = 0, read_fd = -1, read_fd_distance = INT_MAX, read_tried = 0;
 
-  for (int i = 0; i < nfds; i++) {
+  int i;
+  for (i = 0; i < nfds; i++) {
     // Writes and exceptions never block.
     fd_count += (writefds && FD_ISSET(i, writefds) ? 1 : 0) +
                 (exceptfds && FD_ISSET(i, exceptfds) ? 1 : 0);
