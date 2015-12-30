@@ -127,15 +127,15 @@ void processPath(SPA::Path *path, unsigned long pathID) {
   for (auto it : path->getSymbolLog()) {
     if ((it->isMessage() && it->isInput()) ||
         it->getName().compare(0, strlen(SPA_MESSAGE_OUTPUT_SOURCE_PREFIX),
-                              SPA_MESSAGE_OUTPUT_SOURCE_PREFIX) == 0) {
+                              SPA_MESSAGE_OUTPUT_SOURCE_PREFIX) == 0 ||
+        it->getName().compare(0, strlen(SPA_MESSAGE_OUTPUT_CONNECT_PREFIX),
+                              SPA_MESSAGE_OUTPUT_CONNECT_PREFIX) == 0) {
       std::string participant = it->getParticipant();
       std::string ipPort;
 
       if (it->isInput()) {
         ipPort = getIpPort(it.get());
-      } else if (it->getName().compare(0,
-                                       strlen(SPA_MESSAGE_OUTPUT_SOURCE_PREFIX),
-                                       SPA_MESSAGE_OUTPUT_SOURCE_PREFIX) == 0) {
+      } else {
         struct sockaddr_in src;
         assert(it->getOutputValues().size() == sizeof(src));
         for (unsigned i = 0; i < sizeof(src); i++) {
@@ -251,11 +251,10 @@ void processPath(SPA::Path *path, unsigned long pathID) {
                                    SPA_MESSAGE_OUTPUT_SIZE_PREFIX) == 0 ||
             sit->getName().compare(0, strlen(SPA_MESSAGE_OUTPUT_SOURCE_PREFIX),
                                    SPA_MESSAGE_OUTPUT_SOURCE_PREFIX) == 0) {
-          if (messages.back()->from == participantByName[participant] &&
-              messages.back()->to ==
-                  participantByIpPort[getIpPort(sit.get())]) {
-            messages.back()->symbolNames.insert(sit->getName());
-          }
+          assert(messages.back()->from == participantByName[participant] &&
+                 messages.back()->to ==
+                     participantByIpPort[getIpPort(sit.get())]);
+          messages.back()->symbolNames.insert(sit->getName());
         } else {
           messages.emplace_back(new message_t());
           messages.back()->from = participantByName[participant];

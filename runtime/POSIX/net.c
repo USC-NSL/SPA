@@ -10,6 +10,7 @@
 
 struct {
   int type;
+  int listen;
   struct sockaddr_in bind_addr;
   struct sockaddr_in connect_addr;
 } sockets[20];
@@ -18,7 +19,7 @@ int next_available_sockfd = 10;
 int spa_socket(int family, int type, int protocol) {
   memset(&sockets[next_available_sockfd], 0,
          sizeof(sockets[next_available_sockfd]));
-
+  sockets[next_available_sockfd].type = type;
   // Bind default IP.
   sockets[next_available_sockfd].bind_addr.sin_family = AF_INET;
   inet_pton(AF_INET, spa_internal_defaultBindAddr,
@@ -43,7 +44,10 @@ int spa_bind(int sockfd, const struct sockaddr *myaddr, socklen_t addrlen) {
   return 0;
 }
 
-int spa_listen(int sockfd, int backlog) { return 0; }
+int spa_listen(int sockfd, int backlog) {
+  sockets[sockfd].listen = 1;
+  return 0;
+}
 
 int connect(int sockfd, const struct sockaddr *saddr, socklen_t addrlen) {
   char addr[100], src_name[100], srcsize_name[100];
@@ -53,10 +57,10 @@ int connect(int sockfd, const struct sockaddr *saddr, socklen_t addrlen) {
   assert(sockets[sockfd].connect_addr.sin_family == AF_INET);
   inet_ntop(AF_INET, &sockets[sockfd].connect_addr.sin_addr.s_addr, addr,
             sizeof(addr));
-  spa_snprintf3(src_name, sizeof(src_name), "%s_%s.%d", "spa_out_msg_src", addr,
-                ntohs(sockets[sockfd].connect_addr.sin_port));
+  spa_snprintf3(src_name, sizeof(src_name), "%s_%s.%d", "spa_out_msg_connect",
+                addr, ntohs(sockets[sockfd].connect_addr.sin_port));
   spa_snprintf3(srcsize_name, sizeof(srcsize_name), "%s_%s.%d",
-                "spa_out_msg_size_src", addr,
+                "spa_out_msg_size_connect", addr,
                 ntohs(sockets[sockfd].connect_addr.sin_port));
 
   __spa_output((void *)&sockets[sockfd].bind_addr, sizeof(struct sockaddr_in),
@@ -71,10 +75,10 @@ int accept(int s, struct sockaddr *addr, socklen_t *addrlen) {
 
   inet_ntop(AF_INET, &sockets[s].bind_addr.sin_addr.s_addr, addr_str,
             sizeof(addr_str));
-  spa_snprintf3(src_name, sizeof(src_name), "%s_%s.%d", "spa_in_msg_src",
+  spa_snprintf3(src_name, sizeof(src_name), "%s_%s.%d", "spa_in_msg_connect",
                 addr_str, ntohs(sockets[s].bind_addr.sin_port));
   spa_snprintf3(init_src_name, sizeof(init_src_name), "%s_%s.%d",
-                "spa_init_in_msg_src", addr_str,
+                "spa_init_in_msg_connect", addr_str,
                 ntohs(sockets[s].bind_addr.sin_port));
 
   if (spa_check_symbol(src_name, pathID) >= 0) {
@@ -88,7 +92,11 @@ int accept(int s, struct sockaddr *addr, socklen_t *addrlen) {
       *addrlen = sizeof(struct sockaddr_in);
     }
 
-    // Keep bind address from parent socket.
+    // Initialize new socket.
+    memset(&sockets[next_available_sockfd], 0,
+           sizeof(sockets[next_available_sockfd]));
+    // Keep type and bind address from parent socket.
+    sockets[next_available_sockfd].type = sockets[s].type;
     memcpy(&sockets[next_available_sockfd].bind_addr, &sockets[s].bind_addr,
            sizeof(struct sockaddr_in));
     // Get connect address from received symbol.
@@ -214,7 +222,8 @@ int select(int nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds,
 
       inet_ntop(AF_INET, &sockets[i].bind_addr.sin_addr.s_addr, addr,
                 sizeof(addr));
-      spa_snprintf3(src_name, sizeof(src_name), "%s_%s.%d", "spa_in_msg_src",
+      spa_snprintf3(src_name, sizeof(src_name), "%s_%s.%d",
+                    sockets[i].listen ? "spa_in_msg_connect" : "spa_in_msg",
                     addr, ntohs(sockets[i].bind_addr.sin_port));
 
       int distance = spa_check_symbol(src_name, pathID);
