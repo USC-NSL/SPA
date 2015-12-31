@@ -29,7 +29,8 @@ double JSEUtility::getUtility(klee::ExecutionState *state) {
             }
           }
         }
-      } else if (eqExpr->left->isFalse()) {
+      } else if (eqExpr->left->getWidth() == klee::Expr::Bool &&
+                 eqExpr->left->isFalse()) {
         if (klee::EqExpr *neqExpr =
                 llvm::dyn_cast<klee::EqExpr>(eqExpr->right)) {
           if (klee::ConcatExpr *catExpr =
