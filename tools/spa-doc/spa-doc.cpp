@@ -801,7 +801,7 @@ int main(int argc, char **argv, char **envp) {
     pathLoader.reset(new SPA::PathLoader(inFile));
     for (unsigned long pathID = 1; path.reset(pathLoader->getPath()), path;
          pathID++) {
-      if (pathID % NumProcesses == workerID) {
+      if ((int) pathID % NumProcesses == workerID) {
         processPath(path.get(), pathID);
       }
     }
