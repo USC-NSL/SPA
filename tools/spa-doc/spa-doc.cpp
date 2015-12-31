@@ -100,6 +100,10 @@ std::string sanitizeHTML(std::string text) {
   return text;
 }
 
+std::string escapeChar(unsigned char c) {
+  return std::string("&#") + SPA::numToStr((int) c) + ";";
+}
+
 void processPath(SPA::Path *path, unsigned long pathID) {
   std::map<std::string, std::shared_ptr<participant_t> > participantByName;
   std::map<std::string, std::shared_ptr<participant_t> > participantByIpPort;
@@ -420,6 +424,16 @@ void processPath(SPA::Path *path, unsigned long pathID) {
       htmlFile << "      <b>Type:</b> output<br />" << std::endl;
       htmlFile << "      <b>Size:</b> " << sit->getOutputValues().size()
                << "<br />" << std::endl;
+      htmlFile << "      <b>Text Representation:</b><br />" << std::endl;
+      htmlFile << "      <pre>" << std::endl;
+      for (auto it : sit->getOutputValues()) {
+        if (klee::ConstantExpr *ce = llvm::dyn_cast<klee::ConstantExpr>(it)) {
+          htmlFile << escapeChar(ce->getLimitedValue());
+        } else {
+          htmlFile << "&#9608;";
+        }
+      }
+      htmlFile << "      </pre>" << std::endl;
       htmlFile << "      <b>Byte Values:</b><br />" << std::endl;
       htmlFile << "      <table border='1'>" << std::endl;
       htmlFile << "        <tr><th>Index</th><th>Expression</th></tr>"
