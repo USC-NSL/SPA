@@ -1107,7 +1107,7 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
     } else if (baseName.compare(0, strlen(SPA_API_INPUT_PREFIX),
                                 SPA_API_INPUT_PREFIX) == 0) {
       // The root path can't be connected.
-      if (pathID == 0) {
+      if (state.senderPath->getSymbolLog().empty()) {
         klee_message(
             "[spa_seed_symbol] Input %s is not connected. Not seeding.",
             fullName.c_str());
