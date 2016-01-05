@@ -230,6 +230,12 @@ ssize_t recvfrom(int sockfd, __ptr_t buffer, size_t len, int flags,
   }
 }
 
+void __attribute__((noinline, weak)) spa_msg_select_no_input_point() {
+  // Complicated NOP to prevent inlining.
+  static uint8_t i = 0;
+  i++;
+}
+
 int select(int nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds,
            struct timeval *timeout) {
   // The number of fds that won't block.
@@ -271,6 +277,7 @@ int select(int nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds,
   } else {
     printf("[model select] No read socket chosen.\n");
     if (read_tried) {
+      spa_msg_select_no_input_point();
       spa_msg_no_input_point();
     }
   }
