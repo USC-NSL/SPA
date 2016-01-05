@@ -837,25 +837,27 @@ SpecialFunctionHandler::handleSpaLoadPath(ExecutionState &state,
 
   // Get current participant's IP/Ports.
   std::set<std::string> participantIPPorts;
-  for (auto it : state.senderPath->getOutputSymbols()) {
-    std::string name = it.first;
+  for (auto oit : state.senderPath->getOutputSymbols()) {
+    std::string name = oit.first;
     std::string participantName =
         name.substr(name.rfind(SPA_SYMBOL_DELIMITER) + 1);
     if (name.compare(0, strlen(SPA_MESSAGE_OUTPUT_SOURCE_PREFIX),
                      SPA_MESSAGE_OUTPUT_SOURCE_PREFIX) == 0 &&
         participantName == SPA::ParticipantName) {
-      struct sockaddr_in src;
-      assert(it.second[0]->getOutputValues().size() == sizeof(src));
-      for (unsigned i = 0; i < sizeof(src); i++) {
-        ConstantExpr *ce =
-            llvm::dyn_cast<ConstantExpr>(it.second[0]->getOutputValues()[i]);
-        assert(ce && "Non-constant source IP.");
-        ((char *)&src)[i] = ce->getLimitedValue();
+      for (auto sit : oit.second) {
+        struct sockaddr_in src;
+        assert(sit->getOutputValues().size() == sizeof(src));
+        for (unsigned i = 0; i < sizeof(src); i++) {
+          ConstantExpr *ce =
+              llvm::dyn_cast<ConstantExpr>(sit->getOutputValues()[i]);
+          assert(ce && "Non-constant source IP.");
+          ((char *)&src)[i] = ce->getLimitedValue();
+        }
+        char srcTxt[INET_ADDRSTRLEN];
+        assert(inet_ntop(AF_INET, &src.sin_addr, srcTxt, sizeof(srcTxt)));
+        participantIPPorts.insert(std::string(srcTxt) + "." +
+                                  SPA::numToStr(ntohs(src.sin_port)));
       }
-      char srcTxt[INET_ADDRSTRLEN];
-      assert(inet_ntop(AF_INET, &src.sin_addr, srcTxt, sizeof(srcTxt)));
-      participantIPPorts.insert(std::string(srcTxt) + "." +
-                                SPA::numToStr(ntohs(src.sin_port)));
     }
   }
   // Check if there are any symbols in the log that can be consumed but that
