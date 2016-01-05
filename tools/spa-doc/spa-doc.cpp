@@ -44,8 +44,10 @@ typedef struct {
 #define API_PREFIX "api_"
 
 typedef struct {
-  std::shared_ptr<participant_t> from;
-  std::shared_ptr<participant_t> to;
+  std::string fromIpPort;
+  std::shared_ptr<participant_t> fromParticipant;
+  std::string toIpPort;
+  std::shared_ptr<participant_t> toParticipant;
   bool received;
   std::set<std::string> symbolNames;
 } message_t;
@@ -202,8 +204,9 @@ void processPath(SPA::Path *path, unsigned long pathID) {
           klee::klee_message("  Input API to: %s", participant.c_str());
         }
         messages.emplace_back(new message_t());
-        messages.back()->from = participantByName[API_PREFIX + participant];
-        messages.back()->to = participantByName[participant];
+        messages.back()->fromParticipant =
+            participantByName[API_PREFIX + participant];
+        messages.back()->toParticipant = participantByName[participant];
         messages.back()->received = true;
         messages.back()->symbolNames.insert(sit->getName());
       } else if (sit->isMessage()) {
@@ -215,15 +218,20 @@ void processPath(SPA::Path *path, unsigned long pathID) {
           continue;
         }
         bool sent = false;
+        std::string ipPort = getIpPort(sit.get());
         // Find first outstanding compatible message.
         for (auto mit : messages) {
-          if (mit->to->name == participant && !mit->received) {
+          if (mit->toIpPort == ipPort && !mit->received) {
+            if (mit->fromIpPort.empty()) {
+              mit->fromIpPort = ipPort;
+            }
+            assert(mit->fromIpPort == ipPort);
+            mit->received = true;
             if (Debug) {
               klee::klee_message("  Received message: %s -> %s",
-                                 mit->from->name.c_str(),
-                                 mit->to->name.c_str());
+                                 mit->fromIpPort.c_str(),
+                                 mit->toIpPort.c_str());
             }
-            mit->received = true;
             sent = true;
             break;
           }
@@ -238,31 +246,33 @@ void processPath(SPA::Path *path, unsigned long pathID) {
           klee::klee_message("  Output API from: %s", participant.c_str());
         }
         messages.emplace_back(new message_t());
-        messages.back()->from = participantByName[participant];
-        messages.back()->to = participantByName[API_PREFIX + participant];
+        messages.back()->fromParticipant = participantByName[participant];
+        messages.back()->toParticipant =
+            participantByName[API_PREFIX + participant];
         messages.back()->received = true;
         messages.back()->symbolNames.insert(sit->getName());
       } else if (sit->isMessage()) {
-        assert(participantByIpPort.count(getIpPort(sit.get())) &&
+        std::string ipPort = getIpPort(sit.get());
+        assert(participantByIpPort.count(ipPort) &&
                "Message sent to unknown participant.");
         if (Debug) {
-          klee::klee_message(
-              "  Sent message: %s -> %s", participant.c_str(),
-              participantByIpPort[getIpPort(sit.get())]->name.c_str());
+          klee::klee_message("  Sent message: %s -> %s", participant.c_str(),
+                             participantByIpPort[ipPort]->name.c_str());
         }
         // Collapse content size and source symbols into one message.
         if (sit->getName().compare(0, strlen(SPA_MESSAGE_OUTPUT_SIZE_PREFIX),
                                    SPA_MESSAGE_OUTPUT_SIZE_PREFIX) == 0 ||
             sit->getName().compare(0, strlen(SPA_MESSAGE_OUTPUT_SOURCE_PREFIX),
                                    SPA_MESSAGE_OUTPUT_SOURCE_PREFIX) == 0) {
-          assert(messages.back()->from == participantByName[participant] &&
-                 messages.back()->to ==
-                     participantByIpPort[getIpPort(sit.get())]);
+          assert(messages.back()->fromParticipant ==
+                     participantByName[participant] &&
+                 messages.back()->toIpPort == ipPort);
           messages.back()->symbolNames.insert(sit->getName());
         } else {
           messages.emplace_back(new message_t());
-          messages.back()->from = participantByName[participant];
-          messages.back()->to = participantByIpPort[getIpPort(sit.get())];
+          messages.back()->fromParticipant = participantByName[participant];
+          messages.back()->toIpPort = ipPort;
+          messages.back()->toParticipant = participantByIpPort[ipPort];
           messages.back()->symbolNames.insert(sit->getName());
         }
       } else {
@@ -383,10 +393,11 @@ void processPath(SPA::Path *path, unsigned long pathID) {
   }
 
   for (unsigned i = 0; i < messages.size(); i++) {
-    dotFile << "  " << sanitizeToken(messages[i]->from->name) << " -> "
-            << sanitizeToken(messages[i]->to->name) << "[label=\"" << (i + 1)
-            << "\" arrowhead=\"" << (messages[i]->received ? "normal" : "dot")
-            << "\" href=\"#msg" << i << "\"]" << std::endl;
+    dotFile << "  " << sanitizeToken(messages[i]->fromParticipant->name)
+            << " -> " << sanitizeToken(messages[i]->toParticipant->name)
+            << "[label=\"" << (i + 1) << "\" arrowhead=\""
+            << (messages[i]->received ? "normal" : "dot") << "\" href=\"#msg"
+            << i << "\"]" << std::endl;
 
     htmlFile << "    <div class='box' id='msg" << i << "'>" << std::endl;
     htmlFile << "      <a class='closebutton' href='#'>&#x2715;</a>"
