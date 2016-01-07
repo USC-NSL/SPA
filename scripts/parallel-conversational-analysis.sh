@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ex
+set -e
 
 PATH_FILE="$1"
 IFS=';' read -ra OPTS <<< "$2"
