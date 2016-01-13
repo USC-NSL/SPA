@@ -1174,9 +1174,10 @@ void SPA::onStep(klee::ExecutionState *kState) {
     showStats();
   }
 
-  if (stopPointFilter.checkStep(kState->prevPC->inst, kState->pc->inst) ||
-      stopPointFilter.checkStep(NULL, kState->pc->inst) ||
-      stopPointFilter.checkStep(kState->prevPC->inst, NULL)) {
+  if ((stopPointFilter.checkStep(kState->prevPC->inst, kState->pc->inst) ||
+       stopPointFilter.checkStep(NULL, kState->pc->inst) ||
+       stopPointFilter.checkStep(kState->prevPC->inst, NULL)) &&
+      !kState->isReplayingSpaLog()) {
     klee::klee_message("Path reached stop point:");
     kState->dumpStack(llvm::errs());
     executor->terminateStateEarly(*kState, "Reached stop point.");
