@@ -262,9 +262,6 @@ void __attribute__((noinline, weak))
 #endif
 
   char fullVarName[100];
-  //   snprintf(fullVarName, sizeof(fullVarName), "%s_%s_%ld", varName,
-  //            spa_internal_participantName,
-  // spa_internal_io_sequence_number++);
   spa_snprintf3(fullVarName, sizeof(fullVarName), "%s_%s_%ld", varName,
                 spa_internal_participantName,
                 spa_internal_io_sequence_number++);
@@ -342,16 +339,10 @@ void __attribute__((weak))
   }
 #endif // #ifdef ENABLE_KLEE
   char fullVarName[100];
-  //   snprintf(fullVarName, sizeof(fullVarName), "%s_%s_%ld", varName,
-  //            spa_internal_participantName,
-  // spa_internal_io_sequence_number++);
   spa_snprintf3(fullVarName, sizeof(fullVarName), "%s_%s_%ld", varName,
                 spa_internal_participantName,
                 spa_internal_io_sequence_number++);
   char fullSizeName[100];
-  //   snprintf(fullSizeName, sizeof(fullSizeName), "%s_%s_%ld", sizeName,
-  //            spa_internal_participantName,
-  // spa_internal_io_sequence_number++);
   spa_snprintf3(fullSizeName, sizeof(fullSizeName), "%s_%s_%ld", sizeName,
                 spa_internal_participantName,
                 spa_internal_io_sequence_number++);
