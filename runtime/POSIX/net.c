@@ -153,15 +153,21 @@ ssize_t sendto(int sockfd, const void *buffer, size_t len, int flags,
                 "spa_out_msg_size_src", addr,
                 ntohs(((struct sockaddr_in *)to)->sin_port));
 
-  __spa_output((void *)buffer, len, 1500, msg_name, size_name);
-  spa_runtime_call(spa_msg_output_handler, buffer, len, 1500, msg_name);
-
-  __spa_output((void *)&sockets[sockfd].bind_addr, sizeof(struct sockaddr_in),
-               sizeof(struct sockaddr_in), src_name, srcsize_name);
+  if (sockets[sockfd].type == SOCK_STREAM) {
+    for (size_t offset = 0; offset < len; offset++) {
+      __spa_output((void *)&buffer[offset], 1, 1, msg_name, size_name);
+      __spa_output((void *)&sockets[sockfd].bind_addr,
+                   sizeof(struct sockaddr_in), sizeof(struct sockaddr_in),
+                   src_name, srcsize_name);
+    }
+  } else {
+    __spa_output((void *)buffer, len, 1500, msg_name, size_name);
+    __spa_output((void *)&sockets[sockfd].bind_addr, sizeof(struct sockaddr_in),
+                 sizeof(struct sockaddr_in), src_name, srcsize_name);
+  }
 
   printf("[model sendto] Sending message on socket %d to %s:%d.\n", sockfd,
          addr, ntohs(((struct sockaddr_in *)to)->sin_port));
-
   spa_msg_output_point();
 
   return len;
@@ -197,13 +203,31 @@ ssize_t recvfrom(int sockfd, __ptr_t buffer, size_t len, int flags,
                 "spa_init_in_msg_src", addr,
                 ntohs(sockets[sockfd].bind_addr.sin_port));
 
-  if (spa_check_symbol(msg_name, pathID) >= 0) {
-    spa_input(buffer, len, msg_name, &init_msg_value, init_msg_name);
-    spa_runtime_call(spa_msg_input_handler, buffer, len, msg_name);
+  if (spa_check_symbol(msg_name, pathID) < 0) {
+    printf("[model recvfrom] Receiving message on socket %d failed.\n", sockfd);
+    spa_msg_no_input_point();
+    return -1;
+  }
 
+  if (sockets[sockfd].type == SOCK_STREAM) {
+    for (size_t offset = 0;
+         offset < len && spa_check_symbol(msg_name, pathID) >= 0; offset++) {
+      spa_input(&buffer[offset], 1, msg_name, &init_msg_value, init_msg_name);
+      size++;
+    }
+    if (src && srclen) {
+      assert(*srclen >= sizeof(struct sockaddr_in));
+      spa_input(src, sizeof(struct sockaddr_in), src_name, &init_src_value,
+                init_src_name);
+      unsigned int i;
+      for (i = 0; i < *srclen; i++) {
+        ((char *)src)[i] = klee_get_value_i32(((char *)src)[i]);
+      }
+      *srclen = sizeof(struct sockaddr_in);
+    }
+  } else {
+    spa_input(buffer, len, msg_name, &init_msg_value, init_msg_name);
     spa_input(&size, sizeof(size), size_name, &init_size_value, init_size_name);
-    spa_runtime_call(spa_msg_input_size_handler, &size, sizeof(size),
-                     size_name);
     spa_assume(size > 0);
 
     if (src && srclen) {
@@ -216,18 +240,14 @@ ssize_t recvfrom(int sockfd, __ptr_t buffer, size_t len, int flags,
       }
       *srclen = sizeof(struct sockaddr_in);
     }
-
-    printf("[model recvfrom] Received message on socket %d.\n", sockfd);
-
-    spa_tag(MsgReceived, "1");
-    spa_msg_input_point();
-
-    return size;
-  } else {
-    printf("[model recvfrom] Receiving message on socket %d failed.\n", sockfd);
-    spa_msg_no_input_point();
-    return -1;
   }
+
+  printf("[model recvfrom] Received message on socket %d.\n", sockfd);
+
+  spa_tag(MsgReceived, "1");
+  spa_msg_input_point();
+
+  return size;
 }
 
 void __attribute__((noinline, weak)) spa_msg_select_no_input_point() {
