@@ -163,8 +163,10 @@ ssize_t sendto(int sockfd, const void *buffer, size_t len, int flags,
                 ntohs(((struct sockaddr_in *)to)->sin_port));
 
   if (sockets[sockfd].type == SOCK_STREAM) {
-    for (size_t offset = 0; offset < len; offset++) {
-      __spa_output((void *)&buffer[offset], 1, 1, msg_name, size_name);
+    size_t offset;
+    for (offset = 0; offset < len; offset++) {
+      __spa_output((void *)&((const char *)buffer)[offset], 1, 1, msg_name,
+                   size_name);
       __spa_output((void *)&sockets[sockfd].bind_addr,
                    sizeof(struct sockaddr_in), sizeof(struct sockaddr_in),
                    src_name, srcsize_name);
@@ -225,9 +227,11 @@ ssize_t recvfrom(int sockfd, __ptr_t buffer, size_t len, int flags,
   }
 
   if (sockets[sockfd].type == SOCK_STREAM) {
-    for (size_t offset = 0;
-         offset < len && spa_check_symbol(msg_name, pathID) >= 0; offset++) {
-      spa_input(&buffer[offset], 1, msg_name, &init_msg_value, init_msg_name);
+    size_t offset;
+    for (offset = 0; offset < len && spa_check_symbol(msg_name, pathID) >= 0;
+         offset++) {
+      spa_input(&((char *)buffer)[offset], 1, msg_name, &init_msg_value,
+                init_msg_name);
       size++;
     }
     if (src && srclen) {
