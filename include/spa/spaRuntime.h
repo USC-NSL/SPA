@@ -63,8 +63,9 @@ int32_t spa_check_path(uint64_t pathID);
 void spa_load_path(uint64_t pathID);
 int32_t spa_check_symbol(const char varName[], uint64_t pathID);
 void spa_seed_symbol(void *var, uint64_t pathID);
-void spa_snprintf3(char *out, unsigned size, const char *format,
-                   const char *in1, const char *in2, unsigned long in3);
+void spa_snprintf4(char *out, unsigned size, const char *format,
+                   const char *in1, const char *in2, const char *in3,
+                   unsigned long in4);
 #else
 int32_t __attribute__((weak)) spa_check_path(uint64_t pathID) { return 0; }
 void __attribute__((weak)) spa_load_path(uint64_t pathID) {}
@@ -74,8 +75,8 @@ int32_t __attribute__((weak))
 }
 void __attribute__((weak)) spa_seed_symbol(void *var, uint64_t pathID) {}
 void __attribute__((weak))
-    spa_snprintf3(char *out, unsigned size, const char *format, const char *in1,
-                  const char *in2, unsigned long in3) {}
+    spa_snprintf4(char *out, unsigned size, const char *format, const char *in1,
+                  const char *in2, const char *in3, unsigned long in4) {}
 #endif
 
 void spa_input_handler(va_list args);
@@ -262,8 +263,8 @@ void __attribute__((noinline, weak))
 #endif
 
   char fullVarName[100];
-  spa_snprintf3(fullVarName, sizeof(fullVarName), "%s_%s_%ld", varName,
-                spa_internal_participantName,
+  spa_snprintf4(fullVarName, sizeof(fullVarName), "%s_%s%s_%ld", varName,
+                spa_internal_participantName, "",
                 spa_internal_io_sequence_number++);
 
 #ifdef ENABLE_KLEE
@@ -339,12 +340,12 @@ void __attribute__((weak))
   }
 #endif // #ifdef ENABLE_KLEE
   char fullVarName[100];
-  spa_snprintf3(fullVarName, sizeof(fullVarName), "%s_%s_%ld", varName,
-                spa_internal_participantName,
+  spa_snprintf4(fullVarName, sizeof(fullVarName), "%s_%s%s_%ld", varName,
+                spa_internal_participantName, "",
                 spa_internal_io_sequence_number++);
   char fullSizeName[100];
-  spa_snprintf3(fullSizeName, sizeof(fullSizeName), "%s_%s_%ld", sizeName,
-                spa_internal_participantName,
+  spa_snprintf4(fullSizeName, sizeof(fullSizeName), "%s_%s%s_%ld", sizeName,
+                spa_internal_participantName, "",
                 spa_internal_io_sequence_number++);
 
   void *buffer = malloc(bufferSize);

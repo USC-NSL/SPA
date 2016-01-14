@@ -113,7 +113,7 @@ static SpecialFunctionHandler::HandlerInfo handlerInfo[] = {
   add("spa_check_symbol", handleSpaCheckSymbol, true),
   add("spa_seed_symbol", handleSpaSeedSymbol, false),
   add("spa_runtime_call", handleSpaRuntimeCall, false),
-  add("spa_snprintf3", handleSpaSnprintf3, false),
+  add("spa_snprintf4", handleSpaSnprintf4, false),
 #undef addDNR
 #undef add
 };
@@ -1199,11 +1199,11 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
 }
 
 void
-SpecialFunctionHandler::handleSpaSnprintf3(ExecutionState &state,
+SpecialFunctionHandler::handleSpaSnprintf4(ExecutionState &state,
                                            KInstruction *target,
                                            std::vector<ref<Expr> > &arguments) {
-  assert(arguments.size() == 6 &&
-         "Invalid number of arguments to spa_sprintf3.");
+  assert(arguments.size() == 7 &&
+         "Invalid number of arguments to spa_snprintf4.");
 
   klee::ConstantExpr *ce;
   assert(ce = dyn_cast<ConstantExpr>(executor.toUnique(state, arguments[1])));
@@ -1212,13 +1212,14 @@ SpecialFunctionHandler::handleSpaSnprintf3(ExecutionState &state,
   std::string format = readStringAtAddress(state, arguments[2]);
   std::string in1 = readStringAtAddress(state, arguments[3]);
   std::string in2 = readStringAtAddress(state, arguments[4]);
+  std::string in3 = readStringAtAddress(state, arguments[5]);
 
-  assert(ce = dyn_cast<ConstantExpr>(executor.toUnique(state, arguments[5])));
-  unsigned long in3 = ce->getZExtValue();
+  assert(ce = dyn_cast<ConstantExpr>(executor.toUnique(state, arguments[6])));
+  unsigned long in4 = ce->getZExtValue();
 
   char *result = new char[length];
   unsigned resultSize = snprintf(result, length, format.c_str(), in1.c_str(),
-                                 in2.c_str(), in3) + 1;
+                                 in2.c_str(), in3.c_str(), in4) + 1;
 
   ObjectPair op;
   ref<ConstantExpr> address =

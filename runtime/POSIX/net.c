@@ -65,10 +65,13 @@ int connect(int sockfd, const struct sockaddr *saddr, socklen_t addrlen) {
   assert(sockets[sockfd].connect_addr.sin_family == AF_INET);
   inet_ntop(AF_INET, &sockets[sockfd].connect_addr.sin_addr.s_addr, addr,
             sizeof(addr));
-  spa_snprintf3(src_name, sizeof(src_name), "%s_%s.%d", "spa_out_msg_connect",
-                addr, ntohs(sockets[sockfd].connect_addr.sin_port));
-  spa_snprintf3(srcsize_name, sizeof(srcsize_name), "%s_%s.%d",
+  spa_snprintf4(src_name, sizeof(src_name), "%s_%s.%s.%d",
+                "spa_out_msg_connect", addr,
+                sockets[sockfd].type == SOCK_STREAM ? "tcp" : "udp",
+                ntohs(sockets[sockfd].connect_addr.sin_port));
+  spa_snprintf4(srcsize_name, sizeof(srcsize_name), "%s_%s.%s.%d",
                 "spa_out_msg_size_connect", addr,
+                sockets[sockfd].type == SOCK_STREAM ? "tcp" : "udp",
                 ntohs(sockets[sockfd].connect_addr.sin_port));
 
   __spa_output((void *)&sockets[sockfd].bind_addr, sizeof(struct sockaddr_in),
@@ -86,10 +89,12 @@ int accept(int s, struct sockaddr *addr, socklen_t *addrlen) {
 
   inet_ntop(AF_INET, &sockets[s].bind_addr.sin_addr.s_addr, addr_str,
             sizeof(addr_str));
-  spa_snprintf3(src_name, sizeof(src_name), "%s_%s.%d", "spa_in_msg_connect",
-                addr_str, ntohs(sockets[s].bind_addr.sin_port));
-  spa_snprintf3(init_src_name, sizeof(init_src_name), "%s_%s.%d",
+  spa_snprintf4(src_name, sizeof(src_name), "%s_%s.%s.%d", "spa_in_msg_connect",
+                addr_str, sockets[s].type == SOCK_STREAM ? "tcp" : "udp",
+                ntohs(sockets[s].bind_addr.sin_port));
+  spa_snprintf4(init_src_name, sizeof(init_src_name), "%s_%s.%s.%d",
                 "spa_init_in_msg_connect", addr_str,
+                sockets[s].type == SOCK_STREAM ? "tcp" : "udp",
                 ntohs(sockets[s].bind_addr.sin_port));
 
   if (spa_check_symbol(src_name, pathID) >= 0) {
@@ -143,14 +148,18 @@ ssize_t sendto(int sockfd, const void *buffer, size_t len, int flags,
   assert(to->sa_family == AF_INET);
   inet_ntop(AF_INET, &((struct sockaddr_in *)to)->sin_addr.s_addr, addr,
             sizeof(addr));
-  spa_snprintf3(msg_name, sizeof(msg_name), "%s_%s.%d", "spa_out_msg", addr,
+  spa_snprintf4(msg_name, sizeof(msg_name), "%s_%s.%s.%d", "spa_out_msg", addr,
+                sockets[sockfd].type == SOCK_STREAM ? "tcp" : "udp",
                 ntohs(((struct sockaddr_in *)to)->sin_port));
-  spa_snprintf3(size_name, sizeof(size_name), "%s_%s.%d", "spa_out_msg_size",
-                addr, ntohs(((struct sockaddr_in *)to)->sin_port));
-  spa_snprintf3(src_name, sizeof(src_name), "%s_%s.%d", "spa_out_msg_src", addr,
+  spa_snprintf4(size_name, sizeof(size_name), "%s_%s.%s.%d", "spa_out_msg_size",
+                addr, sockets[sockfd].type == SOCK_STREAM ? "tcp" : "udp",
                 ntohs(((struct sockaddr_in *)to)->sin_port));
-  spa_snprintf3(srcsize_name, sizeof(srcsize_name), "%s_%s.%d",
+  spa_snprintf4(src_name, sizeof(src_name), "%s_%s.%s.%d", "spa_out_msg_src",
+                addr, sockets[sockfd].type == SOCK_STREAM ? "tcp" : "udp",
+                ntohs(((struct sockaddr_in *)to)->sin_port));
+  spa_snprintf4(srcsize_name, sizeof(srcsize_name), "%s_%s.%s.%d",
                 "spa_out_msg_size_src", addr,
+                sockets[sockfd].type == SOCK_STREAM ? "tcp" : "udp",
                 ntohs(((struct sockaddr_in *)to)->sin_port));
 
   if (sockets[sockfd].type == SOCK_STREAM) {
@@ -187,20 +196,26 @@ ssize_t recvfrom(int sockfd, __ptr_t buffer, size_t len, int flags,
 
   inet_ntop(AF_INET, &sockets[sockfd].bind_addr.sin_addr.s_addr, addr,
             sizeof(addr));
-  spa_snprintf3(msg_name, sizeof(msg_name), "%s_%s.%d", "spa_in_msg", addr,
+  spa_snprintf4(msg_name, sizeof(msg_name), "%s_%s.%s.%d", "spa_in_msg", addr,
+                sockets[sockfd].type == SOCK_STREAM ? "tcp" : "udp",
                 ntohs(sockets[sockfd].bind_addr.sin_port));
-  spa_snprintf3(init_msg_name, sizeof(init_msg_name), "%s_%s.%d",
+  spa_snprintf4(init_msg_name, sizeof(init_msg_name), "%s_%s.%d",
                 "spa_init_in_msg", addr,
+                sockets[sockfd].type == SOCK_STREAM ? "tcp" : "udp",
                 ntohs(sockets[sockfd].bind_addr.sin_port));
-  spa_snprintf3(size_name, sizeof(size_name), "%s_%s.%d", "spa_in_msg_size",
-                addr, ntohs(sockets[sockfd].bind_addr.sin_port));
-  spa_snprintf3(init_size_name, sizeof(init_size_name), "%s_%s.%d",
+  spa_snprintf4(size_name, sizeof(size_name), "%s_%s.%s.%d", "spa_in_msg_size",
+                addr, sockets[sockfd].type == SOCK_STREAM ? "tcp" : "udp",
+                ntohs(sockets[sockfd].bind_addr.sin_port));
+  spa_snprintf4(init_size_name, sizeof(init_size_name), "%s_%s.%d",
                 "spa_init_in_msg_size", addr,
+                sockets[sockfd].type == SOCK_STREAM ? "tcp" : "udp",
                 ntohs(sockets[sockfd].bind_addr.sin_port));
-  spa_snprintf3(src_name, sizeof(src_name), "%s_%s.%d", "spa_in_msg_src", addr,
+  spa_snprintf4(src_name, sizeof(src_name), "%s_%s.%s.%d", "spa_in_msg_src",
+                addr, sockets[sockfd].type == SOCK_STREAM ? "tcp" : "udp",
                 ntohs(sockets[sockfd].bind_addr.sin_port));
-  spa_snprintf3(init_src_name, sizeof(init_src_name), "%s_%s.%d",
+  spa_snprintf4(init_src_name, sizeof(init_src_name), "%s_%s.%s.%d",
                 "spa_init_in_msg_src", addr,
+                sockets[sockfd].type == SOCK_STREAM ? "tcp" : "udp",
                 ntohs(sockets[sockfd].bind_addr.sin_port));
 
   if (spa_check_symbol(msg_name, pathID) < 0) {
@@ -275,9 +290,10 @@ int select(int nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds,
 
       inet_ntop(AF_INET, &sockets[i].bind_addr.sin_addr.s_addr, addr,
                 sizeof(addr));
-      spa_snprintf3(src_name, sizeof(src_name), "%s_%s.%d",
+      spa_snprintf4(src_name, sizeof(src_name), "%s_%s.%s.%d",
                     sockets[i].listen ? "spa_in_msg_connect" : "spa_in_msg",
-                    addr, ntohs(sockets[i].bind_addr.sin_port));
+                    addr, sockets[i].type == SOCK_STREAM ? "tcp" : "udp",
+                    ntohs(sockets[i].bind_addr.sin_port));
 
       int distance = spa_check_symbol(src_name, pathID);
       if (distance >= 0 && distance < read_fd_distance) {
