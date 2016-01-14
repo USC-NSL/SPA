@@ -844,6 +844,14 @@ SpecialFunctionHandler::handleSpaLoadPath(ExecutionState &state,
     if (name.compare(0, strlen(SPA_MESSAGE_OUTPUT_SOURCE_PREFIX),
                      SPA_MESSAGE_OUTPUT_SOURCE_PREFIX) == 0 &&
         participantName == SPA::ParticipantName) {
+      std::string symbolLocalName =
+          name.substr(0, name.rfind(SPA_SYMBOL_DELIMITER));
+      std::string symbolIPPort = symbolLocalName.substr(
+          symbolLocalName.rfind(SPA_SYMBOL_DELIMITER) + 1);
+      std::string symbolIPProto =
+          symbolIPPort.substr(0, symbolIPPort.rfind("."));
+      std::string symbolProto =
+          symbolIPProto.substr(symbolIPProto.rfind(".") + 1);
       for (auto sit : oit.second) {
         struct sockaddr_in src;
         assert(sit->getOutputValues().size() == sizeof(src));
@@ -855,8 +863,12 @@ SpecialFunctionHandler::handleSpaLoadPath(ExecutionState &state,
         }
         char srcTxt[INET_ADDRSTRLEN];
         assert(inet_ntop(AF_INET, &src.sin_addr, srcTxt, sizeof(srcTxt)));
-        participantIPPorts.insert(std::string(srcTxt) + "." +
-                                  SPA::numToStr(ntohs(src.sin_port)));
+
+        std::string binding = std::string(srcTxt) + "." + symbolProto + "." +
+                              SPA::numToStr(ntohs(src.sin_port));
+        klee_message("[spa_load_path]   Participant accepts messages for %s.",
+                     binding.c_str());
+        participantIPPorts.insert(binding);
       }
     }
   }
