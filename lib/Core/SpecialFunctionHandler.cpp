@@ -866,9 +866,11 @@ SpecialFunctionHandler::handleSpaLoadPath(ExecutionState &state,
 
         std::string binding = std::string(srcTxt) + "." + symbolProto + "." +
                               SPA::numToStr(ntohs(src.sin_port));
-        klee_message("[spa_load_path]   Participant accepts messages for %s.",
-                     binding.c_str());
-        participantIPPorts.insert(binding);
+        if (!participantIPPorts.count(binding)) {
+          klee_message("[spa_load_path]   Participant accepts messages for %s.",
+                       binding.c_str());
+          participantIPPorts.insert(binding);
+        }
       }
     }
   }
