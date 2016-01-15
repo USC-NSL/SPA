@@ -39,14 +39,14 @@ llvm::cl::opt<std::string> InFileName(llvm::cl::Positional, llvm::cl::Required,
 
 typedef struct {
   std::string name;
-  std::set<std::string> ipPort;
+  std::set<std::string> bindings;
 } participant_t;
 #define API_PREFIX "api_"
 
 typedef struct {
-  std::string fromIpPort;
+  std::string fromBinding;
   std::shared_ptr<participant_t> fromParticipant;
-  std::string toIpPort;
+  std::string toBinding;
   std::shared_ptr<participant_t> toParticipant;
   bool received;
   std::set<std::string> symbolNames;
@@ -61,7 +61,7 @@ std::map<std::string,
          std::map<unsigned long, std::map<bool, std::set<std::string> > > >
     coverage;
 
-std::string getIpPort(SPA::Symbol *symbol) {
+std::string getBinding(SPA::Symbol *symbol) {
   std::string symbolName = symbol->getName();
   // Remove counter.
   symbolName = symbolName.substr(0, symbolName.rfind(SPA_SYMBOL_DELIMITER));
@@ -69,7 +69,8 @@ std::string getIpPort(SPA::Symbol *symbol) {
   symbolName = symbolName.substr(0, symbolName.rfind(SPA_SYMBOL_DELIMITER));
   // Remove prefixes.
   symbolName = symbolName.substr(symbolName.rfind(SPA_SYMBOL_DELIMITER) + 1);
-  // Convert ip.port -> ip:port
+  // Convert ip.proto.port -> ip:proto:port
+  symbolName = symbolName.replace(symbolName.rfind("."), 1, ":");
   symbolName = symbolName.replace(symbolName.rfind("."), 1, ":");
 
   return symbolName;
@@ -108,7 +109,7 @@ std::string escapeChar(unsigned char c) {
 
 void processPath(SPA::Path *path, unsigned long pathID) {
   std::map<std::string, std::shared_ptr<participant_t> > participantByName;
-  std::map<std::string, std::shared_ptr<participant_t> > participantByIpPort;
+  std::map<std::string, std::shared_ptr<participant_t> > participantByBinding;
 
   std::vector<std::shared_ptr<message_t> > messages;
 
@@ -137,10 +138,10 @@ void processPath(SPA::Path *path, unsigned long pathID) {
         it->getName().compare(0, strlen(SPA_MESSAGE_OUTPUT_CONNECT_PREFIX),
                               SPA_MESSAGE_OUTPUT_CONNECT_PREFIX) == 0) {
       std::string participant = it->getParticipant();
-      std::string ipPort;
+      std::string binding;
 
       if (it->isInput()) {
-        ipPort = getIpPort(it.get());
+        binding = getBinding(it.get());
       } else {
         struct sockaddr_in src;
         assert(it->getOutputValues().size() == sizeof(src));
@@ -153,17 +154,30 @@ void processPath(SPA::Path *path, unsigned long pathID) {
         char srcTxt[INET_ADDRSTRLEN];
         assert(inet_ntop(AF_INET, &src.sin_addr, srcTxt, sizeof(srcTxt)));
 
-        ipPort = std::string(srcTxt) + ":" + SPA::numToStr(ntohs(src.sin_port));
+        std::string symbolName = it->getName();
+        std::string symbolQualifiedName =
+            symbolName.substr(0, symbolName.rfind(SPA_SYMBOL_DELIMITER));
+        std::string symbolLocalName = symbolQualifiedName.substr(
+            0, symbolQualifiedName.rfind(SPA_SYMBOL_DELIMITER));
+        std::string symbolIPPort = symbolLocalName.substr(
+            symbolLocalName.rfind(SPA_SYMBOL_DELIMITER) + 1);
+        std::string symbolIPProto =
+            symbolIPPort.substr(0, symbolIPPort.rfind("."));
+        std::string symbolProto =
+            symbolIPProto.substr(symbolIPProto.rfind(".") + 1);
+
+        binding = std::string(srcTxt) + ":" + symbolProto + ":" +
+                  SPA::numToStr(ntohs(src.sin_port));
       }
 
       assert(participantByName.count(participant));
 
       if (Debug) {
         klee::klee_message("  Participant %s listens on: %s",
-                           participant.c_str(), ipPort.c_str());
+                           participant.c_str(), binding.c_str());
       }
-      participantByName[participant]->ipPort.insert(ipPort);
-      participantByIpPort[ipPort] = participantByName[participant];
+      participantByName[participant]->bindings.insert(binding);
+      participantByBinding[binding] = participantByName[participant];
     }
   }
 
@@ -171,19 +185,19 @@ void processPath(SPA::Path *path, unsigned long pathID) {
   unsigned long unknownId = 1;
   for (auto it : path->getSymbolLog()) {
     if (it->isMessage() && it->isOutput()) {
-      std::string ipPort = getIpPort(it.get());
-      if (!participantByIpPort.count(ipPort)) {
+      std::string binding = getBinding(it.get());
+      if (!participantByBinding.count(binding)) {
         if (Debug) {
           klee::klee_message("  Found unknown participant on: %s",
-                             ipPort.c_str());
+                             binding.c_str());
         }
         std::string name = "Unknown-" + SPA::numToStr(unknownId++);
         participantByName[name].reset(new participant_t {
           name, std::set<std::string>({
-            ipPort
+            binding
           })
         });
-        participantByIpPort[ipPort] = participantByName[name];
+        participantByBinding[binding] = participantByName[name];
       }
     }
   }
@@ -218,19 +232,19 @@ void processPath(SPA::Path *path, unsigned long pathID) {
           continue;
         }
         bool sent = false;
-        std::string ipPort = getIpPort(sit.get());
+        std::string binding = getBinding(sit.get());
         // Find first outstanding compatible message.
         for (auto mit : messages) {
-          if (mit->toIpPort == ipPort && !mit->received) {
-            if (mit->fromIpPort.empty()) {
-              mit->fromIpPort = ipPort;
+          if (mit->toBinding == binding && !mit->received) {
+            if (mit->fromBinding.empty()) {
+              mit->fromBinding = binding;
             }
-            assert(mit->fromIpPort == ipPort);
+            assert(mit->fromBinding == binding);
             mit->received = true;
             if (Debug) {
               klee::klee_message("  Received message: %s -> %s",
-                                 mit->fromIpPort.c_str(),
-                                 mit->toIpPort.c_str());
+                                 mit->fromBinding.c_str(),
+                                 mit->toBinding.c_str());
             }
             sent = true;
             break;
@@ -252,12 +266,12 @@ void processPath(SPA::Path *path, unsigned long pathID) {
         messages.back()->received = true;
         messages.back()->symbolNames.insert(sit->getName());
       } else if (sit->isMessage()) {
-        std::string ipPort = getIpPort(sit.get());
-        assert(participantByIpPort.count(ipPort) &&
+        std::string binding = getBinding(sit.get());
+        assert(participantByBinding.count(binding) &&
                "Message sent to unknown participant.");
         if (Debug) {
           klee::klee_message("  Sent message: %s -> %s", participant.c_str(),
-                             participantByIpPort[ipPort]->name.c_str());
+                             participantByBinding[binding]->name.c_str());
         }
         // Collapse content size and source symbols into one message.
         if (sit->getName().compare(0, strlen(SPA_MESSAGE_OUTPUT_SIZE_PREFIX),
@@ -266,13 +280,13 @@ void processPath(SPA::Path *path, unsigned long pathID) {
                                    SPA_MESSAGE_OUTPUT_SOURCE_PREFIX) == 0) {
           assert(messages.back()->fromParticipant ==
                      participantByName[participant] &&
-                 messages.back()->toIpPort == ipPort);
+                 messages.back()->toBinding == binding);
           messages.back()->symbolNames.insert(sit->getName());
         } else {
           messages.emplace_back(new message_t());
           messages.back()->fromParticipant = participantByName[participant];
-          messages.back()->toIpPort = ipPort;
-          messages.back()->toParticipant = participantByIpPort[ipPort];
+          messages.back()->toBinding = binding;
+          messages.back()->toParticipant = participantByBinding[binding];
           messages.back()->symbolNames.insert(sit->getName());
         }
       } else {
@@ -385,8 +399,8 @@ void processPath(SPA::Path *path, unsigned long pathID) {
       dotFile << "  " << participantToken << " [style=\"invis\"]" << std::endl;
     } else {
       dotFile << "  " << participantToken << " [label=\"" << pit.first << "\\n";
-      for (auto ipit : pit.second->ipPort) {
-        dotFile << ipit << "\\n";
+      for (auto bit : pit.second->bindings) {
+        dotFile << bit << "\\n";
       }
       dotFile << "\"]" << std::endl;
     }
