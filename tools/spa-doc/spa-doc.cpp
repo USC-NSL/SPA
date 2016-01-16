@@ -48,8 +48,9 @@ typedef struct {
   std::shared_ptr<participant_t> fromParticipant;
   std::string toBinding;
   std::shared_ptr<participant_t> toParticipant;
-  bool received;
-  std::set<std::string> symbolNames;
+  unsigned long outstanding;
+  std::vector<klee::ref<klee::Expr> > content;
+  std::vector<std::string> symbolNames;
 } message_t;
 
 // uuid -> [participant, uuid]s.
@@ -221,8 +222,7 @@ void processPath(SPA::Path *path, unsigned long pathID) {
         messages.back()->fromParticipant =
             participantByName[API_PREFIX + participant];
         messages.back()->toParticipant = participantByName[participant];
-        messages.back()->received = true;
-        messages.back()->symbolNames.insert(sit->getName());
+        messages.back()->symbolNames.push_back(sit->getName());
       } else if (sit->isMessage()) {
         // Ignore message size and source symbols.
         if (sit->getName().compare(0, strlen(SPA_MESSAGE_INPUT_SIZE_PREFIX),
@@ -235,12 +235,12 @@ void processPath(SPA::Path *path, unsigned long pathID) {
         std::string binding = getBinding(sit.get());
         // Find first outstanding compatible message.
         for (auto mit : messages) {
-          if (mit->toBinding == binding && !mit->received) {
+          if (mit->toBinding == binding && mit->outstanding > 0) {
             if (mit->fromBinding.empty()) {
               mit->fromBinding = binding;
             }
             assert(mit->fromBinding == binding);
-            mit->received = true;
+            mit->outstanding--;
             if (Debug) {
               klee::klee_message("  Received message: %s -> %s",
                                  mit->fromBinding.c_str(),
@@ -263,8 +263,10 @@ void processPath(SPA::Path *path, unsigned long pathID) {
         messages.back()->fromParticipant = participantByName[participant];
         messages.back()->toParticipant =
             participantByName[API_PREFIX + participant];
-        messages.back()->received = true;
-        messages.back()->symbolNames.insert(sit->getName());
+        messages.back()->content.insert(messages.back()->content.end(),
+                                        sit->getOutputValues().begin(),
+                                        sit->getOutputValues().end());
+        messages.back()->symbolNames.push_back(sit->getName());
       } else if (sit->isMessage()) {
         std::string binding = getBinding(sit.get());
         assert(participantByBinding.count(binding) &&
@@ -281,13 +283,28 @@ void processPath(SPA::Path *path, unsigned long pathID) {
           assert(messages.back()->fromParticipant ==
                      participantByName[participant] &&
                  messages.back()->toBinding == binding);
-          messages.back()->symbolNames.insert(sit->getName());
+          messages.back()->symbolNames.push_back(sit->getName());
         } else {
-          messages.emplace_back(new message_t());
-          messages.back()->fromParticipant = participantByName[participant];
-          messages.back()->toBinding = binding;
-          messages.back()->toParticipant = participantByBinding[binding];
-          messages.back()->symbolNames.insert(sit->getName());
+          std::string proto = binding.substr(binding.find(":") + 1);
+          proto = proto.substr(0, proto.find(":"));
+          if (messages.empty() || proto == "udp" ||
+              messages.back()->fromParticipant !=
+                  participantByName[participant] ||
+              messages.back()->toBinding != binding) {
+            messages.emplace_back(new message_t());
+            messages.back()->fromParticipant = participantByName[participant];
+            messages.back()->toBinding = binding;
+            messages.back()->toParticipant = participantByBinding[binding];
+          }
+          messages.back()->outstanding++;
+          if (sit->getName().compare(0,
+                                     strlen(SPA_MESSAGE_OUTPUT_CONNECT_PREFIX),
+                                     SPA_MESSAGE_OUTPUT_CONNECT_PREFIX) != 0) {
+            messages.back()->content.insert(messages.back()->content.end(),
+                                            sit->getOutputValues().begin(),
+                                            sit->getOutputValues().end());
+          }
+          messages.back()->symbolNames.push_back(sit->getName());
         }
       } else {
         assert(false && "Symbol is neither message nor API.");
@@ -406,23 +423,63 @@ void processPath(SPA::Path *path, unsigned long pathID) {
     }
   }
 
-  for (unsigned i = 0; i < messages.size(); i++) {
-    dotFile << "  " << sanitizeToken(messages[i]->fromParticipant->name)
-            << " -> " << sanitizeToken(messages[i]->toParticipant->name)
-            << "[label=\"" << (i + 1) << "\" arrowhead=\""
-            << (messages[i]->received ? "normal" : "dot") << "\" href=\"#msg"
-            << i << "\"]" << std::endl;
+  for (unsigned mi = 0; mi < messages.size(); mi++) {
+    dotFile << "  " << sanitizeToken(messages[mi]->fromParticipant->name)
+            << " -> " << sanitizeToken(messages[mi]->toParticipant->name)
+            << "[label=\"" << (mi + 1) << "\" arrowhead=\""
+            << (messages[mi]->outstanding == 0 ? "normal" : "dot")
+            << "\" href=\"#msg" << (mi + 1) << "\"]" << std::endl;
 
-    htmlFile << "    <div class='box' id='msg" << i << "'>" << std::endl;
+    htmlFile << "    <div class='box' id='msg" << (mi + 1) << "'>" << std::endl;
     htmlFile << "      <a class='closebutton' href='#'>&#x2715;</a>"
              << std::endl;
-    htmlFile << "      <h1>Message " << i << " symbols</h1>" << std::endl;
-    htmlFile << "      <ul>" << std::endl;
-    for (auto it : messages[i]->symbolNames) {
-      htmlFile << "        <li><a href='#" << it << "'>" << it << "</a></li>"
+    htmlFile << "        <h1>Message " << (mi + 1) << "</h1>" << std::endl;
+    if (mi > 0) {
+      htmlFile << "      <a href='#msg" << mi
+               << "'>&lt;&lt; Previous Message</a>" << std::endl;
+    }
+    if (mi < messages.size() - 1) {
+      htmlFile << "      <a href='#msg" << mi + 2
+               << "'>Next Message &gt;&gt;</a>" << std::endl;
+    }
+    htmlFile << "      <br />" << std::endl;
+
+    htmlFile << "      <div class='content'>" << std::endl;
+    if (messages[mi]->content.size() > 0) {
+      htmlFile << "        <b>Size:</b> " << messages[mi]->content.size()
+               << "<br />" << std::endl;
+      htmlFile << "        <b>Text Representation:</b><br />" << std::endl;
+      htmlFile << "        <pre>" << std::endl;
+      for (auto it : messages[mi]->content) {
+        if (klee::ConstantExpr *ce = llvm::dyn_cast<klee::ConstantExpr>(it)) {
+          htmlFile << escapeChar(ce->getLimitedValue());
+        } else {
+          htmlFile << "&#9608;";
+        }
+      }
+      htmlFile << "        </pre>" << std::endl;
+      htmlFile << "        <b>Byte Values:</b><br />" << std::endl;
+      htmlFile << "        <table border='1'>" << std::endl;
+      htmlFile << "          <tr><th>Index</th><th>Expression</th></tr>"
+               << std::endl;
+      for (unsigned long si = 0; si < messages[mi]->content.size(); si++) {
+        std::string exprStr;
+        llvm::raw_string_ostream exprROS(exprStr);
+        messages[mi]->content[si]->print(exprROS);
+        htmlFile << "          <tr><td>" << si << "</td><td>" << exprROS.str()
+                 << "</td></tr>" << std::endl;
+      }
+      htmlFile << "      </table>" << std::endl;
+    }
+
+    htmlFile << "        <b>Symbols:</b><br />" << std::endl;
+    htmlFile << "        <ul>" << std::endl;
+    for (auto it : messages[mi]->symbolNames) {
+      htmlFile << "          <li><a href='#" << it << "'>" << it << "</a></li>"
                << std::endl;
     }
-    htmlFile << "      </ul>" << std::endl;
+    htmlFile << "        </ul>" << std::endl;
+    htmlFile << "      </div>" << std::endl;
     htmlFile << "    </div>" << std::endl;
   }
   dotFile << "}" << std::endl;
@@ -433,24 +490,25 @@ void processPath(SPA::Path *path, unsigned long pathID) {
     htmlFile << "      <a class='closebutton' href='#'>&#x2715;</a>"
              << std::endl;
     htmlFile << "      <h1>Symbol " << sit->getName() << "</h1>" << std::endl;
+    htmlFile << "      <div class='content'>" << std::endl;
     if (sit->isInput()) {
       htmlFile << "      <b>Type:</b> input<br />" << std::endl;
-      htmlFile << "      <b>Size:</b> " << sit->getInputArray()->size
+      htmlFile << "        <b>Size:</b> " << sit->getInputArray()->size
                << "<br />" << std::endl;
       if (path->getTestInputs().count(sit->getName())) {
         std::stringstream value;
         copy(path->getTestInput(sit->getName()).begin(),
              path->getTestInput(sit->getName()).end(),
              std::ostream_iterator<int>(value, " "));
-        htmlFile << "      <b>Test Case Value:</b> " << value.str() << "<br />"
-                 << std::endl;
+        htmlFile << "        <b>Test Case Value:</b> " << value.str()
+                 << "<br />" << std::endl;
       }
     } else if (sit->isOutput()) {
-      htmlFile << "      <b>Type:</b> output<br />" << std::endl;
-      htmlFile << "      <b>Size:</b> " << sit->getOutputValues().size()
+      htmlFile << "        <b>Type:</b> output<br />" << std::endl;
+      htmlFile << "        <b>Size:</b> " << sit->getOutputValues().size()
                << "<br />" << std::endl;
-      htmlFile << "      <b>Text Representation:</b><br />" << std::endl;
-      htmlFile << "      <pre>" << std::endl;
+      htmlFile << "        <b>Text Representation:</b><br />" << std::endl;
+      htmlFile << "        <pre>" << std::endl;
       for (auto it : sit->getOutputValues()) {
         if (klee::ConstantExpr *ce = llvm::dyn_cast<klee::ConstantExpr>(it)) {
           htmlFile << escapeChar(ce->getLimitedValue());
@@ -458,22 +516,23 @@ void processPath(SPA::Path *path, unsigned long pathID) {
           htmlFile << "&#9608;";
         }
       }
-      htmlFile << "      </pre>" << std::endl;
-      htmlFile << "      <b>Byte Values:</b><br />" << std::endl;
-      htmlFile << "      <table border='1'>" << std::endl;
-      htmlFile << "        <tr><th>Index</th><th>Expression</th></tr>"
+      htmlFile << "        </pre>" << std::endl;
+      htmlFile << "        <b>Byte Values:</b><br />" << std::endl;
+      htmlFile << "        <table border='1'>" << std::endl;
+      htmlFile << "          <tr><th>Index</th><th>Expression</th></tr>"
                << std::endl;
       for (unsigned long i = 0; i < sit->getOutputValues().size(); i++) {
         std::string exprStr;
         llvm::raw_string_ostream exprROS(exprStr);
         sit->getOutputValues()[i]->print(exprROS);
-        htmlFile << "        <tr><td>" << i << "</td><td>" << exprROS.str()
+        htmlFile << "          <tr><td>" << i << "</td><td>" << exprROS.str()
                  << "</td></tr>" << std::endl;
       }
-      htmlFile << "      </table>" << std::endl;
+      htmlFile << "        </table>" << std::endl;
     } else {
       assert(false && "Unknown symbol type.");
     }
+    htmlFile << "      </div>" << std::endl;
     htmlFile << "    </div>" << std::endl;
   }
 
@@ -490,7 +549,8 @@ void processPath(SPA::Path *path, unsigned long pathID) {
     htmlFile << "      <a class='closebutton' href='#'>&#x2715;</a>"
              << std::endl;
     htmlFile << "      <b>" << fit.first << "</b>" << std::endl;
-    htmlFile << "      <div class='src'>" << std::endl;
+    htmlFile << "      <div class='content'>" << std::endl;
+    htmlFile << "        <div class='src'>" << std::endl;
     std::ifstream srcFile(fit.first);
     unsigned long lastLineNum =
         fit.second.empty() ? 0 : fit.second.rbegin()->first;
@@ -498,7 +558,7 @@ void processPath(SPA::Path *path, unsigned long pathID) {
          srcFile.good() || srcLineNum <= lastLineNum; srcLineNum++) {
       std::string srcLine;
       std::getline(srcFile, srcLine);
-      htmlFile << "        <div class='line "
+      htmlFile << "          <div class='line "
                << (fit.second.count(srcLineNum)
                        ? (fit.second[srcLineNum] ? "covered" : "uncovered")
                        : "unknown") << "'>" << std::endl;
@@ -506,15 +566,16 @@ void processPath(SPA::Path *path, unsigned long pathID) {
         htmlFile << "<a href='coverage.html#" << fit.first << ":" << srcLineNum
                  << "'>" << std::endl;
       }
-      htmlFile << "          <div class='number'>" << srcLineNum << "</div>"
+      htmlFile << "            <div class='number'>" << srcLineNum << "</div>"
                << std::endl;
-      htmlFile << "          <div class='content'>" << sanitizeHTML(srcLine)
+      htmlFile << "            <div class='content'>" << sanitizeHTML(srcLine)
                << "</div>" << std::endl;
       if (fit.second.count(srcLineNum)) {
-        htmlFile << "        </a>" << std::endl;
+        htmlFile << "          </a>" << std::endl;
       }
-      htmlFile << "        </div>" << std::endl;
+      htmlFile << "          </div>" << std::endl;
     }
+    htmlFile << "        </div>" << std::endl;
     htmlFile << "      </div>" << std::endl;
     htmlFile << "    </div>" << std::endl;
   }
@@ -626,10 +687,12 @@ int main(int argc, char **argv, char **envp) {
   cssFile << "div.box:target {" << std::endl;
   cssFile << "  display: table;" << std::endl;
   cssFile << "}" << std::endl;
+  cssFile << "div.box div.content {" << std::endl;
+  cssFile << "  max-height: calc(100vh - 200px);" << std::endl;
+  cssFile << "  overflow-y: scroll;" << std::endl;
+  cssFile << "}" << std::endl;
   cssFile << "div.src {" << std::endl;
-  cssFile << "  max-height: calc(100vh - 150px);" << std::endl;
   cssFile << "  width: 700px;" << std::endl;
-  cssFile << "  overflow: scroll;" << std::endl;
   cssFile << "  line-height: 100%;" << std::endl;
   cssFile << "}" << std::endl;
   cssFile << "div.src div.line {" << std::endl;
