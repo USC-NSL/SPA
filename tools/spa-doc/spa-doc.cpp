@@ -33,6 +33,11 @@ llvm::cl::opt<int>
 
 llvm::cl::opt<bool> Debug("d", llvm::cl::desc("Enable debug messages."));
 
+llvm::cl::list<std::string> SrcDirMap(
+    "map-src",
+    llvm::cl::desc(
+        "Remaps source directories when searching for source code files."));
+
 llvm::cl::opt<std::string> InFileName(llvm::cl::Positional, llvm::cl::Required,
                                       llvm::cl::desc("<input path-file>"));
 }
@@ -61,6 +66,26 @@ std::map<std::string, std::set<std::pair<std::string, std::string> > >
 std::map<std::string,
          std::map<unsigned long, std::map<bool, std::set<std::string> > > >
     coverage;
+
+std::string remapSrcFileName(std::string srcFileName) {
+  for (auto mapping : SrcDirMap) {
+    auto d = mapping.find("=");
+    assert(d != std::string::npos &&
+           "Incorrectly formatted source directory mapping.");
+    std::string from = mapping.substr(0, d);
+    std::string to = mapping.substr(d + 1);
+    if (srcFileName.compare(0, from.length(), from) == 0) {
+      std::string old = srcFileName;
+      srcFileName.replace(0, from.length(), to);
+      if (Debug) {
+        klee::klee_message("Mapping source file %s to %s.", old.c_str(),
+                           srcFileName.c_str());
+      }
+      break;
+    }
+  }
+  return srcFileName;
+}
 
 std::string getBinding(SPA::Symbol *symbol) {
   std::string symbolName = symbol->getName();
@@ -540,18 +565,20 @@ void processPath(SPA::Path *path, unsigned long pathID) {
   htmlFile << "    <h2>Coverage</h2>" << std::endl;
   htmlFile << "    <b>Files:</b><br />" << std::endl;
   for (auto it : path->getExploredLineCoverage()) {
-    htmlFile << "    <a href='#" << it.first << "'>" << it.first << "</a><br />"
-             << std::endl;
+    std::string srcFileName = remapSrcFileName(it.first);
+    htmlFile << "    <a href='#" << srcFileName << "'>" << srcFileName
+             << "</a><br />" << std::endl;
   }
 
   for (auto fit : path->getExploredLineCoverage()) {
-    htmlFile << "    <div class='box' id='" << fit.first << "'>" << std::endl;
+    std::string srcFileName = remapSrcFileName(fit.first);
+    htmlFile << "    <div class='box' id='" << srcFileName << "'>" << std::endl;
     htmlFile << "      <a class='closebutton' href='#'>&#x2715;</a>"
              << std::endl;
-    htmlFile << "      <b>" << fit.first << "</b>" << std::endl;
+    htmlFile << "      <b>" << srcFileName << "</b>" << std::endl;
     htmlFile << "      <div class='content'>" << std::endl;
     htmlFile << "        <div class='src'>" << std::endl;
-    std::ifstream srcFile(fit.first);
+    std::ifstream srcFile(srcFileName);
     unsigned long lastLineNum =
         fit.second.empty() ? 0 : fit.second.rbegin()->first;
     for (unsigned long srcLineNum = 1;
@@ -563,8 +590,8 @@ void processPath(SPA::Path *path, unsigned long pathID) {
                        ? (fit.second[srcLineNum] ? "covered" : "uncovered")
                        : "unknown") << "'>" << std::endl;
       if (fit.second.count(srcLineNum)) {
-        htmlFile << "<a href='coverage.html#" << fit.first << ":" << srcLineNum
-                 << "'>" << std::endl;
+        htmlFile << "<a href='coverage.html#" << srcFileName << ":"
+                 << srcLineNum << "'>" << std::endl;
       }
       htmlFile << "            <div class='number'>" << srcLineNum << "</div>"
                << std::endl;
@@ -801,18 +828,20 @@ int main(int argc, char **argv, char **envp) {
   coverageHtml << "    <h1>Coverage</h1>" << std::endl;
   coverageHtml << "    <b>Files:</b><br />" << std::endl;
   for (auto it : coverage) {
-    coverageHtml << "    <a href='#" << it.first << "'>" << it.first
+    std::string srcFileName = remapSrcFileName(it.first);
+    coverageHtml << "    <a href='#" << srcFileName << "'>" << srcFileName
                  << "</a><br />" << std::endl;
   }
 
   for (auto fit : coverage) {
-    coverageHtml << "    <div class='box' id='" << fit.first << "'>"
+    std::string srcFileName = remapSrcFileName(fit.first);
+    coverageHtml << "    <div class='box' id='" << srcFileName << "'>"
                  << std::endl;
     coverageHtml << "      <a class='closebutton' href='#'>&#x2715;</a>"
                  << std::endl;
-    coverageHtml << "      <b>" << fit.first << "</b>" << std::endl;
+    coverageHtml << "      <b>" << srcFileName << "</b>" << std::endl;
     coverageHtml << "      <div class='src'>" << std::endl;
-    std::ifstream srcFile(fit.first);
+    std::ifstream srcFile(srcFileName);
     unsigned long lastLineNum =
         fit.second.empty() ? 0 : fit.second.rbegin()->first;
     for (unsigned long srcLineNum = 1;
@@ -821,7 +850,7 @@ int main(int argc, char **argv, char **envp) {
       std::getline(srcFile, srcLine);
       coverageHtml << "        <div class='line'>" << std::endl;
       if (fit.second.count(srcLineNum)) {
-        coverageHtml << "<a href='coverage.html#" << fit.first << ":"
+        coverageHtml << "<a href='coverage.html#" << srcFileName << ":"
                      << srcLineNum << "'>" << std::endl;
       }
       coverageHtml << "          <div class='number'>" << srcLineNum << "</div>"
@@ -838,12 +867,13 @@ int main(int argc, char **argv, char **envp) {
   }
 
   for (auto fit : coverage) {
+    std::string srcFileName = remapSrcFileName(fit.first);
     for (auto lit : fit.second) {
-      coverageHtml << "    <div class='box' id='" << fit.first << ":"
+      coverageHtml << "    <div class='box' id='" << srcFileName << ":"
                    << lit.first << "'>" << std::endl;
       coverageHtml << "      <a class='closebutton' href='#'>&#x2715;</a>"
                    << std::endl;
-      coverageHtml << "      <h2>" << fit.first << ":" << lit.first << "</h2>"
+      coverageHtml << "      <h2>" << srcFileName << ":" << lit.first << "</h2>"
                    << std::endl;
 
       coverageHtml << "      <b>Other paths that reached here:</b><br />"
