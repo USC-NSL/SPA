@@ -736,7 +736,8 @@ int main(int argc, char **argv, char **envp) {
   cssFile << "  background-color: lightgray;" << std::endl;
   cssFile << "}" << std::endl;
   cssFile << "div.src div.line div.content {" << std::endl;
-  cssFile << "  width: 100%;" << std::endl;
+  cssFile << "  width: 645px;" << std::endl;
+  cssFile << "  overflow: hidden;" << std::endl;
   cssFile << "  unicode-bidi: embed;" << std::endl;
   cssFile << "  font-family: monospace;" << std::endl;
   cssFile << "  white-space: pre;" << std::endl;
