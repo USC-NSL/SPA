@@ -154,6 +154,8 @@ std::string escapeChar(unsigned char c) {
 }
 
 void makePathIndex(std::string filePrefix, std::set<std::string> uuids) {
+  klee::klee_message("Processing path index %s.", filePrefix.c_str());
+
   std::ofstream dotFile(Directory + "/" + filePrefix + ".dot");
   std::ofstream htmlFile(Directory + "/" + filePrefix + ".html.inc");
   assert(dotFile.good() && htmlFile.good());
@@ -412,9 +414,12 @@ void processPath(SPA::Path *path, unsigned long pathID) {
 
   htmlFile << "    <b>Lineage:</b><br />" << std::endl;
   htmlFile << "    <ol>" << std::endl;
+  std::vector<std::string> conversation;
   for (auto it : path->getParticipants()) {
+    conversation.push_back(it->getName());
     htmlFile << "    <li><a href='" << it->getPathUUID() << ".html'>"
-             << it->getName() << "</a></li>" << std::endl;
+             << it->getName() << "</a> (<a href='" << join(conversation, "_")
+             << ".html'>conversation</a>)</li>" << std::endl;
   }
   htmlFile << "    </ol><br />" << std::endl;
 
@@ -865,12 +870,13 @@ int main(int argc, char **argv, char **envp) {
 
   for (auto cit : conversations) {
     std::string name = join(cit.first, "_");
+    auto fullConversation = cit.second;
     // Add all parent paths to conversation.
     for (auto pit : cit.second) {
       if (parentPath.count(pit)) {
         std::string parent = parentPath[pit];
-        while (!cit.second.count(parent)) {
-          cit.second.insert(parent);
+        while (!fullConversation.count(parent)) {
+          fullConversation.insert(parent);
           if (parentPath.count(parent)) {
             parent = parentPath[parent];
           } else {
@@ -881,8 +887,8 @@ int main(int argc, char **argv, char **envp) {
     }
 
     conversationsDot << "  " << sanitizeToken(name) << " [label=\""
-                     << cit.first.back() << "\" URL=\"" << name << ".html\"]"
-                     << std::endl;
+                     << cit.first.back() << "\\n(" << cit.second.size()
+                     << " Paths)\" URL=\"" << name << ".html\"]" << std::endl;
     if (cit.first.size() > 1) {
       auto parentConversation = cit.first;
       parentConversation.pop_back();
@@ -893,7 +899,7 @@ int main(int argc, char **argv, char **envp) {
       conversationsDot << "  root -> " << sanitizeToken(name) << std::endl;
     }
 
-    makePathIndex(name, cit.second);
+    makePathIndex(name, fullConversation);
     makefile << "all: " << name << std::endl;
     makefile << name << ": " << name << ".html " << name << ".svg" << std::endl;
     makefile << "clean: " << name << ".clean" << std::endl;
