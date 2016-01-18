@@ -58,6 +58,18 @@ typedef struct {
   std::vector<std::string> symbolNames;
 } message_t;
 
+// participants -> uuids.
+std::map<std::vector<std::string>, std::set<std::string> > conversations;
+
+// uuid -> path-id.
+std::map<std::string, unsigned long> uuidToId;
+
+// uuid -> participant.
+std::map<std::string, std::string> uuidToParticipant;
+
+// uuid -> uuid.
+std::map<std::string, std::string> parentPath;
+
 // uuid -> [participant, uuid]s.
 std::map<std::string, std::set<std::pair<std::string, std::string> > >
     childrenPaths;
@@ -66,6 +78,14 @@ std::map<std::string, std::set<std::pair<std::string, std::string> > >
 std::map<std::string,
          std::map<unsigned long, std::map<bool, std::set<std::string> > > >
     coverage;
+
+std::string join(std::vector<std::string> strings, std::string delimiter) {
+  std::string result;
+  for (auto it = strings.begin(), ie = strings.end(); it != ie; it++) {
+    result += (it == strings.begin() ? "" : delimiter) + *it;
+  }
+  return result;
+}
 
 std::string remapSrcFileName(std::string srcFileName) {
   for (auto mapping : SrcDirMap) {
@@ -131,6 +151,36 @@ std::string sanitizeHTML(std::string text) {
 
 std::string escapeChar(unsigned char c) {
   return std::string("&#") + SPA::numToStr((int) c) + ";";
+}
+
+void makePathIndex(std::string filePrefix, std::set<std::string> uuids) {
+  std::ofstream dotFile(Directory + "/" + filePrefix + ".dot");
+  std::ofstream htmlFile(Directory + "/" + filePrefix + ".html.inc");
+  assert(dotFile.good() && htmlFile.good());
+
+  htmlFile << "    <div id=\"header\">" << std::endl;
+  htmlFile << "      <a href=\"index.html\">All Conversations</a>" << std::endl;
+  htmlFile << "      <a href=\"paths.html\">All Paths</a>" << std::endl;
+  htmlFile << "      <a href=\"coverage.html\">Coverage</a>" << std::endl;
+  htmlFile << "    </div>" << std::endl;
+  htmlFile << "    <img src='" << filePrefix
+           << ".svg' alt='Path Dependency Graph' usemap='#G' />" << std::endl;
+
+  dotFile << "digraph G {" << std::endl;
+  dotFile << "  root [label=\"Path 0\"]" << std::endl;
+
+  for (auto it : uuids) {
+    dotFile << "  path_" << uuidToId[it] << " [label=\"Path " << uuidToId[it]
+            << "\\n" << uuidToParticipant[it] << "\" URL=\"" << it << ".html\"]"
+            << std::endl;
+    if (parentPath.count(it)) {
+      dotFile << "  path_" << uuidToId[parentPath[it]] << " -> path_"
+              << uuidToId[it] << std::endl;
+    } else {
+      dotFile << "  root -> path_" << uuidToId[it] << std::endl;
+    }
+  }
+  dotFile << "}" << std::endl;
 }
 
 void processPath(SPA::Path *path, unsigned long pathID) {
@@ -350,7 +400,7 @@ void processPath(SPA::Path *path, unsigned long pathID) {
            << std::endl;
   htmlFile << "      <a href=\"#coverage\">Coverage</a>" << std::endl;
   htmlFile << "      <a href=\"#src\">Path Source</a>" << std::endl;
-  htmlFile << "      <a href=\"index.html\">Path Index</a>" << std::endl;
+  htmlFile << "      <a href=\"index.html\">All Conversations</a>" << std::endl;
   htmlFile << "    </div>" << std::endl;
 
   htmlFile << "    <a class='anchor' id='metadata'></a>" << std::endl;
@@ -657,9 +707,10 @@ int main(int argc, char **argv, char **envp) {
            << std::endl << std::endl;
 
   makefile << "default: all" << std::endl;
-  makefile << "all: index" << std::endl;
+  makefile << "all: index paths" << std::endl;
   makefile << "index: index.html index.svg" << std::endl;
-  makefile << "clean: index.clean" << std::endl;
+  makefile << "paths: paths.html paths.svg" << std::endl;
+  makefile << "clean: index.clean paths.clean" << std::endl;
 
   std::ofstream cssFile(Directory + "/style.css");
   assert(cssFile.good());
@@ -755,32 +806,27 @@ int main(int argc, char **argv, char **envp) {
   cssFile << "  font-size: 20pt;" << std::endl;
   cssFile << "}" << std::endl;
 
-  std::ofstream indexDot(Directory + "/index.dot");
-  std::ofstream indexHtml(Directory + "/index.html.inc");
-  assert(indexDot.good() && indexHtml.good());
-
-  indexHtml << "    <div id=\"header\">" << std::endl;
-  indexHtml << "      <a href=\"index.html\">Path Index</a>" << std::endl;
-  indexHtml << "      <a href=\"coverage.html\">Coverage</a>" << std::endl;
-  indexHtml << "    </div>" << std::endl;
-  indexHtml
-      << "    <img src='index.svg' alt='Path Dependency Graph' usemap='#G' />"
-      << std::endl;
-
-  indexDot << "digraph G {" << std::endl;
-  indexDot << "  root [label=\"Path 0\"]" << std::endl;
-
   std::unique_ptr<SPA::PathLoader> pathLoader(new SPA::PathLoader(inFile));
   std::unique_ptr<SPA::Path> path;
-  std::map<std::string, unsigned long> uuidToId;
+  std::set<std::string> allUUIDs;
 
   for (unsigned long pathID = 1; path.reset(pathLoader->getPath()), path;
        pathID++) {
     uuidToId[path->getUUID()] = pathID;
+    uuidToParticipant[path->getUUID()] =
+        path->getParticipants().back()->getName();
+    allUUIDs.insert(path->getUUID());
+
+    std::vector<std::string> participants;
+    for (auto pit : path->getParticipants()) {
+      participants.push_back(pit->getName());
+    }
+    conversations[participants].insert(path->getUUID());
 
     if (path->getParticipants().size() > 1) {
       auto parent = path->getParticipants()[path->getParticipants().size() - 2];
       auto child = path->getParticipants()[path->getParticipants().size() - 1];
+      parentPath[child->getPathUUID()] = parent->getPathUUID();
       childrenPaths[parent->getPathUUID()]
           .insert(std::make_pair(child->getName(), child->getPathUUID()));
     }
@@ -795,20 +841,64 @@ int main(int argc, char **argv, char **envp) {
     makefile << path->getUUID() << ": " << path->getUUID() << ".html "
              << path->getUUID() << ".svg" << std::endl;
     makefile << "clean: " << path->getUUID() << ".clean" << std::endl;
-
-    indexDot << "  path_" << pathID << " [label=\"Path " << pathID << "\\n"
-             << path->getParticipants().back()->getName() << "\" URL=\""
-             << path->getUUID() << ".html\"]" << std::endl;
-    if (path->getParticipants().size() == 1) {
-      indexDot << "  root -> path_" << pathID << std::endl;
-    } else if (path->getParticipants().size() >= 2) {
-      auto parent = path->getParticipants().size() - 2;
-      indexDot << "  path_"
-               << uuidToId[path->getParticipants()[parent]->getPathUUID()]
-               << " -> path_" << pathID << std::endl;
-    }
   }
-  indexDot << "}" << std::endl;
+
+  makePathIndex("paths", allUUIDs);
+
+  std::ofstream conversationsDot(Directory + "/index.dot");
+  std::ofstream conversationsHtml(Directory + "/index.html.inc");
+  assert(conversationsDot.good() && conversationsHtml.good());
+
+  conversationsHtml << "    <div id=\"header\">" << std::endl;
+  conversationsHtml << "      <a href=\"index.html\">All Conversations</a>"
+                    << std::endl;
+  conversationsHtml << "      <a href=\"paths.html\">All Paths</a>"
+                    << std::endl;
+  conversationsHtml << "      <a href=\"coverage.html\">Coverage</a>"
+                    << std::endl;
+  conversationsHtml << "    </div>" << std::endl;
+  conversationsHtml << "    <img src='index.svg' alt='Conversation Dependency "
+                       "Graph' usemap='#G' />" << std::endl;
+
+  conversationsDot << "digraph G {" << std::endl;
+  conversationsDot << "  root [label=\"Root\"]" << std::endl;
+
+  for (auto cit : conversations) {
+    std::string name = join(cit.first, "_");
+    // Add all parent paths to conversation.
+    for (auto pit : cit.second) {
+      if (parentPath.count(pit)) {
+        std::string parent = parentPath[pit];
+        while (!cit.second.count(parent)) {
+          cit.second.insert(parent);
+          if (parentPath.count(parent)) {
+            parent = parentPath[parent];
+          } else {
+            break;
+          }
+        }
+      }
+    }
+
+    conversationsDot << "  " << sanitizeToken(name) << " [label=\""
+                     << cit.first.back() << "\" URL=\"" << name << ".html\"]"
+                     << std::endl;
+    if (cit.first.size() > 1) {
+      auto parentConversation = cit.first;
+      parentConversation.pop_back();
+
+      conversationsDot << "  " << sanitizeToken(join(parentConversation, "_"))
+                       << " -> " << sanitizeToken(name) << std::endl;
+    } else {
+      conversationsDot << "  root -> " << sanitizeToken(name) << std::endl;
+    }
+
+    makePathIndex(name, cit.second);
+    makefile << "all: " << name << std::endl;
+    makefile << name << ": " << name << ".html " << name << ".svg" << std::endl;
+    makefile << "clean: " << name << ".clean" << std::endl;
+  }
+  conversationsDot << "}" << std::endl;
 
   std::ofstream coverageHtml(Directory + "/coverage.html");
   assert(coverageHtml.good());
@@ -823,7 +913,9 @@ int main(int argc, char **argv, char **envp) {
   coverageHtml << "  </head>" << std::endl;
   coverageHtml << "  <body>" << std::endl;
   coverageHtml << "    <div id=\"header\">" << std::endl;
-  coverageHtml << "      <a href=\"index.html\">Path Index</a>" << std::endl;
+  coverageHtml << "      <a href=\"index.html\">All Conversations</a>"
+               << std::endl;
+  coverageHtml << "      <a href=\"paths.html\">All Paths</a>" << std::endl;
   coverageHtml << "      <a href=\"coverage.html\">Coverage</a>" << std::endl;
   coverageHtml << "    </div>" << std::endl;
   coverageHtml << "    <h1>Coverage</h1>" << std::endl;
