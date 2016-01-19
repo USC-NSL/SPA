@@ -54,6 +54,9 @@ int spa_bind(int sockfd, const struct sockaddr *myaddr, socklen_t addrlen) {
 
 int spa_listen(int sockfd, int backlog) {
   sockets[sockfd].listen = 1;
+
+  printf("[model listen] Listening on socket: %d.\n", sockfd);
+
   return 0;
 }
 
