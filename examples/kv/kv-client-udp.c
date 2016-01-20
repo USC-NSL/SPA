@@ -16,8 +16,8 @@
 struct {
   const char *ip;
   short port;
-} servers[] = { { "127.0.0.1", 12340 }, { "127.0.0.1", 12341 },
-                { "127.0.0.1", 12342 } };
+} servers[] = { { "127.0.0.2", 12340 }, { "127.0.0.3", 12341 },
+                { "127.0.0.4", 12342 } };
 
 struct consensus_t;
 typedef struct consensus_t {

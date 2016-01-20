@@ -16,6 +16,7 @@ spa-explore \
     --output-at spa_msg_no_input_point \
     --output-at kv_done \
     --participant kv-client \
+    --ip 127.0.0.1 \
     kv-client-udp.bc \
     2>&1 | tee kv-client.log &
 
@@ -30,6 +31,7 @@ spa-explore \
     --toward spa_msg_no_input_point \
     --output-at spa_msg_no_input_point \
     --participant kv-server-1 \
+    --ip 127.0.0.2 \
     kv-server-udp.bc \
     2>&1 | tee kv-server1.log &
 
@@ -44,6 +46,7 @@ spa-explore \
     --toward spa_msg_no_input_point \
     --output-at spa_msg_no_input_point \
     --participant kv-server-2 \
+    --ip 127.0.0.3 \
     kv-server-udp.bc \
     2>&1 | tee kv-server2.log &
 
@@ -58,6 +61,7 @@ spa-explore \
     --toward spa_msg_no_input_point \
     --output-at spa_msg_no_input_point \
     --participant kv-server-3 \
+    --ip 127.0.0.4 \
     kv-server-udp.bc \
     2>&1 | tee kv-server3.log &
 
