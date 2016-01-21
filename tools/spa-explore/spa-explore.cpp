@@ -132,8 +132,8 @@ int main(int argc, char **argv, char **envp) {
   klee::klee_message("Writing output to: %s", pathFileName.c_str());
   std::ofstream pathFile(
       pathFileName.c_str(),
-      std::ios_base::out | OutputPathsAppend ? std::ios_base::app
-                                             : std::ios_base::trunc);
+      std::ios_base::out |
+          (OutputPathsAppend ? std::ios_base::app : std::ios_base::trunc));
   assert(pathFile.is_open() && "Unable to open path file.");
   SPA::SPA spa(InputBCFile, pathFile);
 
