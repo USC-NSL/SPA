@@ -313,10 +313,6 @@ void processPath(SPA::Path *path, unsigned long pathID) {
         // Find first outstanding compatible message.
         for (auto mit : messages) {
           if (mit->toBinding == binding && mit->outstanding > 0) {
-            if (mit->fromBinding.empty()) {
-              mit->fromBinding = binding;
-            }
-            assert(mit->fromBinding == binding);
             mit->outstanding--;
             if (Debug) {
               klee::klee_message("  Received message: %s -> %s",
@@ -526,6 +522,10 @@ void processPath(SPA::Path *path, unsigned long pathID) {
 
     htmlFile << "      <div class='content'>" << std::endl;
     if (messages[mi]->content.size() > 0) {
+      htmlFile << "        <b>From:</b> " << messages[mi]->fromBinding << " ("
+               << messages[mi]->fromParticipant->name << ")<br />" << std::endl;
+      htmlFile << "        <b>To:</b> " << messages[mi]->toBinding << " ("
+               << messages[mi]->toParticipant->name << ")<br />" << std::endl;
       htmlFile << "        <b>Size:</b> " << messages[mi]->content.size()
                << "<br />" << std::endl;
       htmlFile << "        <b>Text Representation:</b><br />" << std::endl;
