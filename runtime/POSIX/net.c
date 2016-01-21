@@ -141,8 +141,7 @@ ssize_t send(int sockfd, const void *buffer, size_t len, int flags) {
 
 ssize_t sendto(int sockfd, const void *buffer, size_t len, int flags,
                const struct sockaddr *to, socklen_t tolen) {
-  char addr[100], msg_name[100], size_name[100], src_name[100],
-      srcsize_name[100];
+  char addr[100], msg_name[100], size_name[100];
 
   if (!to) {
     to = (const struct sockaddr *)&sockets[sockfd].connect_addr;
@@ -157,24 +156,23 @@ ssize_t sendto(int sockfd, const void *buffer, size_t len, int flags,
   spa_snprintf4(size_name, sizeof(size_name), "%s_%s.%s.%d", "spa_out_msg_size",
                 addr, sockets[sockfd].type == SOCK_STREAM ? "tcp" : "udp",
                 ntohs(((struct sockaddr_in *)to)->sin_port));
-  spa_snprintf4(src_name, sizeof(src_name), "%s_%s.%s.%d", "spa_out_msg_src",
-                addr, sockets[sockfd].type == SOCK_STREAM ? "tcp" : "udp",
-                ntohs(((struct sockaddr_in *)to)->sin_port));
-  spa_snprintf4(srcsize_name, sizeof(srcsize_name), "%s_%s.%s.%d",
-                "spa_out_msg_size_src", addr,
-                sockets[sockfd].type == SOCK_STREAM ? "tcp" : "udp",
-                ntohs(((struct sockaddr_in *)to)->sin_port));
 
   if (sockets[sockfd].type == SOCK_STREAM) {
     size_t offset;
     for (offset = 0; offset < len; offset++) {
       __spa_output((void *)&((const char *)buffer)[offset], 1, 1, msg_name,
                    size_name);
-      __spa_output((void *)&sockets[sockfd].bind_addr,
-                   sizeof(struct sockaddr_in), sizeof(struct sockaddr_in),
-                   src_name, srcsize_name);
     }
   } else {
+    char src_name[100], srcsize_name[100];
+    spa_snprintf4(src_name, sizeof(src_name), "%s_%s.%s.%d", "spa_out_msg_src",
+                  addr, sockets[sockfd].type == SOCK_STREAM ? "tcp" : "udp",
+                  ntohs(((struct sockaddr_in *)to)->sin_port));
+    spa_snprintf4(srcsize_name, sizeof(srcsize_name), "%s_%s.%s.%d",
+                  "spa_out_msg_size_src", addr,
+                  sockets[sockfd].type == SOCK_STREAM ? "tcp" : "udp",
+                  ntohs(((struct sockaddr_in *)to)->sin_port));
+
     __spa_output((void *)buffer, len, 1500, msg_name, size_name);
     __spa_output((void *)&sockets[sockfd].bind_addr, sizeof(struct sockaddr_in),
                  sizeof(struct sockaddr_in), src_name, srcsize_name);
@@ -194,9 +192,8 @@ ssize_t recv(int sockfd, __ptr_t buffer, size_t len, int flags) {
 ssize_t recvfrom(int sockfd, __ptr_t buffer, size_t len, int flags,
                  struct sockaddr *src, socklen_t *srclen) {
   static char addr[100], msg_name[100], init_msg_name[100], size_name[100],
-      init_size_name[100], src_name[100], init_src_name[100];
-  static uint8_t **init_msg_value = NULL, **init_size_value = NULL,
-                 **init_src_value = NULL;
+      init_size_name[100];
+  static uint8_t **init_msg_value = NULL, **init_size_value = NULL;
   int64_t size = 0;
 
   inet_ntop(AF_INET, &sockets[sockfd].bind_addr.sin_addr.s_addr, addr,
@@ -215,13 +212,6 @@ ssize_t recvfrom(int sockfd, __ptr_t buffer, size_t len, int flags,
                 "spa_init_in_msg_size", addr,
                 sockets[sockfd].type == SOCK_STREAM ? "tcp" : "udp",
                 ntohs(sockets[sockfd].bind_addr.sin_port));
-  spa_snprintf4(src_name, sizeof(src_name), "%s_%s.%s.%d", "spa_in_msg_src",
-                addr, sockets[sockfd].type == SOCK_STREAM ? "tcp" : "udp",
-                ntohs(sockets[sockfd].bind_addr.sin_port));
-  spa_snprintf4(init_src_name, sizeof(init_src_name), "%s_%s.%s.%d",
-                "spa_init_in_msg_src", addr,
-                sockets[sockfd].type == SOCK_STREAM ? "tcp" : "udp",
-                ntohs(sockets[sockfd].bind_addr.sin_port));
 
   if (spa_check_symbol(msg_name, pathID) < 0) {
     printf("[model recvfrom] Receiving message on socket %d failed.\n", sockfd);
@@ -238,16 +228,22 @@ ssize_t recvfrom(int sockfd, __ptr_t buffer, size_t len, int flags,
       size++;
     }
     if (src && srclen) {
-      assert(*srclen >= sizeof(struct sockaddr_in));
-      spa_input(src, sizeof(struct sockaddr_in), src_name, &init_src_value,
-                init_src_name);
-      unsigned int i;
-      for (i = 0; i < *srclen; i++) {
-        ((char *)src)[i] = klee_get_value_i32(((char *)src)[i]);
-      }
+      assert(*srclen >= sizeof(sockets[sockfd].connect_addr));
+      memcpy(src, &sockets[sockfd].connect_addr,
+             sizeof(sockets[sockfd].connect_addr));
       *srclen = sizeof(struct sockaddr_in);
     }
   } else {
+    static char src_name[100], init_src_name[100];
+    static uint8_t **init_src_value = NULL;
+    spa_snprintf4(src_name, sizeof(src_name), "%s_%s.%s.%d", "spa_in_msg_src",
+                  addr, sockets[sockfd].type == SOCK_STREAM ? "tcp" : "udp",
+                  ntohs(sockets[sockfd].bind_addr.sin_port));
+    spa_snprintf4(init_src_name, sizeof(init_src_name), "%s_%s.%s.%d",
+                  "spa_init_in_msg_src", addr,
+                  sockets[sockfd].type == SOCK_STREAM ? "tcp" : "udp",
+                  ntohs(sockets[sockfd].bind_addr.sin_port));
+
     spa_input(buffer, len, msg_name, &init_msg_value, init_msg_name);
     spa_input(&size, sizeof(size), size_name, &init_size_value, init_size_name);
     spa_assume(size > 0);
