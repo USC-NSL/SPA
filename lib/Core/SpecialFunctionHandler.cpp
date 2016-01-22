@@ -113,7 +113,7 @@ static SpecialFunctionHandler::HandlerInfo handlerInfo[] = {
   add("spa_check_symbol", handleSpaCheckSymbol, true),
   add("spa_seed_symbol", handleSpaSeedSymbol, false),
   add("spa_runtime_call", handleSpaRuntimeCall, false),
-  add("spa_snprintf4", handleSpaSnprintf4, false),
+  add("spa_snprintf5", handleSpaSnprintf5, false),
 #undef addDNR
 #undef add
 };
@@ -830,47 +830,28 @@ SpecialFunctionHandler::handleSpaLoadPath(ExecutionState &state,
          "Attempting to process seed path before it's available.");
 
   klee_message(
-      "[spa_load_path]   Starting joint symbolic execution on path %s.",
-      state.senderPath->getUUID().c_str());
+      "[spa_load_path]   Starting joint symbolic execution on path %ld (%s).",
+      pathID, state.senderPath->getUUID().c_str());
 
   state.senderLogPos = state.senderPath->getSymbolLog().begin();
 
   // Get current participant's IP/Ports.
-  std::set<std::string> participantIPPorts;
-  for (auto oit : state.senderPath->getOutputSymbols()) {
-    std::string name = oit.first;
-    std::string participantName =
-        name.substr(name.rfind(SPA_SYMBOL_DELIMITER) + 1);
-    if (name.compare(0, strlen(SPA_MESSAGE_OUTPUT_SOURCE_PREFIX),
-                     SPA_MESSAGE_OUTPUT_SOURCE_PREFIX) == 0 &&
-        participantName == SPA::ParticipantName) {
-      std::string symbolLocalName =
-          name.substr(0, name.rfind(SPA_SYMBOL_DELIMITER));
-      std::string symbolIPPort = symbolLocalName.substr(
-          symbolLocalName.rfind(SPA_SYMBOL_DELIMITER) + 1);
-      std::string symbolIPProto =
-          symbolIPPort.substr(0, symbolIPPort.rfind("."));
-      std::string symbolProto =
-          symbolIPProto.substr(symbolIPProto.rfind(".") + 1);
-      for (auto sit : oit.second) {
-        struct sockaddr_in src;
-        assert(sit->getOutputValues().size() == sizeof(src));
-        for (unsigned i = 0; i < sizeof(src); i++) {
-          ConstantExpr *ce =
-              llvm::dyn_cast<ConstantExpr>(sit->getOutputValues()[i]);
-          assert(ce && "Non-constant source IP.");
-          ((char *)&src)[i] = ce->getLimitedValue();
-        }
-        char srcTxt[INET_ADDRSTRLEN];
-        assert(inet_ntop(AF_INET, &src.sin_addr, srcTxt, sizeof(srcTxt)));
-
-        std::string binding = std::string(srcTxt) + "." + symbolProto + "." +
-                              SPA::numToStr(ntohs(src.sin_port));
-        if (!participantIPPorts.count(binding)) {
-          klee_message("[spa_load_path]   Participant accepts messages for %s.",
-                       binding.c_str());
-          participantIPPorts.insert(binding);
-        }
+  std::set<std::string> participantBindings;
+  for (auto sit : state.senderPath->getSymbolLog()) {
+    if (sit->isMessage() && sit->getParticipant() == SPA::ParticipantName) {
+      std::string binding;
+      if (sit->isInput()) {
+        binding =
+            sit->getMessageDestinationIP() + ":" + sit->getMessageProtocol() +
+            ":" + sit->getMessageDestinationPort();
+      } else if (sit->isOutput()) {
+        binding = sit->getMessageSourceIP() + ":" + sit->getMessageProtocol() +
+                  ":" + sit->getMessageSourcePort();
+      }
+      if (!participantBindings.count(binding)) {
+        klee_message("[spa_load_path]   Participant accepts messages for %s.",
+                     binding.c_str());
+        participantBindings.insert(binding);
       }
     }
   }
@@ -879,29 +860,23 @@ SpecialFunctionHandler::handleSpaLoadPath(ExecutionState &state,
   // To check this, check the log in reverse and find the first of either a
   // symbol outputted by the current participant or a symbol that can be
   // consumed.
-  for (auto it = state.senderPath->getSymbolLog().rbegin();
-       it != state.senderPath->getSymbolLog().rend(); it++) {
-    std::string symbolName = (*it)->getName();
-    std::string symbolQualifiedName =
-        symbolName.substr(0, symbolName.rfind(SPA_SYMBOL_DELIMITER));
-    std::string symbolParticipant = symbolQualifiedName.substr(
-        symbolQualifiedName.rfind(SPA_SYMBOL_DELIMITER) + 1);
-    std::string symbolLocalName = symbolQualifiedName.substr(
-        0, symbolQualifiedName.rfind(SPA_SYMBOL_DELIMITER));
-    std::string symbolIPPort =
-        symbolLocalName.substr(symbolLocalName.rfind(SPA_SYMBOL_DELIMITER) + 1);
-
+  for (auto sit = state.senderPath->getSymbolLog().rbegin(),
+            sie = state.senderPath->getSymbolLog().rend();
+       sit != sie; sit++) {
     // Check if symbol can be consumed by a direct mapping.
-    if (SPA::seedSymbolMappings.count(symbolQualifiedName)) {
+    if (SPA::seedSymbolMappings.count((*sit)->getQualifiedName())) {
       break;
     }
     // Check if symbol can be consumed via symbolic socket layer.
-    if (SPA::connectSockets && (*it)->isOutput() &&
-        participantIPPorts.count(symbolIPPort)) {
-      break;
+    if (SPA::connectSockets && (*sit)->isOutput() && (*sit)->isMessage()) {
+      if (participantBindings.count((*sit)->getMessageDestinationIP() + ":" +
+                                    (*sit)->getMessageProtocol() + ":" +
+                                    (*sit)->getMessageDestinationPort())) {
+        break;
+      }
     }
     // Check if symbol was generated by current participant.
-    if (symbolParticipant == SPA::ParticipantName) {
+    if ((*sit)->getParticipant() == SPA::ParticipantName) {
       klee_message(
           "[spa_load_path] Cannot load path with no new inputs. Terminating.");
       executor.terminateStateOnError(state, "Path has no new inputs.",
@@ -942,7 +917,9 @@ void SpecialFunctionHandler::handleSpaCheckSymbol(
   assert(arguments.size() == 2 &&
          "Invalid number of arguments to spa_check_symbol.");
 
-  std::string baseName = readStringAtAddress(state, arguments[0]);
+  std::string localName = readStringAtAddress(state, arguments[0]);
+  std::string qualifiedName =
+      localName + SPA_SYMBOL_DELIMITER + SPA::ParticipantName;
 
   klee::ConstantExpr *ce;
   assert(ce = dyn_cast<ConstantExpr>(executor.toUnique(state, arguments[1])));
@@ -950,12 +927,12 @@ void SpecialFunctionHandler::handleSpaCheckSymbol(
 
   klee_message(
       "[spa_check_symbol] Checking availability of symbol %s in path %ld.",
-      baseName.c_str(), pathID);
+      localName.c_str(), pathID);
 
   if (!SPA::senderPaths) {
     klee_message("[spa_check_symbol] Not performing joint symbolic execution. "
                  "Considering %s as available.",
-                 baseName.c_str());
+                 localName.c_str());
     assert(pathID == 0 && "Non-zero pathID without a sender path-file.");
     executor.bindLocal(target, state, ConstantExpr::create(0, Expr::Int32));
     return;
@@ -965,24 +942,23 @@ void SpecialFunctionHandler::handleSpaCheckSymbol(
 
   // Check if input mapped.
   auto senderLogPos = state.senderLogPos;
-  if (SPA::seedSymbolMappings.count(baseName)) { // Explicit mapping.
-    std::string senderName = SPA::seedSymbolMappings[baseName];
+  if (SPA::seedSymbolMappings.count(qualifiedName)) { // Explicit mapping.
     // Skip log entries until named symbol.
     for (; senderLogPos != state.senderPath->getSymbolLog().end();
          senderLogPos++) {
-      std::string symbolName = (*senderLogPos)->getName();
       klee_message(
           "[spa_check_symbol]   Checking log entry %d: %s",
           (int)(senderLogPos - state.senderPath->getSymbolLog().begin()),
-          symbolName.c_str());
+          (*senderLogPos)->getFullName().c_str());
 
+      // Check for outstanding outputs in log.
       if ((*senderLogPos)->isOutput() &&
           (*senderLogPos)->getParticipant() == SPA::ParticipantName) {
         bool outputSent = false;
         for (auto it : state.symbolics) {
-          if (it.second->name == symbolName) {
+          if (it.second->name == (*senderLogPos)->getFullName()) {
             klee_message("[spa_check_symbol]      Output %s already sent.",
-                         symbolName.c_str());
+                         (*senderLogPos)->getFullName().c_str());
             outputSent = true;
             break;
           }
@@ -990,44 +966,39 @@ void SpecialFunctionHandler::handleSpaCheckSymbol(
         if (!outputSent) {
           klee_message("[spa_check_symbol]   Trying to receive %s before "
                        "sending %s. Considering input as not yet available.",
-                       baseName.c_str(), symbolName.c_str());
+                       qualifiedName.c_str(),
+                       (*senderLogPos)->getFullName().c_str());
           executor.bindLocal(target, state,
                              ConstantExpr::alloc(llvm::APInt(32, -1, true)));
           return;
         }
       }
 
-      // Strip participant and sequence number from sender symbol.
-      symbolName = symbolName.substr(0, symbolName.rfind(SPA_SYMBOL_DELIMITER));
-      symbolName = symbolName.substr(0, symbolName.rfind(SPA_SYMBOL_DELIMITER));
-      if (symbolName == senderName) {
+      if ((*senderLogPos)->getQualifiedName() ==
+          SPA::seedSymbolMappings[qualifiedName]) {
         break;
       }
     }
   } else if (SPA::connectSockets) {
-    if (baseName.compare(0, strlen(SPA_MESSAGE_INPUT_PREFIX),
-                         SPA_MESSAGE_INPUT_PREFIX) == 0) {
+    if (localName.compare(0, strlen(SPA_MESSAGE_INPUT_PREFIX),
+                          SPA_MESSAGE_INPUT_PREFIX) == 0) {
       // Socket mapping in=out.
-      // Convert symbol name from in to out.
-      std::string senderPrefix =
-          std::string(SPA_MESSAGE_OUTPUT_PREFIX) +
-          baseName.substr(strlen(SPA_MESSAGE_INPUT_PREFIX)) + "_";
-      // Skip log entries until named symbol.
+      // Skip log entries until compatible symbol.
       for (; senderLogPos != state.senderPath->getSymbolLog().end();
            senderLogPos++) {
-        std::string symbolName = (*senderLogPos)->getName();
         klee_message(
             "[spa_check_symbol]   Checking log entry %d: %s",
             (int)(senderLogPos - state.senderPath->getSymbolLog().begin()),
-            symbolName.c_str());
+            (*senderLogPos)->getFullName().c_str());
 
+        // Check for outstanding outputs in log.
         if ((*senderLogPos)->isOutput() &&
             (*senderLogPos)->getParticipant() == SPA::ParticipantName) {
           bool outputSent = false;
           for (auto it : state.symbolics) {
-            if (it.second->name == symbolName) {
+            if (it.second->name == (*senderLogPos)->getFullName()) {
               klee_message("[spa_check_symbol]      Output %s already sent.",
-                           symbolName.c_str());
+                           (*senderLogPos)->getFullName().c_str());
               outputSent = true;
               break;
             }
@@ -1035,36 +1006,38 @@ void SpecialFunctionHandler::handleSpaCheckSymbol(
           if (!outputSent) {
             klee_message("[spa_check_symbol]   Trying to receive %s before "
                          "sending %s. Considering input as not yet available.",
-                         baseName.c_str(), symbolName.c_str());
+                         qualifiedName.c_str(),
+                         (*senderLogPos)->getFullName().c_str());
             executor.bindLocal(target, state,
                                ConstantExpr::alloc(llvm::APInt(32, -1, true)));
             return;
           }
         }
 
-        if (symbolName.compare(0, senderPrefix.length(), senderPrefix) == 0) {
+        if ((*senderLogPos)->isOutput() && (*senderLogPos)->isMessage() &&
+            checkMessageCompatibility(*senderLogPos, localName)) {
           break;
         }
       }
-    } else if (baseName.compare(0, strlen(SPA_API_INPUT_PREFIX),
-                                SPA_API_INPUT_PREFIX) == 0) {
+    } else if (localName.compare(0, strlen(SPA_API_INPUT_PREFIX),
+                                 SPA_API_INPUT_PREFIX) == 0) {
       // API mapping in=in.
       // Skip log entries until same symbol.
       for (; senderLogPos != state.senderPath->getSymbolLog().end();
            senderLogPos++) {
-        std::string symbolName = (*senderLogPos)->getName();
         klee_message(
             "[spa_check_symbol]   Checking log entry %d: %s",
             (int)(senderLogPos - state.senderPath->getSymbolLog().begin()),
-            symbolName.c_str());
+            (*senderLogPos)->getFullName().c_str());
 
+        // Check for outstanding outputs in log.
         if ((*senderLogPos)->isOutput() &&
             (*senderLogPos)->getParticipant() == SPA::ParticipantName) {
           bool outputSent = false;
           for (auto it : state.symbolics) {
-            if (it.second->name == symbolName) {
+            if (it.second->name == (*senderLogPos)->getFullName()) {
               klee_message("[spa_check_symbol]      Output %s already sent.",
-                           symbolName.c_str());
+                           (*senderLogPos)->getFullName().c_str());
               outputSent = true;
               break;
             }
@@ -1072,17 +1045,16 @@ void SpecialFunctionHandler::handleSpaCheckSymbol(
           if (!outputSent) {
             klee_message("[spa_check_symbol]   Trying to receive %s before "
                          "sending %s. Considering input as not yet available.",
-                         baseName.c_str(), symbolName.c_str());
+                         qualifiedName.c_str(),
+                         (*senderLogPos)->getFullName().c_str());
             executor.bindLocal(target, state,
                                ConstantExpr::alloc(llvm::APInt(32, -1, true)));
             return;
           }
         }
 
-        // TODO: Pass full symbol name as argument instead of just the base
-        // name. As it is, this could confuse symbols with the same name but
-        // that come from different participants.
-        if (baseName.compare(0, baseName.length(), symbolName) == 0) {
+        //TODO: Compare sequence number (full-name) if ever available.
+        if (qualifiedName == (*senderLogPos)->getQualifiedName()) {
           break;
         }
       }
@@ -1090,7 +1062,7 @@ void SpecialFunctionHandler::handleSpaCheckSymbol(
   } else { // Not mapped, leave symbol unconstrained.
     klee_message(
         "[spa_check_symbol] %s is not connected. Considering as available.",
-        baseName.c_str());
+        qualifiedName.c_str());
     executor.bindLocal(target, state, ConstantExpr::create(0, Expr::Int32));
     return;
   }
@@ -1098,12 +1070,13 @@ void SpecialFunctionHandler::handleSpaCheckSymbol(
   // Check if log ran out.
   if (senderLogPos == state.senderPath->getSymbolLog().end()) {
     klee_message("[spa_check_symbol] %s is not available in log.",
-                 baseName.c_str());
+                 qualifiedName.c_str());
     executor.bindLocal(target, state,
                        ConstantExpr::alloc(llvm::APInt(32, -1, true)));
   } else {
     klee_message("[spa_check_symbol] %s is available in log after %d entries.",
-                 baseName.c_str(), (int)(senderLogPos - state.senderLogPos));
+                 qualifiedName.c_str(),
+                 (int)(senderLogPos - state.senderLogPos));
     executor.bindLocal(
         target, state,
         ConstantExpr::create(senderLogPos - state.senderLogPos, Expr::Int32));
@@ -1144,29 +1117,27 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
                fullName.c_str());
 
   // Drop the participant and sequence number.
-  std::string baseName =
+  std::string qualifiedName =
       fullName.substr(0, fullName.rfind(SPA_SYMBOL_DELIMITER));
-  baseName = baseName.substr(0, baseName.rfind(SPA_SYMBOL_DELIMITER));
+  std::string localName =
+      qualifiedName.substr(0, qualifiedName.rfind(SPA_SYMBOL_DELIMITER));
 
   // Check if input mapped.
-  if (SPA::seedSymbolMappings.count(baseName)) { // Explicit mapping.
-    std::string senderName = SPA::seedSymbolMappings[baseName];
+  if (SPA::seedSymbolMappings.count(qualifiedName)) { // Explicit mapping.
     // Skip log entries until named symbol.
     for (; state.senderLogPos != state.senderPath->getSymbolLog().end();
          state.senderLogPos++) {
       klee_message(
           "[spa_seed_symbol]   Checking log entry %d: %s",
           (int)(state.senderLogPos - state.senderPath->getSymbolLog().begin()),
-          (*state.senderLogPos)->getName().c_str());
-      std::string symbolName = (*state.senderLogPos)->getName();
-
+          (*state.senderLogPos)->getFullName().c_str());
       if ((*state.senderLogPos)->isOutput() &&
           (*state.senderLogPos)->getParticipant() == SPA::ParticipantName) {
         bool outputSent = false;
         for (auto it : state.symbolics) {
-          if (it.second->name == symbolName) {
+          if (it.second->name == (*state.senderLogPos)->getFullName()) {
             klee_message("[spa_seed_symbol]      Output %s already sent.",
-                         symbolName.c_str());
+                         (*state.senderLogPos)->getFullName().c_str());
             outputSent = true;
             break;
           }
@@ -1174,7 +1145,8 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
         if (!outputSent) {
           klee_message("[spa_seed_symbol]   Trying to receive %s before "
                        "sending %s.",
-                       baseName.c_str(), symbolName.c_str());
+                       fullName.c_str(),
+                       (*state.senderLogPos)->getFullName().c_str());
           executor.terminateStateOnError(
               state,
               "Seeding with incompatible path (used symbol out of order).",
@@ -1183,37 +1155,31 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
         }
       }
 
-      // Strip participant and sequence number from sender symbol as well.
-      symbolName = symbolName.substr(0, symbolName.rfind(SPA_SYMBOL_DELIMITER));
-      symbolName = symbolName.substr(0, symbolName.rfind(SPA_SYMBOL_DELIMITER));
-      if (symbolName == senderName) {
+      if ((*state.senderLogPos)->getQualifiedName() ==
+          SPA::seedSymbolMappings[qualifiedName]) {
         break;
       }
     }
   } else if (SPA::connectSockets) {
-    if (baseName.compare(0, strlen(SPA_MESSAGE_INPUT_PREFIX),
+    if (fullName.compare(0, strlen(SPA_MESSAGE_INPUT_PREFIX),
                          SPA_MESSAGE_INPUT_PREFIX) == 0) {
       // Socket mapping in=out.
-      // Convert symbol name from in to out.
-      std::string senderPrefix =
-          std::string(SPA_MESSAGE_OUTPUT_PREFIX) +
-          baseName.substr(strlen(SPA_MESSAGE_INPUT_PREFIX)) + "_";
       // Skip log entries until named symbol.
       for (; state.senderLogPos != state.senderPath->getSymbolLog().end();
            state.senderLogPos++) {
-        std::string symbolName = (*state.senderLogPos)->getName();
         klee_message("[spa_seed_symbol]   Checking log entry %d: %s",
                      (int)(state.senderLogPos -
                            state.senderPath->getSymbolLog().begin()),
-                     symbolName.c_str());
+                     (*state.senderLogPos)->getFullName().c_str());
 
+        // Check for outstanding outputs in log.
         if ((*state.senderLogPos)->isOutput() &&
             (*state.senderLogPos)->getParticipant() == SPA::ParticipantName) {
           bool outputSent = false;
           for (auto it : state.symbolics) {
-            if (it.second->name == symbolName) {
+            if (it.second->name == (*state.senderLogPos)->getFullName()) {
               klee_message("[spa_seed_symbol]      Output %s already sent.",
-                           symbolName.c_str());
+                           (*state.senderLogPos)->getFullName().c_str());
               outputSent = true;
               break;
             }
@@ -1221,7 +1187,8 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
           if (!outputSent) {
             klee_message("[spa_seed_symbol]   Trying to receive %s before "
                          "sending %s.",
-                         baseName.c_str(), symbolName.c_str());
+                         fullName.c_str(),
+                         (*state.senderLogPos)->getFullName().c_str());
             executor.terminateStateOnError(
                 state,
                 "Seeding with incompatible path (used symbol out of order).",
@@ -1230,11 +1197,13 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
           }
         }
 
-        if (symbolName.compare(0, senderPrefix.length(), senderPrefix) == 0) {
+        if ((*state.senderLogPos)->isOutput() &&
+            (*state.senderLogPos)->isMessage() &&
+            checkMessageCompatibility(*state.senderLogPos, localName)) {
           break;
         }
       }
-    } else if (baseName.compare(0, strlen(SPA_API_INPUT_PREFIX),
+    } else if (fullName.compare(0, strlen(SPA_API_INPUT_PREFIX),
                                 SPA_API_INPUT_PREFIX) == 0) {
       // The root path can't be connected.
       if (state.senderPath->getSymbolLog().empty()) {
@@ -1248,19 +1217,19 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
       // Skip log entries until same symbol.
       for (; state.senderLogPos != state.senderPath->getSymbolLog().end();
            state.senderLogPos++) {
-        std::string symbolName = (*state.senderLogPos)->getName();
         klee_message("[spa_seed_symbol]   Checking log entry %d: %s",
                      (int)(state.senderLogPos -
                            state.senderPath->getSymbolLog().begin()),
-                     symbolName.c_str());
+                     (*state.senderLogPos)->getFullName().c_str());
 
+        // Check for outstanding outputs in log.
         if ((*state.senderLogPos)->isOutput() &&
             (*state.senderLogPos)->getParticipant() == SPA::ParticipantName) {
           bool outputSent = false;
           for (auto it : state.symbolics) {
-            if (it.second->name == symbolName) {
+            if (it.second->name == (*state.senderLogPos)->getFullName()) {
               klee_message("[spa_seed_symbol]      Output %s already sent.",
-                           symbolName.c_str());
+                           (*state.senderLogPos)->getFullName().c_str());
               outputSent = true;
               break;
             }
@@ -1268,7 +1237,8 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
           if (!outputSent) {
             klee_message("[spa_seed_symbol]   Trying to receive %s before "
                          "sending %s.",
-                         baseName.c_str(), symbolName.c_str());
+                         fullName.c_str(),
+                         (*state.senderLogPos)->getFullName().c_str());
             executor.terminateStateOnError(
                 state,
                 "Seeding with incompatible path (used symbol out of order).",
@@ -1277,7 +1247,7 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
           }
         }
 
-        if (fullName == symbolName) {
+        if (fullName == (*state.senderLogPos)->getFullName()) {
           break;
         }
       }
@@ -1299,7 +1269,7 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
   if ((*state.senderLogPos)->isOutput()) { // Check if sender symbol is output.
     klee_message("[spa_seed_symbol]   Connecting symbols %s[%ld] = %s[%ld]",
                  fullName.c_str(), size,
-                 (*state.senderLogPos)->getName().c_str(),
+                 (*state.senderLogPos)->getFullName().c_str(),
                  (*state.senderLogPos)->getOutputValues().size());
 
     assert(size >= (*state.senderLogPos)->getOutputValues().size() &&
@@ -1321,7 +1291,7 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
                  ->isInput()) { // Check if defined as an input instead.
     klee_message("[spa_seed_symbol]   Connecting symbols %s[%ld] = %s[%d]",
                  fullName.c_str(), size,
-                 (*state.senderLogPos)->getName().c_str(),
+                 (*state.senderLogPos)->getFullName().c_str(),
                  (*state.senderLogPos)->getInputArray()->size);
 
     assert(size == (*state.senderLogPos)->getInputArray()->size &&
@@ -1352,11 +1322,11 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
 }
 
 void
-SpecialFunctionHandler::handleSpaSnprintf4(ExecutionState &state,
+SpecialFunctionHandler::handleSpaSnprintf5(ExecutionState &state,
                                            KInstruction *target,
                                            std::vector<ref<Expr> > &arguments) {
-  assert(arguments.size() == 7 &&
-         "Invalid number of arguments to spa_snprintf4.");
+  assert(arguments.size() == 8 &&
+         "Invalid number of arguments to spa_snprintf5.");
 
   klee::ConstantExpr *ce;
   assert(ce = dyn_cast<ConstantExpr>(executor.toUnique(state, arguments[1])));
@@ -1364,15 +1334,16 @@ SpecialFunctionHandler::handleSpaSnprintf4(ExecutionState &state,
 
   std::string format = readStringAtAddress(state, arguments[2]);
   std::string in1 = readStringAtAddress(state, arguments[3]);
-  std::string in2 = readStringAtAddress(state, arguments[4]);
+  assert(ce = dyn_cast<ConstantExpr>(executor.toUnique(state, arguments[4])));
+  unsigned long in2 = ce->getZExtValue();
   std::string in3 = readStringAtAddress(state, arguments[5]);
-
-  assert(ce = dyn_cast<ConstantExpr>(executor.toUnique(state, arguments[6])));
-  unsigned long in4 = ce->getZExtValue();
+  std::string in4 = readStringAtAddress(state, arguments[6]);
+  assert(ce = dyn_cast<ConstantExpr>(executor.toUnique(state, arguments[7])));
+  unsigned long in5 = ce->getZExtValue();
 
   char *result = new char[length];
   unsigned resultSize = snprintf(result, length, format.c_str(), in1.c_str(),
-                                 in2.c_str(), in3.c_str(), in4) + 1;
+                                 in2, in3.c_str(), in4.c_str(), in5) + 1;
 
   ObjectPair op;
   ref<ConstantExpr> address =

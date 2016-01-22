@@ -47,7 +47,7 @@ DbgLineIF *DbgLineIF::parse(llvm::Module *module, std::string dbgPoint) {
     if (delim == std::string::npos)
       return NULL;
     std::string dbgPath = dbgPoint.substr(0, delim);
-    long dbgLineNo = SPA::strToNum<long>(dbgPoint.substr(delim + 1));
+    long dbgLineNo = strToNum<long>(dbgPoint.substr(delim + 1));
 
     // Canonical debug location of what is found (used to ensure uniqueness).
     std::string foundDbgLoc;
@@ -69,11 +69,11 @@ DbgLineIF *DbgLineIF::parse(llvm::Module *module, std::string dbgPoint) {
               dbgInsts.insert(&inst);
 
               if (foundDbgLoc.empty()) {
-                foundDbgLoc = SPA::debugLocation(&inst);
+                foundDbgLoc = debugLocation(&inst);
               } else {
                 // Check if multiple distinct file locations match the specified
                 // criteria (files with same name, different directory).
-                if (foundDbgLoc != SPA::debugLocation(&inst))
+                if (foundDbgLoc != debugLocation(&inst))
                   return NULL;
               }
             }

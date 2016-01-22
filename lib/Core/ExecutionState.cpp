@@ -379,7 +379,7 @@ bool ExecutionState::isReplayingSpaLog() const {
   if (senderPath) {
     std::set<std::string> symbolNames;
     for (auto it : senderPath->getSymbolLog()) {
-      symbolNames.insert(it->getName());
+      symbolNames.insert(it->getFullName());
     }
 
     // Check if all SPA symbols are accounted for in the sender log.

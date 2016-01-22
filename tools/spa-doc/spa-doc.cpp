@@ -49,10 +49,9 @@ typedef struct {
 #define API_PREFIX "api_"
 
 typedef struct {
-  std::string fromBinding;
   std::shared_ptr<participant_t> fromParticipant;
-  std::string toBinding;
   std::shared_ptr<participant_t> toParticipant;
+  std::string sourceIP, sourcePort, protocol, destinationIP, destinationPort;
   unsigned long outstanding;
   std::vector<klee::ref<klee::Expr> > content;
   std::vector<std::string> symbolNames;
@@ -78,6 +77,24 @@ std::map<std::string, std::set<std::pair<std::string, std::string> > >
 std::map<std::string,
          std::map<unsigned long, std::map<bool, std::set<std::string> > > >
     coverage;
+
+bool compareMessage5Tuple(std::shared_ptr<message_t> message,
+                          std::shared_ptr<SPA::Symbol> symbol) {
+  assert(symbol->isMessage());
+  if (message->destinationIP == symbol->getMessageDestinationIP() &&
+      message->protocol == symbol->getMessageProtocol() &&
+      message->destinationPort == symbol->getMessageDestinationPort()) {
+    if (symbol->getMessageSourceIP() == SPA_ANY_IP &&
+        symbol->getMessageSourcePort() == SPA_ANY_PORT) {
+      return true;
+    } else {
+      return message->sourceIP == symbol->getMessageSourceIP() &&
+             message->sourcePort == symbol->getMessageSourcePort();
+    }
+  } else {
+    return false;
+  }
+}
 
 std::string join(std::vector<std::string> strings, std::string delimiter) {
   std::string result;
@@ -105,21 +122,6 @@ std::string remapSrcFileName(std::string srcFileName) {
     }
   }
   return srcFileName;
-}
-
-std::string getBinding(SPA::Symbol *symbol) {
-  std::string symbolName = symbol->getName();
-  // Remove counter.
-  symbolName = symbolName.substr(0, symbolName.rfind(SPA_SYMBOL_DELIMITER));
-  // Remove participant.
-  symbolName = symbolName.substr(0, symbolName.rfind(SPA_SYMBOL_DELIMITER));
-  // Remove prefixes.
-  symbolName = symbolName.substr(symbolName.rfind(SPA_SYMBOL_DELIMITER) + 1);
-  // Convert ip.proto.port -> ip:proto:port
-  symbolName = symbolName.replace(symbolName.rfind("."), 1, ":");
-  symbolName = symbolName.replace(symbolName.rfind("."), 1, ":");
-
-  return symbolName;
 }
 
 std::string sanitizeToken(std::string name) {
@@ -209,43 +211,17 @@ void processPath(SPA::Path *path, unsigned long pathID) {
   }
 
   // Load participant IP/Ports.
-  for (auto it : path->getSymbolLog()) {
-    if ((it->isMessage() && it->isInput()) ||
-        it->getName().compare(0, strlen(SPA_MESSAGE_OUTPUT_SOURCE_PREFIX),
-                              SPA_MESSAGE_OUTPUT_SOURCE_PREFIX) == 0 ||
-        it->getName().compare(0, strlen(SPA_MESSAGE_OUTPUT_CONNECT_PREFIX),
-                              SPA_MESSAGE_OUTPUT_CONNECT_PREFIX) == 0) {
-      std::string participant = it->getParticipant();
+  for (auto sit : path->getSymbolLog()) {
+    if (sit->isMessage()) {
+      std::string participant = sit->getParticipant();
       std::string binding;
-
-      if (it->isInput()) {
-        binding = getBinding(it.get());
-      } else {
-        struct sockaddr_in src;
-        assert(it->getOutputValues().size() == sizeof(src));
-        for (unsigned i = 0; i < sizeof(src); i++) {
-          klee::ConstantExpr *ce =
-              llvm::dyn_cast<klee::ConstantExpr>(it->getOutputValues()[i]);
-          assert(ce && "Non-constant source IP.");
-          ((char *)&src)[i] = ce->getLimitedValue();
-        }
-        char srcTxt[INET_ADDRSTRLEN];
-        assert(inet_ntop(AF_INET, &src.sin_addr, srcTxt, sizeof(srcTxt)));
-
-        std::string symbolName = it->getName();
-        std::string symbolQualifiedName =
-            symbolName.substr(0, symbolName.rfind(SPA_SYMBOL_DELIMITER));
-        std::string symbolLocalName = symbolQualifiedName.substr(
-            0, symbolQualifiedName.rfind(SPA_SYMBOL_DELIMITER));
-        std::string symbolIPPort = symbolLocalName.substr(
-            symbolLocalName.rfind(SPA_SYMBOL_DELIMITER) + 1);
-        std::string symbolIPProto =
-            symbolIPPort.substr(0, symbolIPPort.rfind("."));
-        std::string symbolProto =
-            symbolIPProto.substr(symbolIPProto.rfind(".") + 1);
-
-        binding = std::string(srcTxt) + ":" + symbolProto + ":" +
-                  SPA::numToStr(ntohs(src.sin_port));
+      if (sit->isInput()) {
+        binding =
+            sit->getMessageDestinationIP() + ":" + sit->getMessageProtocol() +
+            ":" + sit->getMessageDestinationPort();
+      } else if (sit->isOutput()) {
+        binding = sit->getMessageSourceIP() + ":" + sit->getMessageProtocol() +
+                  ":" + sit->getMessageSourcePort();
       }
 
       assert(participantByName.count(participant));
@@ -261,9 +237,11 @@ void processPath(SPA::Path *path, unsigned long pathID) {
 
   // Add unknown participants.
   unsigned long unknownId = 1;
-  for (auto it : path->getSymbolLog()) {
-    if (it->isMessage() && it->isOutput()) {
-      std::string binding = getBinding(it.get());
+  for (auto sit : path->getSymbolLog()) {
+    if (sit->isMessage() && sit->isOutput()) {
+      std::string binding =
+          sit->getMessageDestinationIP() + ":" + sit->getMessageProtocol() +
+          ":" + sit->getMessageDestinationPort();
       if (!participantByBinding.count(binding)) {
         if (Debug) {
           klee::klee_message("  Found unknown participant on: %s",
@@ -283,7 +261,7 @@ void processPath(SPA::Path *path, unsigned long pathID) {
   // Load messages.
   for (auto sit : path->getSymbolLog()) {
     if (Debug) {
-      klee::klee_message("  Symbol: %s", sit->getName().c_str());
+      klee::klee_message("  Symbol: %s", sit->getFullName().c_str());
     }
 
     std::string participant = sit->getParticipant();
@@ -299,25 +277,26 @@ void processPath(SPA::Path *path, unsigned long pathID) {
         messages.back()->fromParticipant =
             participantByName[API_PREFIX + participant];
         messages.back()->toParticipant = participantByName[participant];
-        messages.back()->symbolNames.push_back(sit->getName());
+        messages.back()->symbolNames.push_back(sit->getFullName());
       } else if (sit->isMessage()) {
         // Ignore message size and source symbols.
-        if (sit->getName().compare(0, strlen(SPA_MESSAGE_INPUT_SIZE_PREFIX),
-                                   SPA_MESSAGE_INPUT_SIZE_PREFIX) == 0 ||
-            sit->getName().compare(0, strlen(SPA_MESSAGE_INPUT_SOURCE_PREFIX),
-                                   SPA_MESSAGE_INPUT_SOURCE_PREFIX) == 0) {
+        if (sit->getFullName().compare(0, strlen(SPA_MESSAGE_INPUT_SIZE_PREFIX),
+                                       SPA_MESSAGE_INPUT_SIZE_PREFIX) == 0 ||
+            sit->getFullName().compare(0,
+                                       strlen(SPA_MESSAGE_INPUT_SOURCE_PREFIX),
+                                       SPA_MESSAGE_INPUT_SOURCE_PREFIX) == 0) {
           continue;
         }
         bool sent = false;
-        std::string binding = getBinding(sit.get());
-        // Find first outstanding compatible message.
         for (auto mit : messages) {
-          if (mit->toBinding == binding && mit->outstanding > 0) {
+          if (compareMessage5Tuple(mit, sit) && mit->outstanding > 0) {
             mit->outstanding--;
             if (Debug) {
-              klee::klee_message("  Received message: %s -> %s",
-                                 mit->fromBinding.c_str(),
-                                 mit->toBinding.c_str());
+              klee::klee_message(
+                  "  Received message: %s:%s:%s -> %s:%s:%s",
+                  mit->sourceIP.c_str(), mit->protocol.c_str(),
+                  mit->sourcePort.c_str(), mit->destinationIP.c_str(),
+                  mit->protocol.c_str(), mit->destinationPort.c_str());
             }
             sent = true;
             break;
@@ -339,45 +318,49 @@ void processPath(SPA::Path *path, unsigned long pathID) {
         messages.back()->content.insert(messages.back()->content.end(),
                                         sit->getOutputValues().begin(),
                                         sit->getOutputValues().end());
-        messages.back()->symbolNames.push_back(sit->getName());
+        messages.back()->symbolNames.push_back(sit->getFullName());
       } else if (sit->isMessage()) {
-        std::string binding = getBinding(sit.get());
-        assert(participantByBinding.count(binding) &&
+        std::string receiverBinding =
+            sit->getMessageDestinationIP() + ":" + sit->getMessageProtocol() +
+            ":" + sit->getMessageDestinationPort();
+        assert(participantByBinding.count(receiverBinding) &&
                "Message sent to unknown participant.");
         if (Debug) {
-          klee::klee_message("  Sent message: %s -> %s", participant.c_str(),
-                             participantByBinding[binding]->name.c_str());
+          klee::klee_message(
+              "  Sent message: %s -> %s", participant.c_str(),
+              participantByBinding[receiverBinding]->name.c_str());
         }
         // Collapse content size and source symbols into one message.
-        if (sit->getName().compare(0, strlen(SPA_MESSAGE_OUTPUT_SIZE_PREFIX),
-                                   SPA_MESSAGE_OUTPUT_SIZE_PREFIX) == 0 ||
-            sit->getName().compare(0, strlen(SPA_MESSAGE_OUTPUT_SOURCE_PREFIX),
-                                   SPA_MESSAGE_OUTPUT_SOURCE_PREFIX) == 0) {
-          assert(messages.back()->fromParticipant ==
-                     participantByName[participant] &&
-                 messages.back()->toBinding == binding);
-          messages.back()->symbolNames.push_back(sit->getName());
+        if (sit->getFullName().compare(0,
+                                       strlen(SPA_MESSAGE_OUTPUT_SIZE_PREFIX),
+                                       SPA_MESSAGE_OUTPUT_SIZE_PREFIX) == 0 ||
+            sit->getFullName().compare(0,
+                                       strlen(SPA_MESSAGE_OUTPUT_SOURCE_PREFIX),
+                                       SPA_MESSAGE_OUTPUT_SOURCE_PREFIX) == 0) {
+          assert(compareMessage5Tuple(messages.back(), sit));
+          messages.back()->symbolNames.push_back(sit->getFullName());
         } else {
-          std::string proto = binding.substr(binding.find(":") + 1);
-          proto = proto.substr(0, proto.find(":"));
-          if (messages.empty() || proto == "udp" ||
-              messages.back()->fromParticipant !=
-                  participantByName[participant] ||
-              messages.back()->toBinding != binding) {
+          if (messages.empty() || sit->getMessageProtocol() == "udp" ||
+              (!compareMessage5Tuple(messages.back(), sit))) {
             messages.emplace_back(new message_t());
             messages.back()->fromParticipant = participantByName[participant];
-            messages.back()->toBinding = binding;
-            messages.back()->toParticipant = participantByBinding[binding];
+            messages.back()->toParticipant =
+                participantByBinding[receiverBinding];
+            messages.back()->sourceIP = sit->getMessageSourceIP();
+            messages.back()->sourcePort = sit->getMessageSourcePort();
+            messages.back()->protocol = sit->getMessageProtocol();
+            messages.back()->destinationIP = sit->getMessageDestinationIP();
+            messages.back()->destinationPort = sit->getMessageDestinationPort();
           }
           messages.back()->outstanding++;
-          if (sit->getName().compare(0,
-                                     strlen(SPA_MESSAGE_OUTPUT_CONNECT_PREFIX),
-                                     SPA_MESSAGE_OUTPUT_CONNECT_PREFIX) != 0) {
+          if (sit->getFullName().compare(
+                  0, strlen(SPA_MESSAGE_OUTPUT_CONNECT_PREFIX),
+                  SPA_MESSAGE_OUTPUT_CONNECT_PREFIX) != 0) {
             messages.back()->content.insert(messages.back()->content.end(),
                                             sit->getOutputValues().begin(),
                                             sit->getOutputValues().end());
           }
-          messages.back()->symbolNames.push_back(sit->getName());
+          messages.back()->symbolNames.push_back(sit->getFullName());
         }
       } else {
         assert(false && "Symbol is neither message nor API.");
@@ -452,7 +435,7 @@ void processPath(SPA::Path *path, unsigned long pathID) {
     htmlFile << "        <td>" << it.first << "</td>" << std::endl;
     htmlFile << "        <td>" << std::endl;
     for (unsigned long i = 0; i < it.second.size(); i++) {
-      htmlFile << "          <a href='#" << it.second[i]->getName() << "'>"
+      htmlFile << "          <a href='#" << it.second[i]->getFullName() << "'>"
                << (i + 1) << "</a>" << std::endl;
     }
     htmlFile << "        </td>" << std::endl;
@@ -477,7 +460,7 @@ void processPath(SPA::Path *path, unsigned long pathID) {
     htmlFile << "        <td>" << it.first << "</td>" << std::endl;
     htmlFile << "        <td>" << std::endl;
     for (unsigned long i = 0; i < it.second.size(); i++) {
-      htmlFile << "          <a href='#" << it.second[i]->getName() << "'>"
+      htmlFile << "          <a href='#" << it.second[i]->getFullName() << "'>"
                << (i + 1) << "</a>" << std::endl;
     }
     htmlFile << "        </td>" << std::endl;
@@ -522,10 +505,14 @@ void processPath(SPA::Path *path, unsigned long pathID) {
 
     htmlFile << "      <div class='content'>" << std::endl;
     if (messages[mi]->content.size() > 0) {
-      htmlFile << "        <b>From:</b> " << messages[mi]->fromBinding << " ("
-               << messages[mi]->fromParticipant->name << ")<br />" << std::endl;
-      htmlFile << "        <b>To:</b> " << messages[mi]->toBinding << " ("
-               << messages[mi]->toParticipant->name << ")<br />" << std::endl;
+      htmlFile << "        <b>From:</b> " << messages[mi]->sourceIP << ":"
+               << messages[mi]->protocol << ":" << messages[mi]->sourcePort
+               << " (" << messages[mi]->fromParticipant->name << ")<br />"
+               << std::endl;
+      htmlFile << "        <b>To:</b> " << messages[mi]->destinationIP << ":"
+               << messages[mi]->protocol << ":" << messages[mi]->destinationPort
+               << " (" << messages[mi]->toParticipant->name << ")<br />"
+               << std::endl;
       htmlFile << "        <b>Size:</b> " << messages[mi]->content.size()
                << "<br />" << std::endl;
       htmlFile << "        <b>Text Representation:</b><br />" << std::endl;
@@ -565,20 +552,21 @@ void processPath(SPA::Path *path, unsigned long pathID) {
   dotFile << "}" << std::endl;
 
   for (auto sit : path->getSymbolLog()) {
-    htmlFile << "    <div class='box' id='" << sit->getName() << "'>"
+    htmlFile << "    <div class='box' id='" << sit->getFullName() << "'>"
              << std::endl;
     htmlFile << "      <a class='closebutton' href='#'>&#x2715;</a>"
              << std::endl;
-    htmlFile << "      <h1>Symbol " << sit->getName() << "</h1>" << std::endl;
+    htmlFile << "      <h1>Symbol " << sit->getFullName() << "</h1>"
+             << std::endl;
     htmlFile << "      <div class='content'>" << std::endl;
     if (sit->isInput()) {
       htmlFile << "      <b>Type:</b> input<br />" << std::endl;
       htmlFile << "        <b>Size:</b> " << sit->getInputArray()->size
                << "<br />" << std::endl;
-      if (path->getTestInputs().count(sit->getName())) {
+      if (path->getTestInputs().count(sit->getFullName())) {
         std::stringstream value;
-        copy(path->getTestInput(sit->getName()).begin(),
-             path->getTestInput(sit->getName()).end(),
+        copy(path->getTestInput(sit->getFullName()).begin(),
+             path->getTestInput(sit->getFullName()).end(),
              std::ostream_iterator<int>(value, " "));
         htmlFile << "        <b>Test Case Value:</b> " << value.str()
                  << "<br />" << std::endl;

@@ -95,7 +95,7 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
 
   std::set<std::string> symbolsInSenderLog;
   for (auto it : symbolLog) {
-    symbolsInSenderLog.insert(it->getName());
+    symbolsInSenderLog.insert(it->getFullName());
   }
 
   for (auto it : orderedSymbols) {
@@ -172,7 +172,7 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
     if (iit.first.compare(0, strlen(SPA_API_INPUT_PREFIX),
                           SPA_API_INPUT_PREFIX) == 0) {
       for (auto sit : iit.second) {
-        objectNames.push_back(sit->getName());
+        objectNames.push_back(sit->getFullName());
         objects.push_back(sit->getInputArray());
       }
     }
@@ -248,7 +248,7 @@ std::ostream &operator<<(std::ostream &stream, const Path &path) {
 
   stream << SPA_PATH_SYMBOLLOG_START << std::endl;
   for (auto it : path.symbolLog) {
-    stream << it->getName() << std::endl;
+    stream << it->getFullName() << std::endl;
   }
   stream << SPA_PATH_SYMBOLLOG_END << std::endl;
 
@@ -256,7 +256,7 @@ std::ostream &operator<<(std::ostream &stream, const Path &path) {
   std::vector<klee::ref<klee::Expr> > evalExprs;
   for (auto oit : path.outputSymbols) {
     for (auto sit : oit.second) {
-      stream << sit->getName() << SPA_PATH_OUTPUT_DELIMITER
+      stream << sit->getFullName() << SPA_PATH_OUTPUT_DELIMITER
              << sit->getOutputValues().size() << std::endl;
       for (auto bit : sit->getOutputValues()) {
         evalExprs.push_back(bit);

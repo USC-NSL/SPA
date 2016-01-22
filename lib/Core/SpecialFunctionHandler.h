@@ -137,7 +137,7 @@ namespace klee {
     HANDLER(handleSpaLoadPath);
     HANDLER(handleSpaCheckSymbol);
     HANDLER(handleSpaSeedSymbol);
-    HANDLER(handleSpaSnprintf4);
+    HANDLER(handleSpaSnprintf5);
     HANDLER(handleSpaRuntimeCall);
 #undef HANDLER
   };

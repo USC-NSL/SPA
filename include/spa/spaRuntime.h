@@ -63,9 +63,9 @@ int32_t spa_check_path(uint64_t pathID);
 void spa_load_path(uint64_t pathID);
 int32_t spa_check_symbol(const char varName[], uint64_t pathID);
 void spa_seed_symbol(void *var, uint64_t pathID);
-void spa_snprintf4(char *out, unsigned size, const char *format,
-                   const char *in1, const char *in2, const char *in3,
-                   unsigned long in4);
+void spa_snprintf5(char *out, unsigned size, const char *format,
+                   const char *in1, unsigned long in2, const char *in3,
+                   const char *in4, unsigned long in5);
 #else
 int32_t __attribute__((weak)) spa_check_path(uint64_t pathID) { return 0; }
 void __attribute__((weak)) spa_load_path(uint64_t pathID) {}
@@ -75,8 +75,9 @@ int32_t __attribute__((weak))
 }
 void __attribute__((weak)) spa_seed_symbol(void *var, uint64_t pathID) {}
 void __attribute__((weak))
-    spa_snprintf4(char *out, unsigned size, const char *format, const char *in1,
-                  const char *in2, const char *in3, unsigned long in4) {}
+    spa_snprintf5(char *out, unsigned size, const char *format, const char *in1,
+                  unsigned long in2, const char *in3, const char *in4,
+                  unsigned long in5) {}
 #endif
 
 void spa_input_handler(va_list args);
@@ -263,9 +264,9 @@ void __attribute__((noinline, weak))
 #endif
 
   char fullVarName[100];
-  spa_snprintf4(fullVarName, sizeof(fullVarName), "%s_%s%s_%ld", varName,
-                spa_internal_participantName, "",
-                spa_internal_io_sequence_number++);
+  spa_snprintf5(fullVarName, sizeof(fullVarName), "%1$s_%3$s_%2$ld", varName,
+                spa_internal_io_sequence_number++, spa_internal_participantName,
+                "", 0);
 
 #ifdef ENABLE_KLEE
   uint8_t *symbol = (uint8_t *)malloc(size);
@@ -340,13 +341,13 @@ void __attribute__((weak))
   }
 #endif // #ifdef ENABLE_KLEE
   char fullVarName[100];
-  spa_snprintf4(fullVarName, sizeof(fullVarName), "%s_%s%s_%ld", varName,
-                spa_internal_participantName, "",
-                spa_internal_io_sequence_number++);
+  spa_snprintf5(fullVarName, sizeof(fullVarName), "%1$s_%3$s_%2$ld", varName,
+                spa_internal_io_sequence_number++, spa_internal_participantName,
+                "", 0);
   char fullSizeName[100];
-  spa_snprintf4(fullSizeName, sizeof(fullSizeName), "%s_%s%s_%ld", sizeName,
-                spa_internal_participantName, "",
-                spa_internal_io_sequence_number++);
+  spa_snprintf5(fullSizeName, sizeof(fullSizeName), "%1$s_%3$s_%2$ld", sizeName,
+                spa_internal_io_sequence_number++, spa_internal_participantName,
+                "", 0);
 
   void *buffer = malloc(bufferSize);
   klee_make_symbolic(buffer, bufferSize, fullVarName);

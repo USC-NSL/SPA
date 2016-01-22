@@ -12,7 +12,6 @@
 #include <klee/Solver.h>
 
 #include <spa/SPA.h>
-#include <spa/Util.h>
 
 #define SPA_PATH_START "--- PATH START ---"
 #define SPA_PATH_UUID_START "--- UUID START ---"
@@ -45,46 +44,75 @@
 void loadCoverage(SPA::Path *path);
 
 namespace SPA {
+std::string strSplitJoin(std::string input, std::string delimiter, int lidx,
+                         unsigned int rcut);
+std::string generateUUID();
+
 class Symbol {
 private:
-  std::string name;
+  std::string fullName;
   const klee::Array *array = NULL;
   std::vector<klee::ref<klee::Expr> > outputValues;
 
 public:
-  Symbol(std::string name, const klee::Array *array)
-      : name(name), array(array) {}
+  Symbol(std::string fullName, const klee::Array *array)
+      : fullName(fullName), array(array) {}
 
-  Symbol(std::string name, std::vector<klee::ref<klee::Expr> > outputValues =
-                               std::vector<klee::ref<klee::Expr> >())
-      : name(name), outputValues(outputValues) {}
+  Symbol(std::string fullName,
+         std::vector<klee::ref<klee::Expr> > outputValues =
+             std::vector<klee::ref<klee::Expr> >())
+      : fullName(fullName), outputValues(outputValues) {}
 
-  std::string getName() const { return name; }
-
+  std::string getFullName() const { return fullName; }
+  std::string getQualifiedName() const {
+    return strSplitJoin(fullName, SPA_SYMBOL_DELIMITER, 0, 1);
+  }
+  std::string getLocalName() const {
+    return strSplitJoin(fullName, SPA_SYMBOL_DELIMITER, 0, 2);
+  }
   std::string getParticipant() const {
-    std::string participant = name.substr(0, name.rfind(SPA_SYMBOL_DELIMITER));
-    participant =
-        participant.substr(participant.rfind(SPA_SYMBOL_DELIMITER) + 1);
-    return participant;
+    return strSplitJoin(fullName, SPA_SYMBOL_DELIMITER, -2, 1);
+  }
+  std::string getPrefix() const {
+    return strSplitJoin(fullName, SPA_SYMBOL_DELIMITER, 2, 3);
+  }
+  std::string getMessage5Tuple() const {
+    assert(isMessage());
+    return strSplitJoin(fullName, SPA_SYMBOL_DELIMITER, -3, 2);
+  }
+  std::string getMessageSourceIP() const {
+    return strSplitJoin(getMessage5Tuple(), ".", 0, 7);
+  }
+  std::string getMessageSourcePort() const {
+    return strSplitJoin(getMessage5Tuple(), ".", 4, 6);
+  }
+  std::string getMessageProtocol() const {
+    return strSplitJoin(getMessage5Tuple(), ".", 5, 5);
+  }
+  std::string getMessageDestinationIP() const {
+    return strSplitJoin(getMessage5Tuple(), ".", -5, 1);
+  }
+  std::string getMessageDestinationPort() const {
+    return strSplitJoin(getMessage5Tuple(), ".", -1, 0);
   }
 
   bool isInput() const {
-    return name.compare(0, strlen(SPA_INPUT_PREFIX), SPA_INPUT_PREFIX) == 0 &&
-           array;
+    return fullName.compare(0, strlen(SPA_INPUT_PREFIX), SPA_INPUT_PREFIX) ==
+               0 && array;
   }
 
   bool isOutput() const {
-    return name.compare(0, strlen(SPA_OUTPUT_PREFIX), SPA_OUTPUT_PREFIX) == 0 &&
-           outputValues.size() > 0;
+    return fullName.compare(0, strlen(SPA_OUTPUT_PREFIX), SPA_OUTPUT_PREFIX) ==
+               0 && outputValues.size() > 0;
   }
 
   bool isAPI() const {
     if (isInput()) {
-      return name.compare(0, strlen(SPA_API_INPUT_PREFIX),
-                          SPA_API_INPUT_PREFIX) == 0;
+      return fullName.compare(0, strlen(SPA_API_INPUT_PREFIX),
+                              SPA_API_INPUT_PREFIX) == 0;
     } else if (isOutput()) {
-      return name.compare(0, strlen(SPA_API_OUTPUT_PREFIX),
-                          SPA_API_OUTPUT_PREFIX) == 0;
+      return fullName.compare(0, strlen(SPA_API_OUTPUT_PREFIX),
+                              SPA_API_OUTPUT_PREFIX) == 0;
     } else {
       assert(false && "Symbol is neither input nor output.");
     }
@@ -92,11 +120,11 @@ public:
 
   bool isMessage() const {
     if (isInput()) {
-      return name.compare(0, strlen(SPA_MESSAGE_INPUT_PREFIX),
-                          SPA_MESSAGE_INPUT_PREFIX) == 0;
+      return fullName.compare(0, strlen(SPA_MESSAGE_INPUT_PREFIX),
+                              SPA_MESSAGE_INPUT_PREFIX) == 0;
     } else if (isOutput()) {
-      return name.compare(0, strlen(SPA_MESSAGE_OUTPUT_PREFIX),
-                          SPA_MESSAGE_OUTPUT_PREFIX) == 0;
+      return fullName.compare(0, strlen(SPA_MESSAGE_OUTPUT_PREFIX),
+                              SPA_MESSAGE_OUTPUT_PREFIX) == 0;
     } else {
       assert(false && "Symbol is neither input nor output.");
     }
