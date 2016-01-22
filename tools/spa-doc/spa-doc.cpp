@@ -310,6 +310,9 @@ void processPath(SPA::Path *path, unsigned long pathID) {
               break;
             }
           }
+          if (sent) {
+            break;
+          }
         }
         assert(sent && "Message received before being sent.");
       } else {
