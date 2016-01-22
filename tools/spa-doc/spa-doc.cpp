@@ -52,9 +52,10 @@ typedef struct {
   std::shared_ptr<participant_t> fromParticipant;
   std::shared_ptr<participant_t> toParticipant;
   std::string sourceIP, sourcePort, protocol, destinationIP, destinationPort;
-  unsigned long outstanding;
   std::vector<klee::ref<klee::Expr> > content;
-  std::vector<std::string> symbolNames;
+  // Sending symbol and corresponding receiving symbol.
+  std::vector<std::pair<std::shared_ptr<SPA::Symbol>,
+                        std::shared_ptr<SPA::Symbol> > > symbols;
 } message_t;
 
 // participants -> uuids.
@@ -94,6 +95,21 @@ bool compareMessage5Tuple(std::shared_ptr<message_t> message,
   } else {
     return false;
   }
+}
+
+bool checkMessageReceived(std::shared_ptr<message_t> message) {
+  // Check if all non size and source symbols were received.
+  for (auto sit : message->symbols) {
+    if ((!sit.second) && sit.first->getFullName().compare(
+                             0, strlen(SPA_MESSAGE_OUTPUT_SIZE_PREFIX),
+                             SPA_MESSAGE_OUTPUT_SIZE_PREFIX) != 0 &&
+        sit.first->getFullName().compare(
+            0, strlen(SPA_MESSAGE_OUTPUT_SOURCE_PREFIX),
+            SPA_MESSAGE_OUTPUT_SOURCE_PREFIX) != 0) {
+      return false;
+    }
+  }
+  return true;
 }
 
 std::string join(std::vector<std::string> strings, std::string delimiter) {
@@ -277,29 +293,22 @@ void processPath(SPA::Path *path, unsigned long pathID) {
         messages.back()->fromParticipant =
             participantByName[API_PREFIX + participant];
         messages.back()->toParticipant = participantByName[participant];
-        messages.back()->symbolNames.push_back(sit->getFullName());
+        messages.back()->symbols.push_back(std::make_pair(nullptr, sit));
       } else if (sit->isMessage()) {
-        // Ignore message size and source symbols.
-        if (sit->getFullName().compare(0, strlen(SPA_MESSAGE_INPUT_SIZE_PREFIX),
-                                       SPA_MESSAGE_INPUT_SIZE_PREFIX) == 0 ||
-            sit->getFullName().compare(0,
-                                       strlen(SPA_MESSAGE_INPUT_SOURCE_PREFIX),
-                                       SPA_MESSAGE_INPUT_SOURCE_PREFIX) == 0) {
-          continue;
-        }
         bool sent = false;
         for (auto mit : messages) {
-          if (compareMessage5Tuple(mit, sit) && mit->outstanding > 0) {
-            mit->outstanding--;
-            if (Debug) {
-              klee::klee_message(
-                  "  Received message: %s:%s:%s -> %s:%s:%s",
-                  mit->sourceIP.c_str(), mit->protocol.c_str(),
-                  mit->sourcePort.c_str(), mit->destinationIP.c_str(),
-                  mit->protocol.c_str(), mit->destinationPort.c_str());
+          for (auto &msit : mit->symbols) {
+            if ((!msit.second) &&
+                checkMessageCompatibility(msit.first, sit->getLocalName())) {
+              msit.second = sit;
+              if (Debug) {
+                klee::klee_message("  Received message: %s -> %s",
+                                   msit.first->getFullName().c_str(),
+                                   sit->getFullName().c_str());
+              }
+              sent = true;
+              break;
             }
-            sent = true;
-            break;
           }
         }
         assert(sent && "Message received before being sent.");
@@ -318,7 +327,7 @@ void processPath(SPA::Path *path, unsigned long pathID) {
         messages.back()->content.insert(messages.back()->content.end(),
                                         sit->getOutputValues().begin(),
                                         sit->getOutputValues().end());
-        messages.back()->symbolNames.push_back(sit->getFullName());
+        messages.back()->symbols.push_back(std::make_pair(sit, nullptr));
       } else if (sit->isMessage()) {
         std::string receiverBinding =
             sit->getMessageDestinationIP() + ":" + sit->getMessageProtocol() +
@@ -338,7 +347,7 @@ void processPath(SPA::Path *path, unsigned long pathID) {
                                        strlen(SPA_MESSAGE_OUTPUT_SOURCE_PREFIX),
                                        SPA_MESSAGE_OUTPUT_SOURCE_PREFIX) == 0) {
           assert(compareMessage5Tuple(messages.back(), sit));
-          messages.back()->symbolNames.push_back(sit->getFullName());
+          messages.back()->symbols.push_back(std::make_pair(sit, nullptr));
         } else {
           if (messages.empty() || sit->getMessageProtocol() == "udp" ||
               (!compareMessage5Tuple(messages.back(), sit))) {
@@ -352,7 +361,6 @@ void processPath(SPA::Path *path, unsigned long pathID) {
             messages.back()->destinationIP = sit->getMessageDestinationIP();
             messages.back()->destinationPort = sit->getMessageDestinationPort();
           }
-          messages.back()->outstanding++;
           if (sit->getFullName().compare(
                   0, strlen(SPA_MESSAGE_OUTPUT_CONNECT_PREFIX),
                   SPA_MESSAGE_OUTPUT_CONNECT_PREFIX) != 0) {
@@ -360,7 +368,7 @@ void processPath(SPA::Path *path, unsigned long pathID) {
                                             sit->getOutputValues().begin(),
                                             sit->getOutputValues().end());
           }
-          messages.back()->symbolNames.push_back(sit->getFullName());
+          messages.back()->symbols.push_back(std::make_pair(sit, nullptr));
         }
       } else {
         assert(false && "Symbol is neither message nor API.");
@@ -486,7 +494,7 @@ void processPath(SPA::Path *path, unsigned long pathID) {
     dotFile << "  " << sanitizeToken(messages[mi]->fromParticipant->name)
             << " -> " << sanitizeToken(messages[mi]->toParticipant->name)
             << "[label=\"" << (mi + 1) << "\" arrowhead=\""
-            << (messages[mi]->outstanding == 0 ? "normal" : "dot")
+            << (checkMessageReceived(messages[mi]) ? "normal" : "dot")
             << "\" href=\"#msg" << (mi + 1) << "\"]" << std::endl;
 
     htmlFile << "    <div class='box' id='msg" << (mi + 1) << "'>" << std::endl;
@@ -536,16 +544,23 @@ void processPath(SPA::Path *path, unsigned long pathID) {
         htmlFile << "          <tr><td>" << si << "</td><td>" << exprROS.str()
                  << "</td></tr>" << std::endl;
       }
-      htmlFile << "      </table>" << std::endl;
+      htmlFile << "        </table>" << std::endl;
     }
 
     htmlFile << "        <b>Symbols:</b><br />" << std::endl;
-    htmlFile << "        <ul>" << std::endl;
-    for (auto it : messages[mi]->symbolNames) {
-      htmlFile << "          <li><a href='#" << it << "'>" << it << "</a></li>"
-               << std::endl;
+    htmlFile << "        <table border='1'>" << std::endl;
+    htmlFile << "          <tr><th>Sent</th><th>Received</th></tr>"
+             << std::endl;
+    for (auto it : messages[mi]->symbols) {
+      htmlFile << "          <tr><td>"
+               << (it.first ? "<a href='#" + it.first->getFullName() + "'>" +
+                                  it.first->getFullName() + "</a>"
+                            : "") << "</td><td>"
+               << (it.second ? "<a href='#" + it.second->getFullName() + "'>" +
+                                   it.second->getFullName() + "</a>"
+                             : "") << "</td></tr>" << std::endl;
     }
-    htmlFile << "        </ul>" << std::endl;
+    htmlFile << "        </table>" << std::endl;
     htmlFile << "      </div>" << std::endl;
     htmlFile << "    </div>" << std::endl;
   }
@@ -668,6 +683,8 @@ int main(int argc, char **argv, char **envp) {
 
   auto result = mkdir(Directory.c_str(), 0755);
   assert(result == 0 || errno == EEXIST);
+
+  klee::klee_message("Generating static content.");
 
   std::ofstream makefile(Directory + "/Makefile");
   assert(makefile.good());
@@ -799,6 +816,8 @@ int main(int argc, char **argv, char **envp) {
   cssFile << "  font-size: 20pt;" << std::endl;
   cssFile << "}" << std::endl;
 
+  klee::klee_message("Loading paths.");
+
   std::unique_ptr<SPA::PathLoader> pathLoader(new SPA::PathLoader(inFile));
   std::unique_ptr<SPA::Path> path;
   std::set<std::string> allUUIDs;
@@ -837,6 +856,8 @@ int main(int argc, char **argv, char **envp) {
   }
 
   makePathIndex("paths", allUUIDs);
+
+  klee::klee_message("Generating conversation index.");
 
   std::ofstream conversationsDot(Directory + "/index.dot");
   std::ofstream conversationsHtml(Directory + "/index.html.inc");
@@ -893,6 +914,8 @@ int main(int argc, char **argv, char **envp) {
     makefile << "clean: " << name << ".clean" << std::endl;
   }
   conversationsDot << "}" << std::endl;
+
+  klee::klee_message("Generating global coverage index.");
 
   std::ofstream coverageHtml(Directory + "/coverage.html");
   assert(coverageHtml.good());
