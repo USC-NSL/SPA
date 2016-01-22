@@ -6,6 +6,8 @@
 #include <spa/Util.h>
 
 #include <sys/unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
 #include <sys/stat.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
@@ -918,100 +920,106 @@ int main(int argc, char **argv, char **envp) {
   }
   conversationsDot << "}" << std::endl;
 
-  klee::klee_message("Generating global coverage index.");
+  if (NumProcesses == 1 || fork() <= 0) {
+    klee::klee_message("Generating global coverage index.");
 
-  std::ofstream coverageHtml(Directory + "/coverage.html");
-  assert(coverageHtml.good());
-  coverageHtml << "<!doctype html>" << std::endl;
-  coverageHtml << "<html lang=\"en\">" << std::endl;
-  coverageHtml << "  <head>" << std::endl;
-  coverageHtml << "    <meta charset=\"utf-8\">" << std::endl;
-  coverageHtml << "    <title>Coverage</title>" << std::endl;
-  coverageHtml
-      << "    <link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">"
-      << std::endl;
-  coverageHtml << "  </head>" << std::endl;
-  coverageHtml << "  <body>" << std::endl;
-  coverageHtml << "    <div id=\"header\">" << std::endl;
-  coverageHtml << "      <a href=\"index.html\">All Conversations</a>"
-               << std::endl;
-  coverageHtml << "      <a href=\"paths.html\">All Paths</a>" << std::endl;
-  coverageHtml << "      <a href=\"coverage.html\">Coverage</a>" << std::endl;
-  coverageHtml << "    </div>" << std::endl;
-  coverageHtml << "    <h1>Coverage</h1>" << std::endl;
-  coverageHtml << "    <b>Files:</b><br />" << std::endl;
-  for (auto it : coverage) {
-    std::string srcFileName = remapSrcFileName(it.first);
-    coverageHtml << "    <a href='#" << srcFileName << "'>" << srcFileName
-                 << "</a><br />" << std::endl;
-  }
-
-  for (auto fit : coverage) {
-    std::string srcFileName = remapSrcFileName(fit.first);
-    coverageHtml << "    <div class='box' id='" << srcFileName << "'>"
+    std::ofstream coverageHtml(Directory + "/coverage.html");
+    assert(coverageHtml.good());
+    coverageHtml << "<!doctype html>" << std::endl;
+    coverageHtml << "<html lang=\"en\">" << std::endl;
+    coverageHtml << "  <head>" << std::endl;
+    coverageHtml << "    <meta charset=\"utf-8\">" << std::endl;
+    coverageHtml << "    <title>Coverage</title>" << std::endl;
+    coverageHtml
+        << "    <link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">"
+        << std::endl;
+    coverageHtml << "  </head>" << std::endl;
+    coverageHtml << "  <body>" << std::endl;
+    coverageHtml << "    <div id=\"header\">" << std::endl;
+    coverageHtml << "      <a href=\"index.html\">All Conversations</a>"
                  << std::endl;
-    coverageHtml << "      <a class='closebutton' href='#'>&#x2715;</a>"
-                 << std::endl;
-    coverageHtml << "      <b>" << srcFileName << "</b>" << std::endl;
-    coverageHtml << "      <div class='src'>" << std::endl;
-    std::ifstream srcFile(srcFileName);
-    unsigned long lastLineNum =
-        fit.second.empty() ? 0 : fit.second.rbegin()->first;
-    for (unsigned long srcLineNum = 1;
-         srcFile.good() || srcLineNum <= lastLineNum; srcLineNum++) {
-      std::string srcLine;
-      std::getline(srcFile, srcLine);
-      coverageHtml << "        <div class='line'>" << std::endl;
-      if (fit.second.count(srcLineNum)) {
-        coverageHtml << "<a href='coverage.html#" << srcFileName << ":"
-                     << srcLineNum << "'>" << std::endl;
-      }
-      coverageHtml << "          <div class='number'>" << srcLineNum << "</div>"
-                   << std::endl;
-      coverageHtml << "          <div class='content'>" << sanitizeHTML(srcLine)
-                   << "</div>" << std::endl;
-      if (fit.second.count(srcLineNum)) {
-        coverageHtml << "        </a>" << std::endl;
-      }
-      coverageHtml << "        </div>" << std::endl;
-    }
-    coverageHtml << "      </div>" << std::endl;
+    coverageHtml << "      <a href=\"paths.html\">All Paths</a>" << std::endl;
+    coverageHtml << "      <a href=\"coverage.html\">Coverage</a>" << std::endl;
     coverageHtml << "    </div>" << std::endl;
-  }
+    coverageHtml << "    <h1>Coverage</h1>" << std::endl;
+    coverageHtml << "    <b>Files:</b><br />" << std::endl;
+    for (auto it : coverage) {
+      std::string srcFileName = remapSrcFileName(it.first);
+      coverageHtml << "    <a href='#" << srcFileName << "'>" << srcFileName
+                   << "</a><br />" << std::endl;
+    }
 
-  for (auto fit : coverage) {
-    std::string srcFileName = remapSrcFileName(fit.first);
-    for (auto lit : fit.second) {
-      coverageHtml << "    <div class='box' id='" << srcFileName << ":"
-                   << lit.first << "'>" << std::endl;
+    for (auto fit : coverage) {
+      std::string srcFileName = remapSrcFileName(fit.first);
+      coverageHtml << "    <div class='box' id='" << srcFileName << "'>"
+                   << std::endl;
       coverageHtml << "      <a class='closebutton' href='#'>&#x2715;</a>"
                    << std::endl;
-      coverageHtml << "      <h2>" << srcFileName << ":" << lit.first << "</h2>"
-                   << std::endl;
-
-      coverageHtml << "      <b>Other paths that reached here:</b><br />"
-                   << std::endl;
-      unsigned long counter = 1;
-      for (auto pit : lit.second[true]) {
-        coverageHtml << "      <a href='" << pit << ".html'>" << counter++
-                     << "</a>" << std::endl;
+      coverageHtml << "      <b>" << srcFileName << "</b>" << std::endl;
+      coverageHtml << "      <div class='src'>" << std::endl;
+      std::ifstream srcFile(srcFileName);
+      unsigned long lastLineNum =
+          fit.second.empty() ? 0 : fit.second.rbegin()->first;
+      for (unsigned long srcLineNum = 1;
+           srcFile.good() || srcLineNum <= lastLineNum; srcLineNum++) {
+        std::string srcLine;
+        std::getline(srcFile, srcLine);
+        coverageHtml << "        <div class='line'>" << std::endl;
+        if (fit.second.count(srcLineNum)) {
+          coverageHtml << "<a href='coverage.html#" << srcFileName << ":"
+                       << srcLineNum << "'>" << std::endl;
+        }
+        coverageHtml << "          <div class='number'>" << srcLineNum
+                     << "</div>" << std::endl;
+        coverageHtml << "          <div class='content'>"
+                     << sanitizeHTML(srcLine) << "</div>" << std::endl;
+        if (fit.second.count(srcLineNum)) {
+          coverageHtml << "        </a>" << std::endl;
+        }
+        coverageHtml << "        </div>" << std::endl;
       }
-      coverageHtml << "      <br />" << std::endl;
-
-      coverageHtml << "      <b>Other paths that didn't reach here:</b><br />"
-                   << std::endl;
-      counter = 1;
-      for (auto pit : lit.second[false]) {
-        coverageHtml << "      <a href='" << pit << ".html'>" << counter++
-                     << "</a>" << std::endl;
-      }
-      coverageHtml << "      <br />" << std::endl;
-
+      coverageHtml << "      </div>" << std::endl;
       coverageHtml << "    </div>" << std::endl;
     }
+
+    for (auto fit : coverage) {
+      std::string srcFileName = remapSrcFileName(fit.first);
+      for (auto lit : fit.second) {
+        coverageHtml << "    <div class='box' id='" << srcFileName << ":"
+                     << lit.first << "'>" << std::endl;
+        coverageHtml << "      <a class='closebutton' href='#'>&#x2715;</a>"
+                     << std::endl;
+        coverageHtml << "      <h2>" << srcFileName << ":" << lit.first
+                     << "</h2>" << std::endl;
+
+        coverageHtml << "      <b>Other paths that reached here:</b><br />"
+                     << std::endl;
+        unsigned long counter = 1;
+        for (auto pit : lit.second[true]) {
+          coverageHtml << "      <a href='" << pit << ".html'>" << counter++
+                       << "</a>" << std::endl;
+        }
+        coverageHtml << "      <br />" << std::endl;
+
+        coverageHtml << "      <b>Other paths that didn't reach here:</b><br />"
+                     << std::endl;
+        counter = 1;
+        for (auto pit : lit.second[false]) {
+          coverageHtml << "      <a href='" << pit << ".html'>" << counter++
+                       << "</a>" << std::endl;
+        }
+        coverageHtml << "      <br />" << std::endl;
+
+        coverageHtml << "    </div>" << std::endl;
+      }
+    }
+    coverageHtml << "  </body>" << std::endl;
+    coverageHtml << "</html>" << std::endl;
+
+    if (NumProcesses != 1) {
+      return 0;
+    }
   }
-  coverageHtml << "  </body>" << std::endl;
-  coverageHtml << "</html>" << std::endl;
 
   if (OnlyPathID) {
     path.reset(pathLoader->getPath(OnlyPathID - 1));
@@ -1035,6 +1043,13 @@ int main(int argc, char **argv, char **envp) {
       if ((int) pathID % NumProcesses == workerID) {
         processPath(path.get(), pathID);
       }
+    }
+  }
+
+  // Wait for all children to finish.
+  while (wait(nullptr)) {
+    if (errno == ECHILD) {
+      break;
     }
   }
 
