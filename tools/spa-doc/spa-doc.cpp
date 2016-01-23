@@ -1046,7 +1046,8 @@ int main(int argc, char **argv, char **envp) {
     inFile.close();
     inFile.open(InFileName);
     pathLoader.reset(new SPA::PathLoader(inFile));
-    pathLoader->skipPaths(StartFromPathID - 1);
+    assert(pathLoader->skipPaths(StartFromPathID - 1) &&
+           "Specified path does not exist.");
     for (unsigned long pathID = StartFromPathID;
          path.reset(pathLoader->getPath()), path; pathID++) {
       if ((int) pathID % NumProcesses == workerID) {
