@@ -29,6 +29,11 @@ llvm::cl::opt<int> OnlyPathID(
     "only-path",
     llvm::cl::desc("Only generate index and documentation for given path ID."));
 
+llvm::cl::opt<int> StartFromPathID(
+    "start-from-path", llvm::cl::init(1),
+    llvm::cl::desc(
+        "Only generate index and documentation from given path ID onward."));
+
 llvm::cl::opt<int>
     NumProcesses("j", llvm::cl::init(1),
                  llvm::cl::desc("Number of worker processes to spawn."));
@@ -1041,8 +1046,9 @@ int main(int argc, char **argv, char **envp) {
     inFile.close();
     inFile.open(InFileName);
     pathLoader.reset(new SPA::PathLoader(inFile));
-    for (unsigned long pathID = 1; path.reset(pathLoader->getPath()), path;
-         pathID++) {
+    pathLoader->skipPaths(StartFromPathID - 1);
+    for (unsigned long pathID = StartFromPathID;
+         path.reset(pathLoader->getPath()), path; pathID++) {
       if ((int) pathID % NumProcesses == workerID) {
         processPath(path.get(), pathID);
       }
