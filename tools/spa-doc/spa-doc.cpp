@@ -876,6 +876,9 @@ int main(int argc, char **argv, char **envp) {
   conversationsHtml << "      <a href=\"coverage.html\">Coverage</a>"
                     << std::endl;
   conversationsHtml << "    </div>" << std::endl;
+  conversationsHtml << "    Documented " << uuidToId.size() << " paths, in "
+                    << conversations.size() << " conversations.<br />"
+                    << std::endl;
   conversationsHtml << "    <img src='index.svg' alt='Conversation Dependency "
                        "Graph' usemap='#G' />" << std::endl;
 
