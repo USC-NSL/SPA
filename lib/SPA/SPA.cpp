@@ -78,10 +78,7 @@ typedef enum {
 
 namespace SPA {
 extern llvm::cl::opt<std::string> ParticipantName;
-
-llvm::cl::opt<std::string>
-    IP("ip", llvm::cl::desc("Sets the participant IP address when bind doesn't "
-                            "(default: 127.0.0.1)."));
+extern llvm::cl::opt<std::string> IP;
 
 llvm::cl::opt<int>
     MaxPaths("max-paths",

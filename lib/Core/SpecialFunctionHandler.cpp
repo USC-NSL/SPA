@@ -754,6 +754,10 @@ llvm::cl::opt<std::string> ParticipantName(
     "participant",
     llvm::cl::desc("Sets the participant name (default: module-name)."));
 
+llvm::cl::opt<std::string>
+    IP("ip", llvm::cl::desc("Sets the participant IP address when bind doesn't "
+                            "(default: 127.0.0.1)."));
+
 PathLoader *senderPaths = NULL;
 bool followSenderPaths = false;
 std::map<std::string, std::string> seedSymbolMappings;
@@ -855,6 +859,11 @@ SpecialFunctionHandler::handleSpaLoadPath(ExecutionState &state,
       }
     }
   }
+  if (!SPA::IP.empty()) {
+    klee_message("[spa_load_path]   Participant accepts messages for %s:*.",
+                 SPA::IP.c_str());
+    participantBindings.insert(SPA::IP + ":*");
+  }
   // Check if there are any symbols in the log that can be consumed but that
   // come after any symbols outputted by the current participant.
   // To check this, check the log in reverse and find the first of either a
@@ -871,7 +880,8 @@ SpecialFunctionHandler::handleSpaLoadPath(ExecutionState &state,
     if (SPA::connectSockets && (*sit)->isOutput() && (*sit)->isMessage()) {
       if (participantBindings.count((*sit)->getMessageDestinationIP() + ":" +
                                     (*sit)->getMessageProtocol() + ":" +
-                                    (*sit)->getMessageDestinationPort())) {
+                                    (*sit)->getMessageDestinationPort()) ||
+          participantBindings.count((*sit)->getMessageDestinationIP() + ":*")) {
         break;
       }
     }
