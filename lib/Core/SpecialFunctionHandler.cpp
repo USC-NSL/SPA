@@ -1205,8 +1205,17 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
       }
     } else if (fullName.compare(0, strlen(SPA_API_INPUT_PREFIX),
                                 SPA_API_INPUT_PREFIX) == 0) {
-      // The root path can't be connected.
-      if (state.senderPath->getSymbolLog().empty()) {
+      // Check if the current participant hasn't contributed to the sender path.
+      // If not, then path is equivalent to the root path from this participants
+      // point of view and can't be connected.
+      bool participantFound = false;
+      for (auto pit : state.senderPath->getParticipants()) {
+        if (pit->getName() == SPA::ParticipantName) {
+          participantFound = true;
+          break;
+        }
+      }
+      if (!participantFound) {
         klee_message(
             "[spa_seed_symbol] Input %s is not connected. Not seeding.",
             fullName.c_str());
