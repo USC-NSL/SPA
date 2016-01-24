@@ -54,6 +54,8 @@ typedef struct {
   std::set<std::string> bindings;
 } participant_t;
 #define API_PREFIX "api_"
+#define API_INPUT_PREFIX API_PREFIX "in_"
+#define API_OUTPUT_PREFIX API_PREFIX "out_"
 
 typedef struct {
   std::shared_ptr<participant_t> fromParticipant;
@@ -227,8 +229,13 @@ void processPath(SPA::Path *path, unsigned long pathID) {
       participantByName[it->getName()].reset(new participant_t {
         it->getName(), std::set<std::string>()
       });
-      participantByName[API_PREFIX + it->getName()].reset(new participant_t {
-        API_PREFIX + it->getName(), std::set<std::string>()
+      participantByName[API_INPUT_PREFIX + it->getName()]
+          .reset(new participant_t {
+        API_INPUT_PREFIX + it->getName(), std::set<std::string>()
+      });
+      participantByName[API_OUTPUT_PREFIX + it->getName()]
+          .reset(new participant_t {
+        API_OUTPUT_PREFIX + it->getName(), std::set<std::string>()
       });
     }
   }
@@ -289,7 +296,8 @@ void processPath(SPA::Path *path, unsigned long pathID) {
 
     std::string participant = sit->getParticipant();
     assert(participantByName.count(participant) &&
-           participantByName.count(API_PREFIX + participant));
+           participantByName.count(API_INPUT_PREFIX + participant) &&
+           participantByName.count(API_OUTPUT_PREFIX + participant));
 
     if (sit->isInput()) {
       if (sit->isAPI()) {
@@ -298,7 +306,7 @@ void processPath(SPA::Path *path, unsigned long pathID) {
         }
         messages.emplace_back(new message_t());
         messages.back()->fromParticipant =
-            participantByName[API_PREFIX + participant];
+            participantByName[API_INPUT_PREFIX + participant];
         messages.back()->toParticipant = participantByName[participant];
         messages.back()->symbols.push_back(std::make_pair(nullptr, sit));
       } else if (sit->isMessage()) {
@@ -330,14 +338,25 @@ void processPath(SPA::Path *path, unsigned long pathID) {
         if (Debug) {
           klee::klee_message("  Output API from: %s", participant.c_str());
         }
-        messages.emplace_back(new message_t());
-        messages.back()->fromParticipant = participantByName[participant];
-        messages.back()->toParticipant =
-            participantByName[API_PREFIX + participant];
-        messages.back()->content.insert(messages.back()->content.end(),
-                                        sit->getOutputValues().begin(),
-                                        sit->getOutputValues().end());
-        messages.back()->symbols.push_back(std::make_pair(sit, nullptr));
+        // Collapse content and size symbols into one message.
+        if (sit->getFullName().compare(0, strlen(SPA_API_OUTPUT_SIZE_PREFIX),
+                                       SPA_API_OUTPUT_SIZE_PREFIX) == 0) {
+          assert(messages.back()->fromParticipant ==
+                     participantByName[participant] &&
+                 messages.back()->toParticipant ==
+                     participantByName[API_OUTPUT_PREFIX + participant]);
+          messages.back()->symbols.push_back(std::make_pair(sit, nullptr));
+        } else {
+
+          messages.emplace_back(new message_t());
+          messages.back()->fromParticipant = participantByName[participant];
+          messages.back()->toParticipant =
+              participantByName[API_OUTPUT_PREFIX + participant];
+          messages.back()->content.insert(messages.back()->content.end(),
+                                          sit->getOutputValues().begin(),
+                                          sit->getOutputValues().end());
+          messages.back()->symbols.push_back(std::make_pair(sit, nullptr));
+        }
       } else if (sit->isMessage()) {
         std::string receiverBinding =
             sit->getMessageDestinationIP() + ":" + sit->getMessageProtocol() +
@@ -964,7 +983,8 @@ int main(int argc, char **argv, char **envp) {
       coverageHtml << "      <a class='closebutton' href='#'>&#x2715;</a>"
                    << std::endl;
       coverageHtml << "      <b>" << srcFileName << "</b>" << std::endl;
-      coverageHtml << "      <div class='src'>" << std::endl;
+      coverageHtml << "      <div class='content'>" << std::endl;
+      coverageHtml << "        <div class='src'>" << std::endl;
       std::ifstream srcFile(srcFileName);
       unsigned long lastLineNum =
           fit.second.empty() ? 0 : fit.second.rbegin()->first;
@@ -972,20 +992,21 @@ int main(int argc, char **argv, char **envp) {
            srcFile.good() || srcLineNum <= lastLineNum; srcLineNum++) {
         std::string srcLine;
         std::getline(srcFile, srcLine);
-        coverageHtml << "        <div class='line'>" << std::endl;
+        coverageHtml << "          <div class='line'>" << std::endl;
         if (fit.second.count(srcLineNum)) {
           coverageHtml << "<a href='coverage.html#" << srcFileName << ":"
                        << srcLineNum << "'>" << std::endl;
         }
-        coverageHtml << "          <div class='number'>" << srcLineNum
+        coverageHtml << "            <div class='number'>" << srcLineNum
                      << "</div>" << std::endl;
-        coverageHtml << "          <div class='content'>"
+        coverageHtml << "            <div class='content'>"
                      << sanitizeHTML(srcLine) << "</div>" << std::endl;
         if (fit.second.count(srcLineNum)) {
-          coverageHtml << "        </a>" << std::endl;
+          coverageHtml << "          </a>" << std::endl;
         }
-        coverageHtml << "        </div>" << std::endl;
+        coverageHtml << "          </div>" << std::endl;
       }
+      coverageHtml << "        </div>" << std::endl;
       coverageHtml << "      </div>" << std::endl;
       coverageHtml << "    </div>" << std::endl;
     }
