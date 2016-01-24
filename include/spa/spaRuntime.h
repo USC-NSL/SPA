@@ -156,12 +156,13 @@ SpaTag_t __attribute__((weak)) ValidPath;
 
 #define spa_api_output(var, size, maxSize, name)                               \
   do {                                                                         \
-    __spa_output((void *)var, size, maxSize, "spa_out_api_" name);             \
+    __spa_output((void *)var, size, maxSize, "spa_out_api_" name,              \
+                 "spa_out_api_size_" name);                                    \
     spa_runtime_call(spa_api_output_handler, var, size, maxSize,               \
                      "spa_out_api_" name);                                     \
-    while (0)
+  } while (0)
 #define spa_api_output_var(var)                                                \
-  spa_api_output(var, sizeof(var), sizeof(var), #var)
+  spa_api_output(&var, sizeof(var), sizeof(var), #var)
 
 SpaTag_t __attribute__((weak)) MsgReceived;
 #define spa_msg_input(var, size, name)                                         \
