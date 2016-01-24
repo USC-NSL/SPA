@@ -4,13 +4,12 @@
 #include <spa/spaRuntime.h>
 
 #define MAX_MESSAGE_SIZE 1500
-
-SpaTag_t MessagesEqual;
+#define MAX_API_SIZE 100
 
 extern "C" {
 void done();
-void MsgsEqual();
-void MsgsDifferent();
+void Equal();
+void Different();
 }
 
 void compareMsgs(char *msg1, ssize_t size1, char *msg2, ssize_t size2) {
@@ -20,32 +19,49 @@ void compareMsgs(char *msg1, ssize_t size1, char *msg2, ssize_t size2) {
   spa_msg_input_size(size2, "message2");
 
   if (size1 == size2 && memcmp(msg1, msg2, size1) == 0) {
-    spa_tag(MessagesEqual, "1");
-    MsgsEqual();
+    Equal();
   } else {
-    spa_tag(MessagesEqual, "0");
-    MsgsDifferent();
+    Different();
   }
   done();
 }
 
 extern "C" {
+void ApiCompareEntry() {
+  spa_message_handler_entry();
+  char in1[MAX_API_SIZE], in2[MAX_API_SIZE];
+  ssize_t size_in1 = 0, size_in2 = 0;
+
+  spa_api_input_var(in1);
+  spa_api_input_var(size_in1);
+  spa_api_input_var(in2);
+  spa_api_input_var(size_in2);
+
+  if (size_in1 == size_in2 && memcmp(in1, in2, size_in1) == 0) {
+    Equal();
+  } else {
+    Different();
+  }
+  done();
+}
+
 void MsgCompareEntry() {
   spa_message_handler_entry();
   char msg1[MAX_MESSAGE_SIZE], msg2[MAX_MESSAGE_SIZE];
   compareMsgs(msg1, 0, msg2, 0);
 }
+
 void __attribute__((noinline)) done() {
   // Complicated NOP to prevent inlining.
   static uint8_t i = 0;
   i++;
 }
-void __attribute__((noinline)) MsgsEqual() {
+void __attribute__((noinline)) Equal() {
   // Complicated NOP to prevent inlining.
   static uint8_t i = 0;
   i++;
 }
-void __attribute__((noinline)) MsgsDifferent() {
+void __attribute__((noinline)) Different() {
   // Complicated NOP to prevent inlining.
   static uint8_t i = 0;
   i++;
