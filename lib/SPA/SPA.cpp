@@ -499,6 +499,7 @@ llvm::Module *SPA::getModuleFromFile(std::string moduleFile) {
   replaceOrRenameFunction(mainModule, "socket", "spa_socket");
   replaceOrRenameFunction(mainModule, "bind", "spa_bind");
   replaceOrRenameFunction(mainModule, "listen", "spa_listen");
+  replaceOrRenameFunction(mainModule, "getpeername", "spa_getpeername");
 
   return mainModule;
 }

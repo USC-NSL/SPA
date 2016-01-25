@@ -8,13 +8,14 @@
 #define ENABLE_KLEE
 #include <spa/spaRuntime.h>
 
+#define INITIAL_SOCKFD 10
 struct {
   int type;
   int listen;
   struct sockaddr_in bind_addr;
   struct sockaddr_in connect_addr;
 } sockets[20];
-int next_available_sockfd = 10;
+int next_available_sockfd = INITIAL_SOCKFD;
 
 int spa_socket(int family, int type, int protocol) {
   if (family != AF_INET) {
@@ -388,4 +389,17 @@ int select(int nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds,
   }
 
   return fd_count;
+}
+
+int spa_getpeername(int sockfd, struct sockaddr *addr, socklen_t *addrlen) {
+  if (sockfd >= INITIAL_SOCKFD && sockfd < next_available_sockfd) {
+    memcpy(addr, &sockets[sockfd].connect_addr,
+           *addrlen < sizeof(sockets[sockfd].connect_addr)
+               ? *addrlen
+               : sizeof(sockets[sockfd].connect_addr));
+    *addrlen = sizeof(sockets[sockfd].connect_addr);
+    return 0;
+  } else {
+    return -1;
+  }
 }
