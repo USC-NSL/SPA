@@ -193,8 +193,9 @@ ssize_t sendto(int sockfd, const void *buffer, size_t len, int flags,
                  sizeof(struct sockaddr_in), src_name, srcsize_name);
   }
 
-  printf("[model sendto] Sending message on socket %d with %s:%d:%s:%s:%d.\n",
-         sockfd, bind_addr, ntohs(sockets[sockfd].bind_addr.sin_port),
+  printf("[model sendto] Sending message of size %ld on socket %d with "
+         "%s:%d:%s:%s:%d.\n",
+         len, sockfd, bind_addr, ntohs(sockets[sockfd].bind_addr.sin_port),
          sockets[sockfd].type == SOCK_STREAM ? "tcp" : "udp", connect_addr,
          ntohs(((struct sockaddr_in *)to)->sin_port));
   spa_msg_output_point();
