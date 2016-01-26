@@ -146,6 +146,15 @@ int nanosleep(const struct timespec *req, struct timespec *rem) {
   return 0;
 }
 
+int gettimeofday(struct timeval *tv, struct timezone *tz) {
+  static time_t time = 1451635200; // 2016-01-01 00:00:00 PST
+  if (tv) {
+    tv->tv_sec = time++;
+    tv->tv_usec = 0;
+  }
+  return 0;
+}
+
 /* XXX why can't I call this internally? */
 int clock_gettime(clockid_t clk_id, struct timespec *res) __attribute__((weak));
 int clock_gettime(clockid_t clk_id, struct timespec *res) {
