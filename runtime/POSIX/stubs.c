@@ -147,11 +147,18 @@ int nanosleep(const struct timespec *req, struct timespec *rem) {
 }
 
 int gettimeofday(struct timeval *tv, struct timezone *tz) {
-  static time_t time = 1451635200; // 2016-01-01 00:00:00 PST
+  static struct timeval t = {1451635200, 0}; // 2016-01-01 00:00:00 PST
+
   if (tv) {
-    tv->tv_sec = time++;
-    tv->tv_usec = 0;
+    *tv = t;
   }
+
+  t.tv_usec += 10000; // 10ms
+  if (t.tv_usec >= 1000000) {
+    t.tv_usec = 0;
+    t.tv_sec++;
+  }
+
   return 0;
 }
 
