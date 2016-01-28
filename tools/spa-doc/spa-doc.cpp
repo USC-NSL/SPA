@@ -87,6 +87,8 @@ std::map<std::string, std::set<std::pair<std::string, std::string> > >
 std::map<std::string,
          std::map<unsigned long, std::map<bool, std::set<std::string> > > >
     coverage;
+// src file -> index file
+std::map<std::string, std::string> coverageIndexes;
 
 bool compareMessage5Tuple(std::shared_ptr<message_t> message,
                           std::shared_ptr<SPA::Symbol> symbol) {
@@ -677,7 +679,7 @@ void processPath(SPA::Path *path, unsigned long pathID) {
                        ? (fit.second[srcLineNum] ? "covered" : "uncovered")
                        : "unknown") << "'>" << std::endl;
       if (fit.second.count(srcLineNum)) {
-        htmlFile << "<a href='coverage.html#" << srcFileName << ":"
+        htmlFile << "<a href='" << coverageIndexes[fit.first] << "#l"
                  << srcLineNum << "'>" << std::endl;
       }
       htmlFile << "            <div class='number'>" << srcLineNum << "</div>"
@@ -751,99 +753,115 @@ int main(int argc, char **argv, char **envp) {
   makefile << "paths: paths.html paths.svg" << std::endl;
   makefile << "clean: index.clean paths.clean" << std::endl;
 
-  std::ofstream cssFile(Directory + "/style.css");
-  assert(cssFile.good());
-  cssFile << "body {" << std::endl;
-  cssFile << "  padding-top: 50px;" << std::endl;
-  cssFile << "}" << std::endl;
-  cssFile << "a.anchor {" << std::endl;
-  cssFile << "  display: block;" << std::endl;
-  cssFile << "  position: relative;" << std::endl;
-  cssFile << "  top: -50px;" << std::endl;
-  cssFile << "  visibility: hidden;" << std::endl;
-  cssFile << "}" << std::endl;
-  cssFile << "div#header {" << std::endl;
-  cssFile << "  position: fixed;" << std::endl;
-  cssFile << "  width: 100%;" << std::endl;
-  cssFile << "  top: 0; " << std::endl;
-  cssFile << "  left: 0; " << std::endl;
-  cssFile << "  margin: 0;" << std::endl;
-  cssFile << "  padding: 0;" << std::endl;
-  cssFile << "  background-color: lightgray;" << std::endl;
-  cssFile << "  display: table;" << std::endl;
-  cssFile << "  table-layout: fixed;" << std::endl;
-  cssFile << "}" << std::endl;
-  cssFile << "div#header a {" << std::endl;
-  cssFile << "  display: table-cell;" << std::endl;
-  cssFile << "  padding: 14px 16px;" << std::endl;
-  cssFile << "  text-align: center;" << std::endl;
-  cssFile << "  vertical-align: middle;" << std::endl;
-  cssFile << "  text-decoration: none;" << std::endl;
-  cssFile << "  font-weight: bold;" << std::endl;
-  cssFile << "  color: black;" << std::endl;
-  cssFile << "}" << std::endl;
-  cssFile << "div#header a:hover {" << std::endl;
-  cssFile << "  background-color: black;" << std::endl;
-  cssFile << "  color: white;" << std::endl;
-  cssFile << "}" << std::endl;
-  cssFile << "div.box {" << std::endl;
-  cssFile << "  display: none;" << std::endl;
-  cssFile << "  position: fixed;" << std::endl;
-  cssFile << "  left: 0;" << std::endl;
-  cssFile << "  right: 0;" << std::endl;
-  cssFile << "  top: 0;" << std::endl;
-  cssFile << "  margin-left: auto;" << std::endl;
-  cssFile << "  margin-right: auto;" << std::endl;
-  cssFile << "  margin-top: 50px;" << std::endl;
-  cssFile << "  max-width: 90vw;" << std::endl;
-  cssFile << "  border-radius: 10px;" << std::endl;
-  cssFile << "  padding: 10px;" << std::endl;
-  cssFile << "  border: 5px solid black;" << std::endl;
-  cssFile << "  background-color: white;" << std::endl;
-  cssFile << "}" << std::endl;
-  cssFile << "div.box:target {" << std::endl;
-  cssFile << "  display: table;" << std::endl;
-  cssFile << "}" << std::endl;
-  cssFile << "div.box div.content {" << std::endl;
-  cssFile << "  max-height: calc(100vh - 200px);" << std::endl;
-  cssFile << "  overflow-y: scroll;" << std::endl;
-  cssFile << "}" << std::endl;
-  cssFile << "div.src {" << std::endl;
-  cssFile << "  width: 700px;" << std::endl;
-  cssFile << "  line-height: 100%;" << std::endl;
-  cssFile << "}" << std::endl;
-  cssFile << "div.src div.line {" << std::endl;
-  cssFile << "  clear: left;" << std::endl;
-  cssFile << "}" << std::endl;
-  cssFile << "div.src div.line a {" << std::endl;
-  cssFile << "  text-decoration: none;" << std::endl;
-  cssFile << "}" << std::endl;
-  cssFile << "div.src div.line div.number {" << std::endl;
-  cssFile << "  width: 50px;" << std::endl;
-  cssFile << "  float: left;" << std::endl;
-  cssFile << "  text-align: right;" << std::endl;
-  cssFile << "  padding-right: 5px;" << std::endl;
-  cssFile << "  background-color: lightgray;" << std::endl;
-  cssFile << "}" << std::endl;
-  cssFile << "div.src div.line div.content {" << std::endl;
-  cssFile << "  width: 645px;" << std::endl;
-  cssFile << "  overflow: hidden;" << std::endl;
-  cssFile << "  unicode-bidi: embed;" << std::endl;
-  cssFile << "  font-family: monospace;" << std::endl;
-  cssFile << "  white-space: pre;" << std::endl;
-  cssFile << "}" << std::endl;
-  cssFile << "div.src div.covered div.content {" << std::endl;
-  cssFile << "  background-color: lightgreen;" << std::endl;
-  cssFile << "}" << std::endl;
-  cssFile << "div.src div.uncovered div.content {" << std::endl;
-  cssFile << "  background-color: lightcoral;" << std::endl;
-  cssFile << "}" << std::endl;
-  cssFile << "a.closebutton {" << std::endl;
-  cssFile << "  position: absolute;" << std::endl;
-  cssFile << "  top: 3px;" << std::endl;
-  cssFile << "  right: 8px;" << std::endl;
-  cssFile << "  font-size: 20pt;" << std::endl;
-  cssFile << "}" << std::endl;
+  {
+    std::ofstream cssFile(Directory + "/style.css");
+    assert(cssFile.good());
+    cssFile << "body {" << std::endl;
+    cssFile << "  padding-top: 50px;" << std::endl;
+    cssFile << "}" << std::endl;
+    cssFile << "a.anchor {" << std::endl;
+    cssFile << "  display: block;" << std::endl;
+    cssFile << "  position: relative;" << std::endl;
+    cssFile << "  top: -50px;" << std::endl;
+    cssFile << "  visibility: hidden;" << std::endl;
+    cssFile << "}" << std::endl;
+    cssFile << "div#header {" << std::endl;
+    cssFile << "  position: fixed;" << std::endl;
+    cssFile << "  width: 100%;" << std::endl;
+    cssFile << "  top: 0; " << std::endl;
+    cssFile << "  left: 0; " << std::endl;
+    cssFile << "  margin: 0;" << std::endl;
+    cssFile << "  padding: 0;" << std::endl;
+    cssFile << "  background-color: lightgray;" << std::endl;
+    cssFile << "  display: table;" << std::endl;
+    cssFile << "  table-layout: fixed;" << std::endl;
+    cssFile << "}" << std::endl;
+    cssFile << "div#header a {" << std::endl;
+    cssFile << "  display: table-cell;" << std::endl;
+    cssFile << "  padding: 14px 16px;" << std::endl;
+    cssFile << "  text-align: center;" << std::endl;
+    cssFile << "  vertical-align: middle;" << std::endl;
+    cssFile << "  text-decoration: none;" << std::endl;
+    cssFile << "  font-weight: bold;" << std::endl;
+    cssFile << "  color: black;" << std::endl;
+    cssFile << "}" << std::endl;
+    cssFile << "div#header a:hover {" << std::endl;
+    cssFile << "  background-color: black;" << std::endl;
+    cssFile << "  color: white;" << std::endl;
+    cssFile << "}" << std::endl;
+    cssFile << "div.box {" << std::endl;
+    cssFile << "  display: none;" << std::endl;
+    cssFile << "  position: fixed;" << std::endl;
+    cssFile << "  left: 0;" << std::endl;
+    cssFile << "  right: 0;" << std::endl;
+    cssFile << "  top: 0;" << std::endl;
+    cssFile << "  margin-left: auto;" << std::endl;
+    cssFile << "  margin-right: auto;" << std::endl;
+    cssFile << "  margin-top: 50px;" << std::endl;
+    cssFile << "  max-width: 90vw;" << std::endl;
+    cssFile << "  border-radius: 10px;" << std::endl;
+    cssFile << "  padding: 10px;" << std::endl;
+    cssFile << "  border: 5px solid black;" << std::endl;
+    cssFile << "  background-color: white;" << std::endl;
+    cssFile << "}" << std::endl;
+    cssFile << "div.box:target {" << std::endl;
+    cssFile << "  display: table;" << std::endl;
+    cssFile << "}" << std::endl;
+    cssFile << "div.box div.content {" << std::endl;
+    cssFile << "  max-height: calc(100vh - 200px);" << std::endl;
+    cssFile << "  overflow-y: scroll;" << std::endl;
+    cssFile << "}" << std::endl;
+    cssFile << "div.src {" << std::endl;
+    cssFile << "  line-height: 100%;" << std::endl;
+    cssFile << "}" << std::endl;
+    cssFile << "div.src div.line {" << std::endl;
+    cssFile << "  clear: left;" << std::endl;
+    cssFile << "}" << std::endl;
+    cssFile << "div.src div.line a {" << std::endl;
+    cssFile << "  text-decoration: none;" << std::endl;
+    cssFile << "}" << std::endl;
+    cssFile << "div.src div.line div.number {" << std::endl;
+    cssFile << "  width: 50px;" << std::endl;
+    cssFile << "  float: left;" << std::endl;
+    cssFile << "  text-align: right;" << std::endl;
+    cssFile << "  padding-right: 5px;" << std::endl;
+    cssFile << "  background-color: lightgray;" << std::endl;
+    cssFile << "}" << std::endl;
+    cssFile << "div.src div.line div.content {" << std::endl;
+    cssFile << "  overflow: hidden;" << std::endl;
+    cssFile << "  unicode-bidi: embed;" << std::endl;
+    cssFile << "  font-family: monospace;" << std::endl;
+    cssFile << "  white-space: pre;" << std::endl;
+    cssFile << "}" << std::endl;
+    cssFile << "div.src div.covered div.content {" << std::endl;
+    cssFile << "  background-color: lightgreen;" << std::endl;
+    cssFile << "}" << std::endl;
+    cssFile << "div.src div.uncovered div.content {" << std::endl;
+    cssFile << "  background-color: lightcoral;" << std::endl;
+    cssFile << "}" << std::endl;
+    cssFile << "div.src div.alwayscovered div.content {" << std::endl;
+    cssFile << "  background-color: lightgreen;" << std::endl;
+    cssFile << "}" << std::endl;
+    cssFile << "div.src div.nevercovered div.content {" << std::endl;
+    cssFile << "  background-color: lightcoral;" << std::endl;
+    cssFile << "}" << std::endl;
+    cssFile << "div.src div.sometimescovered div.content {" << std::endl;
+    cssFile << "  background-color: khaki;" << std::endl;
+    cssFile << "}" << std::endl;
+    cssFile << "a.closebutton {" << std::endl;
+    cssFile << "  position: absolute;" << std::endl;
+    cssFile << "  top: 3px;" << std::endl;
+    cssFile << "  right: 8px;" << std::endl;
+    cssFile << "  font-size: 20pt;" << std::endl;
+    cssFile << "}" << std::endl;
+    cssFile << "iframe.src {" << std::endl;
+    cssFile << "  position: fixed;" << std::endl;
+    cssFile << "  width: 50%;" << std::endl;
+    cssFile << "  height: calc(100vh - 60px);" << std::endl;
+    cssFile << "  top: 50px;" << std::endl;
+    cssFile << "  right: 0;" << std::endl;
+    cssFile << "}" << std::endl;
+  }
 
   klee::klee_message("Loading paths.");
 
@@ -853,6 +871,8 @@ int main(int argc, char **argv, char **envp) {
 
   for (unsigned long pathID = 1; path.reset(pathLoader->getPath()), path;
        pathID++) {
+    klee::klee_message("  Processing path %ld.", pathID);
+
     uuidToId[path->getUUID()] = pathID;
     uuidToParticipant[path->getUUID()] =
         path->getParticipants().back()->getName();
@@ -876,6 +896,10 @@ int main(int argc, char **argv, char **envp) {
       for (auto lit : fit.second) {
         coverage[fit.first][lit.first][lit.second].insert(path->getUUID());
       }
+      if (!coverageIndexes.count(fit.first)) {
+        coverageIndexes[fit.first] =
+            "coverage-" + SPA::numToStr(coverageIndexes.size()) + ".html";
+      }
     }
 
     makefile << "all: " << path->getUUID() << std::endl;
@@ -886,184 +910,233 @@ int main(int argc, char **argv, char **envp) {
 
   makePathIndex("paths", allUUIDs);
 
-  klee::klee_message("Generating conversation index.");
+  {
+    klee::klee_message("Generating conversation index.");
 
-  std::ofstream conversationsDot(Directory + "/index.dot");
-  std::ofstream conversationsHtml(Directory + "/index.html.inc");
-  assert(conversationsDot.good() && conversationsHtml.good());
+    std::ofstream conversationsHtml(Directory + "/index.html.inc");
+    assert(conversationsHtml.good());
 
-  conversationsHtml << "    <div id=\"header\">" << std::endl;
-  conversationsHtml << "      <a href=\"index.html\">All Conversations</a>"
-                    << std::endl;
-  conversationsHtml << "      <a href=\"paths.html\">All Paths</a>"
-                    << std::endl;
-  conversationsHtml << "      <a href=\"coverage.html\">Coverage</a>"
-                    << std::endl;
-  conversationsHtml << "    </div>" << std::endl;
-  conversationsHtml << "    Documented " << uuidToId.size() << " paths, in "
-                    << conversations.size() << " conversations.<br />"
-                    << std::endl;
-  conversationsHtml << "    <img src='index.svg' alt='Conversation Dependency "
-                       "Graph' usemap='#G' />" << std::endl;
+    conversationsHtml << "    <div id=\"header\">" << std::endl;
+    conversationsHtml << "      <a href=\"index.html\">All Conversations</a>"
+                      << std::endl;
+    conversationsHtml << "      <a href=\"paths.html\">All Paths</a>"
+                      << std::endl;
+    conversationsHtml << "      <a href=\"coverage.html\">Coverage</a>"
+                      << std::endl;
+    conversationsHtml << "    </div>" << std::endl;
+    conversationsHtml << "    Documented " << uuidToId.size() << " paths, in "
+                      << conversations.size() << " conversations.<br />"
+                      << std::endl;
+    conversationsHtml
+        << "    <img src='index.svg' alt='Conversation Dependency "
+           "Graph' usemap='#G' />" << std::endl;
+  }
 
-  conversationsDot << "digraph G {" << std::endl;
-  conversationsDot << "  root [label=\"Root\"]" << std::endl;
+  {
+    std::ofstream conversationsDot(Directory + "/index.dot");
+    assert(conversationsDot.good());
+    conversationsDot << "digraph G {" << std::endl;
+    conversationsDot << "  root [label=\"Root\"]" << std::endl;
 
-  for (auto cit : conversations) {
-    std::string name = join(cit.first, "_");
-    auto fullConversation = cit.second;
-    // Add all parent paths to conversation.
-    for (auto pit : cit.second) {
-      if (parentPath.count(pit)) {
-        std::string parent = parentPath[pit];
-        while (!fullConversation.count(parent)) {
-          fullConversation.insert(parent);
-          if (parentPath.count(parent)) {
-            parent = parentPath[parent];
-          } else {
-            break;
+    for (auto cit : conversations) {
+      std::string name = join(cit.first, "_");
+      auto fullConversation = cit.second;
+      // Add all parent paths to conversation.
+      for (auto pit : cit.second) {
+        if (parentPath.count(pit)) {
+          std::string parent = parentPath[pit];
+          while (!fullConversation.count(parent)) {
+            fullConversation.insert(parent);
+            if (parentPath.count(parent)) {
+              parent = parentPath[parent];
+            } else {
+              break;
+            }
           }
         }
       }
+
+      conversationsDot << "  " << sanitizeToken(name) << " [label=\""
+                       << cit.first.back() << "\\n(" << cit.second.size()
+                       << " Paths)\" URL=\"" << name << ".html\"]" << std::endl;
+      if (cit.first.size() > 1) {
+        auto parentConversation = cit.first;
+        parentConversation.pop_back();
+
+        conversationsDot << "  " << sanitizeToken(join(parentConversation, "_"))
+                         << " -> " << sanitizeToken(name) << std::endl;
+      } else {
+        conversationsDot << "  root -> " << sanitizeToken(name) << std::endl;
+      }
+
+      makePathIndex(name, fullConversation);
+      makefile << "all: " << name << std::endl;
+      makefile << name << ": " << name << ".html " << name << ".svg"
+               << std::endl;
+      makefile << "clean: " << name << ".clean" << std::endl;
     }
-
-    conversationsDot << "  " << sanitizeToken(name) << " [label=\""
-                     << cit.first.back() << "\\n(" << cit.second.size()
-                     << " Paths)\" URL=\"" << name << ".html\"]" << std::endl;
-    if (cit.first.size() > 1) {
-      auto parentConversation = cit.first;
-      parentConversation.pop_back();
-
-      conversationsDot << "  " << sanitizeToken(join(parentConversation, "_"))
-                       << " -> " << sanitizeToken(name) << std::endl;
-    } else {
-      conversationsDot << "  root -> " << sanitizeToken(name) << std::endl;
-    }
-
-    makePathIndex(name, fullConversation);
-    makefile << "all: " << name << std::endl;
-    makefile << name << ": " << name << ".html " << name << ".svg" << std::endl;
-    makefile << "clean: " << name << ".clean" << std::endl;
+    conversationsDot << "}" << std::endl;
   }
-  conversationsDot << "}" << std::endl;
 
-  if (NumProcesses == 1 || fork() <= 0) {
+  {
+    std::ofstream coverageIndex(Directory + "/coverage.html");
     klee::klee_message("Generating global coverage index.");
+    assert(coverageIndex.good());
 
-    std::ofstream coverageHtml(Directory + "/coverage.html");
-    assert(coverageHtml.good());
-    coverageHtml << "<!doctype html>" << std::endl;
-    coverageHtml << "<html lang=\"en\">" << std::endl;
-    coverageHtml << "  <head>" << std::endl;
-    coverageHtml << "    <meta charset=\"utf-8\">" << std::endl;
-    coverageHtml << "    <title>Coverage</title>" << std::endl;
-    coverageHtml
+    coverageIndex << "<!doctype html>" << std::endl;
+    coverageIndex << "<html lang=\"en\">" << std::endl;
+    coverageIndex << "  <head>" << std::endl;
+    coverageIndex << "    <meta charset=\"utf-8\">" << std::endl;
+    coverageIndex << "    <title>Coverage</title>" << std::endl;
+    coverageIndex
         << "    <link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">"
         << std::endl;
-    coverageHtml << "  </head>" << std::endl;
-    coverageHtml << "  <body>" << std::endl;
-    coverageHtml << "    <div id=\"header\">" << std::endl;
-    coverageHtml << "      <a href=\"index.html\">All Conversations</a>"
-                 << std::endl;
-    coverageHtml << "      <a href=\"paths.html\">All Paths</a>" << std::endl;
-    coverageHtml << "      <a href=\"coverage.html\">Coverage</a>" << std::endl;
-    coverageHtml << "    </div>" << std::endl;
-    coverageHtml << "    <h1>Coverage</h1>" << std::endl;
-    coverageHtml << "    <b>Files:</b><br />" << std::endl;
+    coverageIndex << "  </head>" << std::endl;
+    coverageIndex << "  <body>" << std::endl;
+    coverageIndex << "    <div id=\"header\">" << std::endl;
+    coverageIndex << "      <a href=\"index.html\">All Conversations</a>"
+                  << std::endl;
+    coverageIndex << "      <a href=\"paths.html\">All Paths</a>" << std::endl;
+    coverageIndex << "      <a href=\"coverage.html\">Coverage</a>"
+                  << std::endl;
+    coverageIndex << "    </div>" << std::endl;
+    coverageIndex
+        << "    <iframe src='about:blank' name='src' class='src'></iframe>"
+        << std::endl;
+    coverageIndex << "    <h1>Coverage</h1>" << std::endl;
+    coverageIndex << "    <b>Files:</b><br />" << std::endl;
     for (auto it : coverage) {
-      std::string srcFileName = remapSrcFileName(it.first);
-      coverageHtml << "    <a href='#" << srcFileName << "'>" << srcFileName
-                   << "</a><br />" << std::endl;
+      coverageIndex << "    <a href='" << coverageIndexes[it.first]
+                    << "' target='src'>" << remapSrcFileName(it.first)
+                    << "</a><br />" << std::endl;
     }
+    coverageIndex << "  </body>" << std::endl;
+    coverageIndex << "</html>" << std::endl;
+  }
 
-    for (auto fit : coverage) {
-      std::string srcFileName = remapSrcFileName(fit.first);
-      coverageHtml << "    <div class='box' id='" << srcFileName << "'>"
-                   << std::endl;
-      coverageHtml << "      <a class='closebutton' href='#'>&#x2715;</a>"
-                   << std::endl;
-      coverageHtml << "      <b>" << srcFileName << "</b>" << std::endl;
-      coverageHtml << "      <div class='content'>" << std::endl;
-      coverageHtml << "        <div class='src'>" << std::endl;
-      std::ifstream srcFile(srcFileName);
-      unsigned long lastLineNum =
-          fit.second.empty() ? 0 : fit.second.rbegin()->first;
-      for (unsigned long srcLineNum = 1;
-           srcFile.good() || srcLineNum <= lastLineNum; srcLineNum++) {
-        std::string srcLine;
-        std::getline(srcFile, srcLine);
-        coverageHtml << "          <div class='line'>" << std::endl;
-        if (fit.second.count(srcLineNum)) {
-          coverageHtml << "<a href='coverage.html#" << srcFileName << ":"
-                       << srcLineNum << "'>" << std::endl;
-        }
-        coverageHtml << "            <div class='number'>" << srcLineNum
-                     << "</div>" << std::endl;
-        coverageHtml << "            <div class='content'>"
-                     << sanitizeHTML(srcLine) << "</div>" << std::endl;
-        if (fit.second.count(srcLineNum)) {
-          coverageHtml << "          </a>" << std::endl;
-        }
-        coverageHtml << "          </div>" << std::endl;
-      }
-      coverageHtml << "        </div>" << std::endl;
-      coverageHtml << "      </div>" << std::endl;
-      coverageHtml << "    </div>" << std::endl;
+  int workerID;
+  for (workerID = 0; workerID < NumProcesses - 1; workerID++) {
+    if (fork() == 0) {
+      break;
     }
+  }
+  klee::klee_message("Running worker %d of %d.", workerID + 1,
+                     NumProcesses + 0);
 
+  {
+    long fileID = 0;
     for (auto fit : coverage) {
-      std::string srcFileName = remapSrcFileName(fit.first);
-      for (auto lit : fit.second) {
-        coverageHtml << "    <div class='box' id='" << srcFileName << ":"
-                     << lit.first << "'>" << std::endl;
-        coverageHtml << "      <a class='closebutton' href='#'>&#x2715;</a>"
-                     << std::endl;
-        coverageHtml << "      <h2>" << srcFileName << ":" << lit.first
-                     << "</h2>" << std::endl;
+      if (fileID++ % NumProcesses == workerID) {
+        std::string srcFileName = remapSrcFileName(fit.first);
 
-        coverageHtml << "      <b>Other paths that reached here:</b><br />"
-                     << std::endl;
-        unsigned long counter = 1;
-        for (auto pit : lit.second[true]) {
-          coverageHtml << "      <a href='" << pit << ".html'>" << counter++
-                       << "</a>" << std::endl;
-        }
-        coverageHtml << "      <br />" << std::endl;
+        std::ofstream coverageHtml(Directory + "/" +
+                                   coverageIndexes[fit.first]);
+        klee::klee_message("Generating coverage index %s for source file %s.",
+                           coverageIndexes[fit.first].c_str(),
+                           srcFileName.c_str());
+        assert(coverageHtml.good());
 
-        coverageHtml << "      <b>Other paths that didn't reach here:</b><br />"
+        coverageHtml << "<!doctype html>" << std::endl;
+        coverageHtml << "<html lang=\"en\">" << std::endl;
+        coverageHtml << "  <head>" << std::endl;
+        coverageHtml << "    <meta charset=\"utf-8\">" << std::endl;
+        coverageHtml << "    <title>Coverage for " << srcFileName << "</title>"
                      << std::endl;
-        counter = 1;
-        for (auto pit : lit.second[false]) {
-          coverageHtml << "      <a href='" << pit << ".html'>" << counter++
-                       << "</a>" << std::endl;
-        }
-        coverageHtml << "      <br />" << std::endl;
-
+        coverageHtml << "    <link rel=\"stylesheet\" type=\"text/css\" "
+                        "href=\"style.css\">" << std::endl;
+        coverageHtml << "  </head>" << std::endl;
+        coverageHtml << "  <body>" << std::endl;
+        coverageHtml << "    <div id=\"header\">" << std::endl;
+        coverageHtml << "      <a href=\"index.html\">All Conversations</a>"
+                     << std::endl;
+        coverageHtml << "      <a href=\"paths.html\">All Paths</a>"
+                     << std::endl;
+        coverageHtml << "      <a href=\"coverage.html\">Coverage</a>"
+                     << std::endl;
         coverageHtml << "    </div>" << std::endl;
-      }
-    }
-    coverageHtml << "  </body>" << std::endl;
-    coverageHtml << "</html>" << std::endl;
+        coverageHtml << "    <b>" << srcFileName << "</b>" << std::endl;
+        coverageHtml << "    <div class='content'>" << std::endl;
+        coverageHtml << "      <div class='src'>" << std::endl;
+        std::ifstream srcFile(srcFileName);
+        unsigned long lastLineNum =
+            fit.second.empty() ? 0 : fit.second.rbegin()->first;
+        for (unsigned long srcLineNum = 1;
+             srcFile.good() || srcLineNum <= lastLineNum; srcLineNum++) {
+          std::string srcLine;
+          std::getline(srcFile, srcLine);
+          coverageHtml << "        <div class='line ";
+          if (fit.second.count(srcLineNum)) {
+            if (fit.second[srcLineNum][false].empty()) {
+              coverageHtml << "alwayscovered";
+            } else if (fit.second[srcLineNum][true].empty()) {
+              coverageHtml << "nevercovered";
+            } else {
+              coverageHtml << "sometimescovered";
+            }
+          } else {
+            coverageHtml << "unknown";
+          }
+          coverageHtml << "'>" << std::endl;
+          if (fit.second.count(srcLineNum)) {
+            coverageHtml << "<a href='#l" << srcLineNum << "'>" << std::endl;
+          }
+          coverageHtml << "          <div class='number'>" << srcLineNum
+                       << "</div>" << std::endl;
+          coverageHtml << "          <div class='content'>"
+                       << sanitizeHTML(srcLine) << "</div>" << std::endl;
+          if (fit.second.count(srcLineNum)) {
+            coverageHtml << "        </a>" << std::endl;
+          }
+          coverageHtml << "        </div>" << std::endl;
+        }
+        coverageHtml << "      </div>" << std::endl;
+        coverageHtml << "    </div>" << std::endl;
 
-    if (NumProcesses != 1) {
-      return 0;
+        for (auto lit : fit.second) {
+          coverageHtml << "    <div class='box' id='l" << lit.first << "'>"
+                       << std::endl;
+          coverageHtml << "      <a class='closebutton' href='#'>&#x2715;</a>"
+                       << std::endl;
+          coverageHtml << "      <h2>" << srcFileName << ":" << lit.first
+                       << "</h2>" << std::endl;
+
+          coverageHtml << "      <div class='content'>" << std::endl;
+          coverageHtml << "        <b>Other paths that reached here:</b><br />"
+                       << std::endl;
+          unsigned long counter = 1;
+          for (auto pit : lit.second[true]) {
+            coverageHtml << "        <a href='" << pit << ".html'>" << counter++
+                         << "</a>" << std::endl;
+          }
+          coverageHtml << "        <br />" << std::endl;
+
+          coverageHtml
+              << "        <b>Other paths that didn't reach here:</b><br />"
+              << std::endl;
+          counter = 1;
+          for (auto pit : lit.second[false]) {
+            coverageHtml << "        <a href='" << pit << ".html'>" << counter++
+                         << "</a>" << std::endl;
+          }
+          coverageHtml << "        <br />" << std::endl;
+
+          coverageHtml << "      </div>" << std::endl;
+          coverageHtml << "    </div>" << std::endl;
+        }
+        coverageHtml << "  </body>" << std::endl;
+        coverageHtml << "</html>" << std::endl;
+      }
     }
   }
 
   if (OnlyPathID) {
+    if (workerID != 0) {
+      return 0;
+    }
     path.reset(pathLoader->getPath(OnlyPathID - 1));
     assert(path && "Specified path does not exist.");
     processPath(path.get(), OnlyPathID);
   } else {
-    int workerID;
-    for (workerID = 0; workerID < NumProcesses - 1; workerID++) {
-      if (fork() == 0) {
-        break;
-      }
-    }
-    klee::klee_message("Running worker %d of %d.", workerID + 1,
-                       NumProcesses + 0);
-
     inFile.close();
     inFile.open(InFileName);
     pathLoader.reset(new SPA::PathLoader(inFile));
