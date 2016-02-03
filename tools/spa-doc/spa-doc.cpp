@@ -185,33 +185,44 @@ std::string escapeChar(unsigned char c) {
 void makePathIndex(std::string filePrefix, std::set<std::string> uuids) {
   klee::klee_message("Processing path index %s.", filePrefix.c_str());
 
-  std::ofstream dotFile(Directory + "/" + filePrefix + ".dot");
-  std::ofstream htmlFile(Directory + "/" + filePrefix + ".html.inc");
-  assert(dotFile.good() && htmlFile.good());
+  std::string dot = "digraph G {\n"
+                    "  root [label=\"Path 0\"]\n";
 
+  for (auto it : uuids) {
+    std::string pathID = SPA::numToStr(uuidToId[it]);
+    dot += "  path_" + pathID + " [label=\"Path " + pathID + "\\n" +
+           uuidToParticipant[it] + "\" URL=\"" + it + ".html\"]\n";
+    if (parentPath.count(it)) {
+      dot += "  path_" + SPA::numToStr(uuidToId[parentPath[it]]) + " -> path_" +
+             pathID + "\n";
+    } else {
+      dot += "  root -> path_" + pathID + "\n";
+    }
+  }
+  dot += "}\n";
+
+  std::ofstream htmlFile(Directory + "/" + filePrefix + ".html");
+  assert(htmlFile.good());
+
+  htmlFile << "<!doctype html>" << std::endl;
+  htmlFile << "<html lang=\"en\">" << std::endl;
+  htmlFile << "  <head>" << std::endl;
+  htmlFile << "    <meta charset=\"utf-8\">" << std::endl;
+  htmlFile << "    <title>Path in conversation " + filePrefix + "</title>"
+           << std::endl;
+  htmlFile
+      << "    <link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">"
+      << std::endl;
+  htmlFile << "  </head>" << std::endl;
+  htmlFile << "  <body>" << std::endl;
   htmlFile << "    <div id=\"header\">" << std::endl;
   htmlFile << "      <a href=\"index.html\">All Conversations</a>" << std::endl;
   htmlFile << "      <a href=\"paths.html\">All Paths</a>" << std::endl;
   htmlFile << "      <a href=\"coverage.html\">Coverage</a>" << std::endl;
   htmlFile << "    </div>" << std::endl;
-  htmlFile << "    <img src='" << filePrefix
-           << ".svg' alt='Path Dependency Graph' usemap='#G' />" << std::endl;
-
-  dotFile << "digraph G {" << std::endl;
-  dotFile << "  root [label=\"Path 0\"]" << std::endl;
-
-  for (auto it : uuids) {
-    dotFile << "  path_" << uuidToId[it] << " [label=\"Path " << uuidToId[it]
-            << "\\n" << uuidToParticipant[it] << "\" URL=\"" << it << ".html\"]"
-            << std::endl;
-    if (parentPath.count(it)) {
-      dotFile << "  path_" << uuidToId[parentPath[it]] << " -> path_"
-              << uuidToId[it] << std::endl;
-    } else {
-      dotFile << "  root -> path_" << uuidToId[it] << std::endl;
-    }
-  }
-  dotFile << "}" << std::endl;
+  htmlFile << SPA::runCommand("dot -Tsvg", dot) << std::endl;
+  htmlFile << "  </body>" << std::endl;
+  htmlFile << "</html>" << std::endl;
 }
 
 void processPath(SPA::Path *path, unsigned long pathID) {
@@ -409,10 +420,43 @@ void processPath(SPA::Path *path, unsigned long pathID) {
     }
   }
 
-  std::ofstream dotFile(Directory + "/" + path->getUUID() + ".dot");
-  std::ofstream htmlFile(Directory + "/" + path->getUUID() + ".html.inc");
-  assert(dotFile.good() && htmlFile.good());
+  std::string dot = "digraph G {\n";
+  for (auto pit : participantByName) {
+    std::string participantToken = sanitizeToken(pit.first);
+    if (pit.first.compare(0, strlen(API_PREFIX), API_PREFIX) == 0) {
+      dot += "  " + participantToken + " [style=\"invis\"]\n";
+    } else {
+      dot += "  " + participantToken + " [label=\"" + pit.first + "\\n";
+      for (auto bit : pit.second->bindings) {
+        dot += bit + "\\n";
+      }
+      dot += "\"]\n";
+    }
+  }
 
+  for (unsigned mi = 0; mi < messages.size(); mi++) {
+    std::string messageLabel = SPA::numToStr(mi + 1);
+    dot += "  " + sanitizeToken(messages[mi]->fromParticipant->name) + " -> " +
+           sanitizeToken(messages[mi]->toParticipant->name) + "[label=\"" +
+           messageLabel + "\" arrowhead=\"" +
+           (checkMessageReceived(messages[mi]) ? "normal" : "dot") +
+           "\" href=\"#msg" + messageLabel + "\"]\n";
+  }
+  dot += "}\n";
+
+  std::ofstream htmlFile(Directory + "/" + path->getUUID() + ".html");
+  assert(htmlFile.good());
+
+  htmlFile << "<!doctype html>" << std::endl;
+  htmlFile << "<html lang=\"en\">" << std::endl;
+  htmlFile << "  <head>" << std::endl;
+  htmlFile << "    <meta charset=\"utf-8\">" << std::endl;
+  htmlFile << "    <title>Path " << pathID << "</title>" << std::endl;
+  htmlFile
+      << "    <link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">"
+      << std::endl;
+  htmlFile << "  </head>" << std::endl;
+  htmlFile << "  <body>" << std::endl;
   htmlFile << "    <div id=\"header\">" << std::endl;
   htmlFile << "      <a href=\"#metadata\">Path Meta-data</a>" << std::endl;
   htmlFile << "      <a href=\"#messages\">Message Log</a>" << std::endl;
@@ -460,9 +504,7 @@ void processPath(SPA::Path *path, unsigned long pathID) {
 
   htmlFile << "    <a class='anchor' id='messages'></a>" << std::endl;
   htmlFile << "    <h2>Message Log</h2>" << std::endl;
-  htmlFile << "    <img src='" << path->getUUID()
-           << ".svg' alt='Message Sequence Diagram' usemap='#G' />"
-           << std::endl;
+  htmlFile << SPA::runCommand("dot -Tsvg", dot) << std::endl;
 
   htmlFile << "    <a class='anchor' id='constraints'></a>" << std::endl;
   htmlFile << "    <h2>Symbolic Constraint</h2>" << std::endl;
@@ -507,27 +549,7 @@ void processPath(SPA::Path *path, unsigned long pathID) {
   }
   htmlFile << "    </table><br />" << std::endl;
 
-  dotFile << "digraph G {" << std::endl;
-  for (auto pit : participantByName) {
-    std::string participantToken = sanitizeToken(pit.first);
-    if (pit.first.compare(0, strlen(API_PREFIX), API_PREFIX) == 0) {
-      dotFile << "  " << participantToken << " [style=\"invis\"]" << std::endl;
-    } else {
-      dotFile << "  " << participantToken << " [label=\"" << pit.first << "\\n";
-      for (auto bit : pit.second->bindings) {
-        dotFile << bit << "\\n";
-      }
-      dotFile << "\"]" << std::endl;
-    }
-  }
-
   for (unsigned mi = 0; mi < messages.size(); mi++) {
-    dotFile << "  " << sanitizeToken(messages[mi]->fromParticipant->name)
-            << " -> " << sanitizeToken(messages[mi]->toParticipant->name)
-            << "[label=\"" << (mi + 1) << "\" arrowhead=\""
-            << (checkMessageReceived(messages[mi]) ? "normal" : "dot")
-            << "\" href=\"#msg" << (mi + 1) << "\"]" << std::endl;
-
     htmlFile << "    <div class='box' id='msg" << (mi + 1) << "'>" << std::endl;
     htmlFile << "      <a class='closebutton' href='#'>&#x2715;</a>"
              << std::endl;
@@ -595,7 +617,6 @@ void processPath(SPA::Path *path, unsigned long pathID) {
     htmlFile << "      </div>" << std::endl;
     htmlFile << "    </div>" << std::endl;
   }
-  dotFile << "}" << std::endl;
 
   for (auto sit : path->getSymbolLog()) {
     htmlFile << "    <div class='box' id='" << sit->getFullName() << "'>"
@@ -701,6 +722,8 @@ void processPath(SPA::Path *path, unsigned long pathID) {
   htmlFile << "<pre>" << std::endl;
   htmlFile << *path;
   htmlFile << "</pre>" << std::endl;
+  htmlFile << "  </body>" << std::endl;
+  htmlFile << "</html>" << std::endl;
 }
 
 int main(int argc, char **argv, char **envp) {
@@ -716,42 +739,6 @@ int main(int argc, char **argv, char **envp) {
   assert(result == 0 || errno == EEXIST);
 
   klee::klee_message("Generating static content.");
-
-  std::ofstream makefile(Directory + "/Makefile");
-  assert(makefile.good());
-  makefile << "%.pdf: %.dot" << std::endl;
-  makefile << "\tdot -Tpdf -o $@ $<" << std::endl << std::endl;
-
-  makefile << "%.svg: %.dot" << std::endl;
-  makefile << "\tdot -Tsvg -o $@ $<" << std::endl << std::endl;
-
-  makefile << "%.cmapx: %.dot" << std::endl;
-  makefile << "\tdot -Tcmapx -o $@ $<" << std::endl << std::endl;
-
-  makefile << "%.html: %.cmapx %.html.inc" << std::endl;
-  makefile << "\techo '<!doctype html>' > $@" << std::endl;
-  makefile << "\techo '<html lang=\"en\">' >> $@" << std::endl;
-  makefile << "\techo '  <head>' >> $@" << std::endl;
-  makefile << "\techo '    <meta charset=\"utf-8\">' >> $@" << std::endl;
-  makefile << "\techo '    <title>$(@:.html=)</title>' >> $@" << std::endl;
-  makefile << "\techo '    <link rel=\"stylesheet\" type=\"text/css\" "
-              "href=\"style.css\">' >> $@" << std::endl;
-  makefile << "\techo '  </head>' >> $@" << std::endl;
-  makefile << "\techo '  <body>' >> $@" << std::endl;
-  makefile << "\tcat $(@:.html=.html.inc) >> $@" << std::endl;
-  makefile << "\tcat $(@:.html=.cmapx) >> $@" << std::endl;
-  makefile << "\techo '  </body>' >> $@" << std::endl;
-  makefile << "\techo '</html>' >> $@" << std::endl;
-
-  makefile << "%.clean:" << std::endl;
-  makefile << "\trm -f $(@:.clean=.html) $(@:.clean=.svg) $(@:.clean=.cmapx)"
-           << std::endl << std::endl;
-
-  makefile << "default: all" << std::endl;
-  makefile << "all: index paths" << std::endl;
-  makefile << "index: index.html index.svg" << std::endl;
-  makefile << "paths: paths.html paths.svg" << std::endl;
-  makefile << "clean: index.clean paths.clean" << std::endl;
 
   {
     std::ofstream cssFile(Directory + "/style.css");
@@ -901,21 +888,45 @@ int main(int argc, char **argv, char **envp) {
             "coverage-" + SPA::numToStr(coverageIndexes.size()) + ".html";
       }
     }
-
-    makefile << "all: " << path->getUUID() << std::endl;
-    makefile << path->getUUID() << ": " << path->getUUID() << ".html "
-             << path->getUUID() << ".svg" << std::endl;
-    makefile << "clean: " << path->getUUID() << ".clean" << std::endl;
   }
 
-  makePathIndex("paths", allUUIDs);
-
-  {
+  if (SPA::forkWorker(NumProcesses) == 0) {
     klee::klee_message("Generating conversation index.");
+    std::string conversationsDot = "digraph G {\n"
+                                   "  root [label=\"Root\"]\n";
 
-    std::ofstream conversationsHtml(Directory + "/index.html.inc");
+    for (auto cit : conversations) {
+      std::string name = join(cit.first, "_");
+      conversationsDot +=
+          "  " + sanitizeToken(name) + " [label=\"" + cit.first.back() +
+          "\\n(" + SPA::numToStr(cit.second.size()) + " Paths)\" URL=\"" +
+          name + ".html\"]\n";
+      if (cit.first.size() > 1) {
+        auto parentConversation = cit.first;
+        parentConversation.pop_back();
+
+        conversationsDot +=
+            "  " + sanitizeToken(join(parentConversation, "_")) + " -> " +
+            sanitizeToken(name) + "\n";
+      } else {
+        conversationsDot += "  root -> " + sanitizeToken(name) + "\n";
+      }
+    }
+    conversationsDot += "}\n";
+
+    std::ofstream conversationsHtml(Directory + "/index.html");
     assert(conversationsHtml.good());
 
+    conversationsHtml << "<!doctype html>" << std::endl;
+    conversationsHtml << "<html lang=\"en\">" << std::endl;
+    conversationsHtml << "  <head>" << std::endl;
+    conversationsHtml << "    <meta charset=\"utf-8\">" << std::endl;
+    conversationsHtml << "    <title>All Conversations</title>" << std::endl;
+    conversationsHtml
+        << "    <link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">"
+        << std::endl;
+    conversationsHtml << "  </head>" << std::endl;
+    conversationsHtml << "  <body>" << std::endl;
     conversationsHtml << "    <div id=\"header\">" << std::endl;
     conversationsHtml << "      <a href=\"index.html\">All Conversations</a>"
                       << std::endl;
@@ -927,60 +938,19 @@ int main(int argc, char **argv, char **envp) {
     conversationsHtml << "    Documented " << uuidToId.size() << " paths, in "
                       << conversations.size() << " conversations.<br />"
                       << std::endl;
-    conversationsHtml
-        << "    <img src='index.svg' alt='Conversation Dependency "
-           "Graph' usemap='#G' />" << std::endl;
-  }
+    conversationsHtml << SPA::runCommand("dot -Tsvg", conversationsDot)
+                      << std::endl;
+    conversationsHtml << "  </body>" << std::endl;
+    conversationsHtml << "</html>" << std::endl;
 
-  {
-    std::ofstream conversationsDot(Directory + "/index.dot");
-    assert(conversationsDot.good());
-    conversationsDot << "digraph G {" << std::endl;
-    conversationsDot << "  root [label=\"Root\"]" << std::endl;
-
-    for (auto cit : conversations) {
-      std::string name = join(cit.first, "_");
-      auto fullConversation = cit.second;
-      // Add all parent paths to conversation.
-      for (auto pit : cit.second) {
-        if (parentPath.count(pit)) {
-          std::string parent = parentPath[pit];
-          while (!fullConversation.count(parent)) {
-            fullConversation.insert(parent);
-            if (parentPath.count(parent)) {
-              parent = parentPath[parent];
-            } else {
-              break;
-            }
-          }
-        }
-      }
-
-      conversationsDot << "  " << sanitizeToken(name) << " [label=\""
-                       << cit.first.back() << "\\n(" << cit.second.size()
-                       << " Paths)\" URL=\"" << name << ".html\"]" << std::endl;
-      if (cit.first.size() > 1) {
-        auto parentConversation = cit.first;
-        parentConversation.pop_back();
-
-        conversationsDot << "  " << sanitizeToken(join(parentConversation, "_"))
-                         << " -> " << sanitizeToken(name) << std::endl;
-      } else {
-        conversationsDot << "  root -> " << sanitizeToken(name) << std::endl;
-      }
-
-      makePathIndex(name, fullConversation);
-      makefile << "all: " << name << std::endl;
-      makefile << name << ": " << name << ".html " << name << ".svg"
-               << std::endl;
-      makefile << "clean: " << name << ".clean" << std::endl;
+    if (NumProcesses > 1) {
+      exit(0);
     }
-    conversationsDot << "}" << std::endl;
   }
 
-  {
-    std::ofstream coverageIndex(Directory + "/coverage.html");
+  if (SPA::forkWorker(NumProcesses) == 0) {
     klee::klee_message("Generating global coverage index.");
+    std::ofstream coverageIndex(Directory + "/coverage.html");
     assert(coverageIndex.good());
 
     coverageIndex << "<!doctype html>" << std::endl;
@@ -1005,147 +975,199 @@ int main(int argc, char **argv, char **envp) {
         << std::endl;
     coverageIndex << "    <h1>Coverage</h1>" << std::endl;
     coverageIndex << "    <b>Files:</b><br />" << std::endl;
-    for (auto it : coverage) {
-      coverageIndex << "    <a href='" << coverageIndexes[it.first]
-                    << "' target='src'>" << remapSrcFileName(it.first)
-                    << "</a><br />" << std::endl;
+    for (auto it : coverageIndexes) {
+      coverageIndex << "    <a href='" << it.second << "' target='src'>"
+                    << remapSrcFileName(it.first) << "</a><br />" << std::endl;
     }
     coverageIndex << "  </body>" << std::endl;
     coverageIndex << "</html>" << std::endl;
-  }
 
-  int workerID;
-  for (workerID = 0; workerID < NumProcesses - 1; workerID++) {
-    if (fork() == 0) {
-      break;
+    if (NumProcesses > 1) {
+      exit(0);
     }
   }
-  klee::klee_message("Running worker %d of %d.", workerID + 1,
-                     NumProcesses + 0);
 
-  {
-    long fileID = 0;
-    for (auto fit : coverage) {
-      if (fileID++ % NumProcesses == workerID) {
-        std::string srcFileName = remapSrcFileName(fit.first);
+  if (SPA::forkWorker(NumProcesses) == 0) {
+    makePathIndex("paths", allUUIDs);
 
-        std::ofstream coverageHtml(Directory + "/" +
-                                   coverageIndexes[fit.first]);
-        klee::klee_message("Generating coverage index %s for source file %s.",
-                           coverageIndexes[fit.first].c_str(),
-                           srcFileName.c_str());
-        assert(coverageHtml.good());
+    if (NumProcesses > 1) {
+      exit(0);
+    }
+  }
 
-        coverageHtml << "<!doctype html>" << std::endl;
-        coverageHtml << "<html lang=\"en\">" << std::endl;
-        coverageHtml << "  <head>" << std::endl;
-        coverageHtml << "    <meta charset=\"utf-8\">" << std::endl;
-        coverageHtml << "    <title>Coverage for " << srcFileName << "</title>"
-                     << std::endl;
-        coverageHtml << "    <link rel=\"stylesheet\" type=\"text/css\" "
-                        "href=\"style.css\">" << std::endl;
-        coverageHtml << "  </head>" << std::endl;
-        coverageHtml << "  <body>" << std::endl;
-        coverageHtml << "    <div id=\"header\">" << std::endl;
-        coverageHtml << "      <a href=\"index.html\">All Conversations</a>"
-                     << std::endl;
-        coverageHtml << "      <a href=\"paths.html\">All Paths</a>"
-                     << std::endl;
-        coverageHtml << "      <a href=\"coverage.html\">Coverage</a>"
-                     << std::endl;
-        coverageHtml << "    </div>" << std::endl;
-        coverageHtml << "    <b>" << srcFileName << "</b>" << std::endl;
-        coverageHtml << "    <div class='content'>" << std::endl;
-        coverageHtml << "      <div class='src'>" << std::endl;
-        std::ifstream srcFile(srcFileName);
-        unsigned long lastLineNum =
-            fit.second.empty() ? 0 : fit.second.rbegin()->first;
-        for (unsigned long srcLineNum = 1;
-             srcFile.good() || srcLineNum <= lastLineNum; srcLineNum++) {
-          std::string srcLine;
-          std::getline(srcFile, srcLine);
-          coverageHtml << "        <div class='line ";
-          if (fit.second.count(srcLineNum)) {
-            if (fit.second[srcLineNum][false].empty()) {
-              coverageHtml << "alwayscovered";
-            } else if (fit.second[srcLineNum][true].empty()) {
-              coverageHtml << "nevercovered";
+  for (auto cit : conversations) {
+    if (SPA::forkWorker(NumProcesses) == 0) {
+      auto fullConversation = cit.second;
+      // Add all parent paths to conversation.
+      for (auto pit : cit.second) {
+        if (parentPath.count(pit)) {
+          std::string parent = parentPath[pit];
+          while (!fullConversation.count(parent)) {
+            fullConversation.insert(parent);
+            if (parentPath.count(parent)) {
+              parent = parentPath[parent];
             } else {
-              coverageHtml << "sometimescovered";
+              break;
             }
-          } else {
-            coverageHtml << "unknown";
           }
-          coverageHtml << "'>" << std::endl;
-          if (fit.second.count(srcLineNum)) {
-            coverageHtml << "<a href='#l" << srcLineNum << "'>" << std::endl;
-          }
-          coverageHtml << "          <div class='number'>" << srcLineNum
-                       << "</div>" << std::endl;
-          coverageHtml << "          <div class='content'>"
-                       << sanitizeHTML(srcLine) << "</div>" << std::endl;
-          if (fit.second.count(srcLineNum)) {
-            coverageHtml << "        </a>" << std::endl;
-          }
-          coverageHtml << "        </div>" << std::endl;
         }
+      }
+
+      makePathIndex(join(cit.first, "_"), fullConversation);
+
+      if (NumProcesses > 1) {
+        exit(0);
+      }
+    }
+  }
+
+  for (auto fit : coverage) {
+    if (SPA::forkWorker(NumProcesses) == 0) {
+      std::string srcFileName = remapSrcFileName(fit.first);
+
+      std::ofstream coverageHtml(Directory + "/" + coverageIndexes[fit.first]);
+      klee::klee_message("Generating coverage index %s for source file %s.",
+                         coverageIndexes[fit.first].c_str(),
+                         srcFileName.c_str());
+      assert(coverageHtml.good());
+
+      coverageHtml << "<!doctype html>" << std::endl;
+      coverageHtml << "<html lang=\"en\">" << std::endl;
+      coverageHtml << "  <head>" << std::endl;
+      coverageHtml << "    <meta charset=\"utf-8\">" << std::endl;
+      coverageHtml << "    <title>Coverage for " << srcFileName << "</title>"
+                   << std::endl;
+      coverageHtml << "    <link rel=\"stylesheet\" type=\"text/css\" "
+                      "href=\"style.css\">" << std::endl;
+      coverageHtml << "  </head>" << std::endl;
+      coverageHtml << "  <body>" << std::endl;
+      coverageHtml << "    <div id=\"header\">" << std::endl;
+      coverageHtml << "      <a href=\"index.html\">All Conversations</a>"
+                   << std::endl;
+      coverageHtml << "      <a href=\"paths.html\">All Paths</a>" << std::endl;
+      coverageHtml << "      <a href=\"coverage.html\">Coverage</a>"
+                   << std::endl;
+      coverageHtml << "    </div>" << std::endl;
+      coverageHtml << "    <b>" << srcFileName << "</b>" << std::endl;
+      coverageHtml << "    <div class='content'>" << std::endl;
+      coverageHtml << "      <div class='src'>" << std::endl;
+      std::ifstream srcFile(srcFileName);
+      unsigned long lastLineNum =
+          fit.second.empty() ? 0 : fit.second.rbegin()->first;
+      for (unsigned long srcLineNum = 1;
+           srcFile.good() || srcLineNum <= lastLineNum; srcLineNum++) {
+        std::string srcLine;
+        std::getline(srcFile, srcLine);
+        coverageHtml << "        <div class='line ";
+        if (fit.second.count(srcLineNum)) {
+          if (fit.second[srcLineNum][false].empty()) {
+            coverageHtml << "alwayscovered";
+          } else if (fit.second[srcLineNum][true].empty()) {
+            coverageHtml << "nevercovered";
+          } else {
+            coverageHtml << "sometimescovered";
+          }
+        } else {
+          coverageHtml << "unknown";
+        }
+        coverageHtml
+            << "' title='Covered by " << fit.second[srcLineNum][true].size()
+            << " paths.&#10;Not covered by "
+            << fit.second[srcLineNum][false].size() << " paths.'>" << std::endl;
+        if (fit.second.count(srcLineNum)) {
+          coverageHtml << "<a href='#l" << srcLineNum << "'>" << std::endl;
+        }
+        coverageHtml << "          <div class='number'>" << srcLineNum
+                     << "</div>" << std::endl;
+        coverageHtml << "          <div class='content'>"
+                     << sanitizeHTML(srcLine) << "</div>" << std::endl;
+        if (fit.second.count(srcLineNum)) {
+          coverageHtml << "        </a>" << std::endl;
+        }
+        coverageHtml << "        </div>" << std::endl;
+      }
+      coverageHtml << "      </div>" << std::endl;
+      coverageHtml << "    </div>" << std::endl;
+
+      for (auto lit : fit.second) {
+        coverageHtml << "    <div class='box' id='l" << lit.first << "'>"
+                     << std::endl;
+        coverageHtml << "      <a class='closebutton' href='#'>&#x2715;</a>"
+                     << std::endl;
+        coverageHtml << "      <h2>" << srcFileName << ":" << lit.first
+                     << "</h2>" << std::endl;
+
+        coverageHtml << "      <div class='content'>" << std::endl;
+        coverageHtml << "        <b>Other paths that reached here:</b><br />"
+                     << std::endl;
+        unsigned long counter = 1;
+        for (auto pit : lit.second[true]) {
+          coverageHtml << "        <a href='" << pit << ".html'>" << counter++
+                       << "</a>" << std::endl;
+        }
+        coverageHtml << "        <br />" << std::endl;
+
+        coverageHtml
+            << "        <b>Other paths that didn't reach here:</b><br />"
+            << std::endl;
+        counter = 1;
+        for (auto pit : lit.second[false]) {
+          coverageHtml << "        <a href='" << pit << ".html'>" << counter++
+                       << "</a>" << std::endl;
+        }
+        coverageHtml << "        <br />" << std::endl;
+
         coverageHtml << "      </div>" << std::endl;
         coverageHtml << "    </div>" << std::endl;
+      }
+      coverageHtml << "  </body>" << std::endl;
+      coverageHtml << "</html>" << std::endl;
 
-        for (auto lit : fit.second) {
-          coverageHtml << "    <div class='box' id='l" << lit.first << "'>"
-                       << std::endl;
-          coverageHtml << "      <a class='closebutton' href='#'>&#x2715;</a>"
-                       << std::endl;
-          coverageHtml << "      <h2>" << srcFileName << ":" << lit.first
-                       << "</h2>" << std::endl;
-
-          coverageHtml << "      <div class='content'>" << std::endl;
-          coverageHtml << "        <b>Other paths that reached here:</b><br />"
-                       << std::endl;
-          unsigned long counter = 1;
-          for (auto pit : lit.second[true]) {
-            coverageHtml << "        <a href='" << pit << ".html'>" << counter++
-                         << "</a>" << std::endl;
-          }
-          coverageHtml << "        <br />" << std::endl;
-
-          coverageHtml
-              << "        <b>Other paths that didn't reach here:</b><br />"
-              << std::endl;
-          counter = 1;
-          for (auto pit : lit.second[false]) {
-            coverageHtml << "        <a href='" << pit << ".html'>" << counter++
-                         << "</a>" << std::endl;
-          }
-          coverageHtml << "        <br />" << std::endl;
-
-          coverageHtml << "      </div>" << std::endl;
-          coverageHtml << "    </div>" << std::endl;
-        }
-        coverageHtml << "  </body>" << std::endl;
-        coverageHtml << "</html>" << std::endl;
+      if (NumProcesses > 1) {
+        exit(0);
       }
     }
   }
 
   if (OnlyPathID) {
-    if (workerID != 0) {
-      return 0;
-    }
     path.reset(pathLoader->getPath(OnlyPathID - 1));
     assert(path && "Specified path does not exist.");
     processPath(path.get(), OnlyPathID);
   } else {
-    inFile.close();
-    inFile.open(InFileName);
-    pathLoader.reset(new SPA::PathLoader(inFile));
+    pathLoader->restart();
     assert(pathLoader->skipPaths(StartFromPathID - 1) &&
            "Specified path does not exist.");
-    for (unsigned long pathID = StartFromPathID;
-         path.reset(pathLoader->getPath()), path; pathID++) {
-      if ((int) pathID % NumProcesses == workerID) {
-        processPath(path.get(), pathID);
+    for (unsigned long pathID = StartFromPathID;; pathID++) {
+      if (SPA::forkWorker(NumProcesses) == 0) {
+        if (NumProcesses > 1) {
+          // Get new path loader using an independent file descriptor.
+          auto p = pathLoader->save();
+          inFile.close();
+          inFile.open(InFileName);
+          pathLoader.reset(new SPA::PathLoader(inFile));
+          pathLoader->load(p);
+        }
+        path.reset(pathLoader->getPath());
+        if (path) {
+          processPath(path.get(), pathID);
+        }
+        if (NumProcesses > 1) {
+          exit(0);
+        }
+        if (!path) {
+          break;
+        }
+      } else {
+        // Get new path loader using an independent file descriptor.
+        auto p = pathLoader->save();
+        inFile.close();
+        inFile.open(InFileName);
+        pathLoader.reset(new SPA::PathLoader(inFile));
+        pathLoader->load(p);
+
+        if (!pathLoader->skipPath()) {
+          break;
+        }
       }
     }
   }
