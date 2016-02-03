@@ -9,6 +9,9 @@
 #include <sstream>
 #include <fstream>
 
+#include <unistd.h>
+#include <sys/wait.h>
+
 #include <llvm/IR/Instruction.h>
 #include <llvm/DebugInfo.h>
 
@@ -120,6 +123,69 @@ bool __attribute__((weak))
   } else {
     return false;
   }
+}
+
+std::string __attribute__((weak))
+    runCommand(std::string command, std::string input) {
+  int pipe_to_cmd[2], pipe_from_cmd[2];
+  assert(pipe(pipe_to_cmd) == 0);
+  assert(pipe(pipe_from_cmd) == 0);
+
+  pid_t pid = fork();
+  if (pid == 0) {
+    assert(close(pipe_to_cmd[1]) == 0);
+    assert(dup2(pipe_to_cmd[0], 0) >= 0);
+    assert(close(pipe_from_cmd[0]) == 0);
+    assert(dup2(pipe_from_cmd[1], 1) >= 0);
+    assert(execl("/bin/sh", "sh", "-c", command.c_str(), NULL) == 0);
+    exit(-1);
+  }
+
+  assert(close(pipe_to_cmd[0]) == 0);
+  assert(close(pipe_from_cmd[1]) == 0);
+  assert(write(pipe_to_cmd[1], input.c_str(), input.length()) == (long)
+         input.length());
+  assert(close(pipe_to_cmd[1]) == 0);
+
+  char c;
+  std::string output;
+  while (read(pipe_from_cmd[0], &c, 1) == 1) {
+    output += c;
+  }
+  assert(close(pipe_from_cmd[0]) == 0);
+  int status;
+  assert(waitpid(pid, &status, 0) == pid);
+  assert(WIFEXITED(status) && WEXITSTATUS(status) == 0);
+
+  return output;
+}
+
+pid_t __attribute__((weak)) forkWorker(unsigned long maxWorkers) {
+  static unsigned long numWorkers = 0;
+  static bool isWorker = false;
+
+  assert((!isWorker) && "Workers can not launch other workers.");
+
+  if (maxWorkers <= 1) {
+    return 0;
+  }
+
+  while (numWorkers >= maxWorkers) {
+    int status;
+    assert(waitpid(0, &status, 0) > 0);
+    assert(WIFEXITED(status) && WEXITSTATUS(status) == 0);
+    numWorkers--;
+  }
+
+  pid_t pid = fork();
+  assert(pid >= 0);
+  if (pid == 0) {
+    isWorker = true;
+  } else {
+    numWorkers++;
+  }
+
+  return pid;
 }
 
 }
