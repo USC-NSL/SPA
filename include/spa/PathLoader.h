@@ -11,6 +11,12 @@
 #include <fstream>
 
 namespace SPA {
+typedef struct PathLoaderPosition {
+  bool loadEmpty;
+  unsigned long lineNumber;
+  std::streampos filePosition;
+} PathLoaderPosition;
+
 class PathLoader {
 private:
   std::ifstream &input;
@@ -19,14 +25,10 @@ private:
   unsigned long lineNumber;
   PathFilter *filter;
 
-  bool savedLoadEmpty;
-  unsigned long savedLN;
-  std::streampos savedPos;
-
 public:
   PathLoader(std::ifstream &input, bool loadEmptyFirst = false)
       : input(input), loadEmptyFirst(loadEmptyFirst), loadEmpty(loadEmptyFirst),
-        lineNumber(0), filter(NULL), savedLN(0), savedPos(0) {}
+        lineNumber(0), filter(NULL) {}
   void setFilter(PathFilter *_filter) { filter = _filter; }
   void restart() {
     input.clear();
@@ -34,16 +36,20 @@ public:
     loadEmpty = loadEmptyFirst;
     lineNumber = 0;
   }
-  void save() {
-    savedLoadEmpty = loadEmpty;
-    savedPos = input.tellg();
-    savedLN = lineNumber;
+  PathLoaderPosition save() {
+    PathLoaderPosition p;
+
+    p.loadEmpty = loadEmpty;
+    p.filePosition = input.tellg();
+    p.lineNumber = lineNumber;
+
+    return p;
   }
-  void load() {
+  void load(PathLoaderPosition p) {
     input.clear();
-    input.seekg(savedPos, std::ios::beg);
-    loadEmpty = savedLoadEmpty;
-    lineNumber = savedLN;
+    input.seekg(p.filePosition, std::ios::beg);
+    loadEmpty = p.loadEmpty;
+    lineNumber = p.lineNumber;
   }
 
   Path *getPath();
