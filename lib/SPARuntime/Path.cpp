@@ -190,8 +190,7 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
 
 bool Path::isFunctionCovered(std::string fn,
                              std::map<std::string, bool> &coverage) {
-  assert(coverage.count(fn) && "No coverage data for specified function.");
-  return coverage[fn];
+  return coverage.count(fn) && coverage[fn];
 }
 
 bool
@@ -203,12 +202,10 @@ Path::isLineCovered(std::string dbgStr,
 
   for (auto covPath : coverage) {
     if (pathPrefixMatch(covPath.first, dbgPath)) {
-      assert(covPath.second.count(dbgLineNo) &&
-             "No coverage data for specified source line.");
-      return covPath.second[dbgLineNo];
+      return covPath.second.count(dbgLineNo) && covPath.second[dbgLineNo];
     }
   }
-  assert(false && "No coverage data for specified file.");
+  return false;
 }
 
 bool Path::isCovered(std::string dbgStr) {
