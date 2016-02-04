@@ -64,25 +64,21 @@ typedef struct {
                         std::shared_ptr<SPA::Symbol> > > symbols;
 } message_t;
 
-std::set<SPA::Path *> allPaths;
-// participants -> uuids.
-std::map<std::vector<std::string>, std::set<std::string> > conversations;
-// uuid -> path-id.
-std::map<std::string, unsigned long> uuidToId;
-// uuid -> participant.
-std::map<std::string, std::string> uuidToParticipant;
-// uuid -> uuid.
-std::map<std::string, std::string> parentPath;
+// uuid -> path
+std::map<std::string, SPA::Path *> pathsByUUID;
+// path -> path-id.
+std::map<SPA::Path *, unsigned long> pathIDs;
+// participants -> paths
+std::map<std::vector<std::string>, std::set<SPA::Path *> > conversations;
 // uuid -> [participant, uuid]s.
-std::map<std::string, std::set<std::pair<std::string, std::string> > >
-    childrenPaths;
-// file -> (line -> (covered -> uuids))
+std::map<SPA::Path *, std::set<SPA::Path *> > childrenPaths;
+// file -> (line -> (covered -> paths))
 std::map<std::string,
-         std::map<unsigned long, std::map<bool, std::set<std::string> > > >
+         std::map<unsigned long, std::map<bool, std::set<SPA::Path *> > > >
     coverage;
 // src file -> index file
 std::map<std::string, std::string> coverageIndexes;
-
+// file -> generating function
 std::map<std::string, std::function<std::string()> > files;
 
 bool compareMessage5Tuple(std::shared_ptr<message_t> message,
@@ -177,19 +173,23 @@ std::string escapeChar(unsigned char c) {
   return std::string("&#") + SPA::numToStr((int) c) + ";";
 }
 
-std::string generatePathIndex(std::set<std::string> uuids) {
+std::string generatePathIndex(std::set<SPA::Path *> paths) {
   klee::klee_message("Processing path index.");
 
   std::string dot = "digraph G {\n"
                     "  root [label=\"Path 0\"]\n";
 
-  for (auto it : uuids) {
-    std::string pathID = SPA::numToStr(uuidToId[it]);
+  for (auto it : paths) {
+    std::string pathID = SPA::numToStr(pathIDs[it]);
     dot += "  path_" + pathID + " [label=\"Path " + pathID + "\\n" +
-           uuidToParticipant[it] + "\" URL=\"" + it + ".html\"]\n";
-    if (parentPath.count(it)) {
-      dot += "  path_" + SPA::numToStr(uuidToId[parentPath[it]]) + " -> path_" +
-             pathID + "\n";
+           it->getParticipants().back()->getName() + "\" URL=\"" +
+           it->getParticipants().back()->getPathUUID() + ".html\"]\n";
+    if (it->getParticipants().size() > 1) {
+      dot +=
+          "  path_" +
+          SPA::numToStr(pathIDs[
+              pathsByUUID[it->getParticipants().rbegin()[1]->getPathUUID()]]) +
+          " -> path_" + pathID + "\n";
     } else {
       dot += "  root -> path_" + pathID + "\n";
     }
@@ -219,7 +219,8 @@ std::string generatePathHTML(SPA::Path *path) {
 
   std::vector<std::shared_ptr<message_t> > messages;
 
-  klee::klee_message("Processing path %ld.", uuidToId[path->getUUID()]);
+  klee::klee_message("Processing path %ld (%s).", pathIDs[path],
+                     path->getUUID().c_str());
 
   // Load participant names.
   for (auto it : path->getParticipants()) {
@@ -437,8 +438,7 @@ std::string generatePathHTML(SPA::Path *path) {
       "<html lang=\"en\">\n"
       "  <head>\n"
       "    <meta charset=\"utf-8\">\n"
-      "    <title>Path " + SPA::numToStr(uuidToId[path->getUUID()]) +
-      "</title>\n";
+      "    <title>Path " + SPA::numToStr(pathIDs[path]) + "</title>\n";
   htmlFile +=
       "    <link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">\n"
       "  </head>\n"
@@ -452,7 +452,7 @@ std::string generatePathHTML(SPA::Path *path) {
       "      <a href=\"index.html\">All Conversations</a>\n"
       "    </div>\n"
       "    <a class='anchor' id='metadata'></a>\n"
-      "    <h1>Path " + SPA::numToStr(uuidToId[path->getUUID()]) +
+      "    <h1>Path " + SPA::numToStr(pathIDs[path]) +
       "</h1>\n"
       "    <h2>Path Meta-data</h2>\n"
       "    <b>UUID:</b> " + path->getUUID() + "<br /><br />\n"
@@ -468,9 +468,9 @@ std::string generatePathHTML(SPA::Path *path) {
   htmlFile += "    </ol><br />\n"
               "    <b>Children:</b><br />\n"
               "    <ol>\n";
-  for (auto it : childrenPaths[path->getUUID()]) {
-    htmlFile +=
-        "    <li><a href='" + it.second + ".html'>" + it.first + "</a></li>\n";
+  for (auto it : childrenPaths[path]) {
+    htmlFile += "    <li><a href='" + it->getUUID() + ".html'>" +
+                it->getParticipants().back()->getName() + "</a></li>\n";
   }
   htmlFile += "    </ol><br />\n"
               "    <b>Tags:</b><br />\n"
@@ -845,7 +845,7 @@ std::string generateConversationIndex() {
          "      <a href=\"paths.html\">All Paths</a>\n"
          "      <a href=\"coverage.html\">Coverage</a>\n"
          "    </div>\n"
-         "    Documented " + SPA::numToStr(uuidToId.size()) + " paths, in " +
+         "    Documented " + SPA::numToStr(pathsByUUID.size()) + " paths, in " +
          SPA::numToStr(conversations.size()) + " conversations.<br />\n" +
          SPA::runCommand("dot -Tsvg", conversationsDot) + "\n"
                                                           "  </body>\n"
@@ -956,7 +956,7 @@ std::string generateCoverageFile(std::string origSrcFile) {
                     "        <b>Other paths that reached here:</b><br />\n";
     unsigned long counter = 1;
     for (auto pit : lit.second[true]) {
-      coverageHtml += "        <a href='" + pit + ".html'>" +
+      coverageHtml += "        <a href='" + pit->getUUID() + ".html'>" +
                       SPA::numToStr(counter++) + "</a>\n";
     }
     coverageHtml +=
@@ -964,7 +964,7 @@ std::string generateCoverageFile(std::string origSrcFile) {
         "        <b>Other paths that didn't reach here:</b><br />\n";
     counter = 1;
     for (auto pit : lit.second[false]) {
-      coverageHtml += "        <a href='" + pit + ".html'>" +
+      coverageHtml += "        <a href='" + pit->getUUID() + ".html'>" +
                       SPA::numToStr(counter++) + "</a>\n";
     }
     coverageHtml += "        <br />\n"
@@ -1036,43 +1036,40 @@ int main(int argc, char **argv, char **envp) {
 
   klee::klee_message("Loading paths.");
 
-  std::set<std::string> allUUIDs;
+  std::set<SPA::Path *> allPaths;
 
   {
     std::unique_ptr<SPA::PathLoader> pathLoader(new SPA::PathLoader(inFile));
     SPA::Path *path;
     for (unsigned long pathID = 1; (path = pathLoader->getPath()); pathID++) {
       klee::klee_message("  Loading path %ld.", pathID);
+      pathsByUUID[path->getUUID()] = path;
+      pathIDs[path] = pathID;
       allPaths.insert(path);
-      uuidToId[path->getUUID()] = pathID;
     }
   }
 
-  for (auto path : allPaths) {
-    klee::klee_message("  Processing path %ld (%s).", uuidToId[path->getUUID()],
-                       path->getUUID().c_str());
-
-    uuidToParticipant[path->getUUID()] =
-        path->getParticipants().back()->getName();
-    allUUIDs.insert(path->getUUID());
+  for (auto path : pathIDs) {
+    klee::klee_message("  Processing path %ld (%s).", path.second,
+                       path.first->getUUID().c_str());
 
     std::vector<std::string> participants;
-    for (auto pit : path->getParticipants()) {
+    for (auto pit : path.first->getParticipants()) {
       participants.push_back(pit->getName());
     }
-    conversations[participants].insert(path->getUUID());
+    conversations[participants].insert(path.first);
 
-    if (path->getParticipants().size() > 1) {
-      auto parent = path->getParticipants()[path->getParticipants().size() - 2];
-      auto child = path->getParticipants()[path->getParticipants().size() - 1];
-      parentPath[child->getPathUUID()] = parent->getPathUUID();
-      childrenPaths[parent->getPathUUID()]
-          .insert(std::make_pair(child->getName(), child->getPathUUID()));
+    if (path.first->getParticipants().size() > 1) {
+      SPA::Path *parent =
+          pathsByUUID[path.first->getParticipants().rbegin()[1]->getPathUUID()];
+      SPA::Path *child =
+          pathsByUUID[path.first->getParticipants().back()->getPathUUID()];
+      childrenPaths[parent].insert(child);
     }
 
-    for (auto fit : path->getExploredLineCoverage()) {
+    for (auto fit : path.first->getExploredLineCoverage()) {
       for (auto lit : fit.second) {
-        coverage[fit.first][lit.first][lit.second].insert(path->getUUID());
+        coverage[fit.first][lit.first][lit.second].insert(path.first);
       }
       if (!coverageIndexes.count(fit.first)) {
         coverageIndexes[fit.first] =
@@ -1084,21 +1081,18 @@ int main(int argc, char **argv, char **envp) {
   files["style.css"] = generateCSS;
   files["index.html"] = generateConversationIndex;
   files["coverage.html"] = generateCoverageIndex;
-  files["paths.html"] = [ = ]() { return generatePathIndex(allUUIDs); }
+  files["paths.html"] = [ = ]() { return generatePathIndex(allPaths); }
   ;
   for (auto cit : conversations) {
     auto fullConversation = cit.second;
     // Add all parent paths to conversation.
     for (auto pit : cit.second) {
-      if (parentPath.count(pit)) {
-        std::string parent = parentPath[pit];
-        while (!fullConversation.count(parent)) {
-          fullConversation.insert(parent);
-          if (parentPath.count(parent)) {
-            parent = parentPath[parent];
-          } else {
-            break;
-          }
+      SPA::Path *path = pit;
+      while (!fullConversation.count(path)) {
+        fullConversation.insert(path);
+        if (path->getParticipants().size() > 1) {
+          path =
+              pathsByUUID[path->getParticipants().rbegin()[1]->getPathUUID()];
         }
       }
     }
@@ -1115,9 +1109,9 @@ int main(int argc, char **argv, char **envp) {
   }
 
   {
-    for (auto path : allPaths) {
-      files[path->getUUID() + ".html"] = [ = ]() {
-        return generatePathHTML(path);
+    for (auto path : pathsByUUID) {
+      files[path.first + ".html"] = [ = ]() {
+        return generatePathHTML(path.second);
       }
       ;
     }
