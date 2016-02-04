@@ -189,9 +189,9 @@ std::string generatePathIndex(std::set<SPA::Path *> paths) {
                                     pathColors[it].end());
     dot += "  path_" + pathID + " [label=\"Path " + pathID + "\\n" +
            it->getParticipants().back()->getName() + "\" URL=\"" +
-           it->getParticipants().back()->getPathUUID() +
-           ".html\" style=\"filled\" fillcolor=\"" + SPA::strJoin(colors, ":") +
-           "\"]\n";
+           it->getParticipants().back()->getPathUUID() + ".html\" style=\"" +
+           (colors.size() > 1 ? "wedged" : "filled") + "\" fillcolor=\"" +
+           SPA::strJoin(colors, ":") + "\"]\n";
 
     if (it->getParticipants().size() > 1) {
       dot +=
@@ -831,8 +831,8 @@ std::string generateConversationIndex() {
     conversationsDot +=
         "  " + sanitizeToken(name) + " [label=\"" + cit.first.back() + "\\n(" +
         SPA::numToStr(cit.second.size()) + " Paths)\" URL=\"" + name +
-        ".html\" style=\"filled\" fillcolor=\"" + SPA::strJoin(colors, ":") +
-        "\"]\n";
+        ".html\" style=\"" + (colors.size() > 1 ? "wedged" : "filled") +
+        "\" fillcolor=\"" + SPA::strJoin(colors, ":") + "\"]\n";
     if (cit.first.size() > 1) {
       auto parentConversation = cit.first;
       parentConversation.pop_back();
