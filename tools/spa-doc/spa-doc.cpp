@@ -1084,7 +1084,7 @@ int main(int argc, char **argv, char **envp) {
   files["paths.html"] = [ = ]() { return generatePathIndex(allPaths); }
   ;
   for (auto cit : conversations) {
-    auto fullConversation = cit.second;
+    std::set<SPA::Path *> fullConversation;
     // Add all parent paths to conversation.
     for (auto pit : cit.second) {
       SPA::Path *path = pit;
