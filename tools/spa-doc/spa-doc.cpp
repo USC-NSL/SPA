@@ -4,6 +4,7 @@
 
 #include <spa/SPA.h>
 #include <spa/PathLoader.h>
+#include <spa/FilterExpression.h>
 #include <spa/Util.h>
 
 #include <sys/unistd.h>
@@ -21,6 +22,8 @@
 #undef PACKAGE_VERSION
 
 namespace {
+llvm::cl::opt<bool> Debug("d", llvm::cl::desc("Enable debug messages."));
+
 llvm::cl::opt<std::string> Directory(
     "dir", llvm::cl::init("."),
     llvm::cl::desc(
@@ -30,12 +33,15 @@ llvm::cl::opt<int>
     NumProcesses("j", llvm::cl::init(1),
                  llvm::cl::desc("Number of worker processes to spawn."));
 
-llvm::cl::opt<bool> Debug("d", llvm::cl::desc("Enable debug messages."));
-
 llvm::cl::list<std::string> SrcDirMap(
     "map-src",
     llvm::cl::desc(
         "Remaps source directories when searching for source code files."));
+
+llvm::cl::list<std::string> ColorFilter(
+    "color-filter",
+    llvm::cl::desc("Format: 'color:filter'. "
+                   "Annotates paths that match filter with the given color."));
 
 llvm::cl::opt<int>
     ServeHttp("serve-http", llvm::cl::init(0),
@@ -72,6 +78,12 @@ std::map<SPA::Path *, unsigned long> pathIDs;
 std::map<std::vector<std::string>, std::set<SPA::Path *> > conversations;
 // uuid -> [participant, uuid]s.
 std::map<SPA::Path *, std::set<SPA::Path *> > childrenPaths;
+// filter -> color
+std::set<std::pair<SPA::FilterExpression *, std::string> > colorFilters;
+// path -> colors
+std::map<SPA::Path *, std::set<std::string> > pathColors;
+// participants -> colors
+std::map<std::vector<std::string>, std::set<std::string> > conversationColors;
 // file -> (line -> (covered -> paths))
 std::map<std::string,
          std::map<unsigned long, std::map<bool, std::set<SPA::Path *> > > >
@@ -112,14 +124,6 @@ bool checkMessageReceived(std::shared_ptr<message_t> message) {
     }
   }
   return true;
-}
-
-std::string join(std::vector<std::string> strings, std::string delimiter) {
-  std::string result;
-  for (auto it = strings.begin(), ie = strings.end(); it != ie; it++) {
-    result += (it == strings.begin() ? "" : delimiter) + *it;
-  }
-  return result;
 }
 
 std::string remapSrcFileName(std::string srcFileName) {
@@ -181,9 +185,14 @@ std::string generatePathIndex(std::set<SPA::Path *> paths) {
 
   for (auto it : paths) {
     std::string pathID = SPA::numToStr(pathIDs[it]);
+    std::vector<std::string> colors(pathColors[it].begin(),
+                                    pathColors[it].end());
     dot += "  path_" + pathID + " [label=\"Path " + pathID + "\\n" +
            it->getParticipants().back()->getName() + "\" URL=\"" +
-           it->getParticipants().back()->getPathUUID() + ".html\"]\n";
+           it->getParticipants().back()->getPathUUID() +
+           ".html\" style=\"filled\" fillcolor=\"" + SPA::strJoin(colors, ":") +
+           "\"]\n";
+
     if (it->getParticipants().size() > 1) {
       dot +=
           "  path_" +
@@ -461,9 +470,10 @@ std::string generatePathHTML(SPA::Path *path) {
   std::vector<std::string> conversation;
   for (auto it : path->getParticipants()) {
     conversation.push_back(it->getName());
-    htmlFile += "    <li><a href='" + it->getPathUUID() + ".html'>" +
-                it->getName() + "</a> (<a href='" + join(conversation, "_") +
-                ".html'>conversation</a>)</li>\n";
+    htmlFile +=
+        "    <li><a href='" + it->getPathUUID() + ".html'>" + it->getName() +
+        "</a> (<a href='" + SPA::strJoin(conversation, "_") +
+        ".html'>conversation</a>)</li>\n";
   }
   htmlFile += "    </ol><br />\n"
               "    <b>Children:</b><br />\n"
@@ -815,17 +825,21 @@ std::string generateConversationIndex() {
                                  "  root [label=\"Root\"]\n";
 
   for (auto cit : conversations) {
-    std::string name = join(cit.first, "_");
+    std::string name = SPA::strJoin(cit.first, "_");
+    std::vector<std::string> colors(conversationColors[cit.first].begin(),
+                                    conversationColors[cit.first].end());
     conversationsDot +=
         "  " + sanitizeToken(name) + " [label=\"" + cit.first.back() + "\\n(" +
         SPA::numToStr(cit.second.size()) + " Paths)\" URL=\"" + name +
-        ".html\"]\n";
+        ".html\" style=\"filled\" fillcolor=\"" + SPA::strJoin(colors, ":") +
+        "\"]\n";
     if (cit.first.size() > 1) {
       auto parentConversation = cit.first;
       parentConversation.pop_back();
 
-      conversationsDot += "  " + sanitizeToken(join(parentConversation, "_")) +
-                          " -> " + sanitizeToken(name) + "\n";
+      conversationsDot +=
+          "  " + sanitizeToken(SPA::strJoin(parentConversation, "_")) + " -> " +
+          sanitizeToken(name) + "\n";
     } else {
       conversationsDot += "  root -> " + sanitizeToken(name) + "\n";
     }
@@ -1031,6 +1045,15 @@ int main(int argc, char **argv, char **envp) {
       argc, argv,
       "Systematic Protocol Analysis - Path File Documentation Generation");
 
+  for (auto cf : ColorFilter) {
+    auto d = cf.find(":");
+    assert((d != std::string::npos) && "Wrong format for filter color.");
+    std::string color = cf.substr(0, d);
+    SPA::FilterExpression *fe = SPA::FilterExpression::parse(cf.substr(d + 1));
+    assert(fe && "Could not parse filter.");
+    colorFilters.insert(std::make_pair(fe, color));
+  }
+
   std::ifstream inFile(InFileName);
   assert(inFile.is_open() && "Unable to open input path-file.");
 
@@ -1076,6 +1099,15 @@ int main(int argc, char **argv, char **envp) {
             "coverage-" + SPA::numToStr(coverageIndexes.size()) + ".html";
       }
     }
+
+    for (auto cfit : colorFilters) {
+      if (cfit.first->checkPath(*path.first)) {
+        pathColors[path.first].insert(cfit.second);
+      }
+    }
+    if (pathColors[path.first].empty()) {
+      pathColors[path.first].insert("white");
+    }
   }
 
   files["style.css"] = generateCSS;
@@ -1097,7 +1129,12 @@ int main(int argc, char **argv, char **envp) {
       }
     }
 
-    files[join(cit.first, "_") + ".html"] = [ = ]() {
+    for (auto pit : cit.second) {
+      conversationColors[cit.first]
+          .insert(pathColors[pit].begin(), pathColors[pit].end());
+    }
+
+    files[SPA::strJoin(cit.first, "_") + ".html"] = [ = ]() {
       return generatePathIndex(fullConversation);
     }
     ;
