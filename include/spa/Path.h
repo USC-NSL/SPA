@@ -229,6 +229,8 @@ public:
     return testFunctionCoverage;
   }
 
+  std::string getPathSource() const;
+
   friend class PathLoader;
   friend std::ostream &operator<<(std::ostream &stream, const Path &path);
 };

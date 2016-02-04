@@ -233,106 +233,115 @@ bool Path::isCovered(std::string dbgStr) {
   }
 }
 
-std::ostream &operator<<(std::ostream &stream, const Path &path) {
-  stream << SPA_PATH_START << std::endl;
-  stream << SPA_PATH_UUID_START << std::endl;
-  stream << path.uuid << std::endl;
-  stream << SPA_PATH_UUID_END << std::endl;
+std::string Path::getPathSource() const {
+  std::string result = SPA_PATH_START "\n";
+  result += SPA_PATH_UUID_START "\n";
+  result += uuid + "\n";
+  result += SPA_PATH_UUID_END "\n";
 
-  stream << SPA_PATH_PARTICIPANTS_START << std::endl;
-  for (auto it : path.participants) {
-    stream << it->getName() << SPA_PATH_PARTICIPANT_DELIMITER
-           << it->getPathUUID() << std::endl;
+  result += SPA_PATH_PARTICIPANTS_START "\n";
+  for (auto it : participants) {
+    result += it->getName() + SPA_PATH_PARTICIPANT_DELIMITER +
+              it->getPathUUID() + "\n";
   }
-  stream << SPA_PATH_PARTICIPANTS_END << std::endl;
+  result += SPA_PATH_PARTICIPANTS_END "\n";
 
-  stream << SPA_PATH_SYMBOLLOG_START << std::endl;
-  for (auto it : path.symbolLog) {
-    stream << it->getFullName() << std::endl;
+  result += SPA_PATH_SYMBOLLOG_START "\n";
+  for (auto it : symbolLog) {
+    result += it->getFullName() + "\n";
   }
-  stream << SPA_PATH_SYMBOLLOG_END << std::endl;
+  result += SPA_PATH_SYMBOLLOG_END "\n";
 
-  stream << SPA_PATH_OUTPUTS_START << std::endl;
+  result += SPA_PATH_OUTPUTS_START "\n";
   std::vector<klee::ref<klee::Expr> > evalExprs;
-  for (auto oit : path.outputSymbols) {
+  for (auto oit : outputSymbols) {
     for (auto sit : oit.second) {
-      stream << sit->getFullName() << SPA_PATH_OUTPUT_DELIMITER
-             << sit->getOutputValues().size() << std::endl;
+      result += sit->getFullName() + SPA_PATH_OUTPUT_DELIMITER +
+                numToStr(sit->getOutputValues().size()) + "\n";
       for (auto bit : sit->getOutputValues()) {
         evalExprs.push_back(bit);
       }
     }
   }
-  stream << SPA_PATH_OUTPUTS_END << std::endl;
+  result += SPA_PATH_OUTPUTS_END "\n";
 
-  stream << SPA_PATH_TAGS_START << std::endl;
-  for (auto it : path.tags) {
-    stream << it.first << SPA_PATH_TAG_DELIMITER << it.second << std::endl;
+  result += SPA_PATH_TAGS_START "\n";
+  for (auto it : tags) {
+    result += it.first + SPA_PATH_TAG_DELIMITER + it.second + "\n";
   }
-  stream << SPA_PATH_TAGS_END << std::endl;
+  result += SPA_PATH_TAGS_END "\n";
 
-  stream << SPA_PATH_KQUERY_START << std::endl;
+  result += SPA_PATH_KQUERY_START "\n";
   klee::ExprBuilder *exprBuilder = klee::createDefaultExprBuilder();
-  llvm::raw_os_ostream ros(stream);
+
+  std::string kleaverStr;
+  llvm::raw_string_ostream kleaverROS(kleaverStr);
   klee::ExprPPrinter::printQuery(
-      ros, path.getConstraints(), exprBuilder->False(), &evalExprs[0],
+      kleaverROS, constraints, exprBuilder->False(), &evalExprs[0],
       &evalExprs[0] + evalExprs.size(), NULL, NULL, true);
-  ros.flush();
-  stream << SPA_PATH_KQUERY_END << std::endl;
+  kleaverROS.flush();
+  result += kleaverROS.str();
+  result += SPA_PATH_KQUERY_END "\n";
 
-  if ((!path.exploredLineCoverage.empty()) ||
-      (!path.exploredFunctionCoverage.empty())) {
-    stream << SPA_PATH_EXPLOREDCOVERAGE_START << std::endl;
-    for (auto srcFile : path.exploredLineCoverage) {
-      stream << srcFile.first;
+  if ((!exploredLineCoverage.empty()) || (!exploredFunctionCoverage.empty())) {
+    result += SPA_PATH_EXPLOREDCOVERAGE_START "\n";
+    for (auto srcFile : exploredLineCoverage) {
+      result += srcFile.first;
       for (auto line : srcFile.second) {
-        stream << " " << (line.second ? "" : "!") << line.first;
+        result += (line.second ? " " : " !") + numToStr(line.first);
       }
-      stream << std::endl;
+      result += "\n";
     }
-    for (auto fn : path.exploredFunctionCoverage) {
-      stream << (fn.second ? "" : "!") << fn.first << std::endl;
+    for (auto fn : exploredFunctionCoverage) {
+      result += (fn.second ? "" : "!") + fn.first + "\n";
     }
-    stream << SPA_PATH_EXPLOREDCOVERAGE_END << std::endl;
+    result += SPA_PATH_EXPLOREDCOVERAGE_END "\n";
   }
 
-  if (!path.getExploredPath().empty()) {
-    stream << SPA_PATH_EXPLOREDPATH_START << std::endl;
-    for (auto moduleIt : path.getExploredPath()) {
-      stream << moduleIt.first << std::endl;
+  if (!exploredPath.empty()) {
+    result += SPA_PATH_EXPLOREDPATH_START "\n";
+    for (auto moduleIt : exploredPath) {
+      result += moduleIt.first + "\n";
       for (auto pathIt : moduleIt.second) {
-        stream << pathIt.first << " " << pathIt.second << std::endl;
+        result += pathIt.first + " " + numToStr(pathIt.second) + "\n";
       }
     }
-    stream << SPA_PATH_EXPLOREDPATH_END << std::endl;
+    result += SPA_PATH_EXPLOREDPATH_END "\n";
   }
 
-  stream << SPA_PATH_TESTINPUTS_START << std::endl;
-  for (auto input : path.getTestInputs()) {
-    stream << input.first << std::hex;
+  result += SPA_PATH_TESTINPUTS_START "\n";
+  for (auto input : testInputs) {
+    result += input.first;
     for (uint8_t b : input.second) {
-      stream << " " << (int) b;
+      result += " " + numToStrHex(b);
     }
-    stream << std::dec << std::endl;
+    result += "\n";
   }
-  stream << SPA_PATH_TESTINPUTS_END << std::endl;
+  result += SPA_PATH_TESTINPUTS_END "\n";
 
-  if ((!path.testLineCoverage.empty()) ||
-      (!path.testFunctionCoverage.empty())) {
-    stream << SPA_PATH_TESTCOVERAGE_START << std::endl;
-    for (auto srcFile : path.testLineCoverage) {
-      stream << srcFile.first;
+  if ((!testLineCoverage.empty()) || (!testFunctionCoverage.empty())) {
+    result += SPA_PATH_TESTCOVERAGE_START "\n";
+    for (auto srcFile : testLineCoverage) {
+      result += srcFile.first;
       for (auto line : srcFile.second) {
-        stream << " " << (line.second ? "" : "!") << line.first;
+        result += (line.second ? " " : " !") + numToStr(line.first);
       }
-      stream << std::endl;
+      result += "\n";
     }
-    for (auto fn : path.testFunctionCoverage) {
-      stream << (fn.second ? "" : "!") << fn.first << std::endl;
+    for (auto fn : testFunctionCoverage) {
+      result += (fn.second ? "" : "!") + fn.first + "\n";
     }
-    stream << SPA_PATH_TESTCOVERAGE_END << std::endl;
+    result += SPA_PATH_TESTCOVERAGE_END "\n";
   }
 
-  return stream << SPA_PATH_END << std::endl;
+  result += SPA_PATH_END "\n";
+  return result;
 }
+
+std::ostream &operator<<(std::ostream &stream, const Path &path) {
+  stream << path.getPathSource();
+  stream.flush();
+  return stream;
+}
+
 }

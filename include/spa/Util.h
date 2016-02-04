@@ -18,9 +18,15 @@
 #include <spa/Path.h>
 
 namespace SPA {
-template <typename T> std::string numToStr(T n) {
+std::string __attribute__((weak)) numToStr(long long n) {
   std::stringstream ss;
   ss << n;
+  return ss.str();
+}
+
+std::string __attribute__((weak)) numToStrHex(long long n) {
+  std::stringstream ss;
+  ss << std::hex << n;
   return ss.str();
 }
 
@@ -34,7 +40,7 @@ std::string __attribute__((weak)) debugLocation(const llvm::Instruction *inst) {
   if (llvm::MDNode *node = inst->getMetadata("dbg")) {
     llvm::DILocation loc(node);
     return loc.getDirectory().str() + "/" + loc.getFilename().str() + ":" +
-           numToStr<long>(loc.getLineNumber());
+           numToStr(loc.getLineNumber());
   } else {
     return "(unknown)";
   }
