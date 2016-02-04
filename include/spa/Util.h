@@ -47,6 +47,15 @@ std::string __attribute__((weak)) debugLocation(const llvm::Instruction *inst) {
 }
 
 std::string __attribute__((weak))
+    strJoin(std::vector<std::string> strings, std::string delimiter) {
+  std::string result;
+  for (auto it = strings.begin(), ie = strings.end(); it != ie; it++) {
+    result += (it == strings.begin() ? "" : delimiter) + *it;
+  }
+  return result;
+}
+
+std::string __attribute__((weak))
     strSplitJoin(std::string input, std::string delimiter, int lidx,
                  unsigned int rcut) {
   if (lidx > 0) {
