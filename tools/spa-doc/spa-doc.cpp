@@ -188,8 +188,8 @@ std::string generatePathIndex(std::set<SPA::Path *> paths) {
     std::vector<std::string> colors(pathColors[it].begin(),
                                     pathColors[it].end());
     dot += "  path_" + pathID + " [label=\"Path " + pathID + "\\n" +
-           it->getParticipants().back()->getName() + "\" URL=\"" +
-           it->getParticipants().back()->getPathUUID() + ".html\" style=\"" +
+           it->getParticipants().back()->getName() + "\" tooltip=\"" +
+           it->getUUID() + "\" URL=\"" + it->getUUID() + ".html\" style=\"" +
            (colors.size() > 1 ? "wedged" : "filled") + "\" fillcolor=\"" +
            SPA::strJoin(colors, ":") + "\"]\n";
 
