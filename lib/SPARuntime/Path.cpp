@@ -194,6 +194,10 @@ Path *Path::buildDerivedPath(Path *basePath, Path *sourcePath,
   if (basePath->symbolLog.empty() || sourcePath->symbolLog.empty()) {
     return NULL;
   }
+  // Don't use derived paths to augment others (us the base that derived them).
+  if (!sourcePath->derivedFromUUID.empty()) {
+    return NULL;
+  }
   // Find commonalities in each path's participant and symbol logs.
   // Position of first divergent participant entry.
   unsigned long commonParticipants;
@@ -300,6 +304,8 @@ Path *Path::buildDerivedPath(Path *basePath, Path *sourcePath,
   destinationPath->participants = basePath->participants;
   destinationPath->participants.emplace_back(new Participant(
       sourcePath->participants.back()->getName(), destinationPath->uuid));
+  // Keep track of where destination was derived from.
+  destinationPath->derivedFromUUID = sourcePath->uuid;
   // New symbol log entries.
   destinationPath->symbolLog = basePath->symbolLog;
   destinationPath->symbolLog.insert(destinationPath->symbolLog.end(),
