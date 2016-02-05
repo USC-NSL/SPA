@@ -207,7 +207,7 @@ std::string generatePathIndex(std::set<SPA::Path *> paths) {
         paths.count(pathsByUUID[it->getDerivedFromUUID()])) {
       dot += "  path_" +
              SPA::numToStr(pathIDs[pathsByUUID[it->getDerivedFromUUID()]]) +
-             " -> path_" + pathID + " [style=\"dashed\"]\n";
+             " -> path_" + pathID + " [style=\"dashed\" constraint=false]\n";
     }
   }
   dot += "}\n";
