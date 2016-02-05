@@ -758,6 +758,12 @@ llvm::cl::opt<std::string>
     IP("ip", llvm::cl::desc("Sets the participant IP address when bind doesn't "
                             "(default: 127.0.0.1)."));
 
+llvm::cl::opt<bool> ShallowExploration(
+    "shallow-exploration",
+    llvm::cl::desc("Only perform shallow exploration (initial or immediate "
+                   "responses). spa-explore-conversation can fill in the "
+                   "deeper conversations as a separate process."));
+
 PathLoader *senderPaths = NULL;
 bool followSenderPaths = false;
 std::map<std::string, std::string> seedSymbolMappings;
@@ -869,9 +875,26 @@ SpecialFunctionHandler::handleSpaLoadPath(ExecutionState &state,
   // To check this, check the log in reverse and find the first of either a
   // symbol outputted by the current participant or a symbol that can be
   // consumed.
+  // If performing shallow exploration, only consider the most recent
+  // participant.
+  std::string onlyCheckParticipant;
+  if (SPA::ShallowExploration && !state.senderPath->getParticipants().empty()) {
+    onlyCheckParticipant =
+        state.senderPath->getParticipants().back()->getName();
+  }
   for (auto sit = state.senderPath->getSymbolLog().rbegin(),
             sie = state.senderPath->getSymbolLog().rend();
        sit != sie; sit++) {
+    // Only consider last participant for shallow exploration.
+    if (SPA::ShallowExploration &&
+        (*sit)->getParticipant() != onlyCheckParticipant) {
+      klee_message("[spa_load_path] Cannot load path with no shallow inputs. "
+                   "Terminating.");
+      executor.terminateStateOnError(state, "Path has no shallow inputs.",
+                                     "user.err");
+      return;
+    }
+
     // Check if symbol can be consumed by a direct mapping.
     if (SPA::seedSymbolMappings.count((*sit)->getQualifiedName())) {
       break;
