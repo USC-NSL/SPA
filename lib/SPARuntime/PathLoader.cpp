@@ -28,6 +28,7 @@ typedef enum {
   PATH,
   UUID,
   PARTICIPANTS,
+  DERIVEDFROMUUID,
   SYMBOLLOG,
   OUTPUTS,
   TAGS,
@@ -101,6 +102,10 @@ Path *PathLoader::getPath() {
       changeState(PATH, PARTICIPANTS);
     } else if (line == SPA_PATH_PARTICIPANTS_END) {
       changeState(PARTICIPANTS, PATH);
+    } else if (line == SPA_PATH_DERIVEDFROMUUID_START) {
+      changeState(PATH, DERIVEDFROMUUID);
+    } else if (line == SPA_PATH_DERIVEDFROMUUID_END) {
+      changeState(DERIVEDFROMUUID, PATH);
     } else if (line == SPA_PATH_SYMBOLLOG_START) {
       changeState(PATH, SYMBOLLOG);
     } else if (line == SPA_PATH_SYMBOLLOG_END) {
@@ -198,6 +203,9 @@ Path *PathLoader::getPath() {
         std::string uuid =
             line.substr(line.find(SPA_PATH_PARTICIPANT_DELIMITER) + 1);
         path->participants.emplace_back(new Participant(name, uuid));
+      } break;
+      case DERIVEDFROMUUID: {
+        path->derivedFromUUID = line;
       } break;
       case SYMBOLLOG: {
         symbolNamesLog.push_back(line);

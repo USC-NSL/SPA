@@ -19,6 +19,8 @@
 #define SPA_PATH_PARTICIPANTS_START "--- PARTICIPANTS START ---"
 #define SPA_PATH_PARTICIPANT_DELIMITER "	"
 #define SPA_PATH_PARTICIPANTS_END "--- PARTICIPANTS END ---"
+#define SPA_PATH_DERIVEDFROMUUID_START "--- DERIVED FROM UUID START ---"
+#define SPA_PATH_DERIVEDFROMUUID_END "--- DERIVED FROM UUID END ---"
 #define SPA_PATH_SYMBOLLOG_START "--- SYMBOL LOG START ---"
 #define SPA_PATH_SYMBOLLOG_END "--- SYMBOL LOG END ---"
 #define SPA_PATH_OUTPUTS_START "--- OUTPUTS START ---"
@@ -157,6 +159,7 @@ class Path {
 private:
   std::string uuid = generateUUID();
   std::vector<std::shared_ptr<Participant> > participants;
+  std::string derivedFromUUID;
   std::vector<std::shared_ptr<Symbol> > symbolLog;
   std::map<std::string, std::vector<std::shared_ptr<Symbol> > > inputSymbols;
   std::map<std::string, std::vector<std::shared_ptr<Symbol> > > outputSymbols;
@@ -187,6 +190,10 @@ public:
 
   const decltype(participants) & getParticipants() const {
     return participants;
+  }
+
+  const decltype(derivedFromUUID) & getDerivedFromUUID() const {
+    return derivedFromUUID;
   }
 
   const decltype(symbolLog) & getSymbolLog() const { return symbolLog; }
