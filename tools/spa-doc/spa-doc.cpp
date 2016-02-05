@@ -202,6 +202,13 @@ std::string generatePathIndex(std::set<SPA::Path *> paths) {
     } else {
       dot += "  root -> path_" + pathID + "\n";
     }
+
+    if (!it->getDerivedFromUUID().empty() &&
+        paths.count(pathsByUUID[it->getDerivedFromUUID()])) {
+      dot += "  path_" +
+             SPA::numToStr(pathIDs[pathsByUUID[it->getDerivedFromUUID()]]) +
+             " -> path_" + pathID + " [style=\"dashed\"]\n";
+    }
   }
   dot += "}\n";
 
@@ -464,9 +471,9 @@ std::string generatePathHTML(SPA::Path *path) {
       "    <h1>Path " + SPA::numToStr(pathIDs[path]) +
       "</h1>\n"
       "    <h2>Path Meta-data</h2>\n"
-      "    <b>UUID:</b> " + path->getUUID() + "<br /><br />\n"
-                                              "    <b>Lineage:</b><br />\n"
-                                              "    <ol>\n";
+      "    <b>UUID:</b> " + path->getUUID() + "<br /><br />\n";
+  htmlFile += "    <b>Lineage:</b><br />\n"
+              "    <ol>\n";
   std::vector<std::string> conversation;
   for (auto it : path->getParticipants()) {
     conversation.push_back(it->getName());
@@ -475,8 +482,15 @@ std::string generatePathHTML(SPA::Path *path) {
         "</a> (<a href='" + SPA::strJoin(conversation, "_") +
         ".html'>conversation</a>)</li>\n";
   }
-  htmlFile += "    </ol><br />\n"
-              "    <b>Children:</b><br />\n"
+  htmlFile += "    </ol><br />\n";
+  if (!path->getDerivedFromUUID().empty()) {
+    htmlFile +=
+        "    <b>Derived From:</b> <a href='" + path->getDerivedFromUUID() +
+        ".html'>" + pathsByUUID[path->getDerivedFromUUID()]
+                        ->getParticipants().back()->getName() +
+        "</a><br /><br />\n";
+  }
+  htmlFile += "    <b>Children:</b><br />\n"
               "    <ol>\n";
   for (auto it : childrenPaths[path]) {
     htmlFile += "    <li><a href='" + it->getUUID() + ".html'>" +
@@ -1116,8 +1130,23 @@ int main(int argc, char **argv, char **envp) {
   files["paths.html"] = [ = ]() { return generatePathIndex(allPaths); }
   ;
   for (auto cit : conversations) {
-    std::set<SPA::Path *> fullConversation;
+    std::set<SPA::Path *> fullConversation, worklist;
     // Add all parent paths to conversation.
+    worklist = cit.second;
+    while (!worklist.empty()) {
+      SPA::Path *path = *worklist.begin();
+      worklist.erase(path);
+      if (!fullConversation.count(path)) {
+        fullConversation.insert(path);
+        if (path->getParticipants().size() > 1) {
+          worklist.insert(
+              pathsByUUID[path->getParticipants().rbegin()[1]->getPathUUID()]);
+        }
+        if (!path->getDerivedFromUUID().empty()) {
+          worklist.insert(pathsByUUID[path->getDerivedFromUUID()]);
+        }
+      }
+    }
     for (auto pit : cit.second) {
       SPA::Path *path = pit;
       while (!fullConversation.count(path)) {

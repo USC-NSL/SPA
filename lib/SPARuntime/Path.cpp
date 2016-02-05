@@ -243,6 +243,12 @@ std::string Path::getPathSource() const {
   }
   result += SPA_PATH_PARTICIPANTS_END "\n";
 
+  if (!derivedFromUUID.empty()) {
+    result += SPA_PATH_DERIVEDFROMUUID_START "\n";
+    result += derivedFromUUID + "\n";
+    result += SPA_PATH_DERIVEDFROMUUID_END "\n";
+  }
+
   result += SPA_PATH_SYMBOLLOG_START "\n";
   for (auto it : symbolLog) {
     result += it->getFullName() + "\n";
