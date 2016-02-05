@@ -180,6 +180,9 @@ public:
   Path() {}
   Path(klee::ExecutionState *kState, klee::Solver *solver);
 
+  static Path *buildDerivedPath(Path *basePath, Path *sourcePath,
+                                klee::Solver *solver);
+
   const decltype(uuid) & getUUID() const { return uuid; }
 
   const decltype(participants) & getParticipants() const {
