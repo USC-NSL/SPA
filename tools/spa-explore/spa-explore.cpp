@@ -48,14 +48,6 @@ llvm::cl::list<std::string>
     Connect("connect", llvm::cl::desc("Specifies symbols to connect in a "
                                       "receiverSymbol1=senderSymbol2 format."));
 
-llvm::cl::opt<bool>
-    ConnectInOut("connect-in-out", llvm::cl::init(false),
-                 llvm::cl::desc("Automatically connect inputs to outputs."));
-
-llvm::cl::opt<bool>
-    ConnectInIn("connect-in-in", llvm::cl::init(false),
-                llvm::cl::desc("Automatically connect common inputs."));
-
 llvm::cl::opt<bool> ConnectSockets(
     "connect-sockets", llvm::cl::init(false),
     llvm::cl::desc("Automatically connect socket inputs to outputs."));
@@ -172,16 +164,6 @@ int main(int argc, char **argv, char **envp) {
     klee::klee_message("   Seeding symbol %s with values from %s",
                        rValue.c_str(), sValue.c_str());
     spa.addValueMapping(sValue, rValue);
-  }
-
-  if (ConnectInOut) {
-    klee::klee_message("   Connecting inputs to outputs.");
-    spa.mapInputsToOutputs();
-  }
-
-  if (ConnectInIn) {
-    klee::klee_message("   Connecting common inputs.");
-    spa.mapCommonInputs();
   }
 
   if (ConnectSockets) {

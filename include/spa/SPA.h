@@ -130,8 +130,6 @@ public:
   }
   void setSenderPathLoader(PathLoader *pathLoader, bool follow);
   void addValueMapping(std::string senderVar, std::string receiverVar);
-  void mapInputsToOutputs();
-  void mapCommonInputs();
   void mapSockets();
   void addStateUtilityFront(StateUtility *stateUtility,
                             bool _outputFilteredPaths) {
