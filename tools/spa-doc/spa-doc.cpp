@@ -1136,7 +1136,7 @@ int main(int argc, char **argv, char **envp) {
     while (!worklist.empty()) {
       SPA::Path *path = *worklist.begin();
       worklist.erase(path);
-      if (!fullConversation.count(path)) {
+      if (path && !fullConversation.count(path)) {
         fullConversation.insert(path);
         if (path->getParticipants().size() > 1) {
           worklist.insert(
