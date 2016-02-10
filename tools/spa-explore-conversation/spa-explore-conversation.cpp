@@ -121,6 +121,19 @@ Path *buildDerivedPath(Path *basePath, Path *sourcePath) {
   std::vector<const klee::Array *> objects;
   // Big AND.
   for (auto cit : basePath->constraints) {
+    // Don't add internal symbols as they may collide.
+    if (klee::EqExpr *eqExpr = llvm::dyn_cast<klee::EqExpr>(cit)) {
+      if (klee::ConcatExpr *catExpr =
+              llvm::dyn_cast<klee::ConcatExpr>(eqExpr->right)) {
+        if (klee::ReadExpr *rdExpr =
+                llvm::dyn_cast<klee::ReadExpr>(catExpr->getLeft())) {
+          if (rdExpr->updates.root->name.compare(0, strlen(SPA_INTERNAL_PREFIX),
+                                                 SPA_INTERNAL_PREFIX) == 0) {
+            continue;
+          }
+        }
+      }
+    }
     if (!destinationPath->constraints.addAndCheckConstraint(cit)) {
       delete destinationPath;
       return NULL;
@@ -142,8 +155,6 @@ Path *buildDerivedPath(Path *basePath, Path *sourcePath) {
              "Common part of log is not in sync.");
       objectNames.push_back((*bsit)->getFullName());
       objects.push_back((*bsit)->getInputArray());
-      //       *const_cast<std::string *>(&(*ssit)->getInputArray()->name) +=
-      // "_dummy";
       for (size_t offset = 0; offset < (*bsit)->getInputArray()->size;
            offset++) {
         klee::UpdateList bul((*bsit)->getInputArray(), 0);

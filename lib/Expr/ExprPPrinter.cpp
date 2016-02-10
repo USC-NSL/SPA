@@ -471,6 +471,10 @@ void ExprPPrinter::printQuery(llvm::raw_ostream &os,
          [](const Array *a, const Array *b) -> bool {
            return a->name > b->name;
          });
+    usedArrays.erase(std::unique(usedArrays.begin(), usedArrays.end(),
+         [](const Array *a, const Array *b) -> bool {
+           return a->name == b->name;
+         }), usedArrays.end());
     for (auto const it : usedArrays) {
       const Array *A = it;
       // FIXME: Print correct name, domain, and range.
