@@ -10,6 +10,7 @@ spa-explore \
     --follow-in-paths \
     --out-paths kv.paths \
     --out-paths-append \
+    --shallow-exploration \
     --connect-sockets \
     --start-from spa_entry \
     --toward kv_done \
@@ -26,6 +27,7 @@ spa-explore \
     --follow-in-paths \
     --out-paths kv.paths \
     --out-paths-append \
+    --shallow-exploration \
     --connect-sockets \
     --start-from spa_entry1 \
     --toward spa_msg_no_input_point \
@@ -41,6 +43,7 @@ spa-explore \
     --follow-in-paths \
     --out-paths kv.paths \
     --out-paths-append \
+    --shallow-exploration \
     --connect-sockets \
     --start-from spa_entry2 \
     --toward spa_msg_no_input_point \
@@ -56,6 +59,7 @@ spa-explore \
     --follow-in-paths \
     --out-paths kv.paths \
     --out-paths-append \
+    --shallow-exploration \
     --connect-sockets \
     --start-from spa_entry3 \
     --toward spa_msg_no_input_point \
@@ -64,6 +68,13 @@ spa-explore \
     --ip 127.0.0.4 \
     kv-server-tcp.bc \
     2>&1 | tee kv-server3.log &
+
+# gdb --args \
+spa-explore-conversation \
+    --connect-sockets \
+    --follow-in-paths \
+    kv.paths \
+    2>&1 | tee derived.log &
 
 trap 'kill $(jobs -p)' EXIT
 
