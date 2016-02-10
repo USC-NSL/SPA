@@ -860,24 +860,36 @@ std::string generateConversationIndex() {
   }
   conversationsDot += "}\n";
 
-  return "<!doctype html>\n"
-         "<html lang=\"en\">\n"
-         "  <head>\n"
-         "    <meta charset=\"utf-8\">\n"
-         "    <title>All Conversations</title>\n"
-         "    <link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">\n"
-         "  </head>\n"
-         "  <body>\n"
-         "    <div id=\"header\">\n"
-         "      <a href=\"index.html\">All Conversations</a>\n"
-         "      <a href=\"paths.html\">All Paths</a>\n"
-         "      <a href=\"coverage.html\">Coverage</a>\n"
-         "    </div>\n"
-         "    Documented " + SPA::numToStr(pathsByUUID.size()) + " paths, in " +
-         SPA::numToStr(conversations.size()) + " conversations.<br />\n" +
-         SPA::runCommand("dot -Tsvg", conversationsDot) + "\n"
-                                                          "  </body>\n"
-                                                          "</html>\n";
+  unsigned long numDerived = 0;
+  for (auto pit : pathsByUUID) {
+    if (!pit.second->getDerivedFromUUID().empty()) {
+      numDerived++;
+    }
+  }
+
+  std::string conversationIndex =
+      "<!doctype html>\n"
+      "<html lang=\"en\">\n"
+      "  <head>\n"
+      "    <meta charset=\"utf-8\">\n"
+      "    <title>All Conversations</title>\n"
+      "    <link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">\n"
+      "  </head>\n"
+      "  <body>\n"
+      "    <div id=\"header\">\n"
+      "      <a href=\"index.html\">All Conversations</a>\n"
+      "      <a href=\"paths.html\">All Paths</a>\n"
+      "      <a href=\"coverage.html\">Coverage</a>\n"
+      "    </div>\n";
+  conversationIndex +=
+      "    Documented " + SPA::numToStr(pathsByUUID.size()) + " paths (" +
+      SPA::numToStr(numDerived) + " derived and " +
+      SPA::numToStr(pathsByUUID.size() - numDerived) + " explored), in " +
+      SPA::numToStr(conversations.size()) + " conversations.<br />\n" +
+      SPA::runCommand("dot -Tsvg", conversationsDot) + "\n";
+  conversationIndex += "  </body>\n"
+                       "</html>\n";
+  return conversationIndex;
 }
 
 std::string generateCoverageIndex() {
