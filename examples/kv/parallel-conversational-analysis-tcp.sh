@@ -12,10 +12,14 @@ sleep 1
 
 spa-explore-conversation \
     --connect-sockets \
+    --participant-ip kv-client:127.0.0.1 \
+    --participant-ip kv-server-1:127.0.0.2 \
+    --participant-ip kv-server-2:127.0.0.3 \
+    --participant-ip kv-server-3:127.0.0.4 \
     --follow-in-paths \
     kv.paths \
     2>&1 | tee derived.log &
 
-trap 'kill -SIGINT $(jobs -p)' EXIT
+trap 'kill $(jobs -p)' EXIT
 
 wait

@@ -16,6 +16,6 @@ spa-explore-conversation \
     kv.paths \
     2>&1 | tee derived.log &
 
-trap 'kill -SIGINT $(jobs -p); wait' SIGINT
+trap 'kill $(jobs -p)' EXIT
 
 wait
