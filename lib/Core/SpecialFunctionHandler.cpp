@@ -882,6 +882,7 @@ SpecialFunctionHandler::handleSpaLoadPath(ExecutionState &state,
     onlyCheckParticipant =
         state.senderPath->getParticipants().back()->getName();
   }
+  bool receivingSymbols = false;
   for (auto sit = state.senderPath->getSymbolLog().rbegin(),
             sie = state.senderPath->getSymbolLog().rend();
        sit != sie; sit++) {
@@ -897,6 +898,7 @@ SpecialFunctionHandler::handleSpaLoadPath(ExecutionState &state,
 
     // Check if symbol can be consumed by a direct mapping.
     if (SPA::seedSymbolMappings.count((*sit)->getQualifiedName())) {
+      receivingSymbols = true;
       break;
     }
     // Check if symbol can be consumed via symbolic socket layer.
@@ -905,6 +907,7 @@ SpecialFunctionHandler::handleSpaLoadPath(ExecutionState &state,
                                     (*sit)->getMessageProtocol() + ":" +
                                     (*sit)->getMessageDestinationPort()) ||
           participantBindings.count((*sit)->getMessageDestinationIP() + ":*")) {
+        receivingSymbols = true;
         break;
       }
     }
@@ -916,6 +919,14 @@ SpecialFunctionHandler::handleSpaLoadPath(ExecutionState &state,
                                      "user.err");
       return;
     }
+  }
+  if (SPA::ShallowExploration && (!receivingSymbols) &&
+      (!state.senderPath->getSymbolLog().empty())) {
+    klee_message("[spa_load_path] Cannot load path with no shallow inputs. "
+                 "Terminating.");
+    executor.terminateStateOnError(state, "Path has no shallow inputs.",
+                                   "user.err");
+    return;
   }
 
   // Add sender path constraints.
