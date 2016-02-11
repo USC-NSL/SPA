@@ -41,12 +41,21 @@ llvm::cl::opt<bool> ConnectSockets(
     "connect-sockets", llvm::cl::init(false),
     llvm::cl::desc("Automatically connect socket inputs to outputs."));
 
+llvm::cl::list<std::string> ParticipantIP(
+    "participant-ip",
+    llvm::cl::desc(
+        "Specifies the IP that can be assumed to belong entirely to a single "
+        "participant in a <participant-name>:<IP-address> format."));
+
 llvm::cl::opt<bool> Debug("d", llvm::cl::desc("Show debug information."));
 }
 
+// Path ID -> Path
 std::vector<SPA::Path *> paths;
-
+// Receiver symbol -> Sender symbol.
 std::map<std::string, std::string> seedSymbolMappings;
+// Participant name -> [IPs]
+std::map<std::string, std::set<std::string> > participantIPs;
 
 klee::Solver *solver = klee::createIndependentSolver(klee::createCachingSolver(
     klee::createCexCachingSolver(new klee::STPSolver(false, true))));
@@ -65,17 +74,17 @@ Path *buildDerivedPath(Path *basePath, Path *sourcePath) {
   // Position of first divergent participant entry.
   unsigned long commonParticipants;
   // Position of first new source symbol log entry.
-  auto newSourceLog = sourcePath->symbolLog.begin();
+  unsigned long newLogPos = 0;
   for (commonParticipants = 0;
        commonParticipants < basePath->getParticipants().size() &&
            commonParticipants < sourcePath->getParticipants().size();
        commonParticipants++) {
     if (basePath->getParticipants()[commonParticipants]->getPathUUID() ==
         sourcePath->getParticipants()[commonParticipants]->getPathUUID()) {
-      while (newSourceLog != sourcePath->symbolLog.end() &&
-             (*newSourceLog)->getParticipant() ==
+      while (newLogPos < sourcePath->symbolLog.size() &&
+             sourcePath->symbolLog[newLogPos]->getParticipant() ==
                  basePath->getParticipants()[commonParticipants]->getName()) {
-        newSourceLog++;
+        newLogPos++;
       }
     } else {
       break;
@@ -98,15 +107,24 @@ Path *buildDerivedPath(Path *basePath, Path *sourcePath) {
       return NULL;
     }
   }
-  // Check if latest base participant sent anything that the source could use.
-  for (auto bsit = basePath->symbolLog.rbegin();
-       (*bsit)->getParticipant() ==
-           basePath->getParticipants().back()->getName();
-       bsit++) {
-    for (auto ssit = newSourceLog, ssie = sourcePath->symbolLog.end();
+  // Check if any of the new base participants sent anything to the source.
+  for (auto bsit = basePath->symbolLog.begin() + newLogPos,
+            bsie = basePath->symbolLog.end();
+       bsit != bsie; bsit++) {
+    if (ConnectSockets && (*bsit)->isOutput() && (*bsit)->isMessage() &&
+        participantIPs[sourcePath->getParticipants().back()->getName()]
+            .count((*bsit)->getMessageDestinationIP())) {
+      return NULL;
+    }
+    for (auto ssit = sourcePath->symbolLog.begin() + newLogPos,
+              ssie = sourcePath->symbolLog.end();
          ssit != ssie; ssit++) {
       if (seedSymbolMappings[(*ssit)->getQualifiedName()] ==
-              (*bsit)->getQualifiedName() ||
+          (*bsit)->getQualifiedName()) {
+        return NULL;
+      }
+      if (ConnectSockets && (*bsit)->isOutput() && (*bsit)->isMessage() &&
+          (*ssit)->isInput() && (*ssit)->isMessage() &&
           checkMessageCompatibility(*bsit, (*ssit)->getLocalName())) {
         return NULL;
       }
@@ -146,19 +164,20 @@ Path *buildDerivedPath(Path *basePath, Path *sourcePath) {
     }
   }
   // Connect API inputs.
-  for (auto bsit = basePath->symbolLog.begin(),
-            ssit = sourcePath->symbolLog.begin();
-       ssit != newSourceLog; bsit++, ssit++) {
-    if ((*bsit)->isInput() && (*bsit)->isAPI()) {
-      assert((*bsit)->getFullName() == (*ssit)->getFullName() &&
-             (*bsit)->getInputArray()->size == (*ssit)->getInputArray()->size &&
+  for (unsigned long lit = 0; lit < newLogPos; lit++) {
+    if (basePath->symbolLog[lit]->isInput() &&
+        basePath->symbolLog[lit]->isAPI()) {
+      assert(basePath->symbolLog[lit]->getFullName() ==
+                 sourcePath->symbolLog[lit]->getFullName() &&
+             basePath->symbolLog[lit]->getInputArray()->size ==
+                 sourcePath->symbolLog[lit]->getInputArray()->size &&
              "Common part of log is not in sync.");
-      objectNames.push_back((*bsit)->getFullName());
-      objects.push_back((*bsit)->getInputArray());
-      for (size_t offset = 0; offset < (*bsit)->getInputArray()->size;
-           offset++) {
-        klee::UpdateList bul((*bsit)->getInputArray(), 0);
-        klee::UpdateList sul((*ssit)->getInputArray(), 0);
+      objectNames.push_back(basePath->symbolLog[lit]->getFullName());
+      objects.push_back(basePath->symbolLog[lit]->getInputArray());
+      for (size_t offset = 0;
+           offset < basePath->symbolLog[lit]->getInputArray()->size; offset++) {
+        klee::UpdateList bul(basePath->symbolLog[lit]->getInputArray(), 0);
+        klee::UpdateList sul(sourcePath->symbolLog[lit]->getInputArray(), 0);
         llvm::OwningPtr<klee::ExprBuilder> exprBuilder(
             klee::createDefaultExprBuilder());
         klee::ref<klee::Expr> e = exprBuilder->Eq(
@@ -197,17 +216,21 @@ Path *buildDerivedPath(Path *basePath, Path *sourcePath) {
   // New symbol log entries.
   destinationPath->symbolLog = basePath->symbolLog;
   destinationPath->symbolLog.insert(destinationPath->symbolLog.end(),
-                                    newSourceLog, sourcePath->symbolLog.end());
+                                    sourcePath->symbolLog.begin() + newLogPos,
+                                    sourcePath->symbolLog.end());
   // New symbols.
   destinationPath->inputSymbols = basePath->inputSymbols;
   destinationPath->outputSymbols = basePath->outputSymbols;
-  for (; newSourceLog != sourcePath->symbolLog.end(); newSourceLog++) {
-    if ((*newSourceLog)->isInput()) {
-      destinationPath->inputSymbols[(*newSourceLog)->getQualifiedName()]
-          .push_back(*newSourceLog);
-    } else if ((*newSourceLog)->isOutput()) {
-      destinationPath->outputSymbols[(*newSourceLog)->getQualifiedName()]
-          .push_back(*newSourceLog);
+  for (unsigned long slit = newLogPos; slit < sourcePath->symbolLog.size();
+       slit++) {
+    if (sourcePath->symbolLog[slit]->isInput()) {
+      destinationPath
+          ->inputSymbols[sourcePath->symbolLog[slit]->getQualifiedName()]
+          .push_back(sourcePath->symbolLog[slit]);
+    } else if (sourcePath->symbolLog[slit]->isOutput()) {
+      destinationPath
+          ->outputSymbols[sourcePath->symbolLog[slit]->getQualifiedName()]
+          .push_back(sourcePath->symbolLog[slit]);
     } else {
       assert(false && "Symbol is neither input nor output.");
     }
@@ -277,6 +300,13 @@ int main(int argc, char **argv, char **envp) {
     std::string rValue = connection.substr(0, delim);
     std::string sValue = connection.substr(delim + 1);
     seedSymbolMappings[rValue] = sValue;
+  }
+
+  for (auto participantIP : ParticipantIP) {
+    auto delim = participantIP.find(':');
+    std::string participant = participantIP.substr(0, delim);
+    std::string ip = participantIP.substr(delim + 1);
+    participantIPs[participant].insert(ip);
   }
 
   SPA::Path *newPath;
