@@ -72,16 +72,12 @@ done
 
 # Generate bogus workload to fill up parallel input buffer.
 sleep 2
-for j in `seq -f %03.0f 1 32`; do
+for j in `seq -f %03.0f 1 112`; do
   for i in ${!OPTS[@]}; do
     touch $TMPDIR/$j-$i.paths
   done
 done
 
-trap 'kill $(jobs -p)' SIGINT
+trap 'kill $(jobs -p); echo "Cleaning up."; rm -rf $TMPDIR; echo "Done."' EXIT
+
 wait
-
-echo "Cleaning up."
-# rm -rf $TMPDIR
-
-echo "Done."
