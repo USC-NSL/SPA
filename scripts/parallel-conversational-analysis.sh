@@ -78,6 +78,6 @@ for j in `seq -f %03.0f 1 112`; do
   done
 done
 
-trap 'kill $(jobs -p); echo "Cleaning up."; rm -rf $TMPDIR; echo "Done."' EXIT
+trap "trap - SIGTERM && kill -- -$$; echo 'Cleaning up.'; rm -rf $TMPDIR; echo 'Done.'" SIGINT SIGTERM EXIT
 
 wait
