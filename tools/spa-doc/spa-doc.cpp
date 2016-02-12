@@ -70,6 +70,7 @@ typedef struct {
                         std::shared_ptr<SPA::Symbol> > > symbols;
 } message_t;
 
+std::set<SPA::Path *> allPaths;
 // uuid -> path
 std::map<std::string, SPA::Path *> pathsByUUID;
 // path -> path-id.
@@ -1109,68 +1110,85 @@ int main(int argc, char **argv, char **envp) {
   std::ifstream inFile(InFileName);
   assert(inFile.is_open() && "Unable to open input path-file.");
 
+  struct mg_mgr mgr;
+  if (ServeHttp > 0) {
+    klee::klee_message("Starting HTTP server on port %d.", (int) ServeHttp);
+    mg_mgr_init(&mgr, NULL);
+
+    struct mg_connection *nc =
+        mg_bind(&mgr, SPA::numToStr(ServeHttp).c_str(), mongoose_event_handler);
+    assert(nc && "Error binding mongoose HTTP server.");
+    mg_set_protocol_http_websocket(nc);
+  }
+
   klee::klee_message("Loading paths.");
-
-  std::set<SPA::Path *> allPaths;
-
-  {
-    std::unique_ptr<SPA::PathLoader> pathLoader(new SPA::PathLoader(inFile));
-    SPA::Path *path;
-    for (unsigned long pathID = 1; (path = pathLoader->getPath()); pathID++) {
-      klee::klee_message("  Loading path %ld.", pathID);
-      pathsByUUID[path->getUUID()] = path;
-      pathIDs[path] = pathID;
-      allPaths.insert(path);
-    }
-  }
-
-  for (auto path : pathIDs) {
-    klee::klee_message("  Processing path %ld (%s).", path.second,
-                       path.first->getUUID().c_str());
-
-    std::vector<std::string> participants;
-    for (auto pit : path.first->getParticipants()) {
-      participants.push_back(pit->getName());
-    }
-    conversations[participants].insert(path.first);
-
-    if (path.first->getParticipants().size() > 1) {
-      SPA::Path *parent =
-          pathsByUUID[path.first->getParticipants().rbegin()[1]->getPathUUID()];
-      SPA::Path *child =
-          pathsByUUID[path.first->getParticipants().back()->getPathUUID()];
-      childrenPaths[parent].insert(child);
-    }
-
-    for (auto fit : path.first->getExploredLineCoverage()) {
-      for (auto lit : fit.second) {
-        coverage[fit.first][lit.first][lit.second].insert(path.first);
-      }
-      if (!coverageIndexes.count(fit.first)) {
-        coverageIndexes[fit.first] =
-            "coverage-" + SPA::numToStr(coverageIndexes.size()) + ".html";
-      }
-    }
-
-    for (auto cfit : colorFilters) {
-      if (cfit.first->checkPath(*path.first)) {
-        pathColors[path.first].insert(cfit.second);
-      }
-    }
-    if (pathColors[path.first].empty()) {
-      pathColors[path.first].insert("white");
-    }
-  }
 
   files["style.css"] = generateCSS;
   files["index.html"] = generateConversationIndex;
   files["coverage.html"] = generateCoverageIndex;
-  files["paths.html"] = [ = ]() { return generatePathIndex(allPaths); }
+  files["paths.html"] = [&]() { return generatePathIndex(allPaths); }
   ;
-  for (auto cit : conversations) {
+
+  std::unique_ptr<SPA::PathLoader> pathLoader(new SPA::PathLoader(inFile));
+  SPA::Path *path;
+  unsigned long pathID = 1;
+  while ((path = pathLoader->getPath()) || ServeHttp > 0) {
+    if (!path) {
+      mg_mgr_poll(&mgr, 1000);
+      continue;
+    } else {
+      mg_mgr_poll(&mgr, 0);
+    }
+
+    klee::klee_message("  Loading path %ld (%s).", pathID,
+                       path->getUUID().c_str());
+    pathsByUUID[path->getUUID()] = path;
+    pathIDs[path] = pathID;
+    allPaths.insert(path);
+
+    if (path->getParticipants().size() > 1) {
+      childrenPaths[
+          pathsByUUID[path->getParticipants().rbegin()[1]->getPathUUID()]]
+          .insert(path);
+    }
+
+    for (auto cfit : colorFilters) {
+      if (cfit.first->checkPath(*path)) {
+        pathColors[path].insert(cfit.second);
+      }
+    }
+    if (pathColors[path].empty()) {
+      pathColors[path].insert("white");
+    }
+
+    files[path->getUUID() + ".html"] = [ = ]() {
+      return generatePathHTML(path);
+    }
+    ;
+
+    for (auto fit : path->getExploredLineCoverage()) {
+      for (auto lit : fit.second) {
+        coverage[fit.first][lit.first][lit.second].insert(path);
+      }
+      if (!coverageIndexes.count(fit.first)) {
+        std::string coverageIndex =
+            "coverage-" + SPA::numToStr(coverageIndexes.size()) + ".html";
+        coverageIndexes[fit.first] = coverageIndex;
+        files[coverageIndex] = [ = ]() {
+          return generateCoverageFile(fit.first);
+        }
+        ;
+      }
+    }
+
+    std::vector<std::string> participants;
+    for (auto pit : path->getParticipants()) {
+      participants.push_back(pit->getName());
+    }
+    conversations[participants].insert(path);
     std::set<SPA::Path *> fullConversation, worklist;
     // Add all parent paths to conversation.
-    worklist = cit.second;
+    worklist = conversations[participants];
     while (!worklist.empty()) {
       SPA::Path *path = *worklist.begin();
       worklist.erase(path);
@@ -1185,54 +1203,23 @@ int main(int argc, char **argv, char **envp) {
         }
       }
     }
+    conversationColors[participants]
+        .insert(pathColors[path].begin(), pathColors[path].end());
 
-    for (auto pit : cit.second) {
-      conversationColors[cit.first]
-          .insert(pathColors[pit].begin(), pathColors[pit].end());
-    }
-
-    files[SPA::strJoin(cit.first, "_") + ".html"] = [ = ]() {
+    files[SPA::strJoin(participants, "_") + ".html"] = [ = ]() {
       return generatePathIndex(fullConversation);
     }
     ;
+
+    pathID++;
   }
 
-  for (auto fit : coverageIndexes) {
-    files[fit.second] = [ = ]() { return generateCoverageFile(fit.first); }
-    ;
-  }
+  generateFiles();
 
-  {
-    for (auto path : pathsByUUID) {
-      files[path.first + ".html"] = [ = ]() {
-        return generatePathHTML(path.second);
-      }
-      ;
-    }
-  }
-
-  if (ServeHttp > 0) {
-    klee::klee_message("Starting HTTP server on port %d.", (int) ServeHttp);
-    struct mg_mgr mgr;
-    mg_mgr_init(&mgr, NULL);
-
-    struct mg_connection *nc =
-        mg_bind(&mgr, SPA::numToStr(ServeHttp).c_str(), mongoose_event_handler);
-    assert(nc && "Error binding mongoose HTTP server.");
-    mg_set_protocol_http_websocket(nc);
-
-    for (;;) {
-      mg_mgr_poll(&mgr, 1000);
-    }
-    mg_mgr_free(&mgr);
-  } else {
-    generateFiles();
-
-    // Wait for all children to finish.
-    while (wait(nullptr)) {
-      if (errno == ECHILD) {
-        break;
-      }
+  // Wait for all children to finish.
+  while (wait(nullptr)) {
+    if (errno == ECHILD) {
+      break;
     }
   }
 
