@@ -52,6 +52,8 @@ llvm::cl::opt<std::string> InFileName(llvm::cl::Positional, llvm::cl::Required,
                                       llvm::cl::desc("<input path-file>"));
 }
 
+#define DOT_CMD "unflatten | dot -Tsvg"
+
 typedef struct {
   std::string name;
   std::set<std::string> bindings;
@@ -238,9 +240,9 @@ std::string generatePathIndex(std::set<SPA::Path *> paths,
          "      <a href=\"index.html\">All Conversations</a>\n"
          "      <a href=\"paths.html\">All Paths</a>\n"
          "      <a href=\"coverage.html\">Coverage</a>\n"
-         "    </div>\n" + SPA::runCommand("dot -Tsvg", dot) + "\n"
-                                                              "  </body>\n"
-                                                              "</html>\n";
+         "    </div>\n" + SPA::runCommand(DOT_CMD, dot) + "\n"
+                                                          "  </body>\n"
+                                                          "</html>\n";
 }
 
 std::string generatePathHTML(SPA::Path *path) {
@@ -512,7 +514,7 @@ std::string generatePathHTML(SPA::Path *path) {
       "    <h2>Path Meta-data</h2>\n"
       "    <b>UUID:</b> " + path->getUUID() + "<br /><br />\n";
   htmlFile += "    <b>Lineage:</b><br />\n" +
-              SPA::runCommand("dot -Tsvg", lineageDot) + "\n";
+              SPA::runCommand(DOT_CMD, lineageDot) + "\n";
   htmlFile += "    <br /><br />\n"
               "    <b>Conversation:</b><br />\n"
               "    <ol>\n";
@@ -530,16 +532,16 @@ std::string generatePathHTML(SPA::Path *path) {
     htmlFile +=
         "      <tr><td>" + it.first + "</td><td>" + it.second + "</td></tr>\n";
   }
-  htmlFile += "    </table><br />\n"
-              "    <a class='anchor' id='messages'></a>\n"
-              "    <h2>Message Log</h2>\n" +
-              SPA::runCommand("dot -Tsvg", messageLogDot) +
-              "\n"
-              "    <a class='anchor' id='constraints'></a>\n"
-              "    <h2>Symbolic Constraint</h2>\n"
-              "    <b>Input Symbols:</b><br />\n"
-              "    <table border='1'>\n"
-              "      <tr><th>Name</th><th>Instances</th></tr>\n";
+  htmlFile +=
+      "    </table><br />\n"
+      "    <a class='anchor' id='messages'></a>\n"
+      "    <h2>Message Log</h2>\n" + SPA::runCommand(DOT_CMD, messageLogDot) +
+      "\n"
+      "    <a class='anchor' id='constraints'></a>\n"
+      "    <h2>Symbolic Constraint</h2>\n"
+      "    <b>Input Symbols:</b><br />\n"
+      "    <table border='1'>\n"
+      "      <tr><th>Name</th><th>Instances</th></tr>\n";
   for (auto it : path->getInputSymbols()) {
     htmlFile += "      <tr>\n"
                 "        <td>" + it.first + "</td>\n"
@@ -913,7 +915,7 @@ std::string generateConversationIndex() {
       SPA::numToStr(numDerived) + " derived and " +
       SPA::numToStr(pathsByUUID.size() - numDerived) + " explored), in " +
       SPA::numToStr(conversations.size()) + " conversations.<br />\n" +
-      SPA::runCommand("dot -Tsvg", conversationsDot) + "\n";
+      SPA::runCommand(DOT_CMD, conversationsDot) + "\n";
   conversationIndex += "  </body>\n"
                        "</html>\n";
   return conversationIndex;
