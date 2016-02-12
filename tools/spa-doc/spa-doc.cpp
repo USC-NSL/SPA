@@ -177,11 +177,13 @@ std::string escapeChar(unsigned char c) {
   return std::string("&#") + SPA::numToStr((int) c) + ";";
 }
 
-std::string generatePathIndex(std::set<SPA::Path *> paths) {
-  klee::klee_message("Processing path index.");
-
+std::string generatePathDot(std::set<SPA::Path *> paths,
+                            std::set<SPA::Path *> selectedPaths =
+                                std::set<SPA::Path *>(),
+                            std::string direction = "TB") {
   std::string dot = "digraph G {\n"
-                    "  root [label=\"Path 0\"]\n";
+                    "  rankdir = \"" + direction + "\"\n";
+  dot += "  root [label=\"Path 0\"]\n";
 
   for (auto it : paths) {
     std::string pathID = SPA::numToStr(pathIDs[it]);
@@ -191,7 +193,8 @@ std::string generatePathIndex(std::set<SPA::Path *> paths) {
            it->getParticipants().back()->getName() + "\" tooltip=\"" +
            it->getUUID() + "\" URL=\"" + it->getUUID() + ".html\" style=\"" +
            (colors.size() > 1 ? "wedged" : "filled") + "\" fillcolor=\"" +
-           SPA::strJoin(colors, ":") + "\"]\n";
+           SPA::strJoin(colors, ":") + "\" penwidth=\"" +
+           (selectedPaths.count(it) ? "3" : "1") + "\"]\n";
 
     if (it->getParticipants().size() > 1) {
       dot +=
@@ -211,6 +214,16 @@ std::string generatePathIndex(std::set<SPA::Path *> paths) {
     }
   }
   dot += "}\n";
+
+  return dot;
+}
+
+std::string generatePathIndex(std::set<SPA::Path *> paths,
+                              std::set<SPA::Path *> selectedPaths =
+                                  std::set<SPA::Path *>()) {
+  klee::klee_message("Processing path index.");
+
+  std::string dot = generatePathDot(paths, selectedPaths);
 
   return "<!doctype html>\n"
          "<html lang=\"en\">\n"
@@ -425,29 +438,54 @@ std::string generatePathHTML(SPA::Path *path) {
     }
   }
 
-  std::string dot = "digraph G {\n";
+  std::string messageLogDot = "digraph G {\n";
   for (auto pit : participantByName) {
     std::string participantToken = sanitizeToken(pit.first);
     if (pit.first.compare(0, strlen(API_PREFIX), API_PREFIX) == 0) {
-      dot += "  " + participantToken + " [style=\"invis\"]\n";
+      messageLogDot += "  " + participantToken + " [style=\"invis\"]\n";
     } else {
-      dot += "  " + participantToken + " [label=\"" + pit.first + "\\n";
+      messageLogDot +=
+          "  " + participantToken + " [label=\"" + pit.first + "\\n";
       for (auto bit : pit.second->bindings) {
-        dot += bit + "\\n";
+        messageLogDot += bit + "\\n";
       }
-      dot += "\"]\n";
+      messageLogDot += "\"]\n";
     }
   }
 
   for (unsigned mi = 0; mi < messages.size(); mi++) {
     std::string messageLabel = SPA::numToStr(mi + 1);
-    dot += "  " + sanitizeToken(messages[mi]->fromParticipant->name) + " -> " +
-           sanitizeToken(messages[mi]->toParticipant->name) + "[label=\"" +
-           messageLabel + "\" arrowhead=\"" +
-           (checkMessageReceived(messages[mi]) ? "normal" : "dot") +
-           "\" href=\"#msg" + messageLabel + "\"]\n";
+    messageLogDot += "  " + sanitizeToken(messages[mi]->fromParticipant->name) +
+                     " -> " + sanitizeToken(messages[mi]->toParticipant->name) +
+                     "[label=\"" + messageLabel + "\" arrowhead=\"" +
+                     (checkMessageReceived(messages[mi]) ? "normal" : "dot") +
+                     "\" href=\"#msg" + messageLabel + "\"]\n";
   }
-  dot += "}\n";
+  messageLogDot += "}\n";
+
+  std::set<SPA::Path *> fullConversation, worklist;
+  // Show entire conversation up to the children of the current path.
+  worklist = childrenPaths[path];
+  worklist.insert(path);
+  while (!worklist.empty()) {
+    SPA::Path *path = *worklist.begin();
+    worklist.erase(path);
+    if (path && !fullConversation.count(path)) {
+      fullConversation.insert(path);
+      if (path->getParticipants().size() > 1) {
+        worklist.insert(
+            pathsByUUID[path->getParticipants().rbegin()[1]->getPathUUID()]);
+      }
+      if (!path->getDerivedFromUUID().empty()) {
+        worklist.insert(pathsByUUID[path->getDerivedFromUUID()]);
+      }
+    }
+  }
+  std::string lineageDot =
+      generatePathDot(fullConversation, std::set<SPA::Path *>({
+    path
+  }),
+                      "LR");
 
   std::string htmlFile =
       "<!doctype html>\n"
@@ -472,29 +510,16 @@ std::string generatePathHTML(SPA::Path *path) {
       "</h1>\n"
       "    <h2>Path Meta-data</h2>\n"
       "    <b>UUID:</b> " + path->getUUID() + "<br /><br />\n";
-  htmlFile += "    <b>Lineage:</b><br />\n"
+  htmlFile += "    <b>Lineage:</b><br />\n" +
+              SPA::runCommand("dot -Tsvg", lineageDot) + "\n";
+  htmlFile += "    <br /><br />\n"
+              "    <b>Conversation:</b><br />\n"
               "    <ol>\n";
   std::vector<std::string> conversation;
   for (auto it : path->getParticipants()) {
     conversation.push_back(it->getName());
-    htmlFile +=
-        "    <li><a href='" + it->getPathUUID() + ".html'>" + it->getName() +
-        "</a> (<a href='" + SPA::strJoin(conversation, "_") +
-        ".html'>conversation</a>)</li>\n";
-  }
-  htmlFile += "    </ol><br />\n";
-  if (!path->getDerivedFromUUID().empty()) {
-    htmlFile +=
-        "    <b>Derived From:</b> <a href='" + path->getDerivedFromUUID() +
-        ".html'>" + pathsByUUID[path->getDerivedFromUUID()]
-                        ->getParticipants().back()->getName() +
-        "</a><br /><br />\n";
-  }
-  htmlFile += "    <b>Children:</b><br />\n"
-              "    <ol>\n";
-  for (auto it : childrenPaths[path]) {
-    htmlFile += "    <li><a href='" + it->getUUID() + ".html'>" +
-                it->getParticipants().back()->getName() + "</a></li>\n";
+    htmlFile += "    <li><a href='" + SPA::strJoin(conversation, "_") +
+                ".html'>" + it->getName() + "</a></li>\n";
   }
   htmlFile += "    </ol><br />\n"
               "    <b>Tags:</b><br />\n"
@@ -506,7 +531,8 @@ std::string generatePathHTML(SPA::Path *path) {
   }
   htmlFile += "    </table><br />\n"
               "    <a class='anchor' id='messages'></a>\n"
-              "    <h2>Message Log</h2>\n" + SPA::runCommand("dot -Tsvg", dot) +
+              "    <h2>Message Log</h2>\n" +
+              SPA::runCommand("dot -Tsvg", messageLogDot) +
               "\n"
               "    <a class='anchor' id='constraints'></a>\n"
               "    <h2>Symbolic Constraint</h2>\n"
@@ -1156,16 +1182,6 @@ int main(int argc, char **argv, char **envp) {
         }
         if (!path->getDerivedFromUUID().empty()) {
           worklist.insert(pathsByUUID[path->getDerivedFromUUID()]);
-        }
-      }
-    }
-    for (auto pit : cit.second) {
-      SPA::Path *path = pit;
-      while (!fullConversation.count(path)) {
-        fullConversation.insert(path);
-        if (path->getParticipants().size() > 1) {
-          path =
-              pathsByUUID[path->getParticipants().rbegin()[1]->getPathUUID()];
         }
       }
     }
