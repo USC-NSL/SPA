@@ -93,6 +93,12 @@ llvm::cl::opt<bool> OutputLogExhausted(
 llvm::cl::list<std::string>
     OutputAt("output-at", llvm::cl::desc("Code-points to output paths at."));
 
+llvm::cl::opt<std::string> InputFilter(
+    "filter-input",
+    llvm::cl::desc(
+        "Conditions that paths must meet to be loaded for joint symbolic "
+        "execution. Equivalent to using spa-filter before input."));
+
 llvm::cl::opt<std::string> OutputFilter(
     "filter-output",
     llvm::cl::desc("Conditions that paths must meet to be outputted. "
@@ -153,8 +159,16 @@ int main(int argc, char **argv, char **envp) {
     klee::klee_message("   Seeding paths from path-file: %s", InPaths.c_str());
     ifs.open(InPaths);
     assert(ifs.good() && "Unable to open input path file.");
-    spa.setSenderPathLoader(new SPA::PathLoader(ifs, !DontLoadEmptyPath),
-                            FollowInPaths);
+    SPA::PathLoader *pathLoader = new SPA::PathLoader(ifs, !DontLoadEmptyPath);
+
+    if (!InputFilter.empty()) {
+      SPA::FilterExpression *filter = SPA::FilterExpression::parse(InputFilter);
+      assert(filter && "Invalid input filter expression.");
+
+      pathLoader->setFilter(filter);
+    }
+
+    spa.setSenderPathLoader(pathLoader, FollowInPaths);
   }
 
   for (auto connection : Connect) {
@@ -252,7 +266,7 @@ int main(int argc, char **argv, char **envp) {
 
   if (!OutputFilter.empty()) {
     SPA::FilterExpression *filter = SPA::FilterExpression::parse(OutputFilter);
-    assert(filter && "Invalid filter expression.");
+    assert(filter && "Invalid output filter expression.");
 
     spa.setPathFilter(filter);
   }
