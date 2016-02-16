@@ -2,7 +2,10 @@
 
 set -e
 
+TARGET_CONVERSATION="kv-client kv-server-1 kv-server-2 kv-server-3 kv-client"
+
 rm -f kv.paths
+touch kv.paths
 
 # gdb --args \
 spa-explore \
@@ -14,6 +17,7 @@ spa-explore \
     --connect-sockets \
     --start-from spa_entry \
     --toward kv_done \
+    --towards-conversation "$TARGET_CONVERSATION" \
     --output-at spa_msg_no_input_point \
     --output-at kv_done \
     --participant kv-client \
@@ -31,6 +35,7 @@ spa-explore \
     --connect-sockets \
     --start-from spa_entry1 \
     --toward spa_msg_no_input_point \
+    --towards-conversation "$TARGET_CONVERSATION" \
     --output-at spa_msg_no_input_point \
     --participant kv-server-1 \
     --ip 127.0.0.2 \
@@ -47,6 +52,7 @@ spa-explore \
     --connect-sockets \
     --start-from spa_entry2 \
     --toward spa_msg_no_input_point \
+    --towards-conversation "$TARGET_CONVERSATION" \
     --output-at spa_msg_no_input_point \
     --participant kv-server-2 \
     --ip 127.0.0.3 \
@@ -63,6 +69,7 @@ spa-explore \
     --connect-sockets \
     --start-from spa_entry3 \
     --toward spa_msg_no_input_point \
+    --towards-conversation "$TARGET_CONVERSATION" \
     --output-at spa_msg_no_input_point \
     --participant kv-server-3 \
     --ip 127.0.0.4 \
