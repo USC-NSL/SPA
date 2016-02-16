@@ -22,6 +22,7 @@
 #include "spa/AstarUtility.h"
 #include "spa/FilteredUtility.h"
 #include "spa/JSEUtility.h"
+#include "spa/ConversationUtility.h"
 #include "spa/SenderLogDepthUtility.h"
 #include "spa/SymbolLogDepthUtility.h"
 #include "spa/FilterExpression.h"
@@ -76,6 +77,11 @@ llvm::cl::list<std::string>
 llvm::cl::list<std::string>
     AwayFrom("away-from",
              llvm::cl::desc("Code-points to direct execution away from."));
+
+llvm::cl::list<std::string> TowardsConversation(
+    "towards-conversation",
+    llvm::cl::desc("Space delimited list of participants defining a "
+                   "conversation to direct exploration towards."));
 
 llvm::cl::opt<bool>
     OutputTerminal("output-terminal", llvm::cl::init(false),
@@ -215,8 +221,22 @@ int main(int argc, char **argv, char **envp) {
         new SPA::NegatedIF(new SPA::CFGBackwardIF(cfg, cg, dbgInsts)));
   }
 
+  std::set<std::vector<std::string> > targetConversations;
+  for (auto towardsConversation : TowardsConversation) {
+    klee::klee_message("      Directing towards conversation: %s",
+                       towardsConversation.c_str());
+    std::stringstream ss(towardsConversation);
+    std::istream_iterator<std::string> begin(ss), end;
+    std::vector<std::string> conversation(begin, end);
+    targetConversations.insert(conversation);
+  }
+
   spa.addStateUtilityBack(new SPA::FilteredUtility(), false);
   spa.addStateUtilityBack(new SPA::JSEUtility(), false);
+  if (!targetConversations.empty()) {
+    spa.addStateUtilityBack(new SPA::ConversationUtility(targetConversations),
+                            false);
+  }
   spa.addStateUtilityBack(new SPA::SenderLogDepthUtility(), false);
   spa.addStateUtilityBack(new SPA::SymbolLogDepthUtility(), false);
 
