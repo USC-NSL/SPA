@@ -1149,6 +1149,8 @@ int main(int argc, char **argv, char **envp) {
     allPaths.insert(path);
 
     if (path->getParticipants().size() > 1) {
+      assert(pathsByUUID.count(path->getParticipants().rbegin()[1]
+                                   ->getPathUUID()) && "Unknown parent path.");
       childrenPaths[
           pathsByUUID[path->getParticipants().rbegin()[1]->getPathUUID()]]
           .insert(path);
@@ -1201,6 +1203,8 @@ int main(int argc, char **argv, char **envp) {
               pathsByUUID[path->getParticipants().rbegin()[1]->getPathUUID()]);
         }
         if (!path->getDerivedFromUUID().empty()) {
+          assert(pathsByUUID.count(path->getDerivedFromUUID()) &&
+                 "Path derived from unknown source.");
           worklist.insert(pathsByUUID[path->getDerivedFromUUID()]);
         }
       }
