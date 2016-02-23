@@ -24,7 +24,7 @@ int main(int argc, char **argv, char **envp) {
     inputs.insert(new SPA::PathLoader(*ifs));
   }
 
-  std::ofstream output(argv[argc - 1]);
+  std::ofstream output(argv[argc - 1], std::ofstream::out | std::ofstream::app);
   assert(output.good() && "Unable to open output path-file.");
 
   unsigned long pathCount = 0;
