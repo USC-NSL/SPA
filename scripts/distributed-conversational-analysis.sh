@@ -41,7 +41,8 @@ function mkSenderFile() {
   tail -f $LOCAL_WORK_DIR/$SEND_FILE \
       2>/dev/null \
       | ssh -tt $MACHINE \
-            "cat > $REMOTE_WORK_DIR/$SEND_FILE" \
+            "/bin/bash -O huponexit -c \
+                     'cat > $REMOTE_WORK_DIR/$SEND_FILE'" \
       >/dev/null &
 }
 
@@ -53,7 +54,8 @@ function mkReceiverFile() {
       "rm -f $REMOTE_WORK_DIR/$RECEIVE_FILE; \
       touch $REMOTE_WORK_DIR/$RECEIVE_FILE"
   ssh -tt $MACHINE \
-      "tail -f $REMOTE_WORK_DIR/$RECEIVE_FILE 2>/dev/null" \
+      "/bin/bash -O huponexit -c \
+               'tail -f $REMOTE_WORK_DIR/$RECEIVE_FILE 2>/dev/null'" \
       > $LOCAL_WORK_DIR/$RECEIVE_FILE &
 }
 
@@ -85,22 +87,23 @@ for MACHINE in $MACHINES; do \
   echo "Running $NUM_CORES jobs on $MACHINE."
 
   for i in $(seq 1 $NUM_CORES); do \
+    NUM_JOBS=$((NUM_JOBS + 1))
+
     mkSenderFile $MACHINE $NUM_JOBS.paths
 
     for PARTICIPANT in $(seq 0 $((NUM_PARTICIPANTS - 1))); do \
       mkReceiverFile $MACHINE $NUM_JOBS-$PARTICIPANT-result.paths
       RESULT_FILES="$RESULT_FILES $LOCAL_WORK_DIR/$NUM_JOBS-$PARTICIPANT-result.paths"
       ssh -tt $MACHINE \
-          "spa/Release+Asserts/bin/spa-explore \
-            --in-paths $REMOTE_WORK_DIR/$NUM_JOBS.paths \
-            --dont-load-empty-path \
-            --follow-in-paths \
-            --out-paths $REMOTE_WORK_DIR/$NUM_JOBS-$PARTICIPANT-result.paths \
-            ${OPTS[PARTICIPANT]}" \
-            > $LOCAL_WORK_DIR/$NUM_JOBS-$PARTICIPANT.log 2>&1 &
+          "/bin/bash -O huponexit -c \
+                   'spa/Release+Asserts/bin/spa-explore \
+                      --in-paths $REMOTE_WORK_DIR/$NUM_JOBS.paths \
+                      --dont-load-empty-path \
+                      --follow-in-paths \
+                      --out-paths $REMOTE_WORK_DIR/$NUM_JOBS-$PARTICIPANT-result.paths \
+                      ${OPTS[PARTICIPANT]}'" \
+          > $LOCAL_WORK_DIR/$NUM_JOBS-$PARTICIPANT.log 2>&1 &
     done
-
-    NUM_JOBS=$((NUM_JOBS + 1))
   done
 done
 echo "Running a total of $((NUM_JOBS * NUM_PARTICIPANTS)) tasks across all machines."
@@ -118,10 +121,11 @@ for PARTICIPANT in $(seq 0 $((NUM_PARTICIPANTS - 1))); do \
   mkReceiverFile $INITIAL_MACHINE root-$PARTICIPANT-result.paths
   RESULT_FILES="$RESULT_FILES $LOCAL_WORK_DIR/root-$PARTICIPANT-result.paths"
   ssh -tt $INITIAL_MACHINE \
-      "spa/Release+Asserts/bin/spa-explore \
-        --in-paths /dev/null \
-        --out-paths $REMOTE_WORK_DIR/root-$PARTICIPANT-result.paths \
-        ${OPTS[PARTICIPANT]}" \
+      "/bin/bash -O huponexit -c \
+               'spa/Release+Asserts/bin/spa-explore \
+                  --in-paths /dev/null \
+                  --out-paths $REMOTE_WORK_DIR/root-$PARTICIPANT-result.paths \
+                  ${OPTS[PARTICIPANT]}'" \
         > $LOCAL_WORK_DIR/root-$PARTICIPANT.log 2>&1 &
 done
 
@@ -156,7 +160,7 @@ while true; do \
     NO_ACTIVITY_COUNT=0
   fi
 
-  if [ "$NO_ACTIVITY_COUNT" -ge "3" ]; then
+  if [ "$NO_ACTIVITY_COUNT" -ge "5" ]; then
     break
   fi
 
