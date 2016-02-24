@@ -19,7 +19,8 @@ echo "Launching conversation exploration."
 spa-explore-conversation \
     --connect-sockets \
     --follow-in-paths \
-    kv.paths >/dev/null 2>&1 &
+    kv.paths \
+    >derived.log 2>&1 &
 
 echo "Follow analysis progress on: http://localhost:8000/"
 spa-doc --serve-http 8000 \
@@ -29,7 +30,5 @@ spa-doc --serve-http 8000 \
     kv.paths &
 
 wait $SPA_PID
-
 echo "Analysis is complete. Ctrl-C when ready."
-
 wait
