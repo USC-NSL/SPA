@@ -37,6 +37,7 @@ FilterExpression *parseBinaryFE(std::string str, std::string op);
 FilterExpression *parseNotFE(std::string str);
 FilterExpression *parseConstFE(std::string str);
 FilterExpression *parseReachedFE(std::string str);
+FilterExpression *parseConversationFE(std::string str);
 
 FilterExpression *FilterExpression::parse(std::string str) {
   // Trim
@@ -55,6 +56,8 @@ FilterExpression *FilterExpression::parse(std::string str) {
   if ((result = parseConstFE(str)))
     return result;
   if ((result = parseReachedFE(str)))
+    return result;
+  if ((result = parseConversationFE(str)))
     return result;
   return NULL;
 }
@@ -105,5 +108,11 @@ FilterExpression *parseReachedFE(std::string str) {
   if (str.substr(0, strlen(REACHED)) != REACHED)
     return NULL;
   return new ReachedFE(str.substr(strlen(REACHED)));
+}
+
+FilterExpression *parseConversationFE(std::string str) {
+  if (str.substr(0, strlen(CONVERSATION)) != CONVERSATION)
+    return NULL;
+  return new ConversationFE(str.substr(strlen(CONVERSATION)));
 }
 }
