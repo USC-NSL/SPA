@@ -12,16 +12,28 @@
 
 #define FOLLOW_WAIT_S 1
 
+std::string getPathFromFile(std::string fileName, SPA::PathLoaderPosition &p) {
+  std::ifstream ifs(fileName);
+  assert(ifs.good() && "Unable to open input path-file.");
+  std::unique_ptr<SPA::PathLoader> pathLoader(new SPA::PathLoader(ifs));
+  if (p.filePosition) {
+    pathLoader->load(p);
+  }
+  std::string path = pathLoader->getPathText();
+  p = pathLoader->save();
+  ifs.close();
+  return path;
+}
+
 int main(int argc, char **argv, char **envp) {
   assert(argc > 1 && "Insufficient arguments.");
   bool followInputs = (strcmp(argv[1], "-f") == 0);
   assert(argc > (followInputs ? 3 : 2) && "Insufficient arguments.");
 
-  std::set<SPA::PathLoader *> inputs;
+  // {<file name, position>}
+  std::set<std::pair<std::string, SPA::PathLoaderPosition *> > inputs;
   for (int i = (followInputs ? 2 : 1); i < argc - 1; i++) {
-    std::ifstream *ifs = new std::ifstream(argv[i]);
-    assert(ifs->good() && "Unable to open input path-file.");
-    inputs.insert(new SPA::PathLoader(*ifs));
+    inputs.insert(std::make_pair(argv[i], new SPA::PathLoaderPosition));
   }
 
   std::ofstream output(argv[argc - 1], std::ofstream::out | std::ofstream::app);
@@ -32,7 +44,7 @@ int main(int argc, char **argv, char **envp) {
   do {
     foundPath = false;
     for (auto iit : inputs) {
-      std::string p = iit->getPathText();
+      std::string p = getPathFromFile(iit.first, *iit.second);
       if (p.empty()) {
         continue;
       } else {
