@@ -26,7 +26,14 @@ done
 declare -A MACHINE_CORES
 function getCoresForMachine() {
   if [ ! ${MACHINE_CORES["$1"]} ]; then
-    MACHINE_CORES["$1"]=$(ssh "$1" 'grep -c processor /proc/cpuinfo')
+    if [ $(cat ~/.parallel/sshloginfile \
+               | egrep "^[[:space:]]*[0-9]+/$1") ]; then
+      MACHINE_CORES["$1"]=$(cat ~/.parallel/sshloginfile \
+                                | egrep "^[[:space:]]*[0-9]+/$1" \
+                                | sed -re 's#^[[:space:]]*([0-9]*)/.*#\1#')
+    else
+      MACHINE_CORES["$1"]=$(ssh "$1" 'grep -c processor /proc/cpuinfo')
+    fi
   fi
 
   echo ${MACHINE_CORES["$1"]}
@@ -38,9 +45,10 @@ function mkSenderFile() {
 
   rm -f $LOCAL_WORK_DIR/$SEND_FILE
   touch $LOCAL_WORK_DIR/$SEND_FILE
+  ssh $MACHINE "touch $REMOTE_WORK_DIR/$SEND_FILE"
   tail -f $LOCAL_WORK_DIR/$SEND_FILE \
       2>/dev/null \
-      | ssh -tt $MACHINE \
+      | ssh $MACHINE \
             "/bin/bash -O huponexit -c \
                      'cat > $REMOTE_WORK_DIR/$SEND_FILE'" \
       >/dev/null &
@@ -53,7 +61,7 @@ function mkReceiverFile() {
   ssh $MACHINE \
       "rm -f $REMOTE_WORK_DIR/$RECEIVE_FILE; \
       touch $REMOTE_WORK_DIR/$RECEIVE_FILE"
-  ssh -tt $MACHINE \
+  ssh -n $MACHINE \
       "/bin/bash -O huponexit -c \
                'tail -f $REMOTE_WORK_DIR/$RECEIVE_FILE 2>/dev/null'" \
       > $LOCAL_WORK_DIR/$RECEIVE_FILE &
@@ -61,7 +69,9 @@ function mkReceiverFile() {
 
 MACHINES=$(cat ~/.parallel/sshloginfile \
                | egrep '^[[:space:]]*[^#]+' \
-               | sed -re 's/^\s*([^#]+).*$/\1/')
+               | sed -re 's/^\s*([0-9]+\/)?([^#]+).*$/\2/' \
+               | tr '\n' ' ')
+echo "Running workload on $MACHINES"
 
 echo "Setting up work environment."
 LOCAL_WORK_DIR="$(mktemp -d)"
@@ -74,12 +84,10 @@ for PARTICIPANT in $(seq 0 $((NUM_PARTICIPANTS - 1))); do \
   rm -f participant-$PARTICIPANT.log
 done
 
-trap "echo 'Cleaning up.'; \
-      rm -rf $LOCAL_WORK_DIR; \
-      for MACHINE in $MACHINES; do \
-        ssh $MACHINE 'rm -rf $REMOTE_WORK_DIR'; \
-      done; \
-      echo 'Done.'; \
+trap "echo 'Cleaning up.';
+      rm -rf $LOCAL_WORK_DIR;
+      parallel ssh {} 'rm -rf $REMOTE_WORK_DIR' ::: $MACHINES;
+      echo 'Done.';
       trap - SIGTERM && kill -- -$$ 2>/dev/null" SIGINT SIGTERM EXIT
 
 echo "Starting long term jobs."
@@ -97,7 +105,7 @@ for MACHINE in $MACHINES; do \
     for PARTICIPANT in $(seq 0 $((NUM_PARTICIPANTS - 1))); do \
       mkReceiverFile $MACHINE $NUM_JOBS-$PARTICIPANT-result.paths
       RESULT_FILES="$RESULT_FILES $LOCAL_WORK_DIR/$NUM_JOBS-$PARTICIPANT-result.paths"
-      echo "[Job $NUM_JOBS] Running: ssh -tt $MACHINE" \
+      echo "[Job $NUM_JOBS] Running: ssh -n $MACHINE" \
             "/bin/bash -O huponexit -c" \
                      "'spa/Release+Asserts/bin/spa-explore" \
                      "--in-paths $REMOTE_WORK_DIR/$NUM_JOBS.paths" \
@@ -106,7 +114,7 @@ for MACHINE in $MACHINES; do \
                      "--out-paths $REMOTE_WORK_DIR/$NUM_JOBS-$PARTICIPANT-result.paths" \
                      "${OPTS[PARTICIPANT]}'" \
            >> participant-$PARTICIPANT.log
-      ssh -tt $MACHINE \
+      ssh -n $MACHINE \
           "/bin/bash -O huponexit -c \
                    'spa/Release+Asserts/bin/spa-explore \
                       --in-paths $REMOTE_WORK_DIR/$NUM_JOBS.paths \
@@ -129,24 +137,26 @@ spaSplitPaths \
     -n $NUM_JOBS \
     > $LOCAL_WORK_DIR/spaSplitPaths.log 2>&1 &
 
-INITIAL_MACHINE=$(echo "$MACHINES" | head -n 1)
+INITIAL_MACHINE=$(echo "$MACHINES" | awk '{print $1}')
 echo "Starting initial jobs on $INITIAL_MACHINE."
 for PARTICIPANT in $(seq 0 $((NUM_PARTICIPANTS - 1))); do \
   mkReceiverFile $INITIAL_MACHINE root-$PARTICIPANT-result.paths
   RESULT_FILES="$RESULT_FILES $LOCAL_WORK_DIR/root-$PARTICIPANT-result.paths"
-  echo "[Job root] Running: ssh -tt $INITIAL_MACHINE" \
+  echo "[Job root] Running: ssh -n" \
+                    "$INITIAL_MACHINE" \
                     "/bin/bash -O huponexit -c" \
                     "'spa/Release+Asserts/bin/spa-explore" \
                     "--in-paths /dev/null" \
                     "--out-paths $REMOTE_WORK_DIR/root-$PARTICIPANT-result.paths" \
                     "${OPTS[PARTICIPANT]}'" \
        >> participant-$PARTICIPANT.log
-  ssh -tt $INITIAL_MACHINE \
+  ssh -n $INITIAL_MACHINE \
       "/bin/bash -O huponexit -c \
                'spa/Release+Asserts/bin/spa-explore \
                   --in-paths /dev/null \
                   --out-paths $REMOTE_WORK_DIR/root-$PARTICIPANT-result.paths \
-                  ${OPTS[PARTICIPANT]}'" \
+                  ${OPTS[PARTICIPANT]}; \
+                echo --- Done ---'" \
         2>&1 | tee $LOCAL_WORK_DIR/root-$PARTICIPANT.log \
         | awk '{print "[Job root] " $0}' \
         >> participant-$PARTICIPANT.log &
@@ -181,6 +191,7 @@ while true; do \
                 | egrep -v \
 '(==> .*\.log <==)'\
 '|(^$)'\
+'|(^.*--- Done ---.*$)'\
 '|(KLEE: \[spa_load_path\]     Path .* not yet available\. Waiting\.)'\
 '|(Connection to .* closed\.)')" ]; then
     NO_ACTIVITY_COUNT=$((NO_ACTIVITY_COUNT + 1))
