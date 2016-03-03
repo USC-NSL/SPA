@@ -236,14 +236,16 @@ echo "Starting initial jobs on $INITIAL_MACHINE."
 for PARTICIPANT in $(seq 0 $((NUM_PARTICIPANTS - 1))); do
   mkReceiverFile $INITIAL_MACHINE root-$PARTICIPANT-result.paths
   RESULT_FILES="$RESULT_FILES $LOCAL_WORK_DIR/root-$PARTICIPANT-result.paths"
-  ssh -n $INITIAL_MACHINE \
+  touch $LOCAL_WORK_DIR/running/root-$PARTICIPANT.paths
+  (ssh -n $INITIAL_MACHINE \
       "/bin/bash -O huponexit -c \
                'spa/Release+Asserts/bin/spa-explore \
                   --in-paths /dev/null \
                   --out-paths $REMOTE_WORK_DIR/root-$PARTICIPANT-result.paths \
                   ${OPTS[PARTICIPANT]}; \
                 echo --- Done ---'" \
-        2>&1 | awk "{print \"[root-$PARTICIPANT] \" \$0}" >> $PATH_FILE.log &
+        2>&1 | awk "{print \"[root-$PARTICIPANT] \" \$0}" >> $PATH_FILE.log;
+  rm $LOCAL_WORK_DIR/running/root-$PARTICIPANT.paths) &
 done
 
 echo "Starting path collection."
