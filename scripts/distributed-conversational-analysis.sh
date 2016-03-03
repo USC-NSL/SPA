@@ -4,15 +4,18 @@ set -e
 
 PATH_FILE="$1"
 IFS=';' read -ra OPTS <<< "$2"
-
-rm -f $PATH_FILE
-touch $PATH_FILE
+IFS=';' read -ra TARGET_CONVERSATIONS <<< "$3"
 
 NUM_PARTICIPANTS=$(echo ${!OPTS[@]} | wc -w)
+NUM_TARGET_CONVERSATIONS=$(echo ${!TARGET_CONVERSATIONS[@]} | wc -w)
+
+rm -f $PATH_FILE $PATH_FILE.log
+touch $PATH_FILE
+
 echo "Starting conversational analysis with $NUM_PARTICIPANTS participants."
 echo "Conversation recorded to $PATH_FILE.paths"
 
-for i in $(seq 1 $NUM_PARTICIPANTS); do
+for i in $(seq 0 $((NUM_PARTICIPANTS - 1))); do
   echo "Participant $i analyzed with equivalent of:"
   echo "  spa-explore \\"
   echo "      --in-paths $PATH_FILE \\"
@@ -39,25 +42,11 @@ function getCoresForMachine() {
   echo ${MACHINE_CORES["$1"]}
 }
 
-function mkSenderFile() {
-  MACHINE="$1"
-  SEND_FILE="$2"
-
-  rm -f $LOCAL_WORK_DIR/$SEND_FILE
-  touch $LOCAL_WORK_DIR/$SEND_FILE
-  ssh $MACHINE "touch $REMOTE_WORK_DIR/$SEND_FILE"
-  tail -f $LOCAL_WORK_DIR/$SEND_FILE \
-      2>/dev/null \
-      | ssh $MACHINE \
-            "/bin/bash -O huponexit -c \
-                     'cat > $REMOTE_WORK_DIR/$SEND_FILE'" \
-      >/dev/null &
-}
-
 function mkReceiverFile() {
   MACHINE="$1"
   RECEIVE_FILE="$2"
 
+  touch $LOCAL_WORK_DIR/$RECEIVE_FILE
   ssh $MACHINE \
       "rm -f $REMOTE_WORK_DIR/$RECEIVE_FILE; \
       touch $REMOTE_WORK_DIR/$RECEIVE_FILE"
@@ -67,21 +56,126 @@ function mkReceiverFile() {
       > $LOCAL_WORK_DIR/$RECEIVE_FILE &
 }
 
+function listJobs() {
+  if ls $LOCAL_WORK_DIR/pending/*.paths >/dev/null 2>/dev/null; then
+    parallel "awk '
+      BEGIN {
+        match_pos = 1;
+        depth = 0;
+        enable = 0;
+      }
+      /^--- PARTICIPANTS START ---$/ {
+        enable = 1;
+        next;
+      }
+      /^--- PARTICIPANTS END ---$/ {
+        file = FILENAME;
+        sub(/^.*\//, \"\", file);
+        print depth + length(target) - match_pos + 1,
+              length(target) - match_pos + 1,
+              file;
+        exit 0;
+      }
+      {
+        if (FNR == NR) {
+          target[FNR] = \$0;
+        } else if (enable == 1) {
+          depth++;
+          if (target[match_pos] == \$1) {
+            match_pos++;
+          }
+        }
+      }
+      END {
+      }' \
+    {1} {2}" \
+      ::: $LOCAL_WORK_DIR/*.conversation ::: $LOCAL_WORK_DIR/pending/*.paths \
+      | sort -n \
+      | awk '!seen[$3]++ {print $3}'
+  fi
+}
+
+function runWorker() {
+  WORKER_ID="$1"
+  MACHINE="$2"
+  RESULT_FILE="$3"
+
+  while true; do
+    # Atomically get new job.
+    JOB_FILE=""
+    until [ "$JOB_FILE" ]; do
+      if [ ! -d "$LOCAL_WORK_DIR" ]; then
+        exit 0
+      fi
+
+      JOB_FILE=$(
+        (flock 200
+          JOB_FILE=$(head -n 1 $LOCAL_WORK_DIR/jobs)
+
+          if [ "$JOB_FILE" ]; then
+            # Remove file from consideration so other workers don't get it.
+            mv $LOCAL_WORK_DIR/pending/$JOB_FILE \
+               $LOCAL_WORK_DIR/running/$JOB_FILE
+            tail -n +2 $LOCAL_WORK_DIR/jobs > $LOCAL_WORK_DIR/jobs.new
+            mv $LOCAL_WORK_DIR/jobs.new $LOCAL_WORK_DIR/jobs
+          fi
+          echo $JOB_FILE
+        ) 200>$LOCAL_WORK_DIR/lock)
+
+      if [ ! "$JOB_FILE" ]; then
+        sleep 1
+      fi
+    done
+
+    # Run job.
+    scp -q $LOCAL_WORK_DIR/running/$JOB_FILE $MACHINE:$REMOTE_WORK_DIR
+    PARTICIPANT=$(echo "$JOB_FILE" | sed -re 's/.*-(.*)\.paths/\1/')
+    ssh -n $MACHINE \
+        "/bin/bash -O huponexit -c \
+                  'spa/Release+Asserts/bin/spa-explore \
+                    --in-paths $REMOTE_WORK_DIR/$JOB_FILE \
+                    --dont-load-empty-path \
+                    --out-paths $REMOTE_WORK_DIR/$RESULT_FILE \
+                    --out-paths-append \
+                    ${OPTS[PARTICIPANT]}'" \
+        2>&1 | awk "{print \"[$JOB_FILE] \" \$0}" >> $PATH_FILE.log
+    ssh -n $MACHINE \
+        rm $REMOTE_WORK_DIR/$JOB_FILE
+    rm $LOCAL_WORK_DIR/running/$JOB_FILE
+  done
+}
+
+function launchWorkersOnMachine() {
+  MACHINE="$1"
+  NUM_WORKERS="$2"
+  FIRST_WORKER_ID="$3"
+
+  for i in \
+      $(seq $FIRST_WORKER_ID $((FIRST_WORKER_ID + NUM_WORKERS - 1))); do
+    RESULT_FILE="$i-result.paths"
+    mkReceiverFile $MACHINE $RESULT_FILE
+    RESULT_FILES="$RESULT_FILES $LOCAL_WORK_DIR/$RESULT_FILE"
+    runWorker $i $MACHINE $RESULT_FILE &
+  done
+}
+
 MACHINES=$(cat ~/.parallel/sshloginfile \
                | egrep '^[[:space:]]*[^#]+' \
                | sed -re 's/^\s*([0-9]+\/)?([^#]+).*$/\2/' \
                | tr '\n' ' ')
-echo "Running workload on $MACHINES"
+echo "Running workload on $MACHINES."
 
 echo "Setting up work environment."
 LOCAL_WORK_DIR="$(mktemp -d)"
 echo "Working in $LOCAL_WORK_DIR"
+mkdir $LOCAL_WORK_DIR/split
+mkdir $LOCAL_WORK_DIR/pending
+mkdir $LOCAL_WORK_DIR/running
+touch $LOCAL_WORK_DIR/jobs
+
 REMOTE_WORK_DIR=$(basename $LOCAL_WORK_DIR)
-for MACHINE in $MACHINES; do \
+for MACHINE in $MACHINES; do
   ssh $MACHINE "mkdir $REMOTE_WORK_DIR"
-done
-for PARTICIPANT in $(seq 0 $((NUM_PARTICIPANTS - 1))); do \
-  rm -f participant-$PARTICIPANT.log
 done
 
 trap "echo 'Cleaning up.';
@@ -90,66 +184,58 @@ trap "echo 'Cleaning up.';
       echo 'Done.';
       trap - SIGTERM && kill -- -$$ 2>/dev/null" SIGINT SIGTERM EXIT
 
-echo "Starting long term jobs."
-NUM_JOBS=0
-RESULT_FILES=""
-for MACHINE in $MACHINES; do \
-  NUM_CORES=$(getCoresForMachine $MACHINE)
-  echo "Running $NUM_CORES jobs on $MACHINE."
-
-  for i in $(seq 1 $NUM_CORES); do \
-    NUM_JOBS=$((NUM_JOBS + 1))
-
-    mkSenderFile $MACHINE $NUM_JOBS.paths
-
-    for PARTICIPANT in $(seq 0 $((NUM_PARTICIPANTS - 1))); do \
-      mkReceiverFile $MACHINE $NUM_JOBS-$PARTICIPANT-result.paths
-      RESULT_FILES="$RESULT_FILES $LOCAL_WORK_DIR/$NUM_JOBS-$PARTICIPANT-result.paths"
-      echo "[Job $NUM_JOBS] Running: ssh -n $MACHINE" \
-            "/bin/bash -O huponexit -c" \
-                     "'spa/Release+Asserts/bin/spa-explore" \
-                     "--in-paths $REMOTE_WORK_DIR/$NUM_JOBS.paths" \
-                     "--dont-load-empty-path" \
-                     "--follow-in-paths" \
-                     "--out-paths $REMOTE_WORK_DIR/$NUM_JOBS-$PARTICIPANT-result.paths" \
-                     "${OPTS[PARTICIPANT]}'" \
-           >> participant-$PARTICIPANT.log
-      ssh -n $MACHINE \
-          "/bin/bash -O huponexit -c \
-                   'spa/Release+Asserts/bin/spa-explore \
-                      --in-paths $REMOTE_WORK_DIR/$NUM_JOBS.paths \
-                      --dont-load-empty-path \
-                      --follow-in-paths \
-                      --out-paths $REMOTE_WORK_DIR/$NUM_JOBS-$PARTICIPANT-result.paths \
-                      ${OPTS[PARTICIPANT]}'" \
-          2>&1 | tee $LOCAL_WORK_DIR/$NUM_JOBS-$PARTICIPANT.log \
-          | awk "{print \"[Job $NUM_JOBS] \" \$0}" \
-          >> participant-$PARTICIPANT.log &
-    done
+if [ "$NUM_TARGET_CONVERSATIONS" -gt "0" ]; then
+  for i in $(seq 0 $((NUM_TARGET_CONVERSATIONS - 1))); do
+    echo "Directing exploration towards conversation: ${TARGET_CONVERSATIONS[i]}"
+    echo "${TARGET_CONVERSATIONS[i]}" \
+        | tr ' ' '\n' \
+        | grep -v '^$' \
+        > $LOCAL_WORK_DIR/$i.conversation
   done
+else
+  # If no target conversation do BFS.
+  touch $LOCAL_WORK_DIR/empty.conversation
+fi
+
+echo "Starting workers."
+WORKER_ID=1
+RESULT_FILES=""
+for MACHINE in $MACHINES; do
+  NUM_CORES=$(getCoresForMachine $MACHINE)
+  echo "Running $NUM_CORES workers on $MACHINE."
+
+  launchWorkersOnMachine $MACHINE $NUM_CORES $WORKER_ID
+  WORKER_ID=$((WORKER_ID + NUM_CORES))
 done
-echo "Running a total of $((NUM_JOBS * NUM_PARTICIPANTS)) tasks across all machines."
+echo "Running a total of $((WORKER_ID - 1)) workers across all machines."
 
 echo "Starting path splitting."
 spaSplitPaths \
     -i $PATH_FILE -f \
-    -o "$LOCAL_WORK_DIR/%d.paths" \
-    -n $NUM_JOBS \
-    > $LOCAL_WORK_DIR/spaSplitPaths.log 2>&1 &
+    -o "$LOCAL_WORK_DIR/split/%06d.paths" \
+    -p 1 \
+    >> $PATH_FILE.log 2>&1 &
+
+(while true; do
+  for f in $(ls -1 $LOCAL_WORK_DIR/split/*.paths 2>/dev/null); do
+    for p in $(seq 0 $((NUM_PARTICIPANTS - 1))); do
+      cp $f $LOCAL_WORK_DIR/pending/$(basename $f .paths)-$p.paths
+    done
+    rm $f
+
+    # Recompute prioritized job list.
+    (flock 200
+      listJobs > $LOCAL_WORK_DIR/jobs
+    ) 200>$LOCAL_WORK_DIR/lock
+  done
+  sleep 1
+done) &
 
 INITIAL_MACHINE=$(echo "$MACHINES" | awk '{print $1}')
 echo "Starting initial jobs on $INITIAL_MACHINE."
-for PARTICIPANT in $(seq 0 $((NUM_PARTICIPANTS - 1))); do \
+for PARTICIPANT in $(seq 0 $((NUM_PARTICIPANTS - 1))); do
   mkReceiverFile $INITIAL_MACHINE root-$PARTICIPANT-result.paths
   RESULT_FILES="$RESULT_FILES $LOCAL_WORK_DIR/root-$PARTICIPANT-result.paths"
-  echo "[Job root] Running: ssh -n" \
-                    "$INITIAL_MACHINE" \
-                    "/bin/bash -O huponexit -c" \
-                    "'spa/Release+Asserts/bin/spa-explore" \
-                    "--in-paths /dev/null" \
-                    "--out-paths $REMOTE_WORK_DIR/root-$PARTICIPANT-result.paths" \
-                    "${OPTS[PARTICIPANT]}'" \
-       >> participant-$PARTICIPANT.log
   ssh -n $INITIAL_MACHINE \
       "/bin/bash -O huponexit -c \
                'spa/Release+Asserts/bin/spa-explore \
@@ -157,43 +243,29 @@ for PARTICIPANT in $(seq 0 $((NUM_PARTICIPANTS - 1))); do \
                   --out-paths $REMOTE_WORK_DIR/root-$PARTICIPANT-result.paths \
                   ${OPTS[PARTICIPANT]}; \
                 echo --- Done ---'" \
-        2>&1 | tee $LOCAL_WORK_DIR/root-$PARTICIPANT.log \
-        | awk '{print "[Job root] " $0}' \
-        >> participant-$PARTICIPANT.log &
+        2>&1 | awk "{print \"[root-$PARTICIPANT] \" \$0}" >> $PATH_FILE.log &
 done
 
 echo "Starting path collection."
 spaJoinPaths \
     -f $RESULT_FILES \
     $PATH_FILE \
-    > $LOCAL_WORK_DIR/spaJoinPaths.log 2>&1 &
+    >> $PATH_FILE.log 2>&1 &
 
 echo "Waiting for exploration to complete."
 START_TIME=$(date +%s)
 NO_ACTIVITY_COUNT=0
-runtime=$((end-start))
-while true; do \
-  NUM_STATES=$(parallel "tac {} | egrep -m 1 \
-'(KLEE: \[SpaSearcher\] Queued:)'\
-'|(^.*KLEE: Done\..*$)'\
-'|(KLEE: \[spa_load_path\]     Path .* not yet available\. Waiting\..*$)'" \
-                        ::: $LOCAL_WORK_DIR/*-*.log \
-                 | egrep '(KLEE: \[SpaSearcher\] Queued:)' \
-                 | awk 'BEGIN {s = 0} \
-                        {s += $5} \
-                        END {print s}')
+while true; do
+  NUM_FOUND=$(grep -c -- '--- PATH START ---' $PATH_FILE || true)
+  NUM_RUNNING=$(ls -1 $LOCAL_WORK_DIR/running/*.paths 2>/dev/null | wc -l)
+  NUM_PENDING=$(cat $LOCAL_WORK_DIR/jobs 2>/dev/null | wc -l)
 
   echo "[$(($(date +%s) - START_TIME))]" \
-       "Found $(grep -c -- '--- PATH START ---' $PATH_FILE) paths." \
-       "Exploring $NUM_STATES states."
+       "Found $NUM_FOUND paths." \
+       "Processing $NUM_RUNNING paths." \
+       "$NUM_PENDING paths pending."
 
-  if [ ! "$(tail -n 1 $LOCAL_WORK_DIR/*-*.log \
-                | egrep -v \
-'(==> .*\.log <==)'\
-'|(^$)'\
-'|(^.*--- Done ---.*$)'\
-'|(KLEE: \[spa_load_path\]     Path .* not yet available\. Waiting\.)'\
-'|(Connection to .* closed\.)')" ]; then
+  if [ "$((NUM_RUNNING + NUM_PENDING))" -eq "0" ]; then
     NO_ACTIVITY_COUNT=$((NO_ACTIVITY_COUNT + 1))
   else
     NO_ACTIVITY_COUNT=0
