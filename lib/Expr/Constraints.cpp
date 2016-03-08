@@ -100,10 +100,19 @@ ref<Expr> ConstraintManager::simplifyExpr(ref<Expr> e) const {
   
   for (ConstraintManager::constraints_ty::const_iterator 
          it = constraints.begin(), ie = constraints.end(); it != ie; ++it) {
+    klee::ReadExpr *rdExpr;
     if (const EqExpr *ee = dyn_cast<EqExpr>(*it)) {
       if (isa<ConstantExpr>(ee->left)) {
         equalities.insert(std::make_pair(ee->right,
                                          ee->left));
+      } else if (isa<ConstantExpr>(ee->right)) {
+        equalities.insert(std::make_pair(ee->left,
+                                         ee->right));
+      } else if ((rdExpr = llvm::dyn_cast<klee::ReadExpr>(ee->right)) &&
+                 rdExpr->updates.root->name.compare(0,
+                      strlen("spa_in_api_"), "spa_in_api_") == 0) {
+        equalities.insert(std::make_pair(ee->left,
+                                         ee->right));
       } else {
         equalities.insert(std::make_pair(*it,
                                          ConstantExpr::alloc(1, Expr::Bool)));

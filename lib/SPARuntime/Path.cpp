@@ -117,7 +117,8 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
                 state.addressSpace.findObject(it.second.first)) {
           std::vector<klee::ref<klee::Expr> > outputValues;
           for (unsigned int i = 0; i < os->size; i++) {
-            outputValues.push_back(os->read8(i));
+            outputValues.push_back(
+                state.constraints.simplifyExpr(os->read8(i)));
           }
           std::shared_ptr<Symbol> s(new Symbol(fullName, outputValues));
           symbolLog.push_back(s);
