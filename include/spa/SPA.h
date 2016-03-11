@@ -66,6 +66,7 @@
 
 #define SPA_PARTICIPANTNAME_VARIABLE "spa_internal_participantName"
 #define SPA_DEFAULTBINDADDR_VARIABLE "spa_internal_defaultBindAddr"
+#define SPA_LOSSMASK_VARIABLE "spa_internal_lossMask"
 #define SPA_INITVALUEID_VARIABLE "spa_internal_initValueID"
 #define SPA_HANDLERID_VARIABLE "spa_internal_HanderID"
 #define SPA_PATHID_VARIABLE "spa_internal_PathID"

@@ -1152,7 +1152,7 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
   assert(rl.size() == 1 &&
          "Seeding symbol that doesn't resolve to a single object.");
   const MemoryObject *mo = rl[0].first.first;
-  const ObjectState *os = rl[0].first.second;
+  ObjectState *os = const_cast<ObjectState *>(rl[0].first.second);
   assert(!os->readOnly && "Seeding read-only object.");
   std::string fullName = mo->name;
   size_t size = mo->getSizeExpr()->getZExtValue(sizeof(size_t) * 8);
@@ -1248,7 +1248,8 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
         }
       }
     } else if (fullName.compare(0, strlen(SPA_API_INPUT_PREFIX),
-                                SPA_API_INPUT_PREFIX) == 0) {
+                                SPA_API_INPUT_PREFIX) == 0 ||
+               localName == SPA_LOSSMASK_VARIABLE) {
       // Check if the current participant hasn't contributed to the sender path.
       // If not, then path is equivalent to the root path from this participants
       // point of view and can't be connected.
@@ -1339,6 +1340,11 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
             "user.err");
         return;
       }
+    }
+    // Populate symbol with output expression.
+    for (size_t offset = 0;
+         offset < (*state.senderLogPos)->getOutputValues().size(); offset++) {
+      os->write(offset, (*state.senderLogPos)->getOutputValues()[offset]);
     }
   } else if ((*state.senderLogPos)
                  ->isInput()) { // Check if defined as an input instead.
