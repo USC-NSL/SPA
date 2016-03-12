@@ -66,6 +66,12 @@ void spa_seed_symbol(void *var, uint64_t pathID);
 void spa_snprintf5(char *out, unsigned size, const char *format,
                    const char *in1, unsigned long in2, const char *in3,
                    const char *in4, unsigned long in5);
+// Circumvent issue with KLEE not detecting the write and cloning the object.
+#define spa_snprintf5(out, size, format, in1, in2, in3, in4, in5)              \
+  do {                                                                         \
+    out[0] = '\0';                                                             \
+    spa_snprintf5(out, size, format, in1, in2, in3, in4, in5);                 \
+  } while (0)
 #else
 int32_t __attribute__((weak)) spa_check_path(uint64_t pathID) { return 0; }
 void __attribute__((weak)) spa_load_path(uint64_t pathID) {}
