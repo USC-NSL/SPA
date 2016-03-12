@@ -103,6 +103,8 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
     if (symbolsInSenderLog.count(fullName) == 0) {
       std::string qualifiedName =
           fullName.substr(0, fullName.rfind(SPA_SYMBOL_DELIMITER));
+      std::string localName =
+          qualifiedName.substr(0, qualifiedName.rfind(SPA_SYMBOL_DELIMITER));
 
       if (qualifiedName.compare(0, strlen(SPA_INPUT_PREFIX),
                                 SPA_INPUT_PREFIX) == 0) {
@@ -170,8 +172,7 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
   // Process inputs.
   for (auto iit : inputSymbols) {
     // Check if API input.
-    if (iit.first.compare(0, strlen(SPA_API_INPUT_PREFIX),
-                          SPA_API_INPUT_PREFIX) == 0) {
+    if (iit.first.compare(0, strlen(SPA_INPUT_PREFIX), SPA_INPUT_PREFIX) == 0) {
       for (auto sit : iit.second) {
         objectNames.push_back(sit->getFullName());
         objects.push_back(sit->getInputArray());
