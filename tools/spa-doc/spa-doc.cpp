@@ -613,7 +613,13 @@ std::string generatePathHTML(SPA::Path *path) {
           messages[mi]->destinationIP + ":" + messages[mi]->protocol + ":" +
           messages[mi]->destinationPort + " (" +
           messages[mi]->toParticipant->name + ")<br />\n"
-                                              "        <b>Size:</b> " +
+                                              "        <b>Status:</b> " +
+          (checkMessageDropped(messages[mi])
+               ? "Dropped"
+               : (checkMessageReceived(messages[mi]) ? "Received"
+                                                     : "In Flight")) +
+          "<br />\n"
+          "        <b>Size:</b> " +
           SPA::numToStr(messages[mi]->content.size()) +
           "<br />\n"
           "        <b>Text Representation:</b><br />\n"
