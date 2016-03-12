@@ -112,6 +112,7 @@ Path *buildDerivedPath(Path *basePath, Path *sourcePath) {
             bsie = basePath->symbolLog.end();
        bsit != bsie; bsit++) {
     if (ConnectSockets && (*bsit)->isOutput() && (*bsit)->isMessage() &&
+        (!(*bsit)->isDropped()) &&
         participantIPs[sourcePath->getParticipants().back()->getName()]
             .count((*bsit)->getMessageDestinationIP())) {
       return NULL;
@@ -124,7 +125,8 @@ Path *buildDerivedPath(Path *basePath, Path *sourcePath) {
         return NULL;
       }
       if (ConnectSockets && (*bsit)->isOutput() && (*bsit)->isMessage() &&
-          (*ssit)->isInput() && (*ssit)->isMessage() &&
+          (!(*bsit)->isDropped()) && (*ssit)->isInput() &&
+          (*ssit)->isMessage() &&
           checkMessageCompatibility(*bsit, (*ssit)->getLocalName())) {
         return NULL;
       }

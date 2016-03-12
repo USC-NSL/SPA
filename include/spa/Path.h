@@ -132,6 +132,12 @@ public:
     }
   }
 
+  bool isDropped() const {
+    return isMessage() && isOutput() &&
+           strSplitJoin(fullName, SPA_SYMBOL_DELIMITER, -4, 3) ==
+               SPA_DROPPED_PREFIX;
+  }
+
   const klee::Array *getInputArray() const { return array; }
 
   const std::vector<klee::ref<klee::Expr> > &getOutputValues() const {

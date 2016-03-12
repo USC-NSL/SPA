@@ -117,9 +117,7 @@ bool compareMessage5Tuple(std::shared_ptr<message_t> message,
 bool checkMessageDropped(std::shared_ptr<message_t> message) {
   // Check if any of the sender content symbols were dropped.
   for (auto sit : message->symbols) {
-    if (sit.first && sit.first->getFullName().compare(
-                         0, strlen(SPA_MESSAGE_OUTPUT_DROPPED_PREFIX),
-                         SPA_MESSAGE_OUTPUT_DROPPED_PREFIX) == 0) {
+    if (sit.first && sit.first->isDropped()) {
       return true;
     }
   }
