@@ -170,11 +170,10 @@ ssize_t sendto(int sockfd, const void *buffer, size_t len, int flags,
                const struct sockaddr *to, socklen_t tolen) {
   char bind_addr[100], connect_addr[100], msg_name[100], size_name[100];
 
-  assert(to->sa_family == AF_INET);
-
   if (!to) {
     to = (const struct sockaddr *)&sockets[sockfd].connect_addr;
   }
+  assert(to->sa_family == AF_INET);
 
   int drop = spa_faultmodel_none();
 
