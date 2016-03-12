@@ -114,6 +114,18 @@ bool compareMessage5Tuple(std::shared_ptr<message_t> message,
   }
 }
 
+bool checkMessageDropped(std::shared_ptr<message_t> message) {
+  // Check if any of the sender content symbols were dropped.
+  for (auto sit : message->symbols) {
+    if (sit.first && sit.first->getFullName().compare(
+                         0, strlen(SPA_MESSAGE_OUTPUT_DROPPED_PREFIX),
+                         SPA_MESSAGE_OUTPUT_DROPPED_PREFIX) == 0) {
+      return true;
+    }
+  }
+  return false;
+}
+
 bool checkMessageReceived(std::shared_ptr<message_t> message) {
   // Check if all non size and source symbols were received.
   for (auto sit : message->symbols) {
@@ -364,8 +376,6 @@ std::string generatePathHTML(SPA::Path *path) {
           }
         }
         assert(sent && "Message received before being sent.");
-      } else {
-        assert(false && "Symbol is neither message nor API.");
       }
     } else if (sit->isOutput()) {
       if (sit->isAPI()) {
@@ -458,11 +468,14 @@ std::string generatePathHTML(SPA::Path *path) {
 
   for (unsigned mi = 0; mi < messages.size(); mi++) {
     std::string messageLabel = SPA::numToStr(mi + 1);
-    messageLogDot += "  " + sanitizeToken(messages[mi]->fromParticipant->name) +
-                     " -> " + sanitizeToken(messages[mi]->toParticipant->name) +
-                     "[label=\"" + messageLabel + "\" arrowhead=\"" +
-                     (checkMessageReceived(messages[mi]) ? "normal" : "dot") +
-                     "\" href=\"#msg" + messageLabel + "\"]\n";
+    messageLogDot +=
+        "  " + sanitizeToken(messages[mi]->fromParticipant->name) + " -> " +
+        sanitizeToken(messages[mi]->toParticipant->name) + "[label=\"" +
+        messageLabel + "\" arrowhead=\"" +
+        (checkMessageDropped(messages[mi])
+             ? "tee"
+             : (checkMessageReceived(messages[mi]) ? "normal" : "dot")) +
+        "\" href=\"#msg" + messageLabel + "\"]\n";
   }
   messageLogDot += "}\n";
 

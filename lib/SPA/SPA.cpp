@@ -524,6 +524,10 @@ SPA::SPA(llvm::Module *_module, std::ostream &_output)
     ParticipantName = module->getModuleIdentifier();
   }
 
+  assert(
+      (currentFaultModel = module->getFunction(SPA_FAULTMODEL_NONE_FUNCTION)) &&
+      "Empty fault model function not found.");
+
   generateMain();
 }
 

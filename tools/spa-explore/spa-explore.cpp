@@ -70,6 +70,11 @@ llvm::cl::list<std::string>
     StopAt("stop-at",
            llvm::cl::desc("Code-points to stop symbolic execution after."));
 
+llvm::cl::opt<std::string> FaultModel(
+    "fault-model",
+    llvm::cl::desc("Defines which fault-model to use (default: none)."),
+    llvm::cl::init("none"));
+
 llvm::cl::list<std::string>
     Toward("toward",
            llvm::cl::desc("Code-points to direct execution towards."));
@@ -157,6 +162,8 @@ int main(int argc, char **argv, char **envp) {
     assert(fn && "Start point function not found.");
     spa.addEntryFunction(fn);
   }
+
+  spa.setFaultModel(FaultModel);
 
   spa.addSymbolicInitialValues();
 

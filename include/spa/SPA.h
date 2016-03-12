@@ -30,6 +30,8 @@
 #define SPA_PATH_FORK_FUNCTION "spa_path_fork"
 #define SPA_INPUT_ANNOTATION_FUNCTION "spa_input"
 #define SPA_COST_ANNOTATION_FUNCTION "spa_cost"
+#define SPA_FAULTMODEL_FUNCTION_PREFIX "spa_faultmodel_"
+#define SPA_FAULTMODEL_NONE_FUNCTION SPA_FAULTMODEL_FUNCTION_PREFIX "none"
 // #define SPA_SEED_ANNOTATION_FUNCTION			"spa_seed"
 
 #define SPA_PREFIX "spa_"
@@ -46,6 +48,7 @@
 #define SPA_API_OUTPUT_PREFIX SPA_OUTPUT_PREFIX "api_"
 #define SPA_API_OUTPUT_SIZE_PREFIX SPA_API_OUTPUT_PREFIX "size_"
 #define SPA_MESSAGE_OUTPUT_PREFIX SPA_OUTPUT_PREFIX "msg_"
+#define SPA_MESSAGE_OUTPUT_DROPPED_PREFIX SPA_MESSAGE_OUTPUT_PREFIX "dropped_"
 #define SPA_MESSAGE_OUTPUT_SIZE_PREFIX SPA_MESSAGE_OUTPUT_PREFIX "size_"
 #define SPA_MESSAGE_OUTPUT_SOURCE_PREFIX SPA_MESSAGE_OUTPUT_PREFIX "src_"
 #define SPA_MESSAGE_OUTPUT_CONNECT_PREFIX SPA_MESSAGE_OUTPUT_PREFIX "connect_"
@@ -66,7 +69,7 @@
 
 #define SPA_PARTICIPANTNAME_VARIABLE "spa_internal_participantName"
 #define SPA_DEFAULTBINDADDR_VARIABLE "spa_internal_defaultBindAddr"
-#define SPA_LOSSMASK_VARIABLE "spa_internal_lossMask"
+#define SPA_LOSSMASK_VARIABLE "spa_in_lossMask"
 #define SPA_INITVALUEID_VARIABLE "spa_internal_initValueID"
 #define SPA_HANDLERID_VARIABLE "spa_internal_HanderID"
 #define SPA_PATHID_VARIABLE "spa_internal_PathID"
@@ -93,6 +96,7 @@ private:
   llvm::BasicBlock *firstHandlerBB;
   llvm::BasicBlock *nextHandlerBB;
   llvm::BasicBlock *returnBB;
+  llvm::Function *currentFaultModel;
   std::ostream &output;
   UnionIF checkpointFilter;
   WhitelistIF checkpointWhitelist;
@@ -121,6 +125,16 @@ public:
   void addEntryFunction(llvm::Function *fn);
   // 		void addSeedEntryFunction( unsigned int seedID, llvm::Function *fn );
   void newEntryLevel();
+  void setFaultModel(std::string model) {
+    llvm::Function *newModel =
+        module->getFunction(SPA_FAULTMODEL_FUNCTION_PREFIX + model);
+    assert(newModel && "Could not find specified fault model.");
+
+    if (newModel != currentFaultModel) {
+      currentFaultModel->replaceAllUsesWith(newModel);
+      currentFaultModel = newModel;
+    }
+  }
   void addInitialValues(
       std::map<llvm::Value *,
                std::vector<std::vector<std::pair<bool, uint8_t> > > > values);
