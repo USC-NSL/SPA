@@ -17,6 +17,72 @@ struct {
 } sockets[20];
 int next_available_sockfd = INITIAL_SOCKFD;
 
+int __attribute__((used, noinline)) spa_faultmodel_none() {
+  return klee_get_value_i32(0);
+}
+
+int __attribute__((used, noinline)) spa_faultmodel_symbolic() {
+  uint8_t choice = 0;
+  static uint8_t **initialValue = NULL;
+
+  spa_input(&choice, sizeof(choice), "spa_in_lossMask", &initialValue,
+            "spa_init_in_lossMask");
+
+  if (choice) {
+    return klee_get_value_i32(1);
+  } else {
+    return klee_get_value_i32(0);
+  }
+}
+
+int __attribute__((used, noinline)) spa_faultmodel_onedrop() {
+  uint8_t choice = 0;
+  static uint8_t **initialValue = NULL;
+  uint8_t dropped = 0;
+
+  spa_input(&choice, sizeof(choice), "spa_in_lossMask", &initialValue,
+            "spa_init_in_lossMask");
+
+  if ((!dropped) && choice) {
+    dropped = 1;
+    return klee_get_value_i32(1);
+  } else {
+    return klee_get_value_i32(0);
+  }
+}
+
+int __attribute__((used, noinline)) spa_faultmodel_earlydeath() {
+  uint8_t choice = 0;
+  static uint8_t **initialValue = NULL;
+  uint8_t dead = 0;
+
+  spa_input(&choice, sizeof(choice), "spa_in_lossMask", &initialValue,
+            "spa_init_in_lossMask");
+
+  if (dead || choice) {
+    dead = 1;
+    return klee_get_value_i32(1);
+  } else {
+    return klee_get_value_i32(0);
+  }
+}
+
+int __attribute__((used, noinline)) spa_faultmodel_latewakening() {
+  uint8_t choice = 0;
+  static uint8_t **initialValue = NULL;
+  uint8_t awake = 0;
+
+  spa_input(&choice, sizeof(choice), "spa_in_lossMask", &initialValue,
+            "spa_init_in_lossMask");
+
+  if ((!awake) || choice) {
+    return klee_get_value_i32(1);
+  } else {
+    awake = 1;
+    return klee_get_value_i32(0);
+  }
+}
+
 int spa_socket(int family, int type, int protocol) {
   if (family != AF_INET) {
     return -1;
@@ -65,6 +131,8 @@ int connect(int sockfd, const struct sockaddr *saddr, socklen_t addrlen) {
   char bind_addr[100], connect_addr[100], connect_name[100],
       connectsize_name[100];
 
+  int drop = spa_faultmodel_none();
+
   memcpy(&sockets[sockfd].connect_addr, saddr, addrlen);
 
   assert(sockets[sockfd].connect_addr.sin_family == AF_INET);
@@ -72,26 +140,29 @@ int connect(int sockfd, const struct sockaddr *saddr, socklen_t addrlen) {
             sizeof(bind_addr));
   inet_ntop(AF_INET, &sockets[sockfd].connect_addr.sin_addr.s_addr,
             connect_addr, sizeof(connect_addr));
-  spa_snprintf5(
-      connect_name, sizeof(connect_name), "spa_out_msg_connect_%s.%d.%s.%s.%d",
-      bind_addr, ntohs(sockets[sockfd].bind_addr.sin_port),
-      sockets[sockfd].type == SOCK_STREAM ? "tcp" : "udp", connect_addr,
-      ntohs(sockets[sockfd].connect_addr.sin_port));
+  spa_snprintf5(connect_name, sizeof(connect_name),
+                drop ? "spa_out_msg_connect_dropped_%s.%d.%s.%s.%d"
+                     : "spa_out_msg_connect_%s.%d.%s.%s.%d",
+                bind_addr, ntohs(sockets[sockfd].bind_addr.sin_port),
+                sockets[sockfd].type == SOCK_STREAM ? "tcp" : "udp",
+                connect_addr, ntohs(sockets[sockfd].connect_addr.sin_port));
   spa_snprintf5(connectsize_name, sizeof(connectsize_name),
-                "spa_out_msg_size_connect_%s.%d.%s.%s.%d", bind_addr,
-                ntohs(sockets[sockfd].bind_addr.sin_port),
+                drop ? "spa_out_msg_size_connect_dropped_%s.%d.%s.%s.%d"
+                     : "spa_out_msg_size_connect_%s.%d.%s.%s.%d",
+                bind_addr, ntohs(sockets[sockfd].bind_addr.sin_port),
                 sockets[sockfd].type == SOCK_STREAM ? "tcp" : "udp",
                 connect_addr, ntohs(sockets[sockfd].connect_addr.sin_port));
 
   __spa_output((void *)&sockets[sockfd].bind_addr, sizeof(struct sockaddr_in),
                sizeof(struct sockaddr_in), connect_name, connectsize_name);
 
-  printf("[model connect] Connect socket %d with %s:%d:%s:%s:%d.\n", sockfd,
-         bind_addr, ntohs(sockets[sockfd].bind_addr.sin_port),
+  printf("[model connect] %s socket %d with %s:%d:%s:%s:%d.\n",
+         drop ? "Connecting" : "Dropping connection on", sockfd, bind_addr,
+         ntohs(sockets[sockfd].bind_addr.sin_port),
          sockets[sockfd].type == SOCK_STREAM ? "tcp" : "udp", connect_addr,
          ntohs(sockets[sockfd].connect_addr.sin_port));
 
-  return 0;
+  return drop ? -1 : 0;
 }
 
 int accept(int s, struct sockaddr *addr, socklen_t *addrlen) {
@@ -146,24 +217,6 @@ int accept(int s, struct sockaddr *addr, socklen_t *addrlen) {
 
 ssize_t send(int sockfd, const void *buffer, size_t len, int flags) {
   return (sendto(sockfd, buffer, len, flags, NULL, 0));
-}
-
-int __attribute__((used, noinline)) spa_faultmodel_none() {
-  return klee_get_value_i32(0);
-}
-
-int __attribute__((used, noinline)) spa_faultmodel_symbolic() {
-  uint8_t choice = 0;
-  static uint8_t **initialValue = NULL;
-
-  spa_input(&choice, sizeof(choice), "spa_in_lossMask", &initialValue,
-            "spa_init_in_lossMask");
-
-  if (choice) {
-    return klee_get_value_i32(1);
-  } else {
-    return klee_get_value_i32(0);
-  }
 }
 
 ssize_t sendto(int sockfd, const void *buffer, size_t len, int flags,
