@@ -263,7 +263,7 @@ NO_ACTIVITY_COUNT=0
 while true; do
   NUM_FOUND=$(grep -c -- '--- PATH START ---' $PATH_FILE || true)
   NUM_RUNNING=$(ls -1 $LOCAL_WORK_DIR/running/*.paths 2>/dev/null | wc -l)
-  NUM_PENDING=$(cat $LOCAL_WORK_DIR/jobs 2>/dev/null | wc -l)
+  NUM_PENDING=$(ls -1 $LOCAL_WORK_DIR/pending/*.paths 2>/dev/null | wc -l)
 
   echo "[$(($(date +%s) - START_TIME))]" \
        "Found $NUM_FOUND paths." \
