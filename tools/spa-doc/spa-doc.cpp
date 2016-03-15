@@ -1219,9 +1219,8 @@ int main(int argc, char **argv, char **envp) {
           worklist.insert(
               pathsByUUID[path->getParticipants().rbegin()[1]->getPathUUID()]);
         }
-        if (!path->getDerivedFromUUID().empty()) {
-          assert(pathsByUUID.count(path->getDerivedFromUUID()) &&
-                 "Path derived from unknown source.");
+        if ((!path->getDerivedFromUUID().empty()) &&
+            pathsByUUID.count(path->getDerivedFromUUID())) {
           worklist.insert(pathsByUUID[path->getDerivedFromUUID()]);
         }
       }
