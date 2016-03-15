@@ -209,7 +209,8 @@ std::string generatePathDot(std::set<SPA::Path *> paths,
            SPA::strJoin(colors, ":") + "\" penwidth=\"" +
            (selectedPaths.count(it) ? "3" : "1") + "\"]\n";
 
-    if (it->getParticipants().size() > 1) {
+    if (it->getParticipants().size() > 1 &&
+        pathsByUUID.count(it->getParticipants().rbegin()[1]->getPathUUID())) {
       dot +=
           "  path_" +
           SPA::numToStr(pathIDs[
@@ -220,6 +221,7 @@ std::string generatePathDot(std::set<SPA::Path *> paths,
     }
 
     if (!it->getDerivedFromUUID().empty() &&
+        pathsByUUID.count(it->getDerivedFromUUID()) &&
         paths.count(pathsByUUID[it->getDerivedFromUUID()])) {
       dot += "  path_" +
              SPA::numToStr(pathIDs[pathsByUUID[it->getDerivedFromUUID()]]) +
@@ -486,11 +488,14 @@ std::string generatePathHTML(SPA::Path *path) {
     worklist.erase(path);
     if (path && !fullConversation.count(path)) {
       fullConversation.insert(path);
-      if (path->getParticipants().size() > 1) {
+      if (path->getParticipants().size() > 1 &&
+          pathsByUUID.count(path->getParticipants().rbegin()[1]
+                                ->getPathUUID())) {
         worklist.insert(
             pathsByUUID[path->getParticipants().rbegin()[1]->getPathUUID()]);
       }
-      if (!path->getDerivedFromUUID().empty()) {
+      if ((!path->getDerivedFromUUID().empty()) &&
+          pathsByUUID.count(path->getDerivedFromUUID())) {
         worklist.insert(pathsByUUID[path->getDerivedFromUUID()]);
       }
     }
@@ -1214,7 +1219,9 @@ int main(int argc, char **argv, char **envp) {
       worklist.erase(path);
       if (path && !fullConversation.count(path)) {
         fullConversation.insert(path);
-        if (path->getParticipants().size() > 1) {
+        if (path->getParticipants().size() > 1 &&
+            pathsByUUID.count(path->getParticipants().rbegin()[1]
+                                  ->getPathUUID())) {
           worklist.insert(
               pathsByUUID[path->getParticipants().rbegin()[1]->getPathUUID()]);
         }
