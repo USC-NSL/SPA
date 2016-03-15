@@ -120,6 +120,18 @@ public:
     }
   }
 
+  bool isModel() const {
+    if (isInput()) {
+      return fullName.compare(0, strlen(SPA_MODEL_INPUT_PREFIX),
+                              SPA_MODEL_INPUT_PREFIX) == 0;
+    } else if (isOutput()) {
+      return fullName.compare(0, strlen(SPA_MODEL_OUTPUT_PREFIX),
+                              SPA_MODEL_OUTPUT_PREFIX) == 0;
+    } else {
+      assert(false && "Symbol is neither input nor output.");
+    }
+  }
+
   bool isMessage() const {
     if (isInput()) {
       return fullName.compare(0, strlen(SPA_MESSAGE_INPUT_PREFIX),

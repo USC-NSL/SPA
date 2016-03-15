@@ -1064,8 +1064,10 @@ void SpecialFunctionHandler::handleSpaCheckSymbol(
         }
       }
     } else if (localName.compare(0, strlen(SPA_API_INPUT_PREFIX),
-                                 SPA_API_INPUT_PREFIX) == 0) {
-      // API mapping in=in.
+                                 SPA_API_INPUT_PREFIX) == 0 ||
+               localName.compare(0, strlen(SPA_MODEL_INPUT_PREFIX),
+                                 SPA_MODEL_INPUT_PREFIX) == 0) {
+      // API/Model mapping in=in.
       // Skip log entries until same symbol.
       for (; senderLogPos != state.senderPath->getSymbolLog().end();
            senderLogPos++) {
@@ -1249,7 +1251,8 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
       }
     } else if (fullName.compare(0, strlen(SPA_API_INPUT_PREFIX),
                                 SPA_API_INPUT_PREFIX) == 0 ||
-               localName == SPA_LOSSMASK_VARIABLE) {
+               fullName.compare(0, strlen(SPA_MODEL_INPUT_PREFIX),
+                                SPA_MODEL_INPUT_PREFIX) == 0) {
       // Check if the current participant hasn't contributed to the sender path.
       // If not, then path is equivalent to the root path from this participants
       // point of view and can't be connected.
@@ -1267,7 +1270,7 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
         return;
       }
 
-      // API mapping in=in.
+      // API/Model mapping in=in.
       // Skip log entries until same symbol.
       for (; state.senderLogPos != state.senderPath->getSymbolLog().end();
            state.senderLogPos++) {

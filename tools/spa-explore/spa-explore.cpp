@@ -73,7 +73,7 @@ llvm::cl::list<std::string>
 llvm::cl::opt<std::string> FaultModel(
     "fault-model",
     llvm::cl::desc("Defines which fault-model to use (from: none, symbolic, "
-                   "onedrop, earlydeath, latewakening. default: none)."),
+                   "onedrop, earlydeath, latejoin. default: none)."),
     llvm::cl::init("none"));
 
 llvm::cl::list<std::string>

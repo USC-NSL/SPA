@@ -25,8 +25,8 @@ int __attribute__((used, noinline)) spa_faultmodel_symbolic() {
   uint8_t choice = 0;
   static uint8_t **initialValue = NULL;
 
-  spa_input(&choice, sizeof(choice), "spa_in_lossMask", &initialValue,
-            "spa_init_in_lossMask");
+  spa_input(&choice, sizeof(choice), "spa_in_model_lossMask", &initialValue,
+            "spa_init_in_model_lossMask");
 
   if (choice) {
     return klee_get_value_i32(1);
@@ -38,10 +38,10 @@ int __attribute__((used, noinline)) spa_faultmodel_symbolic() {
 int __attribute__((used, noinline)) spa_faultmodel_onedrop() {
   uint8_t choice = 0;
   static uint8_t **initialValue = NULL;
-  uint8_t dropped = 0;
+  static uint8_t dropped = 0;
 
-  spa_input(&choice, sizeof(choice), "spa_in_lossMask", &initialValue,
-            "spa_init_in_lossMask");
+  spa_input(&choice, sizeof(choice), "spa_in_model_lossMask", &initialValue,
+            "spa_init_in_model_lossMask");
 
   if ((!dropped) && choice) {
     dropped = 1;
@@ -54,10 +54,10 @@ int __attribute__((used, noinline)) spa_faultmodel_onedrop() {
 int __attribute__((used, noinline)) spa_faultmodel_earlydeath() {
   uint8_t choice = 0;
   static uint8_t **initialValue = NULL;
-  uint8_t dead = 0;
+  static uint8_t dead = 0;
 
-  spa_input(&choice, sizeof(choice), "spa_in_lossMask", &initialValue,
-            "spa_init_in_lossMask");
+  spa_input(&choice, sizeof(choice), "spa_in_model_lossMask", &initialValue,
+            "spa_init_in_model_lossMask");
 
   if (dead || choice) {
     dead = 1;
@@ -67,15 +67,15 @@ int __attribute__((used, noinline)) spa_faultmodel_earlydeath() {
   }
 }
 
-int __attribute__((used, noinline)) spa_faultmodel_latewakening() {
+int __attribute__((used, noinline)) spa_faultmodel_latejoin() {
   uint8_t choice = 0;
   static uint8_t **initialValue = NULL;
-  uint8_t awake = 0;
+  static uint8_t awake = 0;
 
-  spa_input(&choice, sizeof(choice), "spa_in_lossMask", &initialValue,
-            "spa_init_in_lossMask");
+  spa_input(&choice, sizeof(choice), "spa_in_model_lossMask", &initialValue,
+            "spa_init_in_model_lossMask");
 
-  if ((!awake) || choice) {
+  if ((!awake) && choice) {
     return klee_get_value_i32(1);
   } else {
     awake = 1;

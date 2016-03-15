@@ -165,10 +165,11 @@ Path *buildDerivedPath(Path *basePath, Path *sourcePath) {
       return NULL;
     }
   }
-  // Connect API inputs.
+  // Connect API/Model inputs.
   for (unsigned long lit = 0; lit < newLogPos; lit++) {
     if (basePath->symbolLog[lit]->isInput() &&
-        basePath->symbolLog[lit]->isAPI()) {
+        (basePath->symbolLog[lit]->isAPI() ||
+         basePath->symbolLog[lit]->isModel())) {
       assert(basePath->symbolLog[lit]->getFullName() ==
                  sourcePath->symbolLog[lit]->getFullName() &&
              basePath->symbolLog[lit]->getInputArray()->size ==
@@ -194,7 +195,7 @@ Path *buildDerivedPath(Path *basePath, Path *sourcePath) {
       }
     }
   }
-  // Solve for API inputs.
+  // Solve for API/Model inputs.
   std::vector<std::vector<unsigned char> > result;
   if (solver->getInitialValues(
           klee::Query(destinationPath->constraints,
