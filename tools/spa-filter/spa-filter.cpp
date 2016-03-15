@@ -1,4 +1,5 @@
 #include <fstream>
+#include <unistd.h>
 
 #include <llvm/Support/CommandLine.h>
 #include <llvm/ADT/OwningPtr.h>
@@ -14,12 +15,17 @@
 #undef PACKAGE_TARNAME
 #undef PACKAGE_VERSION
 
+#define FOLLOW_WAIT 1 // s
+
 namespace {
 llvm::cl::opt<bool> EnableDbg("d", llvm::cl::init(false),
                               llvm::cl::desc("Output debug information."));
 
 llvm::cl::opt<std::string> InFileName(llvm::cl::Positional, llvm::cl::Required,
                                       llvm::cl::desc("<input path-file>"));
+
+llvm::cl::opt<bool> Follow("f", llvm::cl::init(false),
+                           llvm::cl::desc("Follow inputs file."));
 
 llvm::cl::opt<std::string> OutFileName(llvm::cl::Positional, llvm::cl::Required,
                                        llvm::cl::desc("<output path-file>"));
@@ -61,7 +67,13 @@ int main(int argc, char **argv, char **envp) {
 
   SPA::PathLoader pathLoader(inFile);
   llvm::OwningPtr<SPA::Path> path;
-  while (path.reset(pathLoader.getPath()), path) {
+  while (path.reset(pathLoader.getPath()), path || Follow) {
+    if (!path) {
+      klee::klee_message("Waiting for new input paths.");
+      sleep(FOLLOW_WAIT);
+      continue;
+    }
+
     klee::klee_message("Processing path.");
 
     if (expr->checkPath(*path.get())) {
