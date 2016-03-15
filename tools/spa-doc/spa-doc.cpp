@@ -1165,9 +1165,8 @@ int main(int argc, char **argv, char **envp) {
     pathIDs[path] = pathID;
     allPaths.insert(path);
 
-    if (path->getParticipants().size() > 1) {
-      assert(pathsByUUID.count(path->getParticipants().rbegin()[1]
-                                   ->getPathUUID()) && "Unknown parent path.");
+    if (path->getParticipants().size() > 1 &&
+        pathsByUUID.count(path->getParticipants().rbegin()[1]->getPathUUID())) {
       childrenPaths[
           pathsByUUID[path->getParticipants().rbegin()[1]->getPathUUID()]]
           .insert(path);
