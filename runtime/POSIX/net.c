@@ -12,16 +12,21 @@
 struct {
   int type;
   int listen;
+  int closed;
   struct sockaddr_in bind_addr;
   struct sockaddr_in connect_addr;
 } sockets[20];
 int next_available_sockfd = INITIAL_SOCKFD;
 
-int __attribute__((used, noinline)) spa_faultmodel_none() {
+int __attribute__((used, noinline))
+    spa_faultmodel_none(int sockfd, const struct sockaddr_in *from,
+                        const struct sockaddr_in *to) {
   return klee_get_value_i32(0);
 }
 
-int __attribute__((used, noinline)) spa_faultmodel_symbolic() {
+int __attribute__((used, noinline))
+    spa_faultmodel_symbolic(int sockfd, const struct sockaddr_in *from,
+                            const struct sockaddr_in *to) {
   uint8_t choice = 0;
   static uint8_t **initialValue = NULL;
 
@@ -35,7 +40,9 @@ int __attribute__((used, noinline)) spa_faultmodel_symbolic() {
   }
 }
 
-int __attribute__((used, noinline)) spa_faultmodel_onedrop() {
+int __attribute__((used, noinline))
+    spa_faultmodel_onedrop(int sockfd, const struct sockaddr_in *from,
+                           const struct sockaddr_in *to) {
   uint8_t choice = 0;
   static uint8_t **initialValue = NULL;
   static uint8_t dropped = 0;
@@ -51,7 +58,9 @@ int __attribute__((used, noinline)) spa_faultmodel_onedrop() {
   }
 }
 
-int __attribute__((used, noinline)) spa_faultmodel_earlydeath() {
+int __attribute__((used, noinline))
+    spa_faultmodel_earlydeath(int sockfd, const struct sockaddr_in *from,
+                              const struct sockaddr_in *to) {
   uint8_t choice = 0;
   static uint8_t **initialValue = NULL;
   static uint8_t dead = 0;
@@ -67,7 +76,9 @@ int __attribute__((used, noinline)) spa_faultmodel_earlydeath() {
   }
 }
 
-int __attribute__((used, noinline)) spa_faultmodel_latejoin() {
+int __attribute__((used, noinline))
+    spa_faultmodel_latejoin(int sockfd, const struct sockaddr_in *from,
+                            const struct sockaddr_in *to) {
   uint8_t choice = 0;
   static uint8_t **initialValue = NULL;
   static uint8_t awake = 0;
@@ -105,6 +116,10 @@ int spa_socket(int family, int type, int protocol) {
 }
 
 int spa_bind(int sockfd, const struct sockaddr *myaddr, socklen_t addrlen) {
+  if (sockets[sockfd].closed) {
+    return -1;
+  }
+
   memcpy(&sockets[sockfd].bind_addr, myaddr, addrlen);
 
   // Bind default IP if none given.
@@ -120,6 +135,10 @@ int spa_bind(int sockfd, const struct sockaddr *myaddr, socklen_t addrlen) {
 }
 
 int spa_listen(int sockfd, int backlog) {
+  if (sockets[sockfd].closed) {
+    return -1;
+  }
+
   sockets[sockfd].listen = 1;
 
   printf("[model listen] Listening on socket: %d.\n", sockfd);
@@ -131,9 +150,15 @@ int connect(int sockfd, const struct sockaddr *saddr, socklen_t addrlen) {
   char bind_addr[100], connect_addr[100], connect_name[100],
       connectsize_name[100];
 
-  int drop = spa_faultmodel_none();
+  if (sockets[sockfd].closed) {
+    return -1;
+  }
 
   memcpy(&sockets[sockfd].connect_addr, saddr, addrlen);
+
+  int drop = spa_faultmodel_none(
+      sockfd, (const struct sockaddr_in *)&sockets[sockfd].bind_addr,
+      (const struct sockaddr_in *)&sockets[sockfd].connect_addr);
 
   assert(sockets[sockfd].connect_addr.sin_family == AF_INET);
   inet_ntop(AF_INET, &sockets[sockfd].bind_addr.sin_addr.s_addr, bind_addr,
@@ -162,12 +187,20 @@ int connect(int sockfd, const struct sockaddr *saddr, socklen_t addrlen) {
          sockets[sockfd].type == SOCK_STREAM ? "tcp" : "udp", connect_addr,
          ntohs(sockets[sockfd].connect_addr.sin_port));
 
+  if (drop) {
+    sockets[sockfd].closed = 1;
+  }
+
   return drop ? -1 : 0;
 }
 
 int accept(int s, struct sockaddr *addr, socklen_t *addrlen) {
   static char bind_addr[100], connect_name[100], init_connect_name[100];
   static uint8_t **init_connect_value = NULL;
+
+  if (sockets[s].closed) {
+    return -1;
+  }
 
   inet_ntop(AF_INET, &sockets[s].bind_addr.sin_addr.s_addr, bind_addr,
             sizeof(bind_addr));
@@ -223,12 +256,17 @@ ssize_t sendto(int sockfd, const void *buffer, size_t len, int flags,
                const struct sockaddr *to, socklen_t tolen) {
   char bind_addr[100], connect_addr[100], msg_name[100], size_name[100];
 
+  if (sockets[sockfd].closed) {
+    return -1;
+  }
+
   if (!to) {
     to = (const struct sockaddr *)&sockets[sockfd].connect_addr;
   }
   assert(to->sa_family == AF_INET);
 
-  int drop = spa_faultmodel_none();
+  int drop = spa_faultmodel_none(sockfd, &sockets[sockfd].bind_addr,
+                                 (const struct sockaddr_in *)to);
 
   inet_ntop(AF_INET, &sockets[sockfd].bind_addr.sin_addr.s_addr, bind_addr,
             sizeof(bind_addr));
@@ -282,6 +320,8 @@ ssize_t sendto(int sockfd, const void *buffer, size_t len, int flags,
   spa_msg_output_point();
 
   if (drop && sockets[sockfd].type == SOCK_STREAM) {
+    sockets[sockfd].closed = 1;
+
     return -1;
   } else {
     return len;
@@ -295,6 +335,10 @@ ssize_t recv(int sockfd, __ptr_t buffer, size_t len, int flags) {
 ssize_t recvfrom(int sockfd, __ptr_t buffer, size_t len, int flags,
                  struct sockaddr *src, socklen_t *srclen) {
   int64_t size = 0;
+
+  if (sockets[sockfd].closed) {
+    return -1;
+  }
 
   if (sockets[sockfd].type == SOCK_STREAM) {
     static char bind_addr[100], connect_addr[100], msg_name[100],
@@ -416,11 +460,12 @@ int select(int nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds,
   int i;
   for (i = 0; i < nfds; i++) {
     // Writes and exceptions never block.
-    fd_count += (writefds && FD_ISSET(i, writefds) ? 1 : 0) +
-                (exceptfds && FD_ISSET(i, exceptfds) ? 1 : 0);
+    fd_count +=
+        ((writefds && FD_ISSET(i, writefds) && (!sockets[i].closed)) ? 1 : 0) +
+        ((exceptfds && FD_ISSET(i, exceptfds) && (!sockets[i].closed)) ? 1 : 0);
 
     // Finds available read fd which is closest in the log,.
-    if (readfds && FD_ISSET(i, readfds)) {
+    if (readfds && FD_ISSET(i, readfds) && (!sockets[i].closed)) {
       static char src_name[100];
 
       printf("[model select] Checking socket %d for read.\n", i);
@@ -478,7 +523,8 @@ int select(int nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds,
 }
 
 int spa_getpeername(int sockfd, struct sockaddr *addr, socklen_t *addrlen) {
-  if (sockfd >= INITIAL_SOCKFD && sockfd < next_available_sockfd) {
+  if (sockfd >= INITIAL_SOCKFD && sockfd < next_available_sockfd &&
+      (!sockets[sockfd].closed)) {
     memcpy(addr, &sockets[sockfd].connect_addr,
            *addrlen < sizeof(sockets[sockfd].connect_addr)
                ? *addrlen
