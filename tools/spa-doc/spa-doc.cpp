@@ -73,6 +73,8 @@ typedef struct {
 } message_t;
 
 std::set<SPA::Path *> allPaths;
+// id -> path
+std::map<unsigned long, SPA::Path *> pathsByID;
 // uuid -> path
 std::map<std::string, SPA::Path *> pathsByUUID;
 // path -> path-id.
@@ -806,6 +808,13 @@ std::string generateCSS() {
          "  font-weight: bold;\n"
          "  color: black;\n"
          "}\n"
+         "div#header form {\n"
+         "  display: table-cell;\n"
+         "  width: 100px;\n"
+         "  padding: 14px 16px;\n"
+         "  text-align: center;\n"
+         "  vertical-align: middle;\n"
+         "}\n"
          "div#header a:hover {\n"
          "  background-color: black;\n"
          "  color: white;\n"
@@ -931,7 +940,17 @@ std::string generateConversationIndex() {
       "      <a href=\"index.html\">All Conversations</a>\n"
       "      <a href=\"paths.html\">All Paths</a>\n"
       "      <a href=\"coverage.html\">Coverage</a>\n"
-      "    </div>\n";
+      "      <form>\n"
+      "        <select "
+      "onchange='if (this.value) window.location.href=this.value'>\n"
+      "          <option value=''>Go to path:</option>\n";
+  for (auto pit : pathsByID) {
+    conversationIndex += "          <option value='" + pit.second->getUUID() +
+                         ".html'>" + SPA::numToStr(pit.first) + "</option>\n";
+  }
+  conversationIndex += "        </select>\n"
+                       "      </form>\n"
+                       "    </div>\n";
   conversationIndex +=
       "    Documented " + SPA::numToStr(pathsByUUID.size()) + " paths (" +
       SPA::numToStr(numDerived) + " derived and " +
@@ -1166,9 +1185,10 @@ int main(int argc, char **argv, char **envp) {
 
     klee::klee_message("  Loading path %ld (%s).", pathID,
                        path->getUUID().c_str());
-    pathsByUUID[path->getUUID()] = path;
-    pathIDs[path] = pathID;
     allPaths.insert(path);
+    pathsByID[pathID] = path;
+    pathIDs[path] = pathID;
+    pathsByUUID[path->getUUID()] = path;
 
     if (path->getParticipants().size() > 1 &&
         pathsByUUID.count(path->getParticipants().rbegin()[1]->getPathUUID())) {
