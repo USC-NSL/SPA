@@ -79,8 +79,9 @@ std::map<std::string, SPA::Path *> pathsByUUID;
 std::map<SPA::Path *, unsigned long> pathIDs;
 // participants -> paths
 std::map<std::vector<std::string>, std::set<SPA::Path *> > conversations;
-// uuid -> [participant, uuid]s.
-std::map<SPA::Path *, std::set<SPA::Path *> > childrenPaths;
+// path -> (participant -> paths).
+std::map<SPA::Path *, std::map<std::string, std::set<SPA::Path *> > >
+    childrenPaths;
 // filter -> color
 std::set<std::pair<SPA::FilterExpression *, std::string> > colorFilters;
 // path -> colors
@@ -480,9 +481,27 @@ std::string generatePathHTML(SPA::Path *path) {
   messageLogDot += "}\n";
 
   std::set<SPA::Path *> fullConversation, worklist;
-  // Show entire conversation up to the children of the current path.
-  worklist = childrenPaths[path];
-  worklist.insert(path);
+  // Show entire conversation up to the children and direct siblings
+  // (same parent and same participant) of the current path.
+  // Add children to worklist.
+  for (auto p : childrenPaths[path]) {
+    worklist.insert(p.second.begin(), p.second.end());
+  }
+  // Add siblings to worklist.
+  if (path->getParticipants().size() > 1) {
+    if (pathsByUUID.count(path->getParticipants().rbegin()[1]->getPathUUID())) {
+      auto siblings = childrenPaths[
+          pathsByUUID[path->getParticipants().rbegin()[1]->getPathUUID()]][
+          path->getParticipants().back()->getName()];
+      worklist.insert(siblings.begin(), siblings.end());
+    }
+  } else {
+    if (childrenPaths.count(NULL)) {
+      auto siblings =
+          childrenPaths[NULL][path->getParticipants().back()->getName()];
+      worklist.insert(siblings.begin(), siblings.end());
+    }
+  }
   while (!worklist.empty()) {
     SPA::Path *path = *worklist.begin();
     worklist.erase(path);
@@ -1170,10 +1189,15 @@ int main(int argc, char **argv, char **envp) {
     pathIDs[path] = pathID;
     allPaths.insert(path);
 
-    if (path->getParticipants().size() > 1 &&
-        pathsByUUID.count(path->getParticipants().rbegin()[1]->getPathUUID())) {
-      childrenPaths[
-          pathsByUUID[path->getParticipants().rbegin()[1]->getPathUUID()]]
+    if (path->getParticipants().size() > 1) {
+      if (pathsByUUID.count(path->getParticipants().rbegin()[1]
+                                ->getPathUUID())) {
+        childrenPaths[
+            pathsByUUID[path->getParticipants().rbegin()[1]->getPathUUID()]][
+            path->getParticipants().back()->getName()].insert(path);
+      }
+    } else {
+      childrenPaths[NULL][path->getParticipants().back()->getName()]
           .insert(path);
     }
 
