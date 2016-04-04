@@ -158,7 +158,7 @@ std::string __attribute__((weak))
   assert(sem_init(sem, 1 /*shared across processes*/, 0) != -1 &&
          "Failed to initialize semaphore");
 
-  pid_t pid = fork();
+  pid_t pid = vfork();
   assert(pid != -1 && "Unable to fork child process.");
   if (pid == 0) {
     assert(close(pipe_to_cmd[1]) == 0);
