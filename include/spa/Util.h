@@ -159,6 +159,7 @@ std::string __attribute__((weak))
          "Failed to initialize semaphore");
 
   pid_t pid = fork();
+  assert(pid != -1 && "Unable to fork child process.");
   if (pid == 0) {
     assert(close(pipe_to_cmd[1]) == 0);
     assert(dup2(pipe_to_cmd[0], 0) >= 0);
