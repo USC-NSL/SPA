@@ -15,6 +15,7 @@
 #include <llvm/IR/Instruction.h>
 #include <llvm/DebugInfo.h>
 
+#include "../../lib/Core/Common.h"
 #include <spa/Path.h>
 
 namespace SPA {
@@ -158,8 +159,14 @@ std::string __attribute__((weak))
 
   assert(close(pipe_to_cmd[0]) == 0);
   assert(close(pipe_from_cmd[1]) == 0);
-  assert(write(pipe_to_cmd[1], input.c_str(), input.length()) == (long)
-         input.length());
+  if (write(pipe_to_cmd[1], input.c_str(), input.length()) != (long)
+      input.length()) {
+    klee::klee_warning("runCommand failed to send input to command.");
+    assert(close(pipe_to_cmd[1]) == 0);
+    assert(close(pipe_from_cmd[0]) == 0);
+    assert(waitpid(pid, NULL, 0) == pid);
+    return "";
+  }
   assert(close(pipe_to_cmd[1]) == 0);
 
   char c;
