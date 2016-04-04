@@ -11,6 +11,9 @@
 
 #include <unistd.h>
 #include <sys/wait.h>
+#include <sys/shm.h>
+#include <sys/stat.h>
+#include <semaphore.h>
 
 #include <llvm/IR/Instruction.h>
 #include <llvm/DebugInfo.h>
@@ -147,26 +150,38 @@ std::string __attribute__((weak))
   assert(pipe(pipe_to_cmd) == 0);
   assert(pipe(pipe_from_cmd) == 0);
 
+  int id = shmget(IPC_PRIVATE, sizeof(sem_t), (S_IRUSR | S_IWUSR));
+  assert(id != -1 && "Failed to create shared memory for semaphore.");
+  sem_t *sem = (sem_t *)shmat(id, NULL, 0);
+  assert(sem != (void *)- 1 &&
+         "Failed to attach memory segment for semaphore.");
+  assert(sem_init(sem, 1 /*shared across processes*/, 0) != -1 &&
+         "Failed to initialize semaphore");
+
   pid_t pid = fork();
   if (pid == 0) {
     assert(close(pipe_to_cmd[1]) == 0);
     assert(dup2(pipe_to_cmd[0], 0) >= 0);
     assert(close(pipe_from_cmd[0]) == 0);
     assert(dup2(pipe_from_cmd[1], 1) >= 0);
+
+    assert(sem_post(sem) != -1 && "Failed to unlock semaphore.");
+
     assert(execl("/bin/sh", "sh", "-c", command.c_str(), NULL) == 0);
     exit(-1);
   }
 
+  // Wait for child process to start.
+  while (sem_wait(sem) == -1) {
+    assert(errno == EINTR && "Failed to lock semaphore.");
+  }
+  assert(shmdt((void *)sem) == 0 &&
+         "Failed to destroy semaphore shared memory.");
+
   assert(close(pipe_to_cmd[0]) == 0);
   assert(close(pipe_from_cmd[1]) == 0);
-  if (write(pipe_to_cmd[1], input.c_str(), input.length()) != (long)
-      input.length()) {
-    klee::klee_warning("runCommand failed to send input to command.");
-    assert(close(pipe_to_cmd[1]) == 0);
-    assert(close(pipe_from_cmd[0]) == 0);
-    assert(waitpid(pid, NULL, 0) == pid);
-    return "";
-  }
+  assert(write(pipe_to_cmd[1], input.c_str(), input.length()) == (long)
+         input.length());
   assert(close(pipe_to_cmd[1]) == 0);
 
   char c;
