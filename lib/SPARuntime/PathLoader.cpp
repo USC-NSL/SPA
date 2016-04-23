@@ -233,7 +233,6 @@ Path *PathLoader::getPath() {
 
         delim = line.find(" ");
         std::string name = line.substr(0, delim);
-        line = line.substr(name.length());
 
         if (delim != std::string::npos) {
           std::stringstream ss(line.substr(name.length()));
