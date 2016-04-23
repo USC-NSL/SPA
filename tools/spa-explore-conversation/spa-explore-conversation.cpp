@@ -243,16 +243,23 @@ Path *buildDerivedPath(Path *basePath, Path *sourcePath) {
   destinationPath->tags.insert(basePath->tags.begin(), basePath->tags.end());
   // Explored line coverage.
   destinationPath->exploredLineCoverage = basePath->exploredLineCoverage;
-  for (auto fit : sourcePath->exploredLineCoverage) {
-    for (auto lit : fit.second) {
-      destinationPath->exploredLineCoverage[fit.first][lit.first] |= lit.second;
+  for (auto pit : sourcePath->exploredLineCoverage) {
+    for (auto fit : pit.second) {
+      for (auto lit : fit.second) {
+        destinationPath
+            ->exploredLineCoverage[pit.first][fit.first][lit.first] |=
+            lit.second;
+      }
     }
   }
   // Explored function coverage.
   destinationPath->exploredFunctionCoverage =
       basePath->exploredFunctionCoverage;
-  for (auto fit : sourcePath->exploredFunctionCoverage) {
-    destinationPath->exploredFunctionCoverage[fit.first] |= fit.second;
+  for (auto pit : sourcePath->exploredFunctionCoverage) {
+    for (auto fit : pit.second) {
+      destinationPath->exploredFunctionCoverage[pit.first][fit.first] |=
+          fit.second;
+    }
   }
   // Explored path.
   destinationPath->exploredPath = basePath->exploredPath;
@@ -262,15 +269,20 @@ Path *buildDerivedPath(Path *basePath, Path *sourcePath) {
       ->exploredPath[sourcePath->getParticipants().back()->getName()];
   // Test line coverage.
   destinationPath->testLineCoverage = basePath->testLineCoverage;
-  for (auto fit : sourcePath->testLineCoverage) {
-    for (auto lit : fit.second) {
-      destinationPath->testLineCoverage[fit.first][lit.first] |= lit.second;
+  for (auto pit : sourcePath->testLineCoverage) {
+    for (auto fit : pit.second) {
+      for (auto lit : fit.second) {
+        destinationPath->testLineCoverage[pit.first][fit.first][lit.first] |=
+            lit.second;
+      }
     }
   }
   // Test function coverage.
   destinationPath->testFunctionCoverage = basePath->testFunctionCoverage;
-  for (auto fit : sourcePath->testFunctionCoverage) {
-    destinationPath->testFunctionCoverage[fit.first] |= fit.second;
+  for (auto pit : sourcePath->testFunctionCoverage) {
+    for (auto fit : pit.second) {
+      destinationPath->testFunctionCoverage[pit.first][fit.first] |= fit.second;
+    }
   }
 
   return destinationPath;

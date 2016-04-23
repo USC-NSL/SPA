@@ -136,9 +136,9 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
     std::string srcLoc = debugLocation(inst);
     std::string srcFile = srcLoc.substr(0, srcLoc.find(":"));
     long srcLineNum = strToNum<long>(srcLoc.substr(srcLoc.find(":") + 1));
-    exploredLineCoverage[srcFile][srcLineNum] = true;
-    exploredFunctionCoverage[inst->getParent()->getParent()->getName().str()] =
-        true;
+    exploredLineCoverage[ParticipantName][srcFile][srcLineNum] = true;
+    exploredFunctionCoverage[ParticipantName][
+        inst->getParent()->getParent()->getName().str()] = true;
   }
   for (llvm::Function &fn :
        *state.pc->inst->getParent()->getParent()->getParent()) {
@@ -148,12 +148,12 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
         std::string srcFile = srcLoc.substr(0, srcLoc.find(":"));
         long srcLineNum = strToNum<long>(srcLoc.substr(srcLoc.find(":") + 1));
 
-        if (!exploredLineCoverage[srcFile].count(srcLineNum)) {
-          exploredLineCoverage[srcFile][srcLineNum] = false;
+        if (!exploredLineCoverage[ParticipantName][srcFile].count(srcLineNum)) {
+          exploredLineCoverage[ParticipantName][srcFile][srcLineNum] = false;
         }
-        if (!exploredFunctionCoverage.count(
-                inst.getParent()->getParent()->getName().str())) {
-          exploredFunctionCoverage[
+        if (!exploredFunctionCoverage[ParticipantName]
+                .count(inst.getParent()->getParent()->getName().str())) {
+          exploredFunctionCoverage[ParticipantName][
               inst.getParent()->getParent()->getName().str()] = false;
         }
       }
@@ -190,42 +190,77 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
   }
 }
 
-bool Path::isFunctionCovered(std::string fn,
-                             std::map<std::string, bool> &coverage) {
-  return coverage.count(fn) && coverage[fn];
+bool Path::isFunctionCovered(
+    std::string fn,
+    std::map<std::string, std::map<std::string, bool> > &coverage,
+    std::string participant) {
+  if (participant.empty()) {
+    for (auto participantCov : coverage) {
+      if (participantCov.second.count(fn) && participantCov.second[fn]) {
+        return true;
+      }
+    }
+    return false;
+  } else {
+    return coverage.count(participant) && coverage[participant].count(fn) &&
+           coverage[participant][fn];
+  }
 }
 
-bool
-Path::isLineCovered(std::string dbgStr,
-                    std::map<std::string, std::map<long, bool> > &coverage) {
+bool Path::isLineCovered(
+    std::string dbgStr,
+    std::map<std::string, std::map<std::string, std::map<long, bool> > > &
+        coverage,
+    std::string participant) {
   // Interpret as dir/file:line
   std::string dbgPath = dbgStr.substr(0, dbgStr.find(":"));
   long dbgLineNo = strToNum<long>(dbgStr.substr(dbgPath.length() + 1));
 
-  for (auto covPath : coverage) {
-    if (pathPrefixMatch(covPath.first, dbgPath)) {
-      return covPath.second.count(dbgLineNo) && covPath.second[dbgLineNo];
+  if (participant.empty()) {
+    for (auto participantCov : coverage) {
+      for (auto covPath : participantCov.second) {
+        if (pathPrefixMatch(covPath.first, dbgPath) &&
+            covPath.second.count(dbgLineNo) && covPath.second[dbgLineNo]) {
+          return true;
+        }
+      }
+    }
+    return false;
+  } else {
+    if (coverage.count(participant)) {
+      for (auto covPath : coverage[participant]) {
+        if (pathPrefixMatch(covPath.first, dbgPath)) {
+          return covPath.second.count(dbgLineNo) && covPath.second[dbgLineNo];
+        }
+      }
     }
   }
   return false;
 }
 
 bool Path::isCovered(std::string dbgStr) {
+  std::string participant;
+  auto d = dbgStr.find("@");
+  if (d != std::string::npos) {
+    participant = dbgStr.substr(0, d);
+    dbgStr = dbgStr.substr(d + 1);
+  }
+
   if (dbgStr.find(":") == std::string::npos) {
     // Interpret as function.
     if (!testFunctionCoverage.empty()) {
-      return isFunctionCovered(dbgStr, testFunctionCoverage);
+      return isFunctionCovered(dbgStr, testFunctionCoverage, participant);
     } else if (!exploredFunctionCoverage.empty()) {
-      return isFunctionCovered(dbgStr, exploredFunctionCoverage);
+      return isFunctionCovered(dbgStr, exploredFunctionCoverage, participant);
     } else {
       assert(false && "No coverage data.");
     }
   } else {
     // Interpret as dir/file:line
     if (!testLineCoverage.empty()) {
-      return isLineCovered(dbgStr, testLineCoverage);
+      return isLineCovered(dbgStr, testLineCoverage, participant);
     } else if (!exploredLineCoverage.empty()) {
-      return isLineCovered(dbgStr, exploredLineCoverage);
+      return isLineCovered(dbgStr, exploredLineCoverage, participant);
     } else {
       assert(false && "No coverage data.");
     }
@@ -290,15 +325,20 @@ std::string Path::getPathSource() const {
 
   if ((!exploredLineCoverage.empty()) || (!exploredFunctionCoverage.empty())) {
     result += SPA_PATH_EXPLOREDCOVERAGE_START "\n";
-    for (auto srcFile : exploredLineCoverage) {
-      result += srcFile.first;
-      for (auto line : srcFile.second) {
-        result += (line.second ? " " : " !") + numToStr(line.first);
+    for (auto participant : exploredLineCoverage) {
+      for (auto srcFile : participant.second) {
+        result += participant.first + " " + srcFile.first;
+        for (auto line : srcFile.second) {
+          result += (line.second ? " " : " !") + numToStr(line.first);
+        }
+        result += "\n";
       }
-      result += "\n";
     }
-    for (auto fn : exploredFunctionCoverage) {
-      result += (fn.second ? "" : "!") + fn.first + "\n";
+    for (auto participant : exploredFunctionCoverage) {
+      for (auto fn : participant.second) {
+        result +=
+            participant.first + (fn.second ? " " : " !") + fn.first + "\n";
+      }
     }
     result += SPA_PATH_EXPLOREDCOVERAGE_END "\n";
   }
@@ -326,15 +366,20 @@ std::string Path::getPathSource() const {
 
   if ((!testLineCoverage.empty()) || (!testFunctionCoverage.empty())) {
     result += SPA_PATH_TESTCOVERAGE_START "\n";
-    for (auto srcFile : testLineCoverage) {
-      result += srcFile.first;
-      for (auto line : srcFile.second) {
-        result += (line.second ? " " : " !") + numToStr(line.first);
+    for (auto participant : testLineCoverage) {
+      for (auto srcFile : participant.second) {
+        result += participant.first + " " + srcFile.first;
+        for (auto line : srcFile.second) {
+          result += (line.second ? " " : " !") + numToStr(line.first);
+        }
+        result += "\n";
       }
-      result += "\n";
     }
-    for (auto fn : testFunctionCoverage) {
-      result += (fn.second ? "" : "!") + fn.first + "\n";
+    for (auto participant : testFunctionCoverage) {
+      for (auto fn : participant.second) {
+        result +=
+            participant.first + (fn.second ? " " : " !") + fn.first + "\n";
+      }
     }
     result += SPA_PATH_TESTCOVERAGE_END "\n";
   }

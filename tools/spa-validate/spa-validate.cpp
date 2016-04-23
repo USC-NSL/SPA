@@ -436,8 +436,9 @@ void loadCoverage(SPA::Path *path) {
     klee::klee_message("Covered %ld functions.", gcovFunctionCoverage.size());
   }
 
-  path->testLineCoverage = gcovLineCoverage;
-  path->testFunctionCoverage = gcovFunctionCoverage;
+  //TODO: Find a way to differentiate among participants.
+  path->testLineCoverage[""] = gcovLineCoverage;
+  path->testFunctionCoverage[""] = gcovFunctionCoverage;
 }
 
 int main(int argc, char **argv, char **envp) {

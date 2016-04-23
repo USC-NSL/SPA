@@ -179,23 +179,37 @@ private:
   std::vector<std::shared_ptr<Participant> > participants;
   std::string derivedFromUUID;
   std::vector<std::shared_ptr<Symbol> > symbolLog;
+  // qualified name -> [symbols]
   std::map<std::string, std::vector<std::shared_ptr<Symbol> > > inputSymbols;
+  // qualified name -> [symbols]
   std::map<std::string, std::vector<std::shared_ptr<Symbol> > > outputSymbols;
   std::map<std::string, std::string> tags;
   klee::ConstraintManager constraints;
-  std::map<std::string, std::map<long, bool> > exploredLineCoverage;
-  std::map<std::string, bool> exploredFunctionCoverage;
+  // participant -> (file -> (line -> covered))
+  std::map<std::string, std::map<std::string, std::map<long, bool> > >
+      exploredLineCoverage;
+  // participant -> (function -> covered)
+  std::map<std::string, std::map<std::string, bool> > exploredFunctionCoverage;
+  // participant -> [location, branch]
   std::map<std::string, std::vector<std::pair<std::string, bool> > >
       exploredPath;
+  // full name -> [bytes]
   std::map<std::string, std::vector<uint8_t> > testInputs;
-  std::map<std::string, std::map<long, bool> > testLineCoverage;
-  std::map<std::string, bool> testFunctionCoverage;
+  // participant -> (file -> (line -> covered))
+  std::map<std::string, std::map<std::string, std::map<long, bool> > >
+      testLineCoverage;
+  // participant -> (function -> covered)
+  std::map<std::string, std::map<std::string, bool> > testFunctionCoverage;
 
-  static bool isFunctionCovered(std::string fn,
-                                std::map<std::string, bool> &coverage);
-  static bool
-      isLineCovered(std::string dbgStr,
-                    std::map<std::string, std::map<long, bool> > &coverage);
+  static bool isFunctionCovered(
+      std::string fn,
+      std::map<std::string, std::map<std::string, bool> > &coverage,
+      std::string participant);
+  static bool isLineCovered(
+      std::string dbgStr,
+      std::map<std::string, std::map<std::string, std::map<long, bool> > > &
+          coverage,
+      std::string participant);
 
 public:
   Path() {}

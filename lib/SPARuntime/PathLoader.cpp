@@ -226,7 +226,14 @@ Path *PathLoader::getPath() {
       } break;
       case EXPLOREDCOVERAGE: {
         auto delim = line.find(" ");
+        assert(delim != std::string::npos &&
+               "Coverage doesn't have participant information.");
+        std::string participant = line.substr(0, delim);
+        line = line.substr(delim + 1);
+
+        delim = line.find(" ");
         std::string name = line.substr(0, delim);
+        line = line.substr(name.length());
 
         if (delim != std::string::npos) {
           std::stringstream ss(line.substr(name.length()));
@@ -245,14 +252,14 @@ Path *PathLoader::getPath() {
             coverage[lineNo] = covered;
           }
 
-          assert(!coverage.empty() && "Invalid line coverage line.");
-          path->exploredLineCoverage[name] = coverage;
+          assert(!coverage.empty() && "Invalid explored coverage line.");
+          path->exploredLineCoverage[participant][name] = coverage;
         } else {
           if (name[0] == '!') {
             name = name.substr(1);
-            path->exploredFunctionCoverage[name] = false;
+            path->exploredFunctionCoverage[participant][name] = false;
           } else {
-            path->exploredFunctionCoverage[name] = true;
+            path->exploredFunctionCoverage[participant][name] = true;
           }
         }
       } break;
@@ -284,32 +291,42 @@ Path *PathLoader::getPath() {
         path->testInputs[name] = value;
       } break;
       case TESTCOVERAGE: {
-        std::string name = line.substr(0, line.find(" "));
-        std::stringstream ss(line.substr(name.length()));
-        std::map<long, bool> coverage;
+        auto delim = line.find(" ");
+        assert(delim != std::string::npos &&
+               "Coverage doesn't have participant information.");
+        std::string participant = line.substr(0, delim);
+        line = line.substr(delim + 1);
 
-        while (ss.good()) {
-          while (ss.peek() == ' ') {
-            ss.get();
-          }
-          bool covered = (ss.peek() != '!');
-          if (!covered) {
-            ss.get();
-          }
-          long line;
-          ss >> line;
-          coverage[line] = covered;
-        }
+        delim = line.find(" ");
+        std::string name = line.substr(0, delim);
+        line = line.substr(name.length());
 
-        if (coverage.empty()) {
+        if (delim != std::string::npos) {
+          std::stringstream ss(line);
+          std::map<long, bool> coverage;
+
+          while (ss.good()) {
+            while (ss.peek() == ' ') {
+              ss.get();
+            }
+            bool covered = (ss.peek() != '!');
+            if (!covered) {
+              ss.get();
+            }
+            long line;
+            ss >> line;
+            coverage[line] = covered;
+          }
+
+          path->testLineCoverage[participant][name] = coverage;
+        } else {
+
           if (name[0] == '!') {
             name = name.substr(1);
-            path->testFunctionCoverage[name] = false;
+            path->testFunctionCoverage[participant][name] = false;
           } else {
-            path->testFunctionCoverage[name] = true;
+            path->testFunctionCoverage[participant][name] = true;
           }
-        } else {
-          path->testLineCoverage[name] = coverage;
         }
       } break;
       default: {
