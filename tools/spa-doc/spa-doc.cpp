@@ -751,72 +751,9 @@ std::string generatePathHTML(SPA::Path *path) {
               "    <h2>Coverage</h2>\n"
               "    <b>Files:</b><br />\n";
   for (auto it : srcFiles) {
-    std::string srcFileName = remapSrcFileName(it);
-    htmlFile +=
-        "    <a href='#" + srcFileName + "'>" + srcFileName + "</a><br />\n";
-  }
-
-  for (auto fit : srcFiles) {
-    std::string srcFileName = remapSrcFileName(fit);
-    htmlFile += "    <div class='box' id='" + srcFileName +
-                "'>\n"
-                "      <a class='closebutton' href='#'>&#x2715;</a>\n"
-                "      <b>" + srcFileName + "</b>\n"
-                                            "      <div class='content'>\n"
-                                            "        <div class='src'>\n";
-    std::ifstream srcFile(srcFileName);
-    for (unsigned long srcLineNum = 1; srcFile.good(); srcLineNum++) {
-      std::set<std::string> covering, notCovering;
-      for (auto pit : path->getExploredLineCoverage()) {
-        if (pit.second.count(fit) &&
-            pit.second[fit].count(srcLineNum)) {
-          if (pit.second[fit][srcLineNum]) {
-            covering.insert(pit.first);
-          } else {
-            notCovering.insert(pit.first);
-          }
-        }
-      }
-
-      std::string srcLine;
-      std::getline(srcFile, srcLine);
-      htmlFile += "          <div class='line ";
-      htmlFile += (!covering.empty())
-                      ? "covered"
-                      : ((!notCovering.empty()) ? "uncovered" : "unknown");
-      htmlFile += "'>\n";
-      if (!(covering.empty() && notCovering.empty())) {
-        htmlFile += "<a href='" + coverageIndexes[fit] + "#l" +
-                    SPA::numToStr(srcLineNum) + "' title='";
-        if (!covering.empty()) {
-          htmlFile += "Covered by";
-          for (auto cit : covering) {
-            htmlFile += " " + cit;
-          }
-          htmlFile += ".";
-        }
-        if (!notCovering.empty()) {
-          htmlFile += " Not covered by";
-          for (auto cit : notCovering) {
-            htmlFile += " " + cit;
-          }
-          htmlFile += ".";
-        }
-        htmlFile += "'>\n";
-      }
-      htmlFile +=
-          "            <div class='number'>" + SPA::numToStr(srcLineNum) +
-          "</div>\n"
-          "            <div class='content'>" + sanitizeHTML(srcLine) +
-          "</div>\n";
-      if (!(covering.empty() && notCovering.empty())) {
-        htmlFile += "          </a>\n";
-      }
-      htmlFile += "          </div>\n";
-    }
-    htmlFile += "        </div>\n"
-                "      </div>\n"
-                "    </div>\n";
+    assert(coverageIndexes.count(it));
+    htmlFile += "    <a href='" + path->getUUID() + "-" + coverageIndexes[it] +
+                "'>" + remapSrcFileName(it) + "</a><br />\n";
   }
 
   htmlFile += "    <a class='anchor' id='src'></a>\n"
@@ -824,6 +761,94 @@ std::string generatePathHTML(SPA::Path *path) {
               "<pre>\n" + path->getPathSource() + "</pre>\n"
                                                   "  </body>\n"
                                                   "</html>\n";
+
+  return htmlFile;
+}
+
+std::string generatePathCoverageHTML(SPA::Path *path, std::string srcFileName) {
+  std::string remappedFileName = remapSrcFileName(srcFileName);
+  klee::klee_message("Processing coverage in %s for path %ld (%s).",
+                     remappedFileName.c_str(), pathIDs[path],
+                     path->getUUID().c_str());
+  std::string htmlFile =
+      "<!doctype html>\n"
+      "<html lang=\"en\">\n"
+      "  <head>\n"
+      "    <meta charset=\"utf-8\">\n"
+      "    <title>Coverage in " + remappedFileName + " for path " +
+      SPA::numToStr(pathIDs[path]) + "</title>\n";
+  htmlFile +=
+      "    <link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">\n"
+      "  </head>\n"
+      "  <body>\n"
+      "    <div id=\"header\">\n"
+      "      <a href=\"" + path->getUUID() +
+      ".html#metadata\">Path Meta-data</a>\n"
+      "      <a href=\"" + path->getUUID() +
+      ".html#messages\">Message Log</a>\n"
+      "      <a href=\"" + path->getUUID() +
+      ".html#constraints\">Symbolic Contraints</a>\n"
+      "      <a href=\"" + path->getUUID() + ".html#coverage\">Coverage</a>\n"
+                                             "      <a href=\"" +
+      path->getUUID() + ".html#src\">Path Source</a>\n"
+                        "      <a href=\"index.html\">All Conversations</a>\n"
+                        "    </div>\n";
+  htmlFile += "    <b>" + remappedFileName + "</b>\n";
+  htmlFile += "    <div class='src'>\n";
+  std::ifstream srcFile(remappedFileName);
+  for (unsigned long srcLineNum = 1; srcFile.good(); srcLineNum++) {
+    std::set<std::string> covering, notCovering;
+    for (auto pit : path->getExploredLineCoverage()) {
+      if (pit.second.count(srcFileName) &&
+          pit.second[srcFileName].count(srcLineNum)) {
+        if (pit.second[srcFileName][srcLineNum]) {
+          covering.insert(pit.first);
+        } else {
+          notCovering.insert(pit.first);
+        }
+      }
+    }
+
+    std::string srcLine;
+    std::getline(srcFile, srcLine);
+    htmlFile += "          <div class='line ";
+    htmlFile += (!covering.empty())
+                    ? "covered"
+                    : ((!notCovering.empty()) ? "uncovered" : "unknown");
+    htmlFile += "'>\n";
+    if (!(covering.empty() && notCovering.empty())) {
+      htmlFile += "<a href='" + coverageIndexes[srcFileName] + "#l" +
+                  SPA::numToStr(srcLineNum) + "' title='";
+      if (!covering.empty()) {
+        htmlFile += "Covered by";
+        for (auto cit : covering) {
+          htmlFile += " " + cit;
+        }
+        htmlFile += ".";
+      }
+      if (!notCovering.empty()) {
+        htmlFile += " Not covered by";
+        for (auto cit : notCovering) {
+          htmlFile += " " + cit;
+        }
+        htmlFile += ".";
+      }
+      htmlFile += "'>\n";
+    }
+    htmlFile += "            <div class='number'>" + SPA::numToStr(srcLineNum) +
+                "</div>\n"
+                "            <div class='content'>" + sanitizeHTML(srcLine) +
+                "</div>\n";
+    if (!(covering.empty() && notCovering.empty())) {
+      htmlFile += "          </a>\n";
+    }
+    htmlFile += "          </div>\n";
+  }
+  htmlFile += "        </div>\n"
+              "      </div>\n"
+              "    </div>\n"
+              "  </body>\n"
+              "</html>\n";
 
   return htmlFile;
 }
@@ -1280,6 +1305,12 @@ int main(int argc, char **argv, char **envp) {
           }
           ;
         }
+        std::string pathCoverageIndex =
+            path->getUUID() + "-" + coverageIndexes[fit.first];
+        files[pathCoverageIndex] = [ = ]() {
+          return generatePathCoverageHTML(path, fit.first);
+        }
+        ;
       }
     }
 
