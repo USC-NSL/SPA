@@ -740,28 +740,24 @@ std::string generatePathHTML(SPA::Path *path) {
                 "    </div>\n";
   }
 
+  std::set<std::string> srcFiles;
+  for (auto pit : path->getExploredLineCoverage()) {
+    for (auto fit : pit.second) {
+      srcFiles.insert(fit.first);
+    }
+  }
+
   htmlFile += "    <a class='anchor' id='coverage'></a>\n"
               "    <h2>Coverage</h2>\n"
               "    <b>Files:</b><br />\n";
-  for (auto it : path->getExploredLineCoverage()) {
-    std::string srcFileName = remapSrcFileName(it.first);
+  for (auto it : srcFiles) {
+    std::string srcFileName = remapSrcFileName(it);
     htmlFile +=
         "    <a href='#" + srcFileName + "'>" + srcFileName + "</a><br />\n";
   }
 
-  std::map<std::string, unsigned long> srcFileNumLines;
-  for (auto pit : path->getExploredLineCoverage()) {
-    for (auto fit : pit.second) {
-      unsigned long lastLineNum =
-          fit.second.empty() ? 0 : fit.second.rbegin()->first;
-      if (lastLineNum > srcFileNumLines[fit.first]) {
-        srcFileNumLines[fit.first] = lastLineNum;
-      }
-    }
-  }
-
-  for (auto fit : srcFileNumLines) {
-    std::string srcFileName = remapSrcFileName(fit.first);
+  for (auto fit : srcFiles) {
+    std::string srcFileName = remapSrcFileName(fit);
     htmlFile += "    <div class='box' id='" + srcFileName +
                 "'>\n"
                 "      <a class='closebutton' href='#'>&#x2715;</a>\n"
@@ -769,13 +765,12 @@ std::string generatePathHTML(SPA::Path *path) {
                                             "      <div class='content'>\n"
                                             "        <div class='src'>\n";
     std::ifstream srcFile(srcFileName);
-    for (unsigned long srcLineNum = 1;
-         srcFile.good() || srcLineNum <= fit.second; srcLineNum++) {
+    for (unsigned long srcLineNum = 1; srcFile.good(); srcLineNum++) {
       std::set<std::string> covering, notCovering;
       for (auto pit : path->getExploredLineCoverage()) {
-        if (pit.second.count(fit.first) &&
-            pit.second[fit.first].count(srcLineNum)) {
-          if (pit.second[fit.first][srcLineNum]) {
+        if (pit.second.count(fit) &&
+            pit.second[fit].count(srcLineNum)) {
+          if (pit.second[fit][srcLineNum]) {
             covering.insert(pit.first);
           } else {
             notCovering.insert(pit.first);
@@ -791,7 +786,7 @@ std::string generatePathHTML(SPA::Path *path) {
                       : ((!notCovering.empty()) ? "uncovered" : "unknown");
       htmlFile += "'>\n";
       if (!(covering.empty() && notCovering.empty())) {
-        htmlFile += "<a href='" + coverageIndexes[fit.first] + "#l" +
+        htmlFile += "<a href='" + coverageIndexes[fit] + "#l" +
                     SPA::numToStr(srcLineNum) + "' title='";
         if (!covering.empty()) {
           htmlFile += "Covered by";
