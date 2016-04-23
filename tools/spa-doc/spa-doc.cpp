@@ -542,7 +542,8 @@ std::string generatePathHTML(SPA::Path *path) {
       "      <a href=\"#messages\">Message Log</a>\n"
       "      <a href=\"#constraints\">Symbolic Contraints</a>\n"
       "      <a href=\"#coverage\">Coverage</a>\n"
-      "      <a href=\"#src\">Path Source</a>\n"
+      "      <a href=\"" + path->getUUID() +
+      ".paths\">Path Source</a>\n"
       "      <a href=\"index.html\">All Conversations</a>\n"
       "    </div>\n"
       "    <a class='anchor' id='metadata'></a>\n"
@@ -756,11 +757,8 @@ std::string generatePathHTML(SPA::Path *path) {
                 "'>" + remapSrcFileName(it) + "</a><br />\n";
   }
 
-  htmlFile += "    <a class='anchor' id='src'></a>\n"
-              "    <h2>Path Source</h2>\n"
-              "<pre>\n" + path->getPathSource() + "</pre>\n"
-                                                  "  </body>\n"
-                                                  "</html>\n";
+  htmlFile += "  </body>\n"
+              "</html>\n";
 
   return htmlFile;
 }
@@ -1288,6 +1286,11 @@ int main(int argc, char **argv, char **envp) {
 
     files[path->getUUID() + ".html"] = [ = ]() {
       return generatePathHTML(path);
+    }
+    ;
+
+    files[path->getUUID() + ".paths"] = [ = ]() {
+      return path->getPathSource();
     }
     ;
 
