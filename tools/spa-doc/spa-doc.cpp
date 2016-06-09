@@ -788,7 +788,7 @@ std::string generatePathCoverageHTML(SPA::Path *path, std::string srcFileName) {
       ".html#constraints\">Symbolic Contraints</a>\n"
       "      <a href=\"" + path->getUUID() + ".html#coverage\">Coverage</a>\n"
                                              "      <a href=\"" +
-      path->getUUID() + ".html#src\">Path Source</a>\n"
+      path->getUUID() + ".paths\">Path Source</a>\n"
                         "      <a href=\"index.html\">All Conversations</a>\n"
                         "    </div>\n";
   htmlFile += "    <b>" + remappedFileName + "</b>\n";
