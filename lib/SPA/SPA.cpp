@@ -1050,6 +1050,10 @@ void SPA::processPath(klee::ExecutionState *state) {
     output << path;
     outputtedPaths++;
 
+    // Update lineage data.
+    state->senderPath->participants
+        .emplace_back(new Participant(ParticipantName, path.getUUID()));
+
     if (MaxPaths && outputtedPaths >= (unsigned) MaxPaths) {
       klee::klee_message("Found specified number of paths. Halting.");
       executor->setHaltExecution(true);

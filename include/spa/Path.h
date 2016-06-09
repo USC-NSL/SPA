@@ -271,6 +271,7 @@ public:
   std::string getPathSource() const;
 
   friend class PathLoader;
+  friend class SPA;
   friend std::ostream &operator<<(std::ostream &stream, const Path &path);
   friend Path *buildDerivedPath(Path *basePath, Path *sourcePath);
 };
