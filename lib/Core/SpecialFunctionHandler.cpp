@@ -876,19 +876,18 @@ SpecialFunctionHandler::handleSpaLoadPath(ExecutionState &state,
   // symbol outputted by the current participant or a symbol that can be
   // consumed.
   // If performing shallow exploration, only consider the most recent
-  // participant.
-  std::string onlyCheckParticipant;
-  if (SPA::ShallowExploration && !state.senderPath->getParticipants().empty()) {
-    onlyCheckParticipant =
-        state.senderPath->getParticipants().back()->getName();
-  }
+  // participant if it was not derived (if it was derived then the source will
+  // be explored and this contribution can be derived from that).
   bool receivingSymbols = false;
   for (auto sit = state.senderPath->getSymbolLog().rbegin(),
             sie = state.senderPath->getSymbolLog().rend();
        sit != sie; sit++) {
     // Only consider last participant for shallow exploration.
     if (SPA::ShallowExploration &&
-        (*sit)->getParticipant() != onlyCheckParticipant) {
+        ((!state.senderPath->getDerivedFromUUID().empty()) ||
+         ((!state.senderPath->getParticipants().empty()) &&
+          (*sit)->getParticipant() !=
+              state.senderPath->getParticipants().back()->getName()))) {
       klee_message("[spa_load_path] Cannot load path with no shallow inputs. "
                    "Terminating.");
       executor.terminateStateOnError(state, "Path has no shallow inputs.",

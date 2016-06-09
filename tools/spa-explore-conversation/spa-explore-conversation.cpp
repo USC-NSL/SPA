@@ -66,46 +66,55 @@ Path *buildDerivedPath(Path *basePath, Path *sourcePath) {
   if (basePath->symbolLog.empty() || sourcePath->symbolLog.empty()) {
     return NULL;
   }
-  // Don't use derived paths to augment others (us the base that derived them).
+  // Don't use derived paths to augment others
+  // (use the source that they were derived from).
   if (!sourcePath->derivedFromUUID.empty()) {
     return NULL;
   }
   // Find commonalities in each path's participant and symbol logs.
-  // Position of first divergent participant entry.
+  // Position of first divergent entries.
   unsigned long commonParticipants;
-  // Position of first new source symbol log entry.
-  unsigned long newLogPos = 0;
   for (commonParticipants = 0;
        commonParticipants < basePath->getParticipants().size() &&
            commonParticipants < sourcePath->getParticipants().size();
        commonParticipants++) {
-    if (basePath->getParticipants()[commonParticipants]->getPathUUID() ==
+    if (basePath->getParticipants()[commonParticipants]->getPathUUID() !=
         sourcePath->getParticipants()[commonParticipants]->getPathUUID()) {
-      while (newLogPos < sourcePath->symbolLog.size() &&
-             sourcePath->symbolLog[newLogPos]->getParticipant() ==
-                 basePath->getParticipants()[commonParticipants]->getName()) {
-        newLogPos++;
-      }
-    } else {
+      break;
+    }
+  }
+  // Position of first log entry not in common.
+  // May be ahead of the entries that came from the common participants if base
+  // has multiple successive derivations.
+  unsigned long newLogPos;
+  for (newLogPos = 0; newLogPos < basePath->symbolLog.size() &&
+                          newLogPos < sourcePath->symbolLog.size();
+       newLogPos++) {
+    if (basePath->symbolLog[newLogPos]->getFullName() !=
+        sourcePath->symbolLog[newLogPos]->getFullName()) {
       break;
     }
   }
   // Does base have something new that source would be adding to?
   // Otherwise destination becomes the same as source.
-  if (commonParticipants == basePath->getParticipants().size()) {
+  if (commonParticipants == basePath->getParticipants().size() ||
+      newLogPos == basePath->symbolLog.size()) {
     return NULL;
   }
-  // Only consider scenario where source is ahead by a single participant.
-  if (sourcePath->getParticipants().size() - commonParticipants != 1) {
+  // Does source have something new to add?
+  // Otherwise destination becomes the same as base.
+  if (commonParticipants == sourcePath->getParticipants().size() ||
+      newLogPos == sourcePath->symbolLog.size()) {
     return NULL;
   }
-  // Check if the source contributor is already in the new part of base.
-  for (auto i = commonParticipants; i < basePath->getParticipants().size();
-       i++) {
-    if (basePath->getParticipants()[i]->getName() ==
-        sourcePath->getParticipants()[commonParticipants]->getName()) {
-      return NULL;
-    }
+  // Only consider scenario where source has a single contribution, i.e. the
+  // source's immediate parent is either the common point or the point the base
+  // was derived from itself (if it was derived).
+  if (sourcePath->getParticipants().size() - 1 != commonParticipants &&
+      sourcePath->getParticipants().size() <= 1 &&
+      sourcePath->getParticipants().rbegin()[1]->getPathUUID() !=
+          basePath->getDerivedFromUUID()) {
+    return NULL;
   }
   // Check if any of the new base participants sent anything to the source.
   for (auto bsit = basePath->symbolLog.begin() + newLogPos,
