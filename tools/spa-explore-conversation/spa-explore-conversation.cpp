@@ -116,6 +116,13 @@ Path *buildDerivedPath(Path *basePath, Path *sourcePath) {
           basePath->getDerivedFromUUID()) {
     return NULL;
   }
+  // Check if the source contribution is already in the new part of base.
+  for (auto i = newLogPos; i < basePath->symbolLog.size(); i++) {
+    if (basePath->symbolLog[i]->getFullName() ==
+        sourcePath->symbolLog[newLogPos]->getFullName()) {
+      return NULL;
+    }
+  }
   // Check if any of the new base participants sent anything to the source.
   for (auto bsit = basePath->symbolLog.begin() + newLogPos,
             bsie = basePath->symbolLog.end();
