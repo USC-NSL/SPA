@@ -64,12 +64,13 @@ function listJobs() {
         match_pos = 1;
         depth = 0;
         enable = 0;
+        uuid = \"\";
       }
-      /^--- PARTICIPANTS START ---$/ {
+      /^--- SYMBOL LOG START ---$/ {
         enable = 1;
         next;
       }
-      /^--- PARTICIPANTS END ---$/ {
+      /^--- SYMBOL LOG END ---$/ {
         file = FILENAME;
         sub(/^.*\//, \"\", file);
         print depth - match_pos + 1,
@@ -81,9 +82,12 @@ function listJobs() {
         if (FNR == NR) {
           target[FNR] = \$0;
         } else if (enable == 1) {
-          depth++;
-          if (target[match_pos] == \$1) {
-            match_pos++;
+          if (\"\$1\" != uuid) {
+            depth++;
+            if (target[match_pos] == \$1) {
+              match_pos++;
+            }
+            uuid = \"\$1\";
           }
         }
       }
