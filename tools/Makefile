@@ -15,7 +15,7 @@ LEVEL=..
 #
 # List all of the subdirectories that we will compile.
 #
-PARALLEL_DIRS=klee kleaver ktest-tool gen-random-bout klee-stats max pic picRR spaSplitPaths spaJoinPaths spaE2ETest spaHandlerTest spaTest2Str spaAnalyzeTest spa-explore spa-explore-conversation spa-filter spa-validate spa-cluster-manual spa-doc
+PARALLEL_DIRS=klee kleaver ktest-tool gen-random-bout klee-stats max pic picRR spaSplitPaths spaJoinPaths spaE2ETest spaHandlerTest spaTest2Str spaAnalyzeTest spa-explore spa-explore-conversation spa-filter spa-validate spa-cluster-manual spa-doc spa-analyze-causality
 
 include $(LEVEL)/Makefile.config
 
