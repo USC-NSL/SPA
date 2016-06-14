@@ -1047,7 +1047,7 @@ void SPA::processPath(klee::ExecutionState *state) {
 
   if (!pathFilter || pathFilter->checkPath(*path)) {
     klee::klee_message("Outputting path.");
-    output << path;
+    output << *path;
     outputtedPaths++;
 
     state->senderPath = path;
