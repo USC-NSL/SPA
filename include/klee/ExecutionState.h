@@ -124,7 +124,7 @@ public:
   // Path used for seeding symbols in this state and it successors.
   std::shared_ptr<SPA::Path> senderPath;
   // Keeps track of where in the log the path seeding process is.
-  std::vector<std::shared_ptr<SPA::Symbol> >::const_iterator senderLogPos;
+  unsigned long senderLogPos;
   // Detailed instruction coverage (for each step).
   std::set<llvm::Instruction *> instructionCoverage;
   // Path followed.

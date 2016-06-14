@@ -843,7 +843,7 @@ SpecialFunctionHandler::handleSpaLoadPath(ExecutionState &state,
       "[spa_load_path]   Starting joint symbolic execution on path %ld (%s).",
       pathID, state.senderPath->getUUID().c_str());
 
-  state.senderLogPos = state.senderPath->getSymbolLog().begin();
+  state.senderLogPos = 0;
 
   // Get current participant's IP/Ports.
   std::set<std::string> participantBindings;
@@ -986,21 +986,23 @@ void SpecialFunctionHandler::handleSpaCheckSymbol(
   auto senderLogPos = state.senderLogPos;
   if (SPA::seedSymbolMappings.count(qualifiedName)) { // Explicit mapping.
     // Skip log entries until named symbol.
-    for (; senderLogPos != state.senderPath->getSymbolLog().end();
+    for (; senderLogPos < state.senderPath->getSymbolLog().size();
          senderLogPos++) {
-      klee_message(
-          "[spa_check_symbol]   Checking log entry %d: %s",
-          (int)(senderLogPos - state.senderPath->getSymbolLog().begin()),
-          (*senderLogPos)->getFullName().c_str());
+      klee_message("[spa_check_symbol]   Checking log entry %ld: %s",
+                   senderLogPos, state.senderPath->getSymbolLog()[senderLogPos]
+                                     ->getFullName().c_str());
 
       // Check for outstanding outputs in log.
-      if ((*senderLogPos)->isOutput() &&
-          (*senderLogPos)->getParticipant() == SPA::ParticipantName) {
+      if (state.senderPath->getSymbolLog()[senderLogPos]->isOutput() &&
+          state.senderPath->getSymbolLog()[senderLogPos]->getParticipant() ==
+              SPA::ParticipantName) {
         bool outputSent = false;
         for (auto it : state.symbolics) {
-          if (it.second->name == (*senderLogPos)->getFullName()) {
+          if (it.second->name ==
+              state.senderPath->getSymbolLog()[senderLogPos]->getFullName()) {
             klee_message("[spa_check_symbol]      Output %s already sent.",
-                         (*senderLogPos)->getFullName().c_str());
+                         state.senderPath->getSymbolLog()[senderLogPos]
+                             ->getFullName().c_str());
             outputSent = true;
             break;
           }
@@ -1009,14 +1011,15 @@ void SpecialFunctionHandler::handleSpaCheckSymbol(
           klee_message("[spa_check_symbol]   Trying to receive %s before "
                        "sending %s. Considering input as not yet available.",
                        qualifiedName.c_str(),
-                       (*senderLogPos)->getFullName().c_str());
+                       state.senderPath->getSymbolLog()[senderLogPos]
+                           ->getFullName().c_str());
           executor.bindLocal(target, state,
                              ConstantExpr::alloc(llvm::APInt(32, -1, true)));
           return;
         }
       }
 
-      if ((*senderLogPos)->getQualifiedName() ==
+      if (state.senderPath->getSymbolLog()[senderLogPos]->getQualifiedName() ==
           SPA::seedSymbolMappings[qualifiedName]) {
         break;
       }
@@ -1026,21 +1029,24 @@ void SpecialFunctionHandler::handleSpaCheckSymbol(
                           SPA_MESSAGE_INPUT_PREFIX) == 0) {
       // Socket mapping in=out.
       // Skip log entries until compatible symbol.
-      for (; senderLogPos != state.senderPath->getSymbolLog().end();
+      for (; senderLogPos < state.senderPath->getSymbolLog().size();
            senderLogPos++) {
-        klee_message(
-            "[spa_check_symbol]   Checking log entry %d: %s",
-            (int)(senderLogPos - state.senderPath->getSymbolLog().begin()),
-            (*senderLogPos)->getFullName().c_str());
+        klee_message("[spa_check_symbol]   Checking log entry %ld: %s",
+                     senderLogPos,
+                     state.senderPath->getSymbolLog()[senderLogPos]
+                         ->getFullName().c_str());
 
         // Check for outstanding outputs in log.
-        if ((*senderLogPos)->isOutput() &&
-            (*senderLogPos)->getParticipant() == SPA::ParticipantName) {
+        if (state.senderPath->getSymbolLog()[senderLogPos]->isOutput() &&
+            state.senderPath->getSymbolLog()[senderLogPos]->getParticipant() ==
+                SPA::ParticipantName) {
           bool outputSent = false;
           for (auto it : state.symbolics) {
-            if (it.second->name == (*senderLogPos)->getFullName()) {
+            if (it.second->name ==
+                state.senderPath->getSymbolLog()[senderLogPos]->getFullName()) {
               klee_message("[spa_check_symbol]      Output %s already sent.",
-                           (*senderLogPos)->getFullName().c_str());
+                           state.senderPath->getSymbolLog()[senderLogPos]
+                               ->getFullName().c_str());
               outputSent = true;
               break;
             }
@@ -1049,15 +1055,18 @@ void SpecialFunctionHandler::handleSpaCheckSymbol(
             klee_message("[spa_check_symbol]   Trying to receive %s before "
                          "sending %s. Considering input as not yet available.",
                          qualifiedName.c_str(),
-                         (*senderLogPos)->getFullName().c_str());
+                         state.senderPath->getSymbolLog()[senderLogPos]
+                             ->getFullName().c_str());
             executor.bindLocal(target, state,
                                ConstantExpr::alloc(llvm::APInt(32, -1, true)));
             return;
           }
         }
 
-        if ((*senderLogPos)->isOutput() && (*senderLogPos)->isMessage() &&
-            checkMessageCompatibility(*senderLogPos, localName)) {
+        if (state.senderPath->getSymbolLog()[senderLogPos]->isOutput() &&
+            state.senderPath->getSymbolLog()[senderLogPos]->isMessage() &&
+            checkMessageCompatibility(
+                state.senderPath->getSymbolLog()[senderLogPos], localName)) {
           break;
         }
       }
@@ -1067,21 +1076,24 @@ void SpecialFunctionHandler::handleSpaCheckSymbol(
                                  SPA_MODEL_INPUT_PREFIX) == 0) {
       // API/Model mapping in=in.
       // Skip log entries until same symbol.
-      for (; senderLogPos != state.senderPath->getSymbolLog().end();
+      for (; senderLogPos < state.senderPath->getSymbolLog().size();
            senderLogPos++) {
-        klee_message(
-            "[spa_check_symbol]   Checking log entry %d: %s",
-            (int)(senderLogPos - state.senderPath->getSymbolLog().begin()),
-            (*senderLogPos)->getFullName().c_str());
+        klee_message("[spa_check_symbol]   Checking log entry %ld: %s",
+                     senderLogPos,
+                     state.senderPath->getSymbolLog()[senderLogPos]
+                         ->getFullName().c_str());
 
         // Check for outstanding outputs in log.
-        if ((*senderLogPos)->isOutput() &&
-            (*senderLogPos)->getParticipant() == SPA::ParticipantName) {
+        if (state.senderPath->getSymbolLog()[senderLogPos]->isOutput() &&
+            state.senderPath->getSymbolLog()[senderLogPos]->getParticipant() ==
+                SPA::ParticipantName) {
           bool outputSent = false;
           for (auto it : state.symbolics) {
-            if (it.second->name == (*senderLogPos)->getFullName()) {
+            if (it.second->name ==
+                state.senderPath->getSymbolLog()[senderLogPos]->getFullName()) {
               klee_message("[spa_check_symbol]      Output %s already sent.",
-                           (*senderLogPos)->getFullName().c_str());
+                           state.senderPath->getSymbolLog()[senderLogPos]
+                               ->getFullName().c_str());
               outputSent = true;
               break;
             }
@@ -1090,7 +1102,8 @@ void SpecialFunctionHandler::handleSpaCheckSymbol(
             klee_message("[spa_check_symbol]   Trying to receive %s before "
                          "sending %s. Considering input as not yet available.",
                          qualifiedName.c_str(),
-                         (*senderLogPos)->getFullName().c_str());
+                         state.senderPath->getSymbolLog()[senderLogPos]
+                             ->getFullName().c_str());
             executor.bindLocal(target, state,
                                ConstantExpr::alloc(llvm::APInt(32, -1, true)));
             return;
@@ -1098,7 +1111,8 @@ void SpecialFunctionHandler::handleSpaCheckSymbol(
         }
 
         //TODO: Compare sequence number (full-name) if ever available.
-        if (qualifiedName == (*senderLogPos)->getQualifiedName()) {
+        if (qualifiedName == state.senderPath->getSymbolLog()[senderLogPos]
+                                 ->getQualifiedName()) {
           break;
         }
       }
@@ -1112,7 +1126,7 @@ void SpecialFunctionHandler::handleSpaCheckSymbol(
   }
 
   // Check if log ran out.
-  if (senderLogPos == state.senderPath->getSymbolLog().end()) {
+  if (senderLogPos >= state.senderPath->getSymbolLog().size()) {
     klee_message("[spa_check_symbol] %s is not available in log.",
                  qualifiedName.c_str());
     executor.bindLocal(target, state,
@@ -1169,19 +1183,23 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
   // Check if input mapped.
   if (SPA::seedSymbolMappings.count(qualifiedName)) { // Explicit mapping.
     // Skip log entries until named symbol.
-    for (; state.senderLogPos != state.senderPath->getSymbolLog().end();
+    for (; state.senderLogPos < state.senderPath->getSymbolLog().size();
          state.senderLogPos++) {
-      klee_message(
-          "[spa_seed_symbol]   Checking log entry %d: %s",
-          (int)(state.senderLogPos - state.senderPath->getSymbolLog().begin()),
-          (*state.senderLogPos)->getFullName().c_str());
-      if ((*state.senderLogPos)->isOutput() &&
-          (*state.senderLogPos)->getParticipant() == SPA::ParticipantName) {
+      klee_message("[spa_seed_symbol]   Checking log entry %ld: %s",
+                   state.senderLogPos,
+                   state.senderPath->getSymbolLog()[state.senderLogPos]
+                       ->getFullName().c_str());
+      if (state.senderPath->getSymbolLog()[state.senderLogPos]->isOutput() &&
+          state.senderPath->getSymbolLog()[state.senderLogPos]
+                  ->getParticipant() == SPA::ParticipantName) {
         bool outputSent = false;
         for (auto it : state.symbolics) {
-          if (it.second->name == (*state.senderLogPos)->getFullName()) {
+          if (it.second->name ==
+              state.senderPath->getSymbolLog()[state.senderLogPos]
+                  ->getFullName()) {
             klee_message("[spa_seed_symbol]      Output %s already sent.",
-                         (*state.senderLogPos)->getFullName().c_str());
+                         state.senderPath->getSymbolLog()[state.senderLogPos]
+                             ->getFullName().c_str());
             outputSent = true;
             break;
           }
@@ -1190,7 +1208,8 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
           klee_message("[spa_seed_symbol]   Trying to receive %s before "
                        "sending %s.",
                        fullName.c_str(),
-                       (*state.senderLogPos)->getFullName().c_str());
+                       state.senderPath->getSymbolLog()[state.senderLogPos]
+                           ->getFullName().c_str());
           executor.terminateStateOnError(
               state,
               "Seeding with incompatible path (used symbol out of order).",
@@ -1199,8 +1218,8 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
         }
       }
 
-      if ((*state.senderLogPos)->getQualifiedName() ==
-          SPA::seedSymbolMappings[qualifiedName]) {
+      if (state.senderPath->getSymbolLog()[state.senderLogPos]
+              ->getQualifiedName() == SPA::seedSymbolMappings[qualifiedName]) {
         break;
       }
     }
@@ -1209,21 +1228,25 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
                          SPA_MESSAGE_INPUT_PREFIX) == 0) {
       // Socket mapping in=out.
       // Skip log entries until named symbol.
-      for (; state.senderLogPos != state.senderPath->getSymbolLog().end();
+      for (; state.senderLogPos < state.senderPath->getSymbolLog().size();
            state.senderLogPos++) {
-        klee_message("[spa_seed_symbol]   Checking log entry %d: %s",
-                     (int)(state.senderLogPos -
-                           state.senderPath->getSymbolLog().begin()),
-                     (*state.senderLogPos)->getFullName().c_str());
+        klee_message("[spa_seed_symbol]   Checking log entry %ld: %s",
+                     state.senderLogPos,
+                     state.senderPath->getSymbolLog()[state.senderLogPos]
+                         ->getFullName().c_str());
 
         // Check for outstanding outputs in log.
-        if ((*state.senderLogPos)->isOutput() &&
-            (*state.senderLogPos)->getParticipant() == SPA::ParticipantName) {
+        if (state.senderPath->getSymbolLog()[state.senderLogPos]->isOutput() &&
+            state.senderPath->getSymbolLog()[state.senderLogPos]
+                    ->getParticipant() == SPA::ParticipantName) {
           bool outputSent = false;
           for (auto it : state.symbolics) {
-            if (it.second->name == (*state.senderLogPos)->getFullName()) {
+            if (it.second->name ==
+                state.senderPath->getSymbolLog()[state.senderLogPos]
+                    ->getFullName()) {
               klee_message("[spa_seed_symbol]      Output %s already sent.",
-                           (*state.senderLogPos)->getFullName().c_str());
+                           state.senderPath->getSymbolLog()[state.senderLogPos]
+                               ->getFullName().c_str());
               outputSent = true;
               break;
             }
@@ -1232,7 +1255,8 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
             klee_message("[spa_seed_symbol]   Trying to receive %s before "
                          "sending %s.",
                          fullName.c_str(),
-                         (*state.senderLogPos)->getFullName().c_str());
+                         state.senderPath->getSymbolLog()[state.senderLogPos]
+                             ->getFullName().c_str());
             executor.terminateStateOnError(
                 state,
                 "Seeding with incompatible path (used symbol out of order).",
@@ -1241,9 +1265,11 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
           }
         }
 
-        if ((*state.senderLogPos)->isOutput() &&
-            (*state.senderLogPos)->isMessage() &&
-            checkMessageCompatibility(*state.senderLogPos, localName)) {
+        if (state.senderPath->getSymbolLog()[state.senderLogPos]->isOutput() &&
+            state.senderPath->getSymbolLog()[state.senderLogPos]->isMessage() &&
+            checkMessageCompatibility(
+                state.senderPath->getSymbolLog()[state.senderLogPos],
+                localName)) {
           break;
         }
       }
@@ -1270,21 +1296,25 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
 
       // API/Model mapping in=in.
       // Skip log entries until same symbol.
-      for (; state.senderLogPos != state.senderPath->getSymbolLog().end();
+      for (; state.senderLogPos < state.senderPath->getSymbolLog().size();
            state.senderLogPos++) {
-        klee_message("[spa_seed_symbol]   Checking log entry %d: %s",
-                     (int)(state.senderLogPos -
-                           state.senderPath->getSymbolLog().begin()),
-                     (*state.senderLogPos)->getFullName().c_str());
+        klee_message("[spa_seed_symbol]   Checking log entry %ld: %s",
+                     state.senderLogPos,
+                     state.senderPath->getSymbolLog()[state.senderLogPos]
+                         ->getFullName().c_str());
 
         // Check for outstanding outputs in log.
-        if ((*state.senderLogPos)->isOutput() &&
-            (*state.senderLogPos)->getParticipant() == SPA::ParticipantName) {
+        if (state.senderPath->getSymbolLog()[state.senderLogPos]->isOutput() &&
+            state.senderPath->getSymbolLog()[state.senderLogPos]
+                    ->getParticipant() == SPA::ParticipantName) {
           bool outputSent = false;
           for (auto it : state.symbolics) {
-            if (it.second->name == (*state.senderLogPos)->getFullName()) {
+            if (it.second->name ==
+                state.senderPath->getSymbolLog()[state.senderLogPos]
+                    ->getFullName()) {
               klee_message("[spa_seed_symbol]      Output %s already sent.",
-                           (*state.senderLogPos)->getFullName().c_str());
+                           state.senderPath->getSymbolLog()[state.senderLogPos]
+                               ->getFullName().c_str());
               outputSent = true;
               break;
             }
@@ -1293,7 +1323,8 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
             klee_message("[spa_seed_symbol]   Trying to receive %s before "
                          "sending %s.",
                          fullName.c_str(),
-                         (*state.senderLogPos)->getFullName().c_str());
+                         state.senderPath->getSymbolLog()[state.senderLogPos]
+                             ->getFullName().c_str());
             executor.terminateStateOnError(
                 state,
                 "Seeding with incompatible path (used symbol out of order).",
@@ -1302,7 +1333,8 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
           }
         }
 
-        if (fullName == (*state.senderLogPos)->getFullName()) {
+        if (fullName == state.senderPath->getSymbolLog()[state.senderLogPos]
+                            ->getFullName()) {
           break;
         }
       }
@@ -1314,26 +1346,33 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
   }
 
   // Check if log ran out.
-  if (state.senderLogPos == state.senderPath->getSymbolLog().end()) {
+  if (state.senderLogPos >= state.senderPath->getSymbolLog().size()) {
     executor.terminateStateOnError(
         state, "Seeding with incompatible path (used symbol not yet present).",
         "user.err");
     return;
   }
 
-  if ((*state.senderLogPos)->isOutput()) { // Check if sender symbol is output.
+  if (state.senderPath->getSymbolLog()[state.senderLogPos]
+          ->isOutput()) { // Check if sender symbol is output.
     klee_message("[spa_seed_symbol]   Connecting symbols %s[%ld] = %s[%ld]",
                  fullName.c_str(), size,
-                 (*state.senderLogPos)->getFullName().c_str(),
-                 (*state.senderLogPos)->getOutputValues().size());
+                 state.senderPath->getSymbolLog()[state.senderLogPos]
+                     ->getFullName().c_str(),
+                 state.senderPath->getSymbolLog()[state.senderLogPos]
+                     ->getOutputValues().size());
 
-    assert(size >= (*state.senderLogPos)->getOutputValues().size() &&
-           "Symbol size mismatch.");
+    assert(size >= state.senderPath->getSymbolLog()[state.senderLogPos]
+                       ->getOutputValues().size() && "Symbol size mismatch.");
     // Add sender output values = server input array constraint.
     for (size_t offset = 0;
-         offset < (*state.senderLogPos)->getOutputValues().size(); offset++) {
+         offset < state.senderPath->getSymbolLog()[state.senderLogPos]
+                      ->getOutputValues().size();
+         offset++) {
       klee::ref<klee::Expr> e = klee::createDefaultExprBuilder()->Eq(
-          os->read8(offset), (*state.senderLogPos)->getOutputValues()[offset]);
+          os->read8(offset),
+          state.senderPath->getSymbolLog()[state.senderLogPos]
+              ->getOutputValues()[offset]);
       if (!state.addAndCheckConstraint(e)) {
         executor.terminateStateOnError(
             state, "Seeding symbol made constraints trivially UNSAT "
@@ -1344,22 +1383,31 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
     }
     // Populate symbol with output expression.
     for (size_t offset = 0;
-         offset < (*state.senderLogPos)->getOutputValues().size(); offset++) {
-      os->write(offset, (*state.senderLogPos)->getOutputValues()[offset]);
+         offset < state.senderPath->getSymbolLog()[state.senderLogPos]
+                      ->getOutputValues().size();
+         offset++) {
+      os->write(offset, state.senderPath->getSymbolLog()[state.senderLogPos]
+                            ->getOutputValues()[offset]);
     }
-  } else if ((*state.senderLogPos)
+  } else if (state.senderPath->getSymbolLog()[state.senderLogPos]
                  ->isInput()) { // Check if defined as an input instead.
     klee_message("[spa_seed_symbol]   Connecting symbols %s[%ld] = %s[%d]",
                  fullName.c_str(), size,
-                 (*state.senderLogPos)->getFullName().c_str(),
-                 (*state.senderLogPos)->getInputArray()->size);
+                 state.senderPath->getSymbolLog()[state.senderLogPos]
+                     ->getFullName().c_str(),
+                 state.senderPath->getSymbolLog()[state.senderLogPos]
+                     ->getInputArray()->size);
 
-    assert(size == (*state.senderLogPos)->getInputArray()->size &&
-           "Symbol size mismatch.");
+    assert(size == state.senderPath->getSymbolLog()[state.senderLogPos]
+                       ->getInputArray()->size && "Symbol size mismatch.");
     // Add sender input values = server input array constraint.
     for (size_t offset = 0;
-         offset < (*state.senderLogPos)->getInputArray()->size; offset++) {
-      klee::UpdateList ul((*state.senderLogPos)->getInputArray(), 0);
+         offset < state.senderPath->getSymbolLog()[state.senderLogPos]
+                      ->getInputArray()->size;
+         offset++) {
+      klee::UpdateList ul(
+          state.senderPath->getSymbolLog()[state.senderLogPos]->getInputArray(),
+          0);
       llvm::OwningPtr<klee::ExprBuilder> exprBuilder(
           klee::createDefaultExprBuilder());
       klee::ref<klee::Expr> e = exprBuilder->Eq(
