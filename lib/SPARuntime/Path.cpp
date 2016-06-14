@@ -27,7 +27,6 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
 
   // Load data from sender path.
   if (state.senderPath) {
-    participants = state.senderPath->participants;
     symbolLog = state.senderPath->symbolLog;
     inputSymbols = state.senderPath->inputSymbols;
     outputSymbols = state.senderPath->outputSymbols;
@@ -38,8 +37,6 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
     testLineCoverage = state.senderPath->testLineCoverage;
     testFunctionCoverage = state.senderPath->testFunctionCoverage;
   }
-
-  participants.emplace_back(new Participant(ParticipantName, uuid));
 
   std::map<uint64_t, std::pair<const klee::MemoryObject *,
                                const klee::Array *> > orderedSymbols;
@@ -108,7 +105,7 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
 
       if (qualifiedName.compare(0, strlen(SPA_INPUT_PREFIX),
                                 SPA_INPUT_PREFIX) == 0) {
-        std::shared_ptr<Symbol> s(new Symbol(fullName, it.second.second));
+        std::shared_ptr<Symbol> s(new Symbol(uuid, fullName, it.second.second));
         symbolLog.push_back(s);
         inputSymbols[qualifiedName].push_back(s);
       } else if (qualifiedName.compare(0, strlen(SPA_OUTPUT_PREFIX),
@@ -122,7 +119,7 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
             outputValues.push_back(
                 state.constraints.simplifyExpr(os->read8(i)));
           }
-          std::shared_ptr<Symbol> s(new Symbol(fullName, outputValues));
+          std::shared_ptr<Symbol> s(new Symbol(uuid, fullName, outputValues));
           symbolLog.push_back(s);
           outputSymbols[qualifiedName].push_back(s);
         }
@@ -273,13 +270,6 @@ std::string Path::getPathSource() const {
   result += uuid + "\n";
   result += SPA_PATH_UUID_END "\n";
 
-  result += SPA_PATH_PARTICIPANTS_START "\n";
-  for (auto it : participants) {
-    result += it->getName() + SPA_PATH_PARTICIPANT_DELIMITER +
-              it->getPathUUID() + "\n";
-  }
-  result += SPA_PATH_PARTICIPANTS_END "\n";
-
   if (!derivedFromUUID.empty()) {
     result += SPA_PATH_DERIVEDFROMUUID_START "\n";
     result += derivedFromUUID + "\n";
@@ -288,7 +278,8 @@ std::string Path::getPathSource() const {
 
   result += SPA_PATH_SYMBOLLOG_START "\n";
   for (auto it : symbolLog) {
-    result += it->getFullName() + "\n";
+    result += it->getPathUUID() + SPA_PATH_SYMBOLLOG_DELIMITER +
+              it->getFullName() + "\n";
   }
   result += SPA_PATH_SYMBOLLOG_END "\n";
 

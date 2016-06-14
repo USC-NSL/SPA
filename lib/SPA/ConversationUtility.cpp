@@ -38,8 +38,12 @@ double ConversationUtility::getUtility(klee::ExecutionState *state) {
   if (state->senderPath) {
     std::vector<std::string> currentConversation;
 
-    for (auto it : state->senderPath->getParticipants()) {
-      currentConversation.push_back(it->getName());
+    std::string pathUUID = "";
+    for (auto it : state->senderPath->getSymbolLog()) {
+      if (it->getPathUUID() != pathUUID) {
+        currentConversation.push_back(it->getParticipant());
+        pathUUID = it->getPathUUID();
+      }
     }
     currentConversation.push_back(ParticipantName);
 

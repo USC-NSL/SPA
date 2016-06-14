@@ -74,8 +74,12 @@ public:
   ConversationFE(std::string conversation) : conversation(conversation) {}
   bool checkPath(Path &p) {
     std::string c;
-    for (auto it : p.getParticipants()) {
-      c += " " + it->getName();
+    std::string pathUUID = "";
+    for (auto it : p.getSymbolLog()) {
+      if (it->getPathUUID() != pathUUID) {
+        c += " " + it->getParticipant();
+        pathUUID = it->getPathUUID();
+      }
     }
     if (!c.empty()) {
       c = c.substr(1);

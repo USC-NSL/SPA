@@ -63,7 +63,7 @@ klee::Solver *solver = klee::createIndependentSolver(klee::createCachingSolver(
 namespace SPA {
 Path *buildDerivedPath(Path *basePath, Path *sourcePath) {
   // Don't augment the root path.
-  if (basePath->symbolLog.empty() || sourcePath->symbolLog.empty()) {
+  if (basePath->getSymbolLog().empty() || sourcePath->getSymbolLog().empty()) {
     return NULL;
   }
   // Don't use derived paths to augment others
@@ -71,15 +71,16 @@ Path *buildDerivedPath(Path *basePath, Path *sourcePath) {
   if (!sourcePath->derivedFromUUID.empty()) {
     return NULL;
   }
-  // Find commonalities in each path's participant and symbol logs.
+  // Find commonalities in each path's symbol logs.
   // Position of first divergent entries.
-  unsigned long commonParticipants;
-  for (commonParticipants = 0;
-       commonParticipants < basePath->getParticipants().size() &&
-           commonParticipants < sourcePath->getParticipants().size();
-       commonParticipants++) {
-    if (basePath->getParticipants()[commonParticipants]->getPathUUID() !=
-        sourcePath->getParticipants()[commonParticipants]->getPathUUID()) {
+  unsigned long commonEntries;
+  for (commonEntries = 0; commonEntries < basePath->getSymbolLog().size() &&
+                              commonEntries < sourcePath->getSymbolLog().size();
+       commonEntries++) {
+    if (basePath->getSymbolLog()[commonEntries]->getPathUUID() !=
+            sourcePath->getSymbolLog()[commonEntries]->getPathUUID() ||
+        basePath->getSymbolLog()[commonEntries]->getFullName() !=
+            sourcePath->getSymbolLog()[commonEntries]->getFullName()) {
       break;
     }
   }
@@ -87,54 +88,69 @@ Path *buildDerivedPath(Path *basePath, Path *sourcePath) {
   // May be ahead of the entries that came from the common participants if base
   // has multiple successive derivations.
   unsigned long newLogPos;
-  for (newLogPos = 0; newLogPos < basePath->symbolLog.size() &&
-                          newLogPos < sourcePath->symbolLog.size();
+  for (newLogPos = commonEntries;
+       newLogPos < basePath->getSymbolLog().size() &&
+           newLogPos < sourcePath->getSymbolLog().size();
        newLogPos++) {
-    if (basePath->symbolLog[newLogPos]->getFullName() !=
-        sourcePath->symbolLog[newLogPos]->getFullName()) {
+    if (basePath->getSymbolLog()[newLogPos]->getFullName() !=
+        sourcePath->getSymbolLog()[newLogPos]->getFullName()) {
       break;
     }
   }
   // Does base have something new that source would be adding to?
   // Otherwise destination becomes the same as source.
-  if (commonParticipants == basePath->getParticipants().size() ||
-      newLogPos == basePath->symbolLog.size()) {
+  if (commonEntries == basePath->getSymbolLog().size() ||
+      newLogPos == basePath->getSymbolLog().size()) {
     return NULL;
   }
   // Does source have something new to add?
   // Otherwise destination becomes the same as base.
-  if (commonParticipants == sourcePath->getParticipants().size() ||
-      newLogPos == sourcePath->symbolLog.size()) {
+  if (commonEntries == sourcePath->getSymbolLog().size() ||
+      newLogPos == sourcePath->getSymbolLog().size()) {
     return NULL;
   }
-  // Only consider scenario where source has a single contribution, i.e. the
-  // source's immediate parent is either the common point or the point the base
-  // was derived from itself (if it was derived).
-  if (sourcePath->getParticipants().size() - 1 != commonParticipants &&
-      sourcePath->getParticipants().size() <= 1 &&
-      sourcePath->getParticipants().rbegin()[1]->getPathUUID() !=
-          basePath->getDerivedFromUUID()) {
-    return NULL;
+  // Only consider scenario where source has a single contribution.
+  std::string newLogPathUUID =
+      sourcePath->getSymbolLog()[newLogPos]->getPathUUID();
+  for (auto it = sourcePath->getSymbolLog().begin() + newLogPos,
+            ie = sourcePath->getSymbolLog().end();
+       it != ie; it++) {
+    if ((*it)->getPathUUID() != newLogPathUUID) {
+      return NULL;
+    }
+  }
+  // The parent path to the source must either be the common path
+  // or the path that the base was derived from.
+  if (basePath->getDerivedFromUUID().empty()) {
+    if (newLogPos > commonEntries) {
+      return NULL;
+    }
+  } else {
+    if (newLogPos == 0 ||
+        sourcePath->getSymbolLog()[newLogPos - 1]->getPathUUID() !=
+            basePath->getDerivedFromUUID()) {
+      return NULL;
+    }
   }
   // Check if the source contribution is already in the new part of base.
-  for (auto i = newLogPos; i < basePath->symbolLog.size(); i++) {
-    if (basePath->symbolLog[i]->getFullName() ==
-        sourcePath->symbolLog[newLogPos]->getFullName()) {
+  for (auto i = newLogPos; i < basePath->getSymbolLog().size(); i++) {
+    if (basePath->getSymbolLog()[i]->getFullName() ==
+        sourcePath->getSymbolLog()[newLogPos]->getFullName()) {
       return NULL;
     }
   }
   // Check if any of the new base participants sent anything to the source.
-  for (auto bsit = basePath->symbolLog.begin() + newLogPos,
-            bsie = basePath->symbolLog.end();
+  for (auto bsit = basePath->getSymbolLog().begin() + newLogPos,
+            bsie = basePath->getSymbolLog().end();
        bsit != bsie; bsit++) {
     if (ConnectSockets && (*bsit)->isOutput() && (*bsit)->isMessage() &&
         (!(*bsit)->isDropped()) &&
-        participantIPs[sourcePath->getParticipants().back()->getName()]
+        participantIPs[sourcePath->getSymbolLog().back()->getParticipant()]
             .count((*bsit)->getMessageDestinationIP())) {
       return NULL;
     }
-    for (auto ssit = sourcePath->symbolLog.begin() + newLogPos,
-              ssie = sourcePath->symbolLog.end();
+    for (auto ssit = sourcePath->getSymbolLog().begin() + newLogPos,
+              ssie = sourcePath->getSymbolLog().end();
          ssit != ssie; ssit++) {
       if (seedSymbolMappings[(*ssit)->getQualifiedName()] ==
           (*bsit)->getQualifiedName()) {
@@ -183,20 +199,22 @@ Path *buildDerivedPath(Path *basePath, Path *sourcePath) {
   }
   // Connect API/Model inputs.
   for (unsigned long lit = 0; lit < newLogPos; lit++) {
-    if (basePath->symbolLog[lit]->isInput() &&
-        (basePath->symbolLog[lit]->isAPI() ||
-         basePath->symbolLog[lit]->isModel())) {
-      assert(basePath->symbolLog[lit]->getFullName() ==
-                 sourcePath->symbolLog[lit]->getFullName() &&
-             basePath->symbolLog[lit]->getInputArray()->size ==
-                 sourcePath->symbolLog[lit]->getInputArray()->size &&
+    if (basePath->getSymbolLog()[lit]->isInput() &&
+        (basePath->getSymbolLog()[lit]->isAPI() ||
+         basePath->getSymbolLog()[lit]->isModel())) {
+      assert(basePath->getSymbolLog()[lit]->getFullName() ==
+                 sourcePath->getSymbolLog()[lit]->getFullName() &&
+             basePath->getSymbolLog()[lit]->getInputArray()->size ==
+                 sourcePath->getSymbolLog()[lit]->getInputArray()->size &&
              "Common part of log is not in sync.");
-      objectNames.push_back(basePath->symbolLog[lit]->getFullName());
-      objects.push_back(basePath->symbolLog[lit]->getInputArray());
+      objectNames.push_back(basePath->getSymbolLog()[lit]->getFullName());
+      objects.push_back(basePath->getSymbolLog()[lit]->getInputArray());
       for (size_t offset = 0;
-           offset < basePath->symbolLog[lit]->getInputArray()->size; offset++) {
-        klee::UpdateList bul(basePath->symbolLog[lit]->getInputArray(), 0);
-        klee::UpdateList sul(sourcePath->symbolLog[lit]->getInputArray(), 0);
+           offset < basePath->getSymbolLog()[lit]->getInputArray()->size;
+           offset++) {
+        klee::UpdateList bul(basePath->getSymbolLog()[lit]->getInputArray(), 0);
+        klee::UpdateList sul(sourcePath->getSymbolLog()[lit]->getInputArray(),
+                             0);
         llvm::OwningPtr<klee::ExprBuilder> exprBuilder(
             klee::createDefaultExprBuilder());
         klee::ref<klee::Expr> e = exprBuilder->Eq(
@@ -225,31 +243,30 @@ Path *buildDerivedPath(Path *basePath, Path *sourcePath) {
     return NULL;
   }
 
-  // Append new data from source to base.
-  // New participant.
-  destinationPath->participants = basePath->participants;
-  destinationPath->participants.emplace_back(new Participant(
-      sourcePath->participants.back()->getName(), destinationPath->uuid));
   // Keep track of where destination was derived from.
-  destinationPath->derivedFromUUID = sourcePath->uuid;
+  destinationPath->derivedFromUUID = sourcePath->getUUID();
+  // Append new data from source to base.
   // New symbol log entries.
-  destinationPath->symbolLog = basePath->symbolLog;
-  destinationPath->symbolLog.insert(destinationPath->symbolLog.end(),
-                                    sourcePath->symbolLog.begin() + newLogPos,
-                                    sourcePath->symbolLog.end());
+  destinationPath->symbolLog = basePath->getSymbolLog();
+  for (auto it = sourcePath->getSymbolLog().begin() + newLogPos,
+            ie = sourcePath->getSymbolLog().end();
+       it != ie; it++) {
+    destinationPath->symbolLog.emplace_back(new Symbol(**it));
+    destinationPath->symbolLog.back()->pathUUID = destinationPath->getUUID();
+  }
   // New symbols.
   destinationPath->inputSymbols = basePath->inputSymbols;
   destinationPath->outputSymbols = basePath->outputSymbols;
-  for (unsigned long slit = newLogPos; slit < sourcePath->symbolLog.size();
+  for (unsigned long slit = newLogPos; slit < sourcePath->getSymbolLog().size();
        slit++) {
-    if (sourcePath->symbolLog[slit]->isInput()) {
+    if (sourcePath->getSymbolLog()[slit]->isInput()) {
       destinationPath
-          ->inputSymbols[sourcePath->symbolLog[slit]->getQualifiedName()]
-          .push_back(sourcePath->symbolLog[slit]);
-    } else if (sourcePath->symbolLog[slit]->isOutput()) {
+          ->inputSymbols[sourcePath->getSymbolLog()[slit]->getQualifiedName()]
+          .push_back(sourcePath->getSymbolLog()[slit]);
+    } else if (sourcePath->getSymbolLog()[slit]->isOutput()) {
       destinationPath
-          ->outputSymbols[sourcePath->symbolLog[slit]->getQualifiedName()]
-          .push_back(sourcePath->symbolLog[slit]);
+          ->outputSymbols[sourcePath->getSymbolLog()[slit]->getQualifiedName()]
+          .push_back(sourcePath->getSymbolLog()[slit]);
     } else {
       assert(false && "Symbol is neither input nor output.");
     }
@@ -280,9 +297,9 @@ Path *buildDerivedPath(Path *basePath, Path *sourcePath) {
   // Explored path.
   destinationPath->exploredPath = basePath->exploredPath;
   destinationPath
-      ->exploredPath[sourcePath->getParticipants().back()->getName()] =
+      ->exploredPath[sourcePath->getSymbolLog().back()->getParticipant()] =
           sourcePath
-      ->exploredPath[sourcePath->getParticipants().back()->getName()];
+      ->exploredPath[sourcePath->getSymbolLog().back()->getParticipant()];
   // Test line coverage.
   destinationPath->testLineCoverage = basePath->testLineCoverage;
   for (auto pit : sourcePath->testLineCoverage) {

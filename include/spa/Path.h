@@ -16,12 +16,10 @@
 #define SPA_PATH_START "--- PATH START ---"
 #define SPA_PATH_UUID_START "--- UUID START ---"
 #define SPA_PATH_UUID_END "--- UUID END ---"
-#define SPA_PATH_PARTICIPANTS_START "--- PARTICIPANTS START ---"
-#define SPA_PATH_PARTICIPANT_DELIMITER "	"
-#define SPA_PATH_PARTICIPANTS_END "--- PARTICIPANTS END ---"
 #define SPA_PATH_DERIVEDFROMUUID_START "--- DERIVED FROM UUID START ---"
 #define SPA_PATH_DERIVEDFROMUUID_END "--- DERIVED FROM UUID END ---"
 #define SPA_PATH_SYMBOLLOG_START "--- SYMBOL LOG START ---"
+#define SPA_PATH_SYMBOLLOG_DELIMITER "	"
 #define SPA_PATH_SYMBOLLOG_END "--- SYMBOL LOG END ---"
 #define SPA_PATH_OUTPUTS_START "--- OUTPUTS START ---"
 #define SPA_PATH_OUTPUT_DELIMITER "	"
@@ -52,19 +50,21 @@ std::string generateUUID();
 
 class Symbol {
 private:
+  std::string pathUUID;
   std::string fullName;
   const klee::Array *array = NULL;
   std::vector<klee::ref<klee::Expr> > outputValues;
 
 public:
-  Symbol(std::string fullName, const klee::Array *array)
-      : fullName(fullName), array(array) {}
+  Symbol(std::string pathUUID, std::string fullName, const klee::Array *array)
+      : pathUUID(pathUUID), fullName(fullName), array(array) {}
 
-  Symbol(std::string fullName,
+  Symbol(std::string pathUUID, std::string fullName,
          std::vector<klee::ref<klee::Expr> > outputValues =
              std::vector<klee::ref<klee::Expr> >())
-      : fullName(fullName), outputValues(outputValues) {}
+      : pathUUID(pathUUID), fullName(fullName), outputValues(outputValues) {}
 
+  std::string getPathUUID() const { return pathUUID; }
   std::string getFullName() const { return fullName; }
   std::string getQualifiedName() const {
     return strSplitJoin(fullName, SPA_SYMBOL_DELIMITER, 0, 1);
@@ -106,6 +106,11 @@ public:
   bool isOutput() const {
     return fullName.compare(0, strlen(SPA_OUTPUT_PREFIX), SPA_OUTPUT_PREFIX) ==
                0 && outputValues.size() > 0;
+  }
+
+  bool isInit() const {
+    return fullName.compare(0, strlen(SPA_INIT_PREFIX), SPA_INIT_PREFIX) == 0 &&
+           outputValues.size() > 0;
   }
 
   bool isAPI() const {
@@ -157,18 +162,7 @@ public:
   }
 
   friend class PathLoader;
-};
-
-class Participant {
-private:
-  std::string name;
-  std::string pathUUID;
-
-public:
-  Participant(std::string name, std::string pathUUID)
-      : name(name), pathUUID(pathUUID) {}
-  decltype(name) getName() const { return name; }
-  decltype(pathUUID) getPathUUID() const { return pathUUID; }
+  friend Path *buildDerivedPath(Path *basePath, Path *sourcePath);
 };
 
 class Path {
@@ -176,7 +170,6 @@ class Path {
 
 private:
   std::string uuid = generateUUID();
-  std::vector<std::shared_ptr<Participant> > participants;
   std::string derivedFromUUID;
   std::vector<std::shared_ptr<Symbol> > symbolLog;
   // qualified name -> [symbols]
@@ -217,12 +210,20 @@ public:
 
   const decltype(uuid) & getUUID() const { return uuid; }
 
-  const decltype(participants) & getParticipants() const {
-    return participants;
-  }
-
   const decltype(derivedFromUUID) & getDerivedFromUUID() const {
     return derivedFromUUID;
+  }
+
+  const std::string getParentUUID() const {
+    if (symbolLog.empty()) {
+      return "";
+    }
+    for (auto it = symbolLog.rbegin(), ie = symbolLog.rend(); it != ie; it++) {
+      if ((*it)->getPathUUID() != symbolLog.back()->getPathUUID()) {
+        return (*it)->getPathUUID();
+      }
+    }
+    return "";
   }
 
   const decltype(symbolLog) & getSymbolLog() const { return symbolLog; }
@@ -271,7 +272,6 @@ public:
   std::string getPathSource() const;
 
   friend class PathLoader;
-  friend class SPA;
   friend std::ostream &operator<<(std::ostream &stream, const Path &path);
   friend Path *buildDerivedPath(Path *basePath, Path *sourcePath);
 };

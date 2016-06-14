@@ -27,7 +27,6 @@ typedef enum {
   START,
   PATH,
   UUID,
-  PARTICIPANTS,
   DERIVEDFROMUUID,
   SYMBOLLOG,
   OUTPUTS,
@@ -77,8 +76,11 @@ Path *PathLoader::getPath() {
 
   LoadState_t state = START;
   Path *path = NULL;
-  std::map<std::string, std::shared_ptr<Symbol> > symbols;
-  std::vector<std::string> symbolNamesLog;
+  // [pathUUID, fullName]
+  std::vector<std::pair<std::string, std::string> > symbolLog;
+  std::map<std::string, const klee::Array *> inputSymbolArrays;
+  std::map<std::string, std::vector<klee::ref<klee::Expr> > >
+      outputSymbolValues;
   std::vector<std::pair<std::string, size_t> > outputSizes;
   std::string kQuery;
   while (input.good()) {
@@ -98,10 +100,6 @@ Path *PathLoader::getPath() {
       changeState(PATH, UUID);
     } else if (line == SPA_PATH_UUID_END) {
       changeState(UUID, PATH);
-    } else if (line == SPA_PATH_PARTICIPANTS_START) {
-      changeState(PATH, PARTICIPANTS);
-    } else if (line == SPA_PATH_PARTICIPANTS_END) {
-      changeState(PARTICIPANTS, PATH);
     } else if (line == SPA_PATH_DERIVEDFROMUUID_START) {
       changeState(PATH, DERIVEDFROMUUID);
     } else if (line == SPA_PATH_DERIVEDFROMUUID_END) {
@@ -129,7 +127,7 @@ Path *PathLoader::getPath() {
       while (klee::expr::Decl *D = P->ParseTopLevelDecl()) {
         assert(!P->GetNumErrors() && "Error parsing kquery in path file.");
         if (klee::expr::ArrayDecl *AD = dyn_cast<klee::expr::ArrayDecl>(D)) {
-          symbols[AD->Root->name].reset(new Symbol(AD->Root->name, AD->Root));
+          inputSymbolArrays[AD->Root->name] = AD->Root;
         } else if (klee::expr::QueryCommand *QC =
                        dyn_cast<klee::expr::QueryCommand>(D)) {
           path->constraints = klee::ConstraintManager(QC->Constraints);
@@ -137,7 +135,7 @@ Path *PathLoader::getPath() {
           for (auto vit : QC->Values) {
             assert((!outputSizes.empty()) && outputSizes.front().second > 0 &&
                    "Too many expressions in path file kquery.");
-            symbols[outputSizes.front().first]->outputValues.push_back(vit);
+            outputSymbolValues[outputSizes.front().first].push_back(vit);
             if (--outputSizes.front().second == 0) {
               outputSizes.erase(outputSizes.begin());
             }
@@ -153,21 +151,23 @@ Path *PathLoader::getPath() {
       delete Builder;
       delete MB;
 
-      for (auto fullName : symbolNamesLog) {
-        if (symbols.count(fullName)) {
-          path->symbolLog.push_back(symbols[fullName]);
+      for (auto entry : symbolLog) {
+        std::shared_ptr<Symbol> symbol;
+        if (inputSymbolArrays.count(entry.second)) {
+          symbol.reset(new Symbol(entry.first, entry.second,
+                                  inputSymbolArrays[entry.second]));
+        } else if (outputSymbolValues.count(entry.second)) {
+          symbol.reset(new Symbol(entry.first, entry.second,
+                                  outputSymbolValues[entry.second]));
+        } else {
+          assert(false && "Symbol definition not found.");
+        }
+        path->symbolLog.push_back(symbol);
 
-          std::string qualifiedName =
-              fullName.substr(0, fullName.rfind(SPA_SYMBOL_DELIMITER));
-          if (qualifiedName.compare(0, strlen(SPA_INPUT_PREFIX),
-                                    SPA_INPUT_PREFIX) == 0) {
-            path->inputSymbols[qualifiedName].push_back(symbols[fullName]);
-          } else if (qualifiedName.compare(0, strlen(SPA_OUTPUT_PREFIX),
-                                           SPA_OUTPUT_PREFIX) == 0 ||
-                     qualifiedName.compare(0, strlen(SPA_INIT_PREFIX),
-                                           SPA_INIT_PREFIX) == 0) {
-            path->outputSymbols[qualifiedName].push_back(symbols[fullName]);
-          }
+        if (symbol->isInput()) {
+          path->inputSymbols[symbol->getQualifiedName()].push_back(symbol);
+        } else if (symbol->isOutput() || symbol->isInit()) {
+          path->outputSymbols[symbol->getQualifiedName()].push_back(symbol);
         }
       }
     } else if (line == SPA_PATH_EXPLOREDCOVERAGE_START) {
@@ -197,24 +197,19 @@ Path *PathLoader::getPath() {
       case UUID: {
         path->uuid = line;
       } break;
-      case PARTICIPANTS: {
-        std::string name =
-            line.substr(0, line.find(SPA_PATH_PARTICIPANT_DELIMITER));
-        std::string uuid =
-            line.substr(line.find(SPA_PATH_PARTICIPANT_DELIMITER) + 1);
-        path->participants.emplace_back(new Participant(name, uuid));
-      } break;
       case DERIVEDFROMUUID: {
         path->derivedFromUUID = line;
       } break;
       case SYMBOLLOG: {
-        symbolNamesLog.push_back(line);
+        std::vector<std::string> s = split(line, SPA_PATH_SYMBOLLOG_DELIMITER);
+        assert(s.size() == 2 &&
+               "Invalid symbol log specification in path file.");
+        symbolLog.push_back(std::make_pair(s[0], s[1]));
       } break;
       case OUTPUTS: {
         std::vector<std::string> s = split(line, SPA_PATH_OUTPUT_DELIMITER);
         assert(s.size() == 2 && "Invalid output specification in path file.");
         outputSizes.push_back(std::make_pair(s[0], strToNum<int>(s[1])));
-        symbols[s[0]].reset(new Symbol(s[0]));
       } break;
       case TAGS: {
         std::vector<std::string> s = split(line, SPA_PATH_TAG_DELIMITER);

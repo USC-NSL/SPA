@@ -885,9 +885,8 @@ SpecialFunctionHandler::handleSpaLoadPath(ExecutionState &state,
     // Only consider last participant for shallow exploration.
     if (SPA::ShallowExploration &&
         ((!state.senderPath->getDerivedFromUUID().empty()) ||
-         ((!state.senderPath->getParticipants().empty()) &&
-          (*sit)->getParticipant() !=
-              state.senderPath->getParticipants().back()->getName()))) {
+         (*sit)->getPathUUID() !=
+             state.senderPath->getSymbolLog().back()->getPathUUID())) {
       klee_message("[spa_load_path] Cannot load path with no shallow inputs. "
                    "Terminating.");
       executor.terminateStateOnError(state, "Path has no shallow inputs.",
@@ -1256,8 +1255,8 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
       // If not, then path is equivalent to the root path from this participants
       // point of view and can't be connected.
       bool participantFound = false;
-      for (auto pit : state.senderPath->getParticipants()) {
-        if (pit->getName() == SPA::ParticipantName) {
+      for (auto pit : state.senderPath->getSymbolLog()) {
+        if (pit->getParticipant() == SPA::ParticipantName) {
           participantFound = true;
           break;
         }

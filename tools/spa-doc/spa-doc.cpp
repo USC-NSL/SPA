@@ -206,19 +206,16 @@ std::string generatePathDot(std::set<SPA::Path *> paths,
     std::vector<std::string> colors(pathColors[it].begin(),
                                     pathColors[it].end());
     dot += "  path_" + pathID + " [label=\"Path " + pathID + "\\n" +
-           it->getParticipants().back()->getName() + "\" tooltip=\"" +
+           it->getSymbolLog().back()->getParticipant() + "\" tooltip=\"" +
            it->getUUID() + "\" URL=\"" + it->getUUID() + ".html\" style=\"" +
            (colors.size() > 1 ? "wedged" : "filled") + "\" fillcolor=\"" +
            SPA::strJoin(colors, ":") + "\" penwidth=\"" +
            (selectedPaths.count(it) ? "3" : "1") + "\"]\n";
 
-    if (it->getParticipants().size() > 1 &&
-        pathsByUUID.count(it->getParticipants().rbegin()[1]->getPathUUID())) {
-      dot +=
-          "  path_" +
-          SPA::numToStr(pathIDs[
-              pathsByUUID[it->getParticipants().rbegin()[1]->getPathUUID()]]) +
-          " -> path_" + pathID + "\n";
+    std::string parentUUID = it->getParentUUID();
+    if (pathsByUUID.count(parentUUID)) {
+      dot += "  path_" + SPA::numToStr(pathIDs[pathsByUUID[parentUUID]]) +
+             " -> path_" + pathID + "\n";
     } else {
       dot += "  root -> path_" + pathID + "\n";
     }
@@ -270,21 +267,22 @@ std::string generatePathHTML(SPA::Path *path) {
                      path->getUUID().c_str());
 
   // Load participant names.
-  for (auto it : path->getParticipants()) {
-    if (!participantByName.count(it->getName())) {
+  for (auto it : path->getSymbolLog()) {
+    if (!participantByName.count(it->getParticipant())) {
       if (Debug) {
-        klee::klee_message("  Found participant: %s", it->getName().c_str());
+        klee::klee_message("  Found participant: %s",
+                           it->getParticipant().c_str());
       }
-      participantByName[it->getName()].reset(new participant_t {
-        it->getName(), std::set<std::string>()
+      participantByName[it->getParticipant()].reset(new participant_t {
+        it->getParticipant(), std::set<std::string>()
       });
-      participantByName[API_INPUT_PREFIX + it->getName()]
+      participantByName[API_INPUT_PREFIX + it->getParticipant()]
           .reset(new participant_t {
-        API_INPUT_PREFIX + it->getName(), std::set<std::string>()
+        API_INPUT_PREFIX + it->getParticipant(), std::set<std::string>()
       });
-      participantByName[API_OUTPUT_PREFIX + it->getName()]
+      participantByName[API_OUTPUT_PREFIX + it->getParticipant()]
           .reset(new participant_t {
-        API_OUTPUT_PREFIX + it->getName(), std::set<std::string>()
+        API_OUTPUT_PREFIX + it->getParticipant(), std::set<std::string>()
       });
     }
   }
@@ -490,30 +488,28 @@ std::string generatePathHTML(SPA::Path *path) {
     worklist.insert(p.second.begin(), p.second.end());
   }
   // Add siblings to worklist.
-  if (path->getParticipants().size() > 1) {
-    if (pathsByUUID.count(path->getParticipants().rbegin()[1]->getPathUUID())) {
-      auto siblings = childrenPaths[
-          pathsByUUID[path->getParticipants().rbegin()[1]->getPathUUID()]][
-          path->getParticipants().back()->getName()];
+  std::string parentUUID = path->getParentUUID();
+  if (!parentUUID.empty()) {
+    if (pathsByUUID.count(parentUUID)) {
+      auto siblings = childrenPaths[pathsByUUID[parentUUID]][
+          path->getSymbolLog().back()->getParticipant()];
       worklist.insert(siblings.begin(), siblings.end());
     }
   } else {
     if (childrenPaths.count(NULL)) {
       auto siblings =
-          childrenPaths[NULL][path->getParticipants().back()->getName()];
+          childrenPaths[NULL][path->getSymbolLog().back()->getParticipant()];
       worklist.insert(siblings.begin(), siblings.end());
     }
   }
   while (!worklist.empty()) {
     SPA::Path *path = *worklist.begin();
+    std::string parentUUID = path->getParentUUID();
     worklist.erase(path);
     if (path && !fullConversation.count(path)) {
       fullConversation.insert(path);
-      if (path->getParticipants().size() > 1 &&
-          pathsByUUID.count(path->getParticipants().rbegin()[1]
-                                ->getPathUUID())) {
-        worklist.insert(
-            pathsByUUID[path->getParticipants().rbegin()[1]->getPathUUID()]);
+      if (pathsByUUID.count(parentUUID)) {
+        worklist.insert(pathsByUUID[parentUUID]);
       }
       if ((!path->getDerivedFromUUID().empty()) &&
           pathsByUUID.count(path->getDerivedFromUUID())) {
@@ -557,10 +553,14 @@ std::string generatePathHTML(SPA::Path *path) {
               "    <b>Conversation:</b><br />\n"
               "    <ol>\n";
   std::vector<std::string> conversation;
-  for (auto it : path->getParticipants()) {
-    conversation.push_back(it->getName());
-    htmlFile += "    <li><a href='" + SPA::strJoin(conversation, "_") +
-                ".html'>" + it->getName() + "</a></li>\n";
+  std::string pathUUID = "";
+  for (auto it : path->getSymbolLog()) {
+    if (it->getPathUUID() != pathUUID) {
+      conversation.push_back(it->getParticipant());
+      htmlFile += "    <li><a href='" + SPA::strJoin(conversation, "_") +
+                  ".html'>" + it->getParticipant() + "</a></li>\n";
+      pathUUID = it->getPathUUID();
+    }
   }
   htmlFile += "    </ol><br />\n"
               "    <b>Tags:</b><br />\n"
@@ -1263,15 +1263,14 @@ int main(int argc, char **argv, char **envp) {
     pathIDs[path] = pathID;
     pathsByUUID[path->getUUID()] = path;
 
-    if (path->getParticipants().size() > 1) {
-      if (pathsByUUID.count(path->getParticipants().rbegin()[1]
-                                ->getPathUUID())) {
-        childrenPaths[
-            pathsByUUID[path->getParticipants().rbegin()[1]->getPathUUID()]][
-            path->getParticipants().back()->getName()].insert(path);
+    std::string parentUUID = path->getParentUUID();
+    if (!parentUUID.empty()) {
+      if (pathsByUUID.count(parentUUID)) {
+        childrenPaths[pathsByUUID[parentUUID]][
+            path->getSymbolLog().back()->getParticipant()].insert(path);
       }
     } else {
-      childrenPaths[NULL][path->getParticipants().back()->getName()]
+      childrenPaths[NULL][path->getSymbolLog().back()->getParticipant()]
           .insert(path);
     }
 
@@ -1318,8 +1317,12 @@ int main(int argc, char **argv, char **envp) {
     }
 
     std::vector<std::string> participants;
-    for (auto pit : path->getParticipants()) {
-      participants.push_back(pit->getName());
+    std::string pathUUID = "";
+    for (auto sit : path->getSymbolLog()) {
+      if (sit->getPathUUID() != pathUUID) {
+        participants.push_back(sit->getParticipant());
+        pathUUID = sit->getPathUUID();
+      }
     }
     conversations[participants].insert(path);
     std::set<SPA::Path *> fullConversation, worklist;
@@ -1327,14 +1330,12 @@ int main(int argc, char **argv, char **envp) {
     worklist = conversations[participants];
     while (!worklist.empty()) {
       SPA::Path *path = *worklist.begin();
+      std::string parentUUID = path->getParentUUID();
       worklist.erase(path);
       if (path && !fullConversation.count(path)) {
         fullConversation.insert(path);
-        if (path->getParticipants().size() > 1 &&
-            pathsByUUID.count(path->getParticipants().rbegin()[1]
-                                  ->getPathUUID())) {
-          worklist.insert(
-              pathsByUUID[path->getParticipants().rbegin()[1]->getPathUUID()]);
+        if (pathsByUUID.count(parentUUID)) {
+          worklist.insert(pathsByUUID[parentUUID]);
         }
         if ((!path->getDerivedFromUUID().empty()) &&
             pathsByUUID.count(path->getDerivedFromUUID())) {

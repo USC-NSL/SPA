@@ -1043,16 +1043,14 @@ void SPA::processPath(klee::ExecutionState *state) {
     return;
   }
 
-  Path path(state, executor->getSolver());
+  std::shared_ptr<Path> path(new Path(state, executor->getSolver()));
 
-  if (!pathFilter || pathFilter->checkPath(path)) {
+  if (!pathFilter || pathFilter->checkPath(*path)) {
     klee::klee_message("Outputting path.");
     output << path;
     outputtedPaths++;
 
-    // Update lineage data.
-    state->senderPath->participants
-        .emplace_back(new Participant(ParticipantName, path.getUUID()));
+    state->senderPath = path;
 
     if (MaxPaths && outputtedPaths >= (unsigned) MaxPaths) {
       klee::klee_message("Found specified number of paths. Halting.");
