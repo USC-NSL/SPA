@@ -977,7 +977,8 @@ std::string generateConversationIndex() {
                                     conversationColors[cit.first].end());
     conversationsDot +=
         "  " + sanitizeToken(name) + " [label=\"" + cit.first.back() + "\\n(" +
-        SPA::numToStr(cit.second.size()) + " Paths)\" URL=\"" + name +
+        SPA::numToStr(cit.second.size()) + " Paths)\" URL=\"" +
+        (cit.second.size() > 1 ? name : (*cit.second.begin())->getUUID()) +
         ".html\" style=\"" + (colors.size() > 1 ? "wedged" : "filled") +
         "\" fillcolor=\"" + SPA::strJoin(colors, ":") + "\"]\n";
     if (cit.first.size() > 1) {
