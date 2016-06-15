@@ -68,7 +68,7 @@ Path *buildDerivedPath(Path *basePath, Path *sourcePath) {
   }
   // Don't use derived paths to augment others
   // (use the source that they were derived from).
-  if (!sourcePath->derivedFromUUID.empty()) {
+  if (!sourcePath->getDerivedFromUUID().empty()) {
     return NULL;
   }
   // Find commonalities in each path's symbol logs.
@@ -243,8 +243,6 @@ Path *buildDerivedPath(Path *basePath, Path *sourcePath) {
     return NULL;
   }
 
-  // Keep track of where destination was derived from.
-  destinationPath->derivedFromUUID = sourcePath->getUUID();
   // Append new data from source to base.
   // New symbol log entries.
   destinationPath->symbolLog = basePath->getSymbolLog();
@@ -253,6 +251,7 @@ Path *buildDerivedPath(Path *basePath, Path *sourcePath) {
        it != ie; it++) {
     destinationPath->symbolLog.emplace_back(new Symbol(**it));
     destinationPath->symbolLog.back()->pathUUID = destinationPath->getUUID();
+    destinationPath->symbolLog.back()->derivedFromUUID = sourcePath->getUUID();
   }
   // New symbols.
   destinationPath->inputSymbols = basePath->inputSymbols;

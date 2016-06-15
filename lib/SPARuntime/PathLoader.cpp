@@ -27,7 +27,6 @@ typedef enum {
   START,
   PATH,
   UUID,
-  DERIVEDFROMUUID,
   SYMBOLLOG,
   OUTPUTS,
   TAGS,
@@ -76,8 +75,8 @@ Path *PathLoader::getPath() {
 
   LoadState_t state = START;
   Path *path = NULL;
-  // [pathUUID, fullName]
-  std::vector<std::pair<std::string, std::string> > symbolLog;
+  // [<pathUUID, derivedFromUUID, fullName>]
+  std::vector<std::vector<std::string> > symbolLog;
   std::map<std::string, const klee::Array *> inputSymbolArrays;
   std::map<std::string, std::vector<klee::ref<klee::Expr> > >
       outputSymbolValues;
@@ -100,10 +99,6 @@ Path *PathLoader::getPath() {
       changeState(PATH, UUID);
     } else if (line == SPA_PATH_UUID_END) {
       changeState(UUID, PATH);
-    } else if (line == SPA_PATH_DERIVEDFROMUUID_START) {
-      changeState(PATH, DERIVEDFROMUUID);
-    } else if (line == SPA_PATH_DERIVEDFROMUUID_END) {
-      changeState(DERIVEDFROMUUID, PATH);
     } else if (line == SPA_PATH_SYMBOLLOG_START) {
       changeState(PATH, SYMBOLLOG);
     } else if (line == SPA_PATH_SYMBOLLOG_END) {
@@ -153,12 +148,12 @@ Path *PathLoader::getPath() {
 
       for (auto entry : symbolLog) {
         std::shared_ptr<Symbol> symbol;
-        if (inputSymbolArrays.count(entry.second)) {
-          symbol.reset(new Symbol(entry.first, entry.second,
-                                  inputSymbolArrays[entry.second]));
-        } else if (outputSymbolValues.count(entry.second)) {
-          symbol.reset(new Symbol(entry.first, entry.second,
-                                  outputSymbolValues[entry.second]));
+        if (inputSymbolArrays.count(entry[2])) {
+          symbol.reset(new Symbol(entry[0], entry[1], entry[2],
+                                  inputSymbolArrays[entry[2]]));
+        } else if (outputSymbolValues.count(entry[2])) {
+          symbol.reset(new Symbol(entry[0], entry[1], entry[2],
+                                  outputSymbolValues[entry[2]]));
         } else {
           assert(false && "Symbol definition not found.");
         }
@@ -197,14 +192,11 @@ Path *PathLoader::getPath() {
       case UUID: {
         path->uuid = line;
       } break;
-      case DERIVEDFROMUUID: {
-        path->derivedFromUUID = line;
-      } break;
       case SYMBOLLOG: {
         std::vector<std::string> s = split(line, SPA_PATH_SYMBOLLOG_DELIMITER);
-        assert(s.size() == 2 &&
+        assert(s.size() == 3 &&
                "Invalid symbol log specification in path file.");
-        symbolLog.push_back(std::make_pair(s[0], s[1]));
+        symbolLog.push_back(s);
       } break;
       case OUTPUTS: {
         std::vector<std::string> s = split(line, SPA_PATH_OUTPUT_DELIMITER);

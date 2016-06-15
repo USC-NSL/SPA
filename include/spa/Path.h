@@ -16,8 +16,6 @@
 #define SPA_PATH_START "--- PATH START ---"
 #define SPA_PATH_UUID_START "--- UUID START ---"
 #define SPA_PATH_UUID_END "--- UUID END ---"
-#define SPA_PATH_DERIVEDFROMUUID_START "--- DERIVED FROM UUID START ---"
-#define SPA_PATH_DERIVEDFROMUUID_END "--- DERIVED FROM UUID END ---"
 #define SPA_PATH_SYMBOLLOG_START "--- SYMBOL LOG START ---"
 #define SPA_PATH_SYMBOLLOG_DELIMITER "	"
 #define SPA_PATH_SYMBOLLOG_END "--- SYMBOL LOG END ---"
@@ -51,21 +49,29 @@ std::string generateUUID();
 class Symbol {
 private:
   std::string pathUUID;
+  std::string derivedFromUUID;
   std::string fullName;
   const klee::Array *array = NULL;
   std::vector<klee::ref<klee::Expr> > outputValues;
 
 public:
-  Symbol(std::string pathUUID, std::string fullName, const klee::Array *array)
-      : pathUUID(pathUUID), fullName(fullName), array(array) {}
+  Symbol(std::string pathUUID, std::string derivedFromUUID,
+         std::string fullName, const klee::Array *array)
+      : pathUUID(pathUUID), derivedFromUUID(derivedFromUUID),
+        fullName(fullName), array(array) {}
 
-  Symbol(std::string pathUUID, std::string fullName,
+  Symbol(std::string pathUUID, std::string derivedFromUUID,
+         std::string fullName,
          std::vector<klee::ref<klee::Expr> > outputValues =
              std::vector<klee::ref<klee::Expr> >())
-      : pathUUID(pathUUID), fullName(fullName), outputValues(outputValues) {}
+      : pathUUID(pathUUID), derivedFromUUID(derivedFromUUID),
+        fullName(fullName), outputValues(outputValues) {}
 
-  std::string getPathUUID() const { return pathUUID; }
-  std::string getFullName() const { return fullName; }
+  decltype(pathUUID) getPathUUID() const { return pathUUID; }
+  decltype(derivedFromUUID) getDerivedFromUUID() const {
+    return derivedFromUUID;
+  }
+  decltype(fullName) getFullName() const { return fullName; }
   std::string getQualifiedName() const {
     return strSplitJoin(fullName, SPA_SYMBOL_DELIMITER, 0, 1);
   }
@@ -170,7 +176,6 @@ class Path {
 
 private:
   std::string uuid = generateUUID();
-  std::string derivedFromUUID;
   std::vector<std::shared_ptr<Symbol> > symbolLog;
   // qualified name -> [symbols]
   std::map<std::string, std::vector<std::shared_ptr<Symbol> > > inputSymbols;
@@ -208,10 +213,14 @@ public:
   Path() {}
   Path(klee::ExecutionState *kState, klee::Solver *solver);
 
-  const decltype(uuid) & getUUID() const { return uuid; }
+  const decltype(uuid) getUUID() const { return uuid; }
 
-  const decltype(derivedFromUUID) & getDerivedFromUUID() const {
-    return derivedFromUUID;
+  const std::string getDerivedFromUUID() const {
+    if (symbolLog.empty()) {
+      return "";
+    } else {
+      return symbolLog.back()->getDerivedFromUUID();
+    }
   }
 
   const std::string getParentUUID() const {
