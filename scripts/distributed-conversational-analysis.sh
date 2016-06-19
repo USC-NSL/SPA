@@ -61,6 +61,7 @@ function listJobs() {
   if ls $LOCAL_WORK_DIR/pending/*.paths >/dev/null 2>/dev/null; then
     parallel "awk '
       BEGIN {
+        FS = \"_|\t\";
         match_pos = 1;
         depth = 0;
         enable = 0;
@@ -82,12 +83,12 @@ function listJobs() {
         if (FNR == NR) {
           target[FNR] = \$0;
         } else if (enable == 1) {
-          if (\"\$1\" != uuid) {
+          if (\$1 != uuid) {
             depth++;
-            if (target[match_pos] == \$1) {
+            if (target[match_pos] == \$(NF - 1)) {
               match_pos++;
             }
-            uuid = \"\$1\";
+            uuid = \$1;
           }
         }
       }
