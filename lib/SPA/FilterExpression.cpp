@@ -38,6 +38,7 @@ FilterExpression *parseNotFE(std::string str);
 FilterExpression *parseConstFE(std::string str);
 FilterExpression *parseReachedFE(std::string str);
 FilterExpression *parseConversationFE(std::string str);
+FilterExpression *parseUUIDFE(std::string str);
 
 FilterExpression *FilterExpression::parse(std::string str) {
   // Trim
@@ -58,6 +59,8 @@ FilterExpression *FilterExpression::parse(std::string str) {
   if ((result = parseReachedFE(str)))
     return result;
   if ((result = parseConversationFE(str)))
+    return result;
+  if ((result = parseUUIDFE(str)))
     return result;
   return NULL;
 }
@@ -114,5 +117,11 @@ FilterExpression *parseConversationFE(std::string str) {
   if (str.substr(0, strlen(CONVERSATION)) != CONVERSATION)
     return NULL;
   return new ConversationFE(str.substr(strlen(CONVERSATION)));
+}
+
+FilterExpression *parseUUIDFE(std::string str) {
+  if (str.substr(0, strlen(UUID)) != UUID)
+    return NULL;
+  return new UUIDFE(str.substr(strlen(UUID)));
 }
 }

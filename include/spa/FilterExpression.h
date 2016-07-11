@@ -4,6 +4,7 @@
 
 #define REACHED "REACHED "
 #define CONVERSATION "CONVERSATION "
+#define UUID "UUID "
 
 namespace SPA {
 class FilterExpression : public PathFilter {
@@ -90,5 +91,15 @@ public:
   std::string dbg_str() {
     return std::string("(" CONVERSATION) + conversation + ")";
   }
+};
+
+class UUIDFE : public FilterExpression {
+private:
+  std::string uuid;
+
+public:
+  UUIDFE(std::string uuid) : uuid(uuid) {}
+  bool checkPath(Path &p) { return p.getUUID() == uuid; }
+  std::string dbg_str() { return std::string("(" UUID) + uuid + ")"; }
 };
 }
