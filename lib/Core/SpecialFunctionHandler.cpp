@@ -882,6 +882,8 @@ SpecialFunctionHandler::handleSpaLoadPath(ExecutionState &state,
   for (auto sit = state.senderPath->getSymbolLog().rbegin(),
             sie = state.senderPath->getSymbolLog().rend();
        sit != sie; sit++) {
+    klee_message("[spa_load_path]   Checking symbol: %s",
+                 (*sit)->getFullName().c_str());
     // Check if symbol can be consumed by a direct mapping.
     for (auto mit : SPA::seedSymbolMappings) {
       if (mit.second == (*sit)->getQualifiedName()) {
