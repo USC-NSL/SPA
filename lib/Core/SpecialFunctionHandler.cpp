@@ -875,10 +875,10 @@ SpecialFunctionHandler::handleSpaLoadPath(ExecutionState &state,
   // To check this, check the log in reverse and find the first of either a
   // symbol from the current participant or a symbol that can be consumed.
   // If performing shallow exploration, make sure all the participants after the
-  // current one either sent symbols the current participant can consume or are
-  // not derived.
-  std::set<std::string> newParticipants, sendingParticipants,
-      shallowParticipants;
+  // last non-derived one sent symbols the current participant can consume.
+  std::set<std::string> sendingParticipants, shallowParticipants,
+      shallowSendingParticipants;
+  bool foundNonDerived = false;
   for (auto sit = state.senderPath->getSymbolLog().rbegin(),
             sie = state.senderPath->getSymbolLog().rend();
        sit != sie; sit++) {
@@ -888,16 +888,23 @@ SpecialFunctionHandler::handleSpaLoadPath(ExecutionState &state,
     if ((*sit)->getParticipant() == SPA::ParticipantName) {
       break;
     }
-    newParticipants.insert((*sit)->getPathUUID());
     if ((*sit)->getDerivedFromUUID().empty()) {
-      shallowParticipants.insert((*sit)->getPathUUID());
+      klee_message("[spa_load_path]     Symbol is not derived.");
+      foundNonDerived = true;
+    } else {
+      klee_message("[spa_load_path]     Symbol is derived.");
+      if (!foundNonDerived) {
+        shallowParticipants.insert((*sit)->getPathUUID());
+      }
     }
     // Check if symbol can be consumed by a direct mapping.
     for (auto mit : SPA::seedSymbolMappings) {
       if (mit.second == (*sit)->getQualifiedName()) {
         klee_message("[spa_load_path]     Symbol is directly mapped.");
         sendingParticipants.insert((*sit)->getPathUUID());
-        shallowParticipants.insert((*sit)->getPathUUID());
+        if (!foundNonDerived) {
+          shallowSendingParticipants.insert((*sit)->getPathUUID());
+        }
         break;
       }
     }
@@ -909,11 +916,9 @@ SpecialFunctionHandler::handleSpaLoadPath(ExecutionState &state,
                                    (*sit)->getMessageDestinationPort()) ||
          participantBindings.count((*sit)->getMessageDestinationIP() + ":*"))) {
       klee_message("[spa_load_path]     Symbol is mapped via socket.");
-      if ((*sit)->getPathUUID() ==
-          state.senderPath->getSymbolLog().back()->getPathUUID()) {
-        klee_message("[spa_load_path]     Symbol is shallow.");
-        sendingParticipants.insert((*sit)->getPathUUID());
-        shallowParticipants.insert((*sit)->getPathUUID());
+      sendingParticipants.insert((*sit)->getPathUUID());
+      if (!foundNonDerived) {
+        shallowSendingParticipants.insert((*sit)->getPathUUID());
       }
       break;
     }
@@ -927,7 +932,7 @@ SpecialFunctionHandler::handleSpaLoadPath(ExecutionState &state,
     return;
   }
   if (SPA::ShallowExploration &&
-      newParticipants.size() != shallowParticipants.size()) {
+      shallowParticipants.size() != shallowSendingParticipants.size()) {
     klee_message("[spa_load_path] Path has non-shallow participants. "
                  "Terminating.");
     executor.terminateStateOnError(state, "Path has no shallow inputs.",
