@@ -74,7 +74,7 @@ Path *buildDerivedPath(Path *basePath, Path *sourcePath) {
   // Don't use derived paths to augment others
   // (use the source that they were derived from).
   if (!sourcePath->getDerivedFromUUID().empty()) {
-    klee::klee_message("Fail 2.");
+    //     klee::klee_message("Fail 2.");
     return NULL;
   }
   // Find commonalities in each path's symbol logs.
