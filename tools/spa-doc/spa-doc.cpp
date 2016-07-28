@@ -84,6 +84,8 @@ std::map<std::vector<std::string>, std::set<SPA::Path *> > conversations;
 // path -> (participant -> paths).
 std::map<SPA::Path *, std::map<std::string, std::set<SPA::Path *> > >
     childrenPaths;
+// path -> paths.
+std::map<SPA::Path *, std::set<SPA::Path *> > derivedPaths;
 // filter -> color
 std::set<std::pair<SPA::FilterExpression *, std::string> > colorFilters;
 // path -> colors
@@ -483,6 +485,7 @@ std::string generatePathHTML(SPA::Path *path) {
   std::set<SPA::Path *> fullConversation, worklist;
   // Show entire conversation up to the children and direct siblings
   // (same parent and same participant) of the current path.
+  // Also add paths derived from this one.
   // Add children to worklist.
   for (auto p : childrenPaths[path]) {
     worklist.insert(p.second.begin(), p.second.end());
@@ -502,6 +505,9 @@ std::string generatePathHTML(SPA::Path *path) {
       worklist.insert(siblings.begin(), siblings.end());
     }
   }
+  // Add derived paths to worklist.
+  worklist.insert(derivedPaths[path].begin(), derivedPaths[path].end());
+
   while (!worklist.empty()) {
     SPA::Path *path = *worklist.begin();
     std::string parentUUID = path->getParentUUID();
@@ -1273,6 +1279,11 @@ int main(int argc, char **argv, char **envp) {
     } else {
       childrenPaths[NULL][path->getSymbolLog().back()->getParticipant()]
           .insert(path);
+    }
+
+    std::string derivedFromUUID = path->getDerivedFromUUID();
+    if (!derivedFromUUID.empty() && pathsByUUID.count(derivedFromUUID)) {
+      derivedPaths[pathsByUUID[derivedFromUUID]].insert(path);
     }
 
     for (auto cfit : colorFilters) {

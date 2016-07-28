@@ -62,13 +62,19 @@ klee::Solver *solver = klee::createIndependentSolver(klee::createCachingSolver(
 
 namespace SPA {
 Path *buildDerivedPath(Path *basePath, Path *sourcePath) {
+  //   klee::klee_message("Trying to augment path %s with %s.",
+  //                      basePath->getUUID().c_str(),
+  //                      sourcePath->getUUID().c_str());
+
   // Don't augment the root path.
   if (basePath->getSymbolLog().empty() || sourcePath->getSymbolLog().empty()) {
+    //     klee::klee_message("Fail 1.");
     return NULL;
   }
   // Don't use derived paths to augment others
   // (use the source that they were derived from).
   if (!sourcePath->getDerivedFromUUID().empty()) {
+    klee::klee_message("Fail 2.");
     return NULL;
   }
   // Find commonalities in each path's symbol logs.
@@ -101,12 +107,14 @@ Path *buildDerivedPath(Path *basePath, Path *sourcePath) {
   // Otherwise destination becomes the same as source.
   if (commonEntries == basePath->getSymbolLog().size() ||
       newLogPos == basePath->getSymbolLog().size()) {
+    //     klee::klee_message("Fail 3.");
     return NULL;
   }
   // Does source have something new to add?
   // Otherwise destination becomes the same as base.
   if (commonEntries == sourcePath->getSymbolLog().size() ||
       newLogPos == sourcePath->getSymbolLog().size()) {
+    //     klee::klee_message("Fail 4.");
     return NULL;
   }
   // Only consider scenario where source has a single contribution.
@@ -116,6 +124,7 @@ Path *buildDerivedPath(Path *basePath, Path *sourcePath) {
             ie = sourcePath->getSymbolLog().end();
        it != ie; it++) {
     if ((*it)->getPathUUID() != newLogPathUUID) {
+      //       klee::klee_message("Fail 5.");
       return NULL;
     }
   }
@@ -123,12 +132,16 @@ Path *buildDerivedPath(Path *basePath, Path *sourcePath) {
   // or the path that the base was derived from.
   if (basePath->getDerivedFromUUID().empty()) {
     if (newLogPos > commonEntries) {
+      //       klee::klee_message("Fail 6.");
       return NULL;
     }
   } else {
     if (newLogPos == 0 ||
-        sourcePath->getSymbolLog()[newLogPos - 1]->getPathUUID() !=
-            basePath->getDerivedFromUUID()) {
+        (sourcePath->getSymbolLog()[newLogPos - 1]->getPathUUID() !=
+             basePath->getSymbolLog()[newLogPos - 1]->getPathUUID() &&
+         sourcePath->getSymbolLog()[newLogPos - 1]->getPathUUID() !=
+             basePath->getDerivedFromUUID())) {
+      //       klee::klee_message("Fail 7.");
       return NULL;
     }
   }
@@ -136,6 +149,7 @@ Path *buildDerivedPath(Path *basePath, Path *sourcePath) {
   for (auto i = newLogPos; i < basePath->getSymbolLog().size(); i++) {
     if (basePath->getSymbolLog()[i]->getFullName() ==
         sourcePath->getSymbolLog()[newLogPos]->getFullName()) {
+      //       klee::klee_message("Fail 8.");
       return NULL;
     }
   }
@@ -147,6 +161,7 @@ Path *buildDerivedPath(Path *basePath, Path *sourcePath) {
         (!(*bsit)->isDropped()) &&
         participantIPs[sourcePath->getSymbolLog().back()->getParticipant()]
             .count((*bsit)->getMessageDestinationIP())) {
+      //       klee::klee_message("Fail 9.");
       return NULL;
     }
     for (auto ssit = sourcePath->getSymbolLog().begin() + newLogPos,
@@ -154,12 +169,14 @@ Path *buildDerivedPath(Path *basePath, Path *sourcePath) {
          ssit != ssie; ssit++) {
       if (seedSymbolMappings[(*ssit)->getQualifiedName()] ==
           (*bsit)->getQualifiedName()) {
+        //         klee::klee_message("Fail 10.");
         return NULL;
       }
       if (ConnectSockets && (*bsit)->isOutput() && (*bsit)->isMessage() &&
           (!(*bsit)->isDropped()) && (*ssit)->isInput() &&
           (*ssit)->isMessage() &&
           checkMessageCompatibility(*bsit, (*ssit)->getLocalName())) {
+        //         klee::klee_message("Fail 11.");
         return NULL;
       }
     }
