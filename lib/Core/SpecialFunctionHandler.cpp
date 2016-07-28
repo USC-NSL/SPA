@@ -883,13 +883,15 @@ SpecialFunctionHandler::handleSpaLoadPath(ExecutionState &state,
             sie = state.senderPath->getSymbolLog().rend();
        sit != sie; sit++) {
     // Check if symbol can be consumed by a direct mapping.
-    if (SPA::seedSymbolMappings.count((*sit)->getQualifiedName())) {
-      if ((*sit)->getPathUUID() ==
-          state.senderPath->getSymbolLog().back()->getPathUUID()) {
-        receivingShallowSymbols = true;
-      }
-      if ((*sit)->getDerivedFromUUID().empty()) {
-        break;
+    for (auto mit : SPA::seedSymbolMappings) {
+      if (mit.second == (*sit)->getQualifiedName()) {
+        if ((*sit)->getPathUUID() ==
+            state.senderPath->getSymbolLog().back()->getPathUUID()) {
+          receivingShallowSymbols = true;
+        }
+        if ((*sit)->getDerivedFromUUID().empty()) {
+          break;
+        }
       }
     }
     // Check if symbol can be consumed via symbolic socket layer.
