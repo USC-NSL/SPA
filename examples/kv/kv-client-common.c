@@ -66,3 +66,16 @@ void __attribute__((noinline, used)) spa_entry() {
   kv_done();
   return;
 }
+
+void __attribute__((noinline, used)) spa_setget() {
+  value_t value = 'v';
+
+  spa_api_input_var(value);
+  kv_set(SPA_KEY, value);
+
+  value = kv_get(SPA_KEY);
+  spa_api_output_var(value);
+
+  kv_done();
+  return;
+}
