@@ -918,7 +918,8 @@ SpecialFunctionHandler::handleSpaLoadPath(ExecutionState &state,
       break;
     }
   }
-  if (sendingParticipants.empty()) {
+  if (sendingParticipants.empty() ||
+      (!state.senderPath->getSymbolLog().empty())) {
     klee_message(
         "[spa_load_path] Cannot load path with no new inputs. Terminating.");
     executor.terminateStateOnError(state, "Path has no new inputs.",
