@@ -230,12 +230,12 @@ spaSplitPaths \
       cp $f $LOCAL_WORK_DIR/pending/$(basename $f .paths)-$p.paths
     done
     rm $f
-
-    # Recompute prioritized job list.
-    (flock 200
-      listJobs > $LOCAL_WORK_DIR/jobs
-    ) 200>$LOCAL_WORK_DIR/lock
   done
+
+  # Recompute prioritized job list.
+  (flock 200
+    listJobs > $LOCAL_WORK_DIR/jobs
+  ) 200>$LOCAL_WORK_DIR/lock
   sleep 1
 done) &
 
