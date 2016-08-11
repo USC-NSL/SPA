@@ -932,7 +932,8 @@ SpecialFunctionHandler::handleSpaLoadPath(ExecutionState &state,
     return;
   }
   if (SPA::ShallowExploration &&
-      (shallowParticipants.size() == 0 ||
+      (((!state.senderPath->getSymbolLog().empty()) &&
+        shallowParticipants.size() == 0) ||
        shallowParticipants.size() != shallowSendingParticipants.size())) {
     klee_message("[spa_load_path] Path has non-shallow participants. "
                  "Terminating.");
