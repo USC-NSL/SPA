@@ -878,7 +878,8 @@ SpecialFunctionHandler::handleSpaLoadPath(ExecutionState &state,
   // last non-derived one sent symbols the current participant can consume.
   std::set<std::string> sendingParticipants, shallowParticipants,
       shallowSendingParticipants;
-  bool foundNonDerived = false;
+  std::string firstDerivedParticipant;
+  bool shallow = true;
   for (auto sit = state.senderPath->getSymbolLog().rbegin(),
             sie = state.senderPath->getSymbolLog().rend();
        sit != sie; sit++) {
@@ -888,7 +889,19 @@ SpecialFunctionHandler::handleSpaLoadPath(ExecutionState &state,
     if ((*sit)->getParticipant() == SPA::ParticipantName) {
       break;
     }
-    if (!foundNonDerived) {
+    if ((*sit)->getDerivedFromUUID().empty()) {
+      klee_message("[spa_load_path]     Symbol is not derived.");
+      if (firstDerivedParticipant.empty()) {
+        firstDerivedParticipant = (*sit)->getParticipant();
+      }
+    } else {
+      klee_message("[spa_load_path]     Symbol is derived.");
+    }
+    if ((!firstDerivedParticipant.empty()) &&
+        firstDerivedParticipant != (*sit)->getParticipant()) {
+      shallow = false;
+    }
+    if (shallow) {
       shallowParticipants.insert((*sit)->getPathUUID());
     }
     // Check if symbol can be consumed by a direct mapping.
@@ -896,7 +909,7 @@ SpecialFunctionHandler::handleSpaLoadPath(ExecutionState &state,
       if (mit.second == (*sit)->getQualifiedName()) {
         klee_message("[spa_load_path]     Symbol is directly mapped.");
         sendingParticipants.insert((*sit)->getPathUUID());
-        if (!foundNonDerived) {
+        if (shallow) {
           shallowSendingParticipants.insert((*sit)->getPathUUID());
         }
         break;
@@ -911,16 +924,10 @@ SpecialFunctionHandler::handleSpaLoadPath(ExecutionState &state,
          participantBindings.count((*sit)->getMessageDestinationIP() + ":*"))) {
       klee_message("[spa_load_path]     Symbol is mapped via socket.");
       sendingParticipants.insert((*sit)->getPathUUID());
-      if (!foundNonDerived) {
+      if (shallow) {
         shallowSendingParticipants.insert((*sit)->getPathUUID());
       }
       break;
-    }
-    if ((*sit)->getDerivedFromUUID().empty()) {
-      klee_message("[spa_load_path]     Symbol is not derived.");
-      foundNonDerived = true;
-    } else {
-      klee_message("[spa_load_path]     Symbol is derived.");
     }
   }
   if (sendingParticipants.empty() &&
