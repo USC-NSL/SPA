@@ -1044,6 +1044,20 @@ std::string generateConversationIndex() {
 
 std::string generateCoverageIndex() {
   klee::klee_message("Generating global coverage index.");
+  unsigned long globalCoveredLines = 0, globalUncoveredLines = 0;
+  std::map<std::string, unsigned long> fileCoveredLines, fileUncoveredLines;
+  for (auto file : coverage) {
+    for (auto line : file.second) {
+      if (line.second[true].empty()) {
+        globalUncoveredLines++;
+        fileUncoveredLines[file.first]++;
+      } else {
+        globalCoveredLines++;
+        fileCoveredLines[file.first]++;
+      }
+    }
+  }
+
   std::string result =
       "<!doctype html>\n"
       "<html lang=\"en\">\n"
@@ -1060,10 +1074,28 @@ std::string generateCoverageIndex() {
       "    </div>\n"
       "    <iframe src='about:blank' name='src' class='src'></iframe>\n"
       "    <h1>Coverage</h1>\n"
+      "    <b>Global Stats:</b><br />\n"
+      "    Lines covered: " + SPA::numToStr(globalCoveredLines) + " (" +
+      SPA::numToStr(100 * globalCoveredLines /
+                    (globalCoveredLines + globalUncoveredLines)) +
+      "%)<br />\n"
+      "    Lines not covered: " + SPA::numToStr(globalUncoveredLines) + " (" +
+      SPA::numToStr(100 * globalUncoveredLines /
+                    (globalCoveredLines + globalUncoveredLines)) +
+      "%)<br />\n"
+      "    Total coverable lines: " +
+      SPA::numToStr(globalCoveredLines + globalUncoveredLines) +
+      "<br /><br />\n"
       "    <b>Files:</b><br />\n";
   for (auto it : coverageIndexes) {
     result += "    <a href='" + it.second + "' target='src'>" +
-              remapSrcFileName(it.first) + "</a><br />\n";
+              remapSrcFileName(it.first) + "</a> - " +
+              SPA::numToStr(fileCoveredLines[it.first]) + " / " +
+              SPA::numToStr(fileCoveredLines[it.first] +
+                            fileUncoveredLines[it.first]) + " (" +
+              SPA::numToStr(100 * fileCoveredLines[it.first] /
+                            (fileCoveredLines[it.first] +
+                             fileUncoveredLines[it.first])) + "%)<br />\n";
   }
   result += "  </body>\n"
             "</html>\n";
@@ -1112,17 +1144,15 @@ std::string generateCoverageFile(std::string origSrcFile) {
       } else {
         coverageHtml += "sometimescovered";
       }
-    } else {
-      coverageHtml += "unknown";
-    }
-    coverageHtml +=
-        "' title='Covered by " +
-        SPA::numToStr(coverage[origSrcFile][srcLineNum][true].size()) +
-        " paths.&#10;Not covered by " +
-        SPA::numToStr(coverage[origSrcFile][srcLineNum][false].size()) +
-        " paths.'>\n";
-    if (coverage[origSrcFile].count(srcLineNum)) {
+      coverageHtml +=
+          "' title='Covered by " +
+          SPA::numToStr(coverage[origSrcFile][srcLineNum][true].size()) +
+          " paths.&#10;Not covered by " +
+          SPA::numToStr(coverage[origSrcFile][srcLineNum][false].size()) +
+          " paths.'>\n";
       coverageHtml += "<a href='#l" + SPA::numToStr(srcLineNum) + "'>\n";
+    } else {
+      coverageHtml += "unknown'>\n";
     }
     coverageHtml +=
         "          <div class='number'>" + SPA::numToStr(srcLineNum) +
