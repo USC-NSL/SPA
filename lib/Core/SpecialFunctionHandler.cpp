@@ -888,6 +888,9 @@ SpecialFunctionHandler::handleSpaLoadPath(ExecutionState &state,
     if ((*sit)->getParticipant() == SPA::ParticipantName) {
       break;
     }
+    if (!foundNonDerived) {
+      shallowParticipants.insert((*sit)->getPathUUID());
+    }
     // Check if symbol can be consumed by a direct mapping.
     for (auto mit : SPA::seedSymbolMappings) {
       if (mit.second == (*sit)->getQualifiedName()) {
@@ -912,9 +915,6 @@ SpecialFunctionHandler::handleSpaLoadPath(ExecutionState &state,
         shallowSendingParticipants.insert((*sit)->getPathUUID());
       }
       break;
-    }
-    if (!foundNonDerived) {
-      shallowParticipants.insert((*sit)->getPathUUID());
     }
     if ((*sit)->getDerivedFromUUID().empty()) {
       klee_message("[spa_load_path]     Symbol is not derived.");
