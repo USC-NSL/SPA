@@ -14,7 +14,7 @@ touch $PATH_FILE
 
 echo "Starting conversational analysis with $NUM_PARTICIPANTS participants." \
      | tee -a $PATH_FILE.log
-echo "Conversation recorded to $PATH_FILE.paths" | tee -a $PATH_FILE.log
+echo "Conversation recorded to $PATH_FILE" | tee -a $PATH_FILE.log
 
 for i in $(seq 0 $((NUM_PARTICIPANTS - 1))); do
   echo "Participant $i analyzed with equivalent of:" | tee -a $PATH_FILE.log
