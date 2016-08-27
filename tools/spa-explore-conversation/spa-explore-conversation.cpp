@@ -33,6 +33,11 @@ llvm::cl::opt<bool>
     OutputPathsAppend("out-paths-append",
                       llvm::cl::desc("Enable appending paths to output file."));
 
+llvm::cl::opt<bool> NoDups(
+    "no-dups",
+    llvm::cl::desc(
+        "Pre-scan the input file and avoid deriving any duplicate paths."));
+
 llvm::cl::list<std::string>
     Connect("connect", llvm::cl::desc("Specifies symbols to connect in a "
                                       "receiverSymbol1=senderSymbol2 format."));
@@ -52,6 +57,8 @@ llvm::cl::opt<bool> Debug("d", llvm::cl::desc("Show debug information."));
 
 // Path ID -> Path
 std::vector<SPA::Path *> paths;
+// [base-UUID, source-UUID]
+std::set<std::pair<std::string, std::string> > preDerivedPaths;
 // Receiver symbol -> Sender symbol.
 std::map<std::string, std::string> seedSymbolMappings;
 // Participant name -> [IPs]
@@ -66,6 +73,14 @@ Path *buildDerivedPath(Path *basePath, Path *sourcePath) {
   //                      basePath->getUUID().c_str(),
   //                      sourcePath->getUUID().c_str());
 
+  // Check if already derived.
+  if (NoDups && preDerivedPaths.count(std::make_pair(basePath->getUUID(),
+                                                     sourcePath->getUUID()))) {
+    klee::klee_message("Suppressing duplicate derived from path %s with %s.",
+                       basePath->getUUID().c_str(),
+                       sourcePath->getUUID().c_str());
+    return NULL;
+  }
   // Don't augment the root path.
   if (basePath->getSymbolLog().empty() || sourcePath->getSymbolLog().empty()) {
     //     klee::klee_message("Fail 1.");
@@ -374,10 +389,30 @@ int main(int argc, char **argv, char **envp) {
   }
 
   SPA::Path *newPath;
+  std::list<SPA::Path *> scannedPaths;
+  if (NoDups) {
+    for (unsigned long pathID = 0; (newPath = pathLoader->getPath());
+         pathID++) {
+      klee::klee_message("Scanning path %ld.", pathID);
+
+      if (!newPath->getDerivedFromUUID().empty()) {
+        preDerivedPaths.insert(std::make_pair(newPath->getParentUUID(),
+                                              newPath->getDerivedFromUUID()));
+      }
+
+      scannedPaths.push_back(newPath);
+    }
+  }
+
   for (unsigned long pathID = 0;; pathID++) {
-    while ((!(newPath = pathLoader->getPath())) && FollowInPaths) {
-      sleep(1);
-      klee::klee_message("Waiting for path %ld.", pathID);
+    if (scannedPaths.empty()) {
+      while ((!(newPath = pathLoader->getPath())) && FollowInPaths) {
+        sleep(1);
+        klee::klee_message("Waiting for path %ld.", pathID);
+      }
+    } else {
+      newPath = scannedPaths.front();
+      scannedPaths.pop_front();
     }
     if (!newPath) {
       break;
