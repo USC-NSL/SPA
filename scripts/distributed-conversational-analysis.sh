@@ -80,7 +80,7 @@ function listJobs() {
         exit 0;
       }
       {
-        if (FNR == NR) {
+        if (FNR == NR && \$0 != \"\") {
           target[FNR] = \$0;
         } else if (enable == 1) {
           if (\$1 != uuid) {
@@ -201,7 +201,7 @@ if [ "$NUM_TARGET_CONVERSATIONS" -gt "0" ]; then
   done
 else
   # If no target conversation do BFS.
-  touch $LOCAL_WORK_DIR/empty.conversation
+  echo > $LOCAL_WORK_DIR/empty.conversation
 fi
 
 echo "Starting workers." | tee -a $PATH_FILE.log
