@@ -1369,10 +1369,19 @@ void SpecialFunctionHandler::handleSpaSeedSymbol(
 
   // Check if log ran out.
   if (state.senderLogPos >= state.senderPath->getSymbolLog().size()) {
-    executor.terminateStateOnError(
-        state, "Seeding with incompatible path (used symbol not yet present).",
-        "user.err");
-    return;
+    if (fullName.compare(0, strlen(SPA_MODEL_INPUT_PREFIX),
+                         SPA_MODEL_INPUT_PREFIX) == 0) {
+      klee_message("[spa_seed_symbol] Model input %s not yet present in log. "
+                   "Not seeding.",
+                   fullName.c_str());
+      return;
+    } else {
+      executor.terminateStateOnError(
+          state,
+          "Seeding with incompatible path (used symbol not yet present).",
+          "user.err");
+      return;
+    }
   }
 
   if (state.senderPath->getSymbolLog()[state.senderLogPos]
