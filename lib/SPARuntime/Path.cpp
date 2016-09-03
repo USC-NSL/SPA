@@ -273,10 +273,15 @@ std::string Path::getPathSource() const {
   result += SPA_PATH_UUID_END "\n";
 
   result += SPA_PATH_SYMBOLLOG_START "\n";
+  std::vector<const klee::Array *> evalArrays;
   for (auto it : symbolLog) {
     result += it->getPathUUID() + SPA_PATH_SYMBOLLOG_DELIMITER +
               it->getDerivedFromUUID() + SPA_PATH_SYMBOLLOG_DELIMITER +
               it->getFullName() + "\n";
+
+    if (it->isInput()) {
+      evalArrays.push_back(it->getInputArray());
+    }
   }
   result += SPA_PATH_SYMBOLLOG_END "\n";
 
@@ -306,7 +311,8 @@ std::string Path::getPathSource() const {
   llvm::raw_string_ostream kleaverROS(kleaverStr);
   klee::ExprPPrinter::printQuery(
       kleaverROS, constraints, exprBuilder->False(), &evalExprs[0],
-      &evalExprs[0] + evalExprs.size(), NULL, NULL, true);
+      &evalExprs[0] + evalExprs.size(), &evalArrays[0],
+      &evalArrays[0] + evalArrays.size(), true);
   kleaverROS.flush();
   result += kleaverROS.str();
   result += SPA_PATH_KQUERY_END "\n";
