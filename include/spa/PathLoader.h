@@ -13,6 +13,7 @@
 namespace SPA {
 typedef struct PathLoaderPosition {
   bool loadEmpty;
+  unsigned long pathNumber;
   unsigned long lineNumber;
   std::streampos filePosition;
 } PathLoaderPosition;
@@ -22,18 +23,20 @@ private:
   std::ifstream &input;
   bool loadEmptyFirst;
   bool loadEmpty;
+  unsigned long pathNumber;
   unsigned long lineNumber;
   PathFilter *filter;
 
 public:
   PathLoader(std::ifstream &input, bool loadEmptyFirst = false)
       : input(input), loadEmptyFirst(loadEmptyFirst), loadEmpty(loadEmptyFirst),
-        lineNumber(0), filter(NULL) {}
+        pathNumber(0), lineNumber(0), filter(NULL) {}
   void setFilter(PathFilter *_filter) { filter = _filter; }
   void restart() {
     input.clear();
     input.seekg(0, std::ios::beg);
     loadEmpty = loadEmptyFirst;
+    pathNumber = 0;
     lineNumber = 0;
   }
   PathLoaderPosition save() {
@@ -41,6 +44,7 @@ public:
 
     p.loadEmpty = loadEmpty;
     p.filePosition = input.tellg();
+    p.pathNumber = pathNumber;
     p.lineNumber = lineNumber;
 
     return p;
@@ -49,6 +53,7 @@ public:
     input.clear();
     input.seekg(p.filePosition, std::ios::beg);
     loadEmpty = p.loadEmpty;
+    pathNumber = p.pathNumber;
     lineNumber = p.lineNumber;
   }
 
@@ -57,7 +62,7 @@ public:
   std::string getPathText();
   std::string getPathText(uint64_t pathID);
   bool skipPath();
-  bool skipPaths(uint64_t pathID);
+  bool gotoPath(uint64_t pathID);
 };
 }
 

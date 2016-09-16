@@ -55,16 +55,14 @@ double JSEUtility::getUtility(klee::ExecutionState *state) {
 
   // If loading path would block, load it last.
   if (pathID >= 0) {
-    senderPaths->restart();
-    if (senderPaths->skipPaths(pathID + 1)) {
+    if (senderPaths->gotoPath(pathID) && senderPaths->skipPath()) {
       return UTILITY_DEFAULT;
     } else {
       return UTILITY_PROCESS_LAST;
     }
   } else {
     if (maxChoice >= 0) {
-      senderPaths->restart();
-      if (senderPaths->skipPaths(maxChoice + 1)) {
+      if (senderPaths->gotoPath(maxChoice) && senderPaths->skipPath()) {
         return UTILITY_DEFAULT;
       } else {
         return UTILITY_PROCESS_LAST;

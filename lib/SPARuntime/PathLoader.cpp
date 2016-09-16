@@ -66,12 +66,12 @@ std::vector<std::string> split(std::string str, std::string delimiter) {
 Path *PathLoader::getPath() {
   if (loadEmpty) {
     loadEmpty = false;
+    pathNumber++;
     return new Path();
   }
 
   // Save current position in case of failure.
-  unsigned long checkpointLN = lineNumber;
-  std::streampos checkpointPos = input.tellg();
+  auto pos = save();
 
   LoadState_t state = START;
   Path *path = NULL;
@@ -183,6 +183,8 @@ Path *PathLoader::getPath() {
       changeState(TESTCOVERAGE, PATH);
     } else if (line == SPA_PATH_END) {
       changeState(PATH, START);
+      pathNumber++;
+
       if (!filter || filter->checkPath(*path))
         return path;
       else
@@ -323,16 +325,13 @@ Path *PathLoader::getPath() {
   }
 
   // Might have found an incomplete path, restore checkpoint position.
-  input.clear();
-  input.seekg(checkpointPos, std::ios::beg);
-  lineNumber = checkpointLN;
+  load(pos);
 
   return NULL;
 }
 
 Path *PathLoader::getPath(uint64_t pathID) {
-  restart();
-  if (skipPaths(pathID)) {
+  if (gotoPath(pathID)) {
     return getPath();
   } else {
     return NULL;
@@ -342,6 +341,7 @@ Path *PathLoader::getPath(uint64_t pathID) {
 std::string PathLoader::getPathText() {
   if (loadEmpty) {
     loadEmpty = false;
+    pathNumber++;
     return "";
   }
 
@@ -364,6 +364,7 @@ std::string PathLoader::getPathText() {
       changeState(START, PATH);
     } else if (line == SPA_PATH_END) {
       changeState(PATH, START);
+      pathNumber++;
       return result;
     } else {
       changeState(PATH, PATH);
@@ -379,8 +380,7 @@ std::string PathLoader::getPathText() {
 }
 
 std::string PathLoader::getPathText(uint64_t pathID) {
-  restart();
-  if (skipPaths(pathID)) {
+  if (gotoPath(pathID)) {
     return getPathText();
   } else {
     return "";
@@ -390,12 +390,12 @@ std::string PathLoader::getPathText(uint64_t pathID) {
 bool PathLoader::skipPath() {
   if (loadEmpty) {
     loadEmpty = false;
+    pathNumber++;
     return true;
   }
 
   // Save current position in case of failure.
-  unsigned long checkpointLN = lineNumber;
-  std::streampos checkpointPos = input.tellg();
+  auto pos = save();
 
   LoadState_t state = START;
   while (input.good()) {
@@ -410,6 +410,7 @@ bool PathLoader::skipPath() {
       changeState(START, PATH);
     } else if (line == SPA_PATH_END) {
       changeState(PATH, START);
+      pathNumber++;
       return true;
     } else {
       changeState(PATH, PATH);
@@ -417,15 +418,16 @@ bool PathLoader::skipPath() {
   }
 
   // Might have found an incomplete path, restore checkpoint position.
-  input.clear();
-  input.seekg(checkpointPos, std::ios::beg);
-  lineNumber = checkpointLN;
+  load(pos);
 
   return false;
 }
 
-bool PathLoader::skipPaths(uint64_t numPaths) {
-  for (uint64_t i = 0; i < numPaths; i++) {
+bool PathLoader::gotoPath(uint64_t pathID) {
+  if (pathID < pathNumber) {
+    restart();
+  }
+  while (pathNumber < pathID) {
     if (!skipPath()) {
       return false;
     }
