@@ -410,22 +410,28 @@ void processPathPair(SPA::PathLoader *pathLoader, unsigned long newPathID,
       SPA::Path *pairPath = pathLoader->getPath(pairPathID + i);
       assert(pairPath);
 
+      klee::klee_message("Trying to augment path %ld (%s) with %ld (%s).",
+                         newPathID, newPath->getUUID().c_str(), pairPathID,
+                         pairPath->getUUID().c_str());
       std::unique_ptr<SPA::Path> derivedPath(
           SPA::buildDerivedPath(newPath, pairPath));
       if (derivedPath) {
-        klee::klee_message("Augmented path %s with %s to produce %s.",
-                           newPath->getUUID().c_str(),
-                           pairPath->getUUID().c_str(),
-                           derivedPath->getUUID().c_str());
+        klee::klee_message(
+            "Augmented path %ld (%s) with %ld (%s) to produce %s.", newPathID,
+            newPath->getUUID().c_str(), pairPathID, pairPath->getUUID().c_str(),
+            derivedPath->getUUID().c_str());
         outFile << *derivedPath;
       }
 
+      klee::klee_message("Trying to augment path %ld (%s) with %ld (%s).",
+                         pairPathID, pairPath->getUUID().c_str(), newPathID,
+                         newPath->getUUID().c_str());
       derivedPath.reset(SPA::buildDerivedPath(pairPath, newPath));
       if (derivedPath) {
-        klee::klee_message("Augmented path %s with %s to produce %s.",
-                           pairPath->getUUID().c_str(),
-                           newPath->getUUID().c_str(),
-                           derivedPath->getUUID().c_str());
+        klee::klee_message(
+            "Augmented path %ld (%s) with %ld (%s) to produce %s.", pairPathID,
+            pairPath->getUUID().c_str(), newPathID, newPath->getUUID().c_str(),
+            derivedPath->getUUID().c_str());
         outFile << *derivedPath;
       }
     }
