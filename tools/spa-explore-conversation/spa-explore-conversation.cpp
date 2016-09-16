@@ -403,6 +403,10 @@ std::string getDerivedFromUUID(SPA::PathLoader *pathLoader) {
 
 void processPathPair(SPA::PathLoader *pathLoader, unsigned long newPathID,
                      unsigned long pairPathID, std::ofstream &outFile) {
+  // The child process will mess with the file position but not the pathLoader,
+  // so checkpoint and recover.
+  auto pos = pathLoader->save();
+
   if (fork() == 0) {
     SPA::Path *newPath = pathLoader->getPath(newPathID);
 
@@ -439,6 +443,8 @@ void processPathPair(SPA::PathLoader *pathLoader, unsigned long newPathID,
   } else {
     wait(NULL);
   }
+
+  pathLoader->load(pos);
 }
 
 int main(int argc, char **argv, char **envp) {
