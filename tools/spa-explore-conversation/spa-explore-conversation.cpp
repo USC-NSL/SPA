@@ -78,10 +78,6 @@ klee::Solver *solver = klee::createIndependentSolver(klee::createCachingSolver(
 
 namespace SPA {
 Path *buildDerivedPath(Path *basePath, Path *sourcePath) {
-  //   klee::klee_message("Trying to augment path %s with %s.",
-  //                      basePath->getUUID().c_str(),
-  //                      sourcePath->getUUID().c_str());
-
   // Check if already derived.
   if (NoDups && preDerivedPaths.count(std::make_pair(basePath->getUUID(),
                                                      sourcePath->getUUID()))) {
