@@ -432,9 +432,9 @@ void processBatch(SPA::PathLoader *pathLoader, unsigned long frontPathID,
            f < pathFront.size(); f++) {
         SPA::Path *pairPath = pathFront[f];
 
-        klee::klee_message("Trying to augment path %ld (%s) with %ld (%s).",
-                           sidePathID + d, newPath->getUUID().c_str(),
-                           frontPathID + f, pairPath->getUUID().c_str());
+        // klee::klee_message("Trying to augment path %ld (%s) with %ld (%s).",
+        //                     sidePathID + d, newPath->getUUID().c_str(),
+        //                     frontPathID + f, pairPath->getUUID().c_str());
         std::unique_ptr<SPA::Path> derivedPath(
             SPA::buildDerivedPath(newPath.get(), pairPath));
         if (derivedPath) {
@@ -445,9 +445,9 @@ void processBatch(SPA::PathLoader *pathLoader, unsigned long frontPathID,
           outFile << *derivedPath;
         }
 
-        klee::klee_message("Trying to augment path %ld (%s) with %ld (%s).",
-                           frontPathID + f, pairPath->getUUID().c_str(),
-                           sidePathID + d, newPath->getUUID().c_str());
+        // klee::klee_message("Trying to augment path %ld (%s) with %ld (%s).",
+        //                     frontPathID + f, pairPath->getUUID().c_str(),
+        //                     sidePathID + d, newPath->getUUID().c_str());
         derivedPath.reset(SPA::buildDerivedPath(pairPath, newPath.get()));
         if (derivedPath) {
           klee::klee_message(
@@ -541,7 +541,7 @@ int main(int argc, char **argv, char **envp) {
       width++;
     }
 
-    for (unsigned long sidePathID = 0; sidePathID < frontPathID+width - 1;
+    for (unsigned long sidePathID = 0; sidePathID < frontPathID + width - 1;
          sidePathID += BatchDepth) {
       processBatch(pathLoader.get(), frontPathID, sidePathID, width, outFile);
     }
