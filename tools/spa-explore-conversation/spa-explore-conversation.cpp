@@ -541,7 +541,7 @@ int main(int argc, char **argv, char **envp) {
       width++;
     }
 
-    for (unsigned long sidePathID = 0; sidePathID < frontPathID;
+    for (unsigned long sidePathID = 0; sidePathID < frontPathID+width - 1;
          sidePathID += BatchDepth) {
       processBatch(pathLoader.get(), frontPathID, sidePathID, width, outFile);
     }
