@@ -28,10 +28,13 @@ llvm::cl::opt<bool> FollowInPaths(
     llvm::cl::desc(
         "Enables following the input path file as new data as added."));
 
-llvm::cl::opt<long> BatchSize(
-    "batch-size", llvm::cl::init(100),
-    llvm::cl::desc(
-        "The number of path-pairs to process at once (default 100)."));
+llvm::cl::opt<long>
+    BatchWidth("batch-width", llvm::cl::init(100),
+               llvm::cl::desc("The width of the batch front (default 100)."));
+
+llvm::cl::opt<long>
+    BatchDepth("batch-depth", llvm::cl::init(1000),
+               llvm::cl::desc("The depth of the batch (default 1000)."));
 
 llvm::cl::opt<std::string> OutputPaths(
     "out-paths",
@@ -85,6 +88,8 @@ Path *buildDerivedPath(Path *basePath, Path *sourcePath) {
     klee::klee_message("Suppressing duplicate derived from path %s with %s.",
                        basePath->getUUID().c_str(),
                        sourcePath->getUUID().c_str());
+    preDerivedPaths.erase(
+        std::make_pair(basePath->getUUID(), sourcePath->getUUID()));
     return NULL;
   }
   // Don't augment the root path.
@@ -401,42 +406,57 @@ std::string getDerivedFromUUID(SPA::PathLoader *pathLoader) {
   return result_str;
 }
 
-void processPathPair(SPA::PathLoader *pathLoader, unsigned long newPathID,
-                     unsigned long pairPathID, std::ofstream &outFile) {
+void processPathPair(SPA::PathLoader *pathLoader, unsigned long frontPathID,
+                     unsigned long sidePathID, unsigned width,
+                     std::ofstream &outFile) {
   // The child process will mess with the file position but not the pathLoader,
   // so checkpoint and recover.
   auto pos = pathLoader->save();
 
   if (fork() == 0) {
-    SPA::Path *newPath = pathLoader->getPath(newPathID);
+    std::vector<SPA::Path *> pathFront;
 
-    for (int i = 0; i < BatchSize && pairPathID + i < newPathID; i++) {
-      SPA::Path *pairPath = pathLoader->getPath(pairPathID + i);
-      assert(pairPath);
+    for (unsigned f = 0; f < width; f++) {
+      SPA::Path *path = pathLoader->getPath(frontPathID + f);
+      assert(path && "Path front not available.");
+      pathFront.push_back(path);
+    }
 
-      klee::klee_message("Trying to augment path %ld (%s) with %ld (%s).",
-                         newPathID, newPath->getUUID().c_str(), pairPathID + i,
-                         pairPath->getUUID().c_str());
-      std::unique_ptr<SPA::Path> derivedPath(
-          SPA::buildDerivedPath(newPath, pairPath));
-      if (derivedPath) {
-        klee::klee_message(
-            "Augmented path %ld (%s) with %ld (%s) to produce %s.", newPathID,
-            newPath->getUUID().c_str(), pairPathID + i,
-            pairPath->getUUID().c_str(), derivedPath->getUUID().c_str());
-        outFile << *derivedPath;
-      }
+    for (unsigned d = 0; d < BatchDepth && sidePathID + d < frontPathID + width;
+         d++) {
+      std::unique_ptr<SPA::Path> newPath(pathLoader->getPath(sidePathID + d));
+      assert(newPath);
 
-      klee::klee_message("Trying to augment path %ld (%s) with %ld (%s).",
-                         pairPathID + i, pairPath->getUUID().c_str(), newPathID,
-                         newPath->getUUID().c_str());
-      derivedPath.reset(SPA::buildDerivedPath(pairPath, newPath));
-      if (derivedPath) {
-        klee::klee_message(
-            "Augmented path %ld (%s) with %ld (%s) to produce %s.",
-            pairPathID + i, pairPath->getUUID().c_str(), newPathID,
-            newPath->getUUID().c_str(), derivedPath->getUUID().c_str());
-        outFile << *derivedPath;
+      for (unsigned long f = sidePathID + d < frontPathID
+                                 ? 0
+                                 : sidePathID + d - frontPathID + 1;
+           f < pathFront.size(); f++) {
+        SPA::Path *pairPath = pathFront[f];
+
+        klee::klee_message("Trying to augment path %ld (%s) with %ld (%s).",
+                           sidePathID + d, newPath->getUUID().c_str(),
+                           frontPathID + f, pairPath->getUUID().c_str());
+        std::unique_ptr<SPA::Path> derivedPath(
+            SPA::buildDerivedPath(newPath.get(), pairPath));
+        if (derivedPath) {
+          klee::klee_message(
+              "Augmented path %ld (%s) with %ld (%s) to produce %s.",
+              sidePathID + d, newPath->getUUID().c_str(), frontPathID + f,
+              pairPath->getUUID().c_str(), derivedPath->getUUID().c_str());
+          outFile << *derivedPath;
+        }
+
+        klee::klee_message("Trying to augment path %ld (%s) with %ld (%s).",
+                           frontPathID + f, pairPath->getUUID().c_str(),
+                           sidePathID + d, newPath->getUUID().c_str());
+        derivedPath.reset(SPA::buildDerivedPath(pairPath, newPath.get()));
+        if (derivedPath) {
+          klee::klee_message(
+              "Augmented path %ld (%s) with %ld (%s) to produce %s.",
+              frontPathID + f, pairPath->getUUID().c_str(), sidePathID + d,
+              newPath->getUUID().c_str(), derivedPath->getUUID().c_str());
+          outFile << *derivedPath;
+        }
       }
     }
     exit(0);
@@ -502,32 +522,33 @@ int main(int argc, char **argv, char **envp) {
 
       assert(pathLoader->skipPath());
     }
-
-    pathLoader->restart();
   }
 
-  for (unsigned long pathID = 0;; pathID++) {
-    auto pos = pathLoader->save();
+  unsigned long frontPathID = 0;
+  while (true) {
+    pathLoader->gotoPath(frontPathID);
     if (FollowInPaths) {
       while (!pathLoader->skipPath()) {
         sleep(1);
-        klee::klee_message("Waiting for path %ld.", pathID);
+        klee::klee_message("Waiting for path %ld.", frontPathID);
       }
     } else {
       if (!pathLoader->skipPath()) {
         break;
       }
     }
-    klee::klee_message("Loading path %ld.", pathID);
-    pathLoader->load(pos);
-
-    for (unsigned long pairPathID = 0; pairPathID < pathID;
-         pairPathID += BatchSize) {
-      processPathPair(pathLoader.get(), pathID, pairPathID, outFile);
+    unsigned width = 1;
+    while (width < BatchWidth && pathLoader->skipPath()) {
+      width++;
     }
 
-    pathLoader->load(pos);
-    assert(pathLoader->skipPath());
+    for (unsigned long sidePathID = 0; sidePathID < frontPathID;
+         sidePathID += BatchDepth) {
+      processPathPair(pathLoader.get(), frontPathID, sidePathID, width,
+                      outFile);
+    }
+
+    frontPathID += width;
   }
 
   outFile.flush();
