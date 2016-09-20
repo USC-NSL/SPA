@@ -185,6 +185,10 @@ Path *PathLoader::getPath() {
       changeState(PATH, START);
       pathNumber++;
 
+      if (!positionCache.count(pathNumber)) {
+        positionCache[pathNumber] = save();
+      }
+
       if (!filter || filter->checkPath(*path))
         return path;
       else
@@ -365,6 +369,11 @@ std::string PathLoader::getPathText() {
     } else if (line == SPA_PATH_END) {
       changeState(PATH, START);
       pathNumber++;
+
+      if (!positionCache.count(pathNumber)) {
+        positionCache[pathNumber] = save();
+      }
+
       return result;
     } else {
       changeState(PATH, PATH);
@@ -394,6 +403,11 @@ bool PathLoader::skipPath() {
     return true;
   }
 
+  if (positionCache.count(pathNumber + 1)) {
+    load(positionCache[pathNumber + 1]);
+    return true;
+  }
+
   // Save current position in case of failure.
   auto pos = save();
 
@@ -411,6 +425,9 @@ bool PathLoader::skipPath() {
     } else if (line == SPA_PATH_END) {
       changeState(PATH, START);
       pathNumber++;
+
+      positionCache[pathNumber] = save();
+
       return true;
     } else {
       changeState(PATH, PATH);
@@ -424,6 +441,10 @@ bool PathLoader::skipPath() {
 }
 
 bool PathLoader::gotoPath(uint64_t pathID) {
+  if (positionCache.count(pathID)) {
+    load(positionCache[pathID]);
+  }
+
   if (pathID < pathNumber) {
     restart();
   }

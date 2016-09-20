@@ -26,6 +26,7 @@ private:
   unsigned long pathNumber;
   unsigned long lineNumber;
   PathFilter *filter;
+  std::map<uint64_t, PathLoaderPosition> positionCache;
 
 public:
   PathLoader(std::ifstream &input, bool loadEmptyFirst = false)
