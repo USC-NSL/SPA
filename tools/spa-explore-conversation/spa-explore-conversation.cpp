@@ -406,9 +406,12 @@ std::string getDerivedFromUUID(SPA::PathLoader *pathLoader) {
   return result_str;
 }
 
-void processPathPair(SPA::PathLoader *pathLoader, unsigned long frontPathID,
-                     unsigned long sidePathID, unsigned width,
-                     std::ofstream &outFile) {
+void processBatch(SPA::PathLoader *pathLoader, unsigned long frontPathID,
+                  unsigned long sidePathID, unsigned width,
+                  std::ofstream &outFile) {
+  klee::klee_message("Processing batch of paths at %ld,%ld of size %d,%ld",
+                     frontPathID, sidePathID, width, BatchDepth.getValue());
+
   // The child process will mess with the file position but not the pathLoader,
   // so checkpoint and recover.
   auto pos = pathLoader->save();
@@ -433,9 +436,9 @@ void processPathPair(SPA::PathLoader *pathLoader, unsigned long frontPathID,
            f < pathFront.size(); f++) {
         SPA::Path *pairPath = pathFront[f];
 
-        klee::klee_message("Trying to augment path %ld (%s) with %ld (%s).",
-                           sidePathID + d, newPath->getUUID().c_str(),
-                           frontPathID + f, pairPath->getUUID().c_str());
+        //klee::klee_message("Trying to augment path %ld (%s) with %ld (%s).",
+        // sidePathID + d, newPath->getUUID().c_str(),
+        // frontPathID + f, pairPath->getUUID().c_str());
         std::unique_ptr<SPA::Path> derivedPath(
             SPA::buildDerivedPath(newPath.get(), pairPath));
         if (derivedPath) {
@@ -446,9 +449,9 @@ void processPathPair(SPA::PathLoader *pathLoader, unsigned long frontPathID,
           outFile << *derivedPath;
         }
 
-        klee::klee_message("Trying to augment path %ld (%s) with %ld (%s).",
-                           frontPathID + f, pairPath->getUUID().c_str(),
-                           sidePathID + d, newPath->getUUID().c_str());
+        //klee::klee_message("Trying to augment path %ld (%s) with %ld (%s).",
+        // frontPathID + f, pairPath->getUUID().c_str(),
+        // sidePathID + d, newPath->getUUID().c_str());
         derivedPath.reset(SPA::buildDerivedPath(pairPath, newPath.get()));
         if (derivedPath) {
           klee::klee_message(
@@ -544,8 +547,7 @@ int main(int argc, char **argv, char **envp) {
 
     for (unsigned long sidePathID = 0; sidePathID < frontPathID;
          sidePathID += BatchDepth) {
-      processPathPair(pathLoader.get(), frontPathID, sidePathID, width,
-                      outFile);
+      processBatch(pathLoader.get(), frontPathID, sidePathID, width, outFile);
     }
 
     frontPathID += width;
