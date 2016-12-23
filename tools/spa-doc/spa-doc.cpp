@@ -754,14 +754,14 @@ std::string generatePathHTML(std::string pathUUID) {
                 "    </div>\n";
   }
 
-  std::set<std::string> srcFiles;
-  for (auto pit : path->getExploredLineCoverage()) {
-    for (auto fit : pit.second) {
-      srcFiles.insert(fit.first);
-    }
-  }
-
   if (!NoCoverage) {
+    std::set<std::string> srcFiles;
+    for (auto pit : path->getExploredLineCoverage()) {
+      for (auto fit : pit.second) {
+        srcFiles.insert(fit.first);
+      }
+    }
+
     htmlFile += "    <a class='anchor' id='coverage'></a>\n"
                 "    <h2>Coverage</h2>\n"
                 "    <b>Files:</b><br />\n";
@@ -780,7 +780,7 @@ std::string generatePathHTML(std::string pathUUID) {
 
 std::string generatePathCoverageHTML(std::string pathUUID,
                                      std::string srcFileName) {
-  if (!NoCoverage) {
+  if (NoCoverage) {
     return "Coverage data tracking disabled.";
   }
 
@@ -1053,7 +1053,7 @@ std::string generateConversationIndex() {
 }
 
 std::string generateCoverageIndex() {
-  if (!NoCoverage) {
+  if (NoCoverage) {
     return "Coverage data tracking disabled.";
   }
 
@@ -1118,7 +1118,7 @@ std::string generateCoverageIndex() {
 }
 
 std::string generateCoverageFile(std::string origSrcFile) {
-  if (!NoCoverage) {
+  if (NoCoverage) {
     return "Coverage data tracking disabled.";
   }
 
