@@ -54,10 +54,6 @@ llvm::cl::opt<std::string> InFileName(llvm::cl::Positional, llvm::cl::Required,
 llvm::cl::opt<bool>
     NoCoverage("no-coverage",
                llvm::cl::desc("Disables tracking coverage (saves memory)."));
-
-llvm::cl::opt<bool>
-    NoPathData("no-path-data",
-               llvm::cl::desc("Disables tracking path data (saves memory)."));
 }
 
 #define DOT_CMD "unflatten | dot -Tsvg"
@@ -80,14 +76,14 @@ typedef struct {
                         std::shared_ptr<SPA::Symbol> > > symbols;
 } message_t;
 
+SPA::PathLoader *pathLoader;
+
 // UUIDs
 std::set<std::string> allPaths;
 // id -> UUID
 std::map<unsigned long, std::string> pathsByID;
-// UUID -> path
-std::map<std::string, SPA::Path *> pathsByUUID;
 // UUID -> path-id.
-std::map<std::string, unsigned long> pathIDs;
+std::map<std::string, unsigned long> pathID;
 // participants -> UUIDs
 std::map<std::vector<std::string>, std::set<std::string> > conversations;
 // UUID -> participant
@@ -219,31 +215,35 @@ std::string generatePathDot(std::set<std::string> paths,
   dot += "  root [label=\"Path 0\"]\n";
 
   for (auto it : paths) {
-    std::string pathID = SPA::numToStr(pathIDs[it]);
+    std::string pathIDStr = SPA::numToStr(pathID[it]);
     std::vector<std::string> colors(pathColors[it].begin(),
                                     pathColors[it].end());
-    dot += "  path_" + pathID + " [label=\"Path " + pathID + "\\n" +
+    dot += "  path_" + pathIDStr + " [label=\"Path " + pathIDStr + "\\n" +
            pathParticipant[it] + "\" tooltip=\"" + it + "\" URL=\"" + it +
            ".html\" style=\"" + (colors.size() > 1 ? "wedged" : "filled") +
            "\" fillcolor=\"" + SPA::strJoin(colors, ":") + "\" penwidth=\"" +
            (selectedPaths.count(it) ? "3" : "1") + "\"]\n";
 
-    if (pathsByUUID.count(parentPath[it])) {
-      dot += "  path_" + SPA::numToStr(pathIDs[parentPath[it]]) + " -> path_" +
-             pathID + "\n";
+    if (allPaths.count(parentPath[it])) {
+      dot += "  path_" + SPA::numToStr(pathID[parentPath[it]]) + " -> path_" +
+             pathIDStr + "\n";
     } else {
-      dot += "  root -> path_" + pathID + "\n";
+      dot += "  root -> path_" + pathIDStr + "\n";
     }
 
-    if (derivedFromPath.count(it) && pathsByUUID.count(derivedFromPath[it]) &&
+    if (derivedFromPath.count(it) && allPaths.count(derivedFromPath[it]) &&
         paths.count(derivedFromPath[it])) {
-      dot += "  path_" + SPA::numToStr(pathIDs[derivedFromPath[it]]) +
-             " -> path_" + pathID + " [style=\"dashed\" constraint=false]\n";
+      dot += "  path_" + SPA::numToStr(pathID[derivedFromPath[it]]) +
+             " -> path_" + pathIDStr + " [style=\"dashed\" constraint=false]\n";
     }
   }
   dot += "}\n";
 
   return dot;
+}
+
+std::unique_ptr<SPA::Path> getPath(unsigned long pathID) {
+  return std::unique_ptr<SPA::Path>(pathLoader->getPath(pathID));
 }
 
 std::string generatePathIndex(std::set<std::string> paths,
@@ -270,20 +270,18 @@ std::string generatePathIndex(std::set<std::string> paths,
                                                           "</html>\n";
 }
 
-std::string generatePathHTML(std::string path) {
-  if (NoPathData) {
-    return "Path data tracking disabled.";
-  }
+std::string generatePathHTML(std::string pathUUID) {
+  klee::klee_message("Processing path %ld (%s).", pathID[pathUUID],
+                     pathUUID.c_str());
+
+  std::unique_ptr<SPA::Path> path(getPath(pathID[pathUUID]));
 
   std::map<std::string, std::shared_ptr<participant_t> > participantByName;
   std::map<std::string, std::shared_ptr<participant_t> > participantByBinding;
-
   std::vector<std::shared_ptr<message_t> > messages;
 
-  klee::klee_message("Processing path %ld (%s).", pathIDs[path], path.c_str());
-
   // Load participant names.
-  for (auto it : pathsByUUID[path]->getSymbolLog()) {
+  for (auto it : path->getSymbolLog()) {
     if (!participantByName.count(it->getParticipant())) {
       if (Debug) {
         klee::klee_message("  Found participant: %s",
@@ -304,7 +302,7 @@ std::string generatePathHTML(std::string path) {
   }
 
   // Load participant IP/Ports.
-  for (auto sit : pathsByUUID[path]->getSymbolLog()) {
+  for (auto sit : path->getSymbolLog()) {
     if (sit->isMessage()) {
       std::string participant = sit->getParticipant();
       std::string binding;
@@ -330,7 +328,7 @@ std::string generatePathHTML(std::string path) {
 
   // Add unknown participants.
   unsigned long unknownId = 1;
-  for (auto sit : pathsByUUID[path]->getSymbolLog()) {
+  for (auto sit : path->getSymbolLog()) {
     if (sit->isMessage() && sit->isOutput()) {
       std::string binding =
           sit->getMessageDestinationIP() + ":" + sit->getMessageProtocol() +
@@ -352,7 +350,7 @@ std::string generatePathHTML(std::string path) {
   }
 
   // Load messages.
-  for (auto sit : pathsByUUID[path]->getSymbolLog()) {
+  for (auto sit : path->getSymbolLog()) {
     if (Debug) {
       klee::klee_message("  Symbol: %s", sit->getFullName().c_str());
     }
@@ -501,33 +499,34 @@ std::string generatePathHTML(std::string path) {
   // (same parent and same participant) of the current path.
   // Also add paths derived from this one.
   // Add children to worklist.
-  for (auto p : childrenPaths[path]) {
+  for (auto p : childrenPaths[pathUUID]) {
     worklist.insert(p.second.begin(), p.second.end());
   }
   // Add siblings to worklist.
-  if (parentPath.count(path)) {
-    if (pathsByUUID.count(parentPath[path])) {
-      auto siblings = childrenPaths[parentPath[path]][pathParticipant[path]];
+  if (parentPath.count(pathUUID)) {
+    if (allPaths.count(parentPath[pathUUID])) {
+      auto siblings =
+          childrenPaths[parentPath[pathUUID]][pathParticipant[pathUUID]];
       worklist.insert(siblings.begin(), siblings.end());
     }
   } else {
     if (childrenPaths.count(NULL)) {
-      auto siblings = childrenPaths[NULL][pathParticipant[path]];
+      auto siblings = childrenPaths[NULL][pathParticipant[pathUUID]];
       worklist.insert(siblings.begin(), siblings.end());
     }
   }
   // Add derived paths to worklist.
-  worklist.insert(derivedPaths[path].begin(), derivedPaths[path].end());
+  worklist.insert(derivedPaths[pathUUID].begin(), derivedPaths[pathUUID].end());
 
   while (!worklist.empty()) {
     std::string p = *worklist.begin();
     worklist.erase(p);
     if (!fullConversation.count(p)) {
       fullConversation.insert(p);
-      if (pathsByUUID.count(parentPath[p])) {
+      if (allPaths.count(parentPath[p])) {
         worklist.insert(parentPath[p]);
       }
-      if (derivedFromPath.count(p) && pathsByUUID.count(derivedFromPath[p])) {
+      if (derivedFromPath.count(p) && allPaths.count(derivedFromPath[p])) {
         worklist.insert(derivedFromPath[p]);
       }
     }
@@ -538,7 +537,7 @@ std::string generatePathHTML(std::string path) {
       "<html lang=\"en\">\n"
       "  <head>\n"
       "    <meta charset=\"utf-8\">\n"
-      "    <title>Path " + SPA::numToStr(pathIDs[path]) + "</title>\n";
+      "    <title>Path " + SPA::numToStr(pathID[pathUUID]) + "</title>\n";
   htmlFile +=
       "    <link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">\n"
       "  </head>\n"
@@ -548,19 +547,19 @@ std::string generatePathHTML(std::string path) {
       "      <a href=\"#messages\">Message Log</a>\n"
       "      <a href=\"#constraints\">Symbolic Contraints</a>\n"
       "      <a href=\"#coverage\">Coverage</a>\n"
-      "      <a href=\"" + path +
+      "      <a href=\"" + pathUUID +
       ".paths\">Path Source</a>\n"
       "      <a href=\"index.html\">All Conversations</a>\n"
       "    </div>\n"
       "    <a class='anchor' id='metadata'></a>\n"
-      "    <h1>Path " + SPA::numToStr(pathIDs[path]) +
+      "    <h1>Path " + SPA::numToStr(pathID[pathUUID]) +
       "</h1>\n"
       "    <h2>Path Meta-data</h2>\n"
-      "    <b>UUID:</b> " + path + "<br /><br />\n";
+      "    <b>UUID:</b> " + pathUUID + "<br /><br />\n";
   htmlFile += "    <b>Lineage:</b><br />\n" +
               SPA::runCommand(DOT_CMD, generatePathDot(fullConversation,
                                                        std::set<std::string>({
-    path
+    pathUUID
   }),
                                                        "LR")) + "\n";
   htmlFile += "    <br /><br />\n"
@@ -568,7 +567,7 @@ std::string generatePathHTML(std::string path) {
               "    <ol>\n";
   std::vector<std::string> conversation;
   std::string currentPath = "";
-  for (auto it : pathsByUUID[path]->getSymbolLog()) {
+  for (auto it : path->getSymbolLog()) {
     if (it->getPathUUID() != currentPath) {
       conversation.push_back(it->getParticipant());
       htmlFile += "    <li><a href='" + SPA::strJoin(conversation, "_") +
@@ -580,7 +579,7 @@ std::string generatePathHTML(std::string path) {
               "    <b>Tags:</b><br />\n"
               "    <table border='1'>\n"
               "      <tr><th>Key</th><th>Value</th></tr>\n";
-  for (auto it : pathsByUUID[path]->getTags()) {
+  for (auto it : path->getTags()) {
     htmlFile +=
         "      <tr><td>" + it.first + "</td><td>" + it.second + "</td></tr>\n";
   }
@@ -594,7 +593,7 @@ std::string generatePathHTML(std::string path) {
       "    <b>Input Symbols:</b><br />\n"
       "    <table border='1'>\n"
       "      <tr><th>Name</th><th>Instances</th></tr>\n";
-  for (auto it : pathsByUUID[path]->getInputSymbols()) {
+  for (auto it : path->getInputSymbols()) {
     htmlFile += "      <tr>\n"
                 "        <td>" + it.first + "</td>\n"
                                             "        <td>\n";
@@ -607,7 +606,7 @@ std::string generatePathHTML(std::string path) {
   }
   htmlFile += "    </table><br />\n"
               "    <b>Constraints:</b><br />\n";
-  for (auto it : pathsByUUID[path]->getConstraints()) {
+  for (auto it : path->getConstraints()) {
     std::string exprStr;
     llvm::raw_string_ostream exprROS(exprStr);
     it->print(exprROS);
@@ -617,7 +616,7 @@ std::string generatePathHTML(std::string path) {
               "    <b>Output Symbols:</b><br />\n"
               "    <table border='1'>\n"
               "      <tr><th>Name</th><th>Instances</th></tr>\n";
-  for (auto it : pathsByUUID[path]->getOutputSymbols()) {
+  for (auto it : path->getOutputSymbols()) {
     htmlFile += "      <tr>\n"
                 "        <td>" + it.first + "</td>\n"
                                             "        <td>\n";
@@ -703,7 +702,7 @@ std::string generatePathHTML(std::string path) {
                 "    </div>\n";
   }
 
-  for (auto sit : pathsByUUID[path]->getSymbolLog()) {
+  for (auto sit : path->getSymbolLog()) {
     htmlFile += "    <div class='box' id='" + sit->getFullName() +
                 "'>\n"
                 "      <a class='closebutton' href='#'>&#x2715;</a>\n"
@@ -714,10 +713,10 @@ std::string generatePathHTML(std::string path) {
       htmlFile += "      <b>Type:</b> input<br />\n"
                   "        <b>Size:</b> " +
                   SPA::numToStr(sit->getInputArray()->size) + "<br />\n";
-      if (pathsByUUID[path]->getTestInputs().count(sit->getFullName())) {
+      if (path->getTestInputs().count(sit->getFullName())) {
         std::stringstream value;
-        copy(pathsByUUID[path]->getTestInput(sit->getFullName()).begin(),
-             pathsByUUID[path]->getTestInput(sit->getFullName()).end(),
+        copy(path->getTestInput(sit->getFullName()).begin(),
+             path->getTestInput(sit->getFullName()).end(),
              std::ostream_iterator<int>(value, " "));
         htmlFile +=
             "        <b>Test Case Value:</b> " + value.str() + "<br />\n";
@@ -756,7 +755,7 @@ std::string generatePathHTML(std::string path) {
   }
 
   std::set<std::string> srcFiles;
-  for (auto pit : pathsByUUID[path]->getExploredLineCoverage()) {
+  for (auto pit : path->getExploredLineCoverage()) {
     for (auto fit : pit.second) {
       srcFiles.insert(fit.first);
     }
@@ -768,8 +767,8 @@ std::string generatePathHTML(std::string path) {
                 "    <b>Files:</b><br />\n";
     for (auto it : srcFiles) {
       assert(coverageIndexes.count(it));
-      htmlFile += "    <a href='" + path + "-" + coverageIndexes[it] + "'>" +
-                  remapSrcFileName(it) + "</a><br />\n";
+      htmlFile += "    <a href='" + pathUUID + "-" + coverageIndexes[it] +
+                  "'>" + remapSrcFileName(it) + "</a><br />\n";
     }
   }
 
@@ -779,38 +778,37 @@ std::string generatePathHTML(std::string path) {
   return htmlFile;
 }
 
-std::string generatePathCoverageHTML(std::string path,
+std::string generatePathCoverageHTML(std::string pathUUID,
                                      std::string srcFileName) {
-  if (!NoPathData) {
-    return "Path data tracking disabled.";
-  }
-
   if (!NoCoverage) {
     return "Coverage data tracking disabled.";
   }
 
+  std::unique_ptr<SPA::Path> path(getPath(pathID[pathUUID]));
+
   std::string remappedFileName = remapSrcFileName(srcFileName);
   klee::klee_message("Processing coverage in %s for path %ld (%s).",
-                     remappedFileName.c_str(), pathIDs[path], path.c_str());
+                     remappedFileName.c_str(), pathID[pathUUID],
+                     pathUUID.c_str());
   std::string htmlFile =
       "<!doctype html>\n"
       "<html lang=\"en\">\n"
       "  <head>\n"
       "    <meta charset=\"utf-8\">\n"
       "    <title>Coverage in " + remappedFileName + " for path " +
-      SPA::numToStr(pathIDs[path]) + "</title>\n";
+      SPA::numToStr(pathID[pathUUID]) + "</title>\n";
   htmlFile +=
       "    <link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">\n"
       "  </head>\n"
       "  <body>\n"
       "    <div id=\"header\">\n"
-      "      <a href=\"" + path + ".html#metadata\">Path Meta-data</a>\n"
-                                  "      <a href=\"" + path +
+      "      <a href=\"" + pathUUID + ".html#metadata\">Path Meta-data</a>\n"
+                                      "      <a href=\"" + pathUUID +
       ".html#messages\">Message Log</a>\n"
-      "      <a href=\"" + path +
+      "      <a href=\"" + pathUUID +
       ".html#constraints\">Symbolic Contraints</a>\n"
-      "      <a href=\"" + path + ".html#coverage\">Coverage</a>\n"
-                                  "      <a href=\"" + path +
+      "      <a href=\"" + pathUUID + ".html#coverage\">Coverage</a>\n"
+                                      "      <a href=\"" + pathUUID +
       ".paths\">Path Source</a>\n"
       "      <a href=\"index.html\">All Conversations</a>\n"
       "    </div>\n";
@@ -819,7 +817,7 @@ std::string generatePathCoverageHTML(std::string path,
   std::ifstream srcFile(remappedFileName);
   for (unsigned long srcLineNum = 1; srcFile.good(); srcLineNum++) {
     std::set<std::string> covering, notCovering;
-    for (auto pit : pathsByUUID[path]->getExploredLineCoverage()) {
+    for (auto pit : path->getExploredLineCoverage()) {
       if (pit.second.count(srcFileName) &&
           pit.second[srcFileName].count(srcLineNum)) {
         if (pit.second[srcFileName][srcLineNum]) {
@@ -1030,34 +1028,27 @@ std::string generateConversationIndex() {
       "      <a href=\"index.html\">All Conversations</a>\n"
       "      <a href=\"paths.html\">All Paths</a>\n"
       "      <a href=\"coverage.html\">Coverage</a>\n";
-  if (!NoPathData) {
-    conversationIndex +=
-        "      <form>\n"
-        "        <select "
-        "onchange='if (this.value) window.location.href=this.value'>\n"
-        "          <option value=''>Go to path:</option>\n";
-    for (auto pit : pathsByID) {
-      conversationIndex += "          <option value='" + pit.second +
-                           ".html'>" + SPA::numToStr(pit.first) + "</option>\n";
-    }
-    conversationIndex += "        </select>\n"
-                         "      </form>\n";
+  conversationIndex +=
+      "      <form>\n"
+      "        <select "
+      "onchange='if (this.value) window.location.href=this.value'>\n"
+      "          <option value=''>Go to path:</option>\n";
+  for (auto pit : pathsByID) {
+    conversationIndex += "          <option value='" + pit.second + ".html'>" +
+                         SPA::numToStr(pit.first) + "</option>\n";
   }
-  conversationIndex += "    </div>\n";
-  if (NoPathData) {
-    conversationIndex += "    Path data not tracked.<br />\n";
-  } else {
-    conversationIndex +=
-        "    Documented " + SPA::numToStr(pathsByUUID.size()) + " paths (" +
-        SPA::numToStr(derivedFromPath.size()) + " derived and " +
-        SPA::numToStr(pathsByUUID.size() - derivedFromPath.size()) +
-        " explored), in " + SPA::numToStr(conversations.size()) +
-        " conversations.<br />\n" + SPA::runCommand(DOT_CMD, conversationsDot) +
-        "\n";
-  }
-  conversationIndex += SPA::runCommand(DOT_CMD, conversationsDot) + "\n";
-  conversationIndex += "  </body>\n"
-                       "</html>\n";
+  conversationIndex +=
+      "        </select>\n"
+      "      </form>\n"
+      "    </div>\n"
+      "    Documented " + SPA::numToStr(allPaths.size()) + " paths (" +
+      SPA::numToStr(derivedFromPath.size()) + " derived and " +
+      SPA::numToStr(allPaths.size() - derivedFromPath.size()) +
+      " explored), in " + SPA::numToStr(conversations.size()) +
+      " conversations.<br />\n" + SPA::runCommand(DOT_CMD, conversationsDot) +
+      "\n"
+      "  </body>\n"
+      "</html>\n";
   return conversationIndex;
 }
 
@@ -1309,10 +1300,10 @@ int main(int argc, char **argv, char **envp) {
   files["paths.html"] = [&]() { return generatePathIndex(allPaths); }
   ;
 
-  std::unique_ptr<SPA::PathLoader> pathLoader(new SPA::PathLoader(inFile));
-  SPA::Path *path;
-  unsigned long pathID = 1;
-  while ((path = pathLoader->getPath()) || ServeHttp > 0) {
+  pathLoader = new SPA::PathLoader(inFile);
+  std::unique_ptr<SPA::Path> path;
+  unsigned long id = 1;
+  while ((path.reset(pathLoader->getPath()), path) || ServeHttp > 0) {
     if (!path) {
       mg_mgr_poll(&mgr, 1000);
       continue;
@@ -1321,16 +1312,15 @@ int main(int argc, char **argv, char **envp) {
     }
 
     std::string pathUUID = path->getUUID();
-    klee::klee_message("  Loading path %ld (%s).", pathID, pathUUID.c_str());
+    klee::klee_message("  Loading path %ld (%s).", id, pathUUID.c_str());
     allPaths.insert(pathUUID);
-    pathsByID[pathID] = pathUUID;
-    pathIDs[pathUUID] = pathID;
-    pathsByUUID[pathUUID] = NoPathData ? NULL : path;
+    pathsByID[id] = pathUUID;
+    pathID[pathUUID] = id;
     pathParticipant[pathUUID] = path->getSymbolLog().back()->getParticipant();
 
     std::string parentUUID = path->getParentUUID();
     if (!parentUUID.empty()) {
-      if (pathsByUUID.count(parentUUID)) {
+      if (allPaths.count(parentUUID)) {
         parentPath[pathUUID] = parentUUID;
         childrenPaths[parentUUID][pathParticipant[pathUUID]].insert(pathUUID);
       }
@@ -1339,7 +1329,7 @@ int main(int argc, char **argv, char **envp) {
     }
 
     std::string derivedFromUUID = path->getDerivedFromUUID();
-    if (!derivedFromUUID.empty() && pathsByUUID.count(derivedFromUUID)) {
+    if (!derivedFromUUID.empty() && allPaths.count(derivedFromUUID)) {
       derivedFromPath[pathUUID] = derivedFromUUID;
       derivedPaths[derivedFromUUID].insert(pathUUID);
     }
@@ -1357,8 +1347,7 @@ int main(int argc, char **argv, char **envp) {
     ;
 
     files[pathUUID + ".paths"] = [ = ]() {
-      return NoPathData ? "Path data tracking disabled."
-                        : path->getPathSource();
+      return getPath(id)->getPathSource();
     }
     ;
 
@@ -1404,10 +1393,10 @@ int main(int argc, char **argv, char **envp) {
       worklist.erase(p);
       if (!fullConversation.count(p)) {
         fullConversation.insert(p);
-        if (pathsByUUID.count(parentPath[p])) {
+        if (allPaths.count(parentPath[p])) {
           worklist.insert(parentPath[p]);
         }
-        if (derivedFromPath.count(p) && pathsByUUID.count(derivedFromPath[p])) {
+        if (derivedFromPath.count(p) && allPaths.count(derivedFromPath[p])) {
           worklist.insert(derivedFromPath[p]);
         }
       }
@@ -1420,11 +1409,7 @@ int main(int argc, char **argv, char **envp) {
     }
     ;
 
-    pathID++;
-
-    if (NoPathData) {
-      delete path;
-    }
+    id++;
   }
 
   generateFiles();
