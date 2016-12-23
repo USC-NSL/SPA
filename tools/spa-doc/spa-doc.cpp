@@ -50,6 +50,10 @@ llvm::cl::opt<int>
 
 llvm::cl::opt<std::string> InFileName(llvm::cl::Positional, llvm::cl::Required,
                                       llvm::cl::desc("<input path-file>"));
+
+llvm::cl::opt<bool>
+    NoCoverage("no-coverage",
+               llvm::cl::desc("Disables tracking coverage (saves memory)."));
 }
 
 #define DOT_CMD "unflatten | dot -Tsvg"
@@ -754,13 +758,16 @@ std::string generatePathHTML(SPA::Path *path) {
     }
   }
 
-  htmlFile += "    <a class='anchor' id='coverage'></a>\n"
-              "    <h2>Coverage</h2>\n"
-              "    <b>Files:</b><br />\n";
-  for (auto it : srcFiles) {
-    assert(coverageIndexes.count(it));
-    htmlFile += "    <a href='" + path->getUUID() + "-" + coverageIndexes[it] +
-                "'>" + remapSrcFileName(it) + "</a><br />\n";
+  if (!NoCoverage) {
+    htmlFile += "    <a class='anchor' id='coverage'></a>\n"
+                "    <h2>Coverage</h2>\n"
+                "    <b>Files:</b><br />\n";
+    for (auto it : srcFiles) {
+      assert(coverageIndexes.count(it));
+      htmlFile +=
+          "    <a href='" + path->getUUID() + "-" + coverageIndexes[it] + "'>" +
+          remapSrcFileName(it) + "</a><br />\n";
+    }
   }
 
   htmlFile += "  </body>\n"
@@ -770,6 +777,10 @@ std::string generatePathHTML(SPA::Path *path) {
 }
 
 std::string generatePathCoverageHTML(SPA::Path *path, std::string srcFileName) {
+  if (!NoCoverage) {
+    return "Coverage data tracking disabled.";
+  }
+
   std::string remappedFileName = remapSrcFileName(srcFileName);
   klee::klee_message("Processing coverage in %s for path %ld (%s).",
                      remappedFileName.c_str(), pathIDs[path],
@@ -1043,6 +1054,10 @@ std::string generateConversationIndex() {
 }
 
 std::string generateCoverageIndex() {
+  if (!NoCoverage) {
+    return "Coverage data tracking disabled.";
+  }
+
   klee::klee_message("Generating global coverage index.");
   unsigned long globalCoveredLines = 0, globalUncoveredLines = 0;
   std::map<std::string, unsigned long> fileCoveredLines, fileUncoveredLines;
@@ -1104,6 +1119,10 @@ std::string generateCoverageIndex() {
 }
 
 std::string generateCoverageFile(std::string origSrcFile) {
+  if (!NoCoverage) {
+    return "Coverage data tracking disabled.";
+  }
+
   std::string srcFileName = remapSrcFileName(origSrcFile);
 
   klee::klee_message("Generating coverage index for %s.", srcFileName.c_str());
@@ -1335,26 +1354,28 @@ int main(int argc, char **argv, char **envp) {
     }
     ;
 
-    for (auto pit : path->getExploredLineCoverage()) {
-      for (auto fit : pit.second) {
-        for (auto lit : fit.second) {
-          coverage[fit.first][lit.first][lit.second].insert(path);
-        }
-        if (!coverageIndexes.count(fit.first)) {
-          std::string coverageIndex =
-              "coverage-" + SPA::numToStr(coverageIndexes.size()) + ".html";
-          coverageIndexes[fit.first] = coverageIndex;
-          files[coverageIndex] = [ = ]() {
-            return generateCoverageFile(fit.first);
+    if (!NoCoverage) {
+      for (auto pit : path->getExploredLineCoverage()) {
+        for (auto fit : pit.second) {
+          for (auto lit : fit.second) {
+            coverage[fit.first][lit.first][lit.second].insert(path);
+          }
+          if (!coverageIndexes.count(fit.first)) {
+            std::string coverageIndex =
+                "coverage-" + SPA::numToStr(coverageIndexes.size()) + ".html";
+            coverageIndexes[fit.first] = coverageIndex;
+            files[coverageIndex] = [ = ]() {
+              return generateCoverageFile(fit.first);
+            }
+            ;
+          }
+          std::string pathCoverageIndex =
+              path->getUUID() + "-" + coverageIndexes[fit.first];
+          files[pathCoverageIndex] = [ = ]() {
+            return generatePathCoverageHTML(path, fit.first);
           }
           ;
         }
-        std::string pathCoverageIndex =
-            path->getUUID() + "-" + coverageIndexes[fit.first];
-        files[pathCoverageIndex] = [ = ]() {
-          return generatePathCoverageHTML(path, fit.first);
-        }
-        ;
       }
     }
 
