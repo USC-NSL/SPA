@@ -58,6 +58,10 @@ llvm::cl::opt<bool>
 llvm::cl::opt<bool>
     NoLineage("no-lineage",
               llvm::cl::desc("Disables tracking lineage (saves memory)."));
+
+llvm::cl::opt<bool>
+    NoPathData("no-path-data",
+               llvm::cl::desc("Disables tracking path data (saves memory)."));
 }
 
 #define DOT_CMD "unflatten | dot -Tsvg"
@@ -1002,10 +1006,15 @@ std::string generateConversationIndex() {
                                     conversationColors[cit.first].end());
     conversationsDot +=
         "  " + sanitizeToken(name) + " [label=\"" + cit.first.back() + "\\n(" +
-        SPA::numToStr(cit.second.size()) + " Paths)\" URL=\"" +
-        (cit.second.size() > 1 ? name : (*cit.second.begin())->getUUID()) +
-        ".html\" style=\"" + (colors.size() > 1 ? "wedged" : "filled") +
-        "\" fillcolor=\"" + SPA::strJoin(colors, ":") + "\"]\n";
+        SPA::numToStr(cit.second.size()) + " Paths)\"; style=\"" +
+        (colors.size() > 1 ? "wedged" : "filled") + "\" fillcolor=\"" +
+        SPA::strJoin(colors, ":") + "\"]\n";
+    if (!NoPathData) {
+      conversationsDot +=
+          "URL=\"" +
+          (cit.second.size() > 1 ? name : (*cit.second.begin())->getUUID()) +
+          ".html\" ";
+    }
     if (cit.first.size() > 1) {
       auto parentConversation = cit.first;
       parentConversation.pop_back();
@@ -1020,8 +1029,8 @@ std::string generateConversationIndex() {
   conversationsDot += "}\n";
 
   unsigned long numDerived = 0;
-  for (auto pit : pathsByUUID) {
-    if (!pit.second->getDerivedFromUUID().empty()) {
+  for (auto pit : allPaths) {
+    if (!pit->getDerivedFromUUID().empty()) {
       numDerived++;
     }
   }
@@ -1038,24 +1047,32 @@ std::string generateConversationIndex() {
       "    <div id=\"header\">\n"
       "      <a href=\"index.html\">All Conversations</a>\n"
       "      <a href=\"paths.html\">All Paths</a>\n"
-      "      <a href=\"coverage.html\">Coverage</a>\n"
-      "      <form>\n"
-      "        <select "
-      "onchange='if (this.value) window.location.href=this.value'>\n"
-      "          <option value=''>Go to path:</option>\n";
-  for (auto pit : pathsByID) {
-    conversationIndex += "          <option value='" + pit.second->getUUID() +
-                         ".html'>" + SPA::numToStr(pit.first) + "</option>\n";
+      "      <a href=\"coverage.html\">Coverage</a>\n";
+  if (!NoPathData) {
+    conversationIndex +=
+        "      <form>\n"
+        "        <select "
+        "onchange='if (this.value) window.location.href=this.value'>\n"
+        "          <option value=''>Go to path:</option>\n";
+    for (auto pit : pathsByID) {
+      conversationIndex += "          <option value='" + pit.second->getUUID() +
+                           ".html'>" + SPA::numToStr(pit.first) + "</option>\n";
+    }
+    conversationIndex += "        </select>\n"
+                         "      </form>\n";
   }
-  conversationIndex += "        </select>\n"
-                       "      </form>\n"
-                       "    </div>\n";
-  conversationIndex +=
-      "    Documented " + SPA::numToStr(pathsByUUID.size()) + " paths (" +
-      SPA::numToStr(numDerived) + " derived and " +
-      SPA::numToStr(pathsByUUID.size() - numDerived) + " explored), in " +
-      SPA::numToStr(conversations.size()) + " conversations.<br />\n" +
-      SPA::runCommand(DOT_CMD, conversationsDot) + "\n";
+  conversationIndex += "    </div>\n";
+  if (NoPathData) {
+    conversationIndex += "    Path data not tracked.<br />\n";
+  } else {
+    conversationIndex +=
+        "    Documented " + SPA::numToStr(pathsByUUID.size()) + " paths (" +
+        SPA::numToStr(numDerived) + " derived and " +
+        SPA::numToStr(pathsByUUID.size() - numDerived) + " explored), in " +
+        SPA::numToStr(conversations.size()) + " conversations.<br />\n" +
+        SPA::runCommand(DOT_CMD, conversationsDot) + "\n";
+  }
+  conversationIndex += SPA::runCommand(DOT_CMD, conversationsDot) + "\n";
   conversationIndex += "  </body>\n"
                        "</html>\n";
   return conversationIndex;
@@ -1425,6 +1442,10 @@ int main(int argc, char **argv, char **envp) {
     ;
 
     pathID++;
+
+    if (NoPathData) {
+      delete path;
+    }
   }
 
   generateFiles();
