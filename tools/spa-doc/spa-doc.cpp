@@ -54,6 +54,10 @@ llvm::cl::opt<std::string> InFileName(llvm::cl::Positional, llvm::cl::Required,
 llvm::cl::opt<bool>
     NoCoverage("no-coverage",
                llvm::cl::desc("Disables tracking coverage (saves memory)."));
+
+llvm::cl::opt<bool>
+    NoLineage("no-lineage",
+              llvm::cl::desc("Disables tracking lineage (saves memory)."));
 }
 
 #define DOT_CMD "unflatten | dot -Tsvg"
@@ -486,52 +490,57 @@ std::string generatePathHTML(SPA::Path *path) {
   }
   messageLogDot += "}\n";
 
-  std::set<SPA::Path *> fullConversation, worklist;
-  // Show entire conversation up to the children and direct siblings
-  // (same parent and same participant) of the current path.
-  // Also add paths derived from this one.
-  // Add children to worklist.
-  for (auto p : childrenPaths[path]) {
-    worklist.insert(p.second.begin(), p.second.end());
-  }
-  // Add siblings to worklist.
-  std::string parentUUID = path->getParentUUID();
-  if (!parentUUID.empty()) {
-    if (pathsByUUID.count(parentUUID)) {
-      auto siblings = childrenPaths[pathsByUUID[parentUUID]][
-          path->getSymbolLog().back()->getParticipant()];
-      worklist.insert(siblings.begin(), siblings.end());
-    }
+  std::string lineageHtml;
+  if (NoLineage) {
+    lineageHtml = "Lineage data not tracked.";
   } else {
-    if (childrenPaths.count(NULL)) {
-      auto siblings =
-          childrenPaths[NULL][path->getSymbolLog().back()->getParticipant()];
-      worklist.insert(siblings.begin(), siblings.end());
+    std::set<SPA::Path *> fullConversation, worklist;
+    // Show entire conversation up to the children and direct siblings
+    // (same parent and same participant) of the current path.
+    // Also add paths derived from this one.
+    // Add children to worklist.
+    for (auto p : childrenPaths[path]) {
+      worklist.insert(p.second.begin(), p.second.end());
     }
-  }
-  // Add derived paths to worklist.
-  worklist.insert(derivedPaths[path].begin(), derivedPaths[path].end());
-
-  while (!worklist.empty()) {
-    SPA::Path *path = *worklist.begin();
+    // Add siblings to worklist.
     std::string parentUUID = path->getParentUUID();
-    worklist.erase(path);
-    if (path && !fullConversation.count(path)) {
-      fullConversation.insert(path);
+    if (!parentUUID.empty()) {
       if (pathsByUUID.count(parentUUID)) {
-        worklist.insert(pathsByUUID[parentUUID]);
+        auto siblings = childrenPaths[pathsByUUID[parentUUID]][
+            path->getSymbolLog().back()->getParticipant()];
+        worklist.insert(siblings.begin(), siblings.end());
       }
-      if ((!path->getDerivedFromUUID().empty()) &&
-          pathsByUUID.count(path->getDerivedFromUUID())) {
-        worklist.insert(pathsByUUID[path->getDerivedFromUUID()]);
+    } else {
+      if (childrenPaths.count(NULL)) {
+        auto siblings =
+            childrenPaths[NULL][path->getSymbolLog().back()->getParticipant()];
+        worklist.insert(siblings.begin(), siblings.end());
       }
     }
+    // Add derived paths to worklist.
+    worklist.insert(derivedPaths[path].begin(), derivedPaths[path].end());
+
+    while (!worklist.empty()) {
+      SPA::Path *path = *worklist.begin();
+      std::string parentUUID = path->getParentUUID();
+      worklist.erase(path);
+      if (path && !fullConversation.count(path)) {
+        fullConversation.insert(path);
+        if (pathsByUUID.count(parentUUID)) {
+          worklist.insert(pathsByUUID[parentUUID]);
+        }
+        if ((!path->getDerivedFromUUID().empty()) &&
+            pathsByUUID.count(path->getDerivedFromUUID())) {
+          worklist.insert(pathsByUUID[path->getDerivedFromUUID()]);
+        }
+      }
+    }
+    lineageHtml = SPA::runCommand(
+        DOT_CMD, generatePathDot(fullConversation, std::set<SPA::Path *>({
+      path
+    }),
+                                 "LR"));
   }
-  std::string lineageDot =
-      generatePathDot(fullConversation, std::set<SPA::Path *>({
-    path
-  }),
-                      "LR");
 
   std::string htmlFile =
       "<!doctype html>\n"
@@ -557,8 +566,7 @@ std::string generatePathHTML(SPA::Path *path) {
       "</h1>\n"
       "    <h2>Path Meta-data</h2>\n"
       "    <b>UUID:</b> " + path->getUUID() + "<br /><br />\n";
-  htmlFile += "    <b>Lineage:</b><br />\n" +
-              SPA::runCommand(DOT_CMD, lineageDot) + "\n";
+  htmlFile += "    <b>Lineage:</b><br />\n" + lineageHtml + "\n";
   htmlFile += "    <br /><br />\n"
               "    <b>Conversation:</b><br />\n"
               "    <ol>\n";
@@ -1319,20 +1327,22 @@ int main(int argc, char **argv, char **envp) {
     pathIDs[path] = pathID;
     pathsByUUID[path->getUUID()] = path;
 
-    std::string parentUUID = path->getParentUUID();
-    if (!parentUUID.empty()) {
-      if (pathsByUUID.count(parentUUID)) {
-        childrenPaths[pathsByUUID[parentUUID]][
-            path->getSymbolLog().back()->getParticipant()].insert(path);
+    if (!NoLineage) {
+      std::string parentUUID = path->getParentUUID();
+      if (!parentUUID.empty()) {
+        if (pathsByUUID.count(parentUUID)) {
+          childrenPaths[pathsByUUID[parentUUID]][
+              path->getSymbolLog().back()->getParticipant()].insert(path);
+        }
+      } else {
+        childrenPaths[NULL][path->getSymbolLog().back()->getParticipant()]
+            .insert(path);
       }
-    } else {
-      childrenPaths[NULL][path->getSymbolLog().back()->getParticipant()]
-          .insert(path);
-    }
 
-    std::string derivedFromUUID = path->getDerivedFromUUID();
-    if (!derivedFromUUID.empty() && pathsByUUID.count(derivedFromUUID)) {
-      derivedPaths[pathsByUUID[derivedFromUUID]].insert(path);
+      std::string derivedFromUUID = path->getDerivedFromUUID();
+      if (!derivedFromUUID.empty() && pathsByUUID.count(derivedFromUUID)) {
+        derivedPaths[pathsByUUID[derivedFromUUID]].insert(path);
+      }
     }
 
     for (auto cfit : colorFilters) {
