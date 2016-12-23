@@ -770,6 +770,10 @@ std::string generatePathHTML(std::string pathUUID) {
       htmlFile += "    <a href='" + pathUUID + "-" + coverageIndexes[it] +
                   "'>" + remapSrcFileName(it) + "</a><br />\n";
     }
+  } else {
+    htmlFile += "    <a class='anchor' id='coverage'></a>\n"
+                "    <h2>Coverage</h2>\n"
+                "    Coverage tracking disabled.<br />\n";
   }
 
   htmlFile += "  </body>\n"
