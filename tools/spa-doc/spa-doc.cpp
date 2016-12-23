@@ -1320,49 +1320,45 @@ int main(int argc, char **argv, char **envp) {
       mg_mgr_poll(&mgr, 0);
     }
 
-    klee::klee_message("  Loading path %ld (%s).", pathID,
-                       path->getUUID().c_str());
-    allPaths.insert(path->getUUID());
-    pathsByID[pathID] = path->getUUID();
-    pathIDs[path->getUUID()] = pathID;
-    pathsByUUID[path->getUUID()] = NoPathData ? NULL : path;
-    pathParticipant[path->getUUID()] =
-        path->getSymbolLog().back()->getParticipant();
+    std::string pathUUID = path->getUUID();
+    klee::klee_message("  Loading path %ld (%s).", pathID, pathUUID.c_str());
+    allPaths.insert(pathUUID);
+    pathsByID[pathID] = pathUUID;
+    pathIDs[pathUUID] = pathID;
+    pathsByUUID[pathUUID] = NoPathData ? NULL : path;
+    pathParticipant[pathUUID] = path->getSymbolLog().back()->getParticipant();
 
     std::string parentUUID = path->getParentUUID();
     if (!parentUUID.empty()) {
       if (pathsByUUID.count(parentUUID)) {
-        parentPath[path->getUUID()] = parentUUID;
-        childrenPaths[parentUUID][pathParticipant[path->getUUID()]]
-            .insert(path->getUUID());
+        parentPath[pathUUID] = parentUUID;
+        childrenPaths[parentUUID][pathParticipant[pathUUID]].insert(pathUUID);
       }
     } else {
-      childrenPaths[""][pathParticipant[path->getUUID()]]
-          .insert(path->getUUID());
+      childrenPaths[""][pathParticipant[pathUUID]].insert(pathUUID);
     }
 
     std::string derivedFromUUID = path->getDerivedFromUUID();
     if (!derivedFromUUID.empty() && pathsByUUID.count(derivedFromUUID)) {
-      derivedFromPath[path->getUUID()] = derivedFromUUID;
-      derivedPaths[derivedFromUUID].insert(path->getUUID());
+      derivedFromPath[pathUUID] = derivedFromUUID;
+      derivedPaths[derivedFromUUID].insert(pathUUID);
     }
 
     for (auto cfit : colorFilters) {
       if (cfit.first->checkPath(*path)) {
-        pathColors[path->getUUID()].insert(cfit.second);
+        pathColors[pathUUID].insert(cfit.second);
       }
     }
-    if (pathColors[path->getUUID()].empty()) {
-      pathColors[path->getUUID()].insert("white");
+    if (pathColors[pathUUID].empty()) {
+      pathColors[pathUUID].insert("white");
     }
 
-    files[path->getUUID() + ".html"] = [ = ]() {
-      return generatePathHTML(path->getUUID());
-    }
+    files[pathUUID + ".html"] = [ = ]() { return generatePathHTML(pathUUID); }
     ;
 
-    files[path->getUUID() + ".paths"] = [ = ]() {
-      return path->getPathSource();
+    files[pathUUID + ".paths"] = [ = ]() {
+      return NoPathData ? "Path data tracking disabled."
+                        : path->getPathSource();
     }
     ;
 
@@ -1370,7 +1366,7 @@ int main(int argc, char **argv, char **envp) {
       for (auto pit : path->getExploredLineCoverage()) {
         for (auto fit : pit.second) {
           for (auto lit : fit.second) {
-            coverage[fit.first][lit.first][lit.second].insert(path->getUUID());
+            coverage[fit.first][lit.first][lit.second].insert(pathUUID);
           }
           if (!coverageIndexes.count(fit.first)) {
             std::string coverageIndex =
@@ -1382,9 +1378,9 @@ int main(int argc, char **argv, char **envp) {
             ;
           }
           std::string pathCoverageIndex =
-              path->getUUID() + "-" + coverageIndexes[fit.first];
+              pathUUID + "-" + coverageIndexes[fit.first];
           files[pathCoverageIndex] = [ = ]() {
-            return generatePathCoverageHTML(path->getUUID(), fit.first);
+            return generatePathCoverageHTML(pathUUID, fit.first);
           }
           ;
         }
@@ -1399,7 +1395,7 @@ int main(int argc, char **argv, char **envp) {
         currentPath = sit->getPathUUID();
       }
     }
-    conversations[participants].insert(path->getUUID());
+    conversations[participants].insert(pathUUID);
     std::set<std::string> fullConversation, worklist;
     // Add all parent paths to conversation.
     worklist = conversations[participants];
@@ -1416,8 +1412,8 @@ int main(int argc, char **argv, char **envp) {
         }
       }
     }
-    conversationColors[participants].insert(pathColors[path->getUUID()].begin(),
-                                            pathColors[path->getUUID()].end());
+    conversationColors[participants]
+        .insert(pathColors[pathUUID].begin(), pathColors[pathUUID].end());
 
     files[SPA::strJoin(participants, "_") + ".html"] = [ = ]() {
       return generatePathIndex(fullConversation);
