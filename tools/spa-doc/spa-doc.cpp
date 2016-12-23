@@ -1000,14 +1000,10 @@ std::string generateConversationIndex() {
                                     conversationColors[cit.first].end());
     conversationsDot +=
         "  " + sanitizeToken(name) + " [label=\"" + cit.first.back() + "\\n(" +
-        SPA::numToStr(cit.second.size()) + " Paths)\"; style=\"" +
-        (colors.size() > 1 ? "wedged" : "filled") + "\" fillcolor=\"" +
-        SPA::strJoin(colors, ":") + "\"]\n";
-    if (!NoPathData) {
-      conversationsDot +=
-          "URL=\"" + (cit.second.size() > 1 ? name : *cit.second.begin()) +
-          ".html\" ";
-    }
+        SPA::numToStr(cit.second.size()) + " Paths)\"; URL=\"" +
+        (cit.second.size() > 1 ? name : *cit.second.begin()) +
+        ".html\" style=\"" + (colors.size() > 1 ? "wedged" : "filled") +
+        "\" fillcolor=\"" + SPA::strJoin(colors, ":") + "\"]\n";
     if (cit.first.size() > 1) {
       auto parentConversation = cit.first;
       parentConversation.pop_back();
