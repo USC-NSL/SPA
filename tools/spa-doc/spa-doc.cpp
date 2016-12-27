@@ -1304,10 +1304,10 @@ int main(int argc, char **argv, char **envp) {
   files["paths.html"] = [&]() { return generatePathIndex(allPaths); }
   ;
 
-  pathLoader = new SPA::PathLoader(inFile);
+  pathLoader = new SPA::PathLoader(inFile, true);
   std::unique_ptr<SPA::Path> path;
   unsigned long id = 1;
-  while ((path.reset(pathLoader->getPath()), path) || ServeHttp > 0) {
+  while ((path.reset(pathLoader->getPath(id)), path) || ServeHttp > 0) {
     if (!path) {
       mg_mgr_poll(&mgr, 1000);
       continue;
