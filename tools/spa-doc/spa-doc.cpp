@@ -261,6 +261,7 @@ std::string generatePathIndex(std::set<std::string> paths,
          "      <a href=\"index.html\">All Conversations</a>\n"
          "      <a href=\"paths.html\">All Paths</a>\n"
          "      <a href=\"coverage.html\">Coverage</a>\n"
+         "      <a href=\"stats.html\">Stats</a>\n"
          "    </div>\n" + SPA::runCommand(DOT_CMD, dot) + "\n"
                                                           "  </body>\n"
                                                           "</html>\n";
@@ -1038,8 +1039,8 @@ std::string generateConversationIndex() {
       "    <div id=\"header\">\n"
       "      <a href=\"index.html\">All Conversations</a>\n"
       "      <a href=\"paths.html\">All Paths</a>\n"
-      "      <a href=\"coverage.html\">Coverage</a>\n";
-  conversationIndex +=
+      "      <a href=\"coverage.html\">Coverage</a>\n"
+      "      <a href=\"stats.html\">Stats</a>\n"
       "      <form>\n"
       "        <select "
       "onchange='if (this.value) window.location.href=this.value'>\n"
@@ -1096,6 +1097,7 @@ std::string generateCoverageIndex() {
       "      <a href=\"index.html\">All Conversations</a>\n"
       "      <a href=\"paths.html\">All Paths</a>\n"
       "      <a href=\"coverage.html\">Coverage</a>\n"
+      "      <a href=\"stats.html\">Stats</a>\n"
       "    </div>\n"
       "    <iframe src='about:blank' name='src' class='src'></iframe>\n"
       "    <h1>Coverage</h1>\n"
@@ -1128,6 +1130,75 @@ std::string generateCoverageIndex() {
   return result;
 }
 
+std::string generateStatsIndex() {
+  klee::klee_message("Generating global stats index.");
+  std::string result =
+      "<!doctype html>\n"
+      "<html lang=\"en\">\n"
+      "  <head>\n"
+      "    <meta charset=\"utf-8\">\n"
+      "    <title>Global Stats</title>\n"
+      "    <link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">\n"
+      "  </head>\n"
+      "  <body>\n"
+      "    <div id=\"header\">\n"
+      "      <a href=\"index.html\">All Conversations</a>\n"
+      "      <a href=\"paths.html\">All Paths</a>\n"
+      "      <a href=\"coverage.html\">Coverage</a>\n"
+      "      <a href=\"stats.html\">Stats</a>\n"
+      "    </div>\n"
+      "    <h1>Paths</h1>\n";
+  result += "    <b>Conversations:</b> " + SPA::numToStr(conversations.size()) +
+            "<br />\n";
+  result +=
+      "    <b>Total Paths:</b> " + SPA::numToStr(allPaths.size()) + "<br />\n";
+  result +=
+      "    <b>Explored Paths:</b> " +
+      SPA::numToStr(allPaths.size() - derivedFromPath.size()) + "<br />\n";
+  result += "    <b>Derived Paths:</b> " +
+            SPA::numToStr(derivedFromPath.size()) + "<br />\n";
+  result += "    <h1>Color Filters</h1>\n"
+            "    <table border='1'>\n"
+            "      <tr><th>Color</th><th>Matches</th><th>Paths</th></tr>\n";
+
+  // Count paths with each color.
+  std::map<std::string, std::set<std::string> > colorPaths;
+  for (auto it : colorFilters) {
+    colorPaths[it.second];
+  }
+  colorPaths["white"];
+  for (auto pit : pathColors) {
+    for (auto cit : pit.second) {
+      colorPaths[cit].insert(pit.first);
+    }
+  }
+
+  for (auto cit : colorPaths) {
+    result += "      <tr>\n"
+              "        <td style='background: " + cit.first + "'>" + cit.first +
+              "</td>\n"
+              "        <td>" + SPA::numToStr(cit.second.size()) + " (" +
+              SPA::numToStr(100 * cit.second.size() / allPaths.size()) +
+              "%)</td>\n"
+              "        <td>\n";
+
+    unsigned long counter = 1;
+    for (auto pit : cit.second) {
+      result += "          <a href='" + pit + ".html'>" +
+                SPA::numToStr(counter++) + "</a>\n";
+    }
+
+    result += "        </td>\n"
+              "      </tr>\n";
+  }
+
+  result += "    </table>\n"
+            "  </body>\n"
+            "</html>\n";
+
+  return result;
+}
+
 std::string generateCoverageFile(std::string origSrcFile) {
   if (NoCoverage) {
     return "Coverage data tracking disabled.";
@@ -1152,6 +1223,7 @@ std::string generateCoverageFile(std::string origSrcFile) {
       "      <a href=\"index.html\">All Conversations</a>\n"
       "      <a href=\"paths.html\">All Paths</a>\n"
       "      <a href=\"coverage.html\">Coverage</a>\n"
+      "      <a href=\"stats.html\">Stats</a>\n"
       "    </div>\n";
   coverageHtml += "    <b>" + srcFileName + "</b>\n";
   coverageHtml += "    <div class='content'>\n"
@@ -1308,6 +1380,7 @@ int main(int argc, char **argv, char **envp) {
   files["style.css"] = generateCSS;
   files["index.html"] = generateConversationIndex;
   files["coverage.html"] = generateCoverageIndex;
+  files["stats.html"] = generateStatsIndex;
   files["paths.html"] = [&]() { return generatePathIndex(allPaths); }
   ;
 
