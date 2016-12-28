@@ -242,10 +242,6 @@ std::string generatePathDot(std::set<std::string> paths,
   return dot;
 }
 
-std::unique_ptr<SPA::Path> getPath(unsigned long pathID) {
-  return std::unique_ptr<SPA::Path>(pathLoader->getPath(pathID));
-}
-
 std::string generatePathIndex(std::set<std::string> paths,
                               std::set<std::string> selectedPaths =
                                   std::set<std::string>()) {
@@ -274,7 +270,7 @@ std::string generatePathHTML(std::string pathUUID) {
   klee::klee_message("Processing path %ld (%s).", pathID[pathUUID],
                      pathUUID.c_str());
 
-  std::unique_ptr<SPA::Path> path(getPath(pathID[pathUUID]));
+  std::unique_ptr<SPA::Path> path(pathLoader->getPath(pathID[pathUUID]));
 
   std::map<std::string, std::shared_ptr<participant_t> > participantByName;
   std::map<std::string, std::shared_ptr<participant_t> > participantByBinding;
@@ -575,7 +571,18 @@ std::string generatePathHTML(std::string pathUUID) {
       currentPath = it->getPathUUID();
     }
   }
-  htmlFile += "    </ol><br />\n"
+  htmlFile +=
+      "    </ol><br />\n"
+      "    <b>Filter Expressions:</b><br />\n"
+      "    <table border='1'>\n"
+      "      <tr><th>Color</th><th>Expression</th><th>Pass/Fail</th></tr>\n";
+  for (auto it : colorFilters) {
+    htmlFile +=
+        "      <tr><td style='background: " + it.second + "'>" + it.second +
+        "</td><td>" + it.first->dbg_str() + "</td><td>" +
+        (it.first->checkPath(*path) ? "&#10003;" : "&#10008;") + "</td></tr>\n";
+  }
+  htmlFile += "    </table><br />\n"
               "    <b>Tags:</b><br />\n"
               "    <table border='1'>\n"
               "      <tr><th>Key</th><th>Value</th></tr>\n";
@@ -788,7 +795,7 @@ std::string generatePathCoverageHTML(std::string pathUUID,
     return "Coverage data tracking disabled.";
   }
 
-  std::unique_ptr<SPA::Path> path(getPath(pathID[pathUUID]));
+  std::unique_ptr<SPA::Path> path(pathLoader->getPath(pathID[pathUUID]));
 
   std::string remappedFileName = remapSrcFileName(srcFileName);
   klee::klee_message("Processing coverage in %s for path %ld (%s).",
@@ -1351,7 +1358,8 @@ int main(int argc, char **argv, char **envp) {
     ;
 
     files[pathUUID + ".paths"] = [ = ]() {
-      return getPath(id)->getPathSource();
+      std::unique_ptr<SPA::Path> path(pathLoader->getPath(pathID[pathUUID]));
+      return path->getPathSource();
     }
     ;
 
