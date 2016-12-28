@@ -1,36 +1,7 @@
 #include <spa/FilterExpression.h>
-
-#define AND " AND "
-#define OR " OR "
-#define NOT "NOT "
-#define TRUE "TRUE"
-#define FALSE "FALSE"
+#include <spa/Util.h>
 
 namespace SPA {
-AndFE::AndFE(FilterExpression *l, FilterExpression *r) : l(l), r(r) {
-  assert(l && r);
-}
-bool AndFE::checkPath(Path &p) { return l->checkPath(p) && r->checkPath(p); }
-std::string AndFE::dbg_str() {
-  return "(" + l->dbg_str() + AND + r->dbg_str() + ")";
-}
-
-OrFE::OrFE(FilterExpression *l, FilterExpression *r) : l(l), r(r) {
-  assert(l && r);
-}
-bool OrFE::checkPath(Path &p) { return l->checkPath(p) || r->checkPath(p); }
-std::string OrFE::dbg_str() {
-  return "(" + l->dbg_str() + OR + r->dbg_str() + ")";
-}
-
-NotFE::NotFE(FilterExpression *subExpr) : subExpr(subExpr) { assert(subExpr); }
-bool NotFE::checkPath(Path &p) { return !subExpr->checkPath(p); }
-std::string NotFE::dbg_str() { return "(" NOT + subExpr->dbg_str() + ")"; }
-
-ConstFE::ConstFE(bool c) : c(c) {}
-bool ConstFE::checkPath(Path &p) { return c; }
-std::string ConstFE::dbg_str() { return c ? TRUE : FALSE; }
-
 FilterExpression *parseParFE(std::string str);
 template <class C>
 FilterExpression *parseBinaryFE(std::string str, std::string op);
@@ -39,6 +10,7 @@ FilterExpression *parseConstFE(std::string str);
 FilterExpression *parseReachedFE(std::string str);
 FilterExpression *parseConversationFE(std::string str);
 FilterExpression *parseUUIDFE(std::string str);
+FilterExpression *parseInterleavingsFE(std::string str);
 
 FilterExpression *FilterExpression::parse(std::string str) {
   // Trim
@@ -48,9 +20,9 @@ FilterExpression *FilterExpression::parse(std::string str) {
   FilterExpression *result;
   if ((result = parseParFE(str)))
     return result;
-  if ((result = parseBinaryFE<AndFE>(str, AND)))
+  if ((result = parseBinaryFE<AndFE>(str, BOOL_OP_AND)))
     return result;
-  if ((result = parseBinaryFE<OrFE>(str, OR)))
+  if ((result = parseBinaryFE<OrFE>(str, BOOL_OP_OR)))
     return result;
   if ((result = parseNotFE(str)))
     return result;
@@ -61,6 +33,8 @@ FilterExpression *FilterExpression::parse(std::string str) {
   if ((result = parseConversationFE(str)))
     return result;
   if ((result = parseUUIDFE(str)))
+    return result;
+  if ((result = parseInterleavingsFE(str)))
     return result;
   return NULL;
 }
@@ -90,19 +64,19 @@ FilterExpression *parseBinaryFE(std::string str, std::string op) {
 }
 
 FilterExpression *parseNotFE(std::string str) {
-  if (str.substr(0, strlen(NOT)) != NOT)
+  if (str.substr(0, strlen(BOOL_OP_NOT)) != BOOL_OP_NOT)
     return NULL;
   llvm::OwningPtr<FilterExpression> subExpr(
-      FilterExpression::parse(str.substr(strlen(NOT))));
+      FilterExpression::parse(str.substr(strlen(BOOL_OP_NOT))));
   if (!subExpr)
     return NULL;
   return new NotFE(subExpr.take());
 }
 
 FilterExpression *parseConstFE(std::string str) {
-  if (str == TRUE)
+  if (str == BOOL_OP_TRUE)
     return new ConstFE(true);
-  if (str == FALSE)
+  if (str == BOOL_OP_FALSE)
     return new ConstFE(false);
   return NULL;
 }
@@ -123,5 +97,15 @@ FilterExpression *parseUUIDFE(std::string str) {
   if (str.substr(0, strlen(UUID)) != UUID)
     return NULL;
   return new UUIDFE(str.substr(strlen(UUID)));
+}
+
+FilterExpression *parseInterleavingsFE(std::string str) {
+  if (str.substr(0, strlen(INTERLEAVINGS)) != INTERLEAVINGS)
+    return NULL;
+  str = str.substr(strlen(INTERLEAVINGS));
+  auto delim = str.find(" ");
+  std::string op = str.substr(0, delim);
+  unsigned int metric = strToNum<unsigned int>(str.substr(delim + 1));
+  return new InterleavingsFE(op, metric);
 }
 }
