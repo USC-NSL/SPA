@@ -1177,10 +1177,11 @@ std::string generateStatsIndex() {
     result += "      <tr>\n"
               "        <td style='background: " + cit.first + "'>" + cit.first +
               "</td>\n"
-              "        <td>" + SPA::numToStr(cit.second.size()) + " (" +
-              SPA::numToStr(100 * cit.second.size() / allPaths.size()) +
-              "%)</td>\n"
-              "        <td>\n";
+              "        <td>" + SPA::numToStr(cit.second.size()) +
+              (allPaths.size() ? " (" + SPA::numToStr(100 * cit.second.size() /
+                                                      allPaths.size()) + "%)"
+                               : "") + "</td>\n"
+                                       "        <td>\n";
 
     unsigned long counter = 1;
     for (auto pit : cit.second) {
