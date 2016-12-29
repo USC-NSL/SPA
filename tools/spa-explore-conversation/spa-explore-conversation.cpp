@@ -529,7 +529,7 @@ int main(int argc, char **argv, char **envp) {
     if (FollowInPaths) {
       while (!pathLoader->skipPath()) {
         sleep(1);
-        klee::klee_message("Waiting for path %ld.", frontPathID);
+        //         klee::klee_message("Waiting for path %ld.", frontPathID);
       }
     } else {
       if (!pathLoader->skipPath()) {
