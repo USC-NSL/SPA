@@ -285,6 +285,17 @@ ssize_t sendto(int sockfd, const void *buffer, size_t len, int flags,
                 sockets[sockfd].type == SOCK_STREAM ? "tcp" : "udp",
                 connect_addr, ntohs(((struct sockaddr_in *)to)->sin_port));
 
+  // Concretize message to emulate NICE.
+  {
+    len = klee_get_value_i32(len);
+
+    size_t offset;
+    for (offset = 0; offset < len; offset++) {
+      ((char *)buffer)[offset]
+          = klee_get_value_i32(((const char *)buffer)[offset]);
+    }
+  }
+
   if (sockets[sockfd].type == SOCK_STREAM) {
     size_t offset;
     for (offset = 0; offset < len; offset++) {
