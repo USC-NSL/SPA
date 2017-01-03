@@ -20,6 +20,10 @@
 #include <spa/Path.h>
 
 namespace SPA {
+llvm::cl::opt<bool> ConcretizePaths(
+    "concretize-paths",
+    llvm::cl::desc("Adds constraints to concretize paths (emulating NICE)."));
+
 extern llvm::cl::opt<std::string> ParticipantName;
 
 Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
@@ -179,12 +183,32 @@ Path::Path(klee::ExecutionState *kState, klee::Solver *solver) {
     }
   }
 
+  klee::ExprBuilder *exprBuilder = klee::createDefaultExprBuilder();
   std::vector<std::vector<unsigned char> > result;
-  if (solver->getInitialValues(
-          klee::Query(constraints, klee::createDefaultExprBuilder()->False()),
-          objects, result)) {
+  if (solver->getInitialValues(klee::Query(constraints, exprBuilder->False()),
+                               objects, result)) {
     for (size_t i = 0; i < result.size(); i++) {
       testInputs[objectNames[i]] = result[i];
+    }
+  }
+
+  if (ConcretizePaths) {
+    // Add constraints that force a single value on all input symbols.
+    for (auto iit : inputSymbols) {
+      // Check if API input.
+      if (iit.first.compare(0, strlen(SPA_INPUT_PREFIX), SPA_INPUT_PREFIX) ==
+          0) {
+        // Iterate over symbols in input.
+        for (auto sit : iit.second) {
+          // Iterate over symbol bytes.
+          for (unsigned b = 0; b < sit->getInputArray()->size; b++) {
+            constraints.addConstraint(exprBuilder->Eq(
+                exprBuilder->Read(klee::UpdateList(sit->getInputArray(), NULL),
+                                  exprBuilder->Constant(b, 8)),
+                exprBuilder->Constant(testInputs[sit->getFullName()][b], 8)));
+          }
+        }
+      }
     }
   }
 }
