@@ -506,8 +506,8 @@ llvm::Module *SPA::getModuleFromFile(std::string moduleFile) {
 
 SPA::SPA(llvm::Module *_module, std::ostream &_output)
     : module(_module), output(_output), pathFilter(NULL),
-      outputTerminalPaths(true), checkpointsFound(0), filteredPathsFound(0),
-      terminalPathsFound(0), outputtedPaths(0) {
+      outputTerminalPaths(true), outputErrorPaths(false), checkpointsFound(0),
+      filteredPathsFound(0), terminalPathsFound(0), outputtedPaths(0) {
   checkpointFilter.addIF(&checkpointWhitelist);
   stopPointFilter.addIF(&stopPointWhitelist);
 
@@ -974,8 +974,8 @@ void SPA::start() {
       break;
     }
   }
-  assert((outputFP || outputTerminalPaths || outputDone || outputLogExhausted ||
-          checkpointFilter.getSubFilters().size() > 1 ||
+  assert((outputFP || outputTerminalPaths || outputErrorPaths || outputDone ||
+          outputLogExhausted || checkpointFilter.getSubFilters().size() > 1 ||
           !checkpointWhitelist.getWhitelist().empty()) &&
          "No points to output data from.");
 
@@ -1157,7 +1157,8 @@ void SPA::onStateTerminateError(klee::ExecutionState *kState) {
   }
 
   terminalPathsFound++;
-  if (outputTerminalPaths || (outputLogExhausted && logExhausted)) {
+  if (outputTerminalPaths || outputErrorPaths ||
+      (outputLogExhausted && logExhausted)) {
     assert(kState);
     klee::klee_message("Processing terminal path.");
     processPath(kState);

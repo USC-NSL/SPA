@@ -94,6 +94,10 @@ llvm::cl::opt<bool>
                    llvm::cl::desc("Enable outputting terminal paths."));
 
 llvm::cl::opt<bool>
+    OutputError("output-error", llvm::cl::init(false),
+                llvm::cl::desc("Enable outputting error paths."));
+
+llvm::cl::opt<bool>
     OutputDone("output-done", llvm::cl::init(false),
                llvm::cl::desc("Output paths when the program finishes."));
 
@@ -289,6 +293,7 @@ int main(int argc, char **argv, char **envp) {
   }
 
   spa.setOutputTerminalPaths(OutputTerminal);
+  spa.setOutputErrorPaths(OutputError);
   spa.setOutputDone(OutputDone);
   spa.setOutputLogExhausted(OutputLogExhausted);
 

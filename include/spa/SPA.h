@@ -107,6 +107,7 @@ private:
   std::deque<bool> outputFilteredPaths;
   PathFilter *pathFilter;
   bool outputTerminalPaths;
+  bool outputErrorPaths;
   bool outputDone;
   bool outputLogExhausted;
 
@@ -176,6 +177,9 @@ public:
   }
   void setOutputTerminalPaths(bool _outputTerminalPaths) {
     outputTerminalPaths = _outputTerminalPaths;
+  }
+  void setOutputErrorPaths(bool _outputErrorPaths) {
+    outputErrorPaths = _outputErrorPaths;
   }
   void setOutputDone(bool _outputDone) { outputDone = _outputDone; }
   void setOutputLogExhausted(bool _outputLogExhausted) {
