@@ -153,7 +153,7 @@ int gettimeofday(struct timeval *tv, struct timezone *tz) {
     *tv = t;
   }
 
-  t.tv_usec += 10000; // 10ms
+  t.tv_usec += 100000; // 100ms
   if (t.tv_usec >= 1000000) {
     t.tv_usec = 0;
     t.tv_sec++;
