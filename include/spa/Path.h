@@ -235,6 +235,18 @@ public:
     return "";
   }
 
+  const std::string getParticipantParentUUID() const {
+    if (symbolLog.empty()) {
+      return "";
+    }
+    for (auto it = symbolLog.rbegin(), ie = symbolLog.rend(); it != ie; it++) {
+      if ((*it)->getParticipant() != symbolLog.back()->getParticipant()) {
+        return (*it)->getPathUUID();
+      }
+    }
+    return "";
+  }
+
   const decltype(symbolLog) & getSymbolLog() const { return symbolLog; }
 
   const decltype(inputSymbols) & getInputSymbols() const {
