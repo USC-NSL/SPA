@@ -103,6 +103,8 @@ std::set<std::pair<SPA::FilterExpression *, std::string> > colorFilters;
 std::map<std::string, std::set<std::string> > pathColors;
 // participants -> colors
 std::map<std::vector<std::string>, std::set<std::string> > conversationColors;
+// UUIDs
+std::set<std::string> terminalPaths;
 // file -> (line -> (covered -> UUIDs))
 std::map<std::string,
          std::map<unsigned long, std::map<bool, std::set<std::string> > > >
@@ -1157,6 +1159,8 @@ std::string generateStatsIndex() {
       SPA::numToStr(allPaths.size() - derivedFromPath.size()) + "<br />\n";
   result += "    <b>Derived Paths:</b> " +
             SPA::numToStr(derivedFromPath.size()) + "<br />\n";
+  result += "    <b>Terminal Paths:</b> " +
+            SPA::numToStr(terminalPaths.size()) + "<br />\n";
   result += "    <h1>Color Filters</h1>\n"
             "    <table border='1'>\n"
             "      <tr><th>Color</th><th>Matches</th><th>Paths</th></tr>\n";
@@ -1402,12 +1406,14 @@ int main(int argc, char **argv, char **envp) {
     pathsByID[id] = pathUUID;
     pathID[pathUUID] = id;
     pathParticipant[pathUUID] = path->getSymbolLog().back()->getParticipant();
+    terminalPaths.insert(pathUUID);
 
     std::string parentUUID = path->getParentUUID();
     if (!parentUUID.empty()) {
       if (allPaths.count(parentUUID)) {
         parentPath[pathUUID] = parentUUID;
         childrenPaths[parentUUID][pathParticipant[pathUUID]].insert(pathUUID);
+        terminalPaths.erase(parentUUID);
       }
     } else {
       childrenPaths[""][pathParticipant[pathUUID]].insert(pathUUID);
