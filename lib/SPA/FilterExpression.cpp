@@ -41,7 +41,21 @@ FilterExpression *FilterExpression::parse(std::string str) {
 
 FilterExpression *parseParFE(std::string str) {
   if (str.front() == '(' && str.back() == ')') {
-    return FilterExpression::parse(str.substr(1, str.length() - 2));
+    // Check if parenthesis are balanced.
+    int count = 0;
+    for (char it : str) {
+      if (it == '(') {
+        count++;
+      } else if (it == ')') {
+        count--;
+      }
+    }
+
+    if (count == 0) {
+      return FilterExpression::parse(str.substr(1, str.length() - 2));
+    } else {
+      return NULL;
+    }
   } else {
     return NULL;
   }
