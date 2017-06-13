@@ -42,7 +42,7 @@ public:
   }
   bool checkPath(Path &p) { return l->checkPath(p) && r->checkPath(p); }
   std::string dbg_str() {
-    return "(" + l->dbg_str() + BOOL_OP_AND + r->dbg_str() + ")";
+    return "((" + l->dbg_str() + ")" + BOOL_OP_AND + "(" + r->dbg_str() + "))";
   }
 };
 
@@ -56,7 +56,7 @@ public:
   }
   bool checkPath(Path &p) { return l->checkPath(p) || r->checkPath(p); }
   std::string dbg_str() {
-    return "(" + l->dbg_str() + BOOL_OP_OR + r->dbg_str() + ")";
+    return "((" + l->dbg_str() + ")" + BOOL_OP_OR + "(" + r->dbg_str() + "))";
   }
 };
 
@@ -67,7 +67,9 @@ private:
 public:
   NotFE(FilterExpression *subExpr) : subExpr(subExpr) { assert(subExpr); }
   bool checkPath(Path &p) { return !subExpr->checkPath(p); }
-  std::string dbg_str() { return "(" BOOL_OP_NOT + subExpr->dbg_str() + ")"; }
+  std::string dbg_str() {
+    return "(" BOOL_OP_NOT "(" + subExpr->dbg_str() + "))";
+  }
 };
 
 class ConstFE : public FilterExpression {
